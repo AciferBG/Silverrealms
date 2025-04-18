@@ -1,0 +1,134 @@
+IF
+	Global("AC#RegencyCouncil","ACIL62",1)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		SetGlobal("AC#RegencyCouncil","ACIL62",2)
+		Wait(1)
+		ActionOverride("AC#DUN01",FaceObject("DOOR01"))
+		Unlock("DOOR01")
+		OpenDoor("DOOR01")
+		Wait(1)
+		ActionOverride("AC#DUN01",MoveToPointNoInterrupt([1769.846]))
+END
+
+IF
+	Global("AC#Dunnabar_Teleport","ACIL62",0)
+	Global("AC#RegencyQuest","GLOBAL",1)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		StartCutSceneMode()
+		CloseDoor("DOOR01")
+		Lock("DOOR01")
+		SetGlobal("AC#Dunnabar_Teleport","ACIL62",1)
+		StartCutScene("ac#ct62A")
+END
+
+IF
+	GlobalGT("AC#Arrested","GLOBAL",1)
+	GlobalGT("AC#Iltkazar_Council_Second_Quest","GLOBAL",0)
+	Global("Opendooragain","ACIL62",0)
+THEN
+	RESPONSE #100
+		Unlock("DOOR01")
+		OpenDoor("DOOR01")
+		SetGlobal("Opendooragain","ACIL62",1)
+END
+
+IF
+	GlobalGT("AC#Iltkazar_Council_Second_Quest","GLOBAL",0)
+	GlobalLT("AC#Vronia_Alert","GLOBAL",10)
+	Global("Deactivate_Vronia","ACIL62",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Deactivate_Vronia","ACIL62",1)
+		ActionOverride("ac#vron1",Deactivate(Myself))
+END
+
+IF
+	Global("AC#Vronia_Alert","GLOBAL",10)
+	Global("Deactivate_Vronia","ACIL62",1)
+THEN
+	RESPONSE #100
+		SetGlobal("Deactivate_Vronia","ACIL62",2)
+		ActionOverride("ac#vron1",Activate(Myself))
+END
+
+IF
+	Global("Acil20_DeadDwarves","GLOBAL",1)
+	Global("Deactivate_Vronia","ACIL62",1)
+THEN
+	RESPONSE #100
+		SetGlobal("Deactivate_Vronia","ACIL62",2)
+		ActionOverride("ac#vron1",Activate(Myself))
+END
+
+IF
+	Global("AC#RC_Ellhimar_First","GLOBAL",1)
+	Global("AC#Vronia_Quest","GLOBAL",12)
+	Global("Create_Vronia","ACIL62",0)
+	!InMyArea("ac#vron1")  // Vronia Eisenbieger
+THEN
+	RESPONSE #100
+		SetGlobal("Create_Vronia","ACIL62",1)
+		CreateCreature("ac#vron1",[2012.964],5)  // Vronia Eisenbieger
+END
+
+IF
+	Global("AC#Ruvan_Treason","GLOBAL",3)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#Ruvan_Treason","GLOBAL",4)
+		CreateCreature("AC#62DW2",[2086.794],3)  // Soldat der Bronzemaske
+		CreateCreature("AC#62DW3",[2204.871],3)  // Soldat der Bronzemaske
+		CreateCreature("AC#TURB8",[1736.1077],9)  // Turbaern Ghalmrin
+		ActionOverride("AC#TURB8",StartDialogNoSet(Player1))
+END
+
+IF
+	Global("AC#ACIL64_Open","GLOBAL",1)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		Wait(1)
+		Unlock("DOOR02")
+		OpenDoor("DOOR02")
+		Wait(1)
+		ActionOverride("AC#GROM1",FaceObject("DOOR03"))
+		Wait(1)
+		Unlock("DOOR03")
+		OpenDoor("DOOR03")
+		Wait(1)
+		SetGlobal("AC#ACIL64_Open","GLOBAL",2)
+		ActionOverride("AC#DUN01",StartDialogNoSet(Player1))
+END
+
+IF
+	Global("AC#RC_Spiderstalkings","GLOBAL",1)
+	Global("RC_Dismissed","ACIL62",0)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		SetGlobal("RC_Dismissed","ACIL62",1)
+		SetGlobal("AC#Ellhimar_Cernd","GLOBAL",1)
+		ActionOverride("AC#FENY1",EscapeAreaObject("TrACIL50"))
+		ActionOverride("AC#STUR1",EscapeAreaObject("TrACIL50"))
+		ActionOverride("AC#TURB8",EscapeAreaObject("TrACIL50"))
+		ActionOverride("AC#VRON1",EscapeAreaObject("TrACIL50"))
+		ActionOverride("AC#ELER1",EscapeAreaObject("TrACIL50"))
+		ActionOverride("AC#GROM1",EscapeAreaObject("TrACIL64"))
+		ActionOverride("AC#DUN01",EscapeAreaObject("TrACIL64"))
+		ActionOverride("AC#ILEL6",DestroySelf())
+END
+
+IF
+	Global("AC#Goodbye_Iltkazar","GLOBAL",1)
+	Global("AC#BettarghBookAstral","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#BettarghBookAstral","GLOBAL",1)
+		CreateCreature("AC#BETT2",[2505.542],9)  // Bettargh Abgrundlied
+		ActionOverride("AC#BETT2",StartDialogNoSet(Player1))
+END
+

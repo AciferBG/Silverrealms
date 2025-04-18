@@ -1,0 +1,21 @@
+IF
+	Global("AC#_VaxallDead","ACIL29",0)
+	Dead("hlvaxal")
+THEN
+	RESPONSE #100
+		SetGlobal("AC#_VaxallDead","ACIL29",1)
+		ActionOverride("Quest_Chest",CreateItem("AC#VAX29",0,0,0)) // Spitzbubenstein
+END
+
+IF
+	Global("Has_Eyestalk","ACIL29",0)
+	PartyHasItem("ac#eyebe")
+THEN
+	RESPONSE #100
+	         Wait(1)
+		SetGlobal("Has_Eyestalk","ACIL29",1)
+		EraseJournalEntry(999999)
+		EraseJournalEntry(999998)
+	        AddJournalEntry(999997,QUEST)
+END
+

@@ -1,0 +1,20 @@
+IF
+  RandomNum(3,1)
+THEN
+  RESPONSE #100
+    FaceObject("INFO_SMITH01")
+    SwingOnce()
+    PlaySound("AC#HAM01")
+END
+
+
+
+
+
+
+
+
+
+
+
+

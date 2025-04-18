@@ -1,0 +1,9 @@
+IF
+  Entered([PC])
+THEN
+  RESPONSE #100
+    ActionOverride("AC#DURG2",ForceSpell(Myself,FLASHY_1))
+    DisplayString(Myself,@100)
+    Wait(2)
+    ActionOverride("AC#DURG2",EscapeArea())
+END

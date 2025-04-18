@@ -1,0 +1,558 @@
+@0= ~Into the Silverrealms V 1.0~
+@1= ~Ihr benötigt eine vollständige Installation von infinity animations, um diese Mod spielen zu können.~
+@2= ~Dieser Stein ist mit zahlreichen zwergischen Runen graviert.~
+@3= ~Ihr könnt den Boden des Schachts nicht erkennen. Er ist jedoch mit einer seltsamen, organischen Masse ausgekleidet.~
+@4= ~Auf diesem Stein ist ein eigenartiges Symbol aufgezeichnet, das Ihr nicht genau erkennen könnt. Jemand hat versucht, das Symbol mit Blutspuren zu verwischen.~ //Zinza01
+@5= ~Auf diesem Stein ist ein Euch unbekanntes Symbol aufgezeichnet: Ein Schwert, das von einem schwarzen Mantel umhüllt ist.~ //Zinza02
+@6= ~Diese Statue stellt eine Drow in einem schwarzen Mantel dar. Die Haltung lässt keinen Zweifel, dass es sich um das Abbild einer Göttin handeln muss.~ //Zinza05
+@7= ~Der Boden und die Wände des gesamten Raumes sind mit zahlreichen Spinnennetzen überzogen. Die Netze sind ungewöhnlich dick und stammen von keiner Spinne, die Ihr kennt.~
+@8= ~Ihr trinkt jeder einen tiefen Schluck aus dem Fläschchen mit dem Levitationstrank, wartet einen Augenblick und springt vom Rand in die Tiefe~
+@9= ~An dieser Stelle scheint die Höhle ins Bodenlose zu fallen. Von unten dringt weit entfernt das Plätschern von Wasser zu Euch hinauf.~
+@10= ~Ohne eine Möglichkeit, in die Höhle hinabzuschweben, würdet Ihr bei dem Sturz ins Bodenlose unweigerlich getötet werden.~
+@11= ~Ihr platziert die tote Spinne auf dem Altar, und Ihr spürt, wie der Raum von einer fremdartigen Macht erfüllt wird. Auf dem Altar erscheint ein Gegenstand, der vorher noch nicht dort war.~
+@12= ~Spinnenelf~
+@13= ~Zwergen-Runenschlüssel~
+@14= ~Diesen Schlüsselstein habt Ihr von den Zwergen Iltkazars erhalten. Mit ihm lässt sich der versiegelte Durchgang zu den Spinnenschächten öffnen, auch wenn das einige der Bewohner der Zwergenstadt sicher nicht für eine gute Idee halten dürften.~
+@15= ~Drachenherz~
+@16= ~Dies ist das Herz des grünen Drachen Ringreemeralxot, den Ihr im Tempel des uralten Drachengottes Kalzareinad beschworen und in einem epischen Kampf erschlagen habt.~
+@17= ~Ihr werft das Drachenherz in den Feueraltar, welches sofort in einem gleißenden Licht zu brennen beginnt. Kurze Zeit später scheint sich der Raum mit einer mächtigen Präsenz zu füllen~
+@18= ~Grüne Drachenschuppen~
+@19= ~Hierbei handelt es sich um ledrige, übelriechende Drachenschuppen, die von einem Grünen Drachen stammen. Man sagt, man könnte aus derartigen Schuppen eine mächtige Rüstung schmieden.~
+@20= ~Ringreemeralxot~
+@21= ~Zyklop~
+@22= ~Um das große Symbol eines Drachen auf dem Boden sind zwölf kleinere Säulen verteilt, die eine kleine Vertiefung enthalten, auf der man wohl mit den entsprechenden Hilfsmitteln eine kleine Flamme entfachen könnte.~
+@23= ~Phosphor~
+@24= ~Bei diesem Gestein handelt es sich in Wirklichkeit um grünen Phosphor, ein leicht entflammbares Element, das gerne in Beschwörungen eingesetzt wird.~
+@25= ~Priester der Eldath~
+@26= ~Tempel der Eldath~
+@27= ~Diese aus holz geschnitzte Statue stellt die Göttin des Friedens Eldath dar~
+@28= ~Seid gegrüßt, Reisende. Die Göttin der singenden Wasser heißt Euch in ihrem Tempel willkommen.~
+@29= ~Seid gegrüßt, Priester. Wem ist dieser Tempel geweiht?~
+@30= ~Göttin der singenden Wasser? Wer soll das sein?~
+@31= ~Bitte entschuldigt die Störung. Ich werde gehen~
+@32= ~Ihr seid zurückgekehrt. Wie kann Euch die Herrin der Ruhe diesmal helfen?~
+@33= ~Ich benötige die Dienste des Tempels.~
+@34    = ~Im Moment benötige ich nichts. Gehabt Euch wohl.~
+@35    = ~Dieser Tempel ist wie das ganze Dämmerwaldtal der Göttin Eldath, Herrin des Friedens, der Ruhe und Quellen gewidmet.~
+@36    = ~Welche Dienste bietet Euer Tempel an?~
+@37    = ~Bitte entschuldigt die Störung. Ich werde gehen~
+@38   = ~Die Ruhe, die dieser Ort austrahlt, ist wirklich bezaubernd.~
+@39   = ~Wir bieten dem Verletzten Heilung und dem Verzweifelten Hilfe, wann immer er es benötigt. Seht selbst, ob meine Herrin Euch helfen kann.~
+@40   = ~Wie ihr wünscht. Solltet Ihr unsere Dienste benötigen, wisst Ihr, wo wir zu finden sind.~
+@41   = ~Ich freue mich, dass Euch unsere Heimat gefällt.~
+@42   = ~Ein wundervoller Ort. Hier lebt alles in perfekter Harmonie und natürlichem Einklang miteinander.~
+@43   = ~Charvekannathor~
+@44   = ~Beldas Abgrundlied~
+@45   = ~Dieser Stein ist mit zahlreichen elfischen Runen und Zeichnungen überzogen.~
+@46   = ~Myteriöse Nachricht~
+@47   = ~<CHARNAME>, wir hörten, dass Ihr in der Stadt seid und den ein oder anderen Auftrag annehmt. Wir benötigen Eure Dienste und können leider nicht selbst zu Euch kommen. Trefft uns in Cromwells Schmiede. Solltet Ihr auf Ruhm und Ehre aussein, können wir Euch davon reichlich bieten, und tut Ihr alles nur des Goldes wegen, bieten wir Euch dessen noch viel mehr. Wir bezahlen gut.~
+@48   = ~Karte der Trollberge~
+@49   = ~Dies eine detaillierte Karte der Region von Amn, die als die Trollberge bezeichnet wird. Ihr könnt Euch vorstellen, dass dieses Gebiet den Namen sicher nicht ohne Grund trägt. Magars Hügel, der Ort, der in dem mysteriösen Brief genannt wurde, liegt am Fuße der Trollberge. Weitere Markierungen auf dem Papier tragen die Bezeichnung "Schlangenwald", "Batyrberg" und als seltsamste Bezeichnung "Der heulende Zwerg". Auf einer großen schraffierten Fläche ist mit einem Fragezeichen der Name "Dämmerwald-Tal" notiert, so, als wäre nicht bekannt, wo genau sich dieser Ort befindet.~
+@50   = ~Nach langem, steinigem Aufstieg erreicht Ihr endlich die Ausläufer des Batyr-Berges. Schon aus der Ferne ist ein tiefes Heulen und Grollen zu hören, und schließlich seht Ihr in der Ferne das Antlitz eines riesigen, aus dem Fels gehauenen Zwerges, der mit starrem Blick, weit aufgerissenen Augen und geöffneten Mund gen Osten blickt: Der heulende Zwerg. So sehr Euch der majestätische Anblick auch begeistern mag - der felsige Weg bis ins Innere der alten Zwergenfestung wird alles andere als einfach werden, und die verschlungenen Pfade zum Fuße des alten Standbildes scheinen endlose Gefahren zu bergen. Entschlossen setzt Ihr den ersten Fuß auf den verwitterten, von Zwergenhand geschaffenen Weg und macht Euch an den beschwerlichen Aufstieg in Richtung des alten Steinkolosses.~ [AC#MUS14]
+@51   = ~Dieser Durchgang ist durch zahlreiche Felsbrocken versperrt. Ihr müsst Euch einen anderen Weg ins Innere der Zwergenstadt suchen.~
+@52   = ~Dies ist mein Reich, nur mein Reich - das Einzige, welches mir geblieben ist, verfluchte Verräter! Kniet nieder vor dem mächtigen Herrn Korolnors, der Euch einen qualvollen Tod bereiten wird!~
+@53   = ~Diese Schmerzen, dies ewige Folter, Ihr sollt leiden, so wie auch ich leide, ich werde Euch alle vernichten!~
+@54   = ~Verflucht sollt Ihr sein, so wie auch ich in alle Ewigkeit verflucht sein muss!~
+@55   = ~Diinkarazan~
+@56   = ~Fomorischer Riese~
+@57   = ~Verbeeg~
+@58   = ~Die Boote gleiten langsam über den stillen, unheimlichen unterirdischen See dahin. Ab und an meint Ihr, eine Bewegung tief unten im Wasser zu sehen, doch Ihr seid Euch nicht sicher, ob dies nicht nur Euer Verstand ist, der Euch einen Streich spielt. Nach einer schier endlos scheinenden Überfahrt erreicht Ihr endlich ohne größere Zischenfälle das andere Ufer - die Grenzen Iltkazars und der Beginn von Barakuir, der mystischen ehemaligen Heimstatt der Grauzwerge.~ [AC#MUS03]
+@59   = ~Notiz~
+@60   = ~Nachricht an trautes Schwert Jak Errins, Prälat der Türme der vergeltenden Hand in Eshpurta im Mirtul des Jahres 1368.
+Meister Errins, wir haben nach langem Aufstieg endlich die alte Festung Kuldelvon, die im Volksmund Heulender Zwerg genannt wird, erreicht. Die alten Zugänge sind eingestürzt, doch wir haben nach langer Suche einen Weg in das Innere der Festung gefunden. Leider ist das ganze Gebiet verseucht mit unzähligen Trollen. Für jedes Wesen, das wir erschlagen, scheinen aus den Tiefen des Berges hundert Weitere nachzukommen. Die Kreaturen sind gut abgerichtet - es scheint, dass eine höhere Macht ihre blinde Wut in eine Richtung zu lenken vermag.
+Ich denke, wir haben bereits Bekanntschaft mit dieser Macht gemacht: Eine geisterhafte Erscheinung, die an allen möglichen Orten innerhalb der Ruinen auftaucht und uns mit aller möglicher Zauberei das Vorankommen erschwert. Vor unserem Aufbruch sagtet ihr mir, dass es der Legende nach eine alte, vergessene Zwergengottheit geben soll, die in den Ruinen herumspukt, und ich glaube, wir haben sie gefunden. Hier erwies sich der gnomische Magier, den wir von Lord Krimmevol gestellt haben, als äußerst nützlich. Es befinden sich hier überall alte Symbole - ein Ring von sieben Edelsteinen. Wenn dies ein Götterzeichen ist, so ist es mir nicht bekannt.
+Ich habe Keveak mit einem dieser Symbole zu Euch zurückgeschickt - vielleicht könnt Ihr mit Eurer Weisheit die Symbole deuten. Weiterhin habe ich ihm noch einige Edelsteine mitgegeben. Bitte seht dies als Vorauszahlung für Eure Unterstützung an. Eine Bitte möchte ich an Euch richten: Wir benötigen dringend Feuerpfeile, um die Trollbiester ein für allemal zu erlegen, und einige Heiltränke, da meine göttlichen Zauber allein die Wunden unserer Gefährten nicht zu versorgen vermag. Bitte gebt Keveak soviel von den Sachen mit, wie Ihr entbehren könnt, wenn Ihr ihn zu uns zurücksendet. Wir werden derweil versuchen, tiefer in die Höhlen vorzudringen. Wenn Keveak Euch erreicht hat, sind wir vielleicht bereits in das Innerste der Ruinen vorgedrungen. Von dort soll es bis zu dem alten Thron, um den sich soviele Legenden ranken, nicht mehr weit sein.
+Möge der Herr der Schlachten uns beschützen. Euer ergebener Diener Thoian Trannyth, Kriegspriester des Tempus
+
+Antwort von Prälat Errins, <YEAR>
+Mein lieber Thoian, der Einfachheit halber antworte ich auf dem gleichen Papier auf Eure Nachricht. Keveak hat uns schnell erreicht, und ich habe ihm die von Euch geforderten Gegenstände mitgegeben. Bei der Entzifferung des Symbols war uns Schildbruder Benitus von großer Hilfe. Es handelt sich um das alte Zeichen Diinkarazans, einer uralten, vergessenen Zwergengottheit. Wie es scheint, haben die alten Zwerge einem bösartigen Gott gehuldigt. Haltet Euch in Acht, denn den Legenden nach nennt man den Gott auch den Wahnsinnigen und er wurde aufgrund seiner Taten selbst in der Unterwelt eingekerkert. Irgendeine Rasse des Unterreiches scheint ihn als ihren Schutzpatron zu verehren, es ist wahrscheinlich, dass Ihr früher oder später auf diese Wesen trefft.~
+@61  = ~König Mith Barak~
+@62  = ~Malphas~
+@63  = ~Werratte~
+@64  = ~Dieser Stein sieht genau gleich aus wie der Stein auf der anderen Seite. Auch hier könntet Ihr versuchen, die Linien auf der Oberfläche zu beseitigen.~
+@65  = ~Der Stein pulsiert in einem sanften Licht. Ihr bemerkt feine Zeichnungen, die über seiner Oberfläche verteilt sind. Ihr könntet versuchen, diese zu entfernen.~
+@66  = ~Ihr berührt die Oberfläche, und die Linien verschwinden. Plötzlich brandet eine heftige Woge vollkommener Hoffnungslosigkeit über Euren Verstand hinweg.~
+@67  = ~Als ihr den Raum betretet, brandet eine Welle bösartiger und hasserfüllter Emotionen über Euch hinweg. Ihr bemerkt an der Tür gegenüber zwei pulsierende Steine, von denen ein unheilvolles Leuchten ausgeht. Irgendetwas in Ihnen scheint auf Euren Verstand einwirken zu wollen.~
+@68  = ~Die Magie des Steines ist erloschen. Er fühlt sich nur noch kalt und kraftlos an.~
+@69  = ~Dieses Wasserbecken sieht tiefer aus, als es sein könnte. Fast sieht es aus, als würde sich auf der Wasseroberfläche eine weit entfernte, Euch irgendwie bekannt vorkommende Landschaft spiegeln. Auf dem grund des Beckens liegt ein alter, verrosteter Schlüssel. Wenn Ihr wünscht, könnt Ihr genauer in das Becken sehen und versuchen, den Schlüssel zu greifen.~
+@70  = ~Ihr beugt Euch hinunter, um tiefer in das Wasser zu sehen und den Schlüssel zu greifen.~
+@71  = ~Ihr könnt die Umrisse Kerzenburgs immer noch deutlich im Wasserbecken erkennen, doch so sehr Ihr Euch auch bemüht, könnt Ihr nicht mehr in die Welt des Beckens eintauchen.~
+@72  = ~Die gekräuselte Wasseroberfläche wird plötzlich ruhig und klar. Auf dem Grund des Beckens nimmt die verschwommene Landschaft plötzlich Gestalt an- Ihr blickt auf Eure alte Heimat Kerzenburg!~
+@73  = ~Ihr beugt Euch stärker herunter, bis Euer Gesicht fast die Wasseroberfläche berührt. Inmitten des Wassers könnt Ihr Gestalten erkennen, und ohne es zu wollen taucht Ihr Euren Kopf unter die Wasseroberfläche. Der Schlüssel liegt auf dem Grund des Beckens, und mit einer Handbewegung habt Ihr Ihn gegriffen. Plötzlich werdet Ihr in die Landschaft des Beckens gezogen...~
+@74  = ~Hüter der Pforte~
+@75  = ~Zauberbecken~
+@76  = ~Ich grüße Euch ebenfalls, Zwerg. Doch ich muss Euch enttäuschen, denn <CHARNAME> wohnt schön lange nicht mehr an diesem Ort. Man sagt, er sei nach Süden gegangen.~
+@77  = ~Wrimbog~
+@78  = ~Seid gegrüßt, Torwächter. Wir sind von weit her gereist und sind in einer wichtigen Mission unterwegs. Wir sind auf der Suche nach <CHARNAME> von Kerzenburg.~
+@79  = ~<CHARNAME> weilt nicht mehr hier? Das sind fürwahr schlechte Nachrichten. Wir haben einen langen Weg zurückgelegt, um ihn zu treffen. So bringt mich denn zu Tethtoril, dem Vorsteher Eurer Bibliothek.~
+@80  = ~Tethtoril ist nicht der Leiter unserer Zitadelle, dieser Titel gebührt Ulraunt, dem Hüter des Wissens. Tethtoril ist jedoch auch nicht hier, er ist vor Kurzem gen Süden aufgebrochen. Außerdem - um nach Kerzenburg eingelassen zu werden, müßt Ihr zuerst unserer Bibliothek ein wertvolles Schriftstück, ein Buch, stiften.~
+@81  = ~Beim feurigen Atem eines Duergar, wollt Ihr mich zum Narren halten, Mensch? Ist denn überhaupt jemand in dieser schäbigen Hütte anwesend, der Willens ist, mit uns zu reden, oder sind wir ganz umsonst hierher gekommen? Bringt mich dann eben zu diesem Ulraunt, auch wenn sich sein Name eher wie Brechmittel denn ein Weiser anhört.~
+@82  = ~Wie gesagt - um hier eingelassen zu werden, müsst ihr unserer Bibliothek ein wertvolles Buch spenden, doch bei Euren Manieren bezweifle ich langsam, dass Ihr schon eines aus der Nähe gesehen habt.~
+@83  = ~Ich weiß sehr wohl, wie ein Buch aussieht, denn auch ich stamme aus einer großen Bücherei, und im Gegensatz zu Euch habe ich diese auch mehrmals von Innen gesehen. Doch meine Rasse schreibt nicht auf vergänglichen Blättern.~
+@84  = ~Fruorin Schwarzstahl~
+@85  = ~Balfrin Schwarzstahl~
+@86  = ~Belster Wendestein~
+@87  = ~Kellerer~
+@88  = ~Viceak~
+@89  = ~Rickul~
+@90  = ~Turbaern Ghalmrin~
+@91  = ~Turbaerns Schlüssel~
+@92  = ~Diesen Schlüssel habt Ihr von Turbaern Ghalmrin, dem Hohepriester Dumathoin bekommen. Mit ihm könnt Ihr die Tür im Süden öffnen und tiefer in die Katakomben vordringen.~
+@93  = ~Ihr gebt den Zwergen ein Zeichen, und sofort setzen sich die Räder des Lastenaufzugs in Bewegung. Ihr werdet langsam in die Tiefe gelassen.~
+@94  = ~Es gibt einen starken Ruck, und mit einem lauten Knall reißt das Seil. Ihr stürzt mitsamt dem Podest in die Tiefe und schlagt hart auf einem kalten Steinboden auf.~
+@95  = ~Dieser Durchgang ist aus einem Euch nicht bekannten Grund zugemauert. Ihr könntet versuchen, mit Gewalt die Mauersteine einzureißen. Das Jammern und Wehklagen, das den Raum erfüllt, scheint von jemandem hinter der Mauer zu kommen.~
+@96  = ~Mit einigen harten Schlägen schlagt Ihr die Mauerstücke entzwei.~
+@97  = ~Langsam gleitet der Lastzug in die Tiefe, vorbei an endlosen Reihen von Gräbern, die mit kleinen, flackernden Kerzen geschmückt sind. Von unten weht ein kalter Luftzug zu Euch herauf, und Euch schaudert bei dem Gedanken, inmitten tausender toter Zwerge durch die Luft zu schweben. Die Tiefe des Schachtes scheint endlos zu sein, denn sosehr Ihr Euch auch anstrengt, Ihr könnt keinen Boden unter Plattform, auf der Ihr steht, erkennen. Plötzlich beginnt die Holzbasis zu schwanken, und aus der Tiefe schwirren Pfeile zu Euch nach oben! Einer der Pfeile trifft das Seil, an dem Ihr schwebt, und es löst sich mit einem häßlichen Geräusch in seine einzelnen Fasern auf. Dann gibt es einen starken Ruck, und mit einem lauten Knall reißt das Seil. Ihr stürzt mitsamt dem Podest in die Tiefe und schlagt hart auf einem kalten Steinboden auf. Leicht benommen tastet Ihr Euren Körper nach Verletzungen ab, aber Ihr scheint von dem Sturz nur leichte Blessuren davongetragen zu haben. Erleichtert atmet Ihr auf, als Ihr plötzlich Schritte hört...~ [AC#MUS17]
+@98  = ~Durhgathu Maendrar~
+@99  = ~Ihr vernehmt plötzlich einen Laut, das wie das Wehklagen einer jungen Frau klingt. Es scheint aus der Kammer im Osten zu kommen.~
+@100 = ~Aus der Nebenkammer sind seltsame Geräusche zu vernehmen. Ihr könnt jemanden hören, der irgendwelche unverständlichen Worte in einer unbekannten Sprache murmelt, begleitet von dem Knistern magischer Energie.~
+@101 = ~Dunnabar Steinschulter~
+@102 = ~Goap~
+@103 = ~Wächter Iltkazars~
+@104 = ~Bresk Steinschulter~
+@105 = ~Sorni Arnschädel~
+@106 = ~Anthrazit~
+@107 = ~Anthrazit ist die härteste Kohlenart, die man im Gestein finden kann. Beim Verbrennen erzeugt es große Hitze, die die Zwerge nutzen, um die Schmelzöfen anzutreiben. Außerdem ist es bekannt dafür, eine sehr lange Brenndauer zu haben.~
+@108 = ~Ihr werft das Stück Anthrazit in den Hochofen. Sofort beginnt es mit heller Flamme zu brennen. Die Hitze vor dem Feuer steigt rasch an.~
+@109 = ~Hochofen~
+@110 = ~Ihr habt alle Hochöfen befeuert. Ihr spürt, wie ein Beben durch die Halle geht und die Hitze fast unerträglich wird. Ihr könnt jetzt das Eisenerz in die Öfen kippen.~
+@111 = ~Wie Sorni Euch erklärt hat, müsst Ihr erst alle drei Hochöfen befeuern und danach das Erz hineinschütten, bevor Ihr das Wasser in die Halle fluten lasst.~
+@112 = ~Ihr habt alle Hochöfen befeuert und das Erz hineingekippt. Nun benötigt Ihr ein Sprengfass, um den Weg für das Wasser freizumachen.~
+@113 = ~Anthan Diamantklinge~
+@114 = ~Hathar Steinschulter~
+@115 = ~Ein unglaubliches Beben erfüllt die Halle, als die Wassermassen mit einem Schlag in die Halle fluten. Zeitgleich hört ihr, wie die Hochöfen bersten und ihre Ladung aus flüssigem Eisen in die Luft sprühen. Es gibt einen ohrenbetäubenden Knall, als die Hallendecke einstürzt. Nur mit Mühe könnt Ihr Euch in das obere Stockwerk retten, doch auch dieses beginnt in sich zusammenzustürzen. Ihr hechtet zum Aufzug, der sich bereits in Bewegung gesetzt hat. Endlich erblickt Ihr die Höhle Iltkazars, und mit einem kräftigen Sprung rettet Ihr Euch auf die andere Seite, bevor der gesamte Schmiedekomplex unter den tosenden Wassermassen in sich zusammenstürzt. Zwischen dem Lärm hört Ihr immer wieder das schrille Kreischen der Teufel, die einer Mischung aus Lava, Fels und Eisen gefangen sind und unter meterdicken Gesteinsbrocken begraben werden.~ [AC#MUS22]
+@116 = ~Beldas' Leiche~
+@117 = ~Dies die Leiche des Zwerges Beldas aus Iltkazar.~
+@118 = ~Hauptmann Szagurel~
+@119 = ~Ihr legt den Phosphor auf den Sockel, der sich sofort entzündet und mit heller Flamme zu brennen beginnt.~
+@120 = ~Dieser Sockel zeigt starke Brandspuren, als ob in der Vergangenheit darauf häufiger etwas entzündet worden wäre.~
+@121 = ~Die Luft in der Kammer beginnt zu knistern. Die Magie, die den Raum erfüllt, scheint plötzlich an Intensität stark zuzunehmen.~
+@122 = ~Als Ihr die letzte Flamme entzündet habt, entlädt sich schlagartig die angestaute Magie. Ihr spürt, wie sich ein Beschwörungszauber materialisiert.~
+@123 = ~Drachenstatue~
+@124 = ~Skulk~
+@125 = ~Grottenschrat~
+@126 = ~Grottenschrat-Hauptmann~
+@127 = ~Brief Vaxalls~
+@128 = ~Hauptmann Eldric,
+Ihr habt Euch im Unterreich wacker geschlagen. Nachdem Ihr unter Iltkazar eine Basis für unsere Betrachter errichtet habt, lautet Euer nächster Befehl, noch in diesem Monat zur Himmelsschifflichtung im Mirwald aufzubrechen und die Ritter des schwarzen Handschuhs darin zu unterstützen, unseren Stützpunkt für die Zaubersegler gegen die Angriffe der Gedankenschinder zu verteidigen.~
+@129 = ~Brief Kellarakins~
+@130 = ~Eldric,
+nachdem Vaxall durch <CHARNAME> vernichtet wurde, bin ich Euer neuer Anführer. Darum befehle ich Euch, schnellstmöglich zur Himmelsschifflichtung aufzubrechen, da wir einen Angriff der Gedankenschinder erwarten.~
+@131 = ~Maldraedior~
+@132 = ~Baernaloth~
+@133 = ~Ihr platziert das Wolfsfell in dem kleinen Behälter. Es verschwindet plötzlich und formt sich einen Augenblick später zu einer geisterhaften Gestalt eines Wolfes!~
+@134 = ~Ihr platziert das Geweih in dem kleinen Behälter. Es verschwindet plötzlich und formt sich einen Augenblick später zu einer geisterhaften Gestalt eines Hirsches!~
+@135 = ~Ihr platziert die Bärentatze in dem kleinen Behälter. Es verschwindet plötzlich und formt sich einen Augenblick später zu einer geisterhaften Gestalt eines Bären!~
+@136 = ~Geisterhirsch~
+@137 = ~Hirschgeweih~
+@138 = ~Dies ist das stattliche Geweih eines Hirsches.~
+@139 = ~Bärentatze~
+@140 = ~Eine riesige Tatze eines Höhlenbären.~
+@141 = ~Wolfspelz~
+@142 = ~Der struppige Pelz eines Schreckenswolfes.~
+@143 = ~Kanarienvogel~
+@144 = ~Ahab, der Einsielder~
+@145 = ~Hakenschrecke~
+@146 = ~Die dunkle Dame~
+@147 = ~Tl'A'Ikith~
+@148 = ~Ur'Yel~
+@149 = ~Seryl~
+@150 = ~Ein riesiges Herz ruht still in der Mitte dieses unheilvollen Raumes. Wenn Ihr wollt, könnt Ihr es näher untersuchen.~
+@151 = ~Ihr tretet  näher an das Herz heran und betrachtet es aus der Nähe...~
+@152 = ~Kalzareinads Herz~
+@153 = ~Schwarzfeuer-Elementar~
+@154 = ~An der Wand gegenüber hängt ein großer Spiegel. Beim Blick hinein in seine Kristalle durchfährt Euch ein kalter Schauer, und Ihr spürt einen Stich in Eurer Brust, als wolle das kalte Glas nach Eurer Seele greifen.~
+@155 = ~Ihr steckt das Silberschwert in den Sockel, in den es sofort mit einem hörbaren Klicken einrastet. Kurz darauf verschwinden die Energiefelder und geben den weiteren Weg frei.~
+@156 = ~Ein starkes magisches Kraftfeld verhindert Euer weiterkommen. Ja sehr Ihr Euch auch anstrengt, es gibt keine Möglichkeit, die magische Barriere zu durchdringen.~
+@157 = ~Die Energie des Kraftfeldes scheint aus der Statue der Githyanki zu kommen.~
+@158 = ~Otimorn~ 
+@159 = ~Kopf einer Naga~
+@160 = ~Dies ist der Kopf einer Naga, der fein säuberlich mit einem starken Hieb vom restlichen Körper abgetrennt wurde.~
+@161 = ~Untote Naga~
+@162 = ~Bleucorundum~
+@163 = ~Heltipyre~
+@164 = ~Harmswa~
+@165 = ~Telekinese~
+@166 = ~In der Mitte dieses seltsamen Schiffes befindet sich ein Schädel, der dem Kopf eines Gedankenschinders nachempfunden ist. Er scheint etwas mit dem Steuermechanismus des Vehikels zu tun zu haben, denn eine starke Energie geht von dem Objekt aus.~
+@167 = ~Intuitiv berührt Ihr den Schädel, und mit einem Ruck verschwimmt die Welt um Euch herum. Ihr scheint mit dem unnatürlichen Geist des Schiffes zu verschmelzen, sodass Ihr die Richtung des Schiffes nur mit Euren Gedanken lenken könntet.~
+@168 = ~Kontrollschädel~
+@169 = ~Letzter Schnitt~
+@170 = ~Letzter Schnitt +3
+Die Herkunft dieser Waffe lässt sich bis in die Zeit des Himmelsfeuers zurückverfolgen, eine Zeit, in der im Süden Faeruns mächtige Dschinn und Ifrit über die Menschen herrschten und das jetzige Tethyr und Calimshan mit immerwährendem Krieg überzogen. Symath Alan, einer der mächtigsten menschlichen Generäle im Dienste der Ifrit schwang diese Waffe, als er in die Schlacht von Memnon zog. Mit einem einzigen Hieb trennte er die Köpfe zahlreicher Widersacher von ihrem Körper, doch Beorthio, der Nekromant, hatte von der mächtigen Waffe gehört, die sein Gegner schwang, und so hatte er bereits im Vorfeld Vorkehrungen getroffen, die Kraft der Waffe gegen seinen Träger selbst zu wenden. Jeder der Krieger, die durch das Schwert getötet wurde, stand durch mächtige Magie in einen Untoten verwandelt wieder auf, und so kam es, dass Symath einem ganzen Heer kopfloser Wiedergänger gegenüberstand, die ihm  nach dem Leben trachteten und gegen die die Vorpalklinge nichts auszurichten vermochte. Irgendwann verließen Symath Alan seine Kräfte, und er wurde von der Horde zu Boden geworfen und in Stücke gerissen. Die Klinge wechselte seither mehrmals den Besitzer, bis sie schließlich den Githyanki in die Hände fiel. Obwohl ein Krummsäbel als Waffe für einen Githyanki eher untypisch ist, sind die Bewohner der Astralebene Krieger genug, um auch mit dieser exotischen Klinge mächtige Krieger zu werden. Legenden zufolge erhielt der Githyanki-Anführer Harmswa die Klinge von der Lich-Königin persönlich, bevor er auf die Mission in das Unterreich des tiefen Shanatar gesendet wurde, wo Ihr ihn nun besiegt habt.
+~
+@171 = ~Portalstein~
+@172 = ~Dieser Edelstein glüht mit einer Euch unbekannten magischen Energie.~
+@173 = ~Astrale Steuereinheit~
+@174 = ~In die Oberfläche dieses Steines sind die typisch runden Runen der Githyankisprache eingraviert. Den Überlieferungen zufolge werden Steine dieser Art von den Githyanki-Kommandanten dazu benutzt, Astrale Schiffe in Gang zu setzen.~
+@175 = ~Osyluth~
+@176 = ~Shuluth~
+@177 = ~Anor Kytsev~
+@178 = ~Nexaph~
+@179 = ~Brilda~
+@180 = ~Nazuu~
+@181 = ~Rindolf Gordrimm~
+@182 = ~Thirig Wahrschmied~
+@183 = ~Dennin Feindhammer~
+@184 = ~Faern Schwarzstahl~
+@185 = ~Helmaer Felsenfaust~
+@186 = ~Beldas Abgrundlied~
+@187 = ~Roryn Tiefaxt~
+@188 = ~seltsame Silbermünze~
+@189 = ~Torglor-Silbermünze~
+@190 = ~Diese Münze besteht aus reinem Silber. Da die Münze schon ziemlich abgegriffen ist, lassen sich die zwergischen Runen am Rand nur noch schwer entziffern. Die Worte scheinen jedoch übersetzt "Silberkönigreich Torglor" zu bedeuten.
+In der Mitte der Münze ist das Symbol eines sich endlos drehenden Wirbels eingeprägt.~
+@191 = ~Eine solch schwere Münze mit zwergischen Runen habt Ihr bisher noch nicht zu Gesicht bekommen. Euer Gefühl sagt Euch, dass sie etwas Besonderes sein muss.~
+@192 = ~Die Höhle vor Euch ist in ein pulsierendes, violettes Licht getaucht. Die Luft flirrt förmlich vor Energie und Macht. Ihr spürt, wie sich Eure Nackenhaare aufrichten.~
+@193 = ~Aus dieser Quelle sprudelt klares, reines Wasser.~
+@194 = ~Ihr trinkt einen Schluck und fühlt Euch gesund und erfrischt.~
+@195 = ~Ihr müsst näher herantreten, wenn Ihr aus dem Becken trinken wollt.~
+@196 = ~Zwergenschlüssel~
+@197 = ~Dieser Schlüssel ist an seinem Griff mit zwei Ringen und einem kleinen Edelstein verziert.~
+@198 = ~Diese Tür ist mit zwei Äxten und zwei zunehmenden Monden verziert. Sie besteht aus einem Euch unbekannten Metall und hat keine sichtbaren Schlösser oder ähnliche Vorrichtungen, um sie zu bewegen. Es muss einen anderen Mechanismus geben, um sie öffnen zu können. Die in die Tür eingravierten Zwergenrunen bedeuten "Tretet ein im Namen der Patronen des zunehmenden Mondes."~
+@199 = ~Verwitterte Zwergenstatue~
+@200 = ~Levitationstrank~
+@201 = ~Dieser Trank lässt den Anwender schweben, ähnlich des Zaubers "Levitation", wenngleich die Wirkung des Trankes nicht lange anhält und sich der Anwender beeilen muss, bis zum Wirkungsende wieder festen Boden unter den Füßen zu haben.~
+@202 = ~Naturgeist~
+@203 = ~Die Hüter der Höhle wurden besiegt. Das Tor in die tiefen Lande steht Euch offen.~
+@204 = ~Varkha~
+@205 = ~Sllith~
+@206 = ~Endlich habe ich den Durchgang in Ravimors Höhle gefunden. Heute Nacht werde ich hier nächtigen, und morgen werde ich in die Tiefen hinabsteigen. Welch Glück, dass ich mir hier mit meiner Magie ein kleines Feuer entfachen kann, denn der kalte Luftzug von unten ließe mich sonst die Nacht über nicht schlafen.~
+@207 = ~Animierte Leiche~
+@208 = ~Cylla~
+@209 = ~Bebilith~
+@210 = ~Schuppenpanzer~
+@211 = ~Messingdrachenschuppenpanzer~
+@212 = ~Dies ist ein Schuppenpanzer, der aus den Schuppen irgendeiner Bestie hergestellt wurde.~
+@213 = ~Dies ist ein Panzer, der aus den Schuppen des Messingdrachen Mimmeshtuaroth gefertigt worden ist.~
+@214 = ~An dieser Stelle scheint die Metallmauer einmal durchbrochen und hastig wieder ausgebessert worden zu sein. Mit normalen Möglichkeiten gibt es aber keine Möglichkeit, die starken Metallbeschläge zu zerschlagen.~
+@215 = ~Ihr nehmt das Bein des Bebilith und schlagt mit voller Wucht auf die Metallteile, die mit einem lauten Schlag zerbersten.~
+@216 = ~Ihr benötigt irgendein Objekt, das Metall zum Brechen bringen kann, um die Mauer an dieser Stelle zu zerstören.~
+@217 = ~Bebilith-Bein~
+@218 = ~Dies ist das Bein, das Ihr vom Körper des Bebilith genommen habt. Es wurde durch den harten Kampf mit Euch offensichtlich abgetrennt. Ihr wisst jedoch nicht, was Ihr damit anfangen könntet.~
+@219 = ~Dies ist das Bein eines Bebilith, eines Spinnendämonen aus der Abyss. Die Bebilith sind gefürchtete Jäger, deren Hauptbeute aus anderen Dämonen, den Tanar'ri, besteht. Die Beine eines Bebilith-Dämonen sind in der Lage, selbst stärkste Metallrüstungen zu zerschlagen.~
+@220 = ~Amduscias~
+@221 = ~Vargouille~
+@222 = ~Schrei der Vargouille~
+@223 = ~Troll-Schamane~
+@224 = ~Ursummnogh der Unbesiegbare~
+@225 = ~Phasentroll~
+@226 = ~Grautroll~
+@227 = ~Dheubpurcwenpyl~
+@228 = ~Verdammt, <GIRLBOY>, könnt Ihr nicht stärker zuschlagen?~
+@229 = ~Das blutige Bollwerk~
+@230 = ~Chiksuls Tränke~
+@231 = ~Chiksul Braustein~
+@232 = ~Das Ende des Tunnels~
+@233 = ~Chiksuls Tränke~
+@234 = ~Pilzfarm~
+@235 = ~Taverne "Das blutige Bollwerk"~
+@236 = ~Brauerei~
+@237 = ~Cathors Pretiosen~
+@238 = ~Joshiahs Laden~
+@239 = ~Das Ende des Tunnels~
+@240 = ~Gasthaus zum zwitschernden Kanarienvogel~
+@241 = ~Thungalos Aranthymvudd~
+@242 = ~Dolum, der Wirt~
+@243 = ~Gogir Vogelfels~
+@244 = ~Hilfe! Dieser Myconid wird mich töten!~
+@245 = ~Cathor Steinschnitter~
+@246 = ~Joshiah Steinfreund~
+@247 = ~Fargil~
+@248 = ~Nili~
+@249 = ~Thifthic Gurarr~
+@250 = ~Delvars Ausrüstung~
+@251 = ~Eber~
+@252 = ~*grunz*~ [AC#BOA1]
+@253 = ~*grunz*~ [AC#BOA2]
+@254 = ~*grunz*~ [AC#BOA3]
+@255 = ~*grunz*~ [AC#BOA4]
+@256 = ~*grunz*~ [AC#BOA5]
+@257 = ~Renrak Argamek~
+@258 = ~Nalric Dunron~
+@259 = ~Otur Palaad~
+@260 = ~Braumeister Felsenbrand~
+@261 = ~Ebermeister Ligar~
+@262 = ~Adept des Amboss~
+@263 = ~Vichorn Goldhammer~
+@264 = ~Tempel des Moradin~
+@265 = ~Ravastine Diamantofen~
+@266 = ~Schrein der Berronar~
+@267 = ~Unbearbeiteter~
+@268 = ~Künstler der Schmiede~
+@269 = ~Hämmerer des Krieges~
+@270 = ~Berbalang~
+@271 = ~Schnotlell Ernstschild~
+@272 = ~Barakor~
+@273 = ~Tempel des Gaerdal~
+@274 = ~Otidak Ruhmesstein~
+@275 = ~Pfeile der Schwäche~
+@276 = ~Die Spitze dieses Pfeiles ist mit einem klebrigen Gift bestrichen, welches dem Opfer bei jedem Treffer einen Teil seiner Kraft raubt.
+
+SPEZIFISCHE EIGENSCHAFTEN:
+
+Schaden: 1W6 (Fernkampf- und Stichwaffe)
+Spezielle Merkmale: Reduziert bei jedem Treffer die Stärke des Opfers kumulativ um -1
+Gewicht: 0
+Dauer: 1 Phase
+Wird verschossen von: Bogen
+Kann nicht verwendet werden von:
+ Druiden
+ Klerikern
+Magiern~
+@277 = ~Die Bronzemaske~
+@278 = ~Torth Schwarzstahl~
+@279 = ~Ruvan Steinschulter~
+@280 = ~Gromi Arnschädel~
+@281 = ~Vrona Eisenbieger~
+@282 = ~Elern Abgrundlied~
+@283 = ~Chemcol Steinschulter~
+@284 = ~Fenyl Arnschädel~
+@285 = ~Sturvis Abgrundlied~
+@286 = ~Dieser klare bis tief karminrote Korund wird wegen seines funkelnden Glanzes und seiner leuchtenden Farben sehr geschätzt. Er kann als klarer Stein, in karmesinrot oder in tiefem karminrot gefunden werden. Von etwa hundert Rubinen hat einer einen weißen Stern in seinem Herzen und ist bekannt als ein Sternrubin. Das gemeine Volk hält Rubine im Allgemeinen für Glücksgegenstände. 
+Rubinstaub hat eine Vielzahl von magischen Verwendungen, einschließlich einer Schlüsselrolle als Zutat in Zauberfarben der Elementar- und Sonnenzauber-Sphären oder in Schwächungs-, Veränderungs- und Beschwörungsschulen. 45 Rubine sind wesentliche Merkmale eines Helms der Brillanz und sind die bevorzugten Edelsteine in jedem Gegenstand, der Heilung verspricht. Richtig eingesetzt, können sie Blitze und Erdbeben (sowohl natürliche als auch magische) abwenden.~
+@287 = ~Magma-Elementar~
+@288 = ~Fledermausumhang~
+@289 = ~Umhang der Fledermaus
+Ein Umhang dieser Art, der aus dunkelbraunem oder schwarzem Stoff gefertigt ist, fällt nicht ohne weiteres als ungewöhnlich auf. Er strahlt jedoch Verzauberungs- und Veränderungsmagie zu gleichen Teilen aus. Der Umhang verleiht eine 90%ige Wahrscheinlichkeit, unentdeckt zu bleiben, wenn der Träger an einem schattigen oder dunklen Ort unbeweglich verharrt. Der Träger ist zusätzlich in der Lage, wie eine Fledermaus kopfüber von der Decke zu hängen.
+Durch Halten der Ränder des Kleidungsstücks kann sich der Träger, wenn er es wünscht, in eine gewöhnliche Fledermaus verwandeln - alles, was er bei sich trägt, wird Teil der Verwandlung sein - und entsprechend fliegen. Das Fliegen als gewöhnliche Fledermaus kann nur in der Dunkelheit (entweder unter dem Nachthimmel oder in einer lichtlosen oder nahezu lichtlosen Umgebung unter der Erde) durchgeführt werden. Die Verwandlung kann bis zu einer Stunde anhalten.
+Der Umhang bietet außerdem einen +2 Bonus auf die Rüstungsklasse. Dieser Vorteil erstreckt sich auch auf den Träger, wenn er in Fledermausform ist.
+
+SPEZIFISCHE EIGENSCHAFTEN:
+
+Besondere Fähigkeiten: Träger erhält -2 auf RK und verfügt über Infravision mit einer Reichweite von bis zu 36 m. Einmal täglich kann sich der Träger in eine Fledermaus verwandeln und erhält in dieser Form 30% auf die Fertigkeit, sich im Schatten zu verstecken.~
+@290 = ~Unbekanntes Erz~
+@291 = ~Mithril-Erz~
+@292 = ~Unbekanntes Erz
+Dieses Erz ist silbrig-blau und glänzend. Es ist sehr leicht und sieht wertvoll aus.~
+@293 = ~Mithrilerz
+Dieses silbrig-blaue, glänzende Metall, das den Zwergen als Wahrmetall bekannt ist, stammt aus weichem, glitzerndem, silbrig-schwarzem Erz, das in seltenen Adern und Gruben überall auf Faerûn in den Tiefen des Unterreichs gefunden wird, besonders in den östlichsten Ländern der nördlichen Schwertküste. Mithril kann mit Stahl (variierende Legierungen aus Eisen und Kohlenstoff) kombiniert werden, um Adamantit herzustellen, wenn man keinen Zugang zu Adamantiterz hat, aber dieser Prozess ist schwierig und nur einigen wenigen Zwergen bekannt, und man benötigt schon gute Gründe, um sie zu überzeugen, dieses Wissens mit Nicht-Zwergen zu teilen.
+Mithril ist das leichteste und geschmeidigste Metall, das jedoch hart genug ist, um bei der Herstellung von Rüstungen verwendet zu werden. Es ist sehr wertvoll.
+Gegenstände, die hauptsächlich aus Mithril bestehen, haben eine erhöhte Resistenz gegen normales Feuer, Kälte und Elektrizität sowie gegen Säure, Auflösung, Magisches Feuer und Blitze.~
+@294 = ~Passt auf, dass Ihr Euch beim Zuschlagen nicht die Hand brecht!~
+@295 = ~Ich würde Euch ja liebend gerne ein paar Zähne ausschlagen, wenn Ihr denn noch welche hättet.~
+@296 = ~Ihr kämpft wie eine dieser Halblingfrauen, von denen sie sich an der Oberfläche den Bart bürsten lassen!~
+@297 = ~...und Ihr habt den Schlag eines Goblinkindes!~
+@298 = ~Faustkämpfer~
+@299 = ~Der Schwung beim Boxen muss aus dem ganzen Körper kommen, nicht nur aus den Armen! Sonst haltet Ihr keinen Kampf durch!~
+@300 = ~Ich tue was ich kann, Meister!~
+@301 = ~Wenn Ihr Euch ducken müsst, behaltet immer Blickkontakt mit dem Gegner!~
+@302 = ~*Keuch*~
+@303 = ~Kampfmeister~
+@304 = ~Soram Steinschulter~
+@305 = ~Petben Riesenkrüppler~
+@306 = ~Königliche Leibgarde~
+@307 = ~Quaggoth~
+@308 = ~Jald~
+@309 = ~Trainingspuppe~
+@310 = ~Auf dem Fels vor Euch liegen die Körper mehrerer toter Zwerge. Ihr geronnenes Blut ist in die Spalten des Höhlenbodens eingedrungen und färbt das Gestein in einem tiefen Rot. Bei den Toten muss es sich um die Zwergenpatrouille handeln, die in Iltkazar vermisst wurde. Wer auch immer die Zwerge zugerichtet hat, muss äußerst brutal vorgegangen sein.~
+@311 = ~Ein seltsames Symbol ist vor Euch auf den Höhlenboden gezeichnet: Ein runder Kreis, von dem mehrere Zeichen abgehen.~
+@312 = ~Dies scheint einer der Erdknoten zu sein, die diesem Gebiet die seltsame magische Energie verleihen. Auf ihm sind uralte Runen eingezeichnet. Wenn Ihr wollt, könnt Ihr die Runen berühren.~
+@313 = ~Die Runen dieses Erdknotens wurden bereits aktiviert.~
+@314 = ~Vorsichtig fahrt Ihr die Linien, die die Runen zeichnen, mit Eurem Finger nach. Euer Finger beginnt plötzlich leicht zu kribbeln, und kurz darauf beginnt die Rune zu leuchten. Der Erdknoten scheint aktiviert worden zu sein.~
+@315 = ~Alle Runensteine des Erdknotens wurden aktiviert.~
+@316 = ~Iremars Notizen~
+@317 = ~Iremars Notizen
+"Wir haben endlich die alte Versammlungshalle erreicht, in der sich vor Jahrhunderten die Abgesandten der verschiedenen Königreiche Shanatars zusammenfanden. Ich konnte die Symbole zu beiden Seiten des Gangs entziffern - ein jedes steht für eines der Unterkönigreiche. Weiterhin sind die Namen und die Titel der Königreiche vermerkt. Ein jedes hatte einen zu seiner Haupttätigkeit passenden Titel - so nannte man Ultoksamrin wegen seiner reichen Zardazilvorkommen das Zardazilkönigreich. Einzig die gierigen Zwerge Drakkalors erhielten für Ihre Stadt keinen Mineraliennamen, sondern den passenden Titel Stadt des Geizes.
+ Die Symbole sind:
+Sondarr, das Meereskönigreich - Symbol einer Geldmünze, vermutlich des Gottes Vergadain
+Holorarar, das Goldkönigreich- Moradins Symbol eines Hammers
+Ultoksamrin, das Zardazilkönigreich - Symbol Dumathoins (ein Berg mit einem Kristall)
+Barakuir, das Eisenkönigreich - Symbol Laduguers (Schild mit Pfeil)
+Torglor, das Silberkönigreich - unbekanntes Symbol (nach abwärts gehende Spirale?), unbekannte Gottheit
+Korolnor, das Juwelenkönigreich - sieben Edelsteine, Symbol einer unbekannten Gottheit
+Hoch-Shanatar - Symbol Thard Harrs (zwei Handschuhe)
+Xothaerin, das Adamantitkönigreich - Symbol Sharindlars (eine brennenden Nadel)
+Iltkazar, das Mithrilkönigreich - Symbol Clandgeddins (zwei Äxte)
+Drakkalor, die Stadt des Geizes - Symbol Abbathors (Juwelenbesetzter Dolch)
+Neben jedem der Symbole ist ein kleiner Opferaltar angebracht. Offensichtlich haben die Gesandten der einzelnen Königreiche dort ihre Herrschaftssymbole platziert. Der Zweck das Ganzen ist mir noch unbekannt. Ich werde hier kurz Rasten und mich dann meinen weiteren Forschungen widmen. Ich muss nur aufpassen, dass ich nicht einschlafe, denn aus den umliegenden Gängen dringen seltsame Geräusche, und von meinen verbliebenen Gefährten habe ich lange nichts mehr gesehen. Wo müssen diese sich auch immer herumtreiben?"~
+@318 = ~Ammonit~
+@319 = ~Dies ist eine versteinerte Meeresschnecke. Sie stammt aus einem Ort, an dem vor vielen Jahrhunderten einmal Meer gewesen sein muss.~
+@320 = ~Goldbarren~
+@321 = ~Dies ein massiver Goldbarren. Sein Wert muss unermesslich sein, doch irgendetwas sagt Euch, dass Ihr diesen speziellen Goldbarren nicht einfach verkaufen solltet.~
+@322 = ~Zardazil~
+@323 = ~Dieses seltene, langlebige, bernsteinfarben bis rötliche, ferromagnetische Metall ist (zumindest bisher) nur in Gebirgen zu finden und taucht um den dampfenden See und in bestimmten zerklüfteten Spalten im Herzen der Raurin auf. Es ist ein sehr weiches Metall und wird deshalb nie in reiner Form verwendet, sondern eher legiert oder zum emaillieren anderer Metalle verwendet. Es kann mit anderen Metallen zu perfekten Gebinden verarbeitet werden, und scheint mit diesen Legierungen regelrecht zu verschmelzen. Doch alle Eigenschaften des anderen Metalls bleiben erhalten. Zardazil besitzt die Fähigkeit, jedweden Gegenstand, der ganz oder teilweise aus ihm besteht, mit dem Körper zu verschmelzen, dessen Blut es zuerst vergossen hat.~
+@324 = ~Eisenerz~
+@325 = ~Dies ist ein Klumpen Eisenerz.~
+@326 = ~Silberbarren~
+@327 = ~Dies ein massiver Silberbarren. Sein Wert muss unermesslich sein, doch irgendetwas sagt Euch, dass Ihr diesen speziellen Silberbarren nicht einfach verkaufen solltet.~
+@328 = ~beschliffener Juwel~
+@329 = ~Bei diesem Stein handelt es sich um einen beschliffenen Juwel. Es könnte sich um einen Smaragd handeln, doch ganz sicher seid Ihr Euch nicht. Die Art des Schliffs zeugt jedoch von großer Handwerkskunst, auch wenn die Ränder des einst makellosen Steines im Laufe der Jahrhunderte etwas brüchig geworden sind.~
+@330 = ~Kieselsteine~
+@331 = ~Diese glatten, runden Steine müssen aus einem Gebirgsbach stammen, dessen schnell fließendes Wasser die Oberfläche der Steine während der Jahrhunderte blank poliert hat. Die Steine liegen gut in der Hand und riechen immer noch etwas nach dem Wasser, aus dem sie vor langer Zeit entnommen wurden. Wie sie von der Oberfläche den langen Weg hier herunter in die verfallene unterirdische Zwergenstadt gefunden haben, ist unklar.~
+@332 = ~Adamantit~
+@333 = ~Adamantit ist eine tiefschwarze Legierung aus Adamantium und anderen Metallen. In der Regel schwarz gefärbt, hat Adamantit bei Kerzenlicht einen grünen Schimmer oder bei magischem Licht einen violett-weißen Schimmer. Es wird nur in Erzadern in der Nähe von Erdknoten und Gebieten von Faerzress im Unterdunkel gefunden. Gelegentlich fielen auch kleine Meteoriten, die aus Adamantit bestanden, auf Abeir-Toril.
+Adamantit ist, wenn es geschmolzen wird, ultrahart, aber das ist eine aufwändige Prozedur. Adamantinische Waffen sind nützlich, um die Waffen und Rüstungen der Gegner zu beschädigen. Ein Satz Adamantin-Panzerung oder ein Schild ist für normale Waffen nahezu undurchdringlich. Adamantit wird oft von Drowelfen des Unterreiches benutzt, und ihre Adamantitwaffen sind normalerweise magisch verbesserte Schwerter. Ihre magische Stärke und Schärfe verschwanden, wenn sie mit direktem Sonnenlicht in Berührung kamen.~
+@334 = ~Mithril~
+@335 = ~Dieses silbrig-blaue, glänzende Metall, das den Zwergen als Wahrmetall bekannt ist, stammt aus weichem, glitzerndem, silbrig-schwarzem Erz, das in seltenen Adern und Gruben überall auf Faerûn in den Tiefen des Unterreichs gefunden wird, besonders in den östlichsten Ländern der nördlichen Schwertküste. Mithril kann mit Stahl (variierende Legierungen aus Eisen und Kohlenstoff) kombiniert werden, um Adamantit herzustellen, wenn man keinen Zugang zu Adamantiterz hat, aber dieser Prozess ist schwierig und nur einigen wenigen Zwergen bekannt, und man benötigt schon gute Gründe, um sie zu überzeugen, dieses Wissens mit Nicht-Zwergen zu teilen.
+Mithril ist das leichteste und geschmeidigste Metall, das jedoch hart genug ist, um bei der Herstellung von Rüstungen verwendet zu werden. Es ist sehr wertvoll.~
+@336 = ~Rubinknauf~
+@337 = ~Dieser Rubin sieht aus, als wäre er aus dem Knauf einer wertvollen Klingenwaffe entnommen worden.~
+@338 = ~...muss... Zugang...zu unterer Ebene... finden...~
+@339 = ~...zehn Königreiche Shanatars... zehn Schlüssel...~
+@340 = ~Ultoksamrin... das Zardazilkönigreich...~
+@341 = ~Barakuir... Heimat von Clan Duergar, den Eisenschmieden...~
+@342 = ~Torglor... Silberkönigreich... unbekannter Zwergengott... einer der zwei Ausgestoßenen?~
+@343 = ~Drakkalor... Stadt des Geizes... Anbeter des Abbathor...~
+@344 = ~Geist Iremars~
+@355 = ~Als Zwerg fällt es Euch leicht, die alten Dethek-Runen zu entziffern. Auf dem Metallboden steht in großen Buchstaben der Name "Shanatar" geschrieben, der Name des legendären Zwergenreiches, von dem so viele Lieder Eurer Vorfahren handeln und das vor Jahrhunderten untergegangen ist.~
+@356 = ~Ihr habt solche Runen schon oft gesehen. Es sind Dethek-Runen, die Schrift der Zwerge. Auf dem Metallboden steht in großen Buchstaben der Name "Shanatar" geschrieben, der Name des legendären Zwergenreiches, das sich in grauer Vorzeit unter den südlichen Ländern an der Schwertküste erstreckte.~
+@357 = ~Anhand des Buches über die Schrift der Zwerge könnt Ihr die Dethek-Runen mühelos entziffern. Auf dem Metallboden steht in großen Buchstaben der Name "Shanatar" geschrieben, der Name des legendären Zwergenreiches, das sich in grauer Vorzeit unter den südlichen Ländern an der Schwertküste erstreckte.~
+@358 = ~Auf dem Metallboden sind dicke Zwergenrunen eingegossen. Ihr könnt sie jedoch nicht entziffern.~
+@359 = ~Aus dieser Entfernung könnt Ihr nichts erkennen.~
+@360 = ~Auf dem Boden steht eine kleine Zwergenstatue. Neben ihr sind auf dem Boden in die Metallplatte kleine Runen eingelassen. Da Ihr ein Zwerg seid, könnt Ihr diese mühelos entziffern. Sie lauten "Iltkazar, das Mithrilkönigreich".~
+@361 = ~Auf dem Boden steht eine kleine Zwergenstatue. Neben ihr sind auf dem Boden in die Metallplatte kleine Runen eingelassen. Sie lauten "Iltkazar, das Mithrilkönigreich".~
+@362 = ~Auf dem Boden steht eine kleine Zwergenstatue. Neben ihr sind auf dem Boden in die Metallplatte kleine Runen eingelassen. Anhand des Buches über die Schrift der Zwerge könnt Ihr die Dethek-Runen mühelos entziffern. Sie lauten "Iltkazar, das Mithrilkönigreich".~
+@363 = ~Auf dem Boden steht eine kleine Zwergenstatue. Auf dem Metallboden daneben sind kleine Zwergenrunen eingelassen. Ihr könnt sie jedoch nicht entziffern.~
+@364 = ~Auf dem Boden steht eine kleine Zwergenstatue. Neben ihr sind auf dem Boden in die Metallplatte kleine Runen eingelassen. Da Ihr ein Zwerg seid, könnt Ihr diese mühelos entziffern. Sie lauten "Korolnor, das Juwelenkönigreich".~
+@365 = ~Auf dem Boden steht eine kleine Zwergenstatue. Neben ihr sind auf dem Boden in die Metallplatte kleine Runen eingelassen. Sie lauten "Korolnor, das Juwelenkönigreich".~
+@366 = ~Auf dem Boden steht eine kleine Zwergenstatue. Neben ihr sind auf dem Boden in die Metallplatte kleine Runen eingelassen. Anhand des Buches über die Schrift der Zwerge könnt Ihr die Dethek-Runen mühelos entziffern. Sie lauten "Korolnor, das Juwelenkönigreich".~
+@367 = ~Auf dem Boden steht eine kleine Zwergenstatue. Neben ihr sind auf dem Boden in die Metallplatte kleine Runen eingelassen. Da Ihr ein Zwerg seid, könnt Ihr diese mühelos entziffern. Sie lauten "Torglor, das Silberkönigreich".~
+@368 = ~Auf dem Boden steht eine kleine Zwergenstatue. Neben ihr sind auf dem Boden in die Metallplatte kleine Runen eingelassen. Sie lauten "Torglor, das Silberkönigreich".~
+@369 = ~Auf dem Boden steht eine kleine Zwergenstatue. Neben ihr sind auf dem Boden in die Metallplatte kleine Runen eingelassen. Anhand des Buches über die Schrift der Zwerge könnt Ihr die Dethek-Runen mühelos entziffern. Sie lauten "Torglor, das Silberkönigreich".~
+@370 = ~Kong Madugg~
+@371 = ~Diese Flagge zeigt das Symbol von Karontor, dem Gott der Fomorischen Riesen. Es das Abbild eines Winterwolfes.~
+@372 = ~Auf dieser Flagge ist ein weißer Wolf abgebildet.~
+@373 = ~Auf dieser Flagge steht in der für Riesen typischen Runenschrift "Königreich Stommheim" geschrieben.~
+@374 = ~Auf dieser Flagge ist ein seltsames Symbol abgebildet.~
+@375 = ~Inkagurksul~
+@376 = ~Derro~
+@377 = ~Bolzen der Schwächung~
+@378 = ~Dieser Armbrustbolzen ist mit einem speziellen Gift präpariert, das dem Opfer bei einem erfolgreichen Treffer seine Stärke raubt - vergleichbar mit dem Effekt, den ein Strahl der Schwächung auf es hätte. Dem Opfer steht ein Rettungswurf zu, um der Wirkung des Giftes zu entgehen.
+
+SPEZIFISCHE EIGENSCHAFTEN:
+
+Schaden: 1W8 (Fernkampfwaffe, Stichwaffe)
+Spezielle Merkmale: Stärkeraubendes Gift (bei Rettungswurf gegen Tod keine Wirkung)
+Gewicht: 0
+Wird verschossen von: Armbrust~
+@379 = ~Dlimoruk~
+@380 = ~Jamrry Streitlacher~
+@381 = ~Entschuldigung, bitte laßt mich sprechen, bevor Ihr angreift.~ [AC#LOTH1]
+@382 = ~ Mein Leben ist ein heilloses Durcheinander.~ [AC#LOTH2]
+@383 = ~Dokuriingor~
+@384 = ~Stab des Höllentores~
+@385 = ~Dieser Stab ist aus einer schweren Metalllegierung gefertigt und scheint das Böse förmlich auszustrahlen. Mit Hilfe des Stabes kann der Anwender kurzzeitig ein Portal nach Phlegethos, der vierten Ebene der Neun Höllen, öffnen und einigen Scheusalen dieser Ebene Zugang zur materiellen Ebene verschaffen. Die Magie des Stabes erlaubt es glücklicherweise nicht, höhere Teufel wie Gehörnte oder Höllenschlundscheusale herbeizurufen, doch die herbeigerufenen niederen Wesen können auf der Welt der Sterblichen schon genug Unheil anrichten.
+
+SPEZIFISCHE EIGENSCHAFTEN:
+
+Besondere Fähigkeiten: Beschwört einmal täglich eine Horde niederer Baatezu.~
+@386 = ~Hamatula~
+@387 = ~Jamrrys Tränke~
+@388 = ~...mein Kopf, wo ist mein schöner Kopf...~
+@389 = ~...welcher Unhold hat mich enthauptet und mir meinen Kopf gestohlen?~
+@390 = ~...kann nichts sehen... nichts hören... nur fühlen...wo sind meine Schwestern?~
+@391 = ~...einst Wächter, jetzt ruheloser Geist...~
+@392 = ~Steintroll~
+@393 = ~Schmiedearbeiter~
+@394 = ~Tiefenrothé~
+@395 = ~Ihr öffnet die Tür des Hochofens, und aus dessen Innerem springt plötzlich ein wütender Feuerelementar heraus!~
+@396 = ~Niederer Ring der Feuerkontrolle~
+@397 = ~Niederer Ring der Feuerkontrolle
+Diesen roten Ring zieren -ähnlich wie sein mächtigeres Pendant- zahlreiche Darstellungen von Flammen und Lavazungen auf seiner Oberfläche. Magier und andere Reisende der Ebenen nutzen derartige Ringe, um sich zu schützen, wenn sie die Feuerebene besuchen. Mit Hilfe des Ringes ist es dem Reisenden auch möglich, Feuerelementare unter seine Kontrolle zu zwingen. Allerdings ist dieser Ring hier nicht so fein gearbeitet wie andere seiner Art und daher nicht ganz so mächtig, wenngleich sein Nutzen außer Frage steht.
+
+SPEZIFISCHE EIGENSCHAFTEN:
+
+Besondere Fähigkeiten: Der Träger erhält +25% Feuerresistenz; der Träger kann Feuerelementare bezaubern (+2 auf den Rettungswurf des Elementars)
+
+Der Träger des Rings kann einmal täglich den Zauber 'Brennende Hände' einsetzen.
+Schaden: 1W3+2
+Reichweite: 0
+Wirkungsbereich: Der Zaubernde~
+@398 = ~Angeschmolzener Schlüssel~
+@399 = ~Dieser Schlüssel sieht aus, als wäre er lange Zeit einer sehr großen Hitze ausgesetzt gewesen.~
+@400 = ~Ihr öffnet die Tür des Hochofens, und aus dessen Innerem springt plötzlich ein mächtiger Feuerelementar heraus!~
+@401 = ~Seltsame Räucherschale~
+@402 = ~Kohlebecken zur Beherrschung von Feuerelementaren~
+@403 = ~Diese Schale hat ein inneres Becken, in dem schon häufiger etwas angezündet und verbrannt worden ist. Der Gegenstand erinnert Euch ein wenig an die Behälter, bei denen in Tempeln während Zeremonien Duftstoffe verbrannt werde.~
+@404 = ~Kohlebecken zur Beherrschung von Feuerelementaren
+Im Inneren dieses Beckens kann etwas Kohle angezündet werden. Während die Flamme hell brennt, kann der Anwender einen Feuerelementar heraufbeschwören, vergleichbar mit dem gleichnamigen Zauberspruch, der ihm für die Dauer von einer Phase dient, bevor er wieder auf die Feuerebene zurückkehrt.
+
+SPEZIFISCHE EIGENSCHAFTEN:
+
+Besondere Fähigkeiten: Der Träger kann einmal am Tag einen Feuerelementar beschwören.
+
+Gewicht: 5~
+@405 = ~Zwergen-Runentafel~
+@406 = ~Dies ist die Aufzeichnung von Dwolin vom Clan Minenschatten, Wächter der Pforte der 'caurak' und treuer Diener des mächtigen Korolnor und seines geliebten Königs Gimerg.
+"Wir haben die Wege in das Unterreich versiegelt. Nachdem wir seit Langem keine Nachricht aus den anderen Unterkönigreichen erhalten haben, hat sich König Gimerg zu diesem Schritt entschlossen, um den Druck unserer Feinde aus der Tiefe zu mildern. Gleichzeitig haben wir uns damit aber auch jede Rückzugsmöglichkeit genommen. Jetzt heißt es für Korolnor kämpfen und sterben! Von der Oberfläche drängen Horden von Riesen in die äußeren Befestigungen, und auch der obere Eingang in unsere Heimat ist zum Einsturz gebracht worden, sodass jetzt nur noch der Weg über Karlyns Statue offen bleibt. Auch dieses Gebiet werden wir nicht lange halten können, und schon jetzt dringen Kampfgeräusche bis hier heruntern. Wie gerne wäre ich bei den Gefechten oben dabei, aber meine Aufgabe ist es, mit Garbo, meinem Waffenbruder, hier auszuharren und die versiegelte Pforte zu bewachen."~
+@407 = ~"Auf Geheiß von König Gimerg Kuldelver wurden die Wege in die 'caurak', die tiefen Lande, alle versiegelt. Die Arbeiter von Clan Minenschatten haben auf einer Länge von einem Tagesmarsch alle Tunnel zum Einsturz gebracht. Die Clans, die in das Silberkönigreich Torglor aufgebrochen sind, wissen, dass es keinen Weg zurück gibt. Alle Clans, die sich entschlossen haben, in der Festung Kuldelvon in Korolnor zu bleiben, werden ausharren und bis zu ihrem Tode kämpfen müssen. So befiehlt es Gimerg, vierzehnter seines Namens, Nachkomme von Karlyn, dem Gründer von Kuldelvon, Herr des Clans Kuldelver und König von Korolnor, dem Juwelenkönigreich. Lang lebe Shanatar, das Reich der Kinder Moradins!"~
+@408 = ~Dieser ehemalige Durchgang ist mit massiven Felsbrocken versperrt. Es sieht so aus, als hätte der Weg früher in tiefere Regionen geführt, aber ein Durchkommen ist jetzt sicher nicht mehr möglich.~
+@409 = ~Kaputte Zwergenrüstung~
+@410 = ~Diese Rüstung ist aus einem unbekannten Metall geschmiedet und scheint sehr alt zu sein. Es sieht aus, als habe der Träger dieser Rüstung zahlreiche Kämpfe mit ihr ausgetragen, doch den letzten Kampf nicht überlebt. Da sie völlig zerstört ist, ist sie zu nichts mehr zu gebrauchen.~
+@411 = ~Riesenskelett~
+@412 = ~Geist König Gimergs~
+@413 = ~In diesem Raum ist eine riesige bronzene Landkarte auf dem Boden angebracht, auf der verschiedene steinerne Figuren stehen, die Zwerge darstellen.~
+@414 = ~Zwergengeist~
+@415 = ~Auf dieser mächtigen Säule steht in Zwergenrunen geschrieben: "Erbaut von Karlyn Kuldelver, Herr von Korolnor, im Jahre 433 nach der Gründung seines Hauses. Mögen diese Hallen ewig stehen und stets ein sicherer Hort für die Brüder und Schwestern Shanatars sein."~
+@416 = ~Auf dieser mächtigen Säule sind zahlreiche Zwergenrunen eingraviert. Ihr könnt sie jedoch nicht entziffern.~
+@417 = ~Dies scheint der gleiche Aufzugsschacht zu sein, den Ihr auch im Stockwerk darüber gesehen habt. Er muss noch weiter nach unten in die Tiefe zu führen.~
+@418 = ~Ein Schacht führt von oben kommend weiter nach unten in die Tiefe.~
+@419 = ~Skelett-Ettin~
+@420 = ~Altes Buch~
+@421 = ~Statue~
+@422 = ~Tiglath~
+@423 = ~Tremor~
+@424 = ~Mith Barak~
+@425 = ~König von Iltkazar~
+@426 = ~Ein Hoch auf Mith Barak, den Mithralschild!~
+@427 = ~Als Ihr den Raum betretet, werdet Ihr von einer großen unnatürlichen Müdigkeit erfasst, die Eure Beine bleiern und Euren Kopf schwer werden lassen.~
+@428 = ~Malinthid~
+@429 = ~Scorlachash~
+@430 = ~Begleiter Mithbaraks~
+@431 = ~Ihr habt bereits alles Wissen erworben, um Eure Reise fortzusetzen.~
+@432 = ~Auf dieser uralten Säule sind Skizzen und Anmerkungen in der Sprache Eurer Vorfahren, der Elfen, eingraviert. Sie zeugen von dem mächtigen Reich, das die Elfen in diesem Teil Faeruns einmal beherrscht haben. Auf dem Boden scheint eine riesige Landkarte mit zahlreichen längst vergessenen Orten der Elfengemeinden aufgezeichnet zu sein. Allerdings könnt Ihr bei Tageslicht die feinen Strukturen kaum erkennen.~
+@433 = ~Auf dieser uralten Säule sind Skizzen und Anmerkungen in der Sprache der Elfen, die Ihr einmal gelernt habt, eingraviert. Sie zeugen von dem mächtigen Reich, das die Elfen in diesem Teil Faeruns einmal beherrscht haben. Auf dem Boden scheint eine riesige Landkarte mit zahlreichen längst vergessenen Orten der Elfengemeinden aufgezeichnet zu sein. Allerdings könnt Ihr bei Tageslicht die feinen Strukturen kaum erkennen.~
+@434 = ~Auf dieser uralten Säule sind Skizzen und Anmerkungen in einer feinen Schrift eingraviert, die Ihr jedoch nicht entziffern könnt. Auf dem Boden scheint eine riesige Landkarte mit zahlreichen längst vergessenen Orten aufgezeichnet zu sein. Allerdings könnt Ihr bei Tageslicht die feinen Strukturen kaum erkennen.~
+@435 = ~Mit einem Mal entdeckt Ihr auf der Karte den Ort, den Mith Barak in Eurem Traum erwähnt hatte - der Ort, an dem Tethir den Drachen erschlagen und den Ihr so lange gesucht habt...~
+@436 = ~Bei Mondschein strahlt die Säule in einem hellen Licht, und auch die Zeichnungen auf der Landkarte stechen deutlich hervor. Wenn Ihr möchtet, könnt Ihr den Stein erneut berühren, um die Karte nach dem von Euch gesuchten Ort gezielt in Augenschein zu nehmen.~
+@437 = ~Aktivierungsstein~
+@438 = ~Dieses herzförmige Stück Metall ist wahrscheinlich zu dem Zweck erschaffen worden, einen Gegenstand zu aktivieren.~
+@439 = ~Diese seltsame Statue scheint das Objekt der Anbetung der hier jetzt wohnenden Grottenschrate zu sein. Überall liegen Opfergaben in Form von Schädeln jeglicher Rassen verteilt. Die Säule schließt nicht ganz bündig mit der Basis ab, ganz so, als könnte man sie bewegen.~
+@440 = ~Ihr seid zu schwach, um die Säule zu bewegen.~
+@441 = ~Ihr drückt gegen eine der Zacken, und plötzlich lässt sich die ganze Säule herumdrehen. Dadurch scheint sich ein Mechanismus in Gang gesetzt zu haben.~
+@442 = ~Schädelratte~
+@443 = ~Neothelid~
+@444 = ~Schädelrattenschwarm~
+@445 = ~Verfluchte Feuerpfeile~
+@446 = ~Verfluchte Feuerpfeile
+Diese magischen Pfeile sind verflucht. Wahrscheinlich hatte der Erschaffer beabsichtigt, magische Feuerpfeile herzustellen, doch in dem empfindlichen Verzauberungsprozess ging etwas gründlich schief. Somit erleidet jetzt derjenige, der den Pfeil verschießt, eine feurige Überraschung.
+
+SPEZIFISCHE EIGENSCHAFTEN:
+
+Schaden: 1W6 (Fernkampf- und Stichwaffe)
+Spezielle Merkmale. 1W6 Feuerschaden bei dem Anwender
+Gewicht: 0
+Wird verschossen von: Bogen
+Kann nicht verwendet werden von:
+ Druiden
+ Klerikern
+Magiern~
+@447 = ~Verfluchte Giftpfeile~
+@448 = ~Verfluchte Giftpfeile
+Ob durch falsches Wissen oder in böser Absicht, bei diesen "beißenden" Pfeilen wurde das Gift anstelle auf die Spitze auf die Befiederung aufgebracht, sodass der Schütze bei jedem Schuss Gefahr läuft, sich selbst zu vergiften. Einige Gelehrte vermuten, dass Pfeile dieser Art von den Anhängern Talonas, der Mutter aller Plagen, in Umlauf gebracht wurden, um auf diese niederträchtige Weise ihrer bösen Herrin zu dienen.
+
+SPEZIFISCHE EIGENSCHAFTEN:
+
+Schaden: 1W6  (Fernkampf- und Stichwaffe)
+Spezielle Merkmale: Gift - 30% der aktuellen TP innerhalb von 20 Sekunden nach dem Verschießen beim Schützen selbst, es sei denn, dem Anwender gelingt ein Rettungswurf gegen Tod
+Gewicht: 0
+Wird verschossen von: Bogen
+
+Gewicht: 0
+Wird verschossen von: Bogen
+Kann nicht verwendet werden von:
+ Druiden
+ Klerikern
+ Magiern~
+ @449 = ~Gürtel der Löwen~
+ @450 = ~Gürtel der Löwen
+ Gürtel der Löwen
+Dieser Gürtel ermöglicht es dem Anwender, einige Eigenschaften katzenartiger Säugetiere anzunehmen.
+Der Träger erhält einen Bonus von +30% auf Leise bewegen
+Der Träger kann einmal täglich den Zauber "katzenhafte Anmut" wirken.
+Der Träger kann einmal täglich katzenartige Tiere wie Hauskatzen, Geparden, Panther, Leoparden, Pumas, Luchse, Tiger und Löwen bezaubern.~
+@451 = ~Dzances Wächter~
+@452 = ~Dzances Wächter
+Der Waldläufer Dzance fand dieses Schild einst in einer Truhe in den Tiefen Gauntlgryms, der verlorenen Stadt. Die Herkunft des Schildes ist unbekannt, wenngleich vermutet wird, dass es von Zwergenhand geschaffen wurde.~
+@453 = ~Löchriger Schädel~
+@454 = ~Diesem menschlichen Schädel hat man die Schädeldecke entfernt. In seinem Inneren könnt Ihr noch Reste verschiedener festgetrockneter Substanzen erkennen, ganz so, als hätte jemand den Schädel als Trink- oder Ess-Schale verwendet.~

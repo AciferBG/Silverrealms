@@ -1,0 +1,58 @@
+
+/*
+Die beschwörung des Glabrezu
+*/
+IF
+	Global("AC#Baphometspawn","GLOBAL",1)
+THEN
+	RESPONSE #100
+                ClearAllActions()
+		StartCutSceneMode()
+		CutSceneId("AC#DURG1")
+		SetGlobal("AC#Baphometspawn","GLOBAL",2)
+		Face(8)
+		ActionOverride(Player1,MoveToPoint([894.667]))
+		ActionOverride(Player2,MoveToPoint([892.665]))
+		ActionOverride(Player3,MoveToPoint([897.669]))
+		ActionOverride(Player4,MoveToPoint([890.661]))
+		ActionOverride(Player5,MoveToPoint([889.651]))
+		ActionOverride(Player6,MoveToPoint([899.671]))
+		ForceSpell(Myself,LONG_RED_MIGHT)
+		Wait(2)
+		MoveViewPoint([830.560],100)
+		CreateVisualEffect("SPSUMGTE",[830.560])
+		ScreenShake([50.50],5)
+		Wait(1)		
+		Wait(2)
+		CreateVisualEffect("SPFIREPI",[830.560])
+		Wait(2)
+		CreateCreature("AC#GLAB1",[830.560],12)
+		ActionOverride("AC#GLAB1",FaceObject("AC#DURG1"))
+		MoveViewObject("AC#GLAB1",VERY_FAST)
+		EndCutSceneMode()
+END
+
+IF
+	Dead("AC#DURG1")
+	CombatCounter(0)
+	Global("DurhgathuDead","ACIL49",0)
+THEN
+	RESPONSE #100
+	 AddJournalEntry(@58007,QUEST)
+	 EraseJournalEntry(@58006)
+         SetGlobal("DurhgathuDead","ACIL49",1)
+END
+
+IF
+	PartyHasItem("AC#HADUM")
+        Global("Hammer_retrieved","ACIL49",0)
+THEN
+	RESPONSE #100
+	 //EraseJournalEntry(999999)
+	 AddJournalEntry(@58020,QUEST)
+         SetGlobal("Hammer_retrieved","ACIL49",1)
+END
+
+
+
+

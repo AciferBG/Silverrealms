@@ -1,0 +1,42 @@
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,6)
+	Global("CircleOfMagic","ACIL81",0)
+THEN
+	RESPONSE #100
+	         SetGlobal("CircleOfMagic","ACIL81",1)
+		DisplayString(Myself,@919)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,6)
+	Global("CircleOfMagic","ACIL81",3)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@922)
+		SetGlobal("CircleOfMagic","ACIL81",4)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,6)
+	GlobalGT("CircleOfMagic","ACIL81",0)
+	GlobalLT("CircleOfMagic","ACIL81",4)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@920)
+		IncrementGlobal("CircleOfMagic","ACIL81",1)
+		//ApplySpellRES("SPWISH07",LastTrigger)
+		//ReallyForceSpell(LastTrigger,CLERIC_RESTORATION)
+		ReallyForceSpell(LastTrigger,CLERIC_HEAL)  // SPPR607.SPL (Heilung)
+		ReallyForceSpell(LastTrigger,RESTORATION_IGNORE_RESIST)  // SPIN581.SPL (No such index)
+END
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,6)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@921)
+END

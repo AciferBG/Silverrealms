@@ -1,0 +1,25 @@
+/*
+
+Dieses Skript transportiert die Spieler aus Area ACIL78 (Kalzareinads Corpse) in die Astralebene (ACIL80)
+*/
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		FadeToColor([30.0],150)
+		Wait(1)
+		LeaveAreaLUAPanic("ACIL80","AC#GTR80",[267.265],0)
+		LeaveAreaLUA("ACIL80","AC#GTR80",[267.265],6)
+		ActionOverride(Player2,LeaveAreaLUA("ACIL80","AC#GTR80",[267.265],6))
+		ActionOverride(Player3,LeaveAreaLUA("ACIL80","AC#GTR80",[267.265],6))
+		ActionOverride(Player4,LeaveAreaLUA("ACIL80","AC#GTR80",[267.265],6))
+		ActionOverride(Player5,LeaveAreaLUA("ACIL80","AC#GTR80",[267.265],6))
+		ActionOverride(Player6,LeaveAreaLUA("ACIL80","AC#GTR80",[267.265],6))
+		MultiPlayerSync()
+		MoveViewPoint([2701.407],INSTANT)
+		Wait(1)
+		FadeFromColor([30.0],150)
+		ActionOverride("AC#CYLL1",StartDialogueNoSet(Player1))
+		//EndCutSceneMode()
+END

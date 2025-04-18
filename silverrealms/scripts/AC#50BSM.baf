@@ -1,0 +1,6 @@
+IF
+	GlobalGT("AC#RC_Sorni_Fourth","GLOBAL",3)
+THEN
+	RESPONSE #100
+                 DestroySelf()
+END

@@ -1,0 +1,33 @@
+
+IF
+	Global("AC#Ellhimar_Cernd","GLOBAL",4)
+	//Range([PC],10)
+	See([PC])
+THEN
+	RESPONSE #100
+	         SetGlobal("AC#Ellhimar_Cernd","GLOBAL",5)
+		// StartDialogueNoSet([PC])
+END
+
+
+IF
+	NumTimesTalkedTo(0)
+	Global("AC#Ellhimar_Cernd","GLOBAL",3)
+THEN
+	RESPONSE #100
+		SetNumTimesTalkedTo(1)
+END
+
+IF
+	Range([PC],10)
+	NumTimesTalkedTo(0)
+	See([PC])
+THEN
+	RESPONSE #100
+		StartDialogueNoSet([PC])
+END
+
+
+
+
+

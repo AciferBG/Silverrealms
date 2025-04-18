@@ -1,0 +1,124 @@
+IF
+	See([ANYONE])
+	Global("hostile","LOCALS",0)
+THEN
+	RESPONSE #100
+		ApplySpell(Myself,CLERIC_HEAL)  // SPPR607.SPL (Heilung)
+		SetGlobal("hostile","LOCALS",1)
+		Enemy()
+END
+
+IF
+	HPPercentLT(Myself,75)
+	Global("teleport","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("teleport","LOCALS",1)
+		ReallyForceSpellRES("AC#TEL1",Myself)  // Teleportieren
+		Wait(1)
+		JumpToPoint([856.1629])
+		Face(13)
+		ReallyForceSpell(Myself,CLERIC_HEAL)  // SPPR607.SPL (Heilung)
+		CreateCreatureDoor("AC#CORN3",[1300.1257],10)  // Cornugon
+		SetGlobalTimer("Teleportation","LOCALS",THREE_ROUNDS)
+END
+
+IF
+	HPPercentLT(Myself,55)
+	Global("teleport","LOCALS",1)
+	GlobalTimerExpired("Teleportation","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobal("teleport","LOCALS",2)
+		ReallyForceSpellRES("AC#TEL1",Myself)  // Teleportieren
+		Wait(1)
+		JumpToPoint([1790.823])
+		Face(3)
+		ReallyForceSpell(Myself,CLERIC_HEAL)  // SPPR607.SPL (Heilung)
+		CreateCreatureDoor("AC#ABRE1",[1522.791],0)  // Roter Abishai
+		CreateCreatureDoor("AC#ABRE1",[1871.1099],5)  // Roter Abishai
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Global("Dispel_Magic","LOCALS",0)
+THEN
+	RESPONSE #100
+		ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_DISPEL_MAGIC)  // SPWI302.SPL (Magie bannen)
+		SetGlobal("Dispel_Magic","LOCALS",1)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Global("PITFEAR","LOCALS",0)
+THEN
+	RESPONSE #100
+		ForceSpell(NearestEnemyOf(Myself),DEMON_FEAR)  // SPIN890.SPL (Dämonenfurcht)
+		SetGlobal("PITFEAR","LOCALS",1)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	!StateCheck(NearestEnemyOf(Myself),STATE_PANIC)
+	Global("Symbol_Pain","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Symbol_Pain","LOCALS",1)
+		ReallyForceSpellRES("SPWI955",NearestEnemyOf(Myself))  // Symbol des Schmerzes
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	!GlobalTimerNotExpired("Flame_Arrow","LOCALS")
+THEN
+	RESPONSE #40
+		ForceSpell(NearestEnemyOf(Myself),WIZARD_FLAME_ARROW)  // SPWI303.SPL (Flammenpfeil)
+		SetGlobalTimer("Flame_Arrow","LOCALS",ONE_ROUND)
+	RESPONSE #60
+		AttackReevaluate(NearestEnemyOf(Myself),15)
+		Continue()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	StateCheck(NearestEnemyOf(Myself),STATE_HASTED)
+THEN
+	RESPONSE #40
+		ForceSpell(NearestEnemyOf(Myself),WIZARD_DISPEL_MAGIC)  // SPWI302.SPL (Magie bannen)
+	RESPONSE #60
+		AttackReevaluate(NearestEnemyOf(Myself),15)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	RandomNum(2,1)
+	!GlobalTimerNotExpired("Flame_Arrow","LOCALS")
+THEN
+	RESPONSE #10
+		ForceSpell(NearestEnemyOf(Myself),WIZARD_FLAME_ARROW)  // SPWI303.SPL (Flammenpfeil)
+		SetGlobalTimer("Flame_Arrow","LOCALS",ONE_ROUND)
+	RESPONSE #10
+		ForceSpell(SecondNearestEnemyOf(Myself),WIZARD_FLAME_ARROW)  // SPWI303.SPL (Flammenpfeil)
+		SetGlobalTimer("Flame_Arrow","LOCALS",ONE_ROUND)
+	RESPONSE #10
+		ForceSpell(ThirdNearestEnemyOf(Myself),WIZARD_FLAME_ARROW)  // SPWI303.SPL (Flammenpfeil)
+		SetGlobalTimer("Flame_Arrow","LOCALS",ONE_ROUND)
+	RESPONSE #10
+		ForceSpell(FourthNearestEnemyOf(Myself),WIZARD_FLAME_ARROW)  // SPWI303.SPL (Flammenpfeil)
+		SetGlobalTimer("Flame_Arrow","LOCALS",ONE_ROUND)
+	RESPONSE #10
+		ForceSpell(FifthNearestEnemyOf(Myself),WIZARD_FLAME_ARROW)  // SPWI303.SPL (Flammenpfeil)
+		SetGlobalTimer("Flame_Arrow","LOCALS",ONE_ROUND)
+	RESPONSE #10
+		ForceSpell(SixthNearestEnemyOf(Myself),WIZARD_FLAME_ARROW)  // SPWI303.SPL (Flammenpfeil)
+		SetGlobalTimer("Flame_Arrow","LOCALS",ONE_ROUND)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		AttackReevaluate(NearestEnemyOf(Myself),15)
+END
+

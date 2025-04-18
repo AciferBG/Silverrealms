@@ -1,0 +1,30 @@
+IF
+	AreaCheck("ACIL27")
+	GlobalGT("MonolithsDeactivated","ACIL27",0)
+THEN
+	RESPONSE #100
+		//Kill(Myself)
+		DestroySelf()
+END
+
+
+IF
+	AreaCheck("ACIL27")
+	Global("AC#kuotoa_madness","GLOBAL",2)
+THEN
+	RESPONSE #100
+		//Kill(Myself)
+		DestroySelf()
+END
+
+
+IF
+        OR(2)
+        AreaCheck("ACIL27")
+        AreaCheck("ACIL2K")
+        Global("AC#kuotoa_madness","GLOBAL",1)
+        !StateCheck(Myself,STATE_CONFUSED)
+THEN
+	RESPONSE #100
+		ApplySpellRES("AC#W508",Myself)
+END

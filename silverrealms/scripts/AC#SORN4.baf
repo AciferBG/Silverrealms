@@ -1,0 +1,22 @@
+IF
+	NumTimesTalkedTo(0)
+	Detect([PC])
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(LastSeenBy(Myself))
+END
+
+IF
+	Global("AC#SorniEscape","GLOBAL",1)
+THEN
+	RESPONSE #100
+                SetGlobal("AC#SorniEscape","GLOBAL",2)
+		MoveToPointNoInterrupt([2005.1352])
+END
+
+
+
+
+
+
+

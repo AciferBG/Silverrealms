@@ -1,0 +1,45 @@
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	//GlobalGT("AC#BackToSurface","GLOBAL",1)
+	Global("AC#EyestalkLadder","ACIL20",0)
+	GlobalGT("AC#Fruntuck","GLOBAL",0)
+	PartyHasItem("AC#SRLAD")
+THEN
+	RESPONSE #100
+		SetGlobal("AC#EyestalkLadder","ACIL20",1)
+                DisplayString(Myself,@730)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	//GlobalGT("AC#BackToSurface","GLOBAL",1)
+	Global("AC#EyestalkLadder","ACIL20",1)
+	PartyHasItem("AC#SRLAD")
+THEN
+	RESPONSE #100
+		SetGlobal("AC#EyestalkLadder","ACIL20",2)
+		TakePartyItem("AC#SRLAD")
+                DisplayString(Myself,@731)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	//GlobalGT("AC#BackToSurface","GLOBAL",1)
+	!PartyHasItem("AC#SRLAD")
+THEN
+	RESPONSE #100
+                DisplayString(Myself,@729)
+END
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,12)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,14702) // Ihr seid zu weit entfernt, um das zu benutzen.
+END
+
+

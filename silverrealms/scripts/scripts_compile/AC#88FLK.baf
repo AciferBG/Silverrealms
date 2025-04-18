@@ -1,0 +1,16 @@
+
+IF
+	Clicked([ANYONE])
+        Range(LastTrigger,12)
+THEN
+	RESPONSE #100
+		ReallyForceSpellPoint([868.751],WIZARD_FIREBALL)
+END
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,12)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,14702)  // Ihr seid zu weit entfernt, um das zu benutzen.
+END

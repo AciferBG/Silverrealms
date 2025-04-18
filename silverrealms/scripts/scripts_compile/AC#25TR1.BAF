@@ -1,0 +1,9 @@
+IF
+	Entered([ANYONE])
+THEN
+	RESPONSE #100
+		CreateCreature("SPIDWR01",[2902.1036],0)  // Geisterspinne
+		CreateCreature("SPIDSW01",[3145.1164],6)  // Schwertspinne
+		CreateCreature("SPIDPH01",[3093.1394],0)  // Phasenspinne
+END
+

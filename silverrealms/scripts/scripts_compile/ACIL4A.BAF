@@ -1,0 +1,16 @@
+IF
+       	 Global("Triggers","ACIL4A",0)
+THEN
+	RESPONSE #100
+	         SetGlobal("Triggers","ACIL4A",1)
+                 TriggerActivation("Tracil07",FALSE)
+END
+
+IF
+       	 Global("AC#Been_in_ACIL07","GLOBAL",1)
+THEN
+	RESPONSE #100
+	         SetGlobal("AC#Been_in_ACIL07","GLOBAL",2)
+	         TriggerActivation("Tracil04",FALSE)
+                 TriggerActivation("Tracil07",TRUE)
+END

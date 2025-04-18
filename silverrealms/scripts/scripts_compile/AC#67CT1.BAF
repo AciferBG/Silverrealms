@@ -1,0 +1,29 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		FadeToColor([30.0],0)
+		Wait(3)
+		MoveViewPoint([904.575],INSTANT)
+		ActionOverride("AC#BRES4",JumpToPoint([904.575]))
+		ActionOverride("AC#BRES4",Face(13))
+		JumpToPoint([975.614])
+		Face(8)
+		ActionOverride(Player2,JumpToPoint([935.655]))
+		ActionOverride(Player2,Face(8))
+		ActionOverride(Player3,JumpToPoint([1006.640]))
+		ActionOverride(Player3,Face(8))
+		ActionOverride(Player4,JumpToPoint([1085.601]))
+		ActionOverride(Player4,Face(8))
+		ActionOverride(Player5,JumpToPoint([1002.702]))
+		ActionOverride(Player5,Face(8))
+		ActionOverride(Player6,JumpToPoint([1101.668]))
+		ActionOverride(Player6,Face(8))
+		Wait(2)
+		FadeFromColor([30.0],0)
+		Wait(3)
+		SetGlobal("RescuePot","ACIL67",3)
+		ActionOverride("AC#BRES4",StartDialogNoSet(Player1))
+END
+

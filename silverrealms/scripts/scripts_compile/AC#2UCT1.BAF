@@ -1,0 +1,15 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		LeaveAreaLUAPanic("ACIL2U","",[6.6],S)
+		LeaveAreaLUA("ACIL2U","",[6.6],NW)
+		MultiPlayerSync()
+		MoveViewPoint([787.702],INSTANT)
+		SmallWait(5)
+		FadeFromColor([30.0],0)
+		Wait(1)
+		ActionOverride("AC#2UCHA",StartDialogueNoSet(Player1))
+END
+

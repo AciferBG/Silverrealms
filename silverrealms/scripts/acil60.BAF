@@ -1,0 +1,35 @@
+IF
+	Global("EnteredArea","ACIL60",0)
+THEN
+	RESPONSE #100
+		FadeToColor([0.0],0)
+		SetGlobal("EnteredArea","ACIL60",1)
+		SetGlobal("AC#_Iltkazar_Destroyed","GLOBAL",1)
+END
+
+/*
+Die PCs werden an die richtige Stelle teleportiert, das Gespräch mit dem Regentschaftsrat Iltkazars beginnt.
+*/
+
+IF
+	Global("EnteredArea","ACIL60",1)
+THEN
+	RESPONSE #100
+                 ClearAllActions()
+                 StartCutSceneMode()
+                 SetGlobal("EnteredArea","ACIL60",2)
+                 Explore()
+		Wait(1)
+		ActionOverride(Player1,JumpToPoint([779.632]))
+		ActionOverride(Player2,JumpToPoint([779.632]))
+		ActionOverride(Player3,JumpToPoint([779.632]))
+		ActionOverride(Player4,JumpToPoint([779.632]))
+		ActionOverride(Player5,JumpToPoint([779.632]))
+		ActionOverride(Player6,JumpToPoint([779.632]))
+		MoveViewPoint([779.632],INSTANT)
+		Wait(1)
+		FadeFromColor([30.0],0)
+		EndCutSceneMode()
+		ActionOverride("AC#DUN03",Dialogue(Player1))
+END
+

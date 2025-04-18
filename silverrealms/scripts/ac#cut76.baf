@@ -1,0 +1,24 @@
+/*
+
+Dieses Skript transportiert die Spieler aus Area ACIL31 (Gatchorof) in die Astralebene (ACIL78)
+*/
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		FadeToColor([30.0],150)
+		Wait(1)
+		StartMovie("AC#ASTR1")
+		LeaveAreaLUAPanic("ACIL78","",[1613.1486],0)
+		LeaveAreaLUA("ACIL78","",[1613.1486],6)
+		ActionOverride(Player2,LeaveAreaLUA("ACIL78","",[1613.1486],6))
+		ActionOverride(Player3,LeaveAreaLUA("ACIL78","",[1613.1486],6))
+		ActionOverride(Player4,LeaveAreaLUA("ACIL78","",[1613.1486],6))
+		ActionOverride(Player5,LeaveAreaLUA("ACIL78","",[1613.1486],6))
+		ActionOverride(Player6,LeaveAreaLUA("ACIL78","",[1613.1486],6))
+		MultiPlayerSync()
+		MoveViewPoint([1613.1486],INSTANT)
+		StartMovie("AC#ASTR2")
+		EndCutSceneMode()
+END

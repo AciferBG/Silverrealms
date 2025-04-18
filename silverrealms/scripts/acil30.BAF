@@ -1,0 +1,44 @@
+IF
+	Global("AC#30GateOpen","ACIL30",4)
+THEN
+	RESPONSE #100
+	SetGlobal("AC#30GateOpen","ACIL30",5)
+	CreateVisualEffectObject("ICMAGICH","axecon")
+	ContainerEnable("axecon",FALSE)
+	CreateVisualEffectObject("ICMAGICH","clubcon")
+	ContainerEnable("clubcon",FALSE)
+	CreateVisualEffectObject("ICMAGICH","hammercon")
+	ContainerEnable("hammercon",FALSE)
+	CreateVisualEffectObject("ICMAGICH","swordcon")
+	ContainerEnable("swordcon",FALSE)
+        OpenDoor("DOOR01")
+END
+
+IF
+	Global("EnteredArea","ACIL30",0)
+THEN
+	RESPONSE #100
+		SetGlobal("EnteredArea","ACIL30",1)
+		SetGlobal("FaerzressTalk","ACIL30",1)
+		DisplayString(Myself,999999)
+END
+
+IF
+	InParty("Viconia")  // Viconia
+	!Dead("Viconia")  // Viconia
+	InMyArea("Viconia")  // Viconia
+	Global("FaerzressTalk","ACIL30",1)
+THEN
+	RESPONSE #100
+		Wait(1)
+		ActionOverride("Viconia",StartDialogNoSet(Player1))
+END
+
+IF
+	!GlobalTimerNotExpired("WildmagicTimer","ACIL30")
+THEN
+	RESPONSE #100
+		ApplySpell(Player1,WILD_MAGIC_AREA)
+		SetGlobalTimer("WildmagicTimer","ACIL30",3)
+END
+

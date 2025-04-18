@@ -1,0 +1,80 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		CreateVisualEffectObject("spdimndr",Player1)
+		SmallWait(50)
+		FadeToColor([20.0],0)
+		SmallWait(23)
+		LeaveAreaLUAPanic("ACIL05","",[254.328],8)
+		LeaveAreaLUA("ACIL05","",[254.328],8)
+		MultiPlayerSync()
+		CreateVisualEffectObject("spdimndr",Player1)
+		ApplySpell(Myself,CLERIC_CURE_LIGHT_WOUNDS) 
+		SmallWait(23)
+		FadeFromColor([20.0],0)
+		Wait(3)
+		EndCutSceneMode()
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player2)
+		CreateVisualEffectObject("spdimndr",Player2)
+		SmallWait(77)
+		LeaveAreaLUA("ACIL05","",[299.329],8)
+		ApplySpell(Player2,CLERIC_CURE_LIGHT_WOUNDS) 
+		CreateVisualEffectObject("spdimndr",Player2)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player3)
+		CreateVisualEffectObject("spdimndr",Player3)
+		SmallWait(77)
+		LeaveAreaLUA("ACIL05","",[340.307],8)
+		ApplySpell(Player3,CLERIC_CURE_LIGHT_WOUNDS) 
+		CreateVisualEffectObject("spdimndr",Player3)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player4)
+		CreateVisualEffectObject("spdimndr",Player4)
+		SmallWait(77)
+		LeaveAreaLUA("ACIL05","",[227.325],8)
+		ApplySpell(Player4,CLERIC_CURE_LIGHT_WOUNDS) 
+		CreateVisualEffectObject("spdimndr",Player4)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player5)
+		CreateVisualEffectObject("spdimndr",Player5)
+		SmallWait(77)
+		LeaveAreaLUA("ACIL05","",[190.322],8)
+		ApplySpell(Player5,CLERIC_CURE_LIGHT_WOUNDS) 
+		CreateVisualEffectObject("spdimndr",Player5)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player6)
+		CreateVisualEffectObject("spdimndr",Player6)
+		SmallWait(77)
+		LeaveAreaLUA("ACIL05","",[199.351],8)
+		ApplySpell(Player6,CLERIC_CURE_LIGHT_WOUNDS) 
+		CreateVisualEffectObject("spdimndr",Player6)
+END
+

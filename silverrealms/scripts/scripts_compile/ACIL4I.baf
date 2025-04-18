@@ -1,0 +1,45 @@
+IF
+	OR(2)
+	Global("AC#BeldasPlotStart","GLOBAL",0)
+	Global("AC#BeldasPlotStart","GLOBAL",2)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#BeldasPlotStart","GLOBAL",3)
+		CreateCreature("ac#dwf00",[280.320],14) // Beldas
+		CreateCreature("AC#DWF20",[258.346],12) // Gormar
+		CreateCreature("AC#DWF30",[339.314],5) // Thradear
+END
+
+IF
+	PartyHasItem("AC#SRBK1")
+	Global("AC#IltkazarQuest#2","GLOBAL",10)
+THEN
+	RESPONSE #100
+		Deactivate("ac#dwf00")
+		Deactivate("ac#dwf20")
+		Deactivate("ac#dwf30")
+		SetGlobal("AC#IltkazarQuest#2","GLOBAL",11)
+		EraseJournalEntry(@20062)
+		AddJournalEntry(@20070,QUEST)
+END
+
+IF
+	PartyHasItem("AC#SR#R1")
+	Exists("AC#4ITHF")
+	Global("DeactivateThief","ACIL4I",0)
+THEN
+	RESPONSE #100
+		Deactivate("AC#4ITHF")
+		SetGlobal("DeactivateThief","ACIL4I",1)
+END
+
+
+
+
+
+
+
+
+
+
+

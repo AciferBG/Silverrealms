@@ -1,0 +1,13 @@
+IF
+        Contains("AC#IL#01",Myself)
+	Global("AC#Runecontainer02","ACIL27",0)
+THEN
+	RESPONSE #100
+	SetInterrupt(FALSE)
+	DestroyItem("AC#IL#01")
+	CreateVisualEffectObject("ICMAGICH",Myself)
+	//ContainerEnable("Runecontainer02",FALSE)
+	SetGlobal("AC#Runecontainer02","ACIL27",1)
+	SetInterrupt(TRUE)
+END
+

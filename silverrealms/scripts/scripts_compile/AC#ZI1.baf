@@ -1,0 +1,44 @@
+IF
+	Contains("AC#SPIDD",Myself)
+	Global("AC#_Zinzarena_Spider","ACIL25",10)
+THEN
+	RESPONSE #100
+		DestroyItem("AC#SPIDD")
+		SetGlobal("AC#_Zinzarena_Spider","ACIL25",11)
+		PlaySound("EFF_P92")
+		ScreenShake([2347.370],15)
+		CreateItem("WAND12",0,0,0)
+		Wait(2)
+		DisplayString(Myself,@6253) 
+END
+
+IF
+	Contains("AC#SPIDD",Myself)
+	GlobalLT("AC#_Zinzarena_Spider","ACIL25",10)
+THEN
+	RESPONSE #100
+		DestroyItem("AC#SPIDD")
+		IncrementGlobal("AC#_Zinzarena_Spider","ACIL25",1)
+		PlaySound("EFF_P92")
+		ScreenShake([2347.370],15)
+		CreateItem("POTN20",0,0,0)
+		Wait(2)
+		DisplayString(Myself,@11) // Ihr platziert die tote Spinne auf dem Altar, und Ihr sp�rt, wie der Raum von einer fremdartigen Macht erf�llt wird. Auf dem Altar erscheint ein Gegenstand, der vorher noch nicht dort war.
+	RESPONSE #100
+			DestroyItem("AC#SPIDD")
+			IncrementGlobal("AC#_Zinzarena_Spider","ACIL25",1)
+			PlaySound("EFF_P92")
+			ScreenShake([2347.370],15)
+			CreateItem("POTN52",0,0,0)
+			Wait(2)
+			DisplayString(Myself,@11) // Ihr platziert die tote Spinne auf dem Altar, und Ihr sp�rt, wie der Raum von einer fremdartigen Macht erf�llt wird. Auf dem Altar erscheint ein Gegenstand, der vorher noch nicht dort war.
+	RESPONSE #100
+				DestroyItem("AC#SPIDD")
+				IncrementGlobal("AC#_Zinzarena_Spider","ACIL25",1)
+				PlaySound("EFF_P92")
+				ScreenShake([2347.370],15)
+				CreateItem("POTN39",0,0,0)
+				Wait(2)
+				DisplayString(Myself,@11) // Ihr platziert die tote Spinne auf dem Altar, und Ihr sp�rt, wie der Raum von einer fremdartigen Macht erf�llt wird. Auf dem Altar erscheint ein Gegenstand, der vorher noch nicht dort war.
+END
+

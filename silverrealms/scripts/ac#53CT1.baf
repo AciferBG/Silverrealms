@@ -1,0 +1,21 @@
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId("AC#53SV1")
+    Wait(1)
+    MoveViewPoint([2410.285],FAST)
+    MoveToObject("AC#GOLME")
+    //Wait(1)
+    SwingOnce()
+    //Wait(1)
+    ForceSpell(Myself,DO_NOTHING)
+    //Wait(1)
+    SwingOnce()
+    ApplyDamage("AC#GOLME",1,ELECTRICITY)
+    ActionOverride("AC#GOLME",SwingOnce())
+    SetGlobal("AC#MetagolemIngredients","ACIL53",5)
+    EndCutSceneMode()
+    ActionOverride("AC#GOLME",StartDialogueNoSet(Player1))
+END
+

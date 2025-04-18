@@ -1,0 +1,16 @@
+IF
+	Global("AC#SorniQuest","ACIL61",3)
+	Detect([PC])
+THEN
+	RESPONSE #100
+		StartDialogNoSet(LastSeenBy(Myself))
+END
+
+IF
+	NumTimesTalkedTo(0)
+	Detect([PC])
+THEN
+	RESPONSE #100
+		StartDialogNoSet(LastSeenBy(Myself))
+END
+

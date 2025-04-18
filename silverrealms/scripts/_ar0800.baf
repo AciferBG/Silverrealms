@@ -1,0 +1,28 @@
+IF
+	InMyArea(Player1)
+	Global("AC#_Lancameths_Widow","GLOBAL",1)
+	Global("AC#_LancamethPlot","GLOBAL",0)
+	AreaType(OUTDOOR)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#_LancamethPlot","GLOBAL",1)
+                CreateCreature("AC#DARC1",[779.620],10) // Darcia Lancameth, Lancameth's widow
+END
+
+// Faruk sidequest, tba
+/*
+IF
+	InMyArea(Player1)
+	Global("AC#_LancamethPlot","GLOBAL",2)
+	Global("AC#_NhairPlot","GLOBAL",0)
+	AreaType(OUTDOOR)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#_NhairPlot","GLOBAL",1)
+                CreateCreature("AC#FARU1",[1468.648],3) // Faruk, calishite Assassin
+END
+*/
+
+
+
+

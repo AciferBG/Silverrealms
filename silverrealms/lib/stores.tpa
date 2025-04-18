@@ -1,0 +1,63 @@
+// Silverrealms Store files
+
+COPY ~silverrealms/sto/ac#bar01.sto~ ~override/ac#bar01.sto~
+SAY 0xc @229
+
+COPY ~silverrealms/sto/ac#bar02.sto~ ~override/ac#bar02.sto~
+SAY 0xc @240
+
+COPY ~silverrealms/sto/ac#sto01.sto~ ~override/ac#sto01.sto~
+SAY 0xc @230
+
+COPY ~silverrealms/sto/ac#sto02.sto~ ~override/ac#sto02.sto~
+SAY 0xc @232
+
+COPY ~silverrealms/sto/AC#ILDW4.sto~ ~override/AC#ILDW4.sto~
+SAY 0xc @237
+
+COPY ~silverrealms/sto/AC#ILHM1.sto~ ~override/AC#ILHM1.sto~
+SAY 0xc @238
+
+COPY ~silverrealms/sto/AC#ILME2.sto~ ~override/AC#ILME2.sto~
+SAY 0xc @250
+
+COPY ~silverrealms/sto/AC#51MOR.sto~ ~override/AC#51MOR.sto~
+SAY 0xc @264
+
+COPY ~silverrealms/sto/ac#51ber.sto~ ~override/ac#51ber.sto~
+SAY 0xc @266
+
+COPY ~silverrealms/sto/AC#SVI01.sto~ ~override/AC#SVI01.sto~
+SAY 0xc @273
+
+COPY ~silverrealms/sto/AC#DWGO2.sto~ ~override/AC#DWGO2.sto~
+SAY 0xc @277
+
+COPY ~silverrealms/sto/ac#jamst.sto~ ~override/ac#jamst.sto~
+SAY 0xc @387
+
+COPY ~silverrealms/sto/ac#52dw1.sto~ ~override/ac#52dw1.sto~
+SAY 0xc @455
+
+COPY ~silverrealms/sto/ac#52dw9.sto~ ~override/ac#52dw9.sto~
+SAY 0xc @482
+
+COPY ~silverrealms/sto/ac#5oOGM.sto~ ~override/ac#5oOGM.sto~
+SAY 0xc @658
+
+COPY ~silverrealms/sto/AC#58ST1.sto~ ~override/AC#58ST1.sto~
+SAY 0xc @684
+
+COPY ~silverrealms/sto/AC#DEVA1.sto~ ~override~
+
+COPY ~silverrealms/sto/AC#4IINN.sto~ ~override~ // Dancing Giant Inn
+SAY 0xc @1106
+
+COPY ~silverrealms/sto/AC#DUN02.sto~ ~override~  // Dunnabar in Area ACIL63
+SAY 0xc @101
+
+COPY ~silverrealms/sto/AC#53SVM.sto~ ~override~   // gnome explosives seller
+SAY 0xc @63
+
+COPY ~silverrealms/sto/AC#ILBAG.sto~ ~override~   // new gem bag
+

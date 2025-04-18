@@ -1,0 +1,7 @@
+IF
+        Global("AC#BeldasJump","LOCALS",0)
+THEN
+	RESPONSE #100
+		JumpToPoint([959.350])
+		SetGlobal("AC#BeldasJump","LOCALS",1)
+END

@@ -1,0 +1,40 @@
+IF
+    Clicked([ANYONE])
+    Range(LastTrigger,12)
+    Global("AC#IL_Wheel_repaired","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("AC#IL_Wheel_repaired","GLOBAL",1)
+        DisplayString(Myself,@7002) 
+END
+
+IF
+    Clicked([ANYONE])
+    Range(LastTrigger,12)
+    Global("RepairWheels","ACIL95",0)
+    PartyHasItem("AC#IL95W")  // Zahnrad
+THEN
+    RESPONSE #100
+        SetGlobal("RepairWheels","ACIL95",1)
+        TakePartyItem("AC#IL95W")  // Zahnrad
+        DisplayString(Myself,@7003)  
+        SetGlobal("AC#IL_Wheel_repaired","GLOBAL",10)
+END
+
+IF
+    Clicked([ANYONE])
+    Range(LastTrigger,12)
+    !PartyHasItem("AC#IL95W")  // Zahnrad
+THEN
+    RESPONSE #100
+        DisplayString(Myself,@7004)  // Oh, den Yugoloth, nicht wahr? Ja, damit habt Ihr allen die Schau gestohlen, wenn ich mich recht erinnere.
+END
+
+IF
+    Clicked([ANYONE])
+    !Range(LastTrigger,12)
+THEN
+    RESPONSE #100
+        DisplayString(Myself,14702)  // Ihr seid zu weit entfernt, um das zu benutzen.
+END
+

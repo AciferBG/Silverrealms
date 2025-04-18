@@ -1,0 +1,20 @@
+IF
+  RandomNum(3,1)
+THEN
+  RESPONSE #100
+    FaceObject("Info_Furnace_07")
+    SwingOnce()
+    PlaySound("AC#HAM02")
+END
+
+
+
+
+
+
+
+
+
+
+
+

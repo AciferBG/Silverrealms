@@ -1,0 +1,28 @@
+IF
+	Global("EnteredArea","ACIL45",0)
+THEN
+	RESPONSE #100
+		FadeToColor([0.0],0)
+		SetGlobal("EnteredArea","ACIL45",1)
+		FadeFromColor([15.0],0)
+		AddJournalEntry(999999,INFO)
+END
+/*
+Rest in the city of greed
+*/
+IF
+	Global("Theft","ACIL45",1)
+THEN
+	RESPONSE #100
+                 Wait(6)
+                 SetGlobal("Theft","ACIL45",0)
+END
+
+IF
+	PartyRested()
+	Global("Theft","ACIL45",0)
+THEN
+	RESPONSE #100
+                 TakePartyGold(250)
+                 SetGlobal("Theft","ACIL45",1)
+END

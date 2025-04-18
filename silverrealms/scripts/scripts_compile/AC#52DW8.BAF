@@ -1,0 +1,78 @@
+IF
+	See([PC])
+	Global("HelpHealing","ACIL52",1)
+	GlobalGT("DwarfHealed","ACIL52",0)
+THEN
+	RESPONSE #100
+		SetGlobal("HelpHealing","ACIL52",2)
+		StartDialogueNoSet([PC])
+END
+
+IF
+	!Detect([PC])
+	Global("Walking","LOCALS",1)
+THEN
+	RESPONSE #100
+		SetGlobal("Walking","LOCALS",0)
+END
+
+IF
+	Detect([PC])
+	Global("Walking","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Walking","LOCALS",1)
+END
+
+IF
+	Detect([PC])
+	ActionListEmpty()
+	RandomNum(4,1)
+	Global("Walking","LOCALS",1)
+THEN
+	RESPONSE #100
+		MoveToPoint([1763.2655])
+		Face(NNW)
+		Wait(2)
+		ForceSpell(Myself,FLASHY_1)  // SPIN797.SPL (No such index)
+	RESPONSE #100
+		MoveToPoint([1754.2726])
+		Face(SSE)
+		Wait(3)
+		ForceSpell(Myself,FLASHY_2)  // SPIN796.SPL (No such index)
+	RESPONSE #100
+		MoveToPoint([1812.2671])
+		Face(SE)
+		Wait(1)
+		ForceSpell(Myself,FLASHY_1)  // SPIN797.SPL (No such index)
+	RESPONSE #100
+		MoveToPoint([1962.2718])
+		Face(SSE)
+		Wait(2)
+		ForceSpell(Myself,FLASHY_2)  // SPIN796.SPL (No such index)
+	RESPONSE #100
+		Wait(2)
+		NoAction()
+	RESPONSE #100
+		MoveToPoint([1763.2655])
+		Face(NNW)
+		Wait(2)
+		ForceSpell("AC#DWIN1",CLERIC_CURE_LIGHT_WOUNDS)  // Verwundeter Zwerg
+	RESPONSE #100
+		MoveToPoint([1763.2655])
+		Face(NNW)
+		Wait(2)
+	RESPONSE #100
+		MoveToPoint([1754.2726])
+		Face(SSE)
+		Wait(3)
+	RESPONSE #100
+		MoveToPoint([1812.2671])
+		Face(SE)
+		Wait(1)
+	RESPONSE #100
+		MoveToPoint([1962.2718])
+		Face(SSE)
+		Wait(2)
+END
+

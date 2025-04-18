@@ -1,0 +1,15 @@
+IF
+        Global("HealedMe","ACIL44",0)
+	See([PC])
+	OR(4)
+	SpellCastOnMe([ANYONE],CLERIC_HEAL)
+	SpellCastOnMe([ANYONE],CLERIC_CURE_LIGHT_WOUNDS)
+        SpellCastOnMe([ANYONE],CLERIC_CURE_MEDIUM_WOUNDS)
+        SpellCastOnMe([ANYONE],CLERIC_CURE_SERIOUS_WOUNDS)
+THEN
+	RESPONSE #100
+		SetGlobal("HealedMe","ACIL44",1)
+		Wait(1)
+		ChangeAnimationNoEffect("AC#44DU2")
+END
+

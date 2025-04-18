@@ -1,0 +1,11 @@
+/*
+Diese Trap triggert Phezults Schlafauber in Area ACIL23
+*/
+IF
+	Entered([PC])
+	Global("Phezultsleep","ACIL23",0)
+THEN
+	RESPONSE #100
+	        SetGlobal("Phezultsleep","ACIL23",1)
+		DisplayString(LastTrigger,999999)
+END

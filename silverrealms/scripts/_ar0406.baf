@@ -1,0 +1,8 @@
+IF
+	Global("AC#_SpawnFaruk","AR0406",0)
+	Global("AC#_NhairPlot","GLOBAL",2)
+THEN
+	RESPONSE #100
+		CreateCreature("AC#FARU2",[937.1200],0)
+		SetGlobal("AC#_SpawnFaruk","AR0406",1)
+END

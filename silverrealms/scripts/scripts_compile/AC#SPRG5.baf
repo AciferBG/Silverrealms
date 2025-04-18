@@ -1,0 +1,7 @@
+IF
+	LevelLT(Player1,12)
+	!DifficultyGT(NORMAL)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END

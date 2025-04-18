@@ -1,0 +1,53 @@
+IF
+	OR(2)
+		LevelLT(Player1,14)
+		DifficultyLT(HARD)
+	HasItem("potn14",Myself)  // Schnelligkeitsöl
+THEN
+	RESPONSE #100
+		DestroyItem("potn14")  // Schnelligkeitsöl
+END
+
+IF
+	OR(2)
+		LevelLT(Player1,13)
+		DifficultyLT(HARD)
+	HasItem("potn10",Myself)  // Unsichtbarkeitstrank
+THEN
+	RESPONSE #100
+		DestroyItem("potn10")  // Unsichtbarkeitstrank
+END
+
+IF
+	HPPercentLT(Myself,50)
+	HasItem("potn52",Myself)  // Konzentrierter Heiltrank
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,46150)  // trinkt einen Trank
+		UseItem("potn52",Myself)  // Konzentrierter Heiltrank
+		Continue()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	!StateCheck(Myself,STATE_HASTED)
+	HasItem("potn14",Myself)  // Schnelligkeitsöl
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,46150)  // trinkt einen Trank
+		UseItem("potn14",Myself)  // Schnelligkeitsöl
+		Continue()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	!StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
+	!StateCheck(Myself,STATE_INVISIBLE)
+	HasItem("potn10",Myself)  // Unsichtbarkeitstrank
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,46150)  // trinkt einen Trank
+		UseItem("potn10",Myself)  // Unsichtbarkeitstrank
+		Continue()
+END
+

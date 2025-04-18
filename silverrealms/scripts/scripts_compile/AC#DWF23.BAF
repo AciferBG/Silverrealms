@@ -1,0 +1,17 @@
+IF
+	!See("ac#drar1")  // Charvekannathor
+	!Dead("ac#drar1")  // Charvekannathor
+	Global("AC#Charvekannathor","GLOBAL",3)
+THEN
+	RESPONSE #100
+		AttackReevaluate("ac#drar1",30)  // Charvekannathor
+END
+
+IF
+	See("ac#drar1")  // Charvekannathor
+	Allegiance("ac#drar1",ENEMY)  // Charvekannathor
+THEN
+	RESPONSE #100
+		AttackReevaluate("ac#drar1",30)  // Charvekannathor
+END
+

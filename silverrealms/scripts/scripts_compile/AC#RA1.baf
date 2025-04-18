@@ -1,0 +1,99 @@
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,15)
+	GlobalGT("AC#Goodbye_Iltkazar","GLOBAL",0)
+	Global("DriftDisc","ACIL02",0)
+THEN
+	RESPONSE #100
+	        SetGlobal("DriftDisc","ACIL02",1)
+		DisplayString(Myself,@888)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,15)
+	GlobalGT("AC#Goodbye_Iltkazar","GLOBAL",0)
+	Global("DriftDisc","ACIL02",1)
+THEN
+	RESPONSE #100
+	        SetGlobal("DriftDisc","ACIL02",0)
+		SaveGame(0)
+		ClearAllActions()
+		StartCutSceneMode()
+		MultiPlayerSync()
+		DisplayString(Myself,@889)
+		ActionOverride(Player1,MoveToPoint([1681.1122]))
+		ActionOverride(Player2,MoveToPoint([1681.1122]))
+		ActionOverride(Player3,MoveToPoint([1681.1122]))
+		ActionOverride(Player4,MoveToPoint([1681.1122]))
+		ActionOverride(Player5,MoveToPoint([1681.1122]))
+		ActionOverride(Player6,MoveToPoint([1681.1122]))
+		//Wait(1)
+		Wait(2)
+		FadeToColor([20.0],0)
+		//Wait(1)
+		Wait(1)
+		StartCutScene("ac#mo2")
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,15)
+	Global("AC#RavomirLevitate","GLOBAL",0)
+THEN
+	RESPONSE #100
+        SetGlobal("AC#RavomirLevitate","GLOBAL",1)
+        DisplayString(Myself,@9) //An dieser Stelle scheint die H�hle ins Bodenlose zu fallen. Von unten dringt weit entfernt das Pl�tschern von Wasser zu Euch hinauf.
+        EraseJournalEntry(@20011)
+		AddJournalEntry(@21002,QUEST_DONE)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,15)
+	PartyHasItem("AC#POTLE")
+	Global("AC#RavomirLevitate","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SaveGame(0)
+		MultiPlayerSync()
+		DisplayString(Myself,@8)//'Ihr trinkt jeder einen tiefen Schluck aus dem Fl�schchen mit dem Levitationstrank, wartet einen Augenblick und springt vom Rand in die Tiefe'
+		TakePartyItem("AC#POTLE")
+		TakePartyItem("AC#POTLE")
+		ActionOverride(Player1,MoveToPoint([1681.1122]))
+		ActionOverride(Player2,MoveToPoint([1681.1122]))
+		ActionOverride(Player3,MoveToPoint([1681.1122]))
+		ActionOverride(Player4,MoveToPoint([1681.1122]))
+		ActionOverride(Player5,MoveToPoint([1681.1122]))
+		ActionOverride(Player6,MoveToPoint([1681.1122]))
+		//Wait(1)
+		Wait(2)
+		FadeToColor([20.0],0)
+		//Wait(1)
+		Wait(1)
+		ClearAllActions()
+		StartCutSceneMode()
+		StartCutScene("ac#mo1")
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,15)
+	!PartyHasItem("AC#POTLE")
+	Global("AC#RavomirLevitate","GLOBAL",1)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@10) // Ohne eine M�glichkeit, in die H�hle hinabzuschweben, w�rdet Ihr bei dem Sturz ins Bodenlose unweigerlich get�tet werden.
+END
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,15)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,14702)
+END
+
+
+
+

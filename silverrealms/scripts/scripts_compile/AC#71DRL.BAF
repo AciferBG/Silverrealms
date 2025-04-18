@@ -1,0 +1,93 @@
+// script taken from BAZDRA03.bcs, Fll'Yissetat green dragon
+IF
+	See(NearestEnemyOf(Myself))
+	!GlobalTimerNotExpired("DRAGONFEAR","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("DRAGONFEAR","LOCALS",TWENTY_MINUTES)
+		PlaySound("BLACK01")
+		ReallyForceSpell(NearestEnemyOf(Myself),DRAGON_FEAR)  // SPIN895.SPL (Drachenfurcht)
+		ReallyForceSpell(NearestEnemyOf(Myself),0)
+		ForceSpell(LastSeenBy(Myself),DRAGON_WING_BUFFET)  // SPIN695.SPL (Fl�gelschlag)
+END
+
+IF
+	OR(3)
+		SpellCast([GOODCUTOFF],WIZARD_INCENDIARY_CLOUD)  // SPWI810.SPL (Flammende Wolke)
+		SpellCast([GOODCUTOFF],WIZARD_STINKING_CLOUD)  // SPWI213.SPL (Stinkende Wolke)
+		SpellCast([GOODCUTOFF],WIZARD_DEATH_FOG)  // SPWI614.SPL (T�dlicher Nebel)
+	!GlobalTimerNotExpired("WINGBUFFET","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("WINGBUFFET","LOCALS",8)
+		ApplySpell(Myself,0)
+		ForceSpell(NearestEnemyOf(Myself),DRAGON_WING_BUFFET)  // SPIN695.SPL (Fl�gelschlag)
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	OR(7)
+		Gender(NearestEnemyOf(Myself),ILLUSIONARY)
+		StateCheck(NearestEnemyOf(Myself),STATE_INVISIBLE)
+		StateCheck(NearestEnemyOf(Myself),STATE_IMPROVEDINVISIBILITY)
+		StateCheck(SecondNearestEnemyOf(Myself),STATE_INVISIBLE)
+		StateCheck(SecondNearestEnemyOf(Myself),STATE_IMPROVEDINVISIBILITY)
+		StateCheck(ThirdNearestEnemyOf(Myself),STATE_INVISIBLE)
+		StateCheck(ThirdNearestEnemyOf(Myself),STATE_IMPROVEDINVISIBILITY)
+	!GlobalTimerNotExpired("DragonSight","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("DragonSight","LOCALS",ONE_TURN)
+		ReallyForceSpell(Myself,WIZARD_TRUE_SIGHT)  // SPWI609.SPL (Wahrer Blick)
+END
+
+IF
+	See(SecondNearestEnemyOf(Myself))
+	!StateCheck(LastSeenBy(Myself),STATE_HELPLESS)
+	!StateCheck(LastSeenBy(Myself),STATE_STUNNED)
+THEN
+	RESPONSE #50
+		ForceSpellRES("AC#DRL1",SecondNearestEnemyOf(Myself)) 
+	RESPONSE #50
+		AttackOneRound([ANYONE])
+END
+
+IF
+	OR(2)
+		!Allegiance(LastSeenBy(Myself),GOODCUTOFF)
+		!See([GOODCUTOFF])
+	!HPPercentLT(Myself,50)
+THEN
+	RESPONSE #100
+		MoveToObject(Player1)
+END
+
+IF
+	!GlobalTimerNotExpired("WINGBUFFET","LOCALS")
+	Range(LastSeenBy(Myself),10)
+	RandomNum(2,1)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("WINGBUFFET","LOCALS",8)
+		ForceSpell(LastSeenBy(Myself),DRAGON_WING_BUFFET)  // SPIN695.SPL (Fl�gelschlag)
+		Wait(1)
+END
+
+IF
+	!Range(LastSeenBy(Myself),10)
+	!GlobalTimerNotExpired("GREENDRAGONBREATH","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("GREENDRAGONBREATH","LOCALS",TWO_ROUNDS)
+		ForceSpell(LastSeenBy(Myself),GREEN_DRAGON_BREATH)  // SPIN535.SPL (Gr�ner Drachenodem)
+		ReallyForceSpellRES("DrGrBrHt",LastSeenBy(Myself))  // No such index
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+		AttackReevaluate(LastSeenBy(Myself),30)
+END
+

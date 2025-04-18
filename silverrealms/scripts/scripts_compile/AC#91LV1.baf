@@ -1,0 +1,35 @@
+IF
+	Clicked([ANYONE])
+	Global("AC#BeldasDies","GLOBAL",0)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@823)
+END
+
+IF
+	Clicked([ANYONE])
+	Global("WayOut","ACIL91",1)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@802)
+END
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,12)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,14702)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	Global("Disc_Activation","ACIL91",0)
+THEN
+	RESPONSE #100
+		PlaySound("AC#91WH1")
+         SetGlobal("Disc_Activation","ACIL91",1)
+         IncrementGlobal("Disc_Orientation","ACIL91",1)
+END
+

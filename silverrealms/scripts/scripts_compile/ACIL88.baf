@@ -1,0 +1,63 @@
+IF
+	Global("AC#Cut1","ACIL88",0)
+THEN
+	RESPONSE #100
+                SetGlobal("AC#Cut1","ACIL88",1)
+	        FadeToColor([0.0],0)
+                ClearAllActions()
+		StartCutSceneMode()
+		StartCutScene("ac#cut88")
+END
+
+IF
+	Global("EnteredArea","ACIL88",0)
+THEN
+	RESPONSE #100
+		SetGlobal("EnteredArea","ACIL88",1)
+		AmbientActivate("Portal",FALSE)
+                SoundActivate("Ac#88_portal",FALSE)
+                TriggerActivation("TrACIL50",FALSE)
+END
+
+IF
+        Global("Deactivate_Power","ACIL88",6)
+        Global("Powerfield_Off","ACIL88",0)
+THEN
+    RESPONSE #100
+             SetGlobal("Powerfield_Off","ACIL88",1)
+             AmbientActivate("Powerfield",FALSE)
+             TriggerActivation("Summon_death",FALSE)
+             OpenDoor("DOOR01")
+END
+
+IF
+         Dead("AC#MITH2")
+         Dead("AC#MAL88")
+       	 Global("Transit_to_ACIL50","ACIL88",0)
+THEN
+	RESPONSE #100
+	         SetGlobal("Transit_to_ACIL50","ACIL88",1)
+	         SetGlobal("AC#Mithbarak_Rescued","GLOBAL",1)
+	         AmbientActivate("Portal",TRUE)
+	         SoundActivate("Ac#88_portal",TRUE)
+                 TriggerActivation("TrACIL50",TRUE)
+END
+
+/*
+//Debug block if change crow -> malphas does not work as intended
+IF
+	OR(2)
+        NumDeadGT("AC#CROW1",9)  // Crow
+	CombatCounter(0)
+	Global("Malphas2Crow","ACIL88",1)
+THEN
+	RESPONSE #100
+		SetGlobal("Malphas2Crow","ACIL88",2)
+		CreateCreature("AC#MAL88",[1790.823],3)   // Malphas
+END
+*/
+
+
+
+
+

@@ -1,0 +1,14 @@
+/*
+Mit diesem Skript wird der Drow-Hinterhalt ausgelöst
+*/
+
+IF
+        Entered([ANYONE])
+        Global("Acil20_Drowspawn","ACIL20",0)
+        GlobalGT("AC#RegencyQuest","GLOBAL",0)
+THEN
+    RESPONSE #100
+         SetGlobal("Acil20_Drowspawn","ACIL20",1)
+END
+
+

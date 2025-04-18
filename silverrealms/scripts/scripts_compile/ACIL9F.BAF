@@ -1,0 +1,15 @@
+// not needed anymore: Player travels back via worldmap
+/*
+IF
+	Global("AC#ACIL04Teleport","GLOBAL",0)
+	PartyHasItem("AC#ZEPX2")
+	InMyArea(Player1)  
+THEN
+	RESPONSE #100
+		Wait(5)
+		SetGlobal("AC#ACIL04Teleport","GLOBAL",1)
+		ClearAllActions()
+		StartCutSceneMode()
+		StartCutScene("AC#9FTEL")
+END
+*/

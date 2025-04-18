@@ -1,0 +1,17 @@
+/*
+
+Dieses Skript lässt den Drow-Magier sterben
+*/
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("AC#24DAE")
+		Wait(2)
+		ReallyForceSpell("AC#24DR9",FLASHY_DEATH_1)  // SPWI980.SPL (No such index)
+		Wait(3)
+                SetGlobal("VhaeraunKillDrow","ACIL24",4)
+		EndCutSceneMode()
+		StartDialogueNoSet(Player1)
+END

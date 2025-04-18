@@ -1,0 +1,419 @@
+IF
+	Global("EnteredArea","ACIL50",0)
+THEN
+	RESPONSE #100
+		FadeToColor([0.0],0)
+		SetGlobal("EnteredArea","ACIL50",1)
+		StartMovie("AC#ILTKA")
+		OpenDoor("DOOR03")
+		TriggerActivation("Tracil63",FALSE)
+		TriggerActivation("TrACIL58",FALSE)
+		TriggerActivation("TrACIL51",FALSE)
+		TriggerActivation("TrAcil52",FALSE)
+		TriggerActivation("TrAcil53",FALSE)
+		TriggerActivation("TrAcil54",FALSE)
+		TriggerActivation("TrAcil55",FALSE)
+		TriggerActivation("TrAcil56",FALSE)
+		FadeFromColor([30.0],0)
+END
+
+IF
+	InMyArea(Player1)
+	Global("MalphasCutscene#2","ACIL50",0) 
+	GlobalGT("AC#ACIL64_Open","GLOBAL",0) 
+THEN
+	RESPONSE #100
+		FadeToColor([8.0],0)
+		SetGlobal("MalphasCutscene#2","ACIL50",1)  
+		//SmallWait(5)
+		StartCutSceneMode()
+		StartCutScene("AC#T2CT2")
+END
+
+IF
+	Global("AC#AzerkynDestroyed","GLOBAL",1)
+THEN
+	RESPONSE #100
+	         FadeToColor([0.0],0)
+		SetGlobal("AC#AzerkynDestroyed","GLOBAL",2)
+		SetGlobal("AC#_Iltkazar_Destroyed","GLOBAL",1)
+		CloseDoor("Door03")
+		Unlock("DOOR02")
+		OpenDoor("DOOR02")
+		AmbientActivate("Arnskull_Flame",FALSE)
+		TriggerActivation("Tracil62",FALSE)
+                TriggerActivation("Tracil63",TRUE)
+                ActionOverride("AC#BRES1",DestroySelf())
+                CreateCreature("AC#DUN03",[868.681],6)  // Dunnabar
+                CreateCreature("AC#SORN3",[799.770],6)  // Sorni
+                CreateCreature("AC#ANT03",[901.666],6)  // Anthan in ACIL50 after the destruction of arnskull hall
+		FadeFromColor([30.0],0)
+		ActionOverride("AC#DUN03",Dialogue(Player1))
+END
+
+/*
+Die PCs werden vor den Eingang des Ratsgeb�udes teleportiert
+*/
+
+IF
+	Global("AC#Bresk_Teleport","ACIL50",1)
+THEN
+	RESPONSE #100
+                 ClearAllActions()
+                 StartCutSceneMode()
+                 SetGlobal("AC#Bresk_Teleport","ACIL50",2)
+	        FadeToColor([15.0],0)
+		Wait(1)
+		ActionOverride("AC#BRES1",JumpToPoint([2928.370]))
+		ActionOverride(Player1,JumpToPoint([2931.379]))
+		ActionOverride(Player2,JumpToPoint([2931.379]))
+		ActionOverride(Player3,JumpToPoint([2931.379]))
+		ActionOverride(Player4,JumpToPoint([2931.379]))
+		ActionOverride(Player5,JumpToPoint([2931.379]))
+		ActionOverride(Player6,JumpToPoint([2931.379]))
+		MoveViewPoint([2931.379],INSTANT)
+		Wait(1)
+		FadeFromColor([15.0],0)
+		EndCutSceneMode()
+		ActionOverride("AC#BRES1",Dialogue(Player1))
+END
+
+IF
+	Global("AC#Bresk_Teleport","ACIL50",3)
+THEN
+	RESPONSE #100
+                 ClearAllActions()
+                 StartCutSceneMode()
+                 SetGlobal("AC#Bresk_Teleport","ACIL50",4)
+	        FadeToColor([15.0],0)
+		Wait(1)
+		StartCutScene("ac#ct50A")
+END
+
+// after first talk to the regency council, the party is arrested
+IF
+	Global("AC#BreskWatches","ACIL50",2)
+	Global("AC#RegencyQuest","GLOBAL",1)
+	Global("AC#Arrested","GLOBAL",0)
+THEN
+	RESPONSE #100
+	    Wait(1)
+		SetGlobal("AC#Arrested","GLOBAL",1)
+	    AddJournalEntry(@55100,QUEST)
+END
+
+IF
+	GlobalGT("AC#BreskMoves01","ACIL50",1)
+	Global("Bystanders","ACIL50",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Bystanders","ACIL50",1)
+		CreateCreature("AC#50SP1",[1787.1641],S)  // Zwerg
+		CreateCreature("AC#50SP2",[1705.1649],S)  // Zwerg
+		CreateCreature("AC#50SP3",[2017.1737],SWW)  // Zwergin
+		CreateCreature("AC#50SP4",[2042.1813],SWW)  // Zwergin
+		CreateCreature("AC#50SP5",[1987.1781],SW)  // Zwergenkind
+END
+
+// this block spawns various sidequest creatures and activates spawnpoints (for rats) after first talk to RC
+IF
+	GlobalGT("AC#Arrested","GLOBAL",0)
+	Global("SpawnSideQuestCreatures","ACIL50",0)
+THEN
+	RESPONSE #100
+		SetGlobal("SpawnSideQuestCreatures","ACIL50",1)
+		CreateCreature("AC#50DWF",[665.855],5)  // Domor the fisherman
+		CreateCreature("AC#50TGU",[2584.490],12) //  Dulman Ironrist, town guide
+END
+
+IF
+         Global("AC#Arrested","GLOBAL",1)
+       	 Global("Transit_to_ACIL62","ACIL50",0)
+THEN
+	RESPONSE #100
+	    SetGlobal("Transit_to_ACIL62","ACIL50",1)
+		 TriggerActivation("TrACIL51",TRUE)
+		 TriggerActivation("TrAcil52",TRUE)
+		 TriggerActivation("TrAcil53",TRUE)
+		 TriggerActivation("TrAcil54",TRUE)
+		 TriggerActivation("TrAcil55",TRUE)
+		 TriggerActivation("TrAcil56",TRUE)
+		 TriggerActivation("TrACIL58",TRUE)
+END
+
+IF
+	Global("AC#Ellhimar_Cernd","GLOBAL",1)
+       	!Exists("ac#vron5")  // Vronia#5 in ACIL50
+THEN
+	RESPONSE #100
+		SetGlobal("AC#Ellhimar_Cernd","GLOBAL",2)
+		CreateCreature("ac#vron5",[2440.947],11)  // Vronia
+END
+
+IF
+	PartyHasItem("AC#DDROW")  // Toter Drow
+	Global("AC#Vronia_Alert","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#Vronia_Alert","GLOBAL",1)
+		CreateCreature("ac#vron4",[2833.1214],11)  // Vronia Eisenbieger
+END
+
+IF
+	Global("AC#Arrested","GLOBAL",1)
+        Global("Create_Vronia","ACIL50",0)
+       	!Exists("ac#vron2")  // Vronia in ACIL50
+THEN
+	RESPONSE #100
+		SetGlobal("Create_Vronia","ACIL50",1)
+		CreateCreature("ac#vron2",[2440.947],11)  // Vronia
+END
+
+IF
+    Global("JournalSpawn","ACIL50",2)
+	PartyHasItem("AC#23ELL")
+THEN
+	RESPONSE #100
+		SetGlobal("JournalSpawn","ACIL50",3)
+		CreateCreature("ac#vron6",[1067.2391],3)  // Vronia
+END
+
+IF
+    Global("AC#EllhimarGith","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#EllhimarGith","GLOBAL",2)
+		CreateCreature("ac#vron7",[2858.1122],10)  // Vronia
+		CreateCreature("AC#BRES7",[2907.1198],5)  // Bresk
+		CreateCreature("AC#GROM7",[2803.1079],15)  // Gromi
+		CreateCreature("AC#BETT7",[2787.1132],13)  // Bettargh
+END
+
+IF
+	Global("AC#ACIL23DreamReflection","GLOBAL",2)
+    Global("JournalSpawn","ACIL50",0)
+THEN
+	RESPONSE #100
+		SetGlobal("JournalSpawn","ACIL50",1)
+		CreateCreature("ac#vron6",[1067.2391],3)  // Vronia
+END
+
+IF
+	//CombatCounter(0)
+	InParty("Jaheira")
+	!Dead("Jaheira")
+	InMyArea("Jaheira")
+	Global("AC#Vronia_Quest","GLOBAL",4)
+	//Global("AC#_Ellhimar_NPC_comment","ACIL50",0)
+	Global("AC#JaheiraTalkedToEllhimar","GLOBAL",1)
+THEN
+	RESPONSE #100
+            Wait(1)
+	        ActionOverride("Jaheira",StartDialogueNoSet(Player1))
+END
+
+IF
+	InParty("Keldorn")
+	!Dead("Keldorn")
+	InMyArea("Keldorn")
+	Global("AC#Vronia_Quest","GLOBAL",4)
+	//Global("AC#_Ellhimar_NPC_comment","ACIL50",0)
+	Global("AC#KeldornTalkedToEllhimar","GLOBAL",1)
+THEN
+	RESPONSE #100
+                Wait(1)
+	        ActionOverride("Keldorn",StartDialogueNoSet(Player1))
+END
+
+IF
+	InParty("Edwin")
+	!Dead("Edwin")
+	InMyArea("Edwin")
+	Global("AC#Vronia_Quest","GLOBAL",4)
+	//Global("AC#_Ellhimar_NPC_comment","ACIL50",0)
+	Global("AC#EdwinTalkedToEllhimar","GLOBAL",1)
+THEN
+	RESPONSE #100
+                Wait(1)
+	        ActionOverride("Edwin",StartDialogueNoSet(Player1))
+END
+/*
+IF
+	Global("AC#Vronia_Quest","GLOBAL",4)
+	Global("AC#_Ellhimar_NPC_comment","ACIL50",0)
+THEN
+	RESPONSE #100
+        SetGlobal("AC#_Ellhimar_NPC_comment","ACIL50",1)
+END
+*/
+
+// when Reputation in Iltkazar is high enough, the players are summoned to the regency council again
+IF
+	InMyArea(Player1)
+	Global("AC#Arrested","GLOBAL",1)
+    //GlobalGT("AC_Iltkazar_Reputation","GLOBAL",10) // Old: more than 10 rep points
+	GlobalGT("AC_Iltkazar_Reputation","GLOBAL",9) // new: 10 rep points
+THEN
+	RESPONSE #100
+	        SetGlobal("AC#Arrested","GLOBAL",2)
+            SetGlobal("AC#Iltkazar_Council_Second_Quest","GLOBAL",1)
+                 //TriggerActivation("Tracil62",TRUE)
+	         CreateCreatureObjectOffScreen("ac#dun50",Player1,0,0,0) // Dunnabar ACIL 50
+END
+
+IF
+         Global("AC#UltoksamrinGate","GLOBAL",0)
+       	 Global("AC#Iltkazar_Council_Second_Quest","GLOBAL",3)
+THEN
+	RESPONSE #100
+	         Unlock("DOOR02")
+                 OpenDoor("DOOR02")
+                 SetGlobal("AC#UltoksamrinGate","GLOBAL",1)
+END
+
+IF
+	Global("AC#RC_Turbaern_Second","GLOBAL",3)
+	Global("AC#BreskDrowPriestess","GLOBAL",0)
+THEN
+	RESPONSE #100
+                 SetGlobal("AC#BreskDrowPriestess","GLOBAL",1)
+		ActionOverride("AC#BRES1",JumpToPoint([2928.370]))
+END
+
+IF
+	Global("AC#RC_Sorni_Fourth","GLOBAL",2)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#RC_Sorni_Fourth","GLOBAL",3)
+		ActionOverride("AC#BRES1",JumpToPoint([1761.1785]))
+		CreateCreature("AC#ELER2",[1846.1718],4)  // Elern Cre#2
+		CreateCreature("AC#50BSM",[1894.1819],4)  // Boatsmith
+		CreateCreature("AC#50BSM",[1825.1829],3)  // Boatsmith
+END
+
+IF
+	Global("AC#RC_Sorni_Fourth","GLOBAL",4)
+THEN
+	RESPONSE #100
+                 ClearAllActions()
+                 StartCutSceneMode()
+                 SetGlobal("AC#RC_Sorni_Fourth","GLOBAL",5)
+	        FadeToColor([15.0],0)
+		Wait(1)
+		StartCutScene("ac#ct50B")
+END
+
+IF
+	Global("AC#Goodbye_Iltkazar","GLOBAL",2)
+THEN
+	RESPONSE #100
+                 ClearAllActions()
+                 StartCutSceneMode()
+                 SetGlobal("AC#Goodbye_Iltkazar","GLOBAL",3)
+	        FadeToColor([15.0],0)
+		Wait(1)
+		StartCutScene("ac#ct50C")
+END
+
+IF
+	Global("AC#Torglor","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#Torglor","GLOBAL",2)
+		Unlock("DOOR01")
+		OpenDoor("DOOR01")
+                CreateCreature("AC#ANT50",[1929.243],9)  // Anthan
+                CreateCreature("AC#SORN5",[2189.281],0)  // Sorni
+                CreateCreature("AC#50DW1",[1903.211],0)  // Gate guard
+                CreateCreature("AC#50DW1",[2094.236],0)  // Gate guard
+END
+
+IF
+	GlobalGT("AC#Torglor","GLOBAL",1)
+	GlobalGT("AC#ACIL80CutScene2","GLOBAL",0)
+	Exists("AC#SORN5")
+THEN
+	RESPONSE #100
+                ActionOverride("AC#SORN5",DestroySelf())  // Sorni
+                ActionOverride("AC#ANT50",DestroySelf())  // Anthan
+END
+
+IF
+	Global("AC#Mithbarak_Rescued","GLOBAL",19)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#Mithbarak_Rescued","GLOBAL",20) // Iltkazar
+		ActionOverride("AC#SORNI",EscapeArea())
+		ActionOverride("AC#ANT64",EscapeArea())
+		ActionOverride("AC#ELERN",EscapeArea())
+		ActionOverride("AC#TORTH",EscapeArea())
+		ActionOverride("AC#STURV",EscapeArea())
+		ActionOverride("AC#FENYL",EscapeArea())
+		ActionOverride("AC#TURBA",EscapeArea())
+		ActionOverride("AC#VRONI",EscapeArea())
+		ActionOverride("AC#BETTA",EscapeArea())
+		ActionOverride("AC#GROM5",EscapeArea())
+END
+
+IF
+	InMyArea(Player1)
+	Global("AC#Mithbarak_Rescued","GLOBAL",1)
+	Global("CreateDwarvesRescue","ACIL50",0)  // Iltkazar
+THEN
+	RESPONSE #100
+		SetGlobal("CreateDwarvesRescue","ACIL50",1)  // Iltkazar
+		CreateCreature("AC#SORNI",[1742.1640],0)  // Sorni Arnschädel
+		CreateCreature("AC#ANT64",[1596.1685],15)  // Anthan Diamantklinge
+		CreateCreature("AC#ELERN",[1559.1745],13)  // Elern Abgrundlied
+		CreateCreature("AC#TORTH",[1556.1799],10)  // Torth Schwarzstahl
+		CreateCreature("AC#STURV",[1564.1855],8)  // Sturvis Abgrundlied
+		CreateCreature("AC#FENYL",[1675.1916],10)  // Fenyl Arnschädel
+		CreateCreature("AC#TURBA",[1799.1912],7)  // Turbaern Ghalmrin
+		CreateCreature("AC#VRONI",[1883.1878],5)  // Vronia Eisenbieger
+		CreateCreature("AC#BETTA",[1921.1847],8)  // Bettargh Abgrundlied
+		CreateCreature("AC#GROM5",[2013.1745],2)  // Gromi Arnschädel
+		Continue()
+END
+
+IF
+	InMyArea(Player1)
+	Global("AC#Mithbarak_Rescued","GLOBAL",1)
+	Global("AC#MithbarakazCurse","GLOBAL",0)
+	Global("CreateMithBarakDwarf","ACIL50",0)  // Iltkazar
+THEN
+	RESPONSE #100
+		SetGlobal("CreateMithBarakDwarf","ACIL50",1)  // Iltkazar
+		CreateCreature("AC#MITH5",[1845.1713],3)  // König Mith Barak
+		Continue()
+END
+
+IF
+	InMyArea(Player1)
+	Global("AC#Mithbarak_Rescued","GLOBAL",1)
+	Global("AC#MithbarakazCurse","GLOBAL",1)
+	Global("CreateMithBarakDwarf","ACIL50",0)  // Iltkazar
+THEN
+	RESPONSE #100
+		SetGlobal("CreateMithBarakDwarf","ACIL50",1)  // Iltkazar
+		CreateCreature("AC#MITHD",[1845.1713],3)  // Mithbarakaz
+		Continue()
+END
+
+IF
+	InMyArea(Player1)
+	Global("CreateMithBarakDwarf","ACIL50",1)  // Iltkazar
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		StartCutSceneMode()
+		SetGlobal("CreateMithBarakDwarf","ACIL50",2)  // Iltkazar
+		CreateVisualEffectObject("ICRMPARI",Player1)
+		CreateVisualEffectObject("ICRMPARI",Player2)
+		CreateVisualEffectObject("ICRMPARI",Player3)
+		CreateVisualEffectObject("ICRMPARI",Player4)
+		CreateVisualEffectObject("ICRMPARI",Player5)
+		CreateVisualEffectObject("ICRMPARI",Player6)
+		Wait(3)
+		ActionOverride("AC#MITH5",StartDialogNoSet(Player1))
+END
+

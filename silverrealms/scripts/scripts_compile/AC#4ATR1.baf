@@ -1,0 +1,11 @@
+IF
+	Opened([ANYONE])
+	Global("ShamblingMound","ACIL4A",0)
+	GlobalGT("AC#DragonToy","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ShamblingMound","ACIL4A",1)
+		CreateVisualEffect("AC#MAGIG",[803.584])
+		Wait(1)
+		CreateCreature("AC#S#SHM",[803.584],7)  // Watschelnder Komposthaufen
+END

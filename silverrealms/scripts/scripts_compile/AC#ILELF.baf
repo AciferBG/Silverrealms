@@ -1,0 +1,283 @@
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_STONE_SKIN)  // SPWI408.SPL (Steinhaut)
+	CheckStatLT(Myself,1,STONESKINS)
+THEN
+	RESPONSE #100
+		Spell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Steinhaut)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HPPercentLT(Myself,50)
+	Global("Contingency","LOCALS",0)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,40199)  // Kombinierter Notfall: Spiegelbild
+		SetGlobal("Contingency","LOCALS",1)
+		ApplySpell(Myself,WIZARD_MIRROR_IMAGE)  // SPWI212.SPL (Spiegelbild)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HitBy([GOODCUTOFF],CRUSHING)
+	HaveSpell(WIZARD_MISLEAD)  // SPWI607.SPL (Ablenkung)
+	Global("Mislead","LOCALS",1)
+THEN
+	RESPONSE #100
+		Spell(Myself,WIZARD_MISLEAD)  // SPWI607.SPL (Ablenkung)
+		SetGlobal("Mislead","LOCALS",2)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	StateCheck(Myself,STATE_SILENCED)
+	HaveSpell(WIZARD_VOCALIZE)  // SPWI219.SPL (Stummer Zauber)
+THEN
+	RESPONSE #100
+		Spell(Myself,WIZARD_VOCALIZE)  // SPWI219.SPL (Stummer Zauber)
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	Detect([PC])
+	!See(LastSeenBy(Myself))
+	HaveSpell(WIZARD_TRUE_SIGHT)  // SPWI609.SPL (Wahrer Blick)
+THEN
+	RESPONSE #100
+		Spell(Myself,WIZARD_TRUE_SIGHT)  // SPWI609.SPL (Wahrer Blick)
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	Detect([PC])
+	!See(LastSeenBy(Myself))
+	!HaveSpell(WIZARD_TRUE_SIGHT)  // SPWI609.SPL (Wahrer Blick)
+	Delay(10)
+THEN
+	RESPONSE #100
+		ReallyForceSpell(Myself,WIZARD_TRUE_SIGHT)  // SPWI609.SPL (Wahrer Blick)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_DEATH_FOG)  // SPWI614.SPL (Tödlicher Nebel)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_DEATH_FOG)  // SPWI614.SPL (Tödlicher Nebel)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_MISLEAD)  // SPWI607.SPL (Ablenkung)
+	Global("Mislead","LOCALS",0)
+THEN
+	RESPONSE #100
+		Spell(Myself,WIZARD_MISLEAD)  // SPWI607.SPL (Ablenkung)
+		SetGlobal("Mislead","LOCALS",1)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HasItem("POTN34",Myself)  // Magiewiderstandstrank
+THEN
+	RESPONSE #100
+		DisplayString(Myself,46150)  // trinkt einen Trank
+		UseItem("POTN34",Myself)  // Magiewiderstandstrank
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HPPercentLT(Myself,100)
+	HasItem("POTN42",Myself)  // Regenerationstrank
+THEN
+	RESPONSE #100
+		DisplayString(Myself,46150)  // trinkt einen Trank
+		UseItem("POTN42",Myself)  // Regenerationstrank
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_FIREBALL)  // SPWI304.SPL (Feuerball)
+	HaveSpell(WIZARD_LIGHTNING_BOLT)  // SPWI308.SPL (Blitzstrahl)
+	HaveSpell(WIZARD_SKULL_TRAP)  // SPWI313.SPL (Schädelfalle)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_FIREBALL)  // SPWI304.SPL (Feuerball)
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_LIGHTNING_BOLT)  // SPWI308.SPL (Blitzstrahl)
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_SKULL_TRAP)  // SPWI313.SPL (Schädelfalle)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	!StateCheck(Myself,STATE_MIRRORIMAGE)
+	HaveSpell(WIZARD_MIRROR_IMAGE)  // SPWI212.SPL (Spiegelbild)
+THEN
+	RESPONSE #100
+		Spell(Myself,WIZARD_MIRROR_IMAGE)  // SPWI212.SPL (Spiegelbild)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_FIREBALL)  // SPWI304.SPL (Feuerball)
+THEN
+	RESPONSE #100
+		Spell(Myself,WIZARD_FIREBALL)  // SPWI304.SPL (Feuerball)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_LIGHTNING_BOLT)  // SPWI308.SPL (Blitzstrahl)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_LIGHTNING_BOLT)  // SPWI308.SPL (Blitzstrahl)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_SKULL_TRAP)  // SPWI313.SPL (Schädelfalle)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_SKULL_TRAP)  // SPWI313.SPL (Schädelfalle)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HitBy([GOODCUTOFF],CRUSHING)
+	Global("Prep2","LOCALS",0)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,40252)  // Notfall: Schutz vor Magischen Waffen
+		ApplySpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // SPWI611.SPL (Schutz vor Magischen Waffen)
+		SetGlobal("Prep2","LOCALS",1)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_CLOUDKILL)  // SPWI502.SPL (Todeswolke)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_CLOUDKILL)  // SPWI502.SPL (Todeswolke)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_SHADOW_DOOR)  // SPWI505.SPL (Phantomtor)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_SHADOW_DOOR)  // SPWI505.SPL (Phantomtor)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_STINKING_CLOUD)  // SPWI213.SPL (Stinkende Wolke)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_STINKING_CLOUD)  // SPWI213.SPL (Stinkende Wolke)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_ANIMATE_DEAD)  // SPWI501.SPL (Tote beleben)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_ANIMATE_DEAD)  // SPWI501.SPL (Tote beleben)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_PRISMATIC_SPRAY)  // SPWI714.SPL (Regenbogenstrahlen)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_PRISMATIC_SPRAY)  // SPWI714.SPL (Regenbogenstrahlen)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_NPC_SYMBOL_STUN)  // SPWI898.SPL (Symbol: Betäubung)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_NPC_SYMBOL_STUN)  // SPWI898.SPL (Symbol: Betäubung)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_NPC_SYMBOL_FEAR)  // SPWI899.SPL (Symbol der Furcht)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_NPC_SYMBOL_FEAR)  // SPWI899.SPL (Symbol der Furcht)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_DISPEL_MAGIC)  // SPWI302.SPL (Magie bannen)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_DISPEL_MAGIC)  // SPWI302.SPL (Magie bannen)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_SPIDER_SPAWN)  // SPWI423.SPL (Spinnenbrut)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_SPIDER_SPAWN)  // SPWI423.SPL (Spinnenbrut)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_MAZE)  // SPWI813.SPL (Irrgarten)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_MAZE)  // SPWI813.SPL (Irrgarten)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_ABI_DALZIMS_HORRID_WILTING)  // SPWI812.SPL (Abi-Dalzims Abscheuliche Austrocknung)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_ABI_DALZIMS_HORRID_WILTING)  // SPWI812.SPL (Abi-Dalzims Abscheuliche Austrocknung)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_FINGER_OF_DEATH)  // SPWI713.SPL (Finger des Todes)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_FINGER_OF_DEATH)  // SPWI713.SPL (Finger des Todes)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_SUMMON_EFREET)  // SPWI717.SPL (Ifrit beschwören)
+THEN
+	RESPONSE #100
+		Spell(Myself,WIZARD_SUMMON_EFREET)  // SPWI717.SPL (Ifrit beschwören)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_NPC_SYMBOL_STUN)  // SPWI898.SPL (Symbol: Betäubung)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_NPC_SYMBOL_STUN)  // SPWI898.SPL (Symbol: Betäubung)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(0)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_MAZE)  // SPWI813.SPL (Irrgarten)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(NearestEnemyOf(Myself),15)
+END
+

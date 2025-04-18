@@ -1,0 +1,44 @@
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,15)
+        Global("Githrune02","ACIL81",0)
+THEN
+	RESPONSE #100
+	         SetGlobal("Githrune02","ACIL81",1)
+		 DisplayString(Myself,@917)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,15)
+	PartyHasItem("AC#GIRU2")
+	Global("Githrune02","ACIL81",1)
+THEN
+	RESPONSE #100
+                SetGlobal("Githrune02","ACIL81",2)
+                TakePartyItem("AC#GIRU2")
+                PlaySound("EFF_M62")
+                AmbientActivate("Rune02",TRUE)
+                DisplayString(Myself,@916)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,15)
+        !PartyHasItem("AC#GIRU2")
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@917)
+END
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,15)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,14702)
+END
+
+
+
+

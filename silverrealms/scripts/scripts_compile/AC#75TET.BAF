@@ -1,0 +1,13 @@
+IF
+	Opened([ANYONE])
+	!Race(LastTrigger,ELF)
+	Global("TethirTrap","ACIL75",0)
+THEN
+	RESPONSE #100
+		SetGlobal("TethirTrap","ACIL75",1)
+		CreateCreature("AC#75REV",[1079.1214],5) 
+		CreateCreature("AC#75REV",[685.1334],10)
+		CreateCreature("AC#75REV",[572.1135],11)
+		ActionOverride("AC#75REV",AttackReevaluate(LastTrigger,30))
+END
+

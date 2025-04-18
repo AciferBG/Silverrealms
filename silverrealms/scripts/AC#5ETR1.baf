@@ -1,0 +1,13 @@
+IF
+        Contains("AC#5QRUN",Myself)
+	GlobalLT("AC#Vronia_Quest","GLOBAL",10)
+	Global("RevealDoor","ACIL5E",0)
+THEN
+	RESPONSE #100
+	SetGlobal("RevealDoor","ACIL5E",1)
+	DetectSecretDoor("DOOR01")
+	DisplayString(Myself,999999)
+	//CreateVisualEffectObject("ICMAGICH",Myself)
+	//ContainerEnable("Desk",FALSE)
+END
+

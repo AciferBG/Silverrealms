@@ -1,0 +1,20 @@
+IF
+	OR(8)
+        Contains("blun01",Myself)
+        Contains("blun02",Myself)
+        Contains("blun03",Myself)
+        Contains("blun04",Myself)
+        Contains("blun05",Myself)
+        Contains("blun06",Myself)
+        Contains("blun07",Myself)
+        Contains("blun11",Myself)
+	GlobalLT("AC#30GateOpen","ACIL30",5)
+	Global("AC#30clubcon","ACIL30",0)
+THEN
+	RESPONSE #100
+	SetGlobal("AC#30clubcon","ACIL30",1)
+	//CreateVisualEffectObject("ICMAGICH",Myself)
+	IncrementGlobal("AC#30GateOpen","ACIL30",1)
+	//ContainerEnable("clubcon",FALSE)
+END
+

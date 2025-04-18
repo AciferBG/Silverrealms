@@ -1,0 +1,20 @@
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+	DropItem("HELM08",[-1.-1])
+	DropItem("PLAT07",[-1.-1])
+	DropItem("SHLD11A",[-1.-1])
+	DropItem("AX1H02",[-1.-1])
+	DropItem("POTN08",[-1.-1])
+	//DropItem("AC#TORGL",[-1.-1]) don't drop torglor silver coin at the moment
+	DestroySelf()
+END
+
+
+
+
+
+
+
+

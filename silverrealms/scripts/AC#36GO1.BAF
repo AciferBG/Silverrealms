@@ -1,0 +1,12 @@
+IF
+	IsOverMe("AC#GOLAD")  // Adamantine Golem
+	//CombatCounterGT(0)
+	Global("GolemDoor","ACIL36",0)
+        //OpenState("DOOR01",FALSE)
+THEN
+	RESPONSE #100
+	         ClearActions("AC#GOLAD")
+	         SmallWait(3)
+	        ActionOverride("AC#GOLAD",Swing())
+		SetGlobal("GolemDoor","ACIL36",1)
+END

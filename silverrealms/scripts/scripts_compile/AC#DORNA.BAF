@@ -1,0 +1,7 @@
+IF
+	PartyHasItem("AC#DRFT2")  // Quecksilber
+	Global("AC#DRIFR","GLOBAL",2)
+THEN
+	RESPONSE #100
+		StartDialogNoSet([PC])
+END

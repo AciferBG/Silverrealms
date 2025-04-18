@@ -1,0 +1,29 @@
+IF
+        See([PC])
+        Range([PC],15)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	!StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
+	RandomNum(2,1)
+	Global("Invisible","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Invisible","LOCALS",1)
+		ReallyForceSpell(Myself,WIZARD_IMPROVED_INVISIBILITY)  // SPWI405.SPL (Erweiterte Unsichtbarkeit)
+		Continue()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(NearestEnemyOf(Myself),30)
+		Continue()
+END
+

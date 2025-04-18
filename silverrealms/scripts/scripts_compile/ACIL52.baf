@@ -1,0 +1,110 @@
+IF
+	Global("Entered","ACIL52",0)
+THEN
+	RESPONSE #100
+        SetGlobal("Entered","ACIL52",1)
+	ContainerEnable("Container_driftd",FALSE)
+END
+
+IF
+	Global("Driftdisc","ACIL52",2)
+	PartyHasItem("AC#DRFT1")
+THEN
+	RESPONSE #100
+	EraseJournalEntry(@64208)
+	AddJournalEntry(@64209,QUEST)
+        SetGlobal("Driftdisc","ACIL52",3)
+END
+
+IF
+	Global("Driftdisc","ACIL52",1)
+THEN
+	RESPONSE #100
+        SetGlobal("Driftdisc","ACIL52",2)
+	ContainerEnable("Container_driftd",TRUE)
+        TriggerActivation("Info_Driftdisc",FALSE)
+END
+
+IF
+       Global("AC#Gromi_Cernd","ACIL52",5)
+THEN
+	RESPONSE #100
+	        Wait(2)
+		SetGlobal("AC#Gromi_Cernd","ACIL52",10)
+		ActionOverride("AC#vron5",Dialogue(Player1))
+END
+
+IF
+       Global("AC#Gromi_Cernd","ACIL52",3)
+THEN
+	RESPONSE #100
+	        Wait(2)
+		SetGlobal("AC#Gromi_Cernd","ACIL52",4)
+		ActionOverride("AC#vron5",Dialogue(Player1))
+END
+
+IF
+       Global("AC#Gromi_Cernd","ACIL52",1)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#Gromi_Cernd","ACIL52",2)
+		CreateCreatureOffScreen("AC#GROM6",0)
+		ActionOverride("AC#GROM6",Dialogue(Player1))
+END
+
+IF
+	Global("AC#Ellhimar_Cernd","GLOBAL",6)
+THEN
+	RESPONSE #100
+                 SetInterrupt(FALSE)
+                 ActionOverride("AC#CERN1",ForceSpell(Myself,FLASHY_1))
+                 Wait(1)
+                 Wait(2)
+                 SetInterrupt(TRUE)
+                 SetGlobal("AC#Ellhimar_Cernd","GLOBAL",7)
+                 ActionOverride("AC#ILEL9",StartDialogueNoSet([PC]))
+END
+
+IF
+	GlobalGT("AC#Ellhimar_Cernd","GLOBAL",2)
+	Global("Ellhimar","ACIL52",0)
+THEN
+	RESPONSE #100
+        SetGlobal("Ellhimar","ACIL52",1)
+	CreateCreature("AC#ILEL9",[3024.2169],5)
+	CreateCreature("ac#vron5",[2954.2103],15)
+END
+
+IF
+	Global("AC#Ellhimar_Cernd","GLOBAL",4)
+	Global("CerndSpawn","ACIL52",0)
+THEN
+	RESPONSE #100
+        SetGlobal("CerndSpawn","ACIL52",1)
+	CreateCreature("AC#CERN1",[3050.2175],8)
+END
+/*
+IF
+	Global("AC#TalkedToBetrangrid","ACIL52",5)
+	Global("AC#BetrangridQuest","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#BetrangridQuest","GLOBAL",1)
+	        AddJournalEntry(999999,QUEST)
+END
+
+IF
+        Global("AC#TalkedToBetrangrid","ACIL52",10)
+        Global("AC#BetrangridQuest","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#BetrangridQuest","GLOBAL",10)
+		EraseJournalEntry(999999)
+	        AddJournalEntry(999998,QUEST_DONE)
+END
+*/
+
+
+
+
+

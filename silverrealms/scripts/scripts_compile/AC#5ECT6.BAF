@@ -1,0 +1,22 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		//CutSceneId("AC#BRES5")
+		//SwingOnce()
+		ActionOverride("AC#BRES5",AttackOneRound("AC#5EGI1"))
+		ActionOverride("AC#5EGI1",Face(12))
+		ActionOverride("AC#5EGI2",Face(12))
+		ActionOverride("AC#5EGI3",Face(12))
+		Wait(2)
+		ActionOverride("ac#ilel5",DestroySelf())
+		ActionOverride("AC#5EGI1",DestroySelf())
+		ActionOverride("AC#5EGI2",DestroySelf())
+		ActionOverride("AC#5EGI3",DestroySelf())
+		CloseDoor("DOOR03")
+		PlaySound("AC#BREAK")
+		SoundActivate("Portal",FALSE)
+		Wait(2)
+		ActionOverride("AC#BRES5",StartDialogNoSet(Player1))
+END

@@ -1,0 +1,30 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		MoveViewObject("ac#drar1",BD_NORMAL)  // Charvekannathor
+		Wait(1)
+		FadeToColor([20.0],0)
+		Wait(2)
+		ActionOverride(Player2,JumpToPoint([955.848]))
+		ActionOverride(Player3,JumpToPoint([929.891]))
+		ActionOverride(Player4,JumpToPoint([964.939]))
+		ActionOverride(Player5,JumpToPoint([1008.992]))
+		ActionOverride(Player6,JumpToPoint([1096.1037]))
+		ActionOverride("A7Afaaq",JumpToPoint([1077.950]))
+		JumpToPoint([1123.928])
+		CreateCreature("CUTSPY",[1276.558],S)  // No such index
+		//SetMusic(COMBAT_NORMAL,BRD)
+		FadeFromColor([20.0],0)
+		ActionOverride(Player2,Face(NE))
+		ActionOverride(Player3,Face(NE))
+		ActionOverride(Player4,Face(NE))
+		ActionOverride(Player5,Face(NE))
+		ActionOverride(Player6,Face(NE))
+		ActionOverride("A7Afaaq",Face(NE))
+		Face(NE)
+		Wait(1)
+		ActionOverride("ac#drar1",StartDialogueNoSet(Player1))
+END
+

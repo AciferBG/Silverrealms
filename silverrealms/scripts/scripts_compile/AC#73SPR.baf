@@ -1,0 +1,39 @@
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,6)
+	Global("CircleOfMagic","ACIL73",0)
+THEN
+	RESPONSE #100
+	         SetGlobal("CircleOfMagic","ACIL73",1)
+		DisplayString(Myself,@928)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,6)
+	Global("CircleOfMagic","ACIL73",3)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@922)
+		SetGlobal("CircleOfMagic","ACIL73",4)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,6)
+	GlobalGT("CircleOfMagic","ACIL73",0)
+	GlobalLT("CircleOfMagic","ACIL73",4)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@929)
+		IncrementGlobal("CircleOfMagic","ACIL73",1)
+		ReallyForceSpellRES("AC#PR611",LastTrigger)
+END
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,6)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@921)
+END

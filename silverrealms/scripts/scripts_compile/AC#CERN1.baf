@@ -1,0 +1,19 @@
+IF
+	NumTimesTalkedTo(0)
+	GlobalGT("AC#Ellhimar_Cernd","GLOBAL",3)
+	!AreaCheck("ACIL5U")
+THEN
+	RESPONSE #100
+		SetNumTimesTalkedTo(1)
+END
+
+IF
+	Range([PC],12)
+	Global("AC#Ellhimar_Cernd","GLOBAL",3)
+	Global("Cernd_Free","ACIL5U",0)
+	See([PC])
+THEN
+	RESPONSE #100
+		StartDialogNoSet([PC])
+END
+

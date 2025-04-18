@@ -1,0 +1,15 @@
+/*
+
+Dieses Skript startet den Dialog von Malphas in Area ACIL88
+*/
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("AC#MAL02")
+		Wait(1)
+		MoveViewPoint([1640.625],INSTANT)
+		Wait(1)
+		FadeFromColor([30.0],150)
+		ActionOverride("AC#MITH2",StartDialogueNoSet(Player1))
+END

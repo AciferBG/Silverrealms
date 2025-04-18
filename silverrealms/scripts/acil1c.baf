@@ -1,0 +1,7 @@
+IF
+	!GlobalTimerNotExpired("AntimagicTimer","ACIL1C")
+THEN
+	RESPONSE #100
+		ApplySpell(Player1,DEAD_MAGIC_AREA)
+		SetGlobalTimer("AntimagicTimer","ACIL1C",3)
+END

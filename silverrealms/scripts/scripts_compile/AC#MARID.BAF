@@ -1,0 +1,89 @@
+IF
+	Allegiance(Myself,ENEMY)
+	Detect([PC])
+	!See(LastSeenBy(Myself))
+	Global("detect_invisible","LOCALS",0)
+THEN
+	RESPONSE #100
+	         SetGlobal("detect_invisible","LOCALS",1)
+		ForceSpell(Myself,WIZARD_DETECT_INVISIBILITY)
+END
+
+IF
+	AreaCheck("ACIL0D")
+        Global("MaridDialogue","ACIL0D",4)
+	See([PC])
+THEN
+	RESPONSE #100
+	         SetGlobal("MaridDialogue","ACIL0D",5)
+		StartDialogueNoSet([PC])
+END
+
+IF
+	AreaCheck("ACIL0D")
+        Global("MaridDialogue","ACIL0D",1)
+	See([PC])
+THEN
+	RESPONSE #100
+	         SetGlobal("MaridDialogue","ACIL0D",2)
+		StartDialogueNoSet([PC])
+END
+
+IF
+	NumTimesTalkedTo(0)
+	See([PC])
+THEN
+	RESPONSE #100
+		StartDialogueNoSet([PC])
+END
+
+IF
+	HPLT(Myself,10)
+	GlobalLT("DjinniGasForm","LOCALS",3)
+	!StateCheck(Myself,STATE_DEAD)
+THEN
+	RESPONSE #100
+		IncrementGlobal("DjinniGasForm","LOCALS",1)
+		ReallyForceSpellRES("AC#MAGF1",Myself) // Marid Gas Form Change
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	GlobalLT("DjinniInvisibility","LOCALS",1)
+	!StateCheck(Myself,STATE_INVISIBLE)
+THEN
+	RESPONSE #100
+		IncrementGlobal("DjinniInvisibility","LOCALS",1)
+		ForceSpell(Myself,WIZARD_SHADOW_DOOR)  // SPWI505.SPL (Phantomtor)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+        Allegiance(Myself,ENEMY)
+	Global("djinni","LOCALS",0)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,11941)  // Notfallzauber
+		ApplySpell(Myself,WIZARD_GLOBE_OF_INVULNERABILITY)  // SPWI602.SPL (Kugel der Unverwundbarkeit)
+		SetGlobal("djinni","LOCALS",1)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+        Allegiance(Myself,ENEMY)
+	Global("djinniprot","LOCALS",0)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,40252)
+		ApplySpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // SPWI611.SPL (Schutz vor Magischen Waffen)
+		SetGlobal("djinniprot","LOCALS",1)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	StateCheck(Myself,STATE_INVISIBLE)
+THEN
+	RESPONSE #100
+		AttackReevaluate(NearestEnemyOf(Myself),15)
+END
+

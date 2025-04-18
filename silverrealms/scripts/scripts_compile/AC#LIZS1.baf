@@ -1,0 +1,84 @@
+IF
+	GlobalGT("AC#Talked_to_Maldraedior","GLOBAL",0)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	Range([PC],12)
+	See([PC])
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		Enemy()
+		SetGlobal("Lizard_Attack","ACIL70",1)
+END
+
+IF
+	HaveSpellRES("AC#C402")  // summon animals (snakes)
+	OR(2)
+		See(NearestEnemyOfType([0.0.0.MAGE_ALL]))
+		See(NearestEnemyOfType([0.0.0.CLERIC_ALL]))
+THEN
+	RESPONSE #100
+		//DisplayString(Myself,12091)
+                SpellRES("AC#C402",LastSeenBy(Myself))
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(CLERIC_CHANT)  // SPPR203.SPL (Gesang)
+THEN
+	RESPONSE #100
+		Spell(Myself,CLERIC_CHANT)  // SPPR203.SPL (Gesang)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(CLERIC_CHANT)  // SPPR203.SPL (Gesang)
+THEN
+	RESPONSE #100
+		Spell(Myself,CLERIC_CHANT)  // SPPR203.SPL (Gesang)
+END
+
+IF
+	HaveSpell(CLERIC_SILENCE_15_FOOT)  // SPPR211.SPL (Stille, 4,5 m Radius)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),CLERIC_SILENCE_15_FOOT)  // SPPR211.SPL (Stille, 4,5 m Radius)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(CLERIC_CHARM_PERSON)  // SPPR204.SPL (Personen oder S�ugetiere bezaubern)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),CLERIC_CHARM_PERSON)  // SPPR204.SPL (Personen oder S�ugetiere bezaubern)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(CLERIC_HOLD_PERSON)  // SPPR208.SPL (Personen festhalten)
+	!StateCheck(LastSeenBy(Myself),STATE_HELPLESS)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),CLERIC_HOLD_PERSON)  // SPPR208.SPL (Personen festhalten)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(CLERIC_CLOAK_OF_FEAR)  // SPPR416.SPL (Mantel der Furcht)
+THEN
+	RESPONSE #100
+		Spell(Myself,CLERIC_CLOAK_OF_FEAR)  // SPPR416.SPL (Mantel der Furcht)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(NearestEnemyOf(Myself),15)
+END
+

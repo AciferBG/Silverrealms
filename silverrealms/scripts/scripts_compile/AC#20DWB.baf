@@ -1,0 +1,15 @@
+IF
+	Global("ClearPassage","ACIL20",1)
+	Global("Face","LOCALS",0)
+THEN
+	RESPONSE #100
+		Face(12)
+		SetGlobal("Face","LOCALS",1)
+END
+
+IF
+	Global("ClearPassage","ACIL20",10)
+THEN
+	RESPONSE #100
+		EscapeArea()
+END

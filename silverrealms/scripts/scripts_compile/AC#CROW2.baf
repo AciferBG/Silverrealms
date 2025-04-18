@@ -1,0 +1,25 @@
+IF
+	HPLT(Myself,90)
+        Global("Malphas2Crow","ACIL88",1)
+THEN
+	RESPONSE #100
+		SetGlobal("Malphas2Crow","ACIL88",2)
+		CreateVisualEffectObject("SPFLESHS",Myself)
+		ReallyForceSpell(Myself,HEAL_NO_VISUAL)
+                ApplySpell(Myself,CLERIC_HEAL) 
+		ChangeAnimationNoEffect("AC#MAL88")
+                //CreateCreatureObject("AC#MAL88",Myself,0,0,0)  // Malphas
+                //DestroySelf()
+END
+
+
+
+
+
+
+
+
+
+
+
+

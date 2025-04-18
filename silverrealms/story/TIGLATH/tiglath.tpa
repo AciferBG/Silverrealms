@@ -1,0 +1,25 @@
+// Tiglath Story Part
+//
+
+EXTEND_TOP ~ar0020.bcs~ ~silverrealms/story/TIGLATH/_ar0020.baf~
+EXTEND_TOP ~ar0406.bcs~ ~silverrealms/story/TIGLATH/_ar0406.baf~
+
+COMPILE
+~silverrealms/story/TIGLATH/AC#TIGL1.d~
+~silverrealms/story/TIGLATH/AC#TIGL2.d~
+~silverrealms/story/TIGLATH/AC#TREM3.d~
+
+COPY ~silverrealms/story/TIGLATH/AC#TIGL1.cre~ ~override/AC#TIGL1.cre~ //Tiglath
+  SAY NAME1 @422 SAY NAME2 @422
+  
+COPY ~silverrealms/story/TIGLATH/AC#TIGL2.cre~ ~override/AC#TIGL2.cre~ //Tiglath Copper Coronet
+  SAY NAME1 @422 SAY NAME2 @422
+  
+COPY ~silverrealms/story/TIGLATH/AC#TREM1.cre~ ~override/AC#TREM1.cre~ //Tremor
+  SAY NAME1 @423 SAY NAME2 @423
+  
+COPY ~silverrealms/story/TIGLATH/AC#TREM2.cre~ ~override/AC#TREM2.cre~ //Tremor Copper Coronet
+  SAY NAME1 @423 SAY NAME2 @423
+  
+ COPY ~silverrealms/story/TIGLATH/AC#TREM3.cre~ ~override/AC#TREM3.cre~ //Tremor in ACIL07: Gives quest
+  SAY NAME1 @423 SAY NAME2 @423

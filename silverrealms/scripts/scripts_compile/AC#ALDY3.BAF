@@ -1,0 +1,22 @@
+IF
+	Global("AC#HealedAldym","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#HealedAldym","GLOBAL",2)
+		Wait(1)
+		ChangeAnimationNoEffect("AC#ALDY4")  // Aldym Ryscelsar
+END
+
+IF
+	Global("AC#HealedAldym","GLOBAL",0)
+	OR(5)
+		SpellCastOnMe([ANYONE],CLERIC_HEAL)  // SPPR607.SPL (Heilung)
+		SpellCastOnMe([ANYONE],CLERIC_CURE_LIGHT_WOUNDS)  // SPPR103.SPL (Leichte Wunden heilen)
+		SpellCastOnMe([ANYONE],CLERIC_CURE_MEDIUM_WOUNDS)  // SPPR315.SPL (Mittelschwere Wunden heilen)
+		SpellCastOnMe([ANYONE],CLERIC_CURE_SERIOUS_WOUNDS)  // SPPR401.SPL (Schwere Wunden heilen)
+		HPGT(Myself,1)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#HealedAldym","GLOBAL",1)
+END
+

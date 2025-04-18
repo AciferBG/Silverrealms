@@ -1,0 +1,14 @@
+IF
+	OR(2)
+        Contains("hamm01",Myself)
+        Contains("hamm02",Myself)
+	GlobalLT("AC#30GateOpen","ACIL30",5)
+	Global("AC#30hammercon","ACIL30",0)
+THEN
+	RESPONSE #100
+	SetGlobal("AC#30hammercon","ACIL30",1)
+	//CreateVisualEffectObject("ICMAGICH",Myself)
+	IncrementGlobal("AC#30GateOpen","ACIL30",1)
+	//ContainerEnable("hammercon",FALSE)
+END
+

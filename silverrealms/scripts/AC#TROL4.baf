@@ -1,0 +1,113 @@
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		StartTimer(77,6)
+END
+
+IF
+	HPLT(Myself,12)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		StartTimer(77,6)
+		ChangeAnimationNoEffect("AC#TROL5")
+END
+
+IF
+	TimerExpired(77)
+THEN
+	RESPONSE #100
+		StartTimer(77,6)
+END
+/*
+IF
+	See(NearestEnemyOf(Myself))
+        Global("PotionUsed","LOCALS",0)
+        //!GlobalTimerNotExpired("DrankPotionTimer","LOCALS")
+	HasItem("POTN02",Myself) // Extrastarker Heiltrank
+THEN
+	RESPONSE #100
+		SetGlobal("PotionUsed","LOCALS",1)
+		DisplayStringHead(Myself,46150) // trinkt einen Trank
+		UseItem("POTN02",Myself) // Feuerschutzrank
+END
+*/
+
+IF
+	See(NearestEnemyOf(Myself))
+	Global("prep","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("prep","LOCALS",1)
+		ReallyForceSpell(Myself,WIZARD_MIRROR_IMAGE) // SPWI212.SPL
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HPLT(Myself,25)
+	Global("prep","LOCALS",1)
+THEN
+	RESPONSE #100
+		SetGlobal("prep","LOCALS",2)
+		ReallyForceSpell(Myself,WIZARD_MIRROR_IMAGE) // SPWI212.SPL
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	!Range(NearestEnemyOf(Myself),7)
+THEN
+	RESPONSE #100
+		ForceSpell(NearestEnemyOf(Myself),PHASE_SPIDER_TELEPORT) // SPWI994.SPL (Dimensionstor)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #10
+		ForceSpell(Player1,PHASE_SPIDER_TELEPORT) // SPWI994.SPL (Dimensionstor)
+	RESPONSE #10
+		ForceSpell(Player2,PHASE_SPIDER_TELEPORT) // SPWI994.SPL (Dimensionstor)
+	RESPONSE #10
+		ForceSpell(Player3,PHASE_SPIDER_TELEPORT) // SPWI994.SPL (Dimensionstor)
+	RESPONSE #10
+		ForceSpell(Player4,PHASE_SPIDER_TELEPORT) // SPWI994.SPL (Dimensionstor)
+	RESPONSE #10
+		ForceSpell(Player5,PHASE_SPIDER_TELEPORT) // SPWI994.SPL (Dimensionstor)
+	RESPONSE #10
+		ForceSpell(Player6,PHASE_SPIDER_TELEPORT) // SPWI994.SPL (Dimensionstor)
+	RESPONSE #100
+		AttackReevaluate(NearestEnemyOf(Myself),15)
+END
+
+
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+		AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(NearestEnemyOf(Myself),5)
+END
+
+IF
+	AttackedBy([ANYONE],DEFAULT)
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastAttackerOf(Myself),5)
+END

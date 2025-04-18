@@ -1,0 +1,63 @@
+IF
+	Global("Entered","ACIL9E",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Entered","ACIL9E",1)
+		OpenDoor("Door01")
+		SoundActivate("Portalsound",FALSE)
+		AmbientActivate("Portal",FALSE)
+END
+
+IF
+	Contains("AC#ZEPXO","Anvil")  // Griff eines Zepters
+	Contains("AC#ZEPXS","Anvil")  // Zepterkopf
+	Global("PlacedItems","ACIL9E",0)
+THEN
+	RESPONSE #100
+		SetGlobal("PlacedItems","ACIL9E",1)
+		ActionOverride("Anvil",DestroyItem("AC#ZEPXO"))  // Griff eines Zepters
+		ActionOverride("Anvil",DestroyItem("AC#ZEPXS"))  // Zepterkopf
+		PlaySound("AC#smsh1")
+		ScreenShake([4.4],30)
+		CloseDoor("Door01")
+		SmallWait(15)
+		CreateVisualEffect("AC#MAGIR",[1586.1611])
+		Wait(1)
+		ActionOverride("Anvil",CreateItem("AC#ZEPX2",0,0,0))  // Xothaerin-Zepter
+END
+
+IF
+	PartyHasItem("AC#ZEPX2")  // Xothaerin-Zepter
+	Global("OpenPortal","ACIL9E",0)
+THEN
+	RESPONSE #100
+		SetGlobal("OpenPortal","ACIL9E",1)
+		DisplayStringHeadOwner("AC#ZEPX2",@1116)
+		Wait(2)
+		ClearAllActions()
+		ScreenShake([4.4],30)
+		CreateVisualEffect("ICMAGICH",[1383.1507])
+		PlaySound("EFF_M36B")
+		OpenDoor("Door02")
+		AmbientActivate("Portal",TRUE)
+		SoundActivate("Portalsound",TRUE)
+		ActionOverride(Player1,PlayDead(20))
+		ActionOverride(Player2,PlayDead(20))
+		ActionOverride(Player3,PlayDead(20))
+		ActionOverride(Player4,PlayDead(20))
+		ActionOverride(Player5,PlayDead(20))
+		ActionOverride(Player6,PlayDead(20))
+		SmallWait(15)
+		CreateCreature("AC#9EFEL",[1390.1589],15)  // Feuerelementar
+END
+
+IF
+	Delay(6)
+	Global("OpenPortal","ACIL9E",1)
+	Dead("AC#9EFEL")  // Feuerelementar
+	NumCreatureLT("AC#9EFEL",5)  // Feuerelementar
+THEN
+	RESPONSE #100
+		CreateCreature("AC#9EFEL",[1390.1589],15)  // Feuerelementar
+END
+

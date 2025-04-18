@@ -1,0 +1,16 @@
+/* 
+Mit diesem Skript wird der Brückenkampf von Bresk ausgelöst
+*/
+
+IF
+        Entered([ANYONE])
+        Global("Acil66_Bridge","ACIL66",0)
+        Global("AC#BreskQuest","GLOBAL",2)
+	Global("AC#Goapspawn","GLOBAL",7)
+THEN
+    RESPONSE #100
+         SetGlobal("Acil66_Bridge","ACIL66",1)
+         TriggerActivation("AC#66FI1",FALSE)
+END
+
+

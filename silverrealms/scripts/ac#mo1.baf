@@ -1,0 +1,25 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		Wait(2)
+		StartMovie("ac#02mve")
+		LeaveAreaLUAPanic("ACIL21","",[466.334],0)
+		LeaveAreaLUA("ACIL21","ac#gtr21",[466.334],0)
+		ActionOverride(Player2,LeaveAreaLUA("ACIL21","ac#gtr21",[466.334],0))
+		ActionOverride(Player3,LeaveAreaLUA("ACIL21","ac#gtr21",[466.334],0))
+		ActionOverride(Player4,LeaveAreaLUA("ACIL21","ac#gtr21",[466.334],0))
+		ActionOverride(Player5,LeaveAreaLUA("ACIL21","ac#gtr21",[466.334],0))
+		ActionOverride(Player6,LeaveAreaLUA("ACIL21","ac#gtr21",[466.334],0))
+		MultiPlayerSync()
+		AddXPObject(Player1,2000)
+		AddXPObject(Player2,2000)
+		AddXPObject(Player3,2000)
+		AddXPObject(Player4,2000)
+		AddXPObject(Player5,2000)
+		AddXPObject(Player6,2000)
+		Wait(1)
+		EndCutSceneMode()
+END
+

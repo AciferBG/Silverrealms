@@ -1,0 +1,46 @@
+IF
+	Detect([PC])
+	!See("AC#CRAT1")
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Global("blast","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("blast","LOCALS",1)
+		ForceSpell(NearestEnemyOf(Myself),BRAIN_PSIONIC_BLAST)  // SPIN834.SPL (Psi-Schlag)
+		DestroySelf()
+END
+
+/*
+IF
+	NumCreatureLT("AC#CRAT1",21)
+	Global("rats_spawned","LOCALS",1)
+THEN
+	RESPONSE #100
+                 DestroySelf()
+END
+
+IF
+	See("AC#CRAT1")
+	Global("rats_spawned","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("rats_spawned","LOCALS",1)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	//See("AC#CRAT1")
+	Global("blast","LOCALS",0)
+	//NumCreatureGT("AC#CRAT1",20)
+THEN
+	RESPONSE #100
+		SetGlobal("blast","LOCALS",1)
+		ForceSpell(NearestEnemyOf(Myself),BRAIN_PSIONIC_BLAST) // SPIN834.SPL (Psi-Schlag)
+END
+*/

@@ -1,0 +1,33 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		ActionOverride(Player1,JumpToPoint([2083.2670]))
+		StorePartyLocations()
+                SmallWait(7)
+		Wait(3)
+		FadeToColor([30.0],0)
+		LeaveAreaLUAPanic("ACIL0C","",[2521.1991],0)
+		LeaveAreaLUA("ACIL0C","",[2521.1991],8)
+		MultiPlayerSync()
+		MoveViewPoint([2874.2496],INSTANT)
+		Explore()
+		SmallWait(5)
+		FadeFromColor([30.0],0)
+		MoveViewPoint([2521.1991],6)
+		ActionOverride("ac#dwcu1",MoveToObject("ac#cccu1"))
+		Wait(3)
+		//ActionOverride("ac#cccu1",Dialogue("ac#dwcu1"))
+		Wait(3)
+		EndCutSceneMode()
+END
+
+
+/* 
+999996 ~Die gekräuselte Wasseroberfläche wird plötzlich ruhig und klar. Auf dem Grund des Beckens nimmt die verschwommene Landschaft plötzlich Gestalt an- Ihr blickt auf Eure alte Heimat Kerzenburg!~
+
+999995 ~Ihr beugt Euch stärker herunter, bis Euer Gesicht fast die Wasseroberfläche berührt. Inmitten des Wassers könnt Ihr Gestalten erkennen, und ohne es zu wollen taucht Ihr Euren Kopf unter die Wasseroberfläche. Der Schlüssel liegt auf dem Grund des Beckens, und mit einer Handbewegung habt Ihr Ihn gegriffen. Plötzlich werdet Ihr in die Landschaft des Beckens gezogen...~
+
+*/
+

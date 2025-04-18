@@ -1,0 +1,41 @@
+IF
+        Clicked([ANYONE])
+        Range(LastTrigger,12)
+        Global("ACIL31_Nodes","ACIL31",0)
+THEN
+    RESPONSE #100
+             DisplayString(Myself,999999)
+             SetGlobal("ACIL31_Nodes","ACIL31",1)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	Global("Node02","ACIL31",1)
+THEN
+	RESPONSE #100
+                DisplayString(Myself,999998)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	Global("ACIL31_Nodes","ACIL31",1)
+	Global("Node02","ACIL31",0)
+THEN
+	RESPONSE #100
+                DisplayString(Myself,999997)
+		OpenDoor("DOOR02")
+		PlaySound("EFF_M62")
+		SetGlobal("Node02","ACIL31",1)
+		IncrementGlobal("EarthNodeActivation","ACIL31",1)
+END
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,12)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,14702) // Ihr seid zu weit entfernt, um das zu benutzen.
+END
+

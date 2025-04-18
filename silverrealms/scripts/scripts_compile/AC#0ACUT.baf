@@ -1,0 +1,16 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+          Wait(1)
+          FadeToColor([50.0],0)
+          Wait(1)
+          //ActionOverride("ac#dwf0a",DestroySelf())
+          //ActionOverride("ac#dwf2a",DestroySelf())
+          //ActionOverride("ac#dwf3a",DestroySelf())
+          FadeFromColor([80.0],0)
+          EndCutSceneMode()
+          SetGlobal("Rest_Party","ACIL0A",1)
+          RestParty()
+          //SetGlobal("Rest_Party","ACIL0A",1)
+END

@@ -1,0 +1,39 @@
+IF
+	NumTimesTalkedTo(0)
+	Detect([PC])
+	Range(LastSeenBy(Myself),13)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(LastSeenBy(Myself))
+END
+
+IF
+    Global("AC#Ruvan_Treason","GLOBAL",2)	
+	Detect([PC])
+	Range([PC],20)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(LastSeenBy(Myself))
+END
+
+IF
+    Global("AC#Iltkazar_Council_Second_Quest","GLOBAL",2)	
+	Detect([PC])
+	Range([PC],12)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(LastSeenBy(Myself))
+END
+
+IF
+    Global("AC#Ruvan_Treason","GLOBAL",5)
+	!See("AC#RUVA1")
+THEN
+	RESPONSE #100
+	    SetGlobal("AC#Ruvan_Treason","GLOBAL",6)
+		StartDialogueNoSet(Player1)
+END
+
+
+
+

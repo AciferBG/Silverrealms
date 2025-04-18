@@ -1,0 +1,56 @@
+IF
+    Global("Prep","ACIL95",0)
+THEN
+    RESPONSE #100
+        CreateCreatureImpassable("AC#95MAP",[58.384],SE)  // Zwergenkarte
+        SetGlobal("Prep","ACIL95",1)
+END
+
+IF
+    Global("Ravimor_revealed","ACIL95",3)
+    Global("Ravimor_map","ACIL95",0)
+THEN
+    RESPONSE #100
+        SetGlobal("Ravimor_map","ACIL95",1)
+        RevealAreaOnMap("ACIL01")
+        //EraseJournalEntry(@20011)
+        AddJournalEntry(@20019,QUEST)  
+END
+
+IF
+    Global("AC#IL_Wheel_repaired","GLOBAL",1)
+    Global("RepairJournal","ACIL95",0)
+THEN
+    RESPONSE #100
+        SetGlobal("RepairJournal","ACIL95",1)
+        AddJournalEntry(@90014,QUEST) 
+END
+
+IF
+    Global("AC#IL_Wheel_repaired","GLOBAL",10)
+    Global("RepairJournal","ACIL95",1)
+THEN
+    RESPONSE #100
+        SetGlobal("RepairJournal","ACIL95",2)
+        AddJournalEntry(@90013,QUEST)  
+END
+
+IF
+    Global("TalkToStatue","ACIL95",0)
+    PartyHasItem("AC#IL95W")  // Zahnrad
+THEN
+    RESPONSE #100
+        SetGlobal("TalkToStatue","ACIL95",1)
+        ActionOverride("AC#95MAP",StartDialogueNoSet([PC]))
+END
+
+IF
+    Global("Journal_Ravimor","ACIL95",0)
+    Global("AC#IL_Wheel_repaired","GLOBAL",10)
+THEN
+    RESPONSE #100
+        SetGlobal("Journal_Ravimor","ACIL95",1)
+        //EraseJournalEntry(@90012)  
+        AddJournalEntry(@90013,QUEST)
+END
+

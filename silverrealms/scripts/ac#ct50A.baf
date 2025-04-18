@@ -1,0 +1,23 @@
+/*
+
+Dieses Skript transportiert die Spieler aus Area ACIL50  in den Regentschaftsrat (ACIL62)
+*/
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		Wait(1)
+		LeaveAreaLUAPanic("ACIL62","",[1041.1572],0)
+		LeaveAreaLUA("ACIL62","",[1041.1572],6)
+		ActionOverride(Player2,LeaveAreaLUA("ACIL62","",[1041.1572],6))
+		ActionOverride(Player3,LeaveAreaLUA("ACIL62","",[1041.1572],6))
+		ActionOverride(Player4,LeaveAreaLUA("ACIL62","",[1041.1572],6))
+		ActionOverride(Player5,LeaveAreaLUA("ACIL62","",[1041.1572],6))
+		ActionOverride(Player6,LeaveAreaLUA("ACIL62","",[1041.1572],6))
+		MultiPlayerSync()
+		MoveViewPoint([1041.1572],INSTANT)
+		Wait(1)
+		FadeFromColor([30.0],150)
+		EndCutSceneMode()
+END

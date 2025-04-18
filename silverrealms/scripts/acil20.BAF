@@ -1,0 +1,345 @@
+IF
+	Global("EnteredArea","ACIL20",0)
+THEN
+	RESPONSE #100
+		TriggerActivation("Drowtrap03",FALSE) // Deactivate Trap for quest "missing dwarven warriors"
+		//CloseDoor("DOOR05") // stone blocks to area ACIL27; closed when quest travel to Barakuir is active; opened again by Hathar and his dwarves
+		AmbientActivate("Patrolsign01",FALSE) // deactivate markings of the missing dwavren patrol
+		AmbientActivate("Patrolsign02",FALSE)
+		AmbientActivate("Patrolsign03",FALSE)
+		SetMusic(NIGHT,%AC#IL20%)
+		SetMusic(DAY,%AC#IL20%)	
+		SetGlobal("EnteredArea","ACIL20",1)
+END
+
+IF
+	Global("AC#Iltkazar_Council_Second_Quest","GLOBAL",3)
+	Global("AC#_Dwarven_Patrol","ACIL20",0)
+THEN
+	RESPONSE #100
+        SetGlobal("AC#_Dwarven_Patrol","ACIL20",1)
+	    ActionOverride("AC#HATH1",JumpToPoint([3252.652]))
+	    ActionOverride("AC#HATH1",Face(4))
+        OpenDoor("DOOR04")
+		AmbientActivate("Patrolsign01",TRUE) // activate markings of the missing dwavren patrol so the player can trace them back to the secret gith cave
+		AmbientActivate("Patrolsign02",TRUE)
+		AmbientActivate("Patrolsign03",TRUE)
+        CreateCreature("AC#DEAD8",[3152.1606],11)
+		CreateCreature("AC#DEAD8",[3258.1553],5)
+		CreateCreature("AC#DEAD8",[3260.1550],1)
+		CreateCreature("AC#DEAD8",[3190.1554],3)
+		Wait(1)
+		CreateCreature("AC#DEAD6",[3152.1606],11)
+		CreateCreature("AC#DEAD6",[3258.1553],5)
+		CreateCreature("AC#DEAD6",[3260.1550],1)
+		CreateCreature("AC#DEAD7",[3147.1652],8)
+		CreateCreature("AC#DEAD6",[3190.1554],3)
+                //ContainerEnable("Pile01",TRUE)
+                //ContainerEnable("Pile02",TRUE)
+                //ContainerEnable("Pile03",TRUE)
+                //ContainerEnable("Pile04",TRUE)
+END
+
+IF
+	GlobalGT("AC#_Iltkazar_Destroyed","GLOBAL",0)
+	Global("Deactivate_Travel","ACIL20",1)
+THEN
+	RESPONSE #100
+		SetGlobal("Deactivate_Travel","ACIL20",2)
+		TriggerActivation("Tracil50",TRUE)
+		TriggerActivation("Tracil66",FALSE)
+END
+
+// quest part: resurrect Hathar; not working atm
+IF
+	Global("AC#HatharQuest","GLOBAL",2)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#HatharQuest","GLOBAL",3)
+		CreateCreature("AC#ABDE1",[3268.658],8)
+		CreateCreature("AC#ABDE1",[3260.650],12)
+		CreateCreature("DEADDEM1",[3272.663],1)
+		ActionOverride("AC#HATH1",JumpToPoint([3267.656]))
+		ActionOverride("AC#HATH1",Kill(Myself))
+		CreateCreature("AC#SZAG1",[3306.641],11)
+END
+
+// after talk to Maldraedior
+// transform Iltkazar to siege status: deactivate area ACIL50; temporaryly activate Area ACIL66 until azerkyn hall is destroyed
+IF
+	GlobalGT("AC#Talked_to_Maldraedior","GLOBAL",0)
+	Global("Deactivate_Travel","ACIL20",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Deactivate_Travel","ACIL20",1)
+		TriggerActivation("Tracil50",FALSE)
+		TriggerActivation("Tracil66",TRUE)
+		ActionOverride("AC#HATH1",Activate(Myself))
+END
+
+// after talk to Maldraedior
+// Party reaturns to Hathar after Dragon Cem; create Abishai via Trigger
+IF
+	Global("AbishaiSpawn","ACIL20",1)
+THEN
+	RESPONSE #100
+        SetGlobal("AbishaiSpawn","ACIL20",2)
+		CreateCreature("AC#ABDE2",[3168.571],11)
+		CreateCreature("AC#ABDE2",[3432.693],5)
+		CreateCreature("AC#ABDE1",[3268.658],8)
+		CreateCreature("AC#ABDE1",[3260.650],12)
+		CreateCreature("AC#20ABG",[3352.545],2)
+		CreateCreature("AC#20ABG",[3398.583],3)
+END
+
+// after talk to Maldraedior
+// Hathar told about the abishai; the 2 Abishai are dead
+IF
+	Global("AbishaiSpawn","ACIL20",4)
+THEN
+	RESPONSE #100
+        SetGlobal("AbishaiSpawn","ACIL20",10)
+		Unlock("DOOR02")
+		OpenDoor("DOOR02")
+END
+
+IF
+
+        Global("Acil20_Bridge","ACIL20",1)
+THEN
+	RESPONSE #100
+                SetGlobal("Acil20_Bridge","ACIL20",2)
+		CreateCreature("AC#GAU01",[3168.571],11)
+		CreateCreature("AC#GAU01",[3432.693],5)
+END
+
+IF
+	Global("AC#_HatharCombat","ACIL20",2)
+	Global("AC#_IltkazarGates","ACIL20",0)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#_IltkazarGates","ACIL20",1)
+                ClearAllActions()
+		StartCutSceneMode()
+		MoveViewPoint([3479.384],100)
+		CreateCreature("CUTSPY",[3479.384],11)
+		Wait(2)
+		OpenDoor("DOOR02")
+		Wait(1)
+		ActionOverride("CUTSPY",DestroySelf())
+		EndCutSceneMode()
+END
+
+IF
+	Global("Acil20_Drowspawn","ACIL20",1)
+THEN
+	RESPONSE #100
+        SetGlobal("Acil20_Drowspawn","ACIL20",2)
+		TriggerActivation("Drowtrap03",TRUE) // Activate Trap for quest "missing dwarven warriors"
+		CreateCreature("AC#DROW2",[1344.2085],11)
+		CreateCreature("AC#DROW2",[1270.2182],5)
+		CreateCreature("AC#DROW2",[1630.2150],8)
+		CreateCreature("AC#DROW1",[1364.2253],8)
+		CreateCreature("ac#quag1",[1512.1987],9)
+		CreateCreature("ac#quag1",[1510.1989],11)
+		CreateCreature("ac#quag1",[1514.1982],3)
+END
+
+IF
+	Global("LakeEntrySealed","ACIL20",0)
+	GlobalGT("AC#RC_Sorni_Fourth","GLOBAL",0) // Quest: Check for boats started
+THEN
+	RESPONSE #100
+        SetGlobal("LakeEntrySealed","ACIL20",1)
+		CloseDoor("DOOR05") // stone blocks to area ACIL27
+		SpawnPtDeactivate("Kuotoaspawn")  // deactivate Kuo Toa Spawnpoint before the party is heading to Barakuir
+		CreateCreature("AC#20DW8",[3700.2405],0)  // dwarven Warrior
+		CreateCreature("AC#20DW8",[3794.2445],5) // dwarven Warrior
+		CreateCreature("AC#20DW8",[3769.2474],5) // dwarven Warrior
+		CreateCreature("AC#20DW8",[3783.2524],5) // dwarven Warrior
+		CreateCreature("AC#20DW9",[3745.2546],5)  // dwarven priest
+END
+
+IF
+	Global("Wheres_Cleric","ACIL20",1)
+THEN
+	RESPONSE #100
+		//SmallWait(15)
+		ActionOverride("AC#20DW9",StartDialogNoSet(Player1))
+END
+
+IF
+	Global("ClearPassage","ACIL20",1)
+THEN
+	RESPONSE #100
+		Wait(1)
+		ClearAllActions()
+		StartCutSceneMode()
+		ActionOverride("AC#20DW9",ForceSpell(Myself,DO_NOTHING))
+		Wait(2)
+		FadeToColor([20.0],0)
+		Wait(2)
+		OpenDoor("DOOR05")
+		CreateCreature("AC#20KDD",[4122.2595],0)  // dead kuo toa
+		CreateCreature("AC#20KDD",[4118.2598],3)  // dead kuo toa
+		CreateCreature("AC#20KDD",[4053.2578],13)  // dead kuo toa
+		CreateCreature("AC#20KDD",[4089.2610],6)  // dead kuo toa
+		FadeFromColor([20.0],0)
+		EndCutSceneMode()
+		SetGlobal("ClearPassage","ACIL20",10)
+		ActionOverride("AC#HATH1",StartDialogNoSet(Player1))
+END
+
+IF
+	Global("Acil20_DrowPriestess","ACIL20",0)
+	Global("AC#BreskDrowPriestess","GLOBAL",3)
+THEN
+	RESPONSE #100
+        SetGlobal("Acil20_DrowPriestess","ACIL20",1)
+		SpawnPtDeactivate("Hook Horror") // temporarly deactivation of Hook Horror Spawn to prevent drow - hook horror crossfire
+		CreateCreature("AC#DROW3",[1166.951],0)  // Drow Priestess
+		CreateCreature("AC#DROW5",[1118.987],5) // Drow Warrior
+		CreateCreature("AC#DROW5",[1205.1003],13) // Drow Warrior
+		CreateCreature("AC#DROW5",[1112.826],9) // Drow Warrior
+		CreateCreature("AC#DROW4",[1134.877],1)  // Drow Wizard
+END
+
+IF
+	Global("Acil20_DrowPriestess","ACIL20",1)
+	PartyHasItem("AC#DROHE") // head of the drow priestess
+THEN
+	RESPONSE #100
+        SetGlobal("Acil20_DrowPriestess","ACIL20",2)
+		SpawnPtActivate("Hook Horror") //  activate  Hook Horror Spawn when drow priestess is dead
+		EraseJournalEntry(@50020)
+		AddJournalEntry(@50021,QUEST)
+END
+
+// when Hizagkuur Quest active
+
+IF
+	Global("HizagkuurRegion","ACIL20",1)
+	Global("AC#HizagkuurQuest","GLOBAL",2)
+THEN
+	RESPONSE #100
+                TriggerActivation("TrACIL2H",TRUE)
+                TriggerActivation("Info_Hizagkuur",FALSE)
+		SetGlobal("HizagkuurRegion","ACIL20",2)
+END
+
+
+// ???: Travel Trigger to ACIL2H is already reachable right from the start
+/*
+IF
+	Global("HizagkuurRegion","ACIL20",0)
+THEN
+	RESPONSE #100
+                TriggerActivation("TrACIL2H",TRUE)
+                TriggerActivation("Info_Hizagkuur",FALSE) // InfoTrigger is not needed anymore
+		SetGlobal("HizagkuurRegion","ACIL20",1)
+END
+*/
+
+//Travel Region only accessible when Quest is active
+IF
+	Global("HizagkuurRegion","ACIL20",0)
+THEN
+	RESPONSE #100
+                TriggerActivation("TrACIL2H",FALSE)
+                TriggerActivation("Info_Hizagkuur",TRUE)
+		SetGlobal("HizagkuurRegion","ACIL20",1)
+END
+
+
+/*
+// not needed anymore, block is now executed together w/ closing door and spawning dwarven guards
+IF
+	Global("SpawnPoint1Activation","ACIL20",0)
+	GlobalGT("AC#RC_Sorni_Fourth","GLOBAL",4)
+THEN
+	RESPONSE #100
+                SpawnPtDeactivate("Spawn Point 1") // deactivate Kuo Toa Spawnpoint before the party is heading to Barakuir
+                SetGlobal("SpawnPoint1Activation","ACIL20",1)
+END
+*/
+
+IF
+
+	Global("BackFromBarakuir","ACIL20",0)
+	Global("AC#Ruvan_Treason","GLOBAL",2)
+THEN
+	RESPONSE #100
+                SetGlobal("BackFromBarakuir","ACIL20",1)
+	        ActionOverride("AC#HATH1",JumpToPoint([3252.652]))
+	        ActionOverride("AC#HATH1",Face(4))
+END
+
+/*
+IF
+	Global("AC#BackToSurface","GLOBAL",4)
+	Global("MapNote_Beholder","ACIL20",0)
+THEN
+	RESPONSE #100
+		SetGlobal("MapNote_Beholder","ACIL20",1)
+		TriggerActivation("Trigger_Ladder",TRUE)
+		AddMapNote([1480.2635],@728)
+END
+*/
+
+IF
+	Global("AC#EyestalkLadder","ACIL20",2)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#EyestalkLadder","ACIL20",3)
+		OpenDoor("DOOR03")
+		TriggerActivation("Trigger_Ladder",FALSE)
+END
+
+IF
+	Global("AC#Goodbye_Iltkazar","GLOBAL",6)
+THEN
+	RESPONSE #100
+		//SetGlobal("AC#Goodbye_Iltkazar","GLOBAL",10)
+                ClearAllActions()
+		StartCutSceneMode()
+		FadeToColor([15.0],0)
+ 	        ActionOverride("AC#BRES9",EscapeArea())
+ 	        ActionOverride("AC#GROM9",EscapeArea())
+ 	        ActionOverride("AC#DUN20",EscapeArea())
+ 	        ActionOverride("AC#ELER9",EscapeArea())
+ 	        ActionOverride("AC#SORN9",EscapeArea())
+ 	        ActionOverride("AC#VRON9",EscapeArea())
+ 	        ActionOverride("AC#ANT20",EscapeArea())
+ 	        ActionOverride("AC#TURB9",EscapeArea())
+ 	        ActionOverride("AC#HATH1",Deactivate(Myself))
+ 	        Wait(2)
+		//Wait(5)
+		CloseDoor("DOOR02")
+		Wait(1)
+		Lock("DOOR02")
+		FadeFromColor([30.0],150)
+		Wait(1)
+		SetGlobal("AC#Goodbye_Iltkazar","GLOBAL",10)
+		EndCutSceneMode()
+END
+
+IF
+	Global("AC#Goodbye_Iltkazar","GLOBAL",10)
+	Global("AC#_Iltkazar_Destroyed","GLOBAL",0)
+	Global("Door02ClosedDuergar","ACIL20",0)
+	OpenState("DOOR02",TRUE)
+THEN
+	RESPONSE #100
+		SetGlobal("Door02ClosedDuergar","ACIL20",1)
+		CloseDoor("DOOR02")
+		Lock("DOOR02")
+END
+
+IF
+	PartyHasItem("AC#25TEL")
+THEN
+	RESPONSE #100
+		DisplayStringHeadOwner("AC#25TEL",@6004)
+		TakePartyItem("AC#25TEL")
+		DestroyItem("AC#25TEL")
+END

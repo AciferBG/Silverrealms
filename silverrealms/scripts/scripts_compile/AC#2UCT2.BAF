@@ -1,0 +1,11 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CreateCreature("AC#2UMAL",[1085.822],NW)  // Malphas
+		ActionOverride("AC#2UMAL",MoveToPoint([861.733]))
+		SmallWait(5)
+		Wait(4)
+		ActionOverride("AC#2UMAL",StartDialogueNoSet(Player1))
+END
+

@@ -1,0 +1,15 @@
+IF
+	Contains("ac#02be1",Myself)
+	Global("AC#_bearsummon","ACIL02",0)
+THEN
+	RESPONSE #100
+                SetInterrupt(FALSE)
+		DestroyItem("ac#02be1")
+		PlaySound("EFF_P92")
+		DisplayString(Myself,999999)
+		SetGlobal("AC#_bearsummon","ACIL02",1)
+		ContainerEnable("ac#cobe",FALSE)
+                CreateCreature("AC#SPIBE",[1262.280],1)
+		SetInterrupt(TRUE)
+END
+

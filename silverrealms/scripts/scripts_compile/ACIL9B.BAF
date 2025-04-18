@@ -1,0 +1,40 @@
+IF
+	Global("TransitionSwitch","ACIL9B",0)
+THEN
+	RESPONSE #100
+		SetGlobal("TransitionSwitch","ACIL9B",1)
+		AmbientActivate("Disk",FALSE)
+		TriggerActivation("TrACIL09",TRUE)
+		TriggerActivation("Tracil06",FALSE)
+		TriggerActivation("Tracil07",FALSE)
+END
+
+IF
+	Global("DiscPlaced","ACIL9B",1)
+	Global("TransitionSwitch","ACIL9B",1)
+THEN
+	RESPONSE #100
+		SetGlobal("TransitionSwitch","ACIL9B",2)
+		OpenDoor("DOOR01")
+END
+
+IF
+	Global("ElementalAmbush","ACIL9B",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ElementalAmbush","ACIL9B",2)
+		PlaySound("EFF_P92")
+		ScreenShake([20.20],10)
+		CreateCreature("ELEAR01",[997.503],NE)  // Erdelementar
+		CreateCreature("ELEAR01",[1034.360],SW)  // Erdelementar
+		CloseDoor("DOOR02")
+END
+
+IF
+	Global("ElementalAmbush","ACIL9B",2)
+	OpenState("DOOR02",TRUE)
+THEN
+	RESPONSE #100
+		CloseDoor("DOOR02")
+END
+

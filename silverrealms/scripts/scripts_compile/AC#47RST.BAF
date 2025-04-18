@@ -1,0 +1,21 @@
+IF
+	Global("CharveRestInterrupt","ACIL47",1)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	Global("CharveRestInterrupt","ACIL47",0)
+	OR(2)
+	!Dead("AC#CHARV")
+	!Dead("AC#CHARR")
+THEN
+	RESPONSE #100
+		ActionOverride("AC#CHARV",DestroySelf())
+		ActionOverride("AC#CHARR",DestroySelf())
+		SmallWait(4)
+		CreateCreatureObject("AC#CHARR",Player1,0,0,0)  
+		DestroySelf()
+END
+

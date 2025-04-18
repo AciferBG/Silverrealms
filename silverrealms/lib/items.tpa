@@ -1,0 +1,1044 @@
+// Silverrealms Item Files
+
+
+COPY ~silverrealms/itm/copy~         ~override~
+
+COPY ~%MOD_FOLDER%/itm/AC#IL95W.itm~         ~override~    // wheel
+  SAY NAME2 @8089
+  SAY DESC @8090
+
+COPY ~%MOD_FOLDER%/itm/AC#ILHE1.itm~         ~override~    // Helmet vs. devour brain ability
+  SAY NAME2 @8087
+  SAY DESC @8088
+
+COPY ~silverrealms/itm/AC#53BK0.ITM~         ~override~ // echos von Delzoun
+  SAY NAME1 @8069
+  SAY NAME2 @8069
+  SAY DESC @8070
+  
+    COPY ~silverrealms/itm/AC#53BK0.ITM~         ~override/AC#53BKA.ITM~ // murren der Zwerge
+    SAY NAME1 @8071
+    SAY NAME2 @8071
+    SAY DESC @8072
+    
+    COPY ~silverrealms/itm/AC#53BK0.ITM~         ~override/AC#53BKB.ITM~ // Gerstensaft
+    SAY NAME1 @8073
+    SAY NAME2 @8073
+    SAY DESC @8074
+    
+    COPY ~silverrealms/itm/AC#53BK0.ITM~         ~override/AC#53BKC.ITM~ // drow
+    SAY NAME2 @8075
+    SAY DESC @8076
+    
+    COPY ~silverrealms/itm/AC#53BK0.ITM~         ~override/AC#53BKD.ITM~ // zwerg und elf
+    SAY NAME2 @8077
+    SAY DESC @8078
+    
+    COPY ~silverrealms/itm/AC#53BK0.ITM~         ~override/AC#53BKE.ITM~ // zinza, vhaeraun und ghau
+    SAY NAME2 @8079
+    SAY DESC @8080
+    
+    COPY ~silverrealms/itm/AC#53BK0.ITM~         ~override/AC#53BKF.ITM~ // quaggoth et al
+    SAY NAME2 @8081
+    SAY DESC @8082
+
+COPY ~silverrealms/itm/AC#53BK9.ITM~         ~override~ //Stahl unter Sternen: Die Geschichte der Zwergenreiche unter dem Himmel Faerûns
+  SAY NAME1 @8067
+  SAY NAME2 @8067
+  SAY DESC @8068
+
+COPY ~silverrealms/itm/AC#53BK8.ITM~         ~override~ //federleichte fehltritte
+  SAY NAME1 @8065
+  SAY NAME2 @8065
+  SAY DESC @8066
+
+COPY ~silverrealms/itm/AC#53BK7.ITM~         ~override~ //eiserner wille
+  SAY NAME1 @8063
+  SAY NAME2 @8063
+  SAY DESC @8064
+
+COPY ~silverrealms/itm/AC#53BK6.ITM~         ~override~ //schatten im gestein
+  SAY NAME1 @8061
+  SAY NAME2 @8061
+  SAY DESC @8062
+
+COPY ~silverrealms/itm/AC#53BK5.ITM~         ~override~ //musik und meißel
+  SAY NAME1 @8059
+  SAY NAME2 @8059
+  SAY DESC @8060
+
+COPY ~silverrealms/itm/AC#53BK4.ITM~         ~override~ //knoten und netze
+  SAY NAME1 @8057
+  SAY NAME2 @8057
+  SAY DESC @8058
+
+COPY ~silverrealms/itm/AC#53BK3.ITM~         ~override~ // book of maze
+  SAY NAME1 @1140
+  SAY NAME2 @1140
+  SAY DESC @1141
+
+COPY ~silverrealms/itm/AC#ASTR1.itm~         ~override/AC#ASTR1.itm~ // astral control unit
+  SAY NAME1 @173
+  SAY NAME2 @173
+  SAY DESC @174
+
+COPY ~silverrealms/itm/AC#SW1HV.itm~         ~override/AC#SW1HV.itm~  // final cut, Gith Blade
+  SAY NAME1 #11052
+  SAY NAME2 @169
+  SAY DESC @170
+
+COPY ~silverrealms/itm/ac#let10.itm~         ~override/ac#let10.itm~ // letter found outside the wailing dwarf
+  SAY NAME1 @59
+  SAY NAME2 @59
+  SAY DESC @60
+
+COPY ~silverrealms/itm/ac#ky1.itm~         ~override/ac#ky1.itm~ // dwarven runekey, opens door to spiderstalkings
+  SAY NAME1 @13
+  SAY NAME2 @13
+  SAY DESC @14
+  
+COPY ~silverrealms/itm/ac#dhe.itm~         ~override/ac#dhe.itm~ // dragon heart, needed for summoning maldraedior
+  SAY NAME1 @15
+  SAY NAME2 @15
+  SAY DESC @16
+  
+COPY ~silverrealms/itm/ac#scagr.itm~         ~override/ac#scagr.itm~  // green dragonscales
+  SAY NAME1 @18
+  SAY NAME2 @18
+  SAY DESC @19
+
+COPY ~silverrealms/itm/AC#P01.itm~         ~override/AC#P01.itm~ // green phosphor
+  SAY NAME1 @23
+  SAY NAME2 @23
+  SAY DESC @24
+  
+COPY ~silverrealms/itm/AC#MES01.itm~         ~override/AC#MES01.itm~ // message: the adventure begins!
+  SAY NAME1 @46
+  SAY NAME2 @46
+  SAY DESC @47
+
+COPY ~silverrealms/itm/AC#MAP01.itm~         ~override/AC#MAP01.itm~ // map of the troll mountains region (unused)
+  SAY NAME1 @48
+  SAY NAME2 @48
+  SAY DESC @49
+  
+COPY_EXISTING ~key01.itm~   ~override/ac#key57.itm~   // Turbaern's key
+  SAY NAME1 @91
+  SAY NAME2 @91
+  SAY DESC @92
+  
+COPY_EXISTING ~misc7z.itm~   ~override/ac#antr1.itm~ // anthrazit
+  SAY NAME1 @106
+  SAY NAME2 @106
+  SAY DESC @107
+  
+COPY_EXISTING ~misc5u.itm~   ~override/AC#CORP1.itm~ // corpse
+  SAY NAME1 @106
+  SAY NAME2 @106
+  SAY DESC @107
+  
+COPY_EXISTING ~ac#let10.itm~         ~override/ac#let29.itm~ // Vaxall's letter (depending if he's alive or dead EDIT!
+  SAY NAME1 @127
+  SAY NAME2 @127
+  SAY DESC @128
+  
+COPY_EXISTING ~ac#let10.itm~         ~override/ac#vax29.itm~ // Vaxall's letter - if he has been killed by the player EDIT!
+  SAY NAME1 @129
+  SAY NAME2 @129
+  SAY DESC @130
+
+COPY ~silverrealms/itm/ac#02de1.itm~         ~override/ac#02de1.itm~ // Stag antlers
+  SAY NAME1 @137
+  SAY NAME2 @137
+  SAY DESC @138
+  
+COPY ~silverrealms/itm/ac#02be1.itm~         ~override/ac#02be1.itm~ // bear's paw
+  SAY NAME1 @139
+  SAY NAME2 @139
+  SAY DESC @140
+  
+COPY ~silverrealms/itm/ac#02wo1.itm~         ~override/ac#02wo1.itm~ // wolf pelt
+  SAY NAME1 @141
+  SAY NAME2 @141
+  SAY DESC @142
+  
+COPY ~silverrealms/itm/AC#NAGAS.itm~         ~override/AC#NAGAS.itm~ //  Naga's skull
+  SAY NAME1 @159
+  SAY NAME2 @159
+  SAY DESC @160
+
+COPY ~silverrealms/itm/ac#80pst.itm~         ~override/ac#80pst.itm~ // Portal stone (for jumping around in area acil80)
+  SAY NAME1 @171
+  SAY NAME2 @171
+  SAY DESC @172
+
+COPY ~silverrealms/itm/AC#TORGL.itm~         ~override/AC#TORGL.itm~ // Torglor silver coin
+  SAY NAME1 @188
+  SAY NAME2 @189
+  SAY UNIDENTIFIED_DESC @191
+  SAY DESC @190
+  
+COPY ~silverrealms/itm/AC#KEY49.itm~         ~override/AC#KEY49.itm~
+  SAY NAME1 @196
+  SAY NAME2 @196
+  SAY DESC @197
+  
+COPY ~silverrealms/itm/AC#POTLE.itm~         ~override/AC#POTLE.itm~ // Potion of feather falling
+  SAY NAME1 @200
+  SAY NAME2 @200
+  SAY DESC @201
+  
+COPY ~silverrealms/itm/ac#not02.itm~         ~override/ac#not02.itm~  // note in Ravimor's cave
+//  SAY NAME1 @200
+//  SAY NAME2 @200
+  SAY DESC @206
+  
+COPY ~silverrealms/itm/AC#PLAT8.itm~         ~override/AC#PLAT8.itm~  // brass dragon armor
+  SAY NAME1 @210
+  SAY NAME2 @211
+  SAY UNIDENTIFIED_DESC @212
+  SAY DESC @213
+
+COPY ~silverrealms/itm/ac#beleg.itm~         ~override/ac#beleg.itm~ // Bebilith's leg
+  SAY NAME1 @217
+  SAY NAME2 @217
+  SAY UNIDENTIFIED_DESC @218
+  SAY DESC @219
+  
+COPY ~silverrealms/itm/AC#AROW1.itm~         ~override/AC#AROW1.itm~  // weakening arrows
+  // SAY NAME1 @217
+  SAY NAME2 @275
+  // SAY UNIDENTIFIED_DESC @218
+  SAY DESC @276
+  
+COPY ~silverrealms/itm/ac#ruby1.itm~         ~override/ac#ruby1.itm~   // Ruby
+  SAY NAME2 @8022
+  SAY DESC @8023
+  
+COPY ~silverrealms/itm/ac#clck1.itm~         ~override/ac#clck1.itm~ // Cloak of the bats
+  // SAY NAME1 @217
+  SAY NAME2 @288
+  // SAY UNIDENTIFIED_DESC @218
+  SAY DESC @289
+  
+COPY ~silverrealms/itm/AC#MITH1.itm~         ~override/AC#MITH1.itm~  // mithril ore
+  SAY NAME1 @290
+  SAY NAME2 @291
+  SAY UNIDENTIFIED_DESC @292
+  SAY DESC @293
+
+COPY ~silverrealms/itm/ac#shan1.itm~         ~override/ac#shan1.itm~   // Ammonit
+  SAY NAME2 @318
+  SAY DESC @319
+  
+COPY ~silverrealms/itm/ac#shan2.itm~         ~override/ac#shan2.itm~   // Goldbarren
+  SAY NAME2 @320
+  SAY DESC @321
+
+COPY ~silverrealms/itm/ac#shan3.itm~         ~override/ac#shan3.itm~   // Zardazil
+  SAY NAME2 @322
+  SAY DESC @323
+  
+COPY ~silverrealms/itm/ac#shan4.itm~         ~override/ac#shan4.itm~   // Eisenerz
+  SAY NAME2 @324
+  SAY DESC @325
+  
+COPY ~silverrealms/itm/ac#shan5.itm~         ~override/ac#shan5.itm~   // Silberbarren
+  SAY NAME2 @326
+  SAY DESC @327
+  
+COPY ~silverrealms/itm/ac#shan6.itm~         ~override/ac#shan6.itm~   // beschliffener Juwel
+  SAY NAME2 @328
+  SAY DESC @329
+
+COPY ~silverrealms/itm/ac#shan7.itm~         ~override/ac#shan7.itm~   // Kieselsteine
+  SAY NAME2 @330
+  SAY DESC @331
+  
+COPY ~silverrealms/itm/ac#shan8.itm~         ~override/ac#shan8.itm~   // Adamantit
+  SAY NAME2 @332
+  SAY DESC @333
+  
+COPY ~silverrealms/itm/ac#shan9.itm~         ~override/ac#shan9.itm~   // Mithril
+  SAY NAME2 @334
+  SAY DESC @335
+
+COPY ~silverrealms/itm/AC#DWCH1.itm~         ~override/AC#DWCH1.itm~   // Drow Chainmail
+
+COPY ~silverrealms/itm/AC#BOLT1.itm~         ~override/AC#BOLT1.itm~   // Bolzen der Schwächung
+  SAY NAME2 @377
+  SAY DESC @378
+  
+COPY ~silverrealms/itm/AC#WAND9.itm~         ~override/AC#WAND9.itm~   // Bolzen der Schwächung
+  SAY NAME2 @384
+  SAY DESC @385
+  
+COPY ~silverrealms/itm/AC#RING7.itm~         ~override/AC#RING7.itm~    // lesser ring of fire control
+  SAY NAME2 @396
+  SAY DESC @397
+  
+COPY ~silverrealms/itm/ac#key1v.itm~   ~override/ac#key1v.itm~  // key for fire giant forge
+  SAY NAME1 @398
+  SAY NAME2 @398
+  SAY DESC @399
+  
+COPY ~silverrealms/itm/AC#BRZ1.itm~         ~override/AC#BRZ1.itm~  // brazier of commanding fire elementals
+  SAY NAME1 @401
+  SAY NAME2 @402
+  SAY UNIDENTIFIED_DESC @403
+  SAY DESC @404
+  
+COPY ~silverrealms/itm/ac#rune1.itm~   ~override/ac#rune1.itm~ // dwarven runestone
+  SAY NAME1 @405
+  SAY NAME2 @405
+  SAY DESC @406
+  
+COPY ~silverrealms/itm/ac#arm01.itm~   ~override/ac#arm01.itm~   // damaged dwarven armor
+  SAY NAME1 @409
+  SAY NAME2 @409
+  SAY DESC @410
+  
+COPY ~silverrealms/itm/ac#msc4a.itm~   ~override/ac#msc4a.itm~   // activation stone
+  SAY NAME1 @437
+  SAY NAME2 @437
+  SAY DESC @438
+  
+COPY ~silverrealms/itm/AC#AROW8.itm~         ~override/AC#AROW8.itm~ // cursed arrwos of fire
+  // SAY NAME1 @290
+  SAY NAME2 @445
+  // SAY UNIDENTIFIED_DESC @292
+  SAY DESC @446
+  
+COPY ~silverrealms/itm/AC#ARO12.itm~         ~override/AC#ARO12.itm~ // cursed poisoned arrows
+  // SAY NAME1 @290
+  SAY NAME2 @447
+  // SAY UNIDENTIFIED_DESC @292
+  SAY DESC @448
+  
+COPY ~silverrealms/itm/AC#BELT9.itm~         ~override/AC#BELT9.itm~ // Belt of the lion
+  // SAY NAME1 @290
+  SAY NAME2 @449
+  // SAY UNIDENTIFIED_DESC @292
+  SAY DESC @450
+  
+COPY ~silverrealms/itm/AC#SHLD4.itm~         ~override/AC#SHLD4.itm~
+  // SAY NAME1 @290
+  SAY NAME2 @451
+  // SAY UNIDENTIFIED_DESC @292
+  SAY DESC @452
+  
+COPY ~silverrealms/itm/AC#MSC50.itm~         ~override/AC#MSC50.itm~  // skull with hole
+  // SAY NAME1 @290
+  SAY NAME2 @453
+  // SAY UNIDENTIFIED_DESC @292
+  SAY DESC @454
+  
+COPY ~silverrealms/itm/AC#CLK13.itm~         ~override/AC#CLK13.itm~  // Illithidrobe
+  // SAY NAME1 @290
+  SAY NAME2 @457
+  // SAY UNIDENTIFIED_DESC @292
+  SAY DESC @458
+  
+COPY ~silverrealms/itm/ac#84key.itm~         ~override/ac#84key.itm~  // Turmschlüssel
+  // SAY NAME1 @290
+  SAY NAME2 @463
+  // SAY UNIDENTIFIED_DESC @292
+  SAY DESC @464
+  
+COPY ~silverrealms/itm/AC#SCABR.itm~         ~override/AC#SCABR.itm~  // Bronze Dragon Scales
+   SAY NAME1 @465
+  SAY NAME2 @466
+  SAY UNIDENTIFIED_DESC @467
+  SAY DESC @468
+
+COPY ~silverrealms/itm/AC#GIRU1.itm~         ~override~  // Githrune #1 "A"
+   SAY NAME1 @469
+  SAY NAME2 @470
+  SAY UNIDENTIFIED_DESC @471
+  SAY DESC @472
+
+COPY ~silverrealms/itm/AC#GIRU2.itm~         ~override~  // Githrune#2 "A"
+   SAY NAME1 @469
+  SAY NAME2 @470
+  SAY UNIDENTIFIED_DESC @471
+  SAY DESC @472
+  
+COPY ~silverrealms/itm/AC#GIRU3.itm~         ~override~  // Githrune#3 "A"
+   SAY NAME1 @469
+  SAY NAME2 @470
+  SAY UNIDENTIFIED_DESC @471
+  SAY DESC @472
+  
+COPY ~silverrealms/itm/AC#GIRU4.itm~         ~override~  // Githrune #4 "A"
+   SAY NAME1 @469
+  SAY NAME2 @470
+  SAY UNIDENTIFIED_DESC @471
+  SAY DESC @472
+  
+COPY ~silverrealms/itm/AC#PSYSW.itm~         ~override/AC#PSYSW.itm~  // Psionic Sword
+  // SAY NAME1 @290
+  SAY NAME2 @473
+  // SAY UNIDENTIFIED_DESC @292
+  SAY DESC @474
+  
+COPY ~silverrealms/itm/AC#RING9.itm~         ~override/AC#RING9.itm~  // Ring der Überlieferung
+  // SAY NAME1 @290
+  SAY NAME2 @485
+  // SAY UNIDENTIFIED_DESC @292
+  SAY DESC @486
+  
+COPY ~silverrealms/itm/AC#HAMM1.itm~         ~override/AC#HAMM1.itm~  // Ildanfal
+  // SAY NAME1 @290
+  SAY NAME2 @487
+  // SAY UNIDENTIFIED_DESC @292
+  SAY DESC @488
+  
+COPY ~silverrealms/itm/AC#BLUN1.itm~         ~override/AC#BLUN1.itm~  // Astraler Streitkolben der Zerschlagung
+  // SAY NAME1 @290
+  SAY NAME2 @493
+  // SAY UNIDENTIFIED_DESC @292
+  SAY DESC @494
+  
+COPY ~silverrealms/itm/AC#BOW01.itm~         ~override/AC#BOW01.itm~  // Bow of Death's Rain
+  // SAY NAME1 @290
+  SAY NAME2 @495
+  // SAY UNIDENTIFIED_DESC @292
+  SAY DESC @496
+  
+COPY ~silverrealms/itm/ac#14le1.itm~         ~override/ac#14le1.itm~  // Letter from the knightly order Kuldar of Barakmordin
+  SAY NAME2 @510
+  SAY DESC @511
+  
+COPY ~silverrealms/itm/ac#bonew.itm~         ~override/ac#bonew.itm~  // Child bones
+  SAY NAME2 @515
+  SAY DESC @516
+  
+COPY ~silverrealms/itm/AC#WAND8.itm~         ~override/AC#WAND8.itm~  // Stab der Augen
+  SAY NAME2 @541
+  SAY DESC @542
+  
+COPY ~silverrealms/itm/AC#RING8.itm~         ~override/AC#RING8.itm~  // Ring des Magiebannens
+  SAY NAME2 @549
+  SAY DESC @550
+  
+COPY ~silverrealms/itm/AC#LEAT7.itm~         ~override~  // Rüstung der Verwundbarkeit
+  SAY NAME2 @552
+  SAY DESC @553
+
+COPY ~silverrealms/itm/ac#note9.itm~         ~override~  // Verbeeg's note in area acil9c
+  SAY NAME2 @554
+  SAY DESC @983
+  
+COPY ~silverrealms/itm/ac#note9.itm~         ~override/AC#53PA1.itm~  // First Page for the Book-Quest in Dugmaren's Library
+  SAY NAME2 @3000
+  SAY DESC @3001
+  
+COPY ~silverrealms/itm/ac#note9.itm~         ~override/AC#53PA2.itm~  // 2nd Page for the Book-Quest in Dugmaren's Library
+  SAY NAME2 @3000
+  SAY DESC @3002
+  
+COPY ~silverrealms/itm/ac#note9.itm~         ~override/AC#53PA3.itm~  // 3rd Page for the Book-Quest in Dugmaren's Library
+  SAY NAME2 @3000
+  SAY DESC @3003
+  
+COPY ~silverrealms/itm/ac#note9.itm~         ~override/AC#53PA4.itm~  // 4th Page for the Book-Quest in Dugmaren's Library
+  SAY NAME2 @3000
+  SAY DESC @3004
+  
+COPY ~silverrealms/itm/ac#note9.itm~         ~override/AC#53PA5.itm~  // 5th Page for the Book-Quest in Dugmaren's Library
+  SAY NAME2 @3000
+  SAY DESC @3005
+  
+COPY ~silverrealms/itm/AC#GEAIR.itm~         ~override/AC#GEAIR.itm~  // Elementarkristall
+  SAY NAME1 @560
+  SAY NAME2 @561
+  SAY UNIDENTIFIED_DESC @562
+  SAY DESC @563
+  
+COPY ~silverrealms/itm/AC#AX1H2.itm~         ~override/AC#AX1H2.itm~  // Narjor +2, +4 against Trolls
+  SAY NAME2 @566
+  SAY DESC @567
+  
+COPY ~silverrealms/itm/AC#BERRO.itm~         ~override/AC#BERRO.itm~  // Amulet of Berronar
+  SAY NAME2 @568
+  SAY DESC @569
+  
+COPY ~silverrealms/itm/ac#head1.itm~         ~override/ac#head1.itm~  // Lancameth's head
+  SAY NAME2 @573
+  SAY DESC @574
+  
+COPY ~silverrealms/itm/AC#KEY13.itm~         ~override/AC#KEY13.itm~  // Swordkey ACIL13 DOOR 02
+  SAY NAME2 @576
+  SAY DESC @577
+  
+COPY ~silverrealms/itm/ac#zepko.itm~         ~override~  // Korolnor-Zepter
+  SAY NAME1 @581
+  SAY NAME2 @579
+  SAY UNIDENTIFIED_DESC @582
+  SAY DESC @580
+  
+COPY ~silverrealms/itm/AC#KEY19.itm~         ~override~  // Diinkarazans Key
+  SAY NAME2 @585
+  SAY DESC @586
+  
+COPY ~silverrealms/itm/ac#githd.itm~         ~override~  // Gith-Dagger
+  // SAY NAME1 @290
+  SAY NAME2 @591
+  // SAY UNIDENTIFIED_DESC @292
+  SAY DESC @592
+  
+COPY ~silverrealms/itm/ac#githe.itm~         ~override~  // Gith-Dagger #2
+  // SAY NAME1 @290
+  SAY NAME2 @913
+  // SAY UNIDENTIFIED_DESC @292
+  SAY DESC @914
+  
+COPY ~silverrealms/itm/ac#githl.itm~         ~override~  // Gith-Leatherarmor
+  // SAY NAME1 @290
+  SAY NAME2 @593
+  // SAY UNIDENTIFIED_DESC @292
+  SAY DESC @594
+  
+COPY ~silverrealms/itm/ac#githm.itm~         ~override~  // Gith-Leatherarmor #2
+  // SAY NAME1 @290
+  SAY NAME2 @593
+  // SAY UNIDENTIFIED_DESC @292
+  SAY DESC @912
+  
+COPY ~silverrealms/itm/ac#mis5l.itm~         ~override~  // Bear toy
+  SAY NAME2 @599
+  SAY DESC @600
+  
+COPY ~silverrealms/itm/ac#mis1g.itm~         ~override/ac#mis1g.itm~  // toy
+  SAY NAME2 @601
+  SAY DESC @602
+  
+COPY ~silverrealms/itm/ac#bookl.itm~         ~override/ac#bookl.itm~  // Lancameth's Journal
+  SAY NAME2 @605
+  SAY DESC @606
+  
+COPY ~silverrealms/itm/ac#booki.itm~         ~override/ac#booki.itm~  // Iremar's Journal
+  SAY NAME2 @607
+  SAY DESC @608
+  
+COPY ~silverrealms/itm/AC#DAQUS.itm~         ~override/AC#DAQUS.itm~  // Stoßdolch von Quar-Shan
+  SAY NAME2 @610
+  SAY DESC  @611
+  
+COPY ~silverrealms/itm/AC#53BK1.itm~         ~override~  // History of the shield dwarves: Right book
+  SAY NAME2 @3006
+  SAY DESC  @3007
+  
+COPY ~silverrealms/itm/AC#53BK1.itm~         ~override/AC#53BK2.itm~  // History of the shield dwarves: wrong book (!!!)
+  SAY NAME2 @3006
+  SAY DESC  @3007
+
+COPY ~silverrealms/itm/AC#BRACD.itm~         ~override/AC#BRACD.itm~  // Bracers of throwing daggers
+  // SAY NAME1 @290
+  SAY NAME2 @623
+  // SAY UNIDENTIFIED_DESC @292
+  SAY DESC @624
+  
+COPY ~silverrealms/itm/AC#SKUTR.itm~         ~override/AC#SKUTR.itm~  // Skull of Explosion
+  // SAY NAME1 @290
+  SAY NAME2 @827
+  // SAY UNIDENTIFIED_DESC @292
+  SAY DESC @828
+  
+COPY ~silverrealms/itm/AC#SRPAX.itm~         ~override/AC#SRPAX.itm~  // Pickaxe
+  SAY NAME2 @629
+  SAY DESC  @630
+  
+COPY ~silverrealms/itm/AC#MIMAZ.itm~         ~override/AC#MIMAZ.itm~  // Minotaurenschale
+  SAY NAME1 @633
+  SAY NAME2 @633
+  SAY UNIDENTIFIED_DESC @635
+  SAY DESC @636
+  
+COPY ~silverrealms/itm/AC#52HA1.itm~         ~override/AC#52HA1.itm~  // Fever Iron Blade
+  SAY NAME2 @641
+  SAY DESC  @642
+  
+COPY ~silverrealms/itm/AC#DEND1.itm~         ~override/AC#DEND1.itm~  // Dendritic Armor
+  SAY NAME2 @644
+  SAY DESC  @645
+  
+COPY ~silverrealms/itm/AC#DDROW.itm~         ~override/AC#DDROW.itm~  // Dead Drow
+  SAY NAME2 @646
+  SAY DESC  @647
+  
+COPY ~silverrealms/itm/AC#5EKEY.itm~         ~override/AC#5EKEY.itm~  // False Ellhimar's Key
+  SAY NAME2 @649
+  SAY DESC  @650
+  
+COPY ~silverrealms/itm/AC#5QRUN.itm~         ~override/AC#5QRUN.itm~  // Vronia's Runestone
+  SAY NAME2 @654
+  SAY DESC  @655
+  
+COPY ~silverrealms/itm/AC#RATTL.itm~         ~override/AC#RATTL.itm~  // Rat tail
+  SAY NAME2 @666
+  SAY DESC  @667
+
+COPY ~silverrealms/itm/AC#HADUM.itm~         ~override/AC#HADUM.itm~  // Sealbreaker; Maul of the Titans
+  SAY NAME1 @8010
+  SAY UNIDENTIFIED_DESC @8011
+  SAY NAME2 @670
+  SAY DESC  @671
+
+COPY ~silverrealms/itm/AC#57TUR.itm~         ~override/AC#57TUR.itm~  // Turbaern's Body
+  SAY NAME2 @90
+  SAY DESC  @675
+  
+COPY ~silverrealms/itm/AC#PLATS.itm~         ~override/AC#PLATS.itm~  // Stone armor
+  SAY NAME1 @686
+  SAY NAME2 @686
+  SAY UNIDENTIFIED_DESC @687
+  SAY DESC @687
+  
+COPY ~silverrealms/itm/AC#AMUDU.itm~         ~override/AC#AMUDU.itm~  // Dumathoin's Amulet
+  SAY NAME2 @688
+  SAY DESC  @689
+  
+COPY ~silverrealms/itm/AC#HIZA1.itm~         ~override/AC#HIZA1.itm~  // Hizagkuur
+  SAY NAME1 @694
+  SAY NAME2 @696
+  SAY UNIDENTIFIED_DESC @695
+  SAY DESC @697
+  
+COPY ~silverrealms/itm/AC#DROHE.itm~         ~override/AC#DROHE.itm~  // Priestess of Lolth's head
+  SAY NAME2 @698
+  SAY DESC  @699
+  
+COPY ~silverrealms/itm/AC#HIZA2.itm~         ~override/AC#HIZA2.itm~  // Hizagkuur reworked
+  SAY NAME2 @696
+  SAY DESC @701
+  
+COPY ~silverrealms/itm/AC#ILWES.itm~         ~override/AC#ILWES.itm~  // Water elemental essence
+     SAY NAME1 @702
+     SAY NAME2 @703
+     SAY UNIDENTIFIED_DESC @704
+     SAY DESC @705
+     
+COPY ~silverrealms/itm/ac#run53.itm~         ~override/ac#run53.itm~  // Runestone: Barakuir
+  SAY NAME2 @707
+  SAY DESC @708
+  
+COPY ~silverrealms/itm/AC#28ELL.itm~         ~override/AC#28ELL.itm~  // Ellhimars body
+  SAY NAME2 @715
+  SAY DESC @716
+  
+COPY ~silverrealms/itm/ac#ddro2.itm~         ~override/ac#ddro2.itm~  // Malagzmyr's body
+  SAY NAME2 @721
+  SAY DESC @722
+  
+COPY ~silverrealms/itm/AC#AML19.itm~         ~override/AC#AML19.itm~  // Cursed amulet of magic resistance
+  SAY NAME2 @726
+  SAY DESC @727
+  
+COPY ~silverrealms/itm/ac#eyebe.itm~         ~override/ac#eyebe.itm~  // Beholder Eyestalk
+  SAY NAME2 @732
+  SAY DESC @733
+  
+COPY ~silverrealms/itm/AC#POTL2.itm~         ~override/AC#POTL2.itm~  // Levitationstrank
+  SAY NAME2 @735
+  SAY DESC @736
+  
+COPY ~silverrealms/itm/AC#BOOKB.itm~         ~override/AC#BOOKB.itm~  // Borthun's Book
+  SAY NAME2 @737
+  SAY DESC @738
+  
+COPY ~silverrealms/itm/AC#SYTI1.itm~         ~override/AC#SYTI1.itm~  // Holy symbol of Tiamat
+     //SAY NAME1 @702
+     SAY NAME2 @750
+     //SAY UNIDENTIFIED_DESC @704
+     SAY DESC @751
+     
+COPY ~silverrealms/itm/ac#adam1.itm~         ~override/ac#adam1.itm~   // Adamantit
+  SAY NAME2 @332
+  SAY DESC @333
+
+COPY ~silverrealms/itm/AC#70NO2.itm~         ~override/AC#70NO2.itm~   // Note to Zafroma
+  SAY NAME2 @759
+  SAY DESC @760
+  
+COPY ~silverrealms/itm/AC#61KEY.itm~         ~override/AC#61KEY.itm~   // Key for Azerkyn Hall Flood
+  SAY NAME2 @764
+  SAY DESC @765
+  
+COPY ~silverrealms/itm/AC#DAG05.itm~         ~override/AC#DAG05.itm~   // Abbathor's Dagger
+  SAY NAME2 @767
+  SAY DESC @768
+  
+COPY ~silverrealms/itm/ac#zepdr.itm~         ~override/ac#zepdr.itm~  // Drakkalor-Zepter
+  SAY NAME1 @771
+  SAY NAME2 @769
+  SAY UNIDENTIFIED_DESC @772
+  SAY DESC @770
+  
+COPY ~silverrealms/itm/ac#zepto.itm~         ~override~  // Torglor-Zepter
+  SAY NAME1 @771
+  SAY NAME2 @8028
+  SAY UNIDENTIFIED_DESC @772
+  SAY DESC @8029
+  
+COPY ~silverrealms/itm/ac#nokey.itm~         ~override/ac#nokey.itm~   // Cheat Key
+  SAY NAME2 @773
+  SAY DESC @774
+  
+COPY ~silverrealms/itm/ac#nokey.itm~         ~override/ac#keyno.itm~   // Cheat Key
+  SAY NAME2 @773
+  SAY DESC @774
+  
+COPY ~silverrealms/itm/AC#HAMAN.itm~         ~override/AC#HAMAN.itm~   // Beldas Hammer
+  SAY NAME2 @776
+  SAY DESC @777
+  
+COPY ~silverrealms/itm/AC#PLAAD.itm~         ~override/AC#PLAAD.itm~   // Adamantrüstung
+  SAY NAME2 @779
+  SAY DESC @780
+  
+COPY ~silverrealms/itm/AC#IL#01.itm~         ~override/AC#IL#01.itm~   // Stone of water elements
+  SAY NAME2 @785
+  SAY DESC @786
+  
+COPY ~silverrealms/itm/AC#IL#02.itm~         ~override/AC#IL#02.itm~   // Runestone #1
+  SAY NAME2 @793
+  SAY DESC @794
+  
+COPY ~silverrealms/itm/AC#IL#03.itm~         ~override/AC#IL#03.itm~   // Runestone #3
+  SAY NAME2 @793
+  SAY DESC @794
+  
+COPY ~silverrealms/itm/AC#WAND7.itm~         ~override/AC#WAND7.itm~  // Geringerer Stab der Erde und des Gesteins
+     //SAY NAME1 @702
+     SAY NAME2 @787
+     //SAY UNIDENTIFIED_DESC @704
+     SAY DESC @788 
+
+COPY_EXISTING ~MISC61.ITM~ ~override/AC#GOGON.ITM~  // Gogondy
+  SAY NAME2 @799
+  SAY DESC @800
+  
+COPY ~silverrealms/itm/AC#S#DRR.itm~         ~override/AC#S#DRR.itm~   // Dragon Figurine
+  SAY NAME2 @813
+  SAY DESC @814
+  
+COPY ~silverrealms/itm/ac#s#bkt.itm~         ~override/ac#s#bkt.itm~   // Book of Tethir, the Dragonslayer
+  SAY NAME2 @815
+  SAY DESC @816
+  
+COPY ~silverrealms/itm/AC#S#MP1.itm~         ~override/AC#S#MP1.itm~   // Map to sunken ship purple wind
+  SAY NAME2 @1015
+  SAY DESC @1016
+  
+COPY ~silverrealms/itm/AC#S#ON1.itm~         ~override~  // Firedge
+     //SAY NAME1 @702
+     SAY NAME2 @1017
+     //SAY UNIDENTIFIED_DESC @704
+     SAY DESC @1018
+     
+COPY ~silverrealms/itm/AC#S#ON2.itm~         ~override~  // Chlorazor
+     //SAY NAME1 @702
+     SAY NAME2 @1019
+     //SAY UNIDENTIFIED_DESC @704
+     SAY DESC @1020
+     
+COPY ~silverrealms/itm/AC#AXTUR.itm~         ~override~   // Turbolds axe
+  SAY NAME2 @825
+  SAY DESC @826
+  
+COPY ~silverrealms/itm/AC#CKBHL.itm~         ~override~   // Bhaal's robe
+  SAY NAME2 @842
+  SAY DESC @843
+  
+COPY ~silverrealms/itm/AC#S#0AS.itm~         ~override~   // Beldas' note
+  SAY NAME2 @844
+  SAY DESC @845
+  
+COPY ~silverrealms/itm/ac#clk05.itm~         ~override~   // Cloak of petrification
+  SAY NAME2 @846
+  SAY DESC @847
+  
+COPY ~silverrealms/itm/ac#s#las.itm~         ~override~   // Lancameth's Skull
+  SAY NAME2 @849
+  SAY DESC @850
+
+COPY ~silverrealms/itm/AC#DRFT1.itm~         ~override~   // Drow driftdisc: out of order
+  SAY NAME2 @890
+  SAY DESC @891
+
+COPY ~silverrealms/itm/AC#DRFT2.itm~         ~override~   // Drow driftdisc: Working
+  SAY NAME2 @890
+  SAY DESC @891
+  
+COPY ~silverrealms/itm/AC#RCKEL.itm~         ~override~   // Stone of earth elemental summoning
+  SAY NAME1 @894
+  SAY NAME2 @895
+  SAY UNIDENTIFIED_DESC @896
+  SAY DESC @897
+  
+COPY ~silverrealms/itm/ac#key80.itm~         ~override~   // Key for the Gate in Area ACIL80
+  SAY DESC @915
+
+COPY ~silverrealms/itm/AC#SW2H1.itm~         ~override~   // Githyanki Silver sword in Area ACIL81, key for door to exit
+  SAY DESC @918
+  
+COPY ~silverrealms/itm/AC#ALLIP.itm~         ~override~   // An allip's wisdom draining attack
+  SAY 0xde @926
+  
+COPY ~silverrealms/itm/AC#81ARO.itm~         ~override~   // arrow of Githyanki slaying
+  SAY DESC @927
+  
+COPY ~silverrealms/itm/AC#ADORE.itm~         ~override~   // adamant ore
+  SAY NAME1 @935
+  SAY DESC  @936
+  
+COPY ~silverrealms/itm/AC#S#ORE.itm~         ~override~ // Ore: Zardazil
+  SAY NAME2 @322
+  SAY DESC @323
+  
+COPY ~silverrealms/itm/AC#PLAT4.itm~         ~override~ // armor of bloodlust
+  SAY NAME2 @941
+  SAY DESC @942
+  
+COPY ~silverrealms/itm/AC#RING2.itm~         ~override~ // Ring of false alignment
+  SAY NAME2 @944
+  SAY DESC @945
+  
+COPY ~silverrealms/itm/AC#SWTET.itm~         ~override~ // Tethir's moonblade
+  SAY NAME2 @8018
+  SAY DESC @8019
+
+COPY ~silverrealms/itm/ac#sr#r1.itm~ ~override/ac#sr#r1.itm~ // Dwarven Runestone
+  SAY NAME1 @405
+  SAY NAME2 @405
+  SAY DESC @1008
+
+COPY ~silverrealms/itm/AC#SRBK1.itm~ ~override/AC#SRBK1.itm~ // Book Astral realms
+  //SAY NAME1 
+  SAY NAME2 @1000
+  SAY UNIDENTIFIED_DESC @1001
+  SAY DESC @1002
+COPY ~silverrealms/itm/AC#SRLAD.itm~ ~override/AC#SRLAD.itm~ // Ladder
+  SAY NAME2 @1003
+  SAY DESC @1004
+  
+COPY ~silverrealms/itm/ac#s#ms1.itm~ ~override/ac#s#ms1.itm~ // Letter: Plot start
+  SAY NAME1 @46
+  SAY NAME2 @46
+  SAY DESC @47
+  
+COPY ~silverrealms/itm/AC#FLSWA.itm~         ~override~   // Flacon of fresh air
+  SAY NAME1 @951
+  SAY NAME2 @952
+  SAY UNIDENTIFIED_DESC @953
+  SAY DESC @954
+
+COPY ~silverrealms/itm/AC#CHEE1.itm~         ~override~   // Cheese
+  SAY NAME2 @972
+  SAY DESC @973
+  
+COPY ~silverrealms/itm/ac#90key.itm~         ~override~   // Key to access Area ACIL91 (mount turbold dungeon), given by Beldas
+  SAY NAME2 @1022
+  SAY DESC @1023
+
+COPY ~silverrealms/itm/AC#ARO1A.itm~         ~override~   // arrows of dragon slaying
+  SAY NAME2 @975
+  SAY DESC @976
+  
+COPY ~silverrealms/itm/ac#note8.itm~         ~override~   // ranger's note in area acil90
+  SAY NAME2 @59
+  SAY DESC @977
+
+COPY ~silverrealms/itm/AC#90RUI.itm~         ~override~   // copy shanatar runestones for area ACIL90
+  SAY NAME2 @980
+  SAY DESC @981
+  
+COPY ~silverrealms/itm/AC#90RUD.itm~         ~override~   // copy shanatar runestones for area ACIL90
+  SAY NAME2 @980
+  SAY DESC @981
+  
+COPY ~silverrealms/itm/AC#90RUB.itm~         ~override~   // copy shanatar runestones for area ACIL90
+  SAY NAME2 @980
+  SAY DESC @981
+  
+COPY ~silverrealms/itm/AC#90RUA.itm~         ~override~   // copy shanatar runestones for area ACIL90
+  SAY NAME2 @980
+  SAY DESC @981
+  
+COPY ~silverrealms/itm/AC#90RUU.itm~         ~override~   // copy shanatar runestones for area ACIL90
+  SAY NAME2 @980
+  SAY DESC @981
+  
+COPY ~silverrealms/itm/AC#90RUX.itm~         ~override~   // copy shanatar runestones for area ACIL90
+  SAY NAME2 @980
+  SAY DESC @981
+  
+COPY ~silverrealms/itm/AC#90RUH.itm~         ~override~   // copy shanatar runestones for area ACIL90
+  SAY NAME2 @980
+  SAY DESC @981
+  
+COPY ~silverrealms/itm/AC#90RUS.itm~         ~override~   // copy shanatar runestones for area ACIL90
+  SAY NAME2 @980
+  SAY DESC @981
+  
+COPY ~silverrealms/itm/AC#WNDJS.itm~         ~override~   // jester's rod
+  SAY NAME2 @28
+  SAY DESC @29
+
+COPY ~silverrealms/itm/AC#ZEPXO.itm~         ~override~   // handle of Xothaerin sceptre
+  SAY NAME2 @8083
+  SAY DESC @8084
+  
+COPY ~silverrealms/itm/AC#ZEPXS.itm~         ~override~   // head of Xothaerin sceptre
+  SAY NAME2 @8085
+  SAY DESC @8086
+  
+COPY ~silverrealms/itm/AC#ZEPX2.itm~         ~override~  // Xothaerin sceptre (restored)
+  SAY NAME1 @581
+  SAY NAME2 @995
+  SAY UNIDENTIFIED_DESC @997
+  SAY DESC @996
+  
+COPY ~silverrealms/itm/AC#CLKBL.itm~         ~override~ // clockwork blade of venom
+  SAY NAME2 @1100
+  SAY DESC @1101
+  
+COPY ~silverrealms/itm/AC#LIVAX.itm~         ~override~ // the living axe, Karlyns Axe
+  SAY NAME2 @1103
+  SAY DESC @1104
+  
+COPY ~silverrealms/itm/ac#let01.itm~         ~override~ // Lancameth's message
+  SAY NAME2 @59
+  SAY DESC @1105
+
+COPY ~silverrealms/itm/AC#4ICOI.itm~         ~override~ // Taran, amnian silver coins
+  SAY NAME2 @1109
+  SAY DESC @1110
+
+COPY ~silverrealms/itm/ac#4ilet.itm~         ~override~ // Beldas' message: Reveals mount Turbold
+  SAY NAME2 @1111
+  SAY DESC @1112
+
+COPY ~silverrealms/itm/AC#DWF33.itm~         ~override~ // Thradear's fever iron armor
+  SAY NAME2 @1114
+  SAY DESC @1115
+
+COPY ~silverrealms/itm/AC#4INT1.itm~         ~override~ // note for Cuvorkan
+  SAY DESC @1117
+  
+COPY ~silverrealms/itm/AC#MGCAP.itm~         ~override~  // cap of clear thoughts
+  SAY NAME1 @1118
+  SAY NAME2 @1120
+  SAY UNIDENTIFIED_DESC @1119
+  SAY DESC @1121
+
+COPY ~silverrealms/itm/AC#BKDWF.itm~         ~override~ //Book about dwarven language
+  SAY NAME2 @1124
+  SAY DESC @1125
+  
+COPY ~silverrealms/itm/AC#HELMI.itm~         ~override~ //Smart-head, helm +2 INT
+  SAY NAME2 @8000
+  SAY DESC @8001
+  
+COPY ~silverrealms/itm/AC#HAPO1.itm~         ~override~ //Harpoon
+  SAY NAME2 @8002
+  SAY DESC @8003
+  
+COPY ~silverrealms/itm/AC#DWCH2.itm~         ~override~ //Drow-Chainmail +1
+  SAY NAME2 @8004
+  SAY DESC @8005
+  
+COPY ~silverrealms/itm/AC#QUAL1.itm~         ~override~  // qualith rune #1
+  SAY NAME1 @8006
+  SAY NAME2 @8007
+  SAY UNIDENTIFIED_DESC @8008
+  SAY DESC @8009
+  
+COPY ~silverrealms/itm/AC#25TEL.itm~         ~override~  // drow teleportation rune
+  SAY NAME1 @8012
+  SAY NAME2 @8013
+  SAY UNIDENTIFIED_DESC @8014
+  SAY DESC @8015
+  
+COPY ~silverrealms/itm/ac#23ell.itm~         ~override~ //Ellhimar's Journal
+  SAY NAME2 @8016
+  SAY DESC @8017
+
+COPY ~silverrealms/itm/AC#67POT.itm~         ~override~ //melting pot
+  SAY NAME2 @8020
+  SAY DESC @8021
+  
+COPY ~silverrealms/itm/AC#BLADR.itm~         ~override~ //Black Adder, long sword+2, lifestealer (Elghonn's weapon, Dragon Annual 1996, p.40)
+  SAY NAME2 @8024
+  SAY DESC @8025
+  
+COPY ~silverrealms/itm/AC#SCRL2.itm~         ~override~ //scroll: Protection from poison (Wizard) (Spellbound, p.95)
+  SAY NAME2 @8026
+  SAY DESC @8027
+  
+COPY ~silverrealms/itm/AC#GODBL.itm~         ~override~  // Godsblood (Dragon magazine #240, p.60)
+  SAY NAME1 @8030
+  SAY NAME2 @8031
+  SAY UNIDENTIFIED_DESC @8032
+  SAY DESC @8033
+  
+COPY ~silverrealms/itm/AC#GODB2.itm~         ~override~  // Godsblood (Dragon magazine #240, p.60)
+  SAY NAME1 @8030
+  SAY NAME2 @8031
+  SAY UNIDENTIFIED_DESC @8032
+  SAY DESC @8034
+  
+COPY ~silverrealms/itm/AC#SW2H9.itm~         ~override~ // Mist Reaver (Dragon magazine #243, p. 39)
+  SAY NAME2 @8035
+  SAY DESC @8036
+  
+COPY ~silverrealms/itm/ac#bolt3.itm~         ~override~ // Bolt of slaying (according to the 2nd Ed. DMG Arrow of slaying, p. 242)
+  SAY NAME2 @8037
+  SAY DESC @8038
+  
+COPY ~silverrealms/itm/AC#AROW2.itm~         ~override~ // arrows of healing, Ruins of Undermountain II, p. 106)
+  SAY NAME2 @8039
+  SAY DESC @8040
+
+COPY ~silverrealms/itm/AC#24DRL.itm~         ~override~  // Drowletter (Vhaeraun priest)
+  SAY NAME1 @8041
+  SAY NAME2 @8042
+  SAY UNIDENTIFIED_DESC @8043
+  SAY DESC @8044
+  
+COPY ~silverrealms/itm/AC#24DR2.itm~         ~override~  // Drowletter deciphered by Viconia (Vhaeraun priest)
+  SAY NAME1 @8041
+  SAY NAME2 @8042
+  SAY UNIDENTIFIED_DESC @8043
+  SAY DESC @8044
+  
+COPY ~silverrealms/itm/AC#CINNA.itm~         ~override~ // cinnabar; quest item to create mercury
+  SAY NAME2 @8045
+  SAY DESC @8046
+  
+COPY ~silverrealms/itm/AC#MERC1.itm~         ~override~ // mercury; quest item for the use of "Tenser's floating disc" spell
+  SAY DESC @8047
+
+COPY ~silverrealms/itm/AC#5DKY1.itm~         ~override~ // Dorna's key, used to open access to the cinnabar mine in area ACIL20
+  SAY NAME2 @8048
+  SAY DESC @8049
+  
+COPY ~silverrealms/itm/AC#5DTFD.itm~         ~override~ // scroll "Tenser's flying disc"
+  SAY NAME2 @8050
+  SAY DESC @8051
+  
+COPY ~silverrealms/itm/AC#BRALG.itm~         ~override~ // Gauntlets 20 Strength, 3 Dex
+  SAY NAME2 @8050
+  SAY DESC @8051
+  
+COPY ~silverrealms/itm/AC#CLK06.itm~         ~override~ // Cloak of silence  UNUSED
+  SAY NAME2 @8052
+  SAY DESC @8053
+  
+COPY ~silverrealms/itm/AC#SPIDD.itm~         ~override~ // dead spider body
+  SAY DESC @8054
+  
+COPY ~silverrealms/itm/AC#PNACD.itm~         ~override~ // Potion of acid resistance
+  SAY NAME2 @8055
+  SAY DESC @8056

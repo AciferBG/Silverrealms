@@ -1,0 +1,18 @@
+IF
+	Global("DeactivateTrigger","ACIL9C",0)
+THEN
+	RESPONSE #100
+	        SetGlobal("DeactivateTrigger","ACIL9C",1)
+		TriggerActivation("Tracil09",FALSE)
+                TriggerActivation("TrACIL06",TRUE)
+END
+
+IF
+	Global("AC#EnteredACIL09","GLOBAL",1)
+	GlobalLT("DeactivateTrigger","ACIL9C",2)
+THEN
+	RESPONSE #100
+	        SetGlobal("DeactivateTrigger","ACIL9C",2)
+		TriggerActivation("Tracil06",FALSE)
+                TriggerActivation("TrACIL09",TRUE)
+END

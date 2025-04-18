@@ -1,0 +1,58 @@
+IF
+	Global("AC#Goapspawn","GLOBAL",2)
+	Global("Prep","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Prep","LOCALS",1)
+		ForceSpell(Myself,CLERIC_REMOVE_FEAR)  // SPPR108.SPL (Furcht bannen)
+END
+
+IF
+	Global("AC#Goapspawn","GLOBAL",2)
+	Global("Prep","LOCALS",1)
+THEN
+	RESPONSE #100
+		SetGlobal("Prep","LOCALS",2)
+		ForceSpell(Myself,CLERIC_PROTECTION_FROM_EVIL_10_FOOT)  // SPPR408.SPL (Schutz vor B�sem, 3 m Radius)
+END
+
+IF
+	Global("AC#Goapspawn","GLOBAL",2)
+	Global("Prep","LOCALS",2)
+THEN
+	RESPONSE #100
+		SetGlobal("Prep","LOCALS",3)
+		ForceSpell(Myself,CLERIC_DEFENSIVE_HARMONY)  // SPPR406.SPL (Koordinierte Verteidigung)
+END
+
+IF
+	AttackedBy([PC],DEFAULT)
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@938)
+END
+
+IF
+	Exists("AC#GOAP1")  // Goap
+	!See("AC#GOAP1")  // Goap
+	!See(NearestEnemyOf(Myself))
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		MoveToObject("AC#GOAP1")  // Goap
+END
+
+IF
+	See("AC#GOAP1")  // Goap
+THEN
+	RESPONSE #100
+		AttackReevaluate("AC#GOAP1",30)  // Goap
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+

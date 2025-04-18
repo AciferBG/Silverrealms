@@ -1,0 +1,85 @@
+IF
+	!Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	Global("DEMONCONTROL","LOCALS",0)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(NearestEnemyOf(Myself),30)
+		SetGlobal("DEMONCONTROL","LOCALS",1)
+END
+
+IF
+	Global("DEMONCONTROL","LOCALS",0)
+	!See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Wait(1)
+		SetGlobal("DEMONCONTROL","LOCALS",1)
+END
+
+IF
+	Global("DEMONCONTROL","LOCALS",1)
+THEN
+	RESPONSE #100
+		ForceSpell(SecondNearestEnemyOf(Myself),TANARI_DEATH_GAZE)  // SPIN996.SPL (Todesblick)
+		ForceSpell(NearestEnemyOf(Myself),TANARI_VAMPIRIC_TOUCH)  // SPIN997.SPL (Vampirgriff)
+		AttackOneRound(NearestEnemyOf(Myself))
+		AttackOneRound(NearestEnemyOf(Myself))
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Global("TANARIPARALYZE","LOCALS",0)
+THEN
+	RESPONSE #100
+		ForceSpell(NearestEnemyOf(Myself),TANARI_PARALYZE)  // SPIN999.SPL (Lähmung)
+		SetGlobal("TANARIPARALYZE","LOCALS",1)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	StateCheck(NearestEnemyOf(Myself),STATE_HELPLESS)
+THEN
+	RESPONSE #100
+		ForceSpell(SecondNearestEnemyOf(Myself),TANARI_DEATH_GAZE)  // SPIN996.SPL (Todesblick)
+		ForceSpell(NearestEnemyOf(Myself),TANARI_VAMPIRIC_TOUCH)  // SPIN997.SPL (Vampirgriff)
+		AttackOneRound(NearestEnemyOf(Myself))
+		AttackOneRound(NearestEnemyOf(Myself))
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #50
+		ForceSpell(SecondNearestEnemyOf(Myself),TANARI_DEATH_GAZE)  // SPIN996.SPL (Todesblick)
+		ForceSpell(NearestEnemyOf(Myself),TANARI_VAMPIRIC_TOUCH)  // SPIN997.SPL (Vampirgriff)
+		AttackOneRound(NearestEnemyOf(Myself))
+	RESPONSE #50
+		ForceSpell(NearestEnemyOf(Myself),TANARI_DEATH_GAZE)  // SPIN996.SPL (Todesblick)
+		ForceSpell(NearestEnemyOf(Myself),TANARI_VAMPIRIC_TOUCH)  // SPIN997.SPL (Vampirgriff)
+		AttackOneRound(NearestEnemyOf(Myself))
+		AttackOneRound(NearestEnemyOf(Myself))
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+	OR(2)
+		!See([ANYONE])
+		TargetUnreachable(LastSeenBy(Myself))
+THEN
+	RESPONSE #100
+		RandomWalk()
+END
+

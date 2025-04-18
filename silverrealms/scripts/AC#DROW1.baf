@@ -1,0 +1,111 @@
+IF
+	Global("AC#_Drow_Death","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#_Drow_Death","GLOBAL",2)
+		ClearAllActions()
+		Kill(Myself)
+END
+
+IF
+	Detect([PC])
+	HPPercentLT(Myself,50)
+	NumDead("AC#DROW2",3)  // Drow
+	Global("AC#Drow_Mercy","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#Drow_Mercy","GLOBAL",1)
+		ClearAllActions()
+		ChangeEnemyAlly(Myself,NEUTRAL)
+		StartDialogNoSet([PC])
+END
+
+/*
+// set off by trap
+IF
+	See(NearestEnemyOf(Myself))
+	Global("StinkingCloud","LOCALS",0)
+THEN
+	RESPONSE #100
+		ReallyForceSpell(LastSeenBy(Myself),WIZARD_STINKING_CLOUD)  // SPWI213.SPL (Stinkende Wolke)
+		SetGlobal("StinkingCloud","LOCALS",1)
+END
+*/
+
+IF
+	See(NearestEnemyOfType([0.0.0.MAGE_ALL]))
+	Global("Darkness","LOCALS",0)
+	!StateCheck(LastSeenBy(Myself),STATE_HELPLESS)
+	!StateCheck(LastSeenBy(Myself),STATE_BLIND)
+THEN
+	RESPONSE #100
+		ReallyForceSpellRES("AC#GDRK",LastSeenBy(Myself))  // Kugel der Dunkelheit
+		SetGlobal("Darkness","LOCALS",1)
+END
+
+IF
+	See(NearestEnemyOfType([0.0.0.CLERIC_ALL]))
+	Global("Darkness","LOCALS",0)
+	!StateCheck(LastSeenBy(Myself),STATE_HELPLESS)
+	!StateCheck(LastSeenBy(Myself),STATE_BLIND)
+THEN
+	RESPONSE #100
+		ReallyForceSpellRES("AC#GDRK",LastSeenBy(Myself))  // Kugel der Dunkelheit
+		SetGlobal("Darkness","LOCALS",1)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Global("Darkness","LOCALS",0)
+	!StateCheck(LastSeenBy(Myself),STATE_HELPLESS)
+	!StateCheck(LastSeenBy(Myself),STATE_BLIND)
+THEN
+	RESPONSE #100
+		ReallyForceSpellRES("AC#GDRK",LastSeenBy(Myself))  // Kugel der Dunkelheit
+		SetGlobal("Darkness","LOCALS",1)
+END
+
+IF
+	HPPercentLT(Myself,50)
+	HasItem("POTN55",Myself)  // Extrastarker Heiltrank
+THEN
+	RESPONSE #100
+		UseItem("POTN55",Myself)  // Extrastarker Heiltrank
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	!StateCheck(LastSeenBy(Myself),STATE_HELPLESS)
+	!Range(NearestEnemyOf(Myself),5)
+THEN
+	RESPONSE #100
+		EquipRanged()
+		AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+	See([GOODCUTOFF])
+	Range(NearestEnemyOf(Myself),12)
+	StateCheck(LastSeenBy(Myself),STATE_HELPLESS)
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+		AttackReevaluate(LastSeenBy(Myself),6)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Range(NearestEnemyOf(Myself),5)
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+		AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+	AttackedBy([ANYONE],DEFAULT)
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastAttackerOf(Myself),30)
+END
+

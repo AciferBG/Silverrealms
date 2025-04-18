@@ -1,0 +1,35 @@
+IF
+	Clicked([ANYONE])
+	Global("LadderActivate","ACIL90",0)
+	PartyHasItem("AC#SRLAD")
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@1005) // PC has Item: Ladder: Could activate Trigger
+		SetGlobal("LadderActivate","ACIL90",1)
+END
+
+IF
+	Clicked([ANYONE])
+	Global("LadderActivate","ACIL90",1)
+	PartyHasItem("AC#SRLAD")
+THEN
+	RESPONSE #100
+		DisplayStringNoName(Myself,@1006) // Ladder done, way down open
+		Wait(1)
+                TakePartyItem("AC#SRLAD")
+		OpenDoor("Door02")
+		TriggerActivation("Trigger_Ladder",FALSE)
+		TriggerActivation("TrACIL90L",TRUE)
+		TriggerActivation("TrACIL90_Ladderup",TRUE)
+		SetGlobal("LadderActivate","ACIL90",2)
+		EraseJournalEntry(@90020)
+END
+
+IF
+	Clicked([ANYONE])
+	!PartyHasItem("AC#SRLAD")
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@1007) // PC not has Ladder
+END
+

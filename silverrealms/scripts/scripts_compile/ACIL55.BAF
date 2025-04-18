@@ -1,0 +1,20 @@
+IF
+	Contains("AC#CINNA","Oven_mercury")  // Cinnabar
+	Global("MercuryCreation","ACIL55",0)
+THEN
+	RESPONSE #100
+		SetGlobal("MercuryCreation","ACIL55",1)
+		ActionOverride("Oven_mercury",DestroyItem("AC#CINNA"))  // Cinnabar
+		//SmallWait(15)
+		CreateVisualEffect("AC#MAGIR",[787.450])
+		Wait(1)
+		ActionOverride("Oven_mercury",CreateItem("AC#MERC1",0,0,0))  // Mercury
+END
+
+IF
+	PartyHasItem("AC#MERC1")  // Mercury
+	Global("MercuryCreation","ACIL55",1)
+THEN
+	RESPONSE #100
+		SetGlobal("MercuryCreation","ACIL55",2)
+END

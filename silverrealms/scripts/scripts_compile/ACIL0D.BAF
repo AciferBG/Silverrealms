@@ -1,0 +1,21 @@
+IF
+	PartyHasItem("AC#ZEPXS")
+	Global("AC#XothaerinHead","GLOBAL",1)
+THEN
+	RESPONSE #100
+            SetGlobal("AC#XothaerinHead","GLOBAL",2)
+            EraseJournalEntry(@20033)
+	        AddJournalEntry(@20034,QUEST)
+END
+// Old quest: retrieve first dagger
+/*
+IF
+	PartyHasItem("AC#S#ON1")
+	Global("Red_Dagger","ACIL0D",0)
+THEN
+	RESPONSE #100
+                SetGlobal("Red_Dagger","ACIL0D",1)
+                EraseJournalEntry(@20030)
+	        AddJournalEntry(@20031,QUEST)
+END
+*/

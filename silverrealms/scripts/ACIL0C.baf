@@ -1,0 +1,9 @@
+IF
+	Global("AC#CandlekeepCutScene2","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#CandlekeepCutScene2","GLOBAL",2)
+                ClearAllActions()
+		StartCutSceneMode()
+		StartCutScene("AC#07CC2")
+END

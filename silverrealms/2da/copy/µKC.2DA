@@ -1,0 +1,41 @@
+µKC/Blacktroll			
+***
+						SOUND
+ATTACK          		TROLL04b nosound nosound
+ATTACK          		0 0 0
+AWAKE           		***
+AWAKE           		0
+CAST            		***
+CAST            		0
+CONJURE         		***
+CONJURE         		0
+DAMAGE          		TROLL08a TROLL08b
+DAMAGE          		0 0
+DIE             		TROLL09a TROLL09b
+DIE             		0 0
+HEAD_TURN       		***
+HEAD_TURN       		0
+READY           		***
+READY           		0
+SHOOT           		***
+SHOOT           		0
+TWITCH          		***
+TWITCH          		0
+WALK            		***
+WALK            		0
+ATTACK_SLASH    		TROLL03a nosound nosound
+ATTACK_SLASH    		0 0 0
+ATTACK_BACKSLASH		TROLL03b nosound nosound
+ATTACK_BACKSLASH		0 0 0
+ATTACK_JAB      		TROLL04a nosound nosound
+ATTACK_JAB      		0 0 0
+EMERGE          		***
+EMERGE          		0
+HIDE            		***
+HIDE            		0
+SLEEP          			***
+SLEEP          			0
+Battle_Cry			TROLL01 TROLL02
+Battle_Cry			0 0
+Selection                       troll01
+Selection                       0

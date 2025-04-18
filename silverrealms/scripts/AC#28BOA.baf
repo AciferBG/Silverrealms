@@ -1,0 +1,8 @@
+IF
+	Clicked([ANYONE])
+	Global("ACIL28_BOATGONE","ACIL28",0)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,999999)
+		SetGlobal("ACIL28_BOATGONE","ACIL28",1)
+END

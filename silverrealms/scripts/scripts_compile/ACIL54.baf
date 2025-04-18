@@ -1,0 +1,96 @@
+IF
+	Global("RotheAttack","ACIL54",1)
+THEN
+	RESPONSE #100
+                SetGlobal("RotheAttack","ACIL54",2)
+               	ActionOverride("AC#ROTHB",Enemy())
+	        ActionOverride("AC#ROTHB",Attack("AC#ILDW9"))
+END
+
+IF
+	Global("AC#Waterwell","GLOBAL",1)
+THEN
+	RESPONSE #100
+                SetGlobal("AC#Waterwell","GLOBAL",2)
+                ClearAllActions()
+		StartCutSceneMode()
+		StartCutScene("ac#cut54")
+END
+
+IF
+	Global("Spawn","ACIL54",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Spawn","ACIL54",1)
+		CreateCreature("AC#IL54A",[149.1907],E)  // Kampftrinker
+		CreateCreature("AC#IL54B",[211.1816],SW)  // Kampftrinker
+		CreateCreature("AC#IL54C",[200.1897],N)  // Kampftrinker
+		CreateCreature("AC#IL54D",[2520.426],N)  // Zwergensänger
+		CreateCreature("AC#IL54E",[2441.369],SW)  // Zwergensänger
+		CreateCreature("AC#IL54F",[2599.352],N)  // Zwergensänger
+		CreateCreature("AC#IL54G",[2506.311],S)  // Zwergensänger
+END
+
+IF
+	Global("AC#Hero_Story","ACIL54",1)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#Hero_Story","ACIL54",2)
+	        AddJournalEntry(@54100,QUEST)
+END
+
+IF
+	Global("Rothe_Rep_Increase","ACIL54",0)
+	Global("RotheAttack","ACIL54",20)
+THEN
+	RESPONSE #100
+		SetGlobal("Rothe_Rep_Increase","ACIL54",1)
+		IncrementGlobal("AC_Iltkazar_Reputation","GLOBAL",1)
+	    DisplayString(Myself,@1021)
+END
+
+IF
+	Global("Boar_Rep_Increase","ACIL54",0)
+	Global("AC#Boar","ACIL54",5)
+THEN
+	RESPONSE #100
+		SetGlobal("Boar_Rep_Increase","ACIL54",1)
+		IncrementGlobal("AC_Iltkazar_Reputation","GLOBAL",1)
+	    DisplayString(Myself,@1021)
+END
+
+IF
+	Global("Rat_Rep_Increase","ACIL54",0)
+	Global("AC#Catch_the_rat","ACIL54",10)
+THEN
+	RESPONSE #100
+		SetGlobal("Rat_Rep_Increase","ACIL54",1)
+		IncrementGlobal("AC_Iltkazar_Reputation","GLOBAL",1)
+	    DisplayString(Myself,@1021)
+END
+
+IF
+	Global("Myco_Rep_Increase","ACIL54",0)
+	Global("AC#Myconid","ACIL54",5)
+THEN
+	RESPONSE #100
+		SetGlobal("Myco_Rep_Increase","ACIL54",1)
+		IncrementGlobal("AC_Iltkazar_Reputation","GLOBAL",1)
+	    DisplayString(Myself,@1021)
+END
+
+IF
+	Global("Well_Rep_Increase","ACIL54",0)
+	Global("AC#Waterwell","GLOBAL",5)
+THEN
+	RESPONSE #100
+		SetGlobal("Well_Rep_Increase","ACIL54",1)
+		IncrementGlobal("AC_Iltkazar_Reputation","GLOBAL",1)
+	    DisplayString(Myself,@1021)
+END
+
+
+
+
+
+

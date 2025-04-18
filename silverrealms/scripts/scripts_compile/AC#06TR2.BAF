@@ -1,0 +1,10 @@
+IF
+	Entered([ANYONE])
+	Global("SecretDoor","ACIL06",0)  // Axtbrücke
+	Global("AC#XothaerinScepter","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("SecretDoor","ACIL06",1)  // Axtbrücke
+		DetectSecretDoor("DOOR01")
+END
+

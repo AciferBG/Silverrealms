@@ -1,0 +1,49 @@
+IF
+	NumTimesTalkedTo(0)
+	Detect([PC])
+	Range([PC],12)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(LastSeenBy(Myself))
+END
+
+IF
+	!NumTimesTalkedTo(0)
+	Detect([PC])
+	Global("AC#BreskQuest","GLOBAL",3)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(LastSeenBy(Myself))
+END
+
+IF
+	Detect([PC])
+	Global("AC#BreskQuest","GLOBAL",4)
+	CombatCounter(0)
+	!See([ENEMY])
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(LastSeenBy(Myself))
+END
+
+IF
+	Global("AC#BreskQuest","GLOBAL",5)
+THEN
+	RESPONSE #100
+                SetGlobal("AC#BreskQuest","GLOBAL",6)
+		EscapeAreaObject("TrACIL65")
+END
+
+IF
+	Global("AC#BreskMoves01","ACIL66",1)
+THEN
+	RESPONSE #100
+		MoveToPoint([818.649])
+END
+
+
+
+
+
+
+

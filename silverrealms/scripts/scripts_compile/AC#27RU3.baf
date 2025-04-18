@@ -1,0 +1,38 @@
+IF
+	Contains("AC#IL#03",Myself)
+	Global("Runecontainer03_Off","ACIL27",3)
+THEN
+	RESPONSE #100
+        DestroyItem("AC#IL#03")
+        DisplayString(Myself,@885)
+        AmbientActivate("Monolith03off",FALSE)
+        AmbientActivate("Monolith03on",FALSE)
+	SetGlobal("Runecontainer03_Off","ACIL27",4)
+	SetGlobal("AC#Runecontainer03","ACIL27",10)
+END
+
+IF
+	Opened([ANYONE])
+	PartyHasItem("AC#IL#03")
+	Global("AC#Runecontainer03","ACIL27",0)
+THEN
+	RESPONSE #100
+	PlaySound("EFF_M62")
+	AmbientActivate("Monolith03off",TRUE)
+	AmbientActivate("Monolith03on",FALSE)
+	SetGlobal("AC#Runecontainer03","ACIL27",1)
+        IncrementGlobal("Runecontainer03_Off","ACIL27",1)
+END
+
+IF
+        Contains("AC#IL#03",Myself)
+	Global("AC#Runecontainer03","ACIL27",1)
+THEN
+	RESPONSE #100
+	PlaySound("EFF_M62")
+	AmbientActivate("Monolith03off",FALSE)
+	AmbientActivate("Monolith03on",TRUE)
+	SetGlobal("AC#Runecontainer03","ACIL27",0)
+	SetGlobal("AC#Rune03Spawn","ACIL27",0)
+END
+

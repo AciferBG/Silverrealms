@@ -1,0 +1,58 @@
+IF
+	OpenState("DOOR01",TRUE)
+	Global("Door","ACIL4O",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Door","ACIL4O",1)
+		TriggerActivation("Info_door",FALSE)
+END
+
+IF
+	PartyHasItem("AC#ZEPXS")  // Scheibe
+	Global("Defense","ACIL4O",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Defense","ACIL4O",1)
+		AmbientActivate("Sharindlardisk",FALSE)
+		ContainerEnable("Disk",FALSE)
+		PlaySound("AC#09MPS")
+		CloseDoor("DOOR01")
+		Lock("DOOR01")
+END
+
+IF
+	Global("Defense","ACIL4O",2)
+	Dead("AC#HAMG1")  // Hammergolem
+THEN
+	RESPONSE #100
+		SetGlobal("Defense","ACIL4O",3)
+		Unlock("DOOR01")
+		OpenDoor("DOOR01")
+END
+
+IF
+	Global("Defense","ACIL4O",1)
+	DifficultyGT(EASY)
+THEN
+	RESPONSE #100
+		SetGlobal("Defense","ACIL4O",2)
+		OpenDoor("DOOR02")
+		SmallWait(15)
+		OpenDoor("DOOR03")
+		CreateCreature("AC#HAMG1",[796.226],SWW)  // Hammergolem
+		CreateCreature("AC#HAMG1",[257.452],SEE)  // Hammergolem
+END
+
+IF
+	Global("Defense","ACIL4O",1)
+THEN
+	RESPONSE #100
+		SetGlobal("Defense","ACIL4O",2)
+		OpenDoor("DOOR02")
+		SmallWait(15)
+		OpenDoor("DOOR03")
+		CreateCreature("AC#HAMG1",[796.226],SWW)  // Hammergolem
+		Unlock("DOOR01")
+		OpenDoor("DOOR01")
+END
+

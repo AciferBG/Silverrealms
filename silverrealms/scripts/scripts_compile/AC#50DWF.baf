@@ -1,0 +1,43 @@
+IF
+	Range([PC],12)
+	NumTimesTalkedTo(0)
+	See([PC])
+THEN
+	RESPONSE #100
+		StartDialogueNoSet([PC]) // Dialogue file in silverrealms\dlg\dialogues_compile\ACIL50_Iltkazar_minor_dialogues
+END
+
+IF
+	Global("FishermanQuest","ACIL50",1)
+	See("AC#50KUO")
+THEN
+	RESPONSE #100
+		StartDialogueNoSet([PC]) // Dialogue file in silverrealms\dlg\dialogues_compile\ACIL50_Iltkazar_minor_dialogues
+END
+
+IF
+	Detect([PC])
+	Dead("AC#50KUO")  // Kuo Toa
+	Global("FishermanQuest","ACIL50",2)
+THEN
+	RESPONSE #100
+		StartDialogNoSet(LastSeenBy(Myself))
+END
+
+IF
+	Range([PC],12)
+	Detect([PC])
+	Global("FishermanQuest","ACIL50",10)
+	GlobalGT("AC#RC_Sorni_Fourth","GLOBAL",2)
+THEN
+	RESPONSE #100
+		SetGlobal("FishermanQuest","ACIL50",11)
+		StartDialogueNoSet(LastSeenBy(Myself)) // Dialogue file in silverrealms\dlg\dialogues_compile\ACIL50_Iltkazar_minor_dialogues
+END
+
+
+
+
+
+
+

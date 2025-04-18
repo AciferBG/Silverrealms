@@ -1,0 +1,13 @@
+/*
+IF
+	See([PC])
+	Allegiance(Myself,NEUTRAL)
+	Global("AC#EnteredACIL09","GLOBAL",1)
+	Global("BoySeenDragon","ACIL04",0) 
+THEN
+	RESPONSE #100
+		SetGlobal("BoySeenDragon","ACIL04",1)
+		StartDialogNoSet([PC])
+END
+*/
+

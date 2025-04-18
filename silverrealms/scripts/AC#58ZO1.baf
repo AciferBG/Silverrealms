@@ -1,0 +1,19 @@
+/*
+Mit diesem Skript erscheinen die Zombie in ACIL58
+*/
+
+IF
+        Entered([PC])
+        Global("Zombiespawn","ACIL58",0)
+        Global("Dumathoin_Alarm","ACIL58",4)
+THEN
+    RESPONSE #100
+             CreateCreature("AC#ZOMB1",[3481.1484],2)  // Zombie
+             CreateCreature("AC#ZOMB1",[3522.1464],2)  // Zombie
+             CreateCreature("AC#ZOMB1",[3555.1516],2)  // Zombie
+             TriggerActivation("Zombietrap01",FALSE)
+             TriggerActivation("Zombietrap02",FALSE)
+             SetGlobal("Zombiespawn","ACIL58",1)
+END
+
+

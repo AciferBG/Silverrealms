@@ -1,0 +1,423 @@
+// Silverrealms animation files
+
+//_____________________________________________________________________________________________________
+// DRACOLICH animation
+  LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0x1200 slotMax = 0x1300 RET slot END
+  ACTION_IF (slot <= 0) BEGIN
+    FAIL ~No free creature animation slot found.~
+  END
+
+  LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+  APPEND ~animate.ids~ ~0x%hexNumber% AC#DRACOLICH~ UNLESS ~AC#DRACOLICH~
+  CLEAR_IDS_MAP
+
+  COPY ~%MOD_FOLDER%/animations/dracolich_ini/exxx.ini~ ~override/%hexNumber%.ini~
+
+  ACTION_BASH_FOR ~%MOD_FOLDER%/animations/dracolich~ ~^.+\.bam$~ BEGIN
+    COPY ~%BASH_FOR_FILESPEC%~ ~override~
+  END
+
+//_____________________________________________________________________________________________________
+// IA Displacer Beast animation
+ LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0x7F3D slotMax = slotMin + 0xff RET slot END
+  ACTION_IF (slot <= 0) BEGIN
+    FAIL ~No free creature animation slot found.~
+  END
+
+  LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+  APPEND ~animate.ids~ ~0x%hexNumber% AC#DISPLACER_BEAST~ UNLESS ~AC#DISPLACER_BEAST~
+  CLEAR_IDS_MAP
+
+  COPY ~%MOD_FOLDER%/animations/displacer_beast/exxx.ini~ ~override/%hexNumber%.ini~
+
+  ACTION_BASH_FOR ~%MOD_FOLDER%/animations/displacer_beast~ ~^.+\.bam$~ BEGIN
+    COPY ~%BASH_FOR_FILESPEC%~ ~override~
+  END
+//_____________________________________________________________________________________________________
+// EARTH_ELEMENTAL_HUGE animation
+  LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0xE000 slotMax = 0xefff RET slot END
+  ACTION_IF (slot <= 0) BEGIN
+    FAIL ~No free creature animation slot found.~
+  END
+
+  LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+  APPEND ~animate.ids~ ~0x%hexNumber% AC#EARTH_ELEMENTAL_HUGE~ UNLESS ~AC#EARTH_ELEMENTAL_HUGE~
+  CLEAR_IDS_MAP
+
+  COPY ~%MOD_FOLDER%/animations/earth_elemental_huge_EE/exxx.ini~ ~override/%hexNumber%.ini~
+
+  ACTION_BASH_FOR ~%MOD_FOLDER%/animations/earth_elemental_huge_EE~ ~^.+\.bam$~ BEGIN
+    COPY ~%BASH_FOR_FILESPEC%~ ~override~
+  END
+//_____________________________________________________________________________________________________
+// RAVEN animation
+  LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0xE000 slotMax = 0xefff RET slot END
+  ACTION_IF (slot <= 0) BEGIN
+    FAIL ~No free creature animation slot found.~
+  END
+
+  LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+  APPEND ~animate.ids~ ~0x%hexNumber% AC#RAVEN~ UNLESS ~AC#RAVEN~
+  CLEAR_IDS_MAP
+
+  COPY ~%MOD_FOLDER%/animations/raven_EE/exxx.ini~ ~override/%hexNumber%.ini~
+
+  ACTION_BASH_FOR ~%MOD_FOLDER%/animations/raven_EE~ ~^.+\.bam$~ BEGIN
+    COPY ~%BASH_FOR_FILESPEC%~ ~override~
+  END
+  
+//_____________________________________________________________________________________________________
+// ROTHÉ animation
+  LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0xE000 slotMax = 0xefff RET slot END
+  ACTION_IF (slot <= 0) BEGIN
+    FAIL ~No free creature animation slot found.~
+  END
+  LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+  APPEND ~animate.ids~ ~0x%hexNumber% AC#ROTHE~ UNLESS ~AC#ROTHE~
+  CLEAR_IDS_MAP
+  COPY ~%MOD_FOLDER%/animations/Rothe/exxx.ini~ ~override/%hexNumber%.ini~
+  ACTION_BASH_FOR ~%MOD_FOLDER%/animations/Rothe~ ~^.+\.bam$~ BEGIN
+    COPY ~%BASH_FOR_FILESPEC%~ ~override~
+  END
+  
+//_____________________________________________________________________________________________________
+// ROTHÉ GRAY animation
+  LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0xE000 slotMax = 0xefff RET slot END
+  ACTION_IF (slot <= 0) BEGIN
+    FAIL ~No free creature animation slot found.~
+  END
+  LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+  APPEND ~animate.ids~ ~0x%hexNumber% AC#ROTHE_GRAY~ UNLESS ~AC#ROTHE_GRAY~
+  CLEAR_IDS_MAP
+  COPY ~%MOD_FOLDER%/animations/Rothe_gray/exxx.ini~ ~override/%hexNumber%.ini~
+  ACTION_BASH_FOR ~%MOD_FOLDER%/animations/Rothe_gray~ ~^.+\.bam$~ BEGIN
+    COPY ~%BASH_FOR_FILESPEC%~ ~override~
+  END
+ 
+  // Dwarven statue animation
+  LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0x7f15 slotMax = slotMin + 0xff RET slot END
+  ACTION_IF (slot <= 0) BEGIN
+    FAIL ~No free creature animation slot found.~
+  END
+  LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+  APPEND ~animate.ids~ ~0x%hexNumber% DWARVENSTATUE_ACIFER~ UNLESS ~DWARVENSTATUE_ACIFER~
+  CLEAR_IDS_MAP
+  COPY ~%MOD_FOLDER%/animations/Dwarven_statue/exxx.ini~ ~override/%hexNumber%.ini~
+  ACTION_BASH_FOR ~%MOD_FOLDER%/animations/Dwarven_statue~ ~^.+\.bam$~ BEGIN
+    COPY ~%BASH_FOR_FILESPEC%~ ~override~
+  END
+
+//_____________________________________________________________________________________________________
+// NWN_DEATH_TYRANT animation
+  LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0xE000 slotMax = 0xefff RET slot END
+  ACTION_IF (slot <= 0) BEGIN
+    FAIL ~No free creature animation slot found.~
+  END
+  LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+  APPEND ~animate.ids~ ~0x%hexNumber% AC#NWN_DEATH_TYRANT~ UNLESS ~AC#NWN_DEATH_TYRANT~
+  CLEAR_IDS_MAP
+  COPY ~%MOD_FOLDER%/animations/NWN_death_tyrant/exxx.ini~ ~override/%hexNumber%.ini~
+  ACTION_BASH_FOR ~%MOD_FOLDER%/animations/NWN_death_tyrant~ ~^.+\.bam$~ BEGIN
+    COPY ~%BASH_FOR_FILESPEC%~ ~override~
+  END
+  
+//_____________________________________________________________________________________________________
+// NWN Allip animation
+  LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0xE000 slotMax = 0xefff RET slot END
+  ACTION_IF (slot <= 0) BEGIN
+    FAIL ~No free creature animation slot found.~
+  END
+  LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+  APPEND ~animate.ids~ ~0x%hexNumber% AC#NWN_ALLIP~ UNLESS ~AC#NWN_ALLIP~
+  CLEAR_IDS_MAP
+  COPY ~%MOD_FOLDER%/animations/NWN_Allip/exxx.ini~ ~override/%hexNumber%.ini~
+  ACTION_BASH_FOR ~%MOD_FOLDER%/animations/NWN_Allip~ ~^.+\.bam$~ BEGIN
+    COPY ~%BASH_FOR_FILESPEC%~ ~override~
+  END
+
+ //_____________________________________________________________________________________________________
+// Golem Hammer animation
+  LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0xE000 slotMax = 0xefff RET slot END
+  ACTION_IF (slot <= 0) BEGIN
+    FAIL ~No free creature animation slot found.~
+  END
+  LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+  APPEND ~animate.ids~ ~0x%hexNumber% AC#GOLEM_HAMMER~ UNLESS ~AC#GOLEM_HAMMER~
+  CLEAR_IDS_MAP
+  COPY ~%MOD_FOLDER%/animations/Golem_Hammer/exxx.ini~ ~override/%hexNumber%.ini~
+  ACTION_BASH_FOR ~%MOD_FOLDER%/animations/Golem_Hammer~ ~^.+\.bam$~ BEGIN
+    COPY ~%BASH_FOR_FILESPEC%~ ~override~
+  END
+
+// NWN Bone Golem animation (used for Skelettin)
+  LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0xE000 slotMax = 0xefff RET slot END
+  ACTION_IF (slot <= 0) BEGIN
+    FAIL ~No free creature animation slot found.~
+  END
+  LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+  APPEND ~animate.ids~ ~0x%hexNumber% AC#NWN_BONE_GOLEM~ UNLESS ~AC#NWN_BONE_GOLEM~
+  CLEAR_IDS_MAP
+  COPY ~%MOD_FOLDER%/animations/NWN_BONE_GOLEM/exxx.ini~ ~override/%hexNumber%.ini~
+  ACTION_BASH_FOR ~%MOD_FOLDER%/animations/NWN_BONE_GOLEM~ ~^.+\.bam$~ BEGIN
+    COPY ~%BASH_FOR_FILESPEC%~ ~override~
+  END
+  
+// Verbeeg large animation (used for Maram's shadow)
+  LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0xE000 slotMax = 0xefff RET slot END
+  ACTION_IF (slot <= 0) BEGIN
+    FAIL ~No free creature animation slot found.~
+  END
+  LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+  APPEND ~animate.ids~ ~0x%hexNumber% AC#VERBEEG_LARGE~ UNLESS ~AC#VERBEEG_LARGE~
+  CLEAR_IDS_MAP
+  COPY ~%MOD_FOLDER%/animations/Verbeeg_large_EE/exxx.ini~ ~override/%hexNumber%.ini~
+  ACTION_BASH_FOR ~%MOD_FOLDER%/animations/Verbeeg_large_EE~ ~^.+\.bam$~ BEGIN
+    COPY ~%BASH_FOR_FILESPEC%~ ~override~
+  END
+  
+// drowned dead small animation (used for Duerghuls)
+  LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0xE000 slotMax = 0xefff RET slot END
+  ACTION_IF (slot <= 0) BEGIN
+    FAIL ~No free creature animation slot found.~
+  END
+  LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+  APPEND ~animate.ids~ ~0x%hexNumber% AC#DROWNED_DEAD_SMALL~ UNLESS ~AC#DROWNED_DEAD_SMALL~
+  CLEAR_IDS_MAP
+  COPY ~%MOD_FOLDER%/animations/Drowned_dead_small/exxx.ini~ ~override/%hexNumber%.ini~
+  ACTION_BASH_FOR ~%MOD_FOLDER%/animations/Drowned_dead_small~ ~^.+\.bam$~ BEGIN
+    COPY ~%BASH_FOR_FILESPEC%~ ~override~
+  END
+  
+ // HAMATULA
+  LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0xE000 slotMax = 0xefff RET slot END
+  ACTION_IF (slot <= 0) BEGIN
+    FAIL ~No free creature animation slot found.~
+  END
+
+  LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+  APPEND ~animate.ids~ ~0x%hexNumber% AC#HAMATULA~ UNLESS ~AC#HAMATULA~
+  CLEAR_IDS_MAP
+
+  COPY ~%MOD_FOLDER%/animations/Hamatula/exxx.ini~ ~override/%hexNumber%.ini~
+
+  ACTION_BASH_FOR ~%MOD_FOLDER%/animations/Hamatula~ ~^.+\.bam$~ BEGIN
+    COPY ~%BASH_FOR_FILESPEC%~ ~override~
+  END
+  
+ // Osyluth
+  LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0xE000 slotMax = 0xefff RET slot END
+  ACTION_IF (slot <= 0) BEGIN
+    FAIL ~No free creature animation slot found.~
+  END
+  LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+  APPEND ~animate.ids~ ~0x%hexNumber% AC#OSYLUTH~ UNLESS ~AC#OSYLUTH~
+  CLEAR_IDS_MAP
+  COPY ~%MOD_FOLDER%/animations/Osyluth/exxx.ini~ ~override/%hexNumber%.ini~
+
+  ACTION_BASH_FOR ~%MOD_FOLDER%/animations/Osyluth~ ~^.+\.bam$~ BEGIN
+    COPY ~%BASH_FOR_FILESPEC%~ ~override~
+  END
+  
+ // Pitfient_NWN
+  LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0xE000 slotMax = 0xefff RET slot END
+  ACTION_IF (slot <= 0) BEGIN
+    FAIL ~No free creature animation slot found.~
+  END
+  LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+  APPEND ~animate.ids~ ~0x%hexNumber% AC#PITFIEND_NWN~ UNLESS ~AC#PITFIEND_NWN~
+  CLEAR_IDS_MAP
+  COPY ~%MOD_FOLDER%/animations/Pitfiend_NWN/exxx.ini~ ~override/%hexNumber%.ini~
+
+  ACTION_BASH_FOR ~%MOD_FOLDER%/animations/Pitfiend_NWN~ ~^.+\.bam$~ BEGIN
+    COPY ~%BASH_FOR_FILESPEC%~ ~override~
+  END
+  
+//_____________________________________________________________________________________________________
+// PST Thokola animation
+ LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0x7F3D slotMax = slotMin + 0xff RET slot END
+  ACTION_IF (slot <= 0) BEGIN
+    FAIL ~No free creature animation slot found.~
+  END
+  LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+  APPEND ~animate.ids~ ~0x%hexNumber% AC#THOKOLA_PST~ UNLESS ~AC#THOKOLA_PST~
+  CLEAR_IDS_MAP
+  COPY ~%MOD_FOLDER%/animations/Thokola_PST/exxx.ini~ ~override/%hexNumber%.ini~
+  ACTION_BASH_FOR ~%MOD_FOLDER%/animations/Thokola_PST~ ~^.+\.bam$~ BEGIN
+    COPY ~%BASH_FOR_FILESPEC%~ ~override~
+  END
+  
+//_____________________________________________________________________________________________________
+// NWN new Basilisk animation
+ LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0x7100 slotMax = slotMin + 0xff RET slot END
+  ACTION_IF (slot <= 0) BEGIN
+    FAIL ~No free creature animation slot found.~
+  END
+  LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+  APPEND ~animate.ids~ ~0x%hexNumber% AC#BASILISK_NWN~ UNLESS ~AC#BASILISK_NWN~
+  CLEAR_IDS_MAP
+  COPY ~%MOD_FOLDER%/animations/Basilisk_NWN/exxx.ini~ ~override/%hexNumber%.ini~
+  ACTION_BASH_FOR ~%MOD_FOLDER%/animations/Basilisk_NWN~ ~^.+\.bam$~ BEGIN
+    COPY ~%BASH_FOR_FILESPEC%~ ~override~
+  END
+  
+// Doomsphere
+  COPY ~%MOD_FOLDER%/animations/Doomsphere/AC#DOOMS.bmp~ ~override~
+  LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0x7000 slotMax = slotMin + 0xff RET slot END
+  ACTION_IF (slot <= 0) BEGIN
+    FAIL ~No free creature animation slot found.~
+  END
+  LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+  APPEND ~animate.ids~ ~0x%hexNumber% AC#BEHOLDER_DOOMSPHERE~ UNLESS ~AC#BEHOLDER_DOOMSPHERE~
+  CLEAR_IDS_MAP
+  COPY ~%MOD_FOLDER%/animations/Doomsphere/exxx.ini~ ~override/%hexNumber%.ini~
+  
+// Gelugon
+  COPY ~%MOD_FOLDER%/animations/Gelugon/AC#GELUG.bmp~ ~override~
+  LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0x7000 slotMax = slotMin + 0xff RET slot END
+  ACTION_IF (slot <= 0) BEGIN
+    FAIL ~No free creature animation slot found.~
+  END
+  LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+  APPEND ~animate.ids~ ~0x%hexNumber% AC#GELUGON~ UNLESS ~AC#GELUGON~
+  CLEAR_IDS_MAP
+  COPY ~%MOD_FOLDER%/animations/Gelugon/exxx.ini~ ~override/%hexNumber%.ini~
+  
+// Earthwhisper
+  COPY ~%MOD_FOLDER%/animations/Earthwhisper/AC#EARWI.bmp~ ~override~
+  LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0x7000 slotMax = slotMin + 0xff RET slot END
+  ACTION_IF (slot <= 0) BEGIN
+    FAIL ~No free creature animation slot found.~
+  END
+  LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+  APPEND ~animate.ids~ ~0x%hexNumber% AC#EARTWHISPER~ UNLESS ~AC#EARTWHISPER~
+  CLEAR_IDS_MAP
+  COPY ~%MOD_FOLDER%/animations/Earthwhisper/exxx.ini~ ~override/%hexNumber%.ini~
+
+//_____________________________________________________________________________________________________
+// Yuan-Ti halfbreed animation - just copy
+  COPY ~silverrealms/animations/Yuan_Ti_Half~         ~override~
+  
+//_____________________________________________________________________________________________________
+// Abishai animations  - just copy
+  COPY ~silverrealms/animations/Abishai_black~         ~override~
+  COPY ~silverrealms/animations/Abishai_green~         ~override~
+  COPY ~silverrealms/animations/Abishai_red~         ~override~
+  COPY ~silverrealms/animations/Abishai_white~         ~override~
+  
+//_____________________________________________________________________________________________________
+//  IWD's fire elemental animation (used for Magam paralelemental animation - just copy
+  COPY ~silverrealms/animations/Elemental_Fire_IWD~         ~override~
+  
+//_____________________________________________________________________________________________________
+//  IWD's water elemental animation - just copy
+  COPY ~silverrealms/animations/Water_elemental_large_EE~         ~override~
+  
+//_____________________________________________________________________________________________________
+//  IWD's Bugbear captain animation - just copy
+  COPY ~silverrealms/animations/Bugbear_captain_IWD~         ~override~
+  
+//_____________________________________________________________________________________________________
+//  IWD's Bugbear animation - just copy
+  COPY ~silverrealms/animations/Bugbear_IWD~         ~override~
+
+//_____________________________________________________________________________________________________
+// verbeeg animation - copy iwd's verbeeg
+  COPY ~silverrealms/animations/verbeeg_iwd_EE~         ~override~
+//_____________________________________________________________________________________________________
+// harpy animation - copy iwd's harpy
+  COPY ~silverrealms/animations/harpy_iwd_EE~         ~override~
+//_____________________________________________________________________________________________________
+// vodyanoi animation - copy iwd's vodyanoi
+  COPY ~silverrealms/animations/Vodyanoi_iwd_EE~         ~override~
+//_____________________________________________________________________________________________________
+// beetle_boring animation - copy
+  COPY ~silverrealms/animations/Beetle_boring_iwd_EE~         ~override~
+//_____________________________________________________________________________________________________
+// umberhulk_elder animation - copy
+  COPY ~silverrealms/animations/Umberhulk_elder_iwd_ee~         ~override~
+  
+//_____________________________________________________________________________________________________
+// svirfneblin -all animations - copy
+  COPY ~silverrealms/animations/svirfneblin_iwd~         ~override~
+
+//_____________________________________________________________________________________________________
+// feyr greater iwd2 animations - copy
+  COPY ~silverrealms/animations/Feyr_greater_iwd2~         ~override~
+
+//_____________________________________________________________________________________________________
+// lizardman green animation - copy
+  COPY ~silverrealms/animations/Lizardman_green_iwd_EE~         ~override~
+//_____________________________________________________________________________________________________
+// hook horror animation - copy
+  COPY ~silverrealms/animations/Hook_Horror_EE~         ~override~
+
+// end of BG2EE stuff, start oBG2 stuff
+//_____________________________________________________________________________________________________
+/*
+COPY ~silverrealms/animations/copy_oBG2~         ~override~
+// copy dracolich files
+COPY ~silverrealms/animations/dracolich~    ~override~
+//Patching IA's water elemental small death animation which otherwise leads to a crash
+COPY_EXISTING ~µarsl.bam~   ~override/µarde.bam~
+COPY_EXISTING ~µarsle.bam~   ~override/µardee.bam~
+
+//Adding Acifers Rothé Animation
+APPEND ~animate.ids~ ~0x533D NWN_ROTHE~ UNLESS ~^0x533[Dd]~
+APPEND ~anisnd.ids~ ~0x533D µJW      CGAMEANIMATIONTYPE_NWN_ROTHE~ UNLESS ~^0x533[Dd]~
+//Adding Acifers Gray Rothé Animation
+APPEND ~animate.ids~ ~0x5101 NWN_ROTHE_GRAY~ UNLESS ~^0x5101~
+APPEND ~anisnd.ids~ ~0x5101 µJX      CGAMEANIMATIONTYPE_NWN_ROTHE_GRAY~ UNLESS ~^0x5101~
+// Adding Acifer NWN Bone Golem Animation
+APPEND ~animate.ids~ ~0x5102 NWN_BONE_GOLEM~ UNLESS ~^0x5102~
+APPEND ~anisnd.ids~ ~0x5102 µJY      CGAMEANIMATIONTYPE_NWN_BONE_GOLEM~ UNLESS ~^0x5102~
+// Adding Acifer NWN Death Tyrant Animation
+APPEND ~animate.ids~ ~0x5103 NWN_DEATH_TYRANT~ UNLESS ~^0x5103~
+APPEND ~anisnd.ids~ ~0x5103 µJZ      CGAMEANIMATIONTYPE_NWN_DEATH_TYRANT~ UNLESS ~^0x5103~
+// Adding Acifers NWN Raven Animation
+APPEND ~animate.ids~ ~0x5341 NWN_RAVEN~ UNLESS ~^0x5341~
+APPEND ~anisnd.ids~ ~0x5341 µKA      CGAMEANIMATIONTYPE_NWN_RAVEN~ UNLESS ~^0x5341~
+// Adding Acifers NWN Allip Animation
+APPEND ~animate.ids~ ~0x5342 NWN_ALLIP~ UNLESS ~^0x5342~
+APPEND ~anisnd.ids~ ~0x5342 µKB      CGAMEANIMATIONTYPE_NWN_ALLIP~ UNLESS ~^0x5342~
+// Adding Acifers Large Black Pudding Animation
+APPEND ~animate.ids~ ~0x5587 ACIFER_BLACK_PUDDING~ UNLESS ~^0x5587~
+APPEND ~anisnd.ids~ ~0x5587 £KJ      CGAMEANIMATIONTYPE_ACIFER_BLACK_PUDDING~ UNLESS ~^0x5587~
+// Adding Cuvs PST True Shadow animation
+APPEND ~animate.ids~ ~0x5110 PST_TRUE_SHADOW~ UNLESS ~^0x5110~
+APPEND ~anisnd.ids~ ~0x5110 µKM      CGAMEANIMATIONTYPE_PST_TRUE_SHADOW~ UNLESS ~^0x5110~
+// Adding Acifers Drowned_dead_small animation
+APPEND ~animate.ids~ ~0x534e DROWNED_DEAD_SMALL~ UNLESS ~^0x534[Ee]~
+APPEND ~anisnd.ids~ ~0x534e µKN      CGAMEANIMATIONTYPE_DROWNED_DEAD_SMALL~ UNLESS ~^0x534[Ee]~
+// Adding Acifers Blacktroll Animation
+APPEND ~animate.ids~ ~0x5343 ACIFER_BLACKTROLL~ UNLESS ~^0x5343~
+APPEND ~anisnd.ids~ ~0x5343 µKC      CGAMEANIMATIONTYPE_ACIFER_BLACKTROLL~ UNLESS ~^0x5343~
+// Adding Acifers Dretch Animation
+APPEND ~animate.ids~ ~0x54AF ACIFER_DRETCH~ UNLESS ~^0x54[Aa][Ff]~
+APPEND ~anisnd.ids~ ~0x54AF £CB      CGAMEANIMATIONTYPE_ACIFER_DRETCH~ UNLESS ~^0x54[Aa][Ff]~
+
+// Adding Acifers huge earth elemental / Galeb Dhur animation
+APPEND ~animate.ids~ ~0x510f IWD_EARTH_ELEMENTAL_HUGE~ UNLESS ~^0x510[Ff]~
+APPEND ~anisnd.ids~ ~0x510f µKL      CGAMEANIMATIONTYPE_IWD_EARTH_ELEMENTAL_HUGE~ UNLESS ~^0x510[Ff]~
+// Adding Acifers large Verbeeg animation
+APPEND ~animate.ids~ ~0x5112 IWD_VERBEEG_LARGE~ UNLESS ~^0x5112~
+APPEND ~anisnd.ids~ ~0x5112 µKO      CGAMEANIMATIONTYPE_IWD_VERBEEG_LARGE~ UNLESS ~^0x5112~
+// Adding Gelugon Animation:
+APPEND ~animate.ids~ ~0x5fe0 GELUGON_ACIFER~ UNLESS ~^0x5[Ff][Ee]0~
+APPEND ~anisnd.ids~ ~0x5fe0 ØDY      CGAMEANIMATIONTYPE_GELUGON_ACIFER~ UNLESS ~^0x5[Ff][Ee]0~
+// Adding Doomsphere Animation:
+APPEND ~animate.ids~ ~0x5fe1 BEHOLDER_DOOMSPHERE~ UNLESS ~^0x5[Ff][Ee]1~
+APPEND ~anisnd.ids~ ~0x5fe1 ØDZ      CGAMEANIMATIONTYPE_BEHOLDER_DOOMSPHERE~ UNLESS ~^0x5[Ff][Ee]1~
+// Adding Earth whisper Animation:
+APPEND ~animate.ids~ ~0x5fe2 EARTH_WHISPER~ UNLESS ~^0x5[Ff][Ee]2~
+APPEND ~anisnd.ids~ ~0x5fe2 ØEA      CGAMEANIMATIONTYPE_EARTH_WHISPER~ UNLESS ~^0x5[Ff][Ee]2~
+// Adding Hammer golem Animation:
+APPEND ~animate.ids~ ~0x5113 HAMMER_GOLEM_PST~ UNLESS ~^0x5113~
+APPEND ~anisnd.ids~ ~0x5113 µKP      CGAMEANIMATIONTYPE_HAMMER_GOLEM_PST~ UNLESS ~^0x5113~
+// Adding Dracolich Animation:
+APPEND ~animate.ids~ ~0x120e DRACOLICH~ UNLESS ~^0x120[Ee]~
+APPEND ~anisnd.ids~ ~0x120e XDR6      CGAMEANIMATIONTYPE_DRACOLICH~ UNLESS ~^0x120[Ee]~
+// Adding Acifers Spriggan Animation DO_NOT_USE
+//APPEND ~animate.ids~ ~0x6801 SPRIGGAN~ UNLESS ~^0x6801~
+//APPEND ~anisnd.ids~ ~0x6801 ¢TµT     CGAMEANIMATIONTYPE_SPRIGGAN~ UNLESS ~^0x6801~
+END
+*/

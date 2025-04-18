@@ -1,0 +1,9 @@
+IF
+	Global("AC#Ruvan_Treason","GLOBAL",1)
+	NumTimesTalkedTo(1)
+	Detect([PC])
+	Range(LastSeenBy(Myself),15)
+THEN
+	RESPONSE #100
+                StartDialogueNoSet(LastSeenBy(Myself))
+END

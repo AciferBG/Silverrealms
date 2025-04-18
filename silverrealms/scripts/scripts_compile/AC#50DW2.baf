@@ -1,0 +1,16 @@
+IF
+	Detect([PC])
+	Range(LastSeenBy(Myself),6)
+	NumTimesTalkedTo(0)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(LastSeenBy(Myself))
+END
+
+IF
+         Global("AC#Arrested","GLOBAL",1)
+THEN
+	RESPONSE #100
+                 DestroySelf()
+END

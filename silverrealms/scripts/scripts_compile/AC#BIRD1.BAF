@@ -1,0 +1,38 @@
+IF
+	Global("AC#TalkedToAhab","GLOBAL",10)
+THEN
+	RESPONSE #100
+		EscapeArea()
+END
+
+IF
+	Global("AC#TalkedToAhab","GLOBAL",1)
+	Global("Move","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Move","LOCALS",1)
+		PlaySound("AC#BIRD1")
+		MoveToObject("AC#BAHA1")
+END
+
+IF
+	Delay(2)
+	!Range("AC#BAHA1",30)
+	!See([ENEMY])
+THEN
+	RESPONSE #15
+		VerbalConstant(Myself,INITIAL_MEETING)
+		MoveToObject("AC#BAHA1")
+	RESPONSE #15
+		VerbalConstant(Myself,HAPPY)
+		MoveToObject("AC#BAHA1")
+	RESPONSE #70
+		MoveToObject("AC#BAHA1")
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		RandomWalk()
+END

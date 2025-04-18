@@ -1,0 +1,28 @@
+/*
+
+Dieses Skript transportiert die Spieler aus Area ACIL62  zurück nach ACIL50
+*/
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+	        FadeToColor([15.0],0)
+		Wait(1)
+		LeaveAreaLUAPanic("ACIL50","",[2907.410],0)
+		LeaveAreaLUA("ACIL50","",[2907.410],6)
+		ActionOverride(Player2,LeaveAreaLUA("ACIL50","",[2907.410],3))
+		ActionOverride(Player3,LeaveAreaLUA("ACIL50","",[2907.410],3))
+		ActionOverride(Player4,LeaveAreaLUA("ACIL50","",[2907.410],3))
+		ActionOverride(Player5,LeaveAreaLUA("ACIL50","",[2907.410],3))
+		ActionOverride(Player6,LeaveAreaLUA("ACIL50","",[2907.410],3))
+		MultiPlayerSync()
+		MoveViewPoint([2907.410],INSTANT)
+		Wait(1)
+		ActionOverride("AC#BRES1",JumpToPoint([2793.507]))
+		ActionOverride("AC#BRES1",FaceObject(Player1))
+		CreateCreature("AC#ELER2",[2917.418],0)  // Elern
+		FadeFromColor([30.0],150)
+		SetGlobal("AC#PlayerArrested","GLOBAL",1)
+		EndCutSceneMode()
+END

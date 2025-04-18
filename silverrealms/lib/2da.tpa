@@ -1,0 +1,62 @@
+// Silverrealms 2da files
+
+// Adding Spawn groups to spawngrp.2da
+
+APPEND_COL ~spawngrp.2da~ "$ $ RDAC#KUO 150 AC#KUOT1 AC#KUOT2 AC#KUOT3 AC#KUOT4 AC#KUOT5 AC#KUOT6 * *"
+APPEND_COL ~spawngrp.2da~ "$ $ RDAC#KU2 170 AC#KUOT7 AC#KUOT3 AC#KUOT4 AC#KUOT4 AC#KUOT8 AC#KUOT2 * *"
+
+COPY_EXISTING ~spawngrp.2da~ ~override~
+    PRETTY_PRINT_2DA
+BUT_ONLY
+
+APPEND ~MastArea.2da~
+~ACIL0A     value~
+UNLESS ~ACIL0A~
+
+APPEND ~MastArea.2da~
+~ACIL0D     value~
+UNLESS ~ACIL0D~
+
+APPEND ~MastArea.2da~
+~ACIL01     value~
+UNLESS ~ACIL01~
+
+APPEND ~MastArea.2da~
+~ACIL07     value~ //Making Rain Effect Work in Road Area
+UNLESS ~ACIL07~
+
+APPEND ~MastArea.2da~
+~ACIL09     value~ //Making Rain Effect Work in Star Bridge
+UNLESS ~ACIL09~
+
+APPEND ~MastArea.2da~
+~ACIL34     value~ //Making Rain Effect Work in Dhalnadar Bridge
+UNLESS ~ACIL34~
+
+APPEND ~MastArea.2da~
+~ACIL41     value~
+UNLESS ~ACIL41~
+
+APPEND ~MastArea.2da~
+~ACIL70     value~
+UNLESS ~ACIL70~
+
+APPEND ~MastArea.2da~
+~ACIL90     value~ //Making Rain Effect Work in Axemarch Stone Area
+UNLESS ~ACIL90~
+
+APPEND ~MastArea.2da~
+~ACIL96     value~
+UNLESS ~ACIL96~
+
+OUTER_SET strref = RESOLVE_STR_REF (@739)
+APPEND itemdial.2da ~AC#BOOKB %strref% AC#BOOKB~
+BUT_ONLY
+
+COPY ~silverrealms/2da/copy~         ~override~
+
+COPY ~silverrealms/2da/AC#MOS01.2DA~ ~override~
+REPLACE ~999999~ @97
+
+COPY ~silverrealms/2da/AC#MOS27.2DA~ ~override/AC#MOS27.2da~
+REPLACE ~999999~ @58

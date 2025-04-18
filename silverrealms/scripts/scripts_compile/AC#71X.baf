@@ -1,0 +1,15 @@
+IF
+	Contains("AC#DHE",Myself)
+	Global("AC#_DragonHeart","ACIL71",0)
+THEN
+	RESPONSE #100
+		DestroyItem("AC#DHE")
+		PlaySound("EFF_P92")
+		ScreenShake([2347.370],15)
+                CloseDoor("Dragon_eyes")
+		Wait(2)
+		AmbientActivate("Burning_heart",TRUE)
+		DisplayString(Myself,@17)
+		SetGlobal("AC#_DragonHeart","ACIL71",1)
+END
+

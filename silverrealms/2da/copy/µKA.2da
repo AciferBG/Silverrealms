@@ -1,0 +1,41 @@
+µKA /RAVEN
+***
+                 SOUND
+ATTACK           AC#RAVA1 AC#RAVA2
+ATTACK           0 0
+AWAKE            ***
+AWAKE            0
+CAST             ***
+CAST             0
+CONJURE          ***
+CONJURE          0
+DAMAGE           AC#RAVH1 AC#RAVH2
+DAMAGE           0 0
+DIE              AC#RAVDE AC#RAVDE
+DIE              0 0
+HEAD_TURN        ***
+HEAD_TURN        0
+READY            AC#RAVRE
+READY            0
+SHOOT            ***
+SHOOT            0 0
+TWITCH           ***
+TWITCH           0
+WALK             0 0 0
+WALK             0
+ATTACK_SLASH     AC#RAVA3 AC#RAVA1 nosound
+ATTACK_SLASH     2 2 0
+ATTACK_BACKSLASH AC#RAVA1 nosound nosound
+ATTACK_BACKSLASH 0
+ATTACK_JAB       AC#RAVA1 AC#RAVA3 nosound
+ATTACK_JAB       0
+EMERGE           ***
+EMERGE           0
+HIDE             ***
+HIDE             0
+SLEEP            ***
+SLEEP            0
+Battle_Cry       AC#RAVB1 AC#RAVB2
+Battle_Cry       0 0
+Selection        AC#RAVSE AC#RAVS2
+Selection        0 0

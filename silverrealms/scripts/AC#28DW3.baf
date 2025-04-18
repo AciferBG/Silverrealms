@@ -1,0 +1,33 @@
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	!StateCheck(LastAttackerOf(Myself),STATE_CHARMED)
+	Global("AttackedMe","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("AttackedMe","LOCALS",1)
+END
+
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	!StateCheck(LastAttackerOf(Myself),STATE_CHARMED)
+	Global("AttackedMe","LOCALS",1)
+THEN
+	RESPONSE #100
+		SetGlobal("AttackedMe","LOCALS",2)
+		DisplayStringHead(Myself,999999) // He, hört gefälligst damit auf!
+		RunAwayFrom(LastAttackerOf(Myself),30)
+END
+
+IF
+	AttackedBy([ANYONE],DEFAULT)
+THEN
+	RESPONSE #100
+		RunAwayFrom(LastAttackerOf(Myself),150)
+END
+
+IF
+	GlobalGT("AC#Ruvan_Treason","GLOBAL",0)
+THEN
+	RESPONSE #100
+                 DestroySelf()
+END

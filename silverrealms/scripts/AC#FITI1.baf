@@ -1,0 +1,19 @@
+IF
+	!Allegiance(Myself,ENEMY)
+	Allegiance("AC#CLTI1",ENEMY)
+THEN
+	RESPONSE #100
+ 	         Enemy()
+END
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,45 @@
+IF
+	Clicked([ANYONE])
+	GlobalGT("AC#_Destroy_Oven","ACIL61",3)
+	GlobalGT("AC#_Ore","ACIL61",0)
+	PartyHasItem("AC#BAR01") // Sprengfass
+	Global("AC#_Barrel","ACIL61",0)
+THEN
+	RESPONSE #100
+                DisplayString(Myself,999997)
+                SetGlobal("AC#_Barrel","ACIL61",1)
+                ClearAllActions()
+	        TakePartyItem("AC#BAR01") // Sprengfass
+                CreateCreature("AC#BAR01",[3048.448],11) // Sprengfass
+END
+
+IF
+	Clicked([ANYONE])
+	GlobalGT("AC#_Destroy_Oven","ACIL61",3)
+	GlobalGT("AC#_Ore","ACIL61",0)
+	!PartyHasItem("AC#BAR01") // Sprengfass
+THEN
+	RESPONSE #100
+                DisplayString(Myself,999998)
+END
+
+IF
+        Clicked([ANYONE])
+	GlobalLT("AC#_Destroy_Oven","ACIL61",4)
+	Global("AC#_Ore","ACIL61",0)
+THEN
+	RESPONSE #100
+                 DisplayString(Myself,999999)
+END
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,10)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,14702)
+END
+
+
+
+

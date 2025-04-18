@@ -1,0 +1,45 @@
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,10)
+	Global("AC#Door82","ACIL82",0)
+THEN
+	RESPONSE #100
+	         SetGlobal("AC#Door82","ACIL82",1)
+                 DisplayString(Myself,999999)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,10)
+	Global("AC#Door82","ACIL82",1)
+	PartyHasItem("ac#beleg")
+THEN
+	RESPONSE #100
+	         SetGlobal("AC#Door82","ACIL82",2)
+ 	         TakePartyItem("ac#beleg")
+ 	         DisplayString(Myself,999998)
+ 	         OpenDoor("Secret_door")
+ 	         PlaySound("EFF_P92")
+		 TriggerActivation("Info_Secret",FALSE)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,10)
+	Global("AC#Door82","ACIL82",1)
+	!PartyHasItem("ac#beleg")
+THEN
+	RESPONSE #100
+ 	         DisplayString(Myself,999997)
+END
+
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,10)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,14702) // Ihr seid zu weit entfernt, um das zu benutzen.
+END
+
+

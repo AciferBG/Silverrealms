@@ -1,0 +1,12 @@
+IF
+  True()
+THEN
+  RESPONSE #100
+    FadeToColor([10.0],0)
+    Wait(3)
+    FadeFromColor([10.0],0)
+    SetGlobal("Jorboud_Runestone","ACIL53",2)
+    EndCutSceneMode()
+    ActionOverride("AC#JOUR1",StartDialogueNoSet(Player1))
+END
+

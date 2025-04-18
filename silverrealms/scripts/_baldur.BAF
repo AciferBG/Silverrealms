@@ -1,0 +1,13 @@
+IF
+	OR(2)
+	PartyHasItemIdentified("AC#24DRL")
+	PartyHasItem("AC#24DR2")
+	Global("AC#25_Bloodmoon","GLOBAL",0)
+THEN
+	RESPONSE #100
+        SetGlobal("AC#25_Bloodmoon","GLOBAL",1)
+		EraseJournalEntry(@62025)
+		EraseJournalEntry(@62026)
+		EraseJournalEntry(@23001)
+		AddJournalEntry(@23002,QUEST)
+END

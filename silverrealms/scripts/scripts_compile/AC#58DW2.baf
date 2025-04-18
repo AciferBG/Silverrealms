@@ -1,0 +1,6 @@
+IF
+	Global("AC#58DW2Moves","ACIL58",1)
+THEN
+	RESPONSE #100
+		MoveToObject("AC#58DW9")
+END

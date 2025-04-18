@@ -1,0 +1,15 @@
+IF
+	PartyHasItem("AC#SCABR")
+	CombatCounter(0)
+	InParty("Jaheira")
+	!Dead("Jaheira")
+	Global("AC#Bronzescales","GLOBAL",0)
+THEN
+	RESPONSE #100
+	        ActionOverride("Jaheira",StartDialogueNoSet(Player1))
+END
+
+
+
+
+

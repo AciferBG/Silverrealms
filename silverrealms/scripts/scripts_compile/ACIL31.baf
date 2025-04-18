@@ -1,0 +1,56 @@
+IF
+	Global("EnteredArea","ACIL31",0)
+THEN
+	RESPONSE #100
+		AmbientActivate("Skullfire",FALSE)
+		SoundActivate("AM0413A",FALSE)
+		TriggerActivation("CSKULL",FALSE)
+		SetGlobal("EnteredArea","ACIL31",1)
+END
+
+IF
+	Global("EarthNodeActivation","ACIL31",6)
+THEN
+	RESPONSE #100
+	        AddexperienceParty(9000)
+	        DisplayString(Myself,@315)
+		SetGlobal("EarthNodeActivation","ACIL31",7)
+END
+
+IF
+	Global("SkulldoorOpen","ACIL31",0)
+	OpenState("DOOR07",TRUE)
+THEN
+	RESPONSE #100
+		AmbientActivate("Skullfire",TRUE)
+		SoundActivate("AM0413A",TRUE)
+		TriggerActivation("CSKULL",TRUE)
+		SetGlobal("SkulldoorOpen","ACIL31",1)
+END
+
+IF
+	Global("AC#Astraltravel","ACIL31",1)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#Astraltravel","ACIL31",0)
+		SaveGame(0)
+		Wait(1)
+		SetGlobal("GithShipleave","ACIL31",1)
+END
+
+IF
+	Global("GithShipleave","ACIL31",1)
+THEN
+	RESPONSE #100
+		SetGlobal("GithShipleave","ACIL31",20)
+		ClearAllActions()
+		StartCutSceneMode()
+		Wait(2)
+		StartCutScene("ac#cut76")
+END
+
+
+
+
+
+

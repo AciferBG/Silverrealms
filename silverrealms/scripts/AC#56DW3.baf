@@ -1,0 +1,55 @@
+IF
+  OR(2)
+  !See([PC])
+  !Range([PC],15)
+THEN
+  RESPONSE #100
+    ClearActions(Myself)
+    ActionOverride("AC#56DW4",ClearActions(Myself))
+    Continue()
+END
+
+IF
+	HitBy("AC#56DW4",CRUSHING)
+        RandomNum(3,1)
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,999999)
+		Wait(2)
+		ActionOverride("AC#56DW4",DisplayStringHead(Myself,999998))
+END
+
+IF
+	HitBy("AC#56DW4",CRUSHING)
+        RandomNum(3,2)
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,999997)
+		Wait(2)
+		ActionOverride("AC#56DW4",DisplayStringHead(Myself,999996))
+END
+
+IF
+  See([PC])
+  Range(LastSeenBy(Myself),15)
+THEN
+  RESPONSE #100
+    ActionOverride("AC#56DW3",DialogueInterrupt(FALSE))
+    ActionOverride("AC#56DW4",DialogueInterrupt(FALSE))
+    ActionOverride("AC#56DW3",AttackOneRound("AC#56DW4")
+    ActionOverride("AC#56DW4",AttackOneRound("AC#56DW3")
+END
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,59 @@
+IF
+	GlobalGT("AC#BeldasDies","GLOBAL",1)
+THEN
+	RESPONSE #100
+	   DestroySelf()
+END
+
+IF
+	Global("GoblinTrap","ACIL0A",20)
+THEN
+	RESPONSE #100
+	   EscapeArea()
+END
+
+IF
+	OR(2)
+	Global("GoblinTrap","ACIL0A",15)
+	Global("GoblinTrap","ACIL0A",19)
+	Global("GoblinAttack","LOCALS",0)
+THEN
+	RESPONSE #100
+	   SetGlobal("GoblinAttack","LOCALS",1)
+	   Enemy()
+	   EquipRanged()
+	   AttackReevaluate(NearestEnemyOf(Myself),15)
+END
+
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	!Range(NearestEnemyOf(Myself),5)
+THEN
+	RESPONSE #100
+		EquipRanged()
+		AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Range(NearestEnemyOf(Myself),5)
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+		AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+	AttackedBy([ANYONE],DEFAULT)
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastAttackerOf(Myself),30)
+END

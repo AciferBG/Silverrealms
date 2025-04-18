@@ -1,0 +1,27 @@
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,6)
+	Global("CircleOfMagic","ACIL39",0)
+THEN
+	RESPONSE #100
+	         SetGlobal("CircleOfMagic","ACIL39",1)
+		DisplayString(Myself,@193)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,6)
+	Global("CircleOfMagic","ACIL39",1)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@194)
+		ReallyForceSpell(LastTrigger,CLERIC_CURE_MEDIUM_WOUNDS)
+END
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,6)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@195)
+END

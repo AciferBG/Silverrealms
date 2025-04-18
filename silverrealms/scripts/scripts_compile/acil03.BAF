@@ -1,0 +1,14 @@
+IF
+	Global("AC#_RavenPlotStart","GLOBAL",6)
+THEN
+	RESPONSE #100
+	// CreateCreature("AC#RAVE4",[1017.1312],0)
+         SetGlobal("AC#_RavenPlotStart","GLOBAL",7)
+END
+
+IF
+	Global("AC#_RavenPlotStart","GLOBAL",4)
+THEN
+	RESPONSE #100
+         SetGlobal("AC#_RavenPlotStart","GLOBAL",5)
+END

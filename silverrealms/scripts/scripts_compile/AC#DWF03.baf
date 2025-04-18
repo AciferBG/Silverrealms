@@ -1,0 +1,38 @@
+IF
+	Global("AC#BeldasDies","GLOBAL",0)
+	OR(2)
+		Global("AC#Charvekannathor","GLOBAL",5)
+		HPLT(Myself,10)
+THEN
+	RESPONSE #100
+		Wait(1)
+		ChangeAnimationNoEffect("AC#DWF10")  // Beldas
+		SetGlobal("AC#BeldasDies","GLOBAL",1)
+END
+
+IF
+	Allegiance("ac#drar1",ENEMY)  // Charvekannathor
+	Global("FireProtection","LOCALS",0)
+THEN
+	RESPONSE #100
+		ReallyForceSpellRES("AC#I713",Player1)  // Eisstaub
+		ApplySpellRES("AC#I713",Myself)
+		SetGlobal("FireProtection","LOCALS",1)
+END
+
+IF
+	Global("FireProtection","LOCALS",1)
+	CheckStatLT(Player1,80,RESISTFIRE)
+THEN
+	RESPONSE #100
+		ReallyForceSpellRES("AC#I713",Player1)  // Eisstaub
+		SetGlobal("FireProtection","LOCALS",2)
+END
+
+IF
+	See("ac#drar1")  // Charvekannathor
+	Allegiance("ac#drar1",ENEMY)  // Charvekannathor
+THEN
+	RESPONSE #100
+		AttackReevaluate("ac#drar1",30)  // Charvekannathor
+END

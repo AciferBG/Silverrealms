@@ -1,0 +1,9 @@
+IF
+        Entered([ANYONE])
+THEN
+    RESPONSE #100
+		DisplayString(LastTrigger,14381)  // Falle zugeschnappt
+                ForceSpell(LastTrigger,WIZARD_ABI_DALZIMS_HORRID_WILTING)
+		//ForceSpell(LastTrigger,WIZARD_IMPRISONMENT)
+END
+

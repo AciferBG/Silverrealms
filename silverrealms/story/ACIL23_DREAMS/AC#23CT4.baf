@@ -1,0 +1,25 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		MultiPlayerSync()
+		ApplySpell(Player2,SURE_SLEEP) // SPIN892.SPL (Schlaf)
+		ApplySpell(Player3,SURE_SLEEP) // SPIN892.SPL (Schlaf)
+		ApplySpell(Player4,SURE_SLEEP) // SPIN892.SPL (Schlaf)
+		ApplySpell(Player5,SURE_SLEEP) // SPIN892.SPL (Schlaf)
+		ApplySpell(Player6,SURE_SLEEP) // SPIN892.SPL (Schlaf)
+		Explore()
+		SmallWait(5)
+		ActionOverride("AC#DREA8",MoveToPoint([609.811]))
+		ActionOverride("AC#DREA9",MoveToPoint([586.891]))
+		//Wait(5)
+		MoveViewPoint([609.811],5)
+		Wait(5)
+		ActionOverride("AC#DREA8",Face(13))
+		//ActionOverride("AC#DREA1",SmallWait(5))
+		//MoveViewObject("AC#DREA1",5)
+		//Wait(3)
+		ActionOverride("AC#DREA8",StartDialogueNoSet(Player1))
+END
+

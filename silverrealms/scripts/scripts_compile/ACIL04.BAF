@@ -1,0 +1,83 @@
+IF
+	Global("prep","ACIL04",0)  // Zweiwasser
+THEN
+	RESPONSE #100
+		SetGlobal("prep","ACIL04",1)  // Zweiwasser
+		TriggerActivation("AC#04T06",FALSE)
+END
+
+IF
+	OR(2)
+	LevelGT(Player1,11)
+	DifficultyGT(NORMAL)
+	Global("Merch_Spawn","ACIL04",0)  // Zweiwasser
+THEN
+	RESPONSE #100
+		SetGlobal("Merch_Spawn","ACIL04",1)  // Zweiwasser
+		CreateCreature("AC#04MCH",[2495.1146],15)  // Händler
+		CreateCreature("AC#04GUA",[2627.1202],6)  // Leibwächter
+		CreateCreature("AC#GOBDD",[2527.1184],1)  // Goblin
+END
+
+IF
+	OR(2)
+		LevelLT(Player1,12)
+		DifficultyLT(HARD)
+	Global("Merch_Spawn","ACIL04",0)  // Zweiwasser
+THEN
+	RESPONSE #100
+		SetGlobal("Merch_Spawn","ACIL04",1)  // Zweiwasser
+		CreateCreature("AC#04MCL",[2495.1146],15)  // Händler
+		CreateCreature("AC#04GUA",[2627.1202],6)  // Leibwächter
+		CreateCreature("AC#GOBDD",[2527.1184],1)  // Goblin
+END
+
+IF
+	Global("AC#EnteredACIL09","GLOBAL",1)
+	Global("Guard_Spawn","ACIL04",0)  // Zweiwasser
+THEN
+	RESPONSE #100
+		SetGlobal("Guard_Spawn","ACIL04",1)  // Zweiwasser
+		CreateCreature("AC#04AG1",[2495.1146],0)  // Amnish guard #1
+		CreateCreature("AC#04AG2",[2627.1202],0)  //Amnish guard #2
+		CreateCreature("AC#04AG2",[2527.1184],0)  //Amnish guard #3
+END
+
+/*
+IF
+	Global("AC#IltkazarQuest#2","GLOBAL",20)
+	Global("AC#RavenQuest#04","GLOBAL",0)
+THEN
+	RESPONSE #100
+		CreateCreature("AC#RAV04",[438.286],11) // Raven
+		SetGlobal("AC#RavenQuest#04","GLOBAL",1)
+END
+
+IF
+	Global("AC#Raven_NPC","ACIL04",1)
+THEN
+	RESPONSE #100
+            SetGlobal("AC#Raven_NPC","ACIL04",2)
+			SetGlobal("AC#RavenKeldorn","GLOBAL",1)
+			Continue()
+END
+
+IF
+	//CombatCounter(0)
+	InParty("Keldorn")
+	!Dead("Keldorn")
+	Global("AC#Raven_NPC","ACIL04",2)
+THEN
+	RESPONSE #100
+            Wait(1)
+	        ActionOverride("Keldorn",StartDialogueNoSet(Player1))
+			Continue()
+END
+
+IF
+	Global("AC#Raven_NPC","ACIL04",2)
+THEN
+	RESPONSE #100
+            SetGlobal("AC#Raven_NPC","ACIL04",20)
+END
+*/

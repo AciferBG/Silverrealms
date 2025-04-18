@@ -1,0 +1,30 @@
+IF
+	Opened([ANYONE])
+THEN
+	RESPONSE #100
+		//ReallyForceSpellPointRES("AC#SKET1",[602.1114]) // Skelettin Wake Up
+		//ReallyForceSpellPointRES("AC#SKET1",[879.1307]) // Skelettin Wake Up
+		AmbientActivate("Skelettin01",FALSE)
+		AmbientActivate("Skelettin02",FALSE)
+		AmbientActivate("Skelettin01GU",TRUE)
+		AmbientActivate("Skelettin02GU",TRUE)
+		PlaySound("EFF_M26.WAV")
+		Wait(1)
+		AmbientActivate("Skelettin01GU",FALSE)
+		AmbientActivate("Skelettin02GU",FALSE)
+                CreateCreature("AC#SKET1",[602.1114],0)
+                CreateCreature("AC#SKET2",[879.1307],5)
+END
+
+/* OLD
+IF
+	Opened([ANYONE])
+THEN
+	RESPONSE #100
+		//ReallyForceSpellPointRES("AC#SKET1",[602.1114]) // Skelettin Wake Up
+		//ReallyForceSpellPointRES("AC#SKET1",[879.1307]) // Skelettin Wake Up
+                CreateCreature("AC#18DO1",[750.1221],14)
+		//AmbientActivate("Skelettin01",FALSE)
+		//AmbientActivate("Skelettin02",FALSE)
+END
+*/

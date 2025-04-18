@@ -1,0 +1,41 @@
+µJY /NWN_BONE_GOLEM/
+***
+						SOUND
+ATTACK          		boneg01 nosound nosound
+ATTACK          		2 0 0
+AWAKE           		***
+AWAKE           		0
+CAST            		***
+CAST            		0
+CONJURE         		***
+CONJURE         		0
+DAMAGE          		boneg07 boneg08
+DAMAGE          		0 0
+DIE             		boneg09
+DIE             		0
+HEAD_TURN       		***
+HEAD_TURN       		0
+READY           		***
+READY           		0
+SHOOT           		***
+SHOOT           		0
+TWITCH          		***
+TWITCH          		0
+WALK            		***
+WALK            		0
+ATTACK_SLASH    		boneg03A BONEG03B nosound
+ATTACK_SLASH    		2 2 0
+ATTACK_BACKSLASH		boneg04A BONEG04B nosound
+ATTACK_BACKSLASH		2 2 0
+ATTACK_JAB      		boneg05A BONEG05B nosound
+ATTACK_JAB      		2 2 0
+EMERGE          		***
+EMERGE          		0
+HIDE            		***
+HIDE            		0
+SLEEP          			***
+SLEEP          			0
+Battle_Cry			boneg01 boneg02
+Battle_Cry			0 0
+Selection                       boneg01
+Selection                       0

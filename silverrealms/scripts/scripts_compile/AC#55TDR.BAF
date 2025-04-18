@@ -1,0 +1,7 @@
+IF
+	PartyHasItem("AC#MERC1")  // Quecksilber
+	Global("MercuryCreation","ACIL55",2)
+THEN
+	RESPONSE #100
+		StartDialogNoSet([PC])
+END

@@ -1,0 +1,29 @@
+IF
+	Global("EnteredArea","ACIL07",0)
+THEN
+	RESPONSE #100
+		SetGlobal("EnteredArea","ACIL07",1)
+		SetGlobal("AC#Been_in_ACIL07","GLOBAL",1)
+		TriggerActivation("Tran0020",FALSE)
+		Explore()
+END
+
+/*
+IF
+	Global("TremorSpawn","ACIL07",0)
+THEN
+	RESPONSE #100
+		SetGlobal("TremorSpawn","ACIL07",1)
+		CreateCreature("AC#TREM3",[125.311],10) // Draemor
+END
+*/
+
+IF
+	Global("AC#DragonToy","GLOBAL",10)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#DragonToy","GLOBAL",11)
+		ActionOverride("Dead_boy",CreateItem("AC#S#DRR",0,0,0))  // Dragon Toy
+END
+
+

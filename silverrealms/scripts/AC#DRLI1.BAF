@@ -1,0 +1,106 @@
+IF
+	See(NearestEnemyOf(Myself))
+	Global("WarnAllies","LOCALS",0)
+THEN
+	RESPONSE #100
+		Shout(151)
+		SetGlobal("WarnAllies","LOCALS",1)
+END
+
+IF
+	Heard([ANYONE],151)
+	InMyGroup(LastHeardBy(Myself))
+	!See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		MoveToObject(LastHeardBy(Myself))
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Range(LastSeenBy(Myself),15)
+	!StateCheck(LastSeenBy(Myself),STATE_STONE_DEATH)
+	GlobalLT("DracoliskAcidAttacks","LOCALS",3)
+	!GlobalTimerNotExpired("DracoliskSpitAcid","LOCALS")
+THEN
+	RESPONSE #100
+		ReallyForceSpellRES("AC#DRLI2",LastSeenBy(Myself))
+		IncrementGlobal("DracoliskAcidAttacks","LOCALS",1)
+		SetGlobalTimer("DracoliskSpitAcid","LOCALS",24)
+END
+
+IF
+	See(ThirdNearestEnemyOf(Myself))
+	Range(LastSeenBy(Myself),30)
+	!StateCheck(LastSeenBy(Myself),STATE_STONE_DEATH)
+	!GlobalTimerNotExpired("BasiliskStoneGaze","LOCALS")
+THEN
+	RESPONSE #100
+		ReallyForceSpellRES("AC#DRLI1",LastSeenBy(Myself))
+		SetGlobalTimer("BasiliskStoneGaze","LOCALS",30)
+END
+
+IF
+	See(SecondNearestEnemyOf(Myself))
+	Range(LastSeenBy(Myself),30)
+	!StateCheck(LastSeenBy(Myself),STATE_STONE_DEATH)
+	!GlobalTimerNotExpired("BasiliskStoneGaze","LOCALS")
+THEN
+	RESPONSE #100
+		ReallyForceSpellRES("AC#DRLI1",LastSeenBy(Myself))
+		SetGlobalTimer("BasiliskStoneGaze","LOCALS",30)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Range(LastSeenBy(Myself),30)
+	!StateCheck(LastSeenBy(Myself),STATE_STONE_DEATH)
+	!GlobalTimerNotExpired("BasiliskStoneGaze","LOCALS")
+THEN
+	RESPONSE #100
+		ReallyForceSpellRES("AC#DRLI1",LastSeenBy(Myself))
+		SetGlobalTimer("BasiliskStoneGaze","LOCALS",30)
+END
+
+IF
+	See(FourthNearestEnemyOf(Myself))
+	Range(LastSeenBy(Myself),30)
+	!StateCheck(LastSeenBy(Myself),STATE_STONE_DEATH)
+	!GlobalTimerNotExpired("BasiliskStoneGaze","LOCALS")
+THEN
+	RESPONSE #100
+		ReallyForceSpellRES("AC#DRLI1",LastSeenBy(Myself))
+		SetGlobalTimer("BasiliskStoneGaze","LOCALS",30)
+END
+
+IF
+	See(SixthNearestEnemyOf(Myself))
+	Range(LastSeenBy(Myself),30)
+	!StateCheck(LastSeenBy(Myself),STATE_STONE_DEATH)
+	!GlobalTimerNotExpired("BasiliskStoneGaze","LOCALS")
+THEN
+	RESPONSE #100
+		ReallyForceSpellRES("AC#DRLI1",LastSeenBy(Myself))
+		SetGlobalTimer("BasiliskStoneGaze","LOCALS",30)
+END
+
+IF
+	See(FifthNearestEnemyOf(Myself))
+	Range(LastSeenBy(Myself),30)
+	!StateCheck(LastSeenBy(Myself),STATE_STONE_DEATH)
+	!GlobalTimerNotExpired("BasiliskStoneGaze","LOCALS")
+THEN
+	RESPONSE #100
+		ReallyForceSpellRES("AC#DRLI1",LastSeenBy(Myself))
+		SetGlobalTimer("BasiliskStoneGaze","LOCALS",30)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	!StateCheck(LastSeenBy(Myself),STATE_STONE_DEATH)
+THEN
+	RESPONSE #100
+		AttackReevaluate(NearestEnemyOf(Myself),15)
+END
+
+

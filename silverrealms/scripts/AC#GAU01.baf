@@ -1,0 +1,97 @@
+IF
+	Global("AC#_HatharCombat","ACIL20",0)
+	Global("GauthBehavior","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("GauthBehavior","LOCALS",2)
+END
+
+IF
+	Global("AC#_HatharCombat","ACIL20",1)
+	Global("GauthBehavior","LOCALS",2)
+THEN
+	RESPONSE #100
+		SetGlobal("GauthBehavior","LOCALS",0)
+END
+
+IF
+	OR(2)
+		LevelGT(Player1,11)
+		DifficultyGT(NORMAL)
+	Global("GauthBehavior","LOCALS",0)
+	See([PC])
+	HPGT(Myself,55)
+THEN
+	RESPONSE #100
+		ReallyForceSpell([PC],BEHOLDER_CAUSE_SERIOUS_WOUNDS)  // SPIN986.SPL (Schwere Wunden verursachen)
+		Wait(2)
+		Continue()
+END
+
+IF
+	LevelLT(Player1,12)
+	!DifficultyGT(NORMAL)
+	Global("GauthBehavior","LOCALS",0)
+	See([PC])
+	HPGT(Myself,55)
+THEN
+	RESPONSE #100
+		ReallyForceSpell([PC],BEHOLDER_AGANNAZAR_SCORCHER)  // SPIN987.SPL (Agannazars Hexerei)
+		Wait(2)
+		Continue()
+END
+
+IF
+	Global("GauthBehavior","LOCALS",0)
+	HPGT(Myself,5)
+	See(Player2)
+THEN
+	RESPONSE #100
+		ReallyForceSpell(Player2,BEHOLDER_LIGHTNING_BOLT)  // SPIN989.SPL (Blitzstrahl)
+		Wait(2)
+		Continue()
+END
+
+IF
+	See(Player3)
+	Global("GauthBehavior","LOCALS",0)
+	HPGT(Myself,15)
+THEN
+	RESPONSE #100
+		ReallyForceSpell(Player3,BEHOLDER_PARALYZATION)  // SPIN990.SPL (Lähmung)
+		Continue()
+END
+
+IF
+	See(Player4)
+	Global("GauthBehavior","LOCALS",0)
+	!See(LeastDamagedOf(Myself))
+	HPGT(Myself,15)
+THEN
+	RESPONSE #100
+		ReallyForceSpell(Player4,BEHOLDER_PARALYZATION)  // SPIN990.SPL (Lähmung)
+		Continue()
+END
+
+IF
+	See(Player5)
+	Global("GauthBehavior","LOCALS",0)
+	HPGT(Myself,45)
+THEN
+	RESPONSE #100
+		ReallyForceSpell(Player5,BEHOLDER_PARALYZATION)  // SPIN990.SPL (Lähmung)
+		Wait(1)
+		Continue()
+END
+
+IF
+	Global("GauthBehavior","LOCALS",0)
+	See([PC])
+	HPGT(Myself,25)
+THEN
+	RESPONSE #100
+		ReallyForceSpell(SecondNearest([PC]),BEHOLDER_SLOW)  // SPIN983.SPL (Verlangsamen)
+		Wait(1)
+		Continue()
+END
+

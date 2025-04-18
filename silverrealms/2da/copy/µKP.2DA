@@ -1,0 +1,41 @@
+µKP/hammer golem
+***
+						SOUND
+ATTACK          		iron01 nosound nosound
+ATTACK          		2 0 0
+AWAKE           		***
+AWAKE           		0
+CAST            		***
+CAST            		0
+CONJURE         		***
+CONJURE         		0
+DAMAGE          		iron06
+DAMAGE          		0
+DIE             		iron07
+DIE             		0
+HEAD_TURN       		***
+HEAD_TURN       		0
+READY           		***
+READY           		0
+SHOOT           		***
+SHOOT           		0
+TWITCH          		***
+TWITCH          		0
+WALK            		***
+WALK            		0
+ATTACK_SLASH    		iron03 nosound nosound
+ATTACK_SLASH    		2 0 0
+ATTACK_BACKSLASH		iron04 nosound nosound
+ATTACK_BACKSLASH		2 0 0
+ATTACK_JAB      		iron05 nosound nosound
+ATTACK_JAB      		2 0 0
+EMERGE          		***
+EMERGE          		0
+HIDE            		***
+HIDE            		0
+SLEEP          			***
+SLEEP          			0
+Battle_Cry			iron01 iron02
+Battle_Cry			0 0
+Selection                       iron01
+Selection                       0

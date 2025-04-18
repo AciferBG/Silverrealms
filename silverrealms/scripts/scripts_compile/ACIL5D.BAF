@@ -1,0 +1,45 @@
+IF
+	Global("Dorna_Spawn","ACIL5D",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Dorna_Spawn","ACIL5D",1)
+		CreateCreature("AC#DORNA",[410.396],4)  // Dorna Abgrundlied
+END
+
+IF
+	PartyHasItem("AC#DRFT2")
+	Global("AC#DRIFR","GLOBAL",2)
+THEN
+	RESPONSE #100
+        SetGlobal("AC#DRIFR","GLOBAL",3)
+        EraseJournalEntry(@64225)
+        AddJournalEntry(@64226,QUEST)
+END
+
+IF
+	OR(2)
+	!Contains("AC#MERC1","Altar")  // Quecksilber
+	!Contains("AC#DRFT1","Altar")  // Schwebescheibe
+	Global("AC#DRIFR","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#DRIFR","GLOBAL",0)
+		DisplayStringHeadOwner("AC#5DTFD",@7000)	
+END
+
+IF
+	Contains("AC#MERC1","Altar")  // Quecksilber
+	Contains("AC#DRFT1","Altar")  // Schwebescheibe
+	Global("AC#DRIFR","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#DRIFR","GLOBAL",2)
+		ActionOverride("Altar",DestroyItem("AC#MERC1"))  // Quecksilber
+		ActionOverride("Altar",DestroyItem("AC#DRFT1"))  // Schwebescheibe
+		CreateVisualEffect("SPCONTIN",[598.229])
+		TakePartyItem("AC#5DTFD")  // Tensers fliegende Scheibe
+		DestroyItem("AC#5DTFD")  // Tensers fliegende Scheibe
+		Wait(1)
+		ActionOverride("Altar",CreateItem("AC#DRFT2",0,0,0))  // Schwebescheibe
+END
+

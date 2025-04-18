@@ -1,0 +1,20 @@
+IF
+	Opened([ANYONE])
+	PartyHasItem("AC#ZEPKO")
+	Global("PartyHasScepter","ACIL19",0)
+THEN
+	RESPONSE #100
+                StartCutSceneMode()
+		SetGlobal("PartyHasScepter","ACIL19",1)
+		CreateVisualEffect("AC#DIFR1",[1039.225])
+		Wait(3)
+		CreateVisualEffect("ICPRAYI",[1039.225])
+		Wait(1)
+		CreateVisualEffect("SPFLESHS",[1039.225])
+		CreateCreature("AC#DIIN2",[1048.271],0)
+		CloseDoor("DOOR01")
+		Lock("DOOR01")
+		EndCutSceneMode()
+		ActionOverride("AC#DIIN2",StartDialogueNoSet(LastTrigger))
+END
+

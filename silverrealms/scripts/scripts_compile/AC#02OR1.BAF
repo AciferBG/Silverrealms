@@ -1,0 +1,25 @@
+IF
+	Detect([PC])
+	Global("OrksBehaviour","ACIL02",0)
+THEN
+	RESPONSE #100
+		SetGlobal("OrksBehaviour","ACIL02",1)
+END
+
+IF
+	Global("OrksBehaviour","ACIL02",1)
+	Global("Summoning","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Summoning","LOCALS",1)
+		ReallyForceSpellPoint([1246.463],BEHOLDER_BLAST_VISUAL2)  // SPIN665.SPL (No such index)
+END
+
+IF
+	Global("DemonSummon","ACIL02",0)
+	Global("Summoning","LOCALS",1)
+THEN
+	RESPONSE #100
+		SetGlobal("DemonSummon","ACIL02",1)
+END
+

@@ -1,0 +1,32 @@
+IF
+	Clicked([ANYONE])
+	Race(LastTrigger,DWARF)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@33)
+END
+
+IF
+	Clicked([ANYONE])
+	CheckStatGT(LastTrigger,50,LORE)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@33)
+END
+
+IF
+	Clicked([ANYONE])
+	PartyHasItemIdentified("AC#BKDWF") // Die Schrift und Sprache der Zwerge
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@33)
+END
+
+IF
+	Clicked([ANYONE])
+	CheckStatLT(LastTrigger,51,LORE)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@34) 
+END
+

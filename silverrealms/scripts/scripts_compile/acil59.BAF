@@ -1,0 +1,66 @@
+IF
+	GlobalGT("AC#RC_Sorni_Fourth","GLOBAL",8) // way to barakuir
+	Global("DeActivateSorni","ACIL59",0)
+       	Exists("AC#SORN1")  // Sorni in ACIL59
+THEN
+	RESPONSE #100
+		SetGlobal("DeActivateSorni","ACIL59",1)
+		ActionOverride("AC#SORN1",Deactivate(Myself))  // Sorni
+END
+
+IF
+	GlobalGT("AC#Ruvan_Treason","GLOBAL",0)
+	Global("ActivateSorni","ACIL59",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ActivateSorni","ACIL59",1)
+		ActionOverride("AC#SORN1",Activate(Myself))  // Sorni
+END
+
+IF
+	Contains("AC#ADORE","Adamant1") // Adamant
+	Contains("AC#ADORE","Adamant2") // Adamant
+	Contains("ac#ADORE","Adamant3") // Adamant
+	Contains("ac#ADORE","Adamant4") // Adamant
+	!Contains("AC#mith1","Adamant1") // Mithril
+	!Contains("AC#mith1","Adamant2") // Mithril
+	!Contains("ac#mith1","Adamant3") // Mithril
+	!Contains("ac#mith1","Adamant4") // Mithril
+	Contains("ac#mith1","Mithril1") // Mithril
+	Contains("ac#mith1","Mithril2") // Mithril
+	Contains("ac#mith1","Mithril3") // Mithril
+	Contains("ac#mith1","Mithril4") // Mithril
+	!Contains("ac#ADORE","Mithril1") // Adamant
+	!Contains("ac#ADORE","Mithril2") // Adamant
+	!Contains("ac#ADORE","Mithril3") // Adamant
+	!Contains("AC#S#ORE","Mithril4") // Zardazil
+	!Contains("AC#ADORE","Mithril4") // Adamant
+	Global("PlacedOre","ACIL59",0)
+THEN
+	RESPONSE #100
+		SetGlobal("PlacedOre","ACIL59",1)
+END
+
+IF
+	OR(2)
+        !Contains("AC#ADORE","Adamant1") // Adamant
+	!Contains("AC#ADORE","Adamant2") // Adamant
+	!Contains("ac#ADORE","Adamant3") // Adamant
+	!Contains("ac#ADORE","Adamant4") // Adamant
+	!Contains("ac#mith1","Mithril1") // Mithril
+	!Contains("ac#mith1","Mithril2") // Mithril
+	!Contains("ac#mith1","Mithril3") // Mithril
+	!Contains("ac#mith1","Mithril4") // Mithril
+	Global("PlacedOre","ACIL59",1)
+THEN
+	RESPONSE #100
+		SetGlobal("PlacedOre","ACIL59",0)
+END
+
+
+
+
+
+
+
+

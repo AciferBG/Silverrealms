@@ -1,0 +1,15 @@
+IF
+	Contains("ac#02wo1",Myself)
+	Global("AC#_wolfsummon","ACIL02",0)
+THEN
+	RESPONSE #100
+                SetInterrupt(FALSE)
+		DestroyItem("ac#02wo1")
+		PlaySound("EFF_P92")
+		DisplayString(Myself,999999)
+		SetGlobal("AC#_wolfsummon","ACIL02",1)
+		ContainerEnable("ac#cowo",FALSE)
+                CreateCreature("AC#SPIWO",[802.515],1)
+		SetInterrupt(TRUE)
+END
+

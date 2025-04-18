@@ -1,0 +1,23 @@
+/*
+This script trigerrs both Hathar's Gauth-fight at the beginnung and later his abishai-fighting
+*/
+
+IF
+        Entered([ANYONE])
+        Global("Acil20_Bridge","ACIL20",0)
+        Global("AC#Talked_to_Maldraedior","GLOBAL",0)
+THEN
+    RESPONSE #100
+         SetGlobal("Acil20_Bridge","ACIL20",1)
+END
+
+IF
+        Entered([ANYONE])
+        Global("AbishaiSpawn","ACIL20",0)
+       	GlobalGT("AC#Talked_to_Maldraedior","GLOBAL",0)
+THEN
+    RESPONSE #100
+         SetGlobal("AbishaiSpawn","ACIL20",1)
+END
+
+

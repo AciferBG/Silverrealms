@@ -1,0 +1,18 @@
+IF
+	Clicked([ANYONE])
+	OR(2)
+		CheckStatGT(LastTrigger,70,LORE)
+		Name("Viconia",LastTrigger)  // Viconia
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@6252)
+END
+
+IF
+	Clicked([ANYONE])
+	CheckStatLT(LastTrigger,71,LORE)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@6)  
+END
+

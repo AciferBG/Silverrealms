@@ -1,0 +1,18 @@
+/*
+Mit diesem Skript wird der Text f�r die tote Patrouille angezeigt
+*/
+
+IF
+        Entered([PC])
+        Global("Acil20_DeadDwarves","GLOBAL",0)
+        GlobalGT("AC#RegencyQuest","GLOBAL",0)
+THEN
+    RESPONSE #100
+         SetGlobal("Acil20_DeadDwarves","GLOBAL",1)
+         DisplayString(Myself,@310)
+         EraseJournalEntry(@62010)
+        AddJournalEntry(@62011,QUEST)
+         ActionOverride("AC#DEAD7",Kill(Myself))
+END
+
+

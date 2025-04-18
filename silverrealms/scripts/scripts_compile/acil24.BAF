@@ -1,0 +1,75 @@
+IF
+	Dead("AC#24DAE")
+	GlobalLT("AC#25_LolthPriestess","GLOBAL",10)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#25_LolthPriestess","GLOBAL",10)	
+END
+
+IF
+	Global("Letter","ACIL24",0)
+	Dead("AC#24DAE")
+	!PartyHasItem("AC#24DRL")
+THEN
+	RESPONSE #100
+        SetGlobal("Letter","ACIL24",1)
+		EraseJournalEntry(@62025)
+		EraseJournalEntry(@62026)
+		AddJournalEntry(@23004,QUEST)
+END
+
+IF
+	PartyHasItem("AC#24DRL")
+	!PartyHasItemIdentified("AC#24DRL")
+	InParty("Viconia")  // Viconia
+	!StateCheck("Viconia",STATE_SLEEPING)  // Viconia
+	Global("DrowNPC_translate","ACIL24",0)
+THEN
+	RESPONSE #100
+		SetGlobal("DrowNPC_translate","ACIL24",1)
+END
+
+IF
+	PartyHasItem("AC#24DRL")
+	!PartyHasItemIdentified("AC#24DRL")
+	InParty("Viconia")  // Viconia
+	!StateCheck("Viconia",STATE_SLEEPING)  // Viconia
+	Global("DrowNPC_translate","ACIL24",1)
+THEN
+	RESPONSE #100
+		ActionOverride("Viconia",StartDialogNoSet(Player1))
+END
+
+IF
+	//Global("DrowNPC_translate","ACIL24",2)
+	PartyHasItem("AC#24DR2")
+	PartyHasItem("AC#24DRL")
+THEN
+	RESPONSE #100
+  		TakePartyItem("AC#24DRL")
+		EraseJournalEntry(@23004)
+END
+
+IF
+	Global("Letter","ACIL24",1)
+	!Global("DrowNPC_translate","ACIL24",2)
+	PartyHasItem("AC#24DRL")
+	!PartyHasItemIdentified("AC#24DRL")
+THEN
+	RESPONSE #100
+        SetGlobal("Letter","ACIL24",2)
+		EraseJournalEntry(@62025)
+		EraseJournalEntry(@62026)
+		EraseJournalEntry(@23004)
+		AddJournalEntry(@23001,QUEST)
+END
+
+IF
+	Global("Driftdisc","ACIL24",0)
+	PartyHasItem("AC#DRFT1")
+THEN
+	RESPONSE #100
+        SetGlobal("Driftdisc","ACIL24",1)
+		EraseJournalEntry(@20800)
+		AddJournalEntry(@20801,QUEST)
+END

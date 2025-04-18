@@ -1,0 +1,1164 @@
+// Silverrealms Script files
+
+// Compile all scripts in folder "scripts_compile"
+COMPILE ~silverrealms/scripts/scripts_compile~
+//Patching Jaheiras Lovetalks
+OUTER_SPRINT newline ~%WNL%%LNL%%MNL%%TAB% ~
+
+COPY_EXISTING ~BALDUR.BCS~ ~override~
+    // Patching thieves guild failure in baldurs.bcs
+    DECOMPILE_AND_PATCH BEGIN
+        SPRINT textToReplace ~\(GlobalTimerExpired("JosterReturn","GLOBAL")\)~
+        COUNT_REGEXP_INSTANCES ~%textToReplace%~ num_matches
+        PATCH_IF (num_matches > 0) BEGIN
+            REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
+            !AreaType(%area_type_id_underdark%)
+            !AreaCheck("ACIL90")\1~
+            PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
+        END ELSE BEGIN
+            PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
+        END
+    END
+    // Patching thieves guild failure in baldurs.bcs
+    DECOMPILE_AND_PATCH BEGIN
+        SPRINT textToReplace ~\(GlobalTimerExpired("JosterPaid","GLOBAL")\)~
+        COUNT_REGEXP_INSTANCES ~%textToReplace%~ num_matches
+        PATCH_IF (num_matches > 0) BEGIN
+            REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
+            !AreaType(%area_type_id_underdark%)
+            !AreaCheck("ACIL90")\1~
+            PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
+        END ELSE BEGIN
+            PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
+        END
+    END
+    // Patching keep failure in baldurs.bcs
+    DECOMPILE_AND_PATCH BEGIN
+        SPRINT textToReplace ~\(GlobalTimerExpired("KPPlotTime","GLOBAL")\)~
+        COUNT_REGEXP_INSTANCES ~%textToReplace%~ num_matches
+        PATCH_IF (num_matches > 0) BEGIN
+            REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
+            !AreaType(%area_type_id_underdark%)
+            !AreaCheck("ACIL90")\1~
+            PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
+        END ELSE BEGIN
+            PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
+        END
+    END
+    // Patching planar sphere failure in baldurs.bcs
+    DECOMPILE_AND_PATCH BEGIN
+        SPRINT textToReplace ~\(GlobalTimerExpired("TeolMessenger","GLOBAL")\)~
+        COUNT_REGEXP_INSTANCES ~%textToReplace%~ num_matches
+        PATCH_IF (num_matches > 0) BEGIN
+            REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
+            !AreaType(%area_type_id_underdark%)
+            !AreaCheck("ACIL90")\1~
+            PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
+        END ELSE BEGIN
+            PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
+        END
+    END
+    // Patching druid stronghold stuff in baldurs.bcs
+    DECOMPILE_AND_PATCH BEGIN
+        SPRINT textToReplace ~\(Global("DruidADSpawn","GLOBAL",0)\)~
+        COUNT_REGEXP_INSTANCES ~%textToReplace%~ num_matches
+        PATCH_IF (num_matches > 0) BEGIN
+            REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
+            !AreaType(%area_type_id_underdark%)
+            !AreaCheck("ACIL90")\1~
+            PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
+        END ELSE BEGIN
+            PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
+        END
+    END
+    //  Patching druid stronghold stuff #2 in baldurs.bcs
+    DECOMPILE_AND_PATCH BEGIN
+        SPRINT textToReplace ~\(GlobalTimerExpired("DruidADReturn","GLOBAL")\)~
+        COUNT_REGEXP_INSTANCES ~%textToReplace%~ num_matches
+        PATCH_IF (num_matches > 0) BEGIN
+            REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
+            !AreaType(%area_type_id_underdark%)
+            !AreaCheck("ACIL90")\1~
+            PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
+        END ELSE BEGIN
+            PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
+        END
+    END
+BUT_ONLY
+
+COPY_EXISTING ~JAHEIRA.BCS~ ~override~
+    // Patching various lovetalk triggers in Jaheira's script
+    DECOMPILE_AND_PATCH BEGIN
+        SPRINT textToReplace ~\(!AreaType(DUNGEON)\)~
+        COUNT_REGEXP_INSTANCES ~%textToReplace%~ num_matches
+        PATCH_IF (num_matches > 0) BEGIN
+            REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
+            !AreaType(%area_type_id_underdark%)
+            !AreaCheck("ACIL90")\1~
+            PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
+        END ELSE BEGIN
+            PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
+        END
+    END
+    // Patching various spawn triggers in Jaheira's script
+    DECOMPILE_AND_PATCH BEGIN
+        SPRINT textToReplace ~\(!AreaCheck("AR2500")\)~
+        COUNT_REGEXP_INSTANCES ~%textToReplace%~ num_matches
+        PATCH_IF (num_matches > 0) BEGIN
+            REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
+            !AreaType(%area_type_id_underdark%)
+            !AreaCheck("ACIL90")\1~
+            PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
+        END ELSE BEGIN
+            PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
+        END
+    END
+    // Patching Meronia spawn triggers in Jaheira's script
+    DECOMPILE_AND_PATCH BEGIN
+        SPRINT textToReplace ~\(Global("JaheiraHarperPlot","GLOBAL",0)\)~
+        COUNT_REGEXP_INSTANCES ~%textToReplace%~ num_matches
+        PATCH_IF (num_matches > 0) BEGIN
+            REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
+            !AreaType(%area_type_id_underdark%)
+            !AreaCheck("ACIL90")\1~
+            PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
+        END ELSE BEGIN
+            PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
+        END
+    END
+BUT_ONLY
+
+//Patching Nalia compaining about her keep
+COPY_EXISTING ~NALIA.BCS~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+        SPRINT textToReplace ~\(GlobalTimerExpired("ArrivedNaliaKeep","GLOBAL")\)~
+        COUNT_REGEXP_INSTANCES ~%textToReplace%~ num_matches
+        PATCH_IF (num_matches > 0) BEGIN
+            REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
+            !AreaType(%area_type_id_underdark%)
+            !AreaCheck("ACIL90")\1~
+            PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
+        END ELSE BEGIN
+            PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
+        END
+    END
+    DECOMPILE_AND_PATCH BEGIN
+        SPRINT textToReplace ~\(GlobalTimerExpired("NaliaGraveyardTimer","GLOBAL")\)~
+        COUNT_REGEXP_INSTANCES ~%textToReplace%~ num_matches
+        PATCH_IF (num_matches > 0) BEGIN
+            REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
+            !AreaType(%area_type_id_underdark%)
+            !AreaCheck("ACIL90")\1~
+            PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
+        END ELSE BEGIN
+            PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
+        END
+    END
+    DECOMPILE_AND_PATCH BEGIN
+        SPRINT textToReplace ~\(GlobalTimerExpired("IsaeaArrestTimer","GLOBAL")\)~
+        COUNT_REGEXP_INSTANCES ~%textToReplace%~ num_matches
+        PATCH_IF (num_matches > 0) BEGIN
+            REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
+            !AreaType(%area_type_id_underdark%)
+            !AreaCheck("ACIL90")\1~
+            PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
+        END ELSE BEGIN
+            PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
+        END
+    END
+BUT_ONLY
+
+// Patching various triggers in HaerDalis's script
+COPY_EXISTING ~HAERDALI.BCS~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+        SPRINT textToReplace ~\(GlobalTimerExpired("HaerDalisHaveGem","GLOBAL")\)~
+        COUNT_REGEXP_INSTANCES ~%textToReplace%~ num_matches
+        PATCH_IF (num_matches > 0) BEGIN
+            REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
+            !AreaType(%area_type_id_underdark%)
+            !AreaCheck("ACIL90")\1~
+            PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
+        END ELSE BEGIN
+            PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
+        END
+    END
+    DECOMPILE_AND_PATCH BEGIN
+        SPRINT textToReplace ~\(GlobalTimerExpired("HaerDalisNoGem","GLOBAL")\)~
+        COUNT_REGEXP_INSTANCES ~%textToReplace%~ num_matches
+        PATCH_IF (num_matches > 0) BEGIN
+            REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
+            !AreaType(%area_type_id_underdark%)
+            !AreaCheck("ACIL90")\1~
+            PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
+        END ELSE BEGIN
+            PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
+        END
+    END
+BUT_ONLY
+// Patching Aerie's script to prevent Qayle messenger reminder
+COPY_EXISTING ~AERIE.BCS~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+        SPRINT textToReplace ~\(GlobalTimerExpired("AerieRemindsQuayle","GLOBAL")\)~
+        COUNT_REGEXP_INSTANCES ~%textToReplace%~ num_matches
+        PATCH_IF (num_matches > 0) BEGIN
+            REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
+            !AreaType(%area_type_id_underdark%)
+            !AreaCheck("ACIL90")\1~
+            PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
+        END ELSE BEGIN
+            PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
+        END
+    END
+BUT_ONLY
+COPY_EXISTING ~AERIE.BCS~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+        SPRINT textToReplace ~\(GlobalTimerExpired("QuayleMessengerComes","GLOBAL")\)~
+        COUNT_REGEXP_INSTANCES ~%textToReplace%~ num_matches
+        PATCH_IF (num_matches > 0) BEGIN
+            REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
+            !AreaType(%area_type_id_underdark%)
+            !AreaCheck("ACIL90")\1~
+            PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
+        END ELSE BEGIN
+            PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
+        END
+    END
+BUT_ONLY
+// Patching Anomen's script to prevent Terl's appearance
+COPY_EXISTING ~ANOMEN.BCS~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+        SPRINT textToReplace ~\(!Exists("Terl")\)~
+        COUNT_REGEXP_INSTANCES ~%textToReplace%~ num_matches
+        PATCH_IF (num_matches > 0) BEGIN
+            REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
+            !AreaType(%area_type_id_underdark%)
+            !AreaCheck("ACIL90")\1~
+            PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
+        END ELSE BEGIN
+            PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
+        END
+    END
+BUT_ONLY
+// Patching Minsc's script to prevent Imnesvale complaint
+COPY_EXISTING ~MINSC.BCS~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+        SPRINT textToReplace ~\(GlobalTimerExpired("MinscRemindsImnesvale","GLOBAL")\)~
+        COUNT_REGEXP_INSTANCES ~%textToReplace%~ num_matches
+        PATCH_IF (num_matches > 0) BEGIN
+            REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
+            !AreaType(%area_type_id_underdark%)
+            !AreaCheck("ACIL90")\1~
+            PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
+        END ELSE BEGIN
+            PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
+        END
+    END
+BUT_ONLY
+// Patching Edwin's script to prevent Nether scroll quest
+COPY_EXISTING ~EDWIN.BCS~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+        SPRINT textToReplace ~\(GlobalTimerExpired("EdwinScroll","GLOBAL")\)~
+        COUNT_REGEXP_INSTANCES ~%textToReplace%~ num_matches
+        PATCH_IF (num_matches > 0) BEGIN
+            REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
+            !AreaType(%area_type_id_underdark%)
+            !AreaCheck("ACIL90")\1~
+            PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
+        END ELSE BEGIN
+            PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
+        END
+    END
+BUT_ONLY
+// Patching Edwin's script to complain nether scroll quest
+COPY_EXISTING ~EDWIN.BCS~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+        SPRINT textToReplace ~\(GlobalTimerExpired("EdwinComplainAboutScroll","GLOBAL")\)~
+        COUNT_REGEXP_INSTANCES ~%textToReplace%~ num_matches
+        PATCH_IF (num_matches > 0) BEGIN
+            REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
+            !AreaType(%area_type_id_underdark%)
+            !AreaCheck("ACIL90")\1~
+            PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
+        END ELSE BEGIN
+            PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
+        END
+    END
+BUT_ONLY
+// Patching Edwin's script to spawn Degardan
+COPY_EXISTING ~EDWIN.BCS~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+        SPRINT textToReplace ~\(GlobalTimerExpired("DegardanSpawn","GLOBAL")\)~
+        COUNT_REGEXP_INSTANCES ~%textToReplace%~ num_matches
+        PATCH_IF (num_matches > 0) BEGIN
+            REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
+            !AreaType(%area_type_id_underdark%)
+            !AreaCheck("ACIL90")\1~
+            PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
+        END ELSE BEGIN
+            PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
+        END
+    END
+BUT_ONLY
+// Patching Korgan's script to prevent madeen quest
+COPY_EXISTING ~KORGAN.BCS~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+        SPRINT textToReplace ~\(GlobalTimerExpired("KorganRemindsMadeen","GLOBAL")\)~
+        COUNT_REGEXP_INSTANCES ~%textToReplace%~ num_matches
+        PATCH_IF (num_matches > 0) BEGIN
+            REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
+            !AreaType(%area_type_id_underdark%)
+            !AreaCheck("ACIL90")\1~
+            PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
+        END ELSE BEGIN
+            PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
+        END
+    END
+BUT_ONLY
+// Patching Korgan's script to prevent book of Kazah quest
+COPY_EXISTING ~KORGAN.BCS~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+        SPRINT textToReplace ~\(GlobalTimerExpired("KorganBook","GLOBAL")\)~
+        COUNT_REGEXP_INSTANCES ~%textToReplace%~ num_matches
+        PATCH_IF (num_matches > 0) BEGIN
+            REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
+            !AreaType(%area_type_id_underdark%)
+            !AreaCheck("ACIL90")\1~
+            PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
+        END ELSE BEGIN
+            PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
+        END
+    END
+BUT_ONLY
+// Patching Korgan's script to prevent shagbag#1 quest
+COPY_EXISTING ~KORGAN.BCS~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+        SPRINT textToReplace ~\(GlobalTimerExpired("FindShagbag","GLOBAL")\)~
+        COUNT_REGEXP_INSTANCES ~%textToReplace%~ num_matches
+        PATCH_IF (num_matches > 0) BEGIN
+            REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
+            !AreaType(%area_type_id_underdark%)
+            !AreaCheck("ACIL90")\1~
+            PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
+        END ELSE BEGIN
+            PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
+        END
+    END
+BUT_ONLY
+// Patching Korgan's script to prevent shagbag#2 quest
+COPY_EXISTING ~KORGAN.BCS~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+        SPRINT textToReplace ~\(GlobalTimerExpired("KorganContract","GLOBAL")\)~
+        COUNT_REGEXP_INSTANCES ~%textToReplace%~ num_matches
+        PATCH_IF (num_matches > 0) BEGIN
+            REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
+            !AreaType(%area_type_id_underdark%)
+            !AreaCheck("ACIL90")\1~
+            PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
+        END ELSE BEGIN
+            PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
+        END
+    END
+BUT_ONLY
+// Patching Korgan's script to prevent shagbag#2 quest
+COPY_EXISTING ~KORGAN.BCS~ ~override~
+    DECOMPILE_AND_PATCH BEGIN
+        SPRINT textToReplace ~\(GlobalTimerExpired("KorganRemindsValygar","GLOBAL")\)~
+        COUNT_REGEXP_INSTANCES ~%textToReplace%~ num_matches
+        PATCH_IF (num_matches > 0) BEGIN
+            REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
+            !AreaType(%area_type_id_underdark%)
+            !AreaCheck("ACIL90")\1~
+            PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
+        END ELSE BEGIN
+            PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
+        END
+    END
+BUT_ONLY
+
+// Compiling scripts that contain new music
+COMPILE ~%MOD_FOLDER%/scripts/ACIL21.baf~  EVAL
+COMPILE ~%MOD_FOLDER%/scripts/ACIL20.baf~  EVAL
+// story start
+EXTEND_TOP ~ar0300.bcs~ ~silverrealms/scripts/_atkatla.baf~
+EXTEND_TOP ~ar0500.bcs~ ~silverrealms/scripts/_atkatla.baf~
+EXTEND_TOP ~ar0900.bcs~ ~silverrealms/scripts/_atkatla.baf~
+EXTEND_TOP ~ar1000.bcs~ ~silverrealms/scripts/_atkatla.baf~
+
+//EXTEND_TOP ~AR0701.bcs~ ~silverrealms/scripts/_AR0701.baf~ // OLD create the thief in the sewers (has stolen book for Beldas / Mith Barak
+EXTEND_TOP ~BALDUR.bcs~ ~silverrealms/scripts/_baldur.baf~ // append baldur.bcs when party has drow letter identified
+
+//EXTEND_TOP ~KUOTOA.bcs~ ~silverrealms/scripts/_kuotoa.baf~
+//EXTEND_TOP ~KUOARC20.bcs~ ~silverrealms/scripts/_kuotoa.baf~
+
+COMPILE ~silverrealms/scripts/acil1c.baf~
+
+COMPILE ~silverrealms/scripts/AC#712.baf~
+COPY_EXISTING ~AC#712.bcs~   ~override/AC#712.bcs~
+       REPLACE ~999999~ @119
+       REPLACE ~999998~ @120
+       
+COMPILE ~silverrealms/scripts/AC#713.baf~
+COPY_EXISTING ~AC#713.bcs~   ~override/AC#713.bcs~
+       REPLACE ~999999~ @119
+       REPLACE ~999998~ @120
+       
+COMPILE ~silverrealms/scripts/AC#714.baf~
+COPY_EXISTING ~AC#714.bcs~   ~override/AC#714.bcs~
+       REPLACE ~999999~ @119
+       REPLACE ~999998~ @120
+       
+COMPILE ~silverrealms/scripts/AC#715.baf~
+COPY_EXISTING ~AC#715.bcs~   ~override/AC#715.bcs~
+       REPLACE ~999999~ @119
+       REPLACE ~999998~ @120
+       
+COMPILE ~silverrealms/scripts/AC#716.baf~
+COPY_EXISTING ~AC#716.bcs~   ~override/AC#716.bcs~
+       REPLACE ~999999~ @119
+       REPLACE ~999998~ @120
+       
+COMPILE ~silverrealms/scripts/AC#717.baf~
+COPY_EXISTING ~AC#717.bcs~   ~override/AC#717.bcs~
+       REPLACE ~999999~ @119
+       REPLACE ~999998~ @120
+       
+COMPILE ~silverrealms/scripts/AC#718.baf~
+COPY_EXISTING ~AC#718.bcs~   ~override/AC#718.bcs~
+       REPLACE ~999999~ @119
+       REPLACE ~999998~ @120
+       
+COMPILE ~silverrealms/scripts/AC#719.baf~
+COPY_EXISTING ~AC#719.bcs~   ~override/AC#719.bcs~
+       REPLACE ~999999~ @119
+       REPLACE ~999998~ @120
+       
+COMPILE ~silverrealms/scripts/AC#720.baf~
+COPY_EXISTING ~AC#720.bcs~   ~override/AC#720.bcs~
+       REPLACE ~999999~ @119
+       REPLACE ~999998~ @120
+       
+COMPILE ~silverrealms/scripts/AC#721.baf~
+COPY_EXISTING ~AC#721.bcs~   ~override/AC#721.bcs~
+       REPLACE ~999999~ @119
+       REPLACE ~999998~ @120
+       
+COMPILE ~silverrealms/scripts/AC#722.baf~
+COPY_EXISTING ~AC#722.bcs~   ~override/AC#722.bcs~
+       REPLACE ~999999~ @119
+       REPLACE ~999998~ @120
+       
+COMPILE ~silverrealms/scripts/AC#723.baf~
+COPY_EXISTING ~AC#723.bcs~   ~override/AC#723.bcs~
+       REPLACE ~999999~ @119
+       REPLACE ~999998~ @120
+
+COMPILE ~silverrealms/scripts/AC#58T57.baf~
+COPY_EXISTING ~AC#58T57.bcs~   ~override/AC#58T57.bcs~
+       REPLACE ~999999~ @93
+       
+COMPILE ~silverrealms/scripts/ac#cut57.baf~
+COPY_EXISTING ~ac#cut57.bcs~   ~override/ac#cut57.bcs~
+       REPLACE ~999999~ @94
+
+
+
+COMPILE ~silverrealms/scripts/AC#07CC2.baf~
+/*COPY_EXISTING ~AC#07CC2.bcs~   ~override/AC#07CC2.bcs~
+       REPLACE ~999996~ @72
+       REPLACE ~999995~ @73
+       REPLACE ~999997~ @69
+       REPLACE ~999998~ @70
+       REPLACE ~999999~ @71
+       REPLACE ~999992~ @76
+*/
+
+COMPILE ~silverrealms/scripts/AC#BANSH.baf~
+COPY_EXISTING ~AC#BANSH.bcs~   ~override/AC#BANSH.bcs~
+       REPLACE ~999999~ @95
+       REPLACE ~999998~ @96
+       
+COMPILE ~silverrealms/scripts/ACIL57.baf~
+COPY_EXISTING ~ACIL57.bcs~   ~override/ACIL57.bcs~
+       REPLACE ~999998~ @683 // ~Irgendwo hat sich eine T�r ge�ffnet.~
+       REPLACE ~999999~ @679 // ~Der Hammer Dumathoins pulsiert pl�tzlich in einem starhlenden Licht. Ihr k�nnt mit seiner Macht die bisher verschlossenen T�ren �ffnen.~
+
+COMPILE ~silverrealms/scripts/ACIL0C.baf~
+/*
+COMPILE ~silverrealms/scripts/AC#57TR1.baf~
+COPY_EXISTING ~AC#57TR1.bcs~   ~override/AC#57TR1.bcs~
+       REPLACE ~999999~ @100
+*/
+
+COMPILE ~silverrealms/scripts/AC#57TR2.baf~
+COPY_EXISTING ~AC#57TR2.bcs~   ~override/AC#57TR2.bcs~
+       REPLACE ~999999~ @99
+
+COMPILE ~silverrealms/scripts/ACIL63.baf~
+
+COMPILE ~silverrealms/scripts/ACIL66.baf~
+
+COMPILE ~silverrealms/scripts/AC#61CO2.baf~
+COPY_EXISTING ~AC#61CO2.bcs~   ~override/AC#61CO2.bcs~
+       REPLACE ~999999~ @108
+       
+       COMPILE ~silverrealms/scripts/AC#61CO3.baf~
+COPY_EXISTING ~AC#61CO3.bcs~   ~override/AC#61CO3.bcs~
+       REPLACE ~999999~ @108
+       
+       COMPILE ~silverrealms/scripts/AC#61CO4.baf~
+COPY_EXISTING ~AC#61CO4.bcs~   ~override/AC#61CO4.bcs~
+       REPLACE ~999999~ @108
+       
+COMPILE ~silverrealms/scripts/ac#bres2.baf~
+
+COMPILE ~silverrealms/scripts/AC#66FI1.baf~
+
+COMPILE ~silverrealms/scripts/ACIL60.baf~
+
+COMPILE ~silverrealms/scripts/AC#20HAT.baf~
+
+//COMPILE ~silverrealms/scripts/ACIL67.baf~
+
+COMPILE ~silverrealms/scripts/AC#SORN4.baf~
+
+COMPILE ~silverrealms/scripts/AC#DWDE2.baf~
+
+COMPILE ~silverrealms/scripts/ac#cut1B.baf~
+
+COMPILE ~silverrealms/scripts/AC#SKLK1.baf~
+
+COMPILE ~silverrealms/scripts/AC#29TR1.baf~
+
+COMPILE ~silverrealms/scripts/AC#29TR2.baf~
+
+COMPILE ~silverrealms/scripts/AC#29TR3.baf~
+
+COMPILE ~silverrealms/scripts/AC#29TR4.baf~
+
+COMPILE ~silverrealms/scripts/ACIL29.baf~
+COPY_EXISTING ~ACIL29.bcs~   ~override/ACIL29.bcs~
+       REPLACE ~999999~ @64202
+       REPLACE ~999998~ @64203
+       REPLACE ~999997~ @64204
+
+COMPILE ~silverrealms/scripts/AC#02WO1.baf~
+COPY_EXISTING ~AC#02WO1.bcs~   ~override/AC#02WO1.bcs~
+       REPLACE ~999999~ @133
+       
+COMPILE ~silverrealms/scripts/ac#02de1.baf~
+COPY_EXISTING ~ac#02de1.bcs~   ~override/ac#02de1.bcs~
+       REPLACE ~999999~ @134
+
+COMPILE ~silverrealms/scripts/ac#02be1.baf~
+COPY_EXISTING ~ac#02be1.bcs~   ~override/ac#02be1.bcs~
+       REPLACE ~999999~ @135
+       
+COMPILE ~silverrealms/scripts/ac#holym.baf~
+
+COMPILE ~silverrealms/scripts/AC#21CO1.baf~
+
+COMPILE ~silverrealms/scripts/AC#GIGH1.baf~
+
+COMPILE ~silverrealms/scripts/ACIL79.baf~
+
+COMPILE ~silverrealms/scripts/AC#79HE1.baf~
+COPY_EXISTING ~AC#79HE1.bcs~   ~override/AC#79HE1.bcs~
+       REPLACE ~999997~ @150
+       REPLACE ~999996~ @151
+       
+COMPILE ~silverrealms/scripts/AC#81MI1.baf~
+COPY_EXISTING ~AC#81MI1.bcs~   ~override/AC#81MI1.bcs~
+       REPLACE ~999999~ @154
+       
+COMPILE ~silverrealms/scripts/AC#81MI2.baf~
+
+COMPILE ~silverrealms/scripts/AC#81MI3.baf~
+
+COMPILE ~silverrealms/scripts/AC#81IN1.baf~
+COPY_EXISTING ~AC#81IN1.bcs~   ~override/AC#81IN1.bcs~
+       REPLACE ~999999~ @156
+       REPLACE ~999998~ @157
+
+COMPILE ~silverrealms/scripts/ac#1dwai.baf~
+COMPILE ~silverrealms/scripts/ac#1dimn.baf~
+
+COMPILE ~silverrealms/scripts/AC#GITH1.baf~
+
+COMPILE ~silverrealms/scripts/AC#76SK.baf~
+COPY_EXISTING ~AC#76SK.bcs~   ~override/AC#76SK.bcs~
+       REPLACE ~999997~ @166
+       REPLACE ~999996~ @167
+
+COMPILE ~silverrealms/scripts/ac#cut76.baf~
+
+COMPILE ~silverrealms/scripts/AC#80COA.baf~
+COMPILE ~silverrealms/scripts/AC#80COB.baf~
+COMPILE ~silverrealms/scripts/AC#80COC.baf~
+COMPILE ~silverrealms/scripts/AC#80COD.baf~
+
+COMPILE ~silverrealms/scripts/AC#80P_A.baf~
+COMPILE ~silverrealms/scripts/AC#80P_B.baf~
+COMPILE ~silverrealms/scripts/AC#80P_C.baf~
+COMPILE ~silverrealms/scripts/AC#80P_D.baf~
+
+COMPILE ~silverrealms/scripts/AC#DRAG1.baf~
+
+COMPILE ~silverrealms/scripts/ACIL30.baf~
+COPY_EXISTING ~ACIL30.bcs~   ~override/ACIL30.bcs~
+       REPLACE ~999999~ @192
+
+COMPILE ~silverrealms/scripts/AC#30CSW.baf~
+COMPILE ~silverrealms/scripts/AC#30CHM.baf~
+COMPILE ~silverrealms/scripts/AC#30CCB.baf~
+COMPILE ~silverrealms/scripts/AC#30CAX.baf~
+
+COMPILE ~silverrealms/scripts/AC#25DO1.baf~
+
+COMPILE ~silverrealms/scripts/ACIL25.baf~
+
+COMPILE ~silverrealms/scripts/ac#mo1.baf~
+
+COMPILE ~silverrealms/scripts/ACIL02.baf~
+
+COMPILE ~silverrealms/scripts/ac#cutra.baf~
+COPY_EXISTING ~ac#cutra.bcs~   ~override/ac#cutra.bcs~
+       REPLACE ~999999~ @203
+       
+COMPILE ~silverrealms/scripts/AC#MYCKI.baf~
+
+COMPILE ~silverrealms/scripts/AC#82DO3.baf~
+COPY_EXISTING ~AC#82DO3.bcs~   ~override/AC#82DO3.bcs~
+       REPLACE ~999999~ @214
+       REPLACE ~999998~ @215
+       REPLACE ~999997~ @216
+       
+COMPILE ~silverrealms/scripts/AC#HARM1.baf~
+
+COMPILE ~silverrealms/scripts/AC#VARG1.baf~
+
+COMPILE ~silverrealms/scripts/AC#TROL1.baf~
+
+COMPILE ~silverrealms/scripts/AC#TROL2.baf~
+
+COMPILE ~silverrealms/scripts/AC#TROL4.baf~
+COMPILE ~silverrealms/scripts/AC#TROL5.baf~
+
+COMPILE ~silverrealms/scripts/AC#TROL6.baf~
+COMPILE ~silverrealms/scripts/AC#TROL7.baf~
+
+COMPILE ~silverrealms/scripts/AC#GRTR1.baf~
+COMPILE ~silverrealms/scripts/AC#GRTR2.baf~
+COMPILE ~silverrealms/scripts/AC#GRTR3.baf~
+
+COMPILE ~silverrealms/scripts/AC#78SK.baf~
+COMPILE ~silverrealms/scripts/ACIL78.baf~
+COMPILE ~silverrealms/scripts/AC#CUT78.baf~
+
+COMPILE ~silverrealms/scripts/AC#DEDRA.baf~
+
+//COMPILE ~silverrealms/scripts/ACIL88.baf~
+COMPILE ~silverrealms/scripts/ac#cut88.baf~
+COMPILE ~silverrealms/scripts/ac#ct88B.baf~
+
+COMPILE ~silverrealms/scripts/AC#MITH2.baf~
+COPY_EXISTING ~AC#MITH2.bcs~   ~override/AC#MITH2.bcs~
+       REPLACE ~999999~ @228
+
+COMPILE ~silverrealms/scripts/ac#cut54.baf~
+
+COMPILE ~silverrealms/scripts/ac#boar1.baf~
+COMPILE ~silverrealms/scripts/AC#ILDW8.baf~
+
+COMPILE ~silverrealms/scripts/AC#51DW1.baf~
+COMPILE ~silverrealms/scripts/AC#51DW4.baf~
+COMPILE ~silverrealms/scripts/AC#51DW5.baf~
+COMPILE ~silverrealms/scripts/AC#51DW6.baf~
+COMPILE ~silverrealms/scripts/AC#51DW7.baf~
+
+COMPILE ~silverrealms/scripts/AC#DRIM2.baf~
+
+COMPILE ~silverrealms/scripts/AC#56DW1.baf~
+COPY_EXISTING ~AC#56DW1.bcs~   ~override/AC#56DW1.bcs~
+       REPLACE ~999999~ @294
+       REPLACE ~999998~ @295
+       REPLACE ~999997~ @296
+       REPLACE ~999996~ @297
+       
+COMPILE ~silverrealms/scripts/AC#56DW3.baf~
+COPY_EXISTING ~AC#56DW3.bcs~   ~override/AC#56DW3.bcs~
+       REPLACE ~999999~ @299
+       REPLACE ~999998~ @300
+       REPLACE ~999997~ @301
+       REPLACE ~999996~ @302
+       
+COMPILE ~silverrealms/scripts/AC#56DW5.baf~
+
+COMPILE ~silverrealms/scripts/AC#QUAG1.baf~
+
+COMPILE ~silverrealms/scripts/AC#20DRW.baf~
+
+COMPILE ~silverrealms/scripts/AC#DROW1.baf~
+COMPILE ~silverrealms/scripts/AC#DROW2.baf~
+
+COMPILE ~silverrealms/scripts/AC#20GIT.baf~
+COPY_EXISTING ~AC#20GIT.bcs~   ~override/AC#20GIT.bcs~
+       REPLACE ~999999~ @311
+
+COMPILE ~silverrealms/scripts/AC#GAU01.baf~
+//COMPILE ~silverrealms/scripts/AC#BRES1.baf~
+
+COMPILE ~silverrealms/scripts/AC#CT50A.baf~
+
+COMPILE ~silverrealms/scripts/AC#DEAD8.baf~
+
+COMPILE ~silverrealms/scripts/AC#31DO1.baf~
+COPY_EXISTING ~AC#31DO1.bcs~   ~override/AC#31DO1.bcs~
+       REPLACE ~999999~ @312
+       REPLACE ~999998~ @313
+       REPLACE ~999997~ @314
+
+       COMPILE ~silverrealms/scripts/AC#31DO2.baf~
+COPY_EXISTING ~AC#31DO2.bcs~   ~override/AC#31DO2.bcs~
+       REPLACE ~999999~ @312
+       REPLACE ~999998~ @313
+       REPLACE ~999997~ @314
+
+       COMPILE ~silverrealms/scripts/AC#31DO3.baf~
+COPY_EXISTING ~AC#31DO3.bcs~   ~override/AC#31DO3.bcs~
+       REPLACE ~999999~ @312
+       REPLACE ~999998~ @313
+       REPLACE ~999997~ @314
+
+       COMPILE ~silverrealms/scripts/AC#31DO4.baf~
+COPY_EXISTING ~AC#31DO4.bcs~   ~override/AC#31DO4.bcs~
+       REPLACE ~999999~ @312
+       REPLACE ~999998~ @313
+       REPLACE ~999997~ @314
+
+       COMPILE ~silverrealms/scripts/AC#31DO5.baf~
+COPY_EXISTING ~AC#31DO5.bcs~   ~override/AC#31DO5.bcs~
+       REPLACE ~999999~ @312
+       REPLACE ~999998~ @313
+       REPLACE ~999997~ @314
+       
+COMPILE ~silverrealms/scripts/AC#31DO6.baf~
+COPY_EXISTING ~AC#31DO6.bcs~   ~override/AC#31DO6.bcs~
+       REPLACE ~999999~ @312
+       REPLACE ~999998~ @313
+       REPLACE ~999997~ @314
+
+COMPILE ~silverrealms/scripts/AC#ROTH1.baf~
+COMPILE ~silverrealms/scripts/AC#ROTH2.baf~
+
+COMPILE ~silverrealms/scripts/AC#1VDO1.baf~
+COPY_EXISTING ~AC#1VDO1.bcs~   ~override/AC#1VDO1.bcs~
+       REPLACE ~999999~ @395
+       
+COMPILE ~silverrealms/scripts/AC#1VDO4.baf~
+COPY_EXISTING ~AC#1VDO4.bcs~   ~override/AC#1VDO4.bcs~
+       REPLACE ~999999~ @400
+
+COMPILE ~silverrealms/scripts/AC#18CO1.baf~
+
+COMPILE ~silverrealms/scripts/AC#18DO5.baf~
+COMPILE ~silverrealms/scripts/AC#SKET1.baf~
+COMPILE ~silverrealms/scripts/AC#SKET2.baf~
+
+COMPILE ~silverrealms/scripts/AC#23BO1.baf~
+COMPILE ~silverrealms/scripts/AC#23BO2.baf~
+COMPILE ~silverrealms/scripts/AC#23BO3.baf~
+COMPILE ~silverrealms/scripts/AC#23BO4.baf~
+COMPILE ~silverrealms/scripts/AC#23BO5.baf~
+
+COMPILE ~silverrealms/scripts/AC#23ST1.baf~
+COMPILE ~silverrealms/scripts/AC#23ST2.baf~
+COMPILE ~silverrealms/scripts/AC#23ST3.baf~
+COMPILE ~silverrealms/scripts/AC#23ST4.baf~
+COMPILE ~silverrealms/scripts/AC#23ST5.baf~
+
+COMPILE ~silverrealms/scripts/ACIL23.baf~
+COMPILE ~silverrealms/scripts/ACILD2.baf~
+
+COMPILE ~silverrealms/scripts/ACIL70.baf~
+
+COMPILE ~silverrealms/scripts/AC#23FAT.baf~
+COPY_EXISTING ~AC#23FAT.bcs~   ~override/AC#23FAT.bcs~
+       REPLACE ~999999~ @427
+       
+COMPILE ~silverrealms/scripts/AC#46PLY.baf~
+COPY_EXISTING ~AC#46PLY.bcs~   ~override/AC#46PLY.bcs~
+       REPLACE ~999999~ @432
+       REPLACE ~999998~ @433
+       REPLACE ~999997~ @434
+       REPLACE ~999996~ @435
+       REPLACE ~999995~ @359 // bleibt
+       REPLACE ~999994~ @431
+       REPLACE ~999993~ @436
+       
+COMPILE ~silverrealms/scripts/AC#GOLIR.baf~
+
+COMPILE ~silverrealms/scripts/AC#28DO2.baf~
+COPY_EXISTING ~AC#28DO2.bcs~   ~override/AC#28DO2.bcs~
+       REPLACE ~999999~ @439
+       REPLACE ~999998~ @440
+       REPLACE ~999997~ @441
+       
+COMPILE ~silverrealms/scripts/AC#RAT21.baf~
+
+COMPILE ~silverrealms/scripts/AC#ABGR2.baf~
+
+COMPILE ~silverrealms/scripts/AC#52DW3.baf~
+COPY_EXISTING ~AC#52DW3.bcs~   ~override/AC#52DW3.bcs~
+       REPLACE ~999999~ @294
+       REPLACE ~999998~ @295
+       REPLACE ~999997~ @296
+       REPLACE ~999996~ @297
+       
+COMPILE ~silverrealms/scripts/AC#52DW5.baf~
+COPY_EXISTING ~AC#52DW5.bcs~   ~override/AC#52DW5.bcs~
+       REPLACE ~999999~ @294
+       REPLACE ~999998~ @295
+       REPLACE ~999997~ @296
+       REPLACE ~999996~ @297
+
+COMPILE ~silverrealms/scripts/AC#GTDIS.baf~
+COMPILE ~silverrealms/scripts/AC#COFF1.baf~
+COPY_EXISTING ~AC#COFF1.bcs~   ~override/AC#COFF1.bcs~
+       REPLACE ~999999~ @484
+       
+COMPILE ~silverrealms/scripts/AC#ORC04.baf~
+COMPILE ~silverrealms/scripts/AC#VAMP1.baf~
+COMPILE ~silverrealms/scripts/AC#VAMP2.baf~
+
+COMPILE ~silverrealms/scripts/AC#TROL8.baf~
+
+COMPILE ~silverrealms/scripts/AC#13TR1.baf~
+       REPLACE ~999999~ @497
+       REPLACE ~999998~ @498
+       REPLACE ~999997~ @499
+       
+COMPILE ~silverrealms/scripts/AC#DEER2.baf~
+
+COMPILE ~silverrealms/scripts/AC#10IN1.baf~
+COPY_EXISTING ~AC#10IN1.bcs~   ~override/AC#10IN1.bcs~
+       REPLACE ~999999~ @517
+       REPLACE ~999998~ @518
+       REPLACE ~999995~ @359
+       
+COMPILE ~silverrealms/scripts/AC#10IN2.baf~
+COPY_EXISTING ~AC#10IN2.bcs~   ~override/AC#10IN2.bcs~
+       REPLACE ~999999~ @519
+       REPLACE ~999998~ @518
+       REPLACE ~999995~ @359
+       
+COMPILE ~silverrealms/scripts/AC#10IN3.baf~
+COPY_EXISTING ~AC#10IN3.bcs~   ~override/AC#10IN3.bcs~
+       REPLACE ~999999~ @520
+       REPLACE ~999998~ @518
+       REPLACE ~999995~ @359
+       
+COMPILE ~silverrealms/scripts/AC#10IN4.baf~
+COPY_EXISTING ~AC#10IN4.bcs~   ~override/AC#10IN4.bcs~
+       REPLACE ~999999~ @521
+       REPLACE ~999998~ @518
+       REPLACE ~999995~ @359
+       
+COMPILE ~silverrealms/scripts/AC#10IN5.baf~
+COPY_EXISTING ~AC#10IN5.bcs~   ~override/AC#10IN5.bcs~
+       REPLACE ~999999~ @522
+       REPLACE ~999998~ @518
+       REPLACE ~999995~ @359
+       
+COMPILE ~silverrealms/scripts/AC#10IN6.baf~
+COPY_EXISTING ~AC#10IN6.bcs~   ~override/AC#10IN6.bcs~
+       REPLACE ~999999~ @538
+       REPLACE ~999998~ @539
+       REPLACE ~999997~ @540
+
+COMPILE ~silverrealms/scripts/AC#11IN1.baf~
+COPY_EXISTING ~AC#11IN1.bcs~   ~override/AC#11IN1.bcs~
+       REPLACE ~999999~ @523
+       REPLACE ~999998~ @524
+       REPLACE ~999995~ @359
+       
+COMPILE ~silverrealms/scripts/AC#11IN2.baf~
+COPY_EXISTING ~AC#11IN2.bcs~   ~override/AC#11IN2.bcs~
+       REPLACE ~999997~ @525
+       REPLACE ~999996~ @526
+
+COMPILE ~silverrealms/scripts/AC#URSU1.baf~
+COPY_EXISTING ~AC#URSU1.bcs~   ~override/AC#URSU1.bcs~
+       REPLACE ~999999~ @529
+       
+COMPILE ~silverrealms/scripts/AC#URSU2.baf~
+COPY_EXISTING ~AC#URSU2.bcs~   ~override/AC#URSU2.bcs~
+       REPLACE ~999999~ @529
+       
+COMPILE ~silverrealms/scripts/AC#13IN1.baf~
+COPY_EXISTING ~AC#13IN1.bcs~   ~override/AC#13IN1.bcs~
+       REPLACE ~999999~ @530
+       REPLACE ~999998~ @531
+       REPLACE ~999997~ @532
+       REPLACE ~999995~ @359
+       
+COMPILE ~silverrealms/scripts/AC#13IN2.baf~
+COPY_EXISTING ~AC#13IN2.bcs~   ~override/AC#13IN2.bcs~
+       REPLACE ~999999~ @533
+       REPLACE ~999998~ @534
+       REPLACE ~999995~ @359
+       
+COMPILE ~silverrealms/scripts/AC#13IN3.baf~
+COPY_EXISTING ~AC#13IN3.bcs~   ~override/AC#13IN3.bcs~
+       REPLACE ~999999~ @535
+       REPLACE ~999998~ @536
+       REPLACE ~999995~ @359
+       
+COMPILE ~silverrealms/scripts/AC#13IN4.baf~
+COPY_EXISTING ~AC#13IN4.bcs~   ~override/AC#13IN4.bcs~
+       REPLACE ~999999~ @545
+       REPLACE ~999998~ @546
+       REPLACE ~999995~ @359
+       
+
+COMPILE ~silverrealms/scripts/AC#13G01.baf~
+COMPILE ~silverrealms/scripts/AC#13G02.baf~
+COMPILE ~silverrealms/scripts/AC#13G03.baf~
+COMPILE ~silverrealms/scripts/AC#13G04.baf~
+COMPILE ~silverrealms/scripts/AC#13G05.baf~
+COMPILE ~silverrealms/scripts/AC#13G06.baf~
+COMPILE ~silverrealms/scripts/AC#13G07.baf~
+
+
+COMPILE ~silverrealms/scripts/AC#BLAD1.baf~
+
+COMPILE ~silverrealms/scripts/AC#TRO71.baf~
+COMPILE ~silverrealms/scripts/AC#TRO72.baf~
+
+COMPILE ~silverrealms/scripts/AC#TROB1.baf~
+COMPILE ~silverrealms/scripts/AC#TROB2.baf~
+
+COMPILE ~silverrealms/scripts/AC#TRSN1.baf~
+COMPILE ~silverrealms/scripts/AC#TRSN2.baf~
+
+COMPILE ~silverrealms/scripts/AC#09DRS.baf~
+COPY_EXISTING ~AC#09DRS.bcs~   ~override/AC#09DRS.bcs~
+       REPLACE ~999999~ @587 // Entered Dragonsound
+
+COMPILE ~silverrealms/scripts/AC#HARP1.baf~
+
+COMPILE ~silverrealms/scripts/AC#BARD1.baf~
+COMPILE ~silverrealms/scripts/AC#DRWLK.baf~
+COMPILE ~silverrealms/scripts/AC#BHGH2.baf~
+COMPILE ~silverrealms/scripts/ac#ct62A.baf~ // Player arrested teleport script Area ACIL62 -> ACIL50
+
+/*
+COMPILE ~silverrealms/scripts/ACIL53.baf~
+COPY_EXISTING ~ACIL53.bcs~   ~override/ACIL53.bcs~
+       REPLACE ~999999~ @53100 // bookbinder_quest_start
+       REPLACE ~999998~ @706 // <CHARNAME>, der Golem
+*/
+
+COMPILE ~silverrealms/scripts/AC#53BBI.baf~
+        COPY_EXISTING ~AC#53BBI.bcs~   ~override/AC#53BBI.bcs~
+        REPLACE ~999999~ @617 // Book machine: Description
+        REPLACE ~999998~ @618 // Book machine: Book Creature Spawned
+       
+COMPILE ~silverrealms/scripts/ACIL90.baf~
+COMPILE ~silverrealms/scripts/ACIL91.baf~
+
+/*
+COMPILE ~silverrealms/scripts/ACIL21.baf~
+        COPY_EXISTING ~ACIL21.bcs~   ~override/ACIL21.bcs~
+        REPLACE ~999999~ @21021 // Search for Iltkazar
+        REPLACE ~999996~ @21002 // Search for Iltkazar: Erase
+*/
+
+COMPILE ~silverrealms/scripts/AC#02TR2.baf~
+
+COMPILE ~silverrealms/scripts/AC#01BE1.baf~
+
+COMPILE ~silverrealms/scripts/ACIL5C.baf~
+
+COMPILE ~silverrealms/scripts/ac#ct54B.baf~
+
+COMPILE ~silverrealms/scripts/AC#5CWHE.baf~
+        COPY_EXISTING ~AC#5CWHE.bcs~   ~override/AC#5CWHE.bcs~
+        REPLACE ~999999~ @625 // Broken wheel: Description
+        REPLACE ~999998~ @626 // Broken wheel: repaired
+        
+COMPILE ~silverrealms/scripts/AC#5CROP.baf~
+        COPY_EXISTING ~AC#5CROP.bcs~   ~override/AC#5CROP.bcs~
+        REPLACE ~999999~ @627 // Broken wheel: Description
+        REPLACE ~999998~ @628 // Broken wheel: repaired
+        
+COMPILE ~silverrealms/scripts/AC#DISPB.baf~
+
+//COMPILE ~silverrealms/scripts/ACIL52.baf~
+        //COPY_EXISTING ~ACIL52.bcs~   ~override/ACIL52.bcs~
+        //REPLACE ~999999~ @52100 // Betrangrid's sword: Quest start
+        //REPLACE ~999998~ @52110 // Betrangrid's sword: Quest end
+
+/*
+COMPILE ~silverrealms/scripts/ACIL5Q.baf~
+*/
+/*
+COMPILE ~silverrealms/scripts/ACIL5E.baf~
+        COPY_EXISTING ~ACIL5E.bcs~   ~override/ACIL5E.bcs~
+        //REPLACE ~999999~ @50610 // Erase Journal
+        //REPLACE ~999998~ @50611 // A drow?!?
+*/
+COMPILE ~silverrealms/scripts/AC#5ETR1.baf~
+        COPY_EXISTING ~AC#5ETR1.bcs~   ~override/AC#5ETR1.bcs~
+        REPLACE ~999999~ @661 // detect secret door
+        
+COMPILE ~silverrealms/scripts/ac#ilell.baf~
+
+COMPILE ~silverrealms/scripts/AC#5ETR2.baf~
+        COPY_EXISTING ~AC#5ETR2.bcs~   ~override/AC#5ETR2.bcs~
+        REPLACE ~999999~ @662 // touch mirror
+        REPLACE ~999998~ @663 // touched mirror
+
+/*
+COMPILE ~silverrealms/scripts/ACIL49.baf~
+COPY_EXISTING ~ACIL49.bcs~   ~override/ACIL49.bcs~
+        REPLACE ~999999~ @58007 // durga dead
+        REPLACE ~999998~ @58006 // found turbaern
+        REPLACE ~999997~ @58020 // hammer retrieved
+*/
+
+/*
+COMPILE ~silverrealms/scripts/ACIL58.baf~
+        REPLACE ~999999~ @58022 // solved journal_ hammer back
+        REPLACE ~999998~ @58021 // erase journal: bring back
+*/
+
+COMPILE ~silverrealms/scripts/AC#STGO1.baf~
+
+COMPILE ~silverrealms/scripts/AC#58DW9.baf~
+
+COMPILE ~silverrealms/scripts/AC#58ZO1.baf~  // Zombie Trap in ACIL58
+
+COMPILE ~silverrealms/scripts/AC#57DOO.baf~  // Door in ACIL57
+
+COMPILE ~silverrealms/scripts/AC#58T50.baf~
+        COPY_EXISTING ~AC#58T50.bcs~   ~override/AC#58T50.bcs~
+        REPLACE ~999999~ @678 // info: you have to bring the hammer back before leaving the temple
+        
+COMPILE ~silverrealms/scripts/AC#57WH1.baf~
+COPY_EXISTING ~AC#57WH1.bcs~   ~override/AC#57WH1.bcs~
+       REPLACE ~999999~ @680
+       REPLACE ~999998~ @681
+       REPLACE ~999997~ @682
+       
+COMPILE ~silverrealms/scripts/AC#57WH2.baf~
+COPY_EXISTING ~AC#57WH2.bcs~   ~override/AC#57WH2.bcs~
+       REPLACE ~999999~ @680
+       REPLACE ~999998~ @681
+       REPLACE ~999997~ @682
+
+COMPILE ~silverrealms/scripts/AC#GROM1.baf~
+COMPILE ~silverrealms/scripts/AC#GROM2.baf~
+
+COMPILE ~silverrealms/scripts/AC#ELEW2.baf~
+
+COMPILE ~silverrealms/scripts/AC#2HTR1.baf~
+COPY_EXISTING ~AC#2HTR1.bcs~   ~override/AC#2HTR1.bcs~
+       REPLACE ~999999~ @693
+       
+COMPILE ~silverrealms/scripts/AC#DROW5.baf~
+COMPILE ~silverrealms/scripts/AC#2HDU1.baf~
+//COMPILE ~silverrealms/scripts/ACIL2H.baf~
+/*
+COMPILE ~silverrealms/scripts/ACIL27.baf~
+COPY_EXISTING ~ACIL27.bcs~   ~override/ACIL27.bcs~
+       REPLACE ~999999~ @711
+*/
+
+COMPILE ~silverrealms/scripts/ac#53CT1.baf~
+
+//COMPILE ~silverrealms/scripts/AC#59TR1.baf~
+COMPILE ~silverrealms/scripts/ac#ct50B.baf~
+COMPILE ~silverrealms/scripts/ac#ct50C.baf~
+
+COMPILE ~silverrealms/scripts/AC#28DW3.baf~
+COPY_EXISTING ~AC#28DW3.bcs~   ~override/AC#28DW3.bcs~
+       REPLACE ~999999~ @714
+       
+COMPILE ~silverrealms/scripts/AC#28BOA.baf~
+COPY_EXISTING ~AC#28BOA.bcs~   ~override/AC#28BOA.bcs~
+       REPLACE ~999999~ @717
+       
+COMPILE ~silverrealms/scripts/AC#HATH8.baf~
+COMPILE ~silverrealms/scripts/ACIL37.baf~
+
+COMPILE ~silverrealms/scripts/AC#50BSM.baf~
+
+COMPILE ~silverrealms/scripts/ACIL64.baf~
+COMPILE ~silverrealms/scripts/ACIL5P.baf~
+
+COMPILE ~silverrealms/scripts/ac#24ct1.baf~
+COMPILE ~silverrealms/scripts/ac#24ct2.baf~
+
+COMPILE ~silverrealms/scripts/AC#DROW7.baf~
+COMPILE ~silverrealms/scripts/AC#DROW8.baf~
+
+COMPILE ~silverrealms/scripts/AC#24MDF.baf~
+COMPILE ~silverrealms/scripts/AC#24DR1.baf~
+
+/*
+COMPILE ~silverrealms/scripts/AC#21SUR.baf~
+COPY_EXISTING ~AC#21SUR.bcs~   ~override/AC#21SUR.bcs~
+       REPLACE ~999999~ @740
+       REPLACE ~999998~ @741
+       REPLACE ~999997~ @742
+       REPLACE ~999996~ @743
+*/
+       
+COMPILE ~silverrealms/scripts/ac#21cta.baf~
+
+COMPILE ~silverrealms/scripts/AC#TREA1.baf~
+COMPILE ~silverrealms/scripts/AC#TREA2.baf~
+
+COMPILE ~silverrealms/scripts/ACIL07.baf~
+
+COMPILE ~silverrealms/scripts/AC#FITI1.baf~
+COMPILE ~silverrealms/scripts/AC#DRLI1.baf~
+
+COMPILE ~silverrealms/scripts/AC#36GO1.baf~
+COMPILE ~silverrealms/scripts/ACIL36.baf~
+
+COMPILE ~silverrealms/scripts/AC#48CH1.baf~
+COPY_EXISTING ~AC#48CH1.bcs~   ~override/AC#48CH1.bcs~
+       REPLACE ~999999~ @766
+
+COMPILE ~silverrealms/scripts/AC#44DU1.baf~
+
+COMPILE ~silverrealms/scripts/ACIL45.baf~
+COPY_EXISTING ~ACIL45.bcs~   ~override/ACIL45.bcs~
+       REPLACE ~999999~ @45000
+
+
+COMPILE ~silverrealms/scripts/AC#WAND7.baf~
+COPY_EXISTING ~AC#WAND7.bcs~   ~override/AC#WAND7.bcs~
+       REPLACE ~999999~ @789
+       REPLACE ~999998~ @792
+       
+COMPILE ~silverrealms/scripts/AC#27DO3.baf~
+COPY_EXISTING ~AC#27DO3.bcs~   ~override/AC#27DO3.bcs~
+       REPLACE ~999999~ @792
+
+COMPILE ~silverrealms/scripts/acil2k.baf~
+
+COMPILE ~silverrealms/scripts/AC#2KBR1.baf~
+COPY_EXISTING ~AC#2KBR1.bcs~   ~override/AC#2KBR1.bcs~
+       REPLACE ~999999~ @795
+       REPLACE ~999998~ @796
+       REPLACE ~999997~ @797
+       REPLACE ~999996~ @798
+       
+COMPILE ~silverrealms/scripts/AC#2KBR2.baf~
+COPY_EXISTING ~AC#2KBR2.bcs~   ~override/AC#2KBR2.bcs~
+       REPLACE ~999999~ @795
+       REPLACE ~999998~ @796
+       REPLACE ~999997~ @797
+       REPLACE ~999996~ @798

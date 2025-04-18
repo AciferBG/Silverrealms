@@ -1,0 +1,20 @@
+IF
+	Clicked([ANYONE])
+	//Range(LastTrigger,12)
+	CheckStatGT(LastTrigger,50,LORE)
+
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@6011)
+END
+
+IF
+	Clicked([ANYONE])
+	//Range(LastTrigger,12)
+	CheckStatLT(LastTrigger,51,LORE)
+
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@6012) 
+END
+

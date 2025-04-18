@@ -1,0 +1,120 @@
+//Worldmap
+DEFINE_ACTION_FUNCTION ~CREATE_REMAPPED_ICONS~ 
+	INT_VAR
+	verbose = 0
+	new_icon_index = ~new_icon_index~
+	STR_VAR
+	path_to_areas = ~~    // full path to the text file containing your areas data, e.g. ~mymod/tbl/areas.tbl~
+	RET_ARRAY
+	remapped_icons
+BEGIN
+	COPY - ~%path_to_areas%~ ~.../areas.tbl~
+		//PRETTY_PRINT_2DA
+		REPLACE_TEXTUALLY ~%WNL%~ ~%LNL%~
+		REPLACE_TEXTUALLY ~//.*$~ ~~
+		READ_2DA_ENTRIES_NOW areas_2da 10
+		FOR (i = 1; i < areas_2da; i = i + 1) BEGIN
+			READ_2DA_ENTRY_FORMER areas_2da i 0 "short_name"
+			PATCH_IF FILE_EXISTS_IN_GAME ~%short_name%.are~ BEGIN
+				READ_2DA_ENTRY_FORMER areas_2da i 4 "bam_anim_old"
+				PATCH_IF (NOT VARIABLE_IS_SET $remapped_icons("%bam_anim_old%")) BEGIN
+					DEFINE_ASSOCIATIVE_ARRAY remapped_icons BEGIN ~%bam_anim_old%~ => ~%new_icon_index%~ END
+					SET new_icon_index = new_icon_index + 1
+				END
+			END
+		END
+		PATCH_IF (verbose = 1) BEGIN
+			PATCH_PRINT ~remapped_icons: old => new~
+			PHP_EACH remapped_icons AS bam => num BEGIN PATCH_PRINT ~                %bam% => %num%~ END
+		END
+END
+
+// map icon index in mapicons.bam
+ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
+  INCLUDE ~%MOD_FOLDER%/Worldmap/add_map_icons_ee.tpa~
+  LAF ADD_MAP_ICONS_EE STR_VAR path_to_icons = EVAL ~%MOD_FOLDER%/Worldmap/ee/icon.bam~ patch_to_pvrz = EVAL ~%MOD_FOLDER%/Worldmap/ee~ RET new_icon_index icons_added END
+  // erstellt automatisch aus deiner area.tbl Datei den remapped_icons array
+  ACTION_IF %icons_added% > 0 BEGIN
+	LAF CREATE_REMAPPED_ICONS INT_VAR verbose = 0 STR_VAR path_to_areas = EVAL ~%MOD_FOLDER%/Worldmap/areas_eet.tbl~ RET_ARRAY remapped_icons END
+  END
+END
+
+ACTION_IF GAME_IS ~tob bgt~ BEGIN //bg2, bgt
+  INCLUDE ~%MOD_FOLDER%/Worldmap/add_map_icons.tpa~
+  LAF ADD_MAP_ICONS STR_VAR path_to_icons = EVAL ~%MOD_FOLDER%/Worldmap/bg/icon.bam~ RET new_icon_index icons_added END
+  // erstellt automatisch aus deiner area.tbl Datei den remapped_icons array
+  ACTION_IF %icons_added% > 0 BEGIN
+	LAF CREATE_REMAPPED_ICONS INT_VAR verbose = 0 STR_VAR path_to_areas = EVAL ~%MOD_FOLDER%/Worldmap/areas_bgt.tbl~ RET_ARRAY remapped_icons END
+  END
+END
+
+ACTION_IF MOD_IS_INSTALLED "SETUP-BP-BGT-WORLDMAP.TP2" 1 BEGIN
+	ACTION_DEFINE_ARRAY worldmaps BEGIN worldmap worldm25 END
+END ELSE BEGIN
+	ACTION_DEFINE_ARRAY worldmaps BEGIN worldmap END
+END
+
+ACTION_PHP_EACH worldmaps AS num => worldmap BEGIN
+	PRINT ~worldmap: %worldmap%~
+	// patch WMP using TBL files
+	//Worldmap for BGT
+	ACTION_IF GAME_IS ~bgt~ BEGIN
+		INCLUDE ~%MOD_FOLDER%/Worldmap/add_worldmap_tbl.tpa~
+		PRINT ~Hallo bgt~
+		LAF ADD_WORLDMAP_TBL
+			INT_VAR
+			verbose = 0
+			inclSv = 0
+			patch_bp_files = 1
+			patch_mastarea = 1
+			STR_VAR
+			path_to_areas = EVAL ~%MOD_FOLDER%/Worldmap/areas_bgt.tbl~
+			path_to_areas_bp = EVAL ~%MOD_FOLDER%/Worldmap/areas_bp_bgt.tbl~
+			path_to_links = EVAL ~%MOD_FOLDER%/Worldmap/links.tbl~
+			path_to_links_bp = EVAL ~%MOD_FOLDER%/Worldmap/links_bp_bgt.tbl~
+			path_to_trans = EVAL ~%MOD_FOLDER%/language/%LANGUAGE%/WORLDMAP.tra~
+			icons_table = ~remapped_icons~
+			worldmap = EVAL ~%worldmap%~
+		END
+	END
+	//Worldmap for Vanilla BG2 and BG2EE
+	ACTION_IF GAME_IS ~tob bg2ee~ AND NOT GAME_IS ~bgt~ BEGIN
+		PRINT ~Hallo bg2~
+		INCLUDE ~%MOD_FOLDER%/Worldmap/add_worldmap_tbl.tpa~
+		LAF ADD_WORLDMAP_TBL
+			INT_VAR
+			verbose = 0
+			inclSv = 0
+			patch_bp_files = 1
+			patch_mastarea = 1
+			STR_VAR
+			path_to_areas = EVAL ~%MOD_FOLDER%/Worldmap/areas_bg2.tbl~
+			path_to_areas_bp = EVAL ~%MOD_FOLDER%/Worldmap/areas_bp_bgt.tbl~
+			path_to_links = EVAL ~%MOD_FOLDER%/Worldmap/links.tbl~
+			path_to_links_bp = EVAL ~%MOD_FOLDER%/Worldmap/links_bp_bgt.tbl~
+			path_to_trans = EVAL~%MOD_FOLDER%/language/%LANGUAGE%/WORLDMAP.tra~
+			icons_table = ~remapped_icons~
+			worldmap = EVAL ~%worldmap%~
+		END
+	END
+	//Worldmap for EET
+	ACTION_IF GAME_IS ~eet~ BEGIN
+		INCLUDE ~%MOD_FOLDER%/Worldmap/add_worldmap_tbl.tpa~
+		LAF ADD_WORLDMAP_TBL
+			INT_VAR
+			verbose = 0
+			inclSv = 0
+			patch_bp_files = 1
+			patch_mastarea = 1
+			STR_VAR
+			path_to_areas = EVAL ~%MOD_FOLDER%/Worldmap/areas_eet.tbl~
+			path_to_areas_bp = EVAL ~%MOD_FOLDER%/Worldmap/areas_bp_bgt.tbl~
+			path_to_links = EVAL ~%MOD_FOLDER%/Worldmap/links.tbl~
+			path_to_links_bp = EVAL ~%MOD_FOLDER%/Worldmap/links_bp_bgt.tbl~
+			path_to_trans = EVAL ~%MOD_FOLDER%/language/%LANGUAGE%/worldmap.tra~
+			icons_table = ~remapped_icons~
+			worldmap = EVAL ~%worldmap%~
+		END
+	END
+END
+  

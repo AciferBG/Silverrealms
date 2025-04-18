@@ -1,0 +1,81 @@
+IF
+	Global("SetRest","ACIL23",0)
+THEN
+	RESPONSE #100
+	        SetGlobal("SetRest","ACIL23",1)
+		//SetAreaRestFlag(0)
+		SetRestEncounterProbabilityDay(0)
+		SetRestEncounterProbabilityNight(0)
+END
+
+IF
+	Global("Phezultsleep","ACIL23",1)
+	Global("SetRest","ACIL23",1)
+THEN
+	RESPONSE #100
+	        SetGlobal("SetRest","ACIL23",2)
+		//SetAreaRestFlag(0)
+		SetRestEncounterProbabilityDay(100)
+		SetRestEncounterProbabilityNight(100)
+END
+
+IF
+	!GlobalTimerNotExpired("FatigueTimer","ACIL23")
+        Global("Phezultsleep","ACIL23",1)
+THEN
+	RESPONSE #100
+	        ApplySpellRES("AC#SPFAT",Player1) // No such index
+		SetGlobalTimer("FatigueTimer","ACIL23",6)
+END
+
+IF
+	Global("CutScenesDone","ACIL23",0)
+	Global("AC#ACIL23DreamReflection","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("CutScenesDone","ACIL23",1)
+		TriggerActivation("Book01",FALSE)
+		TriggerActivation("Book02",FALSE)
+		TriggerActivation("Book03",FALSE)
+		TriggerActivation("Book04",FALSE)
+		TriggerActivation("Book05",FALSE)
+		TriggerActivation("Statue01",FALSE)
+		TriggerActivation("Statue02",FALSE)
+		TriggerActivation("Statue03",FALSE)
+		TriggerActivation("Statue04",FALSE)
+		TriggerActivation("Statue05",FALSE)
+        ActionOverride(Player1,StartDialog("Player1",Myself))
+END
+
+IF
+	Global("AC#23Statue01","ACIL23",2)
+	Global("AC#23Statue02","ACIL23",2)
+	Global("AC#23Statue03","ACIL23",2)
+	Global("AC#23Statue04","ACIL23",2)
+	Global("AC#23Statue05","ACIL23",2)
+	Global("AC#ACIL23CutScene1","GLOBAL",0)
+THEN
+	RESPONSE #100
+	         Wait(1)
+		SetGlobal("AC#ACIL23CutScene1","GLOBAL",1)
+END
+
+IF
+	Global("AC#ACIL23CutScene1","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#ACIL23CutScene1","GLOBAL",2)
+		ClearAllActions()
+		StartCutSceneMode()
+		StartCutScene("AC#23CT1")
+END
+
+IF
+	PartyHasItem("AC#23ELL")
+	Global("AC#EllhimarJournal","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#EllhimarJournal","GLOBAL",1)
+		EraseJournalEntry(@23011)
+		AddJournalEntry(@23010,QUEST)
+END

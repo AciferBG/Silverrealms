@@ -1,0 +1,25 @@
+IF
+	Global("AC#HizagkuurQuest","GLOBAL",0)
+	Global("HizagkuurJournal","ACIL2H",0)
+	PartyHasItem("AC#HIZA1")
+THEN
+	RESPONSE #100
+                SetGlobal("HizagkuurJournal","ACIL2H",1)
+                AddJournalEntry(@53235,QUEST)
+END
+
+IF
+	Global("AC#ACIL2HDuergar","GLOBAL",0)
+	PartyHasItem("AC#HIZA1")
+THEN
+	RESPONSE #100
+                SetGlobal("AC#ACIL2HDuergar","GLOBAL",1)
+		CreateCreature("AC#2HDU2",[1192.1615],8)  // Duergar Leader
+		CreateCreature("AC#2HDU1",[1121.1601],8) // Duergar
+		CreateCreature("AC#2HDU1",[1148.1565],8) // Duergar
+		CreateCreature("AC#2HDU3",[1348.1623],9) // Duergar
+		CreateCreature("AC#2HDU3",[1274.1720],5)  // Duergar
+		CreateCreature("UMBHUL01",[2367.918],3)  // Umber Hulk
+		CreateCreature("AC#2HDU4",[2415.842],3) // Duergar
+		CreateCreature("AC#2HDU4",[2537.902],3)  // Duergar
+END

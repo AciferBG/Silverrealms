@@ -1,0 +1,26 @@
+IF
+	Clicked([ANYONE])
+	Global("Info_Energybarrier","ACIL81",0)
+THEN
+	RESPONSE #100
+                SetGlobal("Info_Energybarrier","ACIL81",1)
+		DisplayString(Myself,999999)
+END
+
+IF
+	Clicked([ANYONE])
+	Global("Info_Energybarrier","ACIL81",1)
+THEN
+	RESPONSE #100
+                SetGlobal("Info_Energybarrier","ACIL81",2)
+		DisplayString(Myself,999998)
+END
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,10)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,14702)
+END
+

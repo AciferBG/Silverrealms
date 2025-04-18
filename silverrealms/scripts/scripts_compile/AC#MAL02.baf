@@ -1,0 +1,51 @@
+IF
+	Detect([PC])
+	Global("AC#Cut1","ACIL88",2)
+	Global("AC#TalkedMalphas","GLOBAL",0)
+THEN
+	RESPONSE #100
+		StartDialogNoSet(LastSeenBy(Myself))
+END
+
+IF
+	OpenState("DOOR01",TRUE)
+	Global("Malphas2Crow","ACIL88",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Malphas2Crow","ACIL88",1)
+		CreateCreatureObject("AC#CROW1",Myself,0,0,0)  // Krähe
+		CreateCreatureObject("AC#CROW1",Myself,0,0,0)  // Krähe
+		CreateCreatureObject("AC#CROW1",Myself,0,0,0)  // Krähe
+		CreateCreatureObject("AC#CROW1",Myself,0,0,0)  // Krähe
+		CreateCreatureObject("AC#CROW1",Myself,0,0,0)  // Krähe
+		CreateCreatureObject("AC#CROW1",Myself,0,0,0)  // Krähe
+		CreateVisualEffectObject("SPFLESHS",Myself)
+		ChangeAnimationNoEffect("AC#CROW2")  // Krähe
+		CreateCreatureObject("AC#CROW1",Myself,0,0,0)  // Krähe
+		CreateCreatureObject("AC#CROW1",Myself,0,0,0)  // Krähe
+		CreateCreatureObject("AC#CROW1",Myself,0,0,0)  // Krähe
+		CreateCreatureObject("AC#CROW1",Myself,0,0,0)  // Krähe
+		DestroySelf()
+END
+
+IF
+	GlobalGT("AC#TalkedMalphas","GLOBAL",0)
+	OpenState("DOOR01",FALSE)
+	Global("Malphas2Crow","ACIL88",0)
+	!GlobalTimerNotExpired("Summon_Abishai","LOCALS")
+	NumCreatureLT("AC#ABGR2",4)  // Grüner Abishai
+THEN
+	RESPONSE #100
+		CreateCreatureDoor("AC#ABGR2",[1493.915],8)  // Grüner Abishai
+		CreateCreatureDoor("AC#ABRE1",[1932.1081],3)  // Roter Abishai
+		SetGlobalTimer("Summon_Abishai","LOCALS",THREE_ROUNDS)
+	RESPONSE #100
+		CreateCreatureDoor("AC#ABGR2",[1932.1081],3)  // Grüner Abishai
+		CreateCreatureDoor("AC#ABRE1",[1493.915],8)  // Roter Abishai
+		SetGlobalTimer("Summon_Abishai","LOCALS",THREE_ROUNDS)
+	RESPONSE #100
+		CreateCreatureDoor("AC#ABGR2",[2066.777],0)  // Grüner Abishai
+		CreateCreatureDoor("AC#ABRE1",[1932.1081],3)  // Roter Abishai
+		SetGlobalTimer("Summon_Abishai","LOCALS",THREE_ROUNDS)
+END
+

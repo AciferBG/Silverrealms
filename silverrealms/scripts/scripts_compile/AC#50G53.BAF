@@ -1,0 +1,16 @@
+IF
+	Range("TrACIL53",6)
+THEN
+	RESPONSE #100
+		Wait(3)
+		CreateVisualEffectObject("SPFLESH2",Myself)
+		DestroySelf()
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		MoveToObject("TrACIL53")
+END
+

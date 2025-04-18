@@ -1,0 +1,16 @@
+IF
+	Range([PC],6)
+	NumberOfTimesTalkedTo(0)
+	See([PC])
+THEN
+	RESPONSE #100
+		StartDialogueNoSet([PC])
+END
+
+IF
+	Global("BettarghMoves","ACIL53",1)
+THEN
+	RESPONSE #100
+		MoveToPoint([1783.847])
+END
+

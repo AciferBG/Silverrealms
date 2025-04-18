@@ -1,0 +1,12 @@
+/*
+IF
+        IsOverMe("AC#WAND7")
+        Global("AC#DOOR03","ACIL27",0)
+THEN
+	RESPONSE #100
+          SetGlobal("AC#DOOR03","ACIL27",1)
+          DisplayString(Myself,999999)
+          ActionOverride("AC#WAND7",DestroySelf())
+END
+*/
+

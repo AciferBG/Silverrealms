@@ -1,0 +1,8 @@
+// unused
+IF
+	True()
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		ActionOverride("AC#BRES5",StartDialogNoSet(Player1))
+END

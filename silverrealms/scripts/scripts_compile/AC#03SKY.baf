@@ -1,0 +1,28 @@
+// ACIL08: curmbled Tower, burning skyship:
+IF
+	Clicked([ANYONE])
+        GlobalGT("AC#_MalphasTransforms","GLOBAL",2)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@505) //  Das Himmelsschiff ist durch das Feuer stark beschädigt. In diesem Zustand ist ein Flug unmöglich.
+END
+
+// ACIL03
+IF
+	Clicked([ANYONE])
+        Global("AC#ACIL03_Skyship","GLOBAL",1)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@502) //  Nach allem, was Ihr bisher gesehen habt, müsste es sich bei diesem Vehikel um eines der berühmten Himmelsschiffe aus Halruaa handeln, für die diese Nation so berühmt ist.
+END
+
+IF
+	Clicked([ANYONE])
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@502) // Nach allem, was Ihr bisher gesehen habt, müsste es sich bei diesem Vehikel um eines der berühmten Himmelsschiffe aus Halruaa handeln, für die diese Nation so berühmt ist.
+		//SetGlobal("AC#ACIL03_Skyship","GLOBAL",1)
+		//AddJournalEntry(@503,INFO) // Ein Magier aus Halruaa?
+END
+
+

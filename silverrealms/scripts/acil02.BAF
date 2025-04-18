@@ -1,0 +1,80 @@
+IF
+	Global("EnableDriftdisc","ACIL02",0)
+THEN
+	RESPONSE #100
+        SetGlobal("EnableDriftdisc","ACIL02",1)
+        AmbientActivate("Driftdisc",FALSE)
+        AmbientActivate("Ac#turni",FALSE)
+        SoundActivate("Driftsound",FALSE)
+END
+
+IF
+	Dead("AC#SPIWO")  // Geisterwolf
+	Dead("AC#SPIDE")  // Geisterhirsch
+	Dead("AC#SPIBE")  // Geisterbär
+	Global("AC#Boss","ACIL02",0)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		CreateVisualEffect("SPSUMP",[1189.507])
+		Wait(2)
+		CreateCreature("AC#01MSH",[1189.507],11)  // Marams Schatten
+		SetGlobal("AC#Boss","ACIL02",1)
+END
+
+IF
+	Dead("AC#01MSH")  // Marams Schatten
+	CombatCounter(0)
+	Global("AC#Door01Open","ACIL02",0)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		StartCutSceneMode()
+		CreateCreature("ac#ravo1",[1189.507],11)  // Naturgeist
+		ActionOverride("ac#ravo1",ReallyForceSpell(Myself,CLERIC_ZONE_OF_SWEET_AIR))  // SPPR318.SPL (Bereich der frischen Luft)
+		SetGlobal("AC#Door01Open","ACIL02",1)
+        EraseJournalEntry(@20019)
+		MoveViewObject("ac#ravo1",INSTANT)
+		StartCutScene("ac#cutra")
+END
+
+IF
+	Global("EnableDriftdisc","ACIL02",1)
+        GlobalGT("AC#Goodbye_Iltkazar","GLOBAL",0)
+THEN
+	RESPONSE #100
+        SetGlobal("EnableDriftdisc","ACIL02",2)
+        AmbientActivate("Driftdisc",TRUE)
+        AmbientActivate("Ac#turni",TRUE)
+        SoundActivate("Driftsound",TRUE)
+END
+
+IF
+	GlobalGT("AC#Talked_to_Maldraedior","GLOBAL",0)
+	Global("OrkSpawn","ACIL02",0)
+THEN
+	RESPONSE #100
+		SetGlobal("OrkSpawn","ACIL02",1)
+		CreateCreature("AC#02OR1",[1251.350],0)  // Orkischer Priester
+		CreateCreature("AC#02OR1",[1400.504],5)  // Orkischer Priester
+		CreateCreature("AC#02OR1",[1074.398],12)  // Orkischer Priester
+		CreateCreature("AC#02OR1",[1218.619],8)  // Orkischer Priester
+END
+
+IF
+	Global("DemonSummon","ACIL02",1)
+THEN
+	RESPONSE #100
+		SetGlobal("DemonSummon","ACIL02",2)
+		Wait(2)
+		CreateVisualEffect("SPSUMGTE",[1246.463])
+		Wait(1)
+		Wait(2)
+		CreateVisualEffect("SPFIREPI",[1246.463])
+		Wait(2)
+		CreateCreature("AC#URID1",[1246.463],0)  // Uridezu
+END
+
+
+
+

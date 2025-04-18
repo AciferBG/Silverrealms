@@ -1,0 +1,229 @@
+IF
+	NumTimesTalkedTo(0)
+THEN
+	RESPONSE #100
+		StartDialogNoSet("AC#MAL03")  // Malphas
+END
+
+IF
+	OR(3)
+		See(NearestEnemyOf(Myself))
+		Global("SkeletonFight","ACIL80",1)
+		Heard([ANYONE],89)
+	Global("SkeletonFight","ACIL80",1)
+THEN
+	RESPONSE #100
+		ApplySpell(Myself,CLERIC_REGENERATE)  // SPPR711.SPL (Regeneration)
+		ApplySpell(Myself,CLERIC_DEATH_WARD)  // SPPR409.SPL (Todesschutz)
+		ReallyForceSpell(LastSeenBy(Myself),CLERIC_DEFENSIVE_HARMONY)  // SPPR406.SPL (Koordinierte Verteidigung)
+		MoveToPoint([2588.542])
+		SetGlobal("SkeletonFight","ACIL80",2)
+END
+
+IF
+	!See(NearestEnemyOf(Myself))
+	Heard([ANYONE],89)
+THEN
+	RESPONSE #100
+		MoveToObject(LastHeardBy(Myself))
+END
+
+IF
+	AttackedBy([ANYONE],RANGED)
+	HaveSpell(CLERIC_PHYSICAL_MIRROR)  // SPPR613.SPL (Materiespiegel)
+THEN
+	RESPONSE #100
+		Spell(Myself,CLERIC_PHYSICAL_MIRROR)  // SPPR613.SPL (Materiespiegel)
+END
+
+IF
+	Detect(NearestEnemyOf(Myself))
+	OR(5)
+		!See(NearestEnemyOf(Myself))
+		StateCheck(NearestEnemyOf(Myself),STATE_IMPROVEDINVISIBILITY)
+		StateCheck(NearestEnemyOf(Myself),STATE_MIRRORIMAGE)
+		StateCheck(NearestEnemyOf(Myself),STATE_BLUR)
+		Gender(NearestEnemyOf(Myself),ILLUSIONARY)
+	HaveSpell(CLERIC_TRUE_SIGHT)  // SPPR505.SPL (Wahrer Blick)
+THEN
+	RESPONSE #100
+		Spell(Myself,CLERIC_TRUE_SIGHT)  // SPPR505.SPL (Wahrer Blick)
+END
+
+IF
+	OR(2)
+		See([GOODCUTOFF.0.SKELETON])
+		See([CONTROLLED.0.SKELETON])
+	!GlobalTimerNotExpired("TurnUndead","LOCALS")
+THEN
+	RESPONSE #100
+		Turn()
+		SetGlobalTimer("TurnUndead","LOCALS",TWO_ROUNDS)
+END
+
+IF
+	See(NearestEnemyOfType([0.0.0.CLERIC_ALL]))
+	HaveSpell(CLERIC_CONFUSION)  // SPPR709.SPL (Verwirrung)
+	!Race(LastSeenBy(Myself),SKELETON)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),CLERIC_CONFUSION)  // SPPR709.SPL (Verwirrung)
+END
+
+IF
+	See(NearestEnemyOfType([0.0.0.CLERIC_ALL]))
+	HaveSpell(CLERIC_HOLD_PERSON)  // SPPR208.SPL (Personen festhalten)
+	!StateCheck(LastSeenBy(Myself),STATE_HELPLESS)
+	!Race(LastSeenBy(Myself),SKELETON)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),CLERIC_HOLD_PERSON)  // SPPR208.SPL (Personen festhalten)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(CLERIC_CONFUSION)  // SPPR709.SPL (Verwirrung)
+	!Race(LastSeenBy(Myself),SKELETON)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),CLERIC_CONFUSION)  // SPPR709.SPL (Verwirrung)
+END
+
+IF
+	HaveSpell(CLERIC_SILENCE_15_FOOT)  // SPPR211.SPL (Stille, 4,5 m Radius)
+	OR(2)
+		See(NearestEnemyOfType([0.0.0.MAGE_ALL]))
+		See(NearestEnemyOfType([0.0.0.CLERIC_ALL]))
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),CLERIC_SILENCE_15_FOOT)  // SPPR211.SPL (Stille, 4,5 m Radius)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(CLERIC_FREE_ACTION)  // SPPR403.SPL (Handlungsfreiheit)
+	See(NearestMyGroupOfType)
+	StateCheck(LastSeenBy(Myself),STATE_HELPLESS)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),CLERIC_FREE_ACTION)  // SPPR403.SPL (Handlungsfreiheit)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_NPC_SYMBOL_FEAR)  // SPWI899.SPL (Symbol der Furcht)
+	!Race(LastSeenBy(Myself),SKELETON)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_NPC_SYMBOL_FEAR)  // SPWI899.SPL (Symbol der Furcht)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(CLERIC_FLAME_STRIKE)  // SPPR503.SPL (Flammenschlag)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),CLERIC_FLAME_STRIKE)  // SPPR503.SPL (Flammenschlag)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(CLERIC_RIGHTEOUS_MAGIC)  // SPPR513.SPL (Gerechte Magie)
+THEN
+	RESPONSE #100
+		Spell(Myself,CLERIC_RIGHTEOUS_MAGIC)  // SPPR513.SPL (Gerechte Magie)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(CLERIC_TRUE_SIGHT)  // SPPR505.SPL (Wahrer Blick)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),CLERIC_TRUE_SIGHT)  // SPPR505.SPL (Wahrer Blick)
+END
+
+IF
+	HaveSpell(CLERIC_SILENCE_15_FOOT)  // SPPR211.SPL (Stille, 4,5 m Radius)
+	OR(2)
+		See(NearestEnemyOfType([0.0.0.MAGE_ALL]))
+		See(NearestEnemyOfType([0.0.0.CLERIC_ALL]))
+	!Race(LastSeenBy(Myself),SKELETON)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),CLERIC_SILENCE_15_FOOT)  // SPPR211.SPL (Stille, 4,5 m Radius)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(CLERIC_CHARM_PERSON)  // SPPR204.SPL (Personen oder S�ugetiere bezaubern)
+	!Race(LastSeenBy(Myself),SKELETON)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),CLERIC_CHARM_PERSON)  // SPPR204.SPL (Personen oder S�ugetiere bezaubern)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(CLERIC_HOLD_PERSON)  // SPPR208.SPL (Personen festhalten)
+	!StateCheck(LastSeenBy(Myself),STATE_HELPLESS)
+	!Race(LastSeenBy(Myself),SKELETON)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),CLERIC_HOLD_PERSON)  // SPPR208.SPL (Personen festhalten)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(CLERIC_CLOAK_OF_FEAR)  // SPPR416.SPL (Mantel der Furcht)
+	!Race(LastSeenBy(Myself),SKELETON)
+THEN
+	RESPONSE #100
+		Spell(Myself,CLERIC_CLOAK_OF_FEAR)  // SPPR416.SPL (Mantel der Furcht)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(CLERIC_PHYSICAL_MIRROR)  // SPPR613.SPL (Materiespiegel)
+THEN
+	RESPONSE #100
+		Spell(Myself,CLERIC_PHYSICAL_MIRROR)  // SPPR613.SPL (Materiespiegel)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	!Range(LastSeenBy(Myself),4)
+	HPPercentLT(Myself,10)
+	HaveSpell(CLERIC_HEAL)  // SPPR607.SPL (Heilung)
+THEN
+	RESPONSE #100
+		Spell(Myself,CLERIC_HEAL)  // SPPR607.SPL (Heilung)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(CLERIC_BLADE_BARRIER)  // SPPR603.SPL (Klingenbarierre)
+	Global("blade","LOCALS",0)
+THEN
+	RESPONSE #100
+		Spell(Myself,NPC_BLADE_BARRIER)  // SPPR698.SPL (Klingenbarierre)
+		SetGlobal("blade","LOCALS",1)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Range(NearestEnemyOf(Myself),6)
+THEN
+	RESPONSE #100
+		EquipRanged()
+		AttackReevaluate(NearestEnemyOf(Myself),15)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	!Range(NearestEnemyOf(Myself),6)
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+		AttackReevaluate(NearestEnemyOf(Myself),15)
+END
+

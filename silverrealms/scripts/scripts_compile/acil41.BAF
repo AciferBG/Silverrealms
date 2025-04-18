@@ -1,0 +1,1018 @@
+IF
+	Global("EnteredArea","ACIL41",0)
+THEN
+	RESPONSE #100
+		SetGlobal("EnteredArea","ACIL41",1)
+		DisplayStringHead(Player1,@801)
+		RevealAreaOnMap("ACIL41")
+		RevealAreaOnMap("ACIL50")
+END
+
+IF
+	Global("EnteredArea","ACIL41",1)
+	OR(2)
+	!Dead("AC#CHARV")
+	!Dead("AC#CHARR")
+THEN
+	RESPONSE #100
+		SetGlobal("EnteredArea","ACIL41",2)
+		CreateCreature("AC#41PAL",[550.678],12) // Dragon slayer (too late)
+END
+
+IF
+	InMyArea(Player1)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("AC#DWCH2",Player1)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player1,0,0,0)
+		TakePartyItemAll("DWCHAN01")
+		Continue()
+END
+
+IF
+	InMyArea(Player2)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("AC#DWCH2",Player2)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player2,0,0,0)
+		TakePartyItemAll("DWCHAN01")
+		Continue()
+END
+
+IF
+	InMyArea(Player3)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("AC#DWCH2",Player3)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player3,0,0,0)
+		TakePartyItemAll("DWCHAN01")
+		Continue()
+END
+
+IF
+	InMyArea(Player4)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("AC#DWCH2",Player4)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player4,0,0,0)
+		TakePartyItemAll("DWCHAN01")
+		Continue()
+END
+
+IF
+	InMyArea(Player5)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("AC#DWCH2",Player5)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player5,0,0,0)
+		TakePartyItemAll("DWCHAN01")
+		Continue()
+END
+
+IF
+	InMyArea(Player6)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("AC#DWCH2",Player6)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player6,0,0,0)
+		TakePartyItemAll("DWCHAN01")
+		Continue()
+END
+
+IF
+	InMyArea(Player1)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWCHAN01",Player1)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player1,0,0,0)
+		TakePartyItemAll("DWCHAN01")
+		Continue()
+END
+
+IF
+	InMyArea(Player2)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWCHAN01",Player2)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player2,0,0,0)
+		TakePartyItemAll("DWCHAN01")
+		Continue()
+END
+
+IF
+	InMyArea(Player3)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWCHAN01",Player3)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player3,0,0,0)
+		TakePartyItemAll("DWCHAN01")
+		Continue()
+END
+
+IF
+	InMyArea(Player4)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWCHAN01",Player4)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player4,0,0,0)
+		TakePartyItemAll("DWCHAN01")
+		Continue()
+END
+
+IF
+	InMyArea(Player5)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWCHAN01",Player5)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player5,0,0,0)
+		TakePartyItemAll("DWCHAN01")
+		Continue()
+END
+
+IF
+	InMyArea(Player6)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWCHAN01",Player6)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player6,0,0,0)
+		TakePartyItemAll("DWCHAN01")
+		Continue()
+END
+
+IF
+	InMyArea(Player1)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWCHAN02",Player1)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player1,0,0,0)
+		TakePartyItemAll("DWCHAN02")
+		Continue()
+END
+
+IF
+	InMyArea(Player2)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWCHAN02",Player2)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player2,0,0,0)
+		TakePartyItemAll("DWCHAN02")
+		Continue()
+END
+
+IF
+	InMyArea(Player3)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWCHAN02",Player3)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player3,0,0,0)
+		TakePartyItemAll("DWCHAN02")
+		Continue()
+END
+
+IF
+	InMyArea(Player4)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWCHAN02",Player4)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player4,0,0,0)
+		TakePartyItemAll("DWCHAN02")
+		Continue()
+END
+
+IF
+	InMyArea(Player5)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWCHAN02",Player5)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player5,0,0,0)
+		TakePartyItemAll("DWCHAN02")
+		Continue()
+END
+
+IF
+	InMyArea(Player6)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWCHAN02",Player6)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player6,0,0,0)
+		TakePartyItemAll("DWCHAN02")
+		Continue()
+END
+
+IF
+	InMyArea(Player1)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWSW1H01",Player1)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player1,0,0,0)
+		TakePartyItemAll("DWSW1H01")
+		Continue()
+END
+
+IF
+	InMyArea(Player2)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWSW1H01",Player2)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player2,0,0,0)
+		TakePartyItemAll("DWSW1H01")
+		Continue()
+END
+
+IF
+	InMyArea(Player3)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWSW1H01",Player3)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player3,0,0,0)
+		TakePartyItemAll("DWSW1H01")
+		Continue()
+END
+
+IF
+	InMyArea(Player4)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWSW1H01",Player4)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player4,0,0,0)
+		TakePartyItemAll("DWSW1H01")
+		Continue()
+END
+
+IF
+	InMyArea(Player5)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWSW1H01",Player5)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player5,0,0,0)
+		TakePartyItemAll("DWSW1H01")
+		Continue()
+END
+
+IF
+	InMyArea(Player6)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWSW1H01",Player6)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player6,0,0,0)
+		TakePartyItemAll("DWSW1H01")
+		Continue()
+END
+
+IF
+	InMyArea(Player1)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWSW1H02",Player1)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player1,0,0,0)
+		TakePartyItemAll("DWSW1H02")
+		Continue()
+END
+
+IF
+	InMyArea(Player2)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWSW1H02",Player2)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player2,0,0,0)
+		TakePartyItemAll("DWSW1H02")
+		Continue()
+END
+
+IF
+	InMyArea(Player3)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWSW1H02",Player3)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player3,0,0,0)
+		TakePartyItemAll("DWSW1H02")
+		Continue()
+END
+
+IF
+	InMyArea(Player4)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWSW1H02",Player4)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player4,0,0,0)
+		TakePartyItemAll("DWSW1H02")
+		Continue()
+END
+
+IF
+	InMyArea(Player5)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWSW1H02",Player5)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player5,0,0,0)
+		TakePartyItemAll("DWSW1H02")
+		Continue()
+END
+
+IF
+	InMyArea(Player6)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWSW1H02",Player6)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player6,0,0,0)
+		TakePartyItemAll("DWSW1H02")
+		Continue()
+END
+
+IF
+	InMyArea(Player1)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWBLUN01",Player1)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player1,0,0,0)
+		TakePartyItemAll("DWBLUN01")
+		Continue()
+END
+
+IF
+	InMyArea(Player2)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWBLUN01",Player2)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player2,0,0,0)
+		TakePartyItemAll("DWBLUN01")
+		Continue()
+END
+
+IF
+	InMyArea(Player3)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWBLUN01",Player3)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player3,0,0,0)
+		TakePartyItemAll("DWBLUN01")
+		Continue()
+END
+
+IF
+	InMyArea(Player4)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWBLUN01",Player4)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player4,0,0,0)
+		TakePartyItemAll("DWBLUN01")
+		Continue()
+END
+
+IF
+	InMyArea(Player5)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWBLUN01",Player5)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player5,0,0,0)
+		TakePartyItemAll("DWBLUN01")
+		Continue()
+END
+
+IF
+	InMyArea(Player6)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWBLUN01",Player6)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player6,0,0,0)
+		TakePartyItemAll("DWBLUN01")
+		Continue()
+END
+
+IF
+	InMyArea(Player1)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWHALB01",Player1)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player1,0,0,0)
+		TakePartyItemAll("DWHALB01")
+		Continue()
+END
+
+IF
+	InMyArea(Player2)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWHALB01",Player2)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player2,0,0,0)
+		TakePartyItemAll("DWHALB01")
+		Continue()
+END
+
+IF
+	InMyArea(Player3)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWHALB01",Player3)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player3,0,0,0)
+		TakePartyItemAll("DWHALB01")
+		Continue()
+END
+
+IF
+	InMyArea(Player4)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWHALB01",Player4)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player4,0,0,0)
+		TakePartyItemAll("DWHALB01")
+		Continue()
+END
+
+IF
+	InMyArea(Player5)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWHALB01",Player5)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player5,0,0,0)
+		TakePartyItemAll("DWHALB01")
+		Continue()
+END
+
+IF
+	InMyArea(Player6)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWHALB01",Player6)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player6,0,0,0)
+		TakePartyItemAll("DWHALB01")
+		Continue()
+END
+
+IF
+	InMyArea(Player1)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWSPER01",Player1)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player1,0,0,0)
+		TakePartyItemAll("DWSPER01")
+		Continue()
+END
+
+IF
+	InMyArea(Player2)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWSPER01",Player2)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player2,0,0,0)
+		TakePartyItemAll("DWSPER01")
+		Continue()
+END
+
+IF
+	InMyArea(Player3)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWSPER01",Player3)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player3,0,0,0)
+		TakePartyItemAll("DWSPER01")
+		Continue()
+END
+
+IF
+	InMyArea(Player4)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWSPER01",Player4)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player4,0,0,0)
+		TakePartyItemAll("DWSPER01")
+		Continue()
+END
+
+IF
+	InMyArea(Player5)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWSPER01",Player5)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player5,0,0,0)
+		TakePartyItemAll("DWSPER01")
+		Continue()
+END
+
+IF
+	InMyArea(Player6)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWSPER01",Player6)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player6,0,0,0)
+		TakePartyItemAll("DWSPER01")
+		Continue()
+END
+
+IF
+	InMyArea(Player1)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWXBOW01",Player1)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player1,0,0,0)
+		TakePartyItemAll("DWXBOW01")
+		Continue()
+END
+
+IF
+	InMyArea(Player2)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWXBOW01",Player2)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player2,0,0,0)
+		TakePartyItemAll("DWXBOW01")
+		Continue()
+END
+
+IF
+	InMyArea(Player3)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWXBOW01",Player3)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player3,0,0,0)
+		TakePartyItemAll("DWXBOW01")
+		Continue()
+END
+
+IF
+	InMyArea(Player4)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWXBOW01",Player4)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player4,0,0,0)
+		TakePartyItemAll("DWXBOW01")
+		Continue()
+END
+
+IF
+	InMyArea(Player5)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWXBOW01",Player5)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player5,0,0,0)
+		TakePartyItemAll("DWXBOW01")
+		Continue()
+END
+
+IF
+	InMyArea(Player6)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWXBOW01",Player6)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player6,0,0,0)
+		TakePartyItemAll("DWXBOW01")
+		Continue()
+END
+
+IF
+	InMyArea(Player1)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWSHLD01",Player1)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player1,0,0,0)
+		TakePartyItemAll("DWSHLD01")
+		Continue()
+END
+
+IF
+	InMyArea(Player2)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWSHLD01",Player2)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player2,0,0,0)
+		TakePartyItemAll("DWSHLD01")
+		Continue()
+END
+
+IF
+	InMyArea(Player3)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWSHLD01",Player3)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player3,0,0,0)
+		TakePartyItemAll("DWSHLD01")
+		Continue()
+END
+
+IF
+	InMyArea(Player4)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWSHLD01",Player4)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player4,0,0,0)
+		TakePartyItemAll("DWSHLD01")
+		Continue()
+END
+
+IF
+	InMyArea(Player5)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWSHLD01",Player5)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player5,0,0,0)
+		TakePartyItemAll("DWSHLD01")
+		Continue()
+END
+
+IF
+	InMyArea(Player6)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWSHLD01",Player6)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player6,0,0,0)
+		TakePartyItemAll("DWSHLD01")
+		Continue()
+END
+
+IF
+	InMyArea(Player1)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWCLCK01",Player1)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player1,0,0,0)
+		TakePartyItemAll("DWCLCK01")
+		Continue()
+END
+
+IF
+	InMyArea(Player2)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWCLCK01",Player2)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player2,0,0,0)
+		TakePartyItemAll("DWCLCK01")
+		Continue()
+END
+
+IF
+	InMyArea(Player3)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWCLCK01",Player3)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player3,0,0,0)
+		TakePartyItemAll("DWCLCK01")
+		Continue()
+END
+
+IF
+	InMyArea(Player4)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWCLCK01",Player4)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player4,0,0,0)
+		TakePartyItemAll("DWCLCK01")
+		Continue()
+END
+
+IF
+	InMyArea(Player5)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWCLCK01",Player5)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player5,0,0,0)
+		TakePartyItemAll("DWCLCK01")
+		Continue()
+END
+
+IF
+	InMyArea(Player6)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWCLCK01",Player6)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player6,0,0,0)
+		TakePartyItemAll("DWCLCK01")
+		Continue()
+END
+
+IF
+	InMyArea(Player1)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWBOLT01",Player1)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player1,0,0,0)
+		TakePartyItemAll("DWBOLT01")
+		Continue()
+END
+
+IF
+	InMyArea(Player2)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWBOLT01",Player2)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player2,0,0,0)
+		TakePartyItemAll("DWBOLT01")
+		Continue()
+END
+
+IF
+	InMyArea(Player3)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWBOLT01",Player3)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player3,0,0,0)
+		TakePartyItemAll("DWBOLT01")
+		Continue()
+END
+
+IF
+	InMyArea(Player4)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWBOLT01",Player4)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player4,0,0,0)
+		TakePartyItemAll("DWBOLT01")
+		Continue()
+END
+
+IF
+	InMyArea(Player5)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWBOLT01",Player5)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player5,0,0,0)
+		TakePartyItemAll("DWBOLT01")
+		Continue()
+END
+
+IF
+	InMyArea(Player6)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWBOLT01",Player6)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player6,0,0,0)
+		TakePartyItemAll("DWBOLT01")
+		Continue()
+END
+
+IF
+	InMyArea(Player1)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWBOLT02",Player1)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player1,0,0,0)
+		TakePartyItemAll("DWBOLT02")
+		Continue()
+END
+
+IF
+	InMyArea(Player2)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWBOLT02",Player2)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player2,0,0,0)
+		TakePartyItemAll("DWBOLT02")
+		Continue()
+END
+
+IF
+	InMyArea(Player3)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWBOLT02",Player3)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player3,0,0,0)
+		TakePartyItemAll("DWBOLT02")
+		Continue()
+END
+
+IF
+	InMyArea(Player4)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWBOLT02",Player4)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player4,0,0,0)
+		TakePartyItemAll("DWBOLT02")
+		Continue()
+END
+
+IF
+	InMyArea(Player5)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWBOLT02",Player5)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player5,0,0,0)
+		TakePartyItemAll("DWBOLT02")
+		Continue()
+END
+
+IF
+	InMyArea(Player6)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWBOLT02",Player6)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player6,0,0,0)
+		TakePartyItemAll("DWBOLT02")
+		Continue()
+END
+
+IF
+	InMyArea(Player1)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWBOLT03",Player1)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player1,0,0,0)
+		TakePartyItemAll("DWBOLT03")
+		Continue()
+END
+
+IF
+	InMyArea(Player2)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWBOLT03",Player2)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player2,0,0,0)
+		TakePartyItemAll("DWBOLT03")
+		Continue()
+END
+
+IF
+	InMyArea(Player3)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWBOLT03",Player3)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player3,0,0,0)
+		TakePartyItemAll("DWBOLT03")
+		Continue()
+END
+
+IF
+	InMyArea(Player4)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWBOLT03",Player4)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player4,0,0,0)
+		TakePartyItemAll("DWBOLT03")
+		Continue()
+END
+
+IF
+	InMyArea(Player5)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWBOLT03",Player5)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player5,0,0,0)
+		TakePartyItemAll("DWBOLT03")
+		Continue()
+END
+
+IF
+	InMyArea(Player6)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWBOLT03",Player6)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player6,0,0,0)
+		TakePartyItemAll("DWBOLT03")
+		Continue()
+END
+
+IF
+	InMyArea(Player1)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWPLAT01",Player1)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player1,0,0,0)
+		TakePartyItemAll("DWPLAT01")
+		Continue()
+END
+
+IF
+	InMyArea(Player2)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWPLAT01",Player2)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player2,0,0,0)
+		TakePartyItemAll("DWPLAT01")
+		Continue()
+END
+
+IF
+	InMyArea(Player3)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWPLAT01",Player3)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player3,0,0,0)
+		TakePartyItemAll("DWPLAT01")
+		Continue()
+END
+
+IF
+	InMyArea(Player4)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWPLAT01",Player4)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player4,0,0,0)
+		TakePartyItemAll("DWPLAT01")
+		Continue()
+END
+
+IF
+	InMyArea(Player5)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWPLAT01",Player5)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player5,0,0,0)
+		TakePartyItemAll("DWPLAT01")
+		Continue()
+END
+
+IF
+	InMyArea(Player6)
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	HasItem("DWPLAT01",Player6)
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player6,0,0,0)
+		TakePartyItemAll("DWPLAT01")
+		Continue()
+END
+
+IF
+	Global("DROWITEMCHECKDONE","ACIL41",0)
+	InMyArea(Player1)
+THEN
+	RESPONSE #100
+		SetGlobal("DROWITEMCHECKDONE","ACIL41",1)
+END

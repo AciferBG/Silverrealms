@@ -1,0 +1,26 @@
+/*
+
+Dieses Skript transportiert die Spieler aus Area ACIL58 (Dumathoins Krypta) in die unteren Gew�lbe ACIL57, wo die Spieler von einer Horde Untoter empfangen werden.
+*/
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		FadeToColor([30.0],0)
+		Wait(1)
+		LeaveAreaLUAPanic("ACIL57","",[549.2225],0)
+		LeaveAreaLUA("ACIL57","",[549.2225],6)
+		ActionOverride(Player2,LeaveAreaLUA("ACIL57","",[549.2225],6))
+		ActionOverride(Player3,LeaveAreaLUA("ACIL57","",[549.2225],6))
+		ActionOverride(Player4,LeaveAreaLUA("ACIL57","",[549.2225],6))
+		ActionOverride(Player5,LeaveAreaLUA("ACIL57","",[549.2225],6))
+		ActionOverride(Player6,LeaveAreaLUA("ACIL57","",[549.2225],6))
+		MultiPlayerSync()
+		MoveViewPoint([549.2225],INSTANT)
+		DisplayStringHead(Myself,@6031)
+		EndCutSceneMode()
+END
+
+
+

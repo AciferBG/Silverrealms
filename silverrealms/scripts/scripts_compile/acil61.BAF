@@ -1,0 +1,73 @@
+IF
+	Global("DisableAnimations","ACIL61",0)
+THEN
+	RESPONSE #100
+		SetGlobal("DisableAnimations","ACIL61",1)
+		AmbientActivate("Furnace01",FALSE)
+		AmbientActivate("Fieryoven02a",FALSE)
+		SoundActivate("Firesound02",FALSE)
+		AmbientActivate("Furnace02",FALSE)
+		AmbientActivate("Fieryoven03a",FALSE)
+		SoundActivate("Firesound03",FALSE)
+		AmbientActivate("Furnace03",FALSE)
+		AmbientActivate("Fieryoven04a",FALSE)
+		SoundActivate("Firesound04",FALSE)
+		AmbientActivate("Waterspray_start",FALSE)
+                SoundActivate("Watersound",FALSE)
+                AmbientActivate("Waterspray_loop",FALSE)
+                AmbientActivate("Waterspray_loop2",FALSE)
+                SoundActivate("Watersound2",FALSE)
+		TriggerActivation("Tracil67a",FALSE)
+		Explore()
+END
+
+IF
+	Global("RescueDwarves","ACIL61",3)
+THEN
+	RESPONSE #100
+		SetGlobal("RescueDwarves","ACIL61",20)
+		EraseJournalEntry(@61020)
+		AddJournalEntry(@61021,QUEST_DONE)
+		AddExperienceParty(1000)
+END
+
+IF
+	Global("AC#SorniQuest","ACIL61",2)
+	OpenState("DOOR01",TRUE)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#SorniQuest","ACIL61",3)
+		SetGlobal("AC#AzerkynDestroyed","GLOBAL",1)
+                TriggerActivation("Tracil67a",TRUE)
+                TriggerActivation("Tracil65a",FALSE)
+                TriggerActivation("Tracil65b",FALSE)
+                AmbientActivate("Waterspray_start",TRUE)
+                SoundActivate("Watersound",TRUE)
+                Wait(3)
+                AmbientActivate("Waterspray_loop",TRUE)
+                AmbientActivate("Waterspray_loop2",TRUE)
+                SoundActivate("Watersound2",TRUE)
+                AmbientActivate("Waterspray_start",FALSE)
+END
+
+/*
+IF
+	Global("AC#SorniQuest","ACIL61",1)
+	Global("MapNotes","ACIL61",0)
+THEN
+	RESPONSE #100
+		SetGlobal("MapNotes","ACIL61",1)
+		AddMapNote([1300.449],999999)
+		AddMapNote([1624.681],999999)
+		AddMapNote([1922.927],999999)
+END
+*/
+
+IF
+	Global("AC#_Destroy_Oven","ACIL61",3)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#_Destroy_Oven","ACIL61",4)
+		Wait(1)
+                DisplayString(Player1,@110)
+END

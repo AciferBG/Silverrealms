@@ -1,0 +1,17 @@
+IF
+	See(NearestEnemyOf(Myself))
+	Global("ac#slow","LOCALS",0)
+THEN
+	RESPONSE #100
+		ReallyForceSpell(LastSeenBy(Myself),WIZARD_SLOW) // Verlangsamen
+		SetGlobal("ac#slow","LOCALS",1)
+END
+
+
+
+
+
+
+
+
+

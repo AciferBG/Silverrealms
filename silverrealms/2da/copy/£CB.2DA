@@ -1,0 +1,41 @@
+£CB ACIFER_DRETCH
+***
+						SOUND
+ATTACK          		ghast03 nosound nosound
+ATTACK          		2 0 0
+AWAKE           		***
+AWAKE           		0
+CAST            		***
+CAST            		0
+CONJURE         		***
+CONJURE         		0
+DAMAGE          		ghast08
+DAMAGE          		0
+DIE             		ghast09
+DIE             		0
+HEAD_TURN       		***
+HEAD_TURN       		0
+READY           		***
+READY           		0
+SHOOT           		***
+SHOOT           		0
+TWITCH          		***
+TWITCH          		0
+WALK            		***
+WALK            		0
+ATTACK_SLASH    		ghast05 nosound nosound
+ATTACK_SLASH    		2 0 0
+ATTACK_BACKSLASH		ghast06 nosound nosound
+ATTACK_BACKSLASH		2 0 0
+ATTACK_JAB      		***
+ATTACK_JAB      		0
+EMERGE          		***
+EMERGE          		0
+HIDE            		***
+HIDE            		0
+SLEEP          			***
+SLEEP          			0
+Battle_Cry			ghast03 ghast04
+Battle_Cry			0 0
+Selection                       ghast03
+Selection                       0

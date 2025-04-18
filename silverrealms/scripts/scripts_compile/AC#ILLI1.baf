@@ -1,0 +1,92 @@
+IF
+	Detect([PC])
+	!See([ENEMY])
+        GlobalGT("EarthNodeActivation","ACIL31",6)
+        GlobalGT("SkulldoorOpen","ACIL31",0)
+        Global("FreedIllithid","ACIL31",2)
+THEN
+	RESPONSE #100
+		SetGlobal("FreedIllithid","ACIL31",10)
+                StartDialogNoSet([PC])
+END
+
+IF
+	NumTimesTalkedTo(0)
+	Detect([PC])
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(LastSeenBy(Myself))
+END
+
+IF
+	OpenState("DOOR08",TRUE)
+	Global("IllithidDoorOpen","ACIL31",0)
+THEN
+	RESPONSE #100
+	        SetGlobal("IllithidDoorOpen","ACIL31",1)
+		StartDialogNoSet([PC])
+END
+
+IF
+	Delay(2)
+	InMyArea(Player1)
+	!Range(Player1,15)
+	!See([ENEMY])
+	Global("FreedIllithid","ACIL31",2)
+THEN
+	RESPONSE #100
+		MoveToObject(Player1)
+END
+
+IF
+	See([0.0.GITHYANKI])
+	//Global("FreedIllithid","ACIL31",2)
+	Allegiance(Myself,GOODBUTBLUE)
+THEN
+	RESPONSE #100
+		AttackReevaluate([0.0.GITHYANKI],30)
+	RESPONSE #100
+		ForceSpell([0.0.GITHYANKI],MIND_FLAYER_PSIONIC_BLAST)  // SPIN974.SPL (Psi-Schlag)
+END
+
+IF
+	Global("FreedIllithid","ACIL31",1)
+THEN
+	RESPONSE #100
+	        ChangeEnemyAlly(Myself,GOODBUTBLUE)
+                SetGlobal("FreedIllithid","ACIL31",2)
+END
+
+
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	!Allegiance(Myself,ENEMY)
+	!Global("FreedIllithid","ACIL31",2)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Delay(9)
+THEN
+	RESPONSE #100
+		ForceSpell(NearestEnemyOf(Myself),MIND_FLAYER_PSIONIC_BLAST)  // SPIN974.SPL (Psi-Schlag)
+		IncrementGlobal("MindFlayerBehavior","LOCALS",1)
+END
+
+IF
+	AttackedBy([ANYONE],DEFAULT)
+	!Global("FreedIllithid","ACIL31",2)
+THEN
+	RESPONSE #100
+		Attack(LastAttackerOf(Myself))
+END

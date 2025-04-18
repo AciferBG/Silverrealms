@@ -1,0 +1,60 @@
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	Global("Coffin","AR0809",0)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,8629) // Nach einem verzweifelten Kampf zog sich Bodhi in ihren Sarg zurück. Es ist an der Zeit, es zu Ende zu bringen. Mit Hilfe eines Pflocks kann man sie jetzt endgültig zerstören und Imoens Seele befreien.
+		SetGlobal("Coffin","AR0809",1)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	PartyHasItem("MISC6W") // Holzpflock
+	Global("Coffin","AR0809",1)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,54932) // Bodhi fällt vor Euren Augen in sich zusammen. Nachdem die gestohlene Seele befreit wurde, ist der Körper nur noch eine leere Hülle. Ihr könnt kurz eine Art von Erscheinung aufblitzen sehen. Dann ist da ... nichts mehr. Durch ihren Tod öffnet sich ein Geheimfach in ihrem Sarg. Dahinter befindet sich die Lathorne.
+		SetGlobal("Coffin","AR0809",2)
+		SetGlobal("BodhiDead","GLOBAL",1)
+		AddXPObject(Player1,48500)
+		AddXPObject(Player2,48500)
+		AddXPObject(Player3,48500)
+		AddXPObject(Player4,48500)
+		AddXPObject(Player5,48500)
+		AddXPObject(Player6,48500)
+		TakePartyItemNum("misc6w",1) // Holzpflock
+		PlaySound("BODHIX07")
+		DestroyItem("misc6w") // Holzpflock
+		GiveItemCreate("c6lantho",LastTrigger,0,0,0) // Lanthorne
+		GiveItemCreate("MISCBP",LastTrigger,0,0,0) // Bodhis Schwarzes Herz
+		CreateVisualEffect("SPDEATH3",[1704.160])
+		Wait(1)
+		CreateVisualEffect("SPFLESHS",[1704.160])
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	Global("Coffin","AR0809",2)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,8630) // Es ist endlich vorbei. Bodhi wird Euch nicht mehr länger quälen. Sie wird in den Abgrund hinabfahren und dort für die bösen Taten bezahlen, die sie der Welt angetan hat.
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,8629) // Nach einem verzweifelten Kampf zog sich Bodhi in ihren Sarg zurück. Es ist an der Zeit, es zu Ende zu bringen. Mit Hilfe eines Pflocks kann man sie jetzt endgültig zerstören und Imoens Seele befreien.
+END
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,12)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,14702) // Ihr seid zu weit entfernt, um das zu benutzen.
+END

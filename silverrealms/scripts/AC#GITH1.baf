@@ -1,0 +1,16 @@
+IF
+	Global("Telekinesis","LOCALS",0)
+//	See(NearestEnemyOf(Myself))
+
+	OR(5)
+		See(NearestEnemyOfType([0.0.0.DRUID_ALL]))
+		See(NearestEnemyOfType([0.0.0.CLERIC_ALL]))
+		See(NearestEnemyOfType([0.0.0.BARD_ALL]))
+		See(NearestEnemyOfType([0.0.0.LONG_BOW]))
+		//See(NearestEnemyOfType)
+
+THEN
+	RESPONSE #100
+		SetGlobal("Telekinesis","LOCALS",1)
+		ReallyForceSpellRES("AC#SPKIN",LastSeenBy(Myself)) // Telekinese
+END

@@ -1,0 +1,80 @@
+IF
+	Global("Petrified","LOCALS",0)
+	!StateCheck(Myself,STATE_STONE_DEATH)
+THEN
+	RESPONSE #100
+	        SetGlobal("Petrified","LOCALS",1)
+ 		ChangeAnimationNoEffect("AC#ROTH1") 
+                PlaySound("ac#roth2")
+END
+
+IF
+	StateCheck(Myself,STATE_STONE_DEATH)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+/*
+IF
+	Global("Petrified","LOCALS",0)
+	!StateCheck(Myself,STATE_STONE_DEATH)
+THEN
+	RESPONSE #100
+	        SetGlobal("Petrified","LOCALS",1)
+ 		ChangeAnimationNoEffect("AC#ROTH1") 
+                PlaySound("ac#roth2")
+	        Continue()
+END
+
+IF
+	Detect([PC])
+	RandomNum(10,1)
+	!StateCheck(Myself,STATE_STONE_DEATH)
+THEN
+	RESPONSE #100
+	        PlaySound("ac#roth2")
+	        Continue()
+END
+
+IF
+	Detect([PC])
+	RandomNum(10,5)
+	!StateCheck(Myself,STATE_STONE_DEATH)
+THEN
+	RESPONSE #100
+	        PlaySound("ac#roth4")
+	        Continue()
+END
+
+IF
+	Detect([PC])
+	RandomNum(10,8)
+	!StateCheck(Myself,STATE_STONE_DEATH)
+THEN
+	RESPONSE #100
+	        PlaySound("ac#roth5")
+	        Continue()
+END
+
+IF
+	See([PC])
+	RandomNum(10,7)
+	!StateCheck(Myself,STATE_STONE_DEATH)
+THEN
+	RESPONSE #100
+	        FaceObject(LastSeenBy(Myself))
+	        PlaySound("ac#roth2")
+	        Wait(6)
+END
+*/
+
+
+
+
+
+
+
+
+
+

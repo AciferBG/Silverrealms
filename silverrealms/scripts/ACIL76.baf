@@ -1,0 +1,26 @@
+IF
+	Global("AC#Astraltravel","ACIL76",1)
+THEN
+	RESPONSE #100
+                SetGlobal("AC#Astraltravel","ACIL76",2)
+                ClearAllActions()
+		StartCutSceneMode()
+		Wait(2)
+		StartCutScene("ac#cut76")
+END
+
+/*
+IF
+	Global("AC#CutScene1","ACIL76",0)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#CutScene1","ACIL76",1)
+                ClearAllActions()
+		StartCutSceneMode()
+		StartCutScene("AC#76CS1")
+END
+*/
+
+
+
+

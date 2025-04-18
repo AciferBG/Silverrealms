@@ -1,0 +1,96 @@
+IF
+	Delay(6)
+	InMyArea(Player1)
+	//Global("OpenPortal","ACIL9E",1)
+THEN
+	RESPONSE #100
+		CreateCreature("AC#ABGR3",[243.255],13)  // green Abishai
+		CreateCreature("AC#ABRE3",[956.88],0)  // red Abishai
+END
+
+IF
+	!GlobalTimerNotExpired("FireTimer","ACIL77")
+	InMyArea(Player1)
+	CheckStatLT(Player1,100,RESISTFIRE)
+THEN
+	RESPONSE #100
+		ApplyDamage(Player1,10,FIRE)
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("FireTimer","ACIL77")
+	CheckStatLT(Player2,100,RESISTFIRE)
+	InMyArea(Player2)
+THEN
+	RESPONSE #100
+		ApplyDamage(Player2,10,FIRE)
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("FireTimer","ACIL77")
+	CheckStatLT(Player3,100,RESISTFIRE)
+	InMyArea(Player3)
+THEN
+	RESPONSE #100
+		ApplyDamage(Player3,10,FIRE)
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("FireTimer","ACIL77")
+	CheckStatLT(Player4,100,RESISTFIRE)
+	InMyArea(Player4)
+THEN
+	RESPONSE #100
+		ApplyDamage(Player4,10,FIRE)
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("FireTimer","ACIL77")
+	CheckStatLT(Player5,100,RESISTFIRE)
+	InMyArea(Player5)
+THEN
+	RESPONSE #100
+		ApplyDamage(Player5,10,FIRE)
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("FireTimer","ACIL77")
+	CheckStatLT(Player6,100,RESISTFIRE)
+	InMyArea(Player6)
+THEN
+	RESPONSE #100
+		ApplyDamage(Player6,10,FIRE)
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("FireTimer","ACIL77")
+	InMyArea([GOODCUTOFF.0.0.0.0.SUMMONED])
+THEN
+	RESPONSE #100
+		ApplyDamage([GOODCUTOFF.0.0.0.0.SUMMONED],10,FIRE)
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("FireTimer","ACIL77")
+	InMyArea([ALLY])
+	CheckStatLT([ALLY],100,RESISTFIRE)
+THEN
+	RESPONSE #100
+		ApplyDamage([ALLY],10,FIRE)
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("FireTimer","ACIL77")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("FireTimer","ACIL77",ONE_ROUND)
+END
+

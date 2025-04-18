@@ -1,0 +1,40 @@
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,10)
+	Global("AC#Campfire","ACIL11",0)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,999997)
+		SetGlobal("AC#Campfire","ACIL11",1)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,10)
+	Global("AC#Campfire","ACIL11",1)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,999996)
+		CreateCreatureImpassable("AC#CAMP1",[824.160],13)
+		SetGlobal("AC#Campfire","ACIL11",2)
+		ActionOverride("AC#CAMP1",StartDialogueNoSet([PC]))
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,10)
+	Global("AC#Campfire","ACIL11",2)
+THEN
+	RESPONSE #100
+		ActionOverride("AC#CAMP1",StartDialogueNoSet([PC]))
+END
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,10)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,14702)
+END
+
+

@@ -1,0 +1,22 @@
+IF
+	See(NearestEnemyOf(Myself))
+	HPLT(Myself,10)
+	Global("berserk","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("berserk","LOCALS",1)
+		DisplayString(Myself,14036) // Tobend
+		SpellNoDec(Myself,BARBARIAN_RAGE) // SPCL152.SPL (Kampfrausch)
+END
+
+
+
+
+
+
+
+
+
+
+
+

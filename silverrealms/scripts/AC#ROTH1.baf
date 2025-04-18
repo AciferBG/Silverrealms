@@ -1,0 +1,46 @@
+IF
+	Detect([PC])
+	RandomNum(10,1)
+THEN
+	RESPONSE #100
+	        PlaySound("ac#roth2")
+	        Continue()
+END
+
+IF
+	Detect([PC])
+	RandomNum(10,5)
+THEN
+	RESPONSE #100
+	        PlaySound("ac#roth4")
+	        Continue()
+END
+
+IF
+	Detect([PC])
+	RandomNum(10,8)
+THEN
+	RESPONSE #100
+	        PlaySound("ac#roth5")
+	        Continue()
+END
+
+IF
+	See([PC])
+	RandomNum(10,7)
+THEN
+	RESPONSE #100
+	        FaceObject(LastSeenBy(Myself))
+	        PlaySound("ac#roth2")
+	        Wait(6)
+END
+
+
+
+
+
+
+
+
+
+

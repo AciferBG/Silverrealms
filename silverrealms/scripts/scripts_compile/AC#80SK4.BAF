@@ -1,0 +1,16 @@
+IF
+	See(NearestEnemyOf(Myself))
+	Global("skelmage","LOCALS",0)
+THEN
+	RESPONSE #100
+		ForceSpell(NearestEnemyOf(Myself),MEPHIT_STINKING_CLOUD)  // SPIN940.SPL (Stinkende Wolke)
+		SetGlobal("skelmage","LOCALS",1)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+

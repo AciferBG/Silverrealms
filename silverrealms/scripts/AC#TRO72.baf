@@ -1,0 +1,47 @@
+IF
+	Global("AC#Troll_Tales","ACIL12",2)
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+                Enemy()
+		SetGlobal("AC#Troll_Tales","ACIL12",3)
+END
+
+IF
+	Global("AC#Troll_Tales","ACIL12",2)
+	See("AC#TRO71")
+THEN
+	RESPONSE #100
+	        Enemy()
+		AttackReevaluate("AC#TRO71",5)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+		AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(NearestEnemyOf(Myself),5)
+END
+
+IF
+	AttackedBy([ANYONE],DEFAULT)
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastAttackerOf(Myself),5)
+END

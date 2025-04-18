@@ -1,0 +1,19 @@
+IF
+	OR(3)
+		AttackedBy([GOODCUTOFF],DEFAULT)
+		Allegiance("AC#24DAE",ENEMY)
+		Global("Drowfight","ACIL24",1)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	Global("VhaeraunLeaves","ACIL24",10)
+THEN
+	RESPONSE #100
+        CreateVisualEffectObject("SPDIMNDR",Myself)
+	    Wait(1)
+	    DestroySelf()
+END

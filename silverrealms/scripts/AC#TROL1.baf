@@ -1,0 +1,33 @@
+IF
+	See(NearestEnemyOf(Myself))
+        Global("PotionUsed","LOCALS",0)
+        //!GlobalTimerNotExpired("DrankPotionTimer","LOCALS")
+	HasItem("POTN02",Myself) // Feuerschutztrank
+THEN
+	RESPONSE #100
+		SetGlobal("PotionUsed","LOCALS",1)
+		DisplayStringHead(Myself,46150) // trinkt einen Trank
+		UseItem("POTN02",Myself) // Feuerschutztrank
+END
+
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(NearestEnemyOf(Myself),5)
+END
+
+IF
+	AttackedBy([ANYONE],DEFAULT)
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastAttackerOf(Myself),5)
+END

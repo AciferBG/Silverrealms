@@ -1,0 +1,52 @@
+/*
+IF
+	Global("DisableAnimations","ACIL05",0)
+THEN
+	RESPONSE #100
+		SetGlobal("DisableAnimations","ACIL05",1)
+		FadeToColor([0.0],0)
+		AmbientActivate("Fire_large01",FALSE)
+		AmbientActivate("Fire_large02",FALSE)
+		AmbientActivate("Smoke_large01",FALSE)
+		AmbientActivate("Smoke_large02",FALSE)
+		SoundActivate("Fire_burning",FALSE)
+		AmbientActivate("Candle01",TRUE)
+		AmbientActivate("Candle02",TRUE)
+		AmbientActivate("Candle03",TRUE)
+		TriggerActivation("Tracil08",FALSE)
+		TriggerActivation("TrACIL03",TRUE)
+		FadeFromColor([30.0],0)
+END
+*/
+
+IF
+	Global("AC#_Malphas_Revealed","GLOBAL",2)
+THEN
+	RESPONSE #100
+		//SmallWait(1)
+		OpenDoor("DOOR01")
+		SmallWait(1)
+		AmbientActivate("Fire_large01",TRUE)
+		AmbientActivate("Fire_large02",TRUE)
+		AmbientActivate("Smoke_large01",TRUE)
+		AmbientActivate("Smoke_large02",TRUE)
+		AmbientActivate("Candle01",FALSE)
+		AmbientActivate("Candle02",FALSE)
+		AmbientActivate("Candle03",FALSE)
+		SoundActivate("Fire_burning",TRUE)
+		TriggerActivation("Tracil08",TRUE)
+		TriggerActivation("TrACIL03",FALSE)
+		SetGlobal("AC#_Malphas_Revealed","GLOBAL",3)
+		SmallWait(1)
+		ActionOverride("AC#MAL06",StartDialogueNoSet([PC]))
+
+END
+
+IF
+	Global("AC#_MalphasTransforms","GLOBAL",4)
+	RandomNum(10,1)
+THEN
+	RESPONSE #100
+		//Wait(1)
+		ScreenShake([233.217],10)
+END

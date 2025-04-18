@@ -1,0 +1,11 @@
+/*
+IF
+	PartyHasItem("AC#ZEPXO")
+	Global("Scepter","ACIL9D",0)
+THEN
+	RESPONSE #100
+	        AddJournalEntry(@20021,QUEST)
+            EraseJournalEntry(@20020)
+		SetGlobal("Scepter","ACIL9D",1)
+END
+*/

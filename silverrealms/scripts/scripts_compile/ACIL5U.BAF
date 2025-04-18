@@ -1,0 +1,29 @@
+IF
+	Global("Cernd_Free","ACIL5U",1)
+	GlobalLT("AC#Ellhimar_Cernd","GLOBAL",4)
+THEN
+	RESPONSE #100
+		Unlock("DOOR01")
+		OpenDoor("DOOR01")
+		SetGlobal("Cernd_Free","ACIL5U",2)
+		Wait(1)
+		ActionOverride("AC#CERN1",StartDialogueNoSet([PC]))
+END
+
+/*
+IF
+	Global("AC#Ellhimar_Cernd","GLOBAL",4)
+       	Exists("AC#5UCE1")  // Cernd's Guard
+THEN
+	RESPONSE #100
+		ActionOverride("AC#5UCE1",DestroySelf())
+END
+
+IF
+	Global("AC#Ellhimar_Cernd","GLOBAL",4)
+       	Exists("AC#5UCE2")  // Cernd's Guard
+THEN
+	RESPONSE #100
+		ActionOverride("AC#5UCE2",DestroySelf())
+END
+*/

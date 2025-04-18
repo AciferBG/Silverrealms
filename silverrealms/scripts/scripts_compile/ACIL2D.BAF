@@ -1,0 +1,9 @@
+IF
+	PartyHasItem("AC#CINNA")  // Cinnabarit
+	Global("AcquiredCinnabarit","ACIL2D",0)
+THEN
+	RESPONSE #100
+		SetGlobal("AcquiredCinnabarit","ACIL2D",1)
+		EraseJournalEntry(@64220)
+		AddJournalEntry(@64222,QUEST)
+END

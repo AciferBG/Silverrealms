@@ -1,0 +1,12 @@
+IF
+        Global("AC#HatharQuest","GLOBAL",10)
+	!See("AC#DUN64")
+THEN
+	RESPONSE #100
+	         SetGlobal("AC#HatharQuest","GLOBAL",11)
+		 StartDialogueNoSet(Player1)
+END
+
+
+
+

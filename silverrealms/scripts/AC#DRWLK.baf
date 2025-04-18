@@ -1,0 +1,34 @@
+IF
+	Global("AC#DragonAttacked","GLOBAL",5)
+	Detect([PC])
+	RandomNum(3,2)
+THEN
+	RESPONSE #100
+		Wait(2)
+		Face(7)
+		Wait(1)
+		Swing()
+		Wait(2)
+	RESPONSE #100
+		Face(0)
+		Wait(1)
+		Swing()
+	RESPONSE #100
+		Face(14)
+		Wait(1)
+		Swing()
+	RESPONSE #100
+		Face(6)
+		Wait(1)
+		Swing()
+END
+
+IF
+	Global("AC#DragonAttacked","GLOBAL",5)
+	Detect([PC])
+	RandomNum(3,1)
+THEN
+	RESPONSE #100
+		RandomWalk()
+END
+

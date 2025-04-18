@@ -1,0 +1,75 @@
+// not needed anymore: driftdisc is aquired earlier
+/*
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,15)
+	GlobalLT("AC#Goodbye_Iltkazar","GLOBAL",10)
+	GlobalGT("AC#Clans_Parting","GLOBAL",0)
+	GlobalGT("AC#BackToSurface","GLOBAL",0)
+	Global("AC#Driftdisc","ACIL21",1)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@742)
+END
+*/
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,15)
+	PartyHasItem("AC#DRFT2")
+	Global("AC#Driftdisc","ACIL21",0)
+THEN
+	RESPONSE #100
+        SetGlobal("AC#Driftdisc","ACIL21",1)
+        TakePartyItem("AC#DRFT2")
+        EraseJournalEntry(@64211)
+        AddJournalEntry(@64212,QUEST_DONE)
+        AmbientActivate("Driftdisc",TRUE)
+        AmbientActivate("Ac#turni",TRUE)
+        SoundActivate("Driftsound",TRUE)
+        DisplayString(Myself,@740)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,15)
+	Global("AC#Driftdisc","ACIL21",1)
+THEN
+	RESPONSE #100
+		SaveGame(0)
+		ClearAllActions()
+		StartCutSceneMode()
+		MultiPlayerSync()
+		DisplayString(Myself,@741)
+		ActionOverride(Player1,MoveToPoint([491.269]))
+		ActionOverride(Player2,MoveToPoint([491.269]))
+		ActionOverride(Player3,MoveToPoint([491.269]))
+		ActionOverride(Player4,MoveToPoint([491.269]))
+		ActionOverride(Player5,MoveToPoint([491.269]))
+		ActionOverride(Player6,MoveToPoint([491.269]))
+		Wait(2)
+		FadeToColor([20.0],0)
+		Wait(1)
+		StartCutScene("ac#21cta")
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,15)
+	!PartyHasItem("AC#DRFT2")
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@743)
+END
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,15)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,14702)
+END
+
+
+
+

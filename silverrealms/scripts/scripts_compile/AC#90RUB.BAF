@@ -1,0 +1,19 @@
+IF
+	Global("AC#90RUB","ACIL90",0)
+	Contains("AC#90RUB",Myself)  // Zwergen-Runentafel
+THEN
+	RESPONSE #100
+		SetGlobal("AC#90RUB","ACIL90",1)
+		IncrementGlobal("FlashCounter","ACIL90",1)
+		CreateVisualEffect("AC#ELECT",[1711.920])
+END
+
+IF
+	Contains("AC#90RUB",Myself)   // Zwergen-Runentafel
+	GlobalLT("FlashCounter","ACIL90",8)
+	RandomNum(10,1)
+THEN
+	RESPONSE #100
+		CreateVisualEffect("AC#ELECT",[1711.920])
+END
+

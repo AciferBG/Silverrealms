@@ -1,0 +1,169 @@
+IF
+	Global("Acil71_Phosphor","ACIL71",1)
+THEN
+	RESPONSE #100
+		SetGlobal("Acil71_Phosphor","ACIL71",2)
+	        AddJournalEntry(@71000,QUEST)
+END
+
+IF
+	Global("AC#_DragonSummon","GLOBAL",12)
+THEN
+	RESPONSE #100
+        ClearAllActions()
+		StartCutSceneMode()
+		MoveViewPoint([894.762],INSTANT)
+		CreateCreature("CUTSPY",[870.750],8)
+        DisplayStringHead("CUTSPY",@121)
+		ScreenShake([50.50],15)
+		AmbientActivate("Cold_veil",TRUE)
+		SoundActivate("Coldveil_amb",TRUE)
+		CloseDoor("Door14")
+		Wait(1)
+		//Wait(6)
+	    CreateCreature("AC#71CR1",[737.458],8)
+	    CreateCreature("AC#71CR2",[1169.540],8)
+	    CreateCreature("AC#71CR3",[1199.570],8)
+	    CreateCreature("AC#71CR4",[1229.600],8)
+	    CreateCreature("AC#71CR5",[1239.610],8)
+		CreateCreature("AC#71CR6",[873.757],8) // Dragon Skeleton
+		PlaySound("EFF_M23C")
+        CreateVisualEffectObject("SPROTECT","AC#71CR6")
+		Wait(1)
+		SmallWait(7)
+		PlaySound("EFF_M23C")
+		CreateVisualEffectObject("SPROTECT","AC#71CR6")
+		Wait(1)
+		CreateVisualEffect("SPFEARE2",[885.807])
+		SmallWait(7)
+		ScreenShake([25.25],20)
+		CreateVisualEffect("SPFIREPI",[885.807])
+		PlaySound("EFF_M21")
+		SmallWait(5)
+		ActionOverride("AC#71CR1",ReallyForceSpell("AC#71CR6",BEHOLDER_BLAST_VISUAL))
+		SmallWait(5)
+		CreateVisualEffect("SPFEARE2",[885.807])
+		SmallWait(5)
+		CreateVisualEffect("SPFIREPI",[885.807])
+		PlaySound("EFF_M21")
+		SmallWait(5)
+		ActionOverride("AC#71CR2",ReallyForceSpell("AC#71CR6",BEHOLDER_BLAST_VISUAL))
+		SmallWait(5)
+		CreateVisualEffect("SPFIREPI",[885.807])
+		PlaySound("EFF_M21")
+		SmallWait(5)
+		ActionOverride("AC#71CR3",ReallyForceSpell("AC#71CR6",BEHOLDER_BLAST_VISUAL))
+		SmallWait(5)
+		CreateVisualEffectObject("ICRMPARI",Myself)
+		SmallWait(3)
+		ActionOverride("AC#71CR4",ReallyForceSpell("AC#71CR6",BEHOLDER_BLAST_VISUAL))
+		SmallWait(3)
+		CreateVisualEffect("SPFIREPI",[885.807])
+		PlaySound("EFF_M21")
+		SmallWait(7)
+		CreateVisualEffect("SPFIREPI",[885.807])
+		PlaySound("EFF_M21")
+		SmallWait(7)
+		ReallyForceSpell("AC#71CR6",HOLY_LIGHT_FROM_ABOVE)
+		PlaySound("EFF_M21")
+		Wait(1)
+		ActionOverride("AC#71CR5",ReallyForceSpell("AC#71CR6",BEHOLDER_BLAST_VISUAL))
+		Wait(1)
+		ReallyForceSpell("AC#71CR6",HOLY_LIGHT_FROM_ABOVE)
+		//Wait(4)
+		ScreenShake([50.50],15)
+		ActionOverride("AC#71CR1",DestroySelf())
+	    ActionOverride("AC#71CR2",DestroySelf())
+	    ActionOverride("AC#71CR3",DestroySelf())
+	    ActionOverride("AC#71CR4",DestroySelf())
+	    ActionOverride("AC#71CR5",DestroySelf())
+		ActionOverride("AC#71CR6",DestroySelf())
+		AmbientActivate("Dracolich02",FALSE)
+		CreateCreature("AC#71DRL",[885.807],9)
+		EndCutSceneMode()
+		SetGlobal("AC#_TransformDracolich","GLOBAL",2)
+		SetGlobal("AC#_DragonSummon","GLOBAL",13)
+END
+
+IF
+	Global("AC#Maldraedior","ACIL71",1)
+THEN
+	RESPONSE #100
+                ClearAllActions()
+		StartCutSceneMode()
+		SetGlobal("AC#Maldraedior","ACIL71",2)
+		Wait(1)
+                CreateCreature("AC#MALD3",[835.378],5)
+               	EndCutSceneMode()
+END
+
+IF
+	Global("AC#_DragonHeart","ACIL71",1)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#_DragonHeart","ACIL71",2)
+		Wait(4)
+		CreateCreatureImpassable("AC#MALD1",[491.286],13) // Drachenstatue
+               	EndCutSceneMode()
+END
+
+IF	
+	PartyHasItem("AC#DHE")
+	OpenState("Door14",FALSE)
+THEN
+	RESPONSE #100
+		PlaySound("EFF_M04")
+		OpenDoor("Door14")
+		AmbientActivate("Cold_veil",FALSE)
+		SoundActivate("Coldveil_amb",FALSE)
+END
+
+IF
+	Global("DisableAnimations","ACIL71",0)
+THEN
+	RESPONSE #100
+		SetGlobal("DisableAnimations","ACIL71",1)
+		//FadeToColor([0.0],0)
+		//StartMovie("AC#71MVE")
+		AmbientActivate("Burning_heart",FALSE)
+		AmbientActivate("Firedoor02",FALSE)
+                AmbientActivate("Firedoor03",FALSE)
+                AmbientActivate("Firedoor04",FALSE)
+                AmbientActivate("Firedoor05",FALSE)
+                AmbientActivate("Firedoor06",FALSE)
+                AmbientActivate("Firedoor07",FALSE)
+                AmbientActivate("Firedoor08",FALSE)
+                AmbientActivate("Firedoor09",FALSE)
+                AmbientActivate("Firedoor10",FALSE)
+                AmbientActivate("Firedoor11",FALSE)
+                AmbientActivate("Firedoor12",FALSE)
+                AmbientActivate("Firedoor13",FALSE)
+				AmbientActivate("Cold_veil",FALSE)
+				SoundActivate("Coldveil_amb",FALSE)
+                //AmbientActivate("Dracolich02",FALSE)
+                OpenDoor("Dragon_eyes")
+                OpenDoor("Door02")
+                OpenDoor("Door03")
+                OpenDoor("Door04")
+                OpenDoor("Door05")
+                OpenDoor("Door06")
+                OpenDoor("Door07")
+                OpenDoor("Door08")
+                OpenDoor("Door09")
+                OpenDoor("Door10")
+                OpenDoor("Door11")
+                OpenDoor("Door12")
+                OpenDoor("Door13")
+				OpenDoor("Door14")
+		//FadeFromColor([30.0],0)
+END
+
+IF
+	Global("AC#_DragonSummon","GLOBAL",10)
+	Global("AC#_Dragon_Warning","ACIL71",0)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#_Dragon_Warning","ACIL71",1)
+		Wait(3)
+                DisplayString(Player1,@121)
+END

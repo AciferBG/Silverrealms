@@ -1,0 +1,7 @@
+IF
+	Global("Prepared","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Prepared","LOCALS",1)
+		ApplySpellRES("SPCL151",Myself) // Movement Rate Modifier
+END

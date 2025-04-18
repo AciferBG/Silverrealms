@@ -1,0 +1,22 @@
+IF
+	Global("Robbery","ACIL96",20)
+THEN
+	RESPONSE #100
+	         DropInventory()
+	         EscapeArea()
+END
+
+IF
+	Global("Robbery","ACIL96",10)
+THEN
+	RESPONSE #100
+	         EscapeArea()
+END
+
+IF
+	Global("Robbery","ACIL96",1)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+	         Enemy()
+END

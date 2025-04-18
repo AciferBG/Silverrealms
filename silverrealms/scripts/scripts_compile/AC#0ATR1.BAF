@@ -1,0 +1,18 @@
+IF
+	Entered([ANYONE])
+	Global("GoblinTrap","ACIL0A",0)
+THEN
+	RESPONSE #100
+	   SetGlobal("GoblinTrap","ACIL0A",1)
+		DisplayString(LastTrigger,14381)  // Falle zugeschnappt
+		ForceSpell(LastTrigger,WIZARD_WEB)  // SPWI215.SPL (Netz)
+END
+
+IF
+	Disarmed([ANYONE])
+	Global("GoblinTrap","ACIL0A",0)
+THEN
+	RESPONSE #100
+	   SetGlobal("GoblinTrap","ACIL0A",10)
+END
+

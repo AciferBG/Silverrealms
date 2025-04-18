@@ -1,0 +1,49 @@
+/*
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,12)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@359) // Aus dieser Entfernung könnt Ihr nichts erkennen.
+END
+*/
+
+IF
+	Clicked([ANYONE])
+	//Range(LastTrigger,12)
+	Race(LastTrigger,DWARF)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@809)
+END
+
+IF
+	Clicked([ANYONE])
+	//Range(LastTrigger,12)
+	CheckStatGT(LastTrigger,70,LORE)
+
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@809)
+END
+
+IF
+	Clicked([ANYONE])
+	//Range(LastTrigger,12)
+	PartyHasItemIdentified("AC#BKDWF") // Die Schrift und Sprache der Zwerge
+
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@809)
+END
+
+IF
+	Clicked([ANYONE])
+	//Range(LastTrigger,12)
+	CheckStatLT(LastTrigger,71,LORE)
+
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@810)
+END
+

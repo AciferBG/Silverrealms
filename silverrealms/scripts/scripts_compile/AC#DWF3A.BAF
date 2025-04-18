@@ -1,0 +1,6 @@
+IF
+	GlobalGT("Rest_Party","ACIL0A",0)
+THEN
+	RESPONSE #100
+                 DestroySelf()
+END

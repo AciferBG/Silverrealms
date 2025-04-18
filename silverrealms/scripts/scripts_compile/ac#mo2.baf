@@ -1,0 +1,19 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		Wait(2)
+		LeaveAreaLUAPanic("ACIL21","ac#gtr21",[466.334],0)
+		LeaveAreaLUA("ACIL21","ac#gtr21",[466.334],0)
+		ActionOverride(Player2,LeaveAreaLUA("ACIL21","ac#gtr21",[466.334],0))
+		ActionOverride(Player3,LeaveAreaLUA("ACIL21","ac#gtr21",[466.334],0))
+		ActionOverride(Player4,LeaveAreaLUA("ACIL21","ac#gtr21",[466.334],0))
+		ActionOverride(Player5,LeaveAreaLUA("ACIL21","ac#gtr21",[466.334],0))
+		ActionOverride(Player6,LeaveAreaLUA("ACIL21","ac#gtr21",[466.334],0))
+		MultiPlayerSync()
+		Wait(1)
+		EndCutSceneMode()
+		FadeFromColor([30.0],0)
+END
+

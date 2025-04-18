@@ -1,0 +1,14 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("ac#s#cd3")  // Larkonlan
+		Wait(1)
+		ReallyForceSpellRES("AC#0701","ac#s#cd4")  // Kämpfer
+		VerbalConstant("ac#s#cd4",DYING)
+		//ApplyDamage("ac#s#cd4",150,FIRE)  // Kämpfer
+		Kill("ac#s#cd4")  // Kämpfer
+		Wait(2)
+		EndCutSceneMode()
+		ActionOverride("ac#s#cd3",StartDialogNoSet([PC]))
+END

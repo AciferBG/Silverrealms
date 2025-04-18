@@ -1,0 +1,24 @@
+IF
+	Global("EnteredArea","ACIL08",0)
+THEN
+	RESPONSE #100
+		FadeToColor([0.0],0)
+		SetGlobal("EnteredArea","ACIL08",1)
+		StartMovie("ac#03mve")
+		FadeFromColor([30.0],0)
+		ScreenShake([20.20],10)
+		HideAreaOnMap("ACIL03")
+		Explore()
+END
+
+IF
+	GlobalTimerExpired("AldymHealMagicTimer","ACIL08")
+	Global("AldymHealMagic","ACIL08",1)
+	!Dead("AC#ALDY3")
+THEN
+	RESPONSE #100
+		SetGlobal("AldymHealMagic","ACIL08",2)
+		ActionOverride("AC#ALDY3",VerbalConstant(Myself,DYING))
+		ActionOverride("AC#ALDY3",Kill(Myself))
+END
+

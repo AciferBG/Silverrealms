@@ -1,0 +1,105 @@
+
+IF
+	Global("Dumathoin_Alarm","ACIL58",0)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		StartCutSceneMode()
+		PlaySound("ac#horn5")
+		Wait(7)
+		PlaySound("ac#horn5")
+		TriggerActivation("Info_Hammer",FALSE)
+		TriggerActivation("TrACIL50",FALSE)
+		TriggerActivation("Travel_ACIL57",FALSE)
+		EndCutSceneMode()
+		ActionOverride("AC#58DW1",Dialog(Player1))
+		ActionOverride("AC#58DW2",MoveToPointNoInterrupt([1849.1411]))
+		SetGlobal("Dumathoin_Alarm","ACIL58",1)
+END
+
+IF
+	Global("Dumathoin_Alarm","ACIL58",2)
+THEN
+	RESPONSE #100
+		TriggerActivation("TrACIL50",TRUE)
+		ActionOverride("AC#58DW2",StartDialogNoSet("AC#58DW1"))
+		SetGlobal("Dumathoin_Alarm","ACIL58",3)
+END
+
+IF
+	Global("Use_Elevator","ACIL58",2)
+THEN
+	RESPONSE #100
+                ClearAllActions()
+                StartCutSceneMode()
+	        Wait(1)
+	        ActionOverride(Player1,JumpToPoint([331.2133]))
+		ActionOverride(Player2,JumpToPoint([331.2133]))
+		ActionOverride(Player3,JumpToPoint([331.2133]))
+		ActionOverride(Player4,JumpToPoint([331.2133]))
+		ActionOverride(Player5,JumpToPoint([331.2133]))
+		ActionOverride(Player6,JumpToPoint([331.2133]))
+		TriggerActivation("Travel_ACIL57",TRUE)
+		SetGlobal("Use_Elevator","ACIL58",3)
+		Wait(1)
+                EndCutSceneMode()
+                ActionOverride("AC#58DW3",StartDialogueNoSet(Player1))
+END
+
+IF
+	PartyHasItem("AC#HADUM")
+	Global("Deactivate_TravelRegion","ACIL58",0)
+THEN
+	RESPONSE #100
+                TriggerActivation("TrACIL50",FALSE)
+                TriggerActivation("Info_Hammer",TRUE)
+		SetGlobal("Deactivate_TravelRegion","ACIL58",1)
+END
+
+IF
+	OpenState("DOOR02",TRUE)
+	PartyHasItem("AC#HADUM")
+	Global("Hammer_retrieved","ACIL58",0)
+THEN
+	RESPONSE #100
+	         ClearAllActions()
+                StartCutSceneMode()
+		TakePartyItem("AC#HADUM")
+		Wait(1)
+		CreateVisualEffect("ICMAGICH",[3359.202])
+		CreateVisualEffect("ICMAGICH",[3318.184])
+		Wait(1)
+		CreateVisualEffect("SPBGBFST",[3223.330])
+		Wait(2)
+		AddExperienceParty(4000)
+		TriggerActivation("TrACIL50",TRUE)
+		TriggerActivation("Info_Hammer",FALSE)
+	        AddJournalEntry(@58022,QUEST_DONE)
+                EraseJournalEntry(@58021)
+		SetGlobal("Hammer_retrieved","ACIL58",1)
+		CloseDoor("DOOR01") // close door to Level #2
+		EndCutSceneMode()
+END
+
+IF
+	OpenState("DOOR01",FALSE)
+	Global("AC#TurbaernRescued","GLOBAL",2)
+THEN
+	RESPONSE #100
+		OpenDoor("DOOR01")
+		TriggerActivation("Zombietrap01",FALSE)
+                TriggerActivation("Zombietrap02",FALSE)
+		SetGlobal("AC#TurbaernRescued","GLOBAL",3)
+END
+
+IF
+	GlobalGT("AC#TurbaernRescued","GLOBAL",9)
+	Global("AC#Turbaern_recovered","GLOBAL",0)
+	OR(2)
+	GlobalTimerExpired("Turbaern_recovered","ACIL58")
+	Global("AC#RC_Turbaern_Second","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#Turbaern_recovered","GLOBAL",1)
+		CreateCreature("AC#TURB3",[408.361],13)  // Turbaern Ghalmrin: Recovered
+END

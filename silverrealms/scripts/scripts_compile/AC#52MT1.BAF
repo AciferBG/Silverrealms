@@ -1,0 +1,12 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		Wait(1)
+		ActionOverride("ac#52HA2",SwingOnce())
+		FadeToColor([10.0],0)
+		Wait(1)
+		FadeFromColor([10.0],0)
+		ActionOverride("ac#52HA2",StartDialogueNoSet([PC]))
+END
+

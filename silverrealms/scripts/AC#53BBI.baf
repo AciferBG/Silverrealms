@@ -1,0 +1,40 @@
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,10)
+	Global("AC#bookmachine","ACIL53",0)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,999999)
+		SetGlobal("AC#bookmachine","ACIL53",1)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,10)
+	Global("AC#bookmachine","ACIL53",1)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,999998)
+		CreateCreatureImpassable("AC#53BKM",[2524.1926],3)
+		SetGlobal("AC#bookmachine","ACIL53",2)
+		ActionOverride("AC#53BKM",StartDialogueNoSet([PC]))
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,10)
+	Global("AC#bookmachine","ACIL53",2)
+THEN
+	RESPONSE #100
+		ActionOverride("AC#53BKM",StartDialogueNoSet([PC]))
+END
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,10)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,14702)
+END
+
+

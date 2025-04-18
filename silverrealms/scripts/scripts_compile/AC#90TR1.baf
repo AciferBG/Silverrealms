@@ -1,0 +1,12 @@
+IF
+	Entered([ANYONE])
+	Global("AC#Lightining","ACIL90",0)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#Lightining","ACIL90",1)
+		SmallWait(8)
+		PlaySound("AM0904C")
+		ForceSpell("AC#90TR2",TRAP_CALL_LIGHTNING)  // Baum
+		ScreenShake([8.8],10)
+END
+

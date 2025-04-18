@@ -1,0 +1,70 @@
+/*
+IF
+        AreaCheck("ACIL27")
+        Global("AC#DOOR03","ACIL27",0)
+THEN
+	RESPONSE #100
+		//ReallyForceSpell(Myself,WIZARD_GREASE)
+		Shout(OPENDOOR)
+		ReallyForceSpellRES("AC#WAND7",Myself)
+		Wait(2)
+		DestroySelf()
+END
+*/
+IF
+        AreaCheck("ACIL27")
+        Global("AC#DOOR03","ACIL27",1)
+THEN
+	RESPONSE #100
+            DestroySelf()
+END
+
+IF
+        AreaCheck("ACIL27")
+        Global("AC#DOOR03","ACIL27",2)
+THEN
+	RESPONSE #100
+                 ReallyForceSpellRES("AC#WAND7",Myself)
+		 Wait(2)
+		 DestroySelf()
+END
+
+IF
+        AreaCheck("ACIL27")
+        Global("AC#DOOR03","ACIL27",0)
+THEN
+	RESPONSE #100
+	         Shout(300)
+		Wait(3)
+		Continue()
+END
+
+IF
+        AreaCheck("ACIL27")
+        Global("AC#DOOR03","ACIL27",0)
+THEN
+	RESPONSE #100
+                 ReallyForceSpellRES("AC#WAND7",Myself)
+		 Wait(2)
+		 DestroySelf()
+END
+
+IF
+        AreaType(DUNGEON)
+        !AreaCheck("ACIL27")
+THEN
+	RESPONSE #100
+		//ReallyForceSpell(Myself,WIZARD_GREASE)
+		ReallyForceSpellRES("AC#WAND7",Myself)
+		Wait(2)
+		DestroySelf()
+END
+
+IF
+        !AreaType(DUNGEON)
+THEN
+	RESPONSE #100
+	         DisplayStringHead(LastSummonerOf(Myself),999999) 
+		Wait(2)
+		DestroySelf()
+END

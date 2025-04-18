@@ -1,0 +1,31 @@
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,10)
+	Global("AC#Door25","ACIL25",0)
+THEN
+	RESPONSE #100
+		CreateCreatureImpassable("AC#25DO1",[3094.291],13)
+		SetGlobal("AC#Door25","ACIL25",1)
+		ActionOverride("AC#25DO1",StartDialogueNoSet([PC]))
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,10)
+	Global("AC#Door25","ACIL25",1)
+THEN
+	RESPONSE #100
+		ActionOverride("AC#25DO1",StartDialogueNoSet([PC]))
+END
+
+
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,10)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,14702) // Ihr seid zu weit entfernt, um das zu benutzen.
+END
+
+

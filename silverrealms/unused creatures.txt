@@ -1,0 +1,138 @@
+Unused CRE resources
+
+File: AC#07CP1.cre, Name: No such index
+File: AC#07MU1.cre, Name: Wegelagerer
+File: AC#07MU2.cre, Name: Wegelagerer
+File: AC#9BEL1.cre, Name: Elfischer Bogenschütze
+File: AC#9BEL2.cre, Name: Aecan
+File: AC#13ST1.cre, Name: Verwitterte Zwergenstatue
+File: AC#13ST2.CRE, Name: Verwitterte Zwergenstatue
+File: AC#13ST3.CRE, Name: Verwitterte Zwergenstatue
+File: AC#13ST4.CRE, Name: Verwitterte Zwergenstatue
+File: AC#13ST5.CRE, Name: Verwitterte Zwergenstatue
+File: AC#13ST6.CRE, Name: Verwitterte Zwergenstatue
+File: AC#13ST7.CRE, Name: Verwitterte Zwergenstatue
+File: AC#13ST8.CRE, Name: Zwergenwächterstatue
+File: AC#14OG1.cre, Name: Gefängniswärter
+File: AC#56ARM.cre, Name: Otidak Ruhmesstein
+File: AC#56FIT.cre, Name: Schmiedearbeiter
+File: AC#56HES.cre, Name: Schmiedearbeiter
+File: AC#96BD1.cre, Name: Räuber
+File: AC#96BD2.cre, Name: Räuber
+File: AC#96BD8.cre, Name: Senora Tulnome
+File: AC#96BD9.cre, Name: Casrach Tulnome
+File: AC#BAHA1.cre, Name: Ahab, der Wanderer
+File: AC#BARD1.cre, Name: Petipal
+File: AC#BARD2.cre, Name: Petipal
+File: AC#BELS1.cre, Name: Belster Wendestein
+File: AC#BHGH2.cre, Name: Bhapar Ghalmrin
+File: ac#bird1.cre, Name: Kanarienvogel
+File: AC#CCCU1.cre, Name: Hüter der Pforte
+File: AC#CLOA1.cre, Name: Kellerer
+File: AC#CUTSP.cre, Name: No such index
+File: AC#DARC1.cre, Name: Darcia Lancameth
+File: AC#DEAD1.cre, Name: Dieb
+File: AC#DEAD3.cre, Name: Dieb
+File: ac#dead4.cre, Name: Dieb
+File: AC#DEAD5.cre, Name: Dieb
+File: ac#dead9.cre, Name: Dieb
+File: AC#DEDRA.cre, Name: Dheubpurcwenpyl
+File: AC#DER01.cre, Name: Inkagurksul
+File: AC#DER03.cre, Name: Derro
+File: AC#DER04.cre, Name: Derro
+File: AC#DER05.cre, Name: Derro
+File: AC#DER11.cre, Name: Dlimoruk
+File: AC#DOGWI.cre, Name: Dokuriingor
+File: AC#DRAG1.cre, Name: Ringreemeralxot
+File: ac#dras2.cre, Name: Scorlachash
+File: AC#DRAS3.cre, Name: Cragnortherma
+File: AC#DUGI1.cre, Name: Duthka'gith
+File: AC#DUGI2.cre, Name: Duthka'gith
+File: AC#DWBR1.cre, Name: Beldas Abgrundlied
+File: AC#DWCU1.cre, Name: Beldas
+File: AC#DWCU2.cre, Name: Fruorin Schwarzstahl
+File: AC#DWCU3.cre, Name: Balfrin Schwarzstahl
+File: AC#DWDF1.cre, Name: Dennin Feindhammer
+File: AC#DWDF2.cre, Name: Dennin Feindhammer
+File: ac#dwf0a.cre, Name: Beldas
+File: ac#dwf01.cre, Name: Beldas
+File: AC#DWF2A.cre, Name: Gormar
+File: AC#DWF3A.cre, Name: Thradear
+File: ac#dwf04.cre, Name: Beldas
+File: AC#DWF21.cre, Name: Gormar
+File: AC#DWF24.cre, Name: Gormar
+File: AC#DWF31.cre, Name: Thradear
+File: AC#DWF32.cre, Name: Thradear
+File: AC#DWF34.cre, Name: Thradear
+File: AC#DWFS1.cre, Name: Faern Schwarzstahl
+File: AC#DWFS2.cre, Name: Faern Schwarzstahl
+File: AC#DWHF1.cre, Name: Helmaer Felsenfaust
+File: AC#DWHF2.cre, Name: Helmaer Felsenfaust
+File: AC#DWRI1.cre, Name: Rindolf Gordrimm
+File: AC#DWRI2.cre, Name: Rindolf Gordrimm
+File: AC#DWRO1.cre, Name: Roryn Tiefaxt
+File: AC#DWRO2.cre, Name: Roryn Tiefaxt
+File: AC#DWTH1.cre, Name: Thirig Wahrschmied
+File: AC#DWTH2.cre, Name: Thirig Wahrschmied
+File: ac#elda9.cre, Name: Priester der Eldath
+File: AC#FARU1.cre, Name: Faruk
+File: AC#FARU2.cre, Name: Faruk
+File: ac#fom01.cre, Name: Fomorischer Riese
+File: ac#fom02.cre, Name: Kong Madugg
+File: ac#gihi1.cre, Name: Verbeeg
+File: AC#GITH9.cre, Name: Krarak
+File: AC#HAMA2.cre, Name: Hamatula
+File: AC#IFER.cre, Name: Acifer, der Spielleiter
+File: AC#IREM1.cre, Name: Geist Iremars
+File: AC#JAM01.cre, Name: Jamrry Streitlacher
+File: AC#KUOPR.cre, Name: Kuo-Toa-Prinz
+File: AC#LADYS.cre, Name: Maid Sternendorn
+File: AC#LANCA.cre, Name: Bryam Lancameth
+File: ac#li1.cre, Name: Echsenmensch-Schamane
+File: AC#LI4.cre, Name: Echsenmensch-Hauptmann
+File: AC#MAL05.cre, Name: Malphas
+File: AC#MES01.cre, Name: Bote
+File: AC#MI3.cre, Name: Adalon
+File: AC#MUGG1.cre, Name: Viceak
+File: AC#MUGG2.cre, Name: Rickul
+File: AC#NAGA1.cre, Name: Untote Naga
+File: AC#NAGA2.cre, Name: Untote Naga
+File: AC#NHAIR.cre, Name: Geist von Nhair Ebendar
+File: ac#orc01.cre, Name: Ork
+File: AC#ORC04.cre, Name: Orkischer Magier
+File: AC#ORC09.cre, Name: Orkischer Bogenschütze
+File: ac#priga.cre, Name: Gefängniswärter
+File: AC#RAT20.cre, Name: Schädelrattenschwarm
+File: AC#RAVE2.cre, Name: Rabe
+File: AC#RAVE4.cre, Name: Rabe
+File: AC#RAVEN.cre, Name: Rabe
+File: ac#s#cd1.cre, Name: Larkonlan
+File: AC#S#CD2.cre, Name: Kämpfer
+File: AC#S#CDD.cre, Name: Magier
+File: AC#S#HPR.cre, Name: Sir Kandelar
+File: AC#S#LG1.cre, Name: Amnischer Soldat
+File: AC#S#LG2.cre, Name: Amnischer Soldat
+File: AC#S#PIR.cre, Name: Seabert
+File: AC#S#WYV.cre, Name: Drachenlindwurm
+File: AC#SCCRO.cre, Name: Vogelscheuche
+File: ac#skar1.cre, Name: Skelett-Bogenschütze
+File: AC#SKEGI.cre, Name: Riesenskelett
+File: AC#SKLK1.cre, Name: Skulk
+File: AC#SLAV1.cre, Name: Sklave
+File: ac#spi01.cre, Name: Riesenspinne
+File: AC#TIAM1.cre, Name: Die dunkle Dame
+File: AC#TREA1.cre, Name: Baumhirte
+File: AC#TREA2.cre, Name: Eichenfleisch
+File: AC#TRO71.cre, Name: Schneetroll
+File: AC#TRO72.cre, Name: Troll
+File: AC#TROHO.cre, Name: Trollhund
+File: AC#TROL1.cre, Name: Troll
+File: AC#TROL2.cre, Name: Troll-Schamane
+File: AC#TROL3.cre, Name: Troll-Schamane
+File: AC#TROL8.cre, Name: Phasentroll
+File: ac#ursu1.cre, Name: Ursummnogh der Untötbare
+File: ac#verb3.cre, Name: Verbeeg
+File: AC#WD#O1.cre, Name: Maid Sternendorn
+File: AC#WD#O2.cre, Name: Ork
+File: AC#WERA1.cre, Name: Werratte
+File: AC#WRIM1.cre, Name: Wrimbog

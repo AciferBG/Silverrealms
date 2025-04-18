@@ -1,0 +1,35 @@
+IF
+    Global("MalphasCutscene","ACIL4M",0)
+    PartyHasItem("AC#SRBK1")  // Versengtes Buch
+    InMyArea(Player1)
+    AreaType(OUTDOOR)
+THEN
+    RESPONSE #100
+        SetGlobal("MalphasCutscene","ACIL4M",1)
+        StartCutSceneMode()
+        FadeToColor([15.15],30)
+        Wait(1)
+        StartCutScene("AC#09CT1")
+END
+
+IF
+    Global("Triggers","ACIL4M",0)
+THEN
+    RESPONSE #100
+        SetGlobal("Triggers","ACIL4M",1)
+        TriggerActivation("TrACIL09A",FALSE)
+        TriggerActivation("TrACIL09B",FALSE)
+END
+
+IF
+    Global("Triggers","ACIL4M",1)
+    PartyHasItem("AC#SRBK1")  // Versengtes Buch
+THEN
+    RESPONSE #100
+        SetGlobal("Triggers","ACIL4M",2)
+        HideAreaOnMap("ACIL04")
+        //HideAreaOnMap("ACIL06")
+        RevealAreaOnMap("ACIL07")
+        //RevealAreaOnMap("ACIL09")
+END
+

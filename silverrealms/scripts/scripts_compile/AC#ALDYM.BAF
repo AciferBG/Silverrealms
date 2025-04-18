@@ -1,0 +1,26 @@
+// NEW: Aldym initiates dialog when he sees party with the sceptre
+IF
+	Detect([PC])
+	PartyHasItem("AC#ZEPX2")  // Xothaerin scepter (restored)
+	Global("Scepter_finished","ACIL05",0)
+	Delay(3)
+THEN
+	RESPONSE #100
+		StartDialogNoSet([PC])
+END
+
+// old: Aldym initiates dialog after teleportation
+/*
+IF
+	Detect([PC])
+	PartyHasItem("AC#ZEPX2")  // Xothaerin sceptre (restored)
+	Global("AC#ACIL04Teleport","GLOBAL",1)
+	Delay(3)
+THEN
+	RESPONSE #100
+		StartDialogNoSet([PC])
+END
+*/
+
+
+

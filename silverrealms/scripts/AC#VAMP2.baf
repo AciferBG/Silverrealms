@@ -1,0 +1,15 @@
+IF
+	Global("Move","LOCALS",0)
+THEN
+	RESPONSE #100
+		Unlock("DOOR01")
+		//OpenDoor("DOOR05")
+		TriggerActivation("Info_Vampire",TRUE)
+		SetGlobal("Move","LOCALS",1)
+		SetGlobal("AC#Vampire_Killed","ACIL1U",1)
+		MoveToPointNoInterrupt([435.470])
+		Wait(1)
+		DestroySelf()
+		//EscapeArea()
+END
+

@@ -1,0 +1,118 @@
+IF
+	Global("EnteredArea","ACIL28",0)
+THEN
+	RESPONSE #100
+		FadeToColor([0.0],0)
+		SetGlobal("EnteredArea","ACIL28",1)
+		TextScreen("AC#MOS27")
+		OpenDoor("Door06")
+		AmbientActivate("Eyesocket01",FALSE)
+                AmbientActivate("Eyesocket02",FALSE)
+                TriggerActivation("Info_Boats",FALSE)
+                TriggerActivation("TrACIL27",FALSE)
+		FadeFromColor([30.0],0)
+END
+
+IF
+	Dead("ac#neot1") // EE: Neothelid is killed
+	CombatCounter(0)
+	Global("FlayerSpawn","ACIL28",0)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		SetGlobal("FlayerSpawn","ACIL28",1)
+		StartCutSceneMode()
+		MoveViewObject(Player1,INSTANT)
+		CreateCreatureObjectDoor("AC#ULIT2",Player1,0,0,0)  // Malinthid
+		Wait(2)
+		EndCutSceneMode()
+END
+
+IF
+    Dead("AC#ALHO1") // ToB: Alhoon is dead
+	OR(2)
+		Global("DeactivateVamps","ACIL28",1)
+		NumDeadGT("AC#ILVA1",3)  // ToB: Illithid-Vampires
+	CombatCounter(0)
+	Global("FlayerSpawn","ACIL28",0)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		SetGlobal("FlayerSpawn","ACIL28",1)
+		StartCutSceneMode()
+		MoveViewObject(Player1,INSTANT)
+		CreateCreatureObjectDoor("AC#ULIT2",Player1,0,0,0)  // Malinthid
+		Wait(2)
+		EndCutSceneMode()
+END
+
+IF
+	Global("AC#Ellhimar_Illithid","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#Ellhimar_Illithid","GLOBAL",2)
+		CreateCreatureObjectDoor("AC#ILEL8","AC#ULIT2",0,0,0)   // Ellhimar appears besides Malinthid
+		Wait(2)
+		ActionOverride("AC#ILEL8",StartDialogueNoSet(Player1))
+END
+
+IF
+	GlobalGT("AC#Ruvan_Treason","GLOBAL",0)
+	Global("Door06Closed","ACIL28",0)
+THEN
+	RESPONSE #100
+	         CloseDoor("Door06")
+	         TriggerActivation("Info_Boats",TRUE)
+               SetGlobal("Door06Closed","ACIL28",1)
+END
+
+IF
+	Global("AC#Ruvan_Treason","GLOBAL",1)
+	Global("EllhimarTalks","ACIL28",0)
+THEN
+	RESPONSE #100
+	         SetInterrupt(FALSE)
+                 Wait(3)
+               SetGlobal("EllhimarTalks","ACIL28",1)
+               SetInterrupt(TRUE)
+               ActionOverride("AC#ILEL8",StartDialogueNoSet(Player1))
+END
+
+IF
+	Global("ACIL28_BOATGONE","ACIL28",1)
+THEN
+	RESPONSE #100
+	         ClearAllActions()
+                 StartCutSceneMode()
+                 MoveViewPoint([406.1653],VERY_FAST)
+                 CreateVisualEffect("ICFRACTI",[406.1653])
+                 Wait(1)
+                 AmbientActivate("Eyesocket01",TRUE)
+                AmbientActivate("Eyesocket02",TRUE)
+                Wait(1)
+                MoveViewPoint([602.1654],VERY_FAST)
+                CreateCreature("AC#ILDUM",[602.1654],8) // Erscheinung
+                Wait(1)
+                CreateVisualEffect("ICFRACTI",[602.1654])
+                ActionOverride("AC#ILDUM",DropItem("AC#HADUM",[-1.-1]))
+                Wait(1)
+                ActionOverride("AC#ILDUM",DestroySelf())
+               SetGlobal("ACIL28_BOATGONE","ACIL28",2)
+               AmbientActivate("Eyesocket01",FALSE)
+                AmbientActivate("Eyesocket02",FALSE)
+                EndCutSceneMode()
+				EraseJournalEntry(@62046)
+				AddJournalEntry(@62047,QUEST)
+END
+
+IF
+	Delay(3)
+	Global("Ambush01","ACIL28",1)
+	GlobalLT("Ambush01Stop","ACIL28",5)
+THEN
+	RESPONSE #100
+		CreateCreature("AC#28LA2",[935.1026],7)  // Lacedon
+		CreateCreature("AC#28LA2",[984.1213],7)  // Lacedon
+		CreateCreature("AC#28LA2",[240.774],0)  // Lacedon
+		IncrementGlobal("Ambush01Stop","ACIL28",1)
+END

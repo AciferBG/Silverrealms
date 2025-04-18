@@ -1,0 +1,28 @@
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	Global("WheelRepaired","ACIL5C",0)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,999999)
+		SetGlobal("WheelRepaired","ACIL5C",1)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	Global("WheelRepaired","ACIL5C",1)
+THEN
+	RESPONSE #100
+		DisplayStringNoName(Myself,999998)
+		PlaySound("AC#M01C")
+		SetGlobal("WheelRepaired","ACIL5C",2)
+END
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,12)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,14702)
+END

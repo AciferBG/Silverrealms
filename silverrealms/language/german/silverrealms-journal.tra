@@ -1,0 +1,686 @@
+//Journal translation file
+
+
+//Journal translation files
+//___________________________Ein Weg ins Unterreich
+@20000   = ~Die Nachricht der Zwerge
+
+Auf meinem Weg durch die Straßen Athkatlas ist mir ein Bote begegnet, der mir eine Nachricht überbracht hat. Sie stammt wohl von einer Gruppe Zwerge, die mich in der Taverne "Zum Tanzenden Riesen" in Zweiwasser, einem kleinen Nest entlang der Eshpurtastraße, treffen möchte.~
+@20002   = ~Ein Weg ins Unterreich
+
+Eine Gruppe Zwerge in der Taverne "Zum tanzenden Riesen" hat mich gebeten, sie in ihre Heimatstadt Iltkazar ins Unterreich zu begleiten, um ihren König aus einem mysteriösen Schlaf zu befreien. Ihr Anführer, ein Zwerg namens Beldas, hat mich beauftragt, einen Weg zurück ins Unterreich und seine Heimat zu finden.~
+@20008   = ~Ein Weg ins Unterreich
+
+Es gibt eine Brücke östlich von Athkatla, die von Zwergen erbaut worden ist. Sie wird "Axtbrücke" genannt. Dort sollte ich nach Hinweisen suchen, um einen Weg ins Unterreich zu finden.~
+@20009   = ~Ein Weg ins Unterreich
+
+In einer Höhle an der Axtbrücke habe ich eine Runentafel gefunden, die vielleicht einen Weg in das Unterreich benennt. Ich sollte sie zu Beldas Diamantklinge bringen.~
+@20010   = ~Ein Weg ins Unterreich
+
+Die Gruppe Zwerge aus Iltkazar ist aus der Taverne verschwunden. Sie möchten sich am Gipfel des Turboldberges mit mir treffen, um einen sicheren Weg ins Unterreich und damit nach Iltkazar zu finden.~
+@20011   = ~Ein Weg ins Unterreich
+
+Beldas und seine Gefährten sind tot. Sie wurden von einem roten Drachen getötet. Der ganze Zugang auf dem Turboldberg war eine ausgeklügelte Falle - ich weiß aber nicht von wem. Nun muss ich meinen Weg nach Iltkazar alleine finden. Im Inneren der Turboldfeste gibt es einen alten Kartenraum, in welchem Zugänge in das Unterreich markiert sind. Ich kann die Tür öffnen, indem ich einen Zeiger auf das Tor richte. Dies teilte mir Beldas mit, bevor er verstarb.~
+@20019   = ~Ein Weg ins Unterreich
+
+Es gibt eine vergessene Höhle in den Kuldingipfeln in Tethyr, die man "Ravimors Höhle" nennt. Dort soll sich ein Zugang ins Unterreich und damit nach Iltkazar befinden.~
+// von hier...___________________________________________________________________________
+@20020   = ~Der Rabe an der Axtbrücke
+
+Ich bin in einer Höhle an der Axtbrücke einem Raben begegnet, der für seinen Meister, einen Magier, ein Zwergenzepter suchen soll. Ich habe mich bereiterklärt, in einer kleineren Höhle danach zu suchen. Sobald ich das Zepter habe, soll ich es dem Raben zurückbringen, damit er es seinem Meister überreichen kann.~
+@20021   = ~Der Rabe an der Axtbrücke
+
+Ich habe das Zepter gefunden - zumindest einen Teil davon. Ich sollte es dem Raben überbringen.~
+@20022   = ~Der Rabe an der Axtbrücke
+
+Ich habe den Teil des Zepters an den Raben übergeben. Sehr glücklich sah er nicht aus, nur mit diesem einen Teil zu seinem Meister zurückkehren zu müssen.~
+@20023   = ~Der Rabe an der Axtbrücke
+
+Der Rabe gab sich mit dem unteren Teil des Zepters nicht zufrieden. Ich soll weiter an der Brücke nach dem Zepterkopf suchen. Dann finde ich hoffentlich eine Möglichkeit, die Brücke wieder zu verlassen, ohne dabei nass zu werden.~
+@20024   = ~Der Rabe an der Axtbrücke
+
+Ich habe die beiden Teile des Zepters an den Raben übergeben. Sehr glücklich sah er nicht aus, nicht mit dem vollständigen Zepter zu seinem Meister zurückkehren zu müssen.~
+@20025   = ~Der Rabe an der Axtbrücke
+
+Ich habe in einer verfallenen Zwergenkammer den Zepterkopf gefunden. Nun muss ich beide Teile dem Raben übergeben, der in der oberen kleinen Höhle neben der Brücke darauf wartet.~
+@20030   = ~Der Rabe an der Axtbrücke
+
+Der Rabe ist mir erneut begegnet. Wenn ich ihm das Zepter aus der Höhle der Axtbrücke besorge, nennt mir sein Meister einen Zugang ins Unterreich.~
+@20031   = ~Der Rabe an der Axtbrücke
+
+Der Rabe ist mir erneut begegnet. Ich soll seinen Meister in einem Turm nördlich von Athkatla aufsuchen. Es scheint so, dass der Magier einen Weg ins Unterreich kennt.~
+@20032   = ~Der Zepterkopf für den Magier
+
+Der Rabe hat mich wieder aufgesucht. Offensichtlich ist ihm jetzt bekannt, wo sich der fehlende Teil des Zepters befindet. Ich soll ein altes Schiffswrack südlich von Athkatla aufsuchen. Sobald der Zepterkopf in meinem Besitz ist, muss ich ihn zum Turm des Magiers bringen.~
+@20033   = ~Der Zepterkopf für den Magier
+
+Der von dem Magier benötigte Zepterkopf befindet sich an Bord eines alten Schiffswracks südlich von Athkatla. Ich soll ihn dort bergen und dem Magier Aldym überbringen.~
+@20034   = ~Der Zepterkopf für den Magier
+
+Ich habe den Kopf des Zepters aus dem Schiffswrack geborgen. Nun muss ich diesen zum Turm des Magiers zurückbringen.~
+@20035   = ~Der Zepterkopf für den Magier
+
+Nun habe ich beide Teile des Zepters abgeliefert. Allerdings findet der Magier Aldym derzeit noch keine Möglichkeit, das Zepter wieder zu vereinigen. Er sendet wieder seinen Vertrauten aus, wenn sich ihm neue Erkenntnisse gezeigt haben.~
+@20036   = ~Das Zepter
+
+Der Meister des Raben möchte, dass ich ihn in seinem Turm nördlich von Athkatla aufsuche. Er scheint eine Möglichkeit gefunden zu haben, die beiden Zepterteile wieder zu vereinigen. Im Austausch dafür möchte er mir eine Möglichkeit nennen, wie ich ins Unterreich gelange. Damit könnte ich meinen Weg nach Iltkazar fortsetzen.~
+@20040   = ~Der Rabe und der Magier
+
+Der Rabe ist mir erneut begegnet. Ich soll seinen Meister in einem Turm nördlich von Athkatla aufsuchen.~
+@20041   = ~Der Rabe und der Magier
+
+Leider ist die Geschichte mit dem Raben nicht gut für seinen "Meister" ausgegangen. Der Turm des Magiers hat sich förmlich in Luft aufgelöst, als ein rabengesichtiges Scheusal erschien, die beiden Zepter entwendete und mitsamt dem Raben wohin auch immer wieder verschwunden ist.~
+@20044   = ~Die Zwergenschmiede
+
+In dem Wolkengipfel-Gebirge gibt es eine alte Zwergenschmiede, in deren Innerem ich versuchen soll, die beiden Zepterteile wieder zu vereinigen.~
+// bis hierhin________________________________________________________________
+@20050	= ~Die Axtbrücke
+
+Mein erster Auftrag für die Zwerge aus Iltkazar lautet, an einer alten Zwergenbrücke, die passenderweise Axtbrücke genannt wird, nach Hinweisen zu suchen, wo es hier in der Nähe einen Weg zurück ins Unterreich Richtung Iltkazar geben könnte. Ich finde die Brücke, indem ich der Straße gen Osten Richtung Eshpurta folge.~
+@20060	= ~Das Buch für den Zwergenkönig
+
+Die Zwerge Iltkazars hatten in Kerzenburg ein für sie wichtiges Buch besorgt, welches ihnen nun gestohlen wurde. Ich soll den Dieb finden und das Buch wiederbeschaffen. Vielleicht sollte ich zunächst einmal mit dem Schankwirt sprechen, wohin der Dieb gegangen sein könnte.~
+@20061	= ~Das Buch für den Zwergenkönig
+
+Der Schankwirt vermutet, dass sich der Dieb nach Athkatla abgesetzt haben könnte. Ihn dort zu finden dürfte aber schwierig werden. Vielleicht sollte ich einfach einmal die Orte abklappern, die mir als Versteck für einen Dieb so in den Sinn kommen.~
+@20062	= ~Das Buch für den Zwergenkönig
+
+Das war knapp! Gerade, als das Buch an einen Unbekannten übergeben werden sollte, habe ich den Dieb stellen können. Nun, da ich das Buch habe, sollte ich zu Beldas in die Taverne "Zum Tanzenden Riesen" zurückkehren. Hoffentlich konnte dieser in der Zwischenzeit einen Rückweg nach Iltkazar ausfindig machen.~
+@20063	= ~Das Buch für den Zwergenkönig
+
+Der Schankwirt vermutet, dass sich der Dieb nach Athkatla abgesetzt haben könnte. Ihn dort zu finden dürfte aber schwierig werden. Draußen vor der Schänke könnte ein Bauer namens Onnor mehr über den Verbleib des Diebes wissen.~
+@20064	= ~Das Buch für den Zwergenkönig
+
+Der Dieb hat sich in Zweiwasser vor seiner Flucht noch an einen Bauern gewandt, um Melkfett zu besorgen. Offensichtlich wollte er sich bei seinem Aufenthalt in Athkatla keine nassen Füße holen. Bleibt die Frage: Wo wollte er in Athkatla hin? Vielleicht sollte ich in der Stadt des Geldes einfach einmal all jene feuchten Orte abklappern, die mir als Versteck für einen Dieb so in den Sinn kommen.~
+@20065	= ~Das Buch für den Zwergenkönig
+
+Der Schankwirt kann mir leider auch nicht sagen, wohin sich der Dieb abgesetzt haben könnte. Draußen vor der Schänke könnte ein Bauer namens Onnor mehr über den Verbleib des Diebes wissen.~
+@20066	= ~Das Buch für den Zwergenkönig
+
+Ein Bauer teilte mir mit, dass der Dieb, der das Buch der Zwerge gestohlen hat, nach Osten zu einem alten Steinbruch aufgebrochen ist. Wenn ich Glück habe, finde ich ihn dort. Hoffentlich ist er nicht bereits weitergezogen.~
+@20070	= ~Wo ist Beldas?
+
+Ich bin in die Taverne "Zum Tanzenden Riesen" zurückgekehrt, um das Buch, das Mith Barak benötigt, zu überbringen. Allerdings sind Beldas und seine Gefährten Gormar und Thradear verschwunden. Ich hoffe, mir kann jemand sagen, wo sie hingegangen sind.~
+@20400   = ~Der Spielzeugdrache
+
+Auf der Eshpurta-Straße bin ich einem kleinen Jungen begegnet, der seinen Spielzeugdrachen in einer Höhle an ein angeblich großes Monster verloren hat. Ich habe versprochen, ihm seinen Drachen zurückzubringen.~
+@20401   = ~Der Spielzeugdrache
+
+Ich habe den Spielzeugdrachen in der Höhle gefunden, das Monster besiegt und sollte dem Jungen den Drachen zurückbringen.~
+@20402   = ~Der Spielzeugdrache
+
+Ich habe dem Jungen seinen Holzdrachen zurückgebracht und dafür ein Buch über Drachentöter erhalten.~
+@20800  = ~Zurück an die Oberfläche
+
+In den Spinnenschächten könnte sich mit etwas Glück eine ominöse Schwebescheibe der Drow befinden, mit deren Hilfe ich wieder zurück an die Oberfläche schweben könnte.~
+@20801  = ~Zurück an die Oberfläche
+
+Ich habe in einem verlassenen Lolth-Tempel eine Schwebescheibe der Drow gefunden. Jetzt muss ich sie nur zum Schweben bringen, wenn ich damit zurück an die Oberfläche gelangen möchte.~
+@20802  = ~Zurück an die Oberfläche
+
+Ich soll Bettargh in der Bibliothek um Rat fragen, wie ich die Drow-Schwebescheibe wieder reparieren kann.~
+@20803  = ~Zurück an die Oberfläche
+
+Bettargh weiß auch nicht weiter. Meine letzte Hoffnung ist, den Magier Ellhimar dazu zu bringen, die Schwebescheibe zu verzaubern.~
+//___________________________Suche nach Iltkazar
+@21002   = ~Ein Weg ins Unterreich
+
+Ich habe den Zugang ins Unterreich gefunden. Es ist ein großer Schacht in unbekannte Tiefen. Es gibt nur einen Weg, herauszufinden, ob dies der Richtige ist. So, wie es aussieht, gibt es aber keinen Weg zurück. Ich sollte mich deshalb auf die bevorstehende Reise gut vorbereiten.~
+//___________________________Suche nach Iltkazar
+@21021   = ~Die Suche nach Iltkazar
+
+Ich bin auf der Suche nach der Stadt der Zwerge im Unterreich angelangt. Von nun an geht es nur noch vorwärts, denn der Weg, den ich gekommen bin, führte mich mehrere Meilen abwärts einen tiefen Schacht herunter. Ich hoffe, ich werde irgendwann einmal wieder die Oberfläche zu Gesicht bekommen.~
+@21022   = ~Die Suche nach Iltkazar
+
+Ich habe die Tore von Iltkazar erreicht und mir wurde Einlass gewährt.~
+//___________________________Die Halle des Blutmondes
+@23000   = ~Die Halle des Blutmondes
+
+Um den Zwergentempel, der "Halle des Blutmondes" genannt wird, im Norden der Spinnenschächte betreten zu können, brauche ich die Wörter der beiden ehemaligen Schutzgottheiten. Ich sollte der Statue, die den Eingang bewacht, die Namen "Clangeddin" und "Selune" nennen, um eingelassen zu werden.~
+//___________________________Die Halle des Blutmondes
+@23001   = ~Die Halle des Blutmondes
+
+Ich habe bei dem Drow, der Anführer der Vhaeraun-verehrenden Drow in den Spinnenschächten war, eine Notiz gefunden. Ich denke, diese Notiz könnte mir bei der Suche nach Ellhimar weiterhelfen. Da sie auf drowisch geschrieben ist, muss ich sie erst identifizieren, um ihren Inhalt lesen zu können.~
+//___________________________Die Halle des Blutmondes
+@23002   = ~Die Halle des Blutmondes
+
+Um den Zwergentempel, der "Halle des Blutmondes" genannt wird, im Norden der Spinnenschächte betreten zu können, brauche ich die Wörter der beiden ehemaligen Schutzgottheiten. Ich sollte der Statue, die den Eingang bewacht, die Namen "Clangeddin" und der menschlichen Mondgöttin nennen, um eingelassen zu werden.~
+@23003   = ~Die Halle des Blutmondes
+
+Ich hatte seltsame Träume in diesem alten Tempel, die ich nicht richtig deuten kann. Es kamen Mith Barak, Elfen und Drachen vor. Es scheint, dass Mith Barak an der Oberfläche an einem Ort war, den er "Drachenfriedhof" genannt hat. Vielleicht sollte ich dort mit der Suche fortfahren.~
+//___________________________Die Halle des Blutmondes
+@23004   = ~Die Halle des Blutmondes
+
+Ich habe den Drow-Anführer der Vhaeraun-Anhänger in dem alten Lolth-Tempel getötet. Da er zu wissen schien, wo ich als nächstes nach einer Ursache für den schlafenden König suchen sollte, sollte ich vielleicht bei seiner Leiche nach Hinweisen suchen.~
+@23010   = ~Ellhimars Tagebuch
+
+In der Halle des Blutmondes habe ich das Tagebuch des Magiers Ellhimar gefunden. Er hatte über Mith Barak einiges herausgefunden. Vielleicht sollte ich das Tagebuch auch einmal zu Vronia und Cernd Schüttergeist bringen, damit sie Ellhimars Erinnerung mit Hilfe der Aufzeichnungen auf die Sprünge helfen und ihn aus seinem Dämmerzustand erwecken können.~
+@23011   = ~Ellhimars Tagebuch
+
+Vronia bat mich, an dem Ort von Ellhimars verschwinden nach Hinweisen zu suchen, die ihr helfen könnten, seinen Wahnsinn zu kurieren.~
+@23012   = ~Ellhimars Tagebuch
+
+Vronia hat Ellhimars Tagebuch an sich genommen, um mit Hilfe der Niederschriften Ellhimars geistigen Zustand zu verbessern.~
+
+//___________________________Boote für Barakuir
+@27000   = ~Boote für Barakuir
+
+Bresk und die anderen Zwerge werden die Boote am See zu Wasser lassen, wenn ich das Gebiet gesichert und von den Elementarwesen und Kuo-Toas befreit habe.~
+//___________________________Die Stadt des Geizes
+@45000   = ~Die Stadt des Geizes
+
+Ich bin in Drakkalor angekommen, die unter den Zwergen auch "Stadt des Geizes" genannt wird. Von dort muss ich meinen Weg gen Norden fortsetzen, um nach Torglor zu gelangen.~
+//___________________________Die Zofe Lolths
+@50020   = ~Die Zofe Lolths
+
+Vor den Toren Iltkazars ist eine Kampftruppe der Drow vorbeigezogen, die von einer Priesterin Lolths angeführt wird. Bresk Steinschulter möchte den Kopf dieser Priesterin haben. Fast hätte ich geschrieben: Tot oder lebendig. Aber das erübrigt sich in diesem Falle wohl.~
+@50021   = ~Die Zofe Lolths
+
+Ich habe die Drow-Priesterin getötet. Jetzt muss ich nur noch ihren Kopf zu Bresk Steinschulter bringen.~
+//___________________________Der missmutige Magier
+@50600   = ~Ein Gefallen für Vronia
+
+Vronia Eisenbieger hat mich in Iltkazar um Hilfe gebeten. Ich finde sie in ihrem Haus im Osten der Stadt.~
+@50601   = ~Der missmutige Magier
+
+Vronia Eisenbieger hat mich gebeten, dem Magier Ellhimar, einem Menschen von der Oberfläche, einen Besuch abzustatten, da sie der Meinung ist, dass etwas mit ihm nicht stimmt. Vielleicht freut es ihn ja, wieder ein Gesicht von der Oberfläche zu sehen.~
+@50602   = ~Der missmutige Magier
+
+Ich habe mich mit Ellhimar unterhalten. Dafür, dass er aus der Nähe Amns kommt, hat er überraschend wenig Ahnung von den Gebieten, die ein Gelehrter von dort eigentlich kennen sollte. Ich sollte Vronia unterrichten, dass ich meine Zweifel habe, ob er wirklich aus der Region stammt, die er vorgibt.~
+@50603   = ~Der missmutige Magier
+
+Vronia möchte, dass ich mich mit Neeritha Runenschrift über Ellhimar, den Magier unterhalte. Überraschenderweise leben in Iltkazar einige Menschen, und Neeritha unterhält einen kleinen Schrein zu Ehren Oghmas im Südosten der Stadt.~
+@50604   = ~Der missmutige Magier
+
+Neeritha hat mir berichtet, dass sich Ellhimar seit Längerem auch in ihren Augen sonderbar verhält. Offenbar suchte er nach einem Weg, König Mith Barak zu helfen und ist nach einem Ausflug in eine alte Mine namens "Spinnenschächte" wie verwandelt zurückgekommen. Ich möchte gar nicht wissen, woher diese Mine ihren Namen erhalten hat. Jedenfalls sollte ich Vronia von dieser Erkenntnis berichten.~
+@50607   = ~Der missmutige Magier
+
+Vronia ist der Meinung, dass man Ellhimar besser beobachten müsste. Ich soll zuerst Sorni Arnschädel in den Schmiedehallen im Westen der Stadt aufsuchen und sie um einen Vorwand bitten, Ellhimar aus seinem Haus zu locken. Danach habe ich ein wenig Zeit, einen verzauberten Runenstein in Ellhimars Schreibtischschublade zu legen, um zu erkennen, ob er etwas Böses im Schilde führt.~
+@50608   = ~Der missmutige Magier
+
+Sorni Arnschädel möchte, dass ich Ellhimar in die Azerkyn-Halle bestelle. Dies sollte mir Zeit verschaffen, den Runenstein, den mir Vronia gegeben hat, in seinem Schreibtisch zu platzieren.~
+@50609   = ~Der missmutige Magier
+
+Ellhimar hat sich tatsächlich zu Sorni aufgemacht, und ich habe Zeit, den Runenstein in seinem Schreibtisch zu platzieren.~
+@50610   = ~Der missmutige Magier
+
+Ellhimar mochte es gar nicht, dass ich mich in seinem Zuhause umsehe und hat mich angegriffen.~
+@50611   = ~Ein Drow?
+
+Nach seinem Tod hat sich Ellhimars Leiche in einen Dunkelelfen verwandelt! Ich sollte den Körper Vronia zeigen. Ich bin gespannt, was sie von dieser Entwicklung hält.~
+@50612   = ~Der missmutige Magier
+
+Ich habe Vronia von meinem Kampf mit "Ellhimar", dem Drow erzählt. Sie war geschockt und ist umgehend zum Ratsbgebäude aufgebrochen. Ich denke, ich habe nun etwas gut bei ihr.~
+@50700   = ~Hilfe für Ellhimar
+
+Vronia Eisenbieger hat mich wieder um Hilfe gebeten. Ich soll einen Zwerg namens Cernd, der ebenso wie Ellhimar von den Gedankenschindern gequält wurde, um Hilfe bitten. Cernd steht in der großen Bibliothek im Osten der Stadt unter Arrest. Wenn ich mit den Wachen rede, sollte Cernd freigelassen werden und ich muss mit ihm in Sharindlars Tempel gehen, um Ellhimar von seiner geistigen Umnachtung zu befreien.~
+@50701   = ~Hilfe für Ellhimar
+
+Cernd Schüttergeist, der Zwerg-Illithide, hat sich aus seinem Käfig einfach wegteleportiert. Wenn ich Glück habe, finde ich ihn bei Vronia und Ellhimar im Tempel Sharindlars in Haelas Hallen. Wenn ich Pech habe - nein, darüber möchte ich lieber nicht nachdenken...~
+@50702   = ~Hilfe für Ellhimar
+
+Cernd Schüttergeists Versuche, Ellhimars geistigen Zustand zu verbessern, dauern an. Bis dahin kann ich mich anderen Aufgaben widmen.~
+//___________________________Drachenangriff
+@51000   = ~Ein Drachenangriff?
+
+Ich bin auf der Axtbrücke unfreiwillig Zeuge der Zerstörungswut eines feuerspeienden Drachen geworden. Er hatte es wohl auf jemanden abgesehen, hat dabei jedoch einen umherziehenden unschuldigen Kaufmann und seine Familie ausgelöscht. Auch wenn es kein Zeichen dafür gibt, dass der Drache zurückkehren könnte, sollte ich dennoch den Himmel über mir im Auge behalten.~
+@51001 = ~Ein Drachenangriff?
+
+Die Elfen, denen der Angriff des Drachen gegolten hat, haben sich in eine nahegelegene Höhle geflüchtet. Sie haben behauptet, den Reiter des Drachen aus dem Sattel geschossen zu haben. Wenn ich Glück habe, finde ich irgendwo draußen an der Brücke seine zertrümmerten Überreste. Irgendetwas sagt mir, dass die Elfen mir noch nützlich sein könnten.~
+//___________________________Töte Charvekannathor
+@51100   = ~Töte Charvekannathor
+
+Ich habe Anthan Diamantklinge versprochen, den roten Drachen Charvekannathor, der seinen Sohn Beldas umgebracht hat, im Namen der Gerechtigkeit zu töten.~
+
+@51200   = ~Unterrichte Beldas' Vater vom Tod seines Sohnes
+
+Ich muss zu Beldas' Vater Anthan Diamantklinge in die Uralte Schmiede gehen und ihm vom Tod seines Sohnes berichten.~
+
+@51201   = ~Unterrichte Beldas' Vater vom Tod seines Sohnes
+
+Ich habe Anthan Diamantklinge die Nachricht vom Tod seines Sohnes Beldas überbracht.~
+//___________________________ACIL52: Luckmaiden'S Sword
+@52100   = ~Das Schwert der Glücksmaid
+
+In Haelas Tempel habe ich von einer der dortigen Kriegerinnen namens Betrangrid den Auftrag bekommen, in der Arnschädelhalle ein Schwert für sie abzuholen. Ich finde die Arnschädelhalle im Westen der Stadt.~
+@52101   = ~Das Schwert der Glücksmaid
+
+Ich habe Betrangrids Schwert von Whundaed, einem der Schmiede der Arnschädelhalle erhalten und kann es nun der zukünftigen Besitzerin in Haelas Tempel im Osten der Stadt übergeben.~
+@52110   = ~Das Schwert der Glücksmaid
+
+Die Besorgung des Schwertes war nur ein Prüfung. In Wahrheit ging es den Priesterinnen darum, meine Glaubwürdigkeit auf die Probe zu stellen. Ich denke, dies ist mir gelungen, und als Dank darf ich die Klinge behalten, die ich eigentlich überbringen sollte.~
+//___________________________ACIL52: Dendritic Crystal armor
+@52200   = ~Die Kristallrüstung
+
+Ich habe bei Thardumin Goldblick eine dendritische Kristallrüstung in Auftrag gegeben, die ich in fünf Tagen bei ihm in Haelas Hallen abholen kann.~
+//____________________________ACIL53: Buchbindequest
+@53100  = ~Binde die Blätter wieder zusammen
+
+Ich habe mich bereit erklärt, die durch die Explosion zerfetzten Bücher mit Hilfe eines Buchbindegerätes im Osten von Iltkazars Bibliothek wieder zu etwas Sinnvollem zusammenzusetzen. Es sollen wohl fünf Seiten sein, die ich wieder zusammenbinden muss.~
+@53109  = ~Binde die Blätter wieder zusammen
+
+Ich habe mein Bestes gegeben, die Blätter wieder zu einem Buch zusammenzubinden. Ob es richtig ist, kann aber nur der Zwerg Kukgrarlug Flaschenbart in Dumathoins Bibliothek selbst beurteilen. Ich sollte ihm das Buch überreichen und sehen, wie er reagiert.~
+@53110  = ~Binde die Blätter wieder zusammen
+
+Ich habe das Buch in Dugmarens Bibliothek wieder richtig zusammengebunden.~
+//____________________________ACIL53: Der Metagolem
+@53200  = ~Der Metagolem
+
+Schnaiklu Kobaltwächter benötigt zur Vollendung seines Golems zwei seltene Zutaten: Zum Einen die Essenz eines höheren Wasserelementars und zum anderen ein seltenes Metall namens Hizagkuur.~
+@53201  = ~Der Metagolem
+
+Ich habe Schnaiklu alle Zutaten gebracht, die er zum Betrieb des Metagolems benötigt.~
+@53220  = ~Die Essenz eines Elementarwesens
+
+Schnaiklu benötigt die Essenz eines Höheren Wasserelementares, um seinen Golem zu betreiben.~
+@53230  = ~Hizagkuur
+
+Sorni Arnschädel in der Arnschädelhalle kann mir bei der Beschaffung des Hizagkuur-Metalls weiterhelfen.~
+@53235  = ~Seltsames Metall
+
+Ich habe in einem der Minenschächte eine seltsame Art von Metall gefunden. Vielleicht kann mir jemand, der sich mit Metallverarbeitung auskennt, mehr darüber sagen.~
+@53236  = ~Seltsames Metall
+
+Sorni Arnschädel konnte mir sagen, um welches Metall es sich bei meinem Fund handelt: Hizagkuur. Ich soll in der großen Bibliothek Iltkazars nach einem Tiefengnom Ausschau halten, der solch eine Art Metall benötigt.~
+
+// Buch Irrgarten
+@53300  = ~Das verirrte Buch
+
+Der zerstreute Priester Dugmarens Orik Dunkelschrift in der Halle der Runensteine, Iltkazars Bibliothek, sucht sein Buch 'Die verschlungenen Pfade des verlorenen Wissens'. Es soll in dunkelgrünes Leder gebunden sein. Den Buchdeckel ziert eine Silberprägung, die ein Labyrinth darstellt. Das Buch muss sich hier irgendwo in der Bibliothek befinden. Sobald ich es gefunden habe, sollte ich es Orik zurückbringen, da er ziemlich vergesslich ist.~
+@53301  = ~Das verirrte Buch
+
+Ich habe das Buch gefunden. Nun muss ich es zu Orik am Rande des gro0en Schachts im Westen der Bibliothek zurückbringen.~
+@53302  = ~Das verirrte Buch
+
+Ich habe Orik das Buch zurückgegeben. Er ist sogleich in einem Labyrinth verschwunden, welches sich beim Lesen des Buches geöffnet hat.~
+@54100 = ~Heldengeschichten
+
+Ich bin in der Bar "Zum blutigen Bollwerk" einer Gruppe Zwerge begegnet, die ihre Heldentaten zum Besten gegeben haben. Wenn auch nur die Hälfte von dem, womit sie geprahlt haben, der Wahrheit entspricht, müssen es alle große Kämpfer sein. Vielleicht kann ich sie auch einmal mit einer meiner Heldentaten unterhalten?~
+@54200 = ~Der Rothe-Bulle
+
+Ein Rothé-Züchter namens Snorri sorgt sich um seine Zucht, weil sein Zuchtbulle keinen Nachwuchs mehr zeugen will.~
+@54210 = ~Der Rothe-Bulle
+
+Ich habe versucht, Snorri mit seinem Rothé-Zuchtproblem zu helfen. Ich hoffe, dass er nicht als nächstes Ärger mit seiner Frau bekommt, aber dabei werde ich ihm wirklich nicht mehr helfen können.~
+//____________________________ACIL54: Die Liebesmüden Rothé
+@54300  = ~Die Liebesmüden Rothé
+
+Snorri, der Rothézüchter, hat mich gebeten, einmal mit dem Tiefengnom-Alchemisten Chiksul zu reden, um dem Paarungsverhalten seiner beiden Rothé wieder auf die Sprünge zu helfen.~
+//____________________________ACIL54: Der Rattenfänger
+@54500  = ~Der Rattenfänger
+
+Iltkazars Rattenfänger Hamli möchte, dass ich ihm zehn Rattenschwänze bringe. Ich finde ihn in der unterirdischen Zitadelle "Zum Blutigen Bollwerk".~
+//____________________________ACIL54: Der Rattenfänger
+@54501  = ~Der Rattenfänger
+
+Ich habe die Rattenschwänze bei Hamli abgeliefert und einen Helm als Belohnung erhalten.~
+//____________________________ACIL54: Die Spitzhacke
+@54601  = ~Die Spitzhacke
+
+Ich soll eine Spitzhacke zu einem zwergischen Bergarbeiter namens Dhundala zur Delvarsgilde in der Halle der Omlare bringen.~
+//___________________________Unter Arrest in Iltkazar
+@55100  = ~Gefangener in der Mithrilstadt
+
+Das hatte ich nicht erwartet. Als Dank dafür, dass ich den Zwergen Iltkazars meine Hilfe anbieten wollte, hat mich der Regentschaftsrat unter Arrest gestellt. Ich sollte irgendwie versuchen, das Vertrauen der Zwerge zu erlangen, damit ich mich wieder außerhalb der Stadt bewegen kann. Zeit, mich nach Arbeit umzusehen!~
+@55101  = ~Gefangener in der Mithrilstadt
+
+Mir wurde von Dunnabar Steinschulter aufgetragen, wieder ins Ratsgebäude im Norden der Stadt zu gehen. Anscheinend möchte mich der Regentschaftsrat sprechen. Ich bin gespannt, ob damit die Zeit des Wartens innerhalb der Mauern Iltkazars ein Ende hat.~
+//___________________________Ein Weg ins Kuo-Toa-Lager
+@56100  = ~Ein Weg ins Kuo-Toa-Lager
+
+Bei der Vorbereitung meiner Reise nach Barakuir gibt es Schwierigkeiten. Horden von Kuo-Toa und anderen Wesen machen die Gewässer, durch die ich mit dem Boot reisen sollte, unsicher. Bresk meint, wir sollten die Tiefengnome der Stadt um Hilfe bitten. Ich soll mit Schnotnell Samrynarr, dem Anführer der Svirfnebli im Tempel Gaerdals in der Bronzemaske sprechen.~
+@56101  = ~Ein Weg ins Kuo-Toa-Lager
+
+Ich habe von den Svirfnebli einen Stab erhalten, der mir Zugang in den bisher unerreichbaren Teil ihres Versteckes geben könnte, indem er Felswände zu Schlamm verwandelt und damit passierbar macht. Da die Kuo-Toa in ihren Verstecken stinkende Essenzen einsetzen, um sich zu stimulieren, sollte ich mich bei der Suche nach einem passenden Stück Fels von meiner Nase leiten lassen.~
+@56102  = ~Ein Weg ins Kuo-Toa-Lager
+
+Der gnomische Stab hat gute Arbeit geleistet. Mit seiner Magie konnte ich einen verborgenen Zugang ins Kuo-Toa-Lager öffnen. Jetzt muss ich dort eine Möglichkeit finden, den Elementar-Steinkreis zu deaktivieren.~
+@56111  = ~Der alte Steinkreis am See
+
+Ich habe im Kuo-Toa-Heiligtum einen Runenstein gefunden, der eventuell den Steinkreis deaktivieren könnte, damit keine Elementare mehr herbeigerufen werden.~
+//___________________________Gogondy-Wein: Wein, Wahnsinn und Kuo-Toa
+@56200  = ~Wein, Wahnsinn und Kuo-Toa
+
+Der Svirfneblin Schnotnell Samrynarr hat vorgeschlagen, eine Flasche seines magischen Gogondy-Weines im Kampf gegen die Kuo-Toa einzusetzen, indem ich das Getränk im Tempel der Kreaturen zum Verdampfen bringe. Das sollte sie in den Wahnsinn treiben und mir den Kampf gegen sie gehörig erleichtern.~
+@56201  = ~Wein, Wahnsinn und Kuo-Toa
+
+Ich habe den Gogondy-Wein der Tiefengnome im Heiligtum der Kuo-Toa verdunsten lassen. Ich hoffe, das reicht aus, um sie in den Wahnsinn zu treiben.~
+//___________________________Die Rettung von Turbaern Ghalmrin
+@58001  = ~Aufruhr im Tempel Dumathoins
+
+Irgendetwas ist im Tempel Dumathoins passiert, das die Zwerge dort sehr beunruhigt. Ich sollte mich umsehen und nach jemandem suchen, der mir mehr über die Ereignisse sagen kann.~
+@58004  = ~Ein Weg nach unten in die Krypta
+
+Da die Durchgänge in die tieferen Krypten des Tempels verschlossen sind, möchten die Zwerge mit Hilfe eines Lastenaufzuges Verstärkung nach unten schicken. Dies wäre ein gute Möglichkeit, meinen Mut unter Beweis zu stellen- oder meine Torheit.~
+@58005  = ~Ein Weg nach unten in die Krypta
+
+Ich habe mich bereiterklärt, nach unten in die Krypta gelassen zu werden. Dort muss ich den "Hohen Omlar" Turbaern Ghalmrin finden. Er ist der Hohepriester des Tempels und wird wissen, wie weiter zu verfahren ist.~
+@58006  = ~Die Rettung von Turbaern Ghalmrin
+
+Ich habe den Priester Turbaern gefunden. Er ist in sehr schlechtem Zustand. Er hat mir in aller Kürze berichtet, was sich hier unten zugetragen hat: Offensichtlich hat eine Zwergin namens Durhgathu Maendrar mit Hilfe eines heiligen Hammers die Schutzrunen, die sich hier unten befinden, zerstört. Was immer sie vorhat, ich muss sie aufhalten. Da viele Türen über einen Sicherheitsmechanismus verfügen, sollte ich erst die Maschinen, die dieses Stockwerk mit Dampf versorgen, wieder in Betrieb nehmen, um zumindest eine Tür öffnen zu können. Dies bringt mich dann hoffentlich näher zu der verrückten Zwergin. Ich bin gespannt, was die Zwergin mit all dem Chaos bezwecken will - ich fürchte, nichts Gutes.~
+@58007  = ~Die Rettung von Turbaern Ghalmrin
+
+Durhgathu Maendrar, die Zwergin, die hinter all dem Chaos steckt, ist tot. Sie hatte einen Dämon beschworen und deshalb vorher mit Hilfe des Hammers die Schutzrunen außer Kraft gesetzt. Ich sollte den Hammer an mich nehmen und mit Turbaern schnell von diesem Ort verschwinden.~
+@58008  = ~Die Rettung von Turbaern Ghalmrin
+
+Da Turbaern es alleine nicht schaffen würde, werde ich ihn Huckepack aus der Krypta nach oben tragen. Er wird die Tür zur Treppe öffnen können. Wenn ich das obere Stockwerk erreicht habe, werden sich die Kleriker Dumathoins hoffentlich schnell um den Priester kümmern können.~
+@58009  = ~Die Rettung von Turbaern Ghalmrin
+
+Ich habe Turbaern den Klerikern Dumathoins übergeben. Mit ihrer Hilfe dürfte es nicht lange dauern, bis der Priester wieder genesen ist. Ich sollte in den nächsten Tagen im Tempel wieder nach ihm sehen, um die ganze Sache aufzuarbeiten.~
+@58020  = ~Der Hammer Dumathoins
+
+Ich habe den Hammer vom Leichnam Durhgathus geborgen. Turbaern wird mir sagen können, was ich weiter mit ihm machen soll.~
+@58021  = ~Der Hammer Dumathoins
+
+Turbaern bat mich, den Hammer wieder an seinen angestammten Platz im Nordosten des Tempels zu legen. Dies scheint eine große Ehre zu sein.~
+@58022  = ~Der Hammer Dumathoins
+
+Ich habe den Hammer Dumathoins auf dem Sockel niedergelegt und dafür den Segen Dumathoins erhalten. Nun müsste es mir möglich sein, den Tempel wieder zu verlassen und mich anderen Aufgaben zu widmen.~
+//___________________________Hizagkuur
+@59100  = ~Hizagkuur
+
+Sorni kann mir kein Hizagkuur geben. Allerdings gibt es außerhalb der Stadt eine alte Mine, in der ich welches finden könnte. Wenn ich das Erz habe, soll ich es zu Sorni zurückbringen, damit sie es in eine geeignete Form bringen kann.~
+@59101  = ~Hizagkuur
+
+Sorni hat mir fertig geformtes Hizagkuur-Erz für den Betrieb des Metagolems überlassen. Ich sollte es zurück zu Schnaiklu Kobaltwächter in Dugmarens Bibliothek bringen.~
+@59200  = ~Alles durcheinander!
+
+Der Erzmeister in der Azerkyn-Halle ist unglücklich, weil seine verschiedenen Erzsorten durcheinander gekommen sind. Ich soll die Erze, die nicht in die entsprechende Halde gehören, umsortieren und ihn dann wieder ansprechen. Klingt einfach.~
+@59201  = ~Alles durcheinander!
+
+Ich habe das Erz in der Azerkyn-Halle wieder geordnet. Vielleicht habe ich den Erzmeister damit sogar ein klein wenig beeindruckt.~
+
+//___________________________Das Portal in der Azerkyn-Halle
+
+@61000  = ~Das Portal in der Azerkyn-Halle
+
+Die Scheusale strömen aus einem Portal in Massen in die Azerkyn-Halle. Sorni bat mich, durch dieses Portal zu schreiten und zu untersuchen, ob es von der anderen Seite wieder verschlossen werden kann.~
+@61001  = ~Das Portal in der Azerkyn-Halle
+
+Es scheint keine Möglichkeit zu geben, das Portal von der Feuerseite aus zu schließen. Ich sollte zu Sorni zurückkehren und Ihr diese Erkenntnis mitteilen, bevor mich die Flammen an diesem feurigen Ort noch verschlingen.~
+@61010  = ~Das Portal in der Azerkyn-Halle
+
+Sorni möchte ernsthaft die gesamte Halle einstürzen lassen, um das Portal zu verschließen! Ich soll im ersten Schritt die drei Hochöfen mit Anthrazit befeuern.~
+@61011  = ~Das Portal in der Azerkyn-Halle
+
+Um die Explosion auszulösen, muss das Wasser auf die überhitzten Hochöfen treffen. Ich muss das Wassertor im Norden öffnen und sollte dann schleunigst die Beine in die Hand nehmen.~
+
+//___________________________Überlebende
+
+@61020  = ~Suche nach Überlebenden
+
+Wenn ich in der Azerkyn-Halle noch überlebende Arbeiter finde, soll ich sie zu Sorni schicken, damit sie diese nach oben in Sicherheit bringen kann.~
+@61021  = ~Suche nach Überlebenden
+
+Ich habe alle verbliebenden Arbeiter in der Azerkyn-Halle nach oben geschickt - hoffe ich zumindest.~
+
+//__________________________Die vermisste Patrouille
+@62010  = ~Die vermisste Patrouille
+
+Der Regentschaftsrat hat mich beauftragt, außerhalb von Iltkazar nach einer vermissten Zwergenpatrouille zu suchen. Sobald ich einen Hinweis gefunden habe, soll ich dem Rat wieder Bericht erstatten.~
+@62011  = ~Die vermisste Patrouille
+
+Ich habe die Patrouille gefunden - zumindest das, was davon übrig ist. Es scheint ein harter Kampf stattgefunden zu haben. Keiner der Zwerge hat überlebt. Ich sollte suchen, ob ich Hinweise nach dem unbekannten Angreifer finde und dann dem Regentschaftsrat wieder Bericht erstatten.~
+
+//___________________________Ein Weg in die Spinnenschächte
+
+@62020  = ~Ein Weg in die Spinnenschächte
+
+Der Regentschaftsrat möchte, dass ich den Priester Turbaern Ghalmrin in der "Halle der Omlare" bitte, den Runenstein für den Zugang in die versiegelte Mine der "Spinnenschächte" herauszugeben.~
+@62021  = ~Ein Weg in die Spinnenschächte
+
+Turbaern Ghalmrin hat es abgelehnt, den Siegelstein für die Spinnenschächte herauszugeben Diese schlechte Nachricht muss ich jetzt dem Regentschaftsrat übermitteln. Wie es danach weitergehen soll, weiß ich nicht.~
+@62022  = ~Ein Weg in die Spinnenschächte
+
+Ich habe den Schlüsselstein für das Tor in die Spinnenschächte erhalten und sollte nun in diesem Gebiet nach Antworten auf den mysteriösen Schlaf König Mith Baraks suchen.~
+// Im Netz der Spinne
+@62025  = ~Im Netz der Spinne
+Ich habe in den Spinnenschächten Daevion'lyr, einen Priester Vhaerauns getroffen, der von einer Priesterin Lolths gesucht wird. Ich soll der Priesterin die Leiche eines toten Drow geben und sie glauben lassen, ich hätte alle Dunkelelfen in diesem Gebiet getötet.~
+@62026  = ~Im Netz der Spinne
+Die Lolth-Priesterin hat den Köder geschluckt. Ich sollte zu Daevion'lyr zurückkehren und von meinem Erfolg berichten.~
+@62027  = ~Im Netz der Spinne
+Die Vhaeraun-Anbeter ziehen weiter an die Oberfläche. Ich hoffe, ich werde den Entschluss, ihnen dabei geholfen zu haben, nicht irgendwann bereuen.~
+//___________________________Barakuir
+@62030  = ~Barakuir
+
+Nachdem es nicht geklappt hat, den Weg in die Spinnenschächte freizugeben, soll ich nun nach einem Weg nach "Barakuir" suchen, auch wenn mir der Rat nicht sagen wollte, worum es sich dabei überhaupt handelt. Bettargh Abgrundlied in der Halle der Runensteine, der großen Bibliothek Dugmarens, ist mein Ansprechpartner.~
+@62031  = ~Barakuir
+
+Es scheint wohl Aufzeichnungen zu geben, wo dieses Barakuir liegen könnte. Ich soll den Aufseher namens Jorboud Hornfinger am zentralen Schacht der Bibliothek um Hilfe bitten.~
+@62032  = ~Barakuir
+
+Jorboud hat mir prompt die Steintafel ausgehändigt war. Diese muss ich jetzt zu Bettargh Abgrundlied bringen.~
+@62033  = ~Barakuir
+
+Der Zugang nach Barakuir liegt im Osten, jenseits eines großen Sees, den die Zwerge "Eisensee" nennen. Ich bin gespannt, was der Rat dazu sagt.~
+@62040  = ~Die Reise nach Barakuir
+
+Ich brauche ein Boot, um über den See nach Barakuir zu reisen. Ich soll Sorni bei den Lavaöfen unter der Arnschädelhalle fragen, ob sie eines ihrer Boote wassertauglich machen kann.~
+@62041  = ~Die Reise nach Barakuir
+
+Sorni kann ein Metallboot bauen, welches auf dem Wasser gleitet. Sie schickt es in die Stadt und ich soll am Platz von Bhaerynden darauf warten.~
+@62042   = ~Der Weg nach Barakuir
+
+Bresk und Elern warten in Iltkazar darauf, bis ich mich vorbereitet habe. Dann werden wir in die Tunnel zu dem unterirdischen See aufbrechen.~
+@62043   = ~Der Weg nach Barakuir
+
+Hathar wartet vor den Tunneln, die zum See führen, auf den Rest der Truppe, während ich die ehrenvolle Aufgabe übernommen habe, gegen die Kuo Toa vorzugehen, bis zu den Ufern des Sees vorzustoßen, den Steinkreis zu deaktivieren und dann darauf zu warten, dass die Boote startklar gemacht werden.~
+@62044   = ~Der Weg nach Barakuir
+
+Die Boote sind startklar. Alle warten nun darauf, dass ich das Boot betrete und damit das Zeichen zum Aufbruch gebe.~
+@62045   = ~Der Weg nach Barakuir
+
+Ich bin an den Ausläufern des ehemaligen Barakuir angekommen. Von nun an geht mein Weg allein weiter. Sobald ich einen Hinweis gefunden habe, was es mit dem Schlaf König Mith Baraks auf sich hat, sollte ich zurück zum Anlegeplatz der Boote gehen, damit mich die Mannschaft zurück nach Iltkazar bringt.~
+@62046   = ~Der Weg aus Barakuir
+
+Der Gedankenschinder in Barakuir behauptet, dass mich die Bootsbesatzung hier zurückgelassen habe. Ich sollte schnellstmöglich ans Ufer zurückkehren und feststellen, ob das stimmt.~
+@62047   = ~Der Weg aus Barakuir
+
+Aus heiterem Himmel ist der Hammer Dumathoins am Ufer Barakuirs aufgetaucht. Vielleicht hilft er mir, von diesem schrecklichen Ort zu verschwinden?~
+@62048   = ~Der Weg aus Barakuir
+
+Ich habe die Außenbezirke der ehemaligen Stadt der Duergar betreten und hoffe, ich finde auf diesem Wege zurück nach Iltkazar.~
+@62050   = ~Ellhimar, der Magier
+
+In einem alten Tempel der Illithiden an den Grenzen Barakuirs bin ich einem Gedankenschinder begegnet, der mir den "echten" Ellhimar zurückgegeben hat. Er scheint die Gesellschaft der Gedankenschinder nicht gut vertragen zu haben. Ich sollte ihn nach Iltkazar zurückbringen. Vielleicht weiß dort jemand, wie man den Magier aus seinem kläglichen Zustand wieder befreien kann.~
+@62051   = ~Ellhimar, der Magier
+
+Ich habe Ellhimar dem Rat übergeben. Die Kleriker der Zwerge versuchen nun, ihn mit Sharindlars Hilfe aus seinem elenden geistigen Zustand zu befreien.~
+@62059	= ~Der Verrat
+
+Ruvan Steinschulter ist mitsamt seiner Frau aus dem Rat ausgeschlossen worden und muss jetzt die nächste Zeit im Gefängnis der Stadt unter der Bronzemaske verbringen. Eine gerechte Strafe dafür, dass er mich in Barakuir dem Tod überlassen wollte.~
+@62060	= ~Ellhimar, der Magier
+
+Im Auftrag des Rates soll ich mich mit Vronia in Ihrer Behausung abstimmen, um dem Magier Ellhimar auf den Zahn zu fühlen.~
+@62061	= ~Ellhimar, der Magier
+
+Da ich das Rätsel um den Magier Ellhimar gelöst habe sollte ich erneut im Regentschaftsrat vorbeisehen, wie er mit dieser Nachricht umgeht.~
+
+//_______________________________Die Astrale See
+@62100  = ~Die Astrale See
+
+Bettargh hat das Buch, welches Beldas in Kerzenburg erworben hatte, gelesen. Es handelt von der Astralebene im Allgemeinen und im Besonderen von Reisen in diese Ebene. Er hat mir eine Niederschrift davon in Borthuns Tagebuch gelegt, damit ich dort jederzeit darauf zugreifen kann.~
+//_______________________________Das Buch aus Kerzenburg
+@62101  = ~Das Buch aus Kerzenburg
+
+Ich soll das Buch, das König Mith Barak aus meiner alten Heimat Kerzenburg erhalten wollte, zu dem zwergischen Gelehrten Bettargh Abgrundlied in die Halle der Runensteine bringen.~
+
+@62102  = ~Das Buch aus Kerzenburg
+
+Ich habe das Buch aus meiner alten Heimat Kerzenburg zu dem zwergischen Gelehrten Bettargh Abgrundlied in die Halle der Runensteine gebracht. Er lässt davon Abschriften anfertigen und meldet sich dann wieder.~
+//_______________________________Githyanki
+@62200  = ~Githyanki
+
+Ellhimar ist von den Githyanki ermordet worden! Nun kenne ich zumindest eine der Gruppen, die hinter der ganzen Sache zu stecken scheint.~
+@62201  = ~Githyanki
+
+Ellhimar ist von den Githyanki entführt worden! Nun kenne ich zumindest eine der Gruppen, die hinter der ganzen Sache zu stecken scheint.~
+// NEW Return to surface
+@63001  = ~Zurück an die Oberfläche
+
+Um zurück an die Oberfläche zu gelangen, sollte ich Elern Abgrundlieds Mutter Dorna Abgrundlied im Tempel Dugmarens aufsuchen. Ich finde den Zugang zum Tempel in der Halle der Runensteine, an einer Tür unter den Werkstätten der Tiefengnome im Norden des Komplexes.~
+//___________________________Der Drachenfriedhof
+@64100  = ~Der Drachenfriedhof
+
+Ich soll Bettargh in der Abgrundliedhalle fragen, ob er einen Anhaltspunkt hat, wo der Ort an der Oberfläche, den Mith Barak in den Träumen besucht hat, liegen könnte.~
+@64101  = ~Der Drachenfriedhof
+
+Bettargh meinte, seine Tochter Elern könnte mir bei der Suche nach diesem seltsamen Ort weiterhelfen. Sie wartet in der Bibliothek an einem Zwergenstandbild im Osten auf mich.~
+@64102  = ~Der Drachenfriedhof
+
+Borthun Diamantklinge, ein großer zwergischer Entdecker, könnte etwas über diesen Drachenfriedhof niedergeschrieben haben. Seine Aufzeichnungen befinden sich in der "Uralten Schmiede", dem Tempel Moradins, im Westen der Stadt.~
+@64103  = ~Der Drachenfriedhof
+
+Ich habe Borthuns Buch von Anthan Diamantklinge erhalten. Ich sollte es sorgfältig lesen und dann in den Thronsaal zurückkehren, um zu besprechen, wie es weitergeht.~
+@64104  = ~Der Drachenfriedhof
+
+Ich habe Borthuns Eintrag zu diesem mysteriösen Ort in seinem Buch gelesen. Es handelt sich um einen für Elfen heiligen Ort am Fuße der Wolkengipfel, an dem ein Elfenheld in grauer Vorzeit zwei Drachen erschlagen hatte. Mith Barak hat diesen Stein wohl deshalb aufgesucht, weil er sich in der Nähe zu einem Ort begab, den er den "Drachentempel" genannt hat. Ich vermute, dass dies der nächste Ort sein wird, den ich bei meiner Suche nach dem schlafenden König aufsuchen muss.~
+//___________________________Zurück an die Oberfläche
+@64200  = ~Zurück an die Oberfläche
+
+So, wie es scheint, liegen die Antworten von Mith Baraks mysteriösem Schlaf an der Oberfläche. Ich sollte nach einem Weg finden, wieder den Weg zurück anzutreten. Bettargh, der Priester Dugmarens in der Abgrundliedhalle, hat vielleicht eine Idee, wie ich die vielen Meilen nach oben zurück in Ravimors Höhle schweben könnte.~
+@64201  = ~Der Levitationstrank
+
+Ein Tiefengnom-Alchemist mit Namen Fruntuck Flaschenhals hat mich gebeten, ihm einen Betrachter-Augenstiel zu beschaffen. Ganz in der Nähe Iltkazars sind alte Tunnel, in denen ich mt etwas "Glück" einem Besitzer eines solchen Augenstiels über den Weg laufen könnte. Um dorthin herabzusteigen,  sollte ich mich in der Zisterne des "Blutigen Bollwerks" einmal umsehen, ob ich von einem der Händler eine Leiter erwerben kann.~
+
+@64202  = ~Der Levitationstrank
+
+Mithilfe der Leiter sollte ich gefahrlos den Schacht südlich von Iltkazar hinunterklettern können, um einen Betrachter von seinem Augenstiel zu trennen.~
+@64203  = ~Der Levitationstrank
+
+Ich habe eine Strickleiter gefunden, die mich gefahrlos in den Schacht südlich von Iltkazar hinunterklettern kann.~
+@64204  = ~Der Levitationstrank
+
+Ich habe den Augenstiel eines Betrachters! Jetzt heißt es zurück zu Fruntuck in Nebeluns Manufaktur, um den Trank zu brauen.~
+@64205  = ~Der Levitationstrank
+
+Der Gnomenalchimist Fruntuck Flaschenhals oben auf der Empore, die sie Nebeluns Manufaktur nennen, kann mir den Levitationstrank brauen, den ich benötige, um wieder an die Oberfläche zu gelangen. Ich freue mich, wieder zurück ans Licht zu kehren. Auf das trinken des Trankes mit dem Betrachterauge freue ich mich weniger.~
+@64206  = ~Der Levitationstrank
+
+Ich habe dem Tiefengnom-Alchemisten Fruntuck Flaschenhals geholfen, wieder neue Levitationstränke zu brauen.~
+@64207  = ~Zurück an die Oberfläche
+
+Der Weg an die Oberfläche ist gar nicht so einfach wie ich dachte! Ich soll Shagretor, den Inhaber des "Vermächtnis" in Haelas Hallen bitten, mir eine ominöse Flugscheibe der Drow zur Verfügung zu stellen.~
+@64208  = ~Zurück an die Oberfläche
+
+Die Schwebescheibe befindet sich im Vermächtnis inmitten anderer Drow-Utensilien.~
+@64209  = ~Zurück an die Oberfläche
+
+Diese verdammte Drow-Scheibe scheint nicht mehr zu funktionieren. Ich sollte sie zu Dorna Abgrundlied in Dugmarens Tempel in der Halle der Runensteine im Nordosten der Stadt bringen. Vielleicht kennt sie jemanden, der sie mir erneut verzaubern kann.~
+@64210  = ~Zurück an die Oberfläche
+
+Ellhimar hat die Schwebescheibe an sich genommen, um sie erneut zu verzaubern. Ich soll ihn in seinem Haus besuchen, wo ich die verzauberte Scheibe wieder abholen kann.~
+@64211  = ~Zurück an die Oberfläche
+
+Ich habe von Ellhimar eine funktionierende Schwebescheibe erhalten, die mich wieder an die Oberfläche zurückbringen kann.~
+@64212  = ~Zurück an die Oberfläche
+
+Die Schwebescheibe der Drow ist startklar. Ich kann nun zwischen der Oberfläche und Iltkazar hin- und herreisen.~
+@64220  = ~Quecksilber
+
+Um die Schwebescheibe wieder aktivieren zu können, benötige ich Quecksilber. Ich kann die Substanz entweder von Chiksul in der Zitadelle "Zum Blutigen Bollwerk" erwerben, oder ich kann sie selbst herstellen. Dazu muss ich außerhalb Iltkazars einen Stollen aufsuchen, der sich "Nummaks Stollen" nennt. Dorna hat mir einen Schlüssel gegeben, um den Zugang zu öffnen. Wenn ich darin etwas Cinnabar-Erz geschürft habe, muss ich das Erz zu einem Zwerg namens Thargrun Trunkensang in dem ersten Stock der Arnschädelhalle bringen, der mir dabei hilft, das Erz in Quecksilber zu verwandeln. Sobald ich das Quecksilber habe, muss ich es zu Dorna in Dugmarens Tempel zurückbringen, um den Schwebezauber auf die Scheibe wirken zu können.~
+@64221  = ~Quecksilber
+
+Ich habe etwas Quecksilber erworben. Nun muss ich es zu Dorna Abgrundlied in Dugmarens Tempel bei der Halle der Runensteine bringen, um die Schwebescheibe wieder verzaubern zu können.~
+@64222  = ~Quecksilber
+
+Ich habe das Cinnabar-Erz gefunden. Ich sollte es zu Thargrun Trunkensang in den ersten Stock der Arnschädelhalle bringen, damit er mir erklärt, wie ich aus dem Erz reines Quecksilber gewinnen kann.~
+@64223  = ~Quecksilber
+
+Um aus dem Cinnabar-Erz Quecksilber zu schürfen, muss ich das Erz in den Ofen neben Thargrun legen und warten, bis das Quecksilber "ausschwitzt", wie er sagt. Dann kann ich die Substanz zu Dorna in Dugmarens Tempel bringen, um die Verzauberung der Drow-Schwebescheibe zu vollenden.~
+@64224  = ~Quecksilber
+
+Ich habe etwas Quecksilber hergestellt. Jetzt muss ich die Substanz zu Dorna in Dugmarens Tempel bringen, um die Verzauberung der Drow-Schwebescheibe zu vollenden.~
+@64225  = ~Die Drow-Schwebescheibe
+
+Um die Verzauberung der Drow-Schwebescheibe zu erneuern, muss ich die Scheibe mitsamt dem Quecksilber auf Dugmarens Altar platzieren. Dann sollte ich den Zauberspruch von der Spruchrolle lesen, welche mir Dorna gegeben hat.~
+@64226  = ~Die Drow-Schwebescheibe
+
+Ich habe die Schwebescheibe hergestellt. Nun kann ich sie am Boden des Schachtes benutzen, den ich von der Oberfläche herabgeschwebt bin.~
+//___________________________Abschied aus Iltkazar
+@64300  = ~Abschied aus Iltkazar
+
+Wenn ich alles habe, was ich brauche, soll ich Bresk auf dem großen Platz im Zentrum Iltkazars über meinen Aufbruch informieren, damit ich einen würdigen Abschied bekomme. Was für ein Gegensatz zu dem frostigen Empfang, den man mir bei meiner Ankunft bereitet hat!~
+@64301  = ~Abschied aus Iltkazar
+
+Ich habe die Stadt verlassen. Die Tore sind verschlossen, und mein Weg wird mich nun zurück an die Oberfläche und zum Drachenfriedhof führen.~
+//___________________________Torglor, das Silberkönigreich
+@64900  = ~Torglor, das Silberkönigreich
+
+So langsam erreicht die Suche nach Mith Barak ihren Höhepunkt. Ich werde mich in das alte Zwergenkönigreich Torglor nach Norden durchschlagen müssen. Mit etwas Glück finde ich dort ein Portal in die Astralebene, mit etwas Pech auch die Githyanki, die sich dort niedergelassen haben könnten.~
+//___________________________Torglor, das Silberkönigreich
+@66000  = ~Angriff auf Iltkazar
+
+Iltkazar wird angegriffen. Hathar hält vor den Toren die Stellung und bat mich, in der Stadt die kämpfenden Zwerge zu unterstützen.~
+@66001  = ~Angriff auf Iltkazar
+
+Der Angriff auf Iltkazar gilt König Mith Barak. Bresk hat mir den Auftrag gegeben, zur Halle des Regentschaftsrates vorzustoßen und Dunnabar Steinschulter über die Gefahr zu unterrichten.~
+//___________________________Die zwölf Sockel
+@71000  = ~Die zwölf Sockel
+
+Ich habe im Inneren des alten Drachentempels zwölf angebrannte Sockel entdeckt. Wenn ich etwas stark Brennbares darauflegen würde, könnte sich der Sockel wahrscheinlich entzünden. Es sieht so aus, als wäre dies in der Vergangenheit bereits mehrere Male getan worden, auch wenn sich mir der Zweck nicht ganz erschließt.~
+@71010  = ~Die zwölf Sockel
+
+Ich habe mithilfe eines alten Rituals Kontakt zu einem Diener der Gottheit aufgenommen, die Mith Barak verflucht hatte. Sein Name war Maldraedior.~
+@71100  = ~Der verfluchte Silberdrache
+
+Ich weiß nicht, wo ich anfangen soll, also fasse ich mich kurz. Mithbarakaz ist in Wahrheit ein verfluchter Silberdrache. Der Gott Kalzareinad, der den Fluch ausgesprochen hat, treibt tot in der Astralebene. Dort scheint auch Mithbarakaz gefangen zu sein. Ich muss ein Portal in die Astralebene finden und dort Kalzareinads Körper aufsuchen, um herauszufinden, wo sich Mithbarakaz gerade aufhält.~
+//___________________________Tiglath
+@79000  = ~Tiglath
+
+Mir ist eine kleine drachenartige Kreatur begegnet, die viel über meine Suche nach Mith Barak zu wissen scheint. Die Herrin des kleinen Wesens, eine Person namens Tiglath, möchte mich im Stadttorviertel Athkatlas treffen. Vielleicht sollte ich dort einmal vorbeischauen, denn es würde mich beunruhigen, wenn jemand Unbekanntes derart gut über meine Schritte informiert ist.~
+//___________________________Kalzareinads Herz
+@79500  = ~Kalzareinads Herz
+
+Ich habe das schlagende Herz, das von dem einstigen Drachengott namens Kalzareinad als letzter Rest übrig war, vernichtet. Dies wird mir sicherlich den Zorn seines letzten Anhängers Maldraedior einbringen, doch nun ist die einst mächtige Gottheit ein für allemal tot. Damit gibt es nun aber keine Möglichkeit mehr, den Fluch von Mithbarakaz zu nehmen, aber das ist nicht mein Problem.~
+@79501  = ~Kalzareinads Herz
+
+Ich habe das schlagende Herz, das von dem einstigen Drachengott namens Kalzareinad als letzter Rest übrig war, vernichtet. Dies wird mir sicherlich den Zorn seines letzten Anhängers Maldraedior einbringen, doch nun ist die einst mächtige Gottheit ein für allemal tot. Zum Glück habe ich ihn vorher noch den Fluch von Mithbarakaz nehmen lassen. Der "Zwergenkönig" vom Fluch befreit, die Gottheit tot - das nenne ich einen guten Verlauf des Abenteuers!~
+//___________________________Der letzte Gläubige
+@79600  = ~Der letzte Gläubige
+
+Ich habe dem alten blauen Drachen Maldraedior versprochen, seiner toten Gottheit Kalzareinad mitzuteilen, dass noch ein Gläubiger in der Welt existiert, der ihm die Treue hält.~
+@79600  = ~Der letzte Gläubige
+
+Ich habe dem alten blauen Drachen Maldraedior versprochen, seiner toten Gottheit Kalzareinad mitzuteilen, dass noch ein Gläubiger in der Welt existiert, der ihm die Treue hält.~
+@79601  = ~Der letzte Gläubige
+
+Ich habe der Drachengottheit Kalzareinad mitgeteilt, dass noch ein Gläubiger in der Welt existiert, der ihm die Treue hält. Der blaue Drache Maldraedior wird sich darüber freuen.~
+//___________________________Mith Baraks Fluch
+@79700  = ~Mith Baraks Fluch
+
+Ich habe den Fluch, der auf Mith Barak lastet, von ihm nehmen lassen. Für diese gute Tat wird er mir sicher sehr dankbar sein.~
+//___________________________Palast der zerschmetterten Seelen
+@80000  = ~Palast der zerschmetterten Seelen
+
+Ich weiß jetzt, wo Mith Barak festgehalten wird. Der Ort nennt sich 'Palast der zerschmetterten Seelen' und liegt in der Astralebene. Obwohl ich noch nie dort gewesen bin, weiß ich durch die Beschreibung des toten Gottes Kalzareinad, wie ich mit dem Astralschiff der Githyanki dorthin gelangen kann.~
+//___________________________Flucht durch den Tunnel
+@90010  = ~Flucht durch den Tunnel
+
+Um die Passage herunter vom Turboldberg zu öffnen, muss ich eine Bodenplatte im Inneren der Kammer aktivieren, indem ich einen Zeiger auf das Symbol Iltkazars - ein Schild mit gekreuzten Äxten - ausrichte. Dies sollte die Geheimtür öffnen, die den Tunnel freigibt, durch den Beldas und seine Freunde den Berg hinaufgelangt sind. Leider können sie mich nicht mehr nach unten begleiten.~
+@90011  = ~Flucht durch den Tunnel
+
+Ich habe die Tür geöffnet, die mich durch den Tunnel und hoffentlich herunter von diesem verfluchten Berg bringt.~
+@90012  = ~Flucht durch den Tunnel
+
+Der Mechanismus, der die Tür herab von diesem Berg öffnen soll, klemmt. Ich muss sehen, ob es in einem anderen Raum eine Möglichkeit gibt, den Mechanismus zu reparieren.~
+@90013  = ~Flucht durch den Tunnel
+
+Ich habe den Mechanismus, der die Ausgangstüre öffnen soll, repariert. Nun sollte ich zurück in den Statuenraum gehen und von diesem Berg verschwinden.~
+@90014  = ~Flucht durch den Tunnel
+
+Ich habe den defekten Mechanismus gefunden. Wenn ich ein passendes Zahnrad finde, könnte ich ihn wieder in Gang setzen, um die Tür im Nebenraum zu öffnen~
+//___________________________Der Abstieg vom Turboldberg
+@90020  = ~Der Abstieg vom Turboldberg
+
+Beldas erwähnte eine Leiter, die er im Inneren der Turboldfeste zurückgelassen hat. Damit könnte ich mich an einem Felssims herunterlassen und den Berg wieder herabsteigen.~
+@90021  = ~Der Abstieg vom Turboldberg
+
+Ich habe die Leiter gefunden. Wenn ich sie im Freien an dem Felsvorsprung festmache, werde ich den Turboldberg wieder verlassen können.~
+//___________________________Der Abstieg vom Turboldberg
+@99000  = ~Iltkazar ist gerettet
+
+Ich habe Iltkazar vor der Bedrohung Tiamats gerettet. Sowohl König Mith Barak als auch die Zwerge waren mir äußerst dankbar, und ich werde von nun in Iltkazar ein- und ausgehen können, wie es mir beliebt.~
+
+
+

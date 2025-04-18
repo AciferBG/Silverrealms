@@ -1,0 +1,183 @@
+/*
+Textscreen: Die PCs werden nach unten gelassen
+*/
+IF
+	Global("EnteredArea","ACIL57",0)
+THEN
+	RESPONSE #100
+		FadeToColor([0.0],0)
+		SetGlobal("EnteredArea","ACIL57",1)
+		StartMovie("ac#57mve")
+		// TextScreen("AC#MOS57")
+END
+
+/*
+Die PCs schlagen auf dem Boden auf und werden von einer Horde Zombies attakiert
+*/
+
+IF
+	Global("EnteredArea","ACIL57",1)
+THEN
+	RESPONSE #100
+                 ClearAllActions()
+                 SetGlobal("EnteredArea","ACIL57",2)
+		ActionOverride(Player1,PlayDead(35))
+		ActionOverride(Player2,PlayDead(35))
+		ActionOverride(Player3,PlayDead(35))
+		ActionOverride(Player4,PlayDead(35))
+		ActionOverride(Player5,PlayDead(35))
+		ActionOverride(Player6,PlayDead(35))
+		ApplyDamage(Player1,1,CRUSHING)
+		ApplyDamage(Player2,1,CRUSHING)
+		ApplyDamage(Player3,1,CRUSHING)
+                ApplyDamage(Player4,1,CRUSHING)
+                ApplyDamage(Player5,1,CRUSHING)
+                ApplyDamage(Player6,1,CRUSHING)
+		CreateCreature("ZOMBIE01",[440.2343],6)
+		CreateCreature("ZOMBIE01",[449.2360],11)
+		Wait(2)
+		ScreenShake([50.50],15)
+		ActionOverride("AC#SKAR1",Shout(89))
+		FadeFromColor([30.0],0)
+END
+
+IF
+	Global("EnteredArea","ACIL57",2)
+THEN
+	RESPONSE #100
+		SetGlobal("EnteredArea","ACIL57",3)
+                AmbientActivate("Steam01",FALSE)
+                AmbientActivate("Steam02",FALSE)
+                SoundActivate("Steamsound01",FALSE)
+                SoundActivate("Steamsound02",FALSE)
+END
+
+IF
+	OpenState("DOOR09",TRUE)
+        OpenState("DOOR10",TRUE)
+        OpenState("DOOR08",FALSE)
+        Global("DOOR08","ACIL57",0)
+
+THEN
+	RESPONSE #100
+	         SetGlobal("DOOR08","ACIL57",1)
+		DisplayString(Myself,999998)  // ~Irgendwo hat sich eine Tür geöffnet.~
+                OpenDoor("DOOR08")
+                ActionOverride("AC#DURG2",DestroySelf())
+                TriggerActivation("AC#57TR1",FALSE)
+END
+
+IF
+	//PartyHasItem("AC#HADUM")
+	Global("Info_Hammer_Doors","ACIL57",0)
+	OR(6)
+	HasItem("AC#HADUM",Player1)
+	HasItem("AC#HADUM",Player2)
+	HasItem("AC#HADUM",Player3)
+	HasItem("AC#HADUM",Player4)
+	HasItem("AC#HADUM",Player5)
+	HasItem("AC#HADUM",Player6)
+THEN
+	RESPONSE #100
+                DisplayStringHeadOwner("AC#HADUM",999999) // ~Der Hammer Dumathoins pulsiert plötzlich in einem starhlenden Licht. Ihr könnt mit seiner Macht die bisher verschlossenen Türen öffnen.~
+                SetGlobal("Info_Hammer_Doors","ACIL57",1)
+END
+/*
+Die beschwörung des Glabrezu: Jetzt in ACIL49
+
+
+IF
+	Global("AC#Baphometspawn","GLOBAL",1)
+THEN
+	RESPONSE #100
+                ClearAllActions()
+		StartCutSceneMode()
+		CutSceneId("AC#DURG1")
+		SetGlobal("AC#Baphometspawn","GLOBAL",2)
+		Face(8)
+		ActionOverride(Player1,MoveToPoint([785.641]))
+		ActionOverride(Player2,MoveToPoint([780.648]))
+		ActionOverride(Player3,MoveToPoint([788.636]))
+		ActionOverride(Player4,MoveToPoint([775.650]))
+		ActionOverride(Player5,MoveToPoint([789.633]))
+		ActionOverride(Player6,MoveToPoint([791.664]))
+		ForceSpell(Myself,LONG_RED_MIGHT)
+		Wait(2)
+		MoveViewPoint([611.522],100)
+		CreateVisualEffect("SPSUMGTE",[611.522])
+		ScreenShake([50.50],5)
+		Wait(1)		
+		Wait(2)
+		CreateVisualEffect("SPFIREPI",[611.522])
+		Wait(2)
+		CreateCreature("AC#GLAB1",[611.522],0)
+		ActionOverride("AC#GLAB1",FaceObject("AC#DURG1"))
+		MoveViewObject("AC#GLAB1",VERY_FAST)
+		EndCutSceneMode()
+END
+*/
+
+IF
+	Global("AC#Banshee_free","GLOBAL",1)
+THEN
+	RESPONSE #100
+	        SoundActivate("Cries",FALSE)
+		SetGlobal("AC#Banshee_free","GLOBAL",2)
+END
+
+
+
+
+
+
+
+
+/*
+IF
+	Global("SpawnPointNegativePlane","ACIL10",0)
+	XPLT(Player1,300000)
+THEN
+	RESPONSE #100
+		CreateCreature("SHADFI01",[451.3337],0) // Schattenscheusal
+		CreateCreature("SHADFI01",[451.3337],0) // Schattenscheusal
+		CreateCreature("SHADFI01",[451.3337],0) // Schattenscheusal
+		CreateCreature("SHADOW01",[451.3337],0) // Schatten
+		CreateCreature("SHADOW01",[451.3337],0) // Schatten
+		CreateCreature("SHADOW01",[451.3337],0) // Schatten
+		SetGlobal("SpawnPointNegativePlane","ACIL10",1)
+END
+
+IF
+	Global("SpawnPointNegativePlane","ACIL10",0)
+	XPGT(Player1,299999)
+	XPLT(Player1,1000000)
+THEN
+	RESPONSE #100
+		CreateCreature("SHADFI01",[451.3337],0) // Schattenscheusal
+		CreateCreature("SHADFI01",[451.3337],0) // Schattenscheusal
+		CreateCreature("SHADFI01",[451.3337],0) // Schattenscheusal
+		CreateCreature("WRAITH01",[451.3337],0) // Todesalb
+		CreateCreature("WRAITH01",[451.3337],0) // Todesalb
+		CreateCreature("WRAITH01",[451.3337],0) // Todesalb
+		SetGlobal("SpawnPointNegativePlane","ACIL10",1)
+END
+
+IF
+	XPGT(Player1,999999)
+	Global("SpawnPointNegativePlane","ACIL10",0)
+THEN
+	RESPONSE #100
+		CreateCreature("SHADFI01",[451.3337],0) // Schattenscheusal
+		CreateCreature("SHADFI01",[451.3337],0) // Schattenscheusal
+		CreateCreature("MISTPO01",[451.3337],0) // Giftiger Nebel
+		CreateCreature("WRAITH01",[451.3337],0) // Todesalb
+		CreateCreature("WRAITH01",[451.3337],0) // Todesalb
+		CreateCreature("WRAITH01",[451.3337],0) // Todesalb
+		CreateCreature("MISTVA01",[451.3337],0) // Vampirischer Nebel
+		CreateCreature("MISTVA01",[451.3337],0) // Vampirischer Nebel
+		CreateCreature("MISTHO01",[451.3337],0) // Nebelschrecken
+		SetGlobal("SpawnPointNegativePlane","ACIL10",1)
+END
+
+*/
+

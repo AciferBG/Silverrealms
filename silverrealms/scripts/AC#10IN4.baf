@@ -1,0 +1,51 @@
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,12)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,999995) // Aus dieser Entfernung könnt Ihr nichts erkennen.
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	Race(LastTrigger,DWARF)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,999999) /* AAuf diesem großen Stein steht in Zwergenrunen geschrieben:
+"An dieser Furt erschlug Karlyn vom Clan Kuldelver mit einem Hieb seiner Axt den feigen Kutlog, König der Hügelriesen." */
+
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	CheckStatGT(LastTrigger,50,LORE)
+
+THEN
+	RESPONSE #100
+		DisplayString(Myself,999999)  /* AAuf diesem großen Stein steht in Zwergenrunen geschrieben:
+"An dieser Furt erschlug Karlyn vom Clan Kuldelver mit einem Hieb seiner Axt den feigen Kutlog, König der Hügelriesen."*/
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	PartyHasItemIdentified("AC#BKDWF") // Die Schrift und Sprache der Zwerge
+
+THEN
+	RESPONSE #100
+		DisplayString(Myself,999999) /* Auf diesem großen Stein steht in Zwergenrunen geschrieben:
+"An dieser Furt erschlug Karlyn vom Clan Kuldelver mit einem Hieb seiner Axt den feigen Kutlog, König der Hügelriesen."*/
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	CheckStatLT(LastTrigger,51,LORE)
+
+THEN
+	RESPONSE #100
+		DisplayString(Myself,999998) // Auf diesem großen Stein sind zahlreiche Zwergenrunen eingraviert, die Ihr nicht entziffern könnt.
+END
+

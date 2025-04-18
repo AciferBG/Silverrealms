@@ -1,0 +1,10 @@
+IF
+	GlobalGT("AC#S#Red_Dagger","GLOBAL",3)
+THEN
+	RESPONSE #100
+                 DestroySelf()
+END
+
+
+
+

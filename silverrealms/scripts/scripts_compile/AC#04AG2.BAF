@@ -1,0 +1,7 @@
+
+IF
+	Global("Guard_Spawn","ACIL04",10) 
+THEN
+	RESPONSE #100
+		EscapeArea()
+END

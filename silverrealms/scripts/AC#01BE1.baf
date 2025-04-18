@@ -1,0 +1,13 @@
+IF
+	See([PC])
+	Range(LastSeenBy(Myself),15)
+	Global("BeeHive","LOCALS",0)
+	OR(2)
+	!Class(LastSeenBy(Myself),DRUID_ALL)
+	!Class(LastSeenBy(Myself),RANGER_ALL)
+THEN
+	RESPONSE #100
+		ReallyForceSpell(LastSeenBy(Myself),CLERIC_INSECT_PLAGUE)
+		SetGlobal("BeeHive","LOCALS",1)
+END
+

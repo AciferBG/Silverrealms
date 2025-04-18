@@ -1,0 +1,11 @@
+
+IF
+        Global("Ladder","ACIL93",0)
+        PartyHasItem("AC#SRLAD")
+THEN
+    RESPONSE #100
+    SetGlobal("Ladder","ACIL93",1)
+    EraseJournalEntry(@90020)
+    AddJournalEntry(@90021,QUEST_DONE)
+END
+

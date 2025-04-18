@@ -1,0 +1,42 @@
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,10)
+	Global("AC#Mirror","ACIL5E",0)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,999999)
+		SetGlobal("AC#Mirror","ACIL5E",1)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,10)
+	Global("AC#Mirror","ACIL5E",1)
+THEN
+	RESPONSE #100
+		//DisplayString(Myself,999998)
+                ClearAllActions()
+                StartCutSceneMode()
+		MoveViewPoint([1054.184],VERY_FAST)
+                Wait(1)
+		//CreateVisualEffect("SPDIMNDR",[1054.184])
+		CreateVisualEffect("SPFLESH2",[1054.184])
+		SoundActivate("Portal",TRUE)
+		Wait(2)
+		AmbientActivate("Mindflayer",TRUE)
+		Wait(5)
+		CreateCreatureImpassable("AC#5EMIN",[1054.184],13)
+		SetGlobal("AC#Mirror","ACIL5E",2)
+		EndCutSceneMode()
+		ActionOverride("AC#5EMIN",StartDialogueNoSet([PC]))
+END
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,10)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,14702)
+END
+
+

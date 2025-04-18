@@ -1,0 +1,35 @@
+IF
+        Clicked([ANYONE])
+        Range(LastTrigger,12)
+        Global("Acil71_Phosphor","ACIL71",0)
+THEN
+    RESPONSE #100
+             DisplayString(Myself,999998)
+             SetGlobal("Acil71_Phosphor","ACIL71",1)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	PartyHasItem("AC#P01") // Phosphor
+	GlobalLT("AC#_DragonSummon","GLOBAL",13)
+THEN
+	RESPONSE #100
+	        TakePartyItemNum("AC#P01",1) // Phosphor
+                DisplayString(Myself,999999)
+		IncrementGlobal("AC#_DragonSummon","GLOBAL",1)
+		PlaySound("TRA_06")
+                CloseDoor("Door03")
+		Wait(2)
+		AmbientActivate("Firedoor03",TRUE)
+                TriggerActivation("Pillar03",FALSE)
+END
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,12)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,14702) // Ihr seid zu weit entfernt, um das zu benutzen.
+END
+

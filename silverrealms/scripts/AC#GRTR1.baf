@@ -1,0 +1,34 @@
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		StartTimer(77,6)
+END
+
+IF
+	HPLT(Myself,15)
+	GlobalLT("GraytrollGasForm","LOCALS",3)
+	!StateCheck(Myself,STATE_DEAD)
+THEN
+	RESPONSE #100
+		IncrementGlobal("GraytrollGasForm","LOCALS",1)
+		ReallyForceSpellRES("AC#GRTR3",Myself) // GAS_FORM_CHANGE
+END
+
+IF
+	HPLT(Myself,12)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		StartTimer(77,6)
+		ChangeAnimationNoEffect("AC#GRTR2")
+END
+
+IF
+	TimerExpired(77)
+THEN
+	RESPONSE #100
+		StartTimer(77,6)
+END
+
+

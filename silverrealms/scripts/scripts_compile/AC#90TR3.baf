@@ -1,0 +1,19 @@
+IF
+	Entered([PC])
+	Global("FoundEntry","ACIL90",0)
+	Dead("AC#S#WYV")
+	//CombatCounter(0)
+THEN
+	RESPONSE #100
+                SetGlobal("FoundEntry","ACIL90",1)
+                Unlock("DOOR04")
+                Wait(1)
+                OpenDoor("DOOR04")
+	        CreateCreature("ac#dwf02",[892.220],14) // Beldas
+		CreateCreature("ac#dwf22",[824.247],15)  // Gormar
+		SmallWait(4)
+		ActionOverride("ac#dwf02",MoveToObject([PC])
+		ActionOverride("ac#dwf22",MoveToObject([PC])
+		Wait(1)
+		ActionOverride("ac#dwf02",Dialogue([PC])
+END

@@ -1,0 +1,24 @@
+// AC#RAVEN translation file
+@1   = ~*Krah!*, *Krah!*~
+@2   = ~Oh, Ihr seid aber ein großer Rabe! Was macht Ihr denn in dieser großen Stadt?~
+@3   = ~Ich *krah* suchte nach <CHARNAME>, nun habe ich <CHARNAME> endlich gefunden! *krah*, *krah*!~
+@4   = ~Hoppla, Ihr könnt sogar sprechen!~
+@5   = ~Natürlich kann ich sprechen. Habt Ihr noch nie einen sprechenden *krah* Vogel gesehen?~
+@6   = ~Doch, doch. Nur der letzte Vogel, mit dem ich gesprochen hatte, war etwas kleiner. Ein Huhn, genauer genommen. Seid Ihr auch ein verwandelter Magier oder so etwas?~
+@7   = ~Ein Magier? *krah*, *krah* Nein. Aber ich diene einem Magier als Vertrauter. Er hat mich zu Euch geschickt.~
+@8   = ~Euer Meister hat Euch zu mir geschickt? Wie heißt er? Und warum kommt er nicht selber?~
+@9   = ~*Krah*! Seht Euch doch an diesem Ort einmal um, <RACE>! Seine Bewohner stehen Magieanwendern nicht gerade freundlich gegenüber. Deshalb zieht es mein Herr vor, Euch lieber weit draußen vor der Stadt zu empfangen als an diesem ungastlichen Ort.~
+@10  = ~Was möchte er von mir?~
+@11  = ~Er hat ein Angebot für Euch. Einen Auftrag. Ihr seid weit herumgekommen und könnt mit den verschiedensten Gefahren umgehen. Mein Meister braucht Euch. Wozu genau, wird er Euch selbst mitteilen müssen. Ich bin nur sein treuer *krah* Diener.~
+@12  = ~Gut. Ich werde Euren Meister treffen. Wo kann ich ihn finden?~
+@13  = ~Ich werde Euch hinführen. Den Ort seines Aufenthaltes darf ich Euch nicht verraten. Wenn Ihr bereit seid, fliege ich voraus und weise Euch den Weg.~
+@14  = ~Ich bin sofort bereit. Lasst uns aufbrechen, Rabe.~
+@15  = ~Ich muss zunächst noch etwas hier in Atkatla erledigen. Könnt Ihr irgendwo auf mich warten, wo ein, ähm, Vogel nicht so auffällt?~
+@16  = ~*Krah*, *krah*! Ihr findet mich bei den Stadttoren. Dort sind Vögel etwas Allgegenwärtiges. Ich warte bei der Taverne des "Gekrümmten Kranich".~
+@17  = ~Ich werde Euch im Stadttorviertel aufsuchen, wenn ich bereit bin.~
+@18  = ~*Krah*! *Krah*! Ich fliege jetzt zu den Toren. Bis bald, <CHARNAME> - aber lasst meinen Meister nicht zu lange warten...~
+@19  = ~Der Rabe und der Magier
+Ich bin in Atkatla auf einen sprechenden Raben getroffen. Sein Meister, ein Magier, möchte sich mit mir außerhalb der Stadt treffen. Der Rabe meinte, er würde mich zu ihm führen und wartet im Stadttorviertel auf mich.~
+@20  = ~Beim Gekrümmten *Krah*nich.~
+@21  = ~Sehr *krah* witzig.~
+@22  = ~Ihr seid aber ungeduldig, <CHARNAME>! So schnell kann ich Euch dann doch nicht hinführen, da ich in der Stadt noch etwas *Krah* anderes erledigen muss.~

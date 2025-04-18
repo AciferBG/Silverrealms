@@ -1,0 +1,18 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		LeaveAreaLUAPanic("ACIL3X","",[0.960],0)
+		LeaveAreaLUA("ACIL3X","",[0.960],6)
+		MultiPlayerSync()
+		MoveViewPoint([484.433],INSTANT)
+		CreateCreature("ac#malg1",[594.896],6)  // Malphas
+		ActionOverride("ac#malg1",MoveToPoint([473.437]))
+		MoveViewPoint([575.255],504)
+		SmallWait(5)
+		FadeFromColor([30.0],0)
+		Wait(5)
+		ActionOverride("AC#malg1",StartDialogNoSet("AC#3XGI1"))
+END
+

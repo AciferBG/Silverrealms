@@ -1,0 +1,23 @@
+IF
+	IsOverMe([ANYONE])
+	Global("AC#BeldasPlotStart","GLOBAL",4)
+	Global("AxeBridgeRevealed","ACIL04",1)  // Zweiwasser
+THEN
+	RESPONSE #100
+		SetGlobal("AxeBridgeRevealed","ACIL04",2)  // Zweiwasser
+		DisplayString(LastTrigger,@1009)  // Ihr hört das Rauschen von Wasser in der Nähe. Die Axtbrücke scheint nicht weit entfernt zu sein.
+		RevealAreaOnMap("ACIL06")  // Axtbrücke
+		ClearAllActions()
+END
+
+// OLD
+/*
+IF
+	Entered([ANYONE])
+THEN
+	RESPONSE #100
+                DisplayString(LastTrigger,@1009)
+		RevealAreaOnMap("ACIL06")  // Axe Bridge
+		ClearAllActions()
+END
+*/

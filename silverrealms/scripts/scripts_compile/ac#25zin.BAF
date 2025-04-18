@@ -1,0 +1,14 @@
+IF
+	IsOverMe("Viconia")
+	//InParty("Viconia")
+	//Range("Viconia",25)
+	IsValidForPartyDialog("Viconia")
+	Global("Viconia_Zinzerena","ACIL25",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Viconia_Zinzerena","ACIL25",1)
+		ActionOverride("Viconia",StartDialogNoSet(Player1))
+END
+
+
+

@@ -1,0 +1,12 @@
+/*
+Mit diesem Skript wird der Text für das Gith-Symbol angezeigt
+*/
+
+IF
+        Entered([PC])
+THEN
+    RESPONSE #100
+         DisplayString(Myself,999999)
+END
+
+

@@ -1,0 +1,46 @@
+IF
+	!Contains("ac#80pst",Myself)
+	Global("AC#80PortalOn_C","ACIL80",1)
+THEN
+	RESPONSE #100
+                SetGlobal("AC#80PortalOn_C","ACIL80",0)
+END
+
+IF
+	Contains("ac#80pst",Myself)
+	Global("AC#80PortalOff_C","ACIL80",1)
+THEN
+	RESPONSE #100
+                SetGlobal("AC#80PortalOff_C","ACIL80",0)
+END
+
+IF
+	Contains("ac#80pst",Myself)
+	Global("AC#80PortalOn_C","ACIL80",0)
+THEN
+	RESPONSE #100
+                SetInterrupt(FALSE)
+                SetGlobal("AC#80PortalOn_C","ACIL80",1)
+		CreateVisualEffectObject("ICMAGICH",Myself)
+		AmbientActivate("Portalc",TRUE)
+		SoundActivate("Amb_portal_c",TRUE)
+		TriggerActivation("Travel_C_A",TRUE)
+		//ContainerEnable("AC#61CO2",FALSE)
+                SetInterrupt(TRUE)
+END
+
+IF
+	!Contains("ac#80pst",Myself)
+	Global("AC#80PortalOff_C","ACIL80",0)
+THEN
+	RESPONSE #100
+                ClearAllActions()
+		StartCutSceneMode()
+                SetGlobal("AC#80PortalOff_C","ACIL80",1)
+		AmbientActivate("Portalc",FALSE)
+		SoundActivate("Amb_portal_c",FALSE)
+		TriggerActivation("Travel_C_A",FALSE)
+		//ContainerEnable("AC#61CO2",FALSE)
+		EndCutSceneMode()
+END
+

@@ -1,0 +1,6 @@
+IF
+	Global("AC#S#CultofDragonQuest","GLOBAL",1)
+THEN
+	RESPONSE #100
+	         EscapeArea()
+END

@@ -1,0 +1,14 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("AC#5EGI1")  // Harmswa
+		FaceObject("ac#ilel5")  // Ellhimar
+		SwingOnce()
+		CreateVisualEffectObject("AC#BLODM","ac#ilel5")  // Ellhimar
+		CreateVisualEffectObject("SPDEATH3","ac#ilel5")  // Ellhimar
+		VerbalConstant("ac#ilel5",DYING)  // Ellhimar
+		Kill("ac#ilel5")  // Ellhimar
+		Wait(1)
+		StartDialogNoSet(Player1)
+END

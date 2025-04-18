@@ -1,0 +1,12 @@
+// Nach dem ersten Treffen in AR0020 (Stadtorviertel) erscheint Tiglath und ihr Vertrauter Tremor in der Kupferkrone
+
+IF
+	Global("AC#_TiglathSpawn","GLOBAL",3)
+THEN
+	RESPONSE #100
+		CreateCreature("AC#TIGL2",[1176.604],1)
+		CreateCreature("AC#TREM2",[1203.567],3)
+		SetGlobal("AC#_TiglathSpawn","GLOBAL",4)
+END
+
+

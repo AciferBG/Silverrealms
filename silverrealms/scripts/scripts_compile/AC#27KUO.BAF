@@ -1,0 +1,55 @@
+IF
+	AreaCheck("ACIL27")
+	GlobalGT("MonolithsDeactivated","ACIL27",0)
+THEN
+	RESPONSE #100
+		//Kill(Myself)
+		DestroySelf()
+END
+
+
+IF
+	AreaCheck("ACIL27")
+	Global("AC#kuotoa_madness","GLOBAL",2)
+THEN
+	RESPONSE #100
+		//Kill(Myself)
+		DestroySelf()
+END
+
+
+IF
+	AreaCheck("ACIL27")
+	Global("AC#kuotoa_madness","GLOBAL",1)
+	!StateCheck(Myself,STATE_CONFUSED)
+THEN
+	RESPONSE #100
+		ApplySpellRES("AC#W508",Myself)  // Chaos
+END
+
+IF
+	See(StrongestOf(Myself))
+	!Range(NearestEnemyOf(Myself),7)
+THEN
+	RESPONSE #100
+		EquipRanged()
+		AttackReevaluate(StrongestOf(Myself),15)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	!Range(NearestEnemyOf(Myself),7)
+THEN
+	RESPONSE #100
+		EquipRanged()
+		AttackReevaluate(NearestEnemyOf(Myself),45)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Range(NearestEnemyOf(Myself),7)
+THEN
+	RESPONSE #100
+		RunAwayFrom(NearestEnemyOf(Myself),30)
+END
+

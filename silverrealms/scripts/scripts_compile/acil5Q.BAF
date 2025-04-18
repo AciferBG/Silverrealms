@@ -1,0 +1,47 @@
+IF
+	Global("RindolfSpawn","ACIL5Q",0)
+THEN
+	RESPONSE #100
+		CreateCreatureImpassableAllowOverlap("AC#5QDW1",[315.162],7)  // Rindolf Eisenbieger
+		SetGlobal("RindolfSpawn","ACIL5Q",1)
+END
+
+IF
+	GlobalGT("AC#Ellhimar_Cernd","GLOBAL",1)
+	Global("VroniaDeactivate_Cernd","ACIL5Q",0)
+	Exists("ac#vron3")  // Vronia Eisenbieger
+THEN
+	RESPONSE #100
+		SetGlobal("VroniaDeactivate_Cernd","ACIL5Q",1)
+		ActionOverride("ac#vron3",Deactivate(Myself))
+END
+
+IF
+	Global("AC#Vronia_Quest","GLOBAL",1)
+	Global("Create_Vronia","ACIL5Q",0)
+	!Exists("ac#vron3")  // Vronia Eisenbieger
+THEN
+	RESPONSE #100
+		SetGlobal("Create_Vronia","ACIL5Q",1)
+		CreateCreature("ac#vron3",[495.243],4)  // Vronia Eisenbieger
+END
+
+IF
+	Global("AC#Vronia_Alert","GLOBAL",10)
+	Global("Create_Vronia","ACIL5Q",1)
+	Exists("ac#vron3")  // Vronia Eisenbieger
+THEN
+	RESPONSE #100
+		SetGlobal("Create_Vronia","ACIL5Q",2)
+		ActionOverride("ac#vron3",Deactivate(Myself))
+END
+
+IF
+	Global("AC#RC_Ellhimar_First","GLOBAL",1)
+	Global("Create_Vronia","ACIL5Q",2)
+THEN
+	RESPONSE #100
+		SetGlobal("Create_Vronia","ACIL5Q",3)
+		ActionOverride("ac#vron3",Activate(Myself))
+END
+

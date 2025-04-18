@@ -1,0 +1,96 @@
+IF
+	DifficultyGT(NORMAL)
+	Global("Enemy_Spawn","ACIL06",0)  // Axtbrücke
+THEN
+	RESPONSE #100
+		SetGlobal("Enemy_Spawn","ACIL06",1)  // Axtbrücke
+		CreateCreature("AC#S#06F",[1587.609],5)  // Kämpfer
+		CreateCreature("AC#S#06C",[1634.728],7)  // Kleriker
+END
+
+IF
+	Global("HarpySpawn","ACIL06",0)
+THEN
+	RESPONSE #100
+		SetGlobal("HarpySpawn","ACIL06",1)
+		CreateCreature("AC#HARP1",[1589.606],3) // Harpye
+		CreateCreature("AC#HARP1",[1400.715],6) // Harpye
+		CreateCreature("AC#HARP1",[1201.574],15) // Harpye
+		CreateCreature("AC#HARP1",[1145.574],10) // Harpye
+END
+
+/*
+IF
+	PartyHasItem("AC#SR#R1")
+	Global("RavenSpawn","ACIL06",0)
+THEN
+	RESPONSE #100
+		CreateCreature("AC#RAVE1",[2579.793],11) // Raven
+		SetGlobal("RavenSpawn","ACIL06",1)
+END
+
+IF
+	GlobalGT("AC#RavenQuest#04","GLOBAL",0)
+	Exists("AC#RAVE1")
+	Global("RavenSpawn","ACIL06",1)
+THEN
+	RESPONSE #100
+		Deactivate("AC#RAVE1")
+		SetGlobal("RavenSpawn","ACIL06",2)
+END
+
+IF
+	PartyHasItem("AC#ZEPXO")  // Griff eines Zepters
+	Global("RavenSpawn","ACIL06",2)
+	GlobalLT("AC#XothaerinForge","GLOBAL",10)
+THEN
+	RESPONSE #100
+		Activate("AC#RAVE1")
+		ActionOverride("AC#RAVE1",JumpToPoint([602.410]))
+		SetGlobal("RavenSpawn","ACIL06",20)
+END
+
+IF
+	Global("AC#Raven_NPC","ACIL06",1)
+THEN
+	RESPONSE #100
+            SetGlobal("AC#Raven_NPC","ACIL06",2)
+			SetGlobal("AC#RavenJaheira","GLOBAL",1)
+			Continue()
+END
+*/
+/*
+
+IF
+	//CombatCounter(0)
+	InParty("Minsc")
+	!Dead("Minsc")
+	Global("AC#_RavenPlotStart","GLOBAL",4)
+	Global("AC#Raven_NPC","GLOBAL",1)
+THEN
+	RESPONSE #100
+            Wait(1)
+	        ActionOverride("Minsc",StartDialogueNoSet(Player1))
+			Continue()
+END
+*/
+/*
+IF
+	//CombatCounter(0)
+	InParty("Jaheira")
+	!Dead("Jaheira")
+	Global("AC#Raven_NPC","ACIL06",2)
+THEN
+	RESPONSE #100
+            Wait(1)
+	        ActionOverride("Jaheira",StartDialogueNoSet(Player1))
+			Continue()
+END
+
+IF
+	Global("AC#Raven_NPC","ACIL06",2)
+THEN
+	RESPONSE #100
+                SetGlobal("AC#Raven_NPC","ACIL06",20)
+END
+*/

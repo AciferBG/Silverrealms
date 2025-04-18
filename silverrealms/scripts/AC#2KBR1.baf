@@ -1,0 +1,49 @@
+IF
+        Clicked([ANYONE])
+        Range(LastTrigger,12)
+        Global("Brazier01","ACIL2K",0)
+        !PartyHasItem("AC#GOGON")
+THEN
+    RESPONSE #100
+             DisplayString(Myself,999999)
+END
+
+IF
+        Clicked([ANYONE])
+        Range(LastTrigger,12)
+        Global("Brazier01","ACIL2K",0)
+        PartyHasItem("AC#GOGON")
+THEN
+    RESPONSE #100
+             DisplayString(Myself,999998)
+             SetGlobal("Brazier01","ACIL2K",1)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	Global("Brazier01","ACIL2K",1)
+	PartyHasItem("AC#GOGON")
+THEN
+	RESPONSE #100
+                DisplayString(Myself,999997)
+                SetGlobal("Brazier01","ACIL2K",2)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	Global("Brazier01","ACIL2K",3)
+THEN
+	RESPONSE #100
+                DisplayString(Myself,999996)
+END
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,12)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,14702) // Ihr seid zu weit entfernt, um das zu benutzen.
+END
+

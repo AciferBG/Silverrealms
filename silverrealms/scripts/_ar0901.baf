@@ -1,0 +1,20 @@
+IF
+	Global("AC#Lancameth_Helm","AR0901",4)
+THEN
+	RESPONSE #100
+                SetInterrupt(FALSE)
+	        Wait(2)
+	        SetInterrupt(TRUE)
+		SetGlobal("AC#Lancameth_Helm","AR0901",5)
+                ActionOverride("AC#S#HPR",Dialogue([PC]))
+END
+
+IF
+	Global("AC#Lancameth_Helm","AR0901",1)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#Lancameth_Helm","AR0901",2)
+                CreateCreature("AC#S#HPR",[967.412],3)
+                //CreateCreatureObjectOffScreen("AC#S#HPR",Player1,0,0,0)
+END
+

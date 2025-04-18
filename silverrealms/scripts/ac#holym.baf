@@ -1,0 +1,6 @@
+IF
+  Die()
+THEN
+  RESPONSE #100
+    ReallyForceSpell(Myself,CLERIC_DRAW_UPON_HOLY_MIGHT)
+END

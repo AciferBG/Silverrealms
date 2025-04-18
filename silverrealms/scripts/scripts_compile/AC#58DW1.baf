@@ -1,0 +1,6 @@
+IF
+	Global("AC#58DW1Moves","ACIL58",1)
+THEN
+	RESPONSE #100
+		MoveToPoint([582.2076])
+END

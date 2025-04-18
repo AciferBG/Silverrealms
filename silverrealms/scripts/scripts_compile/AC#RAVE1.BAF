@@ -1,0 +1,27 @@
+IF
+	PartyHasItem("AC#ZEPXO")  // Griff eines Zepters
+	Detect([PC])
+THEN
+	RESPONSE #100
+		StartDialogNoSet([PC])
+END
+
+IF
+	PartyHasItem("AC#ZEPXO")  // Griff eines Zepters
+	Global("Move","LOCALS",0)
+THEN
+	RESPONSE #100
+		JumpToPoint([602.410])
+		SetGlobal("Move","LOCALS",1)
+END
+
+IF
+	Range([PC],8)
+	Detect([PC])
+	PartyHasItem("AC#SR#R1")  // Zwergen-Runentafel
+	NumTimesTalkedTo(0)
+THEN
+	RESPONSE #100
+		StartDialogNoSet([PC])
+END
+

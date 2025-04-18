@@ -1,0 +1,9 @@
+IF
+	IsOverMe("AC#BETT1")  // Bresk Steinschulter
+	Global("BettarghMoves","ACIL53",1)
+THEN
+	RESPONSE #100
+		ActionOverride("AC#BETT1",MoveToPointNoInterrupt([1783.847]))
+		SetGlobal("BettarghMoves","ACIL53",2)
+END
+

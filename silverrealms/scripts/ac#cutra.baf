@@ -1,0 +1,24 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("ac#ravo1")
+		CreateVisualEffectObject("SPFLESHS",Myself)
+		Wait(1)
+		MoveViewObject("ac#ravo1",INSTANT)
+		Wait(2)
+		DisplayStringHead(Myself,999999) // Die H�ter der H�hle wurden besiegt. Das Tor in die tiefen Lande steht Euch offen.
+		Wait(1)
+		MoveToPointNoInterrupt([1396.760])
+		Face(10)
+		Wait(3)
+                CreateVisualEffectObject("SPDIMNDR",Myself)
+                OpenDoor("DOOR01")
+		EscapeAreaDestroy(1)
+		EndCutSceneMode()
+END
+
+
+
+
+

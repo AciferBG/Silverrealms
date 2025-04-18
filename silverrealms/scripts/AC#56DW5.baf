@@ -1,0 +1,20 @@
+IF
+  RandomNum(3,1)
+  See([PC])
+  Range(LastSeenBy(Myself),15)
+THEN
+  RESPONSE #100
+    SwingOnce()
+END
+
+
+
+
+
+
+
+
+
+
+
+

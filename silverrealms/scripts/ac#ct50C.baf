@@ -1,0 +1,36 @@
+/*
+
+Dieses Skript transportiert die Spieler aus Area ACIL50 nach ACIL20 vor die Tore Iltkazars, um Abschied von den Zwergen zu nehmen
+*/
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		//ActionOverride("AC#BRES1",EscapeArea())
+		//ActionOverride("AC#50BSM",EscapeArea())
+		Wait(1)
+		LeaveAreaLUAPanic("ACIL20","",[3329.622],9)
+		LeaveAreaLUA("ACIL20","",[3329.622],9)
+		ActionOverride(Player2,LeaveAreaLUA("ACIL20","",[3270.659],9))
+		ActionOverride(Player3,LeaveAreaLUA("ACIL20","",[3268.651],9))
+		ActionOverride(Player4,LeaveAreaLUA("ACIL20","",[3275.662],9))
+		ActionOverride(Player5,LeaveAreaLUA("ACIL20","",[3263.651],9))
+		ActionOverride(Player6,LeaveAreaLUA("ACIL20","",[3279.650],9))
+		ActionOverride("AC#HATH1",JumpToPoint([3131.604]))
+		CreateCreature("AC#BRES9",[3345.592],3) 
+		CreateCreature("AC#GROM9",[3368.547],3)
+		CreateCreature("AC#DUN20",[3412.544],3)
+		CreateCreature("AC#ELER9",[3391.478],3)
+		CreateCreature("AC#SORN9",[3417.421],3)
+		CreateCreature("AC#VRON9",[3481.453],3)
+		CreateCreature("AC#ANT20",[3467.371],2)
+		CreateCreature("AC#TURB9",[3462.419],3)
+		MultiPlayerSync()
+		MoveViewPoint([3270.659],INSTANT)
+		Wait(1)
+		FadeFromColor([30.0],150)
+		SetGlobal("AC#Goodbye_Iltkazar","GLOBAL",4)
+		EndCutSceneMode()
+		ActionOverride("AC#BRES9",StartDialogueNoSet(Player1))
+END

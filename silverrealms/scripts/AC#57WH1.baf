@@ -1,0 +1,47 @@
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,10)
+	Global("DOOR09","ACIL57",0)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,999999) // Dieses kleine Rad regelt wohl den Zufluss des Dampfes. Es ist momentan abgedreht.
+		SetGlobal("DOOR09","ACIL57",1)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,10)
+	Global("DOOR09","ACIL57",1)
+	OpenState("Door09",FALSE)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,999998)  // ~Das Rad lässt sich mühelos aufdrehen. Ihr hört, wie nun der Dampf durch die Rohre dringt und verborgene Maschinen antreibt.~
+                OpenDoor("Door09")
+                AmbientActivate("Steam01",TRUE)
+                SoundActivate("Steamsound01",TRUE)
+		//SetGlobal("DOOR09","ACIL57",2)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,10)
+	Global("DOOR09","ACIL57",1)
+	OpenState("Door09",TRUE)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,999997)  // ~Ihr dreht das Rad wieder zurück in seinen geschlossenen Zustand.~
+                CloseDoor("Door09")
+                AmbientActivate("Steam01",FALSE)
+                SoundActivate("Steamsound01",FALSE)
+		//SetGlobal("DOOR09","ACIL57",2)
+END
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,10)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,14702)  // Ihr seid zu weit entfernt, um das zu benutzen.
+END
+
+

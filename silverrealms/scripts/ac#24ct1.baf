@@ -1,0 +1,16 @@
+/*
+
+Dieses Skript erschafft Drow-Magier und lässt ihn sterben
+*/
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		MoveViewPoint([607.626],INSTANT)
+		Wait(1)
+		CreateCreature("AC#24DR9",[607.626],7)  // Drow Wizard
+                SetGlobal("VhaeraunKillDrow","ACIL24",2)
+		EndCutSceneMode()
+		ActionOverride("AC#24DR9",StartDialogueNoSet(Player1))
+END

@@ -1,0 +1,12 @@
+/*
+Diese Trap zeigt an, dass das Lager der Kuo-Toa nicht weit entfernt ist.
+*/
+IF
+	Entered([PC])
+	PartyHasItem("AC#WAND7")
+	Global("KuoToaSmell","ACIL27",0)
+THEN
+	RESPONSE #100
+                SetGlobal("KuoToaSmell","ACIL27",1)
+		DisplayString(Myself,@884)
+END

@@ -1,0 +1,114 @@
+
+IF
+	Global("EnteredArea","ACIL53",0)
+THEN
+	RESPONSE #100
+	        ScreenShake([50.50],15)
+	        PlaySound("AM5000S3")
+		SetGlobal("EnteredArea","ACIL53",1)
+END
+
+IF
+	Global("EnteredArea","ACIL53",1)
+THEN
+	RESPONSE #100
+                Wait(1)
+		SetGlobal("EnteredArea","ACIL53",2)
+		ActionOverride("AC#JOUR1",StartDialogueNoSet(Player1))
+END
+
+IF
+	GlobalGT("AC#TalkedToBettargh","ACIL53",0)
+	Global("ExplosivesSeller","ACIL53",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ExplosivesSeller","ACIL53",1)
+		CreateCreature("AC#53SVM",[1457.275],0)
+END
+
+IF
+	Global("AC#bookbinder","ACIL53",1)
+	Global("AC#bookbinder_hint","ACIL53",0)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#bookbinder_hint","ACIL53",1)
+	        AddJournalEntry(@53100,QUEST)
+END
+
+IF
+	Global("Book_Labyrinth","ACIL53",1)
+	PartyHasItem("AC#53BK3")
+THEN
+	RESPONSE #100
+		SetGlobal("Book_Labyrinth","ACIL53",2)
+	    AddJournalEntry(@53301,QUEST)
+END
+
+IF
+	Global("AC#MetagolemIngredients","ACIL53",3)
+THEN
+	RESPONSE #100
+                 SetGlobal("AC#MetagolemIngredients","ACIL53",4)
+                 ClearAllActions()
+                 StartCutSceneMode()
+	         StartCutScene("AC#53CT1")
+END
+
+IF
+	Global("AC#MetagolemIngredients","ACIL53",6)
+THEN
+	RESPONSE #100
+	         SetInterrupt(FALSE)
+                 Wait(2)
+                 SetGlobal("AC#MetagolemIngredients","ACIL53",7)
+                 FadeToColor([15.0],0)
+                 Wait(2)
+                 FadeFromColor([15.0],0)
+                 Wait(2)
+                 CreateCreatureOffScreen("AC#GOLM2",0)
+                 ActionOverride("AC#GOLM2",ReallyForceSpell(Myself,GOLEM_HASTE))
+	         SetInterrupt(TRUE)
+                 ActionOverride("AC#GOLM2",Dialogue(Player1))
+END
+
+IF
+	Global("AC#MetagolemName","ACIL53",1)
+THEN
+	RESPONSE #100
+	         ActionOverride("AC#GOLM2",SetName(@706))
+                 SetGlobal("AC#MetagolemName","ACIL53",2)
+END
+
+IF
+       Global("ElernSpawn","ACIL53",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ElernSpawn","ACIL53",2)
+		CreateCreatureOffScreen("AC#ELER5",0)
+		ActionOverride("AC#ELER5",Dialogue(Player1))
+END
+
+IF
+	Global("Prison_Cernd","ACIL53",1)
+THEN
+	RESPONSE #100
+		Unlock("DOOR01")
+		OpenDoor("DOOR01")
+		SetGlobal("Prison_Cernd","ACIL53",2)
+END
+
+IF
+	Global("AC#Ellhimar_Cernd","GLOBAL",4)
+       	Exists("AC#53CE1")  // Cernd's Guard
+THEN
+	RESPONSE #100
+		ActionOverride("AC#53CE1",DestroySelf())
+END
+
+IF
+	Global("AC#Ellhimar_Cernd","GLOBAL",4)
+       	Exists("AC#53CE2")  // Cernd's Guard
+THEN
+	RESPONSE #100
+		ActionOverride("AC#53CE2",DestroySelf())
+END

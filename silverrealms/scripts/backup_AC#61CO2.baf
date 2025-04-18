@@ -1,0 +1,14 @@
+IF
+	Contains("ac#antr1",Myself)
+	Global("AC#_Destroy_Oven","ACIL61",0)
+THEN
+	RESPONSE #100
+		DestroyItem("ac#antr1")
+		SetGlobal("AC#_Destroy_Oven","ACIL61",1)
+		PlaySound("EFF_P92")
+		ScreenShake([20.20],5)
+		CreateVisualEffectObject("ICMAGICH",Myself)
+		Wait(2)
+		DisplayString(Myself,999999) 
+END
+

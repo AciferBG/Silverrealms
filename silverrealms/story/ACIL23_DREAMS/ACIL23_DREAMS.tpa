@@ -1,0 +1,34 @@
+// Dream Sequence in Hall of Blooded Moon
+
+COMPILE 
+~silverrealms/story/ACIL23_DREAMS/AC#23CT1.baf~
+COPY_EXISTING ~AC#23CT1.bcs~   ~override/AC#23CT1.bcs~
+       REPLACE ~999999~ @725
+COMPILE
+~silverrealms/story/ACIL23_DREAMS/AC#23CT2.baf~
+~silverrealms/story/ACIL23_DREAMS/AC#23CT3.baf~
+~silverrealms/story/ACIL23_DREAMS/AC#23CT4.baf~
+~silverrealms/story/ACIL23_DREAMS/AC#23CT5.baf~
+COMPILE ~silverrealms/story/ACIL23_DREAMS/AC#D2DW1.baf~
+COPY_EXISTING ~AC#D2DW1.bcs~   ~override/AC#D2DW1.bcs~
+       REPLACE ~999999~ @426
+
+COMPILE
+~silverrealms/story/ACIL23_DREAMS/ac#acild2.d~ // Dialogue in Throneroom
+~silverrealms/story/ACIL23_DREAMS/ac#acild1.d~ // Dialogue in Dragon Cemetary
+~silverrealms/story/ACIL23_DREAMS/_Dialogue_Player1.d~ // Dialogue Player1
+
+COPY ~silverrealms/story/ACIL23_DREAMS/AC#D2DW1.cre~ ~override/AC#D2DW1.cre~ //King's Guard
+  SAY NAME1 @306 SAY NAME2 @306
+  
+COPY ~silverrealms/story/ACIL23_DREAMS/AC#DREA1.cre~ ~override/AC#DREA1.cre~ //Mith Barak the Clanless
+  SAY NAME1 @424 SAY NAME2 @424
+  
+COPY ~silverrealms/story/ACIL23_DREAMS/AC#DREA2.cre~ ~override/AC#DREA2.cre~ //Old King
+  SAY NAME1 @425 SAY NAME2 @425
+
+COPY ~silverrealms/story/ACIL23_DREAMS/AC#DREA8.cre~ ~override/AC#DREA8.cre~ //King Mith Barak
+  SAY NAME1 @61 SAY NAME2 @61
+  
+COPY ~silverrealms/story/ACIL23_DREAMS/AC#DREA9.cre~ ~override/AC#DREA9.cre~ //Bleucorundum
+  SAY NAME1 @430 SAY NAME2 @430

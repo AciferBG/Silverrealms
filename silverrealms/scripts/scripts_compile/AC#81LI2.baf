@@ -1,0 +1,22 @@
+IF
+	OR(10)
+		SpellCastOnMe([GOODCUTOFF],WIZARD_DISPEL_MAGIC)  // SPWI302.SPL (Magie bannen)
+		SpellCastOnMe([GOODCUTOFF],WIZARD_TRUE_DISPEL_MAGIC)  // SPWI326.SPL (Magie bannen)
+		SpellCastOnMe([GOODCUTOFF],CLERIC_DISPEL_MAGIC)  // SPPR303.SPL (Magie bannen)
+		SpellCastOnMe([GOODCUTOFF],WIZARD_BREACH)  // SPWI513.SPL (Bresche)
+		SpellCastOnMe([GOODCUTOFF],WIZARD_PIERCE_MAGIC)  // SPWI608.SPL (Magie durchdringen)
+		SpellCastOnMe([GOODCUTOFF],WIZARD_DISPEL_MAGIC)  // SPWI302.SPL (Magie bannen)
+		SpellCastOnMe([GOODCUTOFF],WIZARD_WARDING_WHIP)  // SPWI705.SPL (Khelbens Parierende Peitsche)
+		SpellCastOnMe([GOODCUTOFF],WIZARD_RUBY_RAY_OF_REVERSAL)  // SPWI704.SPL (Rubinroter Strahl der Aufhebung)
+		SpellCastOnMe([GOODCUTOFF],WIZARD_SPELL_STRIKE)  // SPWI903.SPL (Zauberschlag)
+		SpellCastOnMe([GOODCUTOFF],INQUIS_DISPEL_MAGIC)  // SPCL231.SPL (Magie bannen)
+	Global("LichFree","ACIL81",0)
+THEN
+	RESPONSE #100
+		SetGlobal("LichFree","ACIL81",1)
+		DisplayStringHead(Myself,@925)
+		Wait(1)
+		AmbientActivate("Lich_prisonball",FALSE)
+		SoundActivate("Lich_prisonsound",FALSE)
+		ChangeAnimationNoEffect("AC#81LI1")
+END

@@ -1,0 +1,40 @@
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	Global("Switch01","ACIL27",0)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,999999) //  ~Obwohl Ihr das Symbol nicht deuten könnt, scheint von ihm eine beträchtliche Macht auszugehen.~
+		SetGlobal("Switch01","ACIL27",1)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	Global("Switch01","ACIL27",1)
+	!PartyHasItem("AC#ILWES")
+	!InMyArea("AC#ELWA1")
+THEN
+	RESPONSE #100
+		DisplayString(Myself,999998) // ~Ihr berührt das Symbol. Kurze Zeit geschieht nichts, doch dann beginnen sich die Wellen des Sees zu kräuseln.~
+		Wait(1)
+		SetGlobal("Switch01","ACIL27",2)
+		CreateCreature("AC#ELWA1",[3682.905],1)  // Water Elemental
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	Global("Switch01","ACIL27",2)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,999997) // ~Das Symbol lässt sich nicht mehr aktivieren.~
+END
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,12)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,14702) // Ihr seid zu weit entfernt, um das zu benutzen.
+END

@@ -1,0 +1,239 @@
+IF
+	NumTimesTalkedTo(0)
+	Detect([PC])
+	Range(LastSeenBy(Myself),20)
+THEN
+	RESPONSE #100
+		ApplySpell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Steinhaut)
+		ApplySpell(Myself,WIZARD_VOCALIZE)  // SPWI219.SPL (Stummer Zauber)
+		ApplySpell(Myself,WIZARD_MIRROR_IMAGE)  // SPWI212.SPL (Spiegelbild)
+		ApplySpell(Myself,WIZARD_SPELL_DEFLECTION)  // SPWI618.SPL (Zauberabwehr)
+		StartDialogNoSet(LastSeenBy(Myself))
+END
+
+IF
+	StateCheck(Myself,STATE_SILENCED)
+THEN
+	RESPONSE #100
+		ForceSpell(Myself,WIZARD_VOCALIZE)  // SPWI219.SPL (Stummer Zauber)
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	Global("behaviour","LOCALS",0)
+	CheckStatLT(Myself,1,STONESKINS)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,29736)  // Notfall: Steinhaut
+		ApplySpell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Steinhaut)
+		SetGlobal("behaviour","LOCALS",1)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_CHAIN_LIGHTNING)  // SPWI615.SPL (Kugelblitz)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),WIZARD_CHAIN_LIGHTNING)  // SPWI615.SPL (Kugelblitz)
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	See([GOODCUTOFF.0.0.0.0.SUMMONED])
+	HaveSpell(WIZARD_DEATH_SPELL)  // SPWI605.SPL (Todeszauber)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),WIZARD_DEATH_SPELL)  // SPWI605.SPL (Todeszauber)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_GREATER_MALISON)  // SPWI412.SPL (Gr��eres Unbehagen)
+THEN
+	RESPONSE #100
+		Spell(SecondNearestEnemyOf(Myself),WIZARD_GREATER_MALISON)  // SPWI412.SPL (Gr��eres Unbehagen)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_CHAOS)  // SPWI508.SPL (Chaos)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_CHAOS)  // SPWI508.SPL (Chaos)
+END
+
+IF
+	See("AC#4ITH2")
+	See(NearestEnemyOf(Myself))
+	!Dead("AC#4ITH2")
+	Range("AC#4ITH2",30)
+	HaveSpellRES("AC#0702")  
+THEN
+	RESPONSE #100
+		SpellRES("AC#0702",Myself) // Invisibility 10 foot (enemy version)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Range(NearestEnemyOf(Myself),15)
+	HaveSpell(WIZARD_SUN_FIRE)  // SPWI523.SPL (Sonnenfeuer)
+	Global("AC#Sunfire","AR0701",0)
+	!Dead("AC#4ITH2")
+THEN
+	RESPONSE #100
+		SetGlobal("AC#Sunfire","AR0701",1)
+		DisplayString(Myself,68229)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Range(NearestEnemyOf(Myself),15)
+	HaveSpell(WIZARD_SUN_FIRE)  // SPWI523.SPL (Sonnenfeuer)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_SUN_FIRE)  // SPWI523.SPL (Sonnenfeuer)
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	HaveSpell(WIZARD_DIRE_CHARM)   // SPWI316.SPL (Schreckenszauber)
+	OR(2)
+		See([GOODCUTOFF.0.0.FIGHTER_ALL])
+		See([GOODCUTOFF.0.0.RANGER])
+	!HasItemEquiped("HELM06",LastSeenBy(Myself)) 
+	!StateCheck(LastSeenBy(Myself),STATE_BERSERK)
+	!Race(LastSeenBy(Myself),ELF)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),WIZARD_DIRE_CHARM)  // SPWI316.SPL (Schreckenszauber)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_MONSTER_SUMMONING_3)  // SPWI504.SPL (Monster herbeirufen 3)
+THEN
+	RESPONSE #100
+		Spell(Myself,WIZARD_MONSTER_SUMMONING_3)  // SPWI504.SPL (Monster herbeirufen 3)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_MISLEAD)  // SPWI607.SPL (Ablenkung)
+THEN
+	RESPONSE #100
+		Spell(Myself,WIZARD_MISLEAD)  // SPWI607.SPL (Ablenkung)
+END
+
+IF
+	See(FifthNearestEnemyOf(Myself))
+	HaveSpell(WIZARD_CARRION)  // SPWI623.SPL (Aaskriecher beschwören)
+THEN
+	RESPONSE #100
+		Spell(FifthNearestEnemyOf(Myself),WIZARD_CARRION)  // SPWI623.SPL (Aaskriecher beschwören)
+END
+
+IF
+	See(FourthNearestEnemyOf(Myself))
+	HaveSpell(WIZARD_CARRION)  // SPWI623.SPL (Aaskriecher beschwören)
+THEN
+	RESPONSE #100
+		Spell(FourthNearestEnemyOf(Myself),WIZARD_CARRION)  // SPWI623.SPL (Aaskriecher beschwören)
+END
+
+IF
+	See(ThirdNearestEnemyOf(Myself))
+	HaveSpell(WIZARD_CARRION)  // SPWI623.SPL (Aaskriecher beschwören)
+THEN
+	RESPONSE #100
+		Spell(ThirdNearestEnemyOf(Myself),WIZARD_CARRION)  // SPWI623.SPL (Aaskriecher beschwören)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_SLOW)  // SPWI312.SPL (Verlangsamen)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_SLOW)  // SPWI312.SPL (Verlangsamen)
+END
+
+IF
+	See(NearestEnemyOfType([0.0.0.MAGE_ALL]))
+	!StateCheck([0.0.0.MAGE],STATE_SILENCED)
+	HaveSpell(WIZARD_POWER_WORD_SILENCE)  // SPWI612.SPL (Wort der Macht: Stille)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),WIZARD_POWER_WORD_SILENCE)  // SPWI612.SPL (Wort der Macht: Stille)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	DifficultyGT(EASY)
+	HaveSpell(WIZARD_HOLD_PERSON)  // SPWI306.SPL (Personen festhalten)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_HOLD_PERSON)  // SPWI306.SPL (Personen festhalten)
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	See(SecondNearestEnemyOf(Myself))
+	!StateCheck(LastSeenBy(Myself),STATE_STUNNED)
+	HaveSpell(WIZARD_POWER_WORD_STUN)  // SPWI715.SPL (Wort der Macht: Bet�ubung)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),WIZARD_POWER_WORD_STUN)  // SPWI715.SPL (Wort der Macht: Bet�ubung)
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	HaveSpell(WIZARD_STONE_SKIN)  // SPWI408.SPL (Steinhaut)
+	CheckStatLT(Myself,1,STONESKINS)
+THEN
+	RESPONSE #100
+		Spell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Steinhaut)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_LIGHTNING_BOLT)  // SPWI308.SPL (Blitzstrahl)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_LIGHTNING_BOLT)  // SPWI308.SPL (Blitzstrahl)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_AGANNAZAR_SCORCHER)  // SPWI217.SPL (Agannazars Hexerei)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_AGANNAZAR_SCORCHER)  // SPWI217.SPL (Agannazars Hexerei)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_PHANTOM_BLADE)  // SPWI518.SPL (Phantomklinge)
+	HaveSpell(WIZARD_MIRROR_IMAGE)  // SPWI212.SPL (Spiegelbild)
+THEN
+	RESPONSE #100
+		Spell(Myself,WIZARD_MIRROR_IMAGE)  // SPWI212.SPL (Spiegelbild)
+		Spell(Myself,WIZARD_PHANTOM_BLADE)  // SPWI518.SPL (Phantomklinge)
+		AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magisches Gescho�)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magisches Gescho�)
+END
+
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+		AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+

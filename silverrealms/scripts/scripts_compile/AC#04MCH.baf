@@ -1,0 +1,15 @@
+IF
+	NumTimesTalkedTo(0)
+	See([PC])
+THEN
+	RESPONSE #100
+	        Wait(1)
+		StartDialogNoSet([PC])
+END
+
+IF
+	Global("AttackMerchant","ACIL04",10)
+THEN
+	RESPONSE #100
+	        EscapeArea()
+END

@@ -1,0 +1,48 @@
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,12)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,999995) // Aus dieser Entfernung könnt Ihr nichts erkennen.
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	Race(LastTrigger,DWARF)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,999999) /* ~Diese Platte zeigt das Antlitz Moradins, des Göttervaters. In Zwergenrunen steht darum geschrieben: Voller Zorn verbannte Moradin seine eigenen Zwillingskinder aus der Gemeinschaft der Zwergengötter, auf dass diese niemals mehr solch unsägliches Unheil anrichten könnten.~ */
+
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	CheckStatGT(LastTrigger,50,LORE)
+
+THEN
+	RESPONSE #100
+		DisplayString(Myself,999999)  /* ~Diese Platte zeigt das Antlitz Moradins, des Göttervaters. In Zwergenrunen steht darum geschrieben: Voller Zorn verbannte Moradin seine eigenen Zwillingskinder aus der Gemeinschaft der Zwergengötter, auf dass diese niemals mehr solch unsägliches Unheil anrichten könnten.~ */
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	PartyHasItemIdentified("AC#BKDWF") // Die Schrift und Sprache der Zwerge
+
+THEN
+	RESPONSE #100
+		DisplayString(Myself,999999) /* ~Diese Platte zeigt das Antlitz Moradins, des Göttervaters. In Zwergenrunen steht darum geschrieben: Voller Zorn verbannte Moradin seine eigenen Zwillingskinder aus der Gemeinschaft der Zwergengötter, auf dass diese niemals mehr solch unsägliches Unheil anrichten könnten.~*/
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	CheckStatLT(LastTrigger,51,LORE)
+
+THEN
+	RESPONSE #100
+		DisplayString(Myself,999998) // ~Diese Bronzeplatte zeigt das Symbol eines bärtigen Zwerges. Auf der Umrandung sind Zwergenrunen eingraviert, die Ihr nicht entziffern könnt.~
+END
+

@@ -1,0 +1,396 @@
+
+
+IF
+	Global("DisableAnimations","ACIL91",0)
+THEN
+	RESPONSE #100
+		SetGlobal("DisableAnimations","ACIL91",1)
+		SetGlobal("Disc_Orientation","ACIL91",6)
+		AmbientActivate("Disc_00",FALSE)
+                AmbientActivate("Disc_01",FALSE)
+                AmbientActivate("Disc_02",FALSE)
+                AmbientActivate("Disc_03",FALSE)
+                AmbientActivate("Disc_04",FALSE)
+                AmbientActivate("Disc_05",FALSE)
+                AmbientActivate("Disc_06",TRUE)
+                AmbientActivate("Disc_07",FALSE)
+                AmbientActivate("Disc_08",FALSE)
+                AmbientActivate("Disc_09",FALSE)
+                AmbientActivate("Disc_10",FALSE)
+END
+
+IF
+        Global("Wheel_damaged","ACIL91",1)
+        Global("Wheel_journal","ACIL91",0)
+THEN
+        RESPONSE #100
+            SetGlobal("Wheel_journal","ACIL91",1)
+            //EraseJournalEntry(@90010)
+            AddJournalEntry(@90012,QUEST)  
+END
+
+IF
+        Global("SecretDoor01","ACIL91",0)
+        Global("Disc_Orientation","ACIL91",0)
+        GlobalGT("AC#BeldasDies","GLOBAL",1)
+        OpenState("DOOR02",TRUE)
+THEN
+        RESPONSE #100
+            SetGlobal("SecretDoor01","ACIL91",1)
+            CloseDoor("DOOR02")
+            OpenDoor("DOOR03")
+END
+
+IF
+        Global("DisableAnimations","ACIL91",1)
+        OpenState("DOOR02",TRUE)
+        Global("Disc_Orientation","ACIL91",2)
+        Global("AC#IL91WayOut","GLOBAL",0)
+        Global("AC#IL_Wheel_repaired","GLOBAL",10)
+THEN
+        RESPONSE #100
+            PlaySound("AC#IL91B")
+            SetGlobal("AC#IL91WayOut","GLOBAL",1)
+END
+    
+IF
+        Global("DisableAnimations","ACIL91",1)
+        OpenState("DOOR02",TRUE)
+        Global("Disc_Orientation","ACIL91",2)
+        !Global("AC#IL_Wheel_repaired","GLOBAL",10)
+THEN
+        RESPONSE #100
+            CloseDoor("DOOR02")
+            PlaySound("AC#IL95A")
+            DisplayString("Wheel01",@7001)
+            SetGlobal("Wheel_damaged","ACIL91",1)
+END
+    
+ IF
+        Global("DisableAnimations","ACIL91",1)
+        OpenState("DOOR02",TRUE)
+        !Global("Disc_Orientation","ACIL91",0)
+        !Global("Disc_Orientation","ACIL91",2)
+THEN
+        RESPONSE #100
+            CloseDoor("DOOR02")
+            PlaySound("ac#91lv1")
+            SetGlobal("Disc_Orientation","ACIL91",6)
+            AmbientActivate("Disc_00",FALSE)
+            AmbientActivate("Disc_01",FALSE)
+            AmbientActivate("Disc_02",FALSE)
+            AmbientActivate("Disc_03",FALSE)
+            AmbientActivate("Disc_04",FALSE)
+            AmbientActivate("Disc_05",FALSE)
+            AmbientActivate("Disc_06",TRUE)
+            AmbientActivate("Disc_07",FALSE)
+            AmbientActivate("Disc_08",FALSE)
+            AmbientActivate("Disc_09",FALSE)
+            AmbientActivate("Disc_10",FALSE)
+            SetGlobal("Trap_Activation","ACIL91",1)
+END
+
+IF
+	Global("Trap_Activation","ACIL91",1)
+THEN
+	RESPONSE #100
+		ActionOverride("Trap01",ForceSpellPoint([818.676],WIZARD_INCENDIARY_CLOUD))  // SPWI810.SPL (Flammende Wolke)
+		SetGlobal("Trap_Activation","ACIL91",0)
+	RESPONSE #100
+		ActionOverride("Trap02",ForceSpellPoint([818.676],TRAP_STINKING_CLOUD))  // SPWI004.SPL (Stinkende Wolke)
+		SetGlobal("Trap_Activation","ACIL91",0)
+	RESPONSE #100
+		ActionOverride("Trap03",ForceSpellPoint([818.676],TRAP_CLOUDKILL))  // SPWI016.SPL (Todeswolke)
+		SetGlobal("Trap_Activation","ACIL91",0)
+	RESPONSE #100
+		ActionOverride("Trap04",ForceSpellPoint([818.676],WIZARD_DEATH_FOG))  // SPWI614.SPL (Tödlicher Nebel)
+		SetGlobal("Trap_Activation","ACIL91",0)
+	RESPONSE #100
+		ActionOverride("Trap05",ForceSpellPoint([818.676],TRAP_FIREBALL))  // SPWI001.SPL (Feuerball)
+		SetGlobal("Trap_Activation","ACIL91",0)
+	RESPONSE #100
+		ActionOverride("Trap06",ForceSpellPoint([818.676],CLERIC_GLYPH_OF_WARDING))  // SPPR304.SPL (Glyphe der Abwehr)
+		SetGlobal("Trap_Activation","ACIL91",0)
+	RESPONSE #100
+		ActionOverride("Trap07",ForceSpellPoint([818.676],WIZARD_ICE_STORM))  // SPWI404.SPL (Eissturm)
+		SetGlobal("Trap_Activation","ACIL91",0)
+	RESPONSE #100
+		ActionOverride("Trap08",ForceSpellPoint([818.676],WIZARD_TELEPORT_FIELD))  // SPWI421.SPL (Teleportationsfeld)
+		SetGlobal("Trap_Activation","ACIL91",0)
+	RESPONSE #100
+		ActionOverride("Trap09",ForceSpellPoint([818.676],WIZARD_CHAOS))  // SPWI508.SPL (Chaos)
+		SetGlobal("Trap_Activation","ACIL91",0)
+END
+
+IF
+	Global("Disc_Activation","ACIL91",1)
+	Global("Disc_Orientation","ACIL91",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Disc_Activation","ACIL91",0)
+		PlaySound("ac#91lv1")
+		AmbientActivate("Disc_00",TRUE)
+		AmbientActivate("Disc_01",FALSE)
+                AmbientActivate("Disc_02",FALSE)
+                AmbientActivate("Disc_03",FALSE)
+                AmbientActivate("Disc_04",FALSE)
+                AmbientActivate("Disc_05",FALSE)
+                AmbientActivate("Disc_06",FALSE)
+                AmbientActivate("Disc_07",FALSE)
+                AmbientActivate("Disc_08",FALSE)
+                AmbientActivate("Disc_09",FALSE)
+                AmbientActivate("Disc_10",FALSE)
+END
+
+IF
+	Global("Disc_Activation","ACIL91",1)
+	GlobalGT("Disc_Orientation","ACIL91",10)
+THEN
+	RESPONSE #100
+		SetGlobal("Disc_Activation","ACIL91",0)
+		SetGlobal("Disc_Orientation","ACIL91",0)
+		PlaySound("ac#91lv1")
+		AmbientActivate("Disc_00",TRUE)
+		AmbientActivate("Disc_01",FALSE)
+                AmbientActivate("Disc_02",FALSE)
+                AmbientActivate("Disc_03",FALSE)
+                AmbientActivate("Disc_04",FALSE)
+                AmbientActivate("Disc_05",FALSE)
+                AmbientActivate("Disc_06",FALSE)
+                AmbientActivate("Disc_07",FALSE)
+                AmbientActivate("Disc_08",FALSE)
+                AmbientActivate("Disc_09",FALSE)
+                AmbientActivate("Disc_10",FALSE)
+END
+
+/*
+IF
+        Global("SecretDoor03","ACIL91",0)
+        Global("Disc_Orientation","ACIL91",0)
+        GlobalGT("AC#BeldasDies","GLOBAL",1)
+        OpenState("DOOR02",TRUE)
+    THEN
+        RESPONSE #100
+            SetGlobal("SecretDoor03","ACIL91",1)
+            OpenDoor("DOOR03")
+END
+*/
+
+IF
+  Global("WayOut","ACIL91",0)
+  //Global("Disc_Orientation","ACIL91",0)
+  Global("AC#IL91WayOut","GLOBAL",1)
+  //OpenState("DOOR02",TRUE)
+THEN
+    RESPONSE #100
+    SetGlobal("WayOut","ACIL91",1)
+    OpenDoor("DOOR01")
+    AddExperienceParty(500)
+    //EraseJournalEntry(@90013)
+    AddJournalEntry(@90011,QUEST_DONE)
+END
+
+IF
+	Global("Disc_Activation","ACIL91",1)
+	Global("Disc_Orientation","ACIL91",1)
+THEN
+	RESPONSE #100
+		SetGlobal("Disc_Activation","ACIL91",0)
+		PlaySound("ac#91lv1")
+		AmbientActivate("Disc_00",FALSE)
+		AmbientActivate("Disc_01",TRUE)
+                AmbientActivate("Disc_02",FALSE)
+                AmbientActivate("Disc_03",FALSE)
+                AmbientActivate("Disc_04",FALSE)
+                AmbientActivate("Disc_05",FALSE)
+                AmbientActivate("Disc_06",FALSE)
+                AmbientActivate("Disc_07",FALSE)
+                AmbientActivate("Disc_08",FALSE)
+                AmbientActivate("Disc_09",FALSE)
+                AmbientActivate("Disc_10",FALSE)
+END
+
+IF
+	Global("Disc_Activation","ACIL91",1)
+	Global("Disc_Orientation","ACIL91",2)
+THEN
+	RESPONSE #100
+		SetGlobal("Disc_Activation","ACIL91",0)
+		PlaySound("ac#91lv1")
+		AmbientActivate("Disc_00",FALSE)
+		AmbientActivate("Disc_01",FALSE)
+                AmbientActivate("Disc_02",TRUE)
+                AmbientActivate("Disc_03",FALSE)
+                AmbientActivate("Disc_04",FALSE)
+                AmbientActivate("Disc_05",FALSE)
+                AmbientActivate("Disc_06",FALSE)
+                AmbientActivate("Disc_07",FALSE)
+                AmbientActivate("Disc_08",FALSE)
+                AmbientActivate("Disc_09",FALSE)
+                AmbientActivate("Disc_10",FALSE)
+END
+
+IF
+	Global("Disc_Activation","ACIL91",1)
+	Global("Disc_Orientation","ACIL91",3)
+THEN
+	RESPONSE #100
+		SetGlobal("Disc_Activation","ACIL91",0)
+		PlaySound("ac#91lv1")
+		AmbientActivate("Disc_00",FALSE)
+		AmbientActivate("Disc_01",FALSE)
+                AmbientActivate("Disc_02",FALSE)
+                AmbientActivate("Disc_03",TRUE)
+                AmbientActivate("Disc_04",FALSE)
+                AmbientActivate("Disc_05",FALSE)
+                AmbientActivate("Disc_06",FALSE)
+                AmbientActivate("Disc_07",FALSE)
+                AmbientActivate("Disc_08",FALSE)
+                AmbientActivate("Disc_09",FALSE)
+                AmbientActivate("Disc_10",FALSE)
+END
+
+IF
+	Global("Disc_Activation","ACIL91",1)
+	Global("Disc_Orientation","ACIL91",4)
+THEN
+	RESPONSE #100
+		SetGlobal("Disc_Activation","ACIL91",0)
+		PlaySound("ac#91lv1")
+		AmbientActivate("Disc_00",FALSE)
+		AmbientActivate("Disc_01",FALSE)
+                AmbientActivate("Disc_02",FALSE)
+                AmbientActivate("Disc_03",FALSE)
+                AmbientActivate("Disc_04",TRUE)
+                AmbientActivate("Disc_05",FALSE)
+                AmbientActivate("Disc_06",FALSE)
+                AmbientActivate("Disc_07",FALSE)
+                AmbientActivate("Disc_08",FALSE)
+                AmbientActivate("Disc_09",FALSE)
+                AmbientActivate("Disc_10",FALSE)
+END
+
+IF
+	Global("Disc_Activation","ACIL91",1)
+	Global("Disc_Orientation","ACIL91",5)
+THEN
+	RESPONSE #100
+		SetGlobal("Disc_Activation","ACIL91",0)
+		PlaySound("ac#91lv1")
+		AmbientActivate("Disc_00",FALSE)
+		AmbientActivate("Disc_01",FALSE)
+                AmbientActivate("Disc_02",FALSE)
+                AmbientActivate("Disc_03",FALSE)
+                AmbientActivate("Disc_04",FALSE)
+                AmbientActivate("Disc_05",TRUE)
+                AmbientActivate("Disc_06",FALSE)
+                AmbientActivate("Disc_07",FALSE)
+                AmbientActivate("Disc_08",FALSE)
+                AmbientActivate("Disc_09",FALSE)
+                AmbientActivate("Disc_10",FALSE)
+END
+
+IF
+	Global("Disc_Activation","ACIL91",1)
+	Global("Disc_Orientation","ACIL91",6)
+THEN
+	RESPONSE #100
+		SetGlobal("Disc_Activation","ACIL91",0)
+		PlaySound("ac#91lv1")
+		AmbientActivate("Disc_00",FALSE)
+		AmbientActivate("Disc_01",FALSE)
+                AmbientActivate("Disc_02",FALSE)
+                AmbientActivate("Disc_03",FALSE)
+                AmbientActivate("Disc_04",FALSE)
+                AmbientActivate("Disc_05",FALSE)
+                AmbientActivate("Disc_06",TRUE)
+                AmbientActivate("Disc_07",FALSE)
+                AmbientActivate("Disc_08",FALSE)
+                AmbientActivate("Disc_09",FALSE)
+                AmbientActivate("Disc_10",FALSE)
+END
+
+IF
+	Global("Disc_Activation","ACIL91",1)
+	Global("Disc_Orientation","ACIL91",7)
+THEN
+	RESPONSE #100
+		SetGlobal("Disc_Activation","ACIL91",0)
+		PlaySound("ac#91lv1")
+		AmbientActivate("Disc_00",FALSE)
+		AmbientActivate("Disc_01",FALSE)
+                AmbientActivate("Disc_02",FALSE)
+                AmbientActivate("Disc_03",FALSE)
+                AmbientActivate("Disc_04",FALSE)
+                AmbientActivate("Disc_05",FALSE)
+                AmbientActivate("Disc_06",FALSE)
+                AmbientActivate("Disc_07",TRUE)
+                AmbientActivate("Disc_08",FALSE)
+                AmbientActivate("Disc_09",FALSE)
+                AmbientActivate("Disc_10",FALSE)
+END
+
+IF
+	Global("Disc_Activation","ACIL91",1)
+	Global("Disc_Orientation","ACIL91",8)
+THEN
+	RESPONSE #100
+		SetGlobal("Disc_Activation","ACIL91",0)
+		PlaySound("ac#91lv1")
+		AmbientActivate("Disc_00",FALSE)
+		AmbientActivate("Disc_01",FALSE)
+                AmbientActivate("Disc_02",FALSE)
+                AmbientActivate("Disc_03",FALSE)
+                AmbientActivate("Disc_04",FALSE)
+                AmbientActivate("Disc_05",FALSE)
+                AmbientActivate("Disc_06",FALSE)
+                AmbientActivate("Disc_07",FALSE)
+                AmbientActivate("Disc_08",TRUE)
+                AmbientActivate("Disc_09",FALSE)
+                AmbientActivate("Disc_10",FALSE)
+END
+
+IF
+	Global("Disc_Activation","ACIL91",1)
+	Global("Disc_Orientation","ACIL91",9)
+THEN
+	RESPONSE #100
+		SetGlobal("Disc_Activation","ACIL91",0)
+		PlaySound("ac#91lv1")
+		AmbientActivate("Disc_00",FALSE)
+		AmbientActivate("Disc_01",FALSE)
+                AmbientActivate("Disc_02",FALSE)
+                AmbientActivate("Disc_03",FALSE)
+                AmbientActivate("Disc_04",FALSE)
+                AmbientActivate("Disc_05",FALSE)
+                AmbientActivate("Disc_06",FALSE)
+                AmbientActivate("Disc_07",FALSE)
+                AmbientActivate("Disc_08",FALSE)
+                AmbientActivate("Disc_09",TRUE)
+                AmbientActivate("Disc_10",FALSE)
+END
+
+IF
+	Global("Disc_Activation","ACIL91",1)
+	Global("Disc_Orientation","ACIL91",10)
+THEN
+	RESPONSE #100
+		SetGlobal("Disc_Activation","ACIL91",0)
+		PlaySound("ac#91lv1")
+		AmbientActivate("Disc_00",FALSE)
+		AmbientActivate("Disc_01",FALSE)
+                AmbientActivate("Disc_02",FALSE)
+                AmbientActivate("Disc_03",FALSE)
+                AmbientActivate("Disc_04",FALSE)
+                AmbientActivate("Disc_05",FALSE)
+                AmbientActivate("Disc_06",FALSE)
+                AmbientActivate("Disc_07",FALSE)
+                AmbientActivate("Disc_08",FALSE)
+                AmbientActivate("Disc_09",FALSE)
+                AmbientActivate("Disc_10",TRUE)
+END
+
+
+
+
+

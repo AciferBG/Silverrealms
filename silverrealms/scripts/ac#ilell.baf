@@ -1,0 +1,27 @@
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	!Allegiance(Myself,ENEMY)
+	Global("EllhimarAngry","ACIL5E",0)
+THEN
+	RESPONSE #100
+                 SetGlobal("EllhimarAngry","ACIL5E",1)
+		 Enemy()
+		 StartDialogueNoSet([PC])
+END
+
+IF
+	GlobalLT("AC#Mirror","ACIL5E",3) // player has not seen the mirror and talked to the illithid image
+	HasItem("AC#5EKEY",Myself) 
+THEN
+	RESPONSE #100
+		DestroyItem("AC#5EKEY")
+END
+
+IF
+	HPLT(Myself,10)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#EllhimarHurt","ACIL5E",1)
+		StartDialogueNoSet([PC])
+END
+

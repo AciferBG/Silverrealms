@@ -1,0 +1,42 @@
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	Global("ACIL28_DOOR02","ACIL28",0)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,999999)
+		SetGlobal("ACIL28_DOOR02","ACIL28",1)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	Global("ACIL28_DOOR02","ACIL28",1)
+	CheckStatLT(LastTrigger,20,STR)
+THEN
+	RESPONSE #100
+        DisplayString(Myself,999998)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	Global("ACIL28_DOOR02","ACIL28",1)
+	CheckStatGT(LastTrigger,19,STR)
+THEN
+	RESPONSE #100
+		SetGlobal("ACIL28_DOOR02","ACIL28",2)
+        DisplayString(Myself,999997)
+		OpenDoor("DOOR02")
+		OpenDoor("DOOR03")
+		TriggerActivation("Ac#28do2",FALSE)
+END
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,12)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,14702)  // Ihr seid zu weit entfernt, um das zu benutzen.
+END
+

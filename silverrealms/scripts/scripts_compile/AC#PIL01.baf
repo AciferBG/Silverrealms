@@ -1,0 +1,17 @@
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	Global("AC#_DragonSummon","ACIL71",0)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@22) 
+		SetGlobal("AC#_DragonSummon","ACIL71",1)
+END
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,12)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,14702) // Ihr seid zu weit entfernt, um das zu benutzen.
+END

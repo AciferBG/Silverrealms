@@ -1,0 +1,6 @@
+IF
+	Opened([ANYONE])
+THEN
+	RESPONSE #100
+		ForceSpellRES("ac#spfun",LastTrigger)
+END

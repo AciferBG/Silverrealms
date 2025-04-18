@@ -1,0 +1,147 @@
+IF
+	Global("Dretch_Behavior","LOCALS",0)
+	Heard([ANYONE],300)
+THEN
+	RESPONSE #100
+		SetGlobal("Dretch_Behavior","LOCALS",1)
+END
+
+IF
+	Global("Dretch_Behavior","LOCALS",0)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Shout(300)
+		SetGlobal("Dretch_Behavior","LOCALS",1)
+		ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_STINKING_CLOUD)  // SPWI213.SPL (Stinkende Wolke)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Global("Dretch_Behavior","LOCALS",1)
+THEN
+	RESPONSE #100
+		SetGlobal("Dretch_Behavior","LOCALS",2)
+		AttackOneRound(NearestEnemyOf(Myself))
+END
+
+IF
+	Global("Dretch_Behavior","LOCALS",2)
+	See(NearestEnemyOf(Myself))
+	!StateCheck(LastAttackerOf(Myself),STATE_PANIC)
+	Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		SetGlobal("Dretch_Behavior","LOCALS",3)
+		ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_SPOOK)  // SPWI125.SPL (Alp)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Global("Dretch_Behavior","LOCALS",3)
+THEN
+	RESPONSE #100
+		SetGlobal("Dretch_Behavior","LOCALS",4)
+		AttackOneRound(NearestEnemyOf(Myself))
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Global("Dretch_Behavior","LOCALS",4)
+THEN
+	RESPONSE #100
+		ReallyForceSpellRES("AC#GLDRK",NearestEnemyOf(Myself))  // Kugel der Dunkelheit
+		SetGlobal("Dretch_Behavior","LOCALS",5)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Global("Dretch_Behavior","LOCALS",5)
+THEN
+	RESPONSE #100
+		SetGlobal("Dretch_Behavior","LOCALS",6)
+		AttackOneRound(NearestEnemyOf(Myself))
+END
+
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		Shout(89)
+		Enemy()
+END
+
+IF
+	HitBy([GOODCUTOFF],CRUSHING)
+THEN
+	RESPONSE #100
+		Shout(89)
+		Continue()
+END
+
+IF
+	OR(5)
+		AttackedBy([PC],DEFAULT)
+		AttackedBy([FAMILIAR],DEFAULT)
+		AttackedBy([ALLY],DEFAULT)
+		AttackedBy([CONTROLLED],DEFAULT)
+		AttackedBy([CHARMED],DEFAULT)
+	Allegiance(Myself,ENEMY)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		Shout(89)
+		Continue()
+END
+
+IF
+	Heard([ANYONE],89)
+	Allegiance(Myself,NEUTRAL)
+	!Class(Myself,INNOCENT)
+THEN
+	RESPONSE #100
+		Enemy()
+		MoveToObject(LastHeardBy(Myself))
+END
+
+IF
+	Heard([ANYONE],89)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	Heard([ANYONE],89)
+	!Class(Myself,INNOCENT)
+	!See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		MoveToObject(LastHeardBy(Myself))
+		Continue()
+END
+
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	!Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+	!See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		RandomWalk()
+END
+

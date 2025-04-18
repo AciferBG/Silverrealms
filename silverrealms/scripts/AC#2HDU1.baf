@@ -1,0 +1,7 @@
+IF
+	!Allegiance(Myself,ENEMY)
+	Global("AC#ACIL2HDuergar","GLOBAL",2)
+THEN
+	RESPONSE #100
+		Enemy()
+END

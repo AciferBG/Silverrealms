@@ -1,0 +1,19 @@
+IF
+       	 Global("AC#Transit_to_ACIL96","GLOBAL",0)
+THEN
+	RESPONSE #100
+	         SetGlobal("AC#Transit_to_ACIL96","GLOBAL",1)
+                 TriggerActivation("TrACIL10",FALSE)
+END
+
+IF
+	Global("LevelAdjustment","ACIL96",0)
+	OR(2)
+	DifficultyGT(EASY)
+	LevelGT(Player1,13)
+THEN
+	RESPONSE #100
+		CreateCreatureImpassableAllowOverlap("AC#96BD3",[565.442],0)
+		CreateCreatureImpassableAllowOverlap("AC#96BD3",[1435.793],5)
+		SetGlobal("LevelAdjustment","ACIL96",1)
+END

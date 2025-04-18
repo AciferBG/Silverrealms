@@ -1,0 +1,32 @@
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,12)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,14702)
+END
+
+IF
+   Clicked([ANYONE])
+   Range(LastTrigger,12)
+   GLOBAL("ACIL88_Power","ACIL88",0)
+THEN
+    RESPONSE #100
+             DisplayString(Myself,@781)
+             SetGlobal("ACIL88_Power","ACIL88",1)
+END
+
+IF
+  Clicked([ANYONE])
+  Range(LastTrigger,12)
+  GLOBAL("ACIL88_Power","ACIL88",1)
+THEN
+    RESPONSE #100
+             DisplayString(Myself,@782)
+             ApplyDamage(LastTrigger,10,ELECTRICITY)
+             IncrementGlobal("Deactivate_Power","ACIL88",1)
+             CreateVisualEffectObject("ICMAGICH",Myself)
+             AmbientActivate("Electric06",FALSE)
+             TriggerActivation("Power06",FALSE)
+END
+

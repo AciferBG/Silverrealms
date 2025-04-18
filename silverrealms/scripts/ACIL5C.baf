@@ -1,0 +1,21 @@
+IF
+	Global("EnteredArea","ACIL5C",0)
+THEN
+	RESPONSE #100
+		SetGlobal("EnteredArea","ACIL5C",1)
+		TriggerActivation("Info_rope",TRUE)
+		TriggerActivation("TrACIL54",FALSE)
+END
+
+IF
+	Global("JobDone","ACIL5C",0)
+	Dead("AC#FEYR1")  
+	Global("WheelRepaired","ACIL5C",2)
+THEN
+	RESPONSE #100
+		SetGlobal("JobDone","ACIL5C",1)
+		TriggerActivation("Info_rope",FALSE)
+		TriggerActivation("TrACIL54",TRUE)
+		SetGlobal("AC#Waterwell","GLOBAL",4)
+END
+

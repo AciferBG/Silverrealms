@@ -1,0 +1,26 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		FadeToColor([20.0],0)
+		Wait(2)
+		MoveViewPoint([1022.289],INSTANT)
+		ActionOverride(Player2,JumpToPoint([964.269]))
+		ActionOverride(Player3,JumpToPoint([967.295]))
+		ActionOverride(Player4,JumpToPoint([917.250]))
+		ActionOverride(Player5,JumpToPoint([870.290]))
+		ActionOverride(Player6,JumpToPoint([887.281]))
+		ActionOverride("ac#ilel5",JumpToPoint([1053.269]))
+		JumpToPoint([959.246])
+		FadeFromColor([20.0],0)
+		ActionOverride(Player2,Face(10))
+		ActionOverride(Player3,Face(10))
+		ActionOverride(Player4,Face(10))
+		ActionOverride(Player5,Face(10))
+		ActionOverride(Player6,Face(10))
+		Face(10)
+		FadeFromColor([20.0],0)
+		Wait(2)
+		ActionOverride("ac#ilel5",StartDialogNoSet(Player1))
+END

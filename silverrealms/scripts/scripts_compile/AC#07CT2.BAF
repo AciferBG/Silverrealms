@@ -1,0 +1,11 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId("AC#07MAL")  // Malphas
+        ForceSpellRES("AC#07DC","AC#07PES")  // Schreckenszauber
+        SmallWait(5)
+        Wait(1)
+        StartDialogueNoSet("AC#07PES")  // Bauer
+END
+

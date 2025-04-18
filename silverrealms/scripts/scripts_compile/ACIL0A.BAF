@@ -1,0 +1,64 @@
+// Raven Spawn: Beldas dead; Raven appears
+/*
+IF	
+	GlobalGT("AC#BeldasDies","GLOBAL",1)
+	Global("Raven_Spawn","ACIL0A",0)  // Turboldberg
+THEN
+	RESPONSE #100
+		SetGlobal("Raven_Spawn","ACIL0A",1)  // Turboldberg
+		CreateCreature("AC#RAVE0",[924.540],13)  // Raven
+END
+*/
+
+IF
+	Global("GoblinSpawn","ACIL0A",0) 
+	OR(2)
+	Global("GoblinTrap","ACIL0A",1)  
+	Global("GoblinTrap","ACIL0A",10) 
+THEN
+	RESPONSE #100
+		Wait(2)
+		SetGlobal("GoblinSpawn","ACIL0A",1)  
+		CreateCreature("AC#0AGO1",[924.416],0) // Goblin Captain
+		CreateCreature("AC#0AGO2",[1001.432],2) // Goblin archer
+		CreateCreature("AC#0AGO2",[1004.428],2) // Goblin archer
+		CreateCreature("AC#0AGO2",[998.434],2) // Goblin archer
+		CreateCreature("AC#0AGO2",[1008.438],2) // Goblin archer
+		CreateCreature("AC#0AGO2",[1108.607],2) // Goblin archer
+		CreateCreature("AC#0AGO2",[1115.615],2) // Goblin archer
+		CreateCreature("AC#0AGO2",[1100.600],2) // Goblin archer
+END
+
+// Ahab Spawn
+/*
+IF
+	Global("AC#AhabMeeting","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#AhabMeeting","GLOBAL",2)
+		CreateCreature("AC#BAHA1",[819.381],13)  // Ahab
+		CreateCreature("AC#BIRD1",[1176.637],10)  // Canary
+		CreateCreature("AC#BIRD1",[1036.508],11)  // Canary
+		CreateCreature("AC#BIRD1",[1026.408],5)  // Canary
+		CreateCreature("AC#BIRD1",[1001.301],8)  // Canary
+		CreateCreature("AC#BIRD1",[1199.408],7)  // Canary
+		CreateCreature("AC#BIRD1",[773.581],7)  // Canary
+END
+*/
+
+
+/*
+IF
+	GlobalGT("AC#BeldasDies","GLOBAL",1)
+	Global("CotD_Spawn","ACIL0A",0)  // Turboldberg
+THEN
+	RESPONSE #100
+		SetGlobal("CotD_Spawn","ACIL0A",1)  // Turboldberg
+		TriggerActivation("Info_Camp01",FALSE)
+		TriggerActivation("Info_Camp02",FALSE)
+		CreateCreature("ac#s#cd1",[1089.633],13)  // Larkonlan
+		CreateCreature("ac#s#cd2",[1176.637],10)  // Kämpfer
+		CreateCreature("ac#s#cd2",[1036.508],11)  // Kämpfer
+END
+*/
+

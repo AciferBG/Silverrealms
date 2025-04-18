@@ -1,0 +1,27 @@
+IF
+	NumInParty(1)
+	IsOverMe([PC])
+	Global("Ambush01","ACIL28",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Ambush01","ACIL28",1)
+END
+
+IF
+	NumInParty(2)
+	IsOverMe(Player2Fill)
+	Global("Ambush01","ACIL28",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Ambush01","ACIL28",1)
+END
+
+IF
+	NumInPartyGT(2)
+	IsOverMe(Player3Fill)
+	Global("Ambush01","ACIL28",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Ambush01","ACIL28",1)
+END
+

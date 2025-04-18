@@ -1,0 +1,34 @@
+// old script: Dragon is transformed into dracolich
+/*
+IF
+	Global("AC#_TransformDracolich","GLOBAL",1)
+THEN
+	RESPONSE #100
+		NoAction()
+	RESPONSE #100
+		Swing()
+	RESPONSE #100
+		Recoil()
+	RESPONSE #100
+	DisplayStringHead(Myself,999999) // WAS GESCHIEHT MIT MIR?
+	RESPONSE #100
+	DisplayStringHead(Myself,999998) // AAAHH!
+	RESPONSE #100
+		Face(4)
+	RESPONSE #100
+		Face(8)
+	RESPONSE #100
+		Face(15)
+	RESPONSE #100
+		Face(1)
+END
+*/
+/*
+IF
+	Global("AC#_TransformDracolich","GLOBAL",2)
+THEN
+	RESPONSE #100
+	DisplayStringHead(Myself,999998) // AAAHH!
+	Kill(Myself)
+END
+*/

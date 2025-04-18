@@ -1,0 +1,58 @@
+IF
+	Global("DisableAnimations","ACIL80",0)
+THEN
+	RESPONSE #100
+		SetGlobal("DisableAnimations","ACIL80",1)
+		AmbientActivate("Portala",TRUE)
+		SoundActivate("Amb_portal_a",TRUE)
+		TriggerActivation("Travel_A_B",TRUE)
+		AmbientActivate("Portalb",FALSE)
+		SoundActivate("Amb_portal_b",FALSE)
+		TriggerActivation("Travel_B_C",FALSE)
+		AmbientActivate("Portalc",TRUE)
+		SoundActivate("Amb_portal_c",TRUE)
+		TriggerActivation("Travel_C_A",TRUE)
+		AmbientActivate("Portald",FALSE)
+		SoundActivate("Amb_portal_d",FALSE)
+		TriggerActivation("Travel_d_e",FALSE)
+		AmbientActivate("Portale",TRUE)
+		SoundActivate("Amb_portal_e",TRUE)
+		TriggerActivation("Travel_E_D",TRUE)
+		SpawnPtDeactivate("Allips02")
+		SpawnPtDeactivate("Skeletonarmy01")
+		SpawnPtDeactivate("Skeletonarmy02")
+		SpawnPtDeactivate("Skeletonwarriors")
+END
+
+IF
+	Global("AC#ACIL80CutScene2","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#ACIL80CutScene2","GLOBAL",2)
+END
+
+IF
+	OpenState("DOOR01",TRUE)
+	Global("SpawnXP","ACIL80",0)
+THEN
+	RESPONSE #100
+		SetGlobal("SpawnXP","ACIL80",1)
+		AddExperienceParty(10000)
+		SpawnPtActivate("Allips02")
+		SpawnPtActivate("Skeletonarmy01")
+		SpawnPtActivate("Skeletonarmy02")
+		SpawnPtActivate("Skeletonwarriors")
+END
+
+IF
+	OR(2)
+		DifficultyGT(NORMAL)
+		LevelGT(Player1,10)
+	GlobalGT("SpawnXP","ACIL80",0)
+	Global("SpawnSkelMage","ACIL80",0)
+THEN
+	RESPONSE #100
+		SetGlobal("SpawnSkelMage","ACIL80",1)
+		CreateCreature("AC#80SK4",[2584.445],3)  // Skelett-Magier
+END
+

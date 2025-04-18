@@ -1,0 +1,113 @@
+IF
+	Global("EnteredArea","ACIL64",0)
+THEN
+	RESPONSE #100
+		SetGlobal("EnteredArea","ACIL64",1)
+		TriggerActivation("Tracil63",FALSE)
+END
+
+IF
+	GlobalGT("AC#AzerkynDestroyed","GLOBAL",1)
+	Global("EnteredArea","ACIL64",1)
+THEN
+	RESPONSE #100
+		SetGlobal("EnteredArea","ACIL64",2)
+		ActionOverride("AC#DUN64",Deactivate(Myself))
+		TriggerActivation("Tracil62",FALSE)
+		TriggerActivation("Tracil63",TRUE)
+END
+
+IF
+	Global("AC#ACIL64_Open","GLOBAL",2)
+	Global("Create_Creatures","ACIL64",0)
+THEN
+	RESPONSE #100
+		CreateCreature("AC#DUN64",[1558.258],0)  // Dunnabar Steinschulter
+		CreateCreature("AC#GROM2",[1639.373],6)  // Gromi Arnschädel
+		SetGlobal("Create_Creatures","ACIL64",1)
+END
+
+IF
+	GlobalGT("AC#AzerkynDestroyed","GLOBAL",1)
+	Global("Mith_Dragon","ACIL64",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Mith_Dragon","ACIL64",1)
+END
+
+IF
+	Global("Mith_Dragon","ACIL64",1)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		StartCutSceneMode()
+		FadeToColor([15.0],0)
+		Wait(1)
+		ActionOverride(Player1,JumpToPoint([1577.333]))
+		ActionOverride(Player2,JumpToPoint([1316.597]))
+		ActionOverride(Player3,JumpToPoint([1319.593]))
+		ActionOverride(Player4,JumpToPoint([1321.600]))
+		ActionOverride(Player5,JumpToPoint([1317.590]))
+		ActionOverride(Player6,JumpToPoint([1311.592]))
+		MoveViewPoint([1577.333],INSTANT)
+		CreateCreature("AC#SORNI",[1383.481],10)  // Sorni Arnschädel
+		CreateCreature("AC#ANT64",[1435.515],10)  // Anthan Diamantklinge
+		CreateCreature("AC#ELERN",[1488.550],10)  // Elern Abgrundlied
+		CreateCreature("AC#TORTH",[1506.575],10)  // Torth Schwarzstahl
+		CreateCreature("AC#STURV",[1304.521],10)  // Sturvis Abgrundlied
+		CreateCreature("AC#FENYL",[1403.572],10)  // Fenyl Arnschädel
+		CreateCreature("AC#TURBA",[1462.599],10)  // Turbaern Ghalmrin
+		CreateCreature("AC#VRONI",[1509.627],10)  // Vronia Eisenbieger
+		CreateCreature("AC#BETTA",[1340.452],12)  // Bettargh Abgrundlied
+		Wait(1)
+		EndCutSceneMode()
+		FadeFromColor([30.0],0)
+		SetGlobal("Mith_Dragon","ACIL64",2)
+		ActionOverride("AC#GROM2",Dialog(Player1))
+END
+
+IF
+	Global("Mith_Dragon","ACIL64",3)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		Wait(1)
+		ActionOverride("AC#SORNI",EscapeArea())
+		ActionOverride("AC#ANT64",EscapeArea())
+		ActionOverride("AC#ELERN",EscapeArea())
+		ActionOverride("AC#TORTH",EscapeArea())
+		ActionOverride("AC#STURV",EscapeArea())
+		ActionOverride("AC#FENYL",EscapeArea())
+		ActionOverride("AC#TURBA",EscapeArea())
+		ActionOverride("AC#VRONI",EscapeArea())
+		ActionOverride("AC#BETTA",EscapeArea())
+		SetGlobal("Mith_Dragon","ACIL64",4)
+		SetGlobal("AC#Torglor","GLOBAL",1)
+END
+
+IF
+	Global("AC#Mithbarak_Rescued","GLOBAL",20)
+	Global("AC#MithbarakazCurse","GLOBAL",0)
+	Global("CreateMithBarakDwarf","ACIL64",0)
+THEN
+	RESPONSE #100
+		SetGlobal("CreateMithBarakDwarf","ACIL64",1)
+		ActionOverride("AC#MITH1",DestroySelf())
+		OpenDoor("Door01")
+		CreateCreature("AC#MITH5",[1617.305],4)  // König Mith Barak
+		ActionOverride("AC#MITH5",SetNumTimesTalkedTo(1))
+END
+
+IF
+	Global("AC#Mithbarak_Rescued","GLOBAL",20)
+	Global("AC#MithbarakazCurse","GLOBAL",1)
+	Global("CreateMithBarakDwarf","ACIL64",0)
+THEN
+	RESPONSE #100
+		SetGlobal("CreateMithBarakDwarf","ACIL64",1)
+		ActionOverride("AC#MITH1",DestroySelf())
+		OpenDoor("Door01")
+		CreateCreature("AC#MITHD",[1385.566],4)  // Mithbarakaz
+		ActionOverride("AC#MITH5",SetNumTimesTalkedTo(1))
+END
+

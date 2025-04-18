@@ -1,0 +1,11 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId("AC#IL95G")  // Zwergenstatue
+        MoveToPointNoInterrupt([843.576])
+        Wait(1)
+        SetGlobal("Ravimor_revealed","ACIL95",2)
+        ActionOverride("AC#95MAP",StartDialogueNoSet([PC]))
+END
+

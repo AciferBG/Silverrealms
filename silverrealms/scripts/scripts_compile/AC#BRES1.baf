@@ -1,0 +1,141 @@
+IF
+	NumTimesTalkedTo(0)
+	Detect([PC])
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(LastSeenBy(Myself))
+END
+
+// Reputation counter for Iltkazar: every 3 rounds Bresk is checking the Global variable "AC_Iltkazar_Reputation" for his dialogue
+IF
+	Detect([PC])
+	Range([PC],10)
+	Global("AC#Arrested","GLOBAL",1)
+	!GlobalTimerNotExpired("ReputationCounter","ACIL50")
+THEN
+RESPONSE #100
+	SetGlobalTimer("ReputationCounter","ACIL50",12)
+	SetTokenGlobal("AC_Iltkazar_Reputation","GLOBAL","AC_ILREP")
+END
+
+IF
+	Global("AC#BreskMoves01","ACIL50",1)
+THEN
+	RESPONSE #100
+		MoveToPoint([1761.1785])
+END
+
+IF
+	Global("AC#BreskMoves02","ACIL50",1)
+THEN
+	RESPONSE #100
+		MoveToPoint([1761.1785])
+END
+
+IF
+	Global("AC#BreskWatches","ACIL50",0)
+	Global("AC#RegencyQuest","GLOBAL",1)
+	Detect([PC])
+THEN
+	RESPONSE #100
+		SetGlobal("AC#BreskWatches","ACIL50",1)
+		StartDialogueNoSet(LastSeenBy(Myself))
+END
+
+IF
+	Global("AC#Bresk_Council","LOCALS",1)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#Bresk_Council","LOCALS",2)
+        SetGlobalTimer("waiting_council","LOCALS",TWELVE_MINUTES)
+                //MoveToPointNoInterrupt([1761.1785])
+END
+
+IF
+	Detect([PC])
+	Global("AC#Bresk_Council","LOCALS",2)
+	GlobalTimerExpired("waiting_council","LOCALS")
+	Global("AC#RegencyQuest","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#Bresk_Council","LOCALS",3)
+		StartDialogueNoSet(LastSeenBy(Myself))
+END
+
+IF
+	Detect([PC])
+	Global("AC#BreskDrowPriestess","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#BreskDrowPriestess","GLOBAL",2)
+		StartDialogueNoSet(LastSeenBy(Myself))
+END
+
+/*
+IF
+	Detect([PC])
+	GlobalGT("AC#BackToSurface","GLOBAL",1)
+	Global("AC#BreskEyestalk","ACIL50",0)
+	PartyHasItem("AC#SRLAD")
+THEN
+	RESPONSE #100
+		SetGlobal("AC#BreskEyestalk","ACIL50",1)
+		StartDialogueNoSet(LastSeenBy(Myself))
+END
+*/
+
+IF
+	Detect([PC])
+	Global("AC#Goodbye_Iltkazar","GLOBAL",1)
+	Global("AC#BreskGoodbye","ACIL50",0)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#BreskGoodbye","ACIL50",1)
+		StartDialogueNoSet(LastSeenBy(Myself))
+END
+
+IF
+	Range([PC],16)
+	Detect([PC])
+	Global("AC#RC_Sorni_Fourth","GLOBAL",3)
+	Global("AC#KuoToaStone","GLOBAL",0)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(LastSeenBy(Myself))
+END
+
+IF
+	Range([PC],16)
+	Detect([PC])
+	Global("AC#StoneMelter","ACIL50",0)
+	PartyHasItem("AC#WAND7")
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(LastSeenBy(Myself))
+END
+
+IF
+	Global("Deactivated","LOCALS",1)
+	GlobalGT("AC#EscapeFromBarakuir","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Deactivated","LOCALS",2)
+		Activate(Myself)
+END
+
+IF
+	Global("Deactivated","LOCALS",0)
+	//GlobalGT("AC#RC_Sorni_Fourth","GLOBAL",8) old
+	GlobalGT("AC#RC_Sorni_Fourth","GLOBAL",3)
+THEN
+	RESPONSE #100
+		SetGlobal("Deactivated","LOCALS",1)
+		Deactivate(Myself)
+END
+
+
+
+
+
+
+

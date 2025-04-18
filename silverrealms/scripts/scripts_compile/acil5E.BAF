@@ -1,0 +1,142 @@
+// Block used to trigger the cutscenes later in the quest
+IF
+	Global("Debug","ACIL5E",1)
+THEN
+	RESPONSE #100
+	    SetGlobal("Debug","ACIL5E",2)
+		TriggerActivation("Mirror",FALSE)
+		OpenDoor("DOOR01") // Open secret door
+		ActionOverride("ac#ilel1",DestroySelf()) // destory false ellhimar
+		SetGlobal("AC#Ellhimar_Cernd","GLOBAL",10)
+END
+
+IF
+	Global("FalseEllhimarSpawn","ACIL5E",0)
+	//GlobalGT("AC#Vronia_Quest","GLOBAL",0) // after talk w/Vronia in ACIL50: Player can talk to Ellhimar before talking to Vronia in her home
+	//GlobalGT("AC#Vronia_Quest","GLOBAL",2) // after talk w/Vronia in ACIL5Q  Player can not talk to Ellhimar before talking to Vronia in her home
+THEN
+	RESPONSE #100
+                 CreateCreature("AC#ILEL1",[471.657],14) // Ellhimar
+		SetGlobal("FalseEllhimarSpawn","ACIL5E",1)
+END
+
+IF
+	Global("AC#Ellhimar_Cernd","GLOBAL",10)
+	Global("RealEllhimarSpawn","ACIL5E",0)
+THEN
+	RESPONSE #100
+        SetGlobal("RealEllhimarSpawn","ACIL5E",1)
+		TriggerActivation("Skulltrap",FALSE)
+		TriggerActivation("Lightning_Bolt_Trap",FALSE)
+	CreateCreature("AC#ILEL5",[468.649],3)
+END
+
+IF
+	OR(2)
+        Dead("ac#ilel1")
+        Dead("ac#ilel2")
+	Global("RevealDoor","ACIL5E",0)
+THEN
+	RESPONSE #100
+	SetGlobal("RevealDoor","ACIL5E",1)
+	DetectSecretDoor("DOOR01")
+END
+
+IF
+	Global("EnteredArea","ACIL5E",0)
+THEN
+	RESPONSE #100
+		OpenDoor("DOOR02")
+		OpenDoor("DOOR03")
+		AmbientActivate("Torglorview",FALSE)
+		AmbientActivate("Mindflayer",FALSE)
+		SetGlobal("EnteredArea","ACIL5E",1)
+END
+
+// if Ellhimar is attacked: close door
+IF
+	Global("EllhimarAngry","ACIL5E",2)
+	!Dead("ac#ilel1")
+	!Dead("ac#ilel2")
+	OpenState("DOOR02",TRUE)
+THEN
+	RESPONSE #100
+		CloseDoor("DOOR02")
+		Lock("DOOR02")
+END
+
+// if magical mirror is activated
+IF
+	Global("AC#EllhimarsMirrorDetected","GLOBAL",1)
+	!Dead("ac#ilel1")
+THEN
+	RESPONSE #100
+		CloseDoor("DOOR02")
+		Lock("DOOR02")
+		SetGlobal("AC#EllhimarsMirrorDetected","GLOBAL",2)
+		SetGlobal("OpenDoorEllhimar","ACIL5E",1) // to prevent the script to open the main door
+		ActionOverride("ac#ilel1",DestroySelf())
+		CreateCreature("ac#ilel2",[276.775],12)  // Ellhimar (wicked)
+END
+
+// if Runestone is placed without talking to Ellhimar
+IF
+	GlobalLT("AC#Vronia_Quest","GLOBAL",9)
+	Global("RevealDoor","ACIL5E",1)
+	Global("EllhimarAngry","ACIL5E",0)
+	InMyArea("ac#ilel1")
+	!Dead("ac#ilel1")
+THEN
+	RESPONSE #100
+		SetGlobal("EllhimarAngry","ACIL5E",1)
+		CloseDoor("DOOR02")
+		Lock("DOOR02")
+		ActionOverride("ac#ilel1",StartDialogueNoSet([PC]))
+END
+
+IF
+	Global("AC#Mirror","ACIL5E",3)
+	Global("AC#EllhimarsMirrorDetected","GLOBAL",0)
+THEN
+	RESPONSE #100
+	    CreateVisualEffect("ICMAGICH",[1054.184])
+		AmbientActivate("Mindflayer",FALSE)
+		//TriggerActivation("AC#5ETR2",FALSE) // not needed anymore
+		TriggerActivation("Mirror",FALSE)
+		SoundActivate("Portal",FALSE)
+		ActionOverride("AC#5EMIN",DestroySelf()) // mind flayer image creature disappears
+		SetGlobal("AC#EllhimarsMirrorDetected","GLOBAL",1)
+END
+
+// if Ellhimar has killed before the mirror is revealed, the main door opens after the player talked to the illithid image
+// necessary because if the player has not seen the illithid, Ellhimar destroys the door key to prevent the player leaving the area (in script AC#ILELL.baf)
+IF
+	Global("AC#Mirror","ACIL5E",3)
+	Global("OpenDoorEllhimar","ACIL5E",0)
+	!PartyHasItem("AC#5EKEY")
+	OR(3)
+	Dead("ac#ilel1")
+	Dead("ac#ilel2")
+	Dead("ac#ilel5")
+THEN
+	RESPONSE #100
+		Unlock("DOOR02")
+		OpenDoor("DOOR02")
+		SetGlobal("OpenDoorEllhimar","ACIL5E",1)
+END
+
+IF
+         PartyHasItem("AC#DDROW")
+         Global("AC#Vronia_Quest","GLOBAL",10)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#Vronia_Quest","GLOBAL",11)
+		EraseJournalEntry(@50610)
+		AddJournalEntry(@50611,QUEST)
+END
+
+
+
+
+
+

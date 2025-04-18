@@ -1,0 +1,15 @@
+IF
+	Global("HelpHealing","ACIL52",1)
+	OR(7)
+		SpellCastOnMe([PC],CLERIC_HEAL)  // SPPR607.SPL (Heilung)
+		SpellCastOnMe([PC],CLERIC_CURE_LIGHT_WOUNDS)  // SPPR103.SPL (Leichte Wunden heilen)
+		SpellCastOnMe([PC],CLERIC_CURE_MEDIUM_WOUNDS)  // SPPR315.SPL (Mittelschwere Wunden heilen)
+		SpellCastOnMe([PC],CLERIC_CURE_SERIOUS_WOUNDS)  // SPPR401.SPL (Schwere Wunden heilen)
+		SpellCastOnMe([PC],PALADIN_LAY_ON_HANDS)  // SPCL211.SPL (Hände auflegen)
+		SpellCastOnMe([PC],MAZZY_LAY)  // SPIN827.SPL (Hände auflegen)
+		SpellCastOnMeRES("SPIN101",[PC])  // Leichte Wunden heilen
+THEN
+	RESPONSE #100
+		IncrementGlobal("DwarfHealed","ACIL52",1)
+END
+

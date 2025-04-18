@@ -1,0 +1,45 @@
+IF
+	Detect([PC])
+	RandomNum(10,1)
+THEN
+	RESPONSE #100
+	        VerbalConstant(Myself,INITIAL_MEETING)
+	        Continue()
+END
+
+IF
+	Detect([PC])
+	RandomNum(10,5)
+THEN
+	RESPONSE #100
+	        VerbalConstant(Myself,DAMAGE)
+	        Continue()
+END
+
+IF
+	Detect([PC])
+	RandomNum(10,8)
+THEN
+	RESPONSE #100
+	        VerbalConstant(Myself,HURT)
+	        Continue()
+END
+
+IF
+	Detect([PC])
+	RandomNum(10,7)
+THEN
+	RESPONSE #100
+	        VerbalConstant(Myself,INITIAL_MEETING)
+	        Wait(6)
+END
+
+
+
+
+
+
+
+
+
+

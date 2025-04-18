@@ -1,0 +1,9 @@
+IF
+	Opened([ANYONE])
+THEN
+	RESPONSE #100
+                CreateVisualEffectObject("SPFLESHS",LastTrigger)
+                //ReallyForceSpell(LastTrigger,CLERIC_ANIMATE_DEAD)
+		//ActionOverride(LastTrigger,CreateCreature("SKELWA01",[-1.-1],0))
+		ReallyForceSpellRES("AC#SP301",Myself) // Skelettkrieger beschwören
+END

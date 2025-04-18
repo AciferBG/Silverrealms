@@ -1,0 +1,8 @@
+IF
+	Clicked([ANYONE])
+	GlobalLT("FlashCounter","ACIL90",8)
+THEN
+	RESPONSE #100
+		SetGlobal("FlashCounter","ACIL90",8)
+END
+

@@ -1,0 +1,19 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		LeaveAreaLUAPanic("ACIL2T","",[6.948],0)
+		LeaveAreaLUA("ACIL2T","",[6.948],6)
+		MultiPlayerSync()
+		MoveViewPoint([1539.1297],INSTANT)
+		CreateCreature("AC#2TTIA",[480.306],6)  // Drachenstatue
+		CreateCreature("ac#mal2t",[847.761],6)  // Malphas
+		ActionOverride("ac#mal2t",MoveToPoint([600.499]))
+		MoveViewPoint([480.306],100)
+		SmallWait(5)
+		FadeFromColor([30.0],0)
+		Wait(4)
+		ActionOverride("ac#mal2t",StartDialogNoSet(Player1))
+END
+

@@ -1,0 +1,8 @@
+// Rest Interrupt creature; destroys self after creation  (only needed for interrupting player's sleep)
+IF
+	True()
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+

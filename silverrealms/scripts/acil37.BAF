@@ -1,0 +1,26 @@
+IF
+	Global("EnteredArea","ACIL37",0)
+THEN
+	RESPONSE #100
+		FadeToColor([0.0],0)
+		ApplySpell(Player1,INQUIS_DISPEL_MAGIC) 
+		ApplySpell(Player2,INQUIS_DISPEL_MAGIC) 
+		ApplySpell(Player3,INQUIS_DISPEL_MAGIC)
+		ApplySpell(Player4,INQUIS_DISPEL_MAGIC)
+		ApplySpell(Player5,INQUIS_DISPEL_MAGIC)
+		ApplySpell(Player6,INQUIS_DISPEL_MAGIC)    
+		ApplySpellRES("AC#SPFAT",Player1) 
+		//DisplayStringNoName(Myself,@6002)
+		SetGlobal("EnteredArea","ACIL37",1)
+		//SetGlobal("AC#EscapeFromBarakuir","GLOBAL",1)
+		FadeFromColor([30.0],0)
+END
+
+IF
+	Global("EnteredArea","ACIL37",1)
+THEN
+	RESPONSE #100
+		DisplayStringNoName(Myself,@6002)
+		SetGlobal("EnteredArea","ACIL37",2)
+		SetGlobal("AC#EscapeFromBarakuir","GLOBAL",1)
+END

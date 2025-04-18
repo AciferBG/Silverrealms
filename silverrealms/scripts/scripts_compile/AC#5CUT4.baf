@@ -1,0 +1,143 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("AC#MAL06")  // Malphas
+		ReallyForceSpellPointRES("AC#CTMSW",[200.200])  // Meteorschwarm
+		ActionOverride("AC#ALDYM",ChangeAnimationNoEffect("AC#ALDY2"))  // Aldym Ryscelsar
+		ActionOverride(Player1,PlayDead(160))
+		ActionOverride(Player2,PlayDead(160))
+		ActionOverride(Player3,PlayDead(160))
+		ActionOverride(Player4,PlayDead(160))
+		ActionOverride(Player5,PlayDead(160))
+		ActionOverride(Player6,PlayDead(160))
+		ScreenShake([20.20],10)
+		Wait(2)
+		SetGlobal("AC#_Malphas_Revealed","GLOBAL",2)
+		SmallWait(5)
+		EndCutSceneMode()
+END
+
+
+
+/*
+IF
+	True()
+THEN
+	RESPONSE #100
+	        CutSceneId("AC#MAL06")
+		//Wait(1)
+		ReallyForceSpellPointRES("AC#CTMSW",[200.200]) // Meteorschwarm cutscene spell
+		ScreenShake([20.20],10)
+		//Wait(3)
+		Wait(2)
+		SetGlobal("AC#_Malphas_Revealed","GLOBAL",2)
+		SmallWait(5)
+		EndCutSceneMode()
+END
+*/
+
+
+
+/*
+IF
+	True()
+THEN
+	RESPONSE #100
+		Wait(1)
+		Wait(1)
+		CreateVisualEffectObject("SPFLESHS","AC#RAVE3")
+		ActionOverride("AC#RAVE3",ChangeAnimationNoEffect("AC#MAL06")) // Malphas
+		//Wait(1)
+                //ActionOverride("AC#ALDYM",Face(3))
+                //SmallWait(10)
+                //Wait(6)
+                Wait(3)
+		ActionOverride("AC#MAL06",ReallyForceSpellPoint([250.213],WIZARD_FIREBALL)) // SPWI304.SPL (Feuerball)
+		SmallWait(10)
+		Wait(2)
+		ActionOverride("AC#ALDYM",ChangeAnimationNoEffect("AC#ALDY2"))
+		SmallWait(10)
+		ActionOverride(Player1,PlayDead(60))
+		ActionOverride(Player2,PlayDead(60))
+		ActionOverride(Player3,PlayDead(60))
+		ActionOverride(Player4,PlayDead(60))
+		ActionOverride(Player5,PlayDead(60))
+		ActionOverride(Player6,PlayDead(60))
+		Wait(2)
+		ActionOverride("AC#MAL06",ReallyForceSpellPoint([200.200],CUTSCENE_METEOR_SWARM)) // SPIN719.SPL (Meteorschwarm)
+		ScreenShake([20.20],10)
+		Wait(7)
+		SetGlobal("AC#_Malphas_Revealed","GLOBAL",1)
+		SmallWait(5)
+		EndCutSceneMode()
+END
+
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		Wait(1)
+		Wait(1)
+		CreateVisualEffectObject("SPFLESHS","AC#RAVE3")
+		ActionOverride("AC#RAVE3",ChangeAnimationNoEffect("AC#MAL06")) // Malphas
+		ActionOverride("AC#MAL06",Face(13))
+		SmallWait(10)
+                ActionOverride("AC#ALDYM",Face(3))
+		ActionOverride("AC#MAL06",ReallyForceSpell("AC#ALDYM",WIZARD_FIREBALL)) // SPWI304.SPL (Feuerball)
+		ActionOverride("AC#ALDYM",ChangeAnimationNoEffect("AC#ALDY2"))
+		SmallWait(1)
+		//ScreenShake([20.20],10)
+		OpenDoor("DOOR01")
+		SmallWait(1)
+		ActionOverride("AC#MAL06",ForceSpellPoint([200.200],CUTSCENE_METEOR_SWARM)) // SPIN719.SPL (Meteorschwarm)
+		AmbientActivate("Fire_large01",TRUE)
+		AmbientActivate("Fire_large02",TRUE)
+		AmbientActivate("Smoke_large01",TRUE)
+		AmbientActivate("Smoke_large02",TRUE)
+		AmbientActivate("Candle01",FALSE)
+		AmbientActivate("Candle02",FALSE)
+		AmbientActivate("Candle03",FALSE)
+		SoundActivate("Fire_burning",TRUE)
+		Wait(1)
+		Wait(1)
+		//Kill("AC#ALDY2")
+		SmallWait(5)
+		EndCutSceneMode()
+END
+
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		Wait(1)
+		Wait(1)
+		CreateVisualEffectObject("SPFLESHS","AC#RAVE3")
+		ActionOverride("AC#RAVE3",ChangeAnimationNoEffect("AC#MAL06")) // Malphas
+		//ActionOverride("AC#MAL06",Face(13))
+		//SmallWait(10)
+                //ActionOverride("AC#ALDYM",Face(3))
+                //SmallWait(10)
+		ActionOverride("AC#MAL06",ReallyForceSpell("AC#ALDYM",WIZARD_FIREBALL)) // SPWI304.SPL (Feuerball)
+		SmallWait(10)
+		ActionOverride("AC#ALDYM",ChangeAnimationNoEffect("AC#ALDY2"))
+		Wait(2)
+		ActionOverride("AC#MAL06",ReallyForceSpellPoint([200.200],CUTSCENE_METEOR_SWARM)) // SPIN719.SPL (Meteorschwarm)
+		ScreenShake([20.20],10)
+		Wait(1)
+		SetGlobal("AC#_Malphas_Revealed","GLOBAL",1)
+		SmallWait(5)
+		EndCutSceneMode()
+END
+*/
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,43 @@
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	Global("Switch01","ACIL13",0)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,999999) //  Dieser verrostete Schalter dient ewohl früher dazu, irgendeinen Mechanismus in Gang zu setzen. Er scheint noch funktionsfähig zu sein.
+		SetGlobal("Switch01","ACIL13",1)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	Global("Switch01","ACIL13",1)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,999998) // Ihr legt den Schalter um und hört, wie aus unterirdischen Rohren Gas in die benachbarten Gänge strömt und sich in einer gewaltigen Explosion entzündet.
+		Wait(1)
+		SetGlobal("Switch01","ACIL13",2)
+		AddXPObject(LastTrigger,5000)
+		PlaySound("AC#LEVER")
+		ForceSpellPoint([649.616],WIZARD_INCENDIARY_CLOUD) // SPWI810.SPL (Incendiary Cloud)
+		Wait(1)
+		ForceSpellPoint([1102.846],WIZARD_INCENDIARY_CLOUD) // SPWI810.SPL (Incendiary Cloud)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	Global("Switch01","ACIL13",2)
+THEN
+	RESPONSE #100
+	        PlaySound("AC#CLICK")
+		DisplayString(Myself,999997) // Ihr habt den Schalter bereits umgelegt. Er lässt sich nicht mehr zurücksetzen und scheint mit einer Art Zeitmechanismus gekoppelt zu sein.
+END
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,12)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,14702) // Ihr seid zu weit entfernt, um das zu benutzen.
+END

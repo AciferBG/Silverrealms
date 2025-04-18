@@ -1,0 +1,28 @@
+IF
+        Global("Enemy_Spawn","ACIL9A",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Enemy_Spawn","ACIL9A",1)
+		//CreateCreature("GOLSTO01",[1082.389],0)  // Stone Golem
+		//CreateCreature("GOLSTO01",[1284.678],4)  // Stone Golem
+		CreateCreature("AC#9AGD1",[1192.433],4)  // Galeb Duhr
+END
+
+IF
+	PartyHasItem("AC#SR#R1")
+	Global("Runestone","ACIL9A",0)
+THEN
+	RESPONSE #100
+	        AddJournalEntry(@20009,QUEST)
+                EraseJournalEntry(@20008)
+				EraseJournalEntry(@20050)
+		SetGlobal("Runestone","ACIL9A",1)
+END
+
+IF
+	Global("GalebDuhr_Died","ACIL9A",1)
+THEN
+	RESPONSE #100
+		SetGlobal("GalebDuhr_Died","ACIL9A",2)
+		ScreenShake([8.8],10)
+END

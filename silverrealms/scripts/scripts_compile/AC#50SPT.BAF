@@ -1,0 +1,7 @@
+IF
+	Global("Bystanders","ACIL50",10)
+THEN
+	RESPONSE #100
+		EscapeArea()
+END
+

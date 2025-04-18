@@ -1,0 +1,176 @@
+IF
+	Global("EnteredArea","ACIL90",0)
+THEN
+	RESPONSE #100
+		SetGlobal("EnteredArea","ACIL90",1)
+		DayNight(NOON)
+		Weather(RAIN)
+		TriggerActivation("Trigger_Ladder",FALSE)
+		TriggerActivation("TrACIL90L",FALSE)
+		TriggerActivation("CheatTrigger01",FALSE)
+		TriggerActivation("TrACIL90_Ladderup",FALSE)
+		SoundActivate("Thunder",FALSE)
+		//CreateCreature("AC#S#WYV",[1337.901],14) // Draco-Wyvern
+		CreateCreatureImpassableAllowOverlap("AC#90TR2",[2827.1728],14) // Doomed Tree hit by lightning
+		DisplayString(Myself,@821)
+END
+/*****************************************************************************
+// when all 8 columns have been activated: Create huge lightning that hits the dragon
+******************************************************************************/
+
+IF
+	Global("FlashCounter","ACIL90",8)
+	Global("AC#CharvekannathorHurt","ACIL90",0)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		StartCutSceneMode()
+		CreateCreature("CUTSPY",[1572.408],0)
+		MoveViewPoint([1572.408],INSTANT) // small lightning hits iltkazar column
+		CreateVisualEffect("AMCALL",[1572.408])
+		PlaySound("EFF_P12")
+		Wait(1)
+		ActionOverride("cutspy",JumpToPoint([958.993]))
+		MoveViewPoint([958.993],INSTANT) // small lightning hits xothaerin column
+		CreateVisualEffect("AMCALL",[958.993])
+		PlaySound("EFF_P12")
+		Wait(1)
+		ActionOverride("cutspy",JumpToPoint([821.560]))
+		MoveViewPoint([821.560],INSTANT) // small lightning hits sondarr column
+		CreateVisualEffect("AMCALL",[821.560])
+		PlaySound("EFF_P12")
+		Wait(1)
+		ActionOverride("cutspy",JumpToPoint([1707.824]))
+		MoveViewPoint([1707.824],INSTANT) // small lightning hits barakuir column
+		CreateVisualEffect("AMCALL",[1707.824])
+		PlaySound("EFF_P12")
+		Wait(1)
+		ActionOverride("cutspy",JumpToPoint([794.799]))
+		MoveViewPoint([794.799],INSTANT) // small lightning hits high shanatar column
+		CreateVisualEffect("AMCALL",[794.799])
+		PlaySound("EFF_P12")
+		Wait(1)
+		ActionOverride("cutspy",JumpToPoint([1735.592]))
+		MoveViewPoint([1735.592],INSTANT) // small lightning hits drakkalor column
+		CreateVisualEffect("AMCALL",[1735.592])
+		PlaySound("EFF_P12")
+		Wait(1)
+		ActionOverride("cutspy",JumpToPoint([1215.1081]))
+		MoveViewPoint([1215.1081],INSTANT) // small lightning hits ultoksamrin column
+		CreateVisualEffect("AMCALL",[1215.1081])
+		PlaySound("EFF_P12")
+		Wait(1)
+		ActionOverride("cutspy",JumpToPoint([1535.1013]))
+		MoveViewPoint([1535.1013],INSTANT) // small lightning hits alatorin column
+		CreateVisualEffect("AMCALL",[1535.1013])
+		PlaySound("EFF_P12")
+		Wait(1)
+		MoveViewObject("ac#drar1",INSTANT)  // Charvekannathor
+		Wait(2)
+		PlaySound("AM0904C")
+		ForceSpellRES("AC#IL90","AC#DRAR1") // AC#IL90.SPL - special lightning designed to lower dragon's hp
+		Wait(1)
+		ActionOverride("cutspy",DestroySelf())
+		SetGlobal("FlashCounter","ACIL90",10)
+		SetGlobal("AC#ACIL90_FlashActivated","GLOBAL",1)
+		EndCutSceneMode()
+END
+
+IF
+	GlobalGT("AC#Charvekannathor","GLOBAL",1)
+	Global("DragonBattleStarts","ACIL90",0)
+THEN
+	RESPONSE #100
+		SetGlobal("DragonBattleStarts","ACIL90",1)
+		ActionOverride("cutspy",DestroySelf())
+		//SetMusic(COMBAT_NORMAL,BRD)
+END
+
+IF
+	Global("AC#Lightining","ACIL90",1)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#Lightining","ACIL90",2)
+		OpenDoor("Door03")
+		Wait(1)
+		SoundActivate("Thunder",TRUE)
+		//ActionOverride("AC#DWF32",StartDialogueNoSet([PC]))
+END
+
+IF
+	Global("SeenDragon","ACIL90",1)
+THEN
+	RESPONSE #100
+		SetGlobal("SeenDragon","ACIL90",2)
+		SetMusic(COMBAT_NORMAL,BRD)
+		ClearAllActions()
+		StartCutSceneMode()
+		StartCutScene("AC#90CT1")
+END
+
+IF
+	GlobalGT("AC#CharvekannathorHurt","ACIL90",0)
+	Global("DeactivateWeather","ACIL90",0)  
+THEN
+	RESPONSE #100
+		SetGlobal("DeactivateWeather","ACIL90",1)
+		SetGlobal("AC#90RUI","ACIL90",20) // ff: deactivate the container scripts from firing cause Charvekannathaor has already been "flashed"
+		SetGlobal("AC#90RUA","ACIL90",20)
+		SetGlobal("AC#90RUB","ACIL90",20) 
+		SetGlobal("AC#90RUD","ACIL90",20)
+		SetGlobal("AC#90RUH","ACIL90",20) 
+		SetGlobal("AC#90RUI","ACIL90",20)
+		SetGlobal("AC#90RUS","ACIL90",20)
+		SetGlobal("AC#90RUU","ACIL90",20)
+		SetGlobal("AC#90RUX","ACIL90",20)		
+		Weather(NOWEATHER)
+		SoundActivate("Thunder",FALSE)
+END
+
+IF
+	Global("AC#Charvekannathor","GLOBAL",3)
+	Global("LadderActivation","ACIL90",0)
+THEN
+	RESPONSE #100
+		SetGlobal("LadderActivation","ACIL90",1)
+		TriggerActivation("Trigger_Ladder",TRUE) // Activate Ladder Trigger so the PC is able to use it
+		CloseDoor("Door01") // destroy the drawbridge so there's no way back
+END
+
+IF
+	GlobalGT("AC#Charvekannathor","GLOBAL",3)
+	Global("MusicChange","ACIL90",0)
+THEN
+	RESPONSE #100
+		SetGlobal("MusicChange","ACIL90",1)
+		SetMusic(COMBAT_NORMAL,57)
+END
+
+IF
+	GlobalGT("AC#CharvekannathorHurt","ACIL90",0)
+	OR(2)
+	!Dead("ac#dwf23") // Gormar
+	!Dead("ac#dwf33") // Thradear
+THEN
+	RESPONSE #100
+	    ActionOverride("ac#dwf23",Kill(Myself)) // Gormar
+		ActionOverride("ac#dwf33",Kill(Myself)) // Thradear
+END
+
+IF
+	Global("AC#Charvekannathor","GLOBAL",3)
+	CombatCounterLT(50)
+THEN
+	RESPONSE #100
+		StartCombatCounter()
+END
+
+IF
+	PartyRested()
+	Global("AC#CharvekannathorHurt","ACIL90",0)
+THEN
+RESPONSE #100
+	StartRainNow()
+END
+
+

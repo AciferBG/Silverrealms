@@ -1,0 +1,20 @@
+IF
+	GlobalGT("AC#ShanatarScepters","GLOBAL",0)
+	Global("CreateScepter","ACIL47",0)
+THEN
+	RESPONSE #100
+		SetGlobal("CreateScepter","ACIL47",1)
+                ActionOverride("Drakkalor_scepter",CreateItem("AC#ZEPDR",0,0,0))
+END
+
+IF
+	OR(2)
+	Dead("AC#CHARV")
+	Dead("AC#CHARR")
+	Global("DeactivateRest","ACIL47",0) 
+THEN
+	RESPONSE #100
+		SetGlobal("DeactivateRest","ACIL47",1)  
+		SetRestEncounterProbabilityDay(0)
+		SetRestEncounterProbabilityNight(0)
+END

@@ -1,0 +1,20 @@
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@7) // Der Boden und die W�nde des gesamten Raumes sind mit zahlreichen Spinnennetzen �berzogen. Die Netze sind ungew�hnlich dick und stammen von keiner Spinne, die Ihr kennt.
+END
+
+IF
+	Global("Spawndriders","acil26",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Spawndriders","acil26",1)
+		CreateCreature("ac#dr1",[647.360],14)
+		CreateCreature("ac#dr1",[813.370],14)
+		CreateCreature("ac#dr1",[386.477],10)
+		CreateCreature("ac#dr2",[320.500],2)
+		CreateCreature("ac#dr2",[1037.519],10)
+		CreateCreature("ac#dr2",[824.605],2)
+END
+

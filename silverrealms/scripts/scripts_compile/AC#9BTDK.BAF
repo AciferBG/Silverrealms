@@ -1,0 +1,31 @@
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,15)
+	PartyHasItem("AC#ZEPXS")  // Zepterkopf
+	Global("DiscPlaced","ACIL9B",0)
+THEN
+	RESPONSE #100
+		SetGlobal("DiscPlaced","ACIL9B",1)
+		TakePartyItem("AC#ZEPXS")  // Zepterkopf
+		AmbientActivate("Disk",TRUE)
+		PlaySound("AC#09MPS")
+		TriggerActivation(Myself,FALSE)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,15)
+	!PartyHasItem("AC#ZEPXS")  // Zepterkopf
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@6102) 
+END
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,15)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,14702)  // Ihr seid zu weit entfernt, um das zu benutzen.
+END
+

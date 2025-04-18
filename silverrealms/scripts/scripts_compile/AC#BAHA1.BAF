@@ -1,0 +1,46 @@
+IF
+	OR(5)
+		HitBy(Player1,CRUSHING)
+		HitBy(Player2,CRUSHING)
+		HitBy(Player3,CRUSHING)
+		HitBy(Player4,CRUSHING)
+		HitBy(Player5,CRUSHING)
+		HitBy(Player6,CRUSHING)
+		Global("HitByPC","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("HitByPC","LOCALS",1)
+		DisplayStringHead(Myself,@985)  // He, lasst das! Ich bin auf Eurer Seite!
+END
+
+IF
+	OR(5)
+		HitBy(Player1,CRUSHING)
+		HitBy(Player2,CRUSHING)
+		HitBy(Player3,CRUSHING)
+		HitBy(Player4,CRUSHING)
+		HitBy(Player5,CRUSHING)
+		HitBy(Player6,CRUSHING)
+		Global("HitByPC","LOCALS",1)
+THEN
+	RESPONSE #100
+		SetGlobal("HitByPC","LOCALS",2)
+		DisplayStringHead(Myself,@985)  // He, lasst das! Ich bin auf Eurer Seite!
+END
+
+IF
+	OR(5)
+		HitBy(Player1,CRUSHING)
+		HitBy(Player2,CRUSHING)
+		HitBy(Player3,CRUSHING)
+		HitBy(Player4,CRUSHING)
+		HitBy(Player5,CRUSHING)
+		HitBy(Player6,CRUSHING)
+		Global("HitByPC","LOCALS",2)
+THEN
+	RESPONSE #100
+		SetGlobal("HitByPC","LOCALS",3)
+		SetGlobal("AC#TalkedToAhab","GLOBAL",10)
+		DisplayStringHead(Myself,@986)  // Wie schade, dass Ihr meine Hilfe nicht zu schätzen wisst!
+		ForceSpell(Myself,POOF_GONE)  // SPIN660.SPL (Teleportieren)
+END

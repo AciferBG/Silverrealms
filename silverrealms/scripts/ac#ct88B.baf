@@ -1,0 +1,23 @@
+/*
+
+Dieses Skript startet die zweite Cutscene von Malphas in Area ACIL88
+*/
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId("AC#MAL02")
+    Wait(1)
+    //MoveToPoint([1790.823])
+    FadeToColor([30.0],0)
+    Wait(1)
+    //JumpToPoint([1790.823])
+    Wait(1)
+    ActionOverride("CUTSPY",DestroySelf())
+    Wait(1)
+    MoveViewObject(Player1,INSTANT)
+    FadeFromColor([30.0],150)
+    SetGlobal("AC#Cut1","ACIL88",2)
+    EndCutSceneMode()
+END
+

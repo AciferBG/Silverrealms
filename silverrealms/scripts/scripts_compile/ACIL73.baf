@@ -1,0 +1,9 @@
+IF
+             Global("CircleOfMagic","ACIL73",4)
+THEN
+    RESPONSE #100
+             TriggerActivation("Magic_well",FALSE)
+             AmbientActivate("Magic_power",FALSE)
+             SoundActivate("AM_Glowing Ball",FALSE)
+END
+

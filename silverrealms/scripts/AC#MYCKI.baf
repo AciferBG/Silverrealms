@@ -1,0 +1,9 @@
+IF
+        See([PC])
+        Delay(12)
+	GlobalLT("dead","LOCALS",10)
+THEN
+	RESPONSE #100
+		ForceSpellRES("AC#MYCKI",Myself)
+		IncrementGlobal("dead","LOCALS",1)
+END

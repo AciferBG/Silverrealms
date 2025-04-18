@@ -1,0 +1,8 @@
+IF
+	IsOverMe("AC#BRES2")
+	Global("AC#BreskMoves01","ACIL66",1)
+THEN
+	RESPONSE #100
+		ActionOverride("AC#BRES2",MoveToPointNoInterrupt([818.649]))
+		SetGlobal("AC#BreskMoves01","ACIL66",2)
+END

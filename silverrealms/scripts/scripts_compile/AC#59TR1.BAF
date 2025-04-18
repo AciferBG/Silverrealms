@@ -1,0 +1,11 @@
+IF
+	IsOverMe([PC])
+	Global("AC#BoatTest","ACIL59",1)
+THEN
+	RESPONSE #100
+		Wait(1)
+		TriggerActivation("Boat_Test",FALSE)
+		SetGlobal("AC#BoatTest","ACIL59",2)
+		ActionOverride("AC#SORN1",StartDialogNoSet([PC]))
+END
+

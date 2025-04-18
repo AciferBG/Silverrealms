@@ -1,0 +1,14 @@
+IF
+	InMyArea(Player1)
+	Global("AC#_TiglathSpawn","GLOBAL",1)
+	AreaType(OUTDOOR)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#_TiglathSpawn","GLOBAL",2)
+                CreateCreature("AC#TIGL1",[677.533],12)
+		//CreateCreature("AC#TIGL1",[540.487],0)
+		CreateCreature("AC#TREM1",[552.472],15)
+END
+
+
+

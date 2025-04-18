@@ -1,0 +1,21 @@
+IF
+	Global("Robbery","ACIL96",20)
+THEN
+	RESPONSE #100
+	         DestroySelf()
+END
+
+IF
+	Global("Robbery","ACIL96",10)
+THEN
+	RESPONSE #100
+	         DestroySelf()
+END
+
+IF
+	Global("Robbery","ACIL96",1)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+	         Enemy()
+END

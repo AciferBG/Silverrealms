@@ -1,0 +1,71 @@
+// Silverrealms Spell Files
+
+COPY ~silverrealms/spl/copy~         ~override~
+
+COPY ~silverrealms/spl/AC#HAMG.spl~          ~override~ // pounding force, hammer golem's special ability
+SAY NAME1 @1139 SAY NAME2 @1139
+
+COPY ~silverrealms/spl/AC#SPKIN.spl~          ~override~
+SAY NAME1 @165 SAY NAME2 @165
+
+COPY ~silverrealms/spl/AC#VAR01.spl~          ~override~
+SAY NAME1 @222 SAY NAME2 @222
+
+COPY ~silverrealms/spl/AC#VARSC.spl~          ~override~
+SAY NAME1 @548 SAY NAME2 @548
+
+COPY ~silverrealms/spl/AC#MURZ1.spl~          ~override~
+SAY NAME1 @556 SAY NAME2 @556
+
+COPY ~silverrealms/spl/AC#HSON.spl~          ~override~ //Harpysong
+SAY NAME1 @590 SAY NAME2 @590
+
+COPY ~silverrealms/spl/AC#WAND7.spl~          ~override~
+SAY NAME1 @790 SAY NAME2 @790
+
+COPY ~silverrealms/spl/ac#dii7.spl~           ~override~
+SAY NAME1 @956 SAY NAME2 @956
+
+COPY ~silverrealms/spl/AC#MAL2.spl~          ~override~
+SAY NAME1 @960 SAY NAME2 @960
+
+COPY ~silverrealms/spl/AC#I713.spl~          ~override~   // Protection from Fire, 15' radius (Wizards spell compendium volume III, p. 702)
+SAY NAME1 @1024 SAY NAME2 @1024
+
+COPY ~silverrealms/spl/AC#DRL1.spl~          ~override~   // Dracolich Gaze attack: Hold
+SAY NAME1 @1126 SAY NAME2 @1126
+
+COPY ~silverrealms/spl/AC#GDRK.spl~          ~override~  // Globe of darkness
+SAY NAME1 @1128 SAY NAME2 @1128
+
+COPY ~silverrealms/spl/AC#67IW.spl~          ~override~  // Gelugon: Wall of ice
+SAY NAME1 @1130 SAY NAME2 @1130
+
+COPY ~silverrealms/spl/AC#24GC.spl~          ~override~  // Cloak of Gaer (Demihuman Deities, p.33)
+SAY NAME1 @1131 SAY NAME2 @1131
+
+COPY ~silverrealms/spl/AC#SPW2.spl~          ~override~  // Protection from poison (Wizard)  (Spellbound, p.95)
+SAY NAME1 @8026 SAY NAME2 @8026
+SAY DESC @8027
+SAY UNIDENTIFIED_DESC @8027
+
+COPY ~silverrealms/spl/AC#2DB1.spl~          ~override~  // dwarven banshee: curse (gaze attack)
+SAY NAME1 @1132 SAY NAME2 @1132
+
+COPY ~silverrealms/spl/AC#2DB2.spl~          ~override~  // dwarven banshee: cursed battlecry
+SAY NAME1 @1133 SAY NAME2 @1133
+
+COPY ~silverrealms/spl/AC#B_EN.spl~          ~override~  // doomsphere: enervation
+SAY NAME1 @1134 SAY NAME2 @1134
+
+COPY ~silverrealms/spl/AC#B_BS.spl~          ~override~  // doomsphere: boneshatter
+SAY NAME1 @1135 SAY NAME2 @1135
+
+COPY ~silverrealms/spl/AC#B_WI.spl~          ~override~  // doomsphere: withering
+SAY NAME1 @1136 SAY NAME2 @1136
+
+COPY ~silverrealms/spl/AC#B_CR.spl~          ~override~  // doomsphere: chill ray
+SAY NAME1 @1137 SAY NAME2 @1137
+
+COPY ~silverrealms/spl/AC#EW_1.spl~          ~override~  // earth whisper: avarice
+SAY NAME1 @1138 SAY NAME2 @1138

@@ -1,0 +1,9 @@
+IF
+	IsOverMe([PC])
+	Global("Elevator","ACIL9E",1)  
+THEN
+	RESPONSE #100
+		CloseDoor("Door03")
+		PlaySound("AM1202E6")
+		SetGlobal("Elevator","ACIL9E",0)  
+END

@@ -1,0 +1,35 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		ActionOverride("AC#RAVE2",MoveToPoint([845.417]))
+		Wait(1)
+		MoveViewPoint([845.417],100)
+		ActionOverride(Player2,MoveToPoint([845.417]))
+		ActionOverride(Player3,MoveToPoint([845.417]))
+		ActionOverride(Player4,MoveToPoint([845.417]))
+		ActionOverride(Player5,MoveToPoint([845.417]))
+		ActionOverride(Player6,MoveToPoint([845.417]))
+                MoveToPoint([845.417])
+		FadeToColor([30.0],0)
+		Wait(1)
+		ActionOverride("AC#RAVE2",EscapeArea())
+		LeaveAreaLUAPanic("ACIL03","",[1003.1420],9)
+		LeaveAreaLUA("ACIL03","",[1003.1420],9)
+		ActionOverride(Player2,LeaveAreaLUA("ACIL03","",[1003.1420],9))
+		ActionOverride(Player3,LeaveAreaLUA("ACIL03","",[1003.1420],9))
+		ActionOverride(Player4,LeaveAreaLUA("ACIL03","",[1003.1420],9))
+		ActionOverride(Player5,LeaveAreaLUA("ACIL03","",[1003.1420],9))
+		ActionOverride(Player6,LeaveAreaLUA("ACIL03","",[1003.1420],9))
+		MultiPlayerSync()
+		MoveViewPoint([1003.1420],INSTANT)
+		ActionOverride(Player1,FadeFromColor([30.0],0))
+		SetGlobal("AC#_RavenPlotStart","GLOBAL",6)
+		EndCutSceneMode()
+END
+
+
+
+
+

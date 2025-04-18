@@ -1,0 +1,15 @@
+IF
+	OR(3)
+        Contains("ax1h01",Myself)
+        Contains("ax1h02",Myself)
+        Contains("ax1h04",Myself)
+	GlobalLT("AC#30GateOpen","ACIL30",5)
+	Global("AC#30axecon","ACIL30",0)
+THEN
+	RESPONSE #100
+	SetGlobal("AC#30axecon","ACIL30",1)
+	//CreateVisualEffectObject("ICMAGICH",Myself)
+	IncrementGlobal("AC#30GateOpen","ACIL30",1)
+	//ContainerEnable("axecon",FALSE)
+END
+

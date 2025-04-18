@@ -1,0 +1,17 @@
+IF
+	See(NearestEnemyOf(Myself))
+	Global("ac#colorspray","LOCALS",0)
+THEN
+	RESPONSE #100
+		ReallyForceSpell(LastSeenBy(Myself),WIZARD_COLOR_SPRAY) // SPWI105.SPL (Sprühende Farben)
+		SetGlobal("ac#colorspray","LOCALS",1)
+END
+
+
+
+
+
+
+
+
+

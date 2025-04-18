@@ -1,0 +1,13 @@
+/*
+Mit diesem Skript verschwindet Duhrghatu
+*/
+
+IF
+        Opened([ANYONE])
+THEN
+    RESPONSE #100
+             ActionOverride("AC#DURG2",DestroySelf())
+             TriggerActivation("AC#57TR1",FALSE)
+END
+
+

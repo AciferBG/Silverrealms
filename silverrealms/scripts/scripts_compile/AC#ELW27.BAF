@@ -1,0 +1,15 @@
+IF
+	Die()
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	AreaCheck("ACIL27")
+	Global("MonolithsDeactivated","ACIL27",1)
+THEN
+	RESPONSE #100
+		Kill(Myself)
+END
+

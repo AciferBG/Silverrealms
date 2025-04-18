@@ -1,0 +1,21 @@
+IF
+	Global("EnteredArea","ACIL70",0)
+THEN
+	RESPONSE #100
+		//FadeToColor([0.0],0)
+		SetGlobal("EnteredArea","ACIL70",1)
+		TriggerActivation("TrACIL09",FALSE)
+		//StartMovie("ac#70mve")
+		//FadeFromColor([30.0],0)
+END
+
+IF
+	GlobalGT("AC#Talked_to_Maldraedior","GLOBAL",0)
+	Global("GithSpawn","ACIL70",0)
+THEN
+	RESPONSE #100
+		SetGlobal("GithSpawn","ACIL70",1)
+			CreateCreature("AC#GITH8",[889.1261],8)
+			CreateCreature("AC#DRAS4",[1193.1338],8)
+END
+

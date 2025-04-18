@@ -1,0 +1,24 @@
+IF
+	GlobalGT("AC#Talked_to_Maldraedior","GLOBAL",0)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	Range([PC],12)
+	See([PC])
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		Enemy()
+		SetGlobal("Lizard_Attack","ACIL70",1)
+END
+
+IF
+	Global("Lizard_Attack","ACIL70",1)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		Enemy()
+END

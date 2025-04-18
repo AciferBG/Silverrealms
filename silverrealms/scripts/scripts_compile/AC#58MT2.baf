@@ -1,0 +1,8 @@
+IF
+	IsOverMe("AC#58DW2")
+	Global("AC#58DW2Moves","ACIL58",1)
+THEN
+	RESPONSE #100
+		ActionOverride("AC#58DW2",MoveToObjectNoInterrupt("AC#58DW9"))
+		SetGlobal("AC#58DW2Moves","ACIL58",2)
+END

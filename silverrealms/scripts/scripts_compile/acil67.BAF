@@ -1,0 +1,63 @@
+IF
+	Global("EnteredArea","ACIL67",0)
+THEN
+	RESPONSE #100
+		SetGlobal("EnteredArea","ACIL67",2)
+		StartMovie("ac#61mve")
+		Explore()
+		PlaySound("AM5000S3")
+        ScreenShake([10.10],8)
+		//OpenDoor("Door01") remains closed until Bresk is discovered
+END
+
+IF
+	GlobalGT("AC#BreskEscape","GLOBAL",0) // when Bresk has been discovered: open door to fever iron room
+	Global("IceDoor","ACIL67",0)
+THEN
+	RESPONSE #100
+		SetGlobal("IceDoor","ACIL67",1)
+		OpenDoor("Door01")
+END
+
+IF
+	Global("WallOfIce","ACIL67",1)
+	OpenState("Door01",TRUE)
+THEN
+	RESPONSE #100
+		CreateVisualEffect("SPCLOUD1",[2812.1816])
+		CloseDoor("Door01")
+END
+
+IF
+	Global("WallOfIce","ACIL67",1)
+	OpenState("Door01",FALSE)
+	Dead("AC#67GEL")
+THEN
+	RESPONSE #100
+		SetGlobal("WallOfIce","ACIL67",2)
+		CreateVisualEffect("SPCLOUD1",[2812.1816])
+		//SmallWait(5)
+		OpenDoor("Door01")
+END
+
+IF
+	Global("AC#Screenshake","ACIL67",0)
+THEN
+	RESPONSE #100
+	         SetGlobalTimer("AC#Screenshaketimer","ACIL67",15)
+                 SetGlobal("AC#Screenshake","ACIL67",1)
+END
+
+IF
+	GlobalTimerExpired("AC#Screenshaketimer","ACIL67")
+        Global("AC#Screenshake","ACIL67",1)
+THEN
+	RESPONSE #100
+                 PlaySound("AM5000G2")
+                 ScreenShake([10.10],8)
+                 Wait(2)
+                 SetGlobal("AC#Screenshake","ACIL67",0)
+	RESPONSE #100
+	         SetGlobal("AC#Screenshake","ACIL67",0)
+                 Continue()
+END

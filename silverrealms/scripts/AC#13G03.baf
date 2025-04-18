@@ -1,0 +1,10 @@
+IF
+	Opened([ANYONE])
+	PartyHasItem("MISC23")
+	Global("Gem03","ACIL13",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Gem03","ACIL13",1)
+		ActionOverride("AC#13ST3",StartDialogueNoSet(LastTrigger))
+END
+

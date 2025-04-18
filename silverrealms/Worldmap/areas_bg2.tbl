@@ -1,0 +1,17 @@
+
+SHORT_NAME  CONTENT  LONG_NAME  FLAGS  BAM_ANIM  X_POS   Y_POS  NAME         TOOLTIP  LOAD_IM
+
+ACIL0A      ACIL0A   ACIL0A     0      1100      1238    560    @100000      N        AC#GTR0A	//Turboldberge
+ACIL4M      ACIL4M   ACIL4M     0      1101      1034    138    @100001      N        N			//Steinbruch
+ACIL01      ACIL01   ACIL01     0      1102      1259    629    @100002      N        N			//Ravimors Höhle
+ACIL03      ACIL03   ACIL03     0      1103      714     33     @100003      N        N			//Turm des Magiers
+ACIL04      ACIL04   ACIL04     0      1104      909     49     @100004      N        AC#GTR04	//Zweiwasser
+ACIL06      ACIL06   ACIL06     0      1105      985     52     @100005      N        AC#GTR06	//Axtbrücke
+ACIL07      ACIL07   ACIL07     0      1104      909     49     @100004      N        N			//Zweiwasser
+ACIL08      ACIL08   ACIL08     0      1103      714     33     @100003      N        N			//Turm des Magiers
+ACIL09      ACIL09   ACIL09     0      1105      985	 52     @100005      N        N			//Axtbrücke
+ACIL41      ACIL41   ACIL41     0      1106      1305    464    @100006      N        N			//Ausgang von Drakkalor
+ACIL20      ACIL20   ACIL20     0      1107      1396    603    @100007      N        N			//Iltkazar
+ACIL70      ACIL70   ACIL70     0      1108      1045    15     @100008      N        N			//Drachenfriedhof
+ACIL9F		ACIL9F	 ACIL9F		0      1109      835     26     @100009      N        AC#GTR9F	//Zwergenruine
+

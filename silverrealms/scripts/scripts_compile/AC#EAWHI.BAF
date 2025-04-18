@@ -1,0 +1,62 @@
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	See([PC])
+	CheckStat(LastSeenBy(Myself),1,DEX)
+	!StateCheck(LastSeenBy(Myself),STATE_STONE_DEATH)
+	Range(LastSeenBy(Myself),20)
+THEN
+	RESPONSE #100
+		ReallyForceSpellRES("AC#EW_3",LastSeenBy(Myself))  // Fleisch zu Stein
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	!StateCheck(NearestEnemyOf(Myself),STATE_PANIC)
+	Global("Fear","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Fear","LOCALS",1)
+		ReallyForceSpellRES("AC#EW_2",NearestEnemyOf(Myself))  // Alp
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	!StateCheck(NearestEnemyOf(Myself),STATE_PANIC)
+	Global("Fear","LOCALS",1)
+THEN
+	RESPONSE #100
+		SetGlobal("Fear","LOCALS",2)
+		AttackOneRound(NearestEnemyOf(Myself))
+END
+
+IF
+	See(StrongestOf([PC]))
+	Global("Avarice","LOCALS",0)
+	!StateCheck(LastSeenBy(Myself),STATE_CHARMED)
+THEN
+	RESPONSE #100
+		SetGlobal("Avarice","LOCALS",1)
+		ReallyForceSpellRES("AC#EW_1",LastSeenBy(Myself))  // Schreckenszauber
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		RandomWalk()
+END
+

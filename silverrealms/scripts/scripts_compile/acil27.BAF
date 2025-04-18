@@ -1,0 +1,295 @@
+IF
+	Global("DisableAnimations","ACIL27",0)
+THEN
+	RESPONSE #100
+		SetGlobal("DisableAnimations","ACIL27",1)
+		AmbientActivate("Monolith02on",FALSE)
+		AmbientActivate("Monolith01off",FALSE)
+		AmbientActivate("Monolith03off",FALSE)
+		AmbientActivate("Monolith04off",FALSE)
+		AmbientActivate("Monolith05off",FALSE)
+END
+
+IF
+	Global("SpawnPointManagement","ACIL27",0)
+THEN
+	RESPONSE #100
+		SetGlobal("SpawnPointManagement","ACIL27",1)
+		SpawnPtDeactivate("Madness_spawn_01") // to be activated after Gogondy-wine quest
+		SpawnPtDeactivate("Madness_spawn_02")
+		SpawnPtDeactivate("Madness_spawn_03")
+END
+
+IF
+	Global("AC#Runecontainer02","ACIL27",1)
+THEN
+	RESPONSE #100
+		PlaySound("EFF_M62")
+		AmbientActivate("Monolith02on",TRUE)
+		AmbientActivate("Monolith02off",FALSE)
+		SpawnPtDeactivate("Spawnpointwater")
+		SetGlobal("AC#Runecontainer02","ACIL27",2)
+END
+
+IF
+	Global("AC#Runecontainer02","ACIL27",2)
+	Global("MonolithsDeactivated","ACIL27",0)
+THEN
+	RESPONSE #100
+	        AmbientActivate("Monolith01off",FALSE)
+                AmbientActivate("Monolith01on",FALSE)
+                AmbientActivate("Monolith02on",FALSE)
+		AmbientActivate("Monolith02off",FALSE)
+                AmbientActivate("Monolith03off",FALSE)
+                AmbientActivate("Monolith03on",FALSE)
+                AmbientActivate("Monolith04off",FALSE)
+                AmbientActivate("Monolith04on",FALSE)
+                AmbientActivate("Monolith05off",FALSE)
+                AmbientActivate("Monolith05on",FALSE)
+       		TakePartyItem("AC#IL#01")
+		DestroyItem("AC#IL#01")
+		TakePartyItem("AC#IL#02")
+		DestroyItem("AC#IL#02")
+		TakePartyItem("AC#IL#03")
+		DestroyItem("AC#IL#03")
+		ActionOverride("Runecontainer01",DisplayString(Myself,@886))
+       		ContainerEnable("Runecontainer01",FALSE)
+		ContainerEnable("Runecontainer02",FALSE)
+		ContainerEnable("Runecontainer03",FALSE)
+		SetGlobal("MonolithsDeactivated","ACIL27",1)
+		EraseJournalEntry(@27000)
+END
+
+IF
+        Global("AC#DOOR03","ACIL27",1)
+THEN
+	RESPONSE #100
+	//ClearAllActions()
+	//StartCutSceneMode()
+	MoveViewPoint([2034.1461],INSTANT)
+	ScreenShake([20.20],20)
+        OpenDoor("Door03")
+		EraseJournalEntry(@56101)
+		AddJournalEntry(@56102,QUEST)
+        SetGlobal("AC#DOOR03","ACIL27",2) // DOOR03 to ACIL2K is opened
+END
+
+IF
+	Global("AC#Runecontainer01","ACIL27",1)
+	Global("AC#Rune01Spawn","ACIL27",0)
+THEN
+	RESPONSE #100
+	SetGlobal("AC#Rune01Spawn","ACIL27",1)
+	CreateVisualEffect("SPPLANAR",[3693.910])
+	Wait(2)
+	CreateCreature("raksha01",[3693.910],5)
+END
+
+IF
+	Global("AC#Runecontainer03","ACIL27",1)
+	Global("AC#Rune03Spawn","ACIL27",0)
+THEN
+	RESPONSE #100
+	SetGlobal("AC#Rune03Spawn","ACIL27",1)
+	CreateVisualEffect("SPPLANAR",[3693.910])
+	Wait(2)
+	CreateCreature("AC#27#S1",[3693.910],5)
+END
+
+/*
+IF
+	Global("WaterEleSpawn","ACIL27",0)
+	Global("AC#WaterEleQuest","GLOBAL",1)
+	!PartyHasItem("AC#ILWES")
+	OR(2)
+        !InMyArea("AC#ELWA1")
+        !InMyArea("AC#ELWA2")
+	Dead("AC#ELWA1")
+	//!Exists("AC#ELWA1")
+THEN
+	RESPONSE #100
+                SetGlobal("WaterEleSpawn","ACIL27",1)
+		CreateCreature("AC#ELWA1",[3682.905],1)  // Water Elemental
+END
+*/
+
+IF
+	Global("SpawnPointMadness","ACIL27",0)
+	Global("AC#kuotoa_madness","GLOBAL",1)
+THEN
+	RESPONSE #100
+                SpawnPtDeactivate("Spawn Point 1") // deactivate previous Spawnpoints
+                SpawnPtDeactivate("Spawn Point 2")
+                SpawnPtDeactivate("Spawn Point 3")
+                SpawnPtDeactivate("Spawn Point 4")
+				SpawnPtActivate("Madness_spawn_01") // activate Gogondy-wine spawn points
+				SpawnPtActivate("Madness_spawn_02")
+				SpawnPtActivate("Madness_spawn_03")
+                SetGlobal("SpawnPointMadness","ACIL27",1)
+END
+
+IF
+	Global("SpawnPointActivation","ACIL27",0)
+	Global("MonolithsDeactivated","ACIL27",1)
+	Global("AC#RC_Sorni_Fourth","GLOBAL",7)
+THEN
+	RESPONSE #100
+                SpawnPtDeactivate("Spawn Point 1")
+                SpawnPtDeactivate("Spawn Point 2")
+                SpawnPtDeactivate("Spawn Point 3")
+                SpawnPtDeactivate("Spawn Point 4")
+                SetGlobal("SpawnPointActivation","ACIL27",1)
+                SetGlobal("AC#kuotoa_madness","GLOBAL",2)
+END
+
+
+IF
+	Global("Door03Spawn","ACIL27",0)
+	//Global("AC#RC_Sorni_Fourth","GLOBAL",7)
+THEN
+	RESPONSE #100
+               SetGlobal("Door03Spawn","ACIL27",1)
+	       CreateCreatureImpassable("AC#27DO3",[2034.1461],5)  // Door03 Creature that watches if rock to mud is cast
+END
+
+IF
+        Global("MonolithsDeactivated","ACIL27",1)
+	Global("AC#RC_Sorni_Fourth","GLOBAL",7)
+THEN
+	RESPONSE #100
+	         Kill("AC#ELWA1")
+	         Kill("AC#ELWA2")
+			 Kill("AC#27#S1")
+			 Kill("raksha01")			 			 
+	         Wait(1)
+	         DisplayStringHead(Player1,@711)
+			 EraseJournalEntry(@56111)
+               SetGlobal("AC#RC_Sorni_Fourth","GLOBAL",8)
+END
+
+IF
+	Global("AC#RC_Sorni_Fourth","GLOBAL",8)
+	CombatCounter(0)
+THEN
+	RESPONSE #100
+	         ClearAllActions()
+                 StartCutSceneMode()
+                 MoveViewPoint([3676.902],VERY_FAST)
+                 ActionOverride(Player1,JumpToPoint([3676.902]))
+		ActionOverride(Player2,JumpToPoint([3670.909]))
+		ActionOverride(Player3,JumpToPoint([3679.912]))
+		ActionOverride(Player4,JumpToPoint([3671.898]))
+		ActionOverride(Player5,JumpToPoint([3680.902]))
+		ActionOverride(Player6,JumpToPoint([3682.904]))
+		CreateCreature("AC#HATH8",[3416.965],8)
+                ActionOverride("AC#HATH8",MoveToPointNoInterrupt([3767.1027]))
+	         Wait(1)
+               CreateCreature("AC#BRES8",[3416.965],8)
+                ActionOverride("AC#BRES8",MoveToPointNoInterrupt([3784.892]))
+               Wait(1)
+               CreateCreature("AC#ELER8",[3391.1012],8)
+                ActionOverride("AC#ELER8",MoveToPointNoInterrupt([3786.953]))
+                Wait(1)
+               CreateCreature("AC#27BS1",[3416.965],8)
+               CreateCreature("AC#27BS2",[3248.948],8)
+               Wait(1)
+               ActionOverride("AC#27BS1",MoveToPointNoInterrupt([3986.831]))
+               ActionOverride("AC#27BS2",MoveToPointNoInterrupt([3950.963]))
+               Wait(1)
+               CreateCreature("AC#27DW1",[3416.965],8)
+               CreateCreature("AC#27DW2",[3248.948],8)
+               ActionOverride("AC#27DW1",MoveToPointNoInterrupt([3931.1005]))
+               ActionOverride("AC#27DW2",MoveToPointNoInterrupt([3977.804]))
+               Wait(1)
+               CreateCreature("AC#27DW3",[3416.965],8)
+               CreateCreature("AC#27DW4",[3248.948],8)
+               CreateCreature("AC#27DW5",[3241.951],8)
+               ActionOverride("AC#27DW3",MoveToPointNoInterrupt([3616.847]))
+               ActionOverride("AC#27DW4",MoveToPointNoInterrupt([3619.907]))
+               ActionOverride("AC#27DW5",MoveToPointNoInterrupt([3626.968]))
+               Wait(7)
+               //TriggerActivation("TrACIL20",FALSE)
+	       	//TriggerActivation("Info_ACIL20",TRUE)
+               SetGlobal("AC#RC_Sorni_Fourth","GLOBAL",9)
+               EndCutSceneMode()
+               ActionOverride("AC#BRES8",StartDialogueNoSet(Player1))
+END
+
+IF
+	Global("AC#RC_Sorni_Fourth","GLOBAL",10)
+THEN
+	RESPONSE #100
+	         ClearAllActions()
+                 StartCutSceneMode()
+                 MoveViewPoint([3676.902],VERY_FAST)
+                 ActionOverride("AC#27BS1",Face(11))
+		ActionOverride("AC#27BS2",Face(12))
+                 ActionOverride("AC#27BS1",SwingOnce())
+		ActionOverride("AC#27BS2",SwingOnce())
+		FadeToColor([15.0],0)
+		Wait(1)
+               CreateCreature("AC#SORN8",[3241.951],8)
+               Wait(1)
+               PlaySound("ac#spla1")
+               SmallWait(15)
+               OpenDoor("Door01")
+			   TriggerActivation("TrACIL28",FALSE)
+               Wait(1)
+		FadeFromColor([15.0],0)
+               ActionOverride("AC#SORN8",MoveToPointNoInterrupt([3573.909]))
+               EndCutSceneMode()
+               SetGlobal("AC#RC_Sorni_Fourth","GLOBAL",11)
+               ActionOverride("AC#SORN8",StartDialogueNoSet(Player1))
+END
+
+IF
+	Global("AC#RC_Sorni_Fourth","GLOBAL",12)
+	Global("ACIL28RegionActivate","ACIL27",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ACIL28RegionActivate","ACIL27",1)
+		TriggerActivation("TrACIL28",TRUE)
+END
+
+/*
+// Transition to ACIL20 remains active
+IF
+	GlobalGT("AC#Ruvan_Treason","GLOBAL",0)
+	Global("ACIL20RegionActivate","ACIL27",0)
+THEN
+	RESPONSE #100
+               SetGlobal("ACIL20RegionActivate","ACIL27",1)
+	       TriggerActivation("TrACIL20",TRUE)
+	       TriggerActivation("Info_ACIL20",FALSE)
+END
+*/
+
+IF
+	Global("KuoToaSmell","ACIL27",1)
+THEN
+	RESPONSE #100
+               SetGlobal("KuoToaSmell","ACIL27",2)
+	       TriggerActivation("KuoToa_Smell",FALSE)
+END
+
+IF
+	Global("AC#Ruvan_Treason","GLOBAL",1)
+	Global("ChangeFolks","ACIL27",0)
+THEN
+	RESPONSE #100
+               SetGlobal("ChangeFolks","ACIL27",1)
+               OpenDoor("Door02")
+			   TriggerActivation("TrACIL28",FALSE)
+               ActionOverride("AC#SORN8",DestroySelf()) // Sorni
+               ActionOverride("AC#27BS1",DestroySelf()) // Boatsmith1
+	       ActionOverride("AC#27BS2",DestroySelf()) // Boatsmith2
+               ActionOverride("AC#BRES8",DestroySelf()) // Bresk
+               ActionOverride("AC#ELER8",DestroySelf()) // Elern
+               ActionOverride("AC#27DW1",JumpToPoint([2820.728]))  // Soldat Iltkazars 1
+               ActionOverride("AC#27DW2",JumpToPoint([2744.759]))  // Soldat Iltkazars 2
+               ActionOverride("AC#27DW3",JumpToPoint([2966.834]))  // Ruvan Houseguard
+               ActionOverride("AC#27DW4",JumpToPoint([2894.853]))  // Ruvan Houseguard
+               ActionOverride("AC#27DW5",JumpToPoint([2843.865]))  // Ruvan Houseguard
+               ActionOverride("AC#HATH8",JumpToPoint([2907.762])) // Hathar
+               ActionOverride("AC#HATH8",SetNumTimesTalkedTo(1))
+END

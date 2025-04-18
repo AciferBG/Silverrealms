@@ -1,0 +1,8 @@
+// Silverrealms Dialog Files
+//ACTION_IF GAME_IS ~BG2ee eet~ THEN BEGIN
+  COMPILE ~silverrealms/dlg/dialogues_ee~         ~override~
+/*
+  END ELSE BEGIN
+   COMPILE ~silverrealms/dlg/dialogues_classic~         ~override~
+END
+*/

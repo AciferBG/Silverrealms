@@ -1,0 +1,2327 @@
+// Creatures for Silverrealms
+
+COPY ~silverrealms/cre/copy~         ~override~
+
+COPY ~silverrealms/cre/AC#IL95G.cre~ ~override~ // Dwarven chess golem
+  SAY NAME1 @9042 SAY NAME2 @9042
+  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~DWARVENSTATUE_ACIFER~))
+
+COPY ~silverrealms/cre/AC#95MAP.cre~ ~override~ // Dwarven map
+  SAY NAME1 @9041 SAY NAME2 @9041
+
+COPY ~silverrealms/cre/AC#4OGOL.cre~ ~override~ // Map golem
+  SAY NAME1 @9039 SAY NAME2 @9039
+
+COPY ~silverrealms/cre/AC#DETY1.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#NWN_DEATH_TYRANT~))
+    
+COPY ~silverrealms/cre/AC#DETY2.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#NWN_DEATH_TYRANT~))
+    
+
+COPY ~silverrealms/cre/AC#IL54D.cre~ ~override~
+  SAY NAME1 @9038 SAY NAME2 @9038
+  
+COPY ~silverrealms/cre/AC#IL54E.cre~ ~override~
+  SAY NAME1 @9038 SAY NAME2 @9038
+  
+COPY ~silverrealms/cre/AC#IL54F.cre~ ~override~
+  SAY NAME1 @9038 SAY NAME2 @9038
+  
+COPY ~silverrealms/cre/AC#IL54G.cre~ ~override~
+  SAY NAME1 @9038 SAY NAME2 @9038
+
+COPY ~silverrealms/cre/AC#IL54A.cre~ ~override~
+  SAY NAME1 @9037 SAY NAME2 @9037
+
+COPY ~silverrealms/cre/AC#IL54B.cre~ ~override~
+  SAY NAME1 @9037 SAY NAME2 @9037
+  
+  COPY ~silverrealms/cre/AC#IL54C.cre~ ~override~
+  SAY NAME1 @9037 SAY NAME2 @9037
+  
+  COPY ~silverrealms/cre/AC#STO02.cre~ ~override~
+  SAY NAME1 @9036 SAY NAME2 @9036
+
+COPY ~silverrealms/cre/AC#IL53E.cre~ ~override~
+  SAY NAME1 @341 SAY NAME2 @341
+
+COPY ~silverrealms/cre/AC#IL53L.cre~ ~override~
+  SAY NAME1 @340 SAY NAME2 @340
+
+COPY ~silverrealms/cre/AC#IL53G.cre~ ~override~
+  SAY NAME1 @339 SAY NAME2 @339
+
+COPY ~silverrealms/cre/AC#IL53F.cre~ ~override~
+  SAY NAME1 @338 SAY NAME2 @338
+
+COPY ~silverrealms/cre/AC#IL53R.cre~ ~override~
+  SAY NAME1 @337 SAY NAME2 @337
+
+COPY ~silverrealms/cre/AC#IL53T.cre~ ~override~
+  SAY NAME1 @336 SAY NAME2 @336
+
+COPY ~silverrealms/cre/AC#50SP1.cre~ ~override~
+
+COPY ~silverrealms/cre/AC#50SP2.cre~ ~override~
+
+  COPY ~silverrealms/cre/AC#50SP3.cre~ ~override~
+  SAY NAME1 @316 SAY NAME2 @316
+  
+  COPY ~silverrealms/cre/AC#50SP4.cre~ ~override~
+  SAY NAME1 @316 SAY NAME2 @316
+  
+  COPY ~silverrealms/cre/AC#50SP5.cre~ ~override~
+  SAY NAME1 @317 SAY NAME2 @317
+
+COPY ~silverrealms/cre/AC#56DW1.cre~ ~override/AC#56DW1.cre~
+  SAY NAME1 @298 SAY NAME2 @298
+  
+COPY ~silverrealms/cre/AC#56DW2.cre~ ~override/AC#56DW2.cre~
+  SAY NAME1 @298 SAY NAME2 @298
+  
+
+COPY ~silverrealms/cre/AC#56DW3.cre~ ~override/AC#56DW3.cre~
+  SAY NAME1 @303 SAY NAME2 @303
+
+COPY ~silverrealms/cre/AC#56DW4.cre~ ~override/AC#56DW4.cre~
+  SAY NAME1 @298 SAY NAME2 @298
+  
+COPY ~silverrealms/cre/AC#56DW5.cre~ ~override/AC#56DW5.cre~
+  SAY NAME1 @298 SAY NAME2 @298
+  
+COPY ~silverrealms/cre/AC#56DW6.cre~ ~override/AC#56DW6.cre~
+  SAY NAME1 @304 SAY NAME2 @304
+  
+COPY ~silverrealms/cre/AC#56DW7.cre~ ~override/AC#56DW7.cre~
+  SAY NAME1 @305 SAY NAME2 @305
+  
+COPY ~silverrealms/cre/AC#62DW1.cre~ ~override/AC#62DW1.cre~
+  SAY NAME1 @306 SAY NAME2 @306
+
+COPY ~silverrealms/cre/AC#OSYL1.cre~ ~override/AC#OSYL1.cre~
+  SAY NAME1 @175 SAY NAME2 @175
+       
+    
+    COPY_EXISTING ~AC#OSYL1.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#OSYLUTH~))
+    
+
+COPY ~silverrealms/cre/ac#dr1.cre~ ~override/ac#dr1.cre~
+  SAY NAME1 @12 SAY NAME2 @12
+COPY ~silverrealms/cre/ac#dr2.cre~ ~override/ac#dr2.cre~
+  SAY NAME1 @12 SAY NAME2 @12
+  
+COPY ~silverrealms/cre/ac#drim2.cre~ ~override/ac#drim2.cre~
+  SAY NAME1 @12 SAY NAME2 @12
+  
+COPY ~silverrealms/cre/ac#drim3.cre~ ~override/ac#drim3.cre~
+  SAY NAME1 @12 SAY NAME2 @12
+  
+COPY ~silverrealms/cre/ac#magm1.cre~ ~override/ac#magm1.cre~
+  SAY NAME1 @287 SAY NAME2 @287
+
+COPY ~silverrealms/cre/AC#DRAGR.cre~ ~override/AC#DRAGR.cre~
+  SAY NAME1 @20 SAY NAME2 @20
+  
+COPY ~silverrealms/cre/AC#DRAG1.cre~ ~override/AC#DRAG1.cre~
+  SAY NAME1 @20 SAY NAME2 @20
+
+COPY ~silverrealms/cre/ac#cy1.cre~ ~override/ac#cy1.cre~
+  SAY NAME1 @21 SAY NAME2 @21
+
+COPY ~silverrealms/cre/ac#verb2.cre~ ~override~
+  SAY NAME1 @57 SAY NAME2 @57
+  
+    
+    COPY_EXISTING ~ac#verb2.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~GIANT_VERBEEG~))
+    
+
+COPY ~silverrealms/cre/ac#verb4.cre~ ~override~
+  SAY NAME1 @57 SAY NAME2 @57
+  
+    
+    COPY_EXISTING ~ac#verb4.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~GIANT_VERBEEG~))
+    
+    
+COPY ~silverrealms/cre/AC#MAL02.cre~ ~override~ // Final Fight - Cutscene
+  SAY NAME1 @62 SAY NAME2 @62
+ADD_MEMORIZED_SPELL ~AC#MAL2~ #6 ~wizard~ ( 10 ) // summon abishai
+
+COPY ~silverrealms/cre/AC#MAL03.cre~ ~override~
+  SAY NAME1 @62 SAY NAME2 @62
+  
+COPY ~silverrealms/cre/AC#MAL04.cre~ ~override~
+  SAY NAME1 @62 SAY NAME2 @62
+
+COPY ~silverrealms/cre/AC#09MAL.cre~ ~override~ // Malphas: 1st cutscene in ACIL09 (axebridge ambush)
+  SAY NAME1 @9040 SAY NAME2 @9040
+
+COPY ~silverrealms/cre/AC#07MAL.cre~ ~override~ // Malphas: 1st cutscene in ACIL07 (dancing giant)
+  SAY NAME1 @9040 SAY NAME2 @9040
+
+COPY ~silverrealms/cre/AC#MAL05.cre~ ~override~ // Malphas: 2nd cutscene
+  SAY NAME1 @62 SAY NAME2 @62
+  
+COPY ~silverrealms/cre/AC#2UMAL.cre~ ~override~ // Malphas: Charvekannathor cutscene
+  SAY NAME1 @62 SAY NAME2 @62
+  
+COPY ~silverrealms/cre/AC#MAL06.cre~ ~override~ // Malphas: First Cutscene
+  SAY NAME1 @62 SAY NAME2 @62
+  
+COPY ~silverrealms/cre/AC#MAL09.cre~ ~override~ // Malphas: Axebridge
+  SAY NAME1 @62 SAY NAME2 @62
+  
+COPY ~silverrealms/cre/AC#MAL77.cre~ ~override~ // Malphas: in plane of fire
+  SAY NAME1 @62 SAY NAME2 @62
+  
+COPY ~silverrealms/cre/AC#MAL78.cre~ ~override~ // Malphas: Ambush in ACIL78
+  SAY NAME1 @62 SAY NAME2 @62
+  
+COPY ~silverrealms/cre/AC#MAL88.cre~ ~override~ // Malphas: Boss fight, kill- and lootable
+  SAY NAME1 @62 SAY NAME2 @62
+  
+COPY ~silverrealms/cre/AC#MAL2T.cre~ ~override~ // Malphas: First Tiamat Cutscene
+  SAY NAME1 @62 SAY NAME2 @62
+  
+COPY ~silverrealms/cre/AC#MALT2.cre~ ~override~ // Malphas: 2nd Duergar Cutscene
+  SAY NAME1 @62 SAY NAME2 @62
+  
+COPY ~silverrealms/cre/AC#MALG1.cre~ ~override~ // Malphas: 3rd Torglor Githyanki Cutscene
+  SAY NAME1 @62 SAY NAME2 @62
+
+COPY ~silverrealms/cre/AC#MITH2.cre~ ~override~
+  SAY NAME1 @61 SAY NAME2 @61
+  
+COPY ~silverrealms/cre/AC#MITH5.cre~ ~override/AC#MITH5.cre~  // rescued Mith Barak: Dwarf
+  SAY NAME1 @61 SAY NAME2 @61
+  
+COPY ~silverrealms/cre/AC#MITHD.cre~ ~override/AC#MITHD.cre~ // rescued Mithbarakaz: Dragon
+  SAY NAME1 @783 SAY NAME2 @783
+
+COPY ~silverrealms/cre/AC#DWCU1.cre~ ~override/AC#DWCU1.cre~
+  SAY NAME1 @44 SAY NAME2 @44
+
+COPY ~silverrealms/cre/AC#CCCU1.cre~ ~override/AC#CCCU1.cre~
+  SAY NAME1 @74 SAY NAME2 @74
+
+COPY ~silverrealms/cre/AC#DWCU2.cre~ ~override/AC#DWCU2.cre~
+  SAY NAME1 @84 SAY NAME2 @84
+  
+COPY ~silverrealms/cre/AC#DWCU3.cre~ ~override/AC#DWCU3.cre~
+  SAY NAME1 @85 SAY NAME2 @85
+  
+COPY ~silverrealms/cre/AC#BELS1.cre~ ~override/AC#BELS1.cre~
+  SAY NAME1 @86 SAY NAME2 @86
+  
+COPY ~silverrealms/cre/AC#CLOA1.cre~ ~override/AC#CLOA1.cre~
+  SAY NAME1 @87 SAY NAME2 @87
+
+COPY ~silverrealms/cre/AC#TURB1.cre~ ~override/AC#TURB1.cre~
+  SAY NAME1 @90 SAY NAME2 @90
+
+COPY ~silverrealms/cre/AC#TURB2.cre~ ~override/AC#TURB2.cre~
+  SAY NAME1 @90 SAY NAME2 @90
+  
+COPY ~silverrealms/cre/AC#TURB3.cre~ ~override/AC#TURB3.cre~
+  SAY NAME1 @90 SAY NAME2 @90
+  
+COPY ~silverrealms/cre/AC#TURB8.cre~ ~override/AC#TURB8.cre~
+  SAY NAME1 @90 SAY NAME2 @90
+  
+COPY ~silverrealms/cre/AC#TURB9.cre~ ~override/AC#TURB9.cre~ // Turbaern in ACIL20: Goodbye from Iltkazar
+  SAY NAME1 @90 SAY NAME2 @90
+
+COPY ~silverrealms/cre/AC#TURBA.cre~ ~override/AC#TURBA.cre~ // Turbaern in ACIL64
+  SAY NAME1 @90 SAY NAME2 @90
+
+COPY ~silverrealms/cre/AC#DURG1.cre~ ~override/AC#DURG1.cre~
+  SAY NAME1 @98 SAY NAME2 @98
+  
+COPY ~silverrealms/cre/AC#DURG2.cre~ ~override/AC#DURG2.cre~
+  SAY NAME1 @98 SAY NAME2 @98
+
+COPY ~silverrealms/cre/ac#dun01.cre~ ~override/ac#dun01.cre~
+  SAY NAME1 @101 SAY NAME2 @101
+
+  SAY INITIAL_MEETING   #4939
+  SAY SELECT_COMMON1 #4939
+
+COPY ~silverrealms/cre/ac#dun02.cre~ ~override/ac#dun02.cre~
+  SAY NAME1 @101 SAY NAME2 @101
+  
+  SAY INITIAL_MEETING   #4939
+  SAY SELECT_COMMON1 #4939
+
+COPY ~silverrealms/cre/ac#dun03.cre~ ~override/ac#dun03.cre~  // Dunnabar in ACIL60
+  SAY NAME1 @101 SAY NAME2 @101
+  
+  SAY INITIAL_MEETING   #4939
+  SAY SELECT_COMMON1 #4939
+
+COPY ~silverrealms/cre/ac#dun50.cre~ ~override/ac#dun50.cre~  // Dunnabar in ACIL50
+  SAY NAME1 @101 SAY NAME2 @101
+  
+  SAY INITIAL_MEETING   #4939
+  SAY SELECT_COMMON1 #4939
+  
+COPY ~silverrealms/cre/ac#dun64.cre~ ~override/ac#dun64.cre~  // Dunnabar in ACIL64 (Throneroom)
+  SAY NAME1 @101 SAY NAME2 @101
+  
+  SAY INITIAL_MEETING   #4939
+  SAY SELECT_COMMON1 #4939
+  
+COPY ~silverrealms/cre/AC#DUN20.cre~ ~override/AC#DUN20.cre~  // Dunnabar in ACIL20
+  SAY NAME1 @101 SAY NAME2 @101
+  
+  SAY INITIAL_MEETING   #4939
+  SAY SELECT_COMMON1 #4939
+
+COPY ~silverrealms/cre/ac#goap1.cre~ ~override/ac#goap1.cre~
+  SAY NAME1 @102 SAY NAME2 @102
+      
+    
+    COPY_EXISTING ~AC#goap1.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#PITFIEND_NWN~))
+    
+  
+COPY ~silverrealms/cre/AC#DWMS1.cre~ ~override/AC#DWMS1.cre~
+  SAY NAME1 @103 SAY NAME2 @103
+
+COPY ~silverrealms/cre/AC#BRES1.cre~ ~override~
+  SAY NAME1 @104 SAY NAME2 @104
+
+SAY INITIAL_MEETING   ~~ [AC#BRES4]
+SAY SELECT_COMMON1 ~~ [AC#BRES1]
+SAY SELECT_COMMON2 ~~ [AC#BRES2]
+SAY SELECT_COMMON3 ~~ [AC#BRES3]
+SAY BATTLE_CRY1 ~~ [AC#BRES5]
+SAY DAMAGE ~~ [AC#BRES6]
+SAY DYING ~~ [AC#BRES7]
+
+COPY ~silverrealms/cre/AC#BRES2.cre~ ~override~
+  SAY NAME1 @104 SAY NAME2 @104
+
+SAY INITIAL_MEETING   ~~ [AC#BRES4]
+SAY SELECT_COMMON1 ~~ [AC#BRES1]
+SAY SELECT_COMMON2 ~~ [AC#BRES2]
+SAY SELECT_COMMON3 ~~ [AC#BRES3]
+SAY BATTLE_CRY1 ~~ [AC#BRES5]
+SAY DAMAGE ~~ [AC#BRES6]
+SAY DYING ~~ [AC#BRES7]
+
+COPY ~silverrealms/cre/AC#BRES3.cre~ ~override~
+  SAY NAME1 @104 SAY NAME2 @104
+
+SAY INITIAL_MEETING   ~~ [AC#BRES4]
+SAY SELECT_COMMON1 ~~ [AC#BRES1]
+SAY SELECT_COMMON2 ~~ [AC#BRES2]
+SAY SELECT_COMMON3 ~~ [AC#BRES3]
+SAY BATTLE_CRY1 ~~ [AC#BRES5]
+SAY DAMAGE ~~ [AC#BRES6]
+SAY DYING ~~ [AC#BRES7]
+
+COPY ~silverrealms/cre/AC#BRES4.cre~ ~override~
+  SAY NAME1 @104 SAY NAME2 @104
+
+SAY INITIAL_MEETING   ~~ [AC#BRES4]
+SAY SELECT_COMMON1 ~~ [AC#BRES1]
+SAY SELECT_COMMON2 ~~ [AC#BRES2]
+SAY SELECT_COMMON3 ~~ [AC#BRES3]
+SAY BATTLE_CRY1 ~~ [AC#BRES5]
+SAY DAMAGE ~~ [AC#BRES6]
+SAY DYING ~~ [AC#BRES7]
+
+COPY ~silverrealms/cre/AC#BRES5.cre~ ~override~   // Bresk in ACIL5E (Ellhimars home)
+  SAY NAME1 @104 SAY NAME2 @104
+
+SAY INITIAL_MEETING   ~~ [AC#BRES4]
+SAY SELECT_COMMON1 ~~ [AC#BRES1]
+SAY SELECT_COMMON2 ~~ [AC#BRES2]
+SAY SELECT_COMMON3 ~~ [AC#BRES3]
+SAY BATTLE_CRY1 ~~ [AC#BRES5]
+SAY DAMAGE ~~ [AC#BRES6]
+SAY DYING ~~ [AC#BRES7]
+
+COPY ~silverrealms/cre/AC#BRES7.cre~ ~override~   // Bresk in ACIL50 (Ellhimars death / kidnapping)
+  SAY NAME1 @104 SAY NAME2 @104
+
+SAY INITIAL_MEETING   ~~ [AC#BRES4]
+SAY SELECT_COMMON1 ~~ [AC#BRES1]
+SAY SELECT_COMMON2 ~~ [AC#BRES2]
+SAY SELECT_COMMON3 ~~ [AC#BRES3]
+SAY BATTLE_CRY1 ~~ [AC#BRES5]
+SAY DAMAGE ~~ [AC#BRES6]
+SAY DYING ~~ [AC#BRES7]
+
+COPY ~silverrealms/cre/AC#BRES8.cre~ ~override~ // Bresk in ACIL27
+  SAY NAME1 @104 SAY NAME2 @104
+
+SAY INITIAL_MEETING   ~~ [AC#BRES4]
+SAY SELECT_COMMON1 ~~ [AC#BRES1]
+SAY SELECT_COMMON2 ~~ [AC#BRES2]
+SAY SELECT_COMMON3 ~~ [AC#BRES3]
+SAY BATTLE_CRY1 ~~ [AC#BRES5]
+SAY DAMAGE ~~ [AC#BRES6]
+SAY DYING ~~ [AC#BRES7]
+
+COPY ~silverrealms/cre/AC#BRES9.cre~ ~override~  // Bresk in ACIL20
+  SAY NAME1 @104 SAY NAME2 @104
+
+SAY INITIAL_MEETING   ~~ [AC#BRES1]
+SAY SELECT_COMMON1 ~~ [AC#BRES1]
+SAY SELECT_COMMON2 ~~ [AC#BRES2]
+SAY SELECT_COMMON3 ~~ [AC#BRES3]
+SAY BATTLE_CRY1 ~~ [AC#BRES5]
+SAY DAMAGE ~~ [AC#BRES6]
+SAY DYING ~~ [AC#BRES7]
+
+COPY ~silverrealms/cre/AC#BRESK.cre~ ~override~  // Bresk in ACIL50 if PCs saved his life
+  SAY NAME1 @104 SAY NAME2 @104
+
+SAY INITIAL_MEETING   ~~ [AC#BRES1]
+SAY SELECT_COMMON1 ~~ [AC#BRES1]
+SAY SELECT_COMMON2 ~~ [AC#BRES2]
+SAY SELECT_COMMON3 ~~ [AC#BRES3]
+SAY BATTLE_CRY1 ~~ [AC#BRES5]
+SAY DAMAGE ~~ [AC#BRES6]
+SAY DYING ~~ [AC#BRES7]
+
+COPY ~silverrealms/cre/AC#SORN1.cre~ ~override/AC#SORN1.cre~
+  SAY NAME1 @105 SAY NAME2 @105
+  
+SAY INITIAL_MEETING   ~~ [AC#SORN1]
+SAY SELECT_COMMON1 ~~ [AC#SORN2]
+SAY SELECT_COMMON2 ~~ [AC#SORN3]
+SAY SELECT_COMMON3 ~~ [AC#SORN4]
+SAY BATTLE_CRY1 ~~ [AC#SORN5]
+SAY DAMAGE ~~ [AC#SORN6]
+SAY DYING ~~ [AC#SORN7]
+
+COPY ~silverrealms/cre/AC#SORN2.cre~ ~override/AC#SORN2.cre~
+  SAY NAME1 @105 SAY NAME2 @105
+
+SAY INITIAL_MEETING   ~~ [AC#SORN1]
+SAY SELECT_COMMON1 ~~ [AC#SORN2]
+SAY SELECT_COMMON2 ~~ [AC#SORN3]
+SAY SELECT_COMMON3 ~~ [AC#SORN4]
+SAY BATTLE_CRY1 ~~ [AC#SORN5]
+SAY DAMAGE ~~ [AC#SORN6]
+SAY DYING ~~ [AC#SORN7]
+
+COPY ~silverrealms/cre/AC#SORN3.cre~ ~override/AC#SORN3.cre~
+  SAY NAME1 @105 SAY NAME2 @105
+
+SAY INITIAL_MEETING   ~~ [AC#SORN1]
+SAY SELECT_COMMON1 ~~ [AC#SORN2]
+SAY SELECT_COMMON2 ~~ [AC#SORN3]
+SAY SELECT_COMMON3 ~~ [AC#SORN4]
+SAY BATTLE_CRY1 ~~ [AC#SORN5]
+SAY DAMAGE ~~ [AC#SORN6]
+SAY DYING ~~ [AC#SORN7]
+
+COPY ~silverrealms/cre/AC#SORN4.cre~ ~override/AC#SORN4.cre~
+  SAY NAME1 @105 SAY NAME2 @105
+
+SAY INITIAL_MEETING   ~~ [AC#SORN1]
+SAY SELECT_COMMON1 ~~ [AC#SORN2]
+SAY SELECT_COMMON2 ~~ [AC#SORN3]
+SAY SELECT_COMMON3 ~~ [AC#SORN4]
+SAY BATTLE_CRY1 ~~ [AC#SORN5]
+SAY DAMAGE ~~ [AC#SORN6]
+SAY DYING ~~ [AC#SORN7]
+
+COPY ~silverrealms/cre/AC#SORN5.cre~ ~override/AC#SORN5.cre~
+  SAY NAME1 @105 SAY NAME2 @105
+
+SAY INITIAL_MEETING   ~~ [AC#SORN1]
+SAY SELECT_COMMON1 ~~ [AC#SORN2]
+SAY SELECT_COMMON2 ~~ [AC#SORN3]
+SAY SELECT_COMMON3 ~~ [AC#SORN4]
+SAY BATTLE_CRY1 ~~ [AC#SORN5]
+SAY DAMAGE ~~ [AC#SORN6]
+SAY DYING ~~ [AC#SORN7]
+
+COPY ~silverrealms/cre/AC#SORN8.cre~ ~override/AC#SORN8.cre~
+  SAY NAME1 @105 SAY NAME2 @105
+
+SAY INITIAL_MEETING   ~~ [AC#SORN2]
+SAY SELECT_COMMON1 ~~ [AC#SORN2]
+SAY SELECT_COMMON2 ~~ [AC#SORN3]
+SAY SELECT_COMMON3 ~~ [AC#SORN4]
+SAY BATTLE_CRY1 ~~ [AC#SORN5]
+SAY DAMAGE ~~ [AC#SORN6]
+SAY DYING ~~ [AC#SORN7]
+
+COPY ~silverrealms/cre/AC#SORN9.cre~ ~override/AC#SORN9.cre~
+  SAY NAME1 @105 SAY NAME2 @105
+  
+SAY INITIAL_MEETING   ~~ [AC#SORN1]
+SAY SELECT_COMMON1 ~~ [AC#SORN2]
+SAY SELECT_COMMON2 ~~ [AC#SORN3]
+SAY SELECT_COMMON3 ~~ [AC#SORN4]
+SAY BATTLE_CRY1 ~~ [AC#SORN5]
+SAY DAMAGE ~~ [AC#SORN6]
+SAY DYING ~~ [AC#SORN7]
+
+COPY ~silverrealms/cre/AC#SORNI.cre~ ~override/AC#SORNI.cre~
+  SAY NAME1 @105 SAY NAME2 @105
+  
+SAY INITIAL_MEETING   ~~ [AC#SORN1]
+SAY SELECT_COMMON1 ~~ [AC#SORN2]
+SAY SELECT_COMMON2 ~~ [AC#SORN3]
+SAY SELECT_COMMON3 ~~ [AC#SORN4]
+SAY BATTLE_CRY1 ~~ [AC#SORN5]
+SAY DAMAGE ~~ [AC#SORN6]
+SAY DYING ~~ [AC#SORN7]
+
+COPY ~silverrealms/cre/ac#ant01.cre~ ~override/ac#ant01.cre~ // Anthan Diamondblade in ACIL51 (Ancient Forge, Moradin's Temple)
+  SAY NAME1 @113 SAY NAME2 @113
+
+COPY ~silverrealms/cre/ac#ant03.cre~ ~override/ac#ant03.cre~
+  SAY NAME1 @113 SAY NAME2 @113
+  
+COPY ~silverrealms/cre/AC#ANT20.cre~ ~override/AC#ANT20.cre~ // Anthan Diamondblade in ACIL20 
+  SAY NAME1 @113 SAY NAME2 @113
+  
+COPY ~silverrealms/cre/AC#ANT64.cre~ ~override/AC#ANT64.cre~ // Anthan Diamondblade in ACIL64
+  SAY NAME1 @113 SAY NAME2 @113
+  
+COPY ~silverrealms/cre/AC#ANT50.cre~ ~override/AC#ANT50.cre~ // Anthan Diamondblade in ACIL50
+  SAY NAME1 @113 SAY NAME2 @113
+  
+COPY ~silverrealms/cre/AC#HATH1.cre~ ~override/AC#HATH1.cre~
+  SAY NAME1 @114 SAY NAME2 @114
+  
+COPY ~silverrealms/cre/AC#HATH8.cre~ ~override/AC#HATH8.cre~ // Hathar in ACIL27
+  SAY NAME1 @114 SAY NAME2 @114
+
+COPY ~silverrealms/cre/AC#SZAG1.cre~ ~override/AC#SZAG1.cre~
+  SAY NAME1 @118 SAY NAME2 @118
+
+COPY ~silverrealms/cre/AC#MALD1.cre~ ~override/AC#MALD1.cre~
+  SAY NAME1 @123 SAY NAME2 @123
+  
+COPY ~silverrealms/cre/AC#SKLK1.cre~ ~override/AC#SKLK1.cre~
+  SAY NAME1 @124 SAY NAME2 @124
+  
+COPY ~silverrealms/cre/AC#BUGB1.cre~ ~override/AC#BUGB1.cre~
+  SAY NAME1 @125 SAY NAME2 @125
+  
+COPY ~silverrealms/cre/AC#BUGB2.cre~ ~override/AC#BUGB2.cre~
+  SAY NAME1 @126 SAY NAME2 @126
+
+  COPY ~silverrealms/cre/AC#BUGB3.cre~ ~override/AC#BUGB3.cre~
+  SAY NAME1 @126 SAY NAME2 @126
+  
+COPY ~silverrealms/cre/AC#MALD3.cre~ ~override/AC#MALD3.cre~
+  SAY NAME1 @131 SAY NAME2 @131
+  
+COPY ~silverrealms/cre/AC#BLOTH.cre~ ~override/AC#BLOTH.cre~
+  SAY NAME1 @132 SAY NAME2 @132
+  
+COPY ~silverrealms/cre/AC#SPIDE.cre~ ~override/AC#SPIDE.cre~
+  SAY NAME1 @136 SAY NAME2 @136
+  
+COPY ~silverrealms/cre/ac#bird1.cre~ ~override~ // Canary bird
+  SAY NAME1 @143 SAY NAME2 @143
+  SAY INITIAL_MEETING @987
+  SAY HAPPY @988
+  
+COPY ~silverrealms/cre/ac#bird2.cre~ ~override~ // Canary bird
+  SAY NAME1 @143 SAY NAME2 @143
+  SAY INITIAL_MEETING @987
+  SAY HAPPY @988
+  
+COPY ~silverrealms/cre/AC#BAHA1.cre~ ~override/AC#BAHA1.cre~
+  SAY NAME1 @144 SAY NAME2 @144
+  
+COPY ~silverrealms/cre/AC#HOOK1.cre~ ~override/AC#HOOK1.cre~
+  SAY NAME1 @145 SAY NAME2 @145
+  
+    
+    COPY_EXISTING ~AC#HOOK1.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~HOOK_HORROR~))
+    
+COPY ~silverrealms/cre/AC#TIAM1.cre~ ~override/AC#TIAM1.cre~
+  SAY NAME1 @146 SAY NAME2 @146
+  
+COPY ~silverrealms/cre/AC#GIGH1.cre~ ~override/AC#GIGH1.cre~
+  SAY NAME1 @147 SAY NAME2 @147
+  
+COPY ~silverrealms/cre/AC#URYIE.cre~ ~override/AC#URYIE.cre~
+  SAY NAME1 @148 SAY NAME2 @148
+  
+COPY ~silverrealms/cre/AC#SERYL.cre~ ~override/AC#SERYL.cre~
+  SAY NAME1 @149 SAY NAME2 @149
+  
+COPY ~silverrealms/cre/AC#HEAR1.cre~ ~override/AC#HEAR1.cre~
+  SAY NAME1 @152 SAY NAME2 @152
+  
+COPY ~silverrealms/cre/AC#BLFEL.cre~ ~override/AC#BLFEL.cre~
+  SAY NAME1 @153 SAY NAME2 @153
+  
+COPY ~silverrealms/cre/AC#DEVA1.cre~ ~override~
+
+COPY ~silverrealms/cre/AC#MARIL.cre~ ~override~
+
+COPY ~silverrealms/cre/AC#BLEUC.cre~ ~override/AC#BLEUC.cre~
+  SAY NAME1 @162 SAY NAME2 @162
+
+COPY ~silverrealms/cre/AC#DRAS1.cre~ ~override~
+  SAY NAME1 @163 SAY NAME2 @163
+
+COPY ~silverrealms/cre/AC#GITH1.cre~ ~override~ // Harmswa, Gith captain (Underdark 3e, p. 151)
+  SAY NAME1 @164 SAY NAME2 @164
+
+COPY ~silverrealms/cre/AC#HARM2.cre~ ~override~ // Harmswa, Gith captain  (Underdark 3e, p. 151)
+  SAY NAME1 @164 SAY NAME2 @164
+  
+COPY ~silverrealms/cre/AC#5EGI1.cre~ ~override~ // Harmswa, Gith captain in Area ACIL5E  (Underdark 3e, p. 151)
+  SAY NAME1 @164 SAY NAME2 @164
+  
+COPY ~silverrealms/cre/AC#3XGI1.cre~ ~override~ // Harmswa, Gith captain in Area ACIL3X - Torglor cutscene  (Underdark 3e, p. 151)
+  SAY NAME1 @164 SAY NAME2 @164
+  
+COPY ~silverrealms/cre/ac#skul1.cre~ ~override/ac#skul1.cre~
+  SAY NAME1 @168 SAY NAME2 @168
+  
+COPY ~silverrealms/cre/AC#ILLI1.cre~ ~override/AC#ILLI1.cre~
+  SAY NAME1 @176 SAY NAME2 @176
+  
+COPY ~silverrealms/cre/AC#78MAG.cre~ ~override/AC#78MAG.cre~
+  SAY NAME1 @177 SAY NAME2 @177
+  
+COPY ~silverrealms/cre/AC#78FAM.cre~ ~override/AC#78FAM.cre~
+  SAY NAME1 @178 SAY NAME2 @178
+  
+COPY ~silverrealms/cre/AC#78PRI.cre~ ~override/AC#78PRI.cre~
+  SAY NAME1 @179 SAY NAME2 @179
+  
+COPY ~silverrealms/cre/AC#78HAM.cre~ ~override/AC#78HAM.cre~
+  SAY NAME1 @180 SAY NAME2 @180
+      
+    
+    COPY_EXISTING ~AC#78HAM.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#HAMATULA~))
+    
+  
+COPY ~silverrealms/cre/AC#DWRI1.cre~ ~override/AC#DWRI1.cre~
+  SAY NAME1 @181 SAY NAME2 @181
+  
+COPY ~silverrealms/cre/AC#DWRI2.cre~ ~override/AC#DWRI2.cre~
+  SAY NAME1 @181 SAY NAME2 @181
+  
+COPY ~silverrealms/cre/AC#DWTH1.cre~ ~override/AC#DWTH1.cre~
+  SAY NAME1 @182 SAY NAME2 @182
+  
+COPY ~silverrealms/cre/AC#DWTH2.cre~ ~override/AC#DWTH2.cre~
+  SAY NAME1 @182 SAY NAME2 @182
+  
+COPY ~silverrealms/cre/AC#DWDF1.cre~ ~override/AC#DWDF1.cre~
+  SAY NAME1 @183 SAY NAME2 @183
+  
+COPY ~silverrealms/cre/AC#DWDF2.cre~ ~override/AC#DWDF2.cre~
+  SAY NAME1 @183 SAY NAME2 @183
+
+COPY ~silverrealms/cre/AC#DWFS1.cre~ ~override/AC#DWFS1.cre~
+  SAY NAME1 @184 SAY NAME2 @184
+  
+COPY ~silverrealms/cre/AC#DWFS2.cre~ ~override/AC#DWFS2.cre~
+  SAY NAME1 @184 SAY NAME2 @184
+
+COPY ~silverrealms/cre/AC#DWHF1.cre~ ~override/AC#DWHF1.cre~
+  SAY NAME1 @185 SAY NAME2 @185
+  
+COPY ~silverrealms/cre/AC#DWHF2.cre~ ~override/AC#DWHF2.cre~
+  SAY NAME1 @185 SAY NAME2 @185
+
+COPY ~silverrealms/cre/AC#DWBR1.cre~ ~override/AC#DWBR1.cre~
+  SAY NAME1 @186 SAY NAME2 @186
+
+COPY ~silverrealms/cre/AC#DWRO1.cre~ ~override/AC#DWRO1.cre~
+  SAY NAME1 @187 SAY NAME2 @187
+  
+COPY ~silverrealms/cre/AC#DWRO2.cre~ ~override/AC#DWRO2.cre~
+  SAY NAME1 @187 SAY NAME2 @187
+
+COPY ~silverrealms/cre/AC#25DO1.cre~ ~override/AC#25DO1.cre~
+  SAY NAME1 @199 SAY NAME2 @199
+  
+COPY ~silverrealms/cre/AC#RAVO1.cre~ ~override/AC#RAVO1.cre~
+  SAY NAME1 @202 SAY NAME2 @202
+  
+COPY ~silverrealms/cre/AC#VARK1.cre~ ~override/AC#VARK1.cre~
+  SAY NAME1 @204 SAY NAME2 @204
+      
+    COPY_EXISTING ~AC#VARK1.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~LIZARD_MAN~))
+    
+  
+COPY ~silverrealms/cre/AC#VARK2.cre~ ~override/AC#VARK2.cre~
+  SAY NAME1 @205 SAY NAME2 @205
+     
+    COPY_EXISTING ~AC#VARK2.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~LIZARD_MAN~))
+    
+
+COPY ~silverrealms/cre/AC#MYZO1.cre~ ~override/AC#MYZO1.cre~
+  SAY NAME1 @207 SAY NAME2 @207
+  
+COPY ~silverrealms/cre/AC#CYLL1.cre~ ~override/AC#CYLL1.cre~
+  SAY NAME1 @208 SAY NAME2 @208
+
+ADD_MEMORIZED_SPELL ~SPPR208~ #1 ~priest~ ( 1 ) // CLERIC_HOLD_PERSON
+ADD_MEMORIZED_SPELL ~SPPR204~ #1 ~priest~ ( 1 ) // CLERIC_CHARM_PERSON
+ADD_MEMORIZED_SPELL ~SPPR409~ #3 ~priest~ ( 1 ) // CLERIC_DEATH_WARD
+ADD_MEMORIZED_SPELL ~SPPR403~ #3 ~priest~ ( 1 ) // CLERIC_FREE_ACTION
+ADD_MEMORIZED_SPELL ~SPPR416~ #3 ~priest~ ( 1 ) // CLERIC_CLOAK_OF_FEAR
+ADD_MEMORIZED_SPELL ~SPPR513~ #4 ~priest~ ( 1 ) // CLERIC_RIGHTEOUS_MAGIC
+ADD_MEMORIZED_SPELL ~SPPR505~ #4 ~priest~ ( 1 ) // CLERIC_TRUE_SIGHT
+ADD_MEMORIZED_SPELL ~SPPR607~ #5 ~priest~ ( 2 ) // CLERIC_HEAL
+ADD_MEMORIZED_SPELL ~SPPR711~ #6 ~priest~ ( 1 ) // CLERIC_REGENERATE
+ADD_MEMORIZED_SPELL ~SPPR709~ #6 ~priest~ ( 1 ) // CLERIC_CONFUSION
+
+  
+COPY ~silverrealms/cre/AC#BEBI1.cre~ ~override/AC#BEBI1.cre~
+  SAY NAME1 @209 SAY NAME2 @209
+
+COPY ~silverrealms/cre/AC#DEVL1.cre~ ~override/AC#DEVL1.cre~
+  SAY NAME1 @220 SAY NAME2 @220
+  
+COPY ~silverrealms/cre/AC#VARG1.cre~ ~override/AC#VARG1.cre~
+  SAY NAME1 @221 SAY NAME2 @221
+
+COPY ~silverrealms/cre/AC#TROL4.cre~ ~override/AC#TROL4.cre~
+  SAY NAME1 @225 SAY NAME2 @225
+
+COPY ~silverrealms/cre/AC#TROL5.cre~ ~override/AC#TROL5.cre~
+  SAY NAME1 @225 SAY NAME2 @225
+  
+COPY ~silverrealms/cre/AC#TROL6.cre~ ~override/AC#TROL6.cre~
+  SAY NAME1 @392 SAY NAME2 @392
+  
+COPY ~silverrealms/cre/AC#TROL7.cre~ ~override/AC#TROL7.cre~
+  SAY NAME1 @392 SAY NAME2 @392
+
+COPY ~silverrealms/cre/AC#GRTR1.cre~ ~override/AC#GRTR1.cre~
+  SAY NAME1 @226 SAY NAME2 @226
+  
+COPY ~silverrealms/cre/AC#GRTR2.cre~ ~override/AC#GRTR2.cre~
+  SAY NAME1 @226 SAY NAME2 @226
+  
+COPY ~silverrealms/cre/ac#skul2.cre~ ~override/ac#skul2.cre~
+  SAY NAME1 @168 SAY NAME2 @168
+  
+COPY ~silverrealms/cre/AC#DEDRA.cre~ ~override/AC#DEDRA.cre~
+  SAY NAME1 @227 SAY NAME2 @227
+  
+COPY ~silverrealms/cre/AC#STO01.cre~ ~override/AC#STO01.cre~
+  SAY NAME1 @231 SAY NAME2 @231
+  
+COPY ~silverrealms/cre/AC#ILDW3.cre~ ~override/AC#ILDW3.cre~
+  SAY NAME1 @241 SAY NAME2 @241
+  
+COPY ~silverrealms/cre/AC#BAR01.cre~ ~override/AC#BAR01.cre~
+  SAY NAME1 @242 SAY NAME2 @242
+
+COPY ~silverrealms/cre/AC#BAR02.cre~ ~override/AC#BAR02.cre~
+  SAY NAME1 @243 SAY NAME2 @243
+  
+COPY ~silverrealms/cre/AC#ILDW4.cre~ ~override/AC#ILDW4.cre~
+  SAY NAME1 @245 SAY NAME2 @245
+  
+COPY ~silverrealms/cre/AC#ILHM1.cre~ ~override/AC#ILHM1.cre~
+  SAY NAME1 @246 SAY NAME2 @246
+  
+COPY ~silverrealms/cre/AC#ILDW5.cre~ ~override/AC#ILDW5.cre~
+  SAY NAME1 @247 SAY NAME2 @247
+  
+COPY ~silverrealms/cre/AC#ILDW6.cre~ ~override/AC#ILDW6.cre~
+  SAY NAME1 @248 SAY NAME2 @248
+  
+COPY ~silverrealms/cre/AC#ILME2.cre~ ~override/AC#ILME2.cre~
+  SAY NAME1 @249 SAY NAME2 @249
+  
+COPY ~silverrealms/cre/AC#BOAR1.cre~ ~override/AC#BOAR1.cre~
+  SAY NAME1 @251 SAY NAME2 @251
+SAY INITIAL_MEETING @252
+SAY BATTLE_CRY1 @252
+SAY BATTLE_CRY2 @253
+SAY DAMAGE @254
+SAY DYING @255
+SAY HURT @256
+
+SAY SELECT_COMMON1 @252
+SAY SELECT_COMMON2 @252
+SAY SELECT_COMMON3 @252
+SAY SELECT_ACTION1 @252
+SAY SELECT_ACTION2 @252
+SAY SELECT_ACTION3 @252
+SAY SELECT_ACTION4 @252
+SAY SELECT_ACTION5 @252
+
+COPY ~silverrealms/cre/AC#BOAR2.cre~ ~override/AC#BOAR2.cre~
+  SAY NAME1 @251 SAY NAME2 @251
+SAY INITIAL_MEETING @252
+SAY BATTLE_CRY1 @252
+SAY BATTLE_CRY2 @253
+SAY DAMAGE @254
+SAY DYING @255
+SAY HURT @256
+
+SAY SELECT_COMMON1 @252
+SAY SELECT_COMMON2 @252
+SAY SELECT_COMMON3 @252
+SAY SELECT_ACTION1 @252
+SAY SELECT_ACTION2 @252
+SAY SELECT_ACTION3 @252
+SAY SELECT_ACTION4 @252
+SAY SELECT_ACTION5 @252
+
+COPY ~silverrealms/cre/AC#BADW1.cre~ ~override/AC#BADW1.cre~
+  SAY NAME1 @257 SAY NAME2 @257
+  
+COPY ~silverrealms/cre/AC#BADW2.cre~ ~override/AC#BADW2.cre~
+  SAY NAME1 @258 SAY NAME2 @258
+  
+COPY ~silverrealms/cre/AC#BADW3.cre~ ~override/AC#BADW3.cre~
+  SAY NAME1 @259 SAY NAME2 @259
+  
+COPY ~silverrealms/cre/AC#ILDW7.cre~ ~override/AC#ILDW7.cre~
+  SAY NAME1 @260 SAY NAME2 @260
+  
+COPY ~silverrealms/cre/AC#ILDW8.cre~ ~override/AC#ILDW8.cre~
+  SAY NAME1 @261 SAY NAME2 @261
+  
+COPY ~silverrealms/cre/AC#51DW1.cre~ ~override/AC#51DW1.cre~
+  SAY NAME1 @262 SAY NAME2 @262
+  
+COPY ~silverrealms/cre/AC#55DW1.cre~ ~override/AC#55DW1.cre~
+  SAY NAME1 @393 SAY NAME2 @393
+  
+COPY ~silverrealms/cre/AC#51PR1.cre~ ~override/AC#51PR1.cre~
+  SAY NAME1 @263 SAY NAME2 @263
+  
+COPY ~silverrealms/cre/AC#51PR2.cre~ ~override/AC#51PR2.cre~
+  SAY NAME1 @265 SAY NAME2 @265
+  
+COPY ~silverrealms/cre/AC#51DW2.cre~ ~override/AC#51DW2.cre~
+  SAY NAME1 @267 SAY NAME2 @267
+  
+COPY ~silverrealms/cre/AC#51DW3.cre~ ~override/AC#51DW3.cre~
+  SAY NAME1 @268 SAY NAME2 @268
+  
+COPY ~silverrealms/cre/AC#51DW4.cre~ ~override/AC#51DW4.cre~
+  SAY NAME1 @262 SAY NAME2 @262
+  
+COPY ~silverrealms/cre/AC#51DW5.cre~ ~override/AC#51DW5.cre~
+  SAY NAME1 @262 SAY NAME2 @262
+
+COPY ~silverrealms/cre/AC#51DW6.cre~ ~override/AC#51DW6.cre~
+  SAY NAME1 @269 SAY NAME2 @269
+  
+COPY ~silverrealms/cre/AC#51DW7.cre~ ~override/AC#51DW7.cre~
+  SAY NAME1 @269 SAY NAME2 @269
+  
+COPY ~silverrealms/cre/AC#BERB1.cre~ ~override/AC#BERB1.cre~
+  SAY NAME1 @270 SAY NAME2 @270
+  
+COPY ~silverrealms/cre/AC#SVI01.cre~ ~override/AC#SVI01.cre~
+  SAY NAME1 @271 SAY NAME2 @271
+  
+COPY ~silverrealms/cre/AC#DWGO1.cre~ ~override/AC#DWGO1.cre~
+  SAY NAME1 @272 SAY NAME2 @272
+  
+COPY ~silverrealms/cre/AC#DWGO2.cre~ ~override/AC#DWGO2.cre~
+  SAY NAME1 @274 SAY NAME2 @274
+
+// Regency Council: 
+
+COPY ~silverrealms/cre/AC#TORT1.cre~ ~override~
+  SAY NAME1 @278 SAY NAME2 @278
+  
+COPY ~silverrealms/cre/AC#TORTH.cre~ ~override~ // Torth in ACIL64
+  SAY NAME1 @278 SAY NAME2 @278
+
+COPY ~silverrealms/cre/AC#RUVA1.cre~ ~override~
+  SAY NAME1 @279 SAY NAME2 @279
+  
+COPY ~silverrealms/cre/AC#RUVA2.cre~ ~override~
+  SAY NAME1 @279 SAY NAME2 @279
+  
+COPY ~silverrealms/cre/AC#GROM1.cre~ ~override~
+  SAY NAME1 @280 SAY NAME2 @280
+    SAY INITIAL_MEETING   #-1
+  SAY SELECT_COMMON1 #-1
+  SAY SELECT_COMMON2 #-1
+  
+COPY ~silverrealms/cre/AC#GROM2.cre~ ~override~
+  SAY NAME1 @280 SAY NAME2 @280
+    SAY INITIAL_MEETING   #-1
+  SAY SELECT_COMMON1 #-1
+  SAY SELECT_COMMON2 #-1
+  
+COPY ~silverrealms/cre/AC#GROM5.cre~ ~override~ // Gromi in ACIL50 after Mith Barak's Rescue
+  SAY NAME1 @280 SAY NAME2 @280
+    SAY INITIAL_MEETING   #-1
+  SAY SELECT_COMMON1 #-1
+  SAY SELECT_COMMON2 #-1
+  
+COPY ~silverrealms/cre/AC#GROM6.cre~ ~override~ // Gromi in ACIL52 after Ellhimar's healing
+  SAY NAME1 @280 SAY NAME2 @280
+    SAY INITIAL_MEETING   #-1
+  SAY SELECT_COMMON1 #-1
+  SAY SELECT_COMMON2 #-1
+  
+COPY ~silverrealms/cre/AC#GROM7.cre~ ~override~ // Gromi in ACIL50 after Ellhimar's death  / kidnapping
+  SAY NAME1 @280 SAY NAME2 @280
+    SAY INITIAL_MEETING   #-1
+  SAY SELECT_COMMON1 #-1
+  SAY SELECT_COMMON2 #-1
+  
+COPY ~silverrealms/cre/AC#GROM9.cre~ ~override~ // Gromi in ACIL20
+  SAY NAME1 @280 SAY NAME2 @280
+    SAY INITIAL_MEETING   #-1
+  SAY SELECT_COMMON1 #-1
+  SAY SELECT_COMMON2 #-1
+
+COPY ~silverrealms/cre/AC#VRON1.cre~ ~override~ // Vronia Ironledger: Regency Coucil
+  SAY NAME1 @281 SAY NAME2 @281
+  
+COPY ~silverrealms/cre/AC#VRON2.cre~ ~override~ // Vronia Ironledger: ACIL50, Quest Start
+  SAY NAME1 @281 SAY NAME2 @281
+
+COPY ~silverrealms/cre/AC#VRON3.cre~ ~override~ // Vronia Ironledger: ACIL5Q, Quest continues
+  SAY NAME1 @281 SAY NAME2 @281
+  
+COPY ~silverrealms/cre/AC#VRON4.cre~ ~override~ // Vronia Ironledger: ACIL50, Party has drow corpse item
+  SAY NAME1 @281 SAY NAME2 @281
+  
+COPY ~silverrealms/cre/AC#VRON5.cre~ ~override~ // Vronia Ironledger: ACIL52, Sharindlar
+  SAY NAME1 @281 SAY NAME2 @281
+  
+COPY ~silverrealms/cre/AC#VRON6.cre~ ~override~ // Vronia Ironledger: ACIL50, Ellhimar's journal
+  SAY NAME1 @281 SAY NAME2 @281
+  
+COPY ~silverrealms/cre/AC#VRON7.cre~ ~override~ // Vronia Ironledger: ACIL50, Ellhimar's death / kidnapping
+  SAY NAME1 @281 SAY NAME2 @281
+  
+COPY ~silverrealms/cre/AC#VRON9.cre~ ~override~ // Vronia Ironledger: ACIL20
+  SAY NAME1 @281 SAY NAME2 @281
+  
+COPY ~silverrealms/cre/AC#VRONI.cre~ ~override~ // Vronia Ironledger: ACIL64
+  SAY NAME1 @281 SAY NAME2 @281
+
+COPY ~silverrealms/cre/AC#ELER1.cre~ ~override~ // Elern in ACIL62
+  SAY NAME1 @282 SAY NAME2 @282
+  
+COPY ~silverrealms/cre/AC#ELER2.cre~ ~override~ // Elern in ACIL50
+  SAY NAME1 @282 SAY NAME2 @282
+  
+COPY ~silverrealms/cre/AC#ELER5.cre~ ~override/AC#ELER5.cre~ // Elern in ACIL53
+  SAY NAME1 @282 SAY NAME2 @282
+  
+COPY ~silverrealms/cre/AC#ELER8.cre~ ~override/AC#ELER8.cre~ // Elern in ACIL27
+  SAY NAME1 @282 SAY NAME2 @282
+  
+COPY ~silverrealms/cre/AC#ELER9.cre~ ~override/AC#ELER9.cre~ // Elern in ACIL20
+  SAY NAME1 @282 SAY NAME2 @282
+  
+COPY ~silverrealms/cre/AC#ELERN.cre~ ~override/AC#ELERN.cre~ // Elern in ACIL64
+  SAY NAME1 @282 SAY NAME2 @282
+  
+COPY ~silverrealms/cre/AC#CHEM1.cre~ ~override/AC#CHEM1.cre~
+  SAY NAME1 @283 SAY NAME2 @283
+  
+COPY ~silverrealms/cre/AC#FENY1.cre~ ~override/AC#FENY1.cre~
+  SAY NAME1 @284 SAY NAME2 @284
+  
+COPY ~silverrealms/cre/AC#FENYL.cre~ ~override/AC#FENYL.cre~
+  SAY NAME1 @284 SAY NAME2 @284
+  
+COPY ~silverrealms/cre/AC#STUR1.cre~ ~override/AC#STUR1.cre~
+  SAY NAME1 @285 SAY NAME2 @285
+  
+COPY ~silverrealms/cre/AC#STURV.cre~ ~override/AC#STURV.cre~
+  SAY NAME1 @285 SAY NAME2 @285
+
+COPY ~silverrealms/cre/AC#QUAG1.cre~ ~override/AC#QUAG1.cre~
+  SAY NAME1 @307 SAY NAME2 @307
+    
+    COPY_EXISTING ~AC#QUAG1.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#THOKOLA_PST~))
+    
+  
+COPY ~silverrealms/cre/AC#QUAG2.cre~ ~override/AC#QUAG2.cre~
+  SAY NAME1 @308 SAY NAME2 @308
+    
+    COPY_EXISTING ~AC#QUAG2.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#THOKOLA_PST~))
+    
+
+COPY ~silverrealms/cre/AC#MITH1.cre~ ~override/AC#MITH1.cre~
+  SAY NAME1 @61 SAY NAME2 @61
+  
+COPY ~silverrealms/cre/AC#DUMY1.cre~ ~override/AC#DUMY1.cre~
+  SAY NAME1 @309 SAY NAME2 @309
+
+COPY ~silverrealms/cre/AC#HAMSU.cre~ ~override~ //summoned Hamatula
+  SAY NAME1 @386 SAY NAME2 @386
+  
+COPY ~silverrealms/cre/AC#HAMA2.cre~ ~override~ //enemy Hamatula
+  SAY NAME1 @386 SAY NAME2 @386
+  
+COPY ~silverrealms/cre/AC#ROTH1.cre~ ~override~ //Deep Rothé
+  SAY NAME1 @394 SAY NAME2 @394
+    
+    
+    COPY_EXISTING ~AC#ROTH1.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#ROTHE~))
+    
+
+COPY ~silverrealms/cre/AC#ROTH2.cre~ ~override~ //Deep Rothé
+  SAY NAME1 @394 SAY NAME2 @394
+      
+    
+    COPY_EXISTING ~AC#ROTH2.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#ROTHE~))
+    
+
+COPY ~silverrealms/cre/AC#ROTHB.cre~ ~override~ //Deep Rothé Borug
+  SAY NAME1 @394 SAY NAME2 @394
+       
+    
+    COPY_EXISTING ~AC#ROTHB.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#ROTHE~))
+    
+
+COPY ~silverrealms/cre/AC#SKETT.cre~ ~override~ //Skelettin
+  SAY NAME1 @419 SAY NAME2 @419
+    
+  COPY_EXISTING ~AC#SKETT.cre~ ~override~
+  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#NWN_BONE_GOLEM~))
+  
+  
+COPY ~silverrealms/cre/AC#SKET1.cre~ ~override~ //Skelettin
+  SAY NAME1 @419 SAY NAME2 @419
+   
+  COPY_EXISTING ~AC#SKET1.cre~ ~override~
+  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#NWN_BONE_GOLEM~))
+  
+
+COPY ~silverrealms/cre/AC#SKET2.cre~ ~override~ //Skelettin
+  SAY NAME1 @419 SAY NAME2 @419
+   
+  COPY_EXISTING ~AC#SKET2.cre~ ~override~
+  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#NWN_BONE_GOLEM~))
+  
+
+COPY ~silverrealms/cre/AC#23BO1.cre~ ~override~ //Altes Buch
+  SAY NAME1 @420 SAY NAME2 @420
+  
+COPY ~silverrealms/cre/AC#23BO1.cre~ ~override/AC#23BO2.cre~ //Altes Buch #2
+  SAY NAME1 @420 SAY NAME2 @420
+  WRITE_ASCII 0x280 ~AC#23BO2~ #32 // Death Variable
+  WRITE_ASCII 0x2cc ~AC#23BO2~ #8 // Dialogue file
+
+COPY ~silverrealms/cre/AC#23BO1.cre~ ~override/AC#23BO3.cre~ //Altes Buch #3
+  SAY NAME1 @420 SAY NAME2 @420
+  WRITE_ASCII 0x280 ~AC#23BO3~ #32 // Death Variable
+  WRITE_ASCII 0x2cc ~AC#23BO3~ #8 // Dialogue file
+  
+COPY ~silverrealms/cre/AC#23BO1.cre~ ~override/AC#23BO4.cre~ //Altes Buch #4
+  SAY NAME1 @420 SAY NAME2 @420
+  WRITE_ASCII 0x280 ~AC#23BO4~ #32 // Death Variable
+  WRITE_ASCII 0x2cc ~AC#23BO4~ #8 // Dialogue file
+  
+COPY ~silverrealms/cre/AC#23BO1.cre~ ~override/AC#23BO5.cre~ //Altes Buch #5
+  SAY NAME1 @420 SAY NAME2 @420
+  WRITE_ASCII 0x280 ~AC#23BO5~ #32 // Death Variable
+  WRITE_ASCII 0x2cc ~AC#23BO5~ #8 // Dialogue file
+  
+COPY ~silverrealms/cre/AC#23ST1.cre~ ~override/AC#23ST1.cre~ //Statue
+  SAY NAME1 @421 SAY NAME2 @421
+  
+COPY ~silverrealms/cre/AC#23ST1.cre~ ~override/AC#23ST2.cre~ //Statue
+  SAY NAME1 @421 SAY NAME2 @421
+  WRITE_ASCII 0x280 ~AC#23ST2~ #32 // Death Variable
+  WRITE_ASCII 0x2cc ~AC#23ST2~ #8 // Dialogue file
+  
+COPY ~silverrealms/cre/AC#23ST1.cre~ ~override/AC#23ST3.cre~ //Statue
+  SAY NAME1 @421 SAY NAME2 @421
+  WRITE_ASCII 0x280 ~AC#23ST3~ #32 // Death Variable
+  WRITE_ASCII 0x2cc ~AC#23ST3~ #8 // Dialogue file
+  
+COPY ~silverrealms/cre/AC#23ST1.cre~ ~override/AC#23ST4.cre~ //Statue
+  SAY NAME1 @421 SAY NAME2 @421
+  WRITE_ASCII 0x280 ~AC#23ST4~ #32 // Death Variable
+  WRITE_ASCII 0x2cc ~AC#23ST4~ #8 // Dialogue file
+
+COPY ~silverrealms/cre/AC#23ST1.cre~ ~override/AC#23ST5.cre~ //Statue
+  SAY NAME1 @421 SAY NAME2 @421
+  WRITE_ASCII 0x280 ~AC#23ST5~ #32 // Death Variable
+  WRITE_ASCII 0x2cc ~AC#23ST5~ #8 // Dialogue file
+  
+COPY ~silverrealms/cre/AC#ULIT2.cre~ ~override~ //Ulitharid: Malinthid
+  SAY NAME1 @428 SAY NAME2 @428
+  
+COPY ~silverrealms/cre/ac#dras2.cre~ ~override~ //Scorlachash: young Red Dragon
+  SAY NAME1 @429 SAY NAME2 @429
+  
+COPY ~silverrealms/cre/AC#CRAT1.cre~ ~override~ //Cranium Rat
+  SAY NAME1 @442 SAY NAME2 @442
+/*
+COPY ~silverrealms/cre/AC#NEOTH.cre~ ~override/AC#NEOTH.cre~ //Neothelid
+  SAY NAME1 @443 SAY NAME2 @443 */
+  
+COPY ~silverrealms/cre/AC#RAT20.cre~ ~override~ //Cranium Rat Swarm old
+  SAY NAME1 @444 SAY NAME2 @444
+  
+COPY ~silverrealms/cre/AC#RAT21.cre~ ~override~ //Cranium Rat Swarm
+  SAY NAME1 @444 SAY NAME2 @444
+  
+COPY ~silverrealms/cre/AC#52DW1.cre~ ~override/AC#52DW1.cre~ //Phaeba Schwarzhorn
+  SAY NAME1 @456 SAY NAME2 @456
+  
+COPY ~silverrealms/cre/AC#ABGR2.cre~ ~override~ //Green Abishai
+  SAY NAME1 @459 SAY NAME2 @459
+  
+COPY ~silverrealms/cre/AC#ABGR3.cre~ ~override~ //Green Abishai in area acil77
+  SAY NAME1 @459 SAY NAME2 @459
+  
+COPY ~silverrealms/cre/AC#ABRE1.cre~ ~override~ //Red Abishai
+  SAY NAME1 @460 SAY NAME2 @460
+  
+COPY ~silverrealms/cre/AC#ABRE3.cre~ ~override~ //Red Abishai in area acil77
+  SAY NAME1 @460 SAY NAME2 @460
+  
+COPY ~silverrealms/cre/AC#ABBL1.cre~ ~override~ //Black Abishai
+  SAY NAME1 @461 SAY NAME2 @461
+  
+COPY ~silverrealms/cre/AC#ABBL2.cre~ ~override~ //Black Abishai in ACIL61 (Iltkazar under siege)
+  SAY NAME1 @461 SAY NAME2 @461
+  
+COPY ~silverrealms/cre/AC#ABBLU.cre~ ~override/AC#ABBLU.cre~ //Blue Abishai
+  SAY NAME1 @462 SAY NAME2 @462
+  
+COPY ~silverrealms/cre/AC#52DW2.cre~ ~override/AC#52DW2.cre~ //Luckmaiden
+  SAY NAME1 @475 SAY NAME2 @475
+  
+COPY ~silverrealms/cre/AC#52DW3.cre~ ~override/AC#52DW3.cre~ //Luckmaiden
+  SAY NAME1 @475 SAY NAME2 @475
+  
+COPY ~silverrealms/cre/AC#52DW4.cre~ ~override/AC#52DW4.cre~ //Luckmaiden
+  SAY NAME1 @475 SAY NAME2 @475
+  
+COPY ~silverrealms/cre/AC#52DW5.cre~ ~override/AC#52DW5.cre~ //Luckmaiden
+  SAY NAME1 @475 SAY NAME2 @475
+  
+
+  
+COPY ~silverrealms/cre/AC#52DW7.cre~ ~override/AC#52DW7.cre~ //Shagretor
+  SAY NAME1 @476 SAY NAME2 @476
+  
+COPY ~silverrealms/cre/AC#52DW8.cre~ ~override/AC#52DW8.cre~ //Sharindlar Priest
+  SAY NAME1 @477 SAY NAME2 @477
+  
+COPY ~silverrealms/cre/AC#DWIN1.cre~ ~override/AC#DWIN1.cre~ //Verwundeter Zwerg
+  SAY NAME1 @478 SAY NAME2 @478
+  
+COPY ~silverrealms/cre/AC#RAVEN.cre~ ~override/AC#RAVEN.cre~ //Raven
+  SAY NAME1 @479 SAY NAME2 @479
+  
+    
+    COPY_EXISTING ~ac#RAVEN.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#RAVEN~))
+    
+
+COPY ~silverrealms/cre/AC#RAVE1.cre~ ~override/AC#RAVE1.cre~ //Raven
+  SAY NAME1 @479 SAY NAME2 @479
+  
+    
+    COPY_EXISTING ~ac#RAVE1.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#RAVEN~))
+    
+COPY ~silverrealms/cre/AC#RAVE0.cre~ ~override/AC#RAVE0.cre~ //Raven
+  SAY NAME1 @479 SAY NAME2 @479
+   
+    
+    COPY_EXISTING ~ac#RAVE0.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#RAVEN~))
+    
+COPY ~silverrealms/cre/AC#RAVE2.cre~ ~override/AC#RAVE2.cre~ //Raven
+  SAY NAME1 @479 SAY NAME2 @479
+      
+    
+    COPY_EXISTING ~ac#RAVE2.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#RAVEN~))
+    
+COPY ~silverrealms/cre/AC#RAVE3.cre~ ~override/AC#RAVE3.cre~ //Salpham
+  SAY NAME1 @479 SAY NAME2 @479
+      
+    
+    COPY_EXISTING ~ac#RAVE3.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#RAVEN~))
+    
+COPY ~silverrealms/cre/AC#RAVE4.cre~ ~override/AC#RAVE4.cre~ //Raven
+  SAY NAME1 @479 SAY NAME2 @479
+      
+    
+    COPY_EXISTING ~ac#RAVE4.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#RAVEN~))
+    
+COPY ~silverrealms/cre/AC#RAVE5.cre~ ~override/AC#RAVE5.cre~ //Raven
+  SAY NAME1 @479 SAY NAME2 @479
+     
+    
+    COPY_EXISTING ~ac#RAVE5.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#RAVEN~))
+    
+COPY ~silverrealms/cre/AC#RAV04.cre~ ~override/AC#RAV04.cre~ //Raven in ACIL04 (Eshpurta Road)
+  SAY NAME1 @479 SAY NAME2 @479
+     
+    
+    COPY_EXISTING ~ac#RAV04.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#RAVEN~))
+    
+COPY ~silverrealms/cre/AC#DUGI1.cre~ ~override/AC#DUGI1.cre~ //Duthka'gith
+  SAY NAME1 @480 SAY NAME2 @480
+  
+COPY ~silverrealms/cre/AC#DUGI2.cre~ ~override/AC#DUGI2.cre~ //Duthka'gith
+  SAY NAME1 @480 SAY NAME2 @480
+  
+COPY ~silverrealms/cre/AC#GITH2.cre~ ~override~ //Duthka'gith
+  SAY NAME1 @480 SAY NAME2 @480
+
+COPY ~silverrealms/cre/AC#52DW9.cre~ ~override/AC#52DW9.cre~ //Isdlara Riftsong
+  SAY NAME1 @481 SAY NAME2 @481
+
+COPY ~silverrealms/cre/AC#GIGO1.cre~ ~override/AC#GIGO1.cre~ //New: Allip
+  SAY NAME1 @483 SAY NAME2 @483
+  
+    
+    COPY_EXISTING ~AC#GIGO1.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#NWN_ALLIP~))
+    
+
+COPY ~silverrealms/cre/AC#DER12.cre~ ~override/AC#DER12.cre~ //Kursh Borkenhorn
+  SAY NAME1 @491 SAY NAME2 @491
+  
+COPY ~silverrealms/cre/AC#BARI1.cre~ ~override/AC#BARI1.cre~ //Bariaur
+  SAY NAME1 @492 SAY NAME2 @492
+  
+COPY ~silverrealms/cre/AC#SCCRO.cre~ ~override/AC#SCCRO.cre~ //Scarecrow
+  SAY NAME1 @501 SAY NAME2 @501
+  
+COPY ~silverrealms/cre/AC#IFER.cre~ ~override/AC#IFER.cre~ //Acifer, the DM
+  SAY NAME1 @500 SAY NAME2 @500
+  
+COPY ~silverrealms/cre/AC#DEER2.cre~ ~override/AC#DEER2.cre~ //Verletzte Hirschkuh
+  SAY NAME1 @513 SAY NAME2 @513
+  
+COPY ~silverrealms/cre/AC#CAMP1.cre~ ~override/AC#CAMP1.cre~ //Lagerfeuer
+  SAY NAME1 @527 SAY NAME2 @527
+  
+COPY ~silverrealms/cre/AC#13ST1.cre~ ~override/AC#13ST1.cre~
+  SAY NAME1 @199 SAY NAME2 @199
+  
+/* Adding 6 others statues */
+COPY_EXISTING ~AC#13ST1.CRE~ ~override/AC#13ST2.CRE~
+    WRITE_ASCII 0x280 ~AC#13ST2~ #32 // Death Variable
+    
+COPY_EXISTING ~AC#13ST1.CRE~ ~override/AC#13ST3.CRE~
+    WRITE_ASCII 0x280 ~AC#13ST3~ #32 // Death Variable
+    
+COPY_EXISTING ~AC#13ST1.CRE~ ~override/AC#13ST4.CRE~
+    WRITE_ASCII 0x280 ~AC#13ST4~ #32 // Death Variable
+    
+COPY_EXISTING ~AC#13ST1.CRE~ ~override/AC#13ST5.CRE~
+    WRITE_ASCII 0x280 ~AC#13ST5~ #32 // Death Variable
+    
+COPY_EXISTING ~AC#13ST1.CRE~ ~override/AC#13ST6.CRE~
+    WRITE_ASCII 0x280 ~AC#13ST6~ #32 // Death Variable
+    
+COPY_EXISTING ~AC#13ST1.CRE~ ~override/AC#13ST7.CRE~
+    WRITE_ASCII 0x280 ~AC#13ST7~ #32 // Death Variable
+    
+COPY_EXISTING ~AC#13ST1.CRE~ ~override/AC#13ST8.CRE~
+    WRITE_ASCII 0x280 ~AC#13ST8~ #32 // Death Variable
+    SAY NAME1 @575 SAY NAME2 @575
+
+COPY ~silverrealms/cre/AC#BLAD1.cre~ ~override/AC#BLAD1.cre~
+  SAY NAME1 @547 SAY NAME2 @547
+  
+COPY ~silverrealms/cre/AC#TROB1.cre~ ~override/AC#TROB1.cre~
+  SAY NAME1 @551 SAY NAME2 @551
+  
+COPY ~silverrealms/cre/AC#TROB2.cre~ ~override/AC#TROB2.cre~
+  SAY NAME1 @551 SAY NAME2 @551
+
+COPY ~silverrealms/cre/AC#GIFR1.cre~ ~override/AC#GIFR1.cre~
+  SAY NAME1 @571 SAY NAME2 @571
+
+COPY ~silverrealms/cre/AC#MERDE.cre~ ~override/AC#MERDE.cre~
+  SAY NAME1 @588 SAY NAME2 @588
+  
+COPY ~silverrealms/cre/AC#HARP1.cre~ ~override/AC#HARP1.cre~ // Harpy
+  SAY NAME1 @589 SAY NAME2 @589
+  
+    
+    COPY_EXISTING ~ac#HARP1.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~HARPY~))
+    
+  
+COPY ~silverrealms/cre/AC#BARD1.cre~ ~override/AC#BARD1.cre~ // Petipal, Bard in City Gates District, telling Lancameth's story
+  SAY NAME1 @596 SAY NAME2 @596
+
+COPY ~silverrealms/cre/AC#BARD2.cre~ ~override/AC#BARD2.cre~ // Petipal, Bard in Crooked Crane, first meeting
+  SAY NAME1 @596 SAY NAME2 @596
+
+COPY ~silverrealms/cre/AC#FINW1.cre~ ~override/AC#FINW1.cre~ // Firenewt
+  SAY NAME1 @597 SAY NAME2 @597
+  
+COPY ~silverrealms/cre/AC#FINW2.cre~ ~override/AC#FINW2.cre~ // Firenewt
+  SAY NAME1 @597 SAY NAME2 @597
+
+COPY ~silverrealms/cre/AC#07MU1.cre~ ~override/AC#07MU1.cre~ // highwayman
+  SAY NAME1 @598 SAY NAME2 @598
+
+COPY ~silverrealms/cre/AC#07MU2.cre~ ~override/AC#07MU2.cre~ // highwayman, Leader
+  SAY NAME1 @598 SAY NAME2 @598
+  
+COPY ~silverrealms/cre/AC#07MU3.cre~ ~override~ // highwayman, Malphas reinforcement
+  SAY NAME1 @598 SAY NAME2 @598
+  
+COPY ~silverrealms/cre/AC#07MU4.cre~ ~override~ // highwayman, cleric
+  //SAY NAME1 @598 SAY NAME2 @598
+ADD_MEMORIZED_SPELL ~SPPR101~ #0 ~priest~ ( 1 ) // CLERIC_BLESS
+ADD_MEMORIZED_SPELL ~SPPR204~ #1 ~priest~ ( 1 ) // CLERIC_CHARM_PERSON
+ADD_MEMORIZED_SPELL ~SPPR315~ #2 ~priest~ ( 2 ) // CLERIC_CURE_MEDIUM_WOUNDS
+ADD_MEMORIZED_SPELL ~SPPR416~ #3 ~priest~ ( 1 ) // CLERIC_CLOAK_OF_FEAR
+
+COPY ~silverrealms/cre/AC#07MU5.cre~ ~override~ // highwayman, halfogre
+  //SAY NAME1 @598 SAY NAME2 @598
+
+COPY ~silverrealms/cre/AC#BHGH2.cre~ ~override/AC#BHGH2.cre~ // Bhapar Ghalmrin
+  SAY NAME1 @609 SAY NAME2 @609
+
+COPY ~silverrealms/cre/AC#JOUR1.cre~ ~override/AC#JOUR1.cre~ // Jorboud Hornfinger
+  SAY NAME1 @612 SAY NAME2 @612
+  SAY INITIAL_MEETING   #-1
+  SAY SELECT_COMMON1 #-1
+  SAY SELECT_COMMON2 #-1
+
+COPY ~silverrealms/cre/AC#BETT1.cre~ ~override/AC#BETT1.cre~ // Bettargh Abgrundlied
+  SAY NAME1 @613 SAY NAME2 @613
+    SAY INITIAL_MEETING   #-1
+  SAY SELECT_COMMON1 #-1
+  SAY SELECT_COMMON2 #-1
+
+COPY ~silverrealms/cre/AC#BETT2.cre~ ~override/AC#BETT2.cre~ // Bettargh Abgrundlied in ACIL62
+  SAY NAME1 @613 SAY NAME2 @613
+    SAY INITIAL_MEETING   #-1
+  SAY SELECT_COMMON1 #-1
+  SAY SELECT_COMMON2 #-1
+
+COPY ~silverrealms/cre/AC#BETT7.cre~ ~override~ // Bettargh Abgrundlied in ACIL50 Ellhimar's death / kidnapping
+  SAY NAME1 @613 SAY NAME2 @613
+    SAY INITIAL_MEETING   #-1
+  SAY SELECT_COMMON1 #-1
+  SAY SELECT_COMMON2 #-1
+
+COPY ~silverrealms/cre/AC#BETTA.cre~ ~override/AC#BETTA.cre~ // Bettargh Abgrundlied in ACIL64
+  SAY NAME1 @613 SAY NAME2 @613
+    SAY INITIAL_MEETING   #-1
+  SAY SELECT_COMMON1 #-1
+  SAY SELECT_COMMON2 #-1
+  
+COPY ~silverrealms/cre/AC#XOTH1.cre~ ~override/AC#XOTH1.cre~ // Xothar
+  SAY NAME1 @614 SAY NAME2 @614
+  
+COPY ~silverrealms/cre/AC#IL53S.cre~ ~override~ // Xothar
+  SAY NAME1 @614 SAY NAME2 @614
+  
+COPY ~silverrealms/cre/AC#90TR2.cre~ ~override/AC#90TR2.cre~ // Baum
+  SAY NAME1 @615 SAY NAME2 @615
+  
+COPY ~silverrealms/cre/AC#KUKR1.cre~ ~override/AC#KUKR1.cre~ //Kukgrarlug Flaschenbart, Questgeber in ACIL 53 für die Buchbindequest
+  SAY NAME1 @616 SAY NAME2 @616
+    SAY INITIAL_MEETING   #-1
+  SAY SELECT_COMMON1 #-1
+  SAY SELECT_COMMON2 #-1
+  
+COPY ~silverrealms/cre/AC#53BKM.cre~ ~override/AC#53BKM.cre~ // Buchbindemaschine
+  SAY NAME1 @619 SAY NAME2 @619
+  
+COPY ~silverrealms/cre/AC#01BEE.cre~ ~override/AC#01BEE.cre~ // Beehive
+  SAY NAME1 @622 SAY NAME2 @622
+  
+COPY ~silverrealms/cre/AC#58DE1.cre~ ~override/AC#58DE1.cre~ // Dhundala
+  SAY NAME1 @631 SAY NAME2 @631
+  
+COPY ~silverrealms/cre/AC#DISPB.cre~ ~override/AC#DISPB.cre~ // Displacer Beast
+  SAY NAME1 @632 SAY NAME2 @632
+   
+    
+    COPY_EXISTING ~AC#DISPB.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#DISPLACER_BEAST~))
+    
+
+COPY ~silverrealms/cre/AC#ILDW9.cre~ ~override/AC#ILDW9.cre~ //  Snorri, Rothe-Züchter
+  SAY NAME1 @637 SAY NAME2 @637
+  
+COPY ~silverrealms/cre/AC#ILBEE.cre~ ~override/AC#ILBEE.cre~ //  Beetle, Rat-Hunter
+  SAY NAME1 @638 SAY NAME2 @638
+  
+COPY ~silverrealms/cre/AC#ILHA1.cre~ ~override/AC#ILHA1.cre~ //  Hameli, Rat-Hunter
+  SAY NAME1 @639 SAY NAME2 @639
+  
+COPY ~silverrealms/cre/AC#52HA1.cre~ ~override/AC#52HA1.cre~ //  Betrangrid, Haelas Knight
+  SAY NAME1 @640 SAY NAME2 @640
+  
+COPY ~silverrealms/cre/AC#55SM1.cre~ ~override/AC#55SM1.cre~ // Whundaed Silberlunker
+  SAY NAME1 @643 SAY NAME2 @643
+  
+COPY ~silverrealms/cre/ac#ilel1.cre~ ~override/ac#ilel1.cre~
+  SAY NAME1 @648 SAY NAME2 @648
+  WRITE_ASCII 0x250 ~AC#ILELF~ #8 // CLASS
+// Soundset: IWD2 - Hexenmeister_männlich
+SAY INITIAL_MEETING   ~~ [AC#ELLH2]
+SAY SELECT_COMMON1 ~~ [AC#ELLH1]
+SAY SELECT_COMMON2 ~~ [AC#ELLH3]
+SAY BATTLE_CRY1 ~~ [AC#ELLH4]
+SAY BATTLE_CRY2 ~~ [AC#ELLH5]
+SAY BATTLE_CRY3 ~~ [AC#ELLH6]
+SAY DAMAGE ~~ [AC#ELLH7]
+SAY DYING ~~ [AC#ELLH8]
+ADD_MEMORIZED_SPELL ~SPWI212~ #1 ~wizard~ ( 3 ) // Mirror image
+ADD_MEMORIZED_SPELL ~SPWI213~ #1 ~wizard~ ( 1 ) // Stinking cloud
+ADD_MEMORIZED_SPELL ~SPWI302~ #2 ~wizard~ ( 1 ) // Dispel magic
+ADD_MEMORIZED_SPELL ~SPWI313~ #2 ~wizard~ ( 1 ) // Skull trap
+ADD_MEMORIZED_SPELL ~SPWI308~ #2 ~wizard~ ( 1 ) // Lightning bolt
+ADD_MEMORIZED_SPELL ~SPWI408~ #3 ~wizard~ ( 2 ) // Stoneskin
+ADD_MEMORIZED_SPELL ~SPWI502~ #4 ~wizard~ ( 1 ) // Cloudkill
+ADD_MEMORIZED_SPELL ~SPWI607~ #5 ~wizard~ ( 2 ) // Mislead
+//ADD_MEMORIZED_SPELL ~SPWI614~ #5 ~wizard~ ( 1 ) // deadly fog, already memorized
+ADD_MEMORIZED_SPELL ~SPWI304~ #2 ~wizard~ ( 2 ) // fireball
+ADD_CRE_ITEM ~POTN34~ #0 #0 #0 ~IDENTIFIED~ ~QITEM1~
+ADD_CRE_ITEM ~POTN42~ #0 #0 #0 ~IDENTIFIED~ ~QITEM2~
+
+COPY ~silverrealms/cre/ac#ilel2.cre~ ~override/ac#ilel2.cre~
+  SAY NAME1 @648 SAY NAME2 @648
+  WRITE_ASCII 0x250 ~AC#ILELF~ #8 // CLASS
+SAY INITIAL_MEETING   ~~ [AC#ELLH2]
+SAY SELECT_COMMON1 ~~ [AC#ELLH1]
+SAY SELECT_COMMON2 ~~ [AC#ELLH3]
+SAY BATTLE_CRY1 ~~ [AC#ELLH4]
+SAY BATTLE_CRY2 ~~ [AC#ELLH5]
+SAY BATTLE_CRY3 ~~ [AC#ELLH6]
+SAY DAMAGE ~~ [AC#ELLH7]
+SAY DYING ~~ [AC#ELLH8]
+// SAY DYING ~Das ist also das Ende?~ [AC#ELLH9]
+// WAVC  ~(verrücktes Lachen)~ [AC#ELLHC]
+// WAV ~Gehirn~ [AC#ELLHD]
+// WAV  ~Stimmen im Kopf~ [AC#ELLHE]
+ADD_MEMORIZED_SPELL ~SPWI212~ #1 ~wizard~ ( 3 ) // Mirror image
+ADD_MEMORIZED_SPELL ~SPWI213~ #1 ~wizard~ ( 1 ) // Stinking cloud
+ADD_MEMORIZED_SPELL ~SPWI302~ #2 ~wizard~ ( 1 ) // Dispel magic
+ADD_MEMORIZED_SPELL ~SPWI313~ #2 ~wizard~ ( 1 ) // Skull trap
+ADD_MEMORIZED_SPELL ~SPWI308~ #2 ~wizard~ ( 1 ) // Lightning bolt
+ADD_MEMORIZED_SPELL ~SPWI408~ #3 ~wizard~ ( 2 ) // Stoneskin
+ADD_MEMORIZED_SPELL ~SPWI502~ #4 ~wizard~ ( 1 ) // Cloudkill
+ADD_MEMORIZED_SPELL ~SPWI607~ #5 ~wizard~ ( 2 ) // Mislead
+ADD_MEMORIZED_SPELL ~SPWI614~ #5 ~wizard~ ( 1 ) // deadly fog
+ADD_MEMORIZED_SPELL ~SPWI304~ #2 ~wizard~ ( 2 ) // fireball
+ADD_CRE_ITEM ~POTN34~ #0 #0 #0 ~IDENTIFIED~ ~QITEM1~
+ADD_CRE_ITEM ~POTN42~ #0 #0 #0 ~IDENTIFIED~ ~QITEM2~
+
+COPY ~silverrealms/cre/ac#ilel5.cre~ ~override/ac#ilel5.cre~ // the real Ellhimar, healed, in his home in ACIL5E
+  SAY NAME1 @648 SAY NAME2 @648
+// Soundset: IWD2 - Hexenmeister_männlich
+SAY INITIAL_MEETING   ~~ [AC#ELLH2]
+SAY SELECT_COMMON1 ~~ [AC#ELLH1]
+SAY SELECT_COMMON2 ~~ [AC#ELLH3]
+SAY BATTLE_CRY1 ~~ [AC#ELLH4]
+SAY BATTLE_CRY2 ~~ [AC#ELLH5]
+SAY BATTLE_CRY3 ~~ [AC#ELLH6]
+SAY DAMAGE ~~ [AC#ELLH7]
+SAY DYING ~~ [AC#ELLH8]
+
+
+COPY ~silverrealms/cre/ac#ilel6.cre~ ~override/ac#ilel6.cre~
+  SAY NAME1 @648 SAY NAME2 @648
+
+SAY INITIAL_MEETING   ~~ [AC#ELLHC]
+SAY SELECT_COMMON1 ~~ [AC#ELLHC]
+SAY SELECT_COMMON2 ~~ [AC#ELLHC]
+SAY BATTLE_CRY1 ~~ [AC#ELLHC]
+SAY BATTLE_CRY2 ~~ [AC#ELLHC]
+SAY BATTLE_CRY3 ~~ [AC#ELLHC]
+SAY DAMAGE ~~ [AC#ELLHC]
+SAY DYING ~~ [AC#ELLHC]
+
+COPY ~silverrealms/cre/ac#ilel8.cre~ ~override/ac#ilel8.cre~
+  SAY NAME1 @648 SAY NAME2 @648
+
+SAY INITIAL_MEETING   ~~ [AC#ELLHE]
+SAY SELECT_COMMON1 ~~ [AC#ELLHC]
+SAY SELECT_COMMON2 ~~ [AC#ELLHC]
+SAY BATTLE_CRY1 ~~ [AC#ELLHC]
+SAY BATTLE_CRY2 ~~ [AC#ELLHC]
+SAY BATTLE_CRY3 ~~ [AC#ELLHC]
+SAY DAMAGE ~~ [AC#ELLHC]
+SAY DYING ~~ [AC#ELLHC]
+// SAY DYING ~Das ist also das Ende?~ [AC#ELLH9]
+// WAVC  ~(verrücktes Lachen)~ [AC#ELLHC]
+// WAV ~Gehirn~ [AC#ELLHD]
+// WAV  ~Stimmen im Kopf~ [AC#ELLHE]
+
+COPY ~silverrealms/cre/ac#ilel9.cre~ ~override/ac#ilel9.cre~
+  SAY NAME1 @648 SAY NAME2 @648
+
+SAY INITIAL_MEETING   ~~ [AC#ELLHE]
+SAY SELECT_COMMON1 ~~ [AC#ELLHC]
+SAY SELECT_COMMON2 ~~ [AC#ELLHC]
+SAY BATTLE_CRY1 ~~ [AC#ELLHC]
+SAY BATTLE_CRY2 ~~ [AC#ELLHC]
+SAY BATTLE_CRY3 ~~ [AC#ELLHC]
+SAY DAMAGE ~~ [AC#ELLHC]
+SAY DYING ~~ [AC#ELLHC]
+
+COPY ~silverrealms/cre/AC#24DAE.cre~ ~override/AC#24DAE.cre~ // Daevion'lyr
+  SAY NAME1 @653 SAY NAME2 @653
+ADD_MEMORIZED_SPELL ~SPPR203~ #1 ~priest~ ( 1 ) // CLERIC_CHANT
+ADD_MEMORIZED_SPELL ~SPPR312~ #2 ~priest~ ( 1 ) // CLERIC_STRENGTH_OF_ONE
+ADD_MEMORIZED_SPELL ~SPPR505~ #4 ~priest~ ( 1 ) // CLERIC_TRUE_SIGHT
+ADD_MEMORIZED_SPELL ~SPPR613~ #5 ~priest~ ( 1 ) // CLERIC_PHYSICAL_MIRROR
+ADD_MEMORIZED_SPELL ~AC#GATM~ #6 ~priest~ ( 1 ) // GATE (Marilith)
+
+COPY ~silverrealms/cre/AC#5ONEE.cre~ ~override/AC#5ONEE.cre~ // Neeritha Runescribe
+  SAY NAME1 @657 SAY NAME2 @657
+  
+COPY ~silverrealms/cre/AC#59DW1.cre~ ~override/AC#59DW1.cre~ // Clamri
+  SAY NAME1 @660 SAY NAME2 @660
+  
+COPY ~silverrealms/cre/AC#5EMIN.cre~ ~override/AC#5EMIN.cre~ // Image of a Mindflayer
+  SAY NAME1 @664 SAY NAME2 @664
+  
+COPY ~silverrealms/cre/AC#52HA2.cre~ ~override/AC#52HA2.cre~
+  SAY NAME1 @665 SAY NAME2 @665
+/*
+SAY INITIAL_MEETING   ~~ [AC#ELLH2]
+SAY SELECT_COMMON1 ~~ [AC#ELLH1]
+SAY SELECT_COMMON2 ~~ [AC#ELLH3]
+SAY BATTLE_CRY1 ~~ [AC#ELLH4]
+SAY BATTLE_CRY2 ~~ [AC#ELLH5]
+SAY BATTLE_CRY3 ~~ [AC#ELLH6]
+SAY DAMAGE ~~ [AC#ELLH7]
+*/
+
+COPY ~silverrealms/cre/AC#57DU2.cre~ ~override/AC#57DU2.cre~
+  SAY NAME1 @672 SAY NAME2 @672
+/*
+SAY INITIAL_MEETING   ~~ [AC#ELLH2]
+SAY SELECT_COMMON1 ~~ [AC#ELLH1]
+SAY SELECT_COMMON2 ~~ [AC#ELLH3]
+SAY BATTLE_CRY1 ~~ [AC#ELLH4]
+SAY BATTLE_CRY2 ~~ [AC#ELLH5]
+SAY BATTLE_CRY3 ~~ [AC#ELLH6]
+SAY DAMAGE ~~ [AC#ELLH7]
+*/
+
+COPY ~silverrealms/cre/AC#58DW1.cre~ ~override~ // Dhossaem
+  SAY NAME1 @677 SAY NAME2 @677
+  
+COPY ~silverrealms/cre/AC#58DW2.cre~ ~override~  // Talhund
+  SAY NAME1 @673 SAY NAME2 @673
+  
+COPY ~silverrealms/cre/AC#58DW4.cre~ ~override~  // Talhund
+  SAY NAME1 @673 SAY NAME2 @673
+
+COPY ~silverrealms/cre/AC#58DW3.cre~ ~override~  // Bulmick, dwarven elevator leader
+  SAY NAME1 @674 SAY NAME2 @674
+  
+COPY ~silverrealms/cre/AC#58DW8.cre~ ~override~  // Talhund
+  SAY NAME1 @673 SAY NAME2 @673
+  
+COPY ~silverrealms/cre/AC#58DW9.cre~ ~override~  // Lorsil, guard in ACIL58
+  SAY NAME1 @676 SAY NAME2 @676
+
+COPY ~silverrealms/cre/AC#58PR1.cre~ ~override~  // Thammout Hammermantel, Priest in ACIL58 (Dumathoin's Temple)
+  SAY NAME1 @685 SAY NAME2 @685
+  
+COPY ~silverrealms/cre/AC#WATWR.cre~ ~override~  // Water weird
+  SAY NAME1 @690 SAY NAME2 @690
+  
+COPY ~silverrealms/cre/AC#GOLME.cre~ ~override/AC#GOLME.cre~  // Meta Golem
+  SAY NAME1 @691 SAY NAME2 @691
+  
+COPY ~silverrealms/cre/AC#GOLM2.cre~ ~override/AC#GOLM2.cre~  // Meta Golem 2
+  SAY NAME1 @691 SAY NAME2 @691
+  
+COPY ~silverrealms/cre/AC#53SV1.cre~ ~override/AC#53SV1.cre~  // Schnaiklu Kobaltwächter
+  SAY NAME1 @692 SAY NAME2 @692
+  
+COPY ~silverrealms/cre/AC#2HDU2.cre~ ~override/AC#2HDU2.cre~  // Duergar-Leader
+  SAY NAME1 @700 SAY NAME2 @700
+  
+COPY ~silverrealms/cre/AC#50BSM.cre~ ~override/AC#50BSM.cre~  // Boatsmith
+  SAY NAME1 @710 SAY NAME2 @710
+  
+COPY ~silverrealms/cre/AC#27BS1.cre~ ~override/AC#27BS1.cre~  // Boatsmith
+  SAY NAME1 @710 SAY NAME2 @710
+
+COPY ~silverrealms/cre/AC#27BS2.cre~ ~override/AC#27BS2.cre~  // Boatsmith
+  SAY NAME1 @710 SAY NAME2 @710
+  
+COPY ~silverrealms/cre/AC#27DW1.cre~ ~override/AC#27DW1.cre~  // Soldat Iltkazars
+  SAY NAME1 @712 SAY NAME2 @712
+  
+COPY ~silverrealms/cre/AC#27DW1.cre~ ~override/AC#27DW2.cre~  // Soldat Iltkazars
+  SAY NAME1 @712 SAY NAME2 @712
+   WRITE_ASCII 0x280 ~AC#27DW2~ #32 // Death Variable
+   
+COPY ~silverrealms/cre/AC#27DW3.cre~ ~override/AC#27DW3.cre~  // Ruvans Houseguard
+  SAY NAME1 @713 SAY NAME2 @713
+  
+  COPY ~silverrealms/cre/AC#27DW3.cre~ ~override/AC#27DW4.cre~  // Ruvans Houseguard
+  SAY NAME1 @713 SAY NAME2 @713
+  WRITE_ASCII 0x280 ~AC#27DW4~ #32 // Death Variable
+  
+  COPY ~silverrealms/cre/AC#27DW3.cre~ ~override/AC#27DW5.cre~  // Ruvans Houseguard
+  SAY NAME1 @713 SAY NAME2 @713
+  WRITE_ASCII 0x280 ~AC#27DW5~ #32 // Death Variable
+  
+COPY ~silverrealms/cre/AC#28DW3.cre~ ~override/AC#28DW3.cre~  // Ruvans Houseguard
+  SAY NAME1 @713 SAY NAME2 @713
+  
+COPY ~silverrealms/cre/AC#28DW4.cre~ ~override/AC#28DW4.cre~  // Ruvans Houseguard
+  SAY NAME1 @713 SAY NAME2 @713
+  
+COPY ~silverrealms/cre/AC#28DW5.cre~ ~override/AC#28DW5.cre~  // Ruvans Houseguard
+  SAY NAME1 @713 SAY NAME2 @713
+  
+COPY ~silverrealms/cre/AC#62DW2.cre~ ~override/AC#62DW2.cre~  // Soldier of Bronze Mask
+  SAY NAME1 @718 SAY NAME2 @718
+  
+COPY ~silverrealms/cre/AC#62DW3.cre~ ~override/AC#62DW3.cre~  // Soldier of Bronze Mask
+  SAY NAME1 @718 SAY NAME2 @718
+  
+COPY ~silverrealms/cre/AC#24MDF.cre~ ~override~  // Qall
+  SAY NAME1 @719 SAY NAME2 @719
+  
+COPY ~silverrealms/cre/AC#24DR9.cre~ ~override~  // Malagzmyr
+  SAY NAME1 @720 SAY NAME2 @720
+  
+COPY ~silverrealms/cre/AC#DROW6.cre~ ~override~  // Zilna
+  SAY NAME1 @723 SAY NAME2 @723
+  
+COPY ~silverrealms/cre/AC#TOMGU.cre~ ~override~  // Tome Guardian
+  SAY NAME1 @724 SAY NAME2 @724
+  
+COPY ~silverrealms/cre/AC#53SV2.cre~ ~override~  // Fruntuck
+  SAY NAME1 @734 SAY NAME2 @734
+  
+  SAY INITIAL_MEETING @5023
+  
+COPY ~silverrealms/cre/AC#DRAS3.cre~ ~override~ // Cragnortherma in ACIL46
+  SAY NAME1 @744 SAY NAME2 @744
+  
+COPY ~silverrealms/cre/AC#DRAS4.cre~ ~override~ // Cragnortherma in ACIL09
+  SAY NAME1 @744 SAY NAME2 @744
+
+COPY ~silverrealms/cre/AC#GITH8.cre~ ~override~ // Gith Warrior Krarak in ACIL09 (Axe Bridge Area)
+  SAY NAME1 @745 SAY NAME2 @745
+
+COPY ~silverrealms/cre/AC#GITH9.cre~ ~override~ // Gith Warrior Krarak in ACIL46 ( Magar's Hill)
+  SAY NAME1 @745 SAY NAME2 @745
+
+COPY ~silverrealms/cre/AC#9BEL2.cre~ ~override~ // Aecan
+  SAY NAME1 @747 SAY NAME2 @747
+
+COPY ~silverrealms/cre/AC#FITI1.cre~ ~override~ // Fighter of Tiamat
+  SAY NAME1 @753 SAY NAME2 @753
+
+COPY ~silverrealms/cre/AC#CLTI1.cre~ ~override~ // Kassur
+  SAY NAME1 @754 SAY NAME2 @754
+  
+COPY ~silverrealms/cre/AC#NUZAM.cre~ ~override/AC#NUZAM.cre~ // Nuzam
+  SAY NAME1 @756 SAY NAME2 @756
+  
+COPY ~silverrealms/cre/AC#DRLI1.cre~ ~override/AC#DRLI1.cre~ // Drakolisk
+  SAY NAME1 @757 SAY NAME2 @757
+    
+    
+    COPY_EXISTING ~AC#DRLI1.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#BASILISK_NWN~))
+    
+  
+COPY ~silverrealms/cre/AC#70ST1.cre~ ~override/AC#70ST1.cre~ // Zafroma
+  SAY NAME1 @758 SAY NAME2 @758
+  
+COPY ~silverrealms/cre/AC#71CR1.cre~ ~override/AC#71CR1.cre~ // Sockel
+  SAY NAME1 @763 SAY NAME2 @763
+  
+  COPY_EXISTING ~AC#71CR1.CRE~ ~override/AC#71CR2.CRE~  // Sockel (from #1)
+                         WRITE_ASCII 0x280 ~AC#71CR2~ #32 // Death Variable
+  COPY_EXISTING ~AC#71CR1.CRE~ ~override/AC#71CR3.CRE~  // Sockel (from #1)
+                         WRITE_ASCII 0x280 ~AC#71CR3~ #32 // Death Variable
+  COPY_EXISTING ~AC#71CR1.CRE~ ~override/AC#71CR4.CRE~  // Sockel (from #1)
+                         WRITE_ASCII 0x280 ~AC#71CR4~ #32 // Death Variable
+  COPY_EXISTING ~AC#71CR1.CRE~ ~override/AC#71CR5.CRE~  // Sockel (from #1)
+                         WRITE_ASCII 0x280 ~AC#71CR5~ #32 // Death Variable
+                         
+COPY ~silverrealms/cre/AC#50DW1.cre~ ~override~ // Gate guardian
+  SAY NAME1 @775 SAY NAME2 @775
+  
+COPY ~silverrealms/cre/AC#44DW1.cre~ ~override~ // Gate guardian
+  SAY NAME1 @775 SAY NAME2 @775
+  
+COPY ~silverrealms/cre/AC#44DU1.cre~ ~override~ // Dying Duergar
+  SAY NAME1 @778 SAY NAME2 @778
+  
+COPY ~silverrealms/cre/AC#MYRWT.cre~ ~override~ // Water-Myrmidon
+  SAY NAME1 @784 SAY NAME2 @784
+  
+COPY ~silverrealms/cre/AC#WAND7.cre~ ~override/AC#WAND7.cre~ // Geringerer Stab der Erde und des Gesteins
+  SAY NAME1 @787 SAY NAME2 @787
+
+COPY ~silverrealms/cre/AC#27DO3.cre~ ~override~ // Felswand
+  SAY NAME1 @791 SAY NAME2 @791
+  
+COPY ~silverrealms/cre/AC#S#BY1.cre~ ~override~ // Endrik
+  SAY NAME1 @811 SAY NAME2 @811
+  
+COPY ~silverrealms/cre/AC#S#GI1.cre~ ~override~ // Arilyn
+  SAY NAME1 @812 SAY NAME2 @812
+  
+COPY ~silverrealms/cre/AC#S#04F.cre~ ~override~ // Mother Frawa
+  SAY NAME1 @1010 SAY NAME2 @1010
+  
+COPY ~silverrealms/cre/AC#S#04M.cre~ ~override~ // Father Hegaf
+  SAY NAME1 @1011 SAY NAME2 @1011
+  
+COPY ~silverrealms/cre/AC#S#PIR.cre~ ~override~ // Seabert
+  SAY NAME1 @1014 SAY NAME2 @1014
+
+ // not used anymore
+/*
+COPY ~silverrealms/cre/AC#MARID.cre~ ~override~ // Marid
+  SAY NAME1 @817 SAY NAME2 @817
+*/
+COPY ~silverrealms/cre/ac#s#cd1.cre~ ~override~ // Larkonlan
+  SAY NAME1 @818 SAY NAME2 @818
+
+COPY ~silverrealms/cre/AC#SPRG5.cre~ ~override~ // Spriggan
+  SAY NAME1 @820 SAY NAME2 @820
+  
+COPY ~silverrealms/cre/AC#S#WYV.cre~ ~override~ // Dracowyvern?
+  SAY NAME1 @822 SAY NAME2 @822
+  
+COPY ~silverrealms/cre/AC#BTLCO.cre~ ~override~ // Boring Beetle
+  SAY NAME1 @824 SAY NAME2 @824
+       
+    COPY_EXISTING ~AC#BTLCO.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~BEETLE_BORING~))
+    
+  
+COPY ~silverrealms/cre/AC#50DW2.cre~ ~override~ // Iltkazar Soldier; disappears after first RC encounter
+  SAY NAME1 @838 SAY NAME2 @838
+
+COPY ~silverrealms/cre/AC#50D51.cre~ ~override~ // Iltkazar Soldier; disappears after first RC encounter
+  SAY NAME1 @838 SAY NAME2 @838
+  
+COPY ~silverrealms/cre/AC#50D52.cre~ ~override~ // Iltkazar Soldier; disappears after first RC encounter
+  SAY NAME1 @838 SAY NAME2 @838
+  
+COPY ~silverrealms/cre/AC#50D53.cre~ ~override~ // Iltkazar Soldier; disappears after first RC encounter
+  SAY NAME1 @838 SAY NAME2 @838
+  
+COPY ~silverrealms/cre/AC#50D54.cre~ ~override~ // Iltkazar Soldier; disappears after first RC encounter
+  SAY NAME1 @838 SAY NAME2 @838
+  
+COPY ~silverrealms/cre/AC#50D58.cre~ ~override~ // Iltkazar Soldier; disappears after first RC encounter
+  SAY NAME1 @838 SAY NAME2 @838
+  
+COPY ~silverrealms/cre/AC#S#RES.cre~ ~override~ // Iltkazar Soldier: Rest interrupt
+  SAY NAME1 @838 SAY NAME2 @838
+  
+COPY ~silverrealms/cre/AC#5QDW1.cre~ ~override~ // Rindolf Ironledger
+  SAY NAME1 @839 SAY NAME2 @839
+  
+COPY ~silverrealms/cre/AC#96BD8.cre~ ~override~ // Senora Tulnome
+  SAY NAME1 @841 SAY NAME2 @841
+
+COPY ~silverrealms/cre/AC#96BD9.cre~ ~override~ // Casrach Tulnome
+  SAY NAME1 @840 SAY NAME2 @840
+
+COPY ~silverrealms/cre/ac#drar1.cre~ ~override~ // Charvekannathor: prologue
+  SAY NAME1 @43 SAY NAME2 @43
+  
+COPY ~silverrealms/cre/AC#2UCHA.cre~ ~override~ // Charvekannathor: Malphas cutscene
+  SAY NAME1 @43 SAY NAME2 @43
+  
+COPY ~silverrealms/cre/AC#CHARV.cre~ ~override~ // Charvekannathor: Boss fight
+  SAY NAME1 @43 SAY NAME2 @43
+  
+COPY ~silverrealms/cre/AC#CHARR.cre~ ~override~ // Charvekannathor: Boss fight (Rest interrupt)
+  SAY NAME1 @43 SAY NAME2 @43
+
+  COPY ~silverrealms/cre/AC#47RST.cre~ ~override~ // spawn creature (Rest interrupt)
+  SAY NAME1 @43 SAY NAME2 @43
+  
+COPY ~silverrealms/cre/AC#53CE1.cre~ ~override~ // Iltkazar Soldier #1 guarding cernd's prison
+  SAY NAME1 @838 SAY NAME2 @838
+  
+COPY ~silverrealms/cre/AC#53CE2.cre~ ~override~ // Iltkazar Soldier #2 guarding cernd's prison
+  SAY NAME1 @838 SAY NAME2 @838
+  
+COPY ~silverrealms/cre/AC#CERN1.cre~ ~override~ // Cernd shattermind #1
+  SAY NAME1 @887 SAY NAME2 @887
+
+COPY ~silverrealms/cre/AC#5UCE1.cre~ ~override~ // Iltkazar Soldier #1 guarding cernd's prison
+  SAY NAME1 @838 SAY NAME2 @838
+
+COPY ~silverrealms/cre/AC#5UCE2.cre~ ~override~ // Iltkazar Soldier #1 guarding cernd's prison
+  SAY NAME1 @838 SAY NAME2 @838
+  
+COPY ~silverrealms/cre/AC#S#EAR.cre~ ~override~ // Grav, earth elemental
+  SAY NAME1 @893 SAY NAME2 @893
+  
+COPY ~silverrealms/cre/AC#52DEN.cre~ ~override~ // Dendritic armor seller Thardumin Goliew
+  SAY NAME1 @905 SAY NAME2 @905
+  
+COPY ~silverrealms/cre/AC#81GZ2.cre~ ~override~ // Trapped Creature (Githzerai)
+  SAY NAME1 @923 SAY NAME2 @923
+  
+COPY ~silverrealms/cre/AC#81GZ1.cre~ ~override~ // Githzerai
+  SAY NAME1 @924 SAY NAME2 @924
+  
+COPY ~silverrealms/cre/AC#81LI2.cre~ ~override~ // Trapped Creature (Lich)
+  SAY NAME1 @923 SAY NAME2 @923
+
+COPY ~silverrealms/cre/AC#SKLW2.cre~ ~override~ // Undead Githyanki
+  SAY NAME1 @930 SAY NAME2 @930
+  
+COPY ~silverrealms/cre/AC#LIKI1.cre~ ~override~ // Lizardmen-King
+  SAY NAME1 @931 SAY NAME2 @931
+  
+COPY ~silverrealms/cre/AC#59DW2.cre~ ~override~ // watermaster in ACIL59 (Azerkyn-hall)
+  SAY NAME1 @932 SAY NAME2 @932
+  
+COPY ~silverrealms/cre/AC#59DW3.cre~ ~override~ // worker #3 in ACIL59 (Azerkyn-hall)
+  SAY NAME1 @933 SAY NAME2 @933
+  
+COPY ~silverrealms/cre/AC#59DW4.cre~ ~override~ // worker #4 in ACIL59 (Azerkyn-hall)
+  SAY NAME1 @933 SAY NAME2 @933
+  
+COPY ~silverrealms/cre/AC#59DW5.cre~ ~override~ // oremaster in ACIL59 (Azerkyn-hall)
+  SAY NAME1 @934 SAY NAME2 @934
+
+COPY ~silverrealms/cre/AC#59DW6.cre~ ~override~ // worker #6 (fire elemental encounter) in ACIL59 (Azerkyn-hall)
+  SAY NAME1 @933 SAY NAME2 @933
+  
+COPY ~silverrealms/cre/AC#66DW2.cre~ ~override~ // Iltkazar Soldier inb ACIL66 (Iltkazar under siege)
+  SAY NAME1 @838 SAY NAME2 @838
+  
+COPY ~silverrealms/cre/AC#66DW3.cre~ ~override~ // Iltkazar Soldier inb ACIL66 (Iltkazar under siege)
+  SAY NAME1 @838 SAY NAME2 @838
+  
+COPY ~silverrealms/cre/AC#63DW1.cre~ ~override~ // Iltkazar Soldier inb ACIL63 (regency council; Iltkazar under siege)
+  SAY NAME1 @838 SAY NAME2 @838
+
+COPY ~silverrealms/cre/AC#23RST.cre~ ~override~ // Hall of the blooded moon rest interrupt creature
+  SAY NAME1 @937 SAY NAME2 @937
+  
+COPY ~silverrealms/cre/AC#66SV1.cre~ ~override~ // Deepgnome warrior, ACIL66
+  SAY NAME1 @939 SAY NAME2 @939
+
+COPY ~silverrealms/cre/AC#04MCH.cre~ ~override~ // Merchant in distress
+  SAY NAME1 @943 SAY NAME2 @943
+  
+COPY ~silverrealms/cre/AC#04MCL.cre~ ~override~ // Merchant in distress; higher resistance
+  SAY NAME1 @943 SAY NAME2 @943
+  
+/*__________________________________________________________________
+
+Creatures - prologue
+__________________________________________________________________ */
+COPY ~silverrealms/cre/ac#dwf00.cre~ ~override/ac#dwf00.cre~ // Beldas 00
+  SAY NAME1 @44 SAY NAME2 @44
+SAY INITIAL_MEETING @5000   // Seid mir gegrüßt
+SAY SELECT_COMMON1 @5001
+SAY SELECT_COMMON2 @5002
+SAY SELECT_COMMON3 @5003
+SAY BATTLE_CRY1 @5004
+SAY DAMAGE @5005
+SAY DYING @5006 // Mir geht es gar nicht gut.
+
+COPY ~silverrealms/cre/ac#dwf01.cre~ ~override/ac#dwf01.cre~ // Beldas 01
+  SAY NAME1 @44 SAY NAME2 @44
+  SAY INITIAL_MEETING @5000   // Seid mir gegrüßt
+SAY SELECT_COMMON1 @5001
+SAY SELECT_COMMON2 @5002
+SAY SELECT_COMMON3 @5003
+SAY BATTLE_CRY1 @5004
+SAY DAMAGE @5005
+SAY DYING @5006 // Mir geht es gar nicht gut.
+
+
+COPY ~silverrealms/cre/ac#dwf0a.cre~ ~override/ac#dwf0a.cre~ // Beldas 0A in ACIL 0A
+  SAY NAME1 @44 SAY NAME2 @44
+  SAY INITIAL_MEETING @5000   // Seid mir gegrüßt
+SAY SELECT_COMMON1 @5001
+SAY SELECT_COMMON2 @5002
+SAY SELECT_COMMON3 @5003
+SAY BATTLE_CRY1 @5004
+SAY DAMAGE @5005
+SAY DYING @5006 // Mir geht es gar nicht gut.
+
+  COPY ~silverrealms/cre/ac#dwf02.cre~ ~override/ac#dwf02.cre~ // Beldas 02
+       SAY NAME1 @44 SAY NAME2 @44
+        SAY INITIAL_MEETING @5000   // Seid mir gegrüßt
+        SAY SELECT_COMMON1 @5001
+        SAY SELECT_COMMON2 @5002
+        SAY SELECT_COMMON3 @5003
+        SAY BATTLE_CRY1 @5004
+        SAY DAMAGE @5005
+        SAY DYING @5006 // Mir geht es gar nicht gut.
+
+       COPY ~silverrealms/cre/ac#dwf03.cre~ ~override/ac#dwf03.cre~ // Beldas 03
+        SAY NAME1 @44 SAY NAME2 @44
+        SAY INITIAL_MEETING @5000   // Seid mir gegrüßt
+        SAY SELECT_COMMON1 @5001
+        SAY SELECT_COMMON2 @5002
+        SAY SELECT_COMMON3 @5003
+        SAY BATTLE_CRY1 @5004
+        SAY DAMAGE @5005
+        SAY DYING @5006 // Mir geht es gar nicht gut.
+
+        COPY ~silverrealms/cre/ac#dwf04.cre~ ~override/ac#dwf04.cre~ // Beldas 04
+                         SAY NAME1 @44 SAY NAME2 @44
+                          SAY INITIAL_MEETING @5000   // Seid mir gegrüßt
+                          SAY SELECT_COMMON1 @5001
+                          SAY SELECT_COMMON2 @5002
+                          SAY SELECT_COMMON3 @5003
+                          SAY BATTLE_CRY1 @5004
+                          SAY DAMAGE @5005
+                          SAY DYING @5006 // Mir geht es gar nicht gut.
+
+           COPY ~silverrealms/cre/ac#dwf10.cre~ ~override/ac#dwf10.cre~ // Beldas 10: Dying
+                          SAY NAME1 @44 SAY NAME2 @44
+                          SAY INITIAL_MEETING @5006 // Mir geht es gar nicht gut.
+                          SAY SELECT_COMMON1 @5001
+                          SAY SELECT_COMMON2 @5002
+                          SAY SELECT_COMMON3 @5003
+                          SAY BATTLE_CRY1 @5004
+                          SAY DAMAGE @5005
+                          SAY DYING @5006 // Mir geht es gar nicht gut.
+
+
+COPY ~silverrealms/cre/AC#DWF20.cre~ ~override/AC#DWF20.cre~ // Gormar
+  SAY NAME1 @620 SAY NAME2 @620
+    SAY INITIAL_MEETING @5022
+  SAY SELECT_COMMON1 @5021
+  SAY SELECT_COMMON2 @5022
+  SAY SELECT_COMMON3 @5021
+COPY ~silverrealms/cre/AC#DWF21.cre~ ~override/AC#DWF21.cre~ // Gormar
+  SAY NAME1 @620 SAY NAME2 @620
+      SAY INITIAL_MEETING @5022
+  SAY SELECT_COMMON1 @5021
+  SAY SELECT_COMMON2 @5022
+  SAY SELECT_COMMON3 @5021
+COPY ~silverrealms/cre/AC#DWF2A.cre~ ~override/AC#DWF2A.cre~ // Gormar 2A in ACIL0A
+  SAY NAME1 @620 SAY NAME2 @620
+      SAY INITIAL_MEETING @5022
+  SAY SELECT_COMMON1 @5021
+  SAY SELECT_COMMON2 @5022
+  SAY SELECT_COMMON3 @5021
+  COPY ~silverrealms/cre/AC#DWF22.cre~ ~override/AC#DWF22.cre~ // Gormar
+       SAY NAME1 @620 SAY NAME2 @620
+           SAY INITIAL_MEETING @5022
+  SAY SELECT_COMMON1 @5021
+  SAY SELECT_COMMON2 @5022
+  SAY SELECT_COMMON3 @5021
+    COPY ~silverrealms/cre/AC#DWF23.cre~ ~override/AC#DWF23.cre~ // Gormar
+       SAY NAME1 @620 SAY NAME2 @620
+           SAY INITIAL_MEETING @5022
+  SAY SELECT_COMMON1 @5021
+  SAY SELECT_COMMON2 @5022
+  SAY SELECT_COMMON3 @5021
+          COPY ~silverrealms/cre/AC#DWF24.cre~ ~override/AC#DWF24.cre~ // Gormar
+       SAY NAME1 @620 SAY NAME2 @620
+           SAY INITIAL_MEETING @5022
+  SAY SELECT_COMMON1 @5021
+  SAY SELECT_COMMON2 @5022
+  SAY SELECT_COMMON3 @5021
+  
+COPY ~silverrealms/cre/AC#DWF30.cre~ ~override/AC#DWF30.cre~ // Thradear 
+  SAY NAME1 @621 SAY NAME2 @621
+  SAY INITIAL_MEETING @5010 // Hrm.
+  SAY SELECT_COMMON1 @5011 // Hrm.
+  SAY SELECT_COMMON2 @5012 // Hrm.
+  SAY SELECT_COMMON3 @5011 // Hrm.
+COPY ~silverrealms/cre/AC#DWF31.cre~ ~override/AC#DWF31.cre~ // Thradear 
+  SAY NAME1 @621 SAY NAME2 @621
+  SAY NAME1 @621 SAY NAME2 @621
+  SAY INITIAL_MEETING @5010 // Hrm.
+  SAY SELECT_COMMON1 @5011 // Hrm.
+  SAY SELECT_COMMON2 @5012 // Hrm.
+  SAY SELECT_COMMON3 @5011 // Hrm.
+COPY ~silverrealms/cre/AC#DWF3A.cre~ ~override/AC#DWF3A.cre~ // Thradear 3A in ACIL0A
+  SAY NAME1 @621 SAY NAME2 @621
+  SAY NAME1 @621 SAY NAME2 @621
+  SAY INITIAL_MEETING @5010 // Hrm.
+  SAY SELECT_COMMON1 @5011 // Hrm.
+  SAY SELECT_COMMON2 @5012 // Hrm.
+  SAY SELECT_COMMON3 @5011 // Hrm.
+  COPY ~silverrealms/cre/AC#DWF32.cre~ ~override/AC#DWF32.cre~ // Thradear 
+       SAY NAME1 @621 SAY NAME2 @621
+       SAY NAME1 @621 SAY NAME2 @621
+  SAY INITIAL_MEETING @5010 // Hrm.
+  SAY SELECT_COMMON1 @5011 // Hrm.
+  SAY SELECT_COMMON2 @5012 // Hrm.
+  SAY SELECT_COMMON3 @5011 // Hrm.
+    COPY ~silverrealms/cre/AC#DWF33.cre~ ~override/AC#DWF33.cre~ // Thradear 
+       SAY NAME1 @621 SAY NAME2 @621
+         SAY NAME1 @621 SAY NAME2 @621
+  SAY INITIAL_MEETING @5010 // Hrm.
+  SAY SELECT_COMMON1 @5011 // Hrm.
+  SAY SELECT_COMMON2 @5012 // Hrm.
+  SAY SELECT_COMMON3 @5011 // Hrm.
+                   COPY ~silverrealms/cre/AC#DWF34.cre~ ~override/AC#DWF34.cre~ // Thradear 
+       SAY NAME1 @621 SAY NAME2 @621
+         SAY NAME1 @621 SAY NAME2 @621
+  SAY INITIAL_MEETING @5010 // Hrm.
+  SAY SELECT_COMMON1 @5011 // Hrm.
+  SAY SELECT_COMMON2 @5012 // Hrm.
+  SAY SELECT_COMMON3 @5011 // Hrm.
+
+
+COPY ~silverrealms/cre/AC#S#MS1.cre~ ~override~ // Messenger
+
+COPY ~silverrealms/cre/AC#ALDYM.cre~ ~override~ //Aldym Ryscelsar
+  SAY NAME1 @504 SAY NAME2 @504
+COPY ~silverrealms/cre/AC#ALDY2.cre~ ~override~ // Aldym: Final Fight - Boss Enemy
+  SAY NAME1 @504 SAY NAME2 @504
+COPY ~silverrealms/cre/AC#ALDY3.cre~ ~override~ // Aldym: crumbled tower-dying
+  SAY NAME1 @504 SAY NAME2 @504
+COPY ~silverrealms/cre/AC#ALDY4.cre~ ~override~ // Aldym#4: crumbled tower-rescued
+  SAY NAME1 @504 SAY NAME2 @504
+
+COPY ~silverrealms/cre/AC#LIZS1.cre~ ~override~ // Lizard Shaman
+/*
+ADD_MEMORIZED_SPELL ~SPPR203~ #1 ~priest~ ( 1 ) // chant
+ADD_MEMORIZED_SPELL ~SPPR204~ #1 ~priest~ ( 2 ) // charm person
+ADD_MEMORIZED_SPELL ~SPPR416~ #3 ~priest~ ( 1 ) // cloak of fear
+ADD_MEMORIZED_SPELL ~AC#C402~ #3 ~priest~ ( 1 ) // summon animals (snakes)
+*/
+
+COPY ~silverrealms/cre/AC#CROW1.cre~ ~override~ // Endfight: Crow
+  SAY NAME1 @959 SAY NAME2 @959
+      
+    COPY_EXISTING ~AC#CROW1.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#RAVEN~))
+    
+  
+COPY ~silverrealms/cre/AC#CROW2.cre~ ~override~ // Endfight: Crow = malphas
+  SAY NAME1 @959 SAY NAME2 @959
+       
+    COPY_EXISTING ~AC#CROW2.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#RAVEN~))
+    
+
+COPY ~silverrealms/cre/AC#9AGD1.cre~ ~override~ // Galeb Duhr (Montrous Manual)
+  SAY NAME1 @982 SAY NAME2 @982
+  
+   
+    COPY_EXISTING ~AC#9AGD1.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#EARTH_ELEMENTAL_HUGE~))
+    
+  
+COPY ~silverrealms/cre/AC#REMHZ.cre~ ~override~ // Remorhaz (Montrous Manual)
+  SAY NAME1 @998 SAY NAME2 @998
+  
+COPY ~silverrealms/cre/AC#WDLAC.cre~ ~override~ // Lacedon - Brother Stirdorn
+  SAY NAME1 @1102 SAY NAME2 @1102
+  
+COPY ~silverrealms/cre/AC#4IDR4.cre~ ~override~ // Seabert (Dancing Giant Inn)
+  SAY NAME1 @1107 SAY NAME2 @1107
+  
+COPY ~silverrealms/cre/AC#4ITHF.cre~ ~override~ // Cuvorkan (Lands of Intrigue, Book Amn, p.42)
+  SAY NAME1 @1108 SAY NAME2 @1108
+  
+COPY ~silverrealms/cre/AC#4ITH2.cre~ ~override~ // Cuvorkan (Lands of Intrigue, Book Amn, p.42)
+  SAY NAME1 @1108 SAY NAME2 @1108
+  
+COPY ~silverrealms/cre/ac#s#cd3.cre~ ~override~ // Larkonlan in sewers
+  SAY NAME1 @818 SAY NAME2 @818
+/*
+ADD_MEMORIZED_SPELL ~SPWI312~ #2 ~wizard~ ( 1 ) // slow
+ADD_MEMORIZED_SPELL ~SPWI316~ #2 ~wizard~ ( 1 ) // dire charm
+ADD_MEMORIZED_SPELL ~AC#0702~ #2 ~wizard~ ( 1 ) // invisibility 10 foot (enemy)
+ADD_MEMORIZED_SPELL ~SPWI504~ #4 ~wizard~ ( 1 ) // Monster summoning 3
+ADD_MEMORIZED_SPELL ~SPWI523~ #4 ~wizard~ ( 1 ) // Sunfire
+ADD_MEMORIZED_SPELL ~SPWI607~ #5 ~wizard~ ( 1 ) // Mislead
+ADD_MEMORIZED_SPELL ~SPWI623~ #5 ~wizard~ ( 1 ) // Carrion
+*/
+  
+COPY ~silverrealms/cre/AC#IL04O.cre~ ~override~ // Onnor
+  SAY NAME1 @1113 SAY NAME2 @1113
+  
+COPY ~silverrealms/cre/AC#71DRL.cre~ ~override~ // Dracolich (TSR#8101; Cult of the dragon; German version pp. 116 ff)
+  SAY NAME1 @25 SAY NAME2 @25
+  
+  
+    
+    COPY_EXISTING ~AC#71DRL.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#DRACOLICH~))
+    
+  
+COPY ~silverrealms/cre/AC#71CR6.cre~ ~override~ // dragon skeleton
+  SAY NAME1 @26 SAY NAME2 @26
+  
+COPY ~silverrealms/cre/AC#2TTIA.cre~ ~override~ // malphas' lady (Tiamat)
+  SAY NAME1 @1127 SAY NAME2 @1127
+  
+COPY ~silverrealms/cre/AC#50DWF.cre~ ~override~ // Domor the fisherman
+  SAY NAME1 @1129 SAY NAME2 @1129
+  
+COPY ~silverrealms/cre/AC#20DW8.cre~ ~override~ // dwarven warrior in Area ACIL20, guarding the sealed entrance to Barakuir lake
+  SAY NAME1 @9000 SAY NAME2 @9000
+  
+COPY ~silverrealms/cre/AC#20DW9.cre~ ~override~ // dwarven priest in Area ACIL20, guarding the sealed entrance to Barakuir lake
+  SAY NAME1 @9001 SAY NAME2 @9001
+  
+COPY ~silverrealms/cre/AC#BLPU1.cre~ ~override~ // black pudding
+  SAY NAME1 @9002 SAY NAME2 @9002
+  
+COPY ~silverrealms/cre/AC#T2DU1.cre~ ~override~ // duergar clanchief
+  SAY NAME1 @9003 SAY NAME2 @9003
+    SAY INITIAL_MEETING   #4939
+  SAY SELECT_COMMON1 #4939
+  
+COPY ~silverrealms/cre/AC#57STK.cre~ ~override~ // astral stalker (MM 4th ed. p. 10)
+  SAY NAME1 @9004 SAY NAME2 @9004
+  
+COPY ~silverrealms/cre/AC#ELWAT.cre~ ~override~ // water elemental
+  SAY NAME1 @9005 SAY NAME2 @9005
+  
+COPY ~silverrealms/cre/AC#SPSPI.cre~ ~override~ // spitting spider (Drow of the Underdark 3rd Ed.; pp. 141–142)
+  SAY NAME1 @9006 SAY NAME2 @9006
+  
+COPY ~silverrealms/cre/AC#MYRL1.cre~ ~override~ // Myrlochar (Drow of the Underdark 2nd Ed; p. 113 - German version)
+  SAY NAME1 @9007 SAY NAME2 @9007
+  
+COPY ~silverrealms/cre/AC#75REV.cre~ ~override~ // Reverend One (Elves of Evermeet)
+  SAY NAME1 @9008 SAY NAME2 @9008
+  
+COPY ~silverrealms/cre/AC#67GEL.cre~ ~override~ // Gelugon
+  SAY NAME1 @9009 SAY NAME2 @9009
+      
+    
+    COPY_EXISTING ~AC#67GEL.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#GELUGON~))
+    
+
+COPY ~silverrealms/cre/AC#FEYR1.cre~ ~override~ // greater feyr
+  SAY NAME1 @9010 SAY NAME2 @9010
+    
+    
+    COPY_EXISTING ~AC#FEYR1.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~FEYR_GREATER~))
+    
+
+COPY ~silverrealms/cre/AC#61DW1.cre~ ~override~ // worker in ACIL61 (Azerkyn-hall), to be rescued
+  SAY NAME1 @933 SAY NAME2 @933
+  
+COPY ~silverrealms/cre/AC#BLBO1.cre~ ~override~ // Blazing Bones (Monstrous Compendium Annual Volume One., p. 18. )
+  SAY NAME1 @9011 SAY NAME2 @9011
+  
+COPY ~silverrealms/cre/AC#41PAL.cre~ ~override~ // Paladin, dragon slayer (without a dragon)
+  SAY NAME1 @9012 SAY NAME2 @9012
+  
+COPY ~silverrealms/cre/AC#URHIS.cre~ ~override~ // Ur-Histachii (Cult of the dragon)
+  SAY NAME1 @9013 SAY NAME2 @9013
+  
+COPY ~silverrealms/cre/AC#53SVM.cre~ ~override~ // Krerthmull Staubmarker (deep gnome explosives seller)
+  SAY NAME1 @63 SAY NAME2 @63
+
+COPY ~silverrealms/cre/AC#28LAC.cre~ ~override~ // Duerghul (own creation :-))
+  SAY NAME1 @9014 SAY NAME2 @9014
+      
+    COPY_EXISTING ~AC#28LAC.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#DROWNED_DEAD_SMALL~))
+    
+
+COPY ~silverrealms/cre/ac#28la2.cre~ ~override~ // Duerghul (own creation :-))
+  SAY NAME1 @9014 SAY NAME2 @9014
+        
+    COPY_EXISTING ~AC#28la2.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#DROWNED_DEAD_SMALL~))
+    
+  
+COPY ~silverrealms/cre/AC#ELGHO.cre~ ~override~ // Elghonn (Dragon Annual #1 (1996), p.40)
+  SAY NAME1 @9015 SAY NAME2 @9015
+  
+COPY ~silverrealms/cre/AC#URID1.cre~ ~override~ // Uridezu (Marco Volo adventure series)
+  SAY NAME1 @9016 SAY NAME2 @9016
+  
+COPY ~silverrealms/cre/AC#ABWH1.cre~ ~override~ // White Abishai (Tyrants of the nine hells, p. 110)
+  SAY NAME1 @9017 SAY NAME2 @9017
+  
+COPY ~silverrealms/cre/AC#50TGU.cre~ ~override~ // Dulman Ironrist, town guide in Iltkazar (ACIL50)
+  SAY NAME1 @9018 SAY NAME2 @9018
+  
+COPY ~silverrealms/cre/AC#CRYCA.cre~ ~override~
+  SAY NAME1 @9019 SAY NAME2 @9019
+  
+COPY ~silverrealms/cre/AC#ALHO1.cre~ ~override~ // Alhoon in Barakuir
+// give alhoon the abilities as in AD&D described:
+// 9th level mage (spells: 4, 3, 3, 2, 1)
+
+ADD_MEMORIZED_SPELL ~SPWI203~ #1 ~wizard~ ( 1 ) // detect invisibility
+ADD_MEMORIZED_SPELL ~SPWI203~ #1 ~wizard~ ( 1 ) // detect invisibility
+ADD_MEMORIZED_SPELL ~SPWI205~ #1 ~wizard~ ( 1 ) // horror
+ADD_MEMORIZED_SPELL ~SPWI212~ #1 ~wizard~ ( 1 ) // mirror image
+ADD_MEMORIZED_SPELL ~SPWI304~ #2 ~wizard~ ( 1 ) // fireball
+ADD_MEMORIZED_SPELL ~SPWI308~ #2 ~wizard~ ( 1 ) // lightning bolt
+ADD_MEMORIZED_SPELL ~SPWI312~ #2 ~wizard~ ( 1 ) // slow
+ADD_MEMORIZED_SPELL ~SPWI421~ #3 ~wizard~ ( 1 ) // teleport field
+ADD_MEMORIZED_SPELL ~SPWI408~ #3 ~wizard~ ( 1 ) // stoneskin
+
+COPY ~silverrealms/cre/AC#ILDRT.cre~ ~override~ // Dretch
+  SAY NAME1 @9020 SAY NAME2 @9020 
+  
+COPY ~silverrealms/cre/AC#4OFMY.cre~ ~override~ // Fire Myrmidon
+  SAY NAME1 @9021 SAY NAME2 @9021
+  
+COPY ~silverrealms/cre/AC#4OFM2.cre~ ~override/AC#4OFM2.cre~ // Fire Myrmidon #2
+  SAY NAME1 @9022 SAY NAME2 @9022
+  
+COPY ~silverrealms/cre/AC#DORNA.cre~ ~override~ // Dorna Riftsong, high priestess of Dugmaren in area ACIL5D
+  SAY NAME1 @9023 SAY NAME2 @9023
+  
+COPY ~silverrealms/cre/AC#50GU1.cre~ ~override~ // Glowing stone in area ACIL50 (Iltkazar)
+  SAY NAME1 @9024 SAY NAME2 @9024
+
+COPY ~silverrealms/cre/AC#50G51.cre~ ~override~ // Glowing stone in area ACIL50 (Iltkazar) guiding to ancient forge (ACIL51)
+  SAY NAME1 @9024 SAY NAME2 @9024
+
+// copying the other glow stones:
+   COPY ~silverrealms/cre/AC#50G51.cre~ ~override/AC#50G52.cre~ // Glowing stone in area ACIL50 (Iltkazar) guiding to Haela's halls (ACIL52)
+        SAY NAME1 @9024 SAY NAME2 @9024
+        WRITE_ASCII 0x280 ~AC#50G52~ #32 // Death Variable
+        WRITE_ASCII 0x248 ~AC#50G52~ #8  //override script
+        
+        // copying the other glow stones:
+   COPY ~silverrealms/cre/AC#50G51.cre~ ~override/AC#50G53.cre~ // Glowing stone in area ACIL50 (Iltkazar) guiding to hall of runstones (ACIL53)
+        SAY NAME1 @9024 SAY NAME2 @9024
+        WRITE_ASCII 0x280 ~AC#50G53~ #32 // Death Variable
+        WRITE_ASCII 0x248 ~AC#50G53~ #8  //override script
+        
+   // copying the other glow stones:
+   COPY ~silverrealms/cre/AC#50G51.cre~ ~override/AC#50G54.cre~ // Glowing stone in area ACIL50 (Iltkazar) guiding to Bloody bulwark (ACIL54)
+        SAY NAME1 @9024 SAY NAME2 @9024
+        WRITE_ASCII 0x280 ~AC#50G54~ #32 // Death Variable
+        WRITE_ASCII 0x248 ~AC#50G54~ #8  //override script
+        
+   // copying the other glow stones:
+   COPY ~silverrealms/cre/AC#50G51.cre~ ~override/AC#50G55.cre~ // Glowing stone in area ACIL50 (Iltkazar) guiding to Hall of Arnskull (ACIL55)
+        SAY NAME1 @9024 SAY NAME2 @9024
+        WRITE_ASCII 0x280 ~AC#50G55~ #32 // Death Variable
+        WRITE_ASCII 0x248 ~AC#50G55~ #8  //override script
+        
+   // copying the other glow stones:
+   COPY ~silverrealms/cre/AC#50G51.cre~ ~override/AC#50G56.cre~ // Glowing stone in area ACIL50 (Iltkazar) guiding to Bronze mask (ACIL56)
+        SAY NAME1 @9024 SAY NAME2 @9024
+        WRITE_ASCII 0x280 ~AC#50G56~ #32 // Death Variable
+        WRITE_ASCII 0x248 ~AC#50G56~ #8  //override script
+        
+   // copying the other glow stones:
+   COPY ~silverrealms/cre/AC#50G51.cre~ ~override/AC#50G58.cre~ // Glowing stone in area ACIL50 (Iltkazar) guiding to hall of omlars (ACIL58)
+        SAY NAME1 @9024 SAY NAME2 @9024
+        WRITE_ASCII 0x280 ~AC#50G58~ #32 // Death Variable
+        WRITE_ASCII 0x248 ~AC#50G58~ #8  //override script
+        
+   // copying the other glow stones:
+   COPY ~silverrealms/cre/AC#50G51.cre~ ~override/AC#50G62.cre~ // Glowing stone in aerea ACIL50 (Iltkazar) guiding to regency council (ACIL62)
+        SAY NAME1 @9024 SAY NAME2 @9024
+        WRITE_ASCII 0x280 ~AC#50G62~ #32 // Death Variable
+        WRITE_ASCII 0x248 ~AC#50G62~ #8  //override script
+        
+   // copying the other glow stones:
+   COPY ~silverrealms/cre/AC#50G51.cre~ ~override/AC#50G5O.cre~ // Glowing stone in area ACIL50 (Iltkazar) guiding to Oghma's temple (ACIL5O)
+        SAY NAME1 @9024 SAY NAME2 @9024
+        WRITE_ASCII 0x280 ~AC#50G5O~ #32 // Death Variable
+        WRITE_ASCII 0x248 ~AC#50G5O~ #8  //override script
+
+   // copying the other glow stones:
+   COPY ~silverrealms/cre/AC#50G51.cre~ ~override/AC#50G5Q.cre~ // Glowing stone in area ACIL50 (Iltkazar) guiding to Vronia's mansion (ACIL5Q)
+        SAY NAME1 @9024 SAY NAME2 @9024
+        WRITE_ASCII 0x280 ~AC#50G5Q~ #32 // Death Variable
+        WRITE_ASCII 0x248 ~AC#50G5Q~ #8  //override script
+        
+   // copying the other glow stones:
+   COPY ~silverrealms/cre/AC#50G51.cre~ ~override/AC#50G5E.cre~ // Glowing stone in area ACIL50 (Iltkazar) guiding to Ellhimar's house (ACIL5E)
+        SAY NAME1 @9024 SAY NAME2 @9024
+        WRITE_ASCII 0x280 ~AC#50G5E~ #32 // Death Variable
+        WRITE_ASCII 0x248 ~AC#50G5E~ #8  //override script
+
+COPY ~silverrealms/cre/AC#55TDR.cre~ ~override~ // Thargrun Drunkensong in area ACIL55 (Arnskull Hall)
+  SAY NAME1 @9025 SAY NAME2 @9025
+  
+COPY ~silverrealms/cre/AC#55DW2.cre~ ~override~ // Overseer Brommund in area ACIL55 (Arnskull Hall)
+  SAY NAME1 @9026 SAY NAME2 @9026
+  
+COPY ~silverrealms/cre/AC#2DDBA.cre~ ~override~ // Nimmuk, a dwarven banshee in area ACIL2D (source: TSR#2405 Dark Sun monstrous compendium)
+  SAY NAME1 @9027 SAY NAME2 @9027
+  
+COPY ~silverrealms/cre/AC#50STY.cre~ ~override~ // Crael, glowing stone seller
+  SAY NAME1 @9028 SAY NAME2 @9028
+  
+COPY ~silverrealms/cre/AC#PSGRO.cre~ ~override~ // psionic gray ooze, MM
+  SAY NAME1 @9029 SAY NAME2 @9029
+  
+COPY ~silverrealms/cre/AC#VODY1.cre~ ~override~ // Vodyanoi, MM
+  SAY NAME1 @9030 SAY NAME2 @9030
+    
+    COPY_EXISTING ~AC#VODY1.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~UMBER_HULK_VODYANOI~))
+    
+
+COPY ~silverrealms/cre/AC#01MSH.cre~ ~override~ // Maram's shadow (own creation)
+  SAY NAME1 @9031 SAY NAME2 @9031
+     
+    COPY_EXISTING ~AC#01MSH.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#VERBEEG_LARGE~))
+    
+
+COPY ~silverrealms/cre/AC#DMSP1.cre~ ~override~ // Doomsphere, ghost beholder; Ruins of Myth Drannor, p.24
+  SAY NAME1 @9032 SAY NAME2 @9032
+        
+    
+    COPY_EXISTING ~AC#DMSP1.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#BEHOLDER_DOOMSPHERE~))
+    
+  
+COPY ~silverrealms/cre/AC#WOD01.cre~ ~override~ // Will-o-deep (Ravenloft Monstrous Compendium)
+  SAY NAME1 @9033 SAY NAME2 @9033
+  
+COPY ~silverrealms/cre/AC#EAWH1.cre~ ~override~ // earth whisper (Races of stone, p. 187)
+  SAY NAME1 @9034 SAY NAME2 @9034
+        
+    
+    COPY_EXISTING ~AC#EAWH1.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#EARTWHISPER~))
+    
+  
+COPY ~silverrealms/cre/AC#HAMG1.cre~ ~override~ // hammer golem (TSR monstrous compendium annual Vol.I, p. 66)
+  SAY NAME1 @9035 SAY NAME2 @9035
+     
+    COPY_EXISTING ~AC#HAMG1.cre~ ~override~
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#GOLEM_HAMMER~))
+    

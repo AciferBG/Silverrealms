@@ -1,0 +1,27 @@
+IF
+	Global("Gith_Spawn","ACIL46",10)
+THEN
+	RESPONSE #100
+                 EscapeArea()
+END
+
+IF
+	Global("Gith_Spawn","ACIL46",6)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+ 	         ChangeEnemyAlly(Myself,GOODBUTBLUE)
+		 Attack("AC#DRAS3")
+END
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,32 @@
+IF
+	Global("AC#EnteredSpiderstalkings","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#EnteredSpiderstalkings","GLOBAL",1)
+		TriggerActivation("Trap_Drow01",FALSE)
+		SpawnPtDeactivate("MyrlocharSpawn01")
+END
+
+IF
+	Global("AC#Door25","ACIL25",2)
+	Global("Deactivate","ACIL25",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Deactivate","ACIL25",1)
+		TriggerActivation("Doorhead",FALSE)
+                OpenDoor("DOOR01")
+END
+
+IF
+	Global("AC#25_LolthPriestess","GLOBAL",1)
+THEN
+	RESPONSE #100
+        SetGlobal("AC#25_LolthPriestess","GLOBAL",2)
+		TriggerActivation("Trap_Drow01",TRUE)
+		SpawnPtActivate("MyrlocharSpawn01")
+		CreateCreature("AC#DROW6",[2428.339],0)  // Zilna Khaven-Ghell 
+		CreateCreature("AC#DROW7",[2309.280],5) // Drow Warrior
+		CreateCreature("AC#DROW8",[2535.285],13) // Drow Warrior
+		CreateCreature("AC#DROW7",[1112.826],9) // Drow Warrior
+		CreateCreature("AC#DROW7",[2206.406],5)  // Drow Warrior
+END

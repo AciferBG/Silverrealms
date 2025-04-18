@@ -1,0 +1,10 @@
+IF
+	OR(2)
+		Die()
+		HPLT(Myself,1)
+THEN
+	RESPONSE #100
+		CreateVisualEffectObject("SPDISPMA",Myself)
+		DestroySelf()
+END
+

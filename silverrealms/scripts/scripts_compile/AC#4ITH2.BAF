@@ -1,0 +1,111 @@
+IF
+	Global("AC#Sunfire","AR0701",1)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#Sunfire","AR0701",2)
+		DisplayString(Myself,46150)  // trinkt einen Trank
+		ApplySpell(Myself,ICE_DUST)
+		DestroyItem("WAND16")
+END
+
+IF
+	See(NearestEnemyOfType([0.0.0.MAGE_ALL]))
+	Global("Prep","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Prep","LOCALS",1)
+		EquipRanged()
+		AttackOneRound(LastSeenBy(Myself))
+END
+
+IF
+	See(NearestEnemyOfType([0.0.0.CLERIC_ALL]))
+	Global("Prep","LOCALS",1)
+THEN
+	RESPONSE #100
+		SetGlobal("Prep","LOCALS",2)
+		EquipRanged()
+		AttackOneRound(LastSeenBy(Myself))
+END
+
+IF
+	HasItem("POTN24",Myself)  
+	See(NearestEnemyOf(Myself))
+	HPPercentLT(Myself,50)
+	!GlobalTimerNotExpired("DrankPotionTimer","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("DrankPotionTimer","LOCALS",ONE_ROUND)
+		DisplayStringHead(Myself,46150)  // trinkt einen Trank
+		UseItem("POTN24",Myself)  
+END
+
+IF
+	HasItem("POTN52",Myself)  // Konzentrierter Heiltrank
+	See(NearestEnemyOf(Myself))
+	HPPercentLT(Myself,50)
+	!GlobalTimerNotExpired("DrankPotionTimer","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("DrankPotionTimer","LOCALS",ONE_ROUND)
+		DisplayStringHead(Myself,46150)  // trinkt einen Trank
+		UseItem("POTN52",Myself)  // Konzentrierter Heiltrank
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	See(NearestEnemyOfType([0.0.0.CLERIC_ALL]))
+	!StateCheck(Myself,STATE_INVISIBLE)
+	!StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
+	!GlobalTimerNotExpired("DrankPotionTimer","LOCALS")
+	HasItem("POTN10",Myself)  // Unsichtbarkeitstrank
+THEN
+	RESPONSE #100
+		SetGlobalTimer("DrankPotionTimer","LOCALS",ONE_ROUND)
+		DisplayStringHead(Myself,46150)  // trinkt einen Trank
+		UseItem("POTN10",Myself)  // Unsichtbarkeitstrank
+		EquipMostDamagingMelee()
+		AttackOneRound(LastSeenBy(Myself))
+END
+
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Range(NearestEnemyOf(Myself),5)
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+		AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	!Range(NearestEnemyOf(Myself),5)
+THEN
+	RESPONSE #100
+		EquipRanged()
+		AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Range(NearestEnemyOf(Myself),5)
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+		AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+	AttackedBy([ANYONE],DEFAULT)
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastAttackerOf(Myself),30)
+END

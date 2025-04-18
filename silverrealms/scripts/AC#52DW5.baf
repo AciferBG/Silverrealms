@@ -1,0 +1,94 @@
+IF
+  OR(2)
+  !See([PC])
+  !Range([PC],15)
+THEN
+  RESPONSE #100
+    ClearActions(Myself)
+    ActionOverride("AC#52DW4",ClearActions(Myself))
+    MoveToPoint([269.606])
+    ActionOverride("AC#52DW4",MoveToPoint([351.677]))
+    Continue()
+END
+
+IF
+	HitBy("AC#52DW4",CRUSHING)
+        RandomNum(3,1)
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,999999)
+		Wait(2)
+		ActionOverride("AC#52DW4",DisplayStringHead(Myself,999998))
+                Continue()
+END
+
+IF
+	HitBy("AC#52DW4",CRUSHING)
+        RandomNum(3,2)
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,999997)
+		Wait(2)
+		ActionOverride("AC#52DW4",DisplayStringHead(Myself,999996))
+                Continue()
+END
+
+IF
+  See([PC])
+  Range(LastSeenBy(Myself),15)
+THEN
+  RESPONSE #50
+    DisplayStringHead(Myself,999997)
+    ActionOverride("AC#52DW5",DialogueInterrupt(FALSE))
+    ActionOverride("AC#52DW4",DialogueInterrupt(FALSE))
+    ActionOverride("AC#52DW5",AttackOneRound("AC#52DW4")
+    ActionOverride("AC#52DW4",AttackOneRound("AC#52DW5")
+  RESPONSE #50
+    ActionOverride("AC#52DW4",DisplayStringHead(Myself,999996))
+    ActionOverride("AC#52DW5",DialogueInterrupt(FALSE))
+    ActionOverride("AC#52DW4",DialogueInterrupt(FALSE))
+    ActionOverride("AC#52DW5",AttackOneRound("AC#52DW4")
+    ActionOverride("AC#52DW4",AttackOneRound("AC#52DW5")
+  RESPONSE #50
+    DisplayStringHead(Myself,999999)
+    ActionOverride("AC#52DW5",DialogueInterrupt(FALSE))
+    ActionOverride("AC#52DW4",DialogueInterrupt(FALSE))
+    ActionOverride("AC#52DW5",AttackOneRound("AC#52DW4")
+    ActionOverride("AC#52DW4",AttackOneRound("AC#52DW5")
+  RESPONSE #50
+    ActionOverride("AC#52DW4",DisplayStringHead(Myself,999998))
+    ActionOverride("AC#52DW5",DialogueInterrupt(FALSE))
+    ActionOverride("AC#52DW4",DialogueInterrupt(FALSE))
+    ActionOverride("AC#52DW5",AttackOneRound("AC#52DW4")
+    ActionOverride("AC#52DW4",AttackOneRound("AC#52DW5")
+  RESPONSE #100
+    ActionOverride("AC#52DW5",DialogueInterrupt(FALSE))
+    ActionOverride("AC#52DW4",DialogueInterrupt(FALSE))
+    ActionOverride("AC#52DW5",AttackOneRound("AC#52DW4")
+    ActionOverride("AC#52DW4",AttackOneRound("AC#52DW5")
+END
+
+IF
+  See([PC])
+  Range(LastSeenBy(Myself),15)
+THEN
+  RESPONSE #100
+    ActionOverride("AC#52DW5",DialogueInterrupt(FALSE))
+    ActionOverride("AC#52DW4",DialogueInterrupt(FALSE))
+    ActionOverride("AC#52DW5",AttackOneRound("AC#52DW4")
+    ActionOverride("AC#52DW4",AttackOneRound("AC#52DW5")
+END
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,7 @@
+IF
+	GlobalGT("AC#BreskQuest","GLOBAL",0)
+THEN
+	RESPONSE #100
+		EscapeArea()
+END
+

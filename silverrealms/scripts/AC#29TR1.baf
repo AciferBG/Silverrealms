@@ -1,0 +1,32 @@
+/*
+AC#29MI1
+
+Spiegelfalle AC#29MI1 in der Betrachterhöhle
+*/
+IF
+	Entered([0.0.0.0.0.SUMMONED])
+	!Dead("AC#BEH04")
+	!StateCheck(LastTrigger,STATE_INVISIBLE)
+	!StateCheck(LastTrigger,STATE_IMPROVEDINVISIBILITY)
+THEN
+	RESPONSE #100
+                IncrementGlobal("Trigger_AC#29MI1","ACIL29",1)
+                ActionOverride("AC#BEH04",ReallyForceSpell("AC#29MI1",WIZARD_DEATH_SPELL))
+                SmallWait(20)
+		ReallyForceSpell(LastTrigger,WIZARD_DEATH_SPELL)
+END
+
+IF
+	Entered([PC])
+	!Dead("AC#BEH04")
+	!StateCheck(LastTrigger,STATE_INVISIBLE)
+	!StateCheck(LastTrigger,STATE_IMPROVEDINVISIBILITY)
+THEN
+	RESPONSE #100
+                IncrementGlobal("Trigger_AC#29MI1","ACIL29",1)
+                ActionOverride("AC#BEH04",ForceSpell("AC#29MI1",BEHOLDER_DOMINATION))
+                SmallWait(20)
+		ForceSpell(LastTrigger,BEHOLDER_DOMINATION)
+END
+
+

@@ -1,0 +1,13 @@
+IF
+        //Heard("AC#WAND7",300)
+        Heard([ANYONE],300)
+        //Heard([ANYONE],OPENDOOR)
+        //Detect("AC#WAND7")
+        Global("AC#DOOR03","ACIL27",0)
+THEN
+	RESPONSE #100
+          //Wait(3)
+          DisplayStringHead(Myself,999999)
+          SetGlobal("AC#DOOR03","ACIL27",1)
+END
+

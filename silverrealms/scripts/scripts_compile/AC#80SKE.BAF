@@ -1,0 +1,15 @@
+IF
+	See(NearestEnemyOf(Myself))
+	Global("SkeletonFight","ACIL80",0)
+THEN
+	RESPONSE #100
+		SetGlobal("SkeletonFight","ACIL80",1)
+END
+
+IF
+	Dead("AC#CYLL1")  // Cylla
+THEN
+	RESPONSE #100
+		Kill(Myself)
+END
+

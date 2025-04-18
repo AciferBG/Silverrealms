@@ -1,0 +1,19 @@
+IF
+	OR(7)
+        Contains("sw1h01",Myself)
+        Contains("sw1h02",Myself)
+        Contains("sw1h04",Myself)
+        Contains("sw1h05",Myself)
+        Contains("sw1h07",Myself)
+        Contains("sw1h08",Myself)
+        Contains("sw1h09",Myself)
+	GlobalLT("AC#30GateOpen","ACIL30",5)
+	Global("AC#30swordcon","ACIL30",0)
+THEN
+	RESPONSE #100
+	SetGlobal("AC#30swordcon","ACIL30",1)
+	// CreateVisualEffectObject("ICMAGICH",Myself)
+	IncrementGlobal("AC#30GateOpen","ACIL30",1)
+	//ContainerEnable("swordcon",FALSE)
+END
+

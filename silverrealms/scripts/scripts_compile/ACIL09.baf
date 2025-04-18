@@ -1,0 +1,61 @@
+IF
+    Global("AreaSwitches","ACIL09",0)
+THEN
+    RESPONSE #100
+        SetGlobal("AreaSwitches","ACIL09",1)
+        SetGlobal("AC#EnteredACIL09","GLOBAL",1)
+        DisplayString(Myself,16493)  // Feinde haben Euch aufgelauert. Verteidigt Euch!
+        TriggerActivation("Dragon_Sound",FALSE)
+        HideAreaOnMap("ACIL06")
+        Explore()
+END
+
+IF
+    GlobalGT("AC#BeldasDies","GLOBAL",1)
+    Global("SecretDoor","ACIL09",0)
+THEN
+    RESPONSE #100
+        SetGlobal("SecretDoor","ACIL09",1)
+        DetectSecretDoor("DOOR01")
+END
+
+IF
+    Global("MalphasAmbush","ACIL09",0)
+    Global("Ravimor_revealed","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("MalphasAmbush","ACIL09",1)
+        CreateCreature("AC#MAL09",[358.593],SE)  // Malphas
+END
+
+IF
+    Global("MalphasAppears","ACIL09",1)
+THEN
+    RESPONSE #100
+        SetGlobal("MalphasAppears","ACIL09",2)
+        CreateCreature("AC#07MU3",[781.529],SSW)  // Wegelagerer
+        CreateCreature("AC#07MU3",[736.499],SSW)  // Wegelagerer
+        CreateCreature("AC#07MU3",[579.452],S)  // Wegelagerer
+        CreateCreature("AC#07MU4",[242.684],S)  // Kleriker
+        CreateCreature("AC#07MU5",[419.503],E)  // Halboger
+END
+
+IF
+    Global("VodyanoiSpawn","ACIL09",0)
+THEN
+    RESPONSE #100
+        SetGlobal("VodyanoiSpawn","ACIL09",1)
+        CreateCreature("AC#VODY1",[334.1176],S)  // Vodyanoi
+        CreateCreature("AC#VODY1",[180.1274],NW)  // Vodyanoi
+END
+
+IF
+    DifficultyGT(NORMAL)
+    Global("VodyanoiSpawn","ACIL09",1)
+THEN
+    RESPONSE #100
+        SetGlobal("VodyanoiSpawn","ACIL09",2)
+        CreateCreature("AC#VODY1",[129.1338],S)  // Vodyanoi
+        CreateCreature("AC#VODY1",[1183.1183],NNW)  // Vodyanoi
+END
+

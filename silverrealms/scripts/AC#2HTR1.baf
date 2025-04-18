@@ -1,0 +1,8 @@
+// Hitagkuur Trap Script
+IF
+        Opened([ANYONE])
+THEN
+    RESPONSE #100
+         DisplayString (Myself,999999)
+         ApplyDamage(LastTrigger,15,ELECTRICITY)
+END

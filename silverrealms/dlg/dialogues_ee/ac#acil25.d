@@ -1,0 +1,132 @@
+
+/*******************************************************************************************************
+Dialog mit Drow-Guard
+*******************************************************************************************************/
+
+BEGIN ~AC#DROW8~
+
+IF ~~ THEN BEGIN more_drow
+SAY ~Für diese Beleidigung werdet Ihr mit Eurem *qu'lith* bezahlen, dreckiger <RACE>!~
+IF ~~ THEN  EXTERN ~AC#DROW6~ wait
+END
+
+IF ~~ THEN BEGIN whats_next
+SAY ~Was sollen wir jetzt tun, Ilharess?~
+IF ~~ THEN  EXTERN ~AC#DROW6~ whats_next_02
+END
+
+IF ~~ THEN BEGIN whats_next_03
+SAY ~Und wenn sich hier doch noch die Geflüchteten aufhalten? Und sollten wir nicht wenigstens den Schrein dieser abtrünnigen Göttin hier vollständig entweihen, damit sich keiner mehr an ihrem Segen laben kann?~
+IF ~~ THEN  EXTERN ~AC#DROW6~ whats_next_04
+END																																																																																																																																																			
+/*******************************************************************************************************
+Dialog mit Zilna Khaven-Ghell
+*******************************************************************************************************/
+
+BEGIN ~AC#DROW6~
+
+IF ~~ THEN BEGIN hey_you
+SAY ~Ihr da, <RACE>! Was habt Ihr hier zu schaffen?~
+// IF ~~ THEN REPLY ~Das Gleiche könnte ich Euch fragen.~ + same_question
+IF ~~ THEN REPLY ~Noch mehr Drow? Mit Euch werde ich genau so leicht fertig wie mit den anderen!~ EXTERN ~AC#DROW8~ more_drow
+END
+
+	IF ~~ THEN BEGIN wait
+	SAY ~Warte, *wael*! Ab jetzt rede *ich* mit diesem Oberflächen-<RACE>.~
+	=
+	~Steht still, Fremdlinge. Ich bin Ilharess Zilna vom Hause Khaven-Ghell. Wir hegen keine bösartigen Absichten gegen Euch, <RACE>.~
+	IF ~~ THEN REPLY ~Ich bin <CHARNAME>, und dies sind meine Gefährten.~ + more_drow_2
+	IF ~IsValidForPartyDialog("Jaheira")~ THEN EXTERN ~JAHEIRAJ~ Jaheira_comment_drow
+	END
+
+		IF ~~ THEN BEGIN more_drow_2
+		SAY ~Ihr erwähntet, dass Ihr hier noch andere unserer Rasse begegnet seid. Was ist mit ihnen geschehen?~
+		IF ~!IsValidForPartyDialog("Minsc")~ THEN REPLY ~Ich habe sie alle getötet.~ + killed_all_drow
+		IF ~IsValidForPartyDialog("Minsc")~ THEN REPLY ~Ich habe sie alle getötet.~ EXTERN ~MINSCJ~ Minsc_confused	
+		END
+		
+				IF ~~ THEN BEGIN drow_minsc_confused_01
+				SAY ~Was redet Euer Gefährte dort? Erklärt Euch!~
+				IF ~~ THEN REPLY ~Er ist manchmal etwas verwirrt. Minsc, würdet Ihr dieser Dame Euren Tiergefährten zeigen?~ EXTERN ~MINSCJ~ Minsc_show_boo 
+				END
+		
+			IF ~~ THEN BEGIN killed_all_drow
+			SAY ~Entweder Ihr seid ein Aufschneider oder ein mächtiger Vertreter Eurer Rasse. Im ersteren Fall würden wir Euch töten, im Zweiten würden wir Euch gehen lassen und nicht weiter behelligen. Sprecht also schnell: Habt Ihr irgendwelche Beweise, dass Ihr es hier mit Vertretern unserer Rasse aufnehmen konntet?~
+			IF ~~ THEN REPLY ~Ich habe eine der Leichen hier bei mir. Seht her.~ DO ~TakePartyItem("AC#DDRO2")
+			DestroyItem("AC#DDRO2")~ + have_a_corpse
+			END
+			
+				IF ~~ THEN BEGIN have_a_corpse
+				SAY ~In der Tat, das ist ein Drow. Oh, ich erkenne die Tätowierungen am Hals. Das ist ein Magier aus Sshamath!~
+				=
+				~Er stammt aus dem Hause Helviiryn, der Schule der Verwandlung.~
+				=
+				~Sagt, habt Ihr noch andere Drow hier gesehen?~
+				IF ~~ THEN REPLY ~Nur ein paar seiner Leibwächter. Die sind jetzt alle tot.~ + no_more_drow
+				END
+				
+					IF ~~ THEN BEGIN no_more_drow
+					SAY ~Alle tot. Hmm...~
+					IF ~~ THEN  EXTERN ~AC#DROW8~ whats_next
+					END
+					
+						IF ~~ THEN BEGIN whats_next_02
+						SAY ~Die Suche ist hiermit beendet. Wir kehren nach Guallidurth zurück.~
+						IF ~~ THEN  EXTERN ~AC#DROW8~ whats_next_03
+						END
+						
+							IF ~~ THEN BEGIN whats_next_04
+							SAY ~Das ist mir alles egal. Wir haben den Leichnam eines Magiers aus dieser Männerstadt. Das dürfte meiner Mutter genügen. Ich kann es mir nicht erlauben, hier noch länger zu verweilen, während dieses Miststück Zollgarza zuhause an meinem Stuhl sägt.~
+							=
+							~Habt Dank für Eure Hilfe, <RACE>. Nicht viele können von sich behaupten, dass ihnen eine Ilharess gnädig gesonnen war. Wir werden in unsere Stadt zurückkehren und Euch nicht weiter behelligen.~
+							IF ~~ THEN DO ~
+							SetGlobal("AC#25_LolthPriestess","GLOBAL",3)
+							EraseJournalEntry(@62025)
+							AddJournalEntry(@62026,QUEST)
+							//CreateVisualEffectObject("SPDIMNDR",Myself)
+							//Wait(1)
+							/*DestroySelf()*/~ EXIT
+							END
+
+
+//----------------------------------------
+// CHAIN
+// ---------------------------------------
+CHAIN IF ~NumTimesTalkedTo(0)~ THEN AC#DROW8 chain_see_pc
+~Seht, Ilharess Khaven-Ghell! Eine Gruppe mit einem <RACE> von der Oberfläche! Zieht Eure Schwerter, Männer!~
+== AC#DROW6 ~Beruhigt Euch, *sargtlin*. Vielleicht können uns diese *ryld* von Nutzen sein.~
+END
+IF ~~ THEN EXTERN ~AC#DROW6~ hey_you
+
+//----------------------------------------
+// NPCs
+// ---------------------------------------
+// Jaheira
+APPEND ~JAHEIRAJ~
+IF ~~ THEN BEGIN Jaheira_comment_drow
+   SAY ~Es überrascht mich immer wieder, wie überzeugend Drow lügen können.~
+   IF ~~ THEN REPLY ~Seid gegrüßt, Ilharess. Ich bin <CHARNAME>, und dies sind meine Gefährten.~ EXTERN ~AC#DROW6~ more_drow_2
+END
+
+IF ~~ THEN BEGIN Jaheira_minsc_confused
+   SAY ~Minsc...~
+   IF ~~ THEN EXTERN ~AC#DROW6~ drow_minsc_confused_01
+END
+END
+
+// Minsc
+APPEND ~MINSCJ~
+IF ~~ THEN BEGIN Minsc_confused
+   SAY ~Minsc versteht nicht, <CHARNAME>. Wir haben doch extra alle am Leben gelassen?~
+   IF ~~ THEN EXTERN ~AC#DROW6~ drow_minsc_confused_01
+   IF ~IsValidForPartyDialog("Jaheira")~ THEN EXTERN ~JAHEIRAJ~ Jaheira_minsc_confused
+END
+
+IF ~~ THEN BEGIN Minsc_show_boo
+   SAY ~Oh! Gerne! Seht her, Drow-Dame! Mein Miniatur-Riesenhamster!~
+   IF ~~ THEN EXTERN ~AC#DROW6~ killed_all_drow
+END
+END
+
+
+

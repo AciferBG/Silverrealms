@@ -1,0 +1,15 @@
+IF
+	OR(2)
+	Global("AC#BeldasPlotStart","GLOBAL",0)
+	Global("AC#BeldasPlotStart","GLOBAL",2)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#BeldasPlotStart","GLOBAL",3)
+		CreateCreature("ac#dwf00",[771.537],0) // Beldas
+		CreateCreature("AC#DWF20",[744.605],12) // Gormar
+		CreateCreature("AC#DWF30",[833.560],5) // Thradear
+END
+
+
+
+

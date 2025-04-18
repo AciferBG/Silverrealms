@@ -1,0 +1,51 @@
+IF
+	See(NearestEnemyOf(Myself))
+	Global("shout","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("shout","LOCALS",1)
+		Shout(99)
+END
+
+IF
+	Heard([ANYONE],99)
+	!See(NearestEnemyOf(Myself))
+	Global("shout","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("shout","LOCALS",1)
+		MoveToObject(LastHeardBy(Myself))
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Global("harpysong","LOCALS",0)
+	Range(NearestEnemyOf(Myself),12)
+THEN
+	RESPONSE #100
+		ReallyForceSpellRES("AC#HSON",NearestEnemyOf(Myself))  // Harpyiengesang
+		SetGlobal("harpysong","LOCALS",1)
+END
+
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		Enemy()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(NearestEnemyOf(Myself),15)
+END
+
+IF
+	AttackedBy([ANYONE],DEFAULT)
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastAttackerOf(Myself),15)
+END
+

@@ -1,0 +1,25 @@
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	GlobalLT("WheelRepaired","ACIL5C",2)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,999999)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,12)
+	Global("WheelRepaired","ACIL5C",2)
+THEN
+	RESPONSE #100
+		DisplayStringNoName(Myself,999998)
+END
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,12)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,14702)
+END

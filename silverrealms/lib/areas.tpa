@@ -1,0 +1,431 @@
+// Silverrealms areas
+
+
+COPY ~silverrealms/areas/copy~         ~override~
+
+/*
+// Throne of the mad god content
+COPY ~silverrealms/areas/ACIL1R.are~          ~override~
+  SAY 0x244 @514
+  
+COPY ~silverrealms/areas/ACIL1W.are~          ~override~
+  SAY 0x354 @565
+*/
+
+COPY ~silverrealms/areas/ACIL02.are~          ~override~
+ SAY 0xb88 @877
+ SAY 0xc4c @878
+ SAY 0xd10 @879
+ SAY 0xac4 @880
+
+
+COPY ~silverrealms/areas/ACIL04.are~          ~override~
+   SAY 0x1408 @1012
+   SAY 0x1280 @1012
+   SAY 0x1344 @1013
+   SAY 0x1718 @1106
+
+COPY ~silverrealms/areas/ACIL06.are~          ~override~
+   SAY 0x638 @35
+   SAY 0x6fc @36
+   SAY 0x948 @6110
+
+COPY ~silverrealms/areas/ACIL07.are~          ~override~
+   SAY 0xc00 @1012
+   SAY 0xa78 @1012
+   SAY 0xb3c @1013
+
+COPY ~silverrealms/areas/ACIL09.are~          ~override~
+   SAY 0x139c @35
+   SAY 0x12d8 @36
+   SAY 0x1460 @6110
+   SAY 0xfc8 @6111
+   SAY 0xf04 @6111
+
+COPY ~silverrealms/areas/ACIL4M.are~          ~override~
+   SAY 0x4dc @1012
+
+COPY ~silverrealms/areas/ACIL4O.are~          ~override~
+   SAY 0x354 @6100
+   SAY 0x8bc @6101
+
+COPY ~silverrealms/areas/ACIL9B.are~          ~override~
+//   SAY 0x618 @6103 // Info dwarven statue
+//   SAY 0xb0c @6104 // INfo DOOR01 (secret door) locked
+
+COPY ~silverrealms/areas/ACIL20.are~          ~override~
+  WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+  SAY 0xe98 @2           // Stone Head
+  SAY 0x1020 @3          // Beholder Hole :-)
+  SAY 0x1eac @872       // Hizaagkur Info Trigger
+  SAY 0x1c60 @873       // Spiderstalkings Info Trigger
+  SAY 0x1d24 @874       // Spiderstalkings Info Trigger
+  SAY 0x1950 @875       // Illithidhead Info Trigger
+  SAY 0x188c @876       // Illithidheads Info Trigger
+  SAY 0x20f8 @6200       // Hizaagkur mine sign Info Trigger
+  SAY 0x21bc @6201       // Nummak's delve Info Trigger
+
+COPY ~silverrealms/areas/ACIL21.are~          ~override~
+  WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+
+COPY ~silverrealms/areas/ACIL23.are~          ~override~
+  WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+  SAY 0x190c @940           // Rest Interrupt string
+
+COPY ~silverrealms/areas/ACIL24.are~          ~override~
+  WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+
+COPY ~silverrealms/areas/ACIL25.are~          ~override~
+  WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+/*
+  SAY 0x2004 @4
+  SAY 0x20c8 @5
+  SAY 0x218c @5
+  SAY 0x2250 @5
+  SAY 0x2314 @6
+*/
+  SAY 0x50d8 @198
+
+COPY ~silverrealms/areas/ACIL26.are~          ~override~
+  WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+  
+COPY ~silverrealms/areas/ACIL27.are~          ~override~
+  WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+
+COPY ~silverrealms/areas/ACIL28.are~          ~override~
+  WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+  
+COPY ~silverrealms/areas/ACIL29.are~          ~override~
+  WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+
+COPY ~silverrealms/areas/ACIL2D.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+ 
+COPY ~silverrealms/areas/ACIL2H.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+ 
+COPY ~silverrealms/areas/ACIL2K.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+
+COPY ~silverrealms/areas/ACIL2R.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+  SAY 0x244 @6003
+
+COPY ~silverrealms/areas/ACIL2T.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_explan)  // Set EXTRAPLANAR area type
+
+COPY ~silverrealms/areas/ACIL30.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+  SAY 0x2410 @906           // Info_Silver
+  SAY 0x21c4 @907           // Info_Dwarf_Sword
+  SAY 0x2100 @908           // Info_Dwarf_Hammer
+  SAY 0x234c @909           // Info_Dwarf_Club
+  SAY 0x2288 @910           // Info_Dwarf_Axe
+  SAY 0x24d4 @6030          // Info_Torglor
+  SAY 0x2e60 @911           // Info Locked DOOR01
+  
+COPY ~silverrealms/areas/ACIL31.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+  SAY 0x1ce0 @6029
+
+COPY ~silverrealms/areas/ACIL36.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+ 
+COPY ~silverrealms/areas/ACIL37.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+
+COPY ~silverrealms/areas/ACIL38.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+
+COPY ~silverrealms/areas/ACIL39.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+ 
+COPY ~silverrealms/areas/ACIL3X.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+
+COPY ~silverrealms/areas/ACIL44.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+ 
+COPY ~silverrealms/areas/ACIL45.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+ 
+COPY ~silverrealms/areas/ACIL47.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+
+COPY ~silverrealms/areas/ACIL48.are~          ~override~  // Temple of Abbathor
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+  SAY 0x244 @955           // Info_Abbathor
+
+COPY ~silverrealms/areas/ACIL49.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+
+COPY ~silverrealms/areas/ACIL50.are~          ~override/ACIL50.are~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+       //Map-Notes and Info Triggers
+       SAY 0x61b8 @652 // Map Note#0: Ellhimar's house
+       SAY 0x61ec @656 // Map Note#1: Temple of Oghma
+       SAY 0x1a94 @656 // Info Trigger: Temple of Oghma
+       SAY 0x6220 @659 // Map Note#2: Hall of Arnskull
+       SAY 0x16c0 @659 // Info Trigger: Hall of Arnskull
+       SAY 0x6288 @709 // Map Note#3: Bhaerynden Place
+       SAY 0x6254 @651 // Map Note#4: Vronia's House
+       SAY 0x62bc @829 // Map Note#5: The Ancient forge
+       SAY 0x1848 @829 // Info Trigger: The Ancient forge
+       SAY 0x62f0 @830 // Map Note#6: The Bronze Mask
+       SAY 0x254c @830 // Info Trigger: The Bronze Mask
+       SAY 0x6324 @831 // Map Note#7: The bloody bulwark
+       SAY 0x1784 @831 // Info Trigger: The bloody bulwark
+       SAY 0x6358 @832 // Map Note#8: Haela's halls
+       SAY 0x19d0 @832 // Info Trigger: Haela's halls
+       SAY 0x638c @833 // Map Note#9: Hall of Omlars
+       SAY 0x1c1c @833 // Info Trigger: Hall of Omlars
+       SAY 0x63c0 @834 // Map Note#10: Hall of Runestones
+       SAY 0x190c @834 // Info Trigger: Hall of Runestones
+       SAY 0x63f4 @835 // Map Note#11: Regency Council
+       SAY 0x6428 @836 // Map Note#12: Ultoksamrin Gate
+       SAY 0x645c @837 // Map Note#13: Drakkalor Gate
+       SAY 0x2610 @882 // Info Trigger: Place of the Hammer
+       SAY 0x2e7c @883 // Info Trigger: shaggy Door
+       SAY 0x30c8 @883 // Info Trigger: shaggy Door
+       SAY 0x3004 @883 // Info Trigger: shaggy Door
+       SAY 0x2f40 @883 // Info Trigger: shaggy Door
+       SAY 0x60f0 @892 // Rest Interrupt: Dwarven soldier
+
+COPY ~silverrealms/areas/ACIL51.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+  SAY 0x1324 @6040  // temple of Moradin
+  SAY 0x13e8 @829  // ancient forge
+  SAY 0x1260 @829  // ancient forge
+  
+  ADD_MAP_NOTE #697 #463 ~gray~ @6040 //temple of Moradin
+
+COPY ~silverrealms/areas/ACIL52.are~          ~override~  // Haela's Halls
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+  SAY 0x1ee0 @6013  // Info Beholder
+  SAY 0x212c @6014  // Info Deep Duerra
+  SAY 0x2068 @6015  // Info Derro and Duergar
+  SAY 0x1b0c @6016  // Info Diirinka
+  // Info Driftdisc deactiveted
+  SAY 0x1c94 @6017  // Info Drow
+  SAY 0x21f0 @6018  // Info Flag Laduguer
+  SAY 0x17fc @6019  // Info Sharindlar
+  SAY 0x18c0 @6019  // Info Sharindlar
+  SAY 0x1984 @6019  // Info Sharindlar
+  SAY 0x17fc @6019  // Info Sharindlar
+  SAY 0x1e1c @6020  // Info Mind flayer
+  SAY 0x1fa4 @6021  // Info Scion
+  SAY 0x1674 @6022  // Info shield (false name :-()
+  SAY 0x1d58 @6023  // Info Taark
+  SAY 0x1bd0 @6005  // Info Laduguer
+  SAY 0x1738 @6024  // Info haelatemple
+  SAY 0x1a48 @31    // Info statue sharindlar
+  SAY 0x22b4 @286   // Info Driftdisc
+
+  ADD_MAP_NOTE #699 #561 ~gray~ @6024 //Haela's temple
+  ADD_MAP_NOTE #3097 #2155 ~gray~ @6019 //Sharindlar's temple
+  ADD_MAP_NOTE #3006 #499 ~gray~ @6022 //Legacy
+
+COPY ~silverrealms/areas/ACIL53.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+  SAY 0x1b2c @1123  // Info Borthun 01: Statue
+  SAY 0x1bf0 @1122  // Sign Borthun 02: Sign
+  SAY 0x4e94 @6300  //Tempel des Dugmaren
+
+COPY ~silverrealms/areas/ACIL54.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+  SAY 0x2774 @234
+  SAY 0x2838 @233
+  SAY 0x28fc @235
+  SAY 0x29c0 @236
+  SAY 0x2a84 @237
+  SAY 0x2b48 @238
+  SAY 0x2c0c @239
+  SAY 0x2cd0 @240
+  
+  ADD_MAP_NOTE #586 #2013 ~gray~ @235 //Bloody bulwark
+  ADD_MAP_NOTE #228 #837 ~gray~ @233 //potion store
+  ADD_MAP_NOTE #2820 #511 ~gray~ @240 //canary
+  ADD_MAP_NOTE #2569 #2157 ~gray~ @239 //store
+
+  // corrected
+  SAY 0x44f0 @892 // Rest Interrupt: Dwarven soldier
+
+COPY ~silverrealms/areas/ACIL55.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+
+COPY ~silverrealms/areas/ACIL56.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+  SAY 0x1ce0 @6032 // Gorm statue
+  SAY 0x1848 @6033 // temple of Gorm
+  SAY 0x1784 @6034 // armory
+  SAY 0x1c1c @6035 // Gaerdal statue
+  SAY 0x1b58 @6036 // temple of Gaerdal
+  SAY 0x1a94 @6037 // gym
+  SAY 0x19d0 @6037 // gym
+  SAY 0x190c @6038 // ball room
+  
+  ADD_MAP_NOTE #649 #526 ~gray~ @6033 //temple of Gorm
+  ADD_MAP_NOTE #3172 #2064 ~gray~ @6036 //temple of Gaerdal
+
+COPY ~silverrealms/areas/ACIL57.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+  SAY 0xff4 @6025 // Elven statue
+  SAY 0x10b8 @6025 // Elven statue
+  SAY 0xce4 @6026 // Info Deepspawn (now broken passage)
+  SAY 0x13c8 @6027 // Info elevator
+  SAY 0x16d8 @6028 // Info runes
+  SAY 0x1550 @6028 // Info runes
+  SAY 0x148c @6028 // Info runes
+  SAY 0x1614 @6028 // Info runes
+
+COPY ~silverrealms/areas/ACIL58.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+ 
+COPY ~silverrealms/areas/ACIL59.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+ 
+COPY ~silverrealms/areas/ACIL5A.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+ 
+COPY ~silverrealms/areas/ACIL5C.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+
+COPY ~silverrealms/areas/ACIL5D.are~          ~override~   // Dugmaren's Temple
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+  SAY 0x244 @6000  // Statue Dugmaren
+  SAY 0x308 @6001  // Holy Symbol Dugmaren
+
+COPY ~silverrealms/areas/ACIL5E.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+
+COPY ~silverrealms/areas/ACIL5F.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+ 
+COPY ~silverrealms/areas/ACIL5G.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+ 
+COPY ~silverrealms/areas/ACIL5H.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+ 
+COPY ~silverrealms/areas/ACIL5J.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+ 
+COPY ~silverrealms/areas/ACIL5K.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+
+COPY ~silverrealms/areas/ACIL5O.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+ 
+COPY ~silverrealms/areas/ACIL5P.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+ 
+COPY ~silverrealms/areas/ACIL5Q.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+ 
+COPY ~silverrealms/areas/ACIL5R.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+ 
+COPY ~silverrealms/areas/ACIL5S.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+ 
+COPY ~silverrealms/areas/ACIL5T.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+ 
+COPY ~silverrealms/areas/ACIL5U.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+
+COPY ~silverrealms/areas/ACIL5X.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+ 
+COPY ~silverrealms/areas/ACIL5Y.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+ 
+COPY ~silverrealms/areas/ACIL5Z.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+
+COPY ~silverrealms/areas/ACIL61.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+ 
+COPY ~silverrealms/areas/ACIL62.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+
+COPY ~silverrealms/areas/ACIL63.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+
+COPY ~silverrealms/areas/ACIL64.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+  SAY 0x418 @898
+  SAY 0x4dc @899
+  SAY 0x5a0 @900
+  SAY 0x664 @901
+  SAY 0x728 @902
+  SAY 0x7ec @903
+
+COPY ~silverrealms/areas/ACIL65.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+ 
+COPY ~silverrealms/areas/ACIL66.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+
+COPY ~silverrealms/areas/ACIL67.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+ 
+COPY ~silverrealms/areas/ACIL69.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+ 
+COPY ~silverrealms/areas/ACIL77.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_explan)  // Set EYTRAPLANAR area type
+ 
+COPY ~silverrealms/areas/ACIL78.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_explan)  // Set EYTRAPLANAR area type
+ 
+COPY ~silverrealms/areas/ACIL79.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_explan)  // Set EYTRAPLANAR area type
+ 
+COPY ~silverrealms/areas/ACIL80.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_explan)  // Set EYTRAPLANAR area type
+ 
+COPY ~silverrealms/areas/ACIL81.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_explan)  // Set EYTRAPLANAR area type
+ 
+ COPY ~silverrealms/areas/ACIL82.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_explan)  // Set EYTRAPLANAR area type
+ 
+ COPY ~silverrealms/areas/ACIL83.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_explan)  // Set EYTRAPLANAR area type
+ 
+ COPY ~silverrealms/areas/ACIL84.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_explan)  // Set EYTRAPLANAR area type
+ 
+ COPY ~silverrealms/areas/ACIL85.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_explan)  // Set EYTRAPLANAR area type
+ 
+ COPY ~silverrealms/areas/ACIL86.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_explan)  // Set EYTRAPLANAR area type
+ 
+ COPY ~silverrealms/areas/ACIL88.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_explan)  // Set EYTRAPLANAR area type
+
+COPY ~silverrealms/areas/ACIL90.are~          ~override~
+ SAY 0xf7c  @862
+ SAY 0x1104 @864
+ SAY 0x11c8 @864
+ SAY 0x128c @864
+ SAY 0x1350 @864
+ SAY 0x1414  @864
+ SAY 0x14d8 @864
+ SAY 0x159c @864
+ SAY 0x1660 @864
+ SAY 0x1040  @871
+
+COPY ~silverrealms/areas/ACIL91.are~          ~override~
+ SAY 0x618  @984
+
+COPY ~silverrealms/areas/ACIL94.are~          ~override~
+ SAY 0x354  @881
+ SAY 0x418  @881
+ SAY 0x4dc  @881
+
+COPY ~silverrealms/areas/ACIL9A.are~          ~override~
+ SAY 0x244 @854
+

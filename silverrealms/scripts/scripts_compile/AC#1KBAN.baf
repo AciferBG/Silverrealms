@@ -1,0 +1,8 @@
+IF
+	IsOverMe("AC#LADYS")
+	Global("BansheeGate","ACIL1K",0)
+THEN
+	RESPONSE #100
+		ActionOverride("AC#LADYS",MoveToPointNoInterrupt([3934.1272]))
+END
+

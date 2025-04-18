@@ -1,0 +1,7 @@
+This folder contains different versions / paths of the main story that can be installed separately for better playtesting.
+Each folder contains a tpa-file that is triggered from the tp2-file.
+
+Folders:
+ACIL79_01: Story Path Kalzareinad and the Daggers of Ochir Naal
+TIGLATH: Tiglath subplot
+ACIL23_DREAMS:The Dream-Cutscenes triggered in Area ACIL23

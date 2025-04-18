@@ -1,0 +1,10 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		Wait(20)
+		ReallyForceSpellRES("ac#grtr4",Myself) // Back to normal form (No such index)
+END
+
+
+

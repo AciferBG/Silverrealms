@@ -1,0 +1,44 @@
+IF
+	Detect([PC])
+	Global("AC#Cut1","ACIL88",2)
+        Global("AC#Mithbarak_Free","GLOBAL",0)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(LastSeenBy(Myself))
+END
+
+IF
+	Die()
+THEN
+	RESPONSE #100
+		ReallyForceSpellDead(Myself,ILLUSION_DEATH)
+		SetGlobal("AC#Mithbarak_Dead","GLOBAL",1)
+		Wait(1)
+		DestroySelf()
+END
+
+IF
+	HitBy([PC],CRUSHING)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,999999)
+END
+/*
+IF
+	Die()
+THEN
+	RESPONSE #100
+		CreateVisualEffectObject("SPFLESHS",Myself)
+END
+*/
+
+
+
+
+
+
+
+
+
+
+

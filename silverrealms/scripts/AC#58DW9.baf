@@ -1,0 +1,22 @@
+IF
+	Detect([PC])
+	PartyHasItem("AC#57TUR")
+	GlobalLT("AC#TurbaernRescued","GLOBAL",2)
+	Global("HasTurbaernBody","ACIL58",0)
+THEN
+	RESPONSE #100
+                StartDialogueNoSet(Player1)
+                SetGlobal("HasTurbaernBody","ACIL58",1)
+END
+
+IF
+	Detect([PC])
+	PartyHasItem("AC#57TUR")
+	Global("HasTurbaernBody","ACIL58",1)
+	Global("AC#TurbaernRescued","GLOBAL",3)
+	Range([PC],10)
+THEN
+	RESPONSE #100
+	         SetGlobal("HasTurbaernBody","ACIL58",2)
+                StartDialogueNoSet(Player1)
+END

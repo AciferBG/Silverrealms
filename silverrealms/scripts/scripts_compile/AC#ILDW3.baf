@@ -1,0 +1,51 @@
+IF
+	Detect([PC])
+	Dead("AC#MYC54")
+	GlobalLT("AC#Myconid","ACIL54",4)
+THEN
+	RESPONSE #100
+                SetGlobal("AC#Myconid","ACIL54",4)
+		StartDialogueNoSet(LastSeenBy(Myself))
+END
+
+IF
+	Detect([PC])
+	!Dead("AC#MYC54")
+	Global("AC#Myconid","ACIL54",0)
+THEN
+	RESPONSE #100
+                SetGlobal("AC#Myconid","ACIL54",1)
+		StartDialogueNoSet(LastSeenBy(Myself))
+END
+
+IF
+	!Dead("AC#MYC54")
+	Global("AC#Myconid","ACIL54",2)
+THEN
+	RESPONSE #100
+                SetGlobal("AC#Myconid","ACIL54",3)
+                ActionOverride("AC#MYC54",ChangeAIScript("WTASIGHT",DEFAULT))
+		ActionOverride("AC#MYC54",Attack("AC#ILDW3"))
+END
+
+
+IF
+	HitBy("AC#MYC54",CRUSHING)
+THEN
+	RESPONSE #50
+		DisplayStringHead(Myself,@244)
+	RESPONSE #100
+	        RunAwayFrom("AC#MYC54",15)
+END
+
+
+
+
+
+
+
+
+
+
+
+

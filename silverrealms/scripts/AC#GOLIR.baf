@@ -1,0 +1,49 @@
+/*
+
+Dieses Skript steuert den Eisengolem in ACIL28
+*/
+IF
+	Global("Activated","LOCALS",1)
+THEN
+	RESPONSE #100
+		SetGlobal("Activated","LOCALS",2)
+		ChangeEnemyAlly(Myself,GOODBUTBLUE)
+		SwingOnce()
+		Continue()
+END
+
+IF
+	Global("Activated","LOCALS",2)
+	Global("Moved","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Moved","LOCALS",1)
+		MoveToPoint([2103.1486])
+END
+
+IF
+	Allegiance(Myself,NEUTRAL)
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(NearestEnemyOf(Myself),45)
+END
+
+IF
+	Global("Activated","LOCALS",2)
+	ActionListEmpty()
+	!See([ENEMY])
+	!See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		RandomWalk()
+END
+

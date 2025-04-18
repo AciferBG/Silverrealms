@@ -1,0 +1,49 @@
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,10)
+	Global("AC#Bansee","ACIL57",0)
+THEN
+	RESPONSE #100
+                SetGlobal("AC#Bansee","ACIL57",1)
+                DisplayString(Myself,999999)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,10)
+	Global("AC#Bansee","ACIL57",1)
+THEN
+	RESPONSE #100
+                SetGlobal("AC#Bansee","ACIL57",2)
+                DisplayString(Myself,999998)
+                ClearAllActions()
+		StartCutSceneMode()
+		Wait(2)
+		MoveViewPoint([3441.247],INSTANT)
+		OpenDoor("Door06")
+		CreateCreature("AC#BANS1",[3441.247],3) // Todesfee
+		PlaySound("EFF_M63")
+		CreateVisualEffectObject("SPFLESHS","AC#BANS1")
+		Wait(1)
+		EndCutSceneMode()
+END
+
+IF
+	Clicked([ANYONE])
+	Global("AC#Bansee","ACIL57",2)
+THEN
+	RESPONSE #100
+                SetGlobal("AC#Bansee","ACIL57",3)
+		TriggerActivation("Info_Banshee",FALSE)
+END
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,10)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,14702)
+END
+
+
+

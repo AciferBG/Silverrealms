@@ -1,0 +1,7 @@
+IF
+	Die()
+THEN
+	RESPONSE #100
+		SetGlobal("GalebDuhr_Died","ACIL9A",1)
+		ScreenShake([8.8],10)
+END

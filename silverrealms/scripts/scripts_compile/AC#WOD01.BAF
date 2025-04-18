@@ -1,0 +1,25 @@
+IF
+	See(NearestEnemyOf(Myself))
+	Delay(10)
+THEN
+	RESPONSE #100
+		ForceSpell(NearestEnemyOf(Myself),MEPHIT_BOLT)  // SPIN932.SPL (Blitzstrahl)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #30
+		RunAwayFrom(NearestEnemyOf(Myself),12)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(NearestEnemyOf(Myself),6)
+		RunAwayFrom(NearestEnemyOf(Myself),6)
+	RESPONSE #100
+		AttackReevaluate(NearestEnemyOf(Myself),6)
+END
+

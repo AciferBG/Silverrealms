@@ -1,0 +1,9 @@
+IF
+        Entered([ANYONE])
+        GLOBAL("ACIL81_warning","ACIL81",1)
+THEN
+    RESPONSE #100
+		ForceSpell(LastTrigger,WIZARD_FINGER_OF_DEATH)
+		//ForceSpell(LastTrigger,WIZARD_IMPRISONMENT)
+END
+

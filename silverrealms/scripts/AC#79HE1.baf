@@ -1,0 +1,49 @@
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,10)
+	Global("AC#Heart","ACIL79",0)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,999997)
+		SetGlobal("AC#Heart","ACIL79",1)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,10)
+	Global("AC#Heart","ACIL79",1)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,999996)
+		CreateCreatureImpassable("AC#HEAR1",[1261.340],13)
+		SetGlobal("AC#Heart","ACIL79",2)
+		ActionOverride("AC#HEAR1",StartDialogueNoSet([PC]))
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,10)
+	Global("AC#Heart","ACIL79",2)
+THEN
+	RESPONSE #100
+		ActionOverride("AC#HEAR1",StartDialogueNoSet([PC]))
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,10)
+	Global("AC#Heart","ACIL79",7)
+THEN
+	RESPONSE #100
+		ActionOverride("AC#HEAR1",StartDialogueNoSet([PC]))
+END
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,10)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,14702)
+END
+
+

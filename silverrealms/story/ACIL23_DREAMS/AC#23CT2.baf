@@ -1,0 +1,82 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		FadeToColor([30.0],0)
+		ActionOverride("AC#DREA1",DestroySelf())
+		Wait(1)
+		CloseDoor("Door01")
+		Wait(1)
+		SmallWait(5)
+		FadeFromColor([40.0],0)
+		ActionOverride("AC#DREA2",MoveToPoint([1543.379]))
+		Wait(1)
+		ActionOverride("AC#DREA2",Face(12))
+		Wait(3)
+		MoveViewPoint([1543.379],5)
+		//ActionOverride("AC#DREA1",Face(2))
+		//ActionOverride("AC#DREA1",SmallWait(5))
+		//MoveViewObject("AC#DREA1",5)
+		Wait(3)
+		ActionOverride("AC#DREA2",StartDialogueNoSet(Player1))
+		//FadeToColor([50.0],0)
+		//RestorePartyLocations()
+		//MultiPlayerSync()
+		//FadeFromColor([30.0],0)
+		//EndCutSceneMode()
+		//RestParty()
+END
+
+// OLD:
+/*
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		StorePartyLocations()
+		FadeToColor([30.0],0)
+		Wait(1)
+		Wait(1)
+		LeaveAreaLUAPanic("ACILD2","",[799.1579],0)
+		LeaveAreaLUA("ACILD2","",[799.1579],8)
+		ActionOverride(Player2,LeaveAreaLUA("ACILD2","",[0.0],2))
+		ActionOverride(Player3,LeaveAreaLUA("ACILD2","",[0.0],14))
+		ActionOverride(Player4,LeaveAreaLUA("ACILD2","",[0.0],0))
+		ActionOverride(Player5,LeaveAreaLUA("ACILD2","",[0.0],4))
+		ActionOverride(Player6,LeaveAreaLUA("ACILD2","",[0.0],2))
+		MultiPlayerSync()
+		MoveViewPoint([374.1333],INSTANT)
+		ApplySpell(Player2,SURE_SLEEP) // SPIN892.SPL (Schlaf)
+		ApplySpell(Player3,SURE_SLEEP) // SPIN892.SPL (Schlaf)
+		ApplySpell(Player4,SURE_SLEEP) // SPIN892.SPL (Schlaf)
+		ApplySpell(Player5,SURE_SLEEP) // SPIN892.SPL (Schlaf)
+		ApplySpell(Player6,SURE_SLEEP) // SPIN892.SPL (Schlaf)
+		Explore()
+		SmallWait(5)
+		FadeFromColor([40.0],0)
+		ActionOverride("AC#DREA1",MoveToPoint([1543.379]))
+		Wait(5)
+		MoveViewPoint([1543.379],5)
+		Wait(10)
+		//ActionOverride("AC#DREA1",Face(2))
+		//ActionOverride("AC#DREA1",SmallWait(5))
+		//MoveViewObject("AC#DREA1",5)
+		Wait(5)
+		//ActionOverride("AC#DREA2",StartDialogueNoSet(Player1))
+		FadeToColor([50.0],0)
+		//PlayDead(45)
+		RestorePartyLocations()
+		MultiPlayerSync()
+		FadeFromColor([30.0],0)
+		EndCutSceneMode()
+		RestParty()
+		//ActionOverride("AC#DREA2",Dialogue(Player1))
+END
+
+*/
+
+
+
+

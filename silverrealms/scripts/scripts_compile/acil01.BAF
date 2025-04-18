@@ -1,0 +1,1061 @@
+IF
+	Global("EnteredArea","ACIL01",0)
+THEN
+	RESPONSE #100
+		FadeToColor([0.0],0)
+		SetGlobal("EnteredArea","ACIL01",1)
+		StartCutSceneMode()
+		StartCutScene("AC#2UCT1")
+END
+
+IF
+	Global("WayToACIL09","ACIL01",0)
+	Global("AC#Goodbye_Iltkazar","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("WayToACIL09","ACIL01",1)
+		TriggerActivation("Tracil09",FALSE)
+END
+
+IF
+	Global("AC#EnteredACIL09","GLOBAL",1)
+	Global("WayToACIL09","ACIL01",2)
+THEN
+	RESPONSE #100
+		SetGlobal("WayToACIL09","ACIL01",3)
+		TriggerActivation("Tracil09",FALSE)
+END
+
+IF
+	InMyArea(Player1)
+	Global("DROWITEMCHECKDONE","ACIL01",1)
+	OR(15)
+		PartyHasItem("AC#DWCH2")  // Drow-Elfenkettenhemd +1
+		PartyHasItem("DWCHAN01")  // Drow-Kettenhemd +3
+		PartyHasItem("DWCHAN02")  // Drow-Adamantitkettenhemd +5
+		PartyHasItem("DWSW1H01")  // Drow-Krummsäbel +3
+		PartyHasItem("DWSW1H02")  // Drow-Langschwert +3
+		PartyHasItem("DWBLUN01")  // Drow-Flegel +3
+		PartyHasItem("DWHALB01")  // Drow-Hellebarde +3
+		PartyHasItem("DWSPER01")  // Drow-Lanze +3
+		PartyHasItem("DWXBOW01")  // Drow-Schnellschussarmbrust +3
+		PartyHasItem("DWSHLD01")  // Drow-Schild +3
+		PartyHasItem("DWCLCK01")  // Drow-Piwafwi
+		PartyHasItem("DWBOLT01")  // Drow-Bolzen des Schlafs
+		PartyHasItem("DWBOLT02")  // Drow-Bolzen der Betäubung
+		PartyHasItem("DWBOLT03")  // Drow-Bolzen +1
+		PartyHasItem("DWPLAT01")  // Drow-Prunkharnisch +5
+THEN
+	RESPONSE #100
+		SetGlobal("DROWITEMCHECKDONE","ACIL01",0)
+		Continue()
+END
+
+IF
+	InMyArea(Player1)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		Continue()
+END
+
+IF
+	InMyArea(Player1)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("AC#DWCH2",Player1)  // Drow-Elfenkettenhemd +1
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player1,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("AC#DWCH2")  // Drow-Elfenkettenhemd +1
+		Continue()
+END
+
+IF
+	InMyArea(Player2)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("AC#DWCH2",Player2)  // Drow-Elfenkettenhemd +1
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player2,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("AC#DWCH2")  // Drow-Elfenkettenhemd +1
+		Continue()
+END
+
+IF
+	InMyArea(Player3)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("AC#DWCH2",Player3)  // Drow-Elfenkettenhemd +1
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player3,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("AC#DWCH2")  // Drow-Elfenkettenhemd +1
+		Continue()
+END
+
+IF
+	InMyArea(Player4)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("AC#DWCH2",Player4)  // Drow-Elfenkettenhemd +1
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player4,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("AC#DWCH2")  // Drow-Elfenkettenhemd +1
+		Continue()
+END
+
+IF
+	InMyArea(Player5)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("AC#DWCH2",Player5)  // Drow-Elfenkettenhemd +1
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player5,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("AC#DWCH2")  // Drow-Elfenkettenhemd +1
+		Continue()
+END
+
+IF
+	InMyArea(Player6)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("AC#DWCH2",Player6)  // Drow-Elfenkettenhemd +1
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player6,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("AC#DWCH2")  // Drow-Elfenkettenhemd +1
+		Continue()
+END
+
+IF
+	InMyArea(Player1)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWCHAN01",Player1)  // Drow-Kettenhemd +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player1,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWCHAN01")  // Drow-Kettenhemd +3
+		Continue()
+END
+
+IF
+	InMyArea(Player2)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWCHAN01",Player2)  // Drow-Kettenhemd +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player2,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWCHAN01")  // Drow-Kettenhemd +3
+		Continue()
+END
+
+IF
+	InMyArea(Player3)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWCHAN01",Player3)  // Drow-Kettenhemd +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player3,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWCHAN01")  // Drow-Kettenhemd +3
+		Continue()
+END
+
+IF
+	InMyArea(Player4)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWCHAN01",Player4)  // Drow-Kettenhemd +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player4,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWCHAN01")  // Drow-Kettenhemd +3
+		Continue()
+END
+
+IF
+	InMyArea(Player5)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWCHAN01",Player5)  // Drow-Kettenhemd +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player5,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWCHAN01")  // Drow-Kettenhemd +3
+		Continue()
+END
+
+IF
+	InMyArea(Player6)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWCHAN01",Player6)  // Drow-Kettenhemd +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player6,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWCHAN01")  // Drow-Kettenhemd +3
+		Continue()
+END
+
+IF
+	InMyArea(Player1)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWCHAN02",Player1)  // Drow-Adamantitkettenhemd +5
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player1,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWCHAN02")  // Drow-Adamantitkettenhemd +5
+		Continue()
+END
+
+IF
+	InMyArea(Player2)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWCHAN02",Player2)  // Drow-Adamantitkettenhemd +5
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player2,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWCHAN02")  // Drow-Adamantitkettenhemd +5
+		Continue()
+END
+
+IF
+	InMyArea(Player3)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWCHAN02",Player3)  // Drow-Adamantitkettenhemd +5
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player3,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWCHAN02")  // Drow-Adamantitkettenhemd +5
+		Continue()
+END
+
+IF
+	InMyArea(Player4)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWCHAN02",Player4)  // Drow-Adamantitkettenhemd +5
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player4,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWCHAN02")  // Drow-Adamantitkettenhemd +5
+		Continue()
+END
+
+IF
+	InMyArea(Player5)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWCHAN02",Player5)  // Drow-Adamantitkettenhemd +5
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player5,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWCHAN02")  // Drow-Adamantitkettenhemd +5
+		Continue()
+END
+
+IF
+	InMyArea(Player6)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWCHAN02",Player6)  // Drow-Adamantitkettenhemd +5
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player6,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWCHAN02")  // Drow-Adamantitkettenhemd +5
+		Continue()
+END
+
+IF
+	InMyArea(Player1)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWSW1H01",Player1)  // Drow-Krummsäbel +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player1,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWSW1H01")  // Drow-Krummsäbel +3
+		Continue()
+END
+
+IF
+	InMyArea(Player2)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWSW1H01",Player2)  // Drow-Krummsäbel +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player2,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWSW1H01")  // Drow-Krummsäbel +3
+		Continue()
+END
+
+IF
+	InMyArea(Player3)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWSW1H01",Player3)  // Drow-Krummsäbel +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player3,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWSW1H01")  // Drow-Krummsäbel +3
+		Continue()
+END
+
+IF
+	InMyArea(Player4)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWSW1H01",Player4)  // Drow-Krummsäbel +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player4,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWSW1H01")  // Drow-Krummsäbel +3
+		Continue()
+END
+
+IF
+	InMyArea(Player5)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWSW1H01",Player5)  // Drow-Krummsäbel +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player5,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWSW1H01")  // Drow-Krummsäbel +3
+		Continue()
+END
+
+IF
+	InMyArea(Player6)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWSW1H01",Player6)  // Drow-Krummsäbel +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player6,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWSW1H01")  // Drow-Krummsäbel +3
+		Continue()
+END
+
+IF
+	InMyArea(Player1)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWSW1H02",Player1)  // Drow-Langschwert +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player1,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWSW1H02")  // Drow-Langschwert +3
+		Continue()
+END
+
+IF
+	InMyArea(Player2)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWSW1H02",Player2)  // Drow-Langschwert +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player2,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWSW1H02")  // Drow-Langschwert +3
+		Continue()
+END
+
+IF
+	InMyArea(Player3)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWSW1H02",Player3)  // Drow-Langschwert +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player3,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWSW1H02")  // Drow-Langschwert +3
+		Continue()
+END
+
+IF
+	InMyArea(Player4)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWSW1H02",Player4)  // Drow-Langschwert +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player4,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWSW1H02")  // Drow-Langschwert +3
+		Continue()
+END
+
+IF
+	InMyArea(Player5)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWSW1H02",Player5)  // Drow-Langschwert +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player5,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWSW1H02")  // Drow-Langschwert +3
+		Continue()
+END
+
+IF
+	InMyArea(Player6)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWSW1H02",Player6)  // Drow-Langschwert +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player6,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWSW1H02")  // Drow-Langschwert +3
+		Continue()
+END
+
+IF
+	InMyArea(Player1)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWBLUN01",Player1)  // Drow-Flegel +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player1,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWBLUN01")  // Drow-Flegel +3
+		Continue()
+END
+
+IF
+	InMyArea(Player2)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWBLUN01",Player2)  // Drow-Flegel +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player2,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWBLUN01")  // Drow-Flegel +3
+		Continue()
+END
+
+IF
+	InMyArea(Player3)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWBLUN01",Player3)  // Drow-Flegel +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player3,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWBLUN01")  // Drow-Flegel +3
+		Continue()
+END
+
+IF
+	InMyArea(Player4)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWBLUN01",Player4)  // Drow-Flegel +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player4,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWBLUN01")  // Drow-Flegel +3
+		Continue()
+END
+
+IF
+	InMyArea(Player5)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWBLUN01",Player5)  // Drow-Flegel +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player5,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWBLUN01")  // Drow-Flegel +3
+		Continue()
+END
+
+IF
+	InMyArea(Player6)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWBLUN01",Player6)  // Drow-Flegel +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player6,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWBLUN01")  // Drow-Flegel +3
+		Continue()
+END
+
+IF
+	InMyArea(Player1)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWHALB01",Player1)  // Drow-Hellebarde +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player1,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWHALB01")  // Drow-Hellebarde +3
+		Continue()
+END
+
+IF
+	InMyArea(Player2)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWHALB01",Player2)  // Drow-Hellebarde +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player2,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWHALB01")  // Drow-Hellebarde +3
+		Continue()
+END
+
+IF
+	InMyArea(Player3)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWHALB01",Player3)  // Drow-Hellebarde +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player3,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWHALB01")  // Drow-Hellebarde +3
+		Continue()
+END
+
+IF
+	InMyArea(Player4)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWHALB01",Player4)  // Drow-Hellebarde +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player4,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWHALB01")  // Drow-Hellebarde +3
+		Continue()
+END
+
+IF
+	InMyArea(Player5)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWHALB01",Player5)  // Drow-Hellebarde +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player5,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWHALB01")  // Drow-Hellebarde +3
+		Continue()
+END
+
+IF
+	InMyArea(Player6)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWHALB01",Player6)  // Drow-Hellebarde +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player6,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWHALB01")  // Drow-Hellebarde +3
+		Continue()
+END
+
+IF
+	InMyArea(Player1)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWSPER01",Player1)  // Drow-Lanze +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player1,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWSPER01")  // Drow-Lanze +3
+		Continue()
+END
+
+IF
+	InMyArea(Player2)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWSPER01",Player2)  // Drow-Lanze +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player2,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWSPER01")  // Drow-Lanze +3
+		Continue()
+END
+
+IF
+	InMyArea(Player3)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWSPER01",Player3)  // Drow-Lanze +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player3,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWSPER01")  // Drow-Lanze +3
+		Continue()
+END
+
+IF
+	InMyArea(Player4)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWSPER01",Player4)  // Drow-Lanze +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player4,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWSPER01")  // Drow-Lanze +3
+		Continue()
+END
+
+IF
+	InMyArea(Player5)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWSPER01",Player5)  // Drow-Lanze +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player5,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWSPER01")  // Drow-Lanze +3
+		Continue()
+END
+
+IF
+	InMyArea(Player6)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWSPER01",Player6)  // Drow-Lanze +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player6,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWSPER01")  // Drow-Lanze +3
+		Continue()
+END
+
+IF
+	InMyArea(Player1)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWXBOW01",Player1)  // Drow-Schnellschussarmbrust +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player1,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWXBOW01")  // Drow-Schnellschussarmbrust +3
+		Continue()
+END
+
+IF
+	InMyArea(Player2)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWXBOW01",Player2)  // Drow-Schnellschussarmbrust +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player2,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWXBOW01")  // Drow-Schnellschussarmbrust +3
+		Continue()
+END
+
+IF
+	InMyArea(Player3)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWXBOW01",Player3)  // Drow-Schnellschussarmbrust +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player3,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWXBOW01")  // Drow-Schnellschussarmbrust +3
+		Continue()
+END
+
+IF
+	InMyArea(Player4)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWXBOW01",Player4)  // Drow-Schnellschussarmbrust +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player4,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWXBOW01")  // Drow-Schnellschussarmbrust +3
+		Continue()
+END
+
+IF
+	InMyArea(Player5)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWXBOW01",Player5)  // Drow-Schnellschussarmbrust +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player5,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWXBOW01")  // Drow-Schnellschussarmbrust +3
+		Continue()
+END
+
+IF
+	InMyArea(Player6)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWXBOW01",Player6)  // Drow-Schnellschussarmbrust +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player6,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWXBOW01")  // Drow-Schnellschussarmbrust +3
+		Continue()
+END
+
+IF
+	InMyArea(Player1)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWSHLD01",Player1)  // Drow-Schild +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player1,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWSHLD01")  // Drow-Schild +3
+		Continue()
+END
+
+IF
+	InMyArea(Player2)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWSHLD01",Player2)  // Drow-Schild +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player2,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWSHLD01")  // Drow-Schild +3
+		Continue()
+END
+
+IF
+	InMyArea(Player3)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWSHLD01",Player3)  // Drow-Schild +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player3,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWSHLD01")  // Drow-Schild +3
+		Continue()
+END
+
+IF
+	InMyArea(Player4)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWSHLD01",Player4)  // Drow-Schild +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player4,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWSHLD01")  // Drow-Schild +3
+		Continue()
+END
+
+IF
+	InMyArea(Player5)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWSHLD01",Player5)  // Drow-Schild +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player5,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWSHLD01")  // Drow-Schild +3
+		Continue()
+END
+
+IF
+	InMyArea(Player6)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWSHLD01",Player6)  // Drow-Schild +3
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player6,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWSHLD01")  // Drow-Schild +3
+		Continue()
+END
+
+IF
+	InMyArea(Player1)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWCLCK01",Player1)  // Drow-Piwafwi
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player1,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWCLCK01")  // Drow-Piwafwi
+		Continue()
+END
+
+IF
+	InMyArea(Player2)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWCLCK01",Player2)  // Drow-Piwafwi
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player2,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWCLCK01")  // Drow-Piwafwi
+		Continue()
+END
+
+IF
+	InMyArea(Player3)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWCLCK01",Player3)  // Drow-Piwafwi
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player3,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWCLCK01")  // Drow-Piwafwi
+		Continue()
+END
+
+IF
+	InMyArea(Player4)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWCLCK01",Player4)  // Drow-Piwafwi
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player4,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWCLCK01")  // Drow-Piwafwi
+		Continue()
+END
+
+IF
+	InMyArea(Player5)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWCLCK01",Player5)  // Drow-Piwafwi
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player5,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWCLCK01")  // Drow-Piwafwi
+		Continue()
+END
+
+IF
+	InMyArea(Player6)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWCLCK01",Player6)  // Drow-Piwafwi
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player6,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWCLCK01")  // Drow-Piwafwi
+		Continue()
+END
+
+IF
+	InMyArea(Player1)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWBOLT01",Player1)  // Drow-Bolzen des Schlafs
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player1,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWBOLT01")  // Drow-Bolzen des Schlafs
+		Continue()
+END
+
+IF
+	InMyArea(Player2)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWBOLT01",Player2)  // Drow-Bolzen des Schlafs
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player2,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWBOLT01")  // Drow-Bolzen des Schlafs
+		Continue()
+END
+
+IF
+	InMyArea(Player3)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWBOLT01",Player3)  // Drow-Bolzen des Schlafs
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player3,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWBOLT01")  // Drow-Bolzen des Schlafs
+		Continue()
+END
+
+IF
+	InMyArea(Player4)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWBOLT01",Player4)  // Drow-Bolzen des Schlafs
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player4,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWBOLT01")  // Drow-Bolzen des Schlafs
+		Continue()
+END
+
+IF
+	InMyArea(Player5)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWBOLT01",Player5)  // Drow-Bolzen des Schlafs
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player5,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWBOLT01")  // Drow-Bolzen des Schlafs
+		Continue()
+END
+
+IF
+	InMyArea(Player6)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWBOLT01",Player6)  // Drow-Bolzen des Schlafs
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player6,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWBOLT01")  // Drow-Bolzen des Schlafs
+		Continue()
+END
+
+IF
+	InMyArea(Player1)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWBOLT02",Player1)  // Drow-Bolzen der Betäubung
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player1,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWBOLT02")  // Drow-Bolzen der Betäubung
+		Continue()
+END
+
+IF
+	InMyArea(Player2)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWBOLT02",Player2)  // Drow-Bolzen der Betäubung
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player2,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWBOLT02")  // Drow-Bolzen der Betäubung
+		Continue()
+END
+
+IF
+	InMyArea(Player3)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWBOLT02",Player3)  // Drow-Bolzen der Betäubung
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player3,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWBOLT02")  // Drow-Bolzen der Betäubung
+		Continue()
+END
+
+IF
+	InMyArea(Player4)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWBOLT02",Player4)  // Drow-Bolzen der Betäubung
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player4,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWBOLT02")  // Drow-Bolzen der Betäubung
+		Continue()
+END
+
+IF
+	InMyArea(Player5)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWBOLT02",Player5)  // Drow-Bolzen der Betäubung
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player5,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWBOLT02")  // Drow-Bolzen der Betäubung
+		Continue()
+END
+
+IF
+	InMyArea(Player6)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWBOLT02",Player6)  // Drow-Bolzen der Betäubung
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player6,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWBOLT02")  // Drow-Bolzen der Betäubung
+		Continue()
+END
+
+IF
+	InMyArea(Player1)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWBOLT03",Player1)  // Drow-Bolzen +1
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player1,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWBOLT03")  // Drow-Bolzen +1
+		Continue()
+END
+
+IF
+	InMyArea(Player2)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWBOLT03",Player2)  // Drow-Bolzen +1
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player2,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWBOLT03")  // Drow-Bolzen +1
+		Continue()
+END
+
+IF
+	InMyArea(Player3)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWBOLT03",Player3)  // Drow-Bolzen +1
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player3,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWBOLT03")  // Drow-Bolzen +1
+		Continue()
+END
+
+IF
+	InMyArea(Player4)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWBOLT03",Player4)  // Drow-Bolzen +1
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player4,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWBOLT03")  // Drow-Bolzen +1
+		Continue()
+END
+
+IF
+	InMyArea(Player5)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWBOLT03",Player5)  // Drow-Bolzen +1
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player5,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWBOLT03")  // Drow-Bolzen +1
+		Continue()
+END
+
+IF
+	InMyArea(Player6)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWBOLT03",Player6)  // Drow-Bolzen +1
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player6,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWBOLT03")  // Drow-Bolzen +1
+		Continue()
+END
+
+IF
+	InMyArea(Player1)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWPLAT01",Player1)  // Drow-Prunkharnisch +5
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player1,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWPLAT01")  // Drow-Prunkharnisch +5
+		Continue()
+END
+
+IF
+	InMyArea(Player2)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWPLAT01",Player2)  // Drow-Prunkharnisch +5
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player2,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWPLAT01")  // Drow-Prunkharnisch +5
+		Continue()
+END
+
+IF
+	InMyArea(Player3)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWPLAT01",Player3)  // Drow-Prunkharnisch +5
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player3,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWPLAT01")  // Drow-Prunkharnisch +5
+		Continue()
+END
+
+IF
+	InMyArea(Player4)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWPLAT01",Player4)  // Drow-Prunkharnisch +5
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player4,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWPLAT01")  // Drow-Prunkharnisch +5
+		Continue()
+END
+
+IF
+	InMyArea(Player5)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWPLAT01",Player5)  // Drow-Prunkharnisch +5
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player5,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWPLAT01")  // Drow-Prunkharnisch +5
+		Continue()
+END
+
+IF
+	InMyArea(Player6)
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	HasItem("DWPLAT01",Player6)  // Drow-Prunkharnisch +5
+THEN
+	RESPONSE #100
+		GiveItemCreate("DWDUST",Player6,0,0,0)  // Adamantitstaub
+		TakePartyItemAll("DWPLAT01")  // Drow-Prunkharnisch +5
+		Continue()
+END
+
+IF
+	Global("DROWITEMCHECKDONE","ACIL01",0)
+	InMyArea(Player1)
+THEN
+	RESPONSE #100
+		SetInterrupt(TRUE)
+		SetGlobal("DROWITEMCHECKDONE","ACIL01",1)
+END
+

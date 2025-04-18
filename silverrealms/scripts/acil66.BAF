@@ -1,0 +1,37 @@
+IF
+	OnCreation()
+	Global("Explored","ACIL66",0)
+THEN
+	RESPONSE #100
+		Explore()
+		SetGlobal("Explored","ACIL66",1)
+END
+
+IF
+	Global("AC#BreskQuest","GLOBAL",1)
+THEN
+	RESPONSE #100
+        SetGlobal("AC#BreskQuest","GLOBAL",2)
+		//ActionOverride("AC#BRES2",MoveToPointNoInterrupt([818.649])) // now handled via AC#BRES2 script to enable quicksaving
+END
+
+IF
+	Global("AC#BreskQuest","GLOBAL",2)
+	Global("AC#Goapspawn","GLOBAL",7)
+	Global("Acil66_Bridge","ACIL66",1)
+THEN
+	RESPONSE #100
+                SetGlobal("AC#BreskQuest","GLOBAL",3)
+		ActionOverride("AC#BRES2",JumpToPoint([818.649]))
+		OpenDoor("Door03")
+		CreateCreature("AC#ABDE1",[743.615],11)
+		CreateCreature("AC#ABDE1",[811.659],3)
+		CreateCreature("AC#DWDE1",[810.653],1)
+		CreateCreature("AC#ABDE1",[549.530],8)
+		CreateCreature("AC#DWFM1",[531.497],3)
+		CreateCreature("AC#DWFM1",[377.579],3)
+		CreateCreature("AC#DWDE1",[700.997],2)
+		CreateCreature("AC#DWDE1",[549.459],2)
+		CreateCreature("AC#ABRE1",[703.593],2)
+		CreateCreature("AC#ABGR1",[493.507],2)
+END

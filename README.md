@@ -21,13 +21,12 @@ It introduces a new storyline, areas, enemies, and treasures to uncover in the c
 
 ## Features
 - New questline set in the Forgotten Realms  
-- Multiple new areas to explore  
+- 100 new areas to explore  
 - New monsters and tactical encounters  
 - Unique magical items and treasures  
-- Approximately 7 hours of gameplay  
+- Approximately 20 hours of gameplay  
 - Dynamic difficulty scaling depending on party level and game settings  
 - Playable from the beginning of the game  
-- Available in **English** and **German**
 
 ---
 

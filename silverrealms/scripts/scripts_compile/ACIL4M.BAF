@@ -9,7 +9,8 @@ THEN
         StartCutSceneMode()
         FadeToColor([15.15],30)
         Wait(1)
-        StartCutScene("AC#09CT1")
+        //StartCutScene("AC#09CT1")
+        StartCutScene("AC#07CT1")
 END
 
 IF

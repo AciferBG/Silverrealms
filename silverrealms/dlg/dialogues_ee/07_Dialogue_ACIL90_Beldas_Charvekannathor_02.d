@@ -274,8 +274,9 @@ END
 		END
 		
 		IF ~~ THEN BEGIN way_underdark_03
-		SAY  ~Doch... es gibt auch eine gute Nachricht. Im Inneren dieser Festung hinter mir entdeckten wir in einer gesonderten Kammer eine große alte metallene Zwergenkarte, die weitere Zugänge ins Unterreich markiert. Ihr müsst... den Mechanismus, mit dem Ihr auch die Ausgangstüre öffnen könnt, auf die Tür ausrichten, um den Kartenraum zu öffnen. Und zwar, bevor Ihr den berg verlasst!~
+		SAY  ~Doch... es gibt auch eine gute Nachricht. Im Inneren dieser Festung hinter mir entdeckten wir in einer gesonderten Kammer eine große alte metallene Zwergenkarte, die weitere Zugänge ins Unterreich markiert. Ihr müsst... den Mechanismus, mit dem Ihr auch die Ausgangstüre öffnen könnt, auf die Tür ausrichten, um den Kartenraum zu öffnen. Und zwar, bevor Ihr den Berg verlasst!~
 		IF ~~ THEN DO ~EraseJournalEntry(@20010)
+		EraseJournalEntry(@20062)
 		AddJournalEntry(@20011,QUEST)~ GOTO ravimors_cave_01
 		END
 		

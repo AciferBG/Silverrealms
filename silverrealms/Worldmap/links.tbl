@@ -40,6 +40,8 @@ ACIL07       W            AR1100       ExitNW       5            1            N 
 ACIL07       W            AR1200       ExitW        6            1            N            N            N            N            N            0
 ACIL07       W            ACIL4M       Entrywm      0            1            N            N            N            N            N            0 
 ACIL07       S            ACIL4M       Entrywm      0            1            N            N            N            N            N            0
+ACIL07       W            ACIL0A       Entrywm      0            1            N            N            N            N            N            0 
+ACIL07       S            ACIL0A       Entrywm      0            1            N            N            N            N            N            0
 ACIL07       S            ACIL09       Entrywm      0            1            N            N            N            N            N            0 
 ACIL07       S            ACIL01       EntryWM      3            1            N            N            N            N            N            0 
 ACIL07       W            ACIL01       EntryWM      3            1            N            N            N            N            N            0 
@@ -65,7 +67,8 @@ ACIL0A       W            ACIL04       EntryWM      7            1            N 
 ACIL0A       W            ACIL03       EntryWM      7            1            N            N            N            N            N            0 
 ACIL0A       W            AR2000       ExitNE       2            1            N            N            N            N            N            0 
 ACIL0A       W            AC1900       ExitW        7            1            N            N            N            N            N            0 
-ACIL0A       W            AR1200       ExitW        2            1            N            N            N            N            N            0 
+ACIL0A       W            AR1200       ExitW        2            1            N            N            N            N            N            0
+ACIL0A       W            ACIL01       EntryWM      3            1            N            N            N            N            N            0  
 
 //Turm
 AR0020       E            ACIL03       EntryWM      2            1            N            N            N            N            N            0

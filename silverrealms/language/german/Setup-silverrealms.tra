@@ -249,8 +249,8 @@ In der Mitte der Münze ist das Symbol eines sich endlos drehenden Wirbels einge
 @197 = ~Dieser Schlüssel ist an seinem Griff mit zwei Ringen und einem kleinen Edelstein verziert.~
 @198 = ~Diese Tür ist mit zwei Äxten und zwei zunehmenden Monden verziert. Sie besteht aus einem Euch unbekannten Metall und hat keine sichtbaren Schlösser oder ähnliche Vorrichtungen, um sie zu bewegen. Es muss einen anderen Mechanismus geben, um sie öffnen zu können. Die in die Tür eingravierten Zwergenrunen bedeuten "Tretet ein im Namen der Schutzherren des zunehmenden Mondes."~
 @199 = ~Verwitterte Zwergenstatue~
-@200 = ~Federfalltrank~
-@201 = ~Dieser Trank lässt den Anwender langsam zu Boden gleiten, ähnlich des Zaubers "Federfall", wenngleich die Wirkung des Trankes nicht lange anhält und sich der Anwender beeilen muss, bis zum Wirkungsende wieder festen Boden unter den Füßen zu haben, um nicht doch unsanft auf dem grund aufzuschlagen.~
+@200 = ~Mächtiger Federfalltrank~
+@201 = ~Dieser Trank lässt den Anwender langsam zu Boden gleiten, ähnlich des Zaubers "Federfall", wenngleich die Wirkung des Trankes nicht ewig anhält und sich der Anwender beeilen muss, bis zum Wirkungsende wieder festen Boden unter den Füßen zu haben, um nicht doch unsanft auf dem Grund aufzuschlagen. Der Trank, den IHr in den Händen haltet, scheint jedoch besonders wirkungsstark zu sein - ganz so, als ob man mit ihm eine lange Zeit herunterschweben könnte. Der Hersteller des Trankes muss außergewöhnliche Mühen aufgewendet haben, um solch ein potentes Ingredienz herstellen zu können.~
 @202 = ~Naturgeist~
 @203 = ~Die Hüter der Höhle wurden besiegt. Das Tor in die tiefen Lande steht Euch offen.~
 @204 = ~Varkha~
@@ -1428,7 +1428,7 @@ Kann nicht benutzt werden von:
 @932 = ~Wassermeister~
 @933 = ~Zwergenarbeiter~
 @934 = ~Erzmeister~
-@935 = ~Adamant-Erz~
+
 @936 = ~Dies ist die unberarbeitete, natürliche Form Adamant, das durch Legieren später zu Adamantit weiterverarbeitet wird.~
 @937 = ~Halle des Blutmondes~
 @938 = ~He! Passt gefäligst auf!~
@@ -1860,6 +1860,7 @@ Diirinka'~
 @7002 = ~Dies scheint ein defekter Mechanismus zu sein, der eine Tür öffnet. Es fehlt ein Zahnrad.~
 @7003 = ~Ihr setzt das Zahnrad an die dafür passende Stelle.~
 @7004 = ~Ihr benötigt ein Zahnrad, um den Mechanismus wieder in Gang zu bringen.~
+@7005 = ~Ihr habt das Zahnrad bereits eingesetzt und könnt nun den Mechanismus im anderen Raum dazu verwenden, die Türe in den Tunnel zu öffnen.~
 
 
 
@@ -2263,6 +2264,13 @@ SPEZIFISCHE EIGENSCHAFTEN:
 Gewicht: 2~
 @8089 = ~Zahnrad~
 @8090 = ~Dieses Zahnrad scheint früher einen Mechanismus in Gang gehalten zu haben.~
+@8091 = ~Adamant-Erz~
+@8092 = ~Die leisen Stimmen der Wahrheit~
+@8093 = ~Diese schlichte, ledergebundene Sammlung enthält uralte Lehrsprüche, Geschichten und Weisheiten, die Oghma, dem Herrn des Wissens, geweiht sind.
+Die Seiten wirken unscheinbar, doch wer mit offenem Geist liest, erkennt zwischen den Zeilen eine tieferliegende Wahrheit, verborgen vor jenen, die nur mit den Augen suchen.
+In den Hallen des Unterreichs gilt dieses Buch als seltener Schatz und Zeugnis unvergänglichen Wissens.
+
+Ihr sollt das Buch zu Neerita Runenschrift, der Oghma-Priesterin in Iltkazar, bringen.~
  
 // creature strings
 @9000 = ~Zwergenkrieger~

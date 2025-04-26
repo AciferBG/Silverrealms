@@ -340,18 +340,18 @@ END
 
 CHAIN IF ~~ THEN AC#HATH1 chain_hathar_viconia
 ~Verdammt, das sehe ich ja jetzt erst. Armbrustschützen - legt an! <CHARNAME> hat eine verdammte Drow in <PRO_HISHER>er Gruppe!~
-== ViconiJ IF ~InParty("viconia") !StateCheck("viconia",CD_STATE_NOTVALID)~ THEN ~*Sorgt* Euch nicht, Zwerg. Ich komme nicht, um Eure kostbaren Steine zu stehlen oder Eure kleinen Geheimnisse zu lernen. Ich reise in Begleitung von <CHARNAME>, mehr nicht.~
+== ViconiJ IF ~InParty("viconia") !StateCheck("viconia",CD_STATE_NOTVALID)~ THEN ~Sorgt Euch nicht, Zwerg. Ich komme nicht, um Eure kostbaren Steine zu stehlen oder Eure kleinen Geheimnisse zu lernen. Ich reise in Begleitung von <CHARNAME>, mehr nicht.~
 == AC#HATH1 ~Pah! Warum sollte ich Euch vertrauen? Ich kenne Euch und Euresgleichen! Jedes Wort aus dem Munde einer Drow ist so giftig wie die Spinnen, die sie verehren.~
 == ViconiJ ~Ihr kennt mein Volk? Dann wisst Ihr sicher auch, dass wir nicht alle gleich sind. Ich diene Shar, der Herrin der Nacht, nicht Lolth. Oder fürchtet Ihr Euch vielleicht ein wenig vor der Dunkelheit, Zwerg?~
 == AC#HATH1 ~Furcht gehört nicht zu den Tugenden eines Zwerges. Aber Vorsicht ist der Bruder der Weisheit. Ihr gebt vor, eine Ausgestoßene der Dunkelelfen zu sein? Beweist es!~
 == ViconiJ ~Was mehr sollte ich denn beweisen, als in einer Gruppe mit einem <PRO_RACE> von der Oberfläche zu reisen und Euch gerade in diesem Kampfe geholfen zu haben?~
-== AC#HATH1 ~Ehe ich Euch passieren lasse, Dunkelelf, müsst Ihr einen Beweis Eurer Abkehr von Lolth erbringen. Erkennt Ihr dieses Symbol, das ich hier aus meiner Tasche hole?~
+== AC#HATH1 ~Ehe ich Euch passieren lasse, Dunkelelfe, müsst Ihr einen Beweis Eurer Abkehr von Lolth erbringen. Erkennt Ihr dieses Symbol, das ich hier aus meiner Tasche hole?~
 == ViconiJ  ~Natürlich erkenne ich es. Es ist das Symbol der Spinnenkönigin. Warum tragt Ihr es mit Euch herum, Zwerg?~
-== AC#HATH1 ~Habe es einer Drow-Priesterin vor einigen Tagen abgenommen. Die Schöne hatte ganz schön geröchelt, als ich ihr ganz langsam meine Axt durch die Kehle triebt. Aber mein Sieg soll nicht Eure Sorge sein. Spuckt auf das Symbol Lolths und verflucht ihren Namen hier und jetzt, als Zeichen Eures Bruchs mit der Spinnenkönigin.~
+== AC#HATH1 ~Habe es einer Drow-Priesterin vor einigen Tagen abgenommen. Die Schöne hatte ganz schön geröchelt, als ich ihr ganz langsam meine Axt durch die Kehle trieb. Aber mein Sieg soll nicht Eure Sorge sein. Spuckt auf das Symbol Lolths und verflucht ihren Namen hier und jetzt, als Zeichen Eures Bruchs mit der Spinnenkönigin.~
 == ViconiJ ~Ich... soll vor einem Zwerg den Namen der Spinnenkönigin in den Schmutz ziehen?~
 == AC#HATH1 ~Ganz genau, schönes schwarzes Mädchen. Wenn Ihr ihr wirklich abgeschworen habt, müsst Ihr ohnehin bergein, bergauf um Euer Leben fürchten - ob Ihr ihren Namen hier vor mir zusätzlich durch den Dreck zieht ist dabei nicht mehr von Belang!~
-== ViconiJ ~Nun gut. Lolth mag die Gebieterin der Lügen und der Täuschung sein, aber ich diene ihr nicht mehr. Mögen die Spinnen, die sie so liebt, sich gegen sie wenden und ihre Netze zu ihrem eigenen Gefängnis spinnen. Ich spucke auf ihren Namen und verachte ihre Tyrannei.~
-== AC#HATH1 ~Das ist ein schöner starker Fluch, Dunkelelf. Ich werde Euch einlassen, aber bedenkt: Die Augen von Iltkazar ruhen auf Euch. Jeder Schritt, jeder Atemzug wird beobachtet werden. Ihr wäret nicht die erste, die versucht, uns zu täuschen, und es wäre klug, wenn Ihr nicht versucht, die letzte zu sein.~
+== ViconiJ ~Nun gut. Lolth mag die Gebieterin der Lügen und der Täuschung sein, aber ich diene ihr nicht mehr. Mögen die Spinnen, die sie so liebt, sich gegen sie wenden und ihre Netze zu ihrem eigenen Gefängnis spinnen. Ich spucke auf ihren Namen und verachte ihren Glauben.~
+== AC#HATH1 ~Das ist ein schöner starker Fluch, Dunkelelfe. Ich werde Euch einlassen, aber bedenkt: Die Augen von Iltkazar ruhen auf Euch. Jeder Schritt, jeder Atemzug wird beobachtet werden. Ihr wäret nicht die erste, die versucht, uns zu täuschen, und es wäre klug, wenn Ihr nicht versucht, die letzte zu sein.~
 END
 IF~~THEN GOTO 8	
 /*******************************************************************************************************

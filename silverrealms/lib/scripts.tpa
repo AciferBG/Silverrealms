@@ -13,7 +13,10 @@ COPY_EXISTING ~BALDUR.BCS~ ~override~
         PATCH_IF (num_matches > 0) BEGIN
             REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
             !AreaType(%area_type_id_underdark%)
-            !AreaCheck("ACIL90")\1~
+            !AreaCheck("ACIL90")
+            !AreaCheck("ACIL01")
+            !AreaCheck("ACIL0A")
+            !AreaCheck("ACIL4M")\1~
             PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
         END ELSE BEGIN
             PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
@@ -26,7 +29,10 @@ COPY_EXISTING ~BALDUR.BCS~ ~override~
         PATCH_IF (num_matches > 0) BEGIN
             REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
             !AreaType(%area_type_id_underdark%)
-            !AreaCheck("ACIL90")\1~
+            !AreaCheck("ACIL90")
+            !AreaCheck("ACIL01")
+            !AreaCheck("ACIL0A")
+            !AreaCheck("ACIL4M")\1~
             PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
         END ELSE BEGIN
             PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
@@ -39,7 +45,10 @@ COPY_EXISTING ~BALDUR.BCS~ ~override~
         PATCH_IF (num_matches > 0) BEGIN
             REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
             !AreaType(%area_type_id_underdark%)
-            !AreaCheck("ACIL90")\1~
+            !AreaCheck("ACIL90")
+            !AreaCheck("ACIL01")
+            !AreaCheck("ACIL0A")
+            !AreaCheck("ACIL4M")\1~
             PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
         END ELSE BEGIN
             PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
@@ -52,7 +61,10 @@ COPY_EXISTING ~BALDUR.BCS~ ~override~
         PATCH_IF (num_matches > 0) BEGIN
             REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
             !AreaType(%area_type_id_underdark%)
-            !AreaCheck("ACIL90")\1~
+            !AreaCheck("ACIL90")
+            !AreaCheck("ACIL01")
+            !AreaCheck("ACIL0A")
+            !AreaCheck("ACIL4M")\1~
             PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
         END ELSE BEGIN
             PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
@@ -65,7 +77,10 @@ COPY_EXISTING ~BALDUR.BCS~ ~override~
         PATCH_IF (num_matches > 0) BEGIN
             REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
             !AreaType(%area_type_id_underdark%)
-            !AreaCheck("ACIL90")\1~
+            !AreaCheck("ACIL90")
+            !AreaCheck("ACIL01")
+            !AreaCheck("ACIL0A")
+            !AreaCheck("ACIL4M")\1~
             PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
         END ELSE BEGIN
             PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
@@ -78,7 +93,10 @@ COPY_EXISTING ~BALDUR.BCS~ ~override~
         PATCH_IF (num_matches > 0) BEGIN
             REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
             !AreaType(%area_type_id_underdark%)
-            !AreaCheck("ACIL90")\1~
+            !AreaCheck("ACIL90")
+            !AreaCheck("ACIL01")
+            !AreaCheck("ACIL0A")
+            !AreaCheck("ACIL4M")\1~
             PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
         END ELSE BEGIN
             PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
@@ -94,7 +112,10 @@ COPY_EXISTING ~JAHEIRA.BCS~ ~override~
         PATCH_IF (num_matches > 0) BEGIN
             REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
             !AreaType(%area_type_id_underdark%)
-            !AreaCheck("ACIL90")\1~
+            !AreaCheck("ACIL90")
+            !AreaCheck("ACIL01")
+            !AreaCheck("ACIL0A")
+            !AreaCheck("ACIL4M")\1~
             PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
         END ELSE BEGIN
             PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
@@ -107,7 +128,10 @@ COPY_EXISTING ~JAHEIRA.BCS~ ~override~
         PATCH_IF (num_matches > 0) BEGIN
             REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
             !AreaType(%area_type_id_underdark%)
-            !AreaCheck("ACIL90")\1~
+            !AreaCheck("ACIL90")
+            !AreaCheck("ACIL01")
+            !AreaCheck("ACIL0A")
+            !AreaCheck("ACIL4M")\1~
             PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
         END ELSE BEGIN
             PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
@@ -120,7 +144,10 @@ COPY_EXISTING ~JAHEIRA.BCS~ ~override~
         PATCH_IF (num_matches > 0) BEGIN
             REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
             !AreaType(%area_type_id_underdark%)
-            !AreaCheck("ACIL90")\1~
+            !AreaCheck("ACIL90")
+            !AreaCheck("ACIL01")
+            !AreaCheck("ACIL0A")
+            !AreaCheck("ACIL4M")\1~
             PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
         END ELSE BEGIN
             PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
@@ -136,7 +163,10 @@ COPY_EXISTING ~NALIA.BCS~ ~override~
         PATCH_IF (num_matches > 0) BEGIN
             REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
             !AreaType(%area_type_id_underdark%)
-            !AreaCheck("ACIL90")\1~
+            !AreaCheck("ACIL90")
+            !AreaCheck("ACIL01")
+            !AreaCheck("ACIL0A")
+            !AreaCheck("ACIL4M")\1~
             PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
         END ELSE BEGIN
             PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
@@ -148,7 +178,10 @@ COPY_EXISTING ~NALIA.BCS~ ~override~
         PATCH_IF (num_matches > 0) BEGIN
             REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
             !AreaType(%area_type_id_underdark%)
-            !AreaCheck("ACIL90")\1~
+            !AreaCheck("ACIL90")
+            !AreaCheck("ACIL01")
+            !AreaCheck("ACIL0A")
+            !AreaCheck("ACIL4M")\1~
             PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
         END ELSE BEGIN
             PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
@@ -160,7 +193,10 @@ COPY_EXISTING ~NALIA.BCS~ ~override~
         PATCH_IF (num_matches > 0) BEGIN
             REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
             !AreaType(%area_type_id_underdark%)
-            !AreaCheck("ACIL90")\1~
+            !AreaCheck("ACIL90")
+            !AreaCheck("ACIL01")
+            !AreaCheck("ACIL0A")
+            !AreaCheck("ACIL4M")\1~
             PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
         END ELSE BEGIN
             PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
@@ -176,7 +212,10 @@ COPY_EXISTING ~HAERDALI.BCS~ ~override~
         PATCH_IF (num_matches > 0) BEGIN
             REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
             !AreaType(%area_type_id_underdark%)
-            !AreaCheck("ACIL90")\1~
+            !AreaCheck("ACIL90")
+            !AreaCheck("ACIL01")
+            !AreaCheck("ACIL0A")
+            !AreaCheck("ACIL4M")\1~
             PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
         END ELSE BEGIN
             PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
@@ -188,7 +227,10 @@ COPY_EXISTING ~HAERDALI.BCS~ ~override~
         PATCH_IF (num_matches > 0) BEGIN
             REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
             !AreaType(%area_type_id_underdark%)
-            !AreaCheck("ACIL90")\1~
+            !AreaCheck("ACIL90")
+            !AreaCheck("ACIL01")
+            !AreaCheck("ACIL0A")
+            !AreaCheck("ACIL4M")\1~
             PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
         END ELSE BEGIN
             PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
@@ -203,7 +245,10 @@ COPY_EXISTING ~AERIE.BCS~ ~override~
         PATCH_IF (num_matches > 0) BEGIN
             REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
             !AreaType(%area_type_id_underdark%)
-            !AreaCheck("ACIL90")\1~
+            !AreaCheck("ACIL90")
+            !AreaCheck("ACIL01")
+            !AreaCheck("ACIL0A")
+            !AreaCheck("ACIL4M")\1~
             PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
         END ELSE BEGIN
             PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
@@ -217,7 +262,10 @@ COPY_EXISTING ~AERIE.BCS~ ~override~
         PATCH_IF (num_matches > 0) BEGIN
             REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
             !AreaType(%area_type_id_underdark%)
-            !AreaCheck("ACIL90")\1~
+            !AreaCheck("ACIL90")
+            !AreaCheck("ACIL01")
+            !AreaCheck("ACIL0A")
+            !AreaCheck("ACIL4M")\1~
             PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
         END ELSE BEGIN
             PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
@@ -232,7 +280,10 @@ COPY_EXISTING ~ANOMEN.BCS~ ~override~
         PATCH_IF (num_matches > 0) BEGIN
             REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
             !AreaType(%area_type_id_underdark%)
-            !AreaCheck("ACIL90")\1~
+            !AreaCheck("ACIL90")
+            !AreaCheck("ACIL01")
+            !AreaCheck("ACIL0A")
+            !AreaCheck("ACIL4M")\1~
             PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
         END ELSE BEGIN
             PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
@@ -247,7 +298,10 @@ COPY_EXISTING ~MINSC.BCS~ ~override~
         PATCH_IF (num_matches > 0) BEGIN
             REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
             !AreaType(%area_type_id_underdark%)
-            !AreaCheck("ACIL90")\1~
+            !AreaCheck("ACIL90")
+            !AreaCheck("ACIL01")
+            !AreaCheck("ACIL0A")
+            !AreaCheck("ACIL4M")\1~
             PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
         END ELSE BEGIN
             PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
@@ -262,7 +316,10 @@ COPY_EXISTING ~EDWIN.BCS~ ~override~
         PATCH_IF (num_matches > 0) BEGIN
             REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
             !AreaType(%area_type_id_underdark%)
-            !AreaCheck("ACIL90")\1~
+            !AreaCheck("ACIL90")
+            !AreaCheck("ACIL01")
+            !AreaCheck("ACIL0A")
+            !AreaCheck("ACIL4M")\1~
             PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
         END ELSE BEGIN
             PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
@@ -277,7 +334,10 @@ COPY_EXISTING ~EDWIN.BCS~ ~override~
         PATCH_IF (num_matches > 0) BEGIN
             REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
             !AreaType(%area_type_id_underdark%)
-            !AreaCheck("ACIL90")\1~
+            !AreaCheck("ACIL90")
+            !AreaCheck("ACIL01")
+            !AreaCheck("ACIL0A")
+            !AreaCheck("ACIL4M")\1~
             PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
         END ELSE BEGIN
             PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
@@ -292,7 +352,10 @@ COPY_EXISTING ~EDWIN.BCS~ ~override~
         PATCH_IF (num_matches > 0) BEGIN
             REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
             !AreaType(%area_type_id_underdark%)
-            !AreaCheck("ACIL90")\1~
+            !AreaCheck("ACIL90")
+            !AreaCheck("ACIL01")
+            !AreaCheck("ACIL0A")
+            !AreaCheck("ACIL4M")\1~
             PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
         END ELSE BEGIN
             PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
@@ -307,7 +370,10 @@ COPY_EXISTING ~KORGAN.BCS~ ~override~
         PATCH_IF (num_matches > 0) BEGIN
             REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
             !AreaType(%area_type_id_underdark%)
-            !AreaCheck("ACIL90")\1~
+            !AreaCheck("ACIL90")
+            !AreaCheck("ACIL01")
+            !AreaCheck("ACIL0A")
+            !AreaCheck("ACIL4M")\1~
             PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
         END ELSE BEGIN
             PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
@@ -322,7 +388,10 @@ COPY_EXISTING ~KORGAN.BCS~ ~override~
         PATCH_IF (num_matches > 0) BEGIN
             REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
             !AreaType(%area_type_id_underdark%)
-            !AreaCheck("ACIL90")\1~
+            !AreaCheck("ACIL90")
+            !AreaCheck("ACIL01")
+            !AreaCheck("ACIL0A")
+            !AreaCheck("ACIL4M")\1~
             PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
         END ELSE BEGIN
             PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
@@ -337,7 +406,10 @@ COPY_EXISTING ~KORGAN.BCS~ ~override~
         PATCH_IF (num_matches > 0) BEGIN
             REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
             !AreaType(%area_type_id_underdark%)
-            !AreaCheck("ACIL90")\1~
+            !AreaCheck("ACIL90")
+            !AreaCheck("ACIL01")
+            !AreaCheck("ACIL0A")
+            !AreaCheck("ACIL4M")\1~
             PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
         END ELSE BEGIN
             PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
@@ -352,7 +424,10 @@ COPY_EXISTING ~KORGAN.BCS~ ~override~
         PATCH_IF (num_matches > 0) BEGIN
             REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
             !AreaType(%area_type_id_underdark%)
-            !AreaCheck("ACIL90")\1~
+            !AreaCheck("ACIL90")
+            !AreaCheck("ACIL01")
+            !AreaCheck("ACIL0A")
+            !AreaCheck("ACIL4M")\1~
             PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
         END ELSE BEGIN
             PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~
@@ -367,7 +442,10 @@ COPY_EXISTING ~KORGAN.BCS~ ~override~
         PATCH_IF (num_matches > 0) BEGIN
             REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
             !AreaType(%area_type_id_underdark%)
-            !AreaCheck("ACIL90")\1~
+            !AreaCheck("ACIL90")
+            !AreaCheck("ACIL01")
+            !AreaCheck("ACIL0A")
+            !AreaCheck("ACIL4M")\1~
             PATCH_PRINT ~Patching: %num_matches% matches found in %SOURCE_FILESPEC% for REPLACE_TEXTUALLY: %textToReplace%~
         END ELSE BEGIN
             PATCH_WARN ~WARNING: could not find %textToReplace% in %SOURCE_FILESPEC%~

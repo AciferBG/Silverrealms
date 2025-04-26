@@ -185,7 +185,7 @@ IF ~~ THEN BEGIN shop
 END
 
 IF ~~ THEN BEGIN moradin_1
-  SAY ~Moradin ist der Erschaffer der Zwerge. In grauer Vorzeit formte er in seiner Schmiede den ersten Zwerg aus einem Stück Metall und hauchte ihm beim Abkühlen der noch glühenden Form mit seinem Atem Leben ein. Deshalb nennen wir Moradin auch den "Allvater"~
+  SAY ~Moradin ist der Erschaffer der Zwerge. In grauer Vorzeit formte er in seiner Schmiede den ersten Zwerg aus einem Stück Metall und hauchte ihm beim Abkühlen der noch glühenden Form mit seinem Atem Leben ein. Deshalb nennen wir Moradin auch den Allvater.~
   IF ~~ THEN REPLY ~Interessant. Ich habe noch eine weitere Frage.~ GOTO question
 END
 

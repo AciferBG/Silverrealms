@@ -3,10 +3,6 @@ IF
 THEN
     RESPONSE #100
         CutSceneId(Player1)
-        FadeToColor([30.0],0)
-        ActionOverride("AC#09MAL",EscapeAreaDestroy(3))
-        Wait(2)
-        ActionOverride("CUTSPY",DestroySelf())
         LeaveAreaLUAPanic("ACIL07","",[323.333],S)
         LeaveAreaLUA("ACIL07","",[323.333],NW)
         MultiPlayerSync()

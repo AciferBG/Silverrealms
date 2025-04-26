@@ -762,12 +762,13 @@ END
 
 IF ~~ THEN BEGIN for_the_king
 SAY ~Auf unseren weisen Herrscher.~
-  IF ~~ THEN REPLY ~Auf Köng Mithbarak.~ EXTERN ~AC#GROM1~ dunnabar_arrest
-  IF ~~ THEN REPLY ~(Nichts sagen.)~ EXTERN ~AC#GROM1~ dunnabar_arrest
+  IF ~~ THEN REPLY ~Auf König Mithbarak.~ EXTERN ~AC#GROM1~ dunnabar_arrest
+  IF ~~ THEN REPLY ~Und weiter?~ EXTERN ~AC#GROM1~ dunnabar_arrest
+  IF ~~ THEN REPLY ~Ach, rutscht mir doch alle den Buckel herunter!~ EXTERN ~AC#GROM1~ dunnabar_arrest
 END
 
 IF ~~ THEN BEGIN vronia_is_busy
-SAY ~Vronia lässt sich entschudigen, da sie mit einer wichtigen anderen Angelegenheit beschäftigt ist.~
+SAY ~Vronia lässt sich entschuldigen, da sie mit einer wichtigen anderen Angelegenheit beschäftigt ist.~
 IF ~~ THEN EXTERN ~AC#GROM1~ vronia_is_busy_02 
 END
 
@@ -841,7 +842,9 @@ IF ~~ THEN REPLY ~Es heißt "Die Astrale See, ein Reisebericht in das Reich aus 
 END
 
 IF ~~ THEN BEGIN bad_news
-SAY ~Das sind schlimme Neuigkeiten, die diese Fremden von der Oberfläche hier überbringen. Der Rat muss über das weitere Vorgehen in den nächsten Wochen eingehend beraten. Dies sind schwere Zeiten, und wir sollten jetzt keine leichtfertigen Entscheidungen treffen, die wir dann später bereuen könnten. Meine verehrten Ratsmitglieder, ich beantrage, dass wir die Versammlung vertagen und diese Gruppe solange unter Arrest stellen.~
+SAY ~Das sind schlimme Neuigkeiten, die diese Fremden von der Oberfläche hier überbringen. Der Rat muss über das weitere Vorgehen in den nächsten Wochen eingehend beraten. Dies sind schwere Zeiten, und wir sollten jetzt keine leichtfertigen Entscheidungen treffen, die wir dann später bereuen könnten.~
+= 
+~Meine verehrten Ratsmitglieder, ich beantrage, dass wir die Versammlung vertagen und diese Gruppe solange unter Arrest stellen.~
 IF ~~ THEN EXTERN ~AC#ELER1~ what_uncle
 END
 

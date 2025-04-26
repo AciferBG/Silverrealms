@@ -1,6 +1,16 @@
 IF
     Clicked([ANYONE])
     Range(LastTrigger,12)
+    GlobalGT("RepairWheels","ACIL95",0)
+    GlobalGT("AC#IL_Wheel_repaired","GLOBAL",9)
+THEN
+    RESPONSE #100
+        DisplayString(Myself,@7005)   // Ihr setzt das Zahnrad an die dafür passende Stelle.
+END
+
+IF
+    Clicked([ANYONE])
+    Range(LastTrigger,12)
     Global("AC#IL_Wheel_repaired","GLOBAL",0)
 THEN
     RESPONSE #100
@@ -17,7 +27,7 @@ THEN
     RESPONSE #100
         SetGlobal("RepairWheels","ACIL95",1)
         TakePartyItem("AC#IL95W")  // Zahnrad
-        DisplayString(Myself,@7003)  
+        DisplayString(Myself,@7003)   // Ihr setzt das Zahnrad an die dafür passende Stelle.
         SetGlobal("AC#IL_Wheel_repaired","GLOBAL",10)
 END
 
@@ -27,7 +37,7 @@ IF
     !PartyHasItem("AC#IL95W")  // Zahnrad
 THEN
     RESPONSE #100
-        DisplayString(Myself,@7004)  // Oh, den Yugoloth, nicht wahr? Ja, damit habt Ihr allen die Schau gestohlen, wenn ich mich recht erinnere.
+        DisplayString(Myself,@7004)   // Ihr benötigt ein Zahnrad, um den Mechanismus wieder in Gang zu bringen.
 END
 
 IF

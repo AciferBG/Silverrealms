@@ -88,7 +88,7 @@ END
 	IF ~OR(3)
 	GlobalGT("AC#HizagkuurQuest","GLOBAL",0)
 	GlobalGT("AC#Vronia_Quest","GLOBAL",6)
-	GlobalGT("AC#RC_Sorni_Fourth","GLOBAL",0)~ THEN REPLY ~Ich suche Sorni.~ + looking_4_Sorni
+	GlobalGT("AC#RC_Sorni_Fourth","GLOBAL",0)~ THEN REPLY ~Ich suche Sorni Arnschädel.~ + looking_4_Sorni
 	IF ~GlobalGT("AC#BetrangridQuest","GLOBAL",0)~ THEN REPLY ~Ich suche Whundaed, den Fiebereisenschmied.~  GOTO looking_4_Whundaed
 	END
 	
@@ -104,7 +104,7 @@ END
 		END
 		
 		IF ~~ THEN BEGIN looking_4_Sorni
-		SAY ~Ihr sucht die Chefin? Die ist nicht hier in diesem Stockwerk. Sie ist eine Ebene tiefer, bei den Hochöfen, in der Azerkyn-Halle. Nehmt eine der großen Treppen im Nord- oder Südwesten dieser Halle. Ihr findet sie meist in der Nähe des Lavaflusses bei den Hochöfen.~
+		SAY ~Ihr sucht die Schmiedeherrin? Die ist nicht hier in diesem Stockwerk. Sie ist eine Ebene tiefer, bei den Hochöfen, in der Azerkyn-Halle. Nehmt eine der großen Treppen im Nord- oder Südwesten dieser Halle. Ihr findet sie meist in der Nähe des Lavaflusses bei den Hochöfen. Aber nehmt Euch in Acht - sie ist stark wie ein Höhlenbär! Sie kann ein Stück Stahl allein mit ihrer Armeskraft zurechtbiegen. Ihr solltet ihr lieber nicht krumm kommen.~
 		IF ~~ THEN REPLY ~Ich habe noch weitere Fragen.~ + questions
 		IF ~~ THEN REPLY ~Danke, ich werde mich wieder auf den Weg machen.~ GOTO bye 
 		END

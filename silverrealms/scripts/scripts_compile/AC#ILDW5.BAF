@@ -1,0 +1,9 @@
+IF
+    Global("AC#Waterwell","GLOBAL",4)
+    Global("Waterwell_repaired","ACIL54",0)
+    See([PC])
+THEN
+    RESPONSE #100
+        StartDialogueNoSet([PC])
+END
+

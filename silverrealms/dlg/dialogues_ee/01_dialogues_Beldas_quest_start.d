@@ -499,7 +499,7 @@ END
 
 BEGIN ~ac#dwf20~
 
-IF ~GlobalGT("AC#BeldasPlotStart","GLOBAL",0)
+IF ~GlobalGT("AC#BeldasPlotStart","GLOBAL",3)
 GlobalLT("Dwarf_joke","ACIL4I",3)~ THEN BEGIN joke_01
 SAY ~He, Thradear, Lust auf einen Elfenwitz?~
 IF ~~ THEN EXTERN ~AC#DWF30~ thradear_joke_01
@@ -556,7 +556,7 @@ END
 
 BEGIN ~ac#dwf30~
 
-IF ~GlobalGT("AC#BeldasPlotStart","GLOBAL",0)
+IF ~GlobalGT("AC#BeldasPlotStart","GLOBAL",3)
 GlobalLT("Dwarf_joke","ACIL4I",3)~ THEN BEGIN joke_01
 SAY ~He, Gormar, habt Ihr noch einen Eurer Elfenwitze auf Lager?~
 IF ~~ THEN EXTERN ~AC#DWF20~ gormar_joke_01
@@ -568,7 +568,7 @@ IF ~~ THEN EXTERN ~AC#DWF20~ gormar_joke_01
 END
 
 IF ~True()~ THEN BEGIN hello
-SAY ~Hm.~
+SAY ~...~
 IF ~~ THEN EXIT
 END
 

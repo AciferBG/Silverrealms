@@ -13,10 +13,12 @@ COPY ~silverrealms/cre/AC#4OGOL.cre~ ~override~ // Map golem
   SAY NAME1 @9039 SAY NAME2 @9039
 
 COPY ~silverrealms/cre/AC#DETY1.cre~ ~override~
-    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#NWN_DEATH_TYRANT~))
+    //WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#NWN_DEATH_TYRANT~))
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~DEATH_TYRANT~))
     
 COPY ~silverrealms/cre/AC#DETY2.cre~ ~override~
-    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#NWN_DEATH_TYRANT~))
+    //WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#NWN_DEATH_TYRANT~))
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~DEATH_TYRANT~))
     
 
 COPY ~silverrealms/cre/AC#IL54D.cre~ ~override~

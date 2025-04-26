@@ -3,6 +3,10 @@
 
 COPY ~silverrealms/itm/copy~         ~override~
 
+COPY ~%MOD_FOLDER%/itm/AC#ILBOG.itm~         ~override~    // Oghma's book
+  SAY NAME2 @8092
+  SAY DESC @8093
+
 COPY ~%MOD_FOLDER%/itm/AC#IL95W.itm~         ~override~    // wheel
   SAY NAME2 @8089
   SAY DESC @8090
@@ -790,7 +794,7 @@ COPY ~silverrealms/itm/AC#81ARO.itm~         ~override~   // arrow of Githyanki 
   SAY DESC @927
   
 COPY ~silverrealms/itm/AC#ADORE.itm~         ~override~   // adamant ore
-  SAY NAME1 @935
+  SAY NAME2 @8091
   SAY DESC  @936
   
 COPY ~silverrealms/itm/AC#S#ORE.itm~         ~override~ // Ore: Zardazil

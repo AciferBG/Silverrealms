@@ -7,16 +7,19 @@ BEGIN ~AC#59DW2~
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN 1
 SAY ~Seid gegrüßt, <RACE>!~
 ++ ~Was macht Ihr hier?~ + i_am_the_watermaster
+++ ~Ich muss weiter.~ + bye
 END
 
 	IF ~~ THEN BEGIN i_am_the_watermaster
 	SAY ~Ich bin der Wassermeister. Meine Aufgabe ist es, den Wasserdruck hier in der Halle zu überwachen, damit nichts kaputtgeht.~
 	++ ~Was ist das für eine große runde Tür hier?~ + plug
+	++ ~Wie dem auch sei. Ich lasse Euch bei Eurer Aufgabe einmal wieder allein.~ + bye
 	END
 	
 		IF ~~ THEN BEGIN plug
 		SAY ~Das? Das ist die Wasserpforte. Wir haben hier einen Zugang zum Dhalnadar-Fluss gegraben, der oben durch die Stadt fließt. Damit speisen wir die vielen Rohre, die hier durch die Halle laufen und mit dem Wasserdruck die Öfen antreiben.~
 		++ ~Ist solch ein... Stöpsel nicht gefährlich?~ + dangerous
+		++ ~Eine gute Idee. Ich lasse Euch bei Eurer Aufgabe einmal wieder allein.~ + bye
 		END
 		
 			IF ~~ THEN BEGIN dangerous
@@ -25,7 +28,7 @@ END
 			END
 			
 				IF ~~ THEN BEGIN dumbass
-				SAY ~Was? Was für ein Idiot muss das denn gewesen sein, der den Stöpsel dort entfernt hat!~
+				SAY ~Was? Was für ein Idiot muss das denn gewesen sein, der den Stöpsel dort entfernt hat?~
 				++ ~Wie dem auch sei. Ich lasse Euch bei Eurer Aufgabe einmal wieder allein.~ + bye
 				END
 				
@@ -52,6 +55,7 @@ BEGIN ~AC#59DW3~
 
 BEGIN ~AC#59DW4~
 
+
 // Chain #1: two dwarves in front of the portal
 CHAIN IF WEIGHT #-1 ~NumTimesTalkedTo(0)~ THEN AC#59DW4 chain_fear_portal
 ~Verdammt, hört Ihr das, Hughar? Da ist das Geräusch schon wieder!~
@@ -63,6 +67,10 @@ CHAIN IF WEIGHT #-1 ~NumTimesTalkedTo(0)~ THEN AC#59DW4 chain_fear_portal
 == AC#59DW4 ~Seit drei Jahren warten wir schon, bis er wieder erwacht und sehen zu, wie die Schutzrunen weniger leuchten!~
 END
 IF ~~ THEN EXTERN ~AC#59DW3~ wait
+
+CHAIN IF ~True()~ THEN AC#59DW4 hello_again
+~Mit gefällt dieses Tor nicht. Aber wir brauchen es, verströmt es doch die Hitze, die wir brauchen, um die Öfen zu betreiben.~
+EXIT
 
 // ---------------------------------------------
 // Dwarf#5, oremaster
@@ -85,8 +93,15 @@ END
 	IF ~~ THEN BEGIN finished
 	SAY ~Ja, was ist damit?~
 	++ ~Ach, nichts.~ + leave_you_alone_bye
+	++ ~Was soll ich mit dem Erz noch einmal tun?~ + about_ore_once_more
 	++ ~Ich glaube, ich habe alles sortiert.~ + done_it
 	END
+	
+		IF ~~ THEN BEGIN about_ore_once_more
+		SAY ~Ihr sollt das Adamant aus den Mithrilhaufen und das Mithril aus den Adamanthaufen aussortieren. Dann sollt Ihr in jeden Mithrilhaufen ein Stückchen Mithril einsortieren, und in jeden Adamanthaufen ein Stückchen Adamant.~
+		++ ~Nun gut. Bis später.~ + leave_you_alone_bye
+		++ ~Ich glaube, ich habe alles sortiert.~ + done_it
+		END
 	
 		IF ~~ THEN BEGIN done_it
 		SAY ~Lasst mal sehen...~
@@ -142,7 +157,9 @@ END
 		END
 		
 			IF ~~ THEN BEGIN what_to_do
-			SAY ~Das Mithril muss aus dem Haufen Adamant aussortiert werden, und das Adamant aus dem Mithrilhaufen. Und wenn Ihr irgendwo Zardazil entdeckt, lasst es ganz draußen, das hat hier auf meiner Seite gar nichts zu suchen.~
+			SAY ~Das Mithril muss aus dem Haufen Adamant aussortiert werden, und das Adamant aus dem Mithrilhaufen. Und wenn Ihr irgendwo Zardazil entdeckt, lasst es ganz draußen, das hat hier auf meiner Seite gar nichts zu suchen. Zardazil sollt Ihr mir bringen.~
+			=
+			~Im nächsten Schritt sollt Ihr in jeden Mithrilhaufen ein Stückchen Mithril einsortieren, und in jeden Adamanthaufen ein Stückchen Adamant.~
 			++ ~Wie kann ich die verschiedenen Erze unterscheiden?~ + distinct
 			++ ~Das klingt einfach. Ich werde es machen.~ + lets_do_it
 			++ ~Ich lasse Euch mit diesem Problem lieber alleine.~ + leave_you_alone_bye

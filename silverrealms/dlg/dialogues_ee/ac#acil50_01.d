@@ -420,7 +420,8 @@ IF ~Global("AC#RegencyQuest","GLOBAL",1)
 Global("AC#BreskWatches","ACIL50",1)~ THEN BEGIN short_visit
   SAY ~Na, war ja ein ganz schön kurzer Besuch vor unserem Rat, was?~
   =
-  ~Nur, dass Ihr's gleich wisst: Ich mag Euch übrigens auch nicht. Aber das tut jetzt nichts zur Sache. Ich habe meinen Wachen mitgeteilt, dass Ihr hier überall ein- und ausgehen könnt, soviel Ihr wollt. Nur: Wenn Ihr hier meint, eins auf langen Bart machen zu müssen, landet Ihr im Kerker. Ist das klar?~
+  ~Nur, dass Ihr's gleich wisst: Ich mag Euch übrigens auch nicht. Aber das tut jetzt nichts zur Sache.~
+=~Ich habe meinen Wachen mitgeteilt, dass Ihr hier überall ein- und ausgehen könnt, soviel Ihr wollt. Nur: Wenn Ihr hier meint, eins auf langen Bart machen zu müssen, landet Ihr im Kerker. Ist das klar?~
   IF ~~ THEN EXTERN ~AC#ELER2~ help_party
 END
 
@@ -528,7 +529,9 @@ END
 
 
 IF ~~ THEN BEGIN fast
-  SAY ~Diese Stadt hat auch deshalb so lange im Unterreich überlebt, weil ihre Bewohner immer schon vorher genau wussten, was in Kürze auf sie zukommt. So ist es immer gewesen, und so ist es auch diesmal. Normalerweise würde ich Euch zunächst eingehend befragen, doch wie mein Bruder mir weiter berichtete, habt Ihr wichtige Informationen für unsere Ratsherren. Ihr solltet Euch umgehend im Ratsgebäude melden und Bericht erstatten. Die Halle des Rates befindet sich im Nordosten der Stadt. Nehmt am Besten die großen Treppen, die hinter der Brücke steil die Höhle hinaufgehen, dann könnt Ihr das Gebäude kaum verfehlen.~
+  SAY ~Diese Stadt hat auch deshalb so lange im Unterreich überlebt, weil ihre Bewohner immer schon vorher genau wussten, was in Kürze auf sie zukommt. So ist es immer gewesen, und so ist es auch diesmal.~ 
+  =
+  ~Normalerweise würde ich Euch zunächst eingehend befragen, doch wie mein Bruder mir weiter berichtete, habt Ihr wichtige Informationen für unsere Ratsherren. Ihr solltet Euch umgehend im Ratsgebäude melden und Bericht erstatten. Die Halle des Rates befindet sich im Nordosten der Stadt. Nehmt am Besten die großen Treppen, die hinter der Brücke steil die Höhle hinaufgehen, dann könnt Ihr das Gebäude kaum verfehlen.~
   IF ~~ THEN REPLY ~Es freut mich, dass Ihr mir Vertrauen schenkt und mich alleine diese schöne Stadt erkunden lasst.~ GOTO no_guards
   IF ~~ THEN REPLY ~Ich werde den Weg schon finden. Gehabt Euch wohl.~ GOTO no_guards
 END
@@ -1139,8 +1142,8 @@ CHAIN IF ~NumTimesTalkedTo(0)~ THEN AC#50SP1 chain_bystanders_01
 == AC#50SP1 IF ~InParty("viconia") !StateCheck("viconia",CD_STATE_NOTVALID)~ THEN ~Pfui! Ein Drow ist wie eine schlechte Ader im Erz, sie verdirbt alles, was sie berührt.~
 == AC#50SP4 IF ~InParty("viconia") !StateCheck("viconia",CD_STATE_NOTVALID)~ THEN ~Drow? Ich würde eher einem Goblin mein Kind anvertrauen als einer von denen.~
 == AC#50SP1 IF ~InParty("viconia") !StateCheck("viconia",CD_STATE_NOTVALID)~ THEN ~Drow in der Nähe bedeutet, dass Ärger nicht weit ist. Sie bringen Dunkelheit, wohin sie auch gehen.~
-== AC#BRES1 ~Geht weiter, Leute! Hier gibt es nichts zu sehen!~
-== AC#50SP2 ~Ich wette, keiner von denen hat je eine Axt geschwungen.~
+== AC#BRES1 ~Geht weiter, Leute! Hier gibt es nichts zu sehen! Das ist doch nicht das erste Oberflächenwesen, das Ihr hier zu Gesicht bekommt!~
+== AC#50SP2 ~Ich wette, keiner von denen hat je eine richtige Axt geschwungen.~
 == AC#BRES1 ~Ich sag's nicht noch mal! Verzieht Euch, Bürger! Und hört auf, so dumm herum zu gaffen! Das ziemt sich nicht für einen Zwerg.~
 == AC#BRES1 ~Und Ihr, <CHARNAME>, rasch die Treppe hoch zum Regentschaftsrat, bevor Ihr hier noch mehr Unruhe verbreitet!~
 END

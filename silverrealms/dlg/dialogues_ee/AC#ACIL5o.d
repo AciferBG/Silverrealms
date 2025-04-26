@@ -5,19 +5,32 @@
 BEGIN ~AC#5ONEE~
 
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN hello_0
-  SAY ~Seid gegrüßt, <PRO_RACE> von der Oberwelt! Es ist schön, hier unten auch jemand anderen als missmutige Zwerge zu Gesicht zu bekommen!~
-  ++ ~Ein Mensch hier in der Stadt der Zwerge?~ + a_human
+  SAY ~Seid gegrüßt, <PRO_RACE> von der Oberwelt! Es ist schön, hier unten auch jemand anderen als missmutige Zwerge, die ihre missmutigen Götter anbeten, zu Gesicht zu bekommen!~
+  ++ ~Ihr verehrt hier unten einen Gott von der Oberfläche?~ + a_human_god
   ++ ~Gibt es Dienste, die Ihr hier in Eurem Tempel anbietet?~ + what_service
   IF ~Global("AC#Vronia_Quest","GLOBAL",5)~ THEN REPLY ~Vronia schickt mich mit einer Frage zu Euch.~ + vronia_quest_01
 END
 
 IF ~True()~ THEN BEGIN hello_again
   SAY ~Schön, Euch wiederzusehen! Was kann ich für Euch tun?~
-	++ ~Ihr seid ein seltener Anblick inmitten der ganzen Zwerge.~ + a_human
+	++ ~Ihr verehrt hier unten einen Gott von der Oberfläche?~ + a_human_god
 	++ ~Zeigt mir, was Ihr anzubieten habt.~ + shop
 	++ ~Im Moment nichts.~ + bye
   IF ~Global("AC#Vronia_Quest","GLOBAL",5)~ THEN REPLY ~Vronia schickt mich mit einer Frage zu Euch.~ + vronia_quest_01
+  IF ~PartyHasItem("AC#ILBOG")~ THEN REPLY ~Ich habe das Buch von der Oberfläche für Euch besorgt.~ + have_oghma_book
 END
+
+		IF ~~ THEN BEGIN have_oghma_book
+		SAY ~Wie schön! Großartig! Lasst einmal sehen...~
+		IF ~~ THEN DO ~TakePartyItem("AC#ILBOG") DestroyItem("AC#ILBOG")~ GOTO have_oghma_book_02 
+		END
+		
+			IF ~~ THEN BEGIN have_oghma_book_02
+			SAY ~Einfach wunderbar! Vielen Dank! Ihr habt eine Gelehrte in ihren Hallen sehr glücklich gemacht.~
+			IF ~~ THEN DO ~SetGlobal("AC#ACIL5O_OghmaBook","GLOBAL",10)
+			EraseJournalEntry(@57101)
+			AddJournalEntry(@57110,QUEST_DONE)~ EXIT 
+			END
 
 	IF ~~ THEN BEGIN vronia_quest_01
 	SAY ~Ein Mitglied des Regentschaftsrates lässt sich herab, einen *hurm* um seine Meinung zu fragen? Dann muss es wahrlich etwas Wichtiges sein.~
@@ -25,7 +38,7 @@ END
 	END
 	
 		IF ~~ THEN BEGIN ellhimar_01
-		SAY ~Natürlich. Als er vor einigen Jahren hier nach Iltkazar kam, war er sehr freundlich zu mir. Ich war so froh, endlich einen Gleichgesinnten in dieser Stadt gefunden zu haben! Aber seit einiger Zeit ist er wie verändert.~
+		SAY ~Natürlich. Als er vor einigen Jahren hier nach Iltkazar kam, war er sehr freundlich zu mir. Ich war so froh, endlich einen Gleichgesinnten in dieser Stadt gefunden zu haben! Er brachte mir einiges über die Verehrung Oghmas an der Oberfläche und der Welt der Menschen bei. Aber seit einiger Zeit ist er wie verändert.~
 		++ ~Wie meint Ihr das?~ + ellhimar_02
 		END
 	
@@ -63,7 +76,7 @@ END
 									END
 									
 										IF ~~ THEN BEGIN ellhimar_anything_else
-										SAY ~Leider nein. Er hilft den Zwergen immer noch bei einigen Verzauberungen, aber ansonsten hat er sich aus dem Leben der Gemeinschaft vollständig zurückgezogen. Die Zwerge scheint es nicht zu stören, schließlich ist er ja eh' nur ein *hurm*, ein Mensch.~
+										SAY ~Leider nein. Er hilft uns Zwergen immer noch bei einigen Verzauberungen, aber ansonsten hat er sich aus dem Leben der Gemeinschaft vollständig zurückgezogen. Die Zwerge scheint es nicht zu stören, schließlich ist er ja eh' nur ein *hurm*, ein Mensch.~
 											IF ~~ THEN 
 											REPLY ~Ich danke Euch für diese Information.~ 
 											DO ~SetGlobal("AC#Vronia_Quest","GLOBAL",6)
@@ -78,25 +91,68 @@ END
 										 ++ ~Im Moment nichts.~ + bye
 										END
 		
-	IF ~~ THEN BEGIN a_human
-	SAY ~Ja, das ist wahrlich ein seltener Anblick. Meine Familie hat sich bereits vor Jahrhunderten in dieser Stadt niedergelassen. Leider gelten die Verdienste, die meine Familie für die Stadt bisher getan hat, unter den Zwergen nicht viel, weshalb ich ein Dasein am Rande des allgemeinen Lebens und der Stadt hier in meinem kleinen Tempel friste. Umso mehr freue ich mich, dass Ihr mich hier besucht! Ich habe schon viel über die Oberfläche gehört.~
+	IF ~~ THEN BEGIN a_human_god
+	SAY ~Ja, das ist wahrlich eine seltene Angelegenheit. Meine Familie hat bereits vor Jahrhunderten den Glauben an Oghma angenommen. Leider gelten die Verdienste, die meine Vorfahren für die Stadt bisher getan haben, unter uns Zwergen nicht besonders viel, weshalb ich ein Dasein am Rande des allgemeinen Lebens und der Stadt hier in meinem kleinen Tempel friste. Umso mehr freue ich mich, dass Ihr mich hier besucht! Ich habe schon viel über die Oberfläche gehört.~
 	++ ~Ihr wart noch nie an der Oberfläche?~ + surface
+	IF ~Global("AC#ACIL5O_Scrolls","GLOBAL",0)~ THEN REPLY ~Ich stamme aus Kerzenburg. Habt Ihr schon davon gehört?~ + hail_candlekeep
+	++ ~Ich gehe dann wieder.~ + bye
 	END
 
 			IF ~~ THEN BEGIN surface
-			  SAY ~Nein. Ich bin in Iltkazar geboren. Mein größter Traum wäre jedoch, die Lande unter der Sonne zu bereisen. Aber dazu müsste unser König hier erst einmal wieder aus seinem Schlaf erwachen. Das soll aber nicht Eure Sorge sein. ~
-			  IF ~~ THEN GOTO what_can_i_do
+			  SAY ~Nein. Ich bin in Iltkazar geboren. Leider sehen die Zwerge meinen Glauben als eine lächerliche Abweichung von ihrer Norm an. Das soll aber nicht Eure Sorge sein. ~
+			  ++ ~Gibt es Dienste, die Ihr hier in Eurem Tempel anbietet?~ + what_service
+			  IF ~Global("AC#ACIL5O_Scrolls","GLOBAL",0)~ THEN REPLY ~Ich stamme aus Kerzenburg. Habt Ihr schon davon gehört?~ + hail_candlekeep
+			  ++ ~Ich gehe dann wieder.~ + bye
 			END
+			
+			IF ~~ THEN BEGIN hail_candlekeep
+			  SAY ~Kerzenburg! Ein Name, der selbst in unseren tiefsten Hallen wie ein munteres Lied der Weisheit klingt. Solche Stätten, wo das Wissen gehütet wird wie ein kostbarer Schatz, nähren die Hoffnung, dass Verstand und Wort auch in dieser wandelbaren Welt Bestand haben. Möge Oghmas Hand stets über solchen Orten wachen!~
+			  IF ~~ THEN GOTO hail_candlekeep_02
+			END
+			
+				IF ~~ THEN BEGIN hail_candlekeep_02
+				  SAY ~Danke, dass Ihr mir das erzählt habt! Hier, <BROTHERSISTER> des Wissens, ich gebe Euch einige Schriftrollen als Willkommensgeschenk.~
+				  IF ~~ THEN DO ~SetGlobal("AC#ACIL5O_Scrolls","GLOBAL",1)
+				  GiveItemCreate("SCRL75",LastTalkedToBy,5,1,1)~ GOTO oghma_job
+				END
+				
+					IF ~~ THEN BEGIN oghma_job
+					SAY ~Da fällt mir ein... Dürfte ich Euch um einen Gefallen bitten, solltet Ihr jemals wieder an der Oberfläche einen Tempel Oghmas betreten?~
+					IF ~~ THEN REPLY ~Gerne, was kann ich in solch einem Tempel für Euch tun?~ GOTO oghma_job_02
+					IF ~~ THEN REPLY ~Nein, für so etwas habe ich keine Zeit.~ + oghma_job_no		
+					END
+					
+						IF ~~ THEN BEGIN oghma_job_02
+						SAY ~Es heißt, an der Oberfläche gäbe es ein Buch, das in den Tempeln Oghmas so häufig ist wie Pilze in den feuchten Höhlen der Tiefe – ein Schatz an Weisheit, den jeder dort kennt. Hier jedoch, in den stillen Schatten des Unterreichs, ist solch ein Werk seltener als ein Stern am Höhlenhimmel. Wenn Ihr es finden könntet, wäre es ein Segen für unsere Hallen des Wissens.~
+						IF ~~ THEN GOTO oghma_job_03
+						END
+						
+							IF ~~ THEN BEGIN oghma_job_03
+							SAY ~Das Buch trägt den ehrwürdigen Namen 'Die leisen Stimmen der Wahrheit', eine Sammlung alter Lehrsprüche, wie sie Oghma selbst in goldenen Zeiten geschenkt haben soll.~
+							IF ~~ THEN REPLY ~In Ordnung, ich werde meine Augen nach diesem Buch offenhalten.~ GOTO oghma_job_yes
+							IF ~~ THEN REPLY ~Nein, für so etwas habe ich keine Zeit.~ + oghma_job_no
+							END
+							
+								IF ~~ THEN BEGIN oghma_job_yes
+								SAY ~Ihr seid toll! Ich freue mich schon auf den Moment, das Buch meiner Sammlung hinzufügen zu können.~
+								IF ~~ THEN DO ~SetGlobal("AC#ACIL5O_OghmaBook","GLOBAL",1)
+								AddJournalEntry(@57100,QUEST)~ EXIT
+								END
+					
+						IF ~~ THEN BEGIN oghma_job_no
+						SAY ~Ganz wie Ihr wollt! ES war nur eine Frage.~
+						IF ~~ THEN GOTO bye
+						END
 
 				IF ~~ THEN BEGIN what_can_i_do
-				  SAY ~Was kann ich denn für Euch tun?~
+				  SAY ~Was kann ich denn für Euch in meinem bescheidenen Tempel tun?~
 				  ++ ~Gibt es Dienste, die Ihr hier in Eurem Tempel anbietet?~ + what_service
 				  ++ ~Im Moment nichts.~ + bye
 				  IF ~Global("AC#Vronia_Quest","GLOBAL",5)~ THEN REPLY ~Vronia schickt mich mit einer Frage zu Euch.~ + vronia_quest_01
 				END
 
 					IF ~~ THEN BEGIN what_service
-					  SAY ~Ja, selbstverständlich! Für Heilung und Tränke sind die Tempel der Zwerge verantwortlich. Ich habe hier aber eine große Auswahl an Schriftrollen, die ich Euch anbieten könnte, wenn Ihr Interesse habt.~
+					  SAY ~Ja, selbstverständlich! Für Heilung und Tränke sind die Tempel der Zwergengötter verantwortlich. Ich habe hier aber eine große Auswahl an Schriftrollen, die ich Euch anbieten könnte, wenn Ihr Interesse habt.~
 						++ ~Zeigt mir, was Ihr anzubieten habt.~ + shop
 					END
 
@@ -107,7 +163,7 @@ IF ~~ THEN BEGIN shop
 END
 
 IF ~~ THEN BEGIN bye
-	SAY ~Gut. Wenn Ihr etwas braucht, wisst Ihr, wo ich zu finden bin!~
+	SAY ~Wenn Ihr etwas braucht, wisst Ihr, wo ich zu finden bin!~
 	IF ~~ THEN DO ~~ EXIT
 	END
 

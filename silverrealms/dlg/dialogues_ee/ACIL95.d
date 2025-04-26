@@ -51,9 +51,12 @@ IF~~THEN EXTERN AC#95MAP hello_00_cont
 
 
 	CHAIN IF ~~ THEN AC#95MAP show_places_start
-	~Dieser Raum kann Euch jeden Ort zeigen, den es im glorreichen Shanatar zu erreichen gibt. Welchen Ort wollt Ihr aufsuchen?~
+	~Dieser Raum kann Euch die Orte des glorreichen Shanatar zeigen. Welchen Ort wollt Ihr aufsuchen?~
 	END
 	IF~~THEN REPLY ~Iltkazar.~ EXTERN AC#95MAP seek_Iltkazar
+	IF~~THEN REPLY ~Kerzenburg.~ EXTERN AC#95MAP candlekeep
+	IF~~THEN REPLY ~Athkatla.~ EXTERN AC#95MAP athkatla
+	IF~~THEN REPLY ~Tiefwasser.~ EXTERN AC#95MAP waterdeep
 	IF~~THEN REPLY ~Ich komme später wieder.~ EXTERN AC#95MAP leave
 
 		CHAIN IF ~~ THEN AC#95MAP seek_Iltkazar
@@ -62,6 +65,21 @@ IF~~THEN EXTERN AC#95MAP hello_00_cont
 		ClearAllActions()
 		StartCutSceneMode()
 		StartCutScene("AC#IL95I")~ EXIT
+		
+		CHAIN IF ~~ THEN AC#95MAP candlekeep
+		~Kerzenburg? Solch ein Ort exisitert nicht.~
+		END
+		IF~~THEN EXTERN AC#95MAP show_places_start
+		
+		CHAIN IF ~~ THEN AC#95MAP athkatla
+		~Athkatla? Solch ein Ort exisitert nicht.~
+		END
+		IF~~THEN EXTERN AC#95MAP show_places_start
+		
+		CHAIN IF ~~ THEN AC#95MAP waterdeep
+		~Tiefwasser ist nichts als ein unbedeutendes Fischerdorf im Norden.~
+		END
+		IF~~THEN EXTERN AC#95MAP show_places_start
 
 CHAIN IF ~~ THEN AC#95MAP leave
 ~Zieht Eures Weges, Wanderer.~

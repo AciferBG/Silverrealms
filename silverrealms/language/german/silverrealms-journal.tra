@@ -189,7 +189,7 @@ Vronia Eisenbieger hat mich gebeten, dem Magier Ellhimar, einem Menschen von der
 Ich habe mich mit Ellhimar unterhalten. Dafür, dass er aus der Nähe Amns kommt, hat er überraschend wenig Ahnung von den Gebieten, die ein Gelehrter von dort eigentlich kennen sollte. Ich sollte Vronia unterrichten, dass ich meine Zweifel habe, ob er wirklich aus der Region stammt, die er vorgibt.~
 @50603   = ~Der missmutige Magier
 
-Vronia möchte, dass ich mich mit Neeritha Runenschrift über Ellhimar, den Magier unterhalte. Überraschenderweise leben in Iltkazar einige Menschen, und Neeritha unterhält einen kleinen Schrein zu Ehren Oghmas im Südosten der Stadt.~
+Vronia möchte, dass ich mich mit Neeritha Runenschrift über Ellhimar, den Magier unterhalte. Überraschenderweise leben in Iltkazar einige Anhänger Oghmas, und Neeritha unterhält einen kleinen Schrein zu seinen Ehren im Südosten der Stadt.~
 @50604   = ~Der missmutige Magier
 
 Neeritha hat mir berichtet, dass sich Ellhimar seit Längerem auch in ihren Augen sonderbar verhält. Offenbar suchte er nach einem Weg, König Mith Barak zu helfen und ist nach einem Ausflug in eine alte Mine namens "Spinnenschächte" wie verwandelt zurückgekommen. Ich möchte gar nicht wissen, woher diese Mine ihren Namen erhalten hat. Jedenfalls sollte ich Vronia von dieser Erkenntnis berichten.~
@@ -345,6 +345,16 @@ Der Svirfneblin Schnotnell Samrynarr hat vorgeschlagen, eine Flasche seines magi
 @56201  = ~Wein, Wahnsinn und Kuo-Toa
 
 Ich habe den Gogondy-Wein der Tiefengnome im Heiligtum der Kuo-Toa verdunsten lassen. Ich hoffe, das reicht aus, um sie in den Wahnsinn zu treiben.~
+
+@57100  = ~Oghmas Lehren für Iltkazar
+
+Neerita Runenschrift, Priesterin Oghmas in Iltkazar, bat mich, an der Oberfläche ein Buch zu finden: 'Die leisen Stimmen der Wahrheit'. Es ist dort häufig, im Unterreich jedoch äußerst selten. Ich habe zugesagt, in einem Tempel Oghmas an der Oberfläche danach zu suchen.~
+@57101  = ~Oghmas Lehren für Iltkazar
+
+Ich habe das Buch 'Die leisen Stimmen der Wahrheit' gefunden. Nun muss ich es zu Neerita Runenschrift, der Priesterin Oghmas in Iltkazar, bringen.~
+@57110  = ~Oghmas Lehren für Iltkazar
+
+Neerita Runenschrift war sehr erfreut darüber, dass ich ihr das Buch überbracht habe.~
 //___________________________Die Rettung von Turbaern Ghalmrin
 @58001  = ~Aufruhr im Tempel Dumathoins
 

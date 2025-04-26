@@ -249,7 +249,7 @@ END
 	END
 	
 		IF ~~THEN BEGIN work_with_Ellhimar
-		SAY ~Ja. Will mir das der Rat jetzt etwas verbieten?~
+		SAY ~Ja. Will mir das der Rat jetzt etwa auch verbieten?~
 		++ ~Nein, Vronia würde Euch darum bitten, dass Ihr Ellhimar einmal zu Euch herzitiert.~ + call_for_Ellhimar
 		END
 		

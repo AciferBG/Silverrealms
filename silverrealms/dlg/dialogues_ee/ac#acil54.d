@@ -466,34 +466,20 @@ Dialog Joshiah Steinfreund
 *******************************************************************************************************/
 BEGIN ~AC#ILHM1~
 
-IF ~RACE(LastTalkedToBy,HUMAN)~ THEN BEGIN 3
-  SAY ~Wie schön, hier endlich einmal wieder jemanden meines Schlages zu sehen! Seid gegrüßt, <BROTHERSISTER>!~
-  IF ~~ THEN REPLY ~Ein Mnesch hier in der Zwergenstadt?~ + a_human
+IF ~RACE(LastTalkedToBy,DWARF)~ THEN BEGIN 3
+  SAY ~Ihr müsst der Zwerg von der Oberfläche sein! Seid gegrüßt, <BROTHERSISTER>!~
   IF ~~ THEN REPLY #47378 /* ~Ich würde gerne Eure Dienste in Anspruch nehmen.~ */ GOTO 4
   IF ~~ THEN REPLY #47379 /* ~Ach nichts. Bin schon wieder weg.~ */ GOTO 1
 END
 
-IF ~!RACE(LastTalkedToBy,HUMAN)~ THEN BEGIN 2 // from:
+IF ~!RACE(LastTalkedToBy,DWARF)~ THEN BEGIN 2 // from:
   SAY ~Seid gegrüßt, <RACE>, was kann ich in meinem bescheidenen Laden Euch heute anbieten?~
   IF ~Global("AC#BackToSurface","GLOBAL",2)
   !PartyHasItem("AC#SRLAD")~ THEN REPLY ~Ich suche nach einer Strickleiter, mit der ich einen Schacht hinuntersteigen kann. Könnt Ihr mir sagen, wo ich so etwas finde?~  GOTO ladder
   IF ~~ THEN REPLY #47385 /* ~Ich würde gerne Eure Dienste in Anspruch nehmen.~ */ GOTO 4
   IF ~~ THEN REPLY #47386 /* ~Ach nichts. Bin schon wieder weg.~ */ GOTO 1
 END
-
-		IF ~~ THEN BEGIN a_human
-		SAY ~Fürwahr, ein merkwürdiger Anblick! Meine Vorfahren sind vor Jahren in diese Stadt gekommen - und dort geblieben. Ich fühle mich mittlerweile mehr als Zwerg denn als Mensch - insbesondere, wenn ich nun einmal *wirklich* einem Menschen von der Oberfläche gegenüberstehe!~
-		IF ~~ THEN REPLY ~Wart Ihr schon einmal an der Oberfläche?~ GOTO already_surface
-		IF ~~ THEN REPLY #47385 /* ~Ich würde gerne Eure Dienste in Anspruch nehmen.~ */ GOTO 4
-		IF ~~ THEN REPLY ~Ich verabschiede mich wieder.~ GOTO 1		
-		END
 		
-			IF ~~ THEN BEGIN already_surface
-			SAY ~Ich? Oberfläche? Nein, mein Freund, das ist mir zu gefährlich. Ich bleibe hier unten und habe mich gut an das Leben unter Tage gewöhnt. Sogar mein Bart steht dem eines Zwerges in nichts nach! Wollt Ihr vielleicht einen Blick auf meine Waren werfen?~
-			IF ~~ THEN REPLY ~Bitte zeigt mir Euer Angebot.~ GOTO 4
-			IF ~~ THEN REPLY ~Ich verabschiede mich wieder.~ GOTO 1		
-			END
-
 		IF ~~ THEN BEGIN ladder
 		SAY ~Mit so etwas kann ich Euch leider nicht weiterhelfen, bedaure.~
 		IF ~~ THEN EXIT
@@ -528,13 +514,14 @@ END
 
 IF ~Global("AC#Waterwell","GLOBAL",4)~ THEN BEGIN hello_job_done
 SAY ~Da seid Ihr ja wieder!~
-IF ~~ THEN EXTERN ~AC#ILDW6~ wet_01
+IF ~~ THEN DO ~SetGlobal("Waterwell_repaired","ACIL54",1)~ EXTERN ~AC#ILDW6~ wet_01
 END
 
 IF ~Global("AC#Waterwell_wait","ACIL54",1)~ THEN BEGIN hello_again
 SAY ~Und? Habt Ihr es Euch anders überlegt und wollt uns jetzt helfen?~
     IF ~~ THEN REPLY ~Nun gut, lasst uns nach unten.~  GOTO down
-    IF ~~ THEN REPLY ~Ich muss erst weiter darüber nachdenken.~  GOTO think_about
+    IF ~~ THEN REPLY ~Ich muss erst weiter darüber nachdenken.~  GOTO bye_before_well
+    IF ~~ THEN REPLY ~Nein.~  GOTO bye_before_well
 END
 
 IF ~Global("AC#Waterwell","GLOBAL",0)~ THEN BEGIN 0
@@ -568,6 +555,7 @@ END
 		IF ~~ THEN BEGIN 5
 		SAY ~Wage es ja nicht! Du hast Dir schneller eine eingefangen als Du gucken kannst!~
 			IF ~~ THEN REPLY ~Wo ist hier das Problem?~  EXTERN ~AC#ILDW6~ problem
+			IF ~~ THEN REPLY ~Dann streitet einmal schön weiter.~  GOTO bye_before_well
 		END
 
 		IF ~~ THEN BEGIN 6
@@ -580,17 +568,20 @@ END
 		IF ~~ THEN BEGIN 7
 		SAY ~...oder sich zu waschen. Könnte Euch einmal guttun, Nili. Also Fremder, wollt Ihr uns helfen, die Räder wieder in Gang zu bringen?~
 			IF ~~ THEN REPLY ~Sicher, was muss ich tun?~  GOTO 8
+			IF ~~ THEN REPLY ~Nein.~  GOTO bye_before_well
 		END
 
 		IF ~~ THEN BEGIN 8
 		SAY ~Wir brauchen einen Freiwilligen, der sich an dem Seil nach unten führen lässt, um die Räder wieder in Gang zu bringen.~
-			IF ~~ THEN REPLY ~Wie ich mitbekommen habe, will niemand von Euch beiden diese wichtige Aufgabe übernehmen?~  GOTO 9
+			IF ~~ THEN REPLY ~Es will offensichtlich niemand von Euch beiden diese wichtige Aufgabe übernehmen...~  GOTO 9
+			IF ~~ THEN REPLY ~Und Ihr habt mich dazu auserkoren, dieser Freiwillige zu sein?~  GOTO 9
 		END
 
 		IF ~~ THEN BEGIN 9
 		SAY ~Die beiden Seilwinden müssen von zwei Leuten bedient werden, das hatte mein Partner hier nicht bedacht.~
 			IF ~~ THEN REPLY ~Nun gut, lasst uns nach unten.~  GOTO down
 			IF ~~ THEN REPLY ~He, Moment! Ich weiß ja gar nicht, was mich dort unten erwartet.~  GOTO dunno
+			IF ~~ THEN REPLY ~Vergesst es.~  GOTO bye_before_well
 		END
 
 		IF ~~ THEN BEGIN dunno
@@ -603,6 +594,7 @@ END
 		SAY ~Schön, Euch wiederzusehen! Geht Ihr jetzt nach unten oder nicht?~
 			IF ~~ THEN REPLY ~Nun gut, lasst uns nach unten.~  GOTO down
 			IF ~~ THEN REPLY ~Ich muss erst weiter darüber nachdenken.~  GOTO think_about
+			IF ~~ THEN REPLY ~Nein.~  GOTO bye_before_well
 		END
 
 		IF ~~ THEN BEGIN think_about
@@ -615,6 +607,11 @@ END
 		SAY ~Eine ausgezeichnete Entscheidung! Los, Nili, lasst unseren neuen Freund hier nach unten!~
 		IF ~~ THEN DO ~SetGlobal("AC#Waterwell","GLOBAL",1)~
 		EXIT
+		END
+		
+		IF ~~ THEN BEGIN bye_before_well
+		SAY ~Hach, warum ist das hier alles so fürchterlich kompliziert?~
+		IF ~~ THEN EXIT
 		END
 
 IF ~~ THEN BEGIN done_is_done
@@ -1067,11 +1064,14 @@ END
 IF ~Global("AC#Catch_the_rat","ACIL54",1)~ THEN BEGIN hello
 SAY ~Was wollt Ihr von Hamli, <RACE>?~
 ++ ~Was ist das für ein komischer Käfer da an Eurer Seite?~ + beetle
+++ ~Nichts. Ich gehe wieder.~ + bye_idle
 END
 
 	IF ~~THEN BEGIN beetle
 	SAY ~Das? Das ist ein Feuerkäfer.~
 	++ ~Ein Feuerkäfer? Kann der Feuerspeien oder ähnliches?~ + firebeetle
+	++ ~Ihr habt hier unten aber seltsame Käfer.~ + why_firebeetle
+	++ ~Interessant. Ich muss weiter.~ + bye_idle
 	END
 	
 		IF ~~THEN BEGIN firebeetle
@@ -1091,7 +1091,9 @@ END
 				
 					IF ~~THEN BEGIN rat_problem
 					SAY ~Eigentlich nicht. Aber ich bin eben mit dieser Aufgabe betraut. Wenn die Rattenplage erstmal da ist, heißt es: "Hamli, warum hast Du nichts dagegen unternommen?" Also versuche ich, der Sache vorzubeugen, was nicht ganz einfach ist, seit mein Partner in der Gilde die Stadt verlassen hat.~
-					++ ~Er hat die Stadt verlassen? Warum?~ + why_left_town
+					++ ~Euer Rattenfänger-Partner hat die Stadt verlassen? Warum?~ + why_left_town
+					++ ~Könntet Ihr dem Käfer die Ratten nicht irgendwie schmackhaft machen?~ + beetle_likes_rats
+					++ ~Gibt es kein anderes Tier, das diese Aufgabe übernehmen könnte?~ + another_animal
 					END
 					
 						IF ~~THEN BEGIN why_left_town
@@ -1106,7 +1108,7 @@ END
 							END 
 							
 							IF ~~THEN BEGIN beetle_likes_rats
-							SAY ~Also wenn ich jede verdammte Ratte, bevor sie der blöde Käfer frißt, erst garnieren müsste, könnte ich mir die ganze Arbeit gleich sparen.~
+							SAY ~Also wenn ich jede verdammte Ratte, bevor sie der blöde Käfer frisst, erst garnieren müsste, könnte ich mir die ganze Arbeit gleich sparen.~
 							IF ~~ THEN + rat_part
 							END 
 							
@@ -1115,15 +1117,23 @@ END
 								=
 								~Also passt auf, das wäre ein Versuch wert. Ihr bringt mir ein paar Rattenschwänze, sagen wir zehn, und ich versuche dann, sie dem Käfer schmackhaft zu machen.~
 								++ ~So einen unwürdigen Auftrag habe ich schon seit langer Zeit nicht mehr angeboten bekommen.~ + no_ratquest
+								++ ~Was bekäme ich dafür?~ + ratquest_reward
+								++ ~Klingt gut.~ + ratquest_reward
+								++ ~Kein Interesse. Ich lasse Euch mit Eurem Käferproblem nun wieder allein~ + bye_idle
 								END
 								
 									IF ~~THEN BEGIN no_ratquest
-									SAY ~Müsst Ihr ja nicht machen. Und es wäre auch nicht umsonst. Habe hier noch einen alten Helm von meinem Clan, den ich Euch geben würde.~
+									SAY ~Müsst Ihr ja nicht machen.~ 									
+									IF ~~ THEN GOTO ratquest_reward
+									END
+									
+									IF ~~THEN BEGIN ratquest_reward
+									SAY ~Eure Hilfe wäre auch nicht umsonst! Habe hier noch einen alten Helm von meinem Clan, den ich Euch geben würde.~
 									++ ~Was ist das für ein Helm?~ + what_kind_helm
 									END 
 									
 									IF ~~THEN BEGIN what_kind_helm
-									SAY ~Weiß ich doch nicht. Also beschafft Ihr mir jetzt ein paar Rattenschwänze oder nicht?~
+									SAY ~Weiß ich doch nicht! Ein alter Helm eben. Also beschafft Ihr mir jetzt ein paar Rattenschwänze oder nicht?~
 									++ ~In Ordnung, ich tue es.~ + job_accept
 									++ ~Vergesst es.~ + job_decline
 									END
@@ -1139,6 +1149,11 @@ END
 										IF ~~ THEN DO ~SetGlobal("AC#Catch_the_rat","ACIL54",3)
 										AddJournalEntry(@54500,QUEST)~
 										EXIT
+										END
+										
+										IF ~~ THEN BEGIN bye_idle
+										SAY ~Wie Ihr meint.~
+										IF ~~ THEN EXIT
 										END
 
 IF ~~ THEN BEGIN catch_rat_02

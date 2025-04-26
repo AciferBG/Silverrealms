@@ -7,8 +7,10 @@ Dialog Vronia cre#2 in Iltkazar, Quest-Start
 BEGIN ~ac#vron2~
 
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN 1
-SAY  ~Hallo <CHARNAME>, dürfte ich einen Augenblich mit Euch sprechen? Mein Name ist Vronia Eisenbieger.~
+SAY  ~Hallo <CHARNAME>, dürfte ich einen Augenblick mit Euch sprechen? Mein Name ist Vronia Eisenbieger.~
 ++ ~Ihr wart auch im Regentschaftsrat mit dabei, nicht wahr?~ + 2
+++ ~Worum geht es?~ + 2
+++ ~In dieser Stadt will jemand mit mir sprechen?~ + 2
 END
 
 IF ~~THEN BEGIN 2
@@ -16,15 +18,18 @@ SAY ~Ich bin als Runenwirkerin der Stadt Mitglied des Regentschaftsrates und bed
 =
 ~Ich habe jedoch nicht hier auf Euch gewartet, um über die Vorgänge im Ratsgebäude zu sprechen. Dies steht mir nicht zu, und ich empfehle Euch, den Anweisungen des Rates penibler als ein Diamantschleifer zu folgen. Ich bin hier, weil ich Euch in einer Angelegenheit um Hilfe bitten möchte.~
 ++ ~Um was für eine Angelegenheit handelt es sich denn?~ + 3
+++ ~Dann lasst mal hören.~ + 3
 END
 
 IF ~~THEN BEGIN 3
 SAY ~Dies sollten wir nicht hier draußen besprechen. Mein Haus ist nicht weit entfernt von hier, das letzte Haus in der zweiten Straße im Osten. Sucht mich dort auf, und ich werde Euch darlegen, was ich von Euch brauche.~
 ++ ~Gut, ich werde Euch dort aufsuchen.~ + 4
+++ ~Wenn ich gerade in der Nähe bin, vielleicht.~ + 4
+++ ~Bin gerade nicht in der besten Stimmung für Besuche.~ + 4
 END
 
 IF ~~THEN BEGIN 4
-SAY ~Habt Dank. Vielleicht gelingt es Euch auch, durch Eure Taten hier in Iltkazar den Rat von Euren Fähigkeiten zu überzeugen. Da käme die Frage, die wir in meinem Haus besprechen werden, gerade recht. Ich warte auf Euch an meinem *runedar*, wie wir Zwerge unser Heim zu nennen pflegen.~
+SAY ~Vielleicht gelingt es Euch auch, durch Eure Taten hier in Iltkazar den Rat von Euren Fähigkeiten zu überzeugen. Da käme die Frage, die wir in meinem Haus besprechen werden, gerade recht. Ich warte auf Euch an meinem *runedar*, wie wir Zwerge unser Heim zu nennen pflegen.~
    IF ~~ THEN DO ~SetGlobal("AC#Vronia_Quest","GLOBAL",1)
 AddJournalEntry(@50600,QUEST)
 EscapeAreaObject("TrACIL5Q")~  EXIT
@@ -53,7 +58,7 @@ END
 		
 			IF ~~THEN BEGIN mindflayer_mirror
 			SAY ~Ein *caradhak*! Das sind fürwahr schreckliche Nachrichten! Wie gut, dass Ihr Schlimmeres verhindern konntet, <CHARNAME>.~
-			IF ~Global("AC#Arrested","GLOBAL",1)~ THEN REPLY ~Ist damit mein Arrest aufgehoben?.~ + arrest_finished
+			IF ~Global("AC#Arrested","GLOBAL",1)~ THEN REPLY ~Ist damit mein Arrest aufgehoben?~ + arrest_finished
 			++ ~Gerne geschehen.~ + council
 			END
 			
@@ -245,20 +250,20 @@ END
 // Quest: Temple of Oghma
 
 			IF ~~THEN BEGIN further_investigation
-			SAY ~Eure Beobachtungen haben mich leider nicht beruhigt, sondern eher meine Zweifel genährt. Allerdings war Ellhimar bisher immer ein Mensch mit edelsten Absichten. Ich brauche die Meinung eines weiteren Menschen, um sicher zu sein, dass ich dem Magier kein Unrecht tue.~
+			SAY ~Eure Beobachtungen haben mich leider nicht beruhigt, sondern eher meine Zweifel genährt. Allerdings war Ellhimar bisher immer ein Mensch mit edelsten Absichten. Ich brauche die Meinung eines weiteren Bewohners Iltkazars, um sicher zu sein, dass ich dem Magier kein Unrecht tue.~
 			=
 			~Ganz am Rande der Stadt befindet sich ein kleiner Schrein, der dem Menschengott Oghma geweiht ist.~
 			++ ~Ihr verehrt hier unten Oghma?~ + oghma_01
 			END
 
 			IF ~~THEN BEGIN oghma_01
-			SAY ~Nicht die Zwerge. Iltkazar ist jedoch auch das Heim einiger weniger Menschen, die seit Jahrhunderten im Unterreich mit uns leben. Eine davon ist Neeritha Runenschrift, die Priesterin Oghmas. Ich bitte Euch, sie um Rat zu fragen, was sie von dieser ganzen Angelegenheit hält.~
+			SAY ~Nur die wenigsten Zwerge. Iltkazar ist jedoch das Heim einiger weniger Oghmaanhänger, die seit Jahrhunderten zusammen mit uns leben. Eine davon ist Neeritha Runenschrift, eine Priesterin Oghmas. Ich bitte Euch, sie um Rat zu fragen, was sie von dieser ganzen Angelegenheit hält.~
 			++ ~Nun gut, ich werde sie aufsuchen. Was soll ich ihr denn sagen?~ + go_to_oghma
 			++ ~Warum redet Ihr nicht selbst mit ihr?~ + go_to_oghma
 			END
 			
 			IF ~~THEN BEGIN go_to_oghma
-			SAY ~Das Verhältnis von uns Zwergen mit den hier lebenden Menschen war in der Vergangenheit nicht immer einfach. Was vor allem, zugegebenermaßen, an uns Zwergen gelegen hat. Deshalb habe ich auch bisher Euch ins Vertrauen gezogen und nicht Neeritha. Fragt sie einfach einmal, was sie von Ellhimar hält. Aber Bitte ohne gleich den Eindruck zu erwecken, ich hätte Euch geschickt. Meint Ihr, Ihr bekommt das hin?~
+			SAY ~Das Verhältnis von den meisten Zwergen mit den hier praktizierenden Oghmaanhängern war in der Vergangenheit nicht immer einfach. Was vor allem, zugegebenermaßen, an uns restlichen Zwergen gelegen hat. Deshalb habe ich auch bisher Euch ins Vertrauen gezogen und nicht Neeritha. Fragt sie einfach einmal, was sie von Ellhimar hält. Aber Bitte ohne gleich den Eindruck zu erwecken, ich hätte Euch geschickt. Meint Ihr, Ihr bekommt das hin?~
 			++ ~Ich denke schon.~ + go_to_oghma_02
 			END
 			
@@ -345,7 +350,7 @@ END
 		END
 
 		IF ~~THEN BEGIN ellhimar_strange
-		SAY ~Er ist anders, als er zu Beginn war. Nicht mehr so freundlich und zuvorkommend, sondern in sich gekehrt und missmutig. Er hat mir zu Beginn immer mit meinem kranken Mann geholfen, doch seit mehreren Herdfeuern scheint er kein Interesse mehr an einem Austausch mit mir haben.~
+		SAY ~Er ist anders, als er zu Beginn war. Nicht mehr so freundlich und zuvorkommend, sondern in sich gekehrt und missmutig. Er hat mir zu Beginn immer mit meinem kranken Mann geholfen, doch seit mehreren Herdfeuern scheint er kein Interesse mehr an einem Austausch mit mir zu haben.~
 		=
 		~Wisst Ihr, durch meine Magie bin ich in der Lage, ziemlich genau die Beweggründe eines *hurm* einschätzen zu können, doch bei diesem Magier beiße ich auf Granit.~
 		IF ~~ THEN GOTO check_ellhimar

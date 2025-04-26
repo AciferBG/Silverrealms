@@ -204,6 +204,7 @@ END
 IF ~Global("AC#_HatharDwarfPatrol","ACIL20",1)~ THEN BEGIN Good_luck_patrol
 SAY ~Viel Glück da draußen, <CHARNAME>. Eigentlich ist es eine Schande, dass der Rat einen <RACE> von der Oberfläche mit dieser Aufgabe betraut, aber sei's drum. Für mich ist es jedenfalls furchtbar zu wissen, dass da draußen im Unterreich irgendwo meine Clanbrüder Hilfe brauchen und ich mir hier vor den Toren die Beine in den Bauch stehen muss.~
 IF ~~ THEN REPLY ~Ich werde Euch berichten, sobald ich etwas herausgefunden habe, Hathar. Bis bald.~ DO ~SetGlobal("AC#_HatharDwarfPatrol","ACIL20",2)~ GOTO lookup_dwarf_patrol
+IF ~~ THEN REPLY ~Mir wäre es auch lieber, wenn die Zwerge Iltkazars sich selbst um ihre Angelegenheiten kümmern würden.~ DO ~SetGlobal("AC#_HatharDwarfPatrol","ACIL20",2)~ GOTO lookup_dwarf_patrol
 END
 
 	IF ~~ THEN BEGIN lookup_dwarf_patrol

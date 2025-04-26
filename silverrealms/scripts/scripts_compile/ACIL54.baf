@@ -41,7 +41,7 @@ END
 
 IF
 	Global("Rothe_Rep_Increase","ACIL54",0)
-	Global("RotheAttack","ACIL54",20)
+	GlobalGT("RotheAttack","ACIL54",19)
 THEN
 	RESPONSE #100
 		SetGlobal("Rothe_Rep_Increase","ACIL54",1)
@@ -51,7 +51,7 @@ END
 
 IF
 	Global("Boar_Rep_Increase","ACIL54",0)
-	Global("AC#Boar","ACIL54",5)
+	GlobalGT("AC#Boar","ACIL54",4)
 THEN
 	RESPONSE #100
 		SetGlobal("Boar_Rep_Increase","ACIL54",1)

@@ -561,11 +561,6 @@ COPY_EXISTING ~ACIL57.bcs~   ~override/ACIL57.bcs~
        REPLACE ~999999~ @679 // ~Der Hammer Dumathoins pulsiert pl�tzlich in einem starhlenden Licht. Ihr k�nnt mit seiner Macht die bisher verschlossenen T�ren �ffnen.~
 
 COMPILE ~silverrealms/scripts/ACIL0C.baf~
-/*
-COMPILE ~silverrealms/scripts/AC#57TR1.baf~
-COPY_EXISTING ~AC#57TR1.bcs~   ~override/AC#57TR1.bcs~
-       REPLACE ~999999~ @100
-*/
 
 COMPILE ~silverrealms/scripts/AC#57TR2.baf~
 COPY_EXISTING ~AC#57TR2.bcs~   ~override/AC#57TR2.bcs~
@@ -744,15 +739,6 @@ COPY_EXISTING ~AC#MITH2.bcs~   ~override/AC#MITH2.bcs~
 
 COMPILE ~silverrealms/scripts/ac#cut54.baf~
 
-COMPILE ~silverrealms/scripts/ac#boar1.baf~
-COMPILE ~silverrealms/scripts/AC#ILDW8.baf~
-
-COMPILE ~silverrealms/scripts/AC#51DW1.baf~
-COMPILE ~silverrealms/scripts/AC#51DW4.baf~
-COMPILE ~silverrealms/scripts/AC#51DW5.baf~
-COMPILE ~silverrealms/scripts/AC#51DW6.baf~
-COMPILE ~silverrealms/scripts/AC#51DW7.baf~
-
 COMPILE ~silverrealms/scripts/AC#DRIM2.baf~
 
 COMPILE ~silverrealms/scripts/AC#56DW1.baf~
@@ -836,9 +822,6 @@ COMPILE ~silverrealms/scripts/AC#1VDO4.baf~
 COPY_EXISTING ~AC#1VDO4.bcs~   ~override/AC#1VDO4.bcs~
        REPLACE ~999999~ @400
 
-COMPILE ~silverrealms/scripts/AC#18CO1.baf~
-
-COMPILE ~silverrealms/scripts/AC#18DO5.baf~
 COMPILE ~silverrealms/scripts/AC#SKET1.baf~
 COMPILE ~silverrealms/scripts/AC#SKET2.baf~
 
@@ -908,115 +891,7 @@ COMPILE ~silverrealms/scripts/AC#ORC04.baf~
 COMPILE ~silverrealms/scripts/AC#VAMP1.baf~
 COMPILE ~silverrealms/scripts/AC#VAMP2.baf~
 
-COMPILE ~silverrealms/scripts/AC#TROL8.baf~
-
-COMPILE ~silverrealms/scripts/AC#13TR1.baf~
-       REPLACE ~999999~ @497
-       REPLACE ~999998~ @498
-       REPLACE ~999997~ @499
-       
-COMPILE ~silverrealms/scripts/AC#DEER2.baf~
-
-COMPILE ~silverrealms/scripts/AC#10IN1.baf~
-COPY_EXISTING ~AC#10IN1.bcs~   ~override/AC#10IN1.bcs~
-       REPLACE ~999999~ @517
-       REPLACE ~999998~ @518
-       REPLACE ~999995~ @359
-       
-COMPILE ~silverrealms/scripts/AC#10IN2.baf~
-COPY_EXISTING ~AC#10IN2.bcs~   ~override/AC#10IN2.bcs~
-       REPLACE ~999999~ @519
-       REPLACE ~999998~ @518
-       REPLACE ~999995~ @359
-       
-COMPILE ~silverrealms/scripts/AC#10IN3.baf~
-COPY_EXISTING ~AC#10IN3.bcs~   ~override/AC#10IN3.bcs~
-       REPLACE ~999999~ @520
-       REPLACE ~999998~ @518
-       REPLACE ~999995~ @359
-       
-COMPILE ~silverrealms/scripts/AC#10IN4.baf~
-COPY_EXISTING ~AC#10IN4.bcs~   ~override/AC#10IN4.bcs~
-       REPLACE ~999999~ @521
-       REPLACE ~999998~ @518
-       REPLACE ~999995~ @359
-       
-COMPILE ~silverrealms/scripts/AC#10IN5.baf~
-COPY_EXISTING ~AC#10IN5.bcs~   ~override/AC#10IN5.bcs~
-       REPLACE ~999999~ @522
-       REPLACE ~999998~ @518
-       REPLACE ~999995~ @359
-       
-COMPILE ~silverrealms/scripts/AC#10IN6.baf~
-COPY_EXISTING ~AC#10IN6.bcs~   ~override/AC#10IN6.bcs~
-       REPLACE ~999999~ @538
-       REPLACE ~999998~ @539
-       REPLACE ~999997~ @540
-
-COMPILE ~silverrealms/scripts/AC#11IN1.baf~
-COPY_EXISTING ~AC#11IN1.bcs~   ~override/AC#11IN1.bcs~
-       REPLACE ~999999~ @523
-       REPLACE ~999998~ @524
-       REPLACE ~999995~ @359
-       
-COMPILE ~silverrealms/scripts/AC#11IN2.baf~
-COPY_EXISTING ~AC#11IN2.bcs~   ~override/AC#11IN2.bcs~
-       REPLACE ~999997~ @525
-       REPLACE ~999996~ @526
-
-COMPILE ~silverrealms/scripts/AC#URSU1.baf~
-COPY_EXISTING ~AC#URSU1.bcs~   ~override/AC#URSU1.bcs~
-       REPLACE ~999999~ @529
-       
-COMPILE ~silverrealms/scripts/AC#URSU2.baf~
-COPY_EXISTING ~AC#URSU2.bcs~   ~override/AC#URSU2.bcs~
-       REPLACE ~999999~ @529
-       
-COMPILE ~silverrealms/scripts/AC#13IN1.baf~
-COPY_EXISTING ~AC#13IN1.bcs~   ~override/AC#13IN1.bcs~
-       REPLACE ~999999~ @530
-       REPLACE ~999998~ @531
-       REPLACE ~999997~ @532
-       REPLACE ~999995~ @359
-       
-COMPILE ~silverrealms/scripts/AC#13IN2.baf~
-COPY_EXISTING ~AC#13IN2.bcs~   ~override/AC#13IN2.bcs~
-       REPLACE ~999999~ @533
-       REPLACE ~999998~ @534
-       REPLACE ~999995~ @359
-       
-COMPILE ~silverrealms/scripts/AC#13IN3.baf~
-COPY_EXISTING ~AC#13IN3.bcs~   ~override/AC#13IN3.bcs~
-       REPLACE ~999999~ @535
-       REPLACE ~999998~ @536
-       REPLACE ~999995~ @359
-       
-COMPILE ~silverrealms/scripts/AC#13IN4.baf~
-COPY_EXISTING ~AC#13IN4.bcs~   ~override/AC#13IN4.bcs~
-       REPLACE ~999999~ @545
-       REPLACE ~999998~ @546
-       REPLACE ~999995~ @359
-       
-
-COMPILE ~silverrealms/scripts/AC#13G01.baf~
-COMPILE ~silverrealms/scripts/AC#13G02.baf~
-COMPILE ~silverrealms/scripts/AC#13G03.baf~
-COMPILE ~silverrealms/scripts/AC#13G04.baf~
-COMPILE ~silverrealms/scripts/AC#13G05.baf~
-COMPILE ~silverrealms/scripts/AC#13G06.baf~
-COMPILE ~silverrealms/scripts/AC#13G07.baf~
-
-
 COMPILE ~silverrealms/scripts/AC#BLAD1.baf~
-
-COMPILE ~silverrealms/scripts/AC#TRO71.baf~
-COMPILE ~silverrealms/scripts/AC#TRO72.baf~
-
-COMPILE ~silverrealms/scripts/AC#TROB1.baf~
-COMPILE ~silverrealms/scripts/AC#TROB2.baf~
-
-COMPILE ~silverrealms/scripts/AC#TRSN1.baf~
-COMPILE ~silverrealms/scripts/AC#TRSN2.baf~
 
 COMPILE ~silverrealms/scripts/AC#09DRS.baf~
 COPY_EXISTING ~AC#09DRS.bcs~   ~override/AC#09DRS.bcs~

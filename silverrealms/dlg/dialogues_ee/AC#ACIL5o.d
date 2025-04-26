@@ -27,9 +27,12 @@ END
 		
 			IF ~~ THEN BEGIN have_oghma_book_02
 			SAY ~Einfach wunderbar! Vielen Dank! Ihr habt eine Gelehrte in ihren Hallen sehr glücklich gemacht.~
+			=
+			~Hier, ich gebe Euch zwei Schriftrollen, die wir in unserem Tempel aufbewahrt haben. Auch wenn ich manchmal ziemlich vergesslich bin denke ich, dass sie Euch auf Euren Abenteuern mehr von Nutzen sein könnten!~
 			IF ~~ THEN DO ~SetGlobal("AC#ACIL5O_OghmaBook","GLOBAL",10)
 			EraseJournalEntry(@57101)
-			AddJournalEntry(@57110,QUEST_DONE)~ EXIT 
+			AddJournalEntry(@57110,QUEST_DONE)
+			GiveItemCreate("AC#SC611",LastTalkedToBy,2,1,1)~ EXIT 
 			END
 
 	IF ~~ THEN BEGIN vronia_quest_01

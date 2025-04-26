@@ -11,7 +11,7 @@ END
 END
 
 EXTEND_BOTTOM DOGHMA 0
-IF ~Global("AC#ACIL5O_OghmaBook","GLOBAL",1)~ THEN REPLY ~Ich suche nach dem Buch 'Die leisen Stimmen der Wahrheit'. Habt Ihr dieses hier?~ GOTO need_book
+IF ~Global("AC#ACIL5O_OghmaBook","GLOBAL",1)~ THEN REPLY ~Ich suche nach dem Buch 'Die leisen Stimmen der Wahrheit' für einen Tempel Oghmas in Iltkazar. Habt Ihr dieses hier?~ GOTO need_book
 END
 
 

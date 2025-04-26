@@ -687,7 +687,7 @@ Kann nicht verwendet werden von:
 Druiden
 Magiern
 Dieben~
-@489 = ~Ihr könnt den Boden dieser Spalte nicht erkennen, doch es strömt daraus stetig warme Luft nach oben.~
+
 @490 = ~Trollhund~
 @491 = ~Kursh Bruchhorn~
 @492 = ~Bariaur~
@@ -695,10 +695,9 @@ Dieben~
 @494 = ~Astraler Streitkolben der Zerschmetterung~
 @495 = ~Bogen des Todesregens~
 @496 = ~Bogen des Todesregens~
-@497 = ~Dieser verrostete Schalter diente wohl früher dazu, irgendeinen Mechanismus in Gang zu setzen. Er scheint noch funktionsfähig zu sein.~
-@498 = ~Ihr legt den Schalter um und hört, wie aus unterirdischen Rohren Gas in die benachbarten Gänge strömt und sich in einer gewaltigen Explosion entzündet.~
-@499 = ~Ihr habt den Schalter bereits umgelegt. Er lässt sich nicht mehr zurücksetzen und scheint mit einer Art Zeitmechanismus gekoppelt zu sein.~
+
 @500 = ~Acifer, der Spielleiter~
+
 @501 = ~Vogelscheuche~
 @502 = ~Nach allem, was Ihr bisher gesehen habt, müsste es sich bei diesem Vehikel um eines der berühmten Himmelsschiffe aus Halruaa handeln, für die diese Nation so bekannt ist.~
 @503 = ~Ein Magier aus Halruaa?
@@ -707,50 +706,16 @@ Ich habe neben dem Turm des Magiers, den ich auf Geheiß des Rabens besuchen sol
 @505 = ~Das Himmelsschiff ist durch das Feuer stark beschädigt. In diesem Zustand ist ein Flug mit diesem Gerät unmöglich, und es ist zweifelhaft, ob es jemals wieder instand gesetzt werden kann.~
 @506 = ~Töte sie alle, lass' niemanden am Leben! Ich kehre mit der Beute zu unserer Herrin zurück!~
 @507 = ~Jawohl, Herr!~
+
 @508 = ~Installiere die Area-Grafiken. Dieser Schritt kann 10-15 Minuten dauern...~
 @509 = ~Installiere die Spiel-Videosequenzen. Dieser Schritt kann einige Zeit dauern.~
+
 @510 = ~Ritterliches Edikt~
 @511 = ~Haimmon, Ihr habt Euch als würdig erwiesen, in den heiligen Orden Kuldar von Barakmordin als Ritter aufgenommen zu werden. Eure letzte Prüfung vor dem Initiationsritus wird sein, in die Trollberge zu reisen und dort nach dem Bösen zu suchen, dem wir schon so lange auf der Spur sind und das sich in den Überresten des alten Zwergenreiches Korolnors zu verstecken sucht. Unser Orden ist auf den uralten Gemäuern der Zwerge errichtet, und Barakmordin bedeutet in der Zwergensprache "Schildberge". Außerdem ist der Legende nach in den benachbarten Omlaradinbergen das sagenhafte Zwergenreich Iltkazars beheimatet gewesen. Auch wenn die Zwerge längst verschwunden sind, stehen wir Menschen immer noch in der Tradition ihrer Werte, und ich bin mir sicher, dass Ihr diesen Auftrag zu unserer aller Zufriedenheit ausführen werdet. Barakmordin, im Jahre 1303, gezeichnet von Gaufrid, dem Breitschwert des Torm, Großmeister des Ordens der Paladine Kuldars.~
 
-@513 = ~Verletzte Hirschkuh~
-@514 = ~Hier ruht Ragmus, Erstgeborener des Hauses Kuldelver, Sohn des Karlyn Riesentöter, gestorben in seinem 8. Jahr durch einen hinterhältigen Pfeil eines Menschen. 
-Ragmus, Du spieltest so gerne  unten am Fluss, deshalb haben wir Dich als letzte Ruhestätte an seinen Ufern gebettet. Möge Berronar besser über Dich wachen, als wir es zu Deinen Lebzeiten konnten. Deine Dich auf immer liebenden Eltern~
 @515 = ~Kinderknochen~
 @516 = ~Dies sind die Knochen eines Kindes. Der Form des Schädels nach zu urteilen müsste es sich um ein Zwergenkind gehandelt haben.~
-@517 = ~Auf diesem großen Stein steht in Zwergenrunen geschrieben:
-"Fremde, seid gewahr, dass Ihr nun das Gebiet der Zwerge Korolnors betretet, der Erben des großen Königreiches Shanatar."~
-@518 = ~Auf diesem großen Stein sind zahlreiche Zwergenrunen eingraviert, die Ihr nicht entziffern könnt.~
-@519 = ~Auf diesem großen Stein steht in Zwergenrunen geschrieben:
-"Hört die Stimme des Standbildes Kuldelvons, wie sein Rufen und Klagen die Feinde der Zwerge in die Flucht schlägt!"~
-@520 = ~Auf diesem großen Stein steht in Zwergenrunen geschrieben:
-"Königreich Korolnor im Norden. Karlyn vom Clan Kuldelver heißt alle Freunde der Zwerge in seinen Hallen willkommen."~
-@521 = ~Auf diesem großen Stein steht in Zwergenrunen geschrieben:
-"An dieser Furt erschlug Karlyn vom Clan Kuldelver mit einem Hieb seiner Axt den feigen Kutlog, König der Hügelriesen."~
-@522 = ~Auf diesem großen Stein steht in Zwergenrunen geschrieben:
-"Die übrigen Riesen flohen in die Riesenlaufberge, was diesem Gebirge bis heute seinen Namen gab. Karlyn beschloss, an dieser Furt die neue Festung für seinen Clan zu errichten. Um die Riesen immer an ihre Niederlage zu erinnern, ließ er ein riesiges Standbild eines Zwergenwächters errichten, welches nach Osten sieht, schon aus der Weite für alle Wesen zu hören ist und auf ewig ruft: Fürchtet den Zorn der Zwerge!"~
-@523 = ~Diese Bronzeplatte zeigt eine Zwergenstatue, um die sieben Edelsteine angeordnet sind. Auf der Umrandung steht in Zwergenrunen geschrieben:
-"Korolnor, Juwelenkönigreich, Heim des Clans Kuldelver, stolzer Teil des Königreiches Shanatar."~
-@524 = ~Diese Bronzeplatte zeigt eine Zwergenstatue, um die sieben Edelsteine angeordnet sind. Auf der Umrandung sind Zwergenrunen eingraviert, die Ihr nicht entziffern könnt.~
-@525 = ~In dieser Ecke hat jemand ein kleines Lager errichtet. Wenn Ihr möchtet, könnt Ihr es genauer untersuchen.~
-@526 = ~Ihr kniet nieder und seht Euch das Lager etwas genauer an.~
-@527 = ~<GABBER>~
-@528 = ~Auf goldenen Runen steht auf zwergisch "Korolnor" über dem Eingang.~
-@529 = ~Das heilige Schwert dringt durch das Fleisch des damönischen Trolls und zerreißt ihn in seine Einzelteile.~
-@530 = ~Diese Bronzeplatte zeigt das Symbol eines Hammers mit Amboss, um das sieben Edelsteine angeordnet sind. Das Symbol ist das Zeichen Moradins, des Göttervaters der Zwerge. Auf der Umrandung steht in Zwergenrunen geschrieben:
-"Korolnor, Juwelenkönigreich, Nachfahren von Taark Shanat, des Gründers von Shanatar, Diener Moradins."~
-@531 = ~Diese Bronzeplatte zeigt das Symbol eines Hammers mit Amboss, um das sieben Edelsteine angeordnet sind. Auf der Umrandung sind Zwergenrunen eingraviert, die Ihr nicht entziffern könnt.~
-@532 = ~Diese Bronzeplatte zeigt das Symbol eines Hammers mit Amboss, um das sieben Edelsteine angeordnet sind. Das Symbol ist das Zeichen Moradins. Auf der Umrandung steht in Zwergenrunen geschrieben:
-"Wie alle zehn Königreiche Shanatars erlebte auch das Juwelenkönigreich Korolnor eine Zeit des Wohlstandes. Moradin war seinen Kindern wohlgesonnen. Die Zwerge Korolnors wählten bei der Gründung ihres Reiches eines der Zwillingskinder Moradins als ihren Schutzpatron, zu einer Zeit, als dieser noch nicht dem Wahnsinn anheim gefallen war."~
-@533 = ~Diese Bronzeplatte zeigt das Symbol eines Zwerges in Robe, um den sieben Edelsteine angeordnet sind. Auf der Umrandung steht in Zwergenrunen geschrieben:
-"Doch im Laufe der Zeit veränderte der Schutzpatron sein Antlitz und wurde zu einer selbstsüchtigen Gottheit, die damit Begann, nach verbotener Magie und verborgenenen Geheimnisse zu suchen."~
-@534 = ~Diese Bronzeplatte zeigt das Symbol eines Zwerges in Robe, um den sieben Edelsteine angeordnet sind. Auf der Umrandung sind Zwergenrunen eingraviert, die Ihr nicht entziffern könnt.~
-@535 = ~Diese Bronzeplatte zeigt das Symbol eines Gedankenschinders, um den sieben Edelsteine angeordnet sind. Auf der Umrandung steht in Zwergenrunen geschrieben:
-"Auf einer seiner verbotenen Ausflüge betrat Moradins Sohn gemeinsam mit seinem Bruder das Reich der Gottheit der Gedankenschinder und wurde dafür mit immerwährendem Wahnsinn bestraft."~
-@536 = ~Diese Bronzeplatte zeigt das Symbol eines Gedankenschinders, um den sieben Edelsteine angeordnet sind. Auf der Umrandung sind Zwergenrunen eingraviert, die Ihr nicht entziffern könnt.~
-@537 = ~Ich habe Hinweise entdeckt, dass noch eine weitere Abenteurergruppe in die Gewölbe des Klagenden Zwerges vorgedrungen ist. Den Aufzeichnungen nach soll es dort unten eine Art Thron geben, und irgendeine verschollene Zwergengottheit namens "Diinkarazan" soll auch involviert sein.~
-@538 = ~Diese Brücke wurde eindeutig von Zwergenhand erbaut und scheint früher über den reißenden Fluss geführt zu haben. Leider ist sie schon seit langem eingestürzt. Ihr erkennt, dass sie wohl mithilfe einer Vorrichtung zum Einsturz gebracht worden ist, um Angreifer mit in die Tiefe zu reißen.~
-@539 = ~Diese Brücke scheint früher über den reißenden Fluss geführt zu haben. Leider ist sie schon seit langem eingestürzt. Ihr erkennt, dass sie wohl mithilfe einer Vorrichtung zum Einsturz gebracht worden ist, um Angreifer mit in die Tiefe zu reißen.~
-@540 = ~Diese Brücke scheint früher über den reißenden Fluss geführt zu haben. Leider ist sie schon seit langem eingestürzt.~
+
 @541 = ~Stab der Augen~
 @542 = ~Dieser Zauberstab beschwört auf Befehl ein Zauberauge (wie der Magierzauber der vierten Stufe). Bei jeder Verwendung wird eine Ladung verbraucht. Die Reichweite und Dauer des Auges ist so, als würde es von einem Magier der 6. Stufe gewirkt, unabhängig von der Stufe des Zauberstabträgers. Jeder Benutzer benötigt normalerweise eine Runde, um das Auge zu beschwören und das Bewegen, Fokussieren und Verstehen dessen, was von einem Auge gesehen wird, zu beherrschen. Es ist noch kein bekanntes Verfahren zum Wiederaufladen derartiger Stäbe perfektioniert worden.
 SPEZIFISCHE EIGENSCHAFTEN:
@@ -2267,10 +2232,10 @@ Gewicht: 2~
 @8091 = ~Adamant-Erz~
 @8092 = ~Die leisen Stimmen der Wahrheit~
 @8093 = ~Diese schlichte, ledergebundene Sammlung enthält uralte Lehrsprüche, Geschichten und Weisheiten, die Oghma, dem Herrn des Wissens, geweiht sind.
-Die Seiten wirken unscheinbar, doch wer mit offenem Geist liest, erkennt zwischen den Zeilen eine tieferliegende Wahrheit, verborgen vor jenen, die nur mit den Augen suchen.
-In den Hallen des Unterreichs gilt dieses Buch als seltener Schatz und Zeugnis unvergänglichen Wissens.
 
-Ihr sollt das Buch zu Neerita Runenschrift, der Oghma-Priesterin in Iltkazar, bringen.~
+Die Seiten wirken unscheinbar, doch wer mit offenem Geist liest, erkennt zwischen den Zeilen eine tieferliegende Wahrheit, verborgen vor jenen, die nur mit den Augen suchen.
+
+Ihr sollt das Buch zu Neeritha Runenschrift, der Oghma-Priesterin in Iltkazar, bringen.~
  
 // creature strings
 @9000 = ~Zwergenkrieger~

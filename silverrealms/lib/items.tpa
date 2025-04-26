@@ -3,6 +3,8 @@
 
 COPY ~silverrealms/itm/copy~         ~override~
 
+COPY ~%MOD_FOLDER%/itm/AC#SC611.itm~         ~override~  // scroll wondrous recall
+
 COPY ~%MOD_FOLDER%/itm/AC#ILBOG.itm~         ~override~    // Oghma's book
   SAY NAME2 @8092
   SAY DESC @8093

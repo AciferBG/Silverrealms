@@ -1,35 +1,25 @@
 IF
-	Detect([PC])
-	Dead("AC#ROTHB")
-	OR(2)
-	Global("RotheAttack","ACIL54",2)
+    Detect([PC])
+    Dead("AC#ROTHB")  // Tiefenrothé
+    CombatCounter(0)
+    OR(2)
+        Global("RotheAttack","ACIL54",2)
         Global("RotheAttack","ACIL54",3)
 THEN
-	RESPONSE #100
-                SetGlobal("RotheAttack","ACIL54",10)
-		StartDialogueNoSet(LastSeenBy(Myself))
+    RESPONSE #100
+        SetGlobal("RotheAttack","ACIL54",10)
+        StartDialogueNoSet(LastSeenBy(Myself))
 END
 
 IF
-	Detect([PC])
-        See("AC#ROTHB")
-	!Dead("AC#ROTHB")
-	Allegiance("AC#ROTHB",ENEMY)
-	Global("RotheAttack","ACIL54",2)
+    Detect([PC])
+    See("AC#ROTHB")  // Tiefenrothé
+    !Dead("AC#ROTHB")  // Tiefenrothé
+    Allegiance("AC#ROTHB",ENEMY)  // Tiefenrothé
+    Global("RotheAttack","ACIL54",2)
 THEN
-	RESPONSE #100
-	        SetGlobal("RotheAttack","ACIL54",3)
-		DisplayStringHead(Myself,@904)
+    RESPONSE #100
+        SetGlobal("RotheAttack","ACIL54",3)
+        DisplayStringHead(Myself,104742)  // Borug? Borug! Hilfe, er greift mich an!
 END
-
-
-
-
-
-
-
-
-
-
-
 

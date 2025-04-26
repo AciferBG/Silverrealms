@@ -160,7 +160,7 @@ END
 								IF ~~ THEN REPLY ~Wo kann ich noch einmal das Quecksilber kaufen?~ GOTO buy_mercury 
 								IF ~~ THEN REPLY ~Könnt Ihr mir noch einmal erklären, wie ich Quecksilber selbst herstellen kann?~ GOTO create_mercury
 								IF ~~ THEN REPLY ~Wie war das noch einmal mit dem Zauber, den ich auf die Scheibe wirken sollte?~ + spell_tenser_01
-								IF ~~ THEN REPLY ~Alles klar! los geht's~ + mercury_lets_go
+								IF ~~ THEN REPLY ~Alles klar! Los geht's.~ + mercury_lets_go
 								END
 								
 									IF ~~ THEN BEGIN spell_tenser_01

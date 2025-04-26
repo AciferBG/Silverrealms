@@ -1220,38 +1220,6 @@ COPY ~silverrealms/cre/AC#SCCRO.cre~ ~override/AC#SCCRO.cre~ //Scarecrow
   
 COPY ~silverrealms/cre/AC#IFER.cre~ ~override/AC#IFER.cre~ //Acifer, the DM
   SAY NAME1 @500 SAY NAME2 @500
-  
-COPY ~silverrealms/cre/AC#DEER2.cre~ ~override/AC#DEER2.cre~ //Verletzte Hirschkuh
-  SAY NAME1 @513 SAY NAME2 @513
-  
-COPY ~silverrealms/cre/AC#CAMP1.cre~ ~override/AC#CAMP1.cre~ //Lagerfeuer
-  SAY NAME1 @527 SAY NAME2 @527
-  
-COPY ~silverrealms/cre/AC#13ST1.cre~ ~override/AC#13ST1.cre~
-  SAY NAME1 @199 SAY NAME2 @199
-  
-/* Adding 6 others statues */
-COPY_EXISTING ~AC#13ST1.CRE~ ~override/AC#13ST2.CRE~
-    WRITE_ASCII 0x280 ~AC#13ST2~ #32 // Death Variable
-    
-COPY_EXISTING ~AC#13ST1.CRE~ ~override/AC#13ST3.CRE~
-    WRITE_ASCII 0x280 ~AC#13ST3~ #32 // Death Variable
-    
-COPY_EXISTING ~AC#13ST1.CRE~ ~override/AC#13ST4.CRE~
-    WRITE_ASCII 0x280 ~AC#13ST4~ #32 // Death Variable
-    
-COPY_EXISTING ~AC#13ST1.CRE~ ~override/AC#13ST5.CRE~
-    WRITE_ASCII 0x280 ~AC#13ST5~ #32 // Death Variable
-    
-COPY_EXISTING ~AC#13ST1.CRE~ ~override/AC#13ST6.CRE~
-    WRITE_ASCII 0x280 ~AC#13ST6~ #32 // Death Variable
-    
-COPY_EXISTING ~AC#13ST1.CRE~ ~override/AC#13ST7.CRE~
-    WRITE_ASCII 0x280 ~AC#13ST7~ #32 // Death Variable
-    
-COPY_EXISTING ~AC#13ST1.CRE~ ~override/AC#13ST8.CRE~
-    WRITE_ASCII 0x280 ~AC#13ST8~ #32 // Death Variable
-    SAY NAME1 @575 SAY NAME2 @575
 
 COPY ~silverrealms/cre/AC#BLAD1.cre~ ~override/AC#BLAD1.cre~
   SAY NAME1 @547 SAY NAME2 @547
@@ -1275,7 +1243,7 @@ COPY ~silverrealms/cre/AC#HARP1.cre~ ~override/AC#HARP1.cre~ // Harpy
     COPY_EXISTING ~ac#HARP1.cre~ ~override~
     WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~HARPY~))
     
-  
+
 COPY ~silverrealms/cre/AC#BARD1.cre~ ~override/AC#BARD1.cre~ // Petipal, Bard in City Gates District, telling Lancameth's story
   SAY NAME1 @596 SAY NAME2 @596
 

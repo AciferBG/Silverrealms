@@ -29,7 +29,91 @@ BEGIN ~AC#ANT01~
 				IF ~~ THEN DO ~SetGlobal("AC#AnthanDragon","GLOBAL",1)
 				EraseJournalEntry(@51100)~ EXIT 
 				END
+				
+IF ~NumTimesTalkedTo(0)~ THEN BEGIN hello_firsttime_late
+  SAY ~Ihr seid der <PRO_RACE> von der Oberfläche, der meinen Sohn getroffen hat, bevor er starb. Ihr kommt reichlich spät, um mir von seinem Tod zu berichten.~
+  IF ~~ THEN REPLY ~Das tut mir wirklich sehr leid.~ GOTO im_sorry
+  IF ~~ THEN REPLY ~Ich bin so schnell gekommen wie ich konnte.~ GOTO im_sorry
+  IF ~~ THEN REPLY ~Ich hatte vorher einfach nicht die Zeit.~ GOTO no_time
+END
 
+IF ~~ THEN BEGIN no_time
+  SAY ~Keine Zeit? Kein Wunder, wenn sogar der eigene Vater dem Jungen kaum etwas bedeutete. Passt gut zu einem Sohn, der seine Ahnen vergessen hat. Doch es wäre das Mindeste gewesen, einen Vater unverzüglich vom Tode seines Sohnes zu unterrichten!~
+  IF ~~ THEN REPLY ~Ich hatte gehört, Ihr standet Euch ohnehin nicht mehr sehr nahe.~ GOTO didnt_like_your_son
+  IF ~~ THEN REPLY ~Im Nachhinein betrachtet ja, tut mir leid.~ GOTO im_sorry
+END
+
+	IF ~~ THEN BEGIN didnt_like_your_son
+	  SAY ~Wahrlich. Ein Sohn, der seinen Clan verlässt, muss damit rechnen, dass ihm niemand nachtrauert, wenn er stirbt.~
+	  IF ~~ THEN GOTO im_sorry
+	END
+
+IF ~~ THEN BEGIN im_sorry
+SAY ~Ich bedaure seinen Tod nicht. Warum sollte ich? Er wandte sich vor langer Zeit von den Lehren Moradins ab und folgte den törichten Pfaden Dugmarens... und hat den gerechten Preis dafür bezahlt.~
+=
+~Er war schon immer ein Träumer, zu schwach, den Hammer zu schwingen, die Hände nur dazu geschaffen, durch Bücher zu blättern! Was hätte aus ihm sonst werden können? Ein guter Schmied im Lebtag nicht. Und so war es wohl sein Schicksal, an einem entfernten Ort in Schande zu sterben - anstelle des Stammhalters für Clan Diamantklinge, als den ihn die Götter vorgesehen hatten...~
+=
+~Diamantklinge... ha! Ein Name gehauen aus ewigem Stein – und doch völlig fehl am Platz für Beldas. Er zog das brüchige Holz beständigem Fels vor, und so ist er nun auch verglüht und zerfallen wie ein trockenes Scheit im Feuer.~
+IF ~~ THEN REPLY ~Ihr sprecht ganz schön hart über Euren Sohn.~ GOTO talk_bad_son
+IF ~~ THEN REPLY ~Vielleicht misst sich wahre Stärke nicht allein an Stein und Stahl.~ GOTO heir_father
+IF ~~ THEN REPLY ~Beldas hat seinen eigenen Weg gewählt – und ist ihn bis zum Ende gegangen.~ GOTO not_alive_again
+IF ~~ THEN REPLY ~Nicht jeder ist geschaffen, das Erbe seines Vaters zu tragen.~ GOTO heir_father
+END
+
+		IF ~~ THEN BEGIN talk_bad_son
+		SAY ~Ich habe in der Vergangenheit wohl nicht hart genug zu ihm gesprochen, sonst wäre er jetzt wohl noch am Leben!~
+		IF ~~ THEN GOTO question_coward
+		END
+		
+		IF ~~ THEN BEGIN heir_father
+		SAY ~Ein Erbe ist wie ein rohes Stück Eisen, das geschmiedet und geformt werden muss, bis es widerstandsfähig ist. Jeder Hammerschlag macht es stärker, kompakter... zumindest meistens. Manches Eisen bricht, und so wohl auch Beldas.~
+		IF ~~ THEN GOTO not_alive_again
+		END
+
+	IF ~~ THEN BEGIN not_alive_again
+	SAY ~Nun, davon wird er jetzt auch nicht mehr lebendig.~ 
+	IF ~~ THEN GOTO question_coward
+	END 
+	
+ IF ~~ THEN BEGIN question_coward
+SAY ~Sagt mir wenigstens Eines: Ist er als Held oder als Feigling gestorben?~
+  IF ~~ THEN REPLY ~Als Held.~ GOTO died_as_hero
+  IF ~~ THEN REPLY ~Als Feigling.~ GOTO died_as_coward
+  IF ~~ THEN REPLY ~Was spielt denn das für eine Rolle?~ GOTO why_matter
+END
+
+IF ~~ THEN BEGIN why_matter
+  SAY ~Es spielt eine Rolle für die Ehre des Clans, dem ich schon ein Leben lang vorstehe! So antwortet mir: Starb er als Held oder als Feigling?~
+  IF ~~ THEN REPLY ~Als Held.~ DO ~EraseJournalEntry(@51200) AddJournalEntry(@51201,QUEST_DONE)~ GOTO died_as_hero
+  IF ~~ THEN REPLY ~Als Feigling.~ DO ~EraseJournalEntry(@51200) AddJournalEntry(@51201,QUEST_DONE)~ GOTO died_as_coward
+END
+
+IF ~~ THEN BEGIN died_as_coward
+  SAY ~Ein Feigling. Wie zu erwarten. Das habe ich mir schon gedacht. So ergeht es einem, der nicht auf die Regeln seiner Rasse hört!~
+  IF ~~ THEN REPLY ~Er begegnete einem roten Drachen, überließ aber mir das Kämpfen.~ GOTO coward_fighting_a_dragon
+END
+
+IF ~~ THEN BEGIN coward_fighting_a_dragon
+  SAY ~Dann bleibt ihm nicht einmal ein Stein in der Ahnenhalle. Ihr habt meinen Verdacht bestätigt – und dafür danke ich Euch, so bitter es auch schmeckt.~
+  IF ~~ THEN REPLY ~Gerne geschehen.~ DO ~SetGlobal("AC#CondolenceAnthan","GLOBAL",2)~ GOTO what_else
+END
+
+IF ~~ THEN BEGIN died_as_hero
+  SAY ~Als Held? Das kann ich kaum glauben. Aber es würde mein Vaterherz mit Freude füllen, wenn Ihr denn die Wahrheit sprächet.~
+  IF ~~ THEN REPLY ~Er fiel im Kampf gegen einen roten Drachen.~ GOTO died_fighting_a_dragon
+END
+
+IF ~~ THEN BEGIN died_fighting_a_dragon
+  SAY ~Gegen einen *durgarn*, sagt Ihr? *Mein* Beldas – gegen solch ein Ungeheuer?~
+  IF ~~ THEN REPLY ~Ja, in einem alten zwergischen Wachposten an der Oberfläche, oben auf einer Bergspitze. Er hat dort im Rahmen seiner Ahnen seine letzte Ruhe gefunden.~ DO ~SetGlobal("AC#CondolenceAnthan","GLOBAL",2) SetGlobal("AC#AnthanBeldasTruth","GLOBAL",1)~ GOTO died_fighting_a_dragon_02
+END
+
+IF ~~ THEN BEGIN died_fighting_a_dragon_02
+  SAY ~So hat er also in seinen letzten Atemzügen die Ehre seines Clans doch noch gewahrt... und wird nicht ganz vergessen sein. Ihr habt mir mehr Frieden gebracht, als ich zu hoffen wagte. Habt Dank, Ihr habt einem alten Zwerg sehr geholfen.~
+  IF ~~ THEN REPLY ~Gerne geschehen.~ GOTO what_else
+END
+				
+/*
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN hello_firsttime_late
   SAY ~Ihr seid der <PRO_RACE> von der Oberfläche, der meinen Sohn getroffen hat, bevor er starb. Ihr kommt reichlich spät, um mir von seinem Tod zu berichten.~
   IF ~~ THEN REPLY ~Das tut mir wirklich sehr leid.~ GOTO im_sorry
@@ -86,7 +170,7 @@ END
 					SAY ~So hat er also doch noch seinem Clan zur Ehre gereicht. Nun, da ich weiß, dass mein Sohn als Held gestorben ist, kann ich wieder ruhiger schlafen. Habt Dank, Ihr habt einem alten Zwerg sehr geholfen.~
 					IF ~~ THEN REPLY ~Gerne geschehen.~ GOTO what_else
 					END
-					
+*/					
 	IF ~~ THEN BEGIN what_else
 	  SAY ~Ihr seht so aus, als wolltet Ihr sonst noch etwas von mir.~ 
 	  IF ~Global("AC#Clans_Parting","GLOBAL",2)~ THEN REPLY ~Ich würde gerne einen Blick in das Tagebuch Eures Ahnen Borthun werfen.~ GOTO take_a_look_at_borthuns_book

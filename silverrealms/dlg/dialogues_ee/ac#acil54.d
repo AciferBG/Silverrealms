@@ -828,13 +828,20 @@ END
 
 IF ~Global("AC#Boar","ACIL54",1)~ THEN BEGIN 1
 SAY ~Vorsicht alle Mann! Die wilde Sau ist los!~
-IF ~~ THEN REPLY  ~Wilde Sau?~ DO ~~
-EXIT
+IF ~~ THEN REPLY  ~Wilde Sau?~ GOTO wild_boar
+IF ~~ THEN REPLY  ~Ach Du dickes Schwein!~ GOTO wild_boar
+IF ~~ THEN REPLY  ~Kein Sorge - ich bin schon mit schwierigeren Widersachern fertig geworden.~ GOTO wild_boar
 END
+
+	IF ~~ THEN BEGIN wild_boar
+	SAY ~Ich kann sie nicht mehr halten! Nehmt Euch in Acht!~
+	IF ~~ THEN EXIT
+	END
 
 IF ~Global("AC#Boar","ACIL54",4)~ THEN BEGIN 4
 SAY  ~Ein guter Schlag, Respekt. Ihr versteht etwas vom Töten, <RACE>.~
 ++ ~Eigentlich habe ich mich mehr aufs Erschlagen von Monstern spezialisiert und schlachte seltener Haustiere.~ + 2
+++ ~Ihr haltet hier unten recht große Schweine.~ + 2
 END
 
 	IF ~~ THEN BEGIN 2
@@ -855,7 +862,7 @@ BEGIN ~AC#ILDW9~
 
 IF ~Global("RotheAttack","ACIL54",20)~ THEN BEGIN hello_sigh
 SAY ~*Seufz*.~
-IF ~!PartyHasItem("MISC42")~ THEN EXIT
+IF ~~ THEN REPLY ~Wie dem auch sei. Ich ziehe weiter.~ GOTO borug_attacked_exit
 IF ~PartyHasItem("MISC42")~ THEN REPLY  ~Ihr könntet Eurer Frau vielleicht doch diesen Diamanten hier schenken.~ GOTO give_diamond
 END
 
@@ -873,19 +880,26 @@ END
 		IF ~~ THEN BEGIN give_diamond
 		SAY ~Hmm. Meint Ihr, sie würde den Diamanten mehr schätzen als die Tiefenrothé?~
 		IF ~~ THEN REPLY  ~Auf der Oberfläche gibt es Frauen, die einen Edelstein einem Rothé in jedem Falle vorziehen würden.~ GOTO give_diamond_02
+		IF ~~ THEN REPLY  ~Ich kenne Eure Frau nicht, aber es wäre einen Versuch wert.~ GOTO give_diamond_02
+		IF ~~ THEN REPLY  ~Ihr habt Recht. Das war eine dumme Idee.~ GOTO borug_attacked_exit
 		END
 		
 			IF ~~ THEN BEGIN give_diamond_02
 			SAY ~Und Ihr würdet mir den Diamanten wieder zurückgeben und auf Eure Belohnung verzichten?~
-			IF ~~ THEN REPLY ~Offen gesagt - nein.~ GOTO not_give_diamond
 			IF ~~ THEN REPLY ~Ja, nehmt ihn schon.~ GOTO yes_give_diamond
+			IF ~~ THEN REPLY ~Offen gesagt - nein.~ GOTO not_give_diamond			
 			END
 			
 				IF ~~ THEN BEGIN yes_give_diamond
 				SAY ~Ich danke Euch. Das wird zwar nur ein schwacher Trost sein, aber immerhin besser als gar nichts!~
 				IF ~~ THEN DO ~SetGlobal("RotheAttack","ACIL54",20)
-				TakePartyItemNum("MISC42",1)~ EXIT
+				TakePartyItemNum("MISC42",1)~ GOTO diamoned_given_bye_leave
 				END
+				
+					IF ~~ THEN BEGIN diamoned_given_bye_leave
+					SAY ~Ihr seid gar nicht mal so verkehrt, wisst Ihr? Ich werde jetzt einmal meine Frau besuchen. Ich hoffe, das wird weniger aufregend als der Angriff meines eigenen Rothé-Bullen...~
+					IF ~~ THEN DO ~EscapeArea()~ EXIT 
+					END
 				
 				IF ~~ THEN BEGIN not_give_diamond
 				SAY ~Ich kann Euch verstehen. Naja, sei's drum, damit muss ich wohl jetzt irgendwie klarkommen.~
@@ -900,7 +914,14 @@ END
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN hello
 SAY ~Kennt Ihr das Gefühl, wenn Ihr nach vielen Jahren der Ehe keine Lust mehr habt, das Bett miteinander zu teilen?~
 IF ~~ THEN REPLY  ~Bitte was?~ GOTO rothe_story_01
+IF ~~ THEN REPLY  ~Nein, das Gefühl kenne ich nicht.~ GOTO rothe_story_01
+IF ~~ THEN REPLY  ~Für so etwas habe ich keine Zeit.~ GOTO rothe_story_bye
 END
+
+	IF ~~ THEN BEGIN rothe_story_bye
+	SAY ~Da könnt Ihr Euch glücklich schätzen, <PRO_RACE>.~
+	IF ~~ THEN EXIT
+	END
 
 IF ~Global("AC#RotheQuest","GLOBAL",2)~ THEN BEGIN wait_for_drug
 SAY ~Und, habt Ihr schon mit Chiksul gesprochen?~
@@ -916,7 +937,7 @@ IF ~~ THEN REPLY  ~Kann ich Euch bei Euren Nachwuchssorgen irgendwie helfen?~ GO
 END
 
 IF ~~ THEN BEGIN rothe_story_01
-SAY ~Wenn Euch das Gefühl beschleicht, Eure Frau begehrt Euch nicht mehr und Euch macht es noch nicht einmal etwas aus?~
+SAY ~Wenn Euch das Gefühl beschleicht, Euer Partner begehrt Euch nicht mehr und Euch macht es noch nicht einmal etwas aus?~
 IF ~~ THEN REPLY  ~Das klingt ja furchtbar! Wie ist es in Eurer Ehe dazu gekommen?~ GOTO rothe_story_02
 END
 
@@ -948,13 +969,14 @@ IF ~~ THEN BEGIN why_rothe
 SAY ~Für sehr viel. Fleisch, Milch, Fell, als Antrieb für Mühlen - ohne die Tiere wäre das Leben in Iltkazar ziemlich öde, versteht Ihr?~
 IF ~~ THEN REPLY  ~Also mit so etwas möchte ich mich nun wirklich nicht befassen.~ GOTO skip_rothe_story
 IF ~~ THEN REPLY  ~Kann ich Euch bei Euren Nachwuchssorgen irgendwie helfen?~ GOTO begin_rothe_quest
+IF ~~ THEN REPLY  ~Was müsste man tun, um das Feuer der Liebe wieder in Euren Kühen zu entfachen?~ GOTO begin_rothe_quest
 END
 
 IF ~~ THEN BEGIN begin_rothe_quest
 SAY ~Ich habe schon so ziemlich alles versucht. Viel Bewegung, sie frei laufen lassen, wärmende Bäder...~
 =
 ~Unser Gnomen-Alchemist will mir nicht helfen, weil er der Meinung ist, dass seine Tränke nicht für Tiere geschaffen sind. Pah! Wahrscheinlich hat er nur Angst, dass dann ganz Iltkazar mit solchen Problemen zu ihm kommen könnte.~
-IF ~~ THEN REPLY  ~Also mit so etwas möchte ich mich nun wirklich nicht befassen.~ GOTO skip_rothe_story
+IF ~~ THEN REPLY  ~Er hat gute Gründe. Ich muss jetzt weiter.~ GOTO skip_rothe_story
 IF ~~ THEN REPLY  ~Ich könnte ja einmal versuchen, mit Eurem Alchemisten zu reden.~ GOTO talk_to_alchemist
 IF ~PartyHasItem("POTN28")~ THEN REPLY  ~Ich habe hier einen Trank der Lebenskraft, wollt Ihr es einmal damit versuchen?~ GOTO has_potion
 END
@@ -994,7 +1016,7 @@ END
 
 IF ~~ THEN BEGIN talk_to_alchemist
 SAY ~Hey, das ist ja mal eine gute Idee! Aber erwähnt auf keinen Fall, dass das Gebräu, das er herstellen soll, für meine Rothé ist! Er würde es Euch bestimmt nicht geben.~
-IF ~~ THEN REPLY  ~Also mit so etwas möchte ich mich nun wirklich nicht befassen.~ GOTO skip_rothe_story
+IF ~~ THEN REPLY  ~Da müsst Ihr Euch jemand anderen suchen.~ GOTO skip_rothe_story
 IF ~~ THEN REPLY  ~Gut, ich werde mit dem Alchemisten reden.~ GOTO talk_to_alchemist_02
 END
 
@@ -1003,6 +1025,12 @@ SAY ~Das würdet Ihr für Borug tun? Ist ja mal endlich wieder eine erfreuliche 
 IF ~~ THEN DO ~SetGlobal("AC#RotheQuest","GLOBAL",2)
 AddJournalEntry(@54200,QUEST)~
 EXIT
+END
+
+IF ~True()~ THEN BEGIN hello_0
+SAY ~Kennt Ihr das Gefühl, wenn Ihr nach vielen Jahren der Ehe keine Lust mehr habt, das Bett miteinander zu teilen?~
+IF ~~ THEN REPLY  ~Bitte was?~ GOTO rothe_story_01
+IF ~~ THEN REPLY  ~Für so etwas habe ich keine Zeit.~ GOTO rothe_story_bye
 END
 
 /*******************************************************************************************************

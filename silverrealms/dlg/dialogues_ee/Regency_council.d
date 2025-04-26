@@ -1,4 +1,35 @@
 // -------------------------------------------------
+// King's guard
+//--
+
+BEGIN ~AC#62DW1~
+
+IF ~RandomNum(5,1)~ THEN BEGIN hello_01
+SAY ~Mein Eid gilt auf ewig – solange Mith Barak thront, stehe ich unerschütterlich wie das Erz.~
+IF ~~ THEN EXIT 
+END
+
+IF ~RandomNum(5,2)~ THEN BEGIN hello_02
+SAY ~Der Thron wankt nicht, solange die Klinge wacht.~
+IF ~~ THEN EXIT 
+END
+
+IF ~RandomNum(5,3)~ THEN BEGIN hello_03
+SAY ~Kein Schatten fällt auf den Mithralschild, solange ich wache.~
+IF ~~ THEN EXIT 
+END
+
+IF ~RandomNum(5,4)~ THEN BEGIN hello_04
+SAY ~Unsere Klingen ruhen nicht, solange der König träumt.~
+IF ~~ THEN EXIT 
+END
+
+IF ~RandomNum(5,5)~ THEN BEGIN hello_05
+SAY ~Durch Schlaf und Krieg, durch Dunkelheit und Zeit – wir wachen.~
+IF ~~ THEN EXIT 
+END
+
+// -------------------------------------------------
 // Bettargh Riftsong - Book Astral
 //--------------------------------------------------
 
@@ -433,6 +464,8 @@ END
 						IF ~~ THEN BEGIN patrol_open_doors
 						SAY ~Dunnabar, sagt Eurem Sohn Bresk, dass sich <CHARNAME> in der Stadt frei bewegen darf und das Ultoksamrin-Tor für ihn geöffnet bleiben soll.~
 						IF ~~ THEN REPLY ~Habt Dank. Wo soll ich mit der Suche beginnen?~ EXTERN ~AC#DUN01~ patrol_where_to_start
+						IF ~~ THEN REPLY ~Irgendein Anhalt, wo die Patrouille sein könnte?~ EXTERN ~AC#DUN01~ patrol_where_to_start
+						IF ~~ THEN REPLY ~Ich hoffe, ich muss nicht das ganze Unterreich nach diesen Zwergen absuchen.~ EXTERN ~AC#DUN01~ patrol_where_to_start
 						END
 						
 							IF ~~ THEN BEGIN patrol_search_08
@@ -662,7 +695,7 @@ END
 		END
 		
 			IF ~~ THEN BEGIN elern_driftdisquest_03
-			SAY ~Genaueres kann ich Euch leider auch nicht sagen. Doch wenn Ihr in Erwägung zieht, wieder an die Oberfläche zurück zu reisen - und auf demselben Wege wieder hier herunter, solltet Ihr meine Mutter Dorna in dem Tempel Dugmarens aufsuchen. Ihr findet den Tempel in der Halle der Runensteine, an einer Tür unter den Werkstätten der Tiefengnome.~
+			SAY ~Genaueres kann ich Euch leider auch nicht sagen. Doch wenn Ihr in Erwägung zieht, wieder an die Oberfläche zurück zu reisen - und auf demselben Wege wieder hier herunter - so solltet Ihr meine Mutter Dorna in dem Tempel Dugmarens aufsuchen. Ihr findet den Tempel in der Halle der Runensteine, an einer Tür unter den Werkstätten der Tiefengnome.~
 			IF ~~ THEN DO ~SetGlobal("AC#Return_to_Surface","GLOBAL",1)
 			AddJournalEntry(@63001,QUEST)~ EXTERN ~AC#GROM1~ gromi_driftdisquest_02 
 			END

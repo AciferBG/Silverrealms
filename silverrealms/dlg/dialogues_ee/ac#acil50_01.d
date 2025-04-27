@@ -1041,16 +1041,21 @@ END
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN hello_0
 SAY ~Oh! Hallo! Neu in der Stadt?~
 IF ~~ THEN REPLY ~Ja.~ GOTO new_in_town
+IF ~~ THEN REPLY ~Ein wenig.~ GOTO new_in_town
+IF ~~ THEN REPLY ~Bin nur rauf der Durchreise.~ GOTO new_in_town
 END
 
 	IF ~~ THEN BEGIN new_in_town
 	SAY ~Es kommen nicht oft Fremde hierher. Vor allem nicht solche von Oben.~
 	IF ~~ THEN REPLY ~Wer seid Ihr?~ GOTO who_are_you
+	IF ~~ THEN REPLY ~Bin auch nicht ganz freiwillig hier.~ GOTO trader
+	IF ~~ THEN REPLY ~Dahin möchte ich auch schnell wieder zurück. Lebt wohl.~ GOTO bye
 	END
 	
 		IF ~~ THEN BEGIN who_are_you
 		SAY ~Ich? Ich bin Dulman vom Clan Eisenriss.~
 		IF ~~ THEN REPLY ~Was macht Ihr hier?~ GOTO trader
+		IF ~~ THEN REPLY ~Mehr wollte ich nicht wissen. Lebt wohl.~ GOTO trader
 		END
 		
 			IF ~~ THEN BEGIN trader
@@ -1061,6 +1066,7 @@ END
 			IF ~~ THEN BEGIN sightseeing
 			SAY ~Aber he, wenn Ihr Mühe habt, Euch in der Stadt zurechtzufinden, könnte ich Euch helfen!~
 			IF ~~ THEN REPLY ~Wie könnt Ihr mir dabei helfen?~ GOTO sightseeing_02 
+			IF ~~ THEN REPLY ~Ich komme bei Gelegenheit darauf zurück.~ GOTO bye 
 			END
 			
 				IF ~~ THEN BEGIN sightseeing_02

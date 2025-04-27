@@ -500,7 +500,9 @@ END
 	END
 
 	IF ~~ THEN BEGIN what_next_01
-	SAY ~Mit der Patrouille soll sich die Bronzemaske weiter befassen. Und die 'delvesonns' sollen den Gefallenen ein würdiges Begräbnis geben.~
+	SAY ~Mit der Patrouille soll sich zunächst die Bronzemaske weiter befassen. Ich möchte wissen, was es mit den Illithidenköpfen auf sich hat! Wer hat sie abgetrennt? Unsere eigenen Leute? Jemand anderes? Und einige Priester sollen sich dieses Symbol ansehen und untersuchen, ob ein feindlicher Dweomer darin enthalten ist. Das wird eine Weile dauern, denn ich erwarte, dass dieser Vorfall gründlich untersucht wird!~ 
+	=
+	~Und die *delvesonns* sollen den Gefallenen ein würdiges Begräbnis geben. Solange dieser Vorfall untersucht wird, müssen wir uns weiteren Fragen widmen.~
 	=
 	~<CHARNAME> hat <HISHER> Versprechen gehalten und unser Vertrauen wirklich verdient, verehrte Ratsmitglieder. Dafür gebührt <PRO_HIMHER> unser aufrichtiger Dank.~ 
 	IF ~~ THEN + discussion
@@ -514,7 +516,7 @@ END
 			IF ~GlobalLT("AC#Vronia_Quest","GLOBAL",12)~ THEN EXTERN ~AC#VRON1~ Ellhimar_quest_not_done_yet
 			IF ~GlobalGT("AC#Vronia_Quest","GLOBAL",11)~ THEN + Ellhimar_quest_finished
 			END
-			
+			/*
 				IF ~~ THEN BEGIN Ellhimar_quest_finished
 				SAY ~<CHARNAME>, Vronia berichtete uns, dass Ihr unseren menschlichen Magier als einen vermeintlichen Drow-Spion enttarnt habt.~
 				IF ~~ THEN GOTO Ellhimar_mindflayer_01
@@ -524,6 +526,7 @@ END
 					SAY ~Sie berichtete uns ebenfalls von Eurer Beobachtung, dass er in Kontakt mit einem *caradhak*, einem Illithiden, stand.~
 					IF ~~ THEN REPLY ~Ja, ich habe durch einen Spiegel in das Antlitz eines Gedankenschinders geschaut.~ EXTERN ~AC#STUR1~ illithid_face_01
 					END
+					*/
 					
 						IF ~~ THEN BEGIN illithid_face_02
 						SAY ~Das könnte sein, doch es gibt noch andere Hinweise. Der Magier machte sich wohl auf eigene Faust auf den Weg in die Spinnenschächte, auch wenn dieser Weg verboten ist. Dies hat <CHARNAME> ebenfalls herausgefunden, nicht wahr, Vronia?~
@@ -531,7 +534,7 @@ END
 						END
 						
 							IF ~~ THEN BEGIN charname_spiderstakings_02
-							SAY ~Dann sollte <CHARNAME> in den Spinnenschächten nach weiteren Antworten suchen.~
+							SAY ~Dann sollte <CHARNAME> in den Spinnenschächten nach weiteren Antworten zu dem Vorfall mit dem Drow-Magier suchen.~
 							IF ~~ THEN EXTERN ~AC#VRON1~ charname_spiderstakings_03
 							END
 							
@@ -559,7 +562,9 @@ END
 //__________________________________Quest: Talk to Turbaern
 											
 												IF ~~THEN BEGIN talk_to_turbaern
-												SAY ~Ich bitte Euch, sucht den Hohen Omlar Turbaern Ghalmrin auf und bittet um die Herausgabe des Siegelsteines zum Öffnen der Spinnenschächte.~
+												SAY ~Ich bitte Euch, sucht den Hohen Omlar Turbaern Ghalmrin auf und bittet um die Herausgabe des Siegelsteines zum Öffnen der Spinnenschächte. Die zuständigen Ratsmitglieder kümmern sich derweil um das Begräbnis für unsere Patrouille und um die Untersuchung dieser Höhle vor unserer Stadt. Untersucht dieses Symbol, das <CHARNAME> erwähnt hat. Und entfernt die Köpfe der Illithiden, bevor sie anfangen zu stinken.~
+												=
+												~Damit ist die Ratssitzung beendet.~
 												IF ~~ THEN DO ~SetGlobal("AC#RC_Ellhimar_First","GLOBAL",2)
 												SetGlobal("AC#RC_Turbaern_Second","GLOBAL",1)
 												AddJournalEntry(@62020,QUEST)
@@ -850,7 +855,7 @@ IF ~~ THEN EXTERN ~AC#TORT1~ turbaern_has_his_reasons
 END
 
 IF ~~ THEN BEGIN illithid_face_01
-SAY ~Wieder die *caradhak*! Meister Gromi, die Illithiden haben sich gegen uns're Stadt verschworen!~
+SAY ~Wieder die *caradhak*! Meister Gromi, die Illithiden haben sich gegen unsere Stadt verschworen!~
 IF ~~ THEN EXTERN ~AC#GROM1~ illithid_face_02
 END
 
@@ -1015,7 +1020,7 @@ END
 
 IF ~~ THEN BEGIN patrol_dead_03
 SAY ~Das waren sicher die verfluchten Drow!~
-IF ~~ THEN REPLY ~In der Tat musste ich gegen eine Drowpatrouille vor den Toren Iltkazars kämpfen. In der Höhle befand sich jedoch noch etwas anderes - die abgeschlagenen Köpfe von Illithiden.~ EXTERN ~AC#STUR1~ illithid_01
+IF ~~ THEN REPLY ~In der Tat musste ich gegen eine Drowpatrouille vor den Toren Iltkazars kämpfen. In der Höhle befand sich jedoch noch etwas anderes - die abgeschlagenen Köpfe von Illithiden - und ein seltsames Symbol auf dem Boden.~ EXTERN ~AC#STUR1~ illithid_01
 END
 
 IF ~~ THEN BEGIN vergadain
@@ -1154,11 +1159,16 @@ SAY ~(Die Zwergin ignoriert Euch.)~
 IF ~~ THEN EXIT 
 END
 // ---------------------------------------------
-// Vrona
+// Vronia
 // ---------------------------------------------
 
-BEGIN AC#VRON1  // Vrona
-
+BEGIN AC#VRON1  // Vronia
+/*
+IF ~~THEN BEGIN illithid_symbol
+SAY ~Ich interessiere mich eher für dieses Symbol auf dem Boden.~
+IF ~~ THEN EXTERN ~AC#GROM1~ what_next_01
+END
+*/
 
 IF ~~THEN BEGIN vronia_turbaern_what_do_you_propose
 SAY ~Was schlagt Ihr also vor, Hoher Omlar?~
@@ -1457,3 +1467,18 @@ CHAIN IF ~~ THEN AC#GROM1 chain_under_arrest_npc_reaction
 == CERNDJ IF ~InParty("Cernd") !StateCheck("Cernd",CD_STATE_NOTVALID)~ THEN ~Die Zwerge haben gute Gründe, nicht jedem dahergelaufenen Abenteurer auf Anhieb zu trauen. Warten wir ab, wie es weitergeht.~
 END
 IF~~THEN GOTO know_too_much	
+
+// Chain - message that Ellhimar is a drow spy
+CHAIN IF ~~ THEN AC#GROM1 Ellhimar_quest_finished
+~<CHARNAME>, Vronia berichtete uns, dass Ihr unseren menschlichen Magier als einen vermeintlichen Drow-Spion enttarnt habt.~
+== AC#STUR1 ~Dieser Menschenmagier war in Wirklichkeit ein Drow-Spion? Und lebte jahrelang mitten in unserer Stadt?~
+== AC#GROM1 ~Das glauben wir nicht. Wir vermuten eher, dass etwas im Laufe der letzten Herdfeuer eine Art Sinneswandel bei ihm ausgelöst hat, wenn ich Vronia richtig verstehe.~
+== AC#VRON1 ~So ist es. Ich bemerkte in der letzten Zeit eine deutliche Veränderung seines Wesens. Ich denke, dass wir den richtigen Ellhimar zu Recht bei uns aufgenommen haben - und er irgendwann durch ein großes Unglück durch den Drow ersetzt wurde.~
+END
+IF ~~ THEN EXTERN ~AC#GROM1~ Ellhimar_mindflayer_01
+				
+CHAIN IF ~~ THEN AC#GROM1 Ellhimar_mindflayer_01
+~Sie berichtete uns ebenfalls von <CHARNAME>s Beobachtung, dass Ellhimar in Kontakt mit einem *caradhak*, einem Illithiden, stand.~
+END
+IF ~~ THEN REPLY ~Ja, ich habe durch einen Spiegel in das Antlitz eines Gedankenschinders geschaut.~ EXTERN ~AC#STUR1~ illithid_face_01
+					

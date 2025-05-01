@@ -19,6 +19,7 @@ END
 IF ~True()~ THEN BEGIN hello_02
 SAY ~Seid gegrüßt, <PRO_RACE>!~
 IF ~Global("AC#Return_to_Surface","GLOBAL",4)~ THEN REPLY ~Wegen des Quecksilbers...~ + about_mercury
+IF ~Global("AC#Return_to_Surface","GLOBAL",4)~ THEN REPLY ~Wegen des Levitationstrankes...~ + about_levitation_potion
 IF ~PartyHasItem("AC#DRFT1")
 GlobalLT("AC#Return_to_Surface","GLOBAL",5)~ THEN REPLY ~Ich habe hier die Schwebescheibe der Drow. Allerdings schwebt sie nicht mehr.~ + driftdisc_not_working
 IF ~Global("AC#Return_to_Surface","GLOBAL",1)~ THEN REPLY ~Eure Tochter meinte, Ihr könntet mir bei meinem Weg zurück an die Oberfläche helfen.~ + way_to_surface
@@ -26,6 +27,24 @@ IF ~~ THEN REPLY ~Was ist das für ein Ort?~ GOTO what_is_it
 IF ~~ THEN REPLY ~Ich muss weiter.~ + bye
 END
 
+	IF ~~ THEN BEGIN about_levitation_potion
+	SAY ~Oh! Habt Ihr den Trank bereits erworben?~
+	IF ~PartyHasItem("AC#POTL2")~ THEN REPLY ~Ja, hier ist er.~ GOTO have_levitation_potion
+	IF ~!PartyHasItem("AC#POTL2")~ THEN REPLY ~Nein, noch nicht.~ GOTO not_have_all_ingredients
+	IF ~~ THEN REPLY ~Wie war das noch einmal mit dem Zauber, den ich auf die Scheibe wirken sollte?~ + spell_tenser_reprise
+	END
+	
+		IF ~~ THEN BEGIN have_levitation_potion  
+		SAY ~Wirklich! Ihr seid wahrlich ein großartiger <PRO_RACE>!~
+		IF ~~ THEN GOTO have_levitation_potion_02 
+		END
+		
+		IF ~~ THEN BEGIN have_levitation_potion_02
+		SAY ~Habt Ihr auch das Quecksilber?~
+		IF ~PartyHasItem("AC#MERC1")~ THEN REPLY ~Ja, hier ist es.~ GOTO have_all
+		IF ~!PartyHasItem("AC#MERC1")~ THEN REPLY ~Nein, noch nicht.~ GOTO not_have_all_ingredients
+		END
+		
 	IF ~~ THEN BEGIN about_mercury
 	SAY ~Oh! Habt Ihr es schon gefunden?~
 	IF ~PartyHasItem("AC#MERC1")~ THEN REPLY ~Ja, hier ist es.~ GOTO have_mercury
@@ -41,12 +60,23 @@ END
 		END
 		
 			IF ~~ THEN BEGIN have_mercury_02
-			SAY ~Jetzt müsst Ihr nur noch die verschiedenen Komponenten auf Dugmarens Altar legen und den Zauber wirken. HIer, ich gebe Euch Eure Schwebescheibe wieder...~
+			SAY ~Habt Ihr auch den Levitationstrank?~
+			IF ~PartyHasItem("AC#POTL2")~ THEN REPLY ~Ja, hier ist er.~ GOTO have_all
+			IF ~!PartyHasItem("AC#POTL2")~ THEN REPLY ~Nein, noch nicht.~ GOTO not_have_all_ingredients
+			END
+			
+				IF ~~ THEN BEGIN not_have_all_ingredients
+				SAY ~Kehrt zu mir zurück, wenn Ihr alle Zutaten beisammen habt, um den Zauber auf die Schwebescheibe zu wirken.~
+				IF ~~ THEN EXIT 
+				END
+		
+			IF ~~ THEN BEGIN have_all
+			SAY ~Perfekt! Jetzt müsst Ihr nur noch die verschiedenen Komponenten auf Dugmarens Altar legen und den Zauber wirken. Hier, ich gebe Euch Eure Schwebescheibe wieder...~
 			IF ~~ THEN DO ~GiveItemCreate("AC#DRFT1",Player1,1,0,0)~ GOTO have_mercury_03
 			END
 			
 				IF ~~ THEN BEGIN have_mercury_03
-				SAY ~Legt die Schwebescheibe mitsamt dem Quecksilber auf den Opfertisch. Hier ist die Spruchrolle mit dem Zauber "Tenser fliegende Scheibe". Sprecht den Zauber danach aus, dann sollte die Schwebescheibe - so der Irrende Wanderer möchte - wieder funktionieren.~
+				SAY ~Legt die Schwebescheibe mitsamt dem Quecksilber und dem Levitationstrank auf den Opfertisch. Hier ist die Spruchrolle mit dem Zauber "Tensers fliegende Scheibe". Sprecht den Zauber danach aus, dann sollte die Schwebescheibe - so der Irrende Wanderer möchte - wieder funktionieren.~
 				IF ~~ THEN DO ~SetGlobal("AC#Return_to_Surface","GLOBAL",5)
 				GiveItemCreate("AC#5DTFD",Player1,1,0,0)
 				EraseJournalEntry(@64224)
@@ -81,7 +111,7 @@ END
 								END
 								
 									IF ~~ THEN BEGIN spell_tenser_reprise
-									SAY ~Darum kümmern wir uns später. Besorgt erst einmal das Quecksilber.~
+									SAY ~Darum kümmern wir uns später. Besorgt erst einmal das Quecksilber und den Levitationstrank..~
 									IF ~~ THEN REPLY ~Wo kann ich noch einmal das Quecksilber kaufen?~ GOTO buy_mercury_reprise 
 									IF ~~ THEN REPLY ~Könnt Ihr mir noch einmal erklären, wie ich Quecksilber selbst herstellen kann?~ GOTO create_mercury_reprise
 									IF ~~ THEN REPLY ~Mehr wollte ich gar nicht wissen. Ich muss weiter.~ + bye
@@ -122,15 +152,29 @@ END
 						END
 						
 						IF ~~ THEN BEGIN no_driftdisc
-						SAY ~Wenn Ihr es nicht selbst hinbekommt, die Scheibe zu verzaubern, müssen wir auf den Segen Dugmarens hoffen. Mein Gott hat mich in der Beziehung aber noch nie im Stich gelassen. Dazu aber später mehr. Denn wir brauchen noch eine Komponente, um die Verzauberung abzuschließen.~
+						SAY ~Wenn Ihr es nicht selbst hinbekommt, die Scheibe zu verzaubern, müssen wir auf den Segen Dugmarens hoffen. Mein Gott hat mich in der Beziehung aber noch nie im Stich gelassen. Dazu aber später mehr. Denn wir brauchen noch zwei weitere Komponenten, um die Verzauberung abzuschließen.~
 						IF ~~ THEN GOTO driftdisc_component
 						END
 						
 							IF ~~ THEN BEGIN driftdisc_component
-							SAY ~Ihr benötigt noch etwas Quecksilber. Dieses Material ist äußerst selten. Ihr könnt es entweder in der Stadt kaufen oder selbst herstellen.~
+							SAY ~Ihr benötigt noch einen Levitationstrank und etwas Quecksilber. Den Levitationstrank stellen wir hier in der Bibliothek selbst her. Quecksilber ist jedoch äußerst selten. Ihr könnt es entweder in der Stadt kaufen oder selbst herstellen.~
 							IF ~~ THEN REPLY ~Wo kann ich Quecksilber kaufen?~ GOTO buy_mercury 
 							IF ~~ THEN REPLY ~Wie kann ich Quecksilber selbst herstellen?~ GOTO create_mercury 
+							IF ~~ THEN REPLY ~Wo bekomme ich den Levitationstrank her?~ GOTO levitation_potion 
 							END
+							
+									IF ~~ THEN BEGIN levitation_potion
+									SAY ~Bei Fruntuck Flaschenhals. Die Svirfnebli des Flaschenhals-Clanes sind schon seit langem für die Herstellung verschiedener Tränke zuständig und haben das Braurecht dieser Stadt für die Levitationstränke. Ihr könnt eine Flasche bei Fruntuck gleich außerhalb dieses Tempels, die Treppe hoch bei der Plattform der Erfinder, erwerben.~
+									IF ~~ THEN GOTO driftdisc_components_tutti
+									END
+									
+										IF ~~ THEN BEGIN driftdisc_components_tutti
+										SAY ~Wenn Ihr den Levitationstrank und etwas Quecksilber habt, kommt wieder hier vorbei. Könnt Ihr mir folgen?~
+										IF ~~ THEN REPLY ~Wo kann ich Quecksilber kaufen?~ GOTO buy_mercury 
+										IF ~~ THEN REPLY ~Wie kann ich Quecksilber selbst herstellen?~ GOTO create_mercury 
+										IF ~~ THEN REPLY ~Wo bekomme ich den Levitationstrank her?~ GOTO levitation_potion 
+										IF ~~ THEN REPLY ~Soweit alles klar.~ + driftdisc_summary
+										END
 							
 								IF ~~ THEN BEGIN create_mercury
 								SAY ~Wenn Ihr selbst Quecksilber herstellen wollt, benötigt Ihr das passende Erz. Ich bin keine *delvar*, keine Erzschürferin, aber ich habe mich auch dazu ein wenig belesen. Ihr benötigt ein spezielles Erz, das wir Zwerge "Cinnabar" nennen. Man kann daraus Färbemittel herstellen - aber auch Quecksilber gewinnen.~
@@ -144,7 +188,7 @@ END
 									
 										IF ~~ THEN BEGIN cinnabar_02
 										SAY ~Wenn Ihr das Cinnabar geschürft habt, müsst Ihr es in die erste Ebene der Arnschädelhalle bringen. Dort wird Euch Thargrun Drunkensang helfen, aus dem Erz Quecksilber zu gewinnen.~
-										IF ~Global("buymercury","LOCALS",1)~ THEN DO ~~ GOTO driftdisc_summary 
+										IF ~Global("buymercury","LOCALS",1)~ THEN DO ~~ GOTO driftdisc_components_tutti 
 										IF ~Global("buymercury","LOCALS",0)~ THEN DO ~~ GOTO buy_mercury 
 										END
 																		
@@ -152,11 +196,11 @@ END
 								IF ~~ THEN BEGIN buy_mercury
 								SAY ~Wenn Ihr Quecksilber kaufen wollt, könnt Ihr das in der Stadt tun. Wir haben hier einige Alchemisten, die es für ihre Kunst benötigen. Chiksul in der Zitadelle zum "Blutigen Bollwerk" wird Euch sicher welches verkaufen können. Aber ich warne Euch vor: Das lassen sich die Alchemisten teuer bezahlen! Ihr werdet viele, viele Goldmünzen berappen müssen, um Euch ein wenig dieser Flüssigkeit leisten zu können.~
 								IF ~Global("createmercury","LOCALS",0)~ THEN DO ~SetGlobal("buymercury","LOCALS",1)~ GOTO create_mercury
-								IF ~Global("createmercury","LOCALS",1)~ THEN DO ~SetGlobal("buymercury","LOCALS",1)~ GOTO driftdisc_summary
+								IF ~Global("createmercury","LOCALS",1)~ THEN DO ~SetGlobal("buymercury","LOCALS",1)~ GOTO driftdisc_components_tutti
 								END
 								
 								IF ~~ THEN BEGIN driftdisc_summary
-								SAY ~Wenn Ihr das Quecksilber habt, kehrt zu mir zurück. Dann versuchen wir, den Zauber zu wirken. Mit Dugmarens Beistand werden wir die Scheibe wieder zum Schweben bringen! Habt Ihr noch Fragen?~
+								SAY ~Gemeinsam versuchen wir dann, den Zauber zu wirken. Mit Dugmarens Beistand werden wir die Scheibe wieder zum Schweben bringen! Habt Ihr noch Fragen?~
 								IF ~~ THEN REPLY ~Wo kann ich noch einmal das Quecksilber kaufen?~ GOTO buy_mercury 
 								IF ~~ THEN REPLY ~Könnt Ihr mir noch einmal erklären, wie ich Quecksilber selbst herstellen kann?~ GOTO create_mercury
 								IF ~~ THEN REPLY ~Wie war das noch einmal mit dem Zauber, den ich auf die Scheibe wirken sollte?~ + spell_tenser_01
@@ -173,8 +217,11 @@ END
 										IF ~~ THEN BEGIN mercury_lets_go
 										SAY ~Hier ist der Schlüssel in den Stollen, falls Ihr Euch um das Cinnabar-Erz selbst kümmern wollt. Der Stollen wurde von uns versiegelt, weil es darin spuken soll, aber das ist sicher nur ein Hirngespinst der abergläubigen Zwerge. Viel Erfolg, <CHARNAME>!~
 										IF ~~ THEN DO ~SetGlobal("AC#Return_to_Surface","GLOBAL",4)
+										SetGlobal("AC#Fruntuck_Levitate","GLOBAL",1)
 										GiveItemCreate("AC#5DKY1",LastTrigger,0,0,0)
-										AddJournalEntry(@64220,QUEST)~ EXIT 
+										AddJournalEntry(@64200,QUEST)
+										AddJournalEntry(@64220,QUEST)
+										~ EXIT 
 										END
 
 	IF ~~ THEN BEGIN way_to_surface

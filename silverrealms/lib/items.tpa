@@ -1031,8 +1031,8 @@ COPY ~silverrealms/itm/AC#5DKY1.itm~         ~override~ // Dorna's key, used to 
   SAY DESC @8049
   
 COPY ~silverrealms/itm/AC#5DTFD.itm~         ~override~ // scroll "Tenser's flying disc"
-  SAY NAME2 @8050
-  SAY DESC @8051
+  SAY NAME2 @8094
+  SAY DESC @8095
   
 COPY ~silverrealms/itm/AC#BRALG.itm~         ~override~ // Gauntlets 20 Strength, 3 Dex
   SAY NAME2 @8050

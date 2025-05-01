@@ -284,6 +284,7 @@ SAY ~*Hicks*?~
 IF ~Global("AC#Fruntuck","GLOBAL",0)~ THEN REPLY ~Was ist denn mit Euch los?~ + whats_up_with_you
 IF ~PartyHasItem("ac#eyebe")~ THEN REPLY ~Ich habe hier einen Augenstiel eines Betrachters für Euch.~ + need_potion_eyestalk
 ++ ~Ich sehe schon, das wird nichts. Auf Wiedersehen!~ + bye
+IF ~Global("AC#Fruntuk_Levitate","GLOBAL",1)~ THEN REPLY ~Ich brauche einen Levitationstrank.~ + need_levitation_potion
 END
 
 	IF ~~ THEN BEGIN need_potion_eyestalk
@@ -300,9 +301,9 @@ END
 	END
 				
 				IF ~~ THEN BEGIN make_potion
-				SAY ~Wie dem auch sei. Jetzt habe ich wieder Material, mit dem ich den stärksten Leviationstrank brauen kann, den es in Unterreich gibt!~
+				SAY ~Wie dem auch sei. Jetzt habe ich wieder Material, mit dem ich den stärksten Leviationstrank brauen kann, den es im Unterreich gibt!~
 				=
-				~Man sollte ihn aber nur im Inneren anwenden, ansonsten segelt Ihr herauf bis nach Arborea.~
+				~Was für ein prächtiger Augenstiel das doch ist! Passt auf, mit diesem Trank segelt Ihr herauf bis nach Arborea!~
 				++ ~Wollt Ihr ihn gleich anfertigen?~ + make_potion_02
 				END
 				
@@ -315,26 +316,23 @@ END
 							IF ~~ THEN BEGIN lets_get_started
 							SAY ~Gut! Also, als Erstes müssen wir ein Konzentrat aus ätherischen Ölen aufsetzen.~
 							=
-							~...~
+							~...~ [AM0602D2]
 							=
 							~Jetzt muss der Augenstiel zerdrückt werden, bis der Betrachtersaft gleichmäßig herausläuft...~
 							=
-							~...~
+							~...~ [AM0602D3]
 							=
 							~Wenn wir das jetzt kurz erhitzen, wird das ganze schnell sämig. Die Betrachteressenz setzt sich gerne oben ab, dies müssen wir durch stetiges Rühren verhindern, sonst bildet sich eine Haut. Stört Euch nicht am Geruch!~
 							=
-							~...~
+							~...~ [AM0602D1]
 							=
 							~Fertig! Das ging doch schnell, oder? Hier, ich gieße es noch in eine schicke Flasche. Das Schöne ist, dass man die Flasche niemals fallen lassen kann, da sie durch die Wirkung des Trankes kontinuierlich schwebt.~
-							IF ~~ THEN DO ~EraseJournalEntry(@64203)
+							IF ~~ THEN DO ~GiveItemCreate("AC#POTL2",Player1,1,1,1)
+							EraseJournalEntry(@64203)
 				EraseJournalEntry(@64204)
 				EraseJournalEntry(@64205)
-				AddJournalEntry(@64206,QUEST_DONE)
-				IncrementGlobal("AC_Iltkazar_Reputation","GLOBAL",1)
-				DisplayStringNoName(Player1,@1021)~ EXIT
+				AddJournalEntry(@64206,QUEST_DONE)~ EXIT
 				END
-
-//SetGlobal("AC#BackToSurface","GLOBAL",6)
 	
 	IF ~~ THEN BEGIN whats_up_with_you
 	SAY ~*Hicks*.~ [HICCUP]
@@ -360,23 +358,28 @@ END
 			END
 			
 			IF ~~ THEN BEGIN to_do_with_potions
-			SAY ~*Hicks*! Ja. -*Hicks*!- Und dabei bräuchte ich -*Hicks*!- so dringend neue Ingredientien! *Hicks*!~ [HICCUP]
+			SAY ~*Hicks*! Ja. *Hicks*!~ [HICCUP]
 			++ ~Ich sehe schon, das wird nichts. Auf Wiedersehen!~ + bye
-			++ ~Was benötigt Ihr denn?~ + what_ingredients
+			++ ~Ich komme später wieder, wenn Euer Schluckauf vorbei ist.~ + bye
+			IF ~Global("AC#Fruntuk_Levitate","GLOBAL",1)~ THEN REPLY ~Ich brauche einen Levitationstrank.~ + need_levitation_potion
 			END
 			
-			IF ~~ THEN BEGIN what_ingredients
-			SAY ~Ich bin -*Hicks*!- dafür zuständig, den Gelehrten hier Levitationstränke zu brauen, damit sie nicht ständig -*Hicks*!- Gefahr laufen, den zentralen Schacht herunterzufallen.~ [HICCUP]		
+			IF ~~ THEN BEGIN need_levitation_potion
+			SAY ~Das seid Ihr bei mir richtig! Ich bin -*Hicks*!- dafür zuständig, den Gelehrten hier Levitationstränke zu brauen, damit sie nicht ständig -*Hicks*!- Gefahr laufen, den zentralen Schacht herunterzufallen.~ [HICCUP]
+			=
+			~Nur leider fehlen mir dazu die nötigen Ingredi-*hicks*ien. Durch die Explosion sind alle Lagervor*hicks*räte zerstört worden.~			
 			++ ~Was benötigt Ihr für diesen Trank?~ + need_beholder_eyestalk
 			END
 			
 			IF ~~ THEN BEGIN need_beholder_eyestalk
 			SAY ~Den Augenstiel eines -*Hicks*!- Betrachters.~ [HICCUP]
-			++ ~Ihr wollt einen Trank brauen, in dem der Augenstiel eines Betrachters schwimmt?~ + need_beholder_eyestalk_02
+			++ ~Ihr trinkt hier Tränke, in denen der Augenstiel eines Betrachters schwimmt?~ + need_beholder_eyestalk_02
 			END
 						
 							IF ~~ THEN BEGIN need_beholder_eyestalk_02
 							SAY ~Es gibt leider keine andere -*Hicks*!- Kreatur, die über eine derart mächtige -*Hicks*!- Art der Levitation verfügt, bedaure.~ [HICCUP]
+							=
+							~Bringt mir einen *hicks* Augenstiel, dann kann ich wieder weitere derartige Tränke brauen.~
 							++ ~Nun gut, und wo soll ich einen Betrachter finden, den ich überzeugen kann, sich von einem Augenstiel zu trennen?~ + need_beholder_eyestalk_03
 							END
 							
@@ -400,7 +403,10 @@ END
 											
 												IF ~~ THEN BEGIN not_have_ladder
 												SAY ~Dann müsst Ihr Euch eine -*Hicks*!- neue Leiter besorgen. Mit derlei Dingen kenne ich mich nicht -*Hicks*!- gut aus. Ich denke, in der Zi-*Hicks*!-sterne, in der auch das blutige Boll-*Hicks*!-werk beheimatet ist, könntet Ihr jedoch fündig werden.~ [HICCUP]
+												=
+												~Fragt einmal bei Thif*hicks*... ich meine *Hicks*tic... ach, verdammt... Thiftic! Er sollte solche Dinge im *Hicks*gebot haben.~
 												IF ~~ THEN DO ~SetGlobal("AC#Fruntuck","GLOBAL",1)
+												SetGlobal("AC#Fruntuk_Levitate","GLOBAL",2)
 												AddJournalEntry(@64201,QUEST)
 												~ EXIT
 												END	

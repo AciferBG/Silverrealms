@@ -13,10 +13,10 @@ COPY ~silverrealms/areas/ACIL1W.are~          ~override~
 */
 
 COPY ~silverrealms/areas/ACIL02.are~          ~override~
- SAY 0xb88 @877
- SAY 0xc4c @878
- SAY 0xd10 @879
- SAY 0xac4 @880
+ SAY 0xc98 @877 // info wolf
+ SAY 0xd5c @878  // info deer
+ SAY 0xe20 @879  // info bear
+ SAY 0xbd4 @880  // info giant
 
 
 COPY ~silverrealms/areas/ACIL04.are~          ~override~

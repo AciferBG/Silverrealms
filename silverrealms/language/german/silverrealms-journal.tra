@@ -546,12 +546,12 @@ Ich habe Borthuns Buch von Anthan Diamantklinge erhalten. Ich sollte es sorgfäl
 
 Ich habe Borthuns Eintrag zu diesem mysteriösen Ort in seinem Buch gelesen. Es handelt sich um einen für Elfen heiligen Ort am Fuße der Wolkengipfel, an dem ein Elfenheld in grauer Vorzeit zwei Drachen erschlagen hatte. Mith Barak hat diesen Stein wohl deshalb aufgesucht, weil er sich in der Nähe zu einem Ort begab, den er den "Drachentempel" genannt hat. Ich vermute, dass dies der nächste Ort sein wird, den ich bei meiner Suche nach dem schlafenden König aufsuchen muss.~
 //___________________________Zurück an die Oberfläche
-@64200  = ~Zurück an die Oberfläche
+@64200  = ~Der Levitationstrank
 
-So, wie es scheint, liegen die Antworten von Mith Baraks mysteriösem Schlaf an der Oberfläche. Ich sollte nach einem Weg finden, wieder den Weg zurück anzutreten. Bettargh, der Priester Dugmarens in der Abgrundliedhalle, hat vielleicht eine Idee, wie ich die vielen Meilen nach oben zurück in Ravimors Höhle schweben könnte.~
+Um die Schwebescheibe der Drow wieder zum Schweben zu bringen, muss ich neben dem Quecksilber noch einen Levitationstrank besorgen. Ein Tiefengnom-Alchemist mit Namen Fruntuck Flaschenhals in der Bibliothek der Halle der Runensteine auf der Plattform der Erfinder scheint solche Tränke herzustellen.~
 @64201  = ~Der Levitationstrank
 
-Ein Tiefengnom-Alchemist mit Namen Fruntuck Flaschenhals hat mich gebeten, ihm einen Betrachter-Augenstiel zu beschaffen. Ganz in der Nähe Iltkazars sind alte Tunnel, in denen ich mit etwas "Glück" einem Besitzer eines solchen Augenstiels über den Weg laufen könnte. Um dorthin herabzusteigen,  sollte ich mich in der Zisterne des "Blutigen Bollwerks" einmal umsehen, ob ich von einem der Händler eine Leiter erwerben kann.~
+Fruntuck Flaschenhals benötigt für die Herstellung eines Levitationstrankes den Augenstiel eines Betrachters. Ich soll ihm diesen beschaffen. Ganz in der Nähe Iltkazars sind alte Tunnel, in denen ich mit etwas Glück einem Besitzer eines solchen Augenstiels über den Weg laufen könnte. Um dorthin herabzusteigen, sollte ich mich in der Zisterne des "Blutigen Bollwerks" bei Thiftic Gurarr erkundigen, ob ich von ihm eine Leiter erwerben kann.~
 
 @64202  = ~Der Levitationstrank
 
@@ -564,10 +564,10 @@ Ich habe eine Strickleiter gefunden, die mich gefahrlos in den Schacht südlich 
 Ich habe den Augenstiel eines Betrachters! Jetzt heißt es zurück zu Fruntuck in Nebeluns Manufaktur, um den Trank zu brauen.~
 @64205  = ~Der Levitationstrank
 
-Der Gnomenalchimist Fruntuck Flaschenhals oben auf der Empore, die sie Nebeluns Manufaktur nennen, kann mir den Levitationstrank brauen, den ich benötige, um wieder an die Oberfläche zu gelangen. Ich freue mich, wieder zurück ans Licht zu kehren. Auf das trinken des Trankes mit dem Betrachterauge freue ich mich weniger.~
+Der Gnomenalchimist Fruntuck Flaschenhals oben auf der Empore, die sie Nebeluns Manufaktur nennen, kann mir den Levitationstrank brauen, den ich benötige, um wieder an die Oberfläche zu gelangen. Ich freue mich, wieder zurück ans Licht zu kehren. Auf das Trinken des Trankes mit dem Betrachterauge freue ich mich weniger.~
 @64206  = ~Der Levitationstrank
 
-Ich habe dem Tiefengnom-Alchemisten Fruntuck Flaschenhals geholfen, wieder neue Levitationstränke zu brauen.~
+Ich habe dem Tiefengnom-Alchemisten Fruntuck Flaschenhals geholfen, Levitationstränke zu brauen und eine Flasche erhalten. Nun muss ich diese zu Dorna Abgrundlied in den Tempel des Dugmaren bringen, um gemeinsam mit dem Quecksilber die Schwebescheibe wieder verzaubern zu können.~
 @64207  = ~Zurück an die Oberfläche
 
 Der Weg an die Oberfläche ist gar nicht so einfach wie ich dachte! Ich soll Shagretor, den Inhaber des "Vermächtnis" in Haelas Hallen bitten, mir eine ominöse Flugscheibe der Drow zur Verfügung zu stellen.~
@@ -607,6 +607,7 @@ Um die Verzauberung der Drow-Schwebescheibe zu erneuern, muss ich die Scheibe mi
 @64226  = ~Die Drow-Schwebescheibe
 
 Ich habe die Schwebescheibe hergestellt. Nun kann ich sie am Boden des Schachtes benutzen, den ich von der Oberfläche herabgeschwebt bin.~
+
 //___________________________Abschied aus Iltkazar
 @64300  = ~Abschied aus Iltkazar
 

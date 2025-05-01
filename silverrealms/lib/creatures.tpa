@@ -2,6 +2,14 @@
 
 COPY ~silverrealms/cre/copy~         ~override~
 
+COPY ~silverrealms/cre/AC#MYCMO.cre~ ~override~ // Mycomoth
+  SAY NAME1 @9043 SAY NAME2 @9043
+  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~MYCOMOTH_ACIFER~))
+  
+  COPY ~silverrealms/cre/AC#MYCMD.cre~ ~override~ // Mycomoth (dead)
+  SAY NAME1 @9043 SAY NAME2 @9043
+  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~MYCOMOTH_ACIFER~))
+
 COPY ~silverrealms/cre/AC#IL95G.cre~ ~override~ // Dwarven chess golem
   SAY NAME1 @9042 SAY NAME2 @9042
   WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~DWARVENSTATUE_ACIFER~))

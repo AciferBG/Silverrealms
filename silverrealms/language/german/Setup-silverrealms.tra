@@ -1820,7 +1820,7 @@ Diirinka'~
 @6300 = ~Tempel des Dugmaren~
 
 // Area script Strings
-@7000 = ~Ihr müsst die Schwebescheibe und das Quecksilber auf den Altar legen, um die Scheibe wieder verzaubern zu können.~
+@7000 = ~Ihr müsst die Schwebescheibe, das Quecksilber und den Levitationstrank auf den Altar legen, um die Scheibe wieder verzaubern zu können.~
 @7001 = ~In dieser Position klemmt ein Zahnrad, welches wohl jenseits dieses Raumes aktiviert wird.~
 @7002 = ~Dies scheint ein defekter Mechanismus zu sein, der eine Tür öffnet. Es fehlt ein Zahnrad.~
 @7003 = ~Ihr setzt das Zahnrad an die dafür passende Stelle.~
@@ -2044,17 +2044,6 @@ Kann nicht verwendet werden von:
 @8047 = ~Quecksilber ist ein silberweißes, flüssiges Schwermetall. Es wird manchmal noch zu den Edelmetallen gezählt. Es bildet mit sehr vielen Metallen Legierungen und wird für verschiedene Verzauberungen als Komponente benötigt. Dieses Quecksilber habt Ihr aus Cinnabarit hergestellt, um es für die Verzauberung der Drow-Schwebescheibe zu verwenden. Dorna Abgrundlied im Tempel Dugmarens in der Halle der Runensteine benötigt diesen Gegenstand, um Euch zu helfen.~
 @8048 = ~Schlüssel zu Nimmuks Stollen~
 @8049 = ~Ihr habt diesen Schlüssel von Dorna Abgrundlied erhalten, um den Zugang zu einem alten Stollen, der "Nimmuks Stollen" genannt wird, öffnen zu können. Dorna erwähnte noch, dass der Stollen versiegelt wurde, da es darin spuken soll.~
-@8050 = ~Tensers fliegende Scheibe~
-@8051 = ~Tensers fliegende Scheibe (Hervorrufung) 
-Grad: 1
-Reichweite: 0
-Wirkungsdauer: 3 Runden
-Zeitaufwand: 1
-Wirkungsbereich: Der Zaubernde
-Rettungswurf: Nein
-
-Mit diesem Zauber erschafft der Zaubernde eine leicht konkave, kreisförmige Kraftebene, die als Tensers schwebende Scheibe bekannt ist (nach dem berühmten Zauberer, dessen Gier und Fähigkeit, Schätze zu finden, weithin bekannt sind). Die Scheibe hat einen Durchmesser von drei Fuß und hält ein Gewicht von 100 Pfund pro Stufe des Zaubernden. Die Scheibe schwebt etwa einen Meter über dem Boden und bleibt immer waagerecht. Auf Befehl des Zaubernden schwebt sie innerhalb ihrer Reichweite von 20 Metern entlang und bewegt sich mit einer Geschwindigkeit von maximal 6. Wenn der Zaubernde sich außerhalb der Reichweite bewegt (indem er sich schneller bewegt, z.B. durch einen Teleportationszauber), oder wenn die Dauer des Zaubers abläuft, verschwindet die schwebende Scheibe aus dem Dasein und alles, was sie getragen hat, stürzt auf die Oberfläche unter ihr.
-Die Materialkomponente des Zaubers ist ein Tropfen Quecksilber.~
 @8050 = ~Kromthruns Handschuhe~
 @8051 = ~Anhänger des Duergar-Gottes Laduguer streben ein Leben lang nach Perfektion. Hier kommt ihnen häufig die finstere Wesensart ihres Gottes in die Quere, der seinen Anbetern ein Dasein in Mühsal und Qualen abverlangt.
 Dies musste auch der grauzwergische Schmied Kromthrun erfahren, als er versuchte, mit dem Segen des Grauen Beschützers, der auch als "Der Harsche" bekannt ist, dieses Paar Handschuhe zu erschaffen. Der Gegenstand schenkte ihm zwar die erhoffte Muskelkraft eines Steinriesen, doch die Gewandheit und Trefferfertigkeit würde auf das Niveau eines Flumph reduziert.
@@ -2236,6 +2225,17 @@ Gewicht: 2~
 Die Seiten wirken unscheinbar, doch wer mit offenem Geist liest, erkennt zwischen den Zeilen eine tieferliegende Wahrheit, verborgen vor jenen, die nur mit den Augen suchen.
 
 Ihr sollt das Buch zu Neeritha Runenschrift, der Oghma-Priesterin in Iltkazar, bringen.~
+@8094 = ~Tensers fliegende Scheibe~
+@8095 = ~Tensers fliegende Scheibe (Hervorrufung) 
+Grad: 1
+Reichweite: 0
+Wirkungsdauer: 3 Runden
+Zeitaufwand: 1
+Wirkungsbereich: Der Zaubernde
+Rettungswurf: Nein
+
+Mit diesem Zauber erschafft der Zaubernde eine leicht konkave, kreisförmige Kraftebene, die als Tensers schwebende Scheibe bekannt ist (nach dem berühmten Zauberer, dessen Gier und Fähigkeit, Schätze zu finden, weithin bekannt sind). Die Scheibe hat einen Durchmesser von drei Fuß und hält ein Gewicht von 100 Pfund pro Stufe des Zaubernden. Die Scheibe schwebt etwa einen Meter über dem Boden und bleibt immer waagerecht. Auf Befehl des Zaubernden schwebt sie innerhalb ihrer Reichweite von 20 Metern entlang und bewegt sich mit einer Geschwindigkeit von maximal 6. Wenn der Zaubernde sich außerhalb der Reichweite bewegt (indem er sich schneller bewegt, z.B. durch einen Teleportationszauber), oder wenn die Dauer des Zaubers abläuft, verschwindet die schwebende Scheibe aus dem Dasein und alles, was sie getragen hat, stürzt auf die Oberfläche unter ihr.
+Die Materialkomponente des Zaubers ist ein Tropfen Quecksilber.~
  
 // creature strings
 @9000 = ~Zwergenkrieger~
@@ -2281,6 +2281,7 @@ Ihr sollt das Buch zu Neeritha Runenschrift, der Oghma-Priesterin in Iltkazar, b
 @9040 = ~Scheusal~
 @9041 = ~Zwergenkarte~
 @9042 = ~Zwergenstatue~
+@9043 = ~Mycomoth~
 
 
 

@@ -5,8 +5,12 @@ Dialog Spriggan in ACIL9C
 BEGIN ~AC#DORNA~
 
 IF ~Global("AC#DRIFR","GLOBAL",2)~ THEN BEGIN hello_driftdisc_ready
-SAY ~Toll! Habt Ihr das Wunder Dugmarens gesehen? Ich wünsche Euch viel Erfolg dabei, mit Eurer Schwebescheibe an die Oberfläche zurückzukehren. Ein wenig beneide ich Euch schon, dass Ihr so einfach hin- und herreisen könnt! Wer weiß, vielleicht finden wir Zwerge irgendwann einmal den Mut, Euch an die Oberfläche zu folgen? Bis dahin möge der Irrende Wanderer jeden Eurer Schritte segnen. Ich werde mich wieder an meine Arbeit hier unten im Tempel machen. Ihr wisst, wo Ihr mich finden könnt.~
-IF ~~ THEN DO ~SetGlobal("AC#DRIFR","GLOBAL",3)~ EXIT 
+SAY ~Toll! Habt Ihr das Wunder Dugmarens gesehen? Ich wünsche Euch viel Erfolg dabei, mit Eurer Schwebescheibe an die Oberfläche zurückzukehren. Ein wenig beneide ich Euch schon, dass Ihr so einfach hin- und herreisen könnt! Wer weiß, vielleicht finden wir Zwerge irgendwann einmal den Mut, Euch an die Oberfläche zu folgen?~ 
+=
+~Bis dahin möge der Irrende Wanderer jeden Eurer Schritte segnen. Ich werde mich wieder an meine Arbeit hier unten im Tempel machen. Ihr wisst, wo Ihr mich finden könnt.~
+IF ~~ THEN DO ~SetGlobal("AC#DRIFR","GLOBAL",3)
+EraseJournalEntry(@64225)
+AddJournalEntry(@64226,QUEST_DONE)~ EXIT 
 END
 
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN hello_01
@@ -81,6 +85,8 @@ END
 				GiveItemCreate("AC#5DTFD",Player1,1,0,0)
 				EraseJournalEntry(@64224)
 				EraseJournalEntry(@64221)
+				EraseJournalEntry(@64223)
+				EraseJournalEntry(@64206)
 				AddJournalEntry(@64225,QUEST)~ EXIT 
 				END
 	

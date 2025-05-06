@@ -786,7 +786,7 @@ END
 	
 // Chain #1: Golem erwacht zum Leben
 CHAIN IF WEIGHT #-1 ~Global("AC#MetagolemIngredients","ACIL53",5)~ THEN AC#GOLME awakening
-~Ich bin erwacht! Welche erste Augabe gebt Ihr mir, Meister?~
+~Ich bin erwacht! Welche erste Aufgabe gebt Ihr mir, Meister?~
 == AC#53SV1 ~Es funktioniert! Bevor ich Euch mit einer ersten Aufgabe betraue, lasst mich Euch zunächst testen.~
 == AC#GOLME ~Ich beantworte all Eure Fragen, Meister!~
 == AC#53SV1 ~Hmm... bei der ganzen Aufregung fällt mir jetzt spontan gar keine Frage ein...~

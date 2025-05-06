@@ -2,6 +2,10 @@
 
 COPY ~silverrealms/cre/copy~         ~override~
 
+COPY ~silverrealms/cre/AC#ILHEZ.cre~ ~override~  // Hezrou in ACIL02
+  SAY NAME1 @9044 SAY NAME2 @9044
+  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~HEZROU_ACIFER~))
+
 COPY ~silverrealms/cre/AC#MYCMO.cre~ ~override~ // Mycomoth
   SAY NAME1 @9043 SAY NAME2 @9043
   WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~MYCOMOTH_ACIFER~))

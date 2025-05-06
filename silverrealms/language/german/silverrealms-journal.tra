@@ -393,6 +393,9 @@ Sorni kann mir kein Hizagkuur geben. Allerdings gibt es außerhalb der Stadt ein
 @59101  = ~Hizagkuur
 
 Sorni hat mir fertig geformtes Hizagkuur-Erz für den Betrieb des Metagolems überlassen. Ich sollte es zurück zu Schnaiklu Kobaltwächter in Dugmarens Bibliothek bringen.~
+@59102  = ~Hizagkuur
+
+Ich habe etwas Hizaagkuur-Erz gefunden. Dieses muss ich nun zu Sorni in die Azerkynhalle unter der Arnschädelhalle bringen, um Hizagkuur zur Verwendung in einem Metagolem zu erschaffen.~
 @59200  = ~Alles durcheinander!
 
 Der Erzmeister in der Azerkyn-Halle ist unglücklich, weil seine verschiedenen Erzsorten durcheinander gekommen sind. Ich soll die Erze, die nicht in die entsprechende Halde gehören, umsortieren und ihn dann wieder ansprechen. Klingt einfach.~
@@ -439,7 +442,7 @@ Ich habe die Patrouille gefunden - zumindest das, was davon übrig ist. Es schei
 Der Regentschaftsrat möchte, dass ich den Priester Turbaern Ghalmrin in der "Halle der Omlare" bitte, den Runenstein für den Zugang in die versiegelte Mine der "Spinnenschächte" herauszugeben.~
 @62021  = ~Ein Weg in die Spinnenschächte
 
-Turbaern Ghalmrin hat es abgelehnt, den Siegelstein für die Spinnenschächte herauszugeben Diese schlechte Nachricht muss ich jetzt dem Regentschaftsrat übermitteln. Wie es danach weitergehen soll, weiß ich nicht.~
+Turbaern Ghalmrin hat es abgelehnt, den Siegelstein für die Spinnenschächte herauszugeben. Diese schlechte Nachricht muss ich jetzt dem Regentschaftsrat übermitteln. Wie es danach weitergehen soll, weiß ich nicht.~
 @62022  = ~Ein Weg in die Spinnenschächte
 
 Ich habe den Schlüsselstein für das Tor in die Spinnenschächte erhalten und sollte nun in diesem Gebiet nach Antworten auf den mysteriösen Schlaf König Mith Baraks suchen.~
@@ -603,7 +606,7 @@ Um aus dem Cinnabar-Erz Quecksilber zu schürfen, muss ich das Erz in den Ofen n
 Ich habe etwas Quecksilber hergestellt. Jetzt muss ich die Substanz zu Dorna in Dugmarens Tempel bringen, um die Verzauberung der Drow-Schwebescheibe zu vollenden.~
 @64225  = ~Die Drow-Schwebescheibe
 
-Um die Verzauberung der Drow-Schwebescheibe zu erneuern, muss ich die Scheibe mitsamt dem Quecksilber auf Dugmarens Altar platzieren. Dann sollte ich den Zauberspruch von der Spruchrolle lesen, welche mir Dorna gegeben hat.~
+Um die Verzauberung der Drow-Schwebescheibe zu erneuern, muss ich die Scheibe mitsamt dem Quecksilber und dem Levitationstrank auf Dugmarens Altar platzieren. Dann sollte ich den Zauberspruch von der Spruchrolle lesen, welche mir Dorna gegeben hat.~
 @64226  = ~Die Drow-Schwebescheibe
 
 Ich habe die Schwebescheibe hergestellt. Nun kann ich sie am Boden des Schachtes benutzen, den ich von der Oberfläche herabgeschwebt bin.~

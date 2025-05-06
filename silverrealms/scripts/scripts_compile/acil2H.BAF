@@ -9,6 +9,17 @@ THEN
 END
 
 IF
+    Global("AC#HizagkuurQuest","GLOBAL",2)
+    Global("HizagkuurJournal","ACIL2H",0)
+    PartyHasItem("AC#HIZA1")  // Hizagkuur
+THEN
+    RESPONSE #100
+        SetGlobal("HizagkuurJournal","ACIL2H",1)
+		EraseJournalEntry(@59100)
+        AddJournalEntry(@59102,QUEST)
+END
+
+IF
 	Global("AC#ACIL2HDuergar","GLOBAL",0)
 	PartyHasItem("AC#HIZA1")
 THEN

@@ -296,7 +296,7 @@ END
 		END
 		
 			IF ~~ THEN BEGIN gromi_boat_sorni
-			SAY ~Das war die Idee von Sorni Arnschädel.~
+			SAY ~Das war die Idee meiner Tochter Sorni Arnschädel.~
 			=
 			~Ihr solltet einmal mit Sorni reden, <CHARNAME>. Vielleicht kann sie Verbesserungen an dem Boot vornehmen.~
 			IF ~~ THEN REPLY ~Oh nein. Ich bin die ganze letzte Zeit damit beschäftigt gewesen, durch diese Stadt zu laufen und war bestimmt schon mehrere Male bei Sorni unten in der großen Halle. Könnt Ihr nicht einen Boten zu Ihr schicken?~ EXTERN ~AC#ELER1~ elern_no_way_talk_to_sorni_again
@@ -322,7 +322,7 @@ END
 					END
 
 				IF ~~THEN BEGIN end_pc_talk_sorni_boat
-				SAY ~Nun gut. <CHARNAME>, geht zu Sorni. Wenn sie die Sache mit den Booten vorbereitet hat, trefft Euch mit der Mannschaft am Platz von Bhaerynden.~
+				SAY ~Nun gut. <CHARNAME>, geht zu meiner Tochter Sorni. Wenn sie die Sache mit den Booten vorbereitet hat, trefft Euch mit der Mannschaft am Platz von Bhaerynden.~
 				IF ~~ THEN REPLY ~Gut. Ich werde dort auf die Mannschaft warten.~ + end_pc_talk_sorni_boat_02
 				END
 				

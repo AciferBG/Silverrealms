@@ -2,6 +2,12 @@
 
 COPY ~silverrealms/spl/copy~         ~override~
 
+ADD_PROJECTILE      ~silverrealms/pro/AC#HEZRU.PRO~ // Hezrou stench projectile
+COPY ~silverrealms/spl/AC#HEZR.spl~            ~override~  // Hezrou stench
+  SAY NAME1 @1142
+  SAY 0xce @1142
+  WRITE_SHORT   0x98 ~%AC#HEZRU%~
+
 COPY ~silverrealms/spl/AC#HAMG.spl~          ~override~ // pounding force, hammer golem's special ability
 SAY NAME1 @1139 SAY NAME2 @1139
 
@@ -36,6 +42,9 @@ COPY ~silverrealms/spl/AC#DRL1.spl~          ~override~   // Dracolich Gaze atta
 SAY NAME1 @1126 SAY NAME2 @1126
 
 COPY ~silverrealms/spl/AC#GDRK.spl~          ~override~  // Globe of darkness
+SAY NAME1 @1128 SAY NAME2 @1128
+
+COPY ~silverrealms/spl/AC#GLDRK.spl~          ~override~  // Globe of darkness
 SAY NAME1 @1128 SAY NAME2 @1128
 
 COPY ~silverrealms/spl/AC#67IW.spl~          ~override~  // Gelugon: Wall of ice

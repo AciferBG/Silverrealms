@@ -1,34 +1,27 @@
 IF
-	Clicked([ANYONE])
-	Range(LastTrigger,15)
-	GlobalGT("AC#Goodbye_Iltkazar","GLOBAL",0)
-	Global("DriftDisc","ACIL02",0)
+    Clicked([ANYONE])
+    Range(LastTrigger,15)
+    GlobalGT("AC#Driftdisc","GLOBAL",0)
+    Global("DriftDisc","ACIL02",0)
 THEN
-	RESPONSE #100
-	        SetGlobal("DriftDisc","ACIL02",1)
+    RESPONSE #100
+        SetGlobal("DriftDisc","ACIL02",1)
 		DisplayString(Myself,@888)
 END
 
 IF
-	Clicked([ANYONE])
-	Range(LastTrigger,15)
-	GlobalGT("AC#Goodbye_Iltkazar","GLOBAL",0)
-	Global("DriftDisc","ACIL02",1)
+    Clicked([ANYONE])
+    Range(LastTrigger,15)
+    GlobalGT("AC#Driftdisc","GLOBAL",0)
+    Global("DriftDisc","ACIL02",1)
 THEN
-	RESPONSE #100
-	        SetGlobal("DriftDisc","ACIL02",0)
-		SaveGame(0)
-		ClearAllActions()
-		StartCutSceneMode()
-		MultiPlayerSync()
+    RESPONSE #100
+        SetGlobal("DriftDisc","ACIL02",0)
+        SaveGame(0)
+        ClearAllActions()
+        StartCutSceneMode()
+        MultiPlayerSync()
 		DisplayString(Myself,@889)
-		ActionOverride(Player1,MoveToPoint([1681.1122]))
-		ActionOverride(Player2,MoveToPoint([1681.1122]))
-		ActionOverride(Player3,MoveToPoint([1681.1122]))
-		ActionOverride(Player4,MoveToPoint([1681.1122]))
-		ActionOverride(Player5,MoveToPoint([1681.1122]))
-		ActionOverride(Player6,MoveToPoint([1681.1122]))
-		//Wait(1)
 		Wait(2)
 		FadeToColor([20.0],0)
 		//Wait(1)

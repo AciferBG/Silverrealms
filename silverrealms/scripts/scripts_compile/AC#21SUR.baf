@@ -14,13 +14,13 @@ END
 */
 
 IF
-	Clicked([ANYONE])
-	Range(LastTrigger,15)
-	PartyHasItem("AC#DRFT2")
-	Global("AC#Driftdisc","ACIL21",0)
+    Clicked([ANYONE])
+    Range(LastTrigger,15)
+    PartyHasItem("AC#DRFT2")  // Schwebescheibe
+    Global("AC#Driftdisc","GLOBAL",0)
 THEN
-	RESPONSE #100
-        SetGlobal("AC#Driftdisc","ACIL21",1)
+    RESPONSE #100
+        SetGlobal("AC#Driftdisc","GLOBAL",1)
         TakePartyItem("AC#DRFT2")
         EraseJournalEntry(@64211)
         AddJournalEntry(@64212,QUEST_DONE)
@@ -31,15 +31,15 @@ THEN
 END
 
 IF
-	Clicked([ANYONE])
-	Range(LastTrigger,15)
-	Global("AC#Driftdisc","ACIL21",1)
+    Clicked([ANYONE])
+    Range(LastTrigger,15)
+    Global("AC#Driftdisc","GLOBAL",1)
 THEN
-	RESPONSE #100
-		SaveGame(0)
-		ClearAllActions()
-		StartCutSceneMode()
-		MultiPlayerSync()
+    RESPONSE #100
+        SaveGame(0)
+        ClearAllActions()
+        StartCutSceneMode()
+        MultiPlayerSync()
 		DisplayString(Myself,@741)
 		ActionOverride(Player1,MoveToPoint([491.269]))
 		ActionOverride(Player2,MoveToPoint([491.269]))

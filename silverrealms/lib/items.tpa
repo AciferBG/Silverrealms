@@ -616,7 +616,9 @@ COPY ~silverrealms/itm/AC#DROHE.itm~         ~override/AC#DROHE.itm~  // Prieste
   SAY DESC  @699
   
 COPY ~silverrealms/itm/AC#HIZA2.itm~         ~override/AC#HIZA2.itm~  // Hizagkuur reworked
+  SAY NAME1 @696
   SAY NAME2 @696
+  SAY UNIDENTIFIED_DESC @701
   SAY DESC @701
   
 COPY ~silverrealms/itm/AC#ILWES.itm~         ~override/AC#ILWES.itm~  // Water elemental essence

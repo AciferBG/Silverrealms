@@ -10,6 +10,9 @@ THEN
         FadeFromColor([30.0],0)
 		SetMusic(NIGHT,%AC#IL21%)
 		SetMusic(DAY,%AC#IL21%)		
+		SpawnPtDeactivate("Slime")
+		SpawnPtDeactivate("Spawn04")
+		SpawnPtDeactivate("Spawn05")
 		AddJournalEntry(@21021,QUEST)
 		//EraseJournalEntry(@21002)
 END
@@ -49,39 +52,48 @@ THEN
 		StartCutScene("AC#GCT1")
 END
 
-// after talk to Maldraedior
-// creates Elghonn cre
 IF
-	GlobalGT("AC#Talked_to_Maldraedior","GLOBAL",0)
-	Global("ElghonnSpawn","ACIL21",0)
+    PartyHasItem("AC#DRFT2")  // Schwebescheibe
+    Global("ChangeSpawnPoints","ACIL21",0)
 THEN
-	RESPONSE #100
-		SetGlobal("ElghonnSpawn","ACIL21",1)
-		CreateCreature("AC#ELGHO",[1963.970],6)
+    RESPONSE #100
+		SpawnPtActivate("Slime")
+		SpawnPtActivate("Spawn04")
+		SpawnPtActivate("Spawn05")
+        SetGlobal("ChangeSpawnPoints","ACIL21",1)
 END
 
-// after talk to Maldraedior
-// creates Black pudding cre
+/*
 IF
-	GlobalGT("AC#Talked_to_Maldraedior","GLOBAL",0)
-	Global("PuddingSpawn","ACIL21",0)
+    PartyHasItem("AC#DRFT2")  // Schwebescheibe
+    Global("ElghonnSpawn","ACIL21",0)
 THEN
-	RESPONSE #100
-		SetGlobal("PuddingSpawn","ACIL21",1)
-		CreateCreature("AC#BLPU1",[2355.508],8)
+    RESPONSE #100
+        SetGlobal("ElghonnSpawn","ACIL21",1)
+        CreateCreature("AC#ELGHO",[1963.970],NW)  // Elghonn
+END
+*/
+
+IF
+    PartyHasItem("AC#DRFT2")  // Schwebescheibe
+    Global("PuddingSpawn","ACIL21",0)
+THEN
+    RESPONSE #100
+        SetGlobal("PuddingSpawn","ACIL21",1)
+        CreateCreature("AC#BLPU1",[2355.508],N)  // Schwarzer Pudding
 END
 
-// after talk to Maldraedior
-// creates various other spawned creatures
 IF
-	GlobalGT("AC#Talked_to_Maldraedior","GLOBAL",0)
-	Global("EnemySpawn","ACIL21",0)
+    PartyHasItem("AC#DRFT2")  // Schwebescheibe
+    Global("EnemySpawn","ACIL21",0)
 THEN
-	RESPONSE #100
-		SetGlobal("EnemySpawn","ACIL21",1)
-		CreateCreature("AC#UMHUL",[926.1441],4)
-		CreateCreature("ICSALCOL",[3004.1411],7)
-		CreateCreature("ICSALCOL",[2987.1580],9)
+    RESPONSE #100
+        SetGlobal("EnemySpawn","ACIL21",1)
+        CreateCreature("AC#UMHUL",[926.1441],W)  // Erdkoloss
+        //CreateCreature("ICSALCOL",[3004.1411],NNW)  // Eissalamander
+        //CreateCreature("ICSALCOL",[2987.1580],NNE)  // Eissalamander
 END
+
+
 
 

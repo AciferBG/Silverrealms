@@ -538,18 +538,6 @@ COMPILE ~silverrealms/scripts/ac#cut57.baf~
 COPY_EXISTING ~ac#cut57.bcs~   ~override/ac#cut57.bcs~
        REPLACE ~999999~ @94
 
-
-
-COMPILE ~silverrealms/scripts/AC#07CC2.baf~
-/*COPY_EXISTING ~AC#07CC2.bcs~   ~override/AC#07CC2.bcs~
-       REPLACE ~999996~ @72
-       REPLACE ~999995~ @73
-       REPLACE ~999997~ @69
-       REPLACE ~999998~ @70
-       REPLACE ~999999~ @71
-       REPLACE ~999992~ @76
-*/
-
 COMPILE ~silverrealms/scripts/AC#BANSH.baf~
 COPY_EXISTING ~AC#BANSH.bcs~   ~override/AC#BANSH.bcs~
        REPLACE ~999999~ @95
@@ -811,14 +799,6 @@ COPY_EXISTING ~AC#31DO6.bcs~   ~override/AC#31DO6.bcs~
 
 COMPILE ~silverrealms/scripts/AC#ROTH1.baf~
 COMPILE ~silverrealms/scripts/AC#ROTH2.baf~
-
-COMPILE ~silverrealms/scripts/AC#1VDO1.baf~
-COPY_EXISTING ~AC#1VDO1.bcs~   ~override/AC#1VDO1.bcs~
-       REPLACE ~999999~ @395
-       
-COMPILE ~silverrealms/scripts/AC#1VDO4.baf~
-COPY_EXISTING ~AC#1VDO4.bcs~   ~override/AC#1VDO4.bcs~
-       REPLACE ~999999~ @400
 
 COMPILE ~silverrealms/scripts/AC#SKET1.baf~
 COMPILE ~silverrealms/scripts/AC#SKET2.baf~

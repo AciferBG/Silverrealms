@@ -100,11 +100,7 @@ Mein lieber Thoian, der Einfachheit halber antworte ich direkt unter Eurer Nachr
 @66  = ~Ihr berührt die Oberfläche, und die Linien verschwinden. Plötzlich brandet eine heftige Woge vollkommener Hoffnungslosigkeit über Euren Verstand hinweg.~
 @67  = ~Als ihr den Raum betretet, brandet eine Welle bösartiger und hasserfüllter Emotionen über Euch hinweg. Ihr bemerkt an der Tür gegenüber zwei pulsierende Steine, von denen ein unheilvolles Leuchten ausgeht. Irgendetwas in Ihnen scheint auf Euren Verstand einwirken zu wollen.~
 @68  = ~Die Magie des Steines ist erloschen. Er fühlt sich nur noch kalt und kraftlos an.~
-@69  = ~Dieses Wasserbecken sieht tiefer aus, als es sein könnte. Fast sieht es aus, als würde sich auf der Wasseroberfläche eine weit entfernte, Euch irgendwie bekannt vorkommende Landschaft spiegeln. Auf dem grund des Beckens liegt ein alter, verrosteter Schlüssel. Wenn Ihr wünscht, könnt Ihr genauer in das Becken sehen und versuchen, den Schlüssel zu greifen.~
-@70  = ~Ihr beugt Euch hinunter, um tiefer in das Wasser zu sehen und den Schlüssel zu greifen.~
-@71  = ~Ihr könnt die Umrisse Kerzenburgs immer noch deutlich im Wasserbecken erkennen, doch so sehr Ihr Euch auch bemüht, könnt Ihr nicht mehr in die Welt des Beckens eintauchen.~
-@72  = ~Die gekräuselte Wasseroberfläche wird plötzlich ruhig und klar. Auf dem Grund des Beckens nimmt die verschwommene Landschaft plötzlich Gestalt an- Ihr blickt auf Eure alte Heimat Kerzenburg!~
-@73  = ~Ihr beugt Euch stärker herunter, bis Euer Gesicht fast die Wasseroberfläche berührt. Inmitten des Wassers könnt Ihr Gestalten erkennen, und ohne es zu wollen taucht Ihr Euren Kopf unter die Wasseroberfläche. Der Schlüssel liegt auf dem Grund des Beckens, und mit einer Handbewegung habt Ihr Ihn gegriffen. Plötzlich werdet Ihr in die Landschaft des Beckens gezogen...~
+
 @74  = ~Hüter der Pforte~
 @75  = ~Zauberbecken~
 @76  = ~Ich grüße Euch ebenfalls, Zwerg. Doch ich muss Euch enttäuschen, denn <CHARNAME> wohnt schön lange nicht mehr an diesem Ort. Man sagt, er sei nach Süden gegangen.~
@@ -481,7 +477,7 @@ Besondere Fähigkeiten: Beschwört einmal täglich eine Horde niederer Baatezu.~
 @392 = ~Steintroll~
 @393 = ~Schmiedearbeiter~
 @394 = ~Tiefenrothé~
-@395 = ~Ihr öffnet die Tür des Hochofens, und aus dessen Innerem springt plötzlich ein wütender Feuerelementar heraus!~
+
 @396 = ~Niederer Ring der Feuerkontrolle~
 @397 = ~Niederer Ring der Feuerkontrolle
 Diesen roten Ring zieren -ähnlich wie sein mächtigeres Pendant- zahlreiche Darstellungen von Flammen und Lavazungen auf seiner Oberfläche. Magier und andere Reisende der Ebenen nutzen derartige Ringe, um sich zu schützen, wenn sie die Feuerebene besuchen. Mit Hilfe des Ringes ist es dem Reisenden auch möglich, Feuerelementare unter seine Kontrolle zu zwingen. Allerdings ist dieser Ring hier nicht so fein gearbeitet wie andere seiner Art und daher nicht ganz so mächtig, wenngleich sein Nutzen außer Frage steht.
@@ -496,7 +492,7 @@ Reichweite: 0
 Wirkungsbereich: Der Zaubernde~
 @398 = ~Angeschmolzener Schlüssel~
 @399 = ~Dieser Schlüssel sieht aus, als wäre er lange Zeit einer sehr großen Hitze ausgesetzt gewesen.~
-@400 = ~Ihr öffnet die Tür des Hochofens, und aus dessen Innerem springt plötzlich ein mächtiger Feuerelementar heraus!~
+
 @401 = ~Seltsame Räucherschale~
 @402 = ~Kohlebecken zur Beherrschung von Feuerelementaren~
 @403 = ~Diese Schale hat ein inneres Becken, in dem schon häufiger etwas angezündet und verbrannt worden ist. Der Gegenstand erinnert Euch ein wenig an die Behälter, bei denen in Tempeln während Zeremonien Duftstoffe verbrannt werde.~
@@ -2284,6 +2280,7 @@ Die Materialkomponente des Zaubers ist ein Tropfen Quecksilber.~
 @9042 = ~Zwergenstatue~
 @9043 = ~Mycomoth~
 @9044 = ~Hezrou~
+@9045 = ~Necromental~
 
 
 

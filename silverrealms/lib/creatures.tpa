@@ -2,6 +2,10 @@
 
 COPY ~silverrealms/cre/copy~         ~override~
 
+COPY ~silverrealms/cre/AC#ILNCM.cre~ ~override~  // Necromental in ACIL57
+  SAY NAME1 @9045 SAY NAME2 @9045
+  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~NECROMENTAL_ACIFER~))
+
 COPY ~silverrealms/cre/AC#ILHEZ.cre~ ~override~  // Hezrou in ACIL02
   SAY NAME1 @9044 SAY NAME2 @9044
   WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~HEZROU_ACIFER~))

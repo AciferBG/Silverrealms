@@ -1,0 +1,15 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player1)
+        SmallWait(10)
+        MoveToPoint([3693.1875])
+        Wait(1)
+        StartMovie("AC#IL20A")
+        VerbalConstant(Myself,DYING)
+        PlayDead(6)
+         SetGlobal("GithruneCutscene","ACIL20",3)
+        EndCutSceneMode()
+END
+

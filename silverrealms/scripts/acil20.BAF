@@ -1,43 +1,76 @@
 IF
-	Global("EnteredArea","ACIL20",0)
+    Global("EnteredArea","ACIL20",0)
 THEN
-	RESPONSE #100
-		TriggerActivation("Drowtrap03",FALSE) // Deactivate Trap for quest "missing dwarven warriors"
-		//CloseDoor("DOOR05") // stone blocks to area ACIL27; closed when quest travel to Barakuir is active; opened again by Hathar and his dwarves
-		AmbientActivate("Patrolsign01",FALSE) // deactivate markings of the missing dwavren patrol
-		AmbientActivate("Patrolsign02",FALSE)
-		AmbientActivate("Patrolsign03",FALSE)
+    RESPONSE #100
+        TriggerActivation("Drowtrap03",FALSE)
+        AmbientActivate("Patrolsign01",FALSE)
+        AmbientActivate("Patrolsign02",FALSE)
+        AmbientActivate("Patrolsign03",FALSE)
+        AmbientActivate("Githrune_off",FALSE)
+        AmbientActivate("Githrune_yellow",FALSE)
+        AmbientActivate("Githrune_blue",FALSE)
+        SoundActivate("Githportalsound",FALSE)
+		TriggerActivation("Trigger_githrune",FALSE)
 		SetMusic(NIGHT,%AC#IL20%)
 		SetMusic(DAY,%AC#IL20%)	
 		SetGlobal("EnteredArea","ACIL20",1)
 END
 
 IF
-	Global("AC#Iltkazar_Council_Second_Quest","GLOBAL",3)
-	Global("AC#_Dwarven_Patrol","ACIL20",0)
+    Global("AC#Iltkazar_Council_Second_Quest","GLOBAL",3)
+    Global("AC#_Dwarven_Patrol","ACIL20",0)
 THEN
-	RESPONSE #100
+    RESPONSE #100
         SetGlobal("AC#_Dwarven_Patrol","ACIL20",1)
-	    ActionOverride("AC#HATH1",JumpToPoint([3252.652]))
-	    ActionOverride("AC#HATH1",Face(4))
+        ActionOverride("AC#HATH1",JumpToPoint([3252.652]))
+        ActionOverride("AC#HATH1",Face(W))
         OpenDoor("DOOR04")
-		AmbientActivate("Patrolsign01",TRUE) // activate markings of the missing dwavren patrol so the player can trace them back to the secret gith cave
-		AmbientActivate("Patrolsign02",TRUE)
-		AmbientActivate("Patrolsign03",TRUE)
-        CreateCreature("AC#DEAD8",[3152.1606],11)
-		CreateCreature("AC#DEAD8",[3258.1553],5)
-		CreateCreature("AC#DEAD8",[3260.1550],1)
-		CreateCreature("AC#DEAD8",[3190.1554],3)
-		Wait(1)
-		CreateCreature("AC#DEAD6",[3152.1606],11)
-		CreateCreature("AC#DEAD6",[3258.1553],5)
-		CreateCreature("AC#DEAD6",[3260.1550],1)
-		CreateCreature("AC#DEAD7",[3147.1652],8)
-		CreateCreature("AC#DEAD6",[3190.1554],3)
-                //ContainerEnable("Pile01",TRUE)
-                //ContainerEnable("Pile02",TRUE)
-                //ContainerEnable("Pile03",TRUE)
-                //ContainerEnable("Pile04",TRUE)
+        AmbientActivate("Patrolsign01",TRUE)
+        AmbientActivate("Patrolsign02",TRUE)
+        AmbientActivate("Patrolsign03",TRUE)
+        AmbientActivate("Githrune_yellow",TRUE)
+        CreateCreature("AC#DEAD8",[3152.1606],NEE)  // No such index
+        CreateCreature("AC#DEAD8",[3258.1553],NWW)  // No such index
+        CreateCreature("AC#DEAD8",[3260.1550],SSW)  // No such index
+        CreateCreature("AC#DEAD8",[3190.1554],SWW)  // No such index
+        Wait(1)
+        CreateCreature("AC#DEAD6",[3152.1606],NEE)  // No such index
+        CreateCreature("AC#DEAD6",[3258.1553],NWW)  // No such index
+        CreateCreature("AC#DEAD6",[3260.1550],SSW)  // No such index
+        CreateCreature("AC#DEAD7",[3147.1652],N)  // Zwerg
+        CreateCreature("AC#DEAD6",[3190.1554],SWW)  // No such index
+END
+
+IF
+    Global("GithRuneActivate","ACIL20",1)
+THEN
+    RESPONSE #100
+        SetGlobal("GithRuneActivate","ACIL20",2)
+        TriggerActivation("Trigger_githrune",TRUE)
+        AmbientActivate("Githrune_yellow",FALSE)
+        AmbientActivate("Githrune_blue",TRUE)
+        SoundActivate("Githportalsound",TRUE)
+END
+
+IF
+    Global("GithruneCutscene","ACIL20",1)
+THEN
+    RESPONSE #100
+        SetGlobal("GithruneCutscene","ACIL20",2)
+        TriggerActivation("Trigger_githrune",FALSE)
+        StartCutSceneMode()
+        StartCutScene("AC#IL20Z")
+END
+
+IF
+    Global("GithruneCutscene","ACIL20",3)
+THEN
+    RESPONSE #100
+        SetGlobal("GithruneCutscene","ACIL20",10)
+        AmbientActivate("Githrune_off",TRUE)
+        AmbientActivate("Githrune_yellow",FALSE)
+        AmbientActivate("Githrune_blue",FALSE)
+        SoundActivate("Githportalsound",FALSE)
 END
 
 IF

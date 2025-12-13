@@ -1747,6 +1747,30 @@ In jahrelangen Kriegen zogen die Zwerge gegeneinander in einen  Krieg, der als "
 @5040 = ~Stone endures. So does our city!~ [AC#ILG10]
 @5041 = ~What's your business, shortbeard?~ [AC#ILG11]
 
+//Gromi
+@5051 = ~Speak then.~ [AC#ILE01]
+@5052 = ~Choose your words.~ [AC#ILE02]
+@5053 = ~Haste breaks more than it builds.~ [AC#ILE03]
+@5054 = ~State your matter.~ [AC#ILE04]
+@5055 = ~Speak clearly.~ [AC#ILE05]
+@5056 = ~The old laws hold.~ [AC#ILE06]
+@5057 = ~You walk among elders.~ [AC#ILE07]
+
+// Elern
+@5060 = ~Endurance is not inaction.~ [AC#ILEN3]
+@5061 = ~Time is being wasted.~ [AC#ILEN4]
+@5062 = ~We cannot wait another decade.~ [AC#ILEN5]
+@5063 = ~Tradition is not an excuse.~ [AC#ILEN6]
+@5064 = ~Caution has become comfort.~ [AC#ILEN7]
+@5065 = ~Someone must decide.~ [AC#ILEN8]
+
+@5070 = ~I stand ready.~ [AC#ILBR4]
+@5071 = ~As duty demands.~ [AC#ILBR5]
+@5072 = ~Stand firm.~ [AC#ILBR6]
+@5073 = ~Weapons ready.~ [AC#ILBR7]
+@5074 = ~Stay alert.~ [AC#ILBR8]
+@5075 = ~Keep watch.~ [AC#ILBR9]
+
 /***************************
 // Area Description strings
 ***************************/

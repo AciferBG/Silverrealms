@@ -759,7 +759,7 @@ END
 IF ~~ THEN BEGIN listen
 SAY ~Hört Euch doch wenigstens einmal an, was <PRO_HESHE> zu sagen hat!~
 =
-~Entschuldigt das Auftreten der anderen Ratsmitglieder, <CHARNAME>. Ich bin sicher, es gibt einen guten Grund, dass Ihr uns hier aufsucht.~
+~Entschuldigt das Auftreten der anderen Ratsmitglieder, <CHARNAME>. Ich bin sicher, es gibt einen guten Grund, dass Ihr uns hier aufsucht.~ [AC#ILEN9]
   IF ~~ THEN REPLY ~Ich bin <CHARNAME>. Ich habe den weiten Weg von der Oberfläche bis hierher zurückgelegt, um Euch bei der Suche nach dem Grund für Euren schlafenden König zu helfen.~ EXTERN ~AC#CHEM1~ longway_down
 END
 
@@ -1275,15 +1275,15 @@ END
 // ---------------------------------------------
 
 CHAIN IF WEIGHT #-1 ~Global("AC#RegencyCouncil","ACIL62",2)~ THEN AC#GROM1 1
-~...nun, da wir uns über die Erhöhung der Besteuerung der Zardazil-Erzvorkommen geeinigt haben, kommen wir zu der Frage nach der Neuvergabe der Schürfrechte für die Hizaagkur-Minen von Clan Olara.~
+~...nun, da wir uns über die Erhöhung der Besteuerung der Zardazil-Erzvorkommen geeinigt haben, kommen wir zu der Frage nach der Neuvergabe der Schürfrechte für die Hizaagkur-Minen von Clan Olara.~ [AC#ILGR1]
 DO ~SetGlobal("AC#RegencyCouncil","ACIL62",3)~
-== AC#ELER1 ~Bei allem Respekt, Ratsherr Gromi, aber gibt es nicht drängendere Angelegenheiten, die wir besprechen müssten? Die Bedrohung vor den Toren Iltkazars durch die feindlichen Rassen nimmt mit jedem verstrichenen neuen Tag größere Ausmaße an. Wir sollten die Patrouillen in den nördlichen Tunneln verstärken und...~
+== AC#ELER1 ~Bei allem Respekt, Ratsherr Gromi, aber gibt es nicht drängendere Angelegenheiten, die wir besprechen müssten? Die Bedrohung vor den Toren Iltkazars durch die feindlichen Rassen nimmt mit jedem verstrichenen neuen Tag größere Ausmaße an. Wir sollten die Patrouillen in den nördlichen Tunneln verstärken und...~ [AC#ILEN1]
 == AC#STUR1 ~Dies sind Angelegenheiten, die nur unser Monarch entscheiden kann, Elern.~
 == AC#ELER1 ~...der, wie Ihr alle wisst, in dem derzeitigen Zustand seines mysteriösen Schlafes keine Entscheidungen treffen kann!~
 == AC#RUVA1 ~Ihr seid neu in den Regentschaftsrat aufgenommen worden, Elern. Den anderen Ratsmitgliedern sind die langen Schlafensphasen unseres Königs wohlbekannt, und wir haben uns darauf geeinigt, in diesen Perioden keine grundlegenden Entscheidungen über den Kopf unseres schlafenden Herrschers hinweg treffen zu wollen.~
-== AC#ELER1 ~Aber dieses Mal ist er aus seinem fünfundsiebzig Jahre währenden Schlaf nicht erwacht! Seit einem Jahr schon warten wir darauf, dass unser Herr die Augen wieder öffnet, und es geschieht nichts, während sich die Schlinge unserer Feinde um den Hals unserer schönen Stadt langsam zuzieht!~
+== AC#ELER1 ~Aber dieses Mal ist er aus seinem fünfundsiebzig Jahre währenden Schlaf nicht erwacht! Seit einem Jahr schon warten wir darauf, dass unser Herr die Augen wieder öffnet, und es geschieht nichts, während sich die Schlinge unserer Feinde um den Hals unserer schönen Stadt langsam zuzieht!~ [AC#ILEN2]
 == AC#FENY1 ~Es reicht, Elern. Ihr solltet Eure Position in diesem Rat achten und die älteren Ratsherren nicht verärgern.~
-== AC#GROM1 ~Meine Gattin hat Recht, Ratsherrin Elern. Seit über hundert Jahren stehe ich nun schon dem Regentschaftsrat vor. Überlasst diese Angelegenheit den erfahreneren Ratsherren, die an die Schlafensperioden unseres Monarchen schon gewöhnt sind und wissen, was zu tun ist, bis unser König wieder erwacht.~
+== AC#GROM1 ~Meine Gattin hat Recht, Ratsherrin Elern. Seit über hundert Jahren stehe ich nun schon dem Regentschaftsrat vor. Überlasst diese Angelegenheit den erfahreneren Ratsherren, die an die Schlafensperioden unseres Monarchen schon gewöhnt sind und wissen, was zu tun ist, bis unser König wieder erwacht.~ [AC#ILGR2]
 == AC#ELER1 ~Aber er ist nicht erwacht, Ratsherr Gromi! Seit einem Jahr schon ist der Sand des Stundenglases verronnen, das eigentlich den Zeitpunkt seines Erwachens anzeigen sollte! Sagt mir, was gedenkt Ihr zu tun, wenn unser Herr nicht mehr erwachen sollte?~
 == AC#STUR1 ~Das sind ungeheuerliche Dinge, die Ihr da aussprecht, Elern! Verzeiht das ungeschliffene Benehmen meiner Nichte, Meister Gromi, und kommen wir zurück zu der Frage nach der Vergabe der...~
 == AC#DUN01 ~Verehrte Ratsmitglieder, ich kündige den Besuch von <CHARNAME>, eines Vertreters der Rasse <PRO_RACE> von der Oberfläche, an.~
@@ -1306,7 +1306,7 @@ END
 IF ~~ THEN EXTERN ~AC#GROM1~ entschluss_fest
 
 CHAIN IF ~~ THEN AC#GROM1 chain_council_finished_01
-~Ich schließe die Versammlung mit einem Hoch auf unseren König!~
+~Ich schließe die Versammlung mit einem Hoch auf unseren König!~ [AC#ILGR3]
 == AC#FENY1 ~Auf unseren König!~
 == AC#TORT1 ~Auf uns'ren König!~
 == AC#RUVA1 ~Auf Mith Barak, den Silberschild.~

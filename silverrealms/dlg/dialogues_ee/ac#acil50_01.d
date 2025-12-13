@@ -418,7 +418,7 @@ END
 
 IF ~Global("AC#RegencyQuest","GLOBAL",1)
 Global("AC#BreskWatches","ACIL50",1)~ THEN BEGIN short_visit
-  SAY ~Na, war ja ein ganz schön kurzer Besuch vor unserem Rat, was?~
+  SAY ~Na, war ja ein ganz schön kurzer Besuch vor unserem Rat, was?~ [AC#ILBR3]
   =
   ~Nur, dass Ihr's gleich wisst: Ich mag Euch übrigens auch nicht. Aber das tut jetzt nichts zur Sache.~
 =~Ich habe meinen Wachen mitgeteilt, dass Ihr hier überall ein- und ausgehen könnt, soviel Ihr wollt. Nur: Wenn Ihr hier meint, eins auf langen Bart machen zu müssen, landet Ihr im Kerker. Ist das klar?~
@@ -426,7 +426,7 @@ Global("AC#BreskWatches","ACIL50",1)~ THEN BEGIN short_visit
 END
 
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN hello_firsttime
-  SAY ~Ihr müsst die Gruppe von der Oberfläche sein, von der der Bote meines Bruders berichtet hat. Ich bin Bresk vom Clan Steinschulter, der Kriegsmeister von Iltkazar und verantwortlich für die Sicherheit der Stadt.~
+  SAY ~Ihr müsst die Gruppe von der Oberfläche sein, von der der Bote meines Bruders berichtet hat. Ich bin Bresk vom Clan Steinschulter, der Kriegsmeister von Iltkazar und verantwortlich für die Sicherheit der Stadt.~ [AC#ILBR1]
   IF ~~ THEN REPLY ~Die Nachricht über mein Kommen verbreitet sich aber schnell. Ich bin ja eben erst durch dieses Tor gekommen, und Ihr wisst schon über mich Bescheid?~ GOTO fast
   IF ~~ THEN REPLY ~Seid gegrüßt, Bresk. Mein Name ist <CHARNAME>.~ + pleasantries
 END
@@ -548,7 +548,7 @@ END
 		END
 	
 IF ~~ THEN BEGIN regency_council_quickly
-SAY ~Schon deshalb solltet Ihr jetzt schleunigst die Halle des Regentschaftsrates aufsuchen - zu Eurer eigenen Sicherheit! Der Rat wird entscheiden, wie es mit Euch weitergehen soll, und meine Aufgabe wird es dann sein, diese Entscheidung in die Tat umzusetzen.~
+SAY ~Schon deshalb solltet Ihr jetzt schleunigst die Halle des Regentschaftsrates aufsuchen - zu Eurer eigenen Sicherheit! Der Rat wird entscheiden, wie es mit Euch weitergehen soll, und meine Aufgabe wird es dann sein, diese Entscheidung in die Tat umzusetzen.~ [AC#ILBR2]
   IF ~~ THEN DO ~SetGlobal("AC#Bresk_Council","LOCALS",1)
   SetGlobal("AC#BreskMoves01","ACIL50",1)~ EXIT
 END

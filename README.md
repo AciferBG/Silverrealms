@@ -20,12 +20,13 @@ It introduces a new storyline, areas, enemies, and treasures to uncover in the c
 ---
 
 ## Features
-- New questline set in the Forgotten Realms  
-- 100 new areas to explore  
-- New monsters and tactical encounters  
-- Unique magical items and treasures  
-- Approximately 20 hours of gameplay  
-- Dynamic difficulty scaling depending on party level and game settings  
+Features:
+- A compelling new storyline deeply rooted in Forgotten Realms lore
+- Over 100 brand-new handcrafted areas, including a sprawling dwarven city with multiple unique districts
+- New enemies with custom animations - never seen before in Baldur's Gate
+- Explore a world of hidden lore, clever puzzles, and multi-layered intrigue
+- Countless new magical items, forged in forgotten times and brimming with mystery
+- Approximately 20 hours of gameplay    
 - Playable from the beginning of the game  
 
 ---

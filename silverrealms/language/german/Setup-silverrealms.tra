@@ -1568,7 +1568,7 @@ Waffenfertigkeit: Dolch
 Waffentyp: Einhändig
 Kann nicht verwendet werden von:
 Klerikern~
-@1021 = ~^0xFFFFDF00Euer Ansehen in Iltkazar ist gestiegen.^-~
+@1021 = ~^0xFF22B4E6Euer Ansehen in Iltkazar ist gestiegen.^-~
 @1022 = ~Schlüssel der Turboldfeste~
 @1023 = ~Diesen Schlüssel habt Ihr von Beldas erhalten. Mit ihm lässt sich die schwere Zwergentür ins Innere des Turboldberges öffnen.~
 @1024 = ~Feuerresistenz, 30m Radius~
@@ -1733,6 +1733,19 @@ In jahrelangen Kriegen zogen die Zwerge gegeneinander in einen  Krieg, der als "
 
 // Fruntuck:
 @5023 = ~Hicks!~ [HICCUP]
+
+// Dwarven soundsets:
+@5031 = ~Glory to Iltkazar!~ [AC#ILG01]
+@5032 = ~Gorm Gulthyn will protect us!~ [AC#ILG02]
+@5033 = ~You're near as ugly as a drow.~ [AC#ILG03]
+@5034 = ~Don't step on my beard.~ [AC#ILG04]
+@5035 = ~One shove and down you go.~ [AC#ILG05]
+@5036 = ~Speak up, you fragile little sprout!~ [AC#ILG06]
+@5037 = ~My hammer hits hard. As does my axe.~ [AC#ILG07]
+@5038 = ~A pint of ale, never stale.~ [AC#ILG08]
+@5039 = ~You walk deep, surfacer.~ [AC#ILG09]
+@5040 = ~Stone endures. So does our city!~ [AC#ILG10]
+@5041 = ~What's your business, shortbeard?~ [AC#ILG11]
 
 /***************************
 // Area Description strings

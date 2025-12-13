@@ -16,6 +16,22 @@
   ACTION_BASH_FOR ~%MOD_FOLDER%/animations/dracolich~ ~^.+\.bam$~ BEGIN
     COPY ~%BASH_FOR_FILESPEC%~ ~override~
   END
+  
+//_____________________________________________________________________________________________________
+// Malphas animation
+  LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0x7f15 slotMax = slotMin + 0xff RET slot END
+  ACTION_IF (slot <= 0) BEGIN
+    FAIL ~No free creature animation slot found.~
+  END
+  LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+  APPEND ~animate.ids~ ~0x%hexNumber% MALPHAS_ACIFER~ UNLESS ~MALPHAS_ACIFER~
+  CLEAR_IDS_MAP
+  COPY ~%MOD_FOLDER%/animations/Malphas/exxx.ini~ ~override/%hexNumber%.ini~
+  ACTION_BASH_FOR ~%MOD_FOLDER%/animations/Malphas~ ~^.+\.bam$~ BEGIN
+    COPY ~%BASH_FOR_FILESPEC%~ ~override~
+  COPY ~%MOD_FOLDER%/animations/Malphas/Malphas-sounds~ ~override~
+  END
+
 //_____________________________________________________________________________________________________
 // Hezrou animation
   LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0x7f15 slotMax = slotMin + 0xff RET slot END
@@ -341,6 +357,17 @@
   CLEAR_IDS_MAP
   COPY ~%MOD_FOLDER%/animations/Earthwhisper/exxx.ini~ ~override/%hexNumber%.ini~
 
+//_____________________________________________________________________________________________________
+// dragon white animation - just copy
+  COPY ~silverrealms/animations/Dragon_white~         ~override~
+
+//_____________________________________________________________________________________________________
+// drider male animation - just copy
+  COPY ~silverrealms/animations/Drider_male~         ~override~
+
+//_____________________________________________________________________________________________________
+// drider female animation - just copy
+  COPY ~silverrealms/animations/Drider_female~         ~override~
 //_____________________________________________________________________________________________________
 // Yuan-Ti halfbreed animation - just copy
   COPY ~silverrealms/animations/Yuan_Ti_Half~         ~override~

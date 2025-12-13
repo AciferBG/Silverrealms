@@ -5,7 +5,7 @@
 BEGIN ~AC#62DW1~
 
 IF ~RandomNum(5,1)~ THEN BEGIN hello_01
-SAY ~Mein Eid gilt auf ewig – solange Mith Barak thront, stehe ich unerschütterlich wie das Erz.~
+SAY ~Gorm Gulthyn wird uns beschützen!~ 
 IF ~~ THEN EXIT 
 END
 

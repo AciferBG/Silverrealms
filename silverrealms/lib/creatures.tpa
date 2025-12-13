@@ -110,20 +110,33 @@ COPY ~silverrealms/cre/AC#56DW5.cre~ ~override/AC#56DW5.cre~
   
 COPY ~silverrealms/cre/AC#56DW6.cre~ ~override/AC#56DW6.cre~
   SAY NAME1 @304 SAY NAME2 @304
-  
+  SAY INITIAL_MEETING @5034
+  SAY SELECT_COMMON1 @5035
+  SAY SELECT_COMMON2 @5036
+  SAY SELECT_COMMON3 @5038
+  SAY SELECT_COMMON4 @5041
+    
 COPY ~silverrealms/cre/AC#56DW7.cre~ ~override/AC#56DW7.cre~
   SAY NAME1 @305 SAY NAME2 @305
+  SAY INITIAL_MEETING @5034
+  SAY SELECT_COMMON1 @5035
+  SAY SELECT_COMMON2 @5036
+  SAY SELECT_COMMON3 @5038
+  SAY SELECT_COMMON4 @5041
   
 COPY ~silverrealms/cre/AC#62DW1.cre~ ~override/AC#62DW1.cre~
   SAY NAME1 @306 SAY NAME2 @306
+  SAY INITIAL_MEETING @5031
+  SAY SELECT_COMMON1 @5032
+  SAY SELECT_COMMON2 @5033
+  SAY SELECT_COMMON3 @5040
+  SAY SELECT_COMMON4 @5041
 
 COPY ~silverrealms/cre/AC#OSYL1.cre~ ~override/AC#OSYL1.cre~
   SAY NAME1 @175 SAY NAME2 @175
-       
-    
+
     COPY_EXISTING ~AC#OSYL1.cre~ ~override~
     WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#OSYLUTH~))
-    
 
 COPY ~silverrealms/cre/ac#dr1.cre~ ~override/ac#dr1.cre~
   SAY NAME1 @12 SAY NAME2 @12
@@ -176,40 +189,52 @@ COPY ~silverrealms/cre/AC#MAL04.cre~ ~override~
 
 COPY ~silverrealms/cre/AC#09MAL.cre~ ~override~ // Malphas: 1st cutscene in ACIL09 (axebridge ambush)
   SAY NAME1 @9040 SAY NAME2 @9040
+  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~MALPHAS_ACIFER~))
 
 COPY ~silverrealms/cre/AC#07MAL.cre~ ~override~ // Malphas: 1st cutscene in ACIL07 (dancing giant)
   SAY NAME1 @9040 SAY NAME2 @9040
+  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~MALPHAS_ACIFER~))
 
 COPY ~silverrealms/cre/AC#MAL05.cre~ ~override~ // Malphas: 2nd cutscene
   SAY NAME1 @62 SAY NAME2 @62
-  
+  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~MALPHAS_ACIFER~)) 
+
 COPY ~silverrealms/cre/AC#2UMAL.cre~ ~override~ // Malphas: Charvekannathor cutscene
   SAY NAME1 @62 SAY NAME2 @62
-  
+  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~MALPHAS_ACIFER~)) 
+
 COPY ~silverrealms/cre/AC#MAL06.cre~ ~override~ // Malphas: First Cutscene
   SAY NAME1 @62 SAY NAME2 @62
-  
+  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~MALPHAS_ACIFER~))
+
 COPY ~silverrealms/cre/AC#MAL09.cre~ ~override~ // Malphas: Axebridge
   SAY NAME1 @62 SAY NAME2 @62
-  
+  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~MALPHAS_ACIFER~))
+
 COPY ~silverrealms/cre/AC#MAL77.cre~ ~override~ // Malphas: in plane of fire
   SAY NAME1 @62 SAY NAME2 @62
-  
+  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~MALPHAS_ACIFER~)) 
+
 COPY ~silverrealms/cre/AC#MAL78.cre~ ~override~ // Malphas: Ambush in ACIL78
   SAY NAME1 @62 SAY NAME2 @62
-  
+  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~MALPHAS_ACIFER~))
+
 COPY ~silverrealms/cre/AC#MAL88.cre~ ~override~ // Malphas: Boss fight, kill- and lootable
   SAY NAME1 @62 SAY NAME2 @62
-  
+   WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~MALPHAS_ACIFER~))
+
 COPY ~silverrealms/cre/AC#MAL2T.cre~ ~override~ // Malphas: First Tiamat Cutscene
   SAY NAME1 @62 SAY NAME2 @62
-  
+  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~MALPHAS_ACIFER~))
+
 COPY ~silverrealms/cre/AC#MALT2.cre~ ~override~ // Malphas: 2nd Duergar Cutscene
   SAY NAME1 @62 SAY NAME2 @62
-  
+   WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~MALPHAS_ACIFER~))
+
 COPY ~silverrealms/cre/AC#MALG1.cre~ ~override~ // Malphas: 3rd Torglor Githyanki Cutscene
   SAY NAME1 @62 SAY NAME2 @62
-
+   WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~MALPHAS_ACIFER~))
+   
 COPY ~silverrealms/cre/AC#MITH2.cre~ ~override~
   SAY NAME1 @61 SAY NAME2 @61
   
@@ -744,6 +769,11 @@ COPY ~silverrealms/cre/AC#ILDW3.cre~ ~override/AC#ILDW3.cre~
   
 COPY ~silverrealms/cre/AC#BAR01.cre~ ~override/AC#BAR01.cre~
   SAY NAME1 @242 SAY NAME2 @242
+  SAY INITIAL_MEETING @5038
+  SAY SELECT_COMMON1 @5039
+  SAY SELECT_COMMON2 @5040
+  SAY SELECT_COMMON3 @5031
+  SAY SELECT_COMMON4 @5033
 
 COPY ~silverrealms/cre/AC#BAR02.cre~ ~override/AC#BAR02.cre~
   SAY NAME1 @243 SAY NAME2 @243
@@ -801,18 +831,38 @@ SAY SELECT_ACTION5 @252
 
 COPY ~silverrealms/cre/AC#BADW1.cre~ ~override/AC#BADW1.cre~
   SAY NAME1 @257 SAY NAME2 @257
+  SAY INITIAL_MEETING @5034
+  SAY SELECT_COMMON1 @5035
+  SAY SELECT_COMMON2 @5036
+  SAY SELECT_COMMON3 @5033
+  SAY SELECT_COMMON4 @5041
   
 COPY ~silverrealms/cre/AC#BADW2.cre~ ~override/AC#BADW2.cre~
   SAY NAME1 @258 SAY NAME2 @258
+  SAY INITIAL_MEETING @5037
+  SAY SELECT_COMMON1 @5036
+  SAY SELECT_COMMON2 @5037
+  SAY SELECT_COMMON3 @5038
+  SAY SELECT_COMMON4 @5041
   
 COPY ~silverrealms/cre/AC#BADW3.cre~ ~override/AC#BADW3.cre~
   SAY NAME1 @259 SAY NAME2 @259
+  SAY INITIAL_MEETING @5041
+  SAY SELECT_COMMON1 @5033
+  SAY SELECT_COMMON2 @5036
+  SAY SELECT_COMMON3 @5038
+  SAY SELECT_COMMON4 @5041
   
 COPY ~silverrealms/cre/AC#ILDW7.cre~ ~override/AC#ILDW7.cre~
   SAY NAME1 @260 SAY NAME2 @260
   
 COPY ~silverrealms/cre/AC#ILDW8.cre~ ~override/AC#ILDW8.cre~
   SAY NAME1 @261 SAY NAME2 @261
+  SAY INITIAL_MEETING @5041
+  SAY SELECT_COMMON1 @5034
+  SAY SELECT_COMMON2 @5036
+  SAY SELECT_COMMON3 @5039
+  SAY SELECT_COMMON4 @5041
   
 COPY ~silverrealms/cre/AC#51DW1.cre~ ~override/AC#51DW1.cre~
   SAY NAME1 @262 SAY NAME2 @262
@@ -855,6 +905,11 @@ COPY ~silverrealms/cre/AC#DWGO1.cre~ ~override/AC#DWGO1.cre~
   
 COPY ~silverrealms/cre/AC#DWGO2.cre~ ~override/AC#DWGO2.cre~
   SAY NAME1 @274 SAY NAME2 @274
+  SAY INITIAL_MEETING @5031
+  SAY SELECT_COMMON1 @5032
+  SAY SELECT_COMMON2 @5033
+  SAY SELECT_COMMON3 @5040
+  SAY SELECT_COMMON4 @5041
 
 // Regency Council: 
 
@@ -1370,6 +1425,11 @@ COPY ~silverrealms/cre/AC#52HA1.cre~ ~override/AC#52HA1.cre~ //  Betrangrid, Hae
   
 COPY ~silverrealms/cre/AC#55SM1.cre~ ~override/AC#55SM1.cre~ // Whundaed Silberlunker
   SAY NAME1 @643 SAY NAME2 @643
+  SAY INITIAL_MEETING @5037
+  SAY SELECT_COMMON1 @5035
+  SAY SELECT_COMMON2 @5036
+  SAY SELECT_COMMON3 @5038
+  SAY SELECT_COMMON4 @5041
   
 COPY ~silverrealms/cre/ac#ilel1.cre~ ~override/ac#ilel1.cre~
   SAY NAME1 @648 SAY NAME2 @648
@@ -1716,6 +1776,11 @@ COPY ~silverrealms/cre/AC#BTLCO.cre~ ~override~ // Boring Beetle
   
 COPY ~silverrealms/cre/AC#50DW2.cre~ ~override~ // Iltkazar Soldier; disappears after first RC encounter
   SAY NAME1 @838 SAY NAME2 @838
+  SAY INITIAL_MEETING @5039
+  SAY SELECT_COMMON1 @5035
+  SAY SELECT_COMMON2 @5036
+  SAY SELECT_COMMON3 @5040
+  SAY SELECT_COMMON4 @5041
 
 COPY ~silverrealms/cre/AC#50D51.cre~ ~override~ // Iltkazar Soldier; disappears after first RC encounter
   SAY NAME1 @838 SAY NAME2 @838
@@ -2259,9 +2324,19 @@ COPY ~silverrealms/cre/AC#50G51.cre~ ~override~ // Glowing stone in area ACIL50 
 
 COPY ~silverrealms/cre/AC#55TDR.cre~ ~override~ // Thargrun Drunkensong in area ACIL55 (Arnskull Hall)
   SAY NAME1 @9025 SAY NAME2 @9025
+  SAY INITIAL_MEETING @5037
+  SAY SELECT_COMMON1 @5035
+  SAY SELECT_COMMON2 @5033
+  SAY SELECT_COMMON3 @5038
+  SAY SELECT_COMMON4 @5040
   
 COPY ~silverrealms/cre/AC#55DW2.cre~ ~override~ // Overseer Brommund in area ACIL55 (Arnskull Hall)
   SAY NAME1 @9026 SAY NAME2 @9026
+  SAY INITIAL_MEETING @5037
+  SAY SELECT_COMMON1 @5035
+  SAY SELECT_COMMON2 @5036
+  SAY SELECT_COMMON3 @5038
+  SAY SELECT_COMMON4 @5041
   
 COPY ~silverrealms/cre/AC#2DDBA.cre~ ~override~ // Nimmuk, a dwarven banshee in area ACIL2D (source: TSR#2405 Dark Sun monstrous compendium)
   SAY NAME1 @9027 SAY NAME2 @9027

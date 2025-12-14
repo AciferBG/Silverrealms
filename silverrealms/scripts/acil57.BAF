@@ -7,6 +7,8 @@ THEN
 	RESPONSE #100
 		FadeToColor([0.0],0)
 		SetGlobal("EnteredArea","ACIL57",1)
+		SetMusic(NIGHT,%AC#IL57%)
+		SetMusic(DAY,%AC#IL57%)	
 		StartMovie("ac#57mve")
 		// TextScreen("AC#MOS57")
 END
@@ -61,7 +63,7 @@ IF
 THEN
 	RESPONSE #100
 	         SetGlobal("DOOR08","ACIL57",1)
-		DisplayString(Myself,999998)  // ~Irgendwo hat sich eine Tür geöffnet.~
+		DisplayString(Myself,@683)  // ~Irgendwo hat sich eine Tï¿½r geï¿½ffnet.~
                 OpenDoor("DOOR08")
                 ActionOverride("AC#DURG2",DestroySelf())
                 TriggerActivation("AC#57TR1",FALSE)
@@ -79,11 +81,11 @@ IF
 	HasItem("AC#HADUM",Player6)
 THEN
 	RESPONSE #100
-                DisplayStringHeadOwner("AC#HADUM",999999) // ~Der Hammer Dumathoins pulsiert plötzlich in einem starhlenden Licht. Ihr könnt mit seiner Macht die bisher verschlossenen Türen öffnen.~
+                DisplayStringHeadOwner("AC#HADUM",@679) // ~Der Hammer Dumathoins pulsiert plï¿½tzlich in einem starhlenden Licht. Ihr kï¿½nnt mit seiner Macht die bisher verschlossenen Tï¿½ren ï¿½ffnen.~
                 SetGlobal("Info_Hammer_Doors","ACIL57",1)
 END
 /*
-Die beschwörung des Glabrezu: Jetzt in ACIL49
+Die beschwï¿½rung des Glabrezu: Jetzt in ACIL49
 
 
 IF

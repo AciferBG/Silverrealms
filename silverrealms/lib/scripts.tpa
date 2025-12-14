@@ -456,6 +456,8 @@ BUT_ONLY
 // Compiling scripts that contain new music
 COMPILE ~%MOD_FOLDER%/scripts/ACIL21.baf~  EVAL
 COMPILE ~%MOD_FOLDER%/scripts/ACIL20.baf~  EVAL
+COMPILE ~silverrealms/scripts/ACIL57.baf~ EVAL
+
 // story start
 EXTEND_TOP ~ar0300.bcs~ ~silverrealms/scripts/_atkatla.baf~
 EXTEND_TOP ~ar0500.bcs~ ~silverrealms/scripts/_atkatla.baf~
@@ -542,11 +544,6 @@ COMPILE ~silverrealms/scripts/AC#BANSH.baf~
 COPY_EXISTING ~AC#BANSH.bcs~   ~override/AC#BANSH.bcs~
        REPLACE ~999999~ @95
        REPLACE ~999998~ @96
-       
-COMPILE ~silverrealms/scripts/ACIL57.baf~
-COPY_EXISTING ~ACIL57.bcs~   ~override/ACIL57.bcs~
-       REPLACE ~999998~ @683 // ~Irgendwo hat sich eine T�r ge�ffnet.~
-       REPLACE ~999999~ @679 // ~Der Hammer Dumathoins pulsiert pl�tzlich in einem starhlenden Licht. Ihr k�nnt mit seiner Macht die bisher verschlossenen T�ren �ffnen.~
 
 COMPILE ~silverrealms/scripts/ACIL0C.baf~
 

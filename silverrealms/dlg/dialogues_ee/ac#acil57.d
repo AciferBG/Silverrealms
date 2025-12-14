@@ -74,12 +74,12 @@ END
 			END
 	
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN 1
-SAY  ~Heda, Fremde! Seid Ihr die, die als Verstärkung geschickt wurden? Beim Wächter und Schild des Berges, Ihr kommt zu spät.~
+SAY  ~Wohlauf, Fremde! Seid Ihr die, die als Verstärkung geschickt wurden? Beim Wächter und Schild des Berges, Ihr kommt zu spät.~ [AC#ILTUA]
 ++ ~Wir wurden von den anderen Priestern Dumathoins hier herunter geschickt, um Euch zu helfen. Wer seid Ihr und was ist hier passiert?~ + 2
 END
 
 IF ~~ THEN BEGIN 2
-SAY ~Ich bin Turbaern Ghalmrin, doch meine Tage als Priester Dumathoins scheinen hier unten ein jähes Ende gefunden zu haben. Gegen die Schrecken, die hier hausen, bin selbst ich nicht gewappnet.~
+SAY ~Ich bin Turbaern Ghalmrin, doch meine Tage als Priester Dumathoins scheinen hier unten ein jähes Ende gefunden zu haben. Gegen die Schrecken, die hier hausen, bin selbst ich nicht gewappnet.~ [AC#ILTUB]
 IF ~IsValidForPartyDialog("Jaheira")~ THEN EXTERN ~JAHEIRAJ~ Jaheira_Comment_Dumathoin
 IF ~!IsValidForPartyDialog("Jaheira")~ THEN REPLY ~Was ist hier geschehen?~ + 3
 END
@@ -116,7 +116,7 @@ IF ~~ THEN BEGIN 7
 END
 
 IF ~~ THEN BEGIN 8
-   SAY ~Um mich braucht Ihr Euch am wenigsten Sorgen zu machen. Ich wünschte, ich könnte Euch eine Hilfe sein, doch alles, was ich tun kann, ist hier liegen und für Euren Sieg beten.~
+   SAY ~Um mich braucht Ihr Euch am wenigsten Sorgen zu machen. Ich wünschte, ich könnte Euch eine Hilfe sein, doch alles, was ich tun kann, ist hier liegen und für Euren Sieg beten.~ [AC#ILTUC]
    IF ~~ THEN DO ~GiveItemCreate("AC#KEY57",Player1,1,0,0)
    EraseJournalEntry(@58005)
 	AddJournalEntry(@58006,QUEST)~  EXIT

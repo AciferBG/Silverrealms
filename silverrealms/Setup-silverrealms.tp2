@@ -264,6 +264,7 @@ COPY ~silverrealms/bam/copy~         ~override~
 ///////////////////////////////////////////////////////////////////////
 INCLUDE ~silverrealms/lib/add_music_acil21.tph~
 INCLUDE ~silverrealms/lib/add_music_acil20.tph~
+INCLUDE ~silverrealms/lib/add_music_acil57.tph~
 
 ///////////////////////////////////////////////////////////////////////
 // VVC files

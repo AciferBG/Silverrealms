@@ -457,6 +457,7 @@ BUT_ONLY
 COMPILE ~%MOD_FOLDER%/scripts/ACIL21.baf~  EVAL
 COMPILE ~%MOD_FOLDER%/scripts/ACIL20.baf~  EVAL
 COMPILE ~silverrealms/scripts/ACIL57.baf~ EVAL
+COMPILE ~silverrealms/scripts/ACIL58.baf~ EVAL
 
 // story start
 EXTEND_TOP ~ar0300.bcs~ ~silverrealms/scripts/_atkatla.baf~

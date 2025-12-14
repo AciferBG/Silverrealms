@@ -18,6 +18,15 @@ THEN
 END
 
 IF
+	Global("EnteredArea","ACIL58",0)
+THEN
+	RESPONSE #100
+		SetGlobal("EnteredArea","ACIL58",1)
+		SetMusic(NIGHT,%AC#IL58%)
+		SetMusic(DAY,%AC#IL58%)	
+END
+
+IF
 	Global("Dumathoin_Alarm","ACIL58",2)
 THEN
 	RESPONSE #100

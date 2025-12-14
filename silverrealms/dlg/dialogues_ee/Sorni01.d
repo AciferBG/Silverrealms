@@ -302,11 +302,11 @@ SAY ~Ach, haut ab. Und passt auf, dass Ihr Euch nicht aus Versehen selbst zur Sc
 END
 
 CHAIN IF WEIGHT #-1 ~NumTimesTalkedTo(0)~ THEN AC#SORN1 1
-~Bei den Morndinsamman! Moradin hat wohl seinen Hammer falsch herum gehalten, als er Euch in der Seelenschmiede erschaffen hat, Clamri!~
+~Bei den Morndinsamman! Moradin hat wohl seinen Hammer falsch herum gehalten, als er Euch in der Seelenschmiede erschaffen hat, Clamri!~ [AC#ILSOA]
 == AC#59DW1 ~V-v-verzeiht, Herrin Sorni. D-Die Schlacke war einfach zu heiß.~
 == AC#SORN1 ~Zu heiß? Denkt Ihr ernsthaft, dass mir diese dumme Ausrede genügt?~
 == AC#59DW1 ~N-natürlich n-nicht, Herrin.~
-== AC#SORN1 ~Passt in Zukunft besser auf, sonst halte ich persönlich Euren Hintern über den Schmelzofen, bis er gar ist, verstanden?~
+== AC#SORN1 ~Passt in Zukunft besser auf, sonst halte ich persönlich Euren Hintern über den Schmelzofen, bis er gar ist, verstanden?~[AC#ILSOB]
 == AC#59DW1 ~J-ja, Herrin.~
 END
 IF ~~ THEN EXTERN ~AC#SORN1~ throw_yourself_into_lava

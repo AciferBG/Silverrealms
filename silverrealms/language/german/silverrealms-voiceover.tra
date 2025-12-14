@@ -96,6 +96,24 @@
 @5115 = ~State it.~ [AC#ILTU5]
 @5116 = ~What is buried endures.~ [AC#ILTU6]
 
+// Vronia
+@5121 = ~Ja, Kind?~ [AC#ILVR1]
+@5122 = ~Ich höre.~ [AC#ILVR2]
+@5123 = ~Unsere Runen vergessen nichts.~ [AC#ILVR3]
+@5124 = ~Zeit schleift jeden Rand.~ [AC#ILVR4]
+@5125 = ~Fragt ruhig.~ [AC#ILVR5]
+@5126 = ~Ich helfe, so gut ich kann.~ [AC#ILVR6]
+
+// Sorni
+@5130 = ~Kostet meinen Zorn!~ [AC#SORN5]
+@5131 = ~Hallo. Braucht Ihr was?~ [AC#ILSO1]
+@5132 = ~Was ist?~ [AC#ILSO2]
+@5133 = ~Ihr schon wieder?~ [AC#ILSO3]
+@5134 = ~Da will mir wohl jemand helfen.~ [AC#ILSO4]
+@5135 = ~Kommt nicht zu nahe. Mein Hammer glüht noch.~ [AC#ILSO5]
+@5136 = ~Nicht gut. Gar nicht gut.~ [AC#ILSO6]
+@5137 = ~Genug!~ [AC#SORN6] //damage
+@5138 = ~~ [AC#SORN7] //die
 
 
 

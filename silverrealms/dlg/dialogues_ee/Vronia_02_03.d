@@ -7,7 +7,7 @@ Dialog Vronia cre#2 in Iltkazar, Quest-Start
 BEGIN ~ac#vron2~
 
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN 1
-SAY  ~Hallo <CHARNAME>, dürfte ich einen Augenblick mit Euch sprechen? Mein Name ist Vronia Eisenbieger.~
+SAY  ~<CHARNAME>, dürfte ich einen Augenblick mit Euch sprechen? Mein Name ist Vronia Eisenbieger.~
 ++ ~Ihr wart auch im Regentschaftsrat mit dabei, nicht wahr?~ + 2
 ++ ~Worum geht es?~ + 2
 ++ ~In dieser Stadt will jemand mit mir sprechen?~ + 2

@@ -1208,7 +1208,7 @@ IF ~~ THEN EXTERN ~AC#GROM1~ charname_spiderstakings_02
 END
 
 IF ~~THEN BEGIN nothing_evil
-SAY ~Ich sehe keine boshaften Absichten in <PRO_HISHER>en Augen. Lasst uns hören, was <PRO_HESHE> zu sagen hat.~
+SAY ~Ich sehe keine boshaften Absichten in diesen Augen. Lasst uns hören, was der Oberflächenbewohner zu sagen hat.~ [AC#ILVRA]
 IF ~~ THEN EXTERN ~AC#GROM1~ charname_bio
 END
 
@@ -1220,7 +1220,7 @@ IF ~~ THEN REPLY ~Beldas hoffte, in der alten Zwergenfestung eine Passage ins Un
 END
 
 IF ~~THEN BEGIN elern_is_right
-SAY ~Elern hat Recht. Es wäre nicht der Wunsch unseres Königs, einen Besucher wie einen Gefangenen zu behandeln. Die Runen, mit denen diese Stadt umgeben ist, werden dafür sorgen, dass der <PRO_RACE> keinen Schaden anrichten kann.~
+SAY ~Elern hat Recht. Es wäre nicht der Wunsch unseres Königs, einen Besucher wie einen Gefangenen zu behandeln. Die Runen, mit denen diese Stadt umgeben ist, werden dafür sorgen, dass kein Fremder hier Schaden anrichten kann.~ [AC#ILVRB]
 IF ~~ THEN EXTERN ~AC#STUR1~ runecaster
 END
 

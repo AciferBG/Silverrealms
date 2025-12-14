@@ -456,6 +456,7 @@ BUT_ONLY
 // Compiling scripts that contain new music
 COMPILE ~%MOD_FOLDER%/scripts/ACIL21.baf~  EVAL
 COMPILE ~%MOD_FOLDER%/scripts/ACIL20.baf~  EVAL
+COMPILE ~silverrealms/scripts/ACIL56.baf~ EVAL
 COMPILE ~silverrealms/scripts/ACIL57.baf~ EVAL
 COMPILE ~silverrealms/scripts/ACIL58.baf~ EVAL
 

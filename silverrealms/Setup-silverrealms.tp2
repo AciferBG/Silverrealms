@@ -60,6 +60,8 @@ ALWAYS
     //TRAs declared in LANGUAGE must be reloaded
   LOAD_TRA ~silverrealms/language/%LANGUAGE%/setup-silverrealms.tra~
   LOAD_TRA ~silverrealms/language/%LANGUAGE%/WORLDMAP.tra~
+  LOAD_TRA ~silverrealms/language/%LANGUAGE%/silverrealms-journal.tra~
+  LOAD_TRA ~silverrealms/language/%LANGUAGE%/silverrealms-voiceover.tra~
 
 END
 LANGUAGE ~Deutsch~
@@ -67,6 +69,7 @@ LANGUAGE ~Deutsch~
          ~silverrealms/language/german/setup-silverrealms.tra~
          ~silverrealms/language/german/WORLDMAP.tra~
          ~silverrealms/language/german/silverrealms-journal.tra~
+         ~silverrealms/language/german/silverrealms-voiceover.tra~
 
 
 BEGIN ~Tales of the Silverrealms Version 1.3~ 

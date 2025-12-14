@@ -240,20 +240,20 @@ IF ~~ THEN EXIT
 END
 
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN 1
-SAY ~Heda Fremde! Wollt Ihr mir in diesem Kampf beistehen? Fremde Hilfe ist in Zeiten wie diesen immer gern willkommen!~
+SAY ~He, Ihr da! Wollt Ihr mir in diesem Kampf beistehen? Fremde Hilfe ist in Zeiten wie diesen immer gern willkommen!~ [AC#ILHA7]
 IF ~~ THEN DO ~SetGlobal("AC#_HatharCombat","ACIL20",1)~ EXIT
 END
 
 IF ~Global("AC#_HatharCombat","ACIL20",1)~ THEN BEGIN 2
-SAY ~Habt Dank für Eure Unterstützung, Fremde. Ich bin Hathar Steinschulter, Soldat der Bronzemaske und Wächter der Tore Iltkazars. Wisset, dass Eure Hilfe nicht unbelohnt bleiben wird. Wer seid Ihr?~
+SAY ~Habt Dank für Eure Unterstützung, Fremde. Ich bin Hathar Steinschulter, Soldat der Bronzemaske und Wächter der Tore Iltkazars. Wisset, dass Eure Hilfe nicht unbelohnt bleiben wird. Wer seid Ihr?~ [AC#ILHA8]
 ++ ~Mein Name ist <CHARNAME>. Dies hier ist also tatsächlich der Eingang in die sagenumwobene Zwergenstadt Iltkazar?~ + 3
 ++ ~<CHARNAME>, von der Oberfläche.~ + 3
 END
 
 IF ~Global("AC#_HatharCombat","ACIL20",2)
 Global("AC#Arrested","GLOBAL",0)~ THEN BEGIN doors_open
-SAY ~Die Tore stehen Euch offen, Besucher aus der Oberwelt! Tretet ein, denn die Mithralstadt heißt Euch willkommen!~
-IF ~~ THEN DO ~~ EXIT
+SAY ~Die Tore stehen Euch offen, Besucher aus der Oberwelt! Tretet ein, denn die Mithralstadt heißt Euch willkommen!~ [AC#ILHA9]
+IF ~~ THEN DO ~SetGlobal("HatharReactsDoors","ACIL20",2)~ EXIT
 END
 
 IF ~~ THEN BEGIN goodbye_surface

@@ -147,20 +147,21 @@ THEN
 END
 
 IF
-	Global("AC#_HatharCombat","ACIL20",2)
-	Global("AC#_IltkazarGates","ACIL20",0)
+    Global("AC#_HatharCombat","ACIL20",2)
+    Global("AC#_IltkazarGates","ACIL20",0)
 THEN
-	RESPONSE #100
-		SetGlobal("AC#_IltkazarGates","ACIL20",1)
-                ClearAllActions()
-		StartCutSceneMode()
-		MoveViewPoint([3479.384],100)
-		CreateCreature("CUTSPY",[3479.384],11)
-		Wait(2)
-		OpenDoor("DOOR02")
-		Wait(1)
-		ActionOverride("CUTSPY",DestroySelf())
-		EndCutSceneMode()
+    RESPONSE #100
+        SetGlobal("AC#_IltkazarGates","ACIL20",1)
+        ClearAllActions()
+        StartCutSceneMode()
+        MoveViewPoint([3479.384],100)
+        CreateCreature("CUTSPY",[3479.384],NEE)  // No such index
+        Wait(2)
+        OpenDoor("DOOR02")
+        Wait(1)
+        ActionOverride("CUTSPY",DestroySelf())
+        EndCutSceneMode()
+        SetGlobal("HatharReactsDoors","ACIL20",1)
 END
 
 IF

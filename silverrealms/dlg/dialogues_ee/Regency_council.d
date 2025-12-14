@@ -132,12 +132,12 @@ SAY ~Ich werde meiner Aufgabe nachgehen, an der Seite des Königs Wache zu stehe
 END
 
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN hello
-SAY ~Halt, Fremde! Was führt Euch in die Hallen des Regentschaftsrates?~
+SAY ~Halt, Fremde! Was führt Euch in die Hallen des Regentschaftsrates?~ [AC#ILDUA]
   IF ~~ THEN REPLY ~Ich bin <CHARNAME> und möchte mit dem Regentschaftsrat über König Mith Barak sprechen. Kriegsmeister Bresk Steinschulter hat mich hierhergeschickt.~ GOTO 2
 END
 
 IF ~~ THEN BEGIN 2
-SAY ~Ihr habt mit meinem Sohn Bresk gesprochen? Nun gut, folgt mir, ich werde Euch dem Rat melden. Er soll entscheiden, wie es mit Euch weitergehen soll.~
+SAY ~Ihr habt mit meinem Sohn Bresk gesprochen? Nun gut, folgt mir, ich werde Euch dem Rat melden. Er soll entscheiden, wie es mit Euch weitergehen soll.~ [AC#ILDUB]
 =
 ~Öffnet die Tore und lasst <CHARNAME> vor den Rat treten!~
   IF ~~ THEN DO ~SetGlobal("AC#RegencyCouncil","ACIL62",1)~ EXIT

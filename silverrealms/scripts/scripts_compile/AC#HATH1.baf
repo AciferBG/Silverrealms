@@ -1,94 +1,94 @@
 IF
-	Detect([PC])
-	Range([PC],7)
-	PartyHasItem("AC#KY1") // Runestone: access to spiderstalkings
-	Global("AC#HatharDriftdisc","ACIL20",0)
+    Detect([PC])
+    Range([PC],7)
+    PartyHasItem("AC#KY1")  // Zwergen-Runenschlüssel
+    Global("AC#HatharDriftdisc","ACIL20",0)
 THEN
-	RESPONSE #100
-		SetGlobal("AC#HatharDriftdisc","ACIL20",1)
-		StartDialogueNoSet(LastSeenBy(Myself))
+    RESPONSE #100
+        SetGlobal("AC#HatharDriftdisc","ACIL20",1)
+        StartDialogueNoSet(LastSeenBy(Myself))
 END
 
 IF
-	Detect([PC])
-	Range([PC],7)
-	PartyHasItem("AC#DRFT1") // drow driftdisc
-	Global("AC#HatharDriftdisc","ACIL20",2)
+    Detect([PC])
+    Range([PC],7)
+    PartyHasItem("AC#DRFT1")  // Schwebescheibe
+    Global("AC#HatharDriftdisc","ACIL20",2)
 THEN
-	RESPONSE #100
-		SetGlobal("AC#HatharDriftdisc","ACIL20",3)
-		StartDialogueNoSet(LastSeenBy(Myself))
+    RESPONSE #100
+        SetGlobal("AC#HatharDriftdisc","ACIL20",3)
+        StartDialogueNoSet(LastSeenBy(Myself))
 END
 
 IF
-	Detect([PC])
-	Range([PC],5)
-        Global("AC#_Dwarven_Patrol","ACIL20",1)
-	Global("AC#_HatharDwarfPatrol","ACIL20",0)
+    Detect([PC])
+    Range([PC],5)
+    Global("AC#_Dwarven_Patrol","ACIL20",1)
+    Global("AC#_HatharDwarfPatrol","ACIL20",0)
 THEN
-	RESPONSE #100
-                SetGlobal("AC#_HatharDwarfPatrol","ACIL20",1)
-		StartDialogueNoSet(LastSeenBy(Myself))
+    RESPONSE #100
+        SetGlobal("AC#_HatharDwarfPatrol","ACIL20",1)
+        StartDialogueNoSet(LastSeenBy(Myself))
 END
 
 IF
-	NumTimesTalkedTo(0)
-	Detect([PC])
+    NumberOfTimesTalkedTo(0)
+    Detect([PC])
 THEN
-	RESPONSE #100
-		StartDialogueNoSet(LastSeenBy(Myself))
+    RESPONSE #100
+        StartDialogueNoSet(LastSeenBy(Myself))
 END
 
 IF
-	Detect([PC])
-	Global("AbishaiSpawn","ACIL20",2)
+    Global("HatharReactsDoors","ACIL20",1)
 THEN
-	RESPONSE #100
-		StartDialogueNoSet(LastSeenBy(Myself))
+    RESPONSE #100
+        Wait(1)
+        StartDialogueNoSet(LastSeenBy(Myself))
 END
 
 IF
-	Detect([PC])
-	Global("AbishaiSpawn","ACIL20",3)
-	NumDead("AC#20ABG",2)
+    Detect([PC])
+    Global("AbishaiSpawn","ACIL20",2)
 THEN
-	RESPONSE #100
-		StartDialogueNoSet(LastSeenBy(Myself))
+    RESPONSE #100
+        StartDialogueNoSet(LastSeenBy(Myself))
 END
 
 IF
-	Detect([PC])
-	Global("AC#_HatharCombat","ACIL20",1)
-	NumDead("AC#GAU01",2)
-	CombatCounter(0)
+    Detect([PC])
+    Global("AbishaiSpawn","ACIL20",3)
+    NumDead("AC#20ABG",2)  // Abishai
 THEN
-	RESPONSE #100
-		StartDialogueNoSet(LastSeenBy(Myself))
+    RESPONSE #100
+        StartDialogueNoSet(LastSeenBy(Myself))
 END
 
 IF
-	Global("Deactivated","LOCALS",1)
-	GlobalGT("AC#EscapeFromBarakuir","GLOBAL",0)
+    Detect([PC])
+    Global("AC#_HatharCombat","ACIL20",1)
+    NumDead("AC#GAU01",2)  // Gauth
+    CombatCounter(0)
 THEN
-	RESPONSE #100
-		SetGlobal("Deactivated","LOCALS",2)
-		Activate(Myself)
+    RESPONSE #100
+        StartDialogueNoSet(LastSeenBy(Myself))
 END
 
 IF
-	Global("Deactivated","LOCALS",0)
-	GlobalGT("AC#RC_Sorni_Fourth","GLOBAL",8)
+    Global("Deactivated","LOCALS",1)
+    GlobalGT("AC#EscapeFromBarakuir","GLOBAL",0)
 THEN
-	RESPONSE #100
-		SetGlobal("Deactivated","LOCALS",1)
-		Deactivate(Myself)
+    RESPONSE #100
+        SetGlobal("Deactivated","LOCALS",2)
+        Activate(Myself)
 END
 
-
-
-
-
-
-
-
+IF
+    Global("Deactivated","LOCALS",0)
+    GlobalGT("AC#RC_Sorni_Fourth","GLOBAL",8)
+THEN
+    RESPONSE #100
+        SetGlobal("Deactivated","LOCALS",1)
+        Deactivate(Myself)
+END
 

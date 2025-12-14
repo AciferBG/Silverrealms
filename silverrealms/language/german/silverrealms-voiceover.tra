@@ -1,0 +1,92 @@
+// Character sounds
+// Beldas:
+@5000 = ~Seid mir gegrüßt~ [AC#BELD1] 
+@5001 = ~Ihr weiß ja nicht, nach was wir genau suchen, aber es dürfte hier irgendwo sein.~ [AC#BELD2] 
+@5002 = ~ Das erinnert mich an eine Geschichte~ [AC#BELD3] 
+@5003 = ~~ [AC#BELD2]
+@5004 = ~~ [AC#BELD5]
+@5005 = ~~ [AC#BELD6]
+@5006 = ~Mir geht es gar nicht gut.~ [AC#BELD9]
+
+@5010 = ~(...)~ [AC#DWF32]
+@5011 = ~Hrm.~ [AC#DWF33]
+@5012 = ~(...)~ [AC#DWF34]
+//@5011 = ~Hrm.~ [AC#DWF31]
+
+@5021 = ~Hallo auch! Hallo.~ [AC#DWF21]
+@5022 = ~Was? Was wollt Ihr?~ [AC#DWF22]
+
+// Fruntuck:
+@5023 = ~Hicks!~ [HICCUP]
+
+// Dwarven soundsets:
+@5031 = ~Glory to Iltkazar!~ [AC#ILG01]
+@5032 = ~Gorm Gulthyn will protect us!~ [AC#ILG02]
+@5033 = ~You're near as ugly as a drow.~ [AC#ILG03]
+@5034 = ~Don't step on my beard.~ [AC#ILG04]
+@5035 = ~One shove and down you go.~ [AC#ILG05]
+@5036 = ~Speak up, you fragile little sprout!~ [AC#ILG06]
+@5037 = ~My hammer hits hard. As does my axe.~ [AC#ILG07]
+@5038 = ~A pint of ale, never stale.~ [AC#ILG08]
+@5039 = ~You walk deep, surfacer.~ [AC#ILG09]
+@5040 = ~Stone endures. So does our city!~ [AC#ILG10]
+@5041 = ~What's your business, shortbeard?~ [AC#ILG11]
+
+//Gromi
+@5051 = ~Stone forgets nothing.~ [AC#ILGR4]
+@5052 = ~Slowly... decide slowly.~ [AC#ILGR5]
+@5053 = ~Haste breaks more than it builds.~ [AC#ILGR6]
+@5054 = ~Hmm...~ [AC#ILGR7]
+@5055 = ~Speak clearly.~ [AC#ILGR8]
+@5056 = ~The old laws hold.~ [AC#ILGR9]
+@5057 = ~You walk among elders.~ [AC#ILGR0]
+
+// Elern
+@5060 = ~Endurance is not inaction.~ [AC#ILEN3]
+@5061 = ~Time is being wasted.~ [AC#ILEN4]
+@5062 = ~We cannot wait another decade.~ [AC#ILEN5]
+@5063 = ~Tradition is not an excuse.~ [AC#ILEN6]
+@5064 = ~Caution has become comfort.~ [AC#ILEN7]
+@5065 = ~Someone must decide.~ [AC#ILEN8]
+
+// Bresk
+@5070 = ~I stand ready.~ [AC#ILBR4]
+@5071 = ~As duty demands.~ [AC#ILBR5]
+@5072 = ~Stand firm.~ [AC#ILBR6]
+@5073 = ~Weapons ready.~ [AC#ILBR7]
+@5074 = ~Stay alert.~ [AC#ILBR8]
+@5075 = ~Keep watch.~ [AC#ILBR9]
+
+// Hathar
+@5080 = ~Für Iltkazar!~ [AC#ILHA0]
+@5081 = ~Ho there!~ [AC#ILHA1]
+@5082 = ~Aye! You!~ [AC#ILHA2]
+@5083 = ~Mind the doors!~ [AC#ILHA3]
+@5084 = ~Strong gates. Stronger guard!~ [AC#ILHA4]
+@5085 = ~Nothing gets past me.~ [AC#ILHA5]
+@5086 = ~Now that’s more like it!~ [AC#ILHA6]
+@5087 = ~Oi! Trouble!~ [AC#ILHAA]
+
+// Dunnabar
+@5090 = ~For the king!~ [AC#ILDU0]
+@5091 = ~State your purpose.~ [AC#ILDU1] 
+@5092 = ~Duty does not sleep.~ [AC#ILDU2] 
+@5093 = ~Stand where you are.~ [AC#ILDU3] 
+@5094 = ~One more step, and no further.~ [AC#ILDU4] 
+@5095 = ~Careful.~ [AC#ILDU5] 
+@5096 = ~Hold.~ [AC#ILDU6] 
+
+//grumpy generic dwarf
+@5100 = ~Speak then.~ [AC#ILE01]
+@5102 = ~Choose your words.~ [AC#ILE02]
+@5103 = ~Haste breaks more than it builds.~ [AC#ILE03]
+@5104 = ~State your matter.~ [AC#ILE04]
+@5105 = ~Speak clearly.~ [AC#ILE05]
+@5106 = ~The old laws hold.~ [AC#ILE06]
+@5107 = ~You walk among elders.~ [AC#ILE07]
+
+// Gromi
+
+
+
+

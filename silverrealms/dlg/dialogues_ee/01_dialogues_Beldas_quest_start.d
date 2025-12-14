@@ -131,7 +131,7 @@ END
 			END
 			
 				IF ~~ THEN BEGIN introduce
-				SAY ~Erlaubt mir zunächst, uns drei Zwerge vorzustellen. Ich bin Beldas Diamantklinge, und dies hier sind Gormar vom Clan Talnoth und Thradear vom Clan Sorndar.~
+				SAY ~Erlaubt mir zunächst, uns drei vorzustellen. Ich bin Beldas Diamantklinge, und dies hier sind Gormar vom Clan Talnoth und Thradear vom Clan Sorndar.~ [AC#BELDA]
 				IF ~~ THEN EXTERN ~AC#DWF20~ gormar_hello
 				END
 			
@@ -202,16 +202,16 @@ END
 								IF ~~ THEN REPLY ~Ein weiter Weg, den Ihr für Euren König auf Euch genommen habt.~ GOTO whats_wrong_with_king
 								END
 								
+									IF ~~ THEN BEGIN king_ill
+									SAY ~Wenn man es so sehen möchte, ja, er ist krank. Allerdings nicht im herkömmlichen Sinne.~
+									IF ~~ THEN REPLY ~Wie kann so etwas passieren?~ GOTO whats_wrong_with_king
+									END
+								
 									IF ~~ THEN BEGIN whats_wrong_with_king
-									SAY ~Unser Monarch sitzt reglos wie schlafend zur Mithrilsäule erstarrt auf seinem Thron und lässt sich durch nichts und niemanden aus seinem seltsamen Zustand erwecken.~
+									SAY ~Unser Monarch sitzt reglos wie schlafend zur Mithrilsäule erstarrt auf seinem Thron und lässt sich durch nichts und niemanden aus seinem seltsamen Zustand erwecken.~ [AC#BELDB]
 									IF ~~ THEN REPLY ~Er ist zu einer Art Metallform erstarrt? Wie kann so etwas passieren?~ GOTO about_mithbarak_01
 									IF ~~ THEN REPLY ~Ihr meint wie versteinert? Das Werk eines Basilisken vielleicht?~ GOTO about_mithbarak_01
-									END
-									
-									IF ~~ THEN BEGIN king_ill
-									SAY ~Wenn man es so sehen möchte, ja, er ist krank. Allerdings nicht im herkömmlichen Sinne. Er sitzt reglos wie schlafend zur Mithrilsäule erstarrt auf seinem Thron und lässt sich durch nichts und niemanden aus seinem seltsamen Zustand erwecken.~
-									IF ~~ THEN REPLY ~Wie kann so etwas passieren?~ GOTO about_mithbarak_01
-									END
+									END																
 									
 										IF ~~ THEN BEGIN about_mithbarak_01
 										SAY ~Was genau ihm fehlt, wissen wir leider nicht. Es ist kein herkömmlicher Zauber. Bevor ich Euch Genaueres berichte, möchte ich Euch mitteilen, warum wir Euch hergebeten haben und Eure Hilfe brauchen.~
@@ -260,7 +260,7 @@ END
 												END
 												
 												IF ~~ THEN BEGIN city_not_as_expected
-												SAY ~Seht, unsere Stadt ist vielleicht nicht ganz genau das, was Ihr Euch unter einer typischen Zwergenstadt vorstellt. Wir sind ein Hort des Wissens und besitzen eine der größten Bibliotheken des Unterreiches. Ich selbst bin auch Gelehrter, kein Krieger - ein Diener Dugmarens, um genau zu sein.~ 
+												SAY ~Seht, unsere Stadt ist vielleicht nicht ganz genau das, was Ihr Euch unter einer typischen Zwergenstadt vorstellt. Wir sind ein Hort des Wissens und besitzen eine der größten Bibliotheken des Unterreiches. Ich selbst bin auch Gelehrter, kein Krieger - ein Diener Dugmarens, um genau zu sein.~ [AC#BELDC]
 												=
 												~Auf der Suche nach einem Heilmittel für Mith Barak habe ich die Aufzeichnungen des Königs und unsere eigene Büchersammlung studiert und bin auf diesem Wege auf Hinweise einer großen Bibliothek an der Oberfläche, die man Kerzenburg nennt, gestoßen. Ihr sollt aus Kerzenburg stammen, wie ich hörte.~
 												IF ~~ THEN REPLY ~In einer von Iltkazars Notizen stand, dass ich aus Kerzenburg komme?~ GOTO hail_from_candlekeep
@@ -351,7 +351,7 @@ END
 																			END
 																			
 																				IF ~~ THEN BEGIN way_underdark
-																				SAY ~Nun, da geklärt ist, dass Ihr uns bei unserem Unterfangen unterstützen werdet, müssen wir noch klären, wie wir wieder zurück nach Iltkazar gelangen.~
+																				SAY ~Nun, da geklärt ist, dass Ihr uns bei unserem Unterfangen unterstützen werdet, müssen wir noch klären, wie wir wieder zurück nach Iltkazar gelangen.~ [AC#BELDD]
 																				IF ~~ THEN GOTO way_underdark_02
 																				END
 																				
@@ -454,7 +454,7 @@ END
 																												END
 
 																														IF ~~ THEN BEGIN quest_axe_bridge
-																														SAY ~Wir werden hier in der Taverne auf Euch warten und hoffen, dass Ihr erfolgreich sein werdet. So aufregend die Zeit hier an der Oberfläche auch sein mag, wir sind alle froh, wenn wir wieder in unsere Heimat zurückgekehrt sind, um unserem König helfen zu können. Aber jetzt habe ich schon genug Eurer Zeit gestohlen. Ihr wisst, wo wir zu finden sind. Ich freue mich auf ein Wiedersehen!~
+																														SAY ~Wir werden hier in der Taverne auf Euch warten und hoffen, dass Ihr erfolgreich sein werdet. So aufregend die Zeit hier an der Oberfläche auch sein mag, wir sind alle froh, wenn wir wieder in unsere Heimat zurückgekehrt sind, um unserem König helfen zu können. Aber jetzt habe ich schon genug Eurer Zeit gestohlen. Ihr wisst, wo wir zu finden sind. Ich freue mich auf ein Wiedersehen!~ [AC#BELDE]
 																														IF ~~ THEN DO ~SetGlobal("AC#BeldasPlotStart","GLOBAL",4)
 																														RevealAreaOnMap("ACIL06")
 																														EraseJournalEntry(@20000)

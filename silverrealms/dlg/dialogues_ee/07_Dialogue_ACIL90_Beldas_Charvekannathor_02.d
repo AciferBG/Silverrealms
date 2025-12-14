@@ -24,7 +24,7 @@ SAY ~Argh... verflucht...~
 =
 ~Trotz aller List und Tücke ... Ihr werdet mich hier oben nicht besiegen, <CHARNAME>! Dies war nicht das letzte Mal, dass wir uns getroffen haben! Ich werde Euch bis an das Ende Eurer Tage jagen, kleiner <PRO_RACE>.~
 =
-~Der Himmel ist mein Zuhause. Ihr werdet niemals mehr ruhigen Gewissens den frischen Wind und die Sonne genießen können, ohne an mich und meine Rache denken zu müssen!~
+~Der Himmel ist mein Zuhause. Ihr werdet niemals mehr ruhigen Gewissens den frischen Wind und die Sonne genießen können, ohne an mich und meine Rache denken zu müssen!~ [AC#ILCH2]
 IF ~~ THEN DO ~SetGlobal("AC#CharvekannathorHurt","ACIL90",2)
 SetGlobal("AC#Charvekannathor","GLOBAL",5)
 ForceSpellRES("ac#drar1",LastTalkedToBy)
@@ -33,7 +33,7 @@ DestroySelf()~ EXIT
 END
 
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN hello
-SAY ~So treffen wir uns also wieder, Beldas. Hattet Ihr gedacht, die Hilfe von Euren neuen Freunden an der Oberfläche könnte Euch ein Wiedersehen mit mir ersparen?~
+SAY ~So treffen wir uns also wieder, Beldas. Hattet Ihr gedacht, die Hilfe von Euren neuen Freunden an der Oberfläche könnte Euch ein Wiedersehen mit mir ersparen?~ [AC#ILCH1]
 IF ~~ THEN  EXTERN ~AC#dwf03~ found_us
 END
 

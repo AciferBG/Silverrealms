@@ -115,6 +115,17 @@
 @5137 = ~Genug!~ [AC#SORN6] //damage
 @5138 = ~~ [AC#SORN7] //die
 
+// Malphas
+@5140 = ~Fallt!~ [AC#ILMA0]
+@5141 = ~Flattert, kleine Seelen.~ [AC#ILMA1]
+@5142 = ~Ihr schon wieder!~ [AC#ILMA2]
+@5143 = ~Jetzt gehört Ihr mir!~ [AC#ILMA3]
+@5144 = ~Alles hat seinen Preis.~ [AC#ILMA4]
+@5145 = ~Wie zerbrechlich.~ [AC#ILMA5]
+@5146 = ~Ich werde Eure Seele in die Hölle reißen!~ [AC#ILMA6]
+@5147 = ~Die Hölle zählt eure Seelen!~ [AC#ILMA7]
+@5148 = ~Für die Königin!~ [AC#ILMA8]
+
 
 
 

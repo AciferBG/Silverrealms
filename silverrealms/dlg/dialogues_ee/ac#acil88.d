@@ -6,14 +6,14 @@ Dialog Malphas Cutscene  ACIL88: Talk mit Mithbarak
 BEGIN ~AC#MITH2~
 
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN 1
-SAY ~Hört Ihr die Kampfgeräusche, Teufel? Es scheint, dass meine Rettung naht und als ob Eure Pläne von einem einfachen Sterblichen durchkreuzt werden würden!~
+SAY ~Hört Ihr die Kampfgeräusche, Teufel? Es scheint, dass meine Rettung naht und als ob Eure Pläne von einem einfachen Sterblichen durchkreuzt werden würden!~ [AC#ILMIA]
 IF ~~ THEN EXTERN ~AC#MAL02~ 01
 END
 
 IF ~Global("AC#Cut1","ACIL88",2)
 Global("AC#Mithbarak_Free","GLOBAL",0)
 !Dead("AC#MAL02")~ THEN BEGIN 4
-SAY  ~Ihr seid diejenigen, die gekommen sind, um mich zu retten, habe ich Recht?~
+SAY  ~Ihr seid diejenigen, die gekommen sind, um mich zu retten, habe ich Recht?~ [AC#ILMIB]
 ++ ~Das sind wir, ja.~ + 5
 END
 
@@ -58,12 +58,12 @@ Dialog AC#MAL02
 BEGIN ~AC#MAL02~
 
 IF ~Global("AC#TalkedMalphas","GLOBAL",0)~ THEN BEGIN 04
-SAY  ~Ihr seid weit gekommen, <CHARNAME>!~
+SAY  ~Ihr seid weit gekommen, <CHARNAME>!~ [AC#ILMAF]
 ++ ~In der Tat, wir haben einiges durchgemacht. Doch Ihr seht seit unserem letzten Treffen auch ziemlich ramponiert aus!~ + 05
 END
 
 IF ~~ THEN BEGIN 01
-SAY ~Spottet nicht über mich, Zwerg, denn ich werde Euren Rettern hier endgültig einen schrecklichen Tod bereiten!~
+SAY ~Spottet nicht über mich, Zwerg, denn ich werde Euren Rettern hier endgültig einen schrecklichen Tod bereiten!~ [AC#ILMAG]
 IF ~~ THEN EXTERN ~AC#MITH2~ 2
 END
 
@@ -73,7 +73,7 @@ IF ~~ THEN EXTERN ~AC#MITH2~ 3
 END
 
 IF ~~ THEN BEGIN 03
-SAY ~Wisst Ihr, Mith Barakaz, dies ist das Problem mit Euch gutherzigen Kreaturen - Ihr denkt immer, Ihr könntet Euh in den Geist von uns Tyrannen hineinversetzen, aber Euch fehlt der Blick für all die Bösartigkeiten, zu deren Ideen wir jedesmal aufs Neue fähig sind. Meine Version der Geschichte geht nämlich so: Ihr steckt hier in Eurem Käfig fest und müsst mit ansehen, wie diese schlecht geplante Befreiungsaktion ein klägliches Ende finden wird, während dessen ich meinem astralen Kraftfeld triumphieren werde!~
+SAY ~Wisst Ihr, Mithbarakaz, dies ist das Problem mit Euch gutherzigen Kreaturen - Ihr denkt immer, Ihr könntet Euh in den Geist von uns Tyrannen hineinversetzen, aber Euch fehlt der Blick für all die Bösartigkeiten, zu deren Ideen wir jedesmal aufs Neue fähig sind. Meine Version der Geschichte geht nämlich so: Ihr steckt hier in Eurem Käfig fest und müsst mit ansehen, wie diese schlecht geplante Befreiungsaktion ein klägliches Ende finden wird, während dessen ich meinem astralen Kraftfeld triumphieren werde!~
 IF ~~ THEN DO ~ClearAllActions()
    StartCutSceneMode()
    StartCutScene("ac#ct88B")~
@@ -81,7 +81,7 @@ IF ~~ THEN DO ~ClearAllActions()
 END
 
 IF ~~ THEN BEGIN 05
-SAY ~Ehrlich gesagt habe ich dieses lange Reden ohnehin satt. Bereitet Euch darauf vor, den Rest Eures Dasein in der Hölle zu verbringen!~
+SAY ~Ehrlich gesagt habe ich dieses lange Reden ohnehin satt. Bereitet Euch darauf vor, den Rest Eures Daseins in der Hölle zu verbringen!~ [AC#ILMAE]
 IF ~~ THEN DO ~SetGlobal("AC#TalkedMalphas","GLOBAL",1)
 Enemy()~
    EXIT

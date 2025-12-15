@@ -3,9 +3,9 @@ BEGIN AC#07MAL
 BEGIN AC#07PES
 
 CHAIN IF ~NumTimesTalkedTo(0)~ THEN AC#07MAL hello_Malphas
-	~Seid gegrüßt. Wo finde ich die Gaststätte zum Tanzenden Riesen?~ 
+	~Seid gegrüßt. Wo finde ich die Gaststätte zum Tanzenden Riesen?~ [AC#ILMAC]
 	== AC#07PES ~Bei den Göttern! Was seid Ihr denn für ein rabengesichtiges Scheusal?!~ 
-	== AC#07MAL ~Ach, Maladomini. Das hatte ich ganz vergessen. Einen Moment bitte...~
+	== AC#07MAL ~Ach, Maladomini. Das hatte ich ganz vergessen. Einen Moment bitte...~ [AC#ILMAD]
 	END
 	IF ~~ THEN DO ~StartCutSceneMode()
 	StartCutScene("AC#07CT2")~ EXIT

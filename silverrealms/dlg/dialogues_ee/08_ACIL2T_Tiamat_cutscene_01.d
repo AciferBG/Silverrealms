@@ -12,7 +12,7 @@ BEGIN ~AC#MAL2T~
 
 
 CHAIN IF ~NumTimesTalkedTo(0)~ THEN AC#MAL2T hello
-						~Die Zwerge wurden von dem Wächter vernichtet, Herrin.~ 
+						~Die Zwerge wurden von dem Wächter vernichtet, Herrin.~ [AC#ILMAB]
 						== AC#2TTIA ~Gut. Warum hat es so lange gedauert?~ 
 						== AC#MAL2T ~Es war schwieriger als gedacht. Die Zwerge hatten einen mächtigen Verbündeten.~
 						== AC#2TTIA ~Wer war das?~ 

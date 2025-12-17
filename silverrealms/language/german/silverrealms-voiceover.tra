@@ -209,6 +209,15 @@
 @5256 = ~That was intentional!~ [AC#ILNB4]
 @5257 = ~Ha! Look at it go!~ [AC#ILNB5]
 @5258 = ~Oops.~ [AC#ILNB6]
-@5259 = ~No journey is wasted.~ [AC#ILNB7]
+
+// Oremaster
+@5259 = ~Ashes to ashes. Ore to ore.~ [AC#ILOM1]
+@5260 = ~Good metal sings.~ [AC#ILOM2]
+@5261 = ~All returns to the vein.~ [AC#ILOM3]
+
+// Oremaster
+@5262 = ~Step up, take a look.~ [AC#ILMC1]
+@5263 = ~You won’t find better.~ [AC#ILMC2]
+@5264 = ~Forged proper.~ [AC#ILMC3]
 
 

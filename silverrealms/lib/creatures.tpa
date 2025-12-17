@@ -2483,6 +2483,10 @@ COPY ~silverrealms/cre/AC#59DW4.cre~ ~override~ // worker #4 in ACIL59 (Azerkyn-
   
 COPY ~silverrealms/cre/AC#59DW5.cre~ ~override~ // oremaster in ACIL59 (Azerkyn-hall)
   SAY NAME1 @934 SAY NAME2 @934
+  SAY INITIAL_MEETING   #-1
+  SAY SELECT_COMMON1 @5259
+  SAY SELECT_COMMON2 @5260
+  SAY SELECT_COMMON3 @5261
 
 COPY ~silverrealms/cre/AC#59DW6.cre~ ~override~ // worker #6 (fire elemental encounter) in ACIL59 (Azerkyn-hall)
   SAY NAME1 @933 SAY NAME2 @933
@@ -2749,6 +2753,10 @@ COPY ~silverrealms/cre/AC#2TTIA.cre~ ~override~ // malphas' lady (Tiamat)
   
 COPY ~silverrealms/cre/AC#50DWF.cre~ ~override~ // Domor the fisherman
   SAY NAME1 @1129 SAY NAME2 @1129
+    SAY INITIAL_MEETING   #-1
+  SAY SELECT_COMMON1 @5187
+  SAY SELECT_COMMON2 @5186
+  SAY SELECT_COMMON3 @5185
   
 COPY ~silverrealms/cre/AC#20DW8.cre~ ~override~ // dwarven warrior in Area ACIL20, guarding the sealed entrance to Barakuir lake
   SAY NAME1 @9000 SAY NAME2 @9000
@@ -2835,6 +2843,10 @@ COPY ~silverrealms/cre/AC#ABWH1.cre~ ~override~ // White Abishai (Tyrants of the
   
 COPY ~silverrealms/cre/AC#50TGU.cre~ ~override~ // Dulman Ironrist, town guide in Iltkazar (ACIL50)
   SAY NAME1 @9018 SAY NAME2 @9018
+  SAY INITIAL_MEETING   #-1
+  SAY SELECT_COMMON1 @5262
+  SAY SELECT_COMMON2 @5263
+  SAY SELECT_COMMON3 @5264
   
 COPY ~silverrealms/cre/AC#CRYCA.cre~ ~override~
   SAY NAME1 @9019 SAY NAME2 @9019

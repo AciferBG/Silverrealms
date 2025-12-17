@@ -809,6 +809,8 @@ COPY ~silverrealms/cre/AC#HATH1.cre~ ~override/AC#HATH1.cre~
   SAY SELECT_COMMON6  @5086
   SAY BATTLE_CRY1 @5080
   SAY BATTLE_CRY2 @5087
+  SAY BATTLE_CRY3 @5088
+  SAY BATTLE_CRY4 @5089
   SAY CRITICAL_HIT @5086
   
 COPY ~silverrealms/cre/AC#HATH8.cre~ ~override/AC#HATH8.cre~ // Hathar in ACIL27
@@ -2315,73 +2317,70 @@ __________________________________________________________________ */
 COPY ~silverrealms/cre/ac#dwf00.cre~ ~override/ac#dwf00.cre~ // Beldas 00
   SAY NAME1 @44 SAY NAME2 @44
 SAY INITIAL_MEETING @5000   // Seid mir gegrüßt
-SAY SELECT_COMMON1 @5001
-SAY SELECT_COMMON2 @5002
-SAY SELECT_COMMON3 @5003
+SAY SELECT_COMMON1 @5000
+SAY SELECT_COMMON2 @5001
+SAY SELECT_COMMON3 @5002
 SAY BATTLE_CRY1 @5004
 SAY DAMAGE @5005
-SAY DYING @5006 // Mir geht es gar nicht gut.
 
 COPY ~silverrealms/cre/ac#dwf01.cre~ ~override/ac#dwf01.cre~ // Beldas 01
   SAY NAME1 @44 SAY NAME2 @44
-  SAY INITIAL_MEETING @5000   // Seid mir gegrüßt
-SAY SELECT_COMMON1 @5001
-SAY SELECT_COMMON2 @5002
-SAY SELECT_COMMON3 @5003
+SAY INITIAL_MEETING @5000   // Seid mir gegrüßt
+SAY SELECT_COMMON1 @5000
+SAY SELECT_COMMON2 @5001
+SAY SELECT_COMMON3 @5002
 SAY BATTLE_CRY1 @5004
 SAY DAMAGE @5005
-SAY DYING @5006 // Mir geht es gar nicht gut.
-
+SAY DYING @5006
 
 COPY ~silverrealms/cre/ac#dwf0a.cre~ ~override/ac#dwf0a.cre~ // Beldas 0A in ACIL 0A
   SAY NAME1 @44 SAY NAME2 @44
-  SAY INITIAL_MEETING @5000   // Seid mir gegrüßt
-SAY SELECT_COMMON1 @5001
-SAY SELECT_COMMON2 @5002
-SAY SELECT_COMMON3 @5003
+SAY INITIAL_MEETING @5000   // Seid mir gegrüßt
+SAY SELECT_COMMON1 @5000
+SAY SELECT_COMMON2 @5001
+SAY SELECT_COMMON3 @5002
 SAY BATTLE_CRY1 @5004
 SAY DAMAGE @5005
-SAY DYING @5006 // Mir geht es gar nicht gut.
+SAY DYING @5006
 
   COPY ~silverrealms/cre/ac#dwf02.cre~ ~override/ac#dwf02.cre~ // Beldas 02
        SAY NAME1 @44 SAY NAME2 @44
-        SAY INITIAL_MEETING @5000   // Seid mir gegrüßt
-        SAY SELECT_COMMON1 @5001
-        SAY SELECT_COMMON2 @5002
-        SAY SELECT_COMMON3 @5003
-        SAY BATTLE_CRY1 @5004
-        SAY DAMAGE @5005
-        SAY DYING @5006 // Mir geht es gar nicht gut.
+       SAY INITIAL_MEETING @5000   // Seid mir gegrüßt
+SAY SELECT_COMMON1 @5000
+SAY SELECT_COMMON2 @5001
+SAY SELECT_COMMON3 @5002
+SAY BATTLE_CRY1 @5004
+SAY DAMAGE @5005
+SAY DYING @5006
 
        COPY ~silverrealms/cre/ac#dwf03.cre~ ~override/ac#dwf03.cre~ // Beldas 03
         SAY NAME1 @44 SAY NAME2 @44
-        SAY INITIAL_MEETING @5000   // Seid mir gegrüßt
-        SAY SELECT_COMMON1 @5001
-        SAY SELECT_COMMON2 @5002
-        SAY SELECT_COMMON3 @5003
-        SAY BATTLE_CRY1 @5004
-        SAY DAMAGE @5005
-        SAY DYING @5006 // Mir geht es gar nicht gut.
+      SAY INITIAL_MEETING @5000   // Seid mir gegrüßt
+      SAY SELECT_COMMON1 @5000
+      SAY SELECT_COMMON2 @5001
+      SAY SELECT_COMMON3 @5002
+      SAY BATTLE_CRY1 @5004
+      SAY DAMAGE @5005
+      SAY DYING @5006
 
         COPY ~silverrealms/cre/ac#dwf04.cre~ ~override/ac#dwf04.cre~ // Beldas 04
                          SAY NAME1 @44 SAY NAME2 @44
-                          SAY INITIAL_MEETING @5000   // Seid mir gegrüßt
-                          SAY SELECT_COMMON1 @5001
-                          SAY SELECT_COMMON2 @5002
-                          SAY SELECT_COMMON3 @5003
+                         SAY INITIAL_MEETING @5000   // Seid mir gegrüßt
+                          SAY SELECT_COMMON1 @5000
+                          SAY SELECT_COMMON2 @5001
+                          SAY SELECT_COMMON3 @5002
                           SAY BATTLE_CRY1 @5004
                           SAY DAMAGE @5005
-                          SAY DYING @5006 // Mir geht es gar nicht gut.
+                          SAY DYING @5006
 
            COPY ~silverrealms/cre/ac#dwf10.cre~ ~override/ac#dwf10.cre~ // Beldas 10: Dying
                           SAY NAME1 @44 SAY NAME2 @44
-                          SAY INITIAL_MEETING @5006 // Mir geht es gar nicht gut.
-                          SAY SELECT_COMMON1 @5001
-                          SAY SELECT_COMMON2 @5002
-                          SAY SELECT_COMMON3 @5003
-                          SAY BATTLE_CRY1 @5004
+                         SAY INITIAL_MEETING @5006   // dying
+                          SAY SELECT_COMMON1 @5006
+                          SAY SELECT_COMMON2 @5006
+                          SAY SELECT_COMMON3 @5006
                           SAY DAMAGE @5005
-                          SAY DYING @5006 // Mir geht es gar nicht gut.
+                          SAY DYING @5006
 
 
 COPY ~silverrealms/cre/AC#DWF20.cre~ ~override/AC#DWF20.cre~ // Gormar

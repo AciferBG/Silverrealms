@@ -108,7 +108,7 @@ END
 BEGIN ~ac#dwf10~ //Beldas Creature No 10: Dying
 
 IF ~Global("AC#BeldasDies","GLOBAL",1)~ THEN BEGIN its_over
-SAY ~Es... tut mir leid, <CHARNAME>.~ [AC#BELDY] 
+SAY ~Es... tut mir leid, <CHARNAME>.~ [AC#BELD9] 
 IF ~~ THEN REPLY ~Was tut Euch leid?~ + what
 IF ~~ THEN REPLY ~Ich sehe, dass Euch das Sprechen anstrengt, Beldas.~ + do_not_talk
 IF ~~ THEN REPLY ~Tut mir bitte einen letzten Gefallen und sterbt schneller.~ + not_much_time

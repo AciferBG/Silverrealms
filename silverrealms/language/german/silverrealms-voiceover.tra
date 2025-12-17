@@ -1,14 +1,14 @@
 // Character sounds
 // Beldas:
-@5000 = ~Seid mir gegrüßt~ [AC#BELD1] 
-@5001 = ~Ich weiß ja nicht, nach was wir genau suchen, aber es dürfte hier irgendwo sein.~ [AC#BELD2] 
-@5002 = ~Das erinnert mich an eine Geschichte...~ [AC#BELD3] 
+@5000 = ~Seid mir gegrüßt!~ [AC#BELD1] 
+@5001 = ~Every road teaches something.~ [AC#BELD2] 
+@5002 = ~Dugmaren smiles on the curious.~ [AC#BELD3] 
 @5003 = ~~ [AC#BELD2]
 @5004 = ~~ [AC#BELD5]
 @5005 = ~~ [AC#BELD6]
-@5006 = ~Mir geht es gar nicht gut.~ [AC#BELD9]
-@5007 = ~Los geht's, Freunde!~ [AC#BELD4]
-@5008 = ~Für Iltkazar!~ [AC#BELD0]
+@5006 = ~Ugh...~ [AC#BELD9]
+@5007 = ~Onward, friends!~ [AC#BELD4]
+@5008 = ~For Iltkazar!~ [AC#BELD0]
 
 @5010 = ~(...)~ [AC#DWF32]
 @5011 = ~Hrm.~ [AC#DWF33]
@@ -60,14 +60,16 @@
 @5075 = ~Keep watch.~ [AC#ILBR9]
 
 // Hathar
-@5080 = ~Für Iltkazar!~ [AC#ILHA0]
+@5080 = ~For Iltkazar!~ [AC#ILHA0]
 @5081 = ~Ho there!~ [AC#ILHA1]
 @5082 = ~Aye! You!~ [AC#ILHA2]
-@5083 = ~Mind the doors!~ [AC#ILHA3]
-@5084 = ~Strong gates. Stronger guard!~ [AC#ILHA4]
-@5085 = ~Nothing gets past me.~ [AC#ILHA5]
-@5086 = ~Now that’s more like it!~ [AC#ILHA6]
-@5087 = ~Oi! Trouble!~ [AC#ILHAA]
+@5083 = ~Still standing!~ [AC#ILHA3]
+@5084 = ~Gate’s fine.~ [AC#ILHA4]
+@5085 = ~All clear!~ [AC#ILHA5]
+@5086 = ~Here we go!~ [AC#ILHA6]
+@5087 = ~For beard beer and glory!~ [AC#ILHAA]
+@5088 = ~Face me, you gutless curs!~ [AC#ILHAB]
+@5089 = ~Eat steel, ugly bastards!~ [AC#ILHAC]
 
 // Dunnabar
 @5090 = ~For the king!~ [AC#ILDU0]
@@ -125,6 +127,16 @@
 @5146 = ~Ich werde Eure Seele in die Hölle reißen!~ [AC#ILMA6]
 @5147 = ~Die Hölle zählt eure Seelen!~ [AC#ILMA7]
 @5148 = ~Für die Königin!~ [AC#ILMA8]
+
+// Wellworkers
+@5180 = ~Für Iltkazar!~ [AC#ILGN0]
+@5181 = ~Ho there!~ [AC#ILGN1]
+@5182 = ~Aye! You!~ [AC#ILGN2]
+@5183 = ~Mind the doors!~ [AC#ILGN3]
+@5184 = ~Strong gates. Stronger guard!~ [AC#ILGN4]
+@5185 = ~Nothing gets past me.~ [AC#ILGN5]
+@5186 = ~Now that’s more like it!~ [AC#ILGN6]
+@5187 = ~Oi! Trouble!~ [AC#ILGNA]
 
 
 

@@ -104,12 +104,12 @@ END
 
 							
 IF ~!InMyArea(Player1)~ THEN BEGIN hello_where_is_charname
-SAY ~Seid gegrüßt, <RACE>! Wir suchen einen <PRO_RACE> mit Namen <CHARNAME>. Solltet Ihr ihn zufälligerweise kennen und gesehen haben, schickt ihn Bitte zu uns.~
+SAY ~Seid mir gegrüßt, <RACE>! Wir suchen einen <PRO_RACE> mit Namen <CHARNAME>. Solltet Ihr ihn zufälligerweise kennen und gesehen haben, schickt ihn Bitte zu uns.~ [AC#BELDZ]
 IF ~~ THEN DO ~SetNumTimesTalkedTo(0)~ EXIT
 END
 
 IF ~Global("AC#BeldasPlotStart","GLOBAL",3)~ THEN BEGIN hello
-SAY ~Seid gegrüßt, <PRO_RACE>! Nach den Schilderungen, die uns bescheidenen Wanderern zu Ohren getragen wurden, steht vor uns gewiss <CHARNAME> aus Kerzenburg. Ist es so, dass Ihr jener seid, den wir suchen?~
+SAY ~Seid mir gegrüßt, <PRO_RACE>! Nach den Schilderungen, die uns bescheidenen Wanderern zu Ohren getragen wurden, steht vor uns gewiss <CHARNAME> aus Kerzenburg. Ist es so, dass Ihr jener seid, den wir suchen?~ [AC#BELDZ]
 IF ~~ THEN REPLY ~Wer will das wissen?~ GOTO 02
 IF ~~ THEN REPLY ~Das bin ich, ja.~ GOTO 03
 IF ~~ THEN REPLY ~Ihr habt aber gute Manieren für einen Zwerg!~ GOTO good_education

@@ -252,7 +252,7 @@ END
 
 IF ~Global("AC#_HatharCombat","ACIL20",2)
 Global("AC#Arrested","GLOBAL",0)~ THEN BEGIN doors_open
-SAY ~Die Tore stehen Euch offen, Besucher aus der Oberwelt! Tretet ein, denn die Mithralstadt heißt Euch willkommen!~ [AC#ILHA9]
+SAY ~Die Tore stehen Euch offen, Besucher aus der Oberwelt! Tretet ein, denn die Mithrilstadt heißt Euch willkommen!~ [AC#ILHA9]
 IF ~~ THEN DO ~SetGlobal("HatharReactsDoors","ACIL20",2)~ EXIT
 END
 

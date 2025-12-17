@@ -138,6 +138,31 @@
 @5186 = ~Now that’s more like it!~ [AC#ILGN6]
 @5187 = ~Oi! Trouble!~ [AC#ILGNA]
 
+// joyful dwarf
+@5191 = ~Can I help?~ [AC#ILJF1]
+@5192 = ~Good stone today.~ [AC#ILJF2]
+@5193 = ~Aye!~ [AC#ILJF3]
+@5194 = ~Good iron.~ [AC#ILJF4]
+@5195 = ~Deep and steady.~ [AC#ILJF5]
+@5196 = ~Could be worse.~ [AC#ILJF6]
+
+// stern dwarf
+@5201 = ~Work isn't done.~ [AC#ILSD1]
+@5202 = ~No distractions.~ [AC#ILSD2]
+@5203 = ~Watch yourself.~ [AC#ILSD3]
+@5204 = ~Hmm.~ [AC#ILSD4]
+@5205 = ~Stand firm, as Moradin wills.~ [AC#ILSD5]
+@5206 = ~Dumathoin keep your secrets.~ [AC#ILSD6]
+
+// stern dwarf
+@5211 = ~Do not test Moradin’s patience.~ [AC#ILAN1]
+@5212 = ~Moradin forged the law.~ [AC#ILAN2]
+@5213 = ~All things are tested.~ [AC#ILAN3]
+@5214 = ~Steel remembers its maker.~ [AC#ILAN4]
+@5215 = ~Stand firm, as Moradin wills.~ [AC#ILAN5]
+@5216 = ~Faith is proven in work.~ [AC#ILAN6]
+
+
 
 
 

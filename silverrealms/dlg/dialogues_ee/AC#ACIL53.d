@@ -817,6 +817,7 @@ IF ~~ THEN EXTERN ~AC#53SV1~ metagolem_take_runestone
 BEGIN ~AC#IL53S~ 
 IF ~RandomNum(10,1)~ THEN BEGIN 1
   SAY ~Willkommen in den Hallen des Wissens, wo die Geheimnisse des Dugmaren zwischen den Seiten der Zeit ruhen.~
+IF ~~ THEN EXIT
 END
 
 IF ~RandomNum(10,2)~ THEN BEGIN 2

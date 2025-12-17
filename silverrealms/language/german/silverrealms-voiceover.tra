@@ -154,7 +154,7 @@
 @5205 = ~Stand firm, as Moradin wills.~ [AC#ILSD5]
 @5206 = ~Dumathoin keep your secrets.~ [AC#ILSD6]
 
-// stern dwarf
+// Anthan
 @5211 = ~Do not test Moradin’s patience.~ [AC#ILAN1]
 @5212 = ~Moradin forged the law.~ [AC#ILAN2]
 @5213 = ~All things are tested.~ [AC#ILAN3]
@@ -162,7 +162,53 @@
 @5215 = ~Stand firm, as Moradin wills.~ [AC#ILAN5]
 @5216 = ~Faith is proven in work.~ [AC#ILAN6]
 
+// Miira
+@5221 = ~May Berronar watch over my fallen son.~ [AC#ILMI1]
+@5222 = ~The hearth remembers its children.~ [AC#ILMI2]
+@5223 = ~Berronar keeps what we lose.~ [AC#ILMI3]
+@5224 = ~The hearth must remain warm.~ [AC#ILMI4]
 
+// priests of Haelar
+@5225 = ~Axes up!~ [AC#ILPH1]
+@5226 = ~Blades out!~ [AC#ILPH2]
+@5227 = ~For the joy of battle!~ [AC#ILPH3]
+@5228 = ~Strike!~ [AC#ILPH4]
+@5229 = ~Fight with joy!~ [AC#ILPH5]
 
+// priests of Haelar
+@5230 = ~Ah! A visitor!~ [AC#ILDG1]
+@5231 = ~That’s worth writing down.~ [AC#ILDG2]
+@5232 = ~Fascinating!~ [AC#ILDG3]
+@5233 = ~Knowledge wanders.~ [AC#ILDG4]
+@5234 = ~Ah... footnotes!~ [AC#ILDG5]
+@5235 = ~Where was I?~ [AC#ILDG6]
+
+// Bettargh
+@5240 = ~Ah! Yes?~ [AC#ILBE1]
+@5241 = ~Hmm? Oh!~ [AC#ILBE2]
+@5242 = ~Oh! A question?~ [AC#ILBE3]
+@5243 = ~Curious... very curious.~ [AC#ILBE4]
+@5244 = ~Where was I?~ [AC#ILBE5]
+@5245 = ~Oh—yes, yes.~ [AC#ILBE6]
+@5246 = ~No journey is wasted.~ [AC#ILBE7]
+
+// Dorna, priestess of Dugmaren
+@5247 = ~Dugmaren guides the curious.~ [AC#ILDA1]
+@5248 = ~We honor Dugmaren by trying.~ [AC#ILDA2]
+@5249 = ~There’s no harm in asking.~ [AC#ILDA3]
+
+// Kukgrarlug, book quest
+@5250 = ~Books don’t write themselves!~ [AC#ILKF1]
+@5251 = ~Every page counts!~ [AC#ILKF2]
+@5252 = ~A wasted sheet is a lost battle!~ [AC#ILKF3]
+
+// Nebeluns followers
+@5253 = ~It worked! Mostly!~ [AC#ILNB1]
+@5254 = ~We can fix that later.~ [AC#ILNB2]
+@5255 = ~Stand back! Or closer!~ [AC#ILNB3]
+@5256 = ~That was intentional!~ [AC#ILNB4]
+@5257 = ~Ha! Look at it go!~ [AC#ILNB5]
+@5258 = ~Oops.~ [AC#ILNB6]
+@5259 = ~No journey is wasted.~ [AC#ILNB7]
 
 

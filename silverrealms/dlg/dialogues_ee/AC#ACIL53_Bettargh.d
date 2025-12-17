@@ -188,7 +188,7 @@ IF ~Global("AC#RC_Bettargh_Third","GLOBAL",1)~ THEN REPLY ~Der Regentschaftsrat 
 END
 
 IF ~Global("AC#TalkedToBettargh","ACIL53",1)~ THEN BEGIN 1
-SAY ~Oh, Ihr müsst der <RACE> von der Oberfläche sein! Seid gegrüßt, ich bin Bettargh, treuer Diener des Dugmaren Leuchtmantel. Schön, Euch in dieser Bibliothek willkommen zu heißen! Was kann ich für Euch tun?~
+SAY ~Oh, Ihr müsst der <RACE> von der Oberfläche sein! Seid gegrüßt, ich bin Bettargh, treuer Diener des Dugmaren Leuchtmantel. Schön, Euch in dieser Bibliothek willkommen zu heißen! Was kann ich für Euch tun?~ [AC#ILBEB]
 IF ~~ THEN REPLY ~Ihr seid einer der wenigen Bewohner Iltkazars, der mir nicht mit Abneigung gegenübertritt.~ DO ~SetGlobal("AC#TalkedToBettargh","ACIL53",2)~ + abneigung
 IF ~~ THEN REPLY ~Ich sehe mich hier nur einmal um.~ DO ~SetGlobal("AC#TalkedToBettargh","ACIL53",2)~ + bibliothek
 IF ~PartyHasItem("AC#SRBK1")~ THEN REPLY ~Ich habe nach Euch gesucht. Ich habe ein Buch für Euch.~ DO ~SetGlobal("AC#TalkedToBettargh","ACIL53",2)~ + book_help_mithbarak
@@ -216,7 +216,7 @@ END
 		END
 
 			IF ~~ THEN BEGIN how_help
-			SAY ~Interessant! Wie gedenkt Ihr das denn zu bewerkstelligen?~
+			SAY ~Interessant! Wie gedenkt Ihr das denn zu bewerkstelligen?~ [AC#ILBEC]
 			IF ~~ THEN REPLY ~Das weiß ich noch nicht genau.~ + how_help_02
 			IF ~PartyHasItem("AC#SRBK1")~ THEN REPLY ~Ich habe hier ein Buch, welches Beldas bis zu seinem Tode bei sich trug. Ich soll es Euch geben.~ + beldas_book
 			IF ~Global("AC#RC_Bettargh_Third","GLOBAL",1)~ THEN REPLY ~Der Regentschaftsrat schickt mich mit einer Bitte zu Euch. Ich soll Euch fragen ob Ihr einen Weg nach Barakuir kennt.~ + way_to_barakuir
@@ -225,7 +225,7 @@ END
 				IF ~~ THEN BEGIN how_help_02
 				SAY ~Das ist schon einmal ein sehr guter Ansatz.~
 				=
-				~Die meisten meinen nämlich ganz genau wissen, was unserem König fehlt, und beißen sich derart an einer Spur fest, dass sie nicht merken, dass der Weg nicht mehr weiterführt. Der Irrende Entdecker lehrt uns, immer offenen Auges durch die Welt zu reisen und jede Möglichkeit, die sich einem bietet, in Betracht zu ziehen.~
+				~Die meisten meinen nämlich ganz genau zu wissen, was unserem König fehlt, und beißen sich derart an einer Spur fest, dass sie nicht merken, dass der Weg nicht mehr weiterführt. Der Irrende Entdecker lehrt uns, immer offenen Auges durch die Welt zu reisen und jede Möglichkeit, die sich einem bietet, in Betracht zu ziehen.~
 				IF ~~ THEN DO ~~ GOTO no_idle_chatter
 				END
 				
@@ -380,7 +380,7 @@ END
 
 // Chain #1: Bettargh begutachtet den Schaden, der durch die Explosion an der Bibliothek entstanden ist
 CHAIN IF WEIGHT #-1 ~NumTimesTalkedTo(0)~ THEN AC#BETT1 1
-~Bei dem wandernden Tüftler, da ist diesmal aber ein großer Schaden entstanden!~
+~Bei dem wandernden Tüftler, da ist diesmal aber ein großer Schaden entstanden!~ [AC#ILBEA]
 // DO ~SetGlobal("AC#Damage","ACIL53",1)~
 == AC#XOTH1 ~Ja, Tiefer Shanavant Abgrundlied, durch die Explosion sind zahlreiche Bücher der Oberfläche zerstört worden.~
 == AC#BETT1 ~Hat es auch Bücher getroffen, die unserem König wichtig waren?~

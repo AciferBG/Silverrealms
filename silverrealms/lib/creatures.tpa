@@ -2,6 +2,8 @@
 
 COPY ~silverrealms/cre/copy~         ~override~
 
+COPY ~silverrealms/cre/AC#NEO2T.cre~ ~override~  // Telekinesis
+
 COPY ~silverrealms/cre/AC#IL28E.cre~ ~override~  // Undead Elderbrain
   SAY NAME1 @9046 SAY NAME2 @9046
 

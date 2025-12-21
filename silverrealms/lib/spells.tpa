@@ -8,6 +8,23 @@ COPY ~silverrealms/spl/AC#HEZR.spl~            ~override~  // Hezrou stench
   SAY 0xce @1142
   WRITE_SHORT   0x98 ~%AC#HEZRU%~
 
+COPY ~silverrealms/spl/AC#NEOB.spl~          ~override~ // neothelid's poisonous breath
+SAY NAME1 @1147 SAY NAME2 @1147
+
+COPY ~silverrealms/spl/AC#NEO4.spl~          ~override~ // neothelid's insinuation
+SAY NAME1 @1146 SAY NAME2 @1146
+
+COPY ~silverrealms/spl/AC#NEO3.spl~          ~override~ // neothelid's control body
+SAY NAME1 @1145 SAY NAME2 @1145
+
+COPY ~silverrealms/spl/AC#NEO2.spl~          ~override~ // neothelid's telekinesis
+SAY NAME1 @1144 SAY NAME2 @1144
+
+COPY ~silverrealms/spl/AC#NEO1.spl~          ~override~ // neothelid's taste link
+SAY NAME1 @1143 SAY NAME2 @1143
+
+COPY ~silverrealms/spl/AC#NEOT.spl~          ~override~ // unsummon magical sword
+
 COPY ~silverrealms/spl/AC#HAMG.spl~          ~override~ // pounding force, hammer golem's special ability
 SAY NAME1 @1139 SAY NAME2 @1139
 

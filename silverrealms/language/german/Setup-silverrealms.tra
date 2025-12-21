@@ -83,7 +83,7 @@ Beldas Diamantklinge.~
 @57   = ~Verbeeg~
 @58   = ~Die Boote gleiten langsam über den unheimlichen unterirdischen See. Ab und an meint Ihr, tief unter Euch eine Bewegung im Wasser wahrzunehmen, doch vielleicht spielt Euch Euer Verstand lediglich einen Streich. 
 
-Nach einer schier endlos scheinenden Überfahrt erreicht Ihr schließlich ohne größere Zwischenfälle das andere Ufer – die Grenzen Iltkazars und den Beginn des Zwergenreiches Barakuir, der mystischen, ehemaligen Heimstatt der Duergar.~ [ ]
+Nach einer schier endlos scheinenden Überfahrt erreicht Ihr schließlich ohne größere Zwischenfälle das andere Ufer – die Grenzen Iltkazars und den Beginn des Zwergenreiches Barakuir, der mystischen, ehemaligen Heimstatt der Duergar.~ [AC#IL27M]
 @59   = ~Notiz~
 @60   = ~Nachricht an trautes Schwert Jak Errins, Prälat der Türme der vergeltenden Hand in Eshpurta im Mirtul des Jahres 1367.
 Meister Errins, wir haben nach beschwerlichem Aufstieg endlich die alte Festung Kuldelvon, die im Volksmund Heulender Zwerg genannt wird, erreicht. Die alten Zugänge sind eingestürzt, doch wir haben nach langer Suche einen Weg in das Innere der Festung gefunden. Leider ist das ganze Gebiet wie erwartet verseucht mit unzähligen Trollen. Unser Auftrag, dieses Land im Namen des Tempus von diesen Biestern zu befreien, gestaltet sich schwierig.
@@ -1690,6 +1690,11 @@ Andere Symbole dienen der Orientierung und der Beschilderung. Dabei handelt es s
 
 Das Buch scheint eine Art magische Aura zu besitzen; es fühlt sich ungewöhnlich schwer an und manchmal, wenn man es zu öffnen versucht, scheinen die Seiten von selbst zu blättern, als würden sie den Leser zu einem bestimmten Abschnitt führen wollen - der innersten Seite des Buches, die die Darstellung eines Labyrinthes enthält...~
 @1142 = ~Gestank~
+@1143 = ~Taste Link~
+@1144 = ~Telekinese~
+@1145 = ~Control Body~
+@1146 = ~Insinuation~
+@1147 = ~Giftiger Atem~
 
 
 

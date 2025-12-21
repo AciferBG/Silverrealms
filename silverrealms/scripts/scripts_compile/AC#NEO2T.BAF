@@ -1,0 +1,76 @@
+IF
+    Die()
+THEN
+    RESPONSE #100
+        IncrementGlobal("bd_telekinetic_sword","myarea",-1)
+END
+
+IF
+    OR(3)
+        StateCheck(LastSummonerOf(Myself),STATE_DISABLED)
+        StateCheck(LastSummonerOf(Myself),STATE_REALLY_DEAD)
+        !InMyArea(LastSummonerOf(Myself))
+THEN
+    RESPONSE #100
+        IncrementGlobal("bd_telekinetic_sword","myarea",-1)
+        ApplySpellRES("AC#NEOT",Myself)  // No such index
+END
+
+IF
+    !Detect(LastSummonerOf(Myself))
+    !Range(LastSummonerOf(Myself),35)
+THEN
+    RESPONSE #100
+        IncrementGlobal("bd_telekinetic_sword","myarea",-1)
+        ApplySpellRES("AC#NEOT",Myself)  // No such index
+END
+
+IF
+    Detect(Myself)
+    OR(2)
+        !See(NearestEnemyOf(Myself))
+        !WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
+    OR(2)
+        !See(SecondNearestEnemyOf(Myself))
+        !WeaponEffectiveVs(SecondNearestEnemyOf(Myself),MAINHAND)
+    OR(2)
+        !See(ThirdNearestEnemyOf(Myself))
+        !WeaponEffectiveVs(ThirdNearestEnemyOf(Myself),MAINHAND)
+    OR(2)
+        !See(FourthNearestEnemyOf(Myself))
+        !WeaponEffectiveVs(FourthNearestEnemyOf(Myself),MAINHAND)
+    OR(2)
+        !See(FifthNearestEnemyOf(Myself))
+        !WeaponEffectiveVs(FifthNearestEnemyOf(Myself),MAINHAND)
+    OR(2)
+        !See(SixthNearestEnemyOf(Myself))
+        !WeaponEffectiveVs(SixthNearestEnemyOf(Myself),MAINHAND)
+    OR(2)
+        !See(SeventhNearestEnemyOf(Myself))
+        !WeaponEffectiveVs(SeventhNearestEnemyOf(Myself),MAINHAND)
+    OR(2)
+        !See(EighthNearestEnemyOf(Myself))
+        !WeaponEffectiveVs(EighthNearestEnemyOf(Myself),MAINHAND)
+    OR(2)
+        !See(NinthNearestEnemyOf(Myself))
+        !WeaponEffectiveVs(NinthNearestEnemyOf(Myself),MAINHAND)
+    OR(2)
+        !See(TenthNearestEnemyOf(Myself))
+        !WeaponEffectiveVs(TenthNearestEnemyOf(Myself),MAINHAND)
+    False()
+THEN
+    RESPONSE #100
+        NoAction()
+END
+
+IF
+    See(LastSeenBy)
+    !Range(LastSeenBy,0)
+    !StateCheck(LastSeenBy,STATE_REALLY_DEAD)
+    WeaponEffectiveVs(LastSeenBy,MAINHAND)
+THEN
+    RESPONSE #100
+        EquipMostDamagingMelee()
+        AttackReevaluate(LastSeenBy,30)
+END
+

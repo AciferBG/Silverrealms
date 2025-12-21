@@ -1,20 +1,16 @@
 IF
 	Clicked([ANYONE])
-	//Range(LastTrigger,12)
-	CheckStatGT(LastTrigger,50,LORE)
-
+	GlobalGT("AC#IL_UndeadElderBrain","GLOBAL",0)
 THEN
 	RESPONSE #100
-		DisplayString(Myself,@6011)
+		DisplayString(Myself,@6012) 
 END
 
 IF
 	Clicked([ANYONE])
-	//Range(LastTrigger,12)
-	CheckStatLT(LastTrigger,51,LORE)
-
+	Global("AC#IL_UndeadElderBrain","GLOBAL",0)
 THEN
 	RESPONSE #100
-		DisplayString(Myself,@6012) 
+		DisplayString(Myself,@6011)
 END
 

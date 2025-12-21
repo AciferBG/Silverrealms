@@ -2,6 +2,9 @@
 
 COPY ~silverrealms/cre/copy~         ~override~
 
+COPY ~silverrealms/cre/AC#IL28E.cre~ ~override~  // Undead Elderbrain
+  SAY NAME1 @9046 SAY NAME2 @9046
+
 COPY ~silverrealms/cre/AC#ILNCM.cre~ ~override~  // Necromental in ACIL57
   SAY NAME1 @9045 SAY NAME2 @9045
   WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~NECROMENTAL_ACIFER~))
@@ -1695,9 +1698,9 @@ COPY ~silverrealms/cre/ac#dras2.cre~ ~override~ //Scorlachash: young Red Dragon
   
 COPY ~silverrealms/cre/AC#CRAT1.cre~ ~override~ //Cranium Rat
   SAY NAME1 @442 SAY NAME2 @442
-/*
+
 COPY ~silverrealms/cre/AC#NEOTH.cre~ ~override/AC#NEOTH.cre~ //Neothelid
-  SAY NAME1 @443 SAY NAME2 @443 */
+  SAY NAME1 @443 SAY NAME2 @443 
   
 COPY ~silverrealms/cre/AC#RAT20.cre~ ~override~ //Cranium Rat Swarm old
   SAY NAME1 @444 SAY NAME2 @444

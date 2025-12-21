@@ -3,13 +3,4 @@
 ///////////////////////////////////////////////////////////////////////
 
 SILENT
-//ACTION_IF GAME_IS ~bg2ee eet~ BEGIN // ee game
-  COPY ~silverrealms\tis\tis_all_games~ ~override~ // ee games just need these files copied over
    COPY ~silverrealms\tis\tis_BG2EE~ ~override~ // ee games just need these files copied over
-/*
-END ELSE BEGIN
-  INCLUDE ~silverrealms/lib/a7_tools.tpa~ // tile2ee
-  LAF HANDLE_TILE2EE INT_VAR quality_v1 = 9 STR_VAR input_path = ~silverrealms\tis\tis_all_games~ END // non-ee games need these converted
-  LAF HANDLE_TILE2EE INT_VAR quality_v1 = 9 STR_VAR input_path = ~silverrealms\tis\tis_old_BG2~ END // non-ee games with old water overlay settings
-END
-*/

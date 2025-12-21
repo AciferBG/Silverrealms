@@ -81,7 +81,9 @@ Beldas Diamantklinge.~
 @55   = ~Diinkarazans Avatar~
 @56   = ~Fomorischer Riese~
 @57   = ~Verbeeg~
-@58   = ~Die Boote gleiten langsam über den stillen, unheimlichen unterirdischen See dahin. Ab und an meint Ihr, eine Bewegung tief unten im Wasser zu sehen, doch Ihr seid Euch nicht sicher, ob dies nicht nur Euer Verstand ist, der Euch einen Streich spielt. Nach einer schier endlos scheinenden Überfahrt erreicht Ihr endlich ohne größere Zischenfälle das andere Ufer - die Grenzen Iltkazars und der Beginn von Barakuir, der mystischen ehemaligen Heimstatt der Grauzwerge.~ [AC#MUS03]
+@58   = ~Die Boote gleiten langsam über den unheimlichen unterirdischen See. Ab und an meint Ihr, tief unter Euch eine Bewegung im Wasser wahrzunehmen, doch vielleicht spielt Euch Euer Verstand lediglich einen Streich. 
+
+Nach einer schier endlos scheinenden Überfahrt erreicht Ihr schließlich ohne größere Zwischenfälle das andere Ufer – die Grenzen Iltkazars und den Beginn des Zwergenreiches Barakuir, der mystischen, ehemaligen Heimstatt der Duergar.~ [ ]
 @59   = ~Notiz~
 @60   = ~Nachricht an trautes Schwert Jak Errins, Prälat der Türme der vergeltenden Hand in Eshpurta im Mirtul des Jahres 1367.
 Meister Errins, wir haben nach beschwerlichem Aufstieg endlich die alte Festung Kuldelvon, die im Volksmund Heulender Zwerg genannt wird, erreicht. Die alten Zugänge sind eingestürzt, doch wir haben nach langer Suche einen Weg in das Innere der Festung gefunden. Leider ist das ganze Gebiet wie erwartet verseucht mit unzähligen Trollen. Unser Auftrag, dieses Land im Namen des Tempus von diesen Biestern zu befreien, gestaltet sich schwierig.
@@ -1731,8 +1733,8 @@ In jahrelangen Kriegen zogen die Zwerge gegeneinander in einen  Krieg, der als "
 @6009 = ~Die Runen in altem Dethek lauten: "Barakuir, das Eisenkönigreich.
 Stolze Heimat von Clan Duergar."~
 @6010 = ~Auf dieser Tafel sind Zwergenrunen eingelassen, die Ihr nicht entziffern könnt.~
-@6011 = ~Dies scheinen die verschrumpelten Überreste eines Ältestenhirnes zu sein. Durch das besondere Klima in der Kammer ist die Verwesung nicht weit fortgeschritten. Trotzdem stinkt es fürchterlich nach Fäulnis und Zerfall.~
-@6012 = ~Ein riesiges Gehirn ruht leblos in diesem ausgetrockneten Becken. Der Gestank ist fürchterlich.~
+@6011 = ~Dies scheinen die mumifizierten Überreste eines Ältestenhirnes zu sein. Durch das besondere Klima in der Kammer ist die Verwesung irgendwann zum Stillstand gekommen. Trotzdem riecht es nach Fäulnis und Zerfall.~
+@6012 = ~Das Ätestenhirn antwortet nicht. Es scheint sich wieder auf die Astralebene zurückgezogen zu haben.~
 	// ACIL52: Haela's Halls
 @6013 = ~Ein steinernes Bildnis eines Betrachters.~
 @6014 = ~Diese Flaggen zeigen das Symbol von Tief Duerra, einen Schädel mit vier Tentakeln.~
@@ -2260,6 +2262,7 @@ Die Materialkomponente des Zaubers ist ein Tropfen Quecksilber.~
 @9043 = ~Mycomoth~
 @9044 = ~Hezrou~
 @9045 = ~Necromental~
+@9046 = ~Untotes Ältestenhirn~
 
 
 

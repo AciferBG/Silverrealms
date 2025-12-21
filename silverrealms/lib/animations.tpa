@@ -358,6 +358,10 @@
   COPY ~%MOD_FOLDER%/animations/Earthwhisper/exxx.ini~ ~override/%hexNumber%.ini~
 
 //_____________________________________________________________________________________________________
+// Neothelid animation - just copy
+  COPY ~silverrealms/animations/Neothelid~         ~override~
+
+//_____________________________________________________________________________________________________
 // dragon white animation - just copy
   COPY ~silverrealms/animations/Dragon_white~         ~override~
 

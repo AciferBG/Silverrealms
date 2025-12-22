@@ -33,9 +33,6 @@ SAY 0xc @273
 COPY ~silverrealms/sto/AC#DWGO2.sto~ ~override/AC#DWGO2.sto~
 SAY 0xc @277
 
-COPY ~silverrealms/sto/ac#jamst.sto~ ~override/ac#jamst.sto~
-SAY 0xc @387
-
 COPY ~silverrealms/sto/ac#52dw1.sto~ ~override/ac#52dw1.sto~
 SAY 0xc @455
 
@@ -47,8 +44,6 @@ SAY 0xc @658
 
 COPY ~silverrealms/sto/AC#58ST1.sto~ ~override/AC#58ST1.sto~
 SAY 0xc @684
-
-COPY ~silverrealms/sto/AC#DEVA1.sto~ ~override~
 
 COPY ~silverrealms/sto/AC#4IINN.sto~ ~override~ // Dancing Giant Inn
 SAY 0xc @1106

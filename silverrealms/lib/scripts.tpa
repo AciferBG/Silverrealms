@@ -583,10 +583,6 @@ COMPILE ~silverrealms/scripts/AC#SORN4.baf~
 
 COMPILE ~silverrealms/scripts/AC#DWDE2.baf~
 
-COMPILE ~silverrealms/scripts/ac#cut1B.baf~
-
-COMPILE ~silverrealms/scripts/AC#SKLK1.baf~
-
 COMPILE ~silverrealms/scripts/AC#29TR1.baf~
 
 COMPILE ~silverrealms/scripts/AC#29TR2.baf~
@@ -639,9 +635,6 @@ COPY_EXISTING ~AC#81IN1.bcs~   ~override/AC#81IN1.bcs~
        REPLACE ~999999~ @156
        REPLACE ~999998~ @157
 
-COMPILE ~silverrealms/scripts/ac#1dwai.baf~
-COMPILE ~silverrealms/scripts/ac#1dimn.baf~
-
 COMPILE ~silverrealms/scripts/AC#GITH1.baf~
 
 COMPILE ~silverrealms/scripts/AC#76SK.baf~
@@ -692,27 +685,9 @@ COPY_EXISTING ~AC#82DO3.bcs~   ~override/AC#82DO3.bcs~
        
 COMPILE ~silverrealms/scripts/AC#HARM1.baf~
 
-COMPILE ~silverrealms/scripts/AC#VARG1.baf~
-
-COMPILE ~silverrealms/scripts/AC#TROL1.baf~
-
-COMPILE ~silverrealms/scripts/AC#TROL2.baf~
-
-COMPILE ~silverrealms/scripts/AC#TROL4.baf~
-COMPILE ~silverrealms/scripts/AC#TROL5.baf~
-
-COMPILE ~silverrealms/scripts/AC#TROL6.baf~
-COMPILE ~silverrealms/scripts/AC#TROL7.baf~
-
-COMPILE ~silverrealms/scripts/AC#GRTR1.baf~
-COMPILE ~silverrealms/scripts/AC#GRTR2.baf~
-COMPILE ~silverrealms/scripts/AC#GRTR3.baf~
-
 COMPILE ~silverrealms/scripts/AC#78SK.baf~
 COMPILE ~silverrealms/scripts/ACIL78.baf~
 COMPILE ~silverrealms/scripts/AC#CUT78.baf~
-
-COMPILE ~silverrealms/scripts/AC#DEDRA.baf~
 
 //COMPILE ~silverrealms/scripts/ACIL88.baf~
 COMPILE ~silverrealms/scripts/ac#cut88.baf~
@@ -799,9 +774,6 @@ COPY_EXISTING ~AC#31DO6.bcs~   ~override/AC#31DO6.bcs~
 COMPILE ~silverrealms/scripts/AC#ROTH1.baf~
 COMPILE ~silverrealms/scripts/AC#ROTH2.baf~
 
-COMPILE ~silverrealms/scripts/AC#SKET1.baf~
-COMPILE ~silverrealms/scripts/AC#SKET2.baf~
-
 COMPILE ~silverrealms/scripts/AC#23BO1.baf~
 COMPILE ~silverrealms/scripts/AC#23BO2.baf~
 COMPILE ~silverrealms/scripts/AC#23BO3.baf~
@@ -821,17 +793,7 @@ COMPILE ~silverrealms/scripts/ACIL70.baf~
 COMPILE ~silverrealms/scripts/AC#23FAT.baf~
 COPY_EXISTING ~AC#23FAT.bcs~   ~override/AC#23FAT.bcs~
        REPLACE ~999999~ @427
-       
-COMPILE ~silverrealms/scripts/AC#46PLY.baf~
-COPY_EXISTING ~AC#46PLY.bcs~   ~override/AC#46PLY.bcs~
-       REPLACE ~999999~ @432
-       REPLACE ~999998~ @433
-       REPLACE ~999997~ @434
-       REPLACE ~999996~ @435
-       REPLACE ~999995~ @359 // bleibt
-       REPLACE ~999994~ @431
-       REPLACE ~999993~ @436
-       
+
 COMPILE ~silverrealms/scripts/AC#GOLIR.baf~
 
 COMPILE ~silverrealms/scripts/AC#28DO2.baf~
@@ -859,15 +821,6 @@ COPY_EXISTING ~AC#52DW5.bcs~   ~override/AC#52DW5.bcs~
        REPLACE ~999996~ @297
 
 COMPILE ~silverrealms/scripts/AC#GTDIS.baf~
-COMPILE ~silverrealms/scripts/AC#COFF1.baf~
-COPY_EXISTING ~AC#COFF1.bcs~   ~override/AC#COFF1.bcs~
-       REPLACE ~999999~ @484
-       
-COMPILE ~silverrealms/scripts/AC#ORC04.baf~
-COMPILE ~silverrealms/scripts/AC#VAMP1.baf~
-COMPILE ~silverrealms/scripts/AC#VAMP2.baf~
-
-COMPILE ~silverrealms/scripts/AC#BLAD1.baf~
 
 COMPILE ~silverrealms/scripts/AC#09DRS.baf~
 COPY_EXISTING ~AC#09DRS.bcs~   ~override/AC#09DRS.bcs~
@@ -875,9 +828,8 @@ COPY_EXISTING ~AC#09DRS.bcs~   ~override/AC#09DRS.bcs~
 
 COMPILE ~silverrealms/scripts/AC#HARP1.baf~
 
-COMPILE ~silverrealms/scripts/AC#BARD1.baf~
 COMPILE ~silverrealms/scripts/AC#DRWLK.baf~
-COMPILE ~silverrealms/scripts/AC#BHGH2.baf~
+
 COMPILE ~silverrealms/scripts/ac#ct62A.baf~ // Player arrested teleport script Area ACIL62 -> ACIL50
 
 /*
@@ -1044,9 +996,6 @@ COPY_EXISTING ~AC#21SUR.bcs~   ~override/AC#21SUR.bcs~
 */
        
 COMPILE ~silverrealms/scripts/ac#21cta.baf~
-
-COMPILE ~silverrealms/scripts/AC#TREA1.baf~
-COMPILE ~silverrealms/scripts/AC#TREA2.baf~
 
 COMPILE ~silverrealms/scripts/ACIL07.baf~
 

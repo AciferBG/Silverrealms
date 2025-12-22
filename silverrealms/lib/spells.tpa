@@ -31,23 +31,11 @@ SAY NAME1 @1139 SAY NAME2 @1139
 COPY ~silverrealms/spl/AC#SPKIN.spl~          ~override~
 SAY NAME1 @165 SAY NAME2 @165
 
-COPY ~silverrealms/spl/AC#VAR01.spl~          ~override~
-SAY NAME1 @222 SAY NAME2 @222
-
-COPY ~silverrealms/spl/AC#VARSC.spl~          ~override~
-SAY NAME1 @548 SAY NAME2 @548
-
-COPY ~silverrealms/spl/AC#MURZ1.spl~          ~override~
-SAY NAME1 @556 SAY NAME2 @556
-
 COPY ~silverrealms/spl/AC#HSON.spl~          ~override~ //Harpysong
 SAY NAME1 @590 SAY NAME2 @590
 
 COPY ~silverrealms/spl/AC#WAND7.spl~          ~override~
 SAY NAME1 @790 SAY NAME2 @790
-
-COPY ~silverrealms/spl/ac#dii7.spl~           ~override~
-SAY NAME1 @956 SAY NAME2 @956
 
 COPY ~silverrealms/spl/AC#MAL2.spl~          ~override~
 SAY NAME1 @960 SAY NAME2 @960

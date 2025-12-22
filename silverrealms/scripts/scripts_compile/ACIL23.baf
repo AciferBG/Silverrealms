@@ -29,6 +29,44 @@ THEN
 END
 
 IF
+    Global("CutScenesDone","ACIL23",0)
+    Global("AC#ACIL23DreamReflection","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("CutScenesDone","ACIL23",1)
+        TriggerActivation("Book01",FALSE)
+        TriggerActivation("Book02",FALSE)
+        TriggerActivation("Book03",FALSE)
+        TriggerActivation("Book04",FALSE)
+        TriggerActivation("Book05",FALSE)
+        TriggerActivation("Statue01",FALSE)  // Magisches Schwert
+        TriggerActivation("Statue02",FALSE)  // Magisches Schwert
+        TriggerActivation("Statue03",FALSE)  // Magisches Schwert
+        TriggerActivation("Statue04",FALSE)  // Magisches Schwert
+        TriggerActivation("Statue05",FALSE)  // Magisches Schwert
+END
+
+IF
+    Global("AC#23Statue01","ACIL23",2)
+    Global("AC#23Statue02","ACIL23",2)
+    Global("AC#23Statue03","ACIL23",2)
+    Global("AC#23Statue04","ACIL23",2)
+    Global("AC#23Statue05","ACIL23",2)
+    Global("AC#ACIL23CutScene1","GLOBAL",0)
+THEN
+    RESPONSE #100
+        Wait(1)
+        SetGlobal("AC#ACIL23CutScene1","GLOBAL",1)
+        SetGlobal("AC#ACIL23DreamReflection","GLOBAL",1)
+        PlaySound("AM1202E1")
+        DisplayStringHead(Player1,23493)  // Durch die Räume hallt das Geräusch von schleifendem Stein. Irgendwo in der Nähe hat sich eine Tür geöffnet.
+        OpenDoor("DOOR02")
+END
+
+
+// OLD: Cutscene scripts
+/*
+IF
 	Global("CutScenesDone","ACIL23",0)
 	Global("AC#ACIL23DreamReflection","GLOBAL",1)
 THEN
@@ -69,6 +107,7 @@ THEN
 		StartCutSceneMode()
 		StartCutScene("AC#23CT1")
 END
+*/
 
 IF
 	PartyHasItem("AC#23ELL")

@@ -1,5 +1,31 @@
 
 /*******************************************************************************************************
+Dialog Tür
+*******************************************************************************************************/
+
+BEGIN ~AC#25DO1~
+
+IF ~True()~ THEN BEGIN 0
+SAY ~Ein riesiger Kopf eines Zwergenkriegers ruht am Fuße der Treppe. Er blickt Euch mit einem ernsten und fragenden Ausdruck in seinem steinernen Gesicht an. Seine Augen scheinen manchmal zwischen der Tür und Euch hin und herzuwandern.~
+IF ~~ THEN REPLY ~Öffne die Tür für mich!~ + do_nothing
+IF ~GlobalGT("AC#25_Bloodmoon","GLOBAL",0)~ THEN REPLY ~Ich trete ein im Namen Clangeddin Silberbarts.~ + do_nothing
+IF ~GlobalGT("AC#25_Bloodmoon","GLOBAL",0)~ THEN REPLY ~Ich trete ein im Namen Dumathoins.~ + do_nothing
+IF ~GlobalGT("AC#25_Bloodmoon","GLOBAL",0)~ THEN REPLY ~Ich trete ein im Namen Moradins.~ + do_nothing
+IF ~GlobalGT("AC#25_Bloodmoon","GLOBAL",0)~ THEN REPLY ~Ich trete ein im Namen Selunes und Clangeddin Silberbarts.~ + door_open
+END
+
+IF ~~THEN BEGIN do_nothing
+SAY ~Einen kurzen Moment geschieht nichts, doch dann hört Ihr, wie sich ein unsichtbarer Mechanismus in Bewegung setzt. Mit einem lauten Quietschen öffnet sich die Tür, und Ihr spürt die Brise von kühler Luft, die aus den Tunneln jenseits der verschlossenen Tür ausströmt.~
+   IF ~~ THEN DO ~~  EXIT
+END
+
+IF ~~ THEN BEGIN door_open
+SAY ~Die Tür bewegt sich nicht.~
+IF ~~ THEN  DO ~SetGlobal("AC#Door25","ACIL25",2)
+EraseJournalEntry(@23000)~ EXIT
+END
+
+/*******************************************************************************************************
 Dialog mit Drow-Guard
 *******************************************************************************************************/
 

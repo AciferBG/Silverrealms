@@ -72,6 +72,9 @@ COPY ~silverrealms/areas/ACIL23.are~          ~override~
   WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
   SAY 0x190c @940           // Rest Interrupt string
 
+COPY ~silverrealms/areas/ACIL2M.are~          ~override~
+  WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+
 COPY ~silverrealms/areas/ACIL24.are~          ~override~
   WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
 

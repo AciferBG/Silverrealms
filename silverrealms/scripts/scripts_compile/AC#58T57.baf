@@ -5,7 +5,7 @@ IF
 THEN
 	RESPONSE #100
                 SetGlobal("Travel_ACIL57","ACIL58",1)
-                DisplayString(Myself,999999)
+                DisplayString(Myself,@93)
                 ClearAllActions()
 		StartCutSceneMode()
 		Wait(2)

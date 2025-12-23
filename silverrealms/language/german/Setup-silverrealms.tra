@@ -112,7 +112,8 @@ Nach einer schier endlos scheinenden Überfahrt erreicht Ihr schließlich ohne g
 @91  = ~Turbaerns Schlüssel~
 @92  = ~Diesen Schlüssel habt Ihr von Turbaern Ghalmrin, dem Hohepriester Dumathoin bekommen. Mit ihm könnt Ihr die Tür im Süden öffnen und tiefer in die Katakomben vordringen.~
 @93  = ~Ihr gebt den Zwergen ein Zeichen, und sofort setzen sich die Räder des Lastenaufzugs in Bewegung. Ihr werdet langsam in die Tiefe gelassen.~
-@94  = ~Es gibt einen starken Ruck, und mit einem lauten Knall reißt das Seil. Ihr stürzt mitsamt dem Podest in die Tiefe und schlagt hart auf einem kalten Steinboden auf.~
+/*
+@94  = ~Es gibt einen starken Ruck, und mit einem lauten Knall reißt das Seil. Ihr stürzt mitsamt dem Podest in die Tiefe und schlagt hart auf einem kalten Steinboden auf.~*/
 @95  = ~Dieser Durchgang ist aus einem Euch nicht bekannten Grund zugemauert. Ihr könntet versuchen, mit Gewalt die Mauersteine einzureißen. Das Jammern und Wehklagen, das den Raum erfüllt, scheint von jemandem hinter der Mauer zu kommen.~
 @96  = ~Mit einigen harten Schlägen schlagt Ihr die Mauerstücke entzwei.~
 @97  = ~Der Weg in den Süden ist nicht allzu beschwerlich, und nach einem kurzen Aufstieg erreicht Ihr eine abgelegene Lichtung. Ganz in der Nähe muss sich der Zugang in die Tiefe des Unterreichs befinden, den Ihr beschreiten müsst, um in die Zwergenstadt Iltkazar zu gelangen. Auch wenn Ihr schlechte Nachrichten für deren Bewohner mitbringt und die Ereignisse auf dem Turboldberg Euch noch immer gegenwärtig sind, wisst Ihr, dass Ihr keine andere Wahl habt, als hinab in das Unterreich zu steigen, wenn Ihr bei dieser Suche weiterkommen wollt.~ [AC#MUS01]

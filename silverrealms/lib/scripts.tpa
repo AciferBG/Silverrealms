@@ -466,96 +466,10 @@ EXTEND_TOP ~ar0500.bcs~ ~silverrealms/scripts/_atkatla.baf~
 EXTEND_TOP ~ar0900.bcs~ ~silverrealms/scripts/_atkatla.baf~
 EXTEND_TOP ~ar1000.bcs~ ~silverrealms/scripts/_atkatla.baf~
 
-//EXTEND_TOP ~AR0701.bcs~ ~silverrealms/scripts/_AR0701.baf~ // OLD create the thief in the sewers (has stolen book for Beldas / Mith Barak
 EXTEND_TOP ~BALDUR.bcs~ ~silverrealms/scripts/_baldur.baf~ // append baldur.bcs when party has drow letter identified
 
 //EXTEND_TOP ~KUOTOA.bcs~ ~silverrealms/scripts/_kuotoa.baf~
 //EXTEND_TOP ~KUOARC20.bcs~ ~silverrealms/scripts/_kuotoa.baf~
-
-COMPILE ~silverrealms/scripts/acil1c.baf~
-
-COMPILE ~silverrealms/scripts/AC#712.baf~
-COPY_EXISTING ~AC#712.bcs~   ~override/AC#712.bcs~
-       REPLACE ~999999~ @119
-       REPLACE ~999998~ @120
-       
-COMPILE ~silverrealms/scripts/AC#713.baf~
-COPY_EXISTING ~AC#713.bcs~   ~override/AC#713.bcs~
-       REPLACE ~999999~ @119
-       REPLACE ~999998~ @120
-       
-COMPILE ~silverrealms/scripts/AC#714.baf~
-COPY_EXISTING ~AC#714.bcs~   ~override/AC#714.bcs~
-       REPLACE ~999999~ @119
-       REPLACE ~999998~ @120
-       
-COMPILE ~silverrealms/scripts/AC#715.baf~
-COPY_EXISTING ~AC#715.bcs~   ~override/AC#715.bcs~
-       REPLACE ~999999~ @119
-       REPLACE ~999998~ @120
-       
-COMPILE ~silverrealms/scripts/AC#716.baf~
-COPY_EXISTING ~AC#716.bcs~   ~override/AC#716.bcs~
-       REPLACE ~999999~ @119
-       REPLACE ~999998~ @120
-       
-COMPILE ~silverrealms/scripts/AC#717.baf~
-COPY_EXISTING ~AC#717.bcs~   ~override/AC#717.bcs~
-       REPLACE ~999999~ @119
-       REPLACE ~999998~ @120
-       
-COMPILE ~silverrealms/scripts/AC#718.baf~
-COPY_EXISTING ~AC#718.bcs~   ~override/AC#718.bcs~
-       REPLACE ~999999~ @119
-       REPLACE ~999998~ @120
-       
-COMPILE ~silverrealms/scripts/AC#719.baf~
-COPY_EXISTING ~AC#719.bcs~   ~override/AC#719.bcs~
-       REPLACE ~999999~ @119
-       REPLACE ~999998~ @120
-       
-COMPILE ~silverrealms/scripts/AC#720.baf~
-COPY_EXISTING ~AC#720.bcs~   ~override/AC#720.bcs~
-       REPLACE ~999999~ @119
-       REPLACE ~999998~ @120
-       
-COMPILE ~silverrealms/scripts/AC#721.baf~
-COPY_EXISTING ~AC#721.bcs~   ~override/AC#721.bcs~
-       REPLACE ~999999~ @119
-       REPLACE ~999998~ @120
-       
-COMPILE ~silverrealms/scripts/AC#722.baf~
-COPY_EXISTING ~AC#722.bcs~   ~override/AC#722.bcs~
-       REPLACE ~999999~ @119
-       REPLACE ~999998~ @120
-       
-COMPILE ~silverrealms/scripts/AC#723.baf~
-COPY_EXISTING ~AC#723.bcs~   ~override/AC#723.bcs~
-       REPLACE ~999999~ @119
-       REPLACE ~999998~ @120
-
-COMPILE ~silverrealms/scripts/AC#58T57.baf~
-COPY_EXISTING ~AC#58T57.bcs~   ~override/AC#58T57.bcs~
-       REPLACE ~999999~ @93
-       
-COMPILE ~silverrealms/scripts/ac#cut57.baf~
-COPY_EXISTING ~ac#cut57.bcs~   ~override/ac#cut57.bcs~
-       REPLACE ~999999~ @94
-
-COMPILE ~silverrealms/scripts/AC#BANSH.baf~
-COPY_EXISTING ~AC#BANSH.bcs~   ~override/AC#BANSH.bcs~
-       REPLACE ~999999~ @95
-       REPLACE ~999998~ @96
-
-COMPILE ~silverrealms/scripts/ACIL0C.baf~
-
-COMPILE ~silverrealms/scripts/AC#57TR2.baf~
-COPY_EXISTING ~AC#57TR2.bcs~   ~override/AC#57TR2.bcs~
-       REPLACE ~999999~ @99
-
-COMPILE ~silverrealms/scripts/ACIL63.baf~
-
-COMPILE ~silverrealms/scripts/ACIL66.baf~
 
 COMPILE ~silverrealms/scripts/AC#61CO2.baf~
 COPY_EXISTING ~AC#61CO2.bcs~   ~override/AC#61CO2.bcs~

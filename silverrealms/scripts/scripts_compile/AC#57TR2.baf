@@ -1,11 +1,11 @@
 /*
-Diese Trap zeigt an, dass im Nebenraum ein Wehklagen zu hören ist
+Diese Trap zeigt an, dass im Nebenraum ein Wehklagen zu hï¿½ren ist
 */
 IF
 	Entered([PC])
 THEN
 	RESPONSE #100
                 PlaySound("AC#CR4")
-		DisplayString(Myself,999999)
+		DisplayString(Myself,@99)
 		SetGlobal("AC#MournInfo","ACIL57",1)
 END

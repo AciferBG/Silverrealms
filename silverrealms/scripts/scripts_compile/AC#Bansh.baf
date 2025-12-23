@@ -5,7 +5,7 @@ IF
 THEN
 	RESPONSE #100
                 SetGlobal("AC#Bansee","ACIL57",1)
-                DisplayString(Myself,999999)
+                DisplayString(Myself,@95)
 END
 
 IF
@@ -15,7 +15,7 @@ IF
 THEN
 	RESPONSE #100
                 SetGlobal("AC#Bansee","ACIL57",2)
-                DisplayString(Myself,999998)
+                DisplayString(Myself,@96)
                 ClearAllActions()
 		StartCutSceneMode()
 		Wait(2)

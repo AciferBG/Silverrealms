@@ -4,7 +4,7 @@ IF
         Global("Acil71_Phosphor","ACIL71",0)
 THEN
     RESPONSE #100
-             DisplayString(Myself,999998)
+             DisplayString(Myself,@120)
              SetGlobal("Acil71_Phosphor","ACIL71",1)
 END
 
@@ -16,13 +16,13 @@ IF
 THEN
 	RESPONSE #100
 	        TakePartyItemNum("AC#P01",1) // Phosphor
-                DisplayString(Myself,999999)
+                DisplayString(Myself,@119)
 		IncrementGlobal("AC#_DragonSummon","GLOBAL",1)
 		PlaySound("TRA_06")
-                CloseDoor("Door08")
+                CloseDoor("Door10")
 		Wait(2)
-		AmbientActivate("Firedoor08",TRUE)
-                TriggerActivation("Pillar08",FALSE)
+		AmbientActivate("Firedoor10",TRUE)
+                TriggerActivation("Pillar10",FALSE)
 END
 
 IF

@@ -1,4 +1,13 @@
 IF
+	Global("EnteredArea","ACIL59",0)
+THEN
+	RESPONSE #100
+		SetGlobal("EnteredArea","ACIL59",1)
+		SetMusic(NIGHT,%AC#IL59%)
+		SetMusic(DAY,%AC#IL59%)	
+END
+
+IF
 	GlobalGT("AC#RC_Sorni_Fourth","GLOBAL",8) // way to barakuir
 	Global("DeActivateSorni","ACIL59",0)
        	Exists("AC#SORN1")  // Sorni in ACIL59

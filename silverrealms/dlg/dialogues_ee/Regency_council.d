@@ -154,7 +154,7 @@ SAY ~Jawohl, mein Ratsherr.~
 END
 
 	IF ~~ THEN BEGIN patrol_search_04
-	SAY ~Ich habe vor einigen Tagen eine Patrouille losgeschickt, die die unmittelbare Umgebung der Stadt erkunden soll. Meine Männer sind bisher leider nicht zurückgekehrt. Das ist ungewöhnlich, und ich befürchte, dass ihnen etwas zugestoßen sein könnte.~
+	SAY ~Ich habe vor einigen Tagen eine Patrouille losgeschickt, die die unmittelbare Umgebung der Stadt erkunden soll. Meine Männer sind bisher nicht zurückgekehrt. Das ist ungewöhnlich, und ich befürchte, dass ihnen etwas zugestoßen sein könnte.~
 	 IF ~~ THEN EXTERN ~AC#GROM1~ patrol_search_05
 	END
 	
@@ -510,7 +510,7 @@ END
 
 // Hier geht es nach Patrouillenquest weiter - je nachdem, ob Ellhimars oder Turbaerns Quest schon erledigt wurde
 			IF ~~ THEN BEGIN discussion
-			SAY ~Liebe Ratsmitglieder, wir müssen entscheiden, wie wir weiter verfahren sollen. Es scheint sich eine uns unbekannte Bedrohung vor unserer Stadt zu sammeln, und wir müssen die richtigen Schritte einleiten, um ihr zu begegnen.~
+			SAY ~Wir sollten entscheiden, wie wir weiter verfahren sollen. Es scheint sich eine uns unbekannte Bedrohung vor unserer Stadt zu sammeln, und wir müssen die richtigen Schritte einleiten, um ihr zu begegnen.~
 			//IF ~GlobalGT("AC#TurbaernRescued","GLOBAL",2)~ THEN + Turbaern_quest_finished
 			//IF ~GlobalLT("AC#TurbaernRescued","GLOBAL",3)~ THEN + Turbaern_quest_not_finished_yet
 			IF ~GlobalLT("AC#Vronia_Quest","GLOBAL",12)~ THEN EXTERN ~AC#VRON1~ Ellhimar_quest_not_done_yet

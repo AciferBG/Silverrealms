@@ -6,7 +6,7 @@ THEN
                 SetInterrupt(FALSE)
 		DestroyItem("ac#02wo1")
 		PlaySound("EFF_P92")
-		DisplayString(Myself,999999)
+		DisplayString(Myself,@133)
 		SetGlobal("AC#_wolfsummon","ACIL02",1)
 		ContainerEnable("ac#cowo",FALSE)
                 CreateCreature("AC#SPIWO",[802.515],1)

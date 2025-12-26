@@ -4,7 +4,7 @@ IF
 	Global("AC#Skull","ACIL31",0)
 THEN
 	RESPONSE #100
-		DisplayString(Myself,999997) // ~In der Mitte dieses seltsamen Schiffes befindet sich ein Schädel, der dem Kopf eines Gedankenschinders nachempfunden ist. Er scheint etwas mit dem Steuermechanismus des Vehikels zu tun zu haben, denn eine starke Energie geht von dem Objekt aus.~
+		DisplayString(Myself,@166) // ~In der Mitte dieses seltsamen Schiffes befindet sich ein Schï¿½del, der dem Kopf eines Gedankenschinders nachempfunden ist. Er scheint etwas mit dem Steuermechanismus des Vehikels zu tun zu haben, denn eine starke Energie geht von dem Objekt aus.~
 		SetGlobal("AC#Skull","ACIL31",1)
 END
 
@@ -14,7 +14,7 @@ IF
 	Global("AC#Skull","ACIL31",1)
 THEN
 	RESPONSE #100
-		DisplayString(Myself,999996) // ~Intuitiv berührt Ihr den Schädel, und mit einem Ruck verschwimmt die Welt um Euch herum. Ihr scheint mit dem unnatürlichen Geist des Schiffes zu verschmelzen, sodass Ihr die Richtung des Schiffes nur mit Euren Gedanken lenken könntet.~
+		DisplayString(Myself,@167) // ~Intuitiv berï¿½hrt Ihr den Schï¿½del, und mit einem Ruck verschwimmt die Welt um Euch herum. Ihr scheint mit dem unnatï¿½rlichen Geist des Schiffes zu verschmelzen, sodass Ihr die Richtung des Schiffes nur mit Euren Gedanken lenken kï¿½nntet.~
 		CreateCreatureImpassable("AC#Skul1",[1878.821],13)
 		SetGlobal("AC#Skull","ACIL31",2)
 		ActionOverride("AC#Skul1",StartDialogueNoSet([PC]))

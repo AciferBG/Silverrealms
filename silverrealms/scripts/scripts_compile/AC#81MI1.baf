@@ -4,7 +4,7 @@ IF
 THEN
     RESPONSE #100
          ClearAllActions()
-         DisplayString (Myself,999999)
+         DisplayString (Myself,@154)
          SetGlobal("ACIL81_warning","ACIL81",1)
 END
 

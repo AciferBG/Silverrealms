@@ -6,7 +6,7 @@ THEN
                 SetInterrupt(FALSE)
 		DestroyItem("ac#02de1")
 		PlaySound("EFF_P92")
-		DisplayString(Myself,999999)
+		DisplayString(Myself,@134)
 		SetGlobal("AC#_deersummon","ACIL02",1)
 		ContainerEnable("ac#code",FALSE)
                 CreateCreature("AC#SPIDE",[915.395],1)

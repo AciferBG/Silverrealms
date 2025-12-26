@@ -9,7 +9,7 @@ THEN
 		ScreenShake([20.20],5)
 		CreateVisualEffectObject("ICMAGICH",Myself)
 		Wait(2)
-		DisplayString(Myself,999999)
+		DisplayString(Myself,@108)
 		AmbientActivate("Furnace02",TRUE)
 		//AmbientActivate("Fieryoven03a",TRUE)
 		SoundActivate("Firesound03",TRUE)

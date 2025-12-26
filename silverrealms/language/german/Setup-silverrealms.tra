@@ -13,19 +13,19 @@
 @12= ~Spinnenelf~
 @13= ~Zwergen-Runenschlüssel~
 @14= ~Diesen Schlüsselstein habt Ihr von den Zwergen Iltkazars erhalten. Mit ihm lässt sich der versiegelte Durchgang zu den Spinnenschächten öffnen, auch wenn das einige der Bewohner der Zwergenstadt sicher nicht für eine gute Idee halten dürften.~
-@15= ~Herz eines Drachenleichnams~
-@16= ~Dies ist das verrottete Herz eines namenlosen Drachenleichnams, den Ihr im Tempel des uralten Drachengottes Kalzareinad erweckt und in einem epischen Kampf erschlagen habt. Verglichen mit dem Rest des untoten Wyrms ist das Herz in einem erstaunlich guten Zustand - von seinem grauenhaften Geruch einmal abgesehen. Wahrscheinlich wurde das Herz aus einem Euch unbekannten Grund nach dem Tod des Drachens mit einem stechend riechenden, leicht entflammbaren Öl einbalsamiert und dadurch konserviert.~
+@15= ~Herz eines Phosphordrachen~
+@16= ~Dies ist das Herz eines namenlosen Phosphordrachen, den Ihr im Tempel des uralten Drachengottes Kalzareinad in einem epischen Kampf erschlagen habt.~
 @17= ~Ihr werft das Drachenherz in den Feueraltar, welches sofort in einem gleißenden Licht zu brennen beginnt. Kurze Zeit später scheint sich der Raum mit einer mächtigen Präsenz zu füllen~
-@18= ~Grüne Drachenschuppen~
-@19= ~Hierbei handelt es sich um ledrige, übelriechende Drachenschuppen, die von einem Grünen Drachen stammen. Man sagt, man könnte aus derartigen Schuppen eine mächtige Rüstung schmieden.~
-@20= ~Ringreemeralxot~
+@18= ~Phosphordrachenschuppen~
+@19= ~Hierbei handelt es sich um ledrige, übelriechende Drachenschuppen, die von einem Phosphordrachen stammen. Man sagt, man könnte aus derartigen Schuppen eine mächtige Rüstung schmieden.~
+@20= ~Phosphordrache~
 @21= ~Zyklop~
 @22= ~Um das große Symbol eines Drachen auf dem Boden sind zwölf kleinere Säulen verteilt, die eine kleine Vertiefung enthalten, auf der man wohl mit den entsprechenden Hilfsmitteln eine kleine Flamme entfachen könnte.~
 @23= ~Phosphor~
 @24= ~Bei diesem Felsbrocken handelt es sich in Wirklichkeit um grünen Phosphor, ein seltenes, leicht entflammbares Element, das gerne bei Beschwörungen eingesetzt wird.~
 @25= ~Drachenleichnam~
 @26= ~Drachenskelett~
-@27= ~Diese aus holz geschnitzte Statue stellt die Göttin des Friedens Eldath dar~
+//@27= ~Diese aus holz geschnitzte Statue stellt die Göttin des Friedens Eldath dar~
 @28 = ~Narrenstecken~
 @29 = ~Dieser Stab geht zurück auf Hurlbert, Hofnarr König Alemanders des I. von Tethyr. 
 Der Narr hatte keinen leichten Stand, galt sein König doch als ausgesprochen missmutiger und übellauniger Zeitgenosse. Mit Hilfe eines Magiers versuchte Hurlbert diesen Stecken zu erschaffen, um wenigstens ein klein wenig Freude in das Herz seines kaltherzigen Königs zu pflanzen. Dieser Versuch misslang gründlich, denn beim nächsten Bankett wälzte sich zwar der halbe Festsaal vor Lachen auf dem Boden, der König saß jedoch weiterhin mit eisern erstarrter Miene auf seinem Thron. Es versteht sich von selbst, dass der Hofnarr mitsamt aller Mitlacher am nächsten Tage vor den Stadttoren Zazesspurs seinen Kopf verlor. Zeitgenossen zufolge zauberte die Hinrichtung wenigstens den leisen Anflug eines Lächelns auf des Königs grausames Antlitz.
@@ -65,19 +65,9 @@ Königreich Xothaerin im Westen".~
 @44   = ~Beldas~
 @45   = ~Dieser Stein ist mit zahlreichen elfischen Runen und Zeichnungen überzogen.~
 @46   = ~Nachricht~
-// Beldas' old message
-/*
-@47   = ~<CHARNAME>, wir hörten, dass Ihr in der Stadt seid und den ein oder anderen Auftrag annehmt. Wir benötigen Eure Dienste und können leider nicht selbst zu Euch kommen. Trefft uns in Cromwells Schmiede. Solltet Ihr auf Ruhm und Ehre aus sein, so können wir Euch davon reichlich bieten - und tut Ihr alles nur des lieben Goldes wegen, so bieten wir Euch dessen noch viel mehr. Wir bezahlen gut.~
-*/
 @47   = ~<CHARNAME>, wir hörten, dass Ihr in der Stadt seid und den ein oder anderen Auftrag annehmt. Wir benötigen Eure Dienste und können leider nicht selbst zu Euch kommen. Trefft uns im Wirtshaus "Zum Tanzenden Riesen" in Zweiwasser. Solltet Ihr auf Ruhm und Ehre aus sein, so können wir Euch davon reichlich bieten - und tut Ihr alles nur des lieben Goldes wegen, so bieten wir Euch dessen noch viel mehr. 
 Beldas Diamantklinge.~
 
-@50   = ~Nach langem, steinigem Aufstieg erreicht Ihr endlich die Ausläufer des Batyr-Berges. Schon aus der Ferne ist ein tiefes Heulen und Grollen zu hören, und schließlich seht Ihr in der Ferne das Antlitz eines riesigen, aus dem Fels gehauenen Zwerges, der mit starrem Blick, weit aufgerissenen Augen und geöffneten Mund gen Osten blickt: Der heulende Zwerg. So sehr Euch der majestätische Anblick auch begeistern mag - der felsige Weg bis ins Innere der alten Zwergenfestung wird alles andere als einfach werden, und die verschlungenen Pfade zum Fuße des alten Standbildes scheinen endlose Gefahren zu bergen. Entschlossen setzt Ihr den ersten Fuß auf den verwitterten, von Zwergenhand geschaffenen Weg und macht Euch an den beschwerlichen Aufstieg in Richtung des alten Steinkolosses.~ [AC#MUS14]
-@51   = ~Dieser Durchgang ist durch zahlreiche Felsbrocken versperrt. Ihr müsst Euch einen anderen Weg ins Innere der Zwergenstadt suchen.~
-@52   = ~Dies ist mein Reich, nur mein Reich - das Einzige, welches mir geblieben ist, verfluchte Verräter! Kniet nieder vor dem mächtigen Herrn Korolnors, der Euch einen qualvollen Tod bereiten wird!~
-@53   = ~Diese Schmerzen, dies ewige Folter, Ihr sollt leiden, so wie auch ich leide, ich werde Euch alle vernichten!~
-@54   = ~Verflucht sollt Ihr sein, so wie auch ich in alle Ewigkeit verflucht sein muss!~
-@55   = ~Diinkarazans Avatar~
 @56   = ~Fomorischer Riese~
 @57   = ~Verbeeg~
 @58   = ~Die Boote gleiten langsam über den unheimlichen unterirdischen See. Ab und an meint Ihr, tief unter Euch eine Bewegung im Wasser wahrzunehmen, doch vielleicht spielt Euch Euer Verstand lediglich einen Streich. 
@@ -88,11 +78,13 @@ Nach einer schier endlos scheinenden Überfahrt erreicht Ihr schließlich ohne g
 @61  = ~König Mith Barak~
 @62  = ~Malphas~
 @63  = ~Krerthmull Staubmarker~
+/*
 @64  = ~Dieser Stein sieht genau gleich aus wie der Stein auf der anderen Seite. Auch hier könntet Ihr versuchen, die Linien auf der Oberfläche zu beseitigen.~
 @65  = ~Der Stein pulsiert in einem sanften Licht. Ihr bemerkt feine Zeichnungen, die über seiner Oberfläche verteilt sind. Ihr könntet versuchen, diese zu entfernen.~
 @66  = ~Ihr berührt die Oberfläche, und die Linien verschwinden. Plötzlich brandet eine heftige Woge vollkommener Hoffnungslosigkeit über Euren Verstand hinweg.~
 @67  = ~Als ihr den Raum betretet, brandet eine Welle bösartiger und hasserfüllter Emotionen über Euch hinweg. Ihr bemerkt an der Tür gegenüber zwei pulsierende Steine, von denen ein unheilvolles Leuchten ausgeht. Irgendetwas in Ihnen scheint auf Euren Verstand einwirken zu wollen.~
 @68  = ~Die Magie des Steines ist erloschen. Er fühlt sich nur noch kalt und kraftlos an.~
+
 
 @75  = ~Zauberbecken~
 @76  = ~Ich grüße Euch ebenfalls, Zwerg. Doch ich muss Euch enttäuschen, denn <CHARNAME> wohnt schön lange nicht mehr an diesem Ort. Man sagt, er sei nach Süden gegangen.~
@@ -103,6 +95,7 @@ Nach einer schier endlos scheinenden Überfahrt erreicht Ihr schließlich ohne g
 @81  = ~Beim feurigen Atem eines Duergar, wollt Ihr mich zum Narren halten, Mensch? Ist denn überhaupt jemand in dieser schäbigen Hütte anwesend, der Willens ist, mit uns zu reden, oder sind wir ganz umsonst hierher gekommen? Bringt mich dann eben zu diesem Ulraunt, auch wenn sich sein Name eher wie Brechmittel denn ein Weiser anhört.~
 @82  = ~Wie gesagt - um hier eingelassen zu werden, müsst ihr unserer Bibliothek ein wertvolles Buch spenden, doch bei Euren Manieren bezweifle ich langsam, dass Ihr schon eines aus der Nähe gesehen habt.~
 @83  = ~Ich weiß sehr wohl, wie ein Buch aussieht, denn auch ich stamme aus einer großen Bücherei, und im Gegensatz zu Euch habe ich diese auch mehrmals von Innen gesehen. Doch meine Rasse schreibt nicht auf vergänglichen Blättern.~
+*/
 @84  = ~Fruorin Schwarzstahl~
 @85  = ~Balfrin Schwarzstahl~
 
@@ -1523,6 +1516,7 @@ Das Buch scheint eine Art magische Aura zu besitzen; es fühlt sich ungewöhnlic
 @1145 = ~Control Body~
 @1146 = ~Insinuation~
 @1147 = ~Giftiger Atem~
+@1148 = ~Phosphordrachenodem~
 
 
 
@@ -2047,6 +2041,30 @@ Rettungswurf: Nein
 
 Mit diesem Zauber erschafft der Zaubernde eine leicht konkave, kreisförmige Kraftebene, die als Tensers schwebende Scheibe bekannt ist (nach dem berühmten Zauberer, dessen Gier und Fähigkeit, Schätze zu finden, weithin bekannt sind). Die Scheibe hat einen Durchmesser von drei Fuß und hält ein Gewicht von 100 Pfund pro Stufe des Zaubernden. Die Scheibe schwebt etwa einen Meter über dem Boden und bleibt immer waagerecht. Auf Befehl des Zaubernden schwebt sie innerhalb ihrer Reichweite von 20 Metern entlang und bewegt sich mit einer Geschwindigkeit von maximal 6. Wenn der Zaubernde sich außerhalb der Reichweite bewegt (indem er sich schneller bewegt, z.B. durch einen Teleportationszauber), oder wenn die Dauer des Zaubers abläuft, verschwindet die schwebende Scheibe aus dem Dasein und alles, was sie getragen hat, stürzt auf die Oberfläche unter ihr.
 Die Materialkomponente des Zaubers ist ein Tropfen Quecksilber.~
+@8096 = ~Mith Baraks Notizen~
+@8097 = ~Dies sind Notizen, welche Ihr in einer kleinen Kammer in der Halle des Blutmondes gefunden habt. Sie sind eindeutig von König Mith Barak geschrieben.
+
+1.
+Die Ruinen Shanatars schweigen beharrlich. Jeder Stein scheint Wissen zu bergen, doch keiner offenbart mir den gesuchten Übergang. Ich habe die alten Wege geprüft, Runen verglichen, Bruchstücke vergessener Orte rekonstruiert, doch kein Tor antwortet mir.
+
+2.
+Auch dieser Ort, die Halle des Blutmondes, trägt die Zeichen einer Schwelle. Selûnes Präsenz ist schwach, fast nur noch Erinnerung. Die Magie hier ist dünn, als habe etwas Größeres sie einst berührt und dann weitergezogen. Kein Portal. Nur Nachhall.
+
+3.
+Ich beginne zu begreifen, dass Shanatar einen Zugang besessen haben muss. Nur wo? Die Zwerge suchten Erz und Stein – sie sahen nie, was zwischen den Welten lag. Doch hier ist kein Portal in die Astralebene. Wo dann?
+
+4.
+Immerhin bietet mir diese Halle Ruhe. Abgeschieden von Iltkazars Stimmen, fern der Fragen und des Misstrauens. Hier kann ich denken, rechnen, verwerfen. Die Stille ist ein Werkzeug, schärfer als jeder Meißel.
+
+5.
+Ich habe die Spinnenschächte versiegeln lassen. Ein einfacher, eleganter Entschluss. Kein Zwerg wird freiwillig dort suchen, wo Gift, Dunkelheit und alte Schrecken lauern. Mein Rückzugsort bleibt verborgen, und mein Werk ungestört.
+
+6.
+Ich suche vielleicht wieder am falschen Ort. Vielleicht liegt der Zugang nicht hier, sondern jenseits dessen, was ein Zwerg zu denken wagt. Barakuir, die verlassene Stadt der Duergar, könnte mein nächstes Ziel sein.
+
+7.
+Ich habe nicht mehr viel Zeit. Schon bald werde ich wieder zur Statue erstarrt auf dem Thron sitzen. Dann muss ich in vielen Jahren, wenn ich wieder erwacht bin, weitersuchen. Ich lasse diese Notizen hier, damit ich mich daran erinnern kann, wenn die Zeit gekommen ist. Barakuir soll mein nächstes Ziel sein. Wenn es das Portal in die Astralebene des alten Shanatar wirklich gibt, könnte es dort gelegen sein. Wenn nicht, muss ich weitersuchen. Es gibt noch weitere Unterkönigreiche, die in Frage kommen. Aber Barakuir ist mein nächstes Ziel.~
+
  
 // creature strings
 @9000 = ~Zwergenkrieger~

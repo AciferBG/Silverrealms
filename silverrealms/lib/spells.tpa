@@ -8,6 +8,11 @@ COPY ~silverrealms/spl/AC#HEZR.spl~            ~override~  // Hezrou stench
   SAY 0xce @1142
   WRITE_SHORT   0x98 ~%AC#HEZRU%~
 
+COPY ~silverrealms/spl/AC#ILPB.spl~          ~override~ // phosphor dragon breath
+SAY NAME1 @1148 SAY NAME2 @1148
+
+COPY ~silverrealms/spl/AC#ILPH.spl~          ~override~ // phosphor dragon hit
+
 COPY ~silverrealms/spl/AC#NEOB.spl~          ~override~ // neothelid's poisonous breath
 SAY NAME1 @1147 SAY NAME2 @1147
 

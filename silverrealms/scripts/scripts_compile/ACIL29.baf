@@ -14,8 +14,8 @@ THEN
 	RESPONSE #100
 	         Wait(1)
 		SetGlobal("Has_Eyestalk","ACIL29",1)
-		EraseJournalEntry(999999)
-		EraseJournalEntry(999998)
-	        AddJournalEntry(999997,QUEST)
+		EraseJournalEntry(@64202)
+		EraseJournalEntry(@64203)
+	    AddJournalEntry(@64204,QUEST)
 END
 

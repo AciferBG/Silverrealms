@@ -1,0 +1,9 @@
+IF
+    PartyHasItem("AC#ILMBJ")  // Mith Baraks Notizen
+    Global("AC#MithBarakJournal","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("AC#MithBarakJournal","GLOBAL",1)
+        AddJournalEntry(@23003,QUEST)  
+END        
+

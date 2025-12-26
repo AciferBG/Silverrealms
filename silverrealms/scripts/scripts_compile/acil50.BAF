@@ -251,14 +251,12 @@ END
 IF
 	InMyArea(Player1)
 	Global("AC#Arrested","GLOBAL",1)
-    //GlobalGT("AC_Iltkazar_Reputation","GLOBAL",10) // Old: more than 10 rep points
 	GlobalGT("AC_Iltkazar_Reputation","GLOBAL",9) // new: 10 rep points
 THEN
 	RESPONSE #100
 	        SetGlobal("AC#Arrested","GLOBAL",2)
             SetGlobal("AC#Iltkazar_Council_Second_Quest","GLOBAL",1)
-                 //TriggerActivation("Tracil62",TRUE)
-	         CreateCreatureObjectOffScreen("ac#dun50",Player1,0,0,0) // Dunnabar ACIL 50
+	         CreateCreatureObjectOffset("ac#dun50",Player1,[5.5])  // Dunnabar Steinschulter
 END
 
 IF

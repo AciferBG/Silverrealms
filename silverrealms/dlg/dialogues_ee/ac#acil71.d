@@ -19,7 +19,7 @@ Dialog Ringreemeralxot
 BEGIN ~AC#DRAGR~
 
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN 0
-SAY  ~Wer beschwört den mächtigen Ringreemeralxot? Ein schwacher <RACE>? Für diese Frevelei werde ich Euch vernichten!~
+SAY  ~Wer wagt es, die alte Beschwörung Kalzareinads zu vollziehen? Ein <PRO_RACE>? Nur Drachen sind würdig, den Hüter alter Wunder anzurufen. Ich bin sein Wächter. Für diesen Frevel werde ich Euch vernichten!~
    IF ~~ THEN DO ~SetGlobal("AC#_DragonSummon","GLOBAL",14)
    SetGlobal("AC#_TransformDracolich","GLOBAL",1)
    Enemy()~  EXIT
@@ -170,12 +170,12 @@ END
 	IF ~~THEN BEGIN 16
 	SAY ~Aus für meinen Herrn triftigen Gründen wurde Mithbarakaz der Silberne von Kalzareinad mit einem Fluch belegt.~ 
 	=
-	~Kalzareinad hütete das Wissen um dunkle Drachenmagie und hatte eine Möglichkeit entdeckt, untote Drachen zu erschaffen und ihnen damit ewiges Leben zu ermöglichen. Ihr habt an diesem Leichnam, den Ihr vorhin erweckt habt, einen Teil der Auswirkungen mit eigenen Augen gesehen.~
-	++ ~Kalzareinad hütete das Wissen darüber, untote Drachen zu erschaffen?~ + dracolich_failed
+	~Kalzareinad hütete das Wissen um dunkle Drachenmagie und hatte eine Möglichkeit erforscht, Neue Arten von Drachen zu erschaffen. Solche, die Ihr vorhin beschworen und getötet habt.~
+	++ ~Kalzareinad hütete das Wissen darüber, neue Drachenarten zu erschaffen?~ + dracolich_failed
 	END
 	
 		IF ~~THEN BEGIN dracolich_failed
-		SAY ~Eigentlich sollte dieser Haufen Knochen, den Ihr hinter Euch seht, am Ende eines  Rituals mit ewigem Leben gefüllt werden. Dass dies nicht dauerthaft geschah  haben wir Mith Barak und anderen seiner Art zu verdanken.~
+		SAY ~Eigentlich sollte dieser Drache, den Ihr vorhin vernichtet habt, viel stärker sein. Dass dies nicht dauerhaft geschah  haben wir Mith Barak und anderen seiner Art zu verdanken.~
 		IF ~~ THEN GOTO curse
 		END
 		
@@ -206,19 +206,19 @@ SAY ~Völlig richtig. Aber Mithbarak hat das Beste aus seiner misslichen Lage ge
 END
 
 IF ~~THEN BEGIN remove_curse
-SAY ~Dennoch trachtete er jeden Tag seines Zwergenlebens danach, diesen Fluch zu brechen. Er hoffte immerfort, Kalzareinad werde den Fluch zurücknehmen, wenn die Zeit dafür gekommen wäre.~
+SAY ~Dennoch trachtete er jeden Tag seines Zwergenlebens danach, diesen Fluch zu brechen. Er hoffte immerfort, Kalzareinad werde den Fluch zurücknehmen, wenn die Zeit dafür gekommen wäre. Doch es kam alles anders.~
    IF ~~ THEN GOTO 7
 END
 
 IF ~~THEN BEGIN 7
-SAY ~Doch es kam alles anders. Eines Tages verstummte mein Gebieter, und meine Gebete blieben unbeantwortet. Die Drachen, die ihn einst verehrt hatten, wandten sich von ihm ab, so wie sich viele Drachen von ihren Göttern abwandten, weil sie zu selbstsüchtigen und ehrlosen Kreaturen wurden. Wer braucht schon Götter, wenn er sich für unbesiegbar hält? So wie vielen Drachengottheiten erging es auch meinem Herrn. Er schwand langsam dahin, weil niemand außer mir mehr an ihn glaubte.~
+SAY ~Eines Tages verstummte mein Gebieter, und meine Gebete blieben unbeantwortet. Die Drachen, die ihn einst verehrt hatten, wandten sich von ihm ab, so wie sich viele Drachen von ihren Göttern abwandten, weil sie zu selbstsüchtigen und ehrlosen Kreaturen wurden. Wer braucht schon Götter, wenn er sich für unbesiegbar hält? So wie vielen Drachengottheiten erging es auch meinem Herrn. Er schwand langsam dahin, weil niemand außer mir mehr an ihn glaubte.~
 ++ ~Kalzareinad ist also gestorben?~ + 8
 END
 
 IF ~~THEN BEGIN 8
 SAY ~Wenn dies so für einen Sterblichen leichter zu verstehen ist- ja, er ist tot. In einer Zeit, die Euch als <RACE> als die Zeit der Sorgen bekannt ist, ist sein göttlicher Funke letztendlich vollständig erloschen.~
 =
-~Für Mithbarakaz bedeutet dies, dass es keine Möglichkeit mehr gibt, seinen Fluch zu bannen. Er steckt auf ewig hier in dieser Ebene in seiner Zwergengestalt fest.~
+~Für mich bedeutete dies, keinen Patron mehr zu haben. Für Mithbarakaz bedeutet es, dass es keine Möglichkeit mehr gibt, seinen Fluch zu bannen. Er steckt auf ewig in seiner verfluchten Zwergengestalt fest.~
 ++ ~Und dieser Tempel hier? Und die Beschwörung? Welche Rolle spielt Ihr dabei?~ + 9
 END
 
@@ -272,7 +272,7 @@ END
 						END
 						
 						IF ~~ THEN BEGIN tiamat_02
-						SAY ~Ja. Das ist gut möglich. Die selbst ernannte Königin der Drachen trachtete schon lange danach, das Wissen um die Drachenleichname für sich zu beanspruchen. Sie schickt gerne ihre Horden von Abishai aus den unteren Ebenen, wenn es eine ehrlose Schlacht zu schlagen gibt.~
+						SAY ~Ja. Das ist gut möglich. Die selbst ernannte Königin der Drachen trachtete schon lange danach, das Wissen um die Drachenmagie für sich zu beanspruchen. Sie schickt gerne ihre Horden von Abishai aus den unteren Ebenen, wenn es eine ehrlose Schlacht zu schlagen gibt.~
 						IF ~~ THEN REPLY ~Außerdem bin ich noch mit Githyanki aneinandergeraten.~ GOTO githyanki_01
 						END
 						
@@ -336,10 +336,11 @@ END
 											=
 											~Ihr benötigt ein Portal, um die Astralebene betreten zu können.~
 											++ ~Und wo könnte sich ein solches Portal befinden?~ + how_to_get_to_astral_02
+											++ ~Danach hat auch Mith Barak gesucht, bisher erfolglos.~ + how_to_get_to_astral_02
 											END
 											
 												IF ~~THEN BEGIN how_to_get_to_astral_02
-												SAY ~Das weiß ich nicht. Ich habe viele Jahre gesucht. Es gibt viele Wege, die aus der Astralebene hier zu uns führen, aber nur sehr wenige in die umgekehrte Richtung.~
+												SAY ~Wo ein Portal in die Astralebene zu finden ist weiß ich nicht. Ich habe viele Jahre gesucht. Es gibt viele Wege, die aus der Astralebene hier zu uns führen, aber nur sehr wenige in die umgekehrte Richtung.~
 												=
 												~Allerdings hattet Ihr die Githyanki erwähnt. Sie müssen durch ein solches Portal gekommen sein. Wenn Ihr ihren Unterschlupf finden würdet, würdet Ihr sicher auch ein Portal in ihre Heimatebene finden.~
 												++ ~Ich glaube, Mith Barak hat nach genau so einer Möglichkeit gesucht.~ + mithbarak_astral_portal

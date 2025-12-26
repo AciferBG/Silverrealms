@@ -147,20 +147,21 @@ Ich habe bei dem Drow, der Anführer der Vhaeraun-verehrenden Drow in den Spinne
 Um den Zwergentempel, der "Halle des Blutmondes" genannt wird, im Norden der Spinnenschächte betreten zu können, brauche ich die Wörter der beiden ehemaligen Schutzgottheiten. Ich sollte der Statue, die den Eingang bewacht, die Namen "Clangeddin" und der menschlichen Mondgöttin nennen, um eingelassen zu werden.~
 @23003   = ~Die Halle des Blutmondes
 
-Ich hatte seltsame Träume in diesem alten Tempel, die ich nicht richtig deuten kann. Es kamen Mith Barak, Elfen und Drachen vor. Es scheint, dass Mith Barak an der Oberfläche an einem Ort war, den er "Drachenfriedhof" genannt hat. Vielleicht sollte ich dort mit der Suche fortfahren.~
+Ich habe in einer Nebenkammer der Halle des Blutmondes König Mith Baraks Notizen gefunden. Es scheint, dass er vor den Zwergen etwas verheimlicht hat und sich dort in der Abgeschiedenheit auf die Suche nach einem Portal in die Astralebene gemacht hat. Er wurde zwar in der Halle des Blutmondes nicht fündig, wollte seine Suche jedoch an einem Ort, den er Barakuir genannt hat, fortsetzen.~
 //___________________________Die Halle des Blutmondes
 @23004   = ~Die Halle des Blutmondes
 
 Ich habe den Drow-Anführer der Vhaeraun-Anhänger in dem alten Lolth-Tempel getötet. Da er zu wissen schien, wo ich als nächstes nach einer Ursache für den schlafenden König suchen sollte, sollte ich vielleicht bei seiner Leiche nach Hinweisen suchen.~
 @23010   = ~Ellhimars Tagebuch
 
-In der Halle des Blutmondes habe ich das Tagebuch des Magiers Ellhimar gefunden. Er hatte über Mith Barak einiges herausgefunden. Vielleicht sollte ich das Tagebuch auch einmal zu Vronia und Cernd Schüttergeist bringen, damit sie Ellhimars Erinnerung mit Hilfe der Aufzeichnungen auf die Sprünge helfen und ihn aus seinem Dämmerzustand erwecken können.~
+In der Halle des Blutmondes habe ich das Tagebuch des Magiers Ellhimar gefunden. Er hatte über Mith Barak einiges herausgefunden. Vielleicht sollte ich das Tagebuch einmal zu Vronia bringen, damit sie es sic ansehen kann.~
 @23011   = ~Ellhimars Tagebuch
 
 Vronia bat mich, an dem Ort von Ellhimars verschwinden nach Hinweisen zu suchen, die ihr helfen könnten, seinen Wahnsinn zu kurieren.~
 @23012   = ~Ellhimars Tagebuch
 
 Vronia hat Ellhimars Tagebuch an sich genommen, um mit Hilfe der Niederschriften Ellhimars geistigen Zustand zu verbessern.~
+
 
 //___________________________Boote für Barakuir
 @27000   = ~Boote für Barakuir
@@ -433,7 +434,7 @@ Ich habe alle verbliebenden Arbeiter in der Azerkyn-Halle nach oben geschickt - 
 Der Regentschaftsrat hat mich beauftragt, außerhalb von Iltkazar nach einer vermissten Zwergenpatrouille zu suchen. Sobald ich einen Hinweis gefunden habe, soll ich dem Rat wieder Bericht erstatten.~
 @62011  = ~Die vermisste Patrouille
 
-Ich habe die Patrouille gefunden - zumindest das, was davon übrig ist. Es scheint ein harter Kampf stattgefunden zu haben. Keiner der Zwerge hat überlebt. Ich sollte suchen, ob ich Hinweise nach dem unbekannten Angreifer finde und dann dem Regentschaftsrat wieder Bericht erstatten.~
+Ich habe die Patrouille gefunden - zumindest das, was davon übrig ist. Es scheint ein harter Kampf stattgefunden zu haben. Keiner der Zwerge hat überlebt. Ich sollte dem Regentschaftsrat wieder Bericht erstatten.~
 
 //___________________________Ein Weg in die Spinnenschächte
 

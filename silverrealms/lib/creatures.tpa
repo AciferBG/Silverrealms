@@ -2194,6 +2194,10 @@ COPY ~silverrealms/cre/AC#TOMGU.cre~ ~override~  // Tome Guardian
 COPY ~silverrealms/cre/AC#53SV2.cre~ ~override~  // Fruntuck
   SAY NAME1 @734 SAY NAME2 @734
   SAY INITIAL_MEETING @5023
+  SAY SELECT_COMMON1 @5023
+  SAY SELECT_COMMON2 @5023
+  SAY SELECT_COMMON3 @5023
+  SAY SELECT_COMMON4 @5023
   
 COPY ~silverrealms/cre/AC#DRAS3.cre~ ~override~ // Cragnortherma in ACIL46
   SAY NAME1 @744 SAY NAME2 @744

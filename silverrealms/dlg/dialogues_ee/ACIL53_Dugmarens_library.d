@@ -284,7 +284,7 @@ SAY ~*Hicks*?~
 IF ~Global("AC#Fruntuck","GLOBAL",0)~ THEN REPLY ~Was ist denn mit Euch los?~ + whats_up_with_you
 IF ~PartyHasItem("ac#eyebe")~ THEN REPLY ~Ich habe hier einen Augenstiel eines Betrachters für Euch.~ + need_potion_eyestalk
 ++ ~Ich sehe schon, das wird nichts. Auf Wiedersehen!~ + bye
-IF ~Global("AC#Fruntuk_Levitate","GLOBAL",1)~ THEN REPLY ~Ich brauche einen Levitationstrank.~ + need_levitation_potion
+IF ~Global("AC#Fruntuck_Levitate","GLOBAL",1)~ THEN REPLY ~Ich brauche einen Levitationstrank.~ + need_levitation_potion
 END
 
 	IF ~~ THEN BEGIN need_potion_eyestalk

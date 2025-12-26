@@ -4,7 +4,7 @@ IF
 	Global("AC#Heart","ACIL79",0)
 THEN
 	RESPONSE #100
-		DisplayString(Myself,999997)
+		DisplayString(Myself,@150)
 		SetGlobal("AC#Heart","ACIL79",1)
 END
 
@@ -14,7 +14,7 @@ IF
 	Global("AC#Heart","ACIL79",1)
 THEN
 	RESPONSE #100
-		DisplayString(Myself,999996)
+		DisplayString(Myself,@151)
 		CreateCreatureImpassable("AC#HEAR1",[1261.340],13)
 		SetGlobal("AC#Heart","ACIL79",2)
 		ActionOverride("AC#HEAR1",StartDialogueNoSet([PC]))

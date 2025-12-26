@@ -4,7 +4,7 @@ IF
 THEN
 	RESPONSE #100
                 SetGlobal("Info_Energybarrier","ACIL81",1)
-		DisplayString(Myself,999999)
+		DisplayString(Myself,@156)
 END
 
 IF
@@ -13,7 +13,7 @@ IF
 THEN
 	RESPONSE #100
                 SetGlobal("Info_Energybarrier","ACIL81",2)
-		DisplayString(Myself,999998)
+		DisplayString(Myself,@157)
 END
 
 IF

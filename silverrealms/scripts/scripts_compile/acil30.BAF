@@ -20,7 +20,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("EnteredArea","ACIL30",1)
 		SetGlobal("FaerzressTalk","ACIL30",1)
-		DisplayString(Myself,999999)
+		DisplayString(Myself,@192)
 END
 
 IF

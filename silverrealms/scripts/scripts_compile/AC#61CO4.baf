@@ -4,17 +4,16 @@ IF
 THEN
 	RESPONSE #100
                 SetInterrupt(FALSE)
-		DestroyItem("ac#antr1")
+                DestroyItem("ac#antr1")
 		PlaySound("EFF_P92")
 		ScreenShake([20.20],5)
 		CreateVisualEffectObject("ICMAGICH",Myself)
 		Wait(2)
-		DisplayString(Myself,999999)
-		AmbientActivate("Furnace01",TRUE)
-		//AmbientActivate("Fieryoven02a",TRUE)
-		SoundActivate("Firesound02",TRUE)
-		ContainerEnable("AC#61CO2",FALSE)
+		DisplayString(Myself,@108)
+		AmbientActivate("Furnace03",TRUE)
+		//AmbientActivate("Fieryoven04a",TRUE)
+		SoundActivate("Firesound04",TRUE)
+		ContainerEnable("AC#61CO4",FALSE)
 		IncrementGlobal("AC#_Destroy_Oven","ACIL61",1)
-                SetInterrupt(TRUE)
+		SetInterrupt(TRUE)
 END
-

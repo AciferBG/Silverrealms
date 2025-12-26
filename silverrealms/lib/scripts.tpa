@@ -459,6 +459,7 @@ COMPILE ~%MOD_FOLDER%/scripts/ACIL20.baf~  EVAL
 COMPILE ~silverrealms/scripts/ACIL56.baf~ EVAL
 COMPILE ~silverrealms/scripts/ACIL57.baf~ EVAL
 COMPILE ~silverrealms/scripts/ACIL58.baf~ EVAL
+COMPILE ~silverrealms/scripts/ACIL59.baf~ EVAL
 
 // story start
 EXTEND_TOP ~ar0300.bcs~ ~silverrealms/scripts/_atkatla.baf~
@@ -470,120 +471,6 @@ EXTEND_TOP ~BALDUR.bcs~ ~silverrealms/scripts/_baldur.baf~ // append baldur.bcs 
 
 //EXTEND_TOP ~KUOTOA.bcs~ ~silverrealms/scripts/_kuotoa.baf~
 //EXTEND_TOP ~KUOARC20.bcs~ ~silverrealms/scripts/_kuotoa.baf~
-
-COMPILE ~silverrealms/scripts/AC#61CO2.baf~
-COPY_EXISTING ~AC#61CO2.bcs~   ~override/AC#61CO2.bcs~
-       REPLACE ~999999~ @108
-       
-       COMPILE ~silverrealms/scripts/AC#61CO3.baf~
-COPY_EXISTING ~AC#61CO3.bcs~   ~override/AC#61CO3.bcs~
-       REPLACE ~999999~ @108
-       
-       COMPILE ~silverrealms/scripts/AC#61CO4.baf~
-COPY_EXISTING ~AC#61CO4.bcs~   ~override/AC#61CO4.bcs~
-       REPLACE ~999999~ @108
-       
-COMPILE ~silverrealms/scripts/ac#bres2.baf~
-
-COMPILE ~silverrealms/scripts/AC#66FI1.baf~
-
-COMPILE ~silverrealms/scripts/ACIL60.baf~
-
-COMPILE ~silverrealms/scripts/AC#20HAT.baf~
-
-//COMPILE ~silverrealms/scripts/ACIL67.baf~
-
-COMPILE ~silverrealms/scripts/AC#SORN4.baf~
-
-COMPILE ~silverrealms/scripts/AC#DWDE2.baf~
-
-COMPILE ~silverrealms/scripts/AC#29TR1.baf~
-
-COMPILE ~silverrealms/scripts/AC#29TR2.baf~
-
-COMPILE ~silverrealms/scripts/AC#29TR3.baf~
-
-COMPILE ~silverrealms/scripts/AC#29TR4.baf~
-
-COMPILE ~silverrealms/scripts/ACIL29.baf~
-COPY_EXISTING ~ACIL29.bcs~   ~override/ACIL29.bcs~
-       REPLACE ~999999~ @64202
-       REPLACE ~999998~ @64203
-       REPLACE ~999997~ @64204
-
-COMPILE ~silverrealms/scripts/AC#02WO1.baf~
-COPY_EXISTING ~AC#02WO1.bcs~   ~override/AC#02WO1.bcs~
-       REPLACE ~999999~ @133
-       
-COMPILE ~silverrealms/scripts/ac#02de1.baf~
-COPY_EXISTING ~ac#02de1.bcs~   ~override/ac#02de1.bcs~
-       REPLACE ~999999~ @134
-
-COMPILE ~silverrealms/scripts/ac#02be1.baf~
-COPY_EXISTING ~ac#02be1.bcs~   ~override/ac#02be1.bcs~
-       REPLACE ~999999~ @135
-       
-COMPILE ~silverrealms/scripts/ac#holym.baf~
-
-COMPILE ~silverrealms/scripts/AC#21CO1.baf~
-
-COMPILE ~silverrealms/scripts/AC#GIGH1.baf~
-
-COMPILE ~silverrealms/scripts/ACIL79.baf~
-
-COMPILE ~silverrealms/scripts/AC#79HE1.baf~
-COPY_EXISTING ~AC#79HE1.bcs~   ~override/AC#79HE1.bcs~
-       REPLACE ~999997~ @150
-       REPLACE ~999996~ @151
-       
-COMPILE ~silverrealms/scripts/AC#81MI1.baf~
-COPY_EXISTING ~AC#81MI1.bcs~   ~override/AC#81MI1.bcs~
-       REPLACE ~999999~ @154
-       
-COMPILE ~silverrealms/scripts/AC#81MI2.baf~
-
-COMPILE ~silverrealms/scripts/AC#81MI3.baf~
-
-COMPILE ~silverrealms/scripts/AC#81IN1.baf~
-COPY_EXISTING ~AC#81IN1.bcs~   ~override/AC#81IN1.bcs~
-       REPLACE ~999999~ @156
-       REPLACE ~999998~ @157
-
-COMPILE ~silverrealms/scripts/AC#GITH1.baf~
-
-COMPILE ~silverrealms/scripts/AC#76SK.baf~
-COPY_EXISTING ~AC#76SK.bcs~   ~override/AC#76SK.bcs~
-       REPLACE ~999997~ @166
-       REPLACE ~999996~ @167
-
-COMPILE ~silverrealms/scripts/ac#cut76.baf~
-
-COMPILE ~silverrealms/scripts/AC#80COA.baf~
-COMPILE ~silverrealms/scripts/AC#80COB.baf~
-COMPILE ~silverrealms/scripts/AC#80COC.baf~
-COMPILE ~silverrealms/scripts/AC#80COD.baf~
-
-COMPILE ~silverrealms/scripts/AC#80P_A.baf~
-COMPILE ~silverrealms/scripts/AC#80P_B.baf~
-COMPILE ~silverrealms/scripts/AC#80P_C.baf~
-COMPILE ~silverrealms/scripts/AC#80P_D.baf~
-
-COMPILE ~silverrealms/scripts/AC#DRAG1.baf~
-
-COMPILE ~silverrealms/scripts/ACIL30.baf~
-COPY_EXISTING ~ACIL30.bcs~   ~override/ACIL30.bcs~
-       REPLACE ~999999~ @192
-
-COMPILE ~silverrealms/scripts/AC#30CSW.baf~
-COMPILE ~silverrealms/scripts/AC#30CHM.baf~
-COMPILE ~silverrealms/scripts/AC#30CCB.baf~
-COMPILE ~silverrealms/scripts/AC#30CAX.baf~
-
-COMPILE ~silverrealms/scripts/AC#25DO1.baf~
-
-COMPILE ~silverrealms/scripts/ACIL25.baf~
-
-COMPILE ~silverrealms/scripts/ac#mo1.baf~
 
 COMPILE ~silverrealms/scripts/ac#cutra.baf~
 COPY_EXISTING ~ac#cutra.bcs~   ~override/ac#cutra.bcs~

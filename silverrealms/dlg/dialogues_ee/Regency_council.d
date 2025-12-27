@@ -347,12 +347,19 @@ END
 		AddexperienceParty(1000)
 		~ EXIT
 		END
-				
+
+// Third Quest: search Spiderstalkings
+IF ~GlobalGT("AC#IL_Spiderstalkings","GLOBAL",0)
+GlobalLT("AC#IL_Spiderstalkings","GLOBAL",20)~ THEN BEGIN hello_spiderstalkings_after_vronia
+  SAY ~Vronia hat uns berichtet, dass Ihr Turbaern doch überzeugen konntet, den Schlüssel für die Spinnenschächte herauszurücken. Was habt Ihr dort gefunden?~
+	IF ~Global("AC#RC_Turbaern_Second","GLOBAL",2)~ THEN REPLY ~~ DO ~SetGlobal("AC#IL_Spiderstalkings","GLOBAL",10)~ EXIT
+	IF ~~ THEN REPLY ~Nein, noch nicht.~ GOTO patrol_keep_searching
+END				
 //Second Quest: Retrieve Runestone for Spiderstalkings
 IF ~GlobalGT("AC#RC_Turbaern_Second","GLOBAL",0)
 GlobalLT("AC#RC_Turbaern_Second","GLOBAL",20)~ THEN BEGIN hello_whats_turbaern
   SAY ~Habt Ihr schon mit dem Hohen Omlar Turbaern gesprochen?~
-	IF ~Global("AC#RC_Turbaern_Second","GLOBAL",2)~ THEN REPLY ~Ja. Er wird Euch den Siegelstein für die Spinnenschächte nicht geben.~ EXTERN ~AC#CHEM1~ turbaern_wont_give_runestone
+	IF ~Global("AC#RC_Turbaern_Second","GLOBAL",2)~ THEN REPLY ~Ja. Er wird Euch den Siegelstein für die Spinnenschächte nicht geben.~ DO ~SetGlobal("AC#RC_Turbaern_Second","GLOBAL",20)~ EXTERN ~AC#CHEM1~ turbaern_wont_give_runestone
 	IF ~~ THEN REPLY ~Nein, noch nicht.~ GOTO patrol_keep_searching
 END
 

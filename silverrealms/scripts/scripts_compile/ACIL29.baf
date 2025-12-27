@@ -1,4 +1,14 @@
 IF
+    Global("CreateDeadBeholder","ACIL29",0)
+    Dead("AC#ILBH1")  // Betrachter
+THEN
+    RESPONSE #100
+        SetGlobal("CreateDeadBeholder","ACIL29",1)
+        ActionOverride("Eyestalk",CreateItem("AC#EYEBE",0,0,0))  // Augenstiel eines Betrachters
+        CreateCreature("AC#ILBHD",[296.1361],S)  // Betrachter
+END
+
+IF
 	Global("AC#_VaxallDead","ACIL29",0)
 	Dead("hlvaxal")
 THEN

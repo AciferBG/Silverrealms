@@ -497,6 +497,7 @@ StartCutScene("AC#ILP20")~ EXIT
 	~Versucht einmal, hindurch zu sehen, <CHARNAME>.~
 	EXIT
 
+	// Dialogue in ACIL58:
 CHAIN IF ~Global("AC#IL_ACIL20Portal","GLOBAL",8)~ THEN AC#TURBX hello_portal_aftermath
 	~Geht es <PRO_HIMHER> besser?~
 	== AC#VRONX ~Ja, es scheint, <PRO_HESHE> hat keine bleibenden Schäden davongetragen.~
@@ -512,6 +513,7 @@ CHAIN IF ~Global("AC#IL_ACIL20Portal","GLOBAL",8)~ THEN AC#TURBX hello_portal_af
 		== AC#TURBX ~Es war ein Fehler, Euch den Zugang zu den Spinnenschächten zu verwehren, <CHARNAME>. Hier, nehmt diesen Runenstein. Sobald Ihr wieder gut gerüstet seid, könnt Ihr mit Dumathoins Segen an diesem unheiligen Ort nach der Ursache für unsere Misere suchen, wenn Ihr der Meinung seid, dass dies uns weiterbringt.~
 		END
 		IF ~~ THEN DO ~SetGlobal("AC#IL_ACIL20Portal","GLOBAL",10)
+		SetGlobal("AC#IL_Spiderstalkings","GLOBAL",1)
 		GiveItemCreate("ac#ky1",PLayer1,0,0,0)~ EXIT
 // ---------------------------------------------
 // CHAIN - Abschied aus Iltkazar 01

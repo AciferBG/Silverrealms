@@ -1,0 +1,16 @@
+IF
+    Global("AC#IL_ACIL20Portal","GLOBAL",10)
+THEN
+    RESPONSE #100
+        EscapeArea()
+END
+
+IF
+    See([PC])
+    NumberOfTimesTalkedTo(0)
+THEN
+    RESPONSE #100
+        Wait(1)
+        Dialogue("AC#VRONX")  // Vronia Eisenbieger
+END
+

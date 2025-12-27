@@ -356,13 +356,20 @@ GlobalLT("AC#RC_Turbaern_Second","GLOBAL",20)~ THEN BEGIN hello_whats_turbaern
 	IF ~~ THEN REPLY ~Nein, noch nicht.~ GOTO patrol_keep_searching
 END
 
-
+// OLD - Barakuir before Spiderstalkings:
+/*
 	IF ~~ THEN BEGIN enough_turbaern
 	SAY ~Genug. Es ist leichter, einen Diamanten mit der bloßen Hand zu Staub zu verwandeln, als einen *delvesonn* von seiner Meinung abzubringen.~
 	=
 	~Ich sehe noch eine andere Möglichkeit. <CHARNAME>, Ihr erwähntet den Spiegel Ellhimars, in welchem sich ein Gedankenschinder zeigte, richtig?~
 	IF ~~ THEN REPLY ~Ja, das ist richtig.~ EXTERN ~AC#CHEM1~ send_charname_through_mirror
 	END
+*/
+// NEW: portal investigation before Barakuir:
+	IF ~~ THEN BEGIN enough_turbaern
+	SAY ~Genug. Es ist leichter, einen Diamanten mit der bloßen Hand zu Staub zu verwandeln, als einen *delvesonn* von seiner Meinung abzubringen.~
+	IF ~~ THEN EXTERN ~AC#VRON1~ NEW_acil20_portal_investigate
+	END	
 	
 	
 		IF ~~ THEN BEGIN messages_to_illithids
@@ -1315,6 +1322,27 @@ CHAIN IF ~~ THEN AC#GROM1 chain_council_finished_01
 == AC#VRON1 ~Auf König Mith Barak.~
 END
 IF ~~ THEN EXTERN ~AC#ELER1~ for_the_king
+
+// NEW: portal_investigation:
+CHAIN AC#VRON1 NEW_acil20_portal_investigate
+~Es wäre ohnehin besser, dass wir uns zunächst um andere Probleme kümmern, werter Rat. Wenn Turbaern überzeugt werden kann, dass die Sicherheit der Stadt auf dem Spiel steht, wird er uns den Schlüssel für die Spinnenschächte sicher geben.~
+== AC#VRON1 ~Ich habe die Rune, die in der Kammer, in welcher <CHARNAME> die tote Patrouille gefunden hat, untersucht. Sie ist... merkwürdig, nicht von dieser Welt.~
+== AC#TORT1 ~Ihr meint, sie ist ein Portal? So nahe an unserer Stadt?~
+== AC#VRON1 ~Ich denke, sie könnte ein Portal gewesen sein. Vielleicht nicht, um hindurch zu treten - sondern vielleicht zur Kommunikation.~
+== AC#CHEM1 ~Wir sollten dieses magische Ding dann sofort zerstören!~
+== AC#VRON1 ~Das sollten wir. Doch nicht sofort. Ich habe einen Vorschlag.~
+== AC#FENY1 ~Wir schicken <CHARNAME> durch dieses Portal!~
+== AC#VRON1 ~So etwas hatte ich mir auch überlegt. Ich möchte gemeinsam mit Charname dieses Portal untersuchen.~
+END
+IF ~~ THEN REPLY ~Na toll. Ihr wollt mich durch ein Portal jagen?~ EXTERN ~AC#VRON1~ NEW_acil20_portal_investigate_02
+
+	CHAIN AC#VRON1 NEW_acil20_portal_investigate_02
+	~Ich bitte Euch, einmal durch das Portal zu blicken. Ihr seid bereits in Ellhimars Spiegel einem Gedankenschinder gegenübergestanden. Wenn dieses Portal ebenfalls zur Kommunikation verwendet wurde, müssen wir wissen, mit wem.~
+	== AC#ELER1 ~Das klingt zwar gefährlich, ist aber eine gute Idee.~
+	== AC#GROM1 ~Ein hervorragender Vorschlag, Vronia. <CHARNAME>, Ihr würdet uns damit erneut einen großen Dienst erweisen.~
+	== AC#VRON1 ~Dann steht der Entschluss fest. <CHARNAME>, trefft mich vor den Toren der Stadt. Ich werde da sein, wenn Ihr soweit seid.~
+	END
+	IF ~~ THEN DO ~SetGlobal("AC#IL_ACIL20Portal","GLOBAL",1)~ EXIT
 
 CHAIN IF ~~ THEN AC#RUVA1 chain_ruvan_treason_01
 ~Ja, Meister Gromi. Sie haben es mit ihren eigenen Augen gesehen.~

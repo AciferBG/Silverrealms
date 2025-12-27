@@ -1,0 +1,24 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player1)
+        FadeToColor([20.0],0)
+        Wait(1)
+        LeaveAreaLUAPanic("ACIL58","",[1876.486],W)
+        LeaveAreaLUA("ACIL58","",[1876.486],W)
+        ActionOverride(Player2,LeaveAreaLUA("ACIL58","",[1855.535],NW))
+        ActionOverride(Player3,LeaveAreaLUA("ACIL58","",[1774.543],NW))
+        ActionOverride(Player4,LeaveAreaLUA("ACIL58","",[1900.427],NW))
+        ActionOverride(Player5,LeaveAreaLUA("ACIL58","",[1797.435],NW))
+        ActionOverride(Player6,LeaveAreaLUA("ACIL58","",[1835.565],N))
+        MultiPlayerSync()
+        MoveViewPoint([1876.486],INSTANT)
+        Wait(1)
+        CreateCreature("AC#TURBX",[1645.403],SE)  // Turbaern Ghalmrin
+        CreateCreature("AC#VRONX",[1715.434],SE)  // Vronia Eisenbieger
+        FadeFromColor([30.0],150)
+        ActionOverride(Player1,PlayDead(9))
+        EndCutSceneMode()
+END
+

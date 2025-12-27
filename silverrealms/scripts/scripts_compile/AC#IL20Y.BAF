@@ -1,0 +1,15 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId("AC#VRONX")  // Vronia Eisenbieger
+        Wait(1)
+        MoveToPoint([3568.1847])
+        PlaySound("CAS_M05")
+        ForceSpell(Myself,DO_NOTHING)  // SPIN905.SPL (No such index)
+        SetGlobal("GithRuneActivate","ACIL20",1)
+        Wait(1)
+        SetGlobal("AC#IL_ACIL20Portal","GLOBAL",5)
+        EndCutSceneMode()
+END
+

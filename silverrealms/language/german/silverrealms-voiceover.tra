@@ -91,10 +91,10 @@
 
 // Turbaern
 @5110 = ~By stone and silence!~ [AC#ILTU0]
-@5111 = ~Speak.~ [AC#ILTU1]
-@5112 = ~Careful.~ [AC#ILTU2]
-@5113 = ~Dumathoin watches.~ [AC#ILTU3]
-@5114 = ~The Keeper remembers.~ [AC#ILTU4]
+@5111 = ~Dumathoin watches.~ [AC#ILTU3] 
+@5112 = ~The Keeper remembers.~ [AC#ILTU4] 
+@5113 = ~Careful.~ [AC#ILTU2] 
+@5114 = ~Speak.~ [AC#ILTU1]
 @5115 = ~State it.~ [AC#ILTU5]
 @5116 = ~What is buried endures.~ [AC#ILTU6]
 

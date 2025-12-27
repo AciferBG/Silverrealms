@@ -516,6 +516,17 @@ COPY ~silverrealms/cre/AC#TURBA.cre~ ~override/AC#TURBA.cre~ // Turbaern in ACIL
   SAY SELECT_COMMON5  @5115
   SAY SELECT_COMMON6  @5116
   SAY BATTLE_CRY1 @5110
+  
+COPY ~silverrealms/cre/AC#TURBX.cre~ ~override~   // Turbaern in ACIL58 after portal questline
+  SAY NAME1 @90 SAY NAME2 @90
+      SAY INITIAL_MEETING   @5111
+  SAY SELECT_COMMON1  @5111
+  SAY SELECT_COMMON2  @5112
+  SAY SELECT_COMMON3  @5113
+  SAY SELECT_COMMON4  @5114
+  SAY SELECT_COMMON5  @5115
+  SAY SELECT_COMMON6  @5116
+  SAY BATTLE_CRY1 @5110
 
 COPY ~silverrealms/cre/AC#DURG1.cre~ ~override/AC#DURG1.cre~
   SAY NAME1 @98 SAY NAME2 @98
@@ -1448,6 +1459,16 @@ COPY ~silverrealms/cre/AC#VRON9.cre~ ~override~ // Vronia Ironledger: ACIL20
   SAY SELECT_COMMON6  @5126
 
 COPY ~silverrealms/cre/AC#VRONI.cre~ ~override~ // Vronia Ironledger: ACIL64
+  SAY NAME1 @281 SAY NAME2 @281
+  SAY INITIAL_MEETING   @5126
+  SAY SELECT_COMMON1  @5121
+  SAY SELECT_COMMON2  @5122
+  SAY SELECT_COMMON3  @5123
+  SAY SELECT_COMMON4  @5124
+  SAY SELECT_COMMON5  @5125
+  SAY SELECT_COMMON6  @5126
+  
+COPY ~silverrealms/cre/AC#VRONX.cre~ ~override~ // Vronia Ironledger: ACIL20; portal quest
   SAY NAME1 @281 SAY NAME2 @281
   SAY INITIAL_MEETING   @5126
   SAY SELECT_COMMON1  @5121

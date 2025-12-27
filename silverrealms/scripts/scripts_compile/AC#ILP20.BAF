@@ -1,0 +1,27 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player1)
+        ClearAllActions()
+        FadeToColor([20.0],0)
+        JumpToPoint([3648.1833])
+        ActionOverride(Player2,JumpToPoint([3544.1761]))
+        ActionOverride(Player3,JumpToPoint([3574.1701]))
+        ActionOverride(Player4,JumpToPoint([3468.1753]))
+        ActionOverride(Player5,JumpToPoint([3545.1653]))
+        ActionOverride(Player6,JumpToPoint([3499.1648]))
+        ActionOverride("AC#VRONX",JumpToPoint([3416.1779]))
+        Face(NE)
+        ActionOverride(Player2,Face(NE))
+        ActionOverride(Player3,Face(NE))
+        ActionOverride(Player4,Face(NE))
+        ActionOverride(Player5,Face(NE))
+        ActionOverride(Player6,Face(NE))
+        ActionOverride("AC#VRONX",Face(NE))
+        MoveViewPoint([3648.1833],INSTANT)
+        FadeFromColor([20.0],0)
+        Wait(1)
+        ActionOverride("AC#VRONX",StartDialogueNoSet([PC]))
+END
+

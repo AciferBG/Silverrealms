@@ -1,3 +1,6 @@
+BEGIN ~AC#VRONX~
+BEGIN ~AC#TURBX~
+
 /*******************************************************************************************************
 Dialoge beim Abschied aus Iltkazar
 *******************************************************************************************************/
@@ -459,6 +462,57 @@ ActionOverride("AC#DROW4",EscapeArea())
 EscapeArea()~ EXIT
 END
 
+// ---------------------------------------------
+// CHAIN - Vronia und das Portal
+// ---------------------------------------------
+CHAIN IF ~Global("AC#IL_ACIL20Portal","GLOBAL",2)~ THEN AC#VRONX hello_portal_01
+~Da seid Ihr ja.  Kommt, gehen wir in die Kammer der toten Patrouille und sehen und dieses Portal einmal genauer an.~
+== AC#HATH1 ~Seid vorsichtig, Herrin Vronia. Es sind viele gefährliche Gestalten unterwegs dieser Tage.~
+== AC#VRONX ~Keine Bange. Diese alte Zwergin weiß sich gut zu schützen, wenn sie durch die Steine wandelt. Kommt, <CHARNAME>, gehen wir.~
+END
+IF ~~ THEN DO ~SetGlobal("AC#IL_ACIL20Portal","GLOBAL",3)
+StartCutSceneMode()
+StartCutScene("AC#ILP20")~ EXIT
+
+	CHAIN IF ~Global("AC#IL_ACIL20Portal","GLOBAL",3)~ THEN AC#VRONX hello_portal_02
+	~So, da wären wir. Ich werde versuchen, die Rune zu aktivieren...~
+	END
+	IF ~~ THEN DO ~SetGlobal("AC#IL_ACIL20Portal","GLOBAL",4)
+	StartCutSceneMode()
+	StartCutScene("AC#IL20Y")~ EXIT
+	
+	CHAIN IF ~Global("AC#IL_ACIL20Portal","GLOBAL",5)~ THEN AC#VRONX hello_portal_02
+	~Versucht einmal, hindurch zu sehen, <CHARNAME>.~
+	END
+	IF ~~ THEN DO ~SetGlobal("AC#IL_ACIL20Portal","GLOBAL",6)~ EXIT
+	
+	CHAIN IF ~Global("AC#IL_ACIL20Portal","GLOBAL",7)~ THEN AC#VRONX hello_portal_02
+	~<CHARNAME>! Was ist passiert! Los, schnell zurück in die Stadt...~
+	END
+	IF ~~ THEN DO ~SetGlobal("AC#IL_ACIL20Portal","GLOBAL",8)
+	StartCutSceneMode()
+	StartCutScene("AC#IL20X")~ EXIT
+	
+	CHAIN IF ~Global("AC#IL_ACIL20Portal","GLOBAL",6)~ THEN AC#VRONX hello_look_through
+	~Versucht einmal, hindurch zu sehen, <CHARNAME>.~
+	EXIT
+
+CHAIN IF ~Global("AC#IL_ACIL20Portal","GLOBAL",8)~ THEN AC#TURBX hello_portal_aftermath
+	~Geht es <PRO_HIMHER> besser?~
+	== AC#VRONX ~Ja, es scheint, <PRO_HESHE> hat keine bleibenden Schäden davongetragen.~
+	== AC#TURBX ~Was ist in dieser Kammer passiert?~
+	== AC#VRONX ~Ich habe versucht, die merkwürdige Rune zu aktivieren, und <CHARNAME> hat hindurchgesehen. Irgendetwas auf der anderen Seite hat unseren Ausspähversuch bemerkt und <CHARNAME> einen geistigen Schlag verpasst.~
+	== AC#TURBX ~Was habt Ihr gesehen, <CHARNAME>?~
+	END
+	IF ~~ THEN REPLY ~Ich weiß nicht genau... irgendeine silbrige Ebene. Und das ist plötzlich so ein Rabengesicht aufgetaucht.~ EXTERN AC#VRONX raven_fiend 
+	
+		CHAIN IF ~Global("AC#IL_ACIL20Portal","GLOBAL",7)~ THEN AC#VRONX raven_fiend
+		~Was immer es war, es ist fort und kann uns hier nichts anhaben, <CHARNAME>. Das Portal ist erloschen. Wir sind hier in Sicherheit.~
+		== AC#TURBX ~Doch Ihr habt Recht. Es geht so nicht mehr weiter. Wir müssen sehen, was unsere Stadt bedroht.~
+		== AC#TURBX ~Es war ein Fehler, Euch den Zugang zu den Spinnenschächten zu verwehren, <CHARNAME>. Hier, nehmt diesen Runenstein. Sobald Ihr wieder gut gerüstet seid, könnt Ihr mit Dumathoins Segen an diesem unheiligen Ort nach der Ursache für unsere Misere suchen, wenn Ihr der Meinung seid, dass dies uns weiterbringt.~
+		END
+		IF ~~ THEN DO ~SetGlobal("AC#IL_ACIL20Portal","GLOBAL",10)
+		GiveItemCreate("ac#ky1",PLayer1,0,0,0)~ EXIT
 // ---------------------------------------------
 // CHAIN - Abschied aus Iltkazar 01
 // ---------------------------------------------

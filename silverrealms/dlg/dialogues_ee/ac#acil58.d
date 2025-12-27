@@ -289,7 +289,7 @@ END
 						IF ~~THEN BEGIN thanks_again
 						SAY ~Wie gesagt, der Dank gebührt ganz allein Euch.~
 						=
-						~Ich werde mich nun wieder meinen Aufgaben im Tempel widmen. Es gibt einiges aufzuräumen, und die Schutzrunen in den tiefsten Kammern unserer Stadt sind wohl unwiderbrnglich zerstört.~
+						~Ich werde mich nun wieder meinen Aufgaben im Tempel widmen. Es gibt einiges aufzuräumen, und die Schutzrunen in den tiefsten Kammern unserer Stadt sind wohl unwiederbringlich zerstört.~
 						IF ~GlobalLT("AC#RC_Turbaern_Second","GLOBAL",1)~ THEN EXIT
 						IF ~Global("AC#RC_Turbaern_Second","GLOBAL",1)~ THEN REPLY ~Ich habe noch ein Anliegen. Der Regentschaftsrat bittet Euch, mir den Siegelstein zu den Spinnenschächten auszuhändigen.~ GOTO need_runestone_for_spiderstalkings
 						END

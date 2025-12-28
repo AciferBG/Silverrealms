@@ -102,13 +102,14 @@ END
 	END
 	
 	IF ~~ THEN BEGIN driftdisc_idea
-	SAY ~Da fällt mir noch was ein - wenn Ihr dort alten Hinterlassenschaften der Drow begegnet, solltet Ihr einmal genauer hinschauen. Die Spitzohren schwebten gerne mit allerlei Hilfsmitteln durch die Gegend. Wenn Ihr eins von diesen Schwebeteilen ergattern könntet, hättet Ihr es leichter, Euren Rückzug an die Oberfläche anzutreten!~
-	IF ~~ THEN REPLY ~Weshalb?~ GOTO driftdisc_idea_02
+	SAY ~Da fällt mir noch was ein - habt Ihr eigentlich schon eine Möglichkeit gefunden, wieder nach Hause zurückzukehren? Ich hörte, Dorna vom Clan Abgrundlied, die Mutter Elerns, hat sich da allerhand Gedanken gemacht. Irgendeine komische Drow-Flugscheibe oder so etwas.~
+	IF ~~ THEN REPLY ~Ja.~ GOTO missing_surface_01
+	IF ~~ THEN REPLY ~Ich arbeite daran.~ GOTO driftdisc_not_yet
+	IF ~~ THEN REPLY ~Nein.~ GOTO driftdisc_not_yet
 	END
 	
-		IF ~~ THEN BEGIN driftdisc_idea_02
-		SAY ~Habt Ihr Euch noch keine Gedanken gemacht, wie Ihr wieder von hier verschwinden wollt? Also, ich meine, nicht, dass ich Euch loswerden will! Aber diesen komischen Schacht, den Ihr heruntergekommen seid, werdet Ihr schwerlich einfach so wieder emporklettern können.~
-		IF ~~ THEN REPLY ~Und dabei können mir die Drow mit ihren Gegenständen helfen?~ GOTO driftdisc_idea_03
+		IF ~~ THEN BEGIN driftdisc_not_yet
+		SAY ~Habt es wohl nicht so eilig, von hier zu verschwinden, was? Also, ich meine, nicht, dass ich Euch loswerden will! Aber diesen komischen Schacht, den Ihr heruntergekommen seid, werdet Ihr schwerlich einfach so wieder emporklettern können.~
 		IF ~~ THEN REPLY ~Stimmt, zurück an die Oberfläche sollte ich auch irgendwann einmal wieder.~ + missing_surface_01
 		IF ~~ THEN REPLY ~Gute Idee. Bin froh, wenn ich wieder unter freiem Himmel bin.~ + missing_surface_01
 		END
@@ -120,7 +121,7 @@ END
 			END
 			
 				IF ~~ THEN BEGIN missing_surface_02
-				SAY ~Na, dann ist meine Idee mit den Drow-Geräten doch gar nicht mal so schlecht!~
+				SAY ~Na, dann ist die Idee mit den Drow-Geräten doch gar nicht mal so schlecht!~
 				IF ~~ THEN GOTO driftdisc_idea_03
 				END
 				
@@ -131,25 +132,23 @@ END
 				END
 				
 				IF ~~ THEN BEGIN no_such_place
-				SAY ~Oh, das tut mir leid. Also, wenn's nach mir geht könnt Ihr hier solange bleiben, wie Ihr wollt! Wenn Ihr aber doch mal wieder nach oben reisen wollt, hätte ich da wie gesagt den Einfall mit diesem Drow-Flug-Gerät.~
+				SAY ~Oh, das tut mir leid. Also, wenn's nach mir geht könnt Ihr hier solange bleiben, wie Ihr wollt! Wenn Ihr aber doch mal wieder nach oben reisen wollt, hätte Dorna da wie gesagt den Einfall mit diesem Drow-Flug-Gerät.~
 				IF ~~ THEN GOTO driftdisc_idea_03
 				END
 					
 			IF ~~ THEN BEGIN driftdisc_idea_03
-			SAY ~Die meisten Erfindungen der Dunkelelfen würde ich nicht mit einer Bartspitze anfassen. Aber diese Scheiben, mit denen sie herumschweben, wären doch schon ganz praktisch, findet Ihr nicht? Früher sind die Drow manchmal hier die Schlucht vor den Stadttoren emporgestiegen. Hab' mehr als einem von den Scheißern mit dem Wurfhammer ihre verdammte Scheibe unterm Hintern weggeschossen, dass sie Knall auf Fall zurück in den Abgrund gestürzt sind. Das war ein Spaß sag' ich Euch! Aber jetzt trauen sich die Drow leider nicht mehr so nah vor die Tore, dass ich Euch hier eine von ihren Schwebescheiben besorgen könnte. Deshalb solltet Ihr in den verlassenen Minen einmal danach suchen.~
-			IF ~~ THEN REPLY ~Danke. Ich werde meine Augen offen halten.~ GOTO driftdisc_thanks
-			IF ~~ THEN REPLY ~Warum denkt Ihr, dass in den Spinnenschächten solch ein Gegenstand zu finden sein könnte?~ + why_driftdisc_in_spiderstalkings
+			SAY ~Die meisten Erfindungen der Dunkelelfen würde ich nicht mit einer Bartspitze anfassen. Aber diese Scheiben, mit denen sie herumschweben, wären doch schon ganz praktisch, findet Ihr nicht? Früher sind die Drow manchmal hier die Schlucht vor den Stadttoren emporgestiegen. Hab' mehr als einem von den Scheißern mit dem Wurfhammer ihre verdammte Scheibe unterm Hintern weggeschossen, dass sie Knall auf Fall zurück in den Abgrund gestürzt sind. Das war ein Spaß sag' ich Euch! Aber jetzt trauen sich die Drow leider nicht mehr so nah vor die Tore.~
+			IF ~~ THEN GOTO why_driftdisc_in_spiderstalkings
 			END
 			
 				IF ~~ THEN BEGIN why_driftdisc_in_spiderstalkings
-				SAY ~Viele Orte dort waren Schauplatz legendärer Schlachten meiner Vorfahren gegen Dunkelelfen. Es gab Zeiten, da hatten sich die Drow dort richtig eingenistet - mit all ihren Spinnen, die jetzt noch in den Gängen ihre Netze spinnen. Man findet in der Gegend öfter mal etwas Drow-Zeug, warum dann nicht auch mit etwas Glück eine Flugscheibe?~
+				SAY ~Viele Orte dort waren Schauplatz legendärer Schlachten meiner Vorfahren gegen Dunkelelfen. Es gab Zeiten, da hatten sich die Drow dort richtig eingenistet - mit all ihren Spinnen, die jetzt noch in den Gängen ihre Netze spinnen. Man findet in der Gegend öfter mal etwas Drow-Zeug.~
 				IF ~~ THEN GOTO driftdisc_thanks
 				END
 			
 				IF ~~ THEN BEGIN driftdisc_thanks
 				SAY ~Mehr wollte ich Euch gar nicht mitteilen. Und jetzt geht in die Mine und schlagt ein paar Spinnenbeine ab, verstanden?~
-				IF ~~ THEN DO ~SetGlobal("AC#HatharDriftdisc","ACIL20",2)
-				AddJournalEntry(@20800,QUEST)~ EXIT 
+				IF ~~ THEN DO ~SetGlobal("AC#HatharDriftdisc","ACIL20",2)~ EXIT 
 				END
 
 
@@ -509,8 +508,10 @@ CHAIN IF ~Global("AC#IL_ACIL20Portal","GLOBAL",8)~ THEN AC#TURBX hello_portal_af
 	
 		CHAIN IF ~Global("AC#IL_ACIL20Portal","GLOBAL",7)~ THEN AC#VRONX raven_fiend
 		~Was immer es war, es ist fort und kann uns hier nichts anhaben, <CHARNAME>. Das Portal ist erloschen. Wir sind hier in Sicherheit.~
-		== AC#TURBX ~Doch Ihr habt Recht. Es geht so nicht mehr weiter. Wir müssen sehen, was unsere Stadt bedroht.~
-		== AC#TURBX ~Es war ein Fehler, Euch den Zugang zu den Spinnenschächten zu verwehren, <CHARNAME>. Hier, nehmt diesen Runenstein. Sobald Ihr wieder gut gerüstet seid, könnt Ihr mit Dumathoins Segen an diesem unheiligen Ort nach der Ursache für unsere Misere suchen, wenn Ihr der Meinung seid, dass dies uns weiterbringt.~
+		== AC#TURBX ~Wir sind *noch* in Sicherheit. Eine so mysteriöse Bedrohung habe ich unter den Bergen noch nicht erlebt.~
+		== AC#TURBX ~Ihr hattet Recht. Es geht so nicht mehr weiter. Wir müssen sehen, was unsere Stadt bedroht, bevor uns das Zepter aus der Hand genommen wird.~
+		== AC#TURBX ~Es war ein Fehler, Euch den Zugang zu den Spinnenschächten zu verwehren, <CHARNAME>. Zeit, diesen Fehler wiedergutzumachen! Hier, nehmt diesen Runenstein. Er wird die versiegelte Pforte zu den Spinnenschächten außerhalb unserer Stadt öffnen. Ruht Euch aus und rüstet Euch.~ 
+		= ~Sobald Ihr wieder gut gerüstet seid, solltet Ihr mit Dumathoins Segen an diesem unheiligen Ort nach der Ursache für unsere Misere suchen, wenn Ihr der Meinung seid, dass dies uns weiterbringt.~
 		END
 		IF ~~ THEN DO ~SetGlobal("AC#IL_ACIL20Portal","GLOBAL",10)
 		SetGlobal("AC#IL_Spiderstalkings","GLOBAL",1)

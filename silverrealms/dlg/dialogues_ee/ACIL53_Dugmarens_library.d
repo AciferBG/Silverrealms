@@ -279,6 +279,16 @@ Dialog Fruntuck Flaschenhals
 *******************************************************************************************************/
 BEGIN ~AC#53SV2~
 
+IF ~Global("AC#FruntuckHealed","GLOBAL",1)~ THEN BEGIN hello_afterhick
+SAY ~Oh! Ihr seid es! Der <PRO_RACE>, der mich von meinem Schluckauf befreit hat!~
+++ ~Wollte nur kurz nach Euch schauen und bin schon wieder weg.~ + bye_afterhick
+END
+
+		IF ~~ THEN BEGIN bye_afterhick
+		SAY ~*Hicks*! War nur ein Scherz! Hahaha!~ [HICCUP]
+		IF ~~ THEN EXIT 
+		END
+
 IF ~True()~ THEN BEGIN hick_01
 SAY ~*Hicks*?~
 IF ~Global("AC#Fruntuck","GLOBAL",0)~ THEN REPLY ~Was ist denn mit Euch los?~ + whats_up_with_you
@@ -331,7 +341,8 @@ END
 							EraseJournalEntry(@64203)
 				EraseJournalEntry(@64204)
 				EraseJournalEntry(@64205)
-				AddJournalEntry(@64206,QUEST_DONE)~ EXIT
+				AddJournalEntry(@64206,QUEST_DONE)
+				SetGlobal("AC#FruntuckHealed","GLOBAL",1)~ EXIT
 				END
 	
 	IF ~~ THEN BEGIN whats_up_with_you
@@ -406,7 +417,7 @@ END
 												=
 												~Fragt einmal bei Thif*hicks*... ich meine *Hicks*tic... ach, verdammt... Thiftic! Er sollte solche Dinge im *Hicks*gebot haben.~
 												IF ~~ THEN DO ~SetGlobal("AC#Fruntuck","GLOBAL",1)
-												SetGlobal("AC#Fruntuk_Levitate","GLOBAL",2)
+												SetGlobal("AC#Fruntuck_Levitate","GLOBAL",2)
 												AddJournalEntry(@64201,QUEST)
 												~ EXIT
 												END	

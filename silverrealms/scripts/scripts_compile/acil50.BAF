@@ -270,12 +270,13 @@ THEN
 END
 
 IF
-	Global("AC#RC_Turbaern_Second","GLOBAL",3)
+	GlobalGT("AC#IL_Spiderstalkings","GLOBAL",0)
+	//Global("AC#RC_Turbaern_Second","GLOBAL",3)
 	Global("AC#BreskDrowPriestess","GLOBAL",0)
 THEN
 	RESPONSE #100
-                 SetGlobal("AC#BreskDrowPriestess","GLOBAL",1)
-		ActionOverride("AC#BRES1",JumpToPoint([2928.370]))
+        SetGlobal("AC#BreskDrowPriestess","GLOBAL",1)
+		//ActionOverride("AC#BRES1",JumpToPoint([2928.370]))
 END
 
 IF

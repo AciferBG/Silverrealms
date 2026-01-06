@@ -15,12 +15,12 @@ IF ~GlobalGT("AC#25_Bloodmoon","GLOBAL",0)~ THEN REPLY ~Ich trete ein im Namen S
 END
 
 IF ~~THEN BEGIN do_nothing
-SAY ~Einen kurzen Moment geschieht nichts, doch dann hört Ihr, wie sich ein unsichtbarer Mechanismus in Bewegung setzt. Mit einem lauten Quietschen öffnet sich die Tür, und Ihr spürt die Brise von kühler Luft, die aus den Tunneln jenseits der verschlossenen Tür ausströmt.~
-   IF ~~ THEN DO ~~  EXIT
+SAY ~Die Tür bewegt sich nicht.~ 
+   IF ~~ THEN EXIT
 END
 
 IF ~~ THEN BEGIN door_open
-SAY ~Die Tür bewegt sich nicht.~
+SAY ~Einen kurzen Moment geschieht nichts, doch dann hört Ihr, wie sich ein unsichtbarer Mechanismus in Bewegung setzt. Mit einem lauten Quietschen öffnet sich die Tür, und Ihr spürt die Brise von kühler Luft, die aus den Tunneln jenseits der verschlossenen Tür ausströmt.~
 IF ~~ THEN  DO ~SetGlobal("AC#Door25","ACIL25",2)
 EraseJournalEntry(@23000)~ EXIT
 END

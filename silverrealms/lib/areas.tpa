@@ -255,6 +255,8 @@ COPY ~silverrealms/areas/ACIL54.are~          ~override~
 
 COPY ~silverrealms/areas/ACIL55.are~          ~override~
  WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+ ADD_MAP_NOTE #1789 #500 ~gray~ @6500 //To Azerkyn Hall
+ ADD_MAP_NOTE #724 #1291 ~gray~ @6500 //To Azerkyn Hall
 
 COPY ~silverrealms/areas/ACIL56.are~          ~override~
  WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type

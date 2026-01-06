@@ -515,7 +515,8 @@ CHAIN IF ~Global("AC#IL_ACIL20Portal","GLOBAL",8)~ THEN AC#TURBX hello_portal_af
 		END
 		IF ~~ THEN DO ~SetGlobal("AC#IL_ACIL20Portal","GLOBAL",10)
 		SetGlobal("AC#IL_Spiderstalkings","GLOBAL",1)
-		GiveItemCreate("ac#ky1",PLayer1,0,0,0)~ EXIT
+		GiveItemCreate("ac#ky1",PLayer1,0,0,0)
+		AddJournalEntry(@62022,QUEST)~ EXIT
 // ---------------------------------------------
 // CHAIN - Abschied aus Iltkazar 01
 // ---------------------------------------------

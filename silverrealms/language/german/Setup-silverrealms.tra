@@ -1624,6 +1624,9 @@ Diirinka'~
 // ACIL53 - Dugmaren temple (other entries at @1122 & @1123
 @6300 = ~Tempel des Dugmaren~
 
+// ACIL55 - Arnskullhall
+@6500 = ~Zur Azerkynhalle~
+
 // Area script Strings
 @7000 = ~Ihr müsst die Schwebescheibe, das Quecksilber und den Levitationstrank auf den Altar legen, um die Scheibe wieder verzaubern zu können.~
 @7001 = ~In dieser Position klemmt ein Zahnrad, welches wohl jenseits dieses Raumes aktiviert wird.~
@@ -1713,9 +1716,7 @@ Ich glaube, ich weiß, warum die Zauber der Priester Iltkazars alle verschwendet
 Es gibt nur eine Möglichkeit, dem Rätsel um Mith Barak näher zu kommen: Ich werde in die Spinnenschächte aufbrechen und sehen, was Mith Barak dort hinterlassen hat.
 
 24. Mirtul 1368, im Jahr des Banners
-Ich bin in der Kapelle des Blutigen Mondes angekommen. Ein uralter Tempel zu Ehren eines Menschen- und eines Zwergengottes. Mith Barak ist vermutlich keines von beidem, doch es passt ins Bild, dass er sich hier in der Abgeschiedenheit aufgehalten hat. Der uralte, mythalgleiche Zauber, der diesen Tempel einnimmt wie dichter Nebel ist auffällig. Es scheint so, dass die Erschaffer den Zauber gewebt haben, um in einen tiefen Schlaf fallen zu können. Geht es um Visionen?
-
-...ich bin unglaublich müde, der Zauber zehrt fürchterlich an meinen Kräften. Die Statuen stellen Fragen zur Geschichte der alten Zwergenreiche. Ich habe vier richtig beantwortet. Nun werde ich gleich die letzte Frage beantworten. Ich muss mich nur noch kurz wach halten, denn wenn die letzte Frage beantwortet wurde, setzt die Vision des Zaubers ein, die Mith Barak wahrscheinlich in diesen Ort gewebt hat. Der König muss ein famoser Künstler des Arkanen sein, wenn man sich die mächtige Magie ansieht, die er hier manipuliert hat. So etwas würde kein "normaler" Zwerg zustande bringen. Ich glaube, ich weiß jetzt, was Mith Barak ist. Es gibt nur eine Möglichkeit. Aber alles der Reihe nach. Erst die letzte Frage. Kurz die Augen schließen, neue Kräfte sammeln, und dann geht es los.
+Ich bin in der Kapelle des Blutigen Mondes angekommen. Ein uralter Tempel zu Ehren eines Menschen- und eines Zwergengottes. Ich bin unglaublich müde, der Zauber zehrt fürchterlich an meinen Kräften. Die Statuen stellen Fragen zur Geschichte der alten Zwergenreiche. Ich habe vier richtig beantwortet. Nun werde ich gleich die letzte Frage beantworten. Ich muss mich nur noch kurz wach halten...
 
 (Hier endet das Tagebuch.)
 ~
@@ -2048,13 +2049,13 @@ Die Materialkomponente des Zaubers ist ein Tropfen Quecksilber.~
 Die Ruinen Shanatars schweigen beharrlich. Jeder Stein scheint Wissen zu bergen, doch keiner offenbart mir den gesuchten Übergang. Ich habe die alten Wege geprüft, Runen verglichen, Bruchstücke vergessener Orte rekonstruiert, doch kein Tor antwortet mir.
 
 2.
-Auch dieser Ort, die Halle des Blutmondes, trägt die Zeichen einer Schwelle. Selûnes Präsenz ist schwach, fast nur noch Erinnerung. Die Magie hier ist dünn, als habe etwas Größeres sie einst berührt und dann weitergezogen. Kein Portal. Nur Nachhall.
+Auch dieser Ort, die Halle des Blutmondes, trägt die Zeichen einer Schwelle. Selûnes Präsenz ist schwach, fast nur noch Erinnerung. Die Magie hier ist dünn, als habe etwas Größeres sie einst berührt und sei dann weitergezogen. 
 
 3.
 Ich beginne zu begreifen, dass Shanatar einen Zugang besessen haben muss. Nur wo? Die Zwerge suchten Erz und Stein – sie sahen nie, was zwischen den Welten lag. Doch hier ist kein Portal in die Astralebene. Wo dann?
 
 4.
-Immerhin bietet mir diese Halle Ruhe. Abgeschieden von Iltkazars Stimmen, fern der Fragen und des Misstrauens. Hier kann ich denken, rechnen, verwerfen. Die Stille ist ein Werkzeug, schärfer als jeder Meißel.
+Immerhin bietet mir diese Halle Ruhe. Abgeschieden von Iltkazars Stimmen, fern der Fragen und des Misstrauens. Hier kann ich denken, rechnen, verweilen. Die Stille ist ein Werkzeug, schärfer als jeder Meißel.
 
 5.
 Ich habe die Spinnenschächte versiegeln lassen. Ein einfacher, eleganter Entschluss. Kein Zwerg wird freiwillig dort suchen, wo Gift, Dunkelheit und alte Schrecken lauern. Mein Rückzugsort bleibt verborgen, und mein Werk ungestört.

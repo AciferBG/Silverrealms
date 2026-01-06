@@ -87,17 +87,17 @@ END
 				END
 				
 					IF ~~ THEN BEGIN a_curse_02
-					SAY ~Ich denke nicht. Der Zauber des Tempels ist alt, viel älter als der älteste Zwerg. Nach allem, was wir wissen, war auch dieser König Mith Barak vor langer Zeit in diesem Tempel, hat ihn aber wieder unbehelligt verlassen. Sonst würde er jetzt nicht auf seinem Thron in der Zwergenstadt sitzen. Deshalb denke ich nicht, dass dieser Zauber etwas mit dem Schlaf zu tun - jedenfalls nicht direkt. Dieser Magier Ellhimar war überzeugt davon, dass der Zauber des Tempels aber gewisse Visionen schenken könnte. Jedenfalls faselte er so etwas, bevor wir ihn den Illithiden übergaben.~
-					IF ~~ THEN REPLY ~Könntet Ihr mir nicht helfen, Ellhimar wieder seinen Verstand zurückzugeben?~ GOTO bring_ellhimar_back_to_sanity
+					SAY ~Ich denke nicht. Der Zauber des Tempels ist alt, viel älter als der älteste Zwerg. Nach allem, was wir wissen, war auch dieser König Mith Barak vor langer Zeit in diesem Tempel, hat ihn aber wieder unbehelligt verlassen. Sonst würde er jetzt nicht auf seinem Thron in der Zwergenstadt sitzen. Deshalb denke ich nicht, dass dieser Zauber etwas mit dem Schlaf zu tun hat - jedenfalls nicht direkt. Dieser Magier Ellhimar war jedoch überzeugt davon, dass der Zwergenkönig in diesem Tempel etwas versteckt haben könnte. Jedenfalls faselte er so etwas, bevor wir ihn den Illithiden übergaben.~
+					IF ~~ THEN REPLY ~Könntet Ihr mir nicht helfen, Ellhimar wieder aus der Gewalt der Illithiden zurückzubekommen?~ GOTO bring_ellhimar_back_to_sanity
 					END
 
 				IF ~~ THEN BEGIN bring_ellhimar_back_to_sanity
-				SAY ~Macht Ihr Witze? Damit müsst Ihr wirklich selbst zurechtkommen. Ich rede hier schon viel zu viel. Genug davon. Los Männer, wir ziehen weiter. Jeder pinkelt Lolth noch einmal ins Gesicht und dann ziehen wir los!~
+				SAY ~Macht Ihr Witze? Die Illithiden lassen niemanden mehr gehen. Niemals. Ich rede hier schon viel zu viel. Genug davon. Los Männer, wir gehen weiter. Jeder pinkelt Lolth noch einmal ins Gesicht und dann ziehen wir los!~
 				IF ~~ THEN REPLY ~Ihr bleibt nicht hier?~ + stay_here
 				END
 				
 					IF ~~ THEN BEGIN stay_here
-					SAY ~Hier? In diesem Dreckloch? Nein, mein *abbil*. Uns zieht es an die Oberfläche. Es wird Zeit, dass die Drow erneut die oberen Lande beherrschen! Nun, da uns die Häuser Guallidurths nicht mehr verfolgen, können wir uns dort mit den anderen gleichen Glaubens, die schon oben sind, ein großes Reich erobern.~
+					SAY ~Hier? In diesem Drecksloch? Nein, mein *abbil*. Uns zieht es an die Oberfläche. Es wird Zeit, dass die Drow erneut die oberen Lande beherrschen! Nun, da uns die Häuser Guallidurths nicht mehr verfolgen, können wir uns dort mit den anderen gleichen Glaubens, die schon oben sind, ein großes Reich erobern.~
 					=
 					~Abmarsch! Und lasst nichts als *araj* an diesem *yath* zurück!~
 					IF ~~ THEN DO ~
@@ -198,7 +198,7 @@ END
 									END
 									
 										IF ~~ THEN BEGIN lolth_has_no_power
-										SAY ~Lolth? Sie hat hier schon lange keine Macht mehr. Seht ihr ihre Statue auf der anderen Plattform zu meiner Linken? Sie stellte Lolth dar. Es war mir eine Freunde, ihr den Kopf abzuschlagen. Wisst Ihr, was ich jeden Tag an der Statue als Erstes mache, nachdem ich gut gegessen habe?~
+										SAY ~Lolth? Sie hat hier schon lange keine Macht mehr. Seht ihr ihre Statue auf der anderen Plattform zu meiner Linken? Sie stellte Lolth dar. Es war mir eine Freude, ihr den Kopf abzuschlagen. Wisst Ihr, was ich jeden Tag an der Statue als Erstes mache, nachdem ich gut gegessen habe?~
 										IF ~~ THEN REPLY ~Das möchte ich mir lieber nicht vorstellen.~ + vhaeraun_flag
 										IF ~IsValidForPartyDialog("Korgan")~ THEN EXTERN ~KORGANJ~ Korgan_lolth_statue
 										END
@@ -287,7 +287,7 @@ END
 																					
 																					IF ~~ THEN BEGIN kill_lolth_priestess
 																					SAY ~Die Zofen Lolths schicken immer wieder Späher und Priesterinnen ihrer Göttin aus, um nach so freiheitsliebenden Drow wie uns zu suchen.~
-																					IF ~Dead("AC#DROW3")~ THEN REPLY ~Ich habe doch schon eine von ihnen getötet!~ + already_killed_lolth_priestess 
+																					IF ~Dead("AC#DROW3")~ THEN REPLY ~Ich habe gerade eine Priesterin Lolths getötet.~ + already_killed_lolth_priestess 
 																					IF ~!Dead("AC#DROW3")
 																					GlobalGT("AC#BreskDrowPriestess","GLOBAL",4)~ THEN REPLY ~Vor Kurzem habe ich eine von ihnen am Leben gelassen.~ + not_killed_lolth_priestess 
 																					IF ~~ THEN REPLY ~Was soll ich also tun?~ + what_do_about_lolth_priestess 
@@ -311,6 +311,8 @@ END
 																								IF ~~ THEN BEGIN task_seek_destroy
 																								SAY ~Meine Männer haben mir berichtet, dass die Tochter einer Mutter Oberin hier in der Nähe mit einigen Dienern herumschleicht. Sie kommt aus der Tempelstadt Guallidurth weiter im Süden.~
 																								IF ~~ THEN REPLY ~Ich soll sie für Euch töten?~ + task_seek_destroy_02
+																								IF ~~ THEN REPLY ~Nun gut, dann werde ich sie töten.~ + task_seek_destroy_02
+																								IF ~Dead("AC#DROW3")~ THEN REPLY ~Also gut, die nächste Lolth-Priesterin, die über meine Klinge springt.~ + task_seek_destroy_02
 																								END
 																								
 																									IF ~~ THEN BEGIN task_seek_destroy_02
@@ -343,7 +345,7 @@ END
 																														IF ~~ THEN BEGIN listen_carefully
 																														SAY ~Dieses Miststück Lolths schleicht irgendwo in den Schächten herum. Jetzt, da Ihr sie geöffnet habt, wird es nur eine Frage der Zeit sein, bis sie uns hier findet. Selbst wenn wir sie töten, könnte dies die Mutter Oberinnen von Guallidurth alarmieren.~
 																														=
-																														~Ihr übergebt Ihr die Leiche eines männlichen Drow und überzeugt sie davon, dass Ihr den letzten getötet habt. Wenn Ihr glaubwürdig seid, wird sie von dannen ziehen.~
+																														~Ihr übergebt Ihr die Leiche eines männlichen Drow und überzeugt sie davon, dass Ihr den letzten seiner Art hier in dem Gebiet getötet habt. Wenn Ihr glaubwürdig seid, wird sie von dannen ziehen.~
 																														IF ~~ THEN REPLY ~Und wenn ich nicht glaubwürdig bin?~ + what_if_fail
 																														END
 																														

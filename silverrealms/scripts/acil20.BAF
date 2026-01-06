@@ -379,10 +379,11 @@ THEN
 END
 
 IF
-	PartyHasItem("AC#25TEL")
+    InMyArea(Player1)
+    PartyHasItem("AC#25TEL")  // Drow-Teleportationsstein
 THEN
-	RESPONSE #100
-		DisplayStringHeadOwner("AC#25TEL",@6004)
-		TakePartyItem("AC#25TEL")
-		DestroyItem("AC#25TEL")
+    RESPONSE #100
+        DisplayStringHeadOwner("AC#25TEL",104767)  // Der Drow-Teleportationsstein verschwindet aus Eurem Inventar.
+        TakePartyItem("AC#25TEL")  // Drow-Teleportationsstein
+        DestroyItem("AC#25TEL")  // Drow-Teleportationsstein
 END

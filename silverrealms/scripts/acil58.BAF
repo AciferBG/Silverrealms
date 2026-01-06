@@ -56,13 +56,14 @@ THEN
 END
 
 IF
-	PartyHasItem("AC#HADUM")
-	Global("Deactivate_TravelRegion","ACIL58",0)
+    PartyHasItem("AC#HADUM")  // Siegelbrecher +4
+    Global("Deactivate_TravelRegion","ACIL58",0)
 THEN
-	RESPONSE #100
-                TriggerActivation("TrACIL50",FALSE)
-                TriggerActivation("Info_Hammer",TRUE)
-		SetGlobal("Deactivate_TravelRegion","ACIL58",1)
+    RESPONSE #100
+        TriggerActivation("TrACIL50",FALSE)
+        TriggerActivation("Tracil50_02",FALSE)
+        TriggerActivation("Info_Hammer",TRUE)
+        SetGlobal("Deactivate_TravelRegion","ACIL58",1)
 END
 
 IF
@@ -82,9 +83,10 @@ THEN
 		Wait(2)
 		AddExperienceParty(4000)
 		TriggerActivation("TrACIL50",TRUE)
+		TriggerActivation("Tracil50_02",TRUE)
 		TriggerActivation("Info_Hammer",FALSE)
-	        AddJournalEntry(@58022,QUEST_DONE)
-                EraseJournalEntry(@58021)
+		AddJournalEntry(@58022,QUEST_DONE)
+        //EraseJournalEntry(@58021)
 		SetGlobal("Hammer_retrieved","ACIL58",1)
 		CloseDoor("DOOR01") // close door to Level #2
 		EndCutSceneMode()

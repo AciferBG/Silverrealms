@@ -7,6 +7,11 @@ BEGIN ~AC#59DW1~
 
 BEGIN ~AC#SORN1~
 
+IF ~Global("AC#BoatTest","ACIL59",1)~THEN BEGIN hello_step_on_boat_that_one
+SAY ~Nun macht schon, stellt Euch endlich auf das Boot mit den leeren Kipploren direkt gegenüber von mir! Ich warte!~
+IF ~~ THEN EXIT
+END
+
 IF ~Global("AC#RC_Sorni_Fourth","GLOBAL",1)
 Global("AC#BoatTest","ACIL59",2)~THEN BEGIN boat_that_works
 	SAY ~Ja, das wird funktionieren. Wir haben entsprechende Materialien sogar da. Wo soll ich den Kahn hinbringen?~
@@ -38,17 +43,18 @@ Global("AC#BoatTest","ACIL59",0)~THEN BEGIN you_again
 		IF ~~THEN BEGIN boats_not_suited
 		SAY ~Dafür sind diese Boote aber nicht gemacht. Sie bestehen aus Eisen. Ihr würdet untergehen wie ein Stein im Wasser.~
 		++ ~Könntet Ihr sie nicht ein wenig leichter machen?~ + why_cross_lake
+		++ ~Ich muss aber über diesen See. Für Eure Stadt.~ + why_cross_lake
 		END
 		
 			IF ~~THEN BEGIN why_cross_lake
-			SAY ~Sagt, warum wollt Ihr den See überhaupt überqueren?~
-			++ ~Wir vermuten, dass sich dahinter Barakuir befinden könnte.~ + barakuir_boat
+			SAY ~Warum wollt Ihr den See denn überhaupt überqueren?~
+			++ ~Wir wollen nach Barakuir reisen.~ + barakuir_boat
 			END
 			
 				IF ~~THEN BEGIN barakuir_boat
-				SAY ~Ein hehres Ziel. Hmm, lasst mich einmal kurz überlegen.~
+				SAY ~Barakuir? Also entweder seid Ihr verrückt oder... Nun ja. Hmm, lasst mich einmal kurz überlegen.~
 				++ ~Könnte man nicht einfach Holz nehmen?~ + barakuir_boat_use_wood_instead
-				++ ~(Nichts sagen)~ + have_idea
+				++ ~Lasst Euch durch mich dabei nicht stören.~ + have_idea
 				END
 				
 					IF ~~THEN BEGIN barakuir_boat_use_wood_instead
@@ -64,10 +70,16 @@ Global("AC#BoatTest","ACIL59",0)~THEN BEGIN you_again
 							IF ~~THEN BEGIN make_boat
 							SAY ~Ja, ich denke, das könnte klappen. Könntet Ihr Euch bitte einmal auf dieses Boot da stellen?~
 							++ ~Ihr meint auf das, das da Mitten in der Lava schwimmt?~ + step_on_boat
+							++ ~Welches Boot?~ + step_on_boat_that_one
 							END
 							
 							IF ~~THEN BEGIN step_on_boat
-							SAY ~Ja, genau, das mit den leeren Kipploren darauf. Dann sehe ich, wie wir das austarieren müssen.~
+							SAY ~Ja, genau!~
+							IF ~~ THEN GOTO step_on_boat_that_one
+							END
+
+							IF ~~THEN BEGIN step_on_boat_that_one
+							SAY ~Das mit den leeren Kipploren darauf. Dann sehe ich, wie wir das austarieren müssen.~
 							IF ~~ THEN DO ~SetGlobal("AC#BoatTest","ACIL59",1)
 							TriggerActivation("AC#59TR1",TRUE)
 							~  EXIT

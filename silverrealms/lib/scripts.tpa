@@ -759,7 +759,6 @@ COPY_EXISTING ~ACIL27.bcs~   ~override/ACIL27.bcs~
 COMPILE ~silverrealms/scripts/ac#53CT1.baf~
 
 //COMPILE ~silverrealms/scripts/AC#59TR1.baf~
-COMPILE ~silverrealms/scripts/ac#ct50B.baf~
 COMPILE ~silverrealms/scripts/ac#ct50C.baf~
 
 COMPILE ~silverrealms/scripts/AC#28DW3.baf~

@@ -1,0 +1,29 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player1)
+        ActionOverride("AC#ELER2",EscapeArea())
+        ActionOverride("AC#50BSM",EscapeArea())
+        ActionOverride("AC#50BSM",EscapeArea())
+        Wait(1)
+        LeaveAreaLUAPanic("ACIL20","",[3783.2493],S)
+        LeaveAreaLUA("ACIL20","",[3783.2493],NW)
+        ActionOverride(Player2,LeaveAreaLUA("ACIL20","",[3783.2493],NW))
+        ActionOverride(Player3,LeaveAreaLUA("ACIL20","",[3783.2493],NW))
+        ActionOverride(Player4,LeaveAreaLUA("ACIL20","",[3783.2493],NW))
+        ActionOverride(Player5,LeaveAreaLUA("ACIL20","",[3783.2493],NW))
+        ActionOverride(Player6,LeaveAreaLUA("ACIL20","",[3783.2493],NW))
+        ActionOverride("AC#HATH1",JumpToPoint([3582.2486]))
+        MultiPlayerSync()
+        MoveViewPoint([3783.2493],INSTANT)
+        Wait(1)
+        FadeFromColor([40.0],150)
+        SetGlobal("AC#RC_Sorni_Fourth","GLOBAL",6)
+        SpawnPtDeactivate("Kuotoaspawn")
+        EndCutSceneMode()
+        ActionOverride("AC#HATH1",Face(SEE))
+        Wait(1)
+        ActionOverride("AC#HATH1",StartDialogueNoSet(Player1))
+END
+

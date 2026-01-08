@@ -296,7 +296,7 @@ END
 		END
 		
 			IF ~~ THEN BEGIN gromi_boat_sorni
-			SAY ~Meine Tochter Sorni Arnschädel.~
+			SAY ~Unsere Tochter Sorni Arnschädel.~
 			=
 			~Ihr solltet einmal mit Sorni reden, <CHARNAME>. Vielleicht kann sie Verbesserungen an dem Boot vornehmen, damit es Euch auch über das Wasser trägt.~
 			IF ~~ THEN REPLY ~Oh nein. Ich bin die ganze letzte Zeit damit beschäftigt gewesen, durch diese Stadt zu laufen und war bestimmt schon mehrere Male bei Sorni unten in der großen Halle. Könnt Ihr nicht einen Boten zu Ihr schicken?~ EXTERN ~AC#ELER1~ elern_no_way_talk_to_sorni_again
@@ -1025,7 +1025,7 @@ IF ~~ THEN BEGIN boat_azerkyn_lets_try
 SAY ~Lasst es uns doch einfach ausprobieren! Mehr Möglichkeiten haben wir ohnehin nicht.~
 //IF ~~ THEN REPLY ~Was ist das zwergische Wort für Versuchskaninchen?~ EXTERN ~AC#FENY1~ boat_azerkyn_fenyl
 IF ~~ THEN REPLY ~Bedaure, aber ich bin nicht an einem Himmelfahrtskommando - oder wie immer Ihr das hier unten nennt - interessiert.~ EXTERN ~AC#FENY1~ boat_azerkyn_fenyl
-IF ~~ THEN REPLY ~Vergesst es. Ich bin doch nicht den ganzen Weg bis hierher gegangen, um dann in einem unterirdischen See zu ertrinken!~ EXTERN ~AC#FENY1~ boat_azerkyn_fenyl
+IF ~~ THEN REPLY ~Ich bin nicht den ganzen Weg bis hierher gegangen, um in einem unterirdischen See zu ertrinken!~ EXTERN ~AC#FENY1~ boat_azerkyn_fenyl
 IF ~~ THEN REPLY ~Ein Versuch ist es wert!~ EXTERN ~AC#FENY1~ boat_azerkyn_fenyl
 END
 
@@ -1081,7 +1081,7 @@ END
 	END
 
 IF ~~THEN BEGIN boat_azerkyn_fenyl
-SAY ~Wem unterstehen denn die Boote und wer konstruiert sie, Meister Gromi?~
+SAY ~Wem unterstehen denn die Boote und wer konstruiert sie?~
 IF ~~ THEN EXTERN ~AC#GROM1~ gromi_boat_sorni
 END
 
@@ -1348,7 +1348,7 @@ IF ~~ THEN REPLY ~In einem alten Tempel Selunes und Clangeddins.~ EXTERN ~AC#GRO
 
 	CHAIN IF ~~ THEN AC#GROM1 chain_spiderstalkings_02
 	~Der alte Tempel. Dann sind die Geschichten also wahr.~
-	== AC#ELER1 ~Ihr meint diesen Tempel der Menschengöttin, der versiegelt wurde?~
+	== AC#FENY1 ~Ihr meint diesen Tempel der Menschengöttin, der versiegelt wurde?~
 	== AC#GROM1 ~Ja.~
 	== AC#ELER1 ~Er wurde wohl gebaut, als wir Zwerge noch aufgeschlossener anderen Rassen und Religionen gegenüberstanden.~
 	END
@@ -1380,7 +1380,7 @@ IF ~~ THEN REPLY ~In einem alten Tempel Selunes und Clangeddins.~ EXTERN ~AC#GRO
 				== AC#VRON1 ~Und dennoch wollte Mith Barak genau diesen Ort besuchen. Seht, er hat es hier selbst geschrieben.~
 				== AC#TORT1 ~Wenn unser König der Meinung war, dass genau an diesem Ort sein... mysteriöser Zustand geheilt werden könnte, sollten wir dem nachgehen.~
 				== AC#VRON1 ~Denn dass der König selbst nach einer Lösung für seine Schlafenszyklen suchte, ist nach dem Lesen seiner Niederschriften offensichtlich.~
-				== AC#GROM1 ~Wenn das Wasser in einen Minenschacht eindringt, kann man entweder Mauern oder Wasserräder bauen. Wir entscheiden uns nun für Letzteres. *Wenn* es Hinweise gibt, wie wir unserem König helfen könnten, dann vielleicht an diesem verfluchten Ort.~
+				== AC#GROM1 ~Wenn das Wasser in einen Minenschacht eindringt, kann man entweder Mauern oder Wasserräder bauen. Wir entscheiden uns nun für Letzteres. Wenn es Hinweise gibt, wie wir unserem König helfen könnten, dann vielleicht an diesem verfluchten Ort.~
 				END
 				IF ~~ THEN REPLY ~Ich nehme an, dass Ihr erwartet, dass ich zu diesem Ort reisen soll?~ EXTERN ~AC#GROM1~ chain_should_i_travel_to_xy
 				

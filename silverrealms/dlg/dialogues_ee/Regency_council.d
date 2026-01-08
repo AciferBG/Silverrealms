@@ -291,20 +291,20 @@ END
 	END
 	
 		IF ~~ THEN BEGIN barakuir_need_boat
-		SAY ~Wir benötigen allerdings Boote, um dorthin zu gelangen. Keiner unserer Clans ist noch im Bootsbau bewandert, deshalb erwarte ich Vorschläge.~
-		IF ~~ THEN REPLY ~Ihr habt doch diese kleinen Boote unten in der Halle, mit der Ihr durch die Lava gleitet.~ EXTERN ~AC#TORT1~ boat_azerkyn_too_heavy
+		SAY ~Ihr müsst gen Osten über den Eisensee segeln, um das Reich Barakuir zu erreichen. Wir benötigen allerdings Boote, um dorthin zu gelangen. Keiner unserer Clans ist noch im Bootsbau bewandert, deshalb erwarte ich Vorschläge.~
+		IF ~~ THEN EXTERN ~AC#TORT1~ boat_azerkyn_too_heavy
 		END
 		
 			IF ~~ THEN BEGIN gromi_boat_sorni
-			SAY ~Das war die Idee meiner Tochter Sorni Arnschädel.~
+			SAY ~Meine Tochter Sorni Arnschädel.~
 			=
-			~Ihr solltet einmal mit Sorni reden, <CHARNAME>. Vielleicht kann sie Verbesserungen an dem Boot vornehmen.~
+			~Ihr solltet einmal mit Sorni reden, <CHARNAME>. Vielleicht kann sie Verbesserungen an dem Boot vornehmen, damit es Euch auch über das Wasser trägt.~
 			IF ~~ THEN REPLY ~Oh nein. Ich bin die ganze letzte Zeit damit beschäftigt gewesen, durch diese Stadt zu laufen und war bestimmt schon mehrere Male bei Sorni unten in der großen Halle. Könnt Ihr nicht einen Boten zu Ihr schicken?~ EXTERN ~AC#ELER1~ elern_no_way_talk_to_sorni_again
 			IF ~~ THEN REPLY ~Ich weiß zwar nicht, das wievielte Mal es ist, dass ich Sorni in der Halle aufsuche, aber wenn Ihr wollt, werde ich wieder mit ihr reden.~ + gromi_boat_talk_to_sorni
 			END
 			
 				IF ~~THEN BEGIN gromi_boat_talk_to_sorni
-				SAY ~Gut. Wir benötigen nur noch Zwerge, die die Boote bedienen und über den See navigieren. Dies möchte ich unseren Besuchern von der Oberfläche nicht zumuten. Und wir können es uns nicht leisten, dass sie in der Dunkelheit die Orientierung verlieren und scheitern.~
+				SAY ~Gut. Wir benötigen auch Zwerge, die die Boote bedienen und über den See navigieren. Dies möchte ich unseren Besuchern von der Oberfläche nicht zumuten. Und wir können es uns nicht leisten, dass sie in der Dunkelheit die Orientierung verlieren und scheitern.~
 				IF ~~ THEN EXTERN ~AC#ELER1~ sailors_boat
 				END
 				
@@ -329,8 +329,8 @@ END
 				IF ~~THEN BEGIN end_pc_talk_sorni_boat_02
 				SAY ~Ich bin sicher, dass Sorni eine Lösung finden wird. *Kal maerdh*, <CHARNAME>.~
 				IF ~~ THEN DO ~SetGlobal("AC#RC_Sorni_Fourth","GLOBAL",1)
-				SetGlobal("AC#RC_Bettargh_Third","GLOBAL",20)
-				EraseJournalEntry(@62033)
+				//SetGlobal("AC#RC_Bettargh_Third","GLOBAL",20)
+				//EraseJournalEntry(@62033)
 				AddJournalEntry(@62040,QUEST)
 				AddexperienceParty(1000)
 				~ EXIT
@@ -340,7 +340,7 @@ END
 	IF ~~THEN BEGIN gromi_go_to_king
 	SAY ~Ich werde Euch begleiten. Die Ratssitzung ist hiermit beendet. Der Rat wird erst wieder zusammentreffen, wenn unser König aus dem Schlaf erwacht ist.~
 	=
-	~Es bleibt Euch überlassen, <CHARNAME>, ob Ihr Euch selbst ein Bild unseres Königs machen wollt oder gleich zu den Spinnenschächten aufbrechen werdet.~
+	~Es bleibt Euch überlassen, <CHARNAME>, ob Ihr Euch selbst ein Bild unseres Königs machen wollt oder gleich zurück an die Oberfläche aufbrechen werdet.~
 	IF ~~ THEN DO ~SetGlobal("AC#RC_Spiderstalkings","GLOBAL",1)
 		EraseJournalEntry(@62021)
 		AddJournalEntry(@62022,QUEST)
@@ -352,9 +352,15 @@ END
 IF ~GlobalGT("AC#IL_Spiderstalkings","GLOBAL",0)
 GlobalLT("AC#IL_Spiderstalkings","GLOBAL",20)~ THEN BEGIN hello_spiderstalkings_after_vronia
   SAY ~Vronia hat uns berichtet, dass Ihr Turbaern doch überzeugen konntet, den Schlüssel für die Spinnenschächte herauszurücken. Was habt Ihr dort gefunden?~
-	IF ~Global("AC#RC_Turbaern_Second","GLOBAL",2)~ THEN REPLY ~~ DO ~SetGlobal("AC#IL_Spiderstalkings","GLOBAL",10)~ EXIT
-	IF ~~ THEN REPLY ~Noch nichts.~ GOTO patrol_keep_searching
-END				
+  IF ~Global("AC#EnteredSpiderstalkings","GLOBAL",1) !PartyHasItem("AC#ILMBJ")~ THEN REPLY ~Ich war dort, konnte aber noch nichts herausfinden, was mit dem Schlaf des Königs zusammenhängt.~ GOTO spiderstalkings_no_result
+	IF ~PartyHasItem("AC#ILMBJ")~ THEN REPLY ~Ich habe dort diese Aufzeichnungen Mith Baraks gefunden.~ DO ~SetGlobal("AC#IL_Spiderstalkings","GLOBAL",20)~ DO ~TakePartyItem("AC#ILMBJ") DestroyItem("AC#ILMBJ")~ EXTERN ~AC#CHEM1~ chain_spiderstalkings_01 
+	IF ~~ THEN REPLY ~Noch nichts.~ GOTO spiderstalkings_no_result
+END	
+
+		IF ~~ THEN BEGIN spiderstalkings_no_result
+		SAY ~Berichtet uns Bitte, wenn Ihr dort gewesen seid und etwas in Erfahrung gebracht habt, <CHARNAME>.~
+		IF ~~ THEN EXIT
+		END			
 //Second Quest: Retrieve Runestone for Spiderstalkings
 IF ~GlobalGT("AC#RC_Turbaern_Second","GLOBAL",0)
 GlobalLT("AC#RC_Turbaern_Second","GLOBAL",20)~ THEN BEGIN hello_whats_turbaern
@@ -1017,9 +1023,10 @@ END
 
 IF ~~ THEN BEGIN boat_azerkyn_lets_try
 SAY ~Lasst es uns doch einfach ausprobieren! Mehr Möglichkeiten haben wir ohnehin nicht.~
-IF ~~ THEN REPLY ~Was ist das zwergische Wort für Versuchskaninchen?~ EXTERN ~AC#FENY1~ boat_azerkyn_fenyl
+//IF ~~ THEN REPLY ~Was ist das zwergische Wort für Versuchskaninchen?~ EXTERN ~AC#FENY1~ boat_azerkyn_fenyl
 IF ~~ THEN REPLY ~Bedaure, aber ich bin nicht an einem Himmelfahrtskommando - oder wie immer Ihr das hier unten nennt - interessiert.~ EXTERN ~AC#FENY1~ boat_azerkyn_fenyl
 IF ~~ THEN REPLY ~Vergesst es. Ich bin doch nicht den ganzen Weg bis hierher gegangen, um dann in einem unterirdischen See zu ertrinken!~ EXTERN ~AC#FENY1~ boat_azerkyn_fenyl
+IF ~~ THEN REPLY ~Ein Versuch ist es wert!~ EXTERN ~AC#FENY1~ boat_azerkyn_fenyl
 END
 
 IF ~~ THEN BEGIN why_trust_charname
@@ -1250,7 +1257,7 @@ END
 BEGIN AC#TORT1  // Torth
 
 IF ~~THEN BEGIN boat_azerkyn_too_heavy
-SAY ~So sehr ich Euren Einsatz schätze, <CHARNAME>, doch diese Boote sind dafür geschaffen, über einen dichten Lavastrom zu gleiten. Ich fürchte, sie würden im normalen Wasser einfach untergehen.~
+SAY ~Es gibt doch Boote, die in der Azerkyn-Halle über die Lava gleiten. Wenngleich diese Boote nicht dafür geschaffen sind, auf Wasser zu schwimmen. Ich fürchte, sie könnten im normalen Wasser einfach untergehen.~
 IF ~~ THEN EXTERN ~AC#RUVA1~ boat_azerkyn_lets_try
 END
 
@@ -1329,6 +1336,84 @@ CHAIN IF ~~ THEN AC#GROM1 chain_council_finished_01
 == AC#VRON1 ~Auf König Mith Barak.~
 END
 IF ~~ THEN EXTERN ~AC#ELER1~ for_the_king
+
+// CHAIN: Spiderstalkings
+CHAIN IF ~~ THEN AC#CHEM1 chain_spiderstalkings_01
+~Unser König führte eine Art Tagebuch und lagerte es in den Spinnenschächten? Wie abwegig.~
+== AC#ELER1 ~Wir werden sicher anhand der Schrift beurteilen können, ob es von unserem geliebten Monarchen ist.~
+== AC#GROM1 ~Dies ist eindeutig die Handschrift König Mith Baraks.~
+== AC#STUR1 ~Wo habt Ihr es gefunden?~
+END
+IF ~~ THEN REPLY ~In einem alten Tempel Selunes und Clangeddins.~ EXTERN ~AC#GROM1~ chain_spiderstalkings_02
+
+	CHAIN IF ~~ THEN AC#GROM1 chain_spiderstalkings_02
+	~Der alte Tempel. Dann sind die Geschichten also wahr.~
+	== AC#ELER1 ~Ihr meint diesen Tempel der Menschengöttin, der versiegelt wurde?~
+	== AC#GROM1 ~Ja.~
+	== AC#ELER1 ~Er wurde wohl gebaut, als wir Zwerge noch aufgeschlossener anderen Rassen und Religionen gegenüberstanden.~
+	END
+	IF ~~ THEN REPLY ~Mith Barak schien sich dort gemütlich eingerichtet zu haben, um Ruhe vor Euch allen zu haben.~ EXTERN ~AC#TORT1~ chain_spiderstalkings_03
+	
+		CHAIN IF ~~ THEN AC#TORT1 chain_spiderstalkings_03
+		~Der König hielt sich öfter in diesem Gebiet auf?~
+		== AC#RUVA1 ~Wusstet Ihr als sein Leibwächter davon, mein Bruder?~
+		== AC#DUN01 ~Ich...~
+		== AC#FENY1 ~Diese Frage würde sicher den gesamten Regentschaftsrat brennend interessieren, Bronzebollwerk Dunnabar vom Clan Steinschulter!~
+		== AC#GROM1 ~In der Tat, Dunnabar. Was habt Ihr dazu zu sagen? Ihr helft unserem König nicht, wenn Ihr schweigt.~
+		== AC#DUN01 ~Nun, Hoher Rat, ja, es ist wahr. Ich begleitete Mith Barak als sein Leibwächter mehrere Male vor die Halle des Blutmondes und stand vor den Toren Wache. Er trug mir auf, über diese Besuche mit keinem anderen Zwerg zu reden. Und als Diener Gorm Gulthyns halte ich mein Wort.~
+		== AC#FENY1 ~Was bei Gorm hat er denn dort gesucht?~
+		== AC#DUN01 ~Das weiß ich nicht.~
+		END
+		IF ~~ THEN REPLY ~Euer König suchte wohl eine Art Portal in die Astralebene, wurde aber in dem alten Tempel der Spinnenschächte nicht fündig.~ EXTERN ~AC#CHEM1~ chain_spiderstalkings_04
+		
+			CHAIN IF ~~ THEN AC#CHEM1 chain_spiderstalkings_04
+			~In die Astralebene? Das wird ja immer wilder.~
+			== AC#RUVA1 ~Wisst Ihr etwas darüber, Dunnabar?~
+			== AC#DUN01 ~Nein, Bruder.~
+			== AC#ELER1 ~Was habt Ihr dazu zu sagen, <CHARNAME>?~
+			END
+			IF ~~ THEN REPLY ~Mith Barak war wohl überzeugt, dass in den alten Zwergenreichen irgendwo ein Portal in die Astralebene existiert haben musste. Sein nächstes Ziel war Barakuir.~ EXTERN ~AC#FENY1~ chain_spiderstalkings_barakuir_01
+			
+				CHAIN IF ~~ THEN AC#FENY1 chain_spiderstalkings_barakuir_01
+				~Frevelei! Dieser Name... wurde schon seit Jahrhunderten nicht mehr laut ausgesprochen!~
+				== AC#RUVA1 ~Aus gutem Grund! Dieses Wort ist verflucht, genau wie der Clan, der diesen Ort bewohnte!~
+				== AC#VRON1 ~Und dennoch wollte Mith Barak genau diesen Ort besuchen. Seht, er hat es hier selbst geschrieben.~
+				== AC#TORT1 ~Wenn unser König der Meinung war, dass genau an diesem Ort sein... mysteriöser Zustand geheilt werden könnte, sollten wir dem nachgehen.~
+				== AC#VRON1 ~Denn dass der König selbst nach einer Lösung für seine Schlafenszyklen suchte, ist nach dem Lesen seiner Niederschriften offensichtlich.~
+				== AC#GROM1 ~Wenn das Wasser in einen Minenschacht eindringt, kann man entweder Mauern oder Wasserräder bauen. Wir entscheiden uns nun für Letzteres. *Wenn* es Hinweise gibt, wie wir unserem König helfen könnten, dann vielleicht an diesem verfluchten Ort.~
+				END
+				IF ~~ THEN REPLY ~Ich nehme an, dass Ihr erwartet, dass ich zu diesem Ort reisen soll?~ EXTERN ~AC#GROM1~ chain_should_i_travel_to_xy
+				
+				CHAIN IF ~~ THEN AC#GROM1 chain_should_i_travel_to_xy
+				~Auch, wenn die Geschehnisse an diesem Ort schon lange zurückliegen, würde kein Zwerg unseres Reiches jemals wieder einen Fuß auf diesen unheiligen Boden setzen. Deshalb bitten wir Euch, <CHARNAME>, dies für unsere Stadt zu tun. Dies wäre die beste Spur, die wir derzeit haben.~
+				== AC#ELER1 ~Auch wenn mich der Gedanke daran graust, könnte der Vorschlag Gromis wirklich die beste Entscheidung sein. Die Wege an diesen Ort schienen lange Zeit verloren, doch mein Clan hatte in der Abgrundliedhalle Aufzeichnungen darüber - welche ich bereits gelesen habe.~
+				== AC#STUR1 ~Ihr habt Euch schon das Wissen über B... über diesen Ort angeeignet?~
+				== AC#ELER1 ~Ja. Oder ist sonst jemand von Euch auf die Idee gekommen, nachzuforschen, woher der Gedankenschinder in Ellhimars Spiegel gekommen sein könnte?~
+				END
+				IF ~~ THEN REPLY ~Ich habe in den Spinnenschächten auch eine Gruppe Drow gefunden, die sich mit Illithiden verbündet zu haben scheinen. Sie waren es, welche Ellhimar auf dem Gewissen haben!~ EXTERN ~AC#CHEM1~ chain_illithids_vhaeraun
+				
+				CHAIN IF ~~ THEN AC#CHEM1 chain_illithids_vhaeraun
+				~Moradin stehe uns bei! Drow und Illithiden haben sich gegen uns verschworen!~
+				== AC#TORT1 ~Wo sind die Drow jetzt, <CHARNAME>?~
+				END
+				IF ~~ THEN REPLY ~Sie sind weitergezogen, an die Oberfläche.~ EXTERN ~AC#RUVA1~ chain_illithids_vhaeraun_02
+				
+				CHAIN IF ~~ THEN AC#RUVA1 chain_illithids_vhaeraun_02
+				~Dann stellen sie keine Gefahr mehr für uns dar.~
+				== AC#ELER1 ~Sollten wir nicht versuchen, Ellhimar aus dem Griff der Illithiden zu befreien?~
+				== AC#VRON1 ~Wenn die *caradhak* den Magier in ihrer Gewalt haben ist er verloren. Wir können nichts mehr für ihn tun.~
+				== AC#GROM1 ~Genug. Es bringt jetzt nichts mehr, um das heiße Eisen herumzureden. <CHARNAME>, wir bitten Euch, in Barakuir nach weiteren Antworten zu König Mth Baraks Zustand zu suchen.~
+				== AC#FENY1 ~Barakuir... schon lange habe ich diesen verfluchten Namen nicht mehr vernommen...~
+				END
+				++ ~Was ist Barakuir?~ EXTERN ~AC#VRON1~ NEW_what_is_barakuir
+				
+				CHAIN IF ~~ THEN AC#VRON1 NEW_what_is_barakuir
+				~Barakuir ist die alte Heimstatt der Duergar. Einst waren sie Schildzwerge wie wir, doch die Gefangenschaft der Illithiden brachte sie um den Verstand.~
+				== AC#GROM1 ~Clan Duergar herrschte lange Zeit über sein Unterkönigreich wie jeder andere Clan auch. Doch die lange Folter der Gedankenschinder hat ihren Verstand vergiftet. Die Duergar gaben uns anderen Zwergenclans die Schuld für ihre Sklaverei. Als sie sich aus den Fesseln der Illithiden befreien konnten, wandten sie sich gegen ihre Brüder.~
+				== AC#FENY1 ~Seitdem liegt ein Fluch über Barakuir, und kein Zwerg Shanatars wird jemals wieder diesen unheiligen Ort betreten.~
+				== AC#GROM1 ~Deshalb bitten wir Euch darum, in den Ruinen der einst stolzen Heimat von Clan Duergar nach Antworten zu suchen.~
+				END
+				++ ~Was muss ich tun?~ EXTERN ~AC#GROM1~ barakuir_need_boat	
 
 // NEW: portal_investigation:
 CHAIN AC#VRON1 NEW_acil20_portal_investigate
@@ -1462,24 +1547,6 @@ CHAIN IF ~~ THEN AC#GROM1 chain_go_check_throneroom
 END
 IF ~~ THEN EXTERN ~AC#TURB8~ turbaern_what_to_do_with_hammer
 
-CHAIN IF ~~ THEN AC#GROM1 chain_should_i_travel_to_xy
-~In der Tat. Auch, wenn die Geschehnisse an diesem Ort schon lange zurückliegen, würde kein Zwerg unseres Clans jemals wieder einen Fuß auf diesen unheiligen Boden setzen. Deshalb bitten wir Euch, <CHARNAME>, dies für unsere Stadt zu tun. Dies wäre die beste Spur, die wir derzeit haben.~
-== AC#ELER1 ~Auch wenn mich der Gedanke daran graust, könnte der Vorschlag Gromis wirklich die beste Entscheidung sein. Die Wege an diesen Ort schienen lange Zeit verloren, doch mein Clan hatte in der Abgrundliedhalle Aufzeichnungen darüber - welche ich bereits gelesen habe.~
-== AC#STUR1 ~Ihr habt Euch schon das Wissen über B... über diesen Ort angeeignet?~
-== AC#ELER1 ~Ja. Oder ist sonst jemand von Euch auf die Idee gekommen, woher der Gedankenschinder gekommen sein könnte?~
-== AC#GROM1 ~Genug. Es bringt jetzt nichts mehr, um den heißen Met herumzureden. <CHARNAME>, wir bitten Euch, in Barakuir nach dem Verbleib von Illithiden zu suchen.~
-== AC#FENY1 ~Barakuir... schon lange habe ich diesen verfluchten Namen nicht mehr vernommen...~
-END
-++ ~Was ist Barakuir?~ EXTERN ~AC#VRON1~ NEW_what_is_barakuir
-
-
-CHAIN IF ~~ THEN AC#VRON1 NEW_what_is_barakuir
-~Barakuir ist die alte Heimstatt der Duergar. Einst waren sie Schildzwerge wie wir, doch die Gefangenschaft der Illithiden brachte sie um den Verstand.~
-== AC#GROM1 ~Clan Duergar herrschte lange Zeit über sein Unterkönigreich wie jeder andere Clan auch. Doch die lange Folter der Gedankenschinder hat ihren Verstand vergiftet. Die Duergar gaben uns anderen Zwergenclans die Schuld für ihre Sklaverei. Als sie sich aus den Fesseln der Illithiden befreien konnten, wandten sie sich gegen ihre Brüder.~
-== AC#FENY1 ~Seitdem liegt ein Fluch über Barakuir, und kein Zwerg Shanatars wird jemals wieder diesen unheiligen Ort betreten.~
-== AC#GROM1 ~Deshalb bitten wir Euch darum, in den Ruinen der einst stolzen Heimat von Clan Duergar nach Antworten zu suchen.~
-END
-++ ~Was muss ich tun?~ EXTERN ~AC#GROM1~ barakuir_need_boat	
 
 // Chain NPC Reaction: accept quest?
 

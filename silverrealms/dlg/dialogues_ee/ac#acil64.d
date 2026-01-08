@@ -251,8 +251,7 @@ IF ~Global("AC#RC_Spiderstalkings","GLOBAL",1)~ THEN BEGIN hello_in_throneroom
 	IF ~GlobalGT("AC#Clans_Parting","GLOBAL",2)~ THEN REPLY ~Wegen des Drachenfriedhofes...~ + about_clans_parting
 	IF ~Global("AC#BackToSurface","GLOBAL",6)~ THEN REPLY ~Wegen meiner Rückkehr an die Oberfläche...~ + about_back_to_surface
 	IF ~Global("TalkedToMithBarak","ACIL64",0)~ THEN REPLY ~Wie geht es dem König?~ GOTO not_talked_to_mithbarak_yet
-	IF ~Global("AC#ACIL23DreamReflection","GLOBAL",2)
-	Global("AC#BackToSurface","GLOBAL",0)~ THEN REPLY ~Wegen der Spinnenschächte...~ GOTO about_spiderstalkings
+	//IF ~Global("AC#ACIL23DreamReflection","GLOBAL",2) Global("AC#BackToSurface","GLOBAL",0)~ THEN REPLY ~Wegen der Spinnenschächte...~ GOTO about_spiderstalkings
 END
 
 	IF ~~ THEN BEGIN about_back_to_surface

@@ -102,8 +102,10 @@ IF
 	Global("ACIL28_BOATGONE","ACIL28",1)
 THEN
 	RESPONSE #100
+			Wait(1)
 	         ClearAllActions()
                  StartCutSceneMode()
+				 Wait(1)
                  MoveViewPoint([406.1653],VERY_FAST)
                  CreateVisualEffect("ICFRACTI",[406.1653])
                  Wait(1)

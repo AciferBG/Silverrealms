@@ -2705,6 +2705,7 @@ COPY ~silverrealms/cre/AC#57STK.cre~ ~override~ // astral stalker (MM 4th ed. p.
   
 COPY ~silverrealms/cre/AC#ELWAT.cre~ ~override~ // water elemental
   SAY NAME1 @9005 SAY NAME2 @9005
+  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#ELEMENTAL_WATER_SMALL~))
   
 COPY ~silverrealms/cre/AC#SPSPI.cre~ ~override~ // spitting spider (Drow of the Underdark 3rd Ed.; pp. 141–142)
   SAY NAME1 @9006 SAY NAME2 @9006
@@ -2717,16 +2718,12 @@ COPY ~silverrealms/cre/AC#75REV.cre~ ~override~ // Reverend One (Elves of Everme
   
 COPY ~silverrealms/cre/AC#67GEL.cre~ ~override~ // Gelugon
   SAY NAME1 @9009 SAY NAME2 @9009
-      
-    
     COPY_EXISTING ~AC#67GEL.cre~ ~override~
     WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#GELUGON~))
     
 
 COPY ~silverrealms/cre/AC#FEYR1.cre~ ~override~ // greater feyr
   SAY NAME1 @9010 SAY NAME2 @9010
-    
-    
     COPY_EXISTING ~AC#FEYR1.cre~ ~override~
     WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~FEYR_GREATER~))
     

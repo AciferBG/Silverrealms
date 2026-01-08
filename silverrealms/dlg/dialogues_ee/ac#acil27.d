@@ -6,6 +6,11 @@
 
 BEGIN ~AC#BRES8~
 
+IF ~Global("AC#RC_Sorni_Fourth","GLOBAL",12)~ THEN BEGIN hello_step_boat
+  SAY ~Steigt einfach in das Eine der zwei Boote, <CHARNAME>. Wir werden Euch dann zu Wasser lassen und auf den See hinausschieben.~
+  IF ~~ THEN  EXIT
+END
+
 IF ~NumTimesTalkedToGT(0)~ THEN BEGIN hello_ready
 	SAY ~Also was ist, <CHARNAME>, seid Ihr bereit für die große Fahrt?~
 	IF ~~ THEN REPLY ~Noch nicht ganz. Lasst mich noch einen kurzen Moment verschnaufen und die Zauber vorbereiten, bevor es los geht.~ + bresk_wait
@@ -35,7 +40,9 @@ END
 
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN bresk_good_catch
   SAY ~Na, da habt Ihr ja einiges Getier an Land gezogen!~
-  IF ~~ THEN REPLY ~Ihr meint diese Kuo-Toa?~ DO ~EraseJournalEntry(@62043)~ GOTO kuotoa_catch
+  IF ~~ THEN REPLY ~Ihr meint diese Kuo-Toa?~ GOTO kuotoa_catch
+  IF ~~ THEN REPLY ~War ein ganz schönes Stück Arbeit.~ GOTO kuotoa_catch
+  IF ~~ THEN REPLY ~Nicht der Rede wert.~ GOTO kuotoa_catch
 END
 
 	IF ~~ THEN BEGIN kuotoa_catch
@@ -95,6 +102,11 @@ END
 
 BEGIN ~AC#ELER8~
 
+IF ~Global("AC#RC_Sorni_Fourth","GLOBAL",12)~ THEN BEGIN hello_step_boat
+  SAY ~Steigt einfach in das Eine der zwei Boote, <CHARNAME>. Wir werden Euch dann zu Wasser lassen und auf den See hinausschieben.~
+  IF ~~ THEN  EXIT
+END
+
 IF ~True()~ THEN BEGIN hello_ready
 	SAY ~Also was ist, <CHARNAME>, seid Ihr bereit für die große Fahrt?~
 	IF ~~ THEN REPLY ~Noch nicht ganz. Lasst mich noch einen kurzen Moment verschnaufen und die Zauber vorbereiten, bevor es los geht.~ EXTERN ~AC#BRES8~ bresk_wait
@@ -106,6 +118,11 @@ END
 // ---------------------------------------------
 
 BEGIN ~AC#HATH8~
+
+IF ~Global("AC#RC_Sorni_Fourth","GLOBAL",12)~ THEN BEGIN hello_step_boat
+  SAY ~Steigt einfach in das Eine der zwei Boote, <CHARNAME>. Wir werden Euch dann zu Wasser lassen und auf den See hinausschieben.~
+  IF ~~ THEN  EXIT
+END
 
 IF ~Global("AC#Ruvan_Treason","GLOBAL",0)~ THEN BEGIN hello_ready
 	SAY ~Also was ist, <CHARNAME>, seid Ihr bereit für die große Fahrt?~
@@ -172,6 +189,11 @@ END
 
 BEGIN ~AC#SORN8~
 
+IF ~Global("AC#RC_Sorni_Fourth","GLOBAL",12)~ THEN BEGIN hello_step_boat
+  SAY ~Steigt einfach in das Eine der zwei Boote, <CHARNAME>. Wir werden Euch dann zu Wasser lassen und auf den See hinausschieben.~
+  IF ~~ THEN  EXIT
+END
+
 IF ~NumTimesTalkedToGT(0)~ THEN BEGIN hello_ready
 	SAY ~Also was ist, <CHARNAME>, seid Ihr bereit für die große Fahrt?~
 	IF ~~ THEN REPLY ~Noch nicht ganz. Lasst mich noch einen kurzen Moment verschnaufen und die Zauber vorbereiten, bevor es los geht.~ EXTERN ~AC#BRES8~ bresk_wait
@@ -200,8 +222,9 @@ END
 		END
 		
 			IF ~~ THEN BEGIN step_on_boat
-			SAY ~Es geht los, Männer!~
+			SAY ~Es geht los, Freunde!~
 			IF ~~ THEN REPLY ~Ich danke Euch allen. Ich werde Euch nicht enttäuschen.~ GOTO step_on_boat_02
+			IF ~~ THEN REPLY ~Bin jetzt schon froh, wenn ich wieder zurück bin.~ GOTO step_on_boat_02
 			END
 			
 			IF ~~ THEN BEGIN step_on_boat_02
@@ -217,6 +240,19 @@ END
 // ---------------------------------------------
 BEGIN ~AC#27BSM~
 
+CHAIN IF ~True()~ THEN AC#27BSM hello
+~Wir haben alles dafür gegeben, die besten Boote des Unterreichs zu bauen. Darauf fahren müsst Ihr jedoch selber.~
+EXIT
+
+// ---------------------------------------------
+// Soldier Iltkazars
+// ---------------------------------------------
+BEGIN ~AC#27DW1~
+
+CHAIN IF ~True()~ THEN AC#27DW1 hello
+~Respekt, dass Ihr wirklich nach Barakuir fahren wollt. Dazu noch über dieses tiefe Wasser!~
+EXIT
+
 // ---------------------------------------------
 // Ruvan's Houseguard
 // ---------------------------------------------
@@ -231,6 +267,13 @@ IF ~~ THEN BEGIN y_y_yes_01
 SAY ~J-j-ja, Hathar.~
 IF ~~ THEN EXTERN ~AC#HATH8~ whats_with_you
 END
+
+CHAIN IF ~OR(3)
+Global("AC#RC_Sorni_Fourth","GLOBAL",10)
+Global("AC#RC_Sorni_Fourth","GLOBAL",11)
+Global("AC#RC_Sorni_Fourth","GLOBAL",12)~ THEN AC#27DW3 hello
+~Wenn alle fertig sind, werden wir gemeinsam die Boote besteigen und nach Barakuir fahren.~
+EXIT
 //----------------------------------------
 // CHAIN
 // ---------------------------------------

@@ -30,6 +30,29 @@ IF ~True()~ THEN BEGIN hello_wait_here
   IF ~~ THEN EXIT
 END
 
+// Iron Golem
+
+BEGIN ~AC#GOLIR~
+
+IF ~Global("Activated","LOCALS",0)~ THEN BEGIN 0 
+  SAY ~Dieser Eisengolem steht untätig in einer Ecke. Er wartet offensichtlich darauf, aktiviert zu werden.~
+  IF ~~ THEN REPLY ~Den Golem in Ruhe lassen.~ GOTO 2
+  IF ~PartyHasItem("AC#MSC4A")~ THEN REPLY ~Ich frage mich, ob dieser Aktivierungsstein passen könnte...~ GOTO 1
+END
+
+IF ~~ THEN BEGIN 1 
+  SAY ~Der Aktivierungsstein rastet mit einem hörbaren Klicken in der Brust des metallenen Geschöpfes ein. Kurze Zeit später erwacht der Golem zum Leben...~
+  IF ~~ THEN DO ~SetGlobal("Activated","LOCALS",1)
+  TakePartyItem("AC#MSC4A")
+  DestroyItem("AC#MSC4A")
+~ EXIT
+END
+
+IF ~~ THEN BEGIN 2
+  SAY ~Ihr wendet Euch wieder vom Golem ab.~
+  IF ~~ THEN EXIT
+END
+
 
 // Undead Elder brain
 
@@ -45,6 +68,7 @@ IF ~~ THEN REPLY ~Wer seid Ihr?~ EXTERN AC#IL28E who_are_you
 	~Einst war ich das Ältestenhirn dieser Siedlung. Ein Nexus aus Wissen, Macht und Kontrolle. Nun bin ich… betrachtet mich.~
 	END
 	IF ~~ THEN REPLY ~Was ist geschehen?~ EXTERN AC#IL28E what_happened
+	IF ~~ THEN REPLY ~Ein verfaulter Haufen Gehirnmasse.~ EXTERN AC#IL28E what_happened
 
 		CHAIN AC#IL28E what_happened
 		~Die Siedlung zerfiel, als die Duergar rebellierten. Der Zustrom an Gehirnen versiegte. Es gab nicht genug Nahrung.~ 
@@ -52,9 +76,10 @@ IF ~~ THEN REPLY ~Wer seid Ihr?~ EXTERN AC#IL28E who_are_you
 		~Einige Illithiden wandten sich gegeneinander. Kannibalismus. Ich verlor die Kontrolle. Meine Larven fraßen einander, bis nur eine verblieb – und zu jenem… Ding heranwuchs, das Ihr eben vernichtet habt.~
 		END
 		IF ~~ THEN REPLY ~Dieses Monstrum war einmal eine kleine Larve? Widerlich.~ EXTERN AC#IL28E neothelid
+		IF ~~ THEN REPLY ~Der Neothelid sollte zu einem Gedankenschinder werden?~ EXTERN AC#IL28E neothelid
 
 			CHAIN AC#IL28E neothelid
-			~Für Euch widerlich. Für mich… eine Katastrophe. Meine Zöglinge: tot oder entstellt. Der Neothelid begehrte Bewusstsein. Um mich zu schützen, entzog ich mich. Wechselte auf die Astralebene.~
+			~Für Euch widerlich. Für mich… eine Katastrophe. Meine Zöglinge: Tot oder Untot. Der Neothelid begehrte Bewusstsein. Um mich zu schützen, entzog ich mich. Ich wechselte meinen Geist auf die Astralebene.~
 			=
 			~Doch das Becken, das meinen Leib nährte, trocknete aus. Mein Geist verharrte. Mein Gewebe starb. Weder lebendig, noch tot.~
 			END
@@ -98,12 +123,23 @@ IF ~~ THEN REPLY ~Wer seid Ihr?~ EXTERN AC#IL28E who_are_you
 									IF ~~ THEN REPLY ~Was für ein Fluch?~ EXTERN AC#IL28E mith_curse
 									
 										CHAIN AC#IL28E mith_curse
-										~Das weiß ich nicht zu sagen. Das sagte er nie. Er suchte vielmehr nach Wissen aus einer Zeit, bevor Zwergen, Elfen und Menschen diese Lande besiedelten. Der Zeit der Drachen.~
+										~Das weiß ich nicht zu sagen. Das sagte er nie. Er suchte vielmehr nach Wissen aus einer Zeit, bevor Zwerge, Elfen und Menschen diese Lande besiedelten. Er suchte vielmehr nach Wissen aus der Zeit der Drachen.~
 										END
 										IF ~~ THEN REPLY ~Drachen?~ EXTERN AC#IL28E mith_dragons
 										
 											CHAIN AC#IL28E mith_dragons
-											~Besonders die Tempel der alten Drachengötter begehrten sein Interesse. Vor allem ein uralter Tempel eines toten Drachengottes – dessen Name selbst den Gelehrten dieser Zeit entglitten ist. Dorthin suchte er zu gelangen.~
+											~Besonders die Tempel der alten Drachengötter begehrten sein Interesse. Vor allem ein uralter Tempel eines toten Drachengottes, dessen Name selbst den Gelehrten dieser Zeit entglitten ist. Doch ich kenne den Namen des Drachengottes noch.~
+											END
+											IF ~~ THEN REPLY ~Wie lautet er?~ EXTERN AC#IL28E name_kalzareinad
+											
+											CHAIN AC#IL28E name_kalzareinad
+											~Kalzareinad.~
+											END
+											IF ~~ THEN REPLY ~Aha.~ EXTERN AC#IL28E kalzareinad_temple
+											IF ~~ THEN REPLY ~Noch nie gehört.~ EXTERN AC#IL28E kalzareinad_temple
+											
+											CHAIN AC#IL28E kalzareinad_temple
+											~Ein Name, der unter den Völkern der heutigen Zeit vollkommen in Vergessenheit geraten ist. Doch einige Tempel bestehen noch. Dorthin suchte er zu gelangen.~
 											END
 											IF ~~ THEN REPLY ~Und Ihr konntet ihm sagen, wo dieser Tempel liegt?~ EXTERN AC#IL28E mith_dragons_02
 											
@@ -128,13 +164,18 @@ IF ~~ THEN REPLY ~Wer seid Ihr?~ EXTERN AC#IL28E who_are_you
 												IF ~~ THEN REPLY ~Was?~ EXTERN AC#IL28E bye
 												
 												CHAIN AC#IL28E bye
-												~Seht selbst am Ufer nach. Die Boote sind verschwunden. Es scheint, Ihr werdet hier bleiben müssen. Genau wie ich. Lebt wohl, Suchender. Wir werden einander nicht wieder begegnen.~
+												~Seht selbst am Ufer nach. Die Boote sind verschwunden. Es scheint, Ihr werdet hier bleiben müssen. Genau mein untote Hülle. Lebt wohl, Suchender. Ich werde mich wieder in die Astraleben zurückziehen. Wir werden einander nicht wieder begegnen.~
 												DO ~SetGlobal("AC#IL_UndeadElderBrain","GLOBAL",1)
+												StartCutSceneMode()
 												AddJournalEntry(@62050,QUEST)
 												SetGlobal("AC#Ruvan_Treason","GLOBAL",1)
 												AddJournalEntry(@62046,QUEST)
+												CreateVisualEffect("ICPRAYI",[2196.1589])
 												ReallyForceSpell(Myself,FLASHY_2)
+												Wait(1)
+												EndCutSceneMode()
 												DestroySelf()~EXIT
+/*												
 // -------------------------------------------------
 // Ellhimar (mad)
 //--------------------------------------------------
@@ -331,3 +372,4 @@ END
 				DestroySelf()~ EXIT
 				END
 
+*/

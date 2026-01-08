@@ -1,0 +1,7 @@
+IF
+    Global("AC#RC_Sorni_Fourth","GLOBAL",6)
+THEN
+    RESPONSE #100
+        DestroySelf()
+END
+

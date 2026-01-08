@@ -764,11 +764,7 @@ COMPILE ~silverrealms/scripts/ac#ct50C.baf~
 COMPILE ~silverrealms/scripts/AC#28DW3.baf~
 COPY_EXISTING ~AC#28DW3.bcs~   ~override/AC#28DW3.bcs~
        REPLACE ~999999~ @714
-       
-COMPILE ~silverrealms/scripts/AC#28BOA.baf~
-COPY_EXISTING ~AC#28BOA.bcs~   ~override/AC#28BOA.bcs~
-       REPLACE ~999999~ @717
-       
+
 COMPILE ~silverrealms/scripts/AC#HATH8.baf~
 COMPILE ~silverrealms/scripts/ACIL37.baf~
 

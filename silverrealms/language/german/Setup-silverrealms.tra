@@ -1042,7 +1042,7 @@ Rettungswurf: Speziell~
 @794 = ~Auf diesem Stein ist eine auffällige Rune eingraviert.~
 @795 = ~Dieses Becken wurde von den Kuo-Toa mit einer übelriechenden, giftgrünen Substanz vermischt, welches wohl dazu dienen soll, den Glauben an ihre imaginären Götter zu festigen.~
 @796 = ~Aus diesem Becken steigt giftgrüner Rauch auf, der wohl für Kuo-Toa eine tiefere magische Bedeutung hat. Wenn Ihr möchtet, könnt Ihr dort den Gogondy-Wein beimengen, um den Glauben der Kuo-Toa zu erschüttern.~
-@797 = ~Ihr schüttet ein wenig des Gogondy-Weines ins Becken, und sofort steigt purpurner Rauch auf, dessen süßlich-magischer Duft sich rasch im gesamten Höhlenkomplex verbreitet und Eure Sinne betört. Mit etwas Glück wird dies den Zusammenhalt der Kuo-Toa erheblich schwächen.~
+@797 = ~Ihr schüttet ein wenig des Gogondy-Weines ins Becken, und sofort steigt purpurner Rauch auf, dessen süßlich-magischer Duft sich rasch im gesamten Höhlenkomplex verbreitet und Eure Sinne betört. Mit etwas Glück wird dies den Zusammenhalt der Kuo-Toa erheblich schwächen.~ [EFF_M04]
 @798 = ~Der rote Rauch steigt unaufhörlich weiter auf.~
 @799 = ~Gogondy-Wein~
 @800 = ~Gogondy ist ein purpurrot gefärbtes Getränk, dessen Farbe angeblich darauf zurückzuführen ist, dass er Rubinpulver enthält. Er hat ein ausgesprochen berauschendes Aroma. Gogondy wird in schmiedeeisernen Flaschen aufbewahrt, von denen eine Flasche bis zu sechs Gläser füllen kann.
@@ -1551,7 +1551,7 @@ In jahrelangen Kriegen zogen die Zwerge gegeneinander in einen  Krieg, der als "
 @6001 = ~Das heilige Symbol Dugmarens, ein aufgeschlagenes Buch.~
 @6002 = ~Nach einem langen Irrweg durch das Unterreich erreicht Ihr endlich Gänge, die denen um Iltkazar ähnlich sind.~
 @6003 = ~Dieses helle Licht scheint Spinnen zu vertreiben.~
-@6004 = ~Der Drow-Teleportationsstein verschwindet aus Eurem Inventar.~
+@6004 = ~Der Drow-Teleportationsstein verschwindet aus Eurem Inventar.~ [EFF_E03]
 	// ACIL28: Barakuir
 @6005 = ~Diese Statue stellt Laduguer, den Schutzpatron der Duergar, dar.~
 @6006 = ~Eine Euch unbekannte Zwergenstatue blickt finster auf Euch herab.~
@@ -1852,7 +1852,7 @@ Kann nicht verwendet werden von:
 @8049 = ~Ihr habt diesen Schlüssel von Dorna Abgrundlied erhalten, um den Zugang zu einem alten Stollen, der "Nimmuks Stollen" genannt wird, öffnen zu können. Dorna erwähnte noch, dass der Stollen versiegelt wurde, da es darin spuken soll.~
 @8050 = ~Kromthruns Handschuhe~
 @8051 = ~Anhänger des Duergar-Gottes Laduguer streben ein Leben lang nach Perfektion. Hier kommt ihnen häufig die finstere Wesensart ihres Gottes in die Quere, der seinen Anbetern ein Dasein in Mühsal und Qualen abverlangt.
-Dies musste auch der grauzwergische Schmied Kromthrun erfahren, als er versuchte, mit dem Segen des Grauen Beschützers, der auch als "Der Harsche" bekannt ist, dieses Paar Handschuhe zu erschaffen. Der Gegenstand schenkte ihm zwar die erhoffte Muskelkraft eines Steinriesen, doch die Gewandheit und Trefferfertigkeit würde auf das Niveau eines Flumph reduziert.
+Dies musste auch der grauzwergische Schmied Kromthrun erfahren, als er versuchte, mit dem Segen des Grauen Beschützers, der auch als "Der Harsche" bekannt ist, dieses Paar Handschuhe zu erschaffen. Der Gegenstand schenkte ihm zwar die erhoffte Muskelkraft eines Steinriesen, doch die Gewandheit und Trefferfertigkeit wurde auf das Niveau eines Flumph reduziert.
 
 SPEZIFISCHE EIGENSCHAFTEN:  
 

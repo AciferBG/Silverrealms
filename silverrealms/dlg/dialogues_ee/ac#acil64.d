@@ -318,7 +318,7 @@ END
 		
 		IF ~~ THEN BEGIN yes_acil46_revealed
 		SAY ~Das ist ja fantastisch, <CHARNAME>! Seid Ihr bereit aufzubrechen?~
-		IF ~PartyHasItem("AC#DRFT2")~ THEN REPLY ~Ja. Ich habe hier noch die Drow-Schwebescheibe, mit der ich an die Oberfläche zurückkehren kann.~ GOTO yes_ready_for_back_to_surface
+		IF ~GlobalGT("AC#DRIFR","GLOBAL",2)~ THEN REPLY ~Ja. Ich habe eine Drow-Schwebescheibe repariert, mit der ich an die Oberfläche zurückkehren kann.~ GOTO yes_ready_for_back_to_surface
 		IF ~~ THEN REPLY ~Nein, noch nicht. Ich suche immer noch nach einer Möglichkeit, zurück an die Oberfläche zu gelangen.~ GOTO not_ready_for_back_to_surface
 		END
 		

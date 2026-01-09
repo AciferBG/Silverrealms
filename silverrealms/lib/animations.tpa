@@ -442,6 +442,12 @@
 //_____________________________________________________________________________________________________
 // hook horror animation - copy
   COPY ~silverrealms/animations/Hook_Horror_EE~         ~override~
+  
+// cyclops animation - copy
+  COPY ~silverrealms/animations/Cyclops_IWD~         ~override~
+  
+// lizard king animation - copy
+  COPY ~silverrealms/animations/Lizard_King_IWD~         ~override~
 
 // end of BG2EE stuff, start oBG2 stuff
 //_____________________________________________________________________________________________________

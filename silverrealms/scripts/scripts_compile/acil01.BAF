@@ -9,6 +9,14 @@ THEN
 END
 
 IF
+    Global("WayToACIL09","ACIL01",0)
+THEN
+    RESPONSE #100
+        SetGlobal("WayToACIL09","ACIL01",1)
+        TriggerActivation("Tracil09",FALSE)
+END
+/*
+IF
 	Global("WayToACIL09","ACIL01",0)
 	Global("AC#Goodbye_Iltkazar","GLOBAL",0)
 THEN
@@ -25,6 +33,7 @@ THEN
 		SetGlobal("WayToACIL09","ACIL01",3)
 		TriggerActivation("Tracil09",FALSE)
 END
+*/
 
 IF
 	InMyArea(Player1)

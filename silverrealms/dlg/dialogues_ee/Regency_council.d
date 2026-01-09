@@ -234,7 +234,7 @@ END
 		
 		IF ~~ THEN BEGIN turbaern_open_throneroom
 		SAY ~Ein gewagtes Unterfangen. Warum sollte dies die Bürger unserer Stadt nicht noch niedergeschlagener machen?~
-		IF ~~ THEN REPLY ~Weil sie vielleicht endlich wieder *sehen*, dass sie noch einen König haben?~ + chain_open_throneroom
+		IF ~~ THEN REPLY ~Weil sie vielleicht endlich wieder sehen, dass sie noch einen König haben?~ + chain_open_throneroom
 		END
 		
 		
@@ -335,18 +335,6 @@ END
 				AddexperienceParty(1000)
 				~ EXIT
 				END
-
-// go to throneroom
-	IF ~~THEN BEGIN gromi_go_to_king
-	SAY ~Ich werde Euch begleiten. Die Ratssitzung ist hiermit beendet. Der Rat wird erst wieder zusammentreffen, wenn unser König aus dem Schlaf erwacht ist.~
-	=
-	~Es bleibt Euch überlassen, <CHARNAME>, ob Ihr Euch selbst ein Bild unseres Königs machen wollt oder gleich zurück an die Oberfläche aufbrechen werdet.~
-	IF ~~ THEN DO ~SetGlobal("AC#RC_Spiderstalkings","GLOBAL",1)
-		EraseJournalEntry(@62021)
-		AddJournalEntry(@62022,QUEST)
-		AddexperienceParty(1000)
-		~ EXIT
-		END
 
 // Third Quest: search Spiderstalkings
 IF ~GlobalGT("AC#IL_Spiderstalkings","GLOBAL",0)
@@ -943,7 +931,7 @@ END
 		END
 		
 		IF ~~ THEN BEGIN turbaern_gromi_regencycouncil
-		SAY ~Und bei allem Respekt, Gromi, aber dies ist nicht mehr die Zeit für lange Debatten im Regentschaftsrat.~
+		SAY ~Bei allem Respekt, Gromi, aber dies ist nicht mehr die Zeit für lange Debatten im Regentschaftsrat.~
 		IF ~~ THEN EXTERN ~AC#GROM1~ turbaern_gromi_regencycouncil_02
 		END
 		
@@ -969,7 +957,7 @@ END
 			END
 			
 				IF ~~ THEN BEGIN already_have_key_to_spiderstalkings
-				SAY ~Den Schlüsselstein zu den Spinnenschächten habe ich Euch ja bereits übergeben. Sucht diesen ungastlichen Ort auf - vielleicht kommen wir damit dem Rätsel unseres schlafenden Königs wieder ein Stück näher.~
+				SAY ~Lasst uns zu unseren Aufgaben zurückkehren - vielleicht kommen wir damit dem Rätsel unseres schlafenden Königs wieder ein Stück näher.~
 				IF ~~ THEN EXTERN ~AC#DUN01~ dunnabar_go_to_king
 				END
 		
@@ -1506,21 +1494,39 @@ END
 
 // CHAIN: Player talks about undead elder brain
 CHAIN IF ~~ THEN AC#GROM1 chain_new_after_barakuir
-~Mith Barak hat diesen Abschaum aufgesucht?~
+~Mith Barak hat diesen Abschaum aufgesucht? Wieder wegen dieser Astralebene?~
 END
-++ ~Ja, aber nicht hier, sondern in der Astralebene.~ EXTERN ~AC#STUR1~ chain_new_after_barakuir_02
+++ ~Ja, aber nicht nur, auch wegen eines alten Drachentempels.~ EXTERN ~AC#STUR1~ chain_new_after_barakuir_02
 
 CHAIN IF ~~ THEN AC#STUR1 chain_new_after_barakuir_02
-~Schon wieder diese Astralebene!~
-== AC#FENY1 ~Unser König scheint ja ganz versessen darauf gewesen zu sein, dorthin zu gelangen.~
-== AC#ELER1 ~Habt Ihr irgendeinen Anhalt, wo wir weiter suchen müssen?~
+~Schon wieder Drachen! Wie fürchterlich!~
+== AC#FENY1 ~Unser König scheint sich ja mit allerlei unzwergischen Gedanken beschäftigt zu haben!~
+== AC#TURB8 ~Habt Ihr irgendeinen Anhalt, wo wir weiter suchen müssen?~
 END
 ++ ~Es gibt da einen Tempel eines alten Drachengottes. Dort wollte Mith Barak hinreisen.~ EXTERN ~AC#GROM1~ chain_new_after_barakuir_03
 
 CHAIN IF ~~ THEN AC#GROM1 chain_new_after_barakuir_03
 ~Konntet Ihr herausfinden, wo er liegt?~
 END
-++ ~Nein, leider nicht.~ EXIT
+++ ~Er soll sich an den Lehren von Borthun orientiert haben.~ EXTERN ~AC#ELER1~ chain_new_after_barakuir_04
+
+CHAIN IF ~~ THEN AC#ELER1 chain_new_after_barakuir_04
+~Borthun! Borthun der Wanderer!~
+== AC#FENY1 ~Wir alle haben schon von diesem unvorteilhaften Vorbild unserer Rasse gehört. Steht dieses Standbild in der Halle Eures Vaters immer noch, Elern?~
+== AC#ELER1 ~Natürlich!~
+END
+IF ~~ THEN EXTERN ~AC#TURB8~ turbaern_gromi_regencycouncil
+
+// go to throneroom
+	CHAIN IF ~~ THEN AC#GROM1 gromi_go_to_king
+	~Ich werde Euch zum Thronsaal begleiten. Die Ratssitzung ist hiermit beendet. Der Rat wird erst wieder zusammentreffen, wenn unser König aus dem Schlaf erwacht ist.~
+	== AC#ELER1 ~<CHARNAME>, ich bitte Euch, besucht mich in der großen Bibliothek. Ich werde dort gemeinsam mit meinem Vater versuchen, etwas über den Ort in Erfahrung zu bringen, welchen Mith Barak an der Oberfläche aufsuchen wollte.~
+	END
+	IF ~~ THEN DO ~SetGlobal("AC#RC_Spiderstalkings","GLOBAL",1)
+	SetGlobal("AC#IL_NEW_Borthun","GLOBAL",1)
+		//AddJournalEntry(@62022,QUEST)
+		AddexperienceParty(1000)
+		~ EXIT
 
 // Ellhimar appears
 
@@ -1554,14 +1560,14 @@ CHAIN IF ~~ THEN AC#GROM1 chain_open_throneroom
 == AC#DUN01 ~Und die Sicherheit unseres Königs steht an erster Stelle!~
 == AC#ELER1 ~Ich finde, wir sollten es einmal versuchen.~
 == AC#FENY1 ~Warum nicht? Wir können den Regentschaftsrat jetzt, da Ruvan im Gefängnis sitzt, ohnehin nicht mehr regulär einberufen.~
-== AC#STUR1 ~Vielleicht könnte <CHARNAME> auch einmal einen Blick auf unseren König werfen?~
+== AC#STUR1 ~Vielleicht könnte <CHARNAME> auch einmal einen Blick auf unseren König werfen.~
 END
 IF ~~ THEN EXTERN ~AC#GROM1~ ok_open_throneroom
 
 CHAIN IF ~~ THEN AC#GROM1 chain_go_check_throneroom
 ~Selbstverständlich. Dies war ja der Grund, weshalb Ihr uns aufgesucht habt. Es wäre nun mehr als angemessen, Euch Zutritt zu unserem König zu ermöglichen.~
 == AC#ELER1 ~Erwartet nicht zu viel, <CHARNAME>. Der Anblick ist ziemlich... deprimierend.~
-== AC#GROM1 ~So teilt sich der Rat auf. Fenyl und Sturvis Abgrundlied bringen den Magier in die Obhut der Fruchtvollen Mutter Isdlara. Dunnabar Steinschulter wird neben dem König Wache halten, während seine Söhne die Verteidigung der Stadt aufrecht erhalten.~
+== AC#GROM1 ~So teilt sich der Rat auf. Dunnabar Steinschulter wird neben dem König Wache halten, während seine Söhne die Verteidigung der Stadt aufrecht erhalten.~
 == AC#VRON1 ~Ich werde mich mit Euch, Turbaern, der Erneuerung der zerstörten Runen widmen, die unsere Stadt schützen sollen.~
 == AC#TURB8 ~So werden wir es machen. Ihr seid in der Halle der Omlare immer ein gerngesehener Gast Dumathoins.~
 == AC#GROM1 ~Dabei fällt mir ein - was sollen wir mit dem heiligen Hammer machen, den <CHARNAME> bei sich trägt?~

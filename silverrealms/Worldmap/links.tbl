@@ -101,7 +101,8 @@ ACIL20       W            ACIL01       EntryWM      3            1            N 
 ACIL01       S            ACIL04       EntryWM      8            1            N            N            N            N            N            0 
 ACIL01       S            ACIL07       EntryWM      8            1            N            N            N            N            N            0 
 ACIL01       S            ACIL0A       EntryWM      1            1            N            N            N            N            N            0 
-ACIL01       S            ACIL20       Entrywm      3            1            N            N            N            N            N            0 
+ACIL01       S            ACIL20       Entrywm      3            1            N            N            N            N            N            0
+ACIL01       S            ACIL70       Entrywm      3            1            N            N            N            N            N            0  
 ACIL01       S            AR0020       ExitNE       6            1            N            N            N            N            N            0 
 ACIL01       S            AR2000       ExitNE       3            1            N            N            N            N            N            0 
 ACIL01       S            AC1900       ExitW        2            1            N            N            N            N            N            0 

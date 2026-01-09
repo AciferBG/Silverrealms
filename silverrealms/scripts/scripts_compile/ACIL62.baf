@@ -91,6 +91,7 @@ IF
 THEN
 	RESPONSE #100
 		ClearAllActions()
+		StartCutSceneMode()
 		Wait(1)
 		Unlock("DOOR02")
 		OpenDoor("DOOR02")

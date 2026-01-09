@@ -5,8 +5,24 @@ Dialog mit Drow-Guard
 
 BEGIN ~AC#24DR2~
 
-IF ~NumTimesTalkedTo(0)~ THEN BEGIN 1
+IF ~NumTimesTalkedTo(0)~ THEN BEGIN 0
 SAY ~Ihr seid ein *colnbluth*! Redet besser schnell mit unserem Anführer Daevion'lyr, wenn Ihr am Leben bleiben wollt!~
+IF ~~ THEN EXIT
+END
+
+IF ~True()~ THEN BEGIN hello_1
+SAY ~Mit Euch habe ich nichts zu schaffen, *colnbluth*!~
+IF ~~ THEN EXIT
+END
+
+/*******************************************************************************************************
+Dialog mit Drow-Guard 1
+*******************************************************************************************************/
+
+BEGIN ~AC#24DR1~
+
+IF ~True()~ THEN BEGIN hello_1
+SAY ~Mit Euch habe ich nichts zu schaffen, *colnbluth*!~
 IF ~~ THEN EXIT
 END
 
@@ -404,6 +420,11 @@ END
 IF ~~ THEN BEGIN speaks_the_truth
 SAY ~Ja.~
 IF ~~ THEN EXTERN ~AC#24DAE~ job_finished
+END
+
+IF ~True()~ THEN BEGIN hello_1
+SAY ~Ich dulde Eure Anwesenheit. Mehr nicht. Denkt nicht zu laut an diesem Ort.~
+IF ~~ THEN EXIT
 END
 
 //----------------------------------------

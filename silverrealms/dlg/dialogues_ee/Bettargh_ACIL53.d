@@ -9,6 +9,11 @@ SAY ~Meine Tochter Elern wird Euch am Standbild von Borthun, dem Wanderer alles 
 IF ~~ THEN EXIT
 END	
 
+IF ~Global("AC#IL_NEW_Borthun","GLOBAL",1)~ THEN BEGIN hello_anything_achieved
+SAY ~Seid gegrüßt, <CHARNAME>! Wie ich hörte, habt Ihr seit unserem letzten Zusammentreffen große Abenteuer bestanden und unserer Stadt einen großen Dienst erwiesen!~
+ IF ~Global("AC#IL_NEW_BettarghElern","GLOBAL",0)~ THEN REPLY ~Elern meinte, dass Ihr mir sagen würdet, wie es weitergehen soll.~  DO ~SetGlobal("AC#IL_NEW_BettarghElern","GLOBAL",1)~ + stone_clans_parting_02
+IF ~~ THEN REPLY ~Derzeit nichts. Ich mache mich wieder auf den Weg.~ + keep_on_going_surface
+END		
 
 IF ~OR(2)
 GlobalGT("AC#Clans_Parting","GLOBAL",1)
@@ -19,8 +24,7 @@ SAY ~Der irrende Wanderer lächelt über Euch, <CHARNAME>! Habt Ihr schon etwas 
 //IF ~PartyHasItem("AC#SRLAD")~ THEN REPLY ~Ich habe diese Leiter hier. Was genau soll ich noch einmal damit machen?~ + eyestalker_tunnels_01
 //IF ~PartyHasItem("ac#eyebe") GlobalLT("AC#BackToSurface","GLOBAL",5)~ THEN REPLY ~Hier ist der Augenstiel eines Betrachters. Wie geht es jetzt mit dem Trank weiter?~ + have_eyestalk
 //IF ~PartyHasItem("ac#eyebe") Global("AC#BackToSurface","GLOBAL",5)~ THEN REPLY ~Was soll ich nocheinmal mit dem Augenstiel machen?~ + what_do_with_eyestalk_again
-IF ~PartyHasItem("AC#DRFT1")
-	Global("AC#RepairDriftdisc","GLOBAL",1)~ THEN REPLY ~Ich habe eine Schwebescheibe der Drow in den Spinnenschächten gefunden. Wisst Ihr, wie ich sie wieder in Gang setzen könnte?~ GOTO found_driftdisc
+//IF ~PartyHasItem("AC#DRFT1") Global("AC#RepairDriftdisc","GLOBAL",1)~ THEN REPLY ~Ich habe eine Schwebescheibe der Drow in den Spinnenschächten gefunden. Wisst Ihr, wie ich sie wieder in Gang setzen könnte?~ GOTO found_driftdisc
 IF ~~ THEN REPLY ~Derzeit nichts. Ich mache mich wieder auf den Weg.~ + keep_on_going_surface
 END				
 
@@ -32,8 +36,7 @@ IF ~Global("AC#Clans_Parting","GLOBAL",1)~ THEN REPLY ~Habt Ihr schon einmal von
 //IF ~Global("AC#BackToSurface","GLOBAL",1)~ THEN REPLY ~Wisst Ihr zufällig, wie ich wieder zurück an die Oberfläche komme?~ + back_to_surface_01
 IF ~Global("AC#Ellhimar_Cernd","GLOBAL",3)
 Global("Prison_Cernd","ACIL53",0)~ THEN REPLY ~Ich soll auf Geheiß von Vronia Cernd aus seiner Zelle befreien.~ + free_cernd
-IF ~PartyHasItem("AC#DRFT1")
-	Global("AC#RepairDriftdisc","GLOBAL",1)~ THEN REPLY ~Ich habe eine Schwebescheibe der Drow in den Spinnenschächten gefunden. Wisst Ihr, wie ich sie wieder in Gang setzen könnte?~ GOTO found_driftdisc
+// IF ~PartyHasItem("AC#DRFT1") Global("AC#RepairDriftdisc","GLOBAL",1)~ THEN REPLY ~Ich habe eine Schwebescheibe der Drow in den Spinnenschächten gefunden. Wisst Ihr, wie ich sie wieder in Gang setzen könnte?~ GOTO found_driftdisc
 IF ~~ THEN REPLY ~Derzeit nichts. Ich mache mich wieder auf den Weg.~ + keep_on_going_surface
 END
 
@@ -82,9 +85,7 @@ END
 	END
 	
 		IF ~~ THEN BEGIN stone_clans_parting_02
-		SAY ~Elfen und Drachen? Jetzt, wo Ihr es erwähnt, erinnere ich mich an etwas...~
-		=
-		~Elern, Liebes, würdest Du bitte einmal zu mir und unserem Gast von der Oberfläche kommen?~
+		SAY ~Aber natürlich! Elern, Liebes, würdest Du bitte einmal zu mir und unserem Gast von der Oberfläche kommen?~
 		IF ~~ THEN DO ~SetGlobal("ElernSpawn","ACIL53",1)~ EXIT
 		END
 		

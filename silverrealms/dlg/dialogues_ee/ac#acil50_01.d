@@ -514,6 +514,10 @@ END
 	IF ~~ THEN EXIT 
 	END
 
+IF ~Global("AC#Ruvan_Treason","GLOBAL",2)~ THEN BEGIN hello_ruvan_treason
+SAY ~<CHARNAME>! Ihr seid wohlauf. Ihr hörte schon von dem Verrat. Geht in die Halle des Regentschaftsrates! Mein Onkel wird für seine Lügen bezahlen, das schwöre ich!~
+IF ~~ THEN EXIT
+END
 /* IF Timer of 20 Minutes is not yet expired */
 IF ~Global("AC#Bresk_Council","LOCALS",2)
 /*GlobalTimerNotExpired("waiting_council","LOCALS")*/~ THEN BEGIN go_on

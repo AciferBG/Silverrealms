@@ -111,7 +111,7 @@ THEN
 	RESPONSE #100
 		ClearAllActions()
 		SetGlobal("RC_Dismissed","ACIL62",1)
-		SetGlobal("AC#Ellhimar_Cernd","GLOBAL",1)
+		//SetGlobal("AC#Ellhimar_Cernd","GLOBAL",1)
 		ActionOverride("AC#FENY1",EscapeAreaObject("TrACIL50"))
 		ActionOverride("AC#STUR1",EscapeAreaObject("TrACIL50"))
 		ActionOverride("AC#TURB8",EscapeAreaObject("TrACIL50"))

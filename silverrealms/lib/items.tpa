@@ -556,7 +556,7 @@ COPY ~silverrealms/itm/AC#WAND7.itm~         ~override/AC#WAND7.itm~  // Geringe
      //SAY UNIDENTIFIED_DESC @704
      SAY DESC @788 
 
-COPY_EXISTING ~MISC61.ITM~ ~override/AC#GOGON.ITM~  // Gogondy
+COPY ~silverrealms/itm/AC#GOGON.ITM~ ~override~  // Gogondy
   SAY NAME2 @799
   SAY DESC @800
   

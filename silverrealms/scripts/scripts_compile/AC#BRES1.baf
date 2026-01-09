@@ -71,18 +71,17 @@ THEN
 		StartDialogueNoSet(LastSeenBy(Myself))
 END
 
-/*
+
 IF
 	Detect([PC])
-	GlobalGT("AC#BackToSurface","GLOBAL",1)
-	Global("AC#BreskEyestalk","ACIL50",0)
-	PartyHasItem("AC#SRLAD")
+	Global("AC#Ruvan_Treason","GLOBAL",2)
+	Global("AC#BreskRuvanReaction","ACIL50",0)
 THEN
 	RESPONSE #100
-		SetGlobal("AC#BreskEyestalk","ACIL50",1)
+		SetGlobal("AC#BreskRuvanReaction","ACIL50",1)
 		StartDialogueNoSet(LastSeenBy(Myself))
 END
-*/
+
 
 IF
 	Detect([PC])

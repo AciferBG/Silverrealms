@@ -981,8 +981,8 @@ BEGIN AC#RUVA1  // Ruvan
 
 
 IF ~~ THEN BEGIN charname_has_dumathoins_hammer
-SAY ~Das könnt Ihr nicht tun! <CHARNAME> ist die Person, die Euch hinters Licht führen will! Seht, <PRO_HESHE> trägt sogar den Hammer Dumathoins! Den hat <PRO_HESHE> aus den heiligen Hallen Dumathoins gestohlen!~
-IF ~~ THEN REPLY ~Der Hammer war meine Rettung. Er erschien vor mir, als ich feststellen musste, dass die Boote verschwunden waren.~ + hammer_appeared
+SAY ~Das könnt Ihr nicht tun! <CHARNAME> ist die Person, die Euch hinters Licht führen will! Wie wollt Ihr denn aus Barakuir entkommen sein?~
+IF ~~ THEN REPLY ~Der Hammer Dumathoins war meine Rettung. Er erschien vor mir, als ich feststellen musste, dass die Boote verschwunden waren.~ + hammer_appeared
 END
 
 	IF ~~ THEN BEGIN hammer_appeared
@@ -994,6 +994,8 @@ END
 IF ~~ THEN BEGIN charname_had_no_chance
 SAY ~Meine Männer versuchten noch, <CHARNAME> freizuschaufeln, doch alle Mühe war vergebens - <PRO_HESHE> war augenblicklich tot. Sie richteten <PRO_HIMHER> ein Grab aus Stein ein und machten sich sodann schweren Herzens auf den Rückweg in unsere Stadt.~
 IF ~~ THEN REPLY ~Ich muss schon sagen, von allen Geschichten, die ich bisher über meinen Tod gehört habe, ist dies mit Abstand die Rührseligste.~ + c_c_charnames_alive
+IF ~~ THEN REPLY ~Die Höhlendecke? Hättet Ihr Euch nicht etwas Besseres ausdenken können?~ + c_c_charnames_alive
+IF ~~ THEN REPLY ~Falsch! Es war ein Neothelid, der mich fast gefressen hätte. Aber nur fast.~ + c_c_charnames_alive
 END
 
 	IF ~~ THEN BEGIN c_c_charnames_alive
@@ -1003,7 +1005,9 @@ END
 	
 		IF ~~ THEN BEGIN why_do_you_think_i_am_dead
 		SAY ~M-meine Männer! Sie haben mich falsch informiert! Sie haben Euch zurückgelassen! So eine Feigheit muss mit dem Tod bestraft werden. Ich werde sie umgehend hinrichten lassen!~
-		IF ~~ THEN REPLY ~Und damit wichtige Zeugen ausschalten? Eure Leute haben Hathar gegenüber schon zugegeben, dass sie von Euch angehalten wurden, mich in Barakuir zurückzulassen, sobald ich ihnen den Rücken zugekehrt habe.~ + chain_accusation
+		IF ~~ THEN REPLY ~Und damit wichtige Zeugen ausschalten? Eure Leute haben Hathar gegenüber schon zugegeben, dass sie von Euch angehalten wurden, mich in Barakuir zurückzulassen.~ + chain_accusation
+		IF ~~ THEN REPLY ~So leicht kommt Ihr nicht davon!~ + chain_accusation
+		IF ~~ THEN REPLY ~Ihr habt den Befehl dazu gegeben!~ + chain_accusation
 		END
 
 IF ~~ THEN BEGIN ruvan_boat_one_word_02
@@ -1072,7 +1076,8 @@ BEGIN AC#FENY1  // Fenyl
 
 IF ~~THEN BEGIN so_it_is_true_about_mindflayers
 SAY ~Also ist es wahr! Die *caradhak* sind für die Angriffe und unsere Misere verantwortlich!~
-IF ~~ THEN REPLY ~Nein. Ich traf einige ihrer Vertreter, die nicht gegen mich kämpfen wollten. Auch die Gedankenschinder werden von einem bisher unbekannten Feind gejagt.~ + illithids_not_responsable
+IF ~~ THEN REPLY ~Nein. Es gibt dort keine Illithiden mehr, nur untote Monstrositäten. Mit einer davon habe ich über König Mith Barak gesprochen.~ EXTERN ~AC#GROM1~ chain_new_after_barakuir
+//IF ~~ THEN REPLY ~Nein. Es gibt dort keine Illithiden mehr, nur untote Monstrositäten. Mit einer davon habe ich über König Mith Barak gesprochen.~ + chasinillithids_not_responsable
 END
 
 	IF ~~THEN BEGIN illithids_not_responsable
@@ -1498,8 +1503,24 @@ CHAIN IF ~~ THEN AC#GROM1 chain_community
 == AC#VRON1 ~Mich würde interessieren, was <CHARNAME> über Barakuir zu berichten habt.~
 END
 ++ ~Oh, da gibt es Einiges.~ EXTERN ~AC#GROM1~ tell_us_about_barakuir
-++ ~Viel weiter sind wir nicht gekommen. Ob sich der ganze Ärger gelohnt hat, müsst Ihr entscheiden.~ EXTERN ~AC#GROM1~ tell_us_about_barakuir
-++ ~Ich denke, die wichtigste Erkenntnis war, dass es einen Verräter in Euren Reihen gab.~ EXTERN ~AC#GROM1~ tell_us_about_barakuir
+
+// CHAIN: Player talks about undead elder brain
+CHAIN IF ~~ THEN AC#GROM1 chain_new_after_barakuir
+~Mith Barak hat diesen Abschaum aufgesucht?~
+END
+++ ~Ja, aber nicht hier, sondern in der Astralebene.~ EXTERN ~AC#STUR1~ chain_new_after_barakuir_02
+
+CHAIN IF ~~ THEN AC#STUR1 chain_new_after_barakuir_02
+~Schon wieder diese Astralebene!~
+== AC#FENY1 ~Unser König scheint ja ganz versessen darauf gewesen zu sein, dorthin zu gelangen.~
+== AC#ELER1 ~Habt Ihr irgendeinen Anhalt, wo wir weiter suchen müssen?~
+END
+++ ~Es gibt da einen Tempel eines alten Drachengottes. Dort wollte Mith Barak hinreisen.~ EXTERN ~AC#GROM1~ chain_new_after_barakuir_03
+
+CHAIN IF ~~ THEN AC#GROM1 chain_new_after_barakuir_03
+~Konntet Ihr herausfinden, wo er liegt?~
+END
+++ ~Nein, leider nicht.~ EXIT
 
 // Ellhimar appears
 

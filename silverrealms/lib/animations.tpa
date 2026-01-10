@@ -16,7 +16,20 @@
   ACTION_BASH_FOR ~%MOD_FOLDER%/animations/dracolich~ ~^.+\.bam$~ BEGIN
     COPY ~%BASH_FOR_FILESPEC%~ ~override~
   END
-  
+
+// invisble creature large animation
+ LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0x7d00 slotMax = slotMin + 0xff RET slot END
+  ACTION_IF (slot <= 0) BEGIN
+    FAIL ~No free creature animation slot found.~
+  END
+  LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+  APPEND ~animate.ids~ ~0x%hexNumber% INVISIBLE_LARGE_ACIFER~ UNLESS ~INVISIBLE_LARGE_ACIFER~
+  CLEAR_IDS_MAP
+  COPY ~%MOD_FOLDER%/animations/invisible_creature_large/exxx.ini~ ~override/%hexNumber%.ini~
+  ACTION_BASH_FOR ~%MOD_FOLDER%/animations/invisible_creature_large~ ~^.+\.bam$~ BEGIN
+    COPY ~%BASH_FOR_FILESPEC%~ ~override~
+  END
+
 // small water elemental animation
   LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0xE000 slotMax = 0xefff RET slot END
   ACTION_IF (slot <= 0) BEGIN

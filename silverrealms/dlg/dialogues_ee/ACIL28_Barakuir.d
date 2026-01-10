@@ -174,7 +174,8 @@ IF ~~ THEN REPLY ~Wer seid Ihr?~ EXTERN AC#IL28E who_are_you
 												ReallyForceSpell(Myself,FLASHY_2)
 												Wait(1)
 												EndCutSceneMode()
-												DestroySelf()~EXIT
+												//DestroySelf()
+												~EXIT
 /*												
 // -------------------------------------------------
 // Ellhimar (mad)

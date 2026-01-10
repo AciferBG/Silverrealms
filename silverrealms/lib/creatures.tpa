@@ -2,10 +2,14 @@
 
 COPY ~silverrealms/cre/copy~         ~override~
 
+COPY ~silverrealms/cre/AC#ILKUP.cre~ ~override~ // Kuo-Toa chief
+  SAY NAME1 @220 SAY NAME2 @220
+
 COPY ~silverrealms/cre/AC#NEO2T.cre~ ~override~  // Telekinesis
 
 COPY ~silverrealms/cre/AC#IL28E.cre~ ~override~  // Undead Elderbrain
   SAY NAME1 @9046 SAY NAME2 @9046
+  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~INVISIBLE_LARGE_ACIFER~))
 
 COPY ~silverrealms/cre/AC#ILNCM.cre~ ~override~  // Necromental in ACIL57
   SAY NAME1 @9045 SAY NAME2 @9045

@@ -10,6 +10,7 @@ THEN
                 AmbientActivate("Eyesocket02",FALSE)
                 TriggerActivation("Info_Boats",FALSE)
                 TriggerActivation("TrACIL27",FALSE)
+		AmbientActivate("Smoke_wood",FALSE)		
 		FadeFromColor([30.0],0)
 END
 
@@ -27,6 +28,18 @@ THEN
 		CreateCreatureImpassableAllowOverlap("AC#IL28E",[2196.1589],S)  // Undead Elderbrain
 		Wait(2)
 		EndCutSceneMode()
+END
+
+IF
+	Dead("AC#IL28E") // undead elder brain is killed
+	Global("AC#IL_KilledElderBrain","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#IL_KilledElderBrain","GLOBAL",1)
+		CreateVisualEffect("AC#IL54B",[2196.1589])
+		ScreenShake([20.20],5)
+		OpenDoor("DOOR07")
+		AmbientActivate("Smoke_wood",TRUE)	
 END
 /*
 IF

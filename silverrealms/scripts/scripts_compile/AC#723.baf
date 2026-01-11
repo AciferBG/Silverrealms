@@ -4,7 +4,7 @@ IF
         Global("Acil71_Phosphor","ACIL71",0)
 THEN
     RESPONSE #100
-             DisplayString(Myself,@20)
+             DisplayString(Myself,@120)
              SetGlobal("Acil71_Phosphor","ACIL71",1)
 END
 

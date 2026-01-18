@@ -32,7 +32,7 @@ END
 // -------------------------------------------------
 // Bettargh Riftsong - Book Astral
 //--------------------------------------------------
-
+/*
 BEGIN ~AC#BETT2~
 
 IF ~Global("AC#BettarghBookAstral","GLOBAL",1)~ THEN BEGIN hello_book_astral 
@@ -115,12 +115,8 @@ IF ~Global("AC#BettarghBookAstral","GLOBAL",1)~ THEN BEGIN hello_book_astral
 									IF ~~ THEN DO ~SetGlobal("AC#BettarghBookAstral","GLOBAL",10)
 									EscapeArea()~ EXIT
 									END		
-
-/*
-IF ~~ THEN DO ~SetGlobal("AC#BettarghHasBook","GLOBAL",2)
-									AddJournalEntry(@62100,QUEST)
-									EscapeArea()~ EXIT
-									END	*/
+*/
+									
 // -------------------------------------------------
 // Dunnabar Steinschulter - Dialog 01
 //--------------------------------------------------		
@@ -1398,11 +1394,18 @@ IF ~~ THEN REPLY ~In einem alten Tempel Selunes und Clangeddins.~ EXTERN ~AC#GRO
 				== AC#GROM1 ~Genug. Es bringt jetzt nichts mehr, um das heiße Eisen herumzureden. <CHARNAME>, wir bitten Euch, in Barakuir nach weiteren Antworten zu König Mth Baraks Zustand zu suchen.~
 				== AC#FENY1 ~Barakuir... schon lange habe ich diesen verfluchten Namen nicht mehr vernommen...~
 				END
-				++ ~Was ist Barakuir?~ EXTERN ~AC#VRON1~ NEW_what_is_barakuir
+				++ ~Was genau ist Barakuir?~ EXTERN ~AC#VRON1~ NEW_what_is_barakuir
 				
 				CHAIN IF ~~ THEN AC#VRON1 NEW_what_is_barakuir
-				~Barakuir ist die alte Heimstatt der Duergar. Einst waren sie Schildzwerge wie wir, doch die Gefangenschaft der Illithiden brachte sie um den Verstand.~
-				== AC#GROM1 ~Clan Duergar herrschte lange Zeit über sein Unterkönigreich wie jeder andere Clan auch. Doch die lange Folter der Gedankenschinder hat ihren Verstand vergiftet. Die Duergar gaben uns anderen Zwergenclans die Schuld für ihre Sklaverei. Als sie sich aus den Fesseln der Illithiden befreien konnten, wandten sie sich gegen ihre Brüder.~
+				~Barakuir war eines der Unterkönigreiche Shanatars. Es liegt in der Nähe Iltkazars im östlichen Unterreich, wenngleich die Zugänge dorthin für die meisten Zwerge schon lange in Vergessenheit geraten sind. Die ganze Geschichte darüber werden wir Euch nicht erzählen können. Dies würde ein Menschenleben oder länger dauern. Deshalb in aller Kürze: In Barakuir herrschte ein Zwergenclan, von dem Ihr sogar an der Oberfläche vielleicht schon etwas gehört haben könntet. Er hieß Clan Duergar.~
+				END
+				IF ~~ THEN REPLY ~Die Duergar, die bösen Grauzwerge, lebten in Barakuir?~ EXTERN ~AC#VRON1~ NEW_duergar_01
+				
+				CHAIN IF ~~ THEN AC#VRON1 NEW_duergar_01
+				~Einst war Clan Duergar ein Clan wie alle anderen von Shanatar auch. Die Zwerge des Clans waren unsere Brüder und Schwestern. Doch irgendwann kühlte das Verhältnis des Clans Duergar zu den anderen Unterkönigreichen ab.~
+				=
+				~Die Zwerge Barakuirs fühlten sich bei der Wahl des Großkönigs übergangen und zogen sich zurück. Doch irgendwann gelangten sie in starke Bedrängnis durch die Illithiden, die in der Nähe ihrer Clanfeste eine Stadt errichtet hatten. Die anderen Königreiche antworteten nicht auf die Hilfeersuchen aus Barakuir, und als sich doch eine Expedition aus Iltkazar anschickte, den Brüdern und Schwestern von Clan Duergar beizustehen, fand sie die Stadt verlassen vor. Der ganze Clan war von Illithiden versklavt und verschleppt worden. Die ehemals mächtige Stadt blieb zerstört und leer zurück.~				
+				== AC#GROM1 ~Später gelang Clan Duergar die Flucht aus der Gefangenschaft der *caradhak*, und seither schwören die Zwerge dieses Clans Rache an ihren Vettern für den Verrat, der damals ihrer Meinung nach an ihnen begangen wurde. Einst waren sie Schildzwerge wie wir, doch die Gefangenschaft der Illithiden brachte sie um den Verstand.~
 				== AC#FENY1 ~Seitdem liegt ein Fluch über Barakuir, und kein Zwerg Shanatars wird jemals wieder diesen unheiligen Ort betreten.~
 				== AC#GROM1 ~Deshalb bitten wir Euch darum, in den Ruinen der einst stolzen Heimat von Clan Duergar nach Antworten zu suchen.~
 				END

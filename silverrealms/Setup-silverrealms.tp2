@@ -300,10 +300,24 @@ COPY ~silverrealms/bam/copy~         ~override~
  END
  END
  
-   COPY ~silverrealms/bam/bam_desc_BG2EE/AC#5DKD1.bam~ ~override~  //    dwarven key desc bam
+ COPY ~silverrealms/bam/bam_desc_BG2EE/AC#5DKD1.bam~ ~override~  //    dwarven key desc bam
  LPF UPDATE_PVRZ_INDICES RET original_base_index new_base_index END
  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN 
  LAF INSTALL_PVRZ INT_VAR original_base_index new_base_index STR_VAR source_file = ~silverrealms/bam/bam_desc_BG2EE/MOS1026.pvrz~
+ END
+ END
+ 
+ COPY ~silverrealms/bam/bam_desc_BG2EE/AC#AMUDD.bam~ ~override~  //    amulet dumathoin desc bam
+ LPF UPDATE_PVRZ_INDICES RET original_base_index new_base_index END
+ ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN 
+ LAF INSTALL_PVRZ INT_VAR original_base_index new_base_index STR_VAR source_file = ~silverrealms/bam/bam_desc_BG2EE/MOS1027.pvrz~
+ END
+ END
+ 
+ COPY ~silverrealms/bam/bam_desc_BG2EE/AC#DROHD.bam~ ~override~  //    amulet dumathoin desc bam
+ LPF UPDATE_PVRZ_INDICES RET original_base_index new_base_index END
+ ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN 
+ LAF INSTALL_PVRZ INT_VAR original_base_index new_base_index STR_VAR source_file = ~silverrealms/bam/bam_desc_BG2EE/MOS1028.pvrz~
  END
  END
 

@@ -123,6 +123,8 @@ THEN
 		ActionOverride("AC#ILEL6",DestroySelf())
 END
 
+/*
+// OLD: Bettargh appears in RC
 IF
 	Global("AC#Goodbye_Iltkazar","GLOBAL",1)
 	Global("AC#BettarghBookAstral","GLOBAL",0)
@@ -132,4 +134,5 @@ THEN
 		CreateCreature("AC#BETT2",[2505.542],9)  // Bettargh Abgrundlied
 		ActionOverride("AC#BETT2",StartDialogNoSet(Player1))
 END
+*/
 

@@ -80,12 +80,12 @@ THEN
 END
 
 IF
-       Global("ElernSpawn","ACIL53",1)
+    Global("ElernSpawn","ACIL53",1)
 THEN
-	RESPONSE #100
-		SetGlobal("ElernSpawn","ACIL53",2)
-		CreateCreatureOffScreen("AC#ELER5",0)
-		ActionOverride("AC#ELER5",Dialogue(Player1))
+    RESPONSE #100
+        SetGlobal("ElernSpawn","ACIL53",2)
+        CreateCreatureObjectOffset("AC#ELER5",Player1,[15.15])  // Elern Abgrundlied
+        ActionOverride("AC#ELER5",Dialogue(Player1))
 END
 
 IF

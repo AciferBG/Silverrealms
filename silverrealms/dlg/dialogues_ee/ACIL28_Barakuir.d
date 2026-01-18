@@ -12,10 +12,11 @@ END
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN here_we_are_in_barakuir
   SAY ~So, da wären wir, <PRO_RACE>.~
   IF ~~ THEN REPLY ~Dies ist die ehemalige Stadt der Duergar?~ GOTO edge_barakuir
+  IF ~~ THEN REPLY ~Wie geht es jetzt weiter?~ GOTO edge_barakuir
 END
 
 	IF ~~ THEN BEGIN edge_barakuir
-	SAY ~Dies sind die Ausläufer Barakuirs, ja. Wir werden keinen weiteren Schritt auf dieses verfluchte Land setzen. Erfüllt Eure Aufgabe und kehrt hierher zurück. Wir warten bei den Booten auf Euch und werden Euch dann sicher wieder zurück nach Iltkazar bringen.~
+	SAY ~Dies sind die Ausläufer Barakuirs. Wir werden keinen weiteren Schritt auf dieses verfluchte Land setzen. Erfüllt Eure Aufgabe und kehrt hierher zurück. Wir warten bei den Booten auf Euch und werden Euch dann sicher wieder zurück nach Iltkazar bringen.~
 	IF ~~ THEN DO ~EraseJournalEntry(@62044)
 	AddJournalEntry(@62045,QUEST)
 	SetGlobal("AC#RC_Sorni_Fourth","GLOBAL",13)~ EXIT

@@ -320,6 +320,27 @@ COPY ~silverrealms/bam/copy~         ~override~
  LAF INSTALL_PVRZ INT_VAR original_base_index new_base_index STR_VAR source_file = ~silverrealms/bam/bam_desc_BG2EE/MOS1028.pvrz~
  END
  END
+ 
+  COPY ~silverrealms/bam/bam_desc_BG2EE/AC#POTLD.bam~ ~override~  //    potion featherfalling desc bam
+ LPF UPDATE_PVRZ_INDICES RET original_base_index new_base_index END
+ ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN 
+ LAF INSTALL_PVRZ INT_VAR original_base_index new_base_index STR_VAR source_file = ~silverrealms/bam/bam_desc_BG2EE/MOS1029.pvrz~
+ END
+ END
+ 
+ COPY ~silverrealms/bam/bam_desc_BG2EE/AC#POTD2.bam~ ~override~  //    potion levitation desc bam
+ LPF UPDATE_PVRZ_INDICES RET original_base_index new_base_index END
+ ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN 
+ LAF INSTALL_PVRZ INT_VAR original_base_index new_base_index STR_VAR source_file = ~silverrealms/bam/bam_desc_BG2EE/MOS1030.pvrz~
+ END
+ END
+ 
+  COPY ~silverrealms/bam/bam_desc_BG2EE/AC#RATTD.bam~ ~override~  //    rat tail desc bam
+ LPF UPDATE_PVRZ_INDICES RET original_base_index new_base_index END
+ ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN 
+ LAF INSTALL_PVRZ INT_VAR original_base_index new_base_index STR_VAR source_file = ~silverrealms/bam/bam_desc_BG2EE/MOS1031.pvrz~
+ END
+ END
 
 ///////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////

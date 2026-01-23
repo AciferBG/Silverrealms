@@ -57,76 +57,85 @@ END
 
 // Undead Elder brain
 
+//first encounter
+BEGIN ~AC#IL28F~
+
+CHAIN IF ~NumTimesTalkedTo(0)~ THEN AC#IL28F hello_00
+~(Ein Wesen mit Bewusstsein in diesen Hallen? Das hat es seit tausend Jahren nicht gegeben. Tretet ein, Denkender, und bezwingt den Wächter. Dann werde ich mich Euch offenbaren.)~
+END
+IF ~~ THEN REPLY ~Wer seid Ihr?~ EXTERN AC#IL28F who_are_you_bye
+IF ~~ THEN REPLY ~Wer spricht da?~ EXTERN AC#IL28F who_are_you_bye
+
+	CHAIN AC#IL28F who_are_you_bye
+	~(Niemand antwortet.)~
+	DO ~DestroySelf() ~EXIT
+
+
+// after the neothelid is defeated
+
 BEGIN ~AC#IL28E~
 
-CHAIN IF ~True()~ THEN AC#IL28E hello_00
-~Ihr habt die Geißel dieser Siedlung ausgelöscht. Dafür gebührt Euch mein Dank.~
+CHAIN IF ~NumTimesTalkedTo(0)~ THEN AC#IL28E hello_killed_neothelid
+~Ihr habt die Geißel dieser Stätte ausgelöscht. Dafür gebührt Euch mein Dank.~
 END
 IF ~~ THEN REPLY ~Wer seid Ihr?~ EXTERN AC#IL28E who_are_you
 
-
 	CHAIN AC#IL28E who_are_you
-	~Einst war ich das Ältestenhirn dieser Siedlung. Ein Nexus aus Wissen, Macht und Kontrolle. Nun bin ich… betrachtet mich.~
+	~Einst war ich das Ältestenhirn dieser Siedlung. Ein Nexus aus Wissen, Macht und Kontrolle. Nun bin ich... seht mich an.~
 	END
 	IF ~~ THEN REPLY ~Was ist geschehen?~ EXTERN AC#IL28E what_happened
 	IF ~~ THEN REPLY ~Ein verfaulter Haufen Gehirnmasse.~ EXTERN AC#IL28E what_happened
 
 		CHAIN AC#IL28E what_happened
-		~Die Siedlung zerfiel, als die Duergar rebellierten. Der Zustrom an Gehirnen versiegte. Es gab nicht genug Nahrung.~ 
+		~Die Siedlung zerfiel, als die Duergar rebellierten. Der Zustrom an Nahrung versiegte. Ordnung fiel Hunger anheim.~
 		=
-		~Einige Illithiden wandten sich gegeneinander. Kannibalismus. Ich verlor die Kontrolle. Meine Larven fraßen einander, bis nur eine verblieb – und zu jenem… Ding heranwuchs, das Ihr eben vernichtet habt.~
+		~Illithiden wandten sich gegeneinander. Kannibalismus. Ich verlor die Kontrolle. Larven fraßen Larven, bis nur eine verblieb – und zu jenem Ding heranwuchs, das Ihr gerade vernichtet habt und vor dem ich ich verstecken musste.~
 		END
 		IF ~~ THEN REPLY ~Dieses Monstrum war einmal eine kleine Larve? Widerlich.~ EXTERN AC#IL28E neothelid
 		IF ~~ THEN REPLY ~Der Neothelid sollte zu einem Gedankenschinder werden?~ EXTERN AC#IL28E neothelid
 
 			CHAIN AC#IL28E neothelid
-			~Für Euch widerlich. Für mich… eine Katastrophe. Meine Zöglinge: Tot oder Untot. Der Neothelid begehrte Bewusstsein. Um mich zu schützen, entzog ich mich. Ich wechselte meinen Geist auf die Astralebene.~
+			~Für Euch widerlich. Für mich... drohender Untergang. Ein Neothelid begehrt Bewusstsein, kennt keine Fessel. Er hätte auch mich vernichtet.~
 			=
-			~Doch das Becken, das meinen Leib nährte, trocknete aus. Mein Geist verharrte. Mein Gewebe starb. Weder lebendig, noch tot.~
+			~Um mich zu bewahren, löste ich meinen Geist von meinem Leib. Mein Becken vertrocknete. Das Gewebe starb. Die Gedanken blieben. So wurde ich zu der untoten Masse, die Ihr nun hört und seht.~
 			END
-			IF ~~ THEN REPLY ~Ihr könnt Euch auf die Astralebene zurückziehen?~ EXTERN AC#IL28E astral_plane
-			
+			IF ~~ THEN REPLY ~Ihr seid also eine Art Zombie-Gehirn?~ EXTERN AC#IL28E astral_plane
+			IF ~~ THEN REPLY ~Übel.~ EXTERN AC#IL28E astral_plane
+
 				CHAIN AC#IL28E astral_plane
-				~Nicht nur ich. Alle Ältestenhirne besitzen diese Fähigkeit – einen letzten Schutzmechanismus. Doch mir blieb nur dieser untote Körper… und keine Untergebenen mehr.~
+				~Nennt es, wie Ihr wollt. Mir bleibt nur dieser untote Körper, keine Untergebenen mehr. Ich bin, was von einem großen Geist übrig blieb. Einst herrschte ich über viele Gedanken, nun hüte ich nur noch Erinnerung.~
 				=
-				~Unter normalen Umständen hätte ich Euch bereits ausgelöscht. Doch dies sind keine normalen Umstände. Ihr habt mir gedient. Nun werde ich Euch dienen.~
+				~Jeder Gedankenschinder würde mich vernichten, sobald er mich entdeckt. Mein Dasein wäre ihnen ein Frevel. Darum lebe ich die meiste Zeit versteckt vor ihrem Bewusstsein, in ständiger Angst, vollständig vernichtet zu werden.~
+				=
+				~Es ist daher angenehm, wieder mit einem denkenden Wesen zu kommunizieren. Zu Lebzeiten hätte ich Euer Gehirn gerne konsumiert und Euer Bewusstsein in mich aufgenommen. Doch die Zeiten werden anders, schwieriger. Ihr habt mir geholfen. Darum sollt Ihr Antworten erhalten.~
 				END
-				IF ~~ THEN REPLY ~Wie könnt Ihr mir helfen?~ EXTERN AC#IL28E how_help
-				
+				IF ~~ THEN EXTERN AC#IL28E how_help
+
 					CHAIN AC#IL28E how_help
-					~Ich spüre Euren Zweck. Mith Barak begehrte diesen Ort.~
+					~Ich spüre Euer Verlangen. Ihr sucht nach Mith Barak. Darum seid Ihr hier. Auch Mith Barak betrat einst diese Stätte.~
 					END
 					IF ~~ THEN REPLY ~Ihr seid ihm begegnet?~ EXTERN AC#IL28E met_mith_01
-					
+
 						CHAIN AC#IL28E met_mith_01
-						~Ja. Mehr als einmal. Doch nicht hier.~
+						~Mith Barak suchte Wissen. Oft sprach er von der Zeit der Drachen und von einem Gott, dessen Name kaum noch gedacht wird.~
 						END
 						IF ~~ THEN EXTERN AC#IL28E met_mith_02
+
 						
 							CHAIN AC#IL28E met_mith_02
-							~Ich begegnete ihm auf der Astralebene. In anderer Gestalt.~
+							~Er suchte auch nach einem Weg in die Astralebene.~
 							END
 							IF ~~ THEN REPLY ~Dann hat er also einen Weg dorthin gefunden?~ EXTERN AC#IL28E met_mith_03
 							
-								CHAIN AC#IL28E met_mith_03
-								~Nein.~
-								END
-								IF ~~ THEN REPLY ~Wie konntet Ihr ihn dann dort treffen?~ EXTERN AC#IL28E met_mith_04
-								
-									CHAIN AC#IL28E met_mith_04
-									~Sein Geist war dort. Sein Körper ruht noch immer an dem Ort, an dem er ihn verlassen hatte.~
+									CHAIN AC#IL28E met_mith_03
+									~Nein. Er suchte nach einem Weg, mit seinem gesamten Körper die Astralebene zu betreten. Dabei konnte ich ihm nicht helfen. Doch er suchte auch nach Erlösung von seinem Fluch. Dafür konnte ich ihm den Weg weisen. Und dieses Wissen werde ich nun als Dank an Euch weitergeben.~
 									END
-									IF ~~ THEN EXTERN AC#IL28E met_mith_05
-									
-									CHAIN AC#IL28E met_mith_05
-									~Er suchte weiterhin nach einem Weg, mit seinem gesamten Körper die Astralebene zu betreten. Und er suchte Erlösung von einem Fluch.~
-									END
-									IF ~~ THEN REPLY ~Was für ein Fluch?~ EXTERN AC#IL28E mith_curse
+									IF ~~ THEN EXTERN AC#IL28E mith_curse
 									
 										CHAIN AC#IL28E mith_curse
-										~Das weiß ich nicht zu sagen. Das sagte er nie. Er suchte vielmehr nach Wissen aus einer Zeit, bevor Zwerge, Elfen und Menschen diese Lande besiedelten. Er suchte vielmehr nach Wissen aus der Zeit der Drachen.~
+										~Ihr habt ihn wahrscheinlich gesehen, diese Säule, zu der er erstarrt ist. Er suchte nach einem Weg, seine Verwandlung rückgängig zu machen. Er benötigte Wissen aus einer Zeit, lange, bevor Zwerge, Elfen und Menschen diese Lande besiedelten. Er suchte nach Wissen aus der Zeit der Drachen. Nach der Macht der alten Drachengötter.~
 										END
-										IF ~~ THEN REPLY ~Drachen?~ EXTERN AC#IL28E mith_dragons
+										IF ~~ THEN EXTERN AC#IL28E mith_dragons
 										
 											CHAIN AC#IL28E mith_dragons
 											~Besonders die Tempel der alten Drachengötter begehrten sein Interesse. Vor allem ein uralter Tempel eines toten Drachengottes, dessen Name selbst den Gelehrten dieser Zeit entglitten ist. Doch ich kenne den Namen des Drachengottes noch.~
@@ -134,49 +143,110 @@ IF ~~ THEN REPLY ~Wer seid Ihr?~ EXTERN AC#IL28E who_are_you
 											IF ~~ THEN REPLY ~Wie lautet er?~ EXTERN AC#IL28E name_kalzareinad
 											
 											CHAIN AC#IL28E name_kalzareinad
-											~Kalzareinad.~
+											~Kalzareinad. Ein alter, vergessener Drachengott.~
 											END
 											IF ~~ THEN REPLY ~Aha.~ EXTERN AC#IL28E kalzareinad_temple
 											IF ~~ THEN REPLY ~Noch nie gehört.~ EXTERN AC#IL28E kalzareinad_temple
 											
 											CHAIN AC#IL28E kalzareinad_temple
-											~Ein Name, der unter den Völkern der heutigen Zeit vollkommen in Vergessenheit geraten ist. Doch einige Tempel bestehen noch. Dorthin suchte er zu gelangen.~
+											~Ein Name, der unter den Völkern der heutigen Zeit vollkommen in Vergessenheit geraten ist. So ist es mit Namen: Wenn niemand sie spricht, werden sie Staub. Doch Steine stehen länger als jeder Glaube. Ein Tempel besteht noch. Sein Tempel stand an einem Ort, den man den Drachenfriedhof nannte – dort, wo die alten Drachen ihr Ende suchten. Dorthin suchte er zu gelangen.~
 											END
 											IF ~~ THEN REPLY ~Und Ihr konntet ihm sagen, wo dieser Tempel liegt?~ EXTERN AC#IL28E mith_dragons_02
 											
 												CHAIN AC#IL28E mith_dragons_02
-												~Nein.~
+												~Nein. Ich kannte den Namen, nicht den Weg.~
+												END
+												IF ~~ THEN REPLY ~Also muss ich wieder woanders weitersuchen...~ EXTERN AC#IL28E mith_dragons_03												
+												
+												CHAIN AC#IL28E mith_dragons_03
+												~Und ich werde Euch nun noch etwas sagen, das Euch nicht gefallen wird.~
+												END
+												IF ~~ THEN EXTERN AC#IL28E dwarves_treason
+												/*
 												=
 												~Doch ein Zwerg Shanatars besaß dieses Wissen. Borthun. Borthun der Wanderer. Mith Barak hatte das Wissen die ganze Zeit direkt vor seiner Nase. Wie so oft, wenn man etwas sucht.~
 												END
 												IF ~~ THEN REPLY ~Erzählt mir mehr.~ EXTERN AC#IL28E tell_me_more
 
 													CHAIN AC#IL28E tell_me_more
-													~Das kann ich nicht. Meine Präsenz in dieser Ebene zehrt an mir. Ihr kennt nun sein Begehren. Ob er fand, wonach er suchte, müsst Ihr selbst ergründen.~
+													~Das kann ich nicht. Ihr kennt nun sein Begehren. Ob er fand, wonach er suchte, müsst Ihr selbst ergründen.~
 													END
 													IF ~~ THEN EXTERN AC#IL28E dwarves_treason
+													*/
 
 												CHAIN AC#IL28E dwarves_treason
-												~Es war… angenehm, wieder mit einem denkenden Wesen zu kommunizieren. Zu Lebzeiten hätte ich Euer Gehirn gerne konsumiert und in mich aufgenommen. Doch die Zeiten werden anders, schwieriger.~ 
-												=
-												~Auch für Euch. Es scheint, die Zwerge haben Euch verraten und hier zurückgelassen.~												
+												~Es scheint, die Zwerge haben Euch verraten und hier zurückgelassen.~												
 												END
-												IF ~~ THEN REPLY ~Das haben sie sicher nicht.~ EXTERN AC#IL28E bye
-												IF ~~ THEN REPLY ~Was?~ EXTERN AC#IL28E bye
+												IF ~~ THEN REPLY ~Das haben sie sicher nicht.~ EXTERN AC#IL28E cant_believe_treason
+												IF ~~ THEN REPLY ~Was?~ EXTERN AC#IL28E cant_believe_treason
 												
-												CHAIN AC#IL28E bye
-												~Seht selbst am Ufer nach. Die Boote sind verschwunden. Es scheint, Ihr werdet hier bleiben müssen. Genau mein untote Hülle. Lebt wohl, Suchender. Ich werde mich wieder in die Astraleben zurückziehen. Wir werden einander nicht wieder begegnen.~
+												CHAIN AC#IL28E cant_believe_treason
+												~Die Boote, die Euch hergebracht haben, sind verschwunden. Seht selbst am Ufer nach. Ob aus Feigheit oder Notwendigkeit – ich vermag es nicht zu wissen. Es scheint, Ihr werdet hier bleiben müssen. Genau wie meine untote Hülle. Zwei Reste in einer vergessenen Halle.~
+												END											
+												IF ~~ THEN REPLY ~Warum haben sie das getan?~ EXTERN AC#IL28E what_now
+												IF ~~ THEN REPLY ~Und wie geht es jetzt weiter?~ EXTERN AC#IL28E what_now
+												
+												CHAIN AC#IL28E what_now
+												~Es ist einerlei. Mich dürstet es nach Wissen, und Ihr könnt mir noch ein wenig Gesellschaft leisten. Wenn ich...~												
+												END
+												IF ~~ THEN EXTERN AC#IL28E illithid_are_coming
+
+												CHAIN AC#IL28E illithid_are_coming
+												~Wartet! Ich spüre eine neue Präsenz... Die Gedankenschinder kommen! Ihr Wille nähert sich. Ich ziehe mich zurück. Versucht sie abzuschütteln! Verratet mich nicht.~
 												DO ~SetGlobal("AC#IL_UndeadElderBrain","GLOBAL",1)
 												StartCutSceneMode()
-												AddJournalEntry(@62050,QUEST)
 												SetGlobal("AC#Ruvan_Treason","GLOBAL",1)
-												AddJournalEntry(@62046,QUEST)
+												AddJournalEntry(@62046,QUEST) // Barakuir Quest: boats are gone
+												AddJournalEntry(@99508,QUEST) // sleeping king questline
 												CreateVisualEffect("ICPRAYI",[2196.1589])
 												ReallyForceSpell(Myself,FLASHY_2)
 												Wait(1)
+												SetGlobal("MindflayersAppear","ACIL28",1)
+												Deactivate(Myself)
 												EndCutSceneMode()
-												//DestroySelf()
 												~EXIT
+												
+// -------------------------------------------------
+// Ulitharid
+//--------------------------------------------------
+
+BEGIN ~AC#ULIT2~
+
+CHAIN IF ~Global("AC#IL_KilledElderBrain","GLOBAL",1)~ THEN AC#ULIT2 hello_elderbrain_dead
+~Damit ist diese Störung der Ordnung ausgelöscht. Und nun zu Euch!~
+END
+  IF ~~ THEN EXIT 
+
+CHAIN IF ~NumTimesTalkedTo(0)~ THEN AC#ULIT2 hello_01
+~Seid gegrüßt, <CHARNAME>. Eine Überraschung, Euch hier wiederzusehen. Erinnert Ihr Euch an mich? Das letzte Mal standen wir uns im Spiegel gegenüber. Ich würde Eurer Erinnerung gerne noch weiter auf die Sprünge helfen, doch... nein... Eure Erinnerung wird später für etwas anderes gut sein.~
+END
+  IF ~~ THEN REPLY ~Ihr wart der Illithide, den ich in Ellhimars Spiegel gesehen habe!~ EXTERN AC#ULIT2 ellhimars_mirror 
+
+	CHAIN AC#ULIT2 ellhimars_mirror
+	~Wie aufgeweckt! Da seid Ihr mir doch noch zu etwas nütze.~
+	END
+	IF ~~ THEN EXTERN AC#ULIT2 kill_elder_brain 
+	
+	CHAIN AC#ULIT2 kill_elder_brain
+	~Doch zunächst müssen wir uns um diese... Aberration hier kümmern. Sklave?~
+	END
+	IF ~~ THEN DO ~StartCutSceneMode()
+	StartCutScene("AC#28CT4")~ EXIT
+
+
+// -------------------------------------------------
+// Drow Mage Slave
+//--------------------------------------------------
+
+BEGIN ~AC#28DRS~
+
+CHAIN IF ~NumTimesTalkedTo(0)~ THEN AC#28DRS yes_master
+~Ja, Meister?~
+== AC#ULIT2 ~Vernichtet dieses untote Ding dort.~
+== AC#28DRS ~Jawohl, Meister.~
+END
+IF ~~ THEN DO ~StartCutSceneMode()
+	StartCutScene("AC#28CT5")~ EXIT 
 /*												
 // -------------------------------------------------
 // Ellhimar (mad)

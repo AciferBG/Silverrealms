@@ -329,7 +329,7 @@ Mir wurde von Dunnabar Steinschulter aufgetragen, wieder ins Ratsgebäude im Nor
 //___________________________Ein Weg ins Kuo-Toa-Lager
 @56100  = ~Ein Weg ins Kuo-Toa-Lager
 
-Bei der Vorbereitung meiner Reise nach Barakuir gibt es Schwierigkeiten. Horden von Kuo-Toa und anderen Wesen machen die Gewässer, durch die ich mit dem Boot reisen sollte, unsicher. Bresk meint, wir sollten die Tiefengnome der Stadt um Hilfe bitten. Ich soll mit Schnotnell Samrynarr, dem Anführer der Svirfnebli im Tempel Gaerdals in der Bronzemaske sprechen.~
+Bei der Vorbereitung meiner Reise nach Barakuir gibt es Schwierigkeiten. Kuo-Toa machen die Gewässer, durch die ich mit dem Boot reisen soll, unsicher. Bresk meint, wir sollten die Tiefengnome der Stadt um Hilfe bitten. Ich soll mit Schnotnell Samrynarr, dem Anführer der Svirfnebli im Tempel Gaerdals in der Bronzemaske sprechen.~
 @56101  = ~Ein Weg ins Kuo-Toa-Lager
 
 Ich habe von den Svirfnebli einen Stab erhalten, der mir Zugang in den bisher unerreichbaren Teil ihres Versteckes geben könnte, indem er Felswände zu Schlamm verwandelt und damit passierbar macht. Da die Kuo-Toa in ihren Verstecken stinkende Essenzen einsetzen, um sich zu stimulieren, sollte ich mich bei der Suche nach einem passenden Stück Fels von meiner Nase leiten lassen.~
@@ -494,12 +494,7 @@ Aus heiterem Himmel ist der Hammer Dumathoins am Ufer Barakuirs aufgetaucht. Vie
 @62048   = ~Der Weg aus Barakuir
 
 Ich habe die Außenbezirke der ehemaligen Stadt der Duergar betreten und hoffe, ich finde auf diesem Wege zurück nach Iltkazar.~
-@62050   = ~Ellhimar, der Magier
 
-In einem alten Tempel der Illithiden an den Grenzen Barakuirs bin ich einem Ältestenhirn begegnet. Mith Barak bereiste wohl häufiger die Astralebene, suchte jedoch nach einem Weg, diese durch ein Portal zu bereisen. Auch eine Art Fluch soll eine Rolle gespielt haben.~
-@62051   = ~Ellhimar, der Magier
-
-Ich habe Ellhimar dem Rat übergeben. Die Kleriker der Zwerge versuchen nun, ihn mit Sharindlars Hilfe aus seinem elenden geistigen Zustand zu befreien.~
 @62059	= ~Der Verrat
 
 Ruvan Steinschulter ist mitsamt seiner Frau aus dem Rat ausgeschlossen worden und muss jetzt die nächste Zeit im Gefängnis der Stadt unter der Bronzemaske verbringen. Eine gerechte Strafe dafür, dass er mich in Barakuir dem Tod überlassen wollte.~
@@ -545,7 +540,7 @@ Bettargh meinte, seine Tochter Elern könnte mir bei der Suche nach diesem selts
 Borthun Diamantklinge, ein großer zwergischer Entdecker, könnte etwas über diesen Drachenfriedhof niedergeschrieben haben. Seine Aufzeichnungen befinden sich im Besitz von Anthan Diamantklinge in der "Uralten Schmiede", dem Tempel Moradins, im Westen der Stadt.~
 @64103  = ~Der Drachenfriedhof
 
-Ich habe Borthuns Buch von Anthan Diamantklinge erhalten. Ich muss von diesem Erfolg Elern berichten, welche am Platz von Bhaerynden auf mich wartet. Sie wird mir sagen, wie es weitergehen soll.~
+Ich habe Borthuns Buch von Anthan Diamantklinge erhalten. Ich muss Elern von diesem Erfolg berichten, welche am Platz von Bhaerynden auf mich wartet. Sie wird mir sagen, wie es weitergehen soll.~
 @64104  = ~Der Drachenfriedhof
 
 Ich habe Borthuns Eintrag zu diesem mysteriösen Ort in seinem Buch gelesen. Es handelt sich um einen für Elfen heiligen Ort am Fuße der Wolkengipfel, an dem ein Elfenheld in grauer Vorzeit zwei Drachen erschlagen hatte. Mith Barak hat diesen Stein wohl deshalb aufgesucht, weil er sich in der Nähe zu einem Ort begab, den er den "Drachentempel" genannt hat. Ich vermute, dass dies der nächste Ort sein wird, den ich bei meiner Suche nach dem schlafenden König aufsuchen muss.~
@@ -696,6 +691,37 @@ Ich habe die Leiter gefunden. Wenn ich sie im Freien an dem Felsvorsprung festma
 @99000  = ~Iltkazar ist gerettet
 
 Ich habe Iltkazar vor der Bedrohung Tiamats gerettet. Sowohl König Mith Barak als auch die Zwerge waren mir äußerst dankbar, und ich werde von nun in Iltkazar ein- und ausgehen können, wie es mir beliebt.~
+
+@99500   = ~Der Schlafende König
+
+~
+@99501   = ~Der Schlafende König
+
+~
+@99502   = ~Der Schlafende König
+
+~
+@99503   = ~Der Schlafende König
+
+~
+@99504   = ~Der Schlafende König
+
+~
+@99505   = ~Der Schlafende König
+
+~
+@99506   = ~Der Schlafende König
+
+~
+@99507   = ~Der Schlafende König
+
+~
+@99508   = ~Der Schlafende König
+
+In einem alten Tempel der Illithiden an den Grenzen Barakuirs bin ich einem Ältestenhirn begegnet. Mith Barak suchte nach einem alten Drachentempel. Auch eine Art Fluch soll eine Rolle gespielt haben.~
+@99509   = ~Der Schlafende König
+
+~
 
 
 

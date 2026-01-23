@@ -339,31 +339,39 @@ THEN
 END
 
 IF
-	Global("AC#Goodbye_Iltkazar","GLOBAL",6)
+    Global("AC#Goodbye_Iltkazar","GLOBAL",6)
 THEN
-	RESPONSE #100
-		//SetGlobal("AC#Goodbye_Iltkazar","GLOBAL",10)
-                ClearAllActions()
-		StartCutSceneMode()
-		FadeToColor([15.0],0)
- 	        ActionOverride("AC#BRES9",EscapeArea())
- 	        ActionOverride("AC#GROM9",EscapeArea())
- 	        ActionOverride("AC#DUN20",EscapeArea())
- 	        ActionOverride("AC#ELER9",EscapeArea())
- 	        ActionOverride("AC#SORN9",EscapeArea())
- 	        ActionOverride("AC#VRON9",EscapeArea())
- 	        ActionOverride("AC#ANT20",EscapeArea())
- 	        ActionOverride("AC#TURB9",EscapeArea())
- 	        ActionOverride("AC#HATH1",Deactivate(Myself))
- 	        Wait(2)
-		//Wait(5)
-		CloseDoor("DOOR02")
-		Wait(1)
-		Lock("DOOR02")
-		FadeFromColor([30.0],150)
-		Wait(1)
+    RESPONSE #100
+        ClearAllActions()
+        StartCutSceneMode()
+        FadeToColor([15.0],0)
+        ActionOverride("AC#BRES9",EscapeArea())
+        ActionOverride("AC#GROM9",EscapeArea())
+        ActionOverride("AC#DUN20",EscapeArea())
+        ActionOverride("AC#ELER9",EscapeArea())
+        ActionOverride("AC#SORN9",EscapeArea())
+        ActionOverride("AC#VRON9",EscapeArea())
+        ActionOverride("AC#ANT20",EscapeArea())
+        ActionOverride("AC#TURB9",EscapeArea())
+        ActionOverride("AC#HATH1",Deactivate(Myself))
+        Wait(2)
+        //CloseDoor("DOOR02")
+        //Wait(1)
+        //Lock("DOOR02")
+        FadeFromColor([30.0],150)
+        Wait(1)
 		SetGlobal("AC#Goodbye_Iltkazar","GLOBAL",10)
-		EndCutSceneMode()
+        EndCutSceneMode()
+END
+
+IF
+    Global("AC#Goodbye_Iltkazar","GLOBAL",10)
+	Global("LockGatesBeforeDuergar","ACIL20",0)
+THEN
+    RESPONSE #100
+        CloseDoor("DOOR02")
+        Lock("DOOR02")
+        SetGlobal("LockGatesBeforeDuergar","ACIL20",1)
 END
 
 IF

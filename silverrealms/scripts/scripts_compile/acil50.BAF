@@ -272,6 +272,26 @@ THEN
 END
 
 IF
+    Global("UltoksamrinGateDuergar","ACIL50",0)
+	PartyHasItem("AC#BOOKB")
+THEN
+	RESPONSE #100   
+        CloseDoor("DOOR02")
+		Lock("DOOR02")
+        SetGlobal("UltoksamrinGateDuergar","ACIL50",1)
+END
+
+IF
+    Global("UltoksamrinGateDuergar","ACIL50",1)
+	GlobalGT("AC#Goodbye_Iltkazar","GLOBAL",1)
+THEN
+	RESPONSE #100
+	    Unlock("DOOR02")
+        OpenDoor("DOOR02")
+        SetGlobal("UltoksamrinGateDuergar","ACIL50",2)
+END
+
+IF
 	GlobalGT("AC#IL_Spiderstalkings","GLOBAL",0)
 	//Global("AC#RC_Turbaern_Second","GLOBAL",3)
 	Global("AC#BreskDrowPriestess","GLOBAL",0)

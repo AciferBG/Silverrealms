@@ -205,8 +205,6 @@ END
 		IF ~~THEN BEGIN who_is_this_lay_down
 		SAY ~Wer ist das? Legt ihn ab, damit wir ihn besser betrachten können!~
 		IF ~~ THEN DO ~SetGlobal("AC#Ruvan_Treason","GLOBAL",7)
-		EraseJournalEntry(@62050)
-		AddJournalEntry(@62051,QUEST_DONE)
 		TakePartyItem("AC#28ELL")
 		DestroyItem("AC#28ELL")
 		SetGlobal("AC#Ellhimar_Illithid","GLOBAL",3)

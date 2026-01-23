@@ -1,0 +1,10 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId("AC#ULIT2")  // Malinthid
+        CreateCreature("AC#28DRS",[2587.1461],SW)  // Drow-Magier
+        Wait(1)
+        ActionOverride("AC#28DRS",StartDialogueNoSet([PC]))
+END
+

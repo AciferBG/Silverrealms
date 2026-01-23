@@ -210,7 +210,7 @@ END
 
 IF ~Global("AC#BreskGoodbye","ACIL50",2)~ THEN BEGIN bresk_goodbye_02
   SAY ~Und, seid Ihr jetzt bereit aufzubrechen?~
-  IF ~~ THEN REPLY ~Ja, jetzt geht es los.~ GOTO ready_to_leave_02
+  IF ~~ THEN REPLY ~Ja, jetzt geht es los.~ GOTO ready_to_leave_03
   IF ~~ THEN REPLY ~Noch nicht. Ich werde Euch Bescheid sagen, bevor ich gehe.~ GOTO not_ready_to_leave
 END
 
@@ -244,8 +244,7 @@ END
 	
 		IF ~~ THEN BEGIN not_ready_to_leave
 		SAY ~Ist gut. Dass Ihr Euch ja nicht einfach so davonschleicht, versteht Ihr?~
-		IF ~~ THEN DO ~SetGlobal("AC#BreskGoodbye","ACIL50",2)~
-		EXIT
+		IF ~~ THEN DO ~SetGlobal("AC#BreskGoodbye","ACIL50",2)~EXIT
 		END
 		
 		IF ~~ THEN BEGIN yes_ready_to_leave
@@ -294,18 +293,33 @@ END
 */
 
 // Quest: Kuo-Toa Bresk start
-IF ~Global("AC#RC_Sorni_Fourth","GLOBAL",3)
+IF ~GlobalGT("AC#RC_Sorni_Fourth","GLOBAL",0)
 Global("AC#KuoToaStone","GLOBAL",1)
 Global("AC#StoneMelter","ACIL50",0)~ THEN BEGIN hello_boats_wait_svirfnebli
   SAY ~Und, habt Ihr schon mit den Gnomen gesprochen?~
-  //IF ~PartyHasItem("AC#WAND7")~ THEN REPLY ~Ja, ich habe hier einen Stab bei mir, der Fels in Schlamm verwandeln kann. Mit etwas Glück lässt sich dadurch der Zugang zum Lager der Kuo-Toa finden.~ DO ~SetGlobal("AC#StoneMelter","ACIL50",11)~ GOTO use_that_staff // item check not needed anymore
   IF ~PartyHasItem("AC#WAND7")~ THEN REPLY ~Ja, ich habe hier einen Stab bei mir, der Fels in Schlamm verwandeln kann. Mit etwas Glück lässt sich dadurch der Zugang zum Lager der Kuo-Toa finden.~ DO ~SetGlobal("AC#StoneMelter","ACIL50",11)
   SetGlobal("AC#KuoToaStone","GLOBAL",10)~ GOTO use_that_staff
   IF ~~ THEN REPLY ~Es gibt noch nichts Neues zu berichten.~ + not_talked_to_svrirfs_yet
 END
 
 			IF ~~ THEN BEGIN use_that_staff
-			SAY ~Ha, das ist gut. Nicht so elegant wie mit einem Hammer, aber sei's drum. Also gut, hier ist der Plan. Ihr versucht, die Kuo-Toa zu verjagen und den Steinkreis auszuschalten. Sobald die Höhle sicher ist, rücken wir mit den Booten nach.~
+			SAY ~Ha, das ist gut. Nicht so elegant wie mit einem Hammer, aber sei's drum.~ 
+			IF ~GlobalLT("AC#RC_Sorni_Fourth","GLOBAL",3)~ THEN + not_talked_to_sorni_yet
+			IF ~Global("AC#RC_Sorni_Fourth","GLOBAL",3)~ THEN + yes_talked_to_sorni_yet
+			END
+			
+				IF ~~ THEN BEGIN not_talked_to_sorni_yet
+				SAY ~Habt Ihr auch bereits mit Sorni wegen der Boote gesprochen?~ 
+				IF ~~ THEN REPLY ~Nein, noch nicht.~ + not_talked_to_sorni_yet_bye
+				END
+				
+					IF ~~ THEN BEGIN not_talked_to_sorni_yet_bye
+					SAY ~Dann solltet Ihr schleunigst mit Sorni sprechen. Die Tunnel nach Osten bleiben so lange versiegelt.~
+					IF ~~ THEN EXIT 
+					END
+			
+			IF ~~ THEN BEGIN yes_talked_to_sorni_yet
+			SAY ~Also gut, hier ist der Plan. Ihr versucht, die Kuo-Toa zu verjagen und den Steinkreis auszuschalten. Sobald die Höhle sicher ist, rücken wir mit den Booten nach.~
 			IF ~~ THEN REPLY ~Ihr lasst mich wieder die Drecksarbeit machen.~ GOTO drecksarbeit
 			END
 			
@@ -320,18 +334,27 @@ END
 			END
 			
 			IF ~~ THEN BEGIN not_talked_to_svrirfs_yet
-			SAY ~Macht nichts. Die Tunnel nach Osten bleiben versiegelt, bis Ihr eine Lösung gegen das Kuo-Toa Problem gefunden habt.~
+			SAY ~Die Tunnel nach Osten bleiben solange versiegelt, bis Ihr eine Lösung gegen das Kuo-Toa Problem gefunden habt.~
 			IF ~~ THEN EXIT 
 			END
 
+IF ~Global("AC#RC_Sorni_Fourth","GLOBAL",1)
+Global("AC#KuoToaStone","GLOBAL",0)~ THEN BEGIN hello_kuo_toa_problem
+  SAY ~<CHARNAME>! Ist ja interessant, dass Euch der Rat jetzt nach Barak... in diese alte verfluchte Duergar-Heimat schicken will. Ganz so einfach, wie es sich der Rat vorstellt, ist es aber nicht.~
+  IF ~~ THEN REPLY ~Warum?~ GOTO what_boat_problems
+END
+
+// old: Bresk sagt erst wenn Bootsbauer da sind, dass es Probleme gibt
+/*
 IF ~Global("AC#RC_Sorni_Fourth","GLOBAL",3)
 Global("AC#KuoToaStone","GLOBAL",0)~ THEN BEGIN hello_boats_problem
   SAY ~<CHARNAME>! Gut, dass Ihr kommt. Sornis Bootsbauer sind gerade eingetroffen. Es gibt allerdings Probleme mit unserer Expedition nach Barakuir.~
   IF ~~ THEN REPLY ~Probleme?~ GOTO what_boat_problems
 END
+*/
 
 			IF ~~ THEN BEGIN what_boat_problems
-			SAY ~Ja, Probleme. Meine Kundschafter haben an den Ufern des Sees, der Euch nach Barakuir bringen soll, zahlreiche Wasser-Elementarwesen angetroffen, die jedesmal aufs Neue an das Ufer kriechen, sobald eines dieser Monster erschlagen wurde.~
+			SAY ~Meine Kundschafter haben an den Ufern des Sees, der Euch nach Barakuir bringen soll, zahlreiche Wasser-Elementarwesen angetroffen, die jedesmal aufs Neue an das Ufer kriechen, sobald eines dieser Monster erschlagen wurde.~
 			IF ~~ THEN GOTO boat_problem_02
 			END
 			
@@ -341,7 +364,7 @@ END
 				END
 				
 					IF ~~ THEN BEGIN boat_problem_03
-					SAY ~Ich glaube kaum, dass Ihr einen unterirdischen See überqueren wollt, in dem Euch unzählige Elementare und Fischwesen nach dem Leben trachten.~
+					SAY ~Ich glaube kaum, dass Ihr einen unterirdischen See überqueren wollt, in dem unzählige Elementare und Fischwesen nach Eurem Leben trachten.~
 					IF ~~ THEN REPLY ~Was müssen wir tun?~ GOTO boat_problem_04
 					END
 					
@@ -351,28 +374,33 @@ END
 						END
 						
 							IF ~~ THEN BEGIN find_kuotoa_lair
-							SAY ~Meine Männer haben die Tunnel nach einem versteckten Durchgang abgesucht, sind aber nicht fündig geworden und mussten sich schließlich unter dem Druck der ständigen Attacken der Kuo-Toa wieder zurückziehen. Wir haben vorerst die Tunnel nach Osten mit Steinen und Metall versiegelt, damit uns die Biester in Ruhe lassen. Ich bin mir sicher, dass nicht weit entfernt von den für uns erreichbaren Passagen ein geheimes Lager der Wesen sein muss. Sie nutzen die unter Wasser liegenden Areale, um sich ungehindert fortzubewegen. Diese Möglichkeit bleibt uns verwehrt.~
-							IF ~~ THEN REPLY ~Und wie soll ich dabei helfen? Ihr verlangt wohl kaum von mir, dass ich durch die Höhlen schwimmen soll, oder?~ GOTO find_kuotoa_lair_02
+							SAY ~Meine Männer haben die Tunnel nach einem versteckten Durchgang abgesucht, sind aber nicht fündig geworden und mussten sich schließlich unter dem Druck der ständigen Attacken der Kuo-Toa wieder zurückziehen. Wir haben vorerst die Tunnel nach Osten mit Steinen und Metall versiegelt, damit uns die Biester in Ruhe lassen.~
+							=							
+							~Ich bin mir jedoch sicher, dass ganz in der Nähe der für uns erreichbaren Passagen ein geheimes Lager der Kuo-Toa sein muss. Sie nutzen die unter Wasser liegenden Areale, um sich ungehindert fortzubewegen. Diese Möglichkeit bleibt uns verwehrt.~
+							IF ~~ THEN REPLY ~Und wie soll ich dabei helfen?~ GOTO find_kuotoa_lair_02
+							IF ~~ THEN REPLY ~Ihr verlangt wohl kaum von mir, dass ich durch die Höhlen tauchen soll?~ GOTO find_kuotoa_lair_02
 							END
 							
 								IF ~~ THEN BEGIN find_kuotoa_lair_02
-								SAY ~Mein Bruder Hathar meinte, wir sollten einfach die ganzen verdammten Höhlendecken über dem See zum Einsturz bringen. Das würde aber erstens zu lange dauern und zweitens uns einen wertvollen Durchgang verbauen. Wir brauchen eine andere Möglichkeit, um das Lager der Kuo-Toa zu erreichen. Die Svirfnebli hier in der Stadt sind Meister in Gesteinsverformung. Dort, wo wir unsere Hämmer und Meißel einsetzen, verwenden sie ihre Magie. Vielleicht finden sie einen Weg, den versperrten Zugang zu den Kuo-Toa zu öffnen.~
-								IF ~~ THEN REPLY ~Ich soll die Tiefengnome dieser Stadt um Hilfe bitten?~ GOTO ask_svirfnebli_01
+								SAY ~Mein Bruder Hathar meinte, wir sollten einfach die ganzen verdammten Höhlendecken über dem See zum Einsturz bringen. Das würde aber erstens zu lange dauern und zweitens uns einen wertvollen Durchgang verbauen. Wir brauchen eine andere Möglichkeit, um das Lager der Kuo-Toa zu erreichen.~ 
+								=								
+								~Die Svirfnebli hier in der Stadt sind Meister in Gesteinsverformung. Dort, wo wir unsere Hämmer und Meißel einsetzen, verwenden sie merkwürdige Magie. Vielleicht finden die Tiefengnome einen Weg, den versperrten Zugang zu den Kuo-Toa zu öffnen.~
+								IF ~~ THEN REPLY ~Also gut, ich werde mit den Tiefengnomen reden.~ GOTO ask_svirfnebli_01
 								END
 								
 									IF ~~ THEN BEGIN ask_svirfnebli_01
-									SAY ~Das wäre das Beste. Wenn man als Zwerg nicht mehr mit dem Kopf durch die Wand kommt, sollte man einen Gnom zu Rate ziehen. Fragt den Anführer der Svirfnebli in Gaerdals Tempel. Sein Name ist Schnotnell Samrynarr. Er könnte wissen, wie wir weiterkommen.~
+									SAY ~Die Svirfnebli wären uns eine große Hilfe. Wenn man als Zwerg nicht mehr mit dem Kopf durch die Wand kommt, sollte man einen Gnom zu Rate ziehen. Fragt den Anführer der Svirfnebli in Gaerdals Tempel. Sein Name ist Schnotnell Samrynarr. Er könnte wissen, wie wir weiterkommen.~
 									IF ~~ THEN REPLY ~Wo finde ich ihn?~ GOTO ask_svirfnebli_02
 									IF ~~ THEN REPLY ~Gut, ich werde ihn um Rat fragen.~ GOTO ask_svirfnebli_bye
 									END
 									
 									IF ~~ THEN BEGIN ask_svirfnebli_02
-									SAY ~Im Tempel Gaerdals. Die Gnome haben in der Bronzemaske, der Heimstatt meines Clans, ihm zu Ehren ein Heiligtum im Südosten der Speichenbrunnenzitadelle errichtet.~
+									SAY ~Die Gnome haben in der Bronzemaske, der Heimstatt meines Clans, zu Ehren ihres Gottes Gaerdal ein Heiligtum errichtet.~
 									IF ~~ THEN REPLY ~Dann werde ich dort nach diesem Schnotnell suchen.~ GOTO ask_svirfnebli_bye
 									END
 									
 									IF ~~ THEN BEGIN ask_svirfnebli_bye
-									SAY ~Wir warten hier auf Euch. Sobald die Kuo-Toa vernichtet und die Wege wieder passierbar sind, brechen wir mit den Booten auf.~
+									SAY ~Wir warten hier auf Euch. Sobald die Kuo-Toa vernichtet und die Wege wieder passierbar sind, brechen wir mit den Booten auf, wenn Ihr mit Sorni gesprochen habt.~
 									IF ~~ THEN DO ~SetGlobal("AC#KuoToaStone","GLOBAL",1)
 									AddJournalEntry(@56100,QUEST)~ EXIT
 									END

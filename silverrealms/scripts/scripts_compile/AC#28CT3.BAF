@@ -1,0 +1,13 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId("AC#ULIT2")  // Malinthid
+        MoveViewPoint([2615.1436],INSTANT)
+        MoveToPoint([2490.1520])
+        ActionOverride("AC#28IL2",MoveToPoint([2512.1442]))
+        ActionOverride("AC#28IL3",MoveToPoint([2619.1506]))
+        Wait(3)
+        EndCutSceneMode()
+END
+

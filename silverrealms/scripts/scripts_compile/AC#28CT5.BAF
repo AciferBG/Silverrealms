@@ -1,0 +1,16 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId("AC#28DRS")  // Drow-Magier
+        ReallyForceSpell("AC#IL28E",WIZARD_FIREBALL)  // Untotes Ältestenhirn
+        Kill("AC#IL28E")  // Untotes Ältestenhirn
+        SetGlobal("AC#IL_KilledElderBrain","GLOBAL",1)
+        CreateVisualEffect("AC#IL54B",[2196.1589])
+        ScreenShake([20.20],5)
+        OpenDoor("DOOR07")
+        AmbientActivate("Smoke_wood",TRUE)
+        Wait(1)
+        ActionOverride("AC#ULIT2",StartDialogueNoSet([PC]))
+END
+

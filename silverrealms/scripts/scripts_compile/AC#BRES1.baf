@@ -104,6 +104,19 @@ THEN
 		StartDialogueNoSet(LastSeenBy(Myself))
 END
 
+// NEW
+IF
+	Range([PC],16)
+	Detect([PC])
+	Global("AC#RC_Sorni_Fourth","GLOBAL",1)
+	Global("AC#KuoToaStone","GLOBAL",0)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(LastSeenBy(Myself))
+END
+
+// OLD: Dialog after boats
+/*
 IF
 	Range([PC],16)
 	Detect([PC])
@@ -113,6 +126,7 @@ THEN
 	RESPONSE #100
 		StartDialogueNoSet(LastSeenBy(Myself))
 END
+*/
 
 /*
 IF

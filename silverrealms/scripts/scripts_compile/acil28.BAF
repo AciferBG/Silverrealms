@@ -15,6 +15,15 @@ THEN
 END
 
 IF
+	OpenState("DOOR05",TRUE)
+	Global("HiddenVoiceSpawn","ACIL28",0)
+THEN
+	RESPONSE #100
+		SetGlobal("HiddenVoiceSpawn","ACIL28",1)
+		CreateCreatureImpassableAllowOverlap("AC#IL28F",[2232.1675],S)  // Hidden Voice: Undead Elderbrain
+END
+
+IF
 	Dead("AC#NEOTH") // EE: Neothelid is killed
 	CombatCounter(0)
 	Global("ElderBrainSpawn","ACIL28",0)
@@ -40,6 +49,19 @@ THEN
 		ScreenShake([20.20],5)
 		OpenDoor("DOOR07")
 		AmbientActivate("Smoke_wood",TRUE)	
+END
+
+IF
+    Global("MindflayersAppear","ACIL28",1)
+THEN
+    RESPONSE #100
+        SetGlobal("MindflayersAppear","ACIL28",2)
+		CreateCreature("AC#ULIT2",[2662.1378],SW)  // Malinthid
+		CreateCreature("AC#28IL2",[2618.1330],SW)
+		CreateCreature("AC#28IL3",[2689.1457],SW)
+        ClearAllActions()
+        StartCutSceneMode()
+		StartCutScene("AC#28CT3")
 END
 /*
 IF
@@ -99,6 +121,7 @@ THEN
                SetGlobal("Door06Closed","ACIL28",1)
 END
 
+/*
 IF
 	Global("AC#Ruvan_Treason","GLOBAL",1)
 	Global("EllhimarTalks","ACIL28",0)
@@ -110,6 +133,7 @@ THEN
                SetInterrupt(TRUE)
                ActionOverride("AC#ILEL8",StartDialogueNoSet(Player1))
 END
+*/
 
 IF
 	Global("ACIL28_BOATGONE","ACIL28",1)

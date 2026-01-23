@@ -129,7 +129,7 @@ END
 	SAY ~Hrmpf.~
 	IF ~~ THEN  EXIT
 	END
-	
+/*	
 	IF ~~ THEN BEGIN its_true
 	SAY ~Das ist wahr, Meister Gromi. Ich habe ihn dorthin begleitet.~
 	++ ~Was?~ EXTERN ~AC#GROM2~ you_did_WHAT
@@ -181,6 +181,7 @@ END
 										SAY ~Beim besten Willen, nein. Und die letzte Strecke wollte er wie gesagt ganz allein zurücklegen. Er hatte den Ort wohl in einem Buch nachgelesen.~
 										IF ~~ THEN EXTERN ~AC#GROM2~ mithbarak_should_know_location
 										END
+										*/
 // ---------------------------------------------
 // Gromi Arnskull in Thronsaal ACIL64
 // ---------------------------------------------
@@ -359,7 +360,7 @@ END
 		SAY ~Tut das. Wir werden hier an der Seite unseres Königs verharren.~
 		IF ~~ THEN  EXIT
 		END
-		
+/*		
 	IF ~~ THEN BEGIN about_spiderstalkings
 	SAY ~Oh! Wart Ihr schon dort?~
 	IF ~Global("AC#ACIL23DreamReflection","GLOBAL",2)~ THEN REPLY ~Ja, ich komme gerade aus den Spinnenschächten zurück und möchte Euch davon berichten.~ GOTO back_from_spiderstalkings
@@ -533,7 +534,8 @@ END
 												AddJournalEntry(@64100,QUEST)												
 												AddexperienceParty(1000)
 												~ EXIT
-												END									
+												END		
+*/												
 // ---------------------------------------------
 // König Mith Barak
 // ---------------------------------------------

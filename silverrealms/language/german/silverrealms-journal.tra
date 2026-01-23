@@ -542,10 +542,10 @@ Ich soll Bettargh in der Abgrundliedhalle fragen, ob er einen Anhaltspunkt hat, 
 Bettargh meinte, seine Tochter Elern könnte mir bei der Suche nach diesem seltsamen Ort weiterhelfen. Sie wartet in der Bibliothek an einem Zwergenstandbild im Osten auf mich.~
 @64102  = ~Der Drachenfriedhof
 
-Borthun Diamantklinge, ein großer zwergischer Entdecker, könnte etwas über diesen Drachenfriedhof niedergeschrieben haben. Seine Aufzeichnungen befinden sich in der "Uralten Schmiede", dem Tempel Moradins, im Westen der Stadt.~
+Borthun Diamantklinge, ein großer zwergischer Entdecker, könnte etwas über diesen Drachenfriedhof niedergeschrieben haben. Seine Aufzeichnungen befinden sich im Besitz von Anthan Diamantklinge in der "Uralten Schmiede", dem Tempel Moradins, im Westen der Stadt.~
 @64103  = ~Der Drachenfriedhof
 
-Ich habe Borthuns Buch von Anthan Diamantklinge erhalten. Ich sollte es sorgfältig lesen und dann in den Thronsaal zurückkehren, um zu besprechen, wie es weitergeht.~
+Ich habe Borthuns Buch von Anthan Diamantklinge erhalten. Ich muss von diesem Erfolg Elern berichten, welche am Platz von Bhaerynden auf mich wartet. Sie wird mir sagen, wie es weitergehen soll.~
 @64104  = ~Der Drachenfriedhof
 
 Ich habe Borthuns Eintrag zu diesem mysteriösen Ort in seinem Buch gelesen. Es handelt sich um einen für Elfen heiligen Ort am Fuße der Wolkengipfel, an dem ein Elfenheld in grauer Vorzeit zwei Drachen erschlagen hatte. Mith Barak hat diesen Stein wohl deshalb aufgesucht, weil er sich in der Nähe zu einem Ort begab, den er den "Drachentempel" genannt hat. Ich vermute, dass dies der nächste Ort sein wird, den ich bei meiner Suche nach dem schlafenden König aufsuchen muss.~
@@ -615,7 +615,7 @@ Ich habe die Schwebescheibe hergestellt. Nun kann ich sie am Boden des Schachtes
 //___________________________Abschied aus Iltkazar
 @64300  = ~Abschied aus Iltkazar
 
-Wenn ich alles habe, was ich brauche, soll ich Bresk auf dem großen Platz im Zentrum Iltkazars über meinen Aufbruch informieren, damit ich einen würdigen Abschied bekomme. Was für ein Gegensatz zu dem frostigen Empfang, den man mir bei meiner Ankunft bereitet hat!~
+Ich sollte mich in Iltkazar für die Rückkehr an die Oberfläche rüsten. Wenn ich alles beisammen habe soll ich Bresk auf dem großen Platz im Zentrum Iltkazars über meinen Aufbruch informieren, damit ich einen würdigen Abschied bekomme. Was für ein Gegensatz zu dem frostigen Empfang, den man mir bei meiner Ankunft bereitet hat!~
 @64301  = ~Abschied aus Iltkazar
 
 Ich habe die Stadt verlassen. Die Tore sind verschlossen, und mein Weg wird mich nun zurück an die Oberfläche und zum Drachenfriedhof führen.~

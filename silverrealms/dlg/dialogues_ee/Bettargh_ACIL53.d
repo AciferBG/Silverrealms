@@ -464,7 +464,7 @@ END
 IF ~~ THEN EXTERN ~AC#XOTH1~ jawohl
 
 /*******************************************************************************************************
-Dialog Elern 3 
+Dialog Elern in ACIL53 
 *******************************************************************************************************/
 BEGIN ~AC#ELER5~
 
@@ -475,27 +475,6 @@ EraseJournalEntry(@64100)
 AddJournalEntry(@64101,QUEST)
 MoveToPointNoInterrupt([2755.920])~ EXIT
 END
-
-IF ~Global("ElernSpawn","ACIL53",4)~ THEN BEGIN already_talked_to_anthan
-SAY ~Habt Ihr schon mit Anthan über Borthuns Buch gesprochen?~
-IF ~GlobalLT("AC#Clans_Parting","GLOBAL",3)~ THEN REPLY ~Nein, noch nicht.~ + not_talked_to_anthan
-IF ~GlobalGT("AC#Clans_Parting","GLOBAL",2)~ THEN REPLY ~Ja, das habe ich.~ + yes_talked_to_anthan
-END
-
-	IF ~~ THEN BEGIN not_talked_to_anthan
-	SAY ~Naja, jedenfalls wünsche ich Euch viel Glück dabei.~
-	IF ~~ THEN EXIT
-	END
-	
-	IF ~~ THEN BEGIN yes_talked_to_anthan
-	SAY ~Oh! Und? Hat er es Euch gegeben?~
-	IF ~~ THEN REPLY ~Mit einigem Widerwillen - ja.~ + yes_talked_to_anthan_02
-	END
-	
-		IF ~~ THEN BEGIN yes_talked_to_anthan_02
-		SAY ~Das ist gut! Geht damit zu Gromi in den Thronsaal, er wird die nächsten Schritte mit Euch besprechen.~
-		IF ~~ THEN EXIT
-		END
 
 IF ~Global("ElernSpawn","ACIL53",3)~ THEN BEGIN borthuns_monument
 SAY ~Dies hier ist das Standbild von Borthun. Vielleicht habt Ihr es ja vorher schon einmal gesehen und Euch gefragt, was es damit auf sich hat.~
@@ -589,11 +568,11 @@ END
 											END
 								
 								IF ~~ THEN BEGIN go_ask_anthan_about_borthun
-								SAY ~Jedenfalls kann ich Euch keinen besseren Rat geben, als Anthan in der Uralten Schmiede, dem Tempel Moradins im Westen der Stadt, aufzusuchen und ihn zu bitten, dass er Euch einmal einen Blick in die Aufzeichnungen seines Ahnen Borthun werfen lässt. Kehrt am Besten zu mir zurück, wenn Ihr dabei keinen Erfolg hattet, denn ich könnte Euch vielleicht ein wenig weiterhelfen, mit den Gepflogenheiten von Clan Diamantklinge richtig umzugehen.~
+								SAY ~Jedenfalls kann ich Euch keinen besseren Rat geben, als Anthan in der Uralten Schmiede, dem Tempel Moradins im Westen der Stadt, aufzusuchen und ihn zu bitten, dass er Euch einmal einen Blick in die Aufzeichnungen seines Ahnen Borthun werfen lässt. Ich werde draußen am Platz von Bhaerynden neben Bresk auf Euch warten.~
 								IF ~~ THEN DO ~SetGlobal("ElernSpawn","ACIL53",4)
 								SetGlobal("AC#Clans_Parting","GLOBAL",2)
-								EraseJournalEntry(@64101)
 								AddJournalEntry(@64102,QUEST)
+								EscapeArea()
 								~ EXIT 
 								END
 					

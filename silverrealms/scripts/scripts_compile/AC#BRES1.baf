@@ -33,6 +33,17 @@ THEN
 END
 
 IF
+	Global("Duergar_Threat","ACIL50",0)
+	Global("AC#Clans_Parting","GLOBAL",2)
+	Detect([PC])
+	Range(LastSeenBy(Myself),15)
+THEN
+	RESPONSE #100
+		SetGlobal("Duergar_Threat","ACIL50",1)
+		StartDialogueNoSet(LastSeenBy(Myself))
+END
+
+IF
 	Global("AC#BreskWatches","ACIL50",0)
 	Global("AC#RegencyQuest","GLOBAL",1)
 	Detect([PC])

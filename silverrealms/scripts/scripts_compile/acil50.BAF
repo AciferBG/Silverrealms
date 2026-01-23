@@ -282,6 +282,15 @@ THEN
 END
 
 IF
+	Global("AC#Clans_Parting","GLOBAL",2)
+	Global("Elern6Spawn","ACIL50",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Elern6Spawn","ACIL50",1)
+		CreateCreature("AC#ELER6",[1846.1718],4)  
+END
+
+IF
 	Global("AC#RC_Sorni_Fourth","GLOBAL",2)
 THEN
 	RESPONSE #100

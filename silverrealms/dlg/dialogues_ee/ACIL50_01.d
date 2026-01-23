@@ -4,6 +4,7 @@
 
 //-------------------------------------------------------------------------------------------------------
 // Bettargh
+/*
 BEGIN ~AC#BETT7~
 
 IF ~~ THEN BEGIN ellhimar_mirror_01
@@ -115,8 +116,10 @@ IF ~~ THEN BEGIN bettargh_give_book_astral
 									SAY ~Dann solltet Ihr schleunigst in die Uralte Schmiede gehen und es besorgen. Legt meine Notizen doch einfach dazu, dann findet Ihr sie auch jederzeit wieder.~
 									IF ~~ THEN DO ~SetGlobal("AC#BettarghBookAstral","GLOBAL",10)~ EXTERN ~AC#GROM7~ gromi_bye_2_charname_02
 									END	
+									*/
 //-----------------------------------------------------------------------------------------------
 // Gromi
+/*
 BEGIN ~AC#GROM7~
 
 IF ~~ THEN BEGIN gromi_bye_2_charname
@@ -136,8 +139,8 @@ IF ~~ THEN EXTERN ~AC#BETT7~ bettargh_search_library
 END
 
 IF ~~ THEN BEGIN gromi_bye_2_charname_02
-SAY ~Wie es scheint, wird es langsam Zeit, lebewohl zu sagen, <CHARNAME>. Sprecht mit Bresk am Platz von Bhaerynden, wenn Ihr soweit seid, dann werden wir Euch vor den Toren der Stadt verabschieden.~
-IF ~~ THEN DO ~/*SetGlobal("AC#Clans_Parting","GLOBAL",10)*/
+SAY ~Wie es scheint, wird es langsam Zeit, Lebewohl zu sagen, <CHARNAME>. Sprecht mit Bresk am Platz von Bhaerynden, wenn Ihr soweit seid, dann werden wir Euch vor den Toren der Stadt verabschieden.~
+IF ~~ THEN DO ~
 SetGlobal("AC#BackToSurface","GLOBAL",10)
 SetGlobal("AC#Goodbye_Iltkazar","GLOBAL",1)
 EraseJournalEntry(@64104)
@@ -150,10 +153,13 @@ ActionOverride("AC#VRON7",EscapeArea())
 ActionOverride("AC#BRES7",EscapeArea())
 EscapeArea()~ EXIT 
 END
+*/
+
 
 
 //-------------------------------------------------------------------------------------------------------
 // Vronia
+/*
 BEGIN ~AC#VRON7~
 
 IF ~~ THEN BEGIN torglor_02
@@ -162,6 +168,7 @@ IF ~~ THEN EXTERN ~AC#BRES7~ chain_bresk_gith
 END
 
 BEGIN ~AC#BRES7~
+*/
 
 // ---------------------------------------------
 // Dunnabar Steinschulter
@@ -191,6 +198,16 @@ END
 
 BEGIN ~AC#BRES1~
 
+IF ~Global("Duergar_Threat","ACIL50",1)~ THEN BEGIN hello_duergar_threat_01
+  SAY ~<CHARNAME>!Nur damit Ihr's wisst: Eine große Duergar-Streitmacht ist aus Norden im Anmarsch. Die Lumpen sind zwar noch ein gutes Stück entfernt, aber Ihr solltet dennoch schauen, dass Ihr im Unterreich außerhalb Iltkazars alles abschließt, was Ihr Euch so vorgenommen habt. Sonst könntet Ihr Euch eine blutige Nase holen. Vielleicht sehe ich mich auch gezwungen, die Tore schließen zu lassen, bevor ein verkleideter Duergar-Späher sich in unsere schöne Stadt hineinschleicht. Seht also zu, dass Ihr Eure Siebensachen beisammen habt, bevor es ungemütlich wird.~
+  IF ~~ THEN REPLY ~Ich werde es beherzigen.~ GOTO duergar_threat_02
+END
+
+		IF ~~ THEN BEGIN duergar_threat_02
+		SAY ~Elern hier wartet mit mir zusammen hier. Ihr solltet für sie ja auch dieses komische unzwergische Buch bergen, aber je nach dem könnten die Tore dann schon geschlossen sein.~
+		IF ~~ THEN DO ~SetGlobal("Duergar_Threat","ACIL50",10)~EXIT
+		END
+
 IF ~Global("AC#BreskGoodbye","ACIL50",2)~ THEN BEGIN bresk_goodbye_02
   SAY ~Und, seid Ihr jetzt bereit aufzubrechen?~
   IF ~~ THEN REPLY ~Ja, jetzt geht es los.~ GOTO ready_to_leave_02
@@ -215,12 +232,12 @@ END
 		END
 
 IF ~Global("AC#BreskGoodbye","ACIL50",1)~ THEN BEGIN bresk_goodbye_01
-  SAY ~Gromi hat gesagt, Ihr wolltet wieder für einige Zeit zurück an die Oberfläche?~
+  SAY ~Elern meint also, Ihr seid bereit für die Rückkehr an die Oberfläche?~
   IF ~~ THEN REPLY ~Das ist richtig. Ich werde meine Suche dort fortsetzen müssen.~ GOTO yes_goodbye_iltkazar
 END
 
 	IF ~~ THEN BEGIN yes_goodbye_iltkazar
-	SAY ~Sagt mir Bescheid, wenn Ihr uns wirklich verlasst, ja? Wir wollen Euch einen würdigen Abschied geben. Hätte nicht gedacht, dass ich das einmal sagen würde - aber ich werde es vermissen, Euch hier als Oberflächen-<PRO_RACE> durch die Stadt laufen zu sehen!~
+	SAY ~Die Tore aus der Stadt heraus sind noch alle verschlossen. Sagt mir Bescheid, wenn Ihr uns wirklich verlassen wollt. Dann werde ich Euch vor die Tore begleiten. Außerdem wollen wir Euch einen würdigen Abschied bereiten. Hätte nicht gedacht, dass ich das einmal sagen würde - aber ich werde es vermissen, Euch hier als Oberflächen-<PRO_RACE> durch die Stadt laufen zu sehen!~
 	IF ~~ THEN REPLY ~Eigentlich bin ich gerade schon auf dem Weg aus der Stadt heraus.~ GOTO yes_ready_to_leave
 	IF ~~ THEN REPLY ~Ich werde Euch Bescheid sagen, bevor ich gehe.~ GOTO not_ready_to_leave
 	END
@@ -562,16 +579,6 @@ IF ~~ THEN BEGIN no_trust
   IF ~~ THEN EXTERN ~AC#ELER2~ elern_bye
 END
 
-/*
-IF ~~ THEN BEGIN bresk_bye
-  SAY ~Tut, was Ihr nicht lassen könnt, Elern, und ich behalte hier unseren neuen "Gast" im Auge. Also, Ihr habt's gehört, <PRO_RACE>: Macht es Euch hier ruhig bequem und macht Euch nützlich!~
-   IF ~~ THEN DO ~SetGlobal("AC#BreskWatches","ACIL50",2)
-   SetGlobal("AC#BreskMoves02","ACIL50",1)
-   ActionOverride("AC#ELER2",EscapeArea())
-   ~ EXIT
-END
-*/
-
 	IF ~~ THEN BEGIN hrmpf
 	  SAY ~Hrmpf. Wie gesagt, der Zugang zum See ist vorerst versiegelt. Wir können ihn wieder öffnen, wenn Ihr bereit zum Aufbruch seid. Sagt uns hier Bescheid, wenn's los gehen soll.~
 	  IF ~~ THEN DO ~EraseJournalEntry(@62041)
@@ -589,9 +596,53 @@ END
 			END
 
 
+// ---------------------------------------------
+// Elern Riftsong: Diamondblade book questline
+// ---------------------------------------------
+BEGIN ~AC#ELER6~
+
+IF ~Global("WaitForDriftdisc","ACIL50",1)~ THEN BEGIN hello_have_driftdisc
+SAY ~Habt Ihr schon mit meiner Mutter über die Rückkehr an die Oberfläche gesprochen?~
+IF ~OR(2)
+PartyHasItem("AC#DRFT2")
+GlobalGT("AC#Driftdisc","GLOBAL",0)~ THEN REPLY ~Ja, das habe ich.~ + yes_ready_for_back_to_surface
+IF ~~ THEN REPLY ~Nein, noch nicht.~ + not_ready_for_back_to_surface
+END
+
+IF ~GlobalGT("AC#Clans_Parting","GLOBAL",1)
+Global("ElernWaitsBookAnthan","ACIL50",0)~ THEN BEGIN already_talked_to_anthan
+SAY ~Habt Ihr schon mit Anthan über Borthuns Buch gesprochen?~
+IF ~GlobalGT("AC#Clans_Parting","GLOBAL",2)~ THEN REPLY ~Ja, das habe ich.~ + yes_talked_to_anthan
+IF ~~ THEN REPLY ~Nein, noch nicht.~ + not_talked_to_anthan
+END
+
+	IF ~~ THEN BEGIN not_talked_to_anthan
+	SAY ~Naja, jedenfalls wünsche ich Euch viel Glück dabei.~
+	IF ~~ THEN EXIT
+	END
+	
+	IF ~~ THEN BEGIN yes_talked_to_anthan
+	SAY ~Oh! Und? Hat er es Euch gegeben?~
+	IF ~~ THEN REPLY ~Mit einigem Widerwillen - ja.~ DO ~SetGlobal("ElernWaitsBookAnthan","ACIL50",1)~ + chain_yes_talked_to_anthan_02
+	END
+			
+			IF ~~ THEN BEGIN not_ready_for_back_to_surface
+			SAY ~Wie bereits erwähnt; sprecht mit meiner Mutter Dorna Abgrundlied in Dugmarens Tempel in unserer Bibliothek, der Halle der Runensteine. Wir werden solange hier am Platz auf Euch warten.~
+			IF ~~ THEN DO ~SetGlobal("WaitForDriftdisc","ACIL50",1)~ EXIT
+			END
+		
+			IF ~~ THEN BEGIN yes_ready_for_back_to_surface
+			SAY ~Das ist gut! Ich wünsche unserer Stadt und unserem König, dass Ihr bald mit Antworten wieder zu uns zurückkehren werdet.~
+			=
+			~Wir würden Euch gerne gebührend verabschieden. Rüstet Euch für den Rückweg gut aus. Sprecht Bresk am Platz von Bhaerynden an, wenn Ihr fertig seid. Er wird uns Bescheid sagen und wir werden Euch alle Lebewohl sagen. Ich gehe solange in unsere Bibliothek zurück und sage meinem Vater Bescheid.~
+			IF ~~ THEN DO ~SetGlobal("AC#Goodbye_Iltkazar","GLOBAL",1)
+			AddJournalEntry(@64300,QUEST)
+			EscapeArea()~ EXIT
+			END		
+
 
 // ---------------------------------------------
-// Elern Abgrundlied
+// Elern Riftsong: KuoToa questline
 // ---------------------------------------------
 
 BEGIN ~AC#ELER2~
@@ -1087,6 +1138,26 @@ END
 //----------------------------------------
 // CHAIN
 // ---------------------------------------
+			CHAIN AC#ELER6 chain_yes_talked_to_anthan_02
+			~Das ist gut! Jetzt werden wir dem Schlaf Mith Baraks einen entscheidenden Schritt näher kommen.~
+			== AC#BRES1 ~Nur damit Ihr's wisst: Ich habe befohlen, alle Tore Iltkazars zu verriegeln. Es wird unruhig draußen im Unterreich. Die Streitmacht der Duergar nähert sich. Ihr solltet sehen, dass Ihr hier in der Stadt alles Wichtige erledigt und dann schleunigst an die Oberfläche aufbrechen.~
+			END
+			IF ~~ THEN REPLY ~Soll ich Euch im Kampf mit den Grauzwergen nicht besser helfen?~ EXTERN AC#BRES1 chain_help_with_duergar	
+
+			CHAIN AC#BRES1 chain_help_with_duergar
+			~Pah! Damit kommen wir schon alleine zurecht. Ihr helft uns mehr, wenn Ihr an der Oberfläche nach diesem... diesem scheußlichen Drachenfriedhof sucht.~
+			END
+			IF ~~ THEN EXTERN AC#ELER6 you_know_how_to_get_to_dragoncem
+			
+			
+			CHAIN AC#ELER6 you_know_how_to_get_to_dragoncem
+			~Ihr wisst jetzt, wo sich dieser Drachenfriedhof befindet. Dies wird Euer nächster Schritt sein. Habt Ihr bereits die Möglichkeit meiner Mutter genutzt, um wieder zurück an die Oberfläche zu gelangen?~
+			END
+			IF ~OR(2)
+			PartyHasItem("AC#DRFT2")
+			GlobalGT("AC#Driftdisc","GLOBAL",0)~ THEN REPLY ~Ja. Ich habe mit der Hilfe Eurer Mutter eine Drow-Schwebescheibe repariert, mit der ich an die Oberfläche zurückkehren kann.~ EXTERN AC#ELER6 yes_ready_for_back_to_surface
+			IF ~Global("AC#Driftdisc","GLOBAL",0) !PartyHasItem("AC#DRFT2")~ THEN REPLY ~Nein, noch nicht. Ich suche immer noch nach einer Möglichkeit, zurück an die Oberfläche zu gelangen.~ EXTERN AC#ELER6 not_ready_for_back_to_surface
+
 CHAIN IF ~~ THEN AC#ELER2 chain_ruvan
 ~Der Rat ist der Meinung, dass Eure Männer hier zur Verteidigung der Stadt benötigt werden und Ihr keinen einzigen Krieger entbehren könnt.~
 == AC#BRES1 ~Wisst Ihr, es gibt einen Grund, warum mein Vater und wir hier die Verteidigung der Stadt übernehmen mussten. Mein Vater Dunnabar meint, die Hände seines Bruders Ruvan taugen nur zum Gold zählen.~
@@ -1098,6 +1169,7 @@ CHAIN IF ~~ THEN AC#ELER2 chain_ruvan
 END
 IF ~~ THEN EXTERN ~AC#ELER2~ start_barakuir_adventure
 
+/*
 // Chain after Ellhimar mirror quest, Ellhimar alive and kidnapped
 CHAIN IF ~Global("AC#EllhimarGith","GLOBAL",2)
 Global("AC#GithKillEllhimar","GLOBAL",0)~ THEN AC#VRON7 chain_ellhimar_alive_gith
@@ -1131,6 +1203,7 @@ CHAIN IF ~~ THEN AC#BRES7 chain_bresk_gith
 == AC#BETT7 ~Königreich Torglor führte einen jahrhundertelangen Krieg gegen die Illithiden. Es wäre naheliegend, dass sich dort jetzt Githyanki eingenistet haben, um ihren Erzfeinden eine empfindliche Niederlage beizubringen. Nur was hat unser König mit alldem zu tun? Ich werde mich über unser ehemaliges Nachbarkönigreich Torglor belesen. Vielleicht finde ich etwas heraus.~
 END
 IF ~~ THEN EXTERN ~AC#GROM7~ gromi_bye_2_charname 
+*/
 
 // Bystanders encounter
 

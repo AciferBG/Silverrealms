@@ -76,7 +76,13 @@ IF ~~ THEN REPLY ~Wer spricht da?~ EXTERN AC#IL28F who_are_you_bye
 BEGIN ~AC#IL28E~
 
 CHAIN IF ~NumTimesTalkedTo(0)~ THEN AC#IL28E hello_killed_neothelid
-~Ihr habt die Geißel dieser Stätte ausgelöscht. Dafür gebührt Euch mein Dank.~
+~Ihr habt die Geißel dieser Stätte ausgelöscht. Ein wenig Frieden, nach all den Jahren. Tretet näher und sprecht mit mir, Denkender, wenn Ihr Euch traut.~
+END
+IF ~~ THEN DO ~SetGlobal("TalkToElderBrain","ACIL28",1)
+MoveViewObject(Player1,INSTANT)~ EXIT
+
+CHAIN IF ~Global("TalkToElderBrain","ACIL28",1)~ THEN AC#IL28E hello_again
+~Ihr habt den Neothelid vernichtet. Dafür gebührt Euch mein Dank.~
 END
 IF ~~ THEN REPLY ~Wer seid Ihr?~ EXTERN AC#IL28E who_are_you
 
@@ -112,82 +118,53 @@ IF ~~ THEN REPLY ~Wer seid Ihr?~ EXTERN AC#IL28E who_are_you
 				IF ~~ THEN EXTERN AC#IL28E how_help
 
 					CHAIN AC#IL28E how_help
-					~Ich spüre Euer Verlangen. Ihr sucht nach Mith Barak. Darum seid Ihr hier. Auch Mith Barak betrat einst diese Stätte.~
+					~Ich weiß, warum Ihr hier seid, spüre Euer Verlangen. Ihr sucht nach Hilfe für König Mith Barak. Auch Mith Barak fragte mich vor vielen Jahren um Rat.~
 					END
 					IF ~~ THEN REPLY ~Ihr seid ihm begegnet?~ EXTERN AC#IL28E met_mith_01
 
 						CHAIN AC#IL28E met_mith_01
-						~Mith Barak suchte Wissen. Oft sprach er von der Zeit der Drachen und von einem Gott, dessen Name kaum noch gedacht wird.~
-						END
-						IF ~~ THEN EXTERN AC#IL28E met_mith_02
-
-						
-							CHAIN AC#IL28E met_mith_02
-							~Er suchte auch nach einem Weg in die Astralebene.~
-							END
-							IF ~~ THEN REPLY ~Dann hat er also einen Weg dorthin gefunden?~ EXTERN AC#IL28E met_mith_03
-							
-									CHAIN AC#IL28E met_mith_03
-									~Nein. Er suchte nach einem Weg, mit seinem gesamten Körper die Astralebene zu betreten. Dabei konnte ich ihm nicht helfen. Doch er suchte auch nach Erlösung von seinem Fluch. Dafür konnte ich ihm den Weg weisen. Und dieses Wissen werde ich nun als Dank an Euch weitergeben.~
+						~Mith Barak suchte Erlösung von seinem Zustand. Er suchte nach einem Weg, mit seinem Körper die Astralebene zu betreten. Doch dabei konnte ich ihm nicht helfen. Er suchte jedoch auch nach Erlösung von seinem Fluch. Dafür konnte ich ihm den Weg weisen. Und dieses Wissen werde ich nun als Dank an Euch weitergeben.~
 									END
 									IF ~~ THEN EXTERN AC#IL28E mith_curse
 									
 										CHAIN AC#IL28E mith_curse
-										~Ihr habt ihn wahrscheinlich gesehen, diese Säule, zu der er erstarrt ist. Er suchte nach einem Weg, seine Verwandlung rückgängig zu machen. Er benötigte Wissen aus einer Zeit, lange, bevor Zwerge, Elfen und Menschen diese Lande besiedelten. Er suchte nach Wissen aus der Zeit der Drachen. Nach der Macht der alten Drachengötter.~
+										~Ihr habt ihn wahrscheinlich gesehen, diese Mithrilstatue, zu der er erstarrt ist. Er suchte nach einem Weg, seine Verwandlung rückgängig zu machen. Er benötigte Wissen aus einer Zeit, lange, bevor Zwerge, Elfen und Menschen diese Lande besiedelten. Er suchte nach Wissen aus der Zeit der Drachen. Nach der Macht der alten Drachengötter.~
 										END
 										IF ~~ THEN EXTERN AC#IL28E mith_dragons
 										
 											CHAIN AC#IL28E mith_dragons
-											~Besonders die Tempel der alten Drachengötter begehrten sein Interesse. Vor allem ein uralter Tempel eines toten Drachengottes, dessen Name selbst den Gelehrten dieser Zeit entglitten ist. Doch ich kenne den Namen des Drachengottes noch.~
+											~Besonders einer der alten Drachengötter erweckte sein Interesse. Ein toter Drachengott, dessen Name selbst den Gelehrten dieser Zeit entglitten ist. Doch ich kenne den Namen noch gut. Ich vergesse nichts.~
 											END
 											IF ~~ THEN REPLY ~Wie lautet er?~ EXTERN AC#IL28E name_kalzareinad
 											
 											CHAIN AC#IL28E name_kalzareinad
-											~Kalzareinad. Ein alter, vergessener Drachengott.~
+											~Kalzareinad.~
 											END
 											IF ~~ THEN REPLY ~Aha.~ EXTERN AC#IL28E kalzareinad_temple
 											IF ~~ THEN REPLY ~Noch nie gehört.~ EXTERN AC#IL28E kalzareinad_temple
 											
 											CHAIN AC#IL28E kalzareinad_temple
-											~Ein Name, der unter den Völkern der heutigen Zeit vollkommen in Vergessenheit geraten ist. So ist es mit Namen: Wenn niemand sie spricht, werden sie Staub. Doch Steine stehen länger als jeder Glaube. Ein Tempel besteht noch. Sein Tempel stand an einem Ort, den man den Drachenfriedhof nannte – dort, wo die alten Drachen ihr Ende suchten. Dorthin suchte er zu gelangen.~
+											~Ein Name, der unter den Völkern der heutigen Zeit vollkommen in Vergessenheit geraten ist. So ist es mit Namen: Wenn niemand sie spricht, werden sie Staub. Doch Steine stehen länger als Glaube. Einer seiner alten Tempel besteht noch, an der Oberfläche, nicht weit entfernt. Er stand an einem Ort, den man den Drachenfriedhof nannte – dort, wo die alten Drachen ihr Ende suchten. Mith Barak hatte davon gelesen. Dorthin suchte er zu gelangen.~
 											END
-											IF ~~ THEN REPLY ~Und Ihr konntet ihm sagen, wo dieser Tempel liegt?~ EXTERN AC#IL28E mith_dragons_02
+											IF ~~ THEN EXTERN AC#IL28E mith_dragons_02
 											
 												CHAIN AC#IL28E mith_dragons_02
-												~Nein. Ich kannte den Namen, nicht den Weg.~
+												~Mith Barak hatte davon in einem alten Zwergenbuch gelesen. Er war ein LIebhaber alter Schriften, nicht ganz uneigennützig, wie Ihr seht. Er hortete wissen. Oh, es war eine Freude, mich mit ihm auszutauschen und Erinnerungen an alte Tage, als ich noch dominierte und herrschte, aufleben zu lassen.~
 												END
-												IF ~~ THEN REPLY ~Also muss ich wieder woanders weitersuchen...~ EXTERN AC#IL28E mith_dragons_03												
+												IF ~~ THEN REPLY ~Ihr schweift ab.~ EXTERN AC#IL28E mith_dragons_03												
 												
 												CHAIN AC#IL28E mith_dragons_03
-												~Und ich werde Euch nun noch etwas sagen, das Euch nicht gefallen wird.~
+												~Natürlich tue ich das. Was für einen Wert hat Zeit, wenn man unendlich viel davon hat, aber nichts damit anfangen kann?~
 												END
-												IF ~~ THEN EXTERN AC#IL28E dwarves_treason
-												/*
-												=
-												~Doch ein Zwerg Shanatars besaß dieses Wissen. Borthun. Borthun der Wanderer. Mith Barak hatte das Wissen die ganze Zeit direkt vor seiner Nase. Wie so oft, wenn man etwas sucht.~
+												IF ~~ THEN EXTERN AC#IL28E borthun_book
+
+												CHAIN AC#IL28E borthun_book
+												~Mich dürstet es nach Wissen, und Ihr könnt mir noch ein wenig Gesellschaft leisten. Mith Barak berichtete von einem lange verstorbenen Zwerg, der die Länder des Lichts bereiste. Dieser Zwerg Shanatars besaß Wissen. Sein Name war... Borthun. Borthun der Wanderer. Mith Barak hatte das Wissen die ganze Zeit direkt vor seiner Nase. Wie so oft, wenn man etwas sucht. Dabei half ich ihm.~
 												END
 												IF ~~ THEN REPLY ~Erzählt mir mehr.~ EXTERN AC#IL28E tell_me_more
-
-													CHAIN AC#IL28E tell_me_more
-													~Das kann ich nicht. Ihr kennt nun sein Begehren. Ob er fand, wonach er suchte, müsst Ihr selbst ergründen.~
-													END
-													IF ~~ THEN EXTERN AC#IL28E dwarves_treason
-													*/
-
-												CHAIN AC#IL28E dwarves_treason
-												~Es scheint, die Zwerge haben Euch verraten und hier zurückgelassen.~												
-												END
-												IF ~~ THEN REPLY ~Das haben sie sicher nicht.~ EXTERN AC#IL28E cant_believe_treason
-												IF ~~ THEN REPLY ~Was?~ EXTERN AC#IL28E cant_believe_treason
 												
-												CHAIN AC#IL28E cant_believe_treason
-												~Die Boote, die Euch hergebracht haben, sind verschwunden. Seht selbst am Ufer nach. Ob aus Feigheit oder Notwendigkeit – ich vermag es nicht zu wissen. Es scheint, Ihr werdet hier bleiben müssen. Genau wie meine untote Hülle. Zwei Reste in einer vergessenen Halle.~
-												END											
-												IF ~~ THEN REPLY ~Warum haben sie das getan?~ EXTERN AC#IL28E what_now
-												IF ~~ THEN REPLY ~Und wie geht es jetzt weiter?~ EXTERN AC#IL28E what_now
-												
-												CHAIN AC#IL28E what_now
-												~Es ist einerlei. Mich dürstet es nach Wissen, und Ihr könnt mir noch ein wenig Gesellschaft leisten. Wenn ich...~												
+												CHAIN AC#IL28E tell_me_more
+												~Es ist einerlei.  Wenn ich...~												
 												END
 												IF ~~ THEN EXTERN AC#IL28E illithid_are_coming
 
@@ -195,8 +172,6 @@ IF ~~ THEN REPLY ~Wer seid Ihr?~ EXTERN AC#IL28E who_are_you
 												~Wartet! Ich spüre eine neue Präsenz... Die Gedankenschinder kommen! Ihr Wille nähert sich. Ich ziehe mich zurück. Versucht sie abzuschütteln! Verratet mich nicht.~
 												DO ~SetGlobal("AC#IL_UndeadElderBrain","GLOBAL",1)
 												StartCutSceneMode()
-												SetGlobal("AC#Ruvan_Treason","GLOBAL",1)
-												AddJournalEntry(@62046,QUEST) // Barakuir Quest: boats are gone
 												AddJournalEntry(@99508,QUEST) // sleeping king questline
 												CreateVisualEffect("ICPRAYI",[2196.1589])
 												ReallyForceSpell(Myself,FLASHY_2)
@@ -213,9 +188,135 @@ IF ~~ THEN REPLY ~Wer seid Ihr?~ EXTERN AC#IL28E who_are_you
 BEGIN ~AC#ULIT2~
 
 CHAIN IF ~Global("AC#IL_KilledElderBrain","GLOBAL",1)~ THEN AC#ULIT2 hello_elderbrain_dead
-~Damit ist diese Störung der Ordnung ausgelöscht. Und nun zu Euch!~
+~Damit ist diese Störung der Ordnung ausgelöscht. Und nun zu Euch.~
 END
-  IF ~~ THEN EXIT 
+  IF ~~ THEN EXTERN AC#ULIT2 illithid_talk_02 
+  
+	CHAIN AC#ULIT2 illithid_talk_02
+	~Wir möchten Euch zunächst unseren Dank aussprechen. Ihr habt getan, was wir nicht besser hätten tun können, nämlich diesen alten Tempel unserer Rasse von der Geißel, die ihn über Jahrhunderte besessen hat, zu befreien. Ihr habt den Tod und die Verwesung beseitigt.~
+	END
+	IF ~~ THEN EXTERN AC#ULIT2 illithid_talk_03 
+	
+	CHAIN AC#ULIT2 illithid_talk_03
+	~Wir wissen, dass Ihr dies nicht für uns getan habt, sondern, weil Ihr Antworten sucht. Genau wie wir.~
+	END
+	IF ~~ THEN REPLY ~Warum sollte ich dann überhaupt mit Euch reden?~ EXTERN AC#ULIT2 illithid_talk_04
+	
+	CHAIN AC#ULIT2 illithid_talk_04
+	~Wir haben den gleichen Feind. Wir beobachten Iltkazar schon lange, so wie wir alles um uns herum beobachten. Die Stadt der Zwerge übt wegen des dort gehorteten Wissens einen... gewissen Reiz auf uns aus.~
+	END
+	IF ~~ THEN EXTERN AC#ULIT2 illithid_talk_05
+	
+	CHAIN AC#ULIT2 illithid_talk_05
+	~Wir wissen, dass der König der Zwerge in einem mysteriösen Schlaf liegt. Dies würde uns zum Vorteil gereichen, wenn nicht irgendeine fremde Macht versuchen würde, die Kontrolle in diesem - unseren - Teil des Unterreiches an sich zu reißen und unser Volk tötet.~
+	END
+	IF ~~ THEN REPLY ~Etwas tötet auch Eure Leute?~ EXTERN AC#ULIT2 illithid_talk_06
+	
+	CHAIN AC#ULIT2 illithid_talk_06
+	~Viele Gedankenschinder wurden in der vergangenen Zeit hinterrücks gemeuchelt. So sehr wir unsere Gedankenenergie auch darauf fokussieren mögen- wir können nicht erkennen, wer aus den Schatten heraus derart geschickt gegen uns vorgeht.~
+	END
+	IF ~~ THEN EXTERN AC#ULIT2 illithid_talk_07
+	
+	CHAIN AC#ULIT2 illithid_talk_07
+	~Unserer Feinde gibt es viele - Duergar, Kuo-Toa und andere Rassen des Unterreichs. Wir denken jedoch, dass der Feind, der Iltkazar und auch uns im Griff hält, nicht aus dem Unterreich stammt.~
+	END
+	IF ~~ THEN REPLY ~Wie kommt Ihr darauf?~ EXTERN AC#ULIT2 what_mistakes
+	
+	CHAIN AC#ULIT2 what_mistakes
+	~Unser Feind macht Fehler. Die getötete Zwergenpatrouille vor den Toren derart offensichtlich zurückzulassen war einer davon. Sicher erinnert Ihr Euch an die Köpfe der Vertreter meiner Rasse. Abscheulich. Schändlich. Dumm. Ein Fehler. Wir Illithiden haben noch weitere bemerkt, die wir Euch jedoch nicht mitteilen werden.~
+	END
+	IF ~~ THEN REPLY ~Stimmt, dort waren ja diese Illithiden-Köpfe.~ EXTERN AC#ULIT2 what_mistakes_02
+	
+	CHAIN AC#ULIT2 what_mistakes_02
+	~Korrekt. Etwas stößt aus den Schatten vor und verschwindet wieder. Als würde es eine Art Portal nutzen.~
+	END
+	IF ~~ THEN REPLY ~Ich konnte durch ein Portal hindurchsehen und sah ein rabengesichtiges Scheusal.~ EXTERN AC#ULIT2 raven_fiend
+	
+	CHAIN AC#ULIT2 raven_fiend
+	~Dazu können wir nichts sagen.~
+	END
+	IF ~~ THEN REPLY ~Was könnt Ihr mir sonst noch sagen?~ EXTERN AC#ULIT2 what_benefit
+	
+		CHAIN AC#ULIT2 what_benefit
+		~Es geht nicht darum, wie wir Euch nützen, sondern ob Ihr uns nützt. So lange dies der Fall ist, werden wir Euch nicht behelligen. Als Zeichen unseres guten Willens lassen wir Euch nun Eure Suche fortsetzen. Wenngleich Euer Weg zurück schwierig werden könnte.~
+		END
+		IF ~~ THEN REPLY ~Warum? Ich fahre mit den Booten einfach wieder zurück.~ EXTERN AC#ULIT2 iltkazar_traitor
+		
+		CHAIN AC#ULIT2 iltkazar_traitor
+		~Da wäre ich mir nicht so sicher. Die Boote, mit denen Ihr hergekommen seid, sind jedenfalls verschwunden. Die Zwerge haben Euch hier zurückgelassen.~
+		END
+		IF ~~ THEN REPLY ~Wie bitte? Habt Ihr sie getötet?~ EXTERN AC#ULIT2 iltkazar_treason_02
+		IF ~~ THEN REPLY ~Vermutlich weil Ihr sie mit Euren bösartigen Fähigkeiten dazu gezwungen habt!~ EXTERN AC#ULIT2 iltkazar_treason_02
+		IF ~~ THEN REPLY ~Sie werden schon wieder zurückkommen.~ EXTERN AC#ULIT2 crew_is_gone
+		IF ~~ THEN REPLY ~Na und?~ EXTERN AC#ULIT2 crew_is_gone
+
+	
+		CHAIN AC#ULIT2 iltkazar_treason_02 
+		~Das hätten wir tun können, doch viel unterhaltsamer ist es doch, wenn sich die niederen Rassen gegenseitig zerfleischen.~
+		END		
+		IF ~~ THEN EXTERN AC#ULIT2 crew_is_gone 
+		
+		CHAIN AC#ULIT2 crew_is_gone
+		~Die Bootsbesatzung ist aus freien Stücken zurückgerudert, <CHARNAME>. Die Zwerge haben Euch hier in der Einöde Eurem Schicksal überlassen.~
+		END
+		IF ~~ THEN REPLY ~Das kann nicht sein.~ EXTERN AC#ULIT2 iltkazar_treason_03
+		IF ~~ THEN REPLY ~Vielleicht haben sie mich betrogen, ja. Das macht mir aber nichts mehr aus.~ EXTERN AC#ULIT2 maybe_treason
+
+		
+			CHAIN AC#ULIT2 iltkazar_treason_03
+			~(Die Tentakel des Illithiden zucken hin und her, und das Wesen gibt ein glucksendes Geräusch von sich. Ihr seid Euch nicht sicher, ob dies eine seltsame Form des Lachens sein könnte.)~ [MINDF01] 
+			=
+			~Seid Ihr Euch da sicher? Sie haben doch außer einem tränenreichen Abschied nichts weiter für Euch getan. Vielleicht ist der einzige Grund, weshalb Ihr für Sie diese Aufträge lösen solltet, der, dass sie Euch schnellstmöglich loswerden wollten.~
+			END
+			IF ~~ THEN REPLY ~Ich glaube Euch das alles nicht!~ EXTERN AC#ULIT2 iltkazar_treason_04
+			IF ~~ THEN REPLY ~Redet so viel Ihr wollt. Mich könnt Ihr nicht überzeugen.~ EXTERN AC#ULIT2 iltkazar_treason_04
+			IF ~~ THEN REPLY ~Vielleicht haben sie mich betrogen, ja. Das macht mir aber nichts mehr aus.~ EXTERN AC#ULIT2 maybe_treason
+
+			
+			CHAIN AC#ULIT2 iltkazar_treason_04
+			~Dann geht selbst an das Ufer und sucht nach den Booten.~ 			
+			END
+			IF ~~ THEN EXTERN AC#ULIT2 maybe_treason
+			
+			
+			CHAIN AC#ULIT2 maybe_treason
+			~Ihr sitzt hier fest, <PRO_RACE>.~ 
+			END
+			IF ~~ THEN EXTERN AC#ULIT2 good_bye
+			
+			
+				CHAIN AC#ULIT2 good_bye
+				~Wir wünschen Euch viel Erfolg bei der Suche nach unserem gemeinsamen Feind. Betet zu Euren Göttern von der Oberfläche, dass Ihr niemals wieder einen unserer Rasse zu Gesicht bekommen werdet. Wir werden jetzt in unsere Stadt zurückkehren.~			
+				END
+				IF ~~ THEN REPLY ~Das werdet Ihr nicht. Jedenfalls nicht lebendig!~ EXTERN AC#ULIT2 fight_01
+				IF ~~ THEN REPLY ~Nun gut. ich werde meine Suche fortsetzen.~ EXTERN AC#ULIT2 bye_teleport_away
+				
+				CHAIN AC#ULIT2 fight_01
+				~Wie bitte? Ich habe mich wohl in Euren Gedanken verirrt.~
+				END
+				IF ~~ THEN REPLY ~Zeit zu sterben, Monster!~ EXTERN AC#ULIT2 fight_bye
+				IF ~~ THEN REPLY ~Geht schon. ich werde meine Suche fortsetzen.~ EXTERN AC#ULIT2 bye_teleport_away
+				
+				CHAIN AC#ULIT2 fight_bye
+				~Was für ein dummer Narr Ihr doch seid, Euch mit uns anzulegen!~
+				END
+				IF ~~ THEN DO ~Shout(89)
+				SetGlobal("IllithidFight","ACIL28",1)
+				SetGlobal("AC#Ruvan_Treason","GLOBAL",1)				
+				AddJournalEntry(@62046,QUEST) // Barakuir Quest: boats are gone
+				Enemy()~ EXIT
+				
+				CHAIN AC#ULIT2 bye_teleport_away
+				~Ihr seid ein braver Diener. Los, Freunde und Sklave, wir gehen.~
+				END
+				IF ~~ THEN DO ~SetGlobal("AC#Ruvan_Treason","GLOBAL",1)
+				SetGlobal("IllithidTeleport","ACIL28",1)
+				AddJournalEntry(@62046,QUEST) // Barakuir Quest: boats are gone
+				CreateVisualEffectObject("SPDIMNDR",Myself) 
+				Wait(1)				
+				DestroySelf()~ EXIT
+											
+
 
 CHAIN IF ~NumTimesTalkedTo(0)~ THEN AC#ULIT2 hello_01
 ~Seid gegrüßt, <CHARNAME>. Eine Überraschung, Euch hier wiederzusehen. Erinnert Ihr Euch an mich? Das letzte Mal standen wir uns im Spiegel gegenüber. Ich würde Eurer Erinnerung gerne noch weiter auf die Sprünge helfen, doch... nein... Eure Erinnerung wird später für etwas anderes gut sein.~
@@ -234,6 +335,8 @@ END
 	StartCutScene("AC#28CT4")~ EXIT
 
 
+
+												
 // -------------------------------------------------
 // Drow Mage Slave
 //--------------------------------------------------

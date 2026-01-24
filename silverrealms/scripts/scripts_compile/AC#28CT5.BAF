@@ -10,7 +10,7 @@ THEN
         ScreenShake([20.20],5)
         OpenDoor("DOOR07")
         AmbientActivate("Smoke_wood",TRUE)
-        Wait(1)
+        Wait(3)
         ActionOverride("AC#ULIT2",StartDialogueNoSet([PC]))
 END
 

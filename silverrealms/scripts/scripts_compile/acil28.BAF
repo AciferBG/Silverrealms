@@ -33,12 +33,15 @@ THEN
 		SetGlobal("ElderBrainSpawn","ACIL28",1)
 		StartCutSceneMode()
 		MoveViewPoint([2196.1589],INSTANT)
+		CreateCreatureImpassableAllowOverlap("CUTSPY",[2190.1600],S)
 		CreateVisualEffect("ICPRAYI",[2196.1589])
 		CreateCreatureImpassableAllowOverlap("AC#IL28E",[2196.1589],S)  // Undead Elderbrain
 		Wait(2)
-		EndCutSceneMode()
+		ActionOverride("CUTSPY",DestroySelf())
+		ActionOverride("AC#IL28E",StartDialogueNoSet([PC]))
 END
 
+/*
 IF
 	Dead("AC#IL28E") // undead elder brain is killed
 	Global("AC#IL_KilledElderBrain","GLOBAL",0)
@@ -50,17 +53,29 @@ THEN
 		OpenDoor("DOOR07")
 		AmbientActivate("Smoke_wood",TRUE)	
 END
+*/
 
 IF
     Global("MindflayersAppear","ACIL28",1)
 THEN
     RESPONSE #100
         SetGlobal("MindflayersAppear","ACIL28",2)
-		CreateCreature("AC#ULIT2",[2662.1378],SW)  // Malinthid
-		CreateCreature("AC#28IL2",[2618.1330],SW)
-		CreateCreature("AC#28IL3",[2689.1457],SW)
-        ClearAllActions()
+		SetGlobalTimer("MindflayersAppearTimer","ACIL28",ONE_ROUND)
+		DisplayStringHead(Player1,@7006)
+END
+
+IF
+    Global("MindflayersAppear","ACIL28",2)
+	GlobalTimerExpired("MindflayersAppearTimer","ACIL28")
+THEN
+    RESPONSE #100
+        SetGlobal("MindflayersAppear","ACIL28",3)
+		ClearAllActions()
         StartCutSceneMode()
+		CreateCreatureDoor("AC#ULIT2",[2662.1378],SW)  // Malinthid
+		CreateCreatureDoor("AC#28IL2",[2618.1330],SW)
+		CreateCreatureDoor("AC#28IL3",[2689.1457],SW)
+		Wait(1)
 		StartCutScene("AC#28CT3")
 END
 /*

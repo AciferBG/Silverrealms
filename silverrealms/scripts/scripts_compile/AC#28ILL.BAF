@@ -1,0 +1,9 @@
+IF
+    Global("IllithidTeleport","ACIL28",1)
+THEN
+    RESPONSE #100
+        CreateVisualEffectObject("SPDIMNDR",Myself)
+        Wait(1)
+        DestroySelf()
+END
+

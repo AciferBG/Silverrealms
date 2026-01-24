@@ -341,6 +341,34 @@ COPY ~silverrealms/bam/copy~         ~override~
  LAF INSTALL_PVRZ INT_VAR original_base_index new_base_index STR_VAR source_file = ~silverrealms/bam/bam_desc_BG2EE/MOS1031.pvrz~
  END
  END
+ 
+ COPY ~silverrealms/bam/bam_desc_BG2EE/AC#PSYSD.bam~ ~override~  //    sword of the flayer desc bam
+ LPF UPDATE_PVRZ_INDICES RET original_base_index new_base_index END
+ ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN 
+ LAF INSTALL_PVRZ INT_VAR original_base_index new_base_index STR_VAR source_file = ~silverrealms/bam/bam_desc_BG2EE/MOS1032.pvrz~
+ END
+ END
+ 
+  COPY ~silverrealms/bam/bam_desc_BG2EE/AC#IL#D1.bam~ ~override~  //    water elemental stone desc bam
+ LPF UPDATE_PVRZ_INDICES RET original_base_index new_base_index END
+ ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN 
+ LAF INSTALL_PVRZ INT_VAR original_base_index new_base_index STR_VAR source_file = ~silverrealms/bam/bam_desc_BG2EE/MOS1033.pvrz~
+ END
+ END
+ 
+ COPY ~silverrealms/bam/bam_desc_BG2EE/AC#IL#D2.bam~ ~override~  //    rune elemental stone #2 desc bam
+ LPF UPDATE_PVRZ_INDICES RET original_base_index new_base_index END
+ ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN 
+ LAF INSTALL_PVRZ INT_VAR original_base_index new_base_index STR_VAR source_file = ~silverrealms/bam/bam_desc_BG2EE/MOS1034.pvrz~
+ END
+ END
+ 
+ COPY ~silverrealms/bam/bam_desc_BG2EE/AC#IL#D3.bam~ ~override~  //    rune elemental stone #3 desc bam
+ LPF UPDATE_PVRZ_INDICES RET original_base_index new_base_index END
+ ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN 
+ LAF INSTALL_PVRZ INT_VAR original_base_index new_base_index STR_VAR source_file = ~silverrealms/bam/bam_desc_BG2EE/MOS1035.pvrz~
+ END
+ END
 
 ///////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////

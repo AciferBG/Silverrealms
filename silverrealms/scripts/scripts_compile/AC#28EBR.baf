@@ -1,5 +1,13 @@
 IF
 	Clicked([ANYONE])
+	GlobalGT("AC#IL_KilledElderBrain","GLOBAL",0)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@6041) 
+END
+
+IF
+	Clicked([ANYONE])
 	GlobalGT("AC#IL_UndeadElderBrain","GLOBAL",0)
 THEN
 	RESPONSE #100

@@ -569,24 +569,23 @@ Magiern (auch mehrklassig und mit Klassenkombination)~
 @470 = ~Githyanki-Rune~
 @471 = ~Diese metallene Rune liegt schwer in der Hand und ist erstaunlich groß.~
 @472 = ~Diese Rune ist ein Teil des Alphabets der Githyanki, das Tir'su genannt wird. Sie scheint aus flüssigenm Metall hergestellt worden zu sein, das vor dem Erkalten in eine Form gegossen worden ist.~
-@473 = ~Psi-Schwert~
-@474 = ~Dieses Schwert sieht etwas unförmig aus, lässt sich jedoch trotzdem komfortabel schwingen. Es ist ein psionisches Schwert, das aus der Fertigung der Gedankenschinder stammt. Diese bevorzugen, wenn sie denn überhaupt Waffen verwenden, Langschwerter, die mit allerlei psionischen Verbesserungen versehen sind. Da diese Waffen weniger auf der Kraft des Trägers, sondern vielmehr auf seinen geistigen Fähigkeiten beruhen, benötigt man eine hohe Intelligenz, um diese Waffe zu führen.
+@473 = ~Schwert der Schinder +2~
+@474 = ~Dieses unheimliche Schwert wirkt auf den ersten Blick wie eine gewöhnliche Klinge, doch bei genauer Betrachtung scheinen sich seine Konturen stetig zu verändern. Der Griff ist Tentakeln nachempfunden und feucht. 
+Das Schwert ist eine Waffe der Gedankenschinder, geschaffen nicht zur schnellen Tötung, sondern zur schrittweisen Zerstörung des Verstandes. Seine wahre Macht entfaltet es nur in Momenten äußerster Präzision, wenn ein einziger Schlag ausreicht, den Geist des Gegners zu verwunden: "Nicht das Fleisch zerbricht zuerst, sondern der Geist." 
+Da diese Waffen weniger auf der Kraft des Trägers, sondern vielmehr auf seinen geistigen Fähigkeiten beruhen, benötigt man eine hohe Intelligenz, um diese Waffe zu führen.
 
-PEZIFISCHE EIGENSCHAFTEN:
+EIGENSCHAFTEN:
 
-Besondere Fähigkeiten: Der Träger kann einmal täglich "Beherrschung" wirken 
-Unauffindbarkeit
-ETW0: -3
-Schaden: 1W8+3 (Klingenwaffe)
-Gewicht: 6
-Mindestintelligenz: 18
-Initiativefaktor: 3
-Waffenfertigkeit: Langschwert
-Waffentyp: Einhändig
-Kann nicht verwendet werden von:
-Druiden
-Klerikern
-Magiern~
+– Der Träger kann einmal täglich "Beherrschung" wirken 
+– Kritischer Treffer: Ziel muss einen Rettungswurf gegen Zauber bestehen oder erleidet einen Malus von 1w4 Intelligenz für 1 Phase
+ETW0-Bonus: -2
+Schaden: 1W8 +2 (Klinge)
+Initiativefaktor: 2
+Fertigkeit: Langschwert
+Typ: 1-händig
+Mindeststärke: 6
+
+Gewicht: 2~
 @475 = ~Glücksmaid~
 @476 = ~Shagretor Torgarsaxt~
 @477 = ~Priesterin Sharindlars~
@@ -1564,7 +1563,7 @@ In jahrelangen Kriegen zogen die Zwerge gegeneinander in einen  Krieg, der als "
 Stolze Heimat von Clan Duergar."~
 @6010 = ~Auf dieser Tafel sind Zwergenrunen eingelassen, die Ihr nicht entziffern könnt.~
 @6011 = ~Dies scheinen die mumifizierten Überreste eines Ältestenhirnes zu sein. Durch das besondere Klima in der Kammer ist die Verwesung irgendwann zum Stillstand gekommen. Trotzdem riecht es nach Fäulnis und Zerfall.~
-@6012 = ~Das Ätestenhirn antwortet nicht. Es scheint sich wieder auf die Astralebene zurückgezogen zu haben.~
+@6012 = ~Das Ätestenhirn antwortet nicht. Es scheint sein Bewusstsein zurückgezogen zu haben.~
 	// ACIL52: Haela's Halls
 @6013 = ~Ein steinernes Bildnis eines Betrachters.~
 @6014 = ~Diese Flaggen zeigen das Symbol von Tief Duerra, einen Schädel mit vier Tentakeln.~
@@ -1599,6 +1598,8 @@ Diirinka'~
 @6038 = ~Kugelkammer~
 //ACIL51: Ancient Forge
 @6040 = ~Tempel des Moradin~
+
+@6041 = ~Von dem Ältestenhirn ist nur noch eine verkohlte Masse übrig. ES ist für immer zerstört.~
 
 // ACIL58: Hall of Omlars
 

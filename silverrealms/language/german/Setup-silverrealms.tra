@@ -583,6 +583,7 @@ Schaden: 1W8 +2 (Klinge)
 Initiativefaktor: 2
 Fertigkeit: Langschwert
 Typ: 1-händig
+Mindestintelligenz: 14
 Mindeststärke: 6
 
 Gewicht: 2~
@@ -2070,6 +2071,19 @@ Ich suche vielleicht wieder am falschen Ort. Vielleicht liegt der Zugang nicht h
 
 7.
 Ich habe nicht mehr viel Zeit. Schon bald werde ich wieder zur Statue erstarrt auf dem Thron sitzen. Dann muss ich in vielen Jahren, wenn ich wieder erwacht bin, weitersuchen. Ich lasse diese Notizen hier, damit ich mich daran erinnern kann, wenn die Zeit gekommen ist. Barakuir soll mein nächstes Ziel sein. Wenn es das Portal in die Astralebene des alten Shanatar wirklich gibt, könnte es dort gelegen sein. Wenn nicht, muss ich weitersuchen. Es gibt noch weitere Unterkönigreiche, die in Frage kommen. Aber Barakuir ist mein nächstes Ziel.~
+@8098 = ~Amulett des Salzwahrers~
+@8099 = ~Eigenschaften:~
+@8100 = ~Helm des letzten Gedankens~
+@8101 = ~Dieser Helm gehörte einst dem Duergar-Krieger Talnukk. Als der Neothelid den Duergar verschlang, löste seine Verdauung Fleisch und Knochen des Zwerges vollständig auf. Lediglich einige Schädelreste mit Gehirnmasse und der Helm widerstanden – als hätte sich der letzte Gedanke des Duergars selbst verankert. Verdaut, aber nicht gebrochen.
+
+EIGENSCHAFTEN:
+
+RK-Bonus: -1
+Weisheit: +1
+Rettungswurf Bonus gegen Tod, Verwandlung und Odemwaffe: +1
+Schützt vor kritischen Treffern
+
+Gewicht: 2~
 
  
 // creature strings

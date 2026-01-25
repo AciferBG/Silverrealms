@@ -271,6 +271,7 @@ THEN
                  SetGlobal("AC#UltoksamrinGate","GLOBAL",1)
 END
 
+/*
 IF
     Global("UltoksamrinGateDuergar","ACIL50",0)
 	PartyHasItem("AC#BOOKB")
@@ -280,6 +281,7 @@ THEN
 		Lock("DOOR02")
         SetGlobal("UltoksamrinGateDuergar","ACIL50",1)
 END
+*/
 
 IF
     Global("UltoksamrinGateDuergar","ACIL50",1)

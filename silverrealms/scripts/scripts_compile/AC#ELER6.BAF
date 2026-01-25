@@ -1,0 +1,7 @@
+IF
+    GlobalGT("AC#Goodbye_Iltkazar","GLOBAL",9)
+THEN
+    RESPONSE #100
+        DestroySelf()
+END
+

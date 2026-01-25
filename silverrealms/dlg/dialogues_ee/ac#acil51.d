@@ -221,8 +221,7 @@ END
 										//SetGlobal("AC#Clans_Parting","GLOBAL",3)
 										SetGlobal("AC#Clans_Parting","GLOBAL",4)
 										//EraseJournalEntry(@64103)
-										AddJournalEntry(@64103,QUEST)
-										RevealAreaOnMap("ACIL70")~ EXIT
+										AddJournalEntry(@64103,QUEST)~ EXIT
 										END
 
 	IF ~~ THEN BEGIN no_nothing_else 

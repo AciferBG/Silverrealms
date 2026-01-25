@@ -3,6 +3,14 @@
 
 COPY ~silverrealms/itm/copy~         ~override~
 
+COPY ~%MOD_FOLDER%/itm/AC#ILNEH.itm~         ~override~    // Neothelid duergar helmet
+  SAY NAME2 @8100
+  SAY DESC @8101
+
+COPY ~%MOD_FOLDER%/itm/AC#ILAMK.itm~         ~override~    // Kuo-Toa amulet
+  SAY NAME2 @8098
+  SAY DESC @8099
+
 COPY ~%MOD_FOLDER%/itm/AC#SC611.itm~         ~override~  // scroll wondrous recall
 
 COPY ~%MOD_FOLDER%/itm/AC#ILMBJ.itm~         ~override~    // Mith Barak's journal

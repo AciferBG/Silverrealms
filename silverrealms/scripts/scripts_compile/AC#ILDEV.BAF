@@ -1,0 +1,39 @@
+IF
+    See(NearestEnemyOf(Myself))
+    Global("EgoWhip","LOCALS",0)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+    RESPONSE #50
+        SetGlobal("EgoWhip","LOCALS",1)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        ReallyForceSpell(LastSeenBy(Myself),PSIONIC_EGOWHIP)  // SPIN909.SPL (Egopeitsche)
+END
+
+IF
+    Allegiance(Myself,ENEMY)
+    See(NearestEnemyOf(Myself))
+    !StateCheck(LastSeenBy(Myself),STATE_STUNNED)
+    Global("Insinuation","LOCALS",0)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+    RESPONSE #50
+        SetGlobal("Insinuation","LOCALS",1)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        ReallyForceSpellRES("AC#ILD1",LastSeenBy(Myself))  // Geistige Lähmung
+END
+
+IF
+    See([PC])
+    Allegiance(Myself,ENEMY)
+    !StateCheck(LastSeenBy(Myself),STATE_STUNNED)
+    !StateCheck(LastSeenBy(Myself),STATE_CHARMED)
+    Delay(12)
+    Global("Domination","LOCALS",0)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+    RESPONSE #50
+        SetGlobal("Domination","LOCALS",1)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        ForceSpell(LastSeenBy(Myself),MIND_FLAYER_DOMINATION)  // SPIN975.SPL (Paranormale Beherrschung)
+END
+

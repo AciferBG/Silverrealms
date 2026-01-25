@@ -2,6 +2,7 @@
 
 //_____________________________________________________________________________________________________
 // DRACOLICH animation
+/*
   LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0x1200 slotMax = 0x1300 RET slot END
   ACTION_IF (slot <= 0) BEGIN
     FAIL ~No free creature animation slot found.~
@@ -15,6 +16,21 @@
 
   ACTION_BASH_FOR ~%MOD_FOLDER%/animations/dracolich~ ~^.+\.bam$~ BEGIN
     COPY ~%BASH_FOR_FILESPEC%~ ~override~
+  COPY ~%MOD_FOLDER%/animations/intellect_devourer/intellect_devourer_sounds~ ~override~
+  END
+*/
+// intellect_devourer animation courtesy of Artemius
+  LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0xE000 slotMax = 0xefff RET slot END
+  ACTION_IF (slot <= 0) BEGIN
+    FAIL ~No free creature animation slot found.~
+  END
+  LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+  APPEND ~animate.ids~ ~0x%hexNumber% C0_INTELLECT_DEVOURER~ UNLESS ~C0_INTELLECT_DEVOURER~
+  CLEAR_IDS_MAP
+  COPY ~%MOD_FOLDER%/animations/intellect_devourer/exxx.ini~ ~override/%hexNumber%.ini~
+  ACTION_BASH_FOR ~%MOD_FOLDER%/animations/intellect_devourer~ ~^.+\.bam$~ BEGIN
+    COPY ~%BASH_FOR_FILESPEC%~ ~override~
+      COPY ~%MOD_FOLDER%/animations/intellect_devourer/intellect_devourer_sounds~ ~override~
   END
 
 // invisble creature large animation

@@ -2,6 +2,14 @@
 
 COPY ~silverrealms/cre/copy~         ~override~
 
+COPY ~silverrealms/cre/AC#ILID2.cre~ ~override~  // Intellect devourer  (adult)
+  SAY NAME1 @9048 SAY NAME2 @9048
+  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~C0_INTELLECT_DEVOURER~))
+
+COPY ~silverrealms/cre/AC#ILID1.cre~ ~override~  // Intellect devourer  (adult)
+  SAY NAME1 @9048 SAY NAME2 @9048
+  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~C0_INTELLECT_DEVOURER~))
+
 COPY ~silverrealms/cre/AC#28DRS.cre~ ~override~ // drow mage illithid thrall
 
 COPY ~silverrealms/cre/AC#ILKUP.cre~ ~override~ // Kuo-Toa chief

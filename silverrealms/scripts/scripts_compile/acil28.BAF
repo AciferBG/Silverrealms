@@ -75,6 +75,8 @@ THEN
 		CreateCreatureDoor("AC#ULIT2",[2662.1378],SW)  // Malinthid
 		CreateCreatureDoor("AC#28IL2",[2618.1330],SW)
 		CreateCreatureDoor("AC#28IL3",[2689.1457],SW)
+		CreateCreatureDoor("AC#ILID2",[2588.1357],SW)
+		CreateCreatureDoor("AC#ILID2",[2714.1485],SW)
 		Wait(1)
 		StartCutScene("AC#28CT3")
 END

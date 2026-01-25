@@ -16,6 +16,9 @@ COPY ~silverrealms/spl/AC#ILPH.spl~          ~override~ // phosphor dragon hit
 COPY ~silverrealms/spl/AC#NEOB.spl~          ~override~ // neothelid's poisonous breath
 SAY NAME1 @1147 SAY NAME2 @1147
 
+COPY ~silverrealms/spl/AC#ILD1.spl~          ~override~ // intellect devourer's insinuation
+SAY NAME1 @1146 SAY NAME2 @1146
+
 COPY ~silverrealms/spl/AC#NEO4.spl~          ~override~ // neothelid's insinuation
 SAY NAME1 @1146 SAY NAME2 @1146
 

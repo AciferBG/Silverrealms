@@ -11,6 +11,7 @@ THEN
         AmbientActivate("Githrune_blue",FALSE)
         SoundActivate("Githportalsound",FALSE)
 		TriggerActivation("Trigger_githrune",FALSE)
+		SpawnPtDeactivate("Central_Spawn_Hard") 
 		SetMusic(NIGHT,%AC#IL20%)
 		SetMusic(DAY,%AC#IL20%)	
 		SetGlobal("EnteredArea","ACIL20",1)
@@ -39,6 +40,16 @@ THEN
         CreateCreature("AC#DEAD6",[3260.1550],SSW)  // No such index
         CreateCreature("AC#DEAD7",[3147.1652],N)  // Zwerg
         CreateCreature("AC#DEAD6",[3190.1554],SWW)  // No such index
+END
+
+IF
+	Dead("AC#DROW2")
+    Global("ChangeCentralSpawn","ACIL20",0)
+THEN
+    RESPONSE #100
+		SpawnPtActivate("Central_Spawn_Hard") 
+		SpawnPtDeactivate("Quaggoth")
+		SetGlobal("ChangeCentralSpawn","ACIL20",1)
 END
 
 IF

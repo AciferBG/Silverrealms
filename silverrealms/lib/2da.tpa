@@ -5,6 +5,9 @@
 APPEND_COL ~spawngrp.2da~ "$ $ RDAC#KUO 150 AC#KUOT1 AC#KUOT2 AC#KUOT3 AC#KUOT4 AC#KUOT5 AC#KUOT6 * *"
 APPEND_COL ~spawngrp.2da~ "$ $ RDAC#KU2 170 AC#KUOT7 AC#KUOT3 AC#KUOT4 AC#KUOT4 AC#KUOT8 AC#KUOT2 * *"
 APPEND_COL ~spawngrp.2da~ "$ $ RDAC#KU3 150 AC#KUOTA AC#KUOTB AC#KUOTC AC#KUOT4 AC#KUOTE AC#KUOTF * *"
+APPEND_COL ~spawngrp.2da~ "$ $ RDAC#UHU 150 UMBHUL01 UMBHUL01 * * * * * *"
+APPEND_COL ~spawngrp.2da~ "$ $ RDAC#DRW 150 AC#ILDR1 AC#ILDR1 AC#ILDR1 AC#ILDR1 AC#ILDR1 * * *"
+APPEND_COL ~spawngrp.2da~ "$ $ RDAC#GAU 150 AC#ILGAU AC#ILGAU * * * * * *"
 
 COPY_EXISTING ~spawngrp.2da~ ~override~
     PRETTY_PRINT_2DA
@@ -50,9 +53,11 @@ APPEND ~MastArea.2da~
 ~ACIL96     value~
 UNLESS ~ACIL96~
 
+/*
 OUTER_SET strref = RESOLVE_STR_REF (@739)
 APPEND itemdial.2da ~AC#BOOKB %strref% AC#BOOKB~
 BUT_ONLY
+*/
 
 COPY ~silverrealms/2da/copy~         ~override~
 

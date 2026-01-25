@@ -12,6 +12,8 @@ THEN
         SoundActivate("Githportalsound",FALSE)
 		TriggerActivation("Trigger_githrune",FALSE)
 		SpawnPtDeactivate("Central_Spawn_Hard") 
+		SpawnPtDeactivate("North_spawn_hard") 
+		SpawnPtDeactivate("East_spawn_hard") 
 		SetMusic(NIGHT,%AC#IL20%)
 		SetMusic(DAY,%AC#IL20%)	
 		SetGlobal("EnteredArea","ACIL20",1)
@@ -50,6 +52,25 @@ THEN
 		SpawnPtActivate("Central_Spawn_Hard") 
 		SpawnPtDeactivate("Quaggoth")
 		SetGlobal("ChangeCentralSpawn","ACIL20",1)
+END
+
+IF
+	Global("AC#EnteredSpiderstalkings","GLOBAL",1)
+    Global("ChangeNorthSpawn","ACIL20",0)
+THEN
+    RESPONSE #100
+		SpawnPtActivate("Central_Spawn_Hard") 
+		SpawnPtDeactivate("Spiders")
+		SetGlobal("ChangeNorthSpawn","ACIL20",1)
+END
+
+IF
+	Dead("AC#DROW2")
+    Global("ChangeEastSpawn","ACIL20",0)
+THEN
+    RESPONSE #100
+		SpawnPtActivate("East_spawn_hard") 
+		SetGlobal("ChangeEastSpawn","ACIL20",1)
 END
 
 IF

@@ -18,6 +18,17 @@ THEN
 END
 
 IF
+	DifficultyGT(EASY)
+	Global("CreateMoreDriders","ACIL25",1)
+THEN
+	RESPONSE #100
+        SetGlobal("CreateMoreDriders","ACIL25",2)
+		CreateCreature("AC#ILDDF",[939.540],0)  // Drider female 
+		CreateCreature("AC#ILDDF",[1777.920],11) // Drider female
+		CreateCreature("AC#ILDDF",[1530.425],5) // Drider female
+END
+
+IF
 	Global("AC#25_LolthPriestess","GLOBAL",1)
 THEN
 	RESPONSE #100

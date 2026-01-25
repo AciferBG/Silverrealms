@@ -6,7 +6,7 @@ BEGIN ~AC#ANT01~
 
 	IF ~GlobalGT("AC#CondolenceAnthan","GLOBAL",1)~ THEN BEGIN hello_what_else
 	  SAY ~Wollt Ihr noch etwas?~ 
-	  IF ~Global("AC#Clans_Parting","GLOBAL",2)~ THEN REPLY ~Ich würde gerne einen Blick in das Tagebuch Eures Ahnen Borthun werfen.~ GOTO take_a_look_at_borthuns_book
+	  IF ~Global("AC#Clans_Parting","GLOBAL",2)~ THEN REPLY ~Ich würde gerne einen Blick in die Reisechronik Eures Ahnen Borthun werfen.~ GOTO take_a_look_at_borthuns_book
 	  IF ~~ THEN REPLY ~Nein, nichts mehr.~ GOTO no_nothing_else
 	  IF ~OR(2)
 	  Dead("AC#CHARV")
@@ -173,7 +173,7 @@ END
 */					
 	IF ~~ THEN BEGIN what_else
 	  SAY ~Ihr seht so aus, als wolltet Ihr sonst noch etwas von mir.~ 
-	  IF ~Global("AC#Clans_Parting","GLOBAL",2)~ THEN REPLY ~Ich würde gerne einen Blick in das Tagebuch Eures Ahnen Borthun werfen.~ GOTO take_a_look_at_borthuns_book
+	  IF ~Global("AC#Clans_Parting","GLOBAL",2)~ THEN REPLY ~Ich würde gerne einen Blick in die Reisechronik Eures Ahnen Borthun werfen.~ GOTO take_a_look_at_borthuns_book
 	  IF ~~ THEN REPLY ~Nein, nichts mehr.~ GOTO no_nothing_else
 	END
 

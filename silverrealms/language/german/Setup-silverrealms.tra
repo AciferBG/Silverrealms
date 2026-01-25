@@ -923,8 +923,9 @@ Besondere Fähigkeiten: Verfluchter Gegenstand. Der Träger erhält -30% Magiere
 @734 = ~Fruntuck Flaschenhals~
 @735 = ~Levitationstrank~
 @736 = ~Dieser Trank lässt den Anwender in jede gewünschte Richtung schweben, ähnlich des Zaubers "Levitation", wenngleich die Wirkung des Trankes nicht ewig anhält und sich der Anwender beeilen muss, bis zum Wirkungsende wieder festen Boden unter den Füßen zu haben.~
-@737 = ~Borthuns Tagebuch~
-@738 = ~Dies ist das Tagebuch von Borthun, dem Wanderer. Es enthält detaillierte Aufzeichnungen über die Länder, die heute als Amn und Tethyr bekannt sind. Es scheint ein gewaltiges Nachschlagewerk zu sein. Allerdings sind viele Einträge aufgrund des Alters des Buches nicht mehr aktuell. Euch fällt auf, dass an einigen Stellen jemand anderes in einer eleganten Handschrift Anmerkungen darin gemacht hat. Nach einigem Lesen ist Euch klar, dass diese Anmerkungen von König Mith Barak stammen müssen.~
+@737 = ~Borthuns Reisechronik~
+@738 = ~Dies ist die Chronik von Borthun, dem Wanderer. Es enthält detaillierte Aufzeichnungen über die Länder, die heute als Amn und Tethyr bekannt sind. Es scheint ein gewaltiges Nachschlagewerk zu sein. Allerdings ist es in einer uralten Schrift und Sprache der Zwerge geschrieben, die Ihr nicht entziffern könnt. 
+Euch fällt auf, dass an einigen Stellen jemand anderes in einer eleganten, unleserlichen Handschrift Anmerkungen darin gemacht hat. Ihr erkennt, dass diese Anmerkungen von König Mith Barak stammen müssen.~
 @739 = ~Lesen~
 @740 = ~Dies ist der Weg zurück an die Oberfläche. Mit Hilfe der Drow-Schwebescheibe könntet Ihr wieder nach oben schweben. Ihr legt die Scheibe auf den Boden und sofort beginnt sie in der Luft zu schweben.~
 @741 = ~Ihr betretet vorsichtig die Schwebescheibe. Ihr bemerkt, wie Ihr langsam beginnt, nach oben zu schweben...~
@@ -1517,7 +1518,7 @@ Das Buch scheint eine Art magische Aura zu besitzen; es fühlt sich ungewöhnlic
 @1143 = ~Taste Link~
 @1144 = ~Telekinese~
 @1145 = ~Control Body~
-@1146 = ~Geistige Lähmung~
+@1146 = ~Geistige Verwirrung~
 @1147 = ~Giftiger Atem~
 @1148 = ~Drachenalb-Odem~
 
@@ -2136,6 +2137,7 @@ Gewicht: 2~
 @9046 = ~Untotes Ältestenhirn~
 @9047 = ~(Stimme in Eurem Kopf)~
 @9048 = ~Intellektverzehrer~
+@9049 = ~Skulk~
 
 
 

@@ -2,6 +2,9 @@
 
 COPY ~silverrealms/cre/copy~         ~override~
 
+COPY ~silverrealms/cre/AC#ILSKU.cre~ ~override~ // Skulk
+  SAY NAME1 @9049 SAY NAME2 @9049
+
 COPY ~silverrealms/cre/AC#ILID2.cre~ ~override~  // Intellect devourer  (adult)
   SAY NAME1 @9048 SAY NAME2 @9048
   WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~C0_INTELLECT_DEVOURER~))
@@ -201,6 +204,9 @@ COPY ~silverrealms/cre/AC#OSYL1.cre~ ~override/AC#OSYL1.cre~
 
     COPY_EXISTING ~AC#OSYL1.cre~ ~override~
     WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#OSYLUTH~))
+
+COPY ~silverrealms/cre/AC#ILDDF.cre~ ~override~
+  SAY NAME1 @12 SAY NAME2 @12
 
 COPY ~silverrealms/cre/ac#dr1.cre~ ~override/ac#dr1.cre~
   SAY NAME1 @12 SAY NAME2 @12

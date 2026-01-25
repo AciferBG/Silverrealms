@@ -37,3 +37,19 @@ THEN
         ForceSpell(LastSeenBy(Myself),MIND_FLAYER_DOMINATION)  // SPIN975.SPL (Paranormale Beherrschung)
 END
 
+IF
+    AttackedBy([GOODCUTOFF],DEFAULT)
+    !Allegiance(Myself,ENEMY)
+THEN
+    RESPONSE #100
+        Enemy()
+END
+
+IF
+    ActionListEmpty()
+    See(NearestEnemyOf(Myself))
+THEN
+    RESPONSE #100
+        AttackReevaluate(NearestEnemyOf(Myself),6)
+END
+

@@ -7,9 +7,9 @@ THEN
 		TextScreen("AC#MOS27")
 		OpenDoor("Door06")
 		AmbientActivate("Eyesocket01",FALSE)
-                AmbientActivate("Eyesocket02",FALSE)
-                TriggerActivation("Info_Boats",FALSE)
-                TriggerActivation("TrACIL27",FALSE)
+        AmbientActivate("Eyesocket02",FALSE)
+        TriggerActivation("Info_Boats",FALSE)
+        TriggerActivation("TrACIL27",FALSE)
 		AmbientActivate("Smoke_wood",FALSE)		
 		FadeFromColor([30.0],0)
 END

@@ -529,16 +529,16 @@ END
 					
 						IF ~~ THEN BEGIN back_to_borthun
 						SAY ~Aber zurück zu Borthuns Buch. Er hat genaue Aufzeichnungen über seine Entdeckungen in den Ländern des Lichts geführt. Es würde mich wundern, wenn er dort nicht diesen Ort, den Mith Barak besucht hat, erwähnt hätte.~
-						++ ~Dann brauchen wir also nur in seinem Tagebuch nachzuschauen, wo sich dieser Drachenfriedhof befindet?~ + check_borthuns_diary
+						++ ~Dann brauchen wir also nur in seiner Chronik nachzuschauen, wo sich dieser Drachenfriedhof befindet?~ + check_borthuns_diary
 						END
 			
 							IF ~~ THEN BEGIN check_borthuns_diary
-							SAY ~Eigentlich schon. Nur leider befindet sich das Tagebuch nicht in dieser Bibliothek.~
+							SAY ~Eigentlich schon. Nur leider befindet sich die Chronik nicht in dieser Bibliothek.~
 							++ ~Warum nicht?~ + why_diary_not_here	
 							END
 				
 								IF ~~ THEN BEGIN why_diary_not_here
-								SAY ~Es befindet sich im Besitz von Clan Diamantklinge. Borthun war Angehöriger dieses Clans, und bevor er zu seiner letzten Reise an die Oberfläche aufbrach, vermachte er das Tagebuch seinem Sohn, dem Urgroßvater von Anthan Diamantklinge, des Priesters in der Uralten Schmiede. Anthan rückt es nicht heraus, weil er es als Schande für seine Familie ansieht, dass ein Zwerg an die Oberfläche strebt. Darum gab es schon lange Zeit Streit zwischen Mith Barak und Anthan, dem Clanältesten.~
+								SAY ~Es befindet sich im Besitz von Clan Diamantklinge. Borthun war Angehöriger dieses Clans, und bevor er zu seiner letzten Reise an die Oberfläche aufbrach, vermachte er die Chronik seinem Sohn, dem Urgroßvater von Anthan Diamantklinge, des Priesters in der Uralten Schmiede. Anthan rückt es nicht heraus, weil er es als Schande für seine Familie ansieht, dass ein Zwerg an die Oberfläche strebt. Darum gab es schon lange Zeit Streit zwischen Mith Barak und Anthan, dem Clanältesten.~
 								++ ~Mith Barak hat sich mit Anthan gestritten?~ + dont_know_anthan	
 								END
 								
@@ -547,7 +547,7 @@ END
 									=
 									~*Dornar* Mith Barak machte keinen Hehl daraus, dass er Borthuns Aufzeichnungen gerne in die Bibliothek aufgenommen hätte, aber Anthan hat sich strikt geweigert. Sie haben sich damals wohl so geeinigt, dass Mith Barak das besagte Buch im Tempel Moradins lesen durfte. Dies hatte mir Beldas erzählt, bevor Mith Barak nicht mehr aus seinem Schlaf erwachte. Ich hatte es damals so verstanden, dass Beldas gemeinsam mit Mith Barak das Buch studiert hatte und sich deshalb umso mehr bemüßigt fühlte, an der Oberfläche nach einem "Heilmittel" für Mith Baraks Schlaf zu suchen.~ 
 									= 
-									~Dass Mith Barak vielleicht selbst genau aus diesem Grunde ebenfalls in Borthuns Aufzeichnungen nachschlagen wollte, kam mir bis jetzt nicht in den Sinn. Aber so könnte es gewesen sein! Wenn Ihr also glaubt, dass in diesem Buch hilfreiche Anmerkungen zu Mith Baraks Schlaf enthalten sein könnten, müsstet Ihr Anthan überzeugen, Euch dasselbe Zugeständnis zu gewähren, Euch einen Blick in Borthuns Tagebuch werfen zu lassen.~
+									~Dass Mith Barak vielleicht selbst genau aus diesem Grunde ebenfalls in Borthuns Aufzeichnungen nachschlagen wollte, kam mir bis jetzt nicht in den Sinn. Aber so könnte es gewesen sein! Wenn Ihr also glaubt, dass in diesem Buch hilfreiche Anmerkungen zu Mith Baraks Schlaf enthalten sein könnten, müsstet Ihr Anthan überzeugen, Euch dasselbe Zugeständnis zu gewähren, Euch einen Blick in Borthuns Chronik werfen zu lassen.~
 									=
 									~Das wird nur alles andere als einfach, denn unter den Bewohnern Iltkazars gilt Anthan als der Sturste.~
 									IF ~~ THEN + tell_anthan_about_beldas

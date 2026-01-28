@@ -39,6 +39,14 @@ Dialog mit Drow Vhaerauns-Anführer
 
 BEGIN ~AC#24DAE~
 
+IF ~Global("AC#25PactLolthPriestess","GLOBAL",2)~ THEN BEGIN hello_traitor_pact_lolth
+SAY ~Denkt Ihr, ich weiß nicht längst, was Ihr vorhabt, *og'elend*? Meine Späher haben mir bereits von Eurem Verrat berichtet, welcher Euch teuer zu stehen kommen wird!~
+IF ~~ THEN DO ~SetGlobal("Drowfight","ACIL24",1)
+SetGlobal("AC#25_LolthPriestess","GLOBAL",10)
+SetGlobal("AC#25PactLolthPriestess","GLOBAL",3)
+Enemy()~ EXIT
+END
+
 IF ~GlobalGT("AC#25_LolthPriestess","GLOBAL",0)~ THEN BEGIN whats_up_with_priestess
 SAY ~Na was ist? Habt Ihr das Lolth-Kälbchen schon überzeugen können?~
 IF ~~ THEN REPLY ~Noch nicht, aber ich arbeite daran.~ + not_finished_yet

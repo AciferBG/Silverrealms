@@ -1,0 +1,34 @@
+IF
+    OR(3)
+        See([GOODCUTOFF])
+        AttackedBy([GOODCUTOFF],DEFAULT)
+        HitBy([GOODCUTOFF],CRUSHING)
+THEN
+    RESPONSE #100
+        Shout(89)
+        Continue()
+END
+
+IF
+    See([GOODCUTOFF])
+    Global("Shriek","LOCALS",1)
+    GlobalTimerExpired("Shrieking","LOCALS")
+THEN
+    RESPONSE #100
+        SetGlobal("ShriekerAttractMonster","ACIL20",1)
+        SetGlobalTimer("Shrieking","LOCALS",2)
+        PlaySound("SHRIE04A")
+        SetSequence(SEQ_CAST)
+END
+
+IF
+    See([GOODCUTOFF])
+    Global("Shriek","LOCALS",0)
+THEN
+    RESPONSE #100
+        SetGlobal("Shriek","LOCALS",1)
+        SetGlobalTimer("Shrieking","LOCALS",2)
+        PlaySound("SHRIE04A")
+        SetSequence(SEQ_CAST)
+END
+

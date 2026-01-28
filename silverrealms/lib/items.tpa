@@ -3,6 +3,10 @@
 
 COPY ~silverrealms/itm/copy~         ~override~
 
+COPY ~%MOD_FOLDER%/itm/AC#ILVHA.itm~         ~override~    // holy symbol Vhaeraun
+  SAY NAME2 @8102
+  SAY DESC @8103
+
 COPY ~%MOD_FOLDER%/itm/AC#ILNEH.itm~         ~override~    // Neothelid duergar helmet
   SAY NAME2 @8100
   SAY DESC @8101

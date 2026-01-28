@@ -2,6 +2,9 @@
 
 COPY ~silverrealms/cre/copy~         ~override~
 
+COPY ~silverrealms/cre/AC#ILSHR.cre~ ~override~ // Shrieker
+  SAY NAME1 @9050 SAY NAME2 @9050
+
 COPY ~silverrealms/cre/AC#ILSKU.cre~ ~override~ // Skulk
   SAY NAME1 @9049 SAY NAME2 @9049
 

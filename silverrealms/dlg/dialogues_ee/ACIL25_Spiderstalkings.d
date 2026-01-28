@@ -51,8 +51,30 @@ Dialog mit Zilna Khaven-Ghell
 
 BEGIN ~AC#DROW6~
 
+IF ~GlobalGT("AC#25PactLolthPriestess","GLOBAL",0)~ THEN BEGIN hello_killed_vhaeraun
+SAY ~Da seid Ihr ja wieder, <PRO_RACE>. Habt Ihr mir das verfluchte Symbol dieses Vhaeraun-Priesters mitgebracht?~
+IF ~PartyHasItem("AC#ILVHA")~ THEN REPLY ~Ja, hier ist es.~ DO ~TakePartyItem("AC#ILVHA") DestroyItem("AC#ILVHA")~ GOTO yes_vhaeraun_symbol
+IF ~~ THEN REPLY ~Nein, noch nicht.~ GOTO no_vhaeraun_symbol_yet
+END
+
+				IF ~~ THEN BEGIN no_vhaeraun_symbol_yet
+				SAY ~Dann solltet Ihr Euch besser beeilen! Meine Rasse ist nicht für ihre Geduld mit Euch *iblith* bekannt.~
+				IF ~~ THEN EXIT 
+				END
+				
+							IF ~~ THEN BEGIN yes_vhaeraun_symbol
+							SAY ~Exzellent! Unsere Arbeit hier ist also getan.~
+							=
+							~Habt Dank für Eure Hilfe, <RACE>. Nicht viele können von sich behaupten, dass ihnen eine Ilharess gnädig gesonnen war. Hier, *iblith*, für Eure Mühen, eine kleine Belohnung. Mehr seid Ihr nicht wert. Wir werden in unsere Stadt zurückkehren und unseren Sieg feiern. Gehen wir!~
+							IF ~~ THEN DO ~
+							SetGlobal("AC#25_LolthPriestess","GLOBAL",20)
+							SetGlobal("AC#25PactLolthPriestess","GLOBAL",10)
+							AddJournalEntry(@62030,QUEST_DONE)~ EXIT
+							END
+
+
 IF ~~ THEN BEGIN hey_you
-SAY ~Ihr da, <RACE>! Was habt Ihr hier zu schaffen?~
+SAY ~Ihr da, <PRO_RACE>! Was habt Ihr hier zu schaffen?~
 // IF ~~ THEN REPLY ~Das Gleiche könnte ich Euch fragen.~ + same_question
 IF ~~ THEN REPLY ~Noch mehr Drow? Mit Euch werde ich genau so leicht fertig wie mit den anderen!~ EXTERN ~AC#DROW8~ more_drow
 END
@@ -69,6 +91,7 @@ END
 		SAY ~Ihr erwähntet, dass Ihr hier noch andere unserer Rasse begegnet seid. Was ist mit ihnen geschehen?~
 		IF ~!IsValidForPartyDialog("Minsc")~ THEN REPLY ~Ich habe sie alle getötet.~ + killed_all_drow
 		IF ~IsValidForPartyDialog("Minsc")~ THEN REPLY ~Ich habe sie alle getötet.~ EXTERN ~MINSCJ~ Minsc_confused	
+		IF ~~ THEN REPLY ~Sie verstecken sich in einem zerfallenen Tempel südlich von hier.~ EXTERN AC#DROW6 chain_tell_about_vhaeraun_01
 		END
 		
 				IF ~~ THEN BEGIN drow_minsc_confused_01
@@ -107,7 +130,6 @@ END
 							~Habt Dank für Eure Hilfe, <RACE>. Nicht viele können von sich behaupten, dass ihnen eine Ilharess gnädig gesonnen war. Wir werden in unsere Stadt zurückkehren und Euch nicht weiter behelligen.~
 							IF ~~ THEN DO ~
 							SetGlobal("AC#25_LolthPriestess","GLOBAL",3)
-							EraseJournalEntry(@62025)
 							AddJournalEntry(@62026,QUEST)
 							//CreateVisualEffectObject("SPDIMNDR",Myself)
 							//Wait(1)
@@ -119,10 +141,54 @@ END
 // CHAIN
 // ---------------------------------------
 CHAIN IF ~NumTimesTalkedTo(0)~ THEN AC#DROW8 chain_see_pc
-~Seht, Ilharess Khaven-Ghell! Eine Gruppe mit einem <RACE> von der Oberfläche! Zieht Eure Schwerter, Männer!~
+~Seht, Ilharess Khaven-Ghell! Eine Gruppe mit einem <PRO_RACE> von der Oberfläche! Zieht Eure Schwerter, Männer!~
 == AC#DROW6 ~Beruhigt Euch, *sargtlin*. Vielleicht können uns diese *ryld* von Nutzen sein.~
 END
 IF ~~ THEN EXTERN ~AC#DROW6~ hey_you
+
+CHAIN AC#DROW6 chain_tell_about_vhaeraun_01
+~Was? Dann ist es tatsächlich wahr, dass sich die *dobluth* hier verkrochen haben? Was haben sie Euch gesagt?~
+END
+IF ~~ THEN REPLY ~Ich soll Euch glauben machen, dass ich sie alle getötet habe und Euch diese Leiche übergeben.~ DO ~TakePartyItem("AC#DDRO2") DestroyItem("AC#DDRO2")~ EXTERN ~AC#DROW6~ chain_tell_about_vhaeraun_02
+
+	CHAIN AC#DROW6 chain_tell_about_vhaeraun_02
+	~Das ist ein Magier aus Sshamath, den Ihr mir da präsentiert. Aber die meisten Drow halten sich versteckt, sagt Ihr? Vhaeraun-Anhänger, nehme ich an?~
+	END
+	IF ~~ THEN REPLY ~Was ist Euch diese Information wert?~ EXTERN ~AC#DROW6~ chain_what_info_worth
+	
+		CHAIN AC#DROW6 chain_what_info_worth
+		~Mir? Nichts. Aber Euch Euer Leben, *pera'dene*. Und meine Gunst. Also sprecht schnell, wenn Ihr überhaupt eine Belohnung in Erwägung zieht.~
+		END
+		IF ~~ THEN REPLY ~Sie verstecken sich in einem entweihten Tempel Lolths.~ EXTERN ~AC#DROW6~ chain_tell_about_vhaeraun_03
+		
+		CHAIN AC#DROW6 chain_tell_about_vhaeraun_03
+		~*Cha'kohk*!~
+		== AC#DROW8 ~Sollen wir in diesen Tempel marschieren und die Abtrünnigen vernichten, Ilharess?~
+		== AC#DROW6 ~Nein. Das wird unser neuer *abbil* hier für uns erledigen.~
+		= ~Ihr da, <PRO_RACE>! Euch wird die Ehre zuteil, diese Häretiker auszuschalten! Kehrt mit dem Symbol des Vhaeraun-Priesters, an das er sich so verzweifelt klammert, als Beweis für Eure gute Tat zu mir zurück. Neben meiner Gunst werdet Ihr eine fürstliche Belohnung erhalten.~
+		END
+		IF ~~ THEN REPLY ~Ich werde Euch nicht enttäuschen.~ EXTERN ~AC#DROW6~ chain_yes_kill_vhaeraun_not_disappoint
+		IF ~~ THEN REPLY ~Ist so gut wie erledigt.~ EXTERN ~AC#DROW6~ chain_yes_kill_vhaeraun
+		IF ~~ THEN REPLY ~Ich weiß nicht...~ EXTERN ~AC#DROW6~ chain_no_kill_vhaeraun
+		
+			CHAIN AC#DROW6 chain_no_kill_vhaeraun
+			~Wie dumm seid Ihr eigentlich? Ihr habt mir von ihnen erzählt, also werdet Ihr sie auch für mich töten.~
+			END
+			IF ~~ THEN EXTERN ~AC#DROW6~ chain_yes_kill_vhaeraun 
+			
+			CHAIN AC#DROW6 chain_yes_kill_vhaeraun_not_disappoint
+			~Natürlich werdet Ihr das.~
+			END
+			IF ~~ THEN EXTERN ~AC#DROW6~ chain_yes_kill_vhaeraun 
+		
+		CHAIN AC#DROW6 chain_yes_kill_vhaeraun
+		~Jetzt verschwindet und kümmert Euch um diese Vhaerauniten!~
+		END
+		IF ~~ THEN DO ~SetGlobal("AC#25PactLolthPriestess","GLOBAL",1)
+		AddJournalEntry(@62028,QUEST)~ EXIT
+
+
+
 
 //----------------------------------------
 // NPCs

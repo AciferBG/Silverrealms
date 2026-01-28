@@ -2,8 +2,10 @@ IF
 	Global("EnteredArea","ACIL64",0)
 THEN
 	RESPONSE #100
-		SetGlobal("EnteredArea","ACIL64",1)
+		SetMusic(NIGHT,%AC#IL56%)
+		SetMusic(DAY,%AC#IL56%)		
 		TriggerActivation("Tracil63",FALSE)
+		SetGlobal("EnteredArea","ACIL64",1)	
 END
 
 IF

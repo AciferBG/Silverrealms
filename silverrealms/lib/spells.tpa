@@ -2,6 +2,9 @@
 
 COPY ~silverrealms/spl/copy~         ~override~
 
+COPY ~silverrealms/spl/AC#ILSH.spl~          ~override~ // shrieker shriek
+SAY NAME1 @1149 SAY NAME2 @1149
+
 ADD_PROJECTILE      ~silverrealms/pro/AC#HEZRU.PRO~ // Hezrou stench projectile
 COPY ~silverrealms/spl/AC#HEZR.spl~            ~override~  // Hezrou stench
   SAY NAME1 @1142

@@ -185,7 +185,6 @@ END
 				SAY ~Ihr könnt sie in der Nähe der Spalte, die wieder zu Ravimors Höhle hinaufführt, verwenden. Sobald Ihr die Scheibe dort ablegt, wird sie zu schweben beginnen und Euch an die Oberfläche bringen - und bei Bedarf wieder zurück zu uns, versteht sich. Denn ich hoffe, dass Ihr bald zurückkehrt!~
 				++ ~Ich danke Euch, Ellhimar.~ DO ~SetGlobal("AC#BackToSurface","GLOBAL",6)
 				EraseJournalEntry(@64210)
-				EraseJournalEntry(@20803)
 				AddJournalEntry(@64211,QUEST_DONE)~ + give_driftdisc_exit
 				END
 				

@@ -1,102 +1,111 @@
 IF
-	Range([PC],12)
-	NumTimesTalkedTo(0)
-	See([PC])
+    Range([PC],12)
+    NumberOfTimesTalkedTo(0)
+    See([PC])
 THEN
-	RESPONSE #100
-		StartDialogNoSet([PC])
+    RESPONSE #100
+        StartDialogueNoSet([PC])
 END
 
 IF
-	OR(3)
-		AttackedBy([GOODCUTOFF],DEFAULT)
-		Allegiance("AC#24DR1",ENEMY)
-		Allegiance("AC#24MDF",ENEMY)
-	Allegiance(Myself,NEUTRAL)
+
+    See([PC])
+    Global("AC#25PactLolthPriestess","GLOBAL",2)
 THEN
-	RESPONSE #100
-		SetGlobal("Drowfight","ACIL24",1)
-		SetGlobal("AC#25_LolthPriestess","GLOBAL",10)
-		Enemy()
+    RESPONSE #100
+        StartDialogueNoSet([PC])
 END
 
 IF
-	See(NearestEnemyOf(Myself))
-	HPPercentLT(Myself,50)
-	Global("Gaerscloak","LOCALS",0)
+    OR(3)
+        AttackedBy([GOODCUTOFF],DEFAULT)
+        Allegiance("AC#24DR1",ENEMY)  // Drow-Krieger
+        Allegiance("AC#24MDF",ENEMY)  // Qall
+    Allegiance(Myself,NEUTRAL)
 THEN
-	RESPONSE #100
-		SetGlobal("Gaerscloak","LOCALS",1)
-		ReallyForceSpellRES("AC#24GC",Myself)  // Cloak of Gaer
-END
-
-// Gating in the Marilith only if level oder difficulty is appropriate
-IF
-	OR(2)
-		LevelGT(Player1,12)
-		Difficulty(HARDEST)
-	See(NearestEnemyOf(Myself))
-	HPPercentLT(Myself,30)
-	Global("Gaerscloak","LOCALS",1)
-	HaveSpellRES("AC#GATM")
-THEN
-	RESPONSE #100
-		SpellRES("AC#GATM",Myself)  //AC#GATM.SPL (Gate: Marilith)
+    RESPONSE #100
+        SetGlobal("Drowfight","ACIL24",1)
+        SetGlobal("AC#25_LolthPriestess","GLOBAL",10)
+        Enemy()
 END
 
 IF
-	HitBy([ANYONE],MISSILE)
-	HaveSpell(CLERIC_PHYSICAL_MIRROR)
+    See(NearestEnemyOf(Myself))
+    HPPercentLT(Myself,50)
+    Global("Gaerscloak","LOCALS",0)
 THEN
-	RESPONSE #100
-		Spell(Myself,CLERIC_PHYSICAL_MIRROR)  // SPPR613.SPL (Materiespiegel) 
+    RESPONSE #100
+        SetGlobal("Gaerscloak","LOCALS",1)
+        ReallyForceSpellRES("AC#24GC",Myself)  // Gaers Mantel
 END
 
 IF
-	See(NearestEnemyOf(Myself))
-	HaveSpell(CLERIC_CHANT)
+    OR(2)
+        LevelGT(Player1,12)
+        Difficulty(HARDEST)
+    See(NearestEnemyOf(Myself))
+    HPPercentLT(Myself,30)
+    Global("Gaerscloak","LOCALS",1)
+    HaveSpellRES("AC#GATM")  // Tor
 THEN
-	RESPONSE #100
-		Spell(Myself,CLERIC_CHANT)  // SPPR203.SPL (Gesang)
+    RESPONSE #100
+        SpellRES("AC#GATM",Myself)  // Tor
 END
 
 IF
-	See(NearestEnemyOf(Myself))
-	HaveSpell(CLERIC_CLOAK_OF_FEAR)  // SPPR416.SPL (Mantel der Furcht)
+    HitBy([ANYONE],MISSILE)
+    HaveSpell(CLERIC_PHYSICAL_MIRROR)  // SPPR613.SPL (Materiespiegel)
 THEN
-	RESPONSE #100
-		Spell(Myself,CLERIC_CLOAK_OF_FEAR)  // SPPR416.SPL (Mantel der Furcht)
+    RESPONSE #100
+        Spell(Myself,CLERIC_PHYSICAL_MIRROR)  // SPPR613.SPL (Materiespiegel)
 END
 
 IF
-	See(NearestEnemyOf(Myself))
-	HaveSpell(CLERIC_FLAME_STRIKE)  // SPPR503.SPL (Flammenschlag)
+    See(NearestEnemyOf(Myself))
+    HaveSpell(CLERIC_CHANT)  // SPPR203.SPL (Gesang)
 THEN
-	RESPONSE #100
-		Spell(NearestEnemyOf(Myself),CLERIC_FLAME_STRIKE)  // SPPR503.SPL (Flammenschlag)
+    RESPONSE #100
+        Spell(Myself,CLERIC_CHANT)  // SPPR203.SPL (Gesang)
 END
 
 IF
-	See(NearestEnemyOf(Myself))
-	HaveSpell(CLERIC_HOLD_PERSON)  // SPPR208.SPL (Personen festhalten)
-	!StateCheck(LastSeenBy(Myself),STATE_HELPLESS)
+    See(NearestEnemyOf(Myself))
+    HaveSpell(CLERIC_CLOAK_OF_FEAR)  // SPPR416.SPL (Mantel der Furcht)
 THEN
-	RESPONSE #100
-		Spell(NearestEnemyOf(Myself),CLERIC_HOLD_PERSON)  // SPPR208.SPL (Personen festhalten)
+    RESPONSE #100
+        Spell(Myself,CLERIC_CLOAK_OF_FEAR)  // SPPR416.SPL (Mantel der Furcht)
 END
 
 IF
-	See(NearestEnemyOf(Myself))
-	HaveSpell(CLERIC_TRUE_SIGHT)  // SPPR505.SPL (Wahrer Blick)
+    See(NearestEnemyOf(Myself))
+    HaveSpell(CLERIC_FLAME_STRIKE)  // SPPR503.SPL (Flammenschlag)
 THEN
-	RESPONSE #100
-		Spell(NearestEnemyOf(Myself),CLERIC_TRUE_SIGHT)  // SPPR505.SPL (Wahrer Blick)
+    RESPONSE #100
+        Spell(NearestEnemyOf(Myself),CLERIC_FLAME_STRIKE)  // SPPR503.SPL (Flammenschlag)
 END
 
 IF
-	See(NearestEnemyOf(Myself))
+    See(NearestEnemyOf(Myself))
+    HaveSpell(CLERIC_HOLD_PERSON)  // SPPR208.SPL (Personen festhalten)
+    !StateCheck(LastSeenBy(Myself),STATE_HELPLESS)
 THEN
-	RESPONSE #100
-		EquipMostDamagingMelee()
-		AttackReevaluate(NearestEnemyOf(Myself),15)
+    RESPONSE #100
+        Spell(NearestEnemyOf(Myself),CLERIC_HOLD_PERSON)  // SPPR208.SPL (Personen festhalten)
 END
+
+IF
+    See(NearestEnemyOf(Myself))
+    HaveSpell(CLERIC_TRUE_SIGHT)  // SPPR505.SPL (Wahrer Blick)
+THEN
+    RESPONSE #100
+        Spell(NearestEnemyOf(Myself),CLERIC_TRUE_SIGHT)  // SPPR505.SPL (Wahrer Blick)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+THEN
+    RESPONSE #100
+        EquipMostDamagingMelee()
+        AttackReevaluate(NearestEnemyOf(Myself),15)
+END
+

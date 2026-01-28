@@ -3,7 +3,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("EnteredArea","ACIL56",1)
-		SetMusic(NIGHT,%AC#IL56%)
-		SetMusic(DAY,%AC#IL56%)	
+		//SetMusic(NIGHT,%AC#IL56%)
+		//SetMusic(DAY,%AC#IL56%)	
 END
 

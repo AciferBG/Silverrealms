@@ -7,6 +7,24 @@ THEN
 END
 
 IF
+	Global("AC#25PactLolthPriestess","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#25PactLolthPriestess","GLOBAL",2)
+		ActionOverride("AC#24DAE",JumpToPoint([738.914]))
+		ActionOverride("AC#24MDF",JumpToPoint([865.829]))	
+END
+
+IF
+	PartyHasItem("AC#ILVHA")
+	Global("VhaeraunSymbolJournal","ACIL24",0)
+THEN
+	RESPONSE #100
+		SetGlobal("VhaeraunSymbolJournal","ACIL24",1)
+		AddJournalEntry(@62029,QUEST)
+END
+
+IF
 	Global("Letter","ACIL24",0)
 	Dead("AC#24DAE")
 	!PartyHasItem("AC#24DRL")
@@ -58,12 +76,13 @@ IF
 THEN
 	RESPONSE #100
         SetGlobal("Letter","ACIL24",2)
-		EraseJournalEntry(@62025)
-		EraseJournalEntry(@62026)
-		EraseJournalEntry(@23004)
+		//EraseJournalEntry(@62025)
+		//EraseJournalEntry(@62026)
+		//EraseJournalEntry(@23004)
 		AddJournalEntry(@23001,QUEST)
 END
 
+/*
 IF
 	Global("Driftdisc","ACIL24",0)
 	PartyHasItem("AC#DRFT1")
@@ -73,3 +92,4 @@ THEN
 		EraseJournalEntry(@20800)
 		AddJournalEntry(@20801,QUEST)
 END
+*/

@@ -1521,6 +1521,7 @@ Das Buch scheint eine Art magische Aura zu besitzen; es fühlt sich ungewöhnlic
 @1146 = ~Geistige Verwirrung~
 @1147 = ~Giftiger Atem~
 @1148 = ~Drachenalb-Odem~
+@1149 = ~Kreischen~
 
 
 
@@ -2085,6 +2086,15 @@ Rettungswurf Bonus gegen Tod, Verwandlung und Odemwaffe: +1
 Schützt vor kritischen Treffern
 
 Gewicht: 2~
+@8102 = ~Heiliges Symbol Vhaerauns~
+@8103 = ~Dieses Symbol gehörte dem Drow-Priester Daevion'lyr und zeigt die Maske Vhaerauns, geformt aus violett schimmerndem Metall, dessen Oberfläche das Licht zu verschlucken scheint. Die smaragdgrünen Augen wirken wachsam und lauernd, als würden sie jeden beobachten, der sich offen zeigt.
+
+Für einen Priester Vhaerauns ist dieses Symbol mehr als ein Zeichen des Glaubens: Es ist das Bekenntnis zur List, zur Heimlichkeit und zur Freiheit von der Tyrannei Lolths.
+
+EIGENSCHAFTEN:
+
+Gewicht: 1~
+
 
  
 // creature strings
@@ -2138,6 +2148,8 @@ Gewicht: 2~
 @9047 = ~(Stimme in Eurem Kopf)~
 @9048 = ~Intellektverzehrer~
 @9049 = ~Skulk~
+@9050 = ~Schreipilz~
+
 
 
 

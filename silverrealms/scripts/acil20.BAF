@@ -13,7 +13,9 @@ THEN
 		TriggerActivation("Trigger_githrune",FALSE)
 		SpawnPtDeactivate("Central_Spawn_Hard") 
 		SpawnPtDeactivate("North_spawn_hard") 
-		SpawnPtDeactivate("East_spawn_hard") 
+		SpawnPtDeactivate("East_spawn_hard")
+		SpawnPtDeactivate("Mephits") 
+		SpawnPtDeactivate("Elementals")  
 		SetMusic(NIGHT,%AC#IL20%)
 		SetMusic(DAY,%AC#IL20%)	
 		SetGlobal("EnteredArea","ACIL20",1)
@@ -71,6 +73,48 @@ THEN
     RESPONSE #100
 		SpawnPtActivate("East_spawn_hard") 
 		SetGlobal("ChangeEastSpawn","ACIL20",1)
+END
+
+IF
+	Dead("AC#ILSHR")
+    Global("ChangeElementalSpawn","ACIL20",0)
+THEN
+    RESPONSE #100
+		SpawnPtActivate("Mephits") 
+		SpawnPtActivate("Elementals")  
+		SetGlobal("ChangeElementalSpawn","ACIL20",1)
+END
+
+IF
+    Global("CreateShrieker","ACIL20",0)
+THEN
+    RESPONSE #100
+		SetGlobal("CreateShrieker","ACIL20",1)
+		CreateCreatureImpassableAllowOverlap("AC#ILSHR",[493.1264],S) // Shrieker
+END
+
+IF
+    Global("ShriekerAttractMonster","ACIL20",1)
+    Global("ShriekMonstTimerStart","ACIL20",0)
+THEN
+    RESPONSE #100
+        SetGlobal("ShriekerAttractMonster","ACIL20",0)
+        SetGlobal("ShriekMonstTimerStart","ACIL20",1)
+        SetGlobalTimer("ShriekerMonsterTimer","ACIL20",ONE_ROUND)   
+END
+
+IF
+    Global("ShriekerAttractMonster","ACIL20",1)
+    Global("ShriekMonstTimerStart","ACIL20",1)
+    GlobalTimerExpired("ShriekerMonsterTimer","ACIL20")
+THEN
+    RESPONSE #100
+        SetGlobal("ShriekerAttractMonster","ACIL20",0)
+        SetGlobalTimer("ShriekerMonsterTimer","ACIL20",ONE_ROUND)
+        CreateCreatureOffScreen("AC#IL20S",S)
+        CreateCreatureOffScreen("AC#IL20S",S)
+        CreateCreatureOffScreen("AC#IL20S",S)
+        CreateCreatureOffScreen("AC#IL20S",S)
 END
 
 IF

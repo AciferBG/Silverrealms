@@ -110,6 +110,7 @@ Ich habe den Spielzeugdrachen in der Höhle gefunden, das Monster besiegt und so
 @20402   = ~Der Spielzeugdrache
 
 Ich habe dem Jungen seinen Holzdrachen zurückgebracht und dafür ein Buch über Drachentöter erhalten.~
+/*
 @20800  = ~Zurück an die Oberfläche
 
 In den Spinnenschächten könnte sich mit etwas Glück eine ominöse Schwebescheibe der Drow befinden, mit deren Hilfe ich wieder zurück an die Oberfläche schweben könnte.~
@@ -122,6 +123,7 @@ Ich soll Bettargh in der Bibliothek um Rat fragen, wie ich die Drow-Schwebeschei
 @20803  = ~Zurück an die Oberfläche
 
 Bettargh weiß auch nicht weiter. Meine letzte Hoffnung ist, den Magier Ellhimar dazu zu bringen, die Schwebescheibe zu verzaubern.~
+*/
 //___________________________Suche nach Iltkazar
 @21002   = ~Ein Weg ins Unterreich
 
@@ -449,15 +451,24 @@ Turbaern Ghalmrin hat es abgelehnt, den Siegelstein für die Spinnenschächte he
 Ich habe den Schlüsselstein für das Tor in die Spinnenschächte erhalten und sollte nun in diesem Gebiet nach Antworten auf den mysteriösen Schlaf König Mith Baraks suchen.~
 // Im Netz der Spinne
 @62025  = ~Im Netz der Spinne
+
 Ich habe in den Spinnenschächten Daevion'lyr, einen Priester Vhaerauns getroffen, der von einer Priesterin Lolths gesucht wird. Ich soll der Priesterin die Leiche eines toten Drow geben und sie glauben lassen, ich hätte alle Dunkelelfen in diesem Gebiet getötet.~
 @62026  = ~Im Netz der Spinne
+
 Die Lolth-Priesterin hat den Köder geschluckt. Ich sollte zu Daevion'lyr zurückkehren und von meinem Erfolg berichten.~
 @62027  = ~Im Netz der Spinne
-Die Vhaeraun-Anbeter ziehen weiter an die Oberfläche. Ich hoffe, ich werde den Entschluss, ihnen dabei geholfen zu haben, nicht irgendwann bereuen.~
-//___________________________Barakuir
-@62030  = ~Barakuir
 
-Nachdem es nicht geklappt hat, den Weg in die Spinnenschächte freizugeben, soll ich nun nach einem Weg nach "Barakuir" suchen, auch wenn mir der Rat nicht sagen wollte, worum es sich dabei überhaupt handelt. Bettargh Abgrundlied in der Halle der Runensteine, der großen Bibliothek Dugmarens, ist mein Ansprechpartner.~
+Die Vhaeraun-Anbeter ziehen weiter an die Oberfläche. Ich hoffe, ich werde den Entschluss, ihnen dabei geholfen zu haben, nicht irgendwann bereuen.~
+@62028  = ~Im Netz der Spinne
+
+Ich habe mich auf die Seite der Lolth-Priesterin geschlagen und zugestimmt, die Anhänger Vhaerauns für sie zu töten. Ich soll mit dem heiligen Symbol Vhaerauns zu ihr zurückkehren, um eine Belohnung zu erhalten.~
+@62029  = ~Im Netz der Spinne
+
+Der Vhaeraun-Priester Daevion'lyr ist tot und ich habe sein heiliges Symbol an mich genommen. Dieses muss ich jetzt zurück zu der Drow-Priesterin im Norden der Spinnenschächte bringen..~
+@62030  = ~Im Netz der Spinne
+
+Ich habe der Lolth-Priesterin das heilige Symbol Vhaerauns übergeben.~
+//___________________________Barakuir
 @62031  = ~Barakuir
 
 Es scheint wohl Aufzeichnungen zu geben, wo dieses Barakuir liegen könnte. Ich soll den Aufseher namens Jorboud Hornfinger am zentralen Schacht der Bibliothek um Hilfe bitten.~

@@ -270,9 +270,7 @@ END
 		
 			IF ~~ THEN BEGIN driftdisc_not_working
 			SAY ~Das hatte ich befürchtet. Fragt am Besten einmal Bettargh um Rat, wie man den Gegenstand wieder in Gang setzen kann.~
-			IF ~~ THEN DO ~SetGlobal("AC#RepairDriftdisc","GLOBAL",1)
-			EraseJournalEntry(@20801)
-			AddJournalEntry(@20802,QUEST)~ EXIT 
+			IF ~~ THEN DO ~SetGlobal("AC#RepairDriftdisc","GLOBAL",1)~ EXIT 
 			END
 	
 		IF ~~ THEN BEGIN yes_back_to_surface_whats_clans_parting

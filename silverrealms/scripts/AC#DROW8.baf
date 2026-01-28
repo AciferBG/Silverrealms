@@ -1,8 +1,0 @@
-IF
-	GlobalGT("AC#25_LolthPriestess","GLOBAL",2)
-THEN
-	RESPONSE #100
-            CreateVisualEffectObject("SPDIMNDR",Myself)
-	    	Wait(1)
-	        DestroySelf()
-END

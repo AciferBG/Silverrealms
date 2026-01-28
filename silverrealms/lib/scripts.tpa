@@ -521,9 +521,6 @@ COMPILE ~silverrealms/scripts/AC#QUAG1.baf~
 
 COMPILE ~silverrealms/scripts/AC#20DRW.baf~
 
-COMPILE ~silverrealms/scripts/AC#DROW1.baf~
-COMPILE ~silverrealms/scripts/AC#DROW2.baf~
-
 COMPILE ~silverrealms/scripts/AC#20GIT.baf~
 COPY_EXISTING ~AC#20GIT.bcs~   ~override/AC#20GIT.bcs~
        REPLACE ~999999~ @311

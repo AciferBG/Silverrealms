@@ -1,0 +1,112 @@
+IF
+    See(NearestEnemyOfType([0.0.0.MAGE_ALL]))
+    Global("Darkness","LOCALS",0)
+    !StateCheck(LastSeenBy(Myself),STATE_HELPLESS)
+    !StateCheck(LastSeenBy(Myself),STATE_BLIND)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+    RESPONSE #100
+        ReallyForceSpellRES("AC#GDRK",LastSeenBy(Myself))  // Kugel der Dunkelheit
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        SetGlobal("Darkness","LOCALS",1)
+END
+
+IF
+    See(NearestEnemyOfType([0.0.0.CLERIC_ALL]))
+    Global("Darkness","LOCALS",0)
+    !StateCheck(LastSeenBy(Myself),STATE_HELPLESS)
+    !StateCheck(LastSeenBy(Myself),STATE_BLIND)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+    RESPONSE #100
+        ReallyForceSpellRES("AC#GDRK",LastSeenBy(Myself))  // Kugel der Dunkelheit
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        SetGlobal("Darkness","LOCALS",1)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    Global("Darkness","LOCALS",0)
+    !StateCheck(LastSeenBy(Myself),STATE_HELPLESS)
+    !StateCheck(LastSeenBy(Myself),STATE_BLIND)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+    RESPONSE #100
+        ReallyForceSpellRES("AC#GDRK",LastSeenBy(Myself))  // Kugel der Dunkelheit
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        SetGlobal("Darkness","LOCALS",1)
+END
+
+IF
+    OR(3)
+        See(NearestEnemyOfType([0.0.0.FIGHTER_ALL]))
+        See(NearestEnemyOfType([0.0.0.PALADIN_ALL]))
+        See(NearestEnemyOfType([0.0.0.RANGER_ALL]))
+    Global("FaerieFire","LOCALS",0)
+    !StateCheck(LastSeenBy(Myself),STATE_BLIND)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+    RESPONSE #100
+        ReallyForceSpellRES("AC#ILFF",LastSeenBy(Myself))  // Feenfeuer
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        SetGlobal("FaerieFire","LOCALS",1)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    Global("FaerieFire","LOCALS",0)
+    !StateCheck(LastSeenBy(Myself),STATE_BLIND)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+    RESPONSE #100
+        ReallyForceSpellRES("AC#ILFF",LastSeenBy(Myself))  // Feenfeuer
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        SetGlobal("FaerieFire","LOCALS",1)
+END
+
+IF
+    HPPercentLT(Myself,50)
+    HasItem("POTN52",Myself)  // Konzentrierter Heiltrank
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+    RESPONSE #100
+        UseItem("POTN52",Myself)  // Konzentrierter Heiltrank
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    !StateCheck(LastSeenBy(Myself),STATE_HELPLESS)
+    !Range(NearestEnemyOf(Myself),5)
+THEN
+    RESPONSE #100
+        EquipRanged()
+        AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+    See([GOODCUTOFF])
+    Range(NearestEnemyOf(Myself),12)
+    StateCheck(LastSeenBy(Myself),STATE_HELPLESS)
+THEN
+    RESPONSE #100
+        EquipMostDamagingMelee()
+        AttackReevaluate(LastSeenBy(Myself),6)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    Range(NearestEnemyOf(Myself),5)
+THEN
+    RESPONSE #100
+        EquipMostDamagingMelee()
+        AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+    AttackedBy([ANYONE],DEFAULT)
+THEN
+    RESPONSE #100
+        AttackReevaluate(LastAttackerOf(Myself),30)
+END
+

@@ -6,15 +6,13 @@ THEN
 END
 
 IF
-	Global("Spawndriders","acil26",0)
+    LevelPartyGT(12)
+    Global("Spawndriders","acil26",0)
 THEN
-	RESPONSE #100
-		SetGlobal("Spawndriders","acil26",1)
-		CreateCreature("ac#dr1",[647.360],14)
-		CreateCreature("ac#dr1",[813.370],14)
-		CreateCreature("ac#dr1",[386.477],10)
-		CreateCreature("ac#dr2",[320.500],2)
-		CreateCreature("ac#dr2",[1037.519],10)
-		CreateCreature("ac#dr2",[824.605],2)
+    RESPONSE #100
+        SetGlobal("Spawndriders","acil26",1)
+        CreateCreature("AC#ILDR2",[320.500],SW)  // Spinnenelf
+        CreateCreature("AC#ILDR2",[1037.519],NE)  // Spinnenelf
+        CreateCreature("AC#ILDR2",[824.605],SW)  // Spinnenelf
 END
 

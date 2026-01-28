@@ -1,0 +1,122 @@
+IF
+    See(NearestEnemyOf(Myself))
+    HaveSpell(WIZARD_STONE_SKIN)  // SPWI408.SPL (Steinhaut)
+    Global("Prep","LOCALS",0)
+THEN
+    RESPONSE #70
+        ApplySpell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Steinhaut)
+        Spell(Myself,WIZARD_MIRROR_IMAGE)  // SPWI212.SPL (Spiegelbild)
+        SetGlobal("Prep","LOCALS",1)
+    RESPONSE #100
+        Continue()
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    HaveSpell(WIZARD_HASTE)  // SPWI305.SPL (Hast)
+    !StateCheck(Myself,STATE_HASTED)
+    CheckStat(Myself,0,IMPROVEDHASTE)
+THEN
+    RESPONSE #80
+        Spell(Myself,WIZARD_HASTE)  // SPWI305.SPL (Hast)
+    RESPONSE #100
+        Continue()
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    HaveSpell(WIZARD_WEB)  // SPWI215.SPL (Netz)
+THEN
+    RESPONSE #100
+        Spell(NearestEnemyOf(Myself),WIZARD_WEB)  // SPWI215.SPL (Netz)
+    RESPONSE #100
+        Continue()
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    HaveSpell(WIZARD_STONE_SKIN)  // SPWI408.SPL (Steinhaut)
+    CheckStatLT(Myself,1,STONESKINS)
+THEN
+    RESPONSE #100
+        Spell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Steinhaut)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    HaveSpell(WIZARD_CHAOS)  // SPWI508.SPL (Chaos)
+    HaveSpell(WIZARD_FIRE_SHIELD_RED)  // SPWI418.SPL (Roter Feuerschild)
+THEN
+    RESPONSE #100
+        Spell(NearestEnemyOf(Myself),WIZARD_CHAOS)  // SPWI508.SPL (Chaos)
+        Spell(Myself,WIZARD_FIRE_SHIELD_RED)  // SPWI418.SPL (Roter Feuerschild)
+    RESPONSE #100
+        Continue()
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    HaveSpell(WIZARD_TELEPORT_FIELD)  // SPWI421.SPL (Teleportationsfeld)
+THEN
+    RESPONSE #30
+        Spell(Myself,WIZARD_TELEPORT_FIELD)  // SPWI421.SPL (Teleportationsfeld)
+    RESPONSE #100
+        Continue()
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    HaveSpell(WIZARD_CONFUSION)  // SPWI401.SPL (Verwirrung)
+    !StateCheck(LastSeenBy(Myself),STATE_CONFUSED)
+THEN
+    RESPONSE #80
+        Spell(NearestEnemyOf(Myself),WIZARD_CONFUSION)  // SPWI401.SPL (Verwirrung)
+    RESPONSE #100
+        Continue()
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    HaveSpell(WIZARD_LIGHTNING_BOLT)  // SPWI308.SPL (Blitzstrahl)
+THEN
+    RESPONSE #100
+        Spell(NearestEnemyOf(Myself),WIZARD_LIGHTNING_BOLT)  // SPWI308.SPL (Blitzstrahl)
+    RESPONSE #100
+        Continue()
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    !StateCheck(LastSeenBy(Myself),STATE_HELPLESS)
+    HaveSpell(WIZARD_HOLD_PERSON)  // SPWI306.SPL (Personen festhalten)
+THEN
+    RESPONSE #100
+        Spell(NearestEnemyOf(Myself),WIZARD_HOLD_PERSON)  // SPWI306.SPL (Personen festhalten)
+    RESPONSE #100
+        Continue()
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    StateCheck(Myself,STATE_SILENCED)
+    HaveSpell(WIZARD_VOCALIZE)  // SPWI219.SPL (Wortloses Zaubern)
+THEN
+    RESPONSE #100
+        Spell(Myself,WIZARD_VOCALIZE)  // SPWI219.SPL (Wortloses Zaubern)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    HaveSpell(WIZARD_CHROMATIC_ORB)  // SPWI118.SPL (Farbkugel)
+THEN
+    RESPONSE #100
+        Spell(NearestEnemyOf(Myself),WIZARD_CHROMATIC_ORB)  // SPWI118.SPL (Farbkugel)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+THEN
+    RESPONSE #100
+        AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+

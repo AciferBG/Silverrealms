@@ -211,6 +211,11 @@ COPY ~silverrealms/cre/AC#OSYL1.cre~ ~override/AC#OSYL1.cre~
 COPY ~silverrealms/cre/AC#ILDDF.cre~ ~override~
   SAY NAME1 @12 SAY NAME2 @12
 
+COPY ~silverrealms/cre/AC#ILDR2.cre~ ~override~
+  SAY NAME1 @12 SAY NAME2 @12
+COPY ~silverrealms/cre/AC#ILDR3.cre~ ~override~
+  SAY NAME1 @12 SAY NAME2 @12
+
 COPY ~silverrealms/cre/ac#dr1.cre~ ~override/ac#dr1.cre~
   SAY NAME1 @12 SAY NAME2 @12
 COPY ~silverrealms/cre/ac#dr2.cre~ ~override/ac#dr2.cre~

@@ -1,0 +1,10 @@
+IF
+    Entered([ANYONE])
+THEN
+    RESPONSE #100
+        DisplayStringHead(Myself,@6042)  
+        CreateCreatureEffect("SPIDGI01","SPFLESHS",[1054.2014],S)  // Riesenspinne
+        CreateCreatureEffect("SPIDGI01","SPFLESHS",[967.1996],S)  // Riesenspinne
+        CreateCreatureEffect("SPIDGI01","SPFLESHS",[979.1954],S)  // Riesenspinne
+END
+

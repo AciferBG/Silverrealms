@@ -1603,6 +1603,7 @@ Diirinka'~
 @6040 = ~Tempel des Moradin~
 
 @6041 = ~Von dem Ältestenhirn ist nur noch eine verkohlte Masse übrig. ES ist für immer zerstört.~
+@6042 = ~Einige Spinnen seilen sich aus großer Höhe zu Euch herab.~
 
 // ACIL58: Hall of Omlars
 
@@ -2094,6 +2095,17 @@ Für einen Priester Vhaerauns ist dieses Symbol mehr als ein Zeichen des Glauben
 EIGENSCHAFTEN:
 
 Gewicht: 1~
+@8104 = ~Spinnenschleier~
+@8105 = ~Dieser Umhang wurde in den Tiefen des Unterreichs aus der Spinnenseide der Drider gewoben. Das Kleidungsstück trägt noch immer die Zauber der Spinnenwesen in sich.
+
+EIGENSCHAFTEN:
+
+RK-Bonus: -4 gg. Geschoss- und Stichwaffenwaffen
+RW-Bonus: +1 Malus gg. Zauber
+Magiewiderstand: +7 %
+Schutz vor Netzen
+
+Gewicht: 3~
 
 
  

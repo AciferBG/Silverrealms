@@ -3,6 +3,10 @@
 
 COPY ~silverrealms/itm/copy~         ~override~
 
+COPY ~%MOD_FOLDER%/itm/AC#ILDRC.itm~         ~override~    // dridersilk
+  SAY NAME2 @8104
+  SAY DESC @8105
+
 COPY ~%MOD_FOLDER%/itm/AC#ILVHA.itm~         ~override~    // holy symbol Vhaeraun
   SAY NAME2 @8102
   SAY DESC @8103

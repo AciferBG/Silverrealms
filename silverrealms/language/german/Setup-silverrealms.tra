@@ -2107,6 +2107,17 @@ Magiewiderstand: +7 %
 Schutz vor Netzen
 
 Gewicht: 3~
+@8106 = ~Ring verstärkten Leids~
+@8107 = ~Drow Ring für Gift
+
+EIGENSCHAFTEN:
+
+Ist der träger vergiftet, erleidet <PRO_HESHE> zusätzliche 10 Schadenspunkte je Runde (Gift)
+RW-Bonus: -1
+
+Gewicht: 0~
+@8108 = ~Letztes Aufbäumen~
+@8109 = ~Dieser Ring wurde an der Hand eines Abenteurers gefunden, dessen Körper noch immer in Spinnenseide eingesponnen ist. In den letzten Atemzügen vor seinem Tod mobilisierte er alle verbleibenden Kräfte, um sich aus dem Netz zu befreien – ein verzweifeltes Aufbäumen gegen das Unvermeidliche. Wer diesen Ring trägt, spürt denselben jähen Ausbruch an Energie… gefolgt von lähmender Erschöpfung.~
 
 
  

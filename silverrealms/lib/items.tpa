@@ -3,7 +3,15 @@
 
 COPY ~silverrealms/itm/copy~         ~override~
 
-COPY ~%MOD_FOLDER%/itm/AC#ILDRC.itm~         ~override~    // dridersilk
+COPY ~%MOD_FOLDER%/itm/AC#ILRI6.itm~         ~override~    // drider haste ring
+  SAY NAME2 @8108
+  SAY DESC @8109
+
+COPY ~%MOD_FOLDER%/itm/AC#ILRI5.itm~         ~override~    // drow poison ring
+  SAY NAME2 @8106
+  SAY DESC @8107
+
+COPY ~%MOD_FOLDER%/itm/AC#ILDRC.itm~         ~override~    // dridersilk cloak
   SAY NAME2 @8104
   SAY DESC @8105
 

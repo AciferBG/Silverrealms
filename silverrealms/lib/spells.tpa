@@ -2,6 +2,12 @@
 
 COPY ~silverrealms/spl/copy~         ~override~
 
+COPY ~silverrealms/spl/AC#ILR6.spl~          ~override~ // drider ring spl file #1
+SAY NAME1 @8108 SAY NAME2 @8108
+
+COPY ~silverrealms/spl/AC#ILDR.spl~          ~override~ // drow ring spl file
+SAY NAME1 @8106 SAY NAME2 @8106
+
 COPY ~silverrealms/spl/AC#ILFF.spl~          ~override~ // faerie fire
 SAY NAME1 @1150 SAY NAME2 @1150
 

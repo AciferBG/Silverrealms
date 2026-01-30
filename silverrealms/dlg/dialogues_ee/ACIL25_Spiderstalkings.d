@@ -65,8 +65,8 @@ END
 							IF ~~ THEN BEGIN yes_vhaeraun_symbol
 							SAY ~Exzellent! Unsere Arbeit hier ist also getan.~
 							=
-							~Habt Dank für Eure Hilfe, <RACE>. Nicht viele können von sich behaupten, dass ihnen eine Ilharess gnädig gesonnen war. Hier, *iblith*, für Eure Mühen, eine kleine Belohnung. Mehr seid Ihr nicht wert. Wir werden in unsere Stadt zurückkehren und unseren Sieg feiern. Gehen wir!~
-							IF ~~ THEN DO ~
+							~Habt Dank für Eure Hilfe, <PRO_RACE>. Nicht viele können von sich behaupten, dass ihnen eine Ilharess gnädig gesonnen war. Hier, *iblith*, für Eure Mühen, eine Belohnung. Mehr seid Ihr nicht wert. Wir werden in unsere Stadt zurückkehren und unseren Sieg feiern. Gehen wir!~
+							IF ~~ THEN DO ~GiveItemCreate("AC#ILRI5",Player1,1,0,0)
 							SetGlobal("AC#25_LolthPriestess","GLOBAL",20)
 							SetGlobal("AC#25PactLolthPriestess","GLOBAL",10)
 							AddJournalEntry(@62030,QUEST_DONE)~ EXIT
@@ -127,7 +127,7 @@ END
 							IF ~~ THEN BEGIN whats_next_04
 							SAY ~Das ist mir alles egal. Wir haben den Leichnam eines Magiers aus dieser Männerstadt. Das dürfte meiner Mutter genügen. Ich kann es mir nicht erlauben, hier noch länger zu verweilen, während dieses Miststück Zollgarza zuhause an meinem Stuhl sägt.~
 							=
-							~Habt Dank für Eure Hilfe, <RACE>. Nicht viele können von sich behaupten, dass ihnen eine Ilharess gnädig gesonnen war. Wir werden in unsere Stadt zurückkehren und Euch nicht weiter behelligen.~
+							~Habt Dank für Eure Hilfe, <PRO_RACE>. Nicht viele können von sich behaupten, dass ihnen eine Ilharess gnädig gesonnen war. Wir werden in unsere Stadt zurückkehren und Euch nicht weiter behelligen.~
 							IF ~~ THEN DO ~
 							SetGlobal("AC#25_LolthPriestess","GLOBAL",3)
 							AddJournalEntry(@62026,QUEST)

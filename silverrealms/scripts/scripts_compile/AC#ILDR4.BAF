@@ -1,9 +1,38 @@
 IF
-    See(NearestEnemyOf(Myself))
-    HaveSpell(CLERIC_DISPEL_MAGIC)  // SPPR303.SPL (Magie bannen)
+    Allegiance(Myself,ENEMY)
+    Detect([PC])
+    !See(LastSeenBy(Myself))
+    HaveSpell(CLERIC_INVISIBILITY_PURGE)  // SPPR309.SPL (Unsichtbarkeit aufheben)
 THEN
     RESPONSE #100
-        Spell(LastSeenBy(Myself),CLERIC_DISPEL_MAGIC)  // SPPR303.SPL (Magie bannen)
+        Spell(Myself,CLERIC_INVISIBILITY_PURGE)  // SPPR309.SPL (Unsichtbarkeit aufheben)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    OR(2)
+        See("AC#IL26S")  // Riesenspinne
+        See("AC#IL26K")  // Kleine Spinne
+    HaveSpell(CLERIC_CHANT)  // SPPR203.SPL (Gesang)
+THEN
+    RESPONSE #100
+        Spell(LastSeenBy(Myself),CLERIC_CHANT)  // SPPR203.SPL (Gesang)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    HaveSpell(CLERIC_CHANT)  // SPPR203.SPL (Gesang)
+THEN
+    RESPONSE #100
+        Spell(Myself,CLERIC_CHANT)  // SPPR203.SPL (Gesang)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    HaveSpell(CLERIC_DEFENSIVE_HARMONY)  // SPPR406.SPL (Koordinierte Verteidigung)
+THEN
+    RESPONSE #100
+        Spell(Myself,CLERIC_DEFENSIVE_HARMONY)  // SPPR406.SPL (Koordinierte Verteidigung)
 END
 
 IF
@@ -83,46 +112,6 @@ IF
 THEN
     RESPONSE #100
         Spell(NearestEnemyOf(Myself),CLERIC_HOLD_PERSON)  // SPPR208.SPL (Personen festhalten)
-END
-
-IF
-    See(NearestEnemyOf(Myself))
-    See(NearestMyGroupOfType)
-    HPPercentLT(LastSeenBy(Myself),60)
-    HaveSpell(CLERIC_CURE_SERIOUS_WOUNDS)  // SPPR401.SPL (Schwere Wunden heilen)
-THEN
-    RESPONSE #100
-        Spell(LastSeenBy(Myself),CLERIC_CURE_SERIOUS_WOUNDS)  // SPPR401.SPL (Schwere Wunden heilen)
-END
-
-IF
-    See(NearestEnemyOf(Myself))
-    See(NearestMyGroupOfType)
-    HPPercentLT(LastSeenBy(Myself),10)
-    HaveSpell(CLERIC_HEAL)  // SPPR607.SPL (Heilung)
-THEN
-    RESPONSE #100
-        Spell(LastSeenBy(Myself),CLERIC_HEAL)  // SPPR607.SPL (Heilung)
-END
-
-IF
-    See(NearestEnemyOf(Myself))
-    !Range(LastSeenBy(Myself),4)
-    HPPercentLT(Myself,60)
-    HaveSpell(CLERIC_CURE_SERIOUS_WOUNDS)  // SPPR401.SPL (Schwere Wunden heilen)
-THEN
-    RESPONSE #100
-        Spell(Myself,CLERIC_CURE_SERIOUS_WOUNDS)  // SPPR401.SPL (Schwere Wunden heilen)
-END
-
-IF
-    See(NearestEnemyOf(Myself))
-    !Range(LastSeenBy(Myself),4)
-    HPPercentLT(Myself,10)
-    HaveSpell(CLERIC_HEAL)  // SPPR607.SPL (Heilung)
-THEN
-    RESPONSE #100
-        Spell(Myself,CLERIC_HEAL)  // SPPR607.SPL (Heilung)
 END
 
 IF

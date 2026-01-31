@@ -335,7 +335,7 @@ IF ~GlobalGT("AC#IL_Spiderstalkings","GLOBAL",0)
 GlobalLT("AC#IL_Spiderstalkings","GLOBAL",20)~ THEN BEGIN hello_spiderstalkings_after_vronia
   SAY ~Vronia hat uns berichtet, dass Ihr Turbaern doch überzeugen konntet, den Schlüssel für die Spinnenschächte herauszurücken. Was habt Ihr dort gefunden?~
   IF ~Global("AC#EnteredSpiderstalkings","GLOBAL",1) !PartyHasItem("AC#ILMBJ")~ THEN REPLY ~Ich war dort, konnte aber noch nichts herausfinden, was mit dem Schlaf des Königs zusammenhängt.~ GOTO spiderstalkings_no_result
-	IF ~PartyHasItem("AC#ILMBJ")~ THEN REPLY ~Ich habe dort diese Aufzeichnungen Mith Baraks gefunden.~ DO ~SetGlobal("AC#IL_Spiderstalkings","GLOBAL",20)~ DO ~TakePartyItem("AC#ILMBJ") DestroyItem("AC#ILMBJ")~ EXTERN ~AC#CHEM1~ chain_spiderstalkings_01 
+	IF ~PartyHasItem("AC#ILMBJ")~ THEN REPLY ~Ich habe diese Aufzeichnungen Mith Baraks gefunden.~ DO ~SetGlobal("AC#IL_Spiderstalkings","GLOBAL",20)~ DO ~TakePartyItem("AC#ILMBJ") DestroyItem("AC#ILMBJ")~ EXTERN ~AC#CHEM1~ chain_spiderstalkings_01 
 	IF ~~ THEN REPLY ~Noch nichts.~ GOTO spiderstalkings_no_result
 END	
 
@@ -1340,6 +1340,7 @@ IF ~~ THEN REPLY ~In einem alten Tempel Selunes und Clangeddins.~ EXTERN ~AC#GRO
 	== AC#ELER1 ~Er wurde wohl gebaut, als wir Zwerge noch aufgeschlossener anderen Rassen und Religionen gegenüberstanden.~
 	END
 	IF ~~ THEN REPLY ~Mith Barak schien sich dort gemütlich eingerichtet zu haben, um Ruhe vor Euch allen zu haben.~ EXTERN ~AC#TORT1~ chain_spiderstalkings_03
+	IF ~~ THEN REPLY ~Euer König wollte dort ungestört seine Nachforschungen betreiben.~ EXTERN ~AC#TORT1~ chain_spiderstalkings_03
 	
 		CHAIN IF ~~ THEN AC#TORT1 chain_spiderstalkings_03
 		~Der König hielt sich öfter in diesem Gebiet auf?~
@@ -1351,28 +1352,31 @@ IF ~~ THEN REPLY ~In einem alten Tempel Selunes und Clangeddins.~ EXTERN ~AC#GRO
 		== AC#FENY1 ~Was bei Gorm hat er denn dort gesucht?~
 		== AC#DUN01 ~Das weiß ich nicht.~
 		END
-		IF ~~ THEN REPLY ~Euer König suchte wohl eine Art Portal in die Astralebene, wurde aber in dem alten Tempel der Spinnenschächte nicht fündig.~ EXTERN ~AC#CHEM1~ chain_spiderstalkings_04
+		IF ~~ THEN REPLY ~Euer König suchte auf eigene Faust Erlösung von seinem Schlaf. Es muss sich bei dem Schlaf um einen Fluch handeln.~ EXTERN ~AC#CHEM1~ chain_spiderstalkings_04
 		
 			CHAIN IF ~~ THEN AC#CHEM1 chain_spiderstalkings_04
-			~In die Astralebene? Das wird ja immer wilder.~
+			~Ein Fluch? Das wird ja immer wilder.~
 			== AC#RUVA1 ~Wisst Ihr etwas darüber, Dunnabar?~
 			== AC#DUN01 ~Nein, Bruder.~
 			== AC#ELER1 ~Was habt Ihr dazu zu sagen, <CHARNAME>?~
 			END
-			IF ~~ THEN REPLY ~Mith Barak war wohl überzeugt, dass in den alten Zwergenreichen irgendwo ein Portal in die Astralebene existiert haben musste. Sein nächstes Ziel war Barakuir.~ EXTERN ~AC#FENY1~ chain_spiderstalkings_barakuir_01
+			IF ~~ THEN REPLY ~Mith Barak suchte nach altem Wissen, um das, was er den Fluch nannte, zu lösen. Sein nächstes Ziel war Barakuir.~ EXTERN ~AC#FENY1~ chain_spiderstalkings_barakuir_01
 			
 				CHAIN IF ~~ THEN AC#FENY1 chain_spiderstalkings_barakuir_01
 				~Frevelei! Dieser Name... wurde schon seit Jahrhunderten nicht mehr laut ausgesprochen!~
-				== AC#RUVA1 ~Aus gutem Grund! Dieses Wort ist verflucht, genau wie der Clan, der diesen Ort bewohnte!~
+				== AC#RUVA1 ~Aus gutem Grund! Dieses Wort ist verflucht, genau wie wohl unser König; und dieser Clan, der einst diesen Ort bewohnte!~
 				== AC#VRON1 ~Und dennoch wollte Mith Barak genau diesen Ort besuchen. Seht, er hat es hier selbst geschrieben.~
-				== AC#TORT1 ~Wenn unser König der Meinung war, dass genau an diesem Ort sein... mysteriöser Zustand geheilt werden könnte, sollten wir dem nachgehen.~
+				== AC#TORT1 ~Wenn unser König der Meinung war, dass genau an diesem Ort sein mysteriöser Zustand - sein Fluch - geheilt werden könnte, sollten wir dem nachgehen.~
 				== AC#VRON1 ~Denn dass der König selbst nach einer Lösung für seine Schlafenszyklen suchte, ist nach dem Lesen seiner Niederschriften offensichtlich.~
+				== AC#GROM1 ~Hmm...~
 				== AC#GROM1 ~Wenn das Wasser in einen Minenschacht eindringt, kann man entweder Mauern oder Wasserräder bauen. Wir entscheiden uns nun für Letzteres. Wenn es Hinweise gibt, wie wir unserem König helfen könnten, dann vielleicht an diesem verfluchten Ort.~
 				END
+				IF ~~ THEN REPLY ~Also gut, dann geht dorthin.~ EXTERN ~AC#GROM1~ chain_should_i_travel_to_xy
 				IF ~~ THEN REPLY ~Ich nehme an, dass Ihr erwartet, dass ich zu diesem Ort reisen soll?~ EXTERN ~AC#GROM1~ chain_should_i_travel_to_xy
+				IF ~~ THEN REPLY ~Diesen Weg nehme ich gerne auf mich, um in der Suche weiterzukommen.~ EXTERN ~AC#GROM1~ chain_should_i_travel_to_xy
 				
 				CHAIN IF ~~ THEN AC#GROM1 chain_should_i_travel_to_xy
-				~Auch, wenn die Geschehnisse an diesem Ort schon lange zurückliegen, würde kein Zwerg unseres Reiches jemals wieder einen Fuß auf diesen unheiligen Boden setzen. Deshalb bitten wir Euch, <CHARNAME>, dies für unsere Stadt zu tun. Dies wäre die beste Spur, die wir derzeit haben.~
+				~Selbst wenn die Geschehnisse an diesem Ort schon lange zurückliegen, würde kein Zwerg unseres Reiches jemals wieder einen Fuß auf diesen unheiligen Boden setzen. Deshalb bitten wir Euch, <CHARNAME>, dies für unsere Stadt zu tun. Dies wäre die beste Spur, die wir derzeit haben.~
 				== AC#ELER1 ~Auch wenn mich der Gedanke daran graust, könnte der Vorschlag Gromis wirklich die beste Entscheidung sein. Die Wege an diesen Ort schienen lange Zeit verloren, doch mein Clan hatte in der Abgrundliedhalle Aufzeichnungen darüber - welche ich bereits gelesen habe.~
 				== AC#STUR1 ~Ihr habt Euch schon das Wissen über B... über diesen Ort angeeignet?~
 				== AC#ELER1 ~Ja. Oder ist sonst jemand von Euch auf die Idee gekommen, nachzuforschen, woher der Gedankenschinder in Ellhimars Spiegel gekommen sein könnte?~
@@ -1383,7 +1387,8 @@ IF ~~ THEN REPLY ~In einem alten Tempel Selunes und Clangeddins.~ EXTERN ~AC#GRO
 				~Moradin stehe uns bei! Drow und Illithiden haben sich gegen uns verschworen!~
 				== AC#TORT1 ~Wo sind die Drow jetzt, <CHARNAME>?~
 				END
-				IF ~~ THEN REPLY ~Sie sind weitergezogen, an die Oberfläche.~ EXTERN ~AC#RUVA1~ chain_illithids_vhaeraun_02
+				IF ~!Dead("AC#24DAE")~ THEN REPLY ~Sie sind weitergezogen, an die Oberfläche.~ EXTERN ~AC#RUVA1~ chain_illithids_vhaeraun_02
+				IF ~ Dead("AC#24DAE")~ THEN REPLY ~Ich habe sie getötet.~ EXTERN ~AC#RUVA1~ chain_illithids_vhaeraun_02
 				
 				CHAIN IF ~~ THEN AC#RUVA1 chain_illithids_vhaeraun_02
 				~Dann stellen sie keine Gefahr mehr für uns dar.~

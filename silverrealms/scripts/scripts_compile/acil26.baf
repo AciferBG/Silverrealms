@@ -5,6 +5,7 @@ THEN
 		DisplayString(Myself,@7) // Der Boden und die W�nde des gesamten Raumes sind mit zahlreichen Spinnennetzen �berzogen. Die Netze sind ungew�hnlich dick und stammen von keiner Spinne, die Ihr kennt.
 END
 
+/*
 IF
     LevelPartyGT(12)
     Global("Spawndriders","acil26",0)
@@ -15,4 +16,5 @@ THEN
         CreateCreature("AC#ILDR2",[1037.519],NE)  // Spinnenelf
         CreateCreature("AC#ILDR2",[824.605],SW)  // Spinnenelf
 END
+*/
 

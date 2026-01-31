@@ -3,6 +3,10 @@
 
 COPY ~silverrealms/itm/copy~         ~override~
 
+COPY ~%MOD_FOLDER%/itm/AC#ILEBL.itm~         ~override~    // elder brain lobe part
+  SAY NAME2 @8110
+  SAY DESC @8111
+
 COPY ~%MOD_FOLDER%/itm/AC#ILRI6.itm~         ~override~    // drider haste ring
   SAY NAME2 @8108
   SAY DESC @8109
@@ -801,7 +805,7 @@ COPY ~silverrealms/itm/AC#25TEL.itm~         ~override~  // drow teleportation r
   SAY UNIDENTIFIED_DESC @8014
   SAY DESC @8015
   
-COPY ~silverrealms/itm/ac#23ell.itm~         ~override~ //Ellhimar's Journal
+COPY ~silverrealms/itm/AC#23ELL.itm~         ~override~ //Ellhimar's notes
   SAY NAME2 @8016
   SAY DESC @8017
 

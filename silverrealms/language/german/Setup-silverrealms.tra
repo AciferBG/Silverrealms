@@ -1705,8 +1705,9 @@ SPEZIFISCHE EIGENSCHAFTEN:
 Der Anwender kann sich dreimal täglich an einen Ort in seiner Sichtweite teleportieren.
 Die Wirkung des Steines ist auf die Spinnenschächte begrenzt.
 ~
-@8016 = ~Ellhimars Tagebuch~
-@8017 = ~Dies ist das Tagebuch des Magiers Ellhimar aus Iltkazar. Er scheint es hier verloren zu haben, als er von den Drow überwältigt worden ist. Es ist in einer feinen, akkuraten Handschrift verfasst. Ihr blättert viele Seiten nach hinten, um Euch auf das Wesentliche - Ellhimars Erkenntnisse über den schlafenden König - zu konzentrieren.
+@8016 = ~Ellhimars Notizen~
+@8017 = ~Dies sind Notizen des Magiers Ellhimar aus Iltkazar. Er scheint es hier verloren zu haben, als er von den Drow überwältigt worden ist. Es ist in einer feinen, akkuraten Handschrift verfasst.
+
 23. Alturiak 1367, im Jahr des Schildes
 Der König ist nicht zu der errechneten Zeit aus seinem Schlaf erwacht. In den ersten Wochen, die seitdem verstrichen sind, hat sich die Zwergengemeinde noch keine großen Sorgen gemacht. Dies ist nun, seit der zweite Monat verstrichen ist, anders. Ganz Iltkazar sucht hektisch nach einer Möglichkeit, den König aus seinem mysteriösen Zustand zu befreien.
 
@@ -1717,18 +1718,10 @@ Man hat mich endlich zum König vorgelassen. Sein Zustand ist seltsam und beunru
 Die Priester der Zwerge versuchen noch immer, ihren König mit aller verfügbaren Magie zu erwecken. Nichts scheint zu helfen. Auch der Segen ihrer Götter hat keinen Erfolg.
 
 2. Eleint 1367, im Jahr des Schildes
-Ich habe auf eigene Faust Nachforschungen angestellt.  König Mith Barak selbst hatte vor seinem letzten Schlafe versucht, seinen mysteriösen Zustand zu beenden. Berichten der Zwerge zufolge brach er alleine zu einer Expedition in ein Gebiet, das die Zwerge "Spinnenschächte" nennen, auf. Bei seiner Rückkehr ließ er die Eingänge versiegeln. Die Zwerge denken, dass es zu ihrem Schutz sei. Doch ich denke, dass Mith Barak dort etwas hinterlegt hat. Und wenn es nur eine Nachricht ist. Denn die Hinweise für einen Außenstehenden waren zu offensichtlich. Den Zwergen selbst fällt so etwas freilich nicht auf. Man hat fast den Eindruck, als würde Mith Barak seiner eigenen Rasse nicht vertrauen. Warum nur?
-
-17. Uktar, 1367, im Jahr des Schildes
-Ich glaube, ich weiß, warum die Zauber der Priester Iltkazars alle verschwendet sind. Mith Barak ist keiner der ihren. Alles, was ich über ihn finden konnte, nährt diesen Verdacht. Nur was ist er dann?
-
-23. Mirtul 1368, im Jahr des Banners
-Es gibt nur eine Möglichkeit, dem Rätsel um Mith Barak näher zu kommen: Ich werde in die Spinnenschächte aufbrechen und sehen, was Mith Barak dort hinterlassen hat.
+Ich habe auf eigene Faust Nachforschungen angestellt.  König Mith Barak selbst hatte vor seinem letzten Schlafe versucht, seinen mysteriösen Zustand zu beenden. Berichten der Zwerge zufolge brach er alleine zu einer Expedition in ein Gebiet, das die Zwerge "Spinnenschächte" nennen, auf. Bei seiner Rückkehr ließ er die Eingänge versiegeln. Die Zwerge denken, dass es zu ihrem Schutz sei. Doch ich denke, dass Mith Barak dort etwas hinterlegt hat. Man hat fast den Eindruck, als würde Mith Barak den Zwergen nicht ganz vertrauen. Warum nur?
 
 24. Mirtul 1368, im Jahr des Banners
-Ich bin in der Kapelle des Blutigen Mondes angekommen. Ein uralter Tempel zu Ehren eines Menschen- und eines Zwergengottes. Ich bin unglaublich müde, der Zauber zehrt fürchterlich an meinen Kräften. Die Statuen stellen Fragen zur Geschichte der alten Zwergenreiche. Ich habe vier richtig beantwortet. Nun werde ich gleich die letzte Frage beantworten. Ich muss mich nur noch kurz wach halten...
-
-(Hier endet das Tagebuch.)
+Ich bin in der Kapelle des Blutigen Mondes angekommen. Ein uralter Tempel zu Ehren eines Menschen- und eines Zwergengottes. Ich bin unglaublich müde, der Zauber zehrt fürchterlich an meinen Kräften. Die Statuen stellen Fragen zur Geschichte der alten Zwergenreiche. Ich habe vier richtig beantwortet. Nun werde ich gleich die letzte Frage beantworten. Ich muss mich nur noch ausruhen...
 ~
 @8018 = ~Tethirs Mondklinge~
 @8019 = ~Mondklingen werden seit der Zeit des alten Myth Drannor von außergewöhnlichen Helden des elfischen Volkes getragen. Die Schwerter werden meist von einer Generation auf die nächste vererbt. In seltenen Fällen kann die Klinge von einem anderen Elfen geführt werden, wenn der ursprüngliche Besitzer gestorben ist und das Schwert den neuen Träger anerkennt. Dies ist jedoch nur bei gut gesinnten Elfen der Fall. Alle anderen Gesinnungen und Rassen scheitern bei dem Versuch, die Klinge anzuheben.
@@ -2053,28 +2046,25 @@ Rettungswurf: Nein
 Mit diesem Zauber erschafft der Zaubernde eine leicht konkave, kreisförmige Kraftebene, die als Tensers schwebende Scheibe bekannt ist (nach dem berühmten Zauberer, dessen Gier und Fähigkeit, Schätze zu finden, weithin bekannt sind). Die Scheibe hat einen Durchmesser von drei Fuß und hält ein Gewicht von 100 Pfund pro Stufe des Zaubernden. Die Scheibe schwebt etwa einen Meter über dem Boden und bleibt immer waagerecht. Auf Befehl des Zaubernden schwebt sie innerhalb ihrer Reichweite von 20 Metern entlang und bewegt sich mit einer Geschwindigkeit von maximal 6. Wenn der Zaubernde sich außerhalb der Reichweite bewegt (indem er sich schneller bewegt, z.B. durch einen Teleportationszauber), oder wenn die Dauer des Zaubers abläuft, verschwindet die schwebende Scheibe aus dem Dasein und alles, was sie getragen hat, stürzt auf die Oberfläche unter ihr.
 Die Materialkomponente des Zaubers ist ein Tropfen Quecksilber.~
 @8096 = ~Mith Baraks Notizen~
-@8097 = ~Dies sind Notizen, welche Ihr in einer kleinen Kammer in der Halle des Blutmondes gefunden habt. Sie sind eindeutig von König Mith Barak geschrieben.
+@8097 = ~Dies sind Notizen des Zwergenkönigs Mith Barak, welche Ihr in einer kleinen Kammer in der Halle des Blutmondes gefunden habt. 
 
-1.
-Die Ruinen Shanatars schweigen beharrlich. Jeder Stein scheint Wissen zu bergen, doch keiner offenbart mir den gesuchten Übergang. Ich habe die alten Wege geprüft, Runen verglichen, Bruchstücke vergessener Orte rekonstruiert, doch kein Tor antwortet mir.
+1168 DR
+Meine Suche nach Antworten blieb ohne Frucht. Auch hier, in der Halle des Blutmondes, fand ich keinen Weg, den Fluch zu lösen. Dabei ruhte meine Hoffnung auf diesem uralten Tempel, errichtet in einer Zeit, als Zwerge noch offen mit der Oberfläche verkehrten und die alten Götter deutlicher sprachen. Die Magie wirkt ausgedünnt, und die alten Zauber sind derart verändert, dass sie niedere Geschöpfe nur noch müde machen. Nicht mich, den Himmeln sei Dank.
 
-2.
-Auch dieser Ort, die Halle des Blutmondes, trägt die Zeichen einer Schwelle. Selûnes Präsenz ist schwach, fast nur noch Erinnerung. Die Magie hier ist dünn, als habe etwas Größeres sie einst berührt und sei dann weitergezogen. 
+1170 DR
+Diese Halle schenkt mir Ruhe. Fern von Iltkazars Stimmen, fern von Blicken, die fragen, ohne zu verstehen. Hier kann ich denken und rechnen, Erinnerungen ordnen, die älter sind als dieses Reich. Die Stille ist ein Werkzeug, schärfer als jeder Meißel. Ich stand einst nahe daran, einer von ihnen zu sein, und es schmerzt mich, mein wahres Wesen verschweigen zu müssen. Sie würden die Last nicht begreifen – noch die Wege, die zu gehen ich gezwungen bin.
 
-3.
-Ich beginne zu begreifen, dass Shanatar einen Zugang besessen haben muss. Nur wo? Die Zwerge suchten Erz und Stein – sie sahen nie, was zwischen den Welten lag. Doch hier ist kein Portal in die Astralebene. Wo dann?
+1172 DR
+Ich ließ die Spinnenschächte versiegeln. Ein einfacher Entschluss, doch von bleibender Wirkung. Kein Zwerg sucht freiwillig dort, wo Gift, Finsternis und uralte Schrecken hausen und kein Erz zu finden ist. Mein Rückzugsort bleibt verborgen. Was hier geschieht, soll unbeobachtet bleiben.
 
-4.
-Immerhin bietet mir diese Halle Ruhe. Abgeschieden von Iltkazars Stimmen, fern der Fragen und des Misstrauens. Hier kann ich denken, rechnen, verweilen. Die Stille ist ein Werkzeug, schärfer als jeder Meißel.
+1174 DR
+Ich habe die meisten Schriften der großen Bibliothek Iltkazars gelesen. Sie bergen viel Wissen, doch keines weist mir den nächsten Schritt. Der Fluch regt sich stärker; ich spüre, wie er mich erneut in den Schlaf drängen will. Nebenbei las ich von einer Bibliothek an der Oberfläche, deren Wissen selbst dem der Zwerge gleichkommt. Ein Mönch soll dort von einer Prophezeiung gesprochen haben. Dies sollte ich im Hinterkopf behalten. Vielleicht ist mir die Prophezeiung noch eines Tages nützlich.
 
-5.
-Ich habe die Spinnenschächte versiegeln lassen. Ein einfacher, eleganter Entschluss. Kein Zwerg wird freiwillig dort suchen, wo Gift, Dunkelheit und alte Schrecken lauern. Mein Rückzugsort bleibt verborgen, und mein Werk ungestört.
+1270 DR
+Wieder sitze ich in der Abgeschiedenheit meiner Kammer. Doch diesmal habe ich eine Spur. In den Ruinen von Barakuir könnte Wissen bewahrt worden sein, älter als Shanatar selbst – Wissen aus einer Zeit, als die alten Götter noch wandelten. Die Gefahren dort sind zahlreich, doch man kommt nicht weiter, indem man wartet, bis ein Weg ungefährlich ist.
 
-6.
-Ich suche vielleicht wieder am falschen Ort. Vielleicht liegt der Zugang nicht hier, sondern jenseits dessen, was ein Zwerg zu denken wagt. Barakuir, die verlassene Stadt der Duergar, könnte mein nächstes Ziel sein.
-
-7.
-Ich habe nicht mehr viel Zeit. Schon bald werde ich wieder zur Statue erstarrt auf dem Thron sitzen. Dann muss ich in vielen Jahren, wenn ich wieder erwacht bin, weitersuchen. Ich lasse diese Notizen hier, damit ich mich daran erinnern kann, wenn die Zeit gekommen ist. Barakuir soll mein nächstes Ziel sein. Wenn es das Portal in die Astralebene des alten Shanatar wirklich gibt, könnte es dort gelegen sein. Wenn nicht, muss ich weitersuchen. Es gibt noch weitere Unterkönigreiche, die in Frage kommen. Aber Barakuir ist mein nächstes Ziel.~
+1272 DR
+Mir bleibt wenig Zeit. Bald werde ich erneut erstarren, reglos auf dem Thron sitzend. Wenn ich wieder erwache, werden Jahre vergangen sein. Darum hinterlasse ich diese Worte mir selbst. Barakuir soll mein nächstes Ziel sein. Und sollte ich dort scheitern, muss ich weiterziehen – durch die Überreste der Unterkönigreiche, vielleicht sogar jenseits dieser Welt.~
 @8098 = ~Amulett des Salzwahrers~
 @8099 = ~Eigenschaften:~
 @8100 = ~Helm des letzten Gedankens~
@@ -2118,6 +2108,10 @@ RW-Bonus: -1
 Gewicht: 0~
 @8108 = ~Letztes Aufbäumen~
 @8109 = ~Dieser Ring wurde an der Hand eines Abenteurers gefunden, dessen Körper noch immer in Spinnenseide eingesponnen ist. In den letzten Atemzügen vor seinem Tod mobilisierte er alle verbleibenden Kräfte, um sich aus dem Netz zu befreien – ein verzweifeltes Aufbäumen gegen das Unvermeidliche. Wer diesen Ring trägt, spürt denselben jähen Ausbruch an Energie… gefolgt von lähmender Erschöpfung.~
+@8110 = ~Lappen des Ältestenhirns~
+@8111 = ~Dies ist ein stark verfaulter Teil des Hirnlappens des untoten Ältestenhirns von Barakuir. Trotz seines Zustands wirkt dieses Gewebe besser erhalten als der Rest des Organismus und scheint eine eigentümliche, kalte Präsenz auszustrahlen.
+
+Vielleicht haftet diesem Stück noch ein Rest von Erinnerung an – Fragmente dessen, was das Ältestenhirn einst wusste. Sollte Mith Barak hier Spuren hinterlassen haben, ließen sie sich womöglich bergen. Doch auf gewöhnlichem Wege wohl kaum.~
 
 
  

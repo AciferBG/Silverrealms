@@ -4,6 +4,6 @@ IF
 THEN
     RESPONSE #100
         SetGlobal("AC#MithBarakJournal","GLOBAL",1)
-        AddJournalEntry(@23003,QUEST)  
+        AddJournalEntry(@99506,QUEST)  
 END        
 

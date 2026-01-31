@@ -106,10 +106,12 @@ END
 IF
     Global("ShriekerAttractMonster","ACIL20",1)
     Global("ShriekMonstTimerStart","ACIL20",1)
+	GlobalLT("ShriekMonstTimerSTOP","ACIL20",5)
     GlobalTimerExpired("ShriekerMonsterTimer","ACIL20")
 THEN
     RESPONSE #100
         SetGlobal("ShriekerAttractMonster","ACIL20",0)
+		IncrementGlobal("ShriekMonstTimerSTOP","ACIL20",1)
         SetGlobalTimer("ShriekerMonsterTimer","ACIL20",ONE_ROUND)
         CreateCreatureOffScreen("AC#IL20S",S)
         CreateCreatureOffScreen("AC#IL20S",S)

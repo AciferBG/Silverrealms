@@ -80,7 +80,7 @@ COPY ~silverrealms/areas/ACIL24.are~          ~override~
 
 COPY ~silverrealms/areas/ACIL25.are~          ~override~
   WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
-  SAY 0x50d8 @198  // DOOR01 open fail info
+  SAY 0x5260 @198  // DOOR01 open fail info
 
 COPY ~silverrealms/areas/ACIL26.are~          ~override~
   WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type

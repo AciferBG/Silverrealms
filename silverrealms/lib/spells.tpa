@@ -10,6 +10,7 @@ SAY NAME1 @8106 SAY NAME2 @8106
 
 COPY ~silverrealms/spl/AC#ILFF.spl~          ~override~ // faerie fire
 SAY NAME1 @1150 SAY NAME2 @1150
+SAY 0x18e @1150
 
 COPY ~silverrealms/spl/AC#ILSH.spl~          ~override~ // shrieker shriek
 SAY NAME1 @1149 SAY NAME2 @1149

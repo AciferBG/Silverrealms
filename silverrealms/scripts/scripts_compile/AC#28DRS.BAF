@@ -1,0 +1,8 @@
+IF
+    Global("FireballBrain","ACIL28",2)
+THEN
+    RESPONSE #100
+        Spell("AC#IL28E",WIZARD_FIREBALL)  // Untotes Ältestenhirn
+        SetGlobal("FireballBrain","ACIL28",3)
+END
+

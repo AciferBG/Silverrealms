@@ -19,6 +19,21 @@ END
 
 IF
     See(NearestEnemyOf(Myself))
+    Global("SANCTUARY","LOCALS",0)
+    !StateCheck(Myself,STATE_INVISIBLE)
+    !CheckStat(Myself,1,SANCTUARY)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobal("SANCTUARY","LOCALS",1)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        ReallyForceSpell(Myself,CLERIC_SANCTUARY)  // SPPR109.SPL (Heiligtum)
+        SetInterrupt(TRUE)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
     HaveSpell(CLERIC_SANCTUARY)  // SPPR109.SPL (Heiligtum)
     !StateCheck(Myself,STATE_INVISIBLE)
     !CheckStat(Myself,1,SANCTUARY)
@@ -40,100 +55,47 @@ THEN
         SetInterrupt(FALSE)
         SetGlobal("SummonDemon","LOCALS",1)
         SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
-        ForceSpellRES("AC#IL73",NearestEnemyOf(Myself))  // Tor
+        ForceSpellRES("AC#IL73",Myself)  // Tor
         SetInterrupt(TRUE)
-END
-
-IF
-    See(NearestEnemyOf(Myself))
-    HaveSpell(CLERIC_DEATH_WARD)  // SPPR409.SPL (Todesschutz)
-THEN
-    RESPONSE #100
-        Spell(Myself,CLERIC_DEATH_WARD)  // SPPR409.SPL (Todesschutz)
-END
-
-IF
-    HaveSpell(CLERIC_MISCAST_MAGIC)  // SPPR310.SPL (Magie fehlwirken)
-    OR(2)
-        See(NearestEnemyOfType([0.0.0.MAGE_ALL]))
-        See(NearestEnemyOfType([0.0.0.CLERIC_ALL]))
-THEN
-    RESPONSE #100
-        Spell(LastSeenBy(Myself),CLERIC_MISCAST_MAGIC)  // SPPR310.SPL (Magie fehlwirken)
 END
 
 IF
     See(NearestEnemyOf(Myself))
     HaveSpell(CLERIC_BLADE_BARRIER)  // SPPR603.SPL (Klingenbarierre)
     Global("blade","LOCALS",0)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
 THEN
     RESPONSE #100
         Spell(Myself,NPC_BLADE_BARRIER)  // SPPR698.SPL (Klingenbarierre)
         SetGlobal("blade","LOCALS",1)
-END
-
-IF
-    See(NearestEnemyOf(Myself))
-    HaveSpell(CLERIC_SLAY_LIVING)  // SPPR511.SPL (Schneller Tod)
-THEN
-    RESPONSE #100
-        Spell(Myself,CLERIC_SLAY_LIVING)  // SPPR511.SPL (Schneller Tod)
-        SetGlobal("startAttack","LOCALS",1)
-END
-
-IF
-    GlobalLT("startAttack","LOCALS",6)
-THEN
-    RESPONSE #100
-        IncrementGlobal("startAttack","LOCALS",1)
-        AttackOneRound(NearestEnemyOf(Myself))
-END
-
-IF
-    See(NearestEnemyOf(Myself))
-    HaveSpell(CLERIC_CAUSE_SERIOUS_WOUNDS)  // SPPR414.SPL (Schwere Wunden verursachen)
-THEN
-    RESPONSE #100
-        Spell(NearestEnemyOf(Myself),CLERIC_CAUSE_SERIOUS_WOUNDS)  // SPPR414.SPL (Schwere Wunden verursachen)
-END
-
-IF
-    See(NearestEnemyOf(Myself))
-    HaveSpell(CLERIC_CAUSE_CRITICAL_WOUNDS)  // SPPR510.SPL (Kritische Wunden verursachen)
-THEN
-    RESPONSE #100
-        Spell(NearestEnemyOf(Myself),CLERIC_CAUSE_CRITICAL_WOUNDS)  // SPPR510.SPL (Kritische Wunden verursachen)
-END
-
-IF
-    See(NearestEnemyOf(Myself))
-    HPPercentLT(Myself,50)
-    HaveSpell(CLERIC_CURE_MEDIUM_WOUNDS)  // SPPR315.SPL (Mittelschwere Wunden heilen)
-THEN
-    RESPONSE #100
-        Spell(Myself,CLERIC_CURE_MEDIUM_WOUNDS)  // SPPR315.SPL (Mittelschwere Wunden heilen)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
 END
 
 IF
     HaveSpell(CLERIC_SILENCE_15_FOOT)  // SPPR211.SPL (Stille: 4,5 m Radius)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
     OR(2)
         See(NearestEnemyOfType([0.0.0.MAGE_ALL]))
         See(NearestEnemyOfType([0.0.0.CLERIC_ALL]))
 THEN
     RESPONSE #100
         Spell(LastSeenBy(Myself),CLERIC_SILENCE_15_FOOT)  // SPPR211.SPL (Stille: 4,5 m Radius)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
 END
 
 IF
     See(NearestEnemyOf(Myself))
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
     HaveSpell(CLERIC_MENTAL_DOMINATION)  // SPPR405.SPL (Geistige Beherrschung)
 THEN
     RESPONSE #100
         Spell(NearestEnemyOf(Myself),CLERIC_MENTAL_DOMINATION)  // SPPR405.SPL (Geistige Beherrschung)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
 END
 
 IF
     See(NearestEnemyOf(Myself))
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
 THEN
     RESPONSE #100
         AttackReevaluate(NearestEnemyOf(Myself),6)

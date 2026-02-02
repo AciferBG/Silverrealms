@@ -24,6 +24,24 @@ THEN
 END
 
 IF
+    GlobalGT("MindflayersAppear","ACIL28",0)
+    Global("LockDoor05","ACIL28",0)
+THEN
+    RESPONSE #100
+        SetGlobal("LockDoor05","ACIL28",1)
+        CloseDoor("DOOR05")
+        Lock("DOOR05")
+END
+
+IF
+    Global("FireballBrain","ACIL28",1)
+THEN
+    RESPONSE #100
+    CreateCreatureImpassableAllowOverlap("AC#IL28E",[2196.1589],S)  // Untotes Ältestenhirn
+        SetGlobal("FireballBrain","ACIL28",2)       
+END
+
+IF
 	Dead("AC#NEOTH") // EE: Neothelid is killed
 	CombatCounter(0)
 	Global("ElderBrainSpawn","ACIL28",0)

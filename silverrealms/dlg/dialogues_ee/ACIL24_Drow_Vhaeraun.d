@@ -39,6 +39,14 @@ Dialog mit Drow Vhaerauns-Anführer
 
 BEGIN ~AC#24DAE~
 
+IF ~Dead("AC#DROW6")~ THEN BEGIN hello_traitor_dead_lolth
+SAY ~Ihr wart so töricht, Euch gegen meinen PLan zu stellen und habt die Priesterin Lolths getötet, *og'elend*! Unsere Vereinbarung ist hinfällig, und wir werden Euch dem Zorn Vhaerauns aussetzen, bevor wir von hier weiterziehen werden!~
+IF ~~ THEN DO ~SetGlobal("Drowfight","ACIL24",1)
+SetGlobal("AC#25_LolthPriestess","GLOBAL",10)
+SetGlobal("AC#25PactLolthPriestess","GLOBAL",3)
+Enemy()~ EXIT
+END
+
 IF ~Global("AC#25PactLolthPriestess","GLOBAL",2)~ THEN BEGIN hello_traitor_pact_lolth
 SAY ~Denkt Ihr, ich weiß nicht längst, was Ihr vorhabt, *og'elend*? Meine Späher haben mir bereits von Eurem Verrat berichtet, welcher Euch teuer zu stehen kommen wird!~
 IF ~~ THEN DO ~SetGlobal("Drowfight","ACIL24",1)
@@ -164,31 +172,50 @@ END
 		END
 	
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN 1
-SAY ~Ein *colnbluth* in unseren Hallen! Das kann ja nur bedeuten, dass mich Eure haszakkin-Freunde verraten haben, Qall.~
+SAY ~Ein *colnbluth* in unseren Hallen! Das kann ja nur bedeuten, dass mich Eure *haszakkin*-Freunde verraten haben, Qall.~
 IF ~~ THEN EXTERN ~AC#24MDF~ or_your_friend
 END
 
 	IF ~~ THEN BEGIN whatsoever
 	SAY ~Wie dem auch sei, Fremde. Ihr seid ganz offensichtlich hierher gekommen, weil Ihr nach mir gesucht habt. Was wollt Ihr hier?~
 	IF ~~ THEN REPLY ~Was für ein Spiel treibt Ihr hier, Drow?~ + what_game
+	IF ~~ THEN REPLY ~Sagt mir zuerst, was *Ihr* hier zu suchen habt!~ + narbondel
+	IF ~~ THEN REPLY ~Ich suche nach der Ursache für den schlafenden König Iltkazars.~ + straight_to_the_point
+	IF ~~ THEN REPLY ~Ihr habt den Drow-Magier in Iltkazar spionieren lassen!~ + 4
 	END
 	
 		IF ~~ THEN BEGIN what_game
 		SAY ~Spiel? Das beliebteste Spiel im ganzen Unterreich, es heißt "Wissen ist Macht".~
-		=
-		~Ich sehe, Ihr seid nicht der hellste Kristall am Narbondel. Also gut, ich schlage Euch einen Tausch vor.~
+		IF ~~ THEN + narbondel
+		END
+
+		IF ~~ THEN BEGIN narbondel
+		SAY ~Ich sehe, Ihr seid nicht der hellste Kristall am Narbondel. Also gut, ich schlage Euch einen Tausch vor.~
 		IF ~~ THEN REPLY ~Lasst mich raten: Ich soll Euch etwas verraten, was Ihr begehrt, und Ihr verratet mir dafür eines Eurer Geheimnisse.~ + exchange_secrets
+		IF ~~ THEN REPLY ~Was für ein Tausch soll das sein?~ + exchange_secrets
 		END
 
 			IF ~~ THEN BEGIN exchange_secrets
-			SAY ~Das wäre das Naheliegendste, gewiss. Nein, ich schlage Euch etwas anderes vor. *Ich* verrate Euch, warum Ihr hier seid. Und Ihr sagt mir, warum ich hier bin.~
-			IF ~~ THEN REPLY ~Was für einen Sinn soll das denn Bitte haben?~ + what_sense
+			SAY ~Das wäre das Naheliegendste, gewiss. Nein, ich schlage Euch etwas anderes vor.~ 
+			IF ~~ THEN + exchange_secrets_02
+			END
+						
+			IF ~~ THEN BEGIN exchange_secrets_02
+			SAY ~Ich verrate Euch, warum *Ihr* hier seid. Und *Ihr* sagt mir, warum *ich* hier bin.~
+			IF ~~ THEN REPLY ~Was für einen Sinn soll das denn haben?~ + what_sense
+			IF ~~ THEN REPLY ~Dann los, heraus mit der Sprache.~ + straight_to_the_point
+			IF ~~ THEN REPLY ~Nun gut.~ + what_sense
 			END
 			
 				IF ~~ THEN BEGIN what_sense
 				SAY ~Ihr werdet schon sehen. Zu wissen, was man sucht, ist schon die Hälfte der ganzen Jagd.~
 				IF ~~ THEN + 3
 				END
+				
+					IF ~~ THEN BEGIN straight_to_the_point
+					SAY ~Ihr kommt gleich zur Sache. Das gefällt mir. Nun gut.~
+					IF ~~ THEN + 3
+					END
 				
 					IF ~~ THEN BEGIN 3
 					SAY ~Ihr kommt von der Oberfläche und wollt den Zwergen helfen, ihren versteinerten König zu befreien. Ihr habt meinen Kontaktmann in Iltkazar, Caraf'nir, überführt.~
@@ -219,6 +246,8 @@ END
 									IF ~~ THEN BEGIN power
 									SAY ~Die Macht im Unterreich ist ein fragiles Gleichgewicht. Jede Verschiebung könnte sich zu unseren Ungunsten auswirken.~
 									IF ~~ THEN REPLY ~Und das möchten die Priesterinnen Lolths natürlich nicht.~ + lolth_has_no_power
+									IF ~~ THEN REPLY ~Ihr und Eure verdammte Spinnenkönigin mischen sich aber auch überall ein.~ + lolth_has_no_power
+									IF ~~ THEN REPLY ~Und welcher Macht dient Ihr?~ + vhaeraun_flag
 									END
 									
 										IF ~~ THEN BEGIN lolth_has_no_power
@@ -228,8 +257,10 @@ END
 										END
 										
 											IF ~~ THEN BEGIN vhaeraun_flag
-											SAY ~Und seht Ihr die Banner hinter mir? Erkennt Ihr das Symbol?~											
+											SAY ~Seht Ihr die Banner hinter mir? Erkennt Ihr das Symbol?~											
 											IF ~~ THEN REPLY ~Nein.~ + vhaeraun_flag_02
+											IF ~~ THEN REPLY ~Ich bin mir nicht sicher.~ + vhaeraun_flag_02
+											IF ~CheckStatGT(Player1,80,LORE)~ THEN REPLY ~Ich denke, ich habe solche Symbole bereits in meinen Studien in Kerzenburg gesehen. Sie gehören zur Drow-Gottheit Vhaeraun.~ + vhaeraun_flag_02
 											IF ~IsValidForPartyDialog("Viconia")~ THEN EXTERN ~VICONIJ~ viconia_vhaeraun
 											END
 											
@@ -347,10 +378,16 @@ END
 																										IF ~~ THEN BEGIN how_to_convince
 																										SAY ~Lasst sie glauben, Ihr hättet den letzten Drow getötet.~
 																										IF ~~ THEN REPLY ~Und wie wollt Ihr das bewerkstelligen?~ + thats_my_part
+																										IF ~~ THEN REPLY ~Klingt gut.~ + deal_lolth_priest
 																										END
 																										
 																											IF ~~ THEN BEGIN thats_my_part
-																											SAY ~Das soll meine Sorge ein. Bevor ich Euch Näheres berichte, stelle ich Euch die entscheidende Frage: Seid Ihr mit dem Handel einverstanden?~
+																											SAY ~Das soll meine Sorge ein.~ 
+																											IF ~~ THEN REPLY ~Klingt gut.~ + deal_lolth_priest
+																											END
+																											
+																											IF ~~ THEN BEGIN deal_lolth_priest
+																											SAY ~Bevor ich Euch Näheres berichte, stelle ich Euch die entscheidende Frage: Seid Ihr mit dem Handel einverstanden?~
 																											IF ~~ THEN REPLY ~Ja.~ + accept_offer
 																											IF ~~ THEN REPLY ~Ich werde niemals mit einem Drow zusammenarbeiten!~ + dont_accept_offer
 																											END

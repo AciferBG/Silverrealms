@@ -1603,7 +1603,7 @@ Diirinka'~
 //ACIL51: Ancient Forge
 @6040 = ~Tempel des Moradin~
 
-@6041 = ~Von dem Ältestenhirn ist nur noch eine verkohlte Masse übrig. ES ist für immer zerstört.~
+@6041 = ~Von dem Ältestenhirn ist nur noch eine verkohlte Masse übrig. Es ist für immer zerstört.~
 @6042 = ~Einige Spinnen seilen sich aus großer Höhe zu Euch herab.~
 
 // ACIL58: Hall of Omlars
@@ -2073,7 +2073,7 @@ Mir bleibt wenig Zeit. Bald werde ich erneut erstarren, reglos auf dem Thron sit
 EIGENSCHAFTEN:
 
 RK-Bonus: -1
-Weisheit: +1
+Weisheit: -1
 Rettungswurf Bonus gegen Tod, Verwandlung und Odemwaffe: +1
 Schützt vor kritischen Treffern
 
@@ -2112,6 +2112,18 @@ Gewicht: 0~
 @8111 = ~Dies ist ein stark verfaulter Teil des Hirnlappens des untoten Ältestenhirns von Barakuir. Trotz seines Zustands wirkt dieses Gewebe besser erhalten als der Rest des Organismus und scheint eine eigentümliche, kalte Präsenz auszustrahlen.
 
 Vielleicht haftet diesem Stück noch ein Rest von Erinnerung an – Fragmente dessen, was das Ältestenhirn einst wusste. Sollte Mith Barak hier Spuren hinterlassen haben, ließen sie sich womöglich bergen. Doch auf gewöhnlichem Wege wohl kaum.~
+@8112 = ~Diadem der Erwählten~
+@8113 = ~Dieses Diadem ist ein Zeichen göttlicher Gunst Lolths – doch nur für jene, die sie als würdig erachtet.
+Auf dem Kopf eines Mannes wird es zum Instrument der Demütigung.
+
+EIGENSCHAFTEN:
+
+Charisma: +1
+Intelligenz: +1 (nur Frauen)
+Intelligenz: -5 (Männer)
+Schützt vor kritischen Treffern
+
+Gewicht: 2~
 
 
  
@@ -2167,6 +2179,7 @@ Vielleicht haftet diesem Stück noch ein Rest von Erinnerung an – Fragmente de
 @9048 = ~Intellektverzehrer~
 @9049 = ~Skulk~
 @9050 = ~Kreischer~
+@9051 = ~Drow-Magier-Sklave~
 
 
 

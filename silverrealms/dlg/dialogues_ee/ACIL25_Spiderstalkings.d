@@ -32,7 +32,7 @@ Dialog mit Drow-Guard
 BEGIN ~AC#DROW8~
 
 IF ~~ THEN BEGIN more_drow
-SAY ~Für diese Beleidigung werdet Ihr mit Eurem *qu'lith* bezahlen, dreckiger <RACE>!~
+SAY ~Für diese Beleidigung werdet Ihr mit Eurem *qu'lith* bezahlen, dreckiger <PRO_RACE>!~
 IF ~~ THEN  EXTERN ~AC#DROW6~ wait
 END
 
@@ -75,15 +75,25 @@ END
 
 IF ~~ THEN BEGIN hey_you
 SAY ~Ihr da, <PRO_RACE>! Was habt Ihr hier zu schaffen?~
-// IF ~~ THEN REPLY ~Das Gleiche könnte ich Euch fragen.~ + same_question
+IF ~~ THEN REPLY ~Das selbe könnte ich Euch fragen.~ + same_question
 IF ~~ THEN REPLY ~Noch mehr Drow? Mit Euch werde ich genau so leicht fertig wie mit den anderen!~ EXTERN ~AC#DROW8~ more_drow
 END
 
-	IF ~~ THEN BEGIN wait
-	SAY ~Warte, *wael*! Ab jetzt rede *ich* mit diesem Oberflächen-<RACE>.~
+	IF ~~ THEN BEGIN same_question
+	SAY ~Normalerweise würde ich Euch allein für diese Frechheit einen qualvollen Tod bereiten lassen. Doch ich habe nicht viel Zeit, deshalb gebe ich Euch eine zweite Chance.~
 	=
-	~Steht still, Fremdlinge. Ich bin Ilharess Zilna vom Hause Khaven-Ghell. Wir hegen keine bösartigen Absichten gegen Euch, <RACE>.~
+	~Ich bin Ilharess Zilna vom Hause Khaven-Ghell. Wir hegen keine bösartigen Absichten gegen Euch, <PRO_RACE>.~
 	IF ~~ THEN REPLY ~Ich bin <CHARNAME>, und dies sind meine Gefährten.~ + more_drow_2
+	IF ~~ THEN REPLY ~Das ist mir egal. Ich werde Euch trotzdem töten.~ + kill_drow
+	IF ~IsValidForPartyDialog("Jaheira")~ THEN EXTERN ~JAHEIRAJ~ Jaheira_comment_drow
+	END
+	
+	IF ~~ THEN BEGIN wait
+	SAY ~Warte, *wael*! Ab jetzt rede *ich* mit diesem Oberflächen-<PRO_RACE>.~
+	=
+	~Steht still, Fremdlinge. Ich bin Ilharess Zilna vom Hause Khaven-Ghell. Wir hegen keine bösartigen Absichten gegen Euch, <PRO_RACE>.~
+	IF ~~ THEN REPLY ~Ich bin <CHARNAME>, und dies sind meine Gefährten.~ + more_drow_2
+	IF ~~ THEN REPLY ~Das ist mir egal. Ich werde Euch trotzdem töten.~ + kill_drow
 	IF ~IsValidForPartyDialog("Jaheira")~ THEN EXTERN ~JAHEIRAJ~ Jaheira_comment_drow
 	END
 
@@ -92,17 +102,20 @@ END
 		IF ~!IsValidForPartyDialog("Minsc")~ THEN REPLY ~Ich habe sie alle getötet.~ + killed_all_drow
 		IF ~IsValidForPartyDialog("Minsc")~ THEN REPLY ~Ich habe sie alle getötet.~ EXTERN ~MINSCJ~ Minsc_confused	
 		IF ~~ THEN REPLY ~Sie verstecken sich in einem zerfallenen Tempel südlich von hier.~ EXTERN AC#DROW6 chain_tell_about_vhaeraun_01
+		IF ~~ THEN REPLY ~Ich tausche keine Freundlichkeiten mit einer Drow aus! Zeit zu sterben!~ + kill_drow
 		END
 		
 				IF ~~ THEN BEGIN drow_minsc_confused_01
 				SAY ~Was redet Euer Gefährte dort? Erklärt Euch!~
 				IF ~~ THEN REPLY ~Er ist manchmal etwas verwirrt. Minsc, würdet Ihr dieser Dame Euren Tiergefährten zeigen?~ EXTERN ~MINSCJ~ Minsc_show_boo 
+				IF ~~ THEN REPLY ~Mein Gefährte hat Recht. Die von Euch gesuchten Drow verstecken sich in einem zerfallenen Tempel südlich von hier.~ EXTERN AC#DROW6 chain_tell_about_vhaeraun_01
 				END
 		
 			IF ~~ THEN BEGIN killed_all_drow
 			SAY ~Entweder Ihr seid ein Aufschneider oder ein mächtiger Vertreter Eurer Rasse. Im ersteren Fall würden wir Euch töten, im Zweiten würden wir Euch gehen lassen und nicht weiter behelligen. Sprecht also schnell: Habt Ihr irgendwelche Beweise, dass Ihr es hier mit Vertretern unserer Rasse aufnehmen konntet?~
-			IF ~~ THEN REPLY ~Ich habe eine der Leichen hier bei mir. Seht her.~ DO ~TakePartyItem("AC#DDRO2")
-			DestroyItem("AC#DDRO2")~ + have_a_corpse
+			IF ~~ THEN REPLY ~Ich habe eine der Leichen hier bei mir. Seht her.~ DO ~TakePartyItem("AC#DDRO2") DestroyItem("AC#DDRO2")~ + have_a_corpse
+			IF ~~ THEN REPLY ~Die von Euch gesuchten Drow verstecken sich in einem zerfallenen Tempel südlich von hier.~ EXTERN AC#DROW6 chain_tell_about_vhaeraun_01
+			IF ~~ THEN REPLY ~Ich tausche keine Freundlichkeiten mit einer Drow aus! Zeit zu sterben!~ + kill_drow
 			END
 			
 				IF ~~ THEN BEGIN have_a_corpse
@@ -128,12 +141,14 @@ END
 							SAY ~Das ist mir alles egal. Wir haben den Leichnam eines Magiers aus dieser Männerstadt. Das dürfte meiner Mutter genügen. Ich kann es mir nicht erlauben, hier noch länger zu verweilen, während dieses Miststück Zollgarza zuhause an meinem Stuhl sägt.~
 							=
 							~Habt Dank für Eure Hilfe, <PRO_RACE>. Nicht viele können von sich behaupten, dass ihnen eine Ilharess gnädig gesonnen war. Wir werden in unsere Stadt zurückkehren und Euch nicht weiter behelligen.~
-							IF ~~ THEN DO ~
-							SetGlobal("AC#25_LolthPriestess","GLOBAL",3)
-							AddJournalEntry(@62026,QUEST)
-							//CreateVisualEffectObject("SPDIMNDR",Myself)
-							//Wait(1)
-							/*DestroySelf()*/~ EXIT
+							IF ~~ THEN DO ~SetGlobal("AC#25_LolthPriestess","GLOBAL",3)
+							AddJournalEntry(@62026,QUEST)~ EXIT
+							END
+							
+							IF ~~ THEN BEGIN kill_drow
+							SAY ~Was für ein dummer Oberflächen-<PRO_RACE> Ihr doch seid. Legt sich gleich mit einer Ilharess an. Kommt, Männer, zeigen diesem Wurm einmal, wer die Herren des Unterreiches sind!~
+							IF ~~ THEN DO ~Shout(151)
+							Enemy()~ EXIT
 							END
 
 

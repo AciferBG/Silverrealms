@@ -3,6 +3,10 @@
 
 COPY ~silverrealms/itm/copy~         ~override~
 
+COPY ~%MOD_FOLDER%/itm/AC#ILDRD.itm~         ~override~    // lolth diadem for females
+  SAY NAME2 @8112
+  SAY DESC @8113
+
 COPY ~%MOD_FOLDER%/itm/AC#ILEBL.itm~         ~override~    // elder brain lobe part
   SAY NAME2 @8110
   SAY DESC @8111

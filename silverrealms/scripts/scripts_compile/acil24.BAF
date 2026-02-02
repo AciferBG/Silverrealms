@@ -7,7 +7,9 @@ THEN
 END
 
 IF
-	Global("AC#25PactLolthPriestess","GLOBAL",1)
+	OR(2)
+		Dead("AC#DROW6")
+		Global("AC#25PactLolthPriestess","GLOBAL",1)
 THEN
 	RESPONSE #100
 		SetGlobal("AC#25PactLolthPriestess","GLOBAL",2)

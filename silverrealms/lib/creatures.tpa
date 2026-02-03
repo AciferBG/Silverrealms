@@ -24,6 +24,10 @@ COPY ~silverrealms/cre/AC#ILKUP.cre~ ~override~ // Kuo-Toa chief
 
 COPY ~silverrealms/cre/AC#NEO2T.cre~ ~override~  // Telekinesis
 
+COPY ~silverrealms/cre/AC#IL28G.cre~ ~override~  // Undead Elderbrain
+  SAY NAME1 @9046 SAY NAME2 @9046
+  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~INVISIBLE_LARGE_ACIFER~))
+
 COPY ~silverrealms/cre/AC#IL28E.cre~ ~override~  // Undead Elderbrain
   SAY NAME1 @9046 SAY NAME2 @9046
   WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~INVISIBLE_LARGE_ACIFER~))

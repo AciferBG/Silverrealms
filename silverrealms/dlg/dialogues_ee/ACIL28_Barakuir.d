@@ -61,7 +61,7 @@ END
 BEGIN ~AC#IL28F~
 
 CHAIN IF ~NumTimesTalkedTo(0)~ THEN AC#IL28F hello_00
-~(Ein Wesen mit Bewusstsein in diesen Hallen? Das hat es seit tausend Jahren nicht gegeben. Tretet ein, Denkender, und bezwingt den Wächter. Dann werde ich mich Euch offenbaren.)~
+~(Ein Wesen mit Bewusstsein in diesen Hallen? Das hat es seit vielen Jahren nicht gegeben. Tretet ein, Denkender, und bezwingt den Wächter. Dann werde ich mich Euch offenbaren.)~
 END
 IF ~~ THEN REPLY ~Wer seid Ihr?~ EXTERN AC#IL28F who_are_you_bye
 IF ~~ THEN REPLY ~Wer spricht da?~ EXTERN AC#IL28F who_are_you_bye
@@ -388,9 +388,41 @@ CHAIN IF ~NumTimesTalkedTo(0)~ THEN AC#28DRS yes_master
 == AC#28DRS ~Jawohl, Meister. Ein Zauber und seine Existenz ist vorbei. Ich werde es mit meinen Flammen vernichten.~
 END
 IF ~~ THEN DO ~SetGlobal("FireballBrain","ACIL28",1)
-//StartCutSceneMode()
-//StartCutScene("AC#28CT5")
 ~ EXIT 
+
+// encounter with illithids
+BEGIN ~AC#IL28G~
+
+CHAIN IF ~NumTimesTalkedTo(0)~ THEN AC#IL28G hello_00
+~<PRO_RACE>, helft mir! Rettet mich vor den Illithiden!~
+== AC#ULIT2 ~Klammert Euch nicht an diese niedere Kreatur, untote Irrung! Für Euer Dasein habt Ihr nichts als den Tod verdient! Tretet beiseite, <CHARNAME>, und lasst uns dies hier beenden.~
+END
+IF ~~ THEN REPLY ~Nein. Ich werde nicht zulassen, dass Ihr dem Wesen etwas antut.~ EXTERN AC#ULIT2 dont_hurt_brain
+IF ~~ THEN REPLY ~Mir ist es gleich. Tötet es, wenn Ihr müsst.~ EXTERN AC#IL28G i_dont_mind_kill_brain
+
+CHAIN AC#ULIT2 dont_hurt_brain
+~Was? Ihr seid nicht ganz bei Trost, Euch gegen uns zu stellen!~
+END
+IF ~~ THEN REPLY ~Ich meine es ernst.~ EXTERN AC#ULIT2 dont_hurt_brain_02
+IF ~~ THEN REPLY ~Natürlich.~ EXTERN AC#IL28G i_dont_mind_kill_brain
+
+	CHAIN AC#ULIT2 dont_hurt_brain_02
+	~Ihr wollt Euch wirklich auf die Seite dieses Wesens stellen?~
+	=
+	~Wir haben den gleichen Feind, <CHARNAME>. Ihr habt die toten Illithiden bei der Zwergenpatrouille gesehen! Wir wissen von dem schlafenden König.~
+	END
+	IF ~~ THEN REPLY ~Nein. Ich bleibe dabei.~ EXTERN AC#ULIT2 dont_hurt_brain_fight
+	IF ~~ THEN REPLY ~Ihr habt Recht. Also gut, tötet dieses untote Ding.~ EXTERN AC#IL28G i_dont_mind_kill_brain
+
+	CHAIN AC#ULIT2 dont_hurt_brain_fight
+	~So sei es! Es wird uns großes Vergnügen bereiten, Euch als Sklaven in unsere Stadt zu bringen, wo Ihr den Rest Eures armseligen Lebens unter unserer Herrschaft verbringen werdet!~
+	DO ~Shout(89)
+	Enemy()~EXIT	
+	
+	CHAIN AC#IL28G i_dont_mind_kill_brain
+	~Nein! Ich werde das nicht zulassen!~
+	DO ~StartCutSceneMode()
+	StartCutScene("AC#28CT5")~EXIT	
 /*												
 // -------------------------------------------------
 // Ellhimar (mad)

@@ -1,0 +1,9 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CreateCreatureImpassableAllowOverlap("AC#IL28G",[2196.1589],S)  // Untotes Ältestenhirn
+        SetGlobal("FireballBrain","ACIL28",1)
+        EndCutSceneMode()
+END
+

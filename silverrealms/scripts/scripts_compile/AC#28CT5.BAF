@@ -4,7 +4,7 @@ THEN
     RESPONSE #100
         CutSceneId("AC#28DRS")  // Drow-Magier-Sklave
         SetGlobal("AC#IL_KilledElderBrain","GLOBAL",1)
-        ReallyForceSpell("AC#IL28G",WIZARD_FIREBALL)  // Untotes Ältestenhirn
+        ForceSpell("AC#IL28G",WIZARD_FIREBALL)  // Untotes Ältestenhirn
         Kill("AC#IL28G")  // Untotes Ältestenhirn
         CreateVisualEffect("AC#IL54B",[2196.1589])
         ScreenShake([20.20],5)

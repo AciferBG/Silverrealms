@@ -5,6 +5,13 @@ THEN
 		DisplayString(Myself,@7) // Der Boden und die W�nde des gesamten Raumes sind mit zahlreichen Spinnennetzen �berzogen. Die Netze sind ungew�hnlich dick und stammen von keiner Spinne, die Ihr kennt.
 END
 
+IF
+    PartyHasItem("AC#ILBDM")
+    Global("AC#IL_Beardmaker","GLOBAL",1)    
+THEN
+    RESPONSE #100
+        SetGlobal("AC#IL_Beardmaker","GLOBAL",2)
+END
 /*
 IF
     LevelPartyGT(12)

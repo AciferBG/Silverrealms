@@ -296,6 +296,23 @@ Ich habe das Buch gefunden. Nun muss ich es zu Orik am Rande des gro0en Schachts
 @53302  = ~Das verirrte Buch
 
 Ich habe Orik das Buch zurückgegeben. Er ist sogleich in einem Labyrinth verschwunden, welches sich beim Lesen des Buches geöffnet hat.~
+// Bartmacher
+@53400 = ~Iltkazars Bartmacher
+
+In Iltkazar habe ich einen zwergischen Bartmacher kennengelernt. Er bat mich, im Unterreich nach seltenen und interessanten Stoffen Ausschau zu halten. Sollte ich auf etwas stoßen, aus dem man einen Bart machen kann, soll ich es ihm bringen.~
+
+@53401 = ~Iltkazars Bartmacher
+
+In einer Höhle im Unterreich habe ich Drider-Seide gefunden. Iltkazars Bartmacher in Iltkazar sucht nach selten Materialien. Es könnte genau das sein, wonach er sucht.~
+
+@53402 = ~Iltkazars Bartmacher
+
+Ich habe die Drider-Seide übergeben. Iltkazars Bartmacher war zufrieden und möchte mir aus einem Teil der Seide einen Umhang weben. Ich kann diesen nach einem Tag abholen.~
+@53403 = ~Iltkazars Bartmacher
+
+Ich habe mit dem Umhang aus Drider-Seide meine wohlverdiente Belohnung von dem Bartmacher Iltkazars erhalten..~
+
+// Heldengeschichten
 @54100 = ~Heldengeschichten
 
 Ich bin in der Bar "Zum blutigen Bollwerk" einer Gruppe Zwerge begegnet, die ihre Heldentaten zum Besten gegeben haben. Wenn auch nur die Hälfte von dem, womit sie geprahlt haben, der Wahrheit entspricht, müssen es alle große Kämpfer sein. Vielleicht kann ich sie auch einmal mit einer meiner Heldentaten unterhalten?~
@@ -729,7 +746,7 @@ Ich habe in einer Nebenkammer der Halle des Blutmondes König Mith Baraks Notize
 ~
 @99508   = ~Der Schlafende König
 
-In einem alten Tempel der Illithiden an den Grenzen Barakuirs bin ich einem Ältestenhirn begegnet. Mith Barak suchte nach einem alten Drachentempel. Auch eine Art Fluch soll eine Rolle gespielt haben.~
+In einem alten Tempel der Illithiden an den Grenzen Barakuirs bin ich einem Ältestenhirn begegnet. Mith Barak war dort und halt wohl einige Erinnerungen mit der Kreatur geteilt. Allerdings konnte mir das Ältestenhirn nicht sagen welche. Ich habe einen Teil seiner Hirngewebes. Mit etwas Glück wissen die Zwerge, wie man auf dessen Erinnerungen zurückgreifen kann, um bei der Suche weiterzukommen.~
 @99509   = ~Der Schlafende König
 
 ~

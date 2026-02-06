@@ -1,0 +1,7 @@
+IF
+    Global("AC#IL_MetBeardmaker","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("AC#IL_MetBeardmaker","GLOBAL",1)
+END
+

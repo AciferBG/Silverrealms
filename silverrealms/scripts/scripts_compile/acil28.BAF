@@ -54,6 +54,16 @@ THEN
 END
 
 IF
+    Dead("AC#ULIT2") // EE: Neothelid is killed
+    CombatCounter(0)
+    GlobalLT("ElderBrainAid","ACIL28",2)
+THEN
+    RESPONSE #100
+        ClearAllActions()
+        ActionOverride("AC#IL28G",StartDialogueNoSet([PC]))
+END
+
+IF
 	Dead("AC#NEOTH") // EE: Neothelid is killed
 	CombatCounter(0)
 	Global("ElderBrainSpawn","ACIL28",0)

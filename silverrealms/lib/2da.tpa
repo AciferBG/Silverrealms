@@ -1,5 +1,8 @@
 // Silverrealms 2da files
 
+APPEND itemexcl.2da ~AC#ILCK5 1~
+BUT_ONLY
+
 // Adding Spawn groups to spawngrp.2da
 
 APPEND_COL ~spawngrp.2da~ "$ $ RDAC#KUO 150 AC#KUOT1 AC#KUOT2 AC#KUOT3 AC#KUOT4 AC#KUOT5 AC#KUOT6 * *"

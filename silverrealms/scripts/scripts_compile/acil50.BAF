@@ -449,3 +449,11 @@ THEN
 		ActionOverride("AC#MITH5",StartDialogNoSet(Player1))
 END
 
+IF
+    Global("AC#IL_MetBeardmaker","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("AC#IL_MetBeardmaker","GLOBAL",2)
+		AddMapNote([2486.1302],@221)
+END
+

@@ -75,8 +75,10 @@ END
 
 IF ~~ THEN BEGIN hey_you
 SAY ~Ihr da, <PRO_RACE>! Was habt Ihr hier zu schaffen?~
-IF ~~ THEN REPLY ~Das selbe könnte ich Euch fragen.~ + same_question
+IF ~~ THEN REPLY ~Dasselbe könnte ich Euch fragen.~ + same_question
+IF ~~ THEN REPLY ~Das geht Euch nichts an.~ + same_question
 IF ~~ THEN REPLY ~Noch mehr Drow? Mit Euch werde ich genau so leicht fertig wie mit den anderen!~ EXTERN ~AC#DROW8~ more_drow
+IF ~~ THEN REPLY ~Habe gerade ein paar Drow getötet.~ EXTERN ~AC#DROW8~ more_drow
 END
 
 	IF ~~ THEN BEGIN same_question

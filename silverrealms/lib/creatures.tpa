@@ -2,7 +2,19 @@
 
 COPY ~silverrealms/cre/copy~         ~override~
 
+COPY ~silverrealms/cre/AC#IL5RD.cre~ ~override~ // commoner iltkazar
+  SAY NAME1 @9054 SAY NAME2 @9054
+  SAY INITIAL_MEETING @5205
+  SAY SELECT_COMMON1 @5202
+  SAY SELECT_COMMON2 @5203
+  SAY SELECT_COMMON3 @5204
+  SAY SELECT_COMMON4 @5205
+  SAY SELECT_COMMON5 @5201
+
 COPY ~silverrealms/cre/AC#ILSHM.cre~ ~override~ // shadow mastiff
+  SAY NAME1 @9053 SAY NAME2 @9053
+  
+COPY ~silverrealms/cre/AC#ILSM2.cre~ ~override~ // shadow mastiff
   SAY NAME1 @9053 SAY NAME2 @9053
 
 COPY ~silverrealms/cre/AC#ILBDM.cre~ ~override~ // Iltkazar's beardmaker
@@ -2147,11 +2159,6 @@ SAY DYING ~~ [AC#ELLHC]
 
 COPY ~silverrealms/cre/AC#24DAE.cre~ ~override/AC#24DAE.cre~ // Daevion'lyr
   SAY NAME1 @653 SAY NAME2 @653
-ADD_MEMORIZED_SPELL ~SPPR203~ #1 ~priest~ ( 1 ) // CLERIC_CHANT
-ADD_MEMORIZED_SPELL ~SPPR312~ #2 ~priest~ ( 1 ) // CLERIC_STRENGTH_OF_ONE
-ADD_MEMORIZED_SPELL ~SPPR505~ #4 ~priest~ ( 1 ) // CLERIC_TRUE_SIGHT
-ADD_MEMORIZED_SPELL ~SPPR613~ #5 ~priest~ ( 1 ) // CLERIC_PHYSICAL_MIRROR
-ADD_MEMORIZED_SPELL ~AC#GATM~ #6 ~priest~ ( 1 ) // GATE (Marilith)
 
 COPY ~silverrealms/cre/AC#5ONEE.cre~ ~override/AC#5ONEE.cre~ // Neeritha Runescribe
   SAY NAME1 @657 SAY NAME2 @657

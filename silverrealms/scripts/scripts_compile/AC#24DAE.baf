@@ -8,8 +8,17 @@ THEN
 END
 
 IF
-
     See([PC])
+    Dead("AC#DROW6")  // Zilna
+    Global("AC#25KilledLolthPriestess","ACIL24",0)
+THEN
+    RESPONSE #100
+        StartDialogueNoSet([PC])
+END
+
+IF
+    See([PC])
+    !Dead("AC#DROW6")  // Zilna
     Global("AC#25PactLolthPriestess","GLOBAL",2)
 THEN
     RESPONSE #100
@@ -27,6 +36,40 @@ THEN
         SetGlobal("Drowfight","ACIL24",1)
         SetGlobal("AC#25_LolthPriestess","GLOBAL",10)
         Enemy()
+END
+
+IF
+    Allegiance(Myself,ENEMY)
+    OR(2)
+        See(NearestEnemyOfType([GOODCUTOFF.0.0.SORCERER]))
+        See(NearestEnemyOfType([GOODCUTOFF.0.0.MAGE_ALL]))
+    Global("Summon_Mastiff","LOCALS",0)
+THEN
+    RESPONSE #100
+        SetGlobal("Summon_Mastiff","LOCALS",1)
+        CreateCreatureObject("AC#ILSM2",LastSeenBy(Myself),0,0,0)  // Schattenmastiff
+END
+
+IF
+    Allegiance(Myself,ENEMY)
+    OR(3)
+        See(NearestEnemyOfType([GOODCUTOFF.0.0.BARD]))
+        See(NearestEnemyOfType([GOODCUTOFF.0.0.DRUID_ALL]))
+        See(NearestEnemyOfType([GOODCUTOFF.0.0.CLERIC_ALL]))
+    Global("Summon_Mastiff","LOCALS",0)
+THEN
+    RESPONSE #100
+        SetGlobal("Summon_Mastiff","LOCALS",1)
+        CreateCreatureObject("AC#ILSM2",LastSeenBy(Myself),0,0,0)  // Schattenmastiff
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    Global("Summon_Mastiff","LOCALS",0)
+THEN
+    RESPONSE #100
+        SetGlobal("Summon_Mastiff","LOCALS",1)
+        CreateCreatureObject("AC#ILSM2",LastSeenBy(Myself),0,0,0)  // Schattenmastiff
 END
 
 IF

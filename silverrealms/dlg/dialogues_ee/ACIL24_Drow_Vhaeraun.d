@@ -39,9 +39,11 @@ Dialog mit Drow Vhaerauns-Anführer
 
 BEGIN ~AC#24DAE~
 
-IF ~Dead("AC#DROW6")~ THEN BEGIN hello_traitor_dead_lolth
-SAY ~Ihr wart so töricht, Euch gegen meinen PLan zu stellen und habt die Priesterin Lolths getötet, *og'elend*! Unsere Vereinbarung ist hinfällig, und wir werden Euch dem Zorn Vhaerauns aussetzen, bevor wir von hier weiterziehen werden!~
+IF ~Dead("AC#DROW6")
+Global("AC#25KilledLolthPriestess","ACIL24",0)~ THEN BEGIN hello_traitor_dead_lolth
+SAY ~Ihr wart so töricht, Euch gegen meinen Plan zu stellen und habt die Priesterin Lolths getötet, *og'elend*! Unsere Vereinbarung ist hinfällig, und wir werden Euch dem Zorn Vhaerauns aussetzen, bevor wir von hier weiterziehen werden!~
 IF ~~ THEN DO ~SetGlobal("Drowfight","ACIL24",1)
+SetGlobal("AC#25KilledLolthPriestess","ACIL24",1)
 SetGlobal("AC#25_LolthPriestess","GLOBAL",10)
 SetGlobal("AC#25PactLolthPriestess","GLOBAL",3)
 Enemy()~ EXIT

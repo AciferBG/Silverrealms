@@ -14,6 +14,9 @@ COPY ~silverrealms/cre/AC#ILBDM.cre~ ~override~ // Iltkazar's beardmaker
 COPY ~silverrealms/cre/AC#28DRS.cre~ ~override~ // drow mage illithid thrall
   SAY NAME1 @9051 SAY NAME2 @9051
 
+COPY ~silverrealms/cre/AC#ILSH2.cre~ ~override~ // Shrieker
+  SAY NAME1 @9050 SAY NAME2 @9050
+
 COPY ~silverrealms/cre/AC#ILSHR.cre~ ~override~ // Shrieker
   SAY NAME1 @9050 SAY NAME2 @9050
 

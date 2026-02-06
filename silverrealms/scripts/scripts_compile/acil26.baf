@@ -11,6 +11,7 @@ IF
 THEN
     RESPONSE #100
         SetGlobal("AC#IL_Beardmaker","GLOBAL",2)
+        AddJournalEntry(@53401,QUEST)
 END
 /*
 IF

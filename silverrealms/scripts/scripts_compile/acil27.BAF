@@ -96,23 +96,6 @@ THEN
 	CreateCreature("AC#27#S1",[3693.910],5)
 END
 
-/*
-IF
-	Global("WaterEleSpawn","ACIL27",0)
-	Global("AC#WaterEleQuest","GLOBAL",1)
-	!PartyHasItem("AC#ILWES")
-	OR(2)
-        !InMyArea("AC#ELWA1")
-        !InMyArea("AC#ELWA2")
-	Dead("AC#ELWA1")
-	//!Exists("AC#ELWA1")
-THEN
-	RESPONSE #100
-                SetGlobal("WaterEleSpawn","ACIL27",1)
-		CreateCreature("AC#ELWA1",[3682.905],1)  // Water Elemental
-END
-*/
-
 IF
 	Global("SpawnPointMadness","ACIL27",0)
 	Global("AC#kuotoa_madness","GLOBAL",1)
@@ -251,19 +234,6 @@ THEN
 		TriggerActivation("TrACIL28",TRUE)
 END
 
-/*
-// Transition to ACIL20 remains active
-IF
-	GlobalGT("AC#Ruvan_Treason","GLOBAL",0)
-	Global("ACIL20RegionActivate","ACIL27",0)
-THEN
-	RESPONSE #100
-               SetGlobal("ACIL20RegionActivate","ACIL27",1)
-	       TriggerActivation("TrACIL20",TRUE)
-	       TriggerActivation("Info_ACIL20",FALSE)
-END
-*/
-
 IF
 	Global("KuoToaSmell","ACIL27",1)
 THEN
@@ -292,4 +262,30 @@ THEN
                ActionOverride("AC#27DW5",JumpToPoint([2843.865]))  // Ruvan Houseguard
                ActionOverride("AC#HATH8",JumpToPoint([2907.762])) // Hathar
                ActionOverride("AC#HATH8",SetNumTimesTalkedTo(1))
+END
+
+IF
+    Global("ShriekerAttractMonster","ACIL27",1)
+    Global("ShriekMonstTimerStart","ACIL27",0)
+THEN
+    RESPONSE #100
+        SetGlobal("ShriekerAttractMonster","ACIL27",0)
+        SetGlobal("ShriekMonstTimerStart","ACIL27",1)
+        SetGlobalTimer("ShriekerMonsterTimer","ACIL27",ONE_ROUND)
+END
+
+IF
+    Global("ShriekerAttractMonster","ACIL27",1)
+    Global("ShriekMonstTimerStart","ACIL27",1)
+    GlobalLT("ShriekMonstTimerSTOP","ACIL27",5)
+    GlobalTimerExpired("ShriekerMonsterTimer","ACIL27")
+THEN
+    RESPONSE #100
+        SetGlobal("ShriekerAttractMonster","ACIL27",0)
+        IncrementGlobal("ShriekMonstTimerSTOP","ACIL27",1)
+        SetGlobalTimer("ShriekerMonsterTimer","ACIL27",ONE_ROUND)
+        CreateCreatureOffScreen("AC#KUOTY",S)  // Riesenspinne
+        CreateCreatureOffScreen("AC#KUOTY",S)  // Riesenspinne
+        CreateCreatureOffScreen("AC#KUOTY",S)  // Riesenspinne
+        CreateCreatureOffScreen("AC#KUOTY",S)  // Riesenspinne
 END

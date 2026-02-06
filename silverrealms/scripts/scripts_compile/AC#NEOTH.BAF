@@ -1,120 +1,27 @@
 IF
+    See(NearestEnemyOf(Myself))
     Global("bd_combat","locals",0)
-    Detect(NearestEnemyOf(Myself))
 THEN
     RESPONSE #100
         SetGlobal("bd_combat","locals",1)
-        SetGlobalTimer("PSIONIC_DIMENSION_WALK","locals",FOUR_ROUNDS)
+        AnkhegEmerge()
+        AttackReevaluate(NearestEnemyOf(Myself),6)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    !GlobalTimerNotExpired("bd_breath_weapon","locals")
+    !GlobalTimerNotExpired("bd_cast","locals")
+    GlobalLT("bd_breath_weapon","locals",2)
+    DifficultyGT(EASY)
+THEN
+    RESPONSE #100
+        AnkhegEmerge()
         SetGlobalTimer("bd_breath_weapon","locals",FIVE_ROUNDS)
-        SetMusic(COMBAT_NORMAL,BPC1)
-        Continue()
-END
-
-IF
-    Detect(Myself)
-    Global("bd_combat","locals",1)
-    !Global("bd_search_timer","locals",0)
-    GlobalTimerNotExpired("bd_search_timer","locals")
-    OR(2)
-        !See(NearestEnemyOf(Myself))
-        !WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
-    OR(2)
-        !See(SecondNearestEnemyOf(Myself))
-        !WeaponEffectiveVs(SecondNearestEnemyOf(Myself),MAINHAND)
-    OR(2)
-        !See(ThirdNearestEnemyOf(Myself))
-        !WeaponEffectiveVs(ThirdNearestEnemyOf(Myself),MAINHAND)
-    OR(2)
-        !See(FourthNearestEnemyOf(Myself))
-        !WeaponEffectiveVs(FourthNearestEnemyOf(Myself),MAINHAND)
-    OR(2)
-        !See(FifthNearestEnemyOf(Myself))
-        !WeaponEffectiveVs(FifthNearestEnemyOf(Myself),MAINHAND)
-    OR(2)
-        !See(SixthNearestEnemyOf(Myself))
-        !WeaponEffectiveVs(SixthNearestEnemyOf(Myself),MAINHAND)
-    OR(2)
-        !See(SeventhNearestEnemyOf(Myself))
-        !WeaponEffectiveVs(SeventhNearestEnemyOf(Myself),MAINHAND)
-    OR(2)
-        !See(EighthNearestEnemyOf(Myself))
-        !WeaponEffectiveVs(EighthNearestEnemyOf(Myself),MAINHAND)
-    OR(2)
-        !See(NinthNearestEnemyOf(Myself))
-        !WeaponEffectiveVs(NinthNearestEnemyOf(Myself),MAINHAND)
-    OR(2)
-        !See(TenthNearestEnemyOf(Myself))
-        !WeaponEffectiveVs(TenthNearestEnemyOf(Myself),MAINHAND)
-    False()
-THEN
-    RESPONSE #100
-        NoAction()
-END
-
-IF
-    Global("bd_combat","locals",1)
-    !Global("bd_search_timer","locals",0)
-    GlobalTimerNotExpired("bd_search_timer","locals")
-    See(LastSeenBy)
-    !Range(LastSeenBy,0)
-    !StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-    WeaponEffectiveVs(LastSeenBy,MAINHAND)
-THEN
-    RESPONSE #100
-        SetGlobal("bd_search_timer","locals",0)
-        Continue()
-END
-
-IF
-    !GlobalTimerNotExpired("bd_cast","locals")
-    Detect(Myself)
-    HPPercentLT(Myself,80)
-    DifficultyGT(EASY)
-    !GlobalTimerNotExpired("PSIONIC_TASTE_LINK","locals")
-    OR(3)
-        !See(NearestEnemyOf(Myself))
-        !CheckSpellState(NearestEnemyOf(Myself),POTION_OF_HEALING)
-        CheckSpellState(NearestEnemyOf(Myself),TASTE_LINK)
-    OR(3)
-        !See(SecondNearestEnemyOf(Myself))
-        !CheckSpellState(SecondNearestEnemyOf(Myself),POTION_OF_HEALING)
-        CheckSpellState(SecondNearestEnemyOf(Myself),TASTE_LINK)
-    OR(3)
-        !See(ThirdNearestEnemyOf(Myself))
-        !CheckSpellState(ThirdNearestEnemyOf(Myself),POTION_OF_HEALING)
-        CheckSpellState(ThirdNearestEnemyOf(Myself),TASTE_LINK)
-    OR(3)
-        !See(FourthNearestEnemyOf(Myself))
-        !CheckSpellState(FourthNearestEnemyOf(Myself),POTION_OF_HEALING)
-        CheckSpellState(FourthNearestEnemyOf(Myself),TASTE_LINK)
-    OR(3)
-        !See(FifthNearestEnemyOf(Myself))
-        !CheckSpellState(FifthNearestEnemyOf(Myself),POTION_OF_HEALING)
-        CheckSpellState(FifthNearestEnemyOf(Myself),TASTE_LINK)
-    OR(3)
-        !See(SixthNearestEnemyOf(Myself))
-        !CheckSpellState(SixthNearestEnemyOf(Myself),POTION_OF_HEALING)
-        CheckSpellState(SixthNearestEnemyOf(Myself),TASTE_LINK)
-    OR(3)
-        !See(SeventhNearestEnemyOf(Myself))
-        !CheckSpellState(SeventhNearestEnemyOf(Myself),POTION_OF_HEALING)
-        CheckSpellState(SeventhNearestEnemyOf(Myself),TASTE_LINK)
-    OR(3)
-        !See(EighthNearestEnemyOf(Myself))
-        !CheckSpellState(EighthNearestEnemyOf(Myself),POTION_OF_HEALING)
-        CheckSpellState(EighthNearestEnemyOf(Myself),TASTE_LINK)
-    OR(3)
-        !See(NinthNearestEnemyOf(Myself))
-        !CheckSpellState(NinthNearestEnemyOf(Myself),POTION_OF_HEALING)
-        CheckSpellState(NinthNearestEnemyOf(Myself),TASTE_LINK)
-    OR(3)
-        !See(TenthNearestEnemyOf(Myself))
-        !CheckSpellState(TenthNearestEnemyOf(Myself),POTION_OF_HEALING)
-        CheckSpellState(TenthNearestEnemyOf(Myself),TASTE_LINK)
-    False()
-THEN
-    RESPONSE #100
-        NoAction()
+        SetGlobalTimer("bd_cast","locals",ONE_ROUND)
+        IncrementGlobal("bd_breath_weapon","myarea",1)
+        ForceSpellRES("AC#NEOB",LastSeenBy(Myself))  // Schwarzer Drache: Odemwaffe
+        ReallyForceSpellRES("spin691v",LastSeenBy(Myself))  // No such index
 END
 
 IF
@@ -122,12 +29,12 @@ IF
     HPPercentLT(Myself,80)
     DifficultyGT(EASY)
     !GlobalTimerNotExpired("PSIONIC_TASTE_LINK","locals")
-    See(LastSeenBy)
-    !Range(LastSeenBy,0)
+    See(NearestEnemyOf(Myself))
     !StateCheck(LastSeenBy,STATE_REALLY_DEAD)
     CheckSpellState(LastSeenBy,POTION_OF_HEALING)
 THEN
     RESPONSE #100
+        AnkhegEmerge()
         SetGlobalTimer("PSIONIC_TASTE_LINK","locals",TWO_ROUNDS)
         SetGlobalTimer("bd_cast","locals",ONE_ROUND)
         SpellNoDecRES("AC#NEO1",LastSeenBy)  // Taste Link
@@ -136,155 +43,22 @@ THEN
 END
 
 IF
-    !GlobalTimerNotExpired("bd_cast","locals")
-    Detect(Myself)
-    DifficultyGT(EASY)
-    !GlobalTimerNotExpired("PSIONIC_DOMINATION","locals")
-    OR(8)
-        !See(NearestEnemyOfType([0.0.0.FIGHTER_ALL]))
-        StateCheck(NearestEnemyOfType([0.0.0.FIGHTER_ALL]),STATE_DISABLED)
-        !CheckStat(NearestEnemyOfType([0.0.0.FIGHTER_ALL]),0,CLERIC_CHAOTIC_COMMANDS)
-        CheckSpellState(NearestEnemyOfType([0.0.0.FIGHTER_ALL]),STATE_ENRAGED)
-        CheckSpellState(NearestEnemyOfType([0.0.0.FIGHTER_ALL]),POTION_OF_CLARITY)
-        !CheckStatGT(NearestEnemyOfType([0.0.0.FIGHTER_ALL]),0,SAVEVSSPELL)
-        Race(NearestEnemyOfType([0.0.0.FIGHTER_ALL]),ELF)
-        HasItemEquiped("helm06",NearestEnemyOfType([0.0.0.FIGHTER_ALL]))  // Helm zum Schutz vor Bezauberung
-    OR(8)
-        !See(SecondNearestEnemyOfType([0.0.0.FIGHTER_ALL]))
-        StateCheck(SecondNearestEnemyOfType([0.0.0.FIGHTER_ALL]),STATE_DISABLED)
-        !CheckStat(SecondNearestEnemyOfType([0.0.0.FIGHTER_ALL]),0,CLERIC_CHAOTIC_COMMANDS)
-        CheckSpellState(SecondNearestEnemyOfType([0.0.0.FIGHTER_ALL]),STATE_ENRAGED)
-        CheckSpellState(SecondNearestEnemyOfType([0.0.0.FIGHTER_ALL]),POTION_OF_CLARITY)
-        !CheckStatGT(SecondNearestEnemyOfType([0.0.0.FIGHTER_ALL]),0,SAVEVSSPELL)
-        Race(SecondNearestEnemyOfType([0.0.0.FIGHTER_ALL]),ELF)
-        HasItemEquiped("helm06",SecondNearestEnemyOfType([0.0.0.FIGHTER_ALL]))  // Helm zum Schutz vor Bezauberung
-    OR(8)
-        !See(ThirdNearestEnemyOfType([0.0.0.FIGHTER_ALL]))
-        StateCheck(ThirdNearestEnemyOfType([0.0.0.FIGHTER_ALL]),STATE_DISABLED)
-        !CheckStat(ThirdNearestEnemyOfType([0.0.0.FIGHTER_ALL]),0,CLERIC_CHAOTIC_COMMANDS)
-        CheckSpellState(ThirdNearestEnemyOfType([0.0.0.FIGHTER_ALL]),STATE_ENRAGED)
-        CheckSpellState(ThirdNearestEnemyOfType([0.0.0.FIGHTER_ALL]),POTION_OF_CLARITY)
-        !CheckStatGT(ThirdNearestEnemyOfType([0.0.0.FIGHTER_ALL]),0,SAVEVSSPELL)
-        Race(ThirdNearestEnemyOfType([0.0.0.FIGHTER_ALL]),ELF)
-        HasItemEquiped("helm06",ThirdNearestEnemyOfType([0.0.0.FIGHTER_ALL]))  // Helm zum Schutz vor Bezauberung
-    OR(8)
-        !See(NearestEnemyOfType([0.0.0.RANGER_ALL]))
-        StateCheck(NearestEnemyOfType([0.0.0.RANGER_ALL]),STATE_DISABLED)
-        !CheckStat(NearestEnemyOfType([0.0.0.RANGER_ALL]),0,CLERIC_CHAOTIC_COMMANDS)
-        CheckSpellState(NearestEnemyOfType([0.0.0.RANGER_ALL]),STATE_ENRAGED)
-        CheckSpellState(NearestEnemyOfType([0.0.0.RANGER_ALL]),POTION_OF_CLARITY)
-        !CheckStatGT(NearestEnemyOfType([0.0.0.RANGER_ALL]),0,SAVEVSSPELL)
-        Race(NearestEnemyOfType([0.0.0.RANGER_ALL]),ELF)
-        HasItemEquiped("helm06",NearestEnemyOfType([0.0.0.RANGER_ALL]))  // Helm zum Schutz vor Bezauberung
-    OR(8)
-        !See(SecondNearestEnemyOfType([0.0.0.RANGER_ALL]))
-        StateCheck(SecondNearestEnemyOfType([0.0.0.RANGER_ALL]),STATE_DISABLED)
-        !CheckStat(SecondNearestEnemyOfType([0.0.0.RANGER_ALL]),0,CLERIC_CHAOTIC_COMMANDS)
-        CheckSpellState(SecondNearestEnemyOfType([0.0.0.RANGER_ALL]),STATE_ENRAGED)
-        CheckSpellState(SecondNearestEnemyOfType([0.0.0.RANGER_ALL]),POTION_OF_CLARITY)
-        !CheckStatGT(SecondNearestEnemyOfType([0.0.0.RANGER_ALL]),0,SAVEVSSPELL)
-        Race(SecondNearestEnemyOfType([0.0.0.RANGER_ALL]),ELF)
-        HasItemEquiped("helm06",SecondNearestEnemyOfType([0.0.0.RANGER_ALL]))  // Helm zum Schutz vor Bezauberung
-    OR(8)
-        !See(ThirdNearestEnemyOfType([0.0.0.RANGER_ALL]))
-        StateCheck(ThirdNearestEnemyOfType([0.0.0.RANGER_ALL]),STATE_DISABLED)
-        !CheckStat(ThirdNearestEnemyOfType([0.0.0.RANGER_ALL]),0,CLERIC_CHAOTIC_COMMANDS)
-        CheckSpellState(ThirdNearestEnemyOfType([0.0.0.RANGER_ALL]),STATE_ENRAGED)
-        CheckSpellState(ThirdNearestEnemyOfType([0.0.0.RANGER_ALL]),POTION_OF_CLARITY)
-        !CheckStatGT(ThirdNearestEnemyOfType([0.0.0.RANGER_ALL]),0,SAVEVSSPELL)
-        Race(ThirdNearestEnemyOfType([0.0.0.RANGER_ALL]),ELF)
-        HasItemEquiped("helm06",ThirdNearestEnemyOfType([0.0.0.RANGER_ALL]))  // Helm zum Schutz vor Bezauberung
-    False()
-THEN
-    RESPONSE #100
-        NoAction()
-END
-
-IF
+    See(NearestEnemyOf(Myself))
     !GlobalTimerNotExpired("bd_cast","locals")
     DifficultyGT(EASY)
     !GlobalTimerNotExpired("PSIONIC_DOMINATION","locals")
-    See(LastSeenBy)
-    !Range(LastSeenBy,0)
-    !StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-    !StateCheck(LastSeenBy,STATE_DISABLED)
-    CheckStat(LastSeenBy,0,CLERIC_CHAOTIC_COMMANDS)
-    !CheckSpellState(LastSeenBy,STATE_ENRAGED)
-    !CheckSpellState(LastSeenBy,POTION_OF_CLARITY)
-    CheckStatGT(LastSeenBy,0,SAVEVSSPELL)
-    !Race(LastSeenBy,ELF)
-    !HasItemEquiped("helm06",LastSeenBy)  // Helm zum Schutz vor Bezauberung
 THEN
     RESPONSE #100
+        AnkhegEmerge()
         SetGlobalTimer("PSIONIC_DOMINATION","locals",FIVE_ROUNDS)
         SetGlobalTimer("bd_cast","locals",ONE_ROUND)
         SpellNoDec(LastSeenBy,PSIONIC_DOMINATION)  // SPIN910.SPL (Beherrschung)
 END
 
 IF
-    !GlobalTimerNotExpired("bd_cast","locals")
-    Detect(Myself)
-    !GlobalTimerNotExpired("PSIONIC_DOMINATION","locals")
-    OR(6)
-        !See(NearestEnemyOf(Myself))
-        RandomNumGT(4,2)
-        StateCheck(NearestEnemyOf(Myself),STATE_DISABLED)
-        !CheckStat(NearestEnemyOf(Myself),0,CLERIC_CHAOTIC_COMMANDS)
-        CheckSpellState(NearestEnemyOf(Myself),STATE_ENRAGED)
-        Race(NearestEnemyOf(Myself),ELF)
-    OR(6)
-        !See(SecondNearestEnemyOf(Myself))
-        RandomNumGT(4,3)
-        StateCheck(SecondNearestEnemyOf(Myself),STATE_DISABLED)
-        !CheckStat(SecondNearestEnemyOf(Myself),0,CLERIC_CHAOTIC_COMMANDS)
-        CheckSpellState(SecondNearestEnemyOf(Myself),STATE_ENRAGED)
-        Race(SecondNearestEnemyOf(Myself),ELF)
-    OR(5)
-        !See(ThirdNearestEnemyOf(Myself))
-        StateCheck(ThirdNearestEnemyOf(Myself),STATE_DISABLED)
-        !CheckStat(ThirdNearestEnemyOf(Myself),0,CLERIC_CHAOTIC_COMMANDS)
-        CheckSpellState(ThirdNearestEnemyOf(Myself),STATE_ENRAGED)
-        Race(ThirdNearestEnemyOf(Myself),ELF)
-    OR(5)
-        !See(FourthNearestEnemyOf(Myself))
-        StateCheck(FourthNearestEnemyOf(Myself),STATE_DISABLED)
-        !CheckStat(FourthNearestEnemyOf(Myself),0,CLERIC_CHAOTIC_COMMANDS)
-        CheckSpellState(FourthNearestEnemyOf(Myself),STATE_ENRAGED)
-        Race(FourthNearestEnemyOf(Myself),ELF)
-    OR(5)
-        !See(FifthNearestEnemyOf(Myself))
-        StateCheck(FifthNearestEnemyOf(Myself),STATE_DISABLED)
-        !CheckStat(FifthNearestEnemyOf(Myself),0,CLERIC_CHAOTIC_COMMANDS)
-        CheckSpellState(FifthNearestEnemyOf(Myself),STATE_ENRAGED)
-        Race(FifthNearestEnemyOf(Myself),ELF)
-    OR(5)
-        !See(NearestEnemyOf(Myself))
-        StateCheck(NearestEnemyOf(Myself),STATE_DISABLED)
-        !CheckStat(NearestEnemyOf(Myself),0,CLERIC_CHAOTIC_COMMANDS)
-        CheckSpellState(NearestEnemyOf(Myself),STATE_ENRAGED)
-        Race(NearestEnemyOf(Myself),ELF)
-    OR(5)
-        !See(SecondNearestEnemyOf(Myself))
-        StateCheck(SecondNearestEnemyOf(Myself),STATE_DISABLED)
-        !CheckStat(SecondNearestEnemyOf(Myself),0,CLERIC_CHAOTIC_COMMANDS)
-        CheckSpellState(SecondNearestEnemyOf(Myself),STATE_ENRAGED)
-        Race(SecondNearestEnemyOf(Myself),ELF)
-    False()
-THEN
-    RESPONSE #100
-        NoAction()
-END
-
-IF
+    See(NearestEnemyOf(Myself))
     !GlobalTimerNotExpired("bd_cast","locals")
     !GlobalTimerNotExpired("PSIONIC_DOMINATION","locals")
-    See(LastSeenBy)
-    !Range(LastSeenBy,0)
-    !StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-    !StateCheck(LastSeenBy,STATE_DISABLED)
-    CheckStat(LastSeenBy,0,CLERIC_CHAOTIC_COMMANDS)
-    !CheckSpellState(LastSeenBy,STATE_ENRAGED)
-    !Race(LastSeenBy,ELF)
 THEN
     RESPONSE #100
         SetGlobalTimer("PSIONIC_DOMINATION","locals",FIVE_ROUNDS)
@@ -295,32 +69,9 @@ THEN
 END
 
 IF
-    !GlobalTimerNotExpired("bd_cast","locals")
-    Detect(Myself)
-    !GlobalTimerNotExpired("PSIONIC_TELEKINESIS","locals")
-    OR(2)
-        !See(NearestEnemyOf(Myself))
-        RandomNumGT(4,2)
-    OR(2)
-        !See(SecondNearestEnemyOf(Myself))
-        RandomNumGT(4,3)
-    !See(ThirdNearestEnemyOf(Myself))
-    !See(FourthNearestEnemyOf(Myself))
-    !See(FifthNearestEnemyOf(Myself))
-    !See(NearestEnemyOf(Myself))
-    !See(SecondNearestEnemyOf(Myself))
-    False()
-THEN
-    RESPONSE #100
-        NoAction()
-END
-
-IF
+    See(NearestEnemyOf(Myself))
     !GlobalTimerNotExpired("bd_cast","locals")
     !GlobalTimerNotExpired("PSIONIC_TELEKINESIS","locals")
-    See(LastSeenBy)
-    !Range(LastSeenBy,0)
-    !StateCheck(LastSeenBy,STATE_REALLY_DEAD)
     GlobalLT("bd_telekinetic_sword","myarea",6)
     OR(2)
         GlobalLT("bd_telekinetic_sword","myarea",1)
@@ -345,90 +96,8 @@ THEN
 END
 
 IF
+    See(NearestEnemyOf(Myself))
     !GlobalTimerNotExpired("bd_cast","locals")
-    Detect(Myself)
-    OR(5)
-        !See(NearestEnemyOf(Myself))
-        RandomNumGT(8,4)
-        StateCheck(NearestEnemyOf(Myself),STATE_DISABLED)
-        !CheckStat(NearestEnemyOf(Myself),0,CLERIC_CHAOTIC_COMMANDS)
-        CheckSpellState(NearestEnemyOf(Myself),STATE_ENRAGED)
-    OR(5)
-        !See(SecondNearestEnemyOf(Myself))
-        RandomNumGT(8,6)
-        StateCheck(SecondNearestEnemyOf(Myself),STATE_DISABLED)
-        !CheckStat(SecondNearestEnemyOf(Myself),0,CLERIC_CHAOTIC_COMMANDS)
-        CheckSpellState(SecondNearestEnemyOf(Myself),STATE_ENRAGED)
-    OR(5)
-        !See(ThirdNearestEnemyOf(Myself))
-        RandomNumGT(8,7)
-        StateCheck(ThirdNearestEnemyOf(Myself),STATE_DISABLED)
-        !CheckStat(ThirdNearestEnemyOf(Myself),0,CLERIC_CHAOTIC_COMMANDS)
-        CheckSpellState(ThirdNearestEnemyOf(Myself),STATE_ENRAGED)
-    OR(4)
-        !See(FourthNearestEnemyOf(Myself))
-        StateCheck(FourthNearestEnemyOf(Myself),STATE_DISABLED)
-        !CheckStat(FourthNearestEnemyOf(Myself),0,CLERIC_CHAOTIC_COMMANDS)
-        CheckSpellState(FourthNearestEnemyOf(Myself),STATE_ENRAGED)
-    OR(4)
-        !See(FifthNearestEnemyOf(Myself))
-        StateCheck(FifthNearestEnemyOf(Myself),STATE_DISABLED)
-        !CheckStat(FifthNearestEnemyOf(Myself),0,CLERIC_CHAOTIC_COMMANDS)
-        CheckSpellState(FifthNearestEnemyOf(Myself),STATE_ENRAGED)
-    OR(4)
-        !See(SixthNearestEnemyOf(Myself))
-        StateCheck(SixthNearestEnemyOf(Myself),STATE_DISABLED)
-        !CheckStat(SixthNearestEnemyOf(Myself),0,CLERIC_CHAOTIC_COMMANDS)
-        CheckSpellState(SixthNearestEnemyOf(Myself),STATE_ENRAGED)
-    OR(4)
-        !See(SeventhNearestEnemyOf(Myself))
-        StateCheck(SeventhNearestEnemyOf(Myself),STATE_DISABLED)
-        !CheckStat(SeventhNearestEnemyOf(Myself),0,CLERIC_CHAOTIC_COMMANDS)
-        CheckSpellState(SeventhNearestEnemyOf(Myself),STATE_ENRAGED)
-    OR(4)
-        !See(EighthNearestEnemyOf(Myself))
-        StateCheck(EighthNearestEnemyOf(Myself),STATE_DISABLED)
-        !CheckStat(EighthNearestEnemyOf(Myself),0,CLERIC_CHAOTIC_COMMANDS)
-        CheckSpellState(EighthNearestEnemyOf(Myself),STATE_ENRAGED)
-    OR(4)
-        !See(NinthNearestEnemyOf(Myself))
-        StateCheck(NinthNearestEnemyOf(Myself),STATE_DISABLED)
-        !CheckStat(NinthNearestEnemyOf(Myself),0,CLERIC_CHAOTIC_COMMANDS)
-        CheckSpellState(NinthNearestEnemyOf(Myself),STATE_ENRAGED)
-    OR(4)
-        !See(TenthNearestEnemyOf(Myself))
-        StateCheck(TenthNearestEnemyOf(Myself),STATE_DISABLED)
-        !CheckStat(TenthNearestEnemyOf(Myself),0,CLERIC_CHAOTIC_COMMANDS)
-        CheckSpellState(TenthNearestEnemyOf(Myself),STATE_ENRAGED)
-    OR(4)
-        !See(NearestEnemyOf(Myself))
-        StateCheck(NearestEnemyOf(Myself),STATE_DISABLED)
-        !CheckStat(NearestEnemyOf(Myself),0,CLERIC_CHAOTIC_COMMANDS)
-        CheckSpellState(NearestEnemyOf(Myself),STATE_ENRAGED)
-    OR(4)
-        !See(SecondNearestEnemyOf(Myself))
-        StateCheck(SecondNearestEnemyOf(Myself),STATE_DISABLED)
-        !CheckStat(SecondNearestEnemyOf(Myself),0,CLERIC_CHAOTIC_COMMANDS)
-        CheckSpellState(SecondNearestEnemyOf(Myself),STATE_ENRAGED)
-    OR(4)
-        !See(ThirdNearestEnemyOf(Myself))
-        StateCheck(ThirdNearestEnemyOf(Myself),STATE_DISABLED)
-        !CheckStat(ThirdNearestEnemyOf(Myself),0,CLERIC_CHAOTIC_COMMANDS)
-        CheckSpellState(ThirdNearestEnemyOf(Myself),STATE_ENRAGED)
-    False()
-THEN
-    RESPONSE #100
-        NoAction()
-END
-
-IF
-    !GlobalTimerNotExpired("bd_cast","locals")
-    See(LastSeenBy)
-    !Range(LastSeenBy,0)
-    !StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-    !StateCheck(LastSeenBy,STATE_DISABLED)
-    CheckStat(LastSeenBy,0,CLERIC_CHAOTIC_COMMANDS)
-    !CheckSpellState(LastSeenBy,STATE_ENRAGED)
 THEN
     RESPONSE #100
         SetGlobalTimer("bd_cast","locals",ONE_ROUND)
@@ -438,13 +107,8 @@ THEN
 END
 
 IF
+    See(NearestEnemyOf(Myself))
     !GlobalTimerNotExpired("bd_cast","locals")
-    See(LastSeenBy)
-    !Range(LastSeenBy,0)
-    !StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-    !StateCheck(LastSeenBy,STATE_DISABLED)
-    CheckStat(LastSeenBy,0,CLERIC_CHAOTIC_COMMANDS)
-    !CheckSpellState(LastSeenBy,STATE_ENRAGED)
 THEN
     RESPONSE #100
         SetGlobalTimer("bd_cast","locals",ONE_ROUND)
@@ -454,507 +118,21 @@ THEN
 END
 
 IF
+    See(NearestEnemyOf(Myself))
     !GlobalTimerNotExpired("bd_cast","locals")
-    See(LastSeenBy)
-    !Range(LastSeenBy,0)
-    !StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-    !StateCheck(LastSeenBy,STATE_DISABLED)
-    CheckStat(LastSeenBy,0,CLERIC_CHAOTIC_COMMANDS)
-    !CheckSpellState(LastSeenBy,STATE_ENRAGED)
 THEN
     RESPONSE #100
         SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-        SpellNoDecRES("AC#NEO4",LastSeenBy)  // Insinuation
+        SpellNoDecRES("AC#NEO4",LastSeenBy)  // Geistige Verwirrung
     RESPONSE #50
         Continue()
 END
 
 IF
-    !GlobalTimerNotExpired("bd_breath_weapon","locals")
     See(NearestEnemyOf(Myself))
-    DifficultyGT(EASY)
-    !HasItem("ac#neob",Myself)  // No such index
-THEN
-    RESPONSE #100
-        SetGlobalTimer("bd_breath_weapon","locals",TEN_ROUNDS)
-        ApplySpellRES("ac#neob",Myself)  // Und ich liebe Euch, Anomen.
-END
-
-IF
-    HasItem("ac#neob",Myself)  // No such index
-    DifficultyGT(EASY)
-    See(NearestEnemyOf(Myself))
-    OR(2)
-        !CheckStatGT(LastSeenBy,50,RESISTPOISON)
-        Range(ThirdNearestEnemyOf(Myself),25)
-THEN
-    RESPONSE #100
-        SetInterrupt(FALSE)
-        SelectWeaponAbility(SLOT_WEAPON3,0)
-        Attack(LastSeenBy)
-        SetInterrupt(TRUE)
-END
-
-IF
-    OR(2)
-        Global("bd_combat","locals",0)
-        DifficultyLT(NORMAL)
-    !HasItemEquipedReal("ac#neo1",Myself)  // No such index
-THEN
-    RESPONSE #100
-        SelectWeaponAbility(SLOT_WEAPON0,0)
-        Continue()
-END
-
-IF
-    Global("bd_combat","locals",1)
-    Difficulty(NORMAL)
-    !HasItemEquipedReal("ac#neo2",Myself)  // No such index
-THEN
-    RESPONSE #100
-        SelectWeaponAbility(SLOT_WEAPON1,0)
-        Continue()
-END
-
-IF
-    Global("bd_combat","locals",1)
-    DifficultyGT(NORMAL)
-    !HasItemEquipedReal("ac#neo3",Myself)  // No such index
-THEN
-    RESPONSE #100
-        SelectWeaponAbility(SLOT_WEAPON2,0)
-        Continue()
-END
-
-IF
-    Detect(Myself)
-    OR(2)
-        !See(NearestEnemyOf(Myself))
-        !WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
-    !Range(NearestEnemyOf(Myself),5)
-    !StateCheck(NearestEnemyOf(Myself),STATE_STUNNED)
-    !StateCheck(NearestEnemyOf(Myself),STATE_HELPLESS)
-    !StateCheck(NearestEnemyOf(Myself),STATE_FEEBLEMINDED)
-    False()
-THEN
-    RESPONSE #100
-        NoAction()
-END
-
-IF
-    See(LastSeenBy)
-    !Range(LastSeenBy,0)
-    !StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-    WeaponEffectiveVs(LastSeenBy,MAINHAND)
-    OR(4)
-        !StateCheck(NearestEnemyOf(Myself),STATE_SLEEPING)
-        !StateCheck(NearestEnemyOf(Myself),STATE_STUNNED)
-        !StateCheck(NearestEnemyOf(Myself),STATE_HELPLESS)
-        !StateCheck(NearestEnemyOf(Myself),STATE_FEEBLEMINDED)
-    Range(LastSeenBy,5)
 THEN
     RESPONSE #100
         AttackReevaluate(LastSeenBy,30)
-END
-
-IF
-    Detect(Myself)
-    !GlobalTimerNotExpired("bd_random_walk_timer","locals")
-    OR(3)
-        !See(NearestEnemyOf(Myself))
-        !WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
-        !Range(NearestEnemyOf(Myself),5)
-    OR(3)
-        !See(SecondNearestEnemyOf(Myself))
-        !WeaponEffectiveVs(SecondNearestEnemyOf(Myself),MAINHAND)
-        !Range(SecondNearestEnemyOf(Myself),5)
-    OR(3)
-        !See(ThirdNearestEnemyOf(Myself))
-        !WeaponEffectiveVs(ThirdNearestEnemyOf(Myself),MAINHAND)
-        !Range(ThirdNearestEnemyOf(Myself),5)
-    OR(3)
-        !See(FourthNearestEnemyOf(Myself))
-        !WeaponEffectiveVs(FourthNearestEnemyOf(Myself),MAINHAND)
-        !Range(FourthNearestEnemyOf(Myself),5)
-    OR(3)
-        !See(FifthNearestEnemyOf(Myself))
-        !WeaponEffectiveVs(FifthNearestEnemyOf(Myself),MAINHAND)
-        !Range(FifthNearestEnemyOf(Myself),5)
-    False()
-THEN
-    RESPONSE #100
-        NoAction()
-END
-
-IF
-    !GlobalTimerNotExpired("bd_random_walk_timer","locals")
-    See(LastSeenBy)
-    !Range(LastSeenBy,0)
-    !StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-    DifficultyLT(NORMAL)
-    WeaponEffectiveVs(LastSeenBy,MAINHAND)
-    Range(LastSeenBy,5)
-THEN
-    RESPONSE #100
-        AttackReevaluate(LastSeenBy,30)
-    RESPONSE #50
-        SetGlobalTimerRandom("bd_random_walk_timer","locals",ONE_ROUND,TWO_MINUTES)
-END
-
-IF
-    !GlobalTimerNotExpired("bd_random_walk_timer","locals")
-    See(LastSeenBy)
-    !Range(LastSeenBy,0)
-    !StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-    Difficulty(NORMAL)
-    WeaponEffectiveVs(LastSeenBy,MAINHAND)
-    Range(LastSeenBy,5)
-THEN
-    RESPONSE #100
-        AttackReevaluate(LastSeenBy,30)
-    RESPONSE #100
-        SetGlobalTimerRandom("bd_random_walk_timer","locals",ONE_ROUND,TWO_MINUTES)
-END
-
-IF
-    !GlobalTimerNotExpired("bd_random_walk_timer","locals")
-    See(LastSeenBy)
-    !Range(LastSeenBy,0)
-    !StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-    DifficultyGT(NORMAL)
-    WeaponEffectiveVs(LastSeenBy,MAINHAND)
-    Range(LastSeenBy,5)
-THEN
-    RESPONSE #100
-        AttackReevaluate(LastSeenBy,30)
-    RESPONSE #200
-        SetGlobalTimerRandom("bd_random_walk_timer","locals",ONE_ROUND,TWO_MINUTES)
-END
-
-IF
-    Detect(Myself)
-    DifficultyGT(EASY)
-    !GlobalTimerNotExpired("PSIONIC_DIMENSION_WALK","locals")
-    !See(NearestEnemyOf(Myself))
-    RandomNumGT(8,4)
-    !WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
-    False()
-THEN
-    RESPONSE #100
-        NoAction()
-END
-
-IF
-    DifficultyGT(EASY)
-    !GlobalTimerNotExpired("PSIONIC_DIMENSION_WALK","locals")
-    See(LastSeenBy)
-    !Range(LastSeenBy,0)
-    !StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-    WeaponEffectiveVs(LastSeenBy,MAINHAND)
-    OR(4)
-        !StateCheck(NearestEnemyOf(Myself),STATE_SLEEPING)
-        !StateCheck(NearestEnemyOf(Myself),STATE_STUNNED)
-        !StateCheck(NearestEnemyOf(Myself),STATE_HELPLESS)
-        !StateCheck(NearestEnemyOf(Myself),STATE_FEEBLEMINDED)
-THEN
-    RESPONSE #100
-        SetGlobalTimer("PSIONIC_DIMENSION_WALK","locals",FOUR_ROUNDS)
-        ForceSpell(LastSeenBy,0)
-END
-
-IF
-    Detect(Myself)
-    !GlobalTimerNotExpired("bd_random_walk_timer","locals")
-    OR(3)
-        !See(NearestEnemyOf(Myself))
-        RandomNumGT(8,4)
-        !WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
-    OR(3)
-        !See(SecondNearestEnemyOf(Myself))
-        RandomNumGT(8,6)
-        !WeaponEffectiveVs(SecondNearestEnemyOf(Myself),MAINHAND)
-    OR(3)
-        !See(ThirdNearestEnemyOf(Myself))
-        RandomNumGT(8,7)
-        !WeaponEffectiveVs(ThirdNearestEnemyOf(Myself),MAINHAND)
-    OR(2)
-        !See(FourthNearestEnemyOf(Myself))
-        !WeaponEffectiveVs(FourthNearestEnemyOf(Myself),MAINHAND)
-    OR(2)
-        !See(FifthNearestEnemyOf(Myself))
-        !WeaponEffectiveVs(FifthNearestEnemyOf(Myself),MAINHAND)
-    OR(2)
-        !See(SixthNearestEnemyOf(Myself))
-        !WeaponEffectiveVs(SixthNearestEnemyOf(Myself),MAINHAND)
-    OR(2)
-        !See(SeventhNearestEnemyOf(Myself))
-        !WeaponEffectiveVs(SeventhNearestEnemyOf(Myself),MAINHAND)
-    OR(2)
-        !See(EighthNearestEnemyOf(Myself))
-        !WeaponEffectiveVs(EighthNearestEnemyOf(Myself),MAINHAND)
-    OR(2)
-        !See(NinthNearestEnemyOf(Myself))
-        !WeaponEffectiveVs(NinthNearestEnemyOf(Myself),MAINHAND)
-    OR(2)
-        !See(TenthNearestEnemyOf(Myself))
-        !WeaponEffectiveVs(TenthNearestEnemyOf(Myself),MAINHAND)
-    OR(2)
-        !See(NearestEnemyOf(Myself))
-        !WeaponEffectiveVs(NearestEnemyOf(Myself),MAINHAND)
-    OR(2)
-        !See(SecondNearestEnemyOf(Myself))
-        !WeaponEffectiveVs(SecondNearestEnemyOf(Myself),MAINHAND)
-    OR(2)
-        !See(ThirdNearestEnemyOf(Myself))
-        !WeaponEffectiveVs(ThirdNearestEnemyOf(Myself),MAINHAND)
-    False()
-THEN
-    RESPONSE #100
-        NoAction()
-END
-
-IF
-    !GlobalTimerNotExpired("bd_random_walk_timer","locals")
-    !GlobalTimerNotExpired("PSIONIC_DIMENSION_WALK","locals")
-    See(LastSeenBy)
-    !Range(LastSeenBy,0)
-    !StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-    !Difficulty(EASIEST)
-    WeaponEffectiveVs(LastSeenBy,MAINHAND)
-THEN
-    RESPONSE #100
-        SetGlobalTimer("PSIONIC_DIMENSION_WALK","locals",FOUR_ROUNDS)
-        ForceSpell(LastSeenBy,0)
-END
-
-IF
-    !GlobalTimerNotExpired("bd_random_walk_timer","locals")
-    See(LastSeenBy)
-    !Range(LastSeenBy,0)
-    !StateCheck(LastSeenBy,STATE_REALLY_DEAD)
-    WeaponEffectiveVs(LastSeenBy,MAINHAND)
-THEN
-    RESPONSE #100
-        MoveToObject(LastSeenBy)
-END
-
-IF
-    Global("bd_combat","locals",1)
-    GlobalTimerNotExpired("bd_random_walk_timer","locals")
-THEN
-    RESPONSE #100
-        RandomWalkContinuous()
-END
-
-IF
-    !GlobalTimerNotExpired("bd_cast","locals")
-    Global("bd_combat","locals",1)
-    !Detect(NearestEnemyOf(Myself))
-    DifficultyGT(EASY)
-    !GlobalTimerNotExpired("PSIONIC_DIMENSION_WALK","locals")
-    InMyArea(Player1)
-    !RandomNumGT(16,2)
-    CheckStat(Player1,0,CLERIC_CHAOTIC_COMMANDS)
-    CheckStat(Player1,0,SANCTUARY)
-    !StateCheck(Player1,STATE_REALLY_DEAD)
-THEN
-    RESPONSE #100
-        SetGlobalTimer("PSIONIC_DIMENSION_WALK","locals",FOUR_ROUNDS)
-        SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-        SpellNoDec(Player1,0)
-END
-
-IF
-    !GlobalTimerNotExpired("bd_cast","locals")
-    Global("bd_combat","locals",1)
-    !Detect(NearestEnemyOf(Myself))
-    DifficultyGT(EASY)
-    !GlobalTimerNotExpired("PSIONIC_DIMENSION_WALK","locals")
-    InMyArea(Player2)
-    !RandomNumGT(16,5)
-    CheckStat(Player2,0,CLERIC_CHAOTIC_COMMANDS)
-    CheckStat(Player2,0,SANCTUARY)
-    !StateCheck(Player2,STATE_REALLY_DEAD)
-THEN
-    RESPONSE #100
-        SetGlobalTimer("PSIONIC_DIMENSION_WALK","locals",FOUR_ROUNDS)
-        SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-        SpellNoDec(Player2,0)
-END
-
-IF
-    !GlobalTimerNotExpired("bd_cast","locals")
-    Global("bd_combat","locals",1)
-    !Detect(NearestEnemyOf(Myself))
-    DifficultyGT(EASY)
-    !GlobalTimerNotExpired("PSIONIC_DIMENSION_WALK","locals")
-    InMyArea(Player3)
-    !RandomNumGT(16,8)
-    CheckStat(Player3,0,CLERIC_CHAOTIC_COMMANDS)
-    CheckStat(Player3,0,SANCTUARY)
-    !StateCheck(Player3,STATE_REALLY_DEAD)
-THEN
-    RESPONSE #100
-        SetGlobalTimer("PSIONIC_DIMENSION_WALK","locals",FOUR_ROUNDS)
-        SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-        SpellNoDec(Player3,0)
-END
-
-IF
-    !GlobalTimerNotExpired("bd_cast","locals")
-    Global("bd_combat","locals",1)
-    !Detect(NearestEnemyOf(Myself))
-    DifficultyGT(EASY)
-    !GlobalTimerNotExpired("PSIONIC_DIMENSION_WALK","locals")
-    InMyArea(Player4)
-    !RandomNumGT(16,11)
-    CheckStat(Player4,0,CLERIC_CHAOTIC_COMMANDS)
-    CheckStat(Player4,0,SANCTUARY)
-    !StateCheck(Player4,STATE_REALLY_DEAD)
-THEN
-    RESPONSE #100
-        SetGlobalTimer("PSIONIC_DIMENSION_WALK","locals",FOUR_ROUNDS)
-        SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-        SpellNoDec(Player4,0)
-END
-
-IF
-    !GlobalTimerNotExpired("bd_cast","locals")
-    Global("bd_combat","locals",1)
-    !Detect(NearestEnemyOf(Myself))
-    DifficultyGT(EASY)
-    !GlobalTimerNotExpired("PSIONIC_DIMENSION_WALK","locals")
-    InMyArea(Player5)
-    !RandomNumGT(16,14)
-    CheckStat(Player5,0,CLERIC_CHAOTIC_COMMANDS)
-    CheckStat(Player5,0,SANCTUARY)
-    !StateCheck(Player5,STATE_REALLY_DEAD)
-THEN
-    RESPONSE #100
-        SetGlobalTimer("PSIONIC_DIMENSION_WALK","locals",FOUR_ROUNDS)
-        SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-        SpellNoDec(Player5,0)
-END
-
-IF
-    !GlobalTimerNotExpired("bd_cast","locals")
-    Global("bd_combat","locals",1)
-    !Detect(NearestEnemyOf(Myself))
-    DifficultyGT(EASY)
-    !GlobalTimerNotExpired("PSIONIC_DIMENSION_WALK","locals")
-    InMyArea(Player6)
-    CheckStat(Player6,0,CLERIC_CHAOTIC_COMMANDS)
-    CheckStat(Player6,0,SANCTUARY)
-    !StateCheck(Player6,STATE_REALLY_DEAD)
-THEN
-    RESPONSE #100
-        SetGlobalTimer("PSIONIC_DIMENSION_WALK","locals",FOUR_ROUNDS)
-        SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-        SpellNoDec(Player6,0)
-END
-
-IF
-    !GlobalTimerNotExpired("bd_cast","locals")
-    Global("bd_combat","locals",1)
-    !Detect(NearestEnemyOf(Myself))
-    DifficultyGT(EASY)
-    !GlobalTimerNotExpired("PSIONIC_DIMENSION_WALK","locals")
-    InMyArea(Player1)
-    CheckStat(Player1,0,CLERIC_CHAOTIC_COMMANDS)
-    CheckStat(Player1,0,SANCTUARY)
-    !StateCheck(Player1,STATE_REALLY_DEAD)
-THEN
-    RESPONSE #100
-        SetGlobalTimer("PSIONIC_DIMENSION_WALK","locals",FOUR_ROUNDS)
-        SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-        SpellNoDec(Player1,0)
-END
-
-IF
-    !GlobalTimerNotExpired("bd_cast","locals")
-    Global("bd_combat","locals",1)
-    !Detect(NearestEnemyOf(Myself))
-    DifficultyGT(EASY)
-    !GlobalTimerNotExpired("PSIONIC_DIMENSION_WALK","locals")
-    InMyArea(Player2)
-    CheckStat(Player2,0,CLERIC_CHAOTIC_COMMANDS)
-    CheckStat(Player2,0,SANCTUARY)
-    !StateCheck(Player2,STATE_REALLY_DEAD)
-THEN
-    RESPONSE #100
-        SetGlobalTimer("PSIONIC_DIMENSION_WALK","locals",FOUR_ROUNDS)
-        SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-        SpellNoDec(Player2,0)
-END
-
-IF
-    !GlobalTimerNotExpired("bd_cast","locals")
-    Global("bd_combat","locals",1)
-    !Detect(NearestEnemyOf(Myself))
-    DifficultyGT(EASY)
-    !GlobalTimerNotExpired("PSIONIC_DIMENSION_WALK","locals")
-    InMyArea(Player3)
-    CheckStat(Player3,0,CLERIC_CHAOTIC_COMMANDS)
-    CheckStat(Player3,0,SANCTUARY)
-    !StateCheck(Player3,STATE_REALLY_DEAD)
-THEN
-    RESPONSE #100
-        SetGlobalTimer("PSIONIC_DIMENSION_WALK","locals",FOUR_ROUNDS)
-        SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-        SpellNoDec(Player3,0)
-END
-
-IF
-    !GlobalTimerNotExpired("bd_cast","locals")
-    Global("bd_combat","locals",1)
-    !Detect(NearestEnemyOf(Myself))
-    DifficultyGT(EASY)
-    !GlobalTimerNotExpired("PSIONIC_DIMENSION_WALK","locals")
-    InMyArea(Player4)
-    CheckStat(Player4,0,CLERIC_CHAOTIC_COMMANDS)
-    CheckStat(Player4,0,SANCTUARY)
-    !StateCheck(Player4,STATE_REALLY_DEAD)
-THEN
-    RESPONSE #100
-        SetGlobalTimer("PSIONIC_DIMENSION_WALK","locals",FOUR_ROUNDS)
-        SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-        SpellNoDec(Player4,0)
-END
-
-IF
-    !GlobalTimerNotExpired("bd_cast","locals")
-    Global("bd_combat","locals",1)
-    !Detect(NearestEnemyOf(Myself))
-    DifficultyGT(EASY)
-    !GlobalTimerNotExpired("PSIONIC_DIMENSION_WALK","locals")
-    InMyArea(Player5)
-    CheckStat(Player5,0,CLERIC_CHAOTIC_COMMANDS)
-    CheckStat(Player5,0,SANCTUARY)
-    !StateCheck(Player5,STATE_REALLY_DEAD)
-THEN
-    RESPONSE #100
-        SetGlobalTimer("PSIONIC_DIMENSION_WALK","locals",FOUR_ROUNDS)
-        SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-        SpellNoDec(Player5,0)
-END
-
-IF
-    Global("bd_combat","locals",1)
-    !Global("bd_search_timer","locals",0)
-    GlobalTimerExpired("bd_search_timer","locals")
-THEN
-    RESPONSE #100
-        SetGlobal("bd_combat","locals",0)
-        SetGlobal("bd_search_timer","locals",0)
-        SetMusic(COMBAT_NORMAL,G3Blank)
-END
-
-IF
-    Global("bd_combat","locals",1)
-    Global("bd_search_timer","locals",0)
-THEN
-    RESPONSE #100
-        SetGlobalTimer("bd_search_timer","locals",TEN_ROUNDS)
 END
 
 IF

@@ -90,6 +90,7 @@ COPY ~silverrealms/areas/ACIL27.are~          ~override~
 
 COPY ~silverrealms/areas/ACIL28.are~          ~override~
   WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+  SAY 0x2c8c @6043           // Info door locked by elderbrain
   
 COPY ~silverrealms/areas/ACIL29.are~          ~override~
   WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type

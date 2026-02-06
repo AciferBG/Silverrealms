@@ -3,6 +3,10 @@
 
 COPY ~silverrealms/itm/copy~         ~override~
 
+COPY ~%MOD_FOLDER%/itm/AC#ILSHM.itm~         ~override~    // shadow mastiff statuette
+  SAY NAME2 @8118
+  SAY DESC @8119
+
 COPY ~%MOD_FOLDER%/itm/AC#ILCK5.itm~         ~override~    // drider silk cloak
   SAY NAME2 @8116
   SAY DESC @8117

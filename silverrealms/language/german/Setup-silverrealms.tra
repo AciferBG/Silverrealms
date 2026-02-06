@@ -2143,6 +2143,24 @@ Magiewiderstand: +10 %
 
 Gewicht: 3
 ~
+@8118 = ~Schattenmastiff-Statuette~
+@8119 = ~Die Statuette, die Ihr da in Eurer Hand haltet, stellt eine schwarze Spinne dar. Wenn man das Befehlswort ausspricht, verwandelt sich die Statuette zu einer halbintelligenten Spinne, die auf den Namen Kitthix hört. Die große Spinne gehorcht den Befehlen ihres Herren, bis eine Stunde verstrichen ist oder bis sie getötet wird. Dann verwandelt sie sich zurück in die Statuette. Es dauert einen Tag, bis die Statuette wieder einsatzbereit ist.
+
+EIGENSCHAFTEN:
+
+Schattenmastiff beschwören (1x täglich)
+ Reichweite: 6 m
+ Dauer: 1 Stunde
+
+Fähigkeiten des Schattenmastiff:
+– Angriffe pro Runde: 3/2
+– Schaden: 1W8 (Stich)
+– Schadensbonus: Gift
+ (Rettungswurf +1 gg. Gift)
+– kann während des Kampfes ein Phasentor einsetzen
+– kann Gegner für 2 Runden in ein Netz verstricken (Rettungswurf -2 gg. Zauber)
+
+Gewicht: 0~
 
 
  
@@ -2200,6 +2218,7 @@ Gewicht: 3
 @9050 = ~Kreischer~
 @9051 = ~Drow-Magier-Sklave~
 @9052 = ~Kragni Haarstein~
+@9053 = ~Schattenmastiff~
 
 
 

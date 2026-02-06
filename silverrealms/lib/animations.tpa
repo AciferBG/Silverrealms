@@ -466,6 +466,10 @@
   COPY ~silverrealms/animations/Feyr_greater_iwd2~         ~override~
 
 //_____________________________________________________________________________________________________
+// worg iwd2 animations - copy
+  COPY ~silverrealms/animations/worg_iwd_EE~         ~override~
+
+//_____________________________________________________________________________________________________
 // lizardman green animation - copy
   COPY ~silverrealms/animations/Lizardman_green_iwd_EE~         ~override~
 //_____________________________________________________________________________________________________

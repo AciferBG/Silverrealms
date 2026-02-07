@@ -1,0 +1,18 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player1)
+        ActionOverride("AC#27DW1",EscapeAreaDestroy(1))
+        ActionOverride("AC#27DW2",EscapeAreaDestroy(1))
+        ActionOverride("AC#27DW3",DropItem("SPER01",[-1.-1]))  // Speer
+        ActionOverride("AC#27DW4",DropItem("SPER01",[-1.-1]))  // Speer
+        ActionOverride("AC#27DW5",DropItem("SPER01",[-1.-1]))  // Speer
+        ActionOverride("AC#27DW3",EscapeAreaDestroy(1))
+        ActionOverride("AC#27DW4",EscapeAreaDestroy(1))
+        ActionOverride("AC#27DW5",EscapeAreaDestroy(1))
+        ActionOverride("AC#HATH8",EscapeAreaDestroy(1))
+        Wait(1)
+        EndCutSceneMode()
+END
+

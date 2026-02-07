@@ -1,0 +1,10 @@
+IF
+    GlobalGT("AC#Ruvan_Treason","GLOBAL",5)
+    Global("Create_Ruvan","ACIL5P",0)
+    !Exists("AC#RUVA2")  // Ruvan Steinschulter
+THEN
+    RESPONSE #100
+        SetGlobal("Create_Ruvan","ACIL5P",1)
+        CreateCreature("AC#RUVA2",[251.497],NNE)  // Ruvan Steinschulter
+END
+

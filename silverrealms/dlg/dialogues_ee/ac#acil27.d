@@ -133,16 +133,20 @@ END
 		IF ~~ THEN BEGIN cowards_did_not_help
 		SAY ~Das sind schlimme Nachrichten. Ich werde meinen Bruder informieren, damit er den Rat davon in Kenntnis setzen kann.~
 		IF ~~ THEN REPLY ~Nicht nötig, Hathar. Das kann ich auch gerne selbst übernehmen.~ + hathar_charname
+		IF ~~ THEN REPLY ~Diese Kerle lügen!~ + hathar_charname
 		END
 		
 			IF ~~ THEN BEGIN hathar_charname
 			SAY ~<CHARNAME>? Ich dachte, Ihr wäret tot?~
 			IF ~~ THEN REPLY ~Das würden sich manch andere wohl gerne wünschen.~ EXTERN ~AC#27DW3~ chain_impossible
+			IF ~~ THEN REPLY ~Sehe ich etwa so aus?~ EXTERN ~AC#27DW3~ chain_impossible
 			END
 			
 				IF ~~ THEN BEGIN bunch_of_liars
 				SAY ~Ich würde eher sagen, Ihr seid ein Haufen Lügner, oder was meint Ihr dazu, <CHARNAME>?~
 				IF ~~ THEN REPLY ~Sie haben mich einfach zurückgelassen. Als ich meine Aufgabe erfüllt hatte, waren sie mitsamt der Boote weg.~ + abgekartetes_spiel
+				IF ~~ THEN REPLY ~Ich sehe es genauso.~ + abgekartetes_spiel
+				IF ~~ THEN REPLY ~Sie wollten mich in Barakuir sterben lassen!~ + abgekartetes_spiel
 				END
 				
 					IF ~~ THEN BEGIN abgekartetes_spiel
@@ -153,10 +157,21 @@ END
 					IF ~~ THEN BEGIN only_orders
 					SAY ~Hab' ich mir's doch gedacht! Daher weht der Wind! Und ich weiß auch schon, wer im Hintergrund die Strippen zieht!~
 					IF ~~ THEN REPLY ~Ruvan, Euer Onkel?~ + uncle_ruvan
+					IF ~~ THEN REPLY ~Wer?~ + uncle_ruvan_who
 					END
 				
+					IF ~~ THEN BEGIN uncle_ruvan_who
+					SAY ~Mein hinterhältiger Onkel Ruvan Steinschulter!~ 
+					IF ~~ THEN + quich_to_rc
+					END
+					
 					IF ~~ THEN BEGIN uncle_ruvan
-					SAY ~Ja, genau! Wir müssen schleunigst vor den Rat, denn ich könnte mir vorstellen, dass diese feige Spinne schon weiter ihre Fäden spinnt!~
+					SAY ~Ja, genau!~ 
+					IF ~~ THEN + quich_to_rc
+					END
+					
+					IF ~~ THEN BEGIN quich_to_rc
+					SAY ~Wir müssen schleunigst vor den Rat, denn ich könnte mir vorstellen, dass diese feige Spinne schon weiter ihre Fäden spinnt!~
 					=
 					~Legt Eure Waffen nieder und kommt mit uns, Ihr feiger Abschaum von Duergarscheiße! Und seid froh, dass ich <CHARNAME> nicht gestatte, Euch hier gleich einen Kopf kürzer zu machen!~
 					IF ~~ THEN EXTERN ~AC#27DW3~ y_y_yes_01
@@ -165,7 +180,17 @@ END
 					IF ~~ THEN BEGIN whats_with_you
 					SAY ~Ich nehme die Jammerlappen mit in die Bronzemaske. Ihr solltet wie gesagt schnell vor den Rat treten. Wollt Ihr uns begleiten oder alleine nach Iltkazar vorrücken?~
 					IF ~~ THEN REPLY ~Ich komme schon alleine zurecht.~ + go_alone
+					IF ~~ THEN REPLY ~Ich begleite Euch gerne.~ + go_with_you
 					END
+					
+					IF ~~ THEN BEGIN go_with_you
+						SAY ~Folgt mir, <CHARNAME>. Los, Abmarsch, Männer, und dass Ihr mir keine Faxen macht!~
+						IF ~~ THEN DO ~SetGlobal("AC#Ruvan_Treason","GLOBAL",2)
+						ClearAllActions()
+						StartCutSceneMode()												
+						StartCutScene("AC#27CT1")
+						~ EXIT
+						END
 					
 						IF ~~ THEN BEGIN go_alone
 						SAY ~Gut. Los, Abmarsch, Männer, und dass Ihr mir keine Faxen macht!~
@@ -261,6 +286,7 @@ BEGIN ~AC#27DW3~
 IF ~~ THEN BEGIN n_no_1
 SAY ~N-n-nein! Wir haben doch nur...~
 IF ~~ THEN REPLY ~Ihr habt doch nur Eure Befehle ausgeführt, richtig?~ EXTERN ~AC#HATH8~ only_orders
+IF ~~ THEN REPLY ~Was?~ EXTERN ~AC#HATH8~ only_orders
 END
 
 IF ~~ THEN BEGIN y_y_yes_01
@@ -326,7 +352,7 @@ IF ~~ THEN EXTERN ~AC#SORN8~ step_on_boat
 
 CHAIN IF ~NumTimesTalkedTo(1)
 Global("AC#Ruvan_Treason","GLOBAL",1)~ THEN AC#HATH8 chain_pcs_are_missing
-~Ihr kehrt alleine zurück! Was ist mit <CHARNAME> und den anderen?~
+~Bootsführer Iltkazars! Ihr kehrt alleine zurück. Was ist mit <CHARNAME> und den anderen?~
 == AC#27DW3 ~Wir überbringen schlechte Nachrichten, Hathar.~
 == AC#HATH8 ~Bei dem Allvater! Was ist geschehen?~
 == AC#27DW3 ~Sie sind in Barakuir gefallen. Wir konnten ihnen nicht helfen und sind schweren Herzens alleine zurückgefahren.~

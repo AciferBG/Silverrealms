@@ -28,94 +28,6 @@ IF ~RandomNum(5,5)~ THEN BEGIN hello_05
 SAY ~Durch Schlaf und Krieg, durch Dunkelheit und Zeit – wir wachen.~
 IF ~~ THEN EXIT 
 END
-
-// -------------------------------------------------
-// Bettargh Riftsong - Book Astral
-//--------------------------------------------------
-/*
-BEGIN ~AC#BETT2~
-
-IF ~Global("AC#BettarghBookAstral","GLOBAL",1)~ THEN BEGIN hello_book_astral 
-  SAY ~<CHARNAME>! Wie gut, dass ich Euch hier treffe!~
-	IF ~!Global("AC#BettarghHasBook","GLOBAL",1)~ THEN GOTO not_bettargh_has_book_reveal
-	IF ~Global("AC#BettarghHasBook","GLOBAL",1)~ THEN GOTO yes_bettargh__has_book_reveal
-	END
-	
-	IF ~~ THEN BEGIN not_bettargh_has_book_reveal
-	SAY ~Beldas war doch auf der Suche nach einem Buch auf der Oberfläche. Habt Ihr es noch?~
-	IF ~PartyHasItem("AC#SRBK1")~ THEN REPLY ~Stimmt, ich sollte es Euch ja geben. Ist es dieses hier, das ich bei mir trage?~ + give_bettargh_book
-	IF ~!PartyHasItem("AC#SRBK1")~ THEN REPLY ~Nein, ich habe kein Buch.~ GOTO dont_have_book
-	END
-	
-		IF ~~ THEN BEGIN dont_have_book
-		SAY ~Das ist schade. Ich konnte aber über einige meiner Gelehrten dennoch in Erfahrung bringen, was es mit dem Buch auf sich hat.~
-		IF ~~ THEN GOTO astral_book_01
-		END
-		
-		IF ~~ THEN BEGIN give_bettargh_book
-		SAY ~Ja, das ist es! Lasst mich das Buch einmal sehen...~
-		IF ~~ THEN DO ~TakePartyItem("AC#SRBK1")
-		~ + give_bettargh_book_02
-		END
-		
-			IF ~~ THEN BEGIN give_bettargh_book_02
-			SAY ~Genau, wie ich es mir gedacht hatte. Ich konnte bereits über einige meiner Gelehrten in Erfahrung bringen, was es mit dem Buch auf sich hat.~
-			IF ~~ THEN GOTO astral_book_01
-			END
-							
-	IF ~~ THEN BEGIN yes_bettargh__has_book_reveal
-	SAY ~Ihr hattet mir doch dieses Buch gegeben, welches Beldas an der Oberfläche erworben hatte: "Die Astrale See, ein Reisebericht in das Reich aus Silber von Maskyr dem Einäugigen". König Mith Barak wollte es wohl unbedingt haben.~
-	IF ~~ THEN REPLY ~Habt Ihr herausgefunden, warum Mith Barak es wollte?~ GOTO astral_book_01
-	END
-	
-			IF ~~ THEN BEGIN astral_book_01
-			SAY ~König Mith Barak war seit längerer Zeit sehr interessiert an Berichten über die Astralebene.~
-			IF ~~ THEN REPLY ~Was ist die Astralebene?~ GOTO whats_astral_plane
-			END
-			
-				IF ~~ THEN BEGIN whats_astral_plane
-				SAY ~Die Astralebene ist eine seltsame Erscheinung. Sie ist eine Existenzebene, die das gesamte äußere Multiversum miteinander verbindet. Leuchtende Tunnel strahlenden Lichts ziehen sich wie Silberstreifen am Horizont durch sie hindurch. Sie wird deshalb auch als silberne Leere oder Reich des Silbers bezeichnet. In ihr existiert weder Zeit noch Raum, es ist eine Ebene des Geistes, der Seele und der toten Götter.~
-				IF ~~ THEN REPLY ~Tote Götter?~ GOTO dead_gods
-				END
-				
-					IF ~~ THEN BEGIN dead_gods
-					SAY ~Ja. In dem Buch, welches Beldas erwarb, finden sich genaue Beschreibungen, was passiert, wenn Götter sterben. Der Autor, Maskyr, war der Überzeugung, dass diese in der Astralebene ihre letzte Ruhe finden.~
-					IF ~~ THEN REPLY ~Das ist ja ein grausiger Gedanke.~ GOTO astral_book_02
-					IF ~~ THEN REPLY ~Und was hat das mit unserer Suche zu tun?~ GOTO astral_book_02
-					END
-					
-						IF ~~ THEN BEGIN astral_book_02
-						SAY ~Maskyr beschreibt sehr genau, wie es Sterblichen möglich ist, die Astralebene zu bereisen. Einige der Möglichkeiten sind uns Priestern Iltkazars sogar bekannt. Es gibt Zauber, die es ermöglichen, unsere sterbliche Hülle hier - auf der materiellen Ebene - zurückzulassen und unseren Geist auf eine Reise in die Astrale See zu schicken.~
-						IF ~~ THEN REPLY ~Mit sterblicher Hülle meint Ihr den eigenen Körper, der hier zurückbleibt?~ GOTO mithbarak_astral_travel
-						END
-						
-							IF ~~ THEN BEGIN mithbarak_astral_travel
-							SAY ~Ganz genau. Der Körper bleibt regungslos zurück, während sich der Geist durch die silberne Leere bewegt.~
-							IF ~~ THEN REPLY ~So regungslos wie Mith Barak auf seinem Thron?~ DO ~SetGlobal("AC#BettarghHasBook","GLOBAL",2)~ GOTO mithbarak_astral_travel_02
-							END
-							
-								IF ~~ THEN BEGIN mithbarak_astral_travel_02
-								SAY ~Das könnte sein. Daran hatte ich auch gedacht. Was, wenn unser König deshalb so regungslos auf seinem Thron sitzt, wenn er auf einer Astralreise wäre?~
-								IF ~~ THEN REPLY ~Das ist eine ausgesprochen dumme Idee.~ GOTO mithbarak_astral_travel_03
-								IF ~~ THEN REPLY ~Das klingt plausibel. Warum können wir ihn dann nicht einfach "aufwecken"?~ GOTO mithbarak_astral_travel_03
-								END
-								
-									IF ~~ THEN BEGIN mithbarak_astral_travel_03
-									SAY ~Ehrlich gesagt glaube ich nicht, dass unser König unter dem Einfluss astraler Magie steht. Würde er einen solchen Zauber vor seinem Schlaf gewirkt haben, hatte es jede Wache mitbekommen. Nein, hinter seinem Schlaf muss etwas anderes stecken, auch wenn ich mittlerweile überlege, ob es irgendeine Verbindung mit der Astralebene geben könnte. Das Buch beschäftigt sich auch nur am Rande mit der Möglichkeit, durch Zauber auf die Astralebene zu gelangen, und vielmehr mit der Frage, wie man Portale in die Astralebene nutzen kann, um mitsamt seinem Körper dorthin zu gelangen.~
-									IF ~~ THEN REPLY ~Mith Barak suchte nach Portalen in die Astralebene?~ GOTO mithbarak_astral_travel_04
-									END
-									
-									IF ~~ THEN BEGIN mithbarak_astral_travel_04
-									SAY ~Davon bin ich mittlerweile fest überzeugt. Ich werde in der Bibliothek weitersuchen, ob sich dazu weitere Hinweise finden lassen. Dennoch ist Euer Weg an die Oberfläche der nächste wichtige Schritt, und ich wollte Euch auch nicht zusätzlich verwirren. Ich möchte nur, dass Ihr bei Eurer Suche nach Antworten auf den mysteriösen Schlaf auch diese Mitteilung in Betracht zieht. Ich habe Euch auch eine kleine Niederschrift des Inhaltes von Maskyrs Buch mitgebracht. Wie ich hörte, seid Ihr ja im Besitz von Borthuns Tagebuch. Legt meine Notizen doch einfach dazu, dann findet Ihr sie auch jederzeit wieder.~
-									IF ~~ THEN DO ~~ GOTO mithbarak_astral_travel_05
-									END
-									
-									IF ~~ THEN BEGIN mithbarak_astral_travel_05
-									SAY ~Aber jetzt möchte ich Euch nicht von Euren Reisevorbereitungen abhalten. Ich hörte, Ihr sagt Bresk Bescheid, bevor Ihr uns verlasst, dann haben wir noch die Möglichkeit, uns zu verabschieden, bis Ihr wieder zurückkehrt. Ich werde in den Thronsaal gehen und Gromi und Dunnabar von meinen Erkenntnissen berichten.~
-									IF ~~ THEN DO ~SetGlobal("AC#BettarghBookAstral","GLOBAL",10)
-									EscapeArea()~ EXIT
-									END		
-*/
 									
 // -------------------------------------------------
 // Dunnabar Steinschulter - Dialog 01
@@ -166,7 +78,7 @@ END
 			
 
 IF ~~ THEN BEGIN dunnabar_go_to_king
-SAY ~Unseren König werde ich nun wieder aufsuchen, um meine Pflicht zu erfüllen.~
+SAY ~Ich werde nun unseren König aufsuchen, um meine Pflicht zu erfüllen.~
  IF ~~ THEN EXTERN ~AC#GROM1~ gromi_go_to_king
 END
 
@@ -177,14 +89,14 @@ END
 // -------------------------------------------------
 // Ellhimar 6(mad)
 //--------------------------------------------------
-
+/*
 BEGIN ~AC#ILEL6~
 
 IF ~Global("AC#Ellhimar_Illithid","GLOBAL",3)~ THEN BEGIN hello_mad_laughter 
   SAY ~(wirres Lachen)~
 	IF ~~ THEN EXTERN ~AC#VRON1~ chain_is_this_really_ellhimar
 		END
-
+*/
 
 // ---------------------------------------------
 // Gromi Arnskull
@@ -199,7 +111,7 @@ END
 
 		IF ~~ THEN BEGIN tell_us_about_barakuir
 		SAY ~Bitte teilt Eure weiteren Erkenntnisse über Barakuir mit uns, um der ganzen Angelegenheit doch noch ein wenig Sinn zu geben.~
-		IF ~~ THEN REPLY ~Außerhalb der Stadt gab es einen verlassenen Tempel der Illithiden und ich musste gegen einige der abscheulichsten ihrer Ausgeburten kämpfen.~ EXTERN ~AC#FENY1~ so_it_is_true_about_mindflayers
+		IF ~~ THEN REPLY ~Außerhalb der Stadt gab es einen verlassenen Tempel der Illithiden und ich musste gegen einige der Abscheulichsten ihrer Ausgeburten kämpfen.~ EXTERN ~AC#FENY1~ so_it_is_true_about_mindflayers
 		END
 				
 		IF ~~THEN BEGIN who_is_this_lay_down
@@ -228,12 +140,16 @@ END
 		
 		IF ~~ THEN BEGIN turbaern_open_throneroom
 		SAY ~Ein gewagtes Unterfangen. Warum sollte dies die Bürger unserer Stadt nicht noch niedergeschlagener machen?~
-		IF ~~ THEN REPLY ~Weil sie vielleicht endlich wieder sehen, dass sie noch einen König haben?~ + chain_open_throneroom
+		IF ~~ THEN REPLY ~Damit sie vielleicht endlich wieder sehen, dass sie noch einen König haben?~ + chain_open_throneroom
+		IF ~~ THEN REPLY ~Ein sichtbarer König stärkt den Mut, er schwächt ihn nicht.~ + chain_open_throneroom
+		IF ~~ THEN REPLY ~Weil der Rat ohne sichtbares Oberhaupt bereits zerfällt.~ + chain_open_throneroom
+		IF ~~ THEN REPLY ~Weil Feinde draußen stärker werden, während wir drinnen zaudern.~ + chain_open_throneroom
+		IF ~~ THEN REPLY ~Verstecken ist Feigheit.~ + chain_open_throneroom
 		END
 		
 		
 		IF ~~ THEN BEGIN ok_open_throneroom
-		SAY ~Schwierige Zeiten erfordern schwierige Entscheidungen.~
+		SAY ~Hmm... schwierige Zeiten erfordern schwierige Entscheidungen...~
 		=
 		~Wohlan denn, Königsgarde - öffnet die Tore in den Thronsaal!~
 		IF ~~ THEN DO ~SetGlobal("AC#Ruvan_Treason","GLOBAL",10)
@@ -351,15 +267,6 @@ GlobalLT("AC#RC_Turbaern_Second","GLOBAL",20)~ THEN BEGIN hello_whats_turbaern
 	IF ~~ THEN REPLY ~Nein, noch nicht.~ GOTO patrol_keep_searching
 END
 
-// OLD - Barakuir before Spiderstalkings:
-/*
-	IF ~~ THEN BEGIN enough_turbaern
-	SAY ~Genug. Es ist leichter, einen Diamanten mit der bloßen Hand zu Staub zu verwandeln, als einen *delvesonn* von seiner Meinung abzubringen.~
-	=
-	~Ich sehe noch eine andere Möglichkeit. <CHARNAME>, Ihr erwähntet den Spiegel Ellhimars, in welchem sich ein Gedankenschinder zeigte, richtig?~
-	IF ~~ THEN REPLY ~Ja, das ist richtig.~ EXTERN ~AC#CHEM1~ send_charname_through_mirror
-	END
-*/
 // NEW: portal investigation before Barakuir:
 	IF ~~ THEN BEGIN enough_turbaern
 	SAY ~Genug. Es ist leichter, einen Diamanten mit der bloßen Hand zu Staub zu verwandeln, als einen *delvesonn* von seiner Meinung abzubringen.~
@@ -376,15 +283,7 @@ END
 			SAY ~Genau, dorthin. Zu dem verlorenen Clan, deren Namen wir hier nicht in den Mund nehmen dürfen. Wenn das Wasser in einen Minenschacht eindringt, kann man entweder Mauern oder Wasserräder bauen. Wir entscheiden uns für Letzteres. *Wenn* es Hinweise gibt, wie die *caradhak* uns schaden könnten, dann ist es an diesem Ort.~
 			IF ~~ THEN REPLY ~Ich nehme an, dass Ihr erwartet, dass ich zu diesem Ort reisen soll?~ + chain_should_i_travel_to_xy
 			END
-				// OLD
-				/*
-				IF ~~ THEN BEGIN should_i_travel_to_xy
-				SAY ~In der Tat. Auch, wenn die Geschehnisse an diesem Ort schon lange zurückliegen, würde kein Zwerg unseres Clans jemals wieder einen Fuß auf diesen unheiligen Boden setzen. Deshalb bitten wir Euch, <CHARNAME>, dies für unsere Stadt zu tun. Dies wäre die beste Spur, die wir derzeit haben.~
-				IF ~~ THEN  EXTERN ~AC#ELER1~ barakuir_right
-				END
-				*/
-					
-						
+									
 					IF ~~THEN BEGIN ask_bettargh_barakuir
 					SAY ~Das ist eine gute Idee, Elern. <CHARNAME>, wir bitten Euch, Bettargh Abgrundlied in der Halle der Runensteine aufzusuchen. Er wird uns weiterhelfen können.~
 					=
@@ -908,7 +807,7 @@ IF ~Global("AC#Ruvan_Treason","GLOBAL",4)~ THEN BEGIN charname_has_not_stolen_ha
 SAY ~Nein, <PRO_HESHE> hat ihn NICHT gestohlen! Der Hammer wurde <CHARNAME> von Dumathoin überlassen, um <PRO_HIMHER> die Flucht aus Barakuir zu ermöglichen.~
 IF ~~ THEN EXTERN ~AC#GROM1~ chain_gromi_turbaern_01
 END
-
+/*
 IF ~~ THEN BEGIN know_about_spiderstalkings
 SAY ~Es gibt einen Grund, weshalb König Mith Barak wollte, dass dieser Ort für alle Ewigkeit versiegelt bleiben möge. Auch wenn ich nicht glaube, dass Ellhimar sein jetziger Zustand in den Spinnenschächten widerfahren ist, so ist doch gut möglich, dass er dort auf etwas gestoßen ist, welches ihn in die Fänge der Illithiden getrieben hat.~
 IF ~~ THEN EXTERN ~AC#GROM1~ question_and_answer
@@ -923,14 +822,15 @@ END
 	SAY ~Nein. Ich wollte ihn *dem Rat* nicht geben. Ihr habt Euren Wert für die Stadt mehr als einmal unter Beweis gestellt, <CHARNAME>. Hier, nehmt ihn.~
 	IF ~~ THEN DO ~GiveItemCreate("AC#KY1",Player1,1,0,0)~ + turbaern_gromi_regencycouncil
 		END
+		*/
 		
 		IF ~~ THEN BEGIN turbaern_gromi_regencycouncil
-		SAY ~Bei allem Respekt, Gromi, aber dies ist nicht mehr die Zeit für lange Debatten im Regentschaftsrat.~
+		SAY ~Bei allem Respekt, Gromi, aber dies ist nicht mehr die Zeit für Entscheidungen im Regentschaftsrat.~
 		IF ~~ THEN EXTERN ~AC#GROM1~ turbaern_gromi_regencycouncil_02
 		END
 		
 		IF ~~ THEN BEGIN no_more_regency_council
-		SAY ~Lasst uns die alte Fehden beiseite legen. Und unser Volk braucht unseren König! Lasst uns die Hallen zum Thronsaal wieder öffnen.~
+		SAY ~Legen wir die alten Fehden beiseite. Löst den Regentschaftsrat auf. Unser Volk braucht jetzt seinen König! Lasst uns die Hallen zum Thronsaal wieder öffnen.~
 		IF ~~ THEN EXTERN ~AC#GROM1~ turbaern_open_throneroom
 		END
 		
@@ -1058,8 +958,7 @@ BEGIN AC#FENY1  // Fenyl
 
 IF ~~THEN BEGIN so_it_is_true_about_mindflayers
 SAY ~Also ist es wahr! Die *caradhak* sind für die Angriffe und unsere Misere verantwortlich!~
-IF ~~ THEN REPLY ~Nein. Es gibt dort keine Illithiden mehr, nur untote Monstrositäten. Mit einer davon habe ich über König Mith Barak gesprochen.~ EXTERN ~AC#GROM1~ chain_new_after_barakuir
-//IF ~~ THEN REPLY ~Nein. Es gibt dort keine Illithiden mehr, nur untote Monstrositäten. Mit einer davon habe ich über König Mith Barak gesprochen.~ + chasinillithids_not_responsable
+IF ~~ THEN REPLY ~Nein. Die Illithiden sind dafür nicht verantwortlich. An dem Ort befand sich ein untotes Illithiden-Ältestenhirn. König Mith Barak hatte anscheinend mit diesem über seinen Fluch gesprochen.~ EXTERN ~AC#GROM1~ chain_new_after_barakuir
 END
 
 	IF ~~THEN BEGIN illithids_not_responsable
@@ -1179,13 +1078,13 @@ END
 */
 
 IF ~~THEN BEGIN vronia_turbaern_what_do_you_propose
-SAY ~Was schlagt Ihr also vor, Hoher Omlar?~
+SAY ~Was schlagt Ihr vor, Hoher Omlar?~
 IF ~~ THEN EXTERN ~AC#TURB8~ no_more_regency_council
 END
 
 IF ~~THEN BEGIN vronia_ellhimar_drow
 SAY ~Da der andere Ellhimar ein Drow war, könnte ich mir schon vorstellen, was - oder besser wen -wir dort vorfinden könnten.~
-IF ~~ THEN REPLY ~Ihr meint, dass die Drow hinter allem Stecken?~ EXTERN ~AC#TURB8~ turbaern_drow_possible
+//IF ~~ THEN REPLY ~Ihr meint, dass die Drow hinter allem Stecken?~ EXTERN ~AC#TURB8~ turbaern_drow_possible
 END
 
 IF ~~THEN BEGIN checked_mirror_no_way
@@ -1271,6 +1170,11 @@ END
 IF ~~THEN BEGIN torth_agrees
 SAY ~Bei Dumathoin, das stimmt. Wir müssen diese Nachrichten erst in Ruhe überdenken, bevor wir weitere Schritte ergreifen werden.~
 IF ~~ THEN EXTERN ~AC#GROM1~ abstimmung
+END
+
+IF ~GlobalGT("RC_Dismissed","ACIL62",0)~ THEN BEGIN hello_dismissed
+SAY ~Jetzt sind sie alle weg. Was soll ich nun machen? Die Schmiede ist zu laut, und mein Weib ist mir zu anstrengend. *Seufz*. Ich glaube, ich bleibe einfach hier.~
+IF ~~ THEN EXIT 
 END
 
 IF ~True()~ THEN BEGIN hello_true
@@ -1489,8 +1393,9 @@ CHAIN IF ~~ THEN AC#DUN01 chain_dunnabar_own_brother
 == AC#GROM1 ~Bei alledem bin ich mir sicher, dass Ruvan dennoch meinte, das Beste für unsere Stadt zu tun.~
 == AC#ELER1 ~Indem er beabsichtigte, <CHARNAME> in Barakuir verrotten zu lassen?~
 END
-++ ~Das ist für mich auch schwer zu begreifen.~ EXTERN ~AC#GROM1~ chain_community
-++ ~Ich kann in seinem Verhalten auch schwer etwas Gemeinnütziges erkennen.~ EXTERN ~AC#GROM1~ chain_community
+++ ~Das ist für mich schwer zu begreifen.~ EXTERN ~AC#GROM1~ chain_community
+++ ~Ich kann in seinem Verhalten nichts Gemeinnütziges erkennen.~ EXTERN ~AC#GROM1~ chain_community
+++ ~Es spielt jetzt keine Rolle mehr.~ EXTERN ~AC#GROM1~ chain_community
 
 CHAIN IF ~~ THEN AC#GROM1 chain_community
 ~Letztlich bleibt uns jetzt nur, nach vorne zu sehen!~
@@ -1500,32 +1405,71 @@ END
 
 // CHAIN: Player talks about undead elder brain
 CHAIN IF ~~ THEN AC#GROM1 chain_new_after_barakuir
-~Mith Barak hat diesen Abschaum aufgesucht? Wieder wegen dieser Astralebene?~
+~Mith Barak hat diesen Gedankenschinder-Abschaum aufgesucht?~ 
+== AC#FENY1 ~Nach allem, was die Illithiden unserem Sohn angetan haben? Was hatte sich unser König nur dabei gedacht?~
 END
-++ ~Ja, aber nicht nur, auch wegen eines alten Drachentempels.~ EXTERN ~AC#STUR1~ chain_new_after_barakuir_02
+++ ~Das Ältestenhirn ist seit langer Zeit untot. Mith Barak schien zu hoffen, dass es ihm mit seinem uralten Wissen weiterhelfen könnte.~ EXTERN ~AC#STUR1~ chain_new_after_barakuir_02
 
 CHAIN IF ~~ THEN AC#STUR1 chain_new_after_barakuir_02
-~Schon wieder Drachen! Wie fürchterlich!~
+~Wie kann man nur solch eine Kreatur um Rat fragen?~
+== AC#TURB8 ~Das weiß nur unser König ganz allein.~
 == AC#FENY1 ~Unser König scheint sich ja mit allerlei unzwergischen Gedanken beschäftigt zu haben!~
-== AC#TURB8 ~Habt Ihr irgendeinen Anhalt, wo wir weiter suchen müssen?~
+== AC#GROM1 ~Konntet Ihr wenigstens von diesem... diesem Hirn Antworten erhalten?~
 END
-++ ~Es gibt da einen Tempel eines alten Drachengottes. Dort wollte Mith Barak hinreisen.~ EXTERN ~AC#GROM1~ chain_new_after_barakuir_03
+++ ~Leider nein, das Gehirn hat einen Großteil seines Wissens verloren.~ EXTERN ~AC#GROM1~ chain_new_after_barakuir_03
 
 CHAIN IF ~~ THEN AC#GROM1 chain_new_after_barakuir_03
-~Konntet Ihr herausfinden, wo er liegt?~
+~Dann war die ganze Reise nach Barakuir also vergebens!~
 END
-++ ~Er soll sich an den Lehren von Borthun orientiert haben.~ EXTERN ~AC#ELER1~ chain_new_after_barakuir_04
+++ ~Nicht ganz. Seht, ich habe hier einen Teil des Ältestenhirns mitgebracht!~ EXTERN ~AC#FENY1~ chain_new_after_barakuir_04
 
-CHAIN IF ~~ THEN AC#ELER1 chain_new_after_barakuir_04
-~Borthun! Borthun der Wanderer!~
-== AC#FENY1 ~Wir alle haben schon von diesem unvorteilhaften Vorbild unserer Rasse gehört. Steht dieses Standbild in der Halle Eures Vaters immer noch, Elern?~
-== AC#ELER1 ~Natürlich!~
+CHAIN IF ~~ THEN AC#FENY1 chain_new_after_barakuir_04
+~Das ist ja widerlich!~
+== AC#ELER1 ~Vielleicht ist dies unsere einzige Möglichkeit, dem König zu helfen?~
+== AC#TORT1 ~Indem wir einen Teil eines Ältestenhirnes um Rat fragen?~
+== AC#STUR1 ~Ugh! Wie das stinkt!~
+== AC#VRON1 ~Zeigt mir bitte einmal diesen Gehirnlappen, <CHARNAME>.~
+END
+IF ~~ THEN DO ~TakePartyItem("AC#ILEBL") DestroyItem("AC#ILEBL")~ EXTERN AC#VRON1 take_lobe_01
+
+CHAIN IF ~~ THEN AC#VRON1 take_lobe_01
+~Ein merkwürdiges Ding. Und Ihr sagtet, das Ältestenhirn habe sich an nichts mehr erinnern können?~
+END
+++ ~Ja. Es schien mit dem Namen Mith Baraks etwas zu verbinden, konnte die Erinnerung aber nicht abrufen.~ EXTERN ~AC#VRON1~ take_lobe_02
+
+CHAIN IF ~~ THEN AC#VRON1 take_lobe_02
+~Dann bleibt uns nur eine Möglichkeit. Ich werde versuchen, selbst die Erinnerung abzurufen, indem ich mir einen Teil dieses Gehirns einverleibe.~
+== AC#FENY1 ~Ihr seid nicht ganz bei Trost!~
+== AC#ELER1 ~Tut das nicht, Vronia!~
+== AC#STUR1 ~Ihr wisst selbst, wie das mit Gromis Sohn Khaernd ausgegangen ist damals als...~
+== AC#GROM1 ~Ruhe! Darüber wird hier nicht gesprochen!~
+== AC#VRON1 ~Es gibt keine andere Möglichkeit, Ratsmitglieder.~
+END
+IF ~~ THEN DO ~~ EXTERN AC#VRON1 take_lobe_03
+
+CHAIN IF ~~ THEN AC#VRON1 take_lobe_03
+~Uh... nicht angenehm...~
+== AC#VRON1 ~Das ist... ich spüre etwas... doch...~
+== AC#VRON1 ~Nein. Es offenbart sich mir nicht. Vielleicht ist meine zwergische Widerstandskraft zu groß, um meinen Geist der Erinnerung zu öffnen. Wenn jemand anderes einmal versuchen würde zu...~
+== AC#GROM1 ~Schluss mit diesem Unsinn! Der Rat wird diesen Weg nicht weiter beschreiten!~
 END
 IF ~~ THEN EXTERN ~AC#TURB8~ turbaern_gromi_regencycouncil
 
 // go to throneroom
 	CHAIN IF ~~ THEN AC#GROM1 gromi_go_to_king
-	~Ich werde Euch zum Thronsaal begleiten. Die Ratssitzung ist hiermit beendet. Der Rat wird erst wieder zusammentreffen, wenn unser König aus dem Schlaf erwacht ist.~
+	~Ich werde Euch zum Thronsaal begleiten. Die Ratssitzung ist hiermit beendet. Der Rat wird erst wieder zusammentreffen, wenn unser König aus dem Schlaf erwacht ist. Ein jeder soll sich Gedanken machen, wie man das Rätsel unseres Königs doch noch lösen könnte.~
+	== AC#VRON1 ~Ich habe schon eine Idee. <CHARNAME>, lasst uns draußen vor der Halle einmal miteinander sprechen.~
+	== AC#GROM1 ~Dass Ihr mir nicht mehr von diesem... diesem Gehirn kostet, Vronia!~
+	== AC#VRON1 ~Nein, ich nicht. Ganz bestimmt nicht...~
+	== AC#GROM1 ~Dann ist der Regentschaftsrat hiermit aufgelöst!~
+	END
+	IF ~~ THEN DO ~SetGlobal("AC#RC_Spiderstalkings","GLOBAL",1)
+	SetGlobal("AC#IL_NEW_Cernd","GLOBAL",1)
+		AddexperienceParty(500)
+		~ EXIT
+
+// OLD: ELERN Bibliothek Borthuns Buch
+/*
 	== AC#ELER1 ~<CHARNAME>, ich bitte Euch, besucht mich in der großen Bibliothek. Ich werde dort gemeinsam mit meinem Vater versuchen, etwas über den Ort in Erfahrung zu bringen, welchen Mith Barak an der Oberfläche aufsuchen wollte.~
 	END
 	IF ~~ THEN DO ~SetGlobal("AC#RC_Spiderstalkings","GLOBAL",1)
@@ -1533,9 +1477,9 @@ IF ~~ THEN EXTERN ~AC#TURB8~ turbaern_gromi_regencycouncil
 		//AddJournalEntry(@62022,QUEST)
 		AddexperienceParty(1000)
 		~ EXIT
-
+		*/
 // Ellhimar appears
-
+/*
 CHAIN IF ~~ THEN AC#VRON1 chain_is_this_really_ellhimar
 ~Das ist Ellhimar!~
 == AC#TORT1 ~Was ist das wieder für eine neue Teufelei!~
@@ -1559,7 +1503,8 @@ CHAIN IF ~~ THEN AC#GROM1 chain_yes_its_really_ellhimar
 == AC#VRON1 ~Aber wir wissen, wo ihm dies widerfahren sein könnte und könnten dort unsere Suche fortsetzen.~
 == AC#TURB8 ~Wohl wahr. Der Weg führt uns nun also in die Spinnenschächte.~
 END
-++ ~Ihr wusstet davon, Turbaern?~ EXTERN ~AC#TURB8~ know_about_spiderstalkings
+*/
+//++ ~Ihr wusstet davon, Turbaern?~ EXTERN ~AC#TURB8~ know_about_spiderstalkings
 
 CHAIN IF ~~ THEN AC#GROM1 chain_open_throneroom
 ~Es war bisher noch nie in der Schlafensperiode unseres Königs der Fall, dass jedem Zutritt zum Thronsaal gewährt wurde.~
@@ -1574,8 +1519,8 @@ CHAIN IF ~~ THEN AC#GROM1 chain_go_check_throneroom
 ~Selbstverständlich. Dies war ja der Grund, weshalb Ihr uns aufgesucht habt. Es wäre nun mehr als angemessen, Euch Zutritt zu unserem König zu ermöglichen.~
 == AC#ELER1 ~Erwartet nicht zu viel, <CHARNAME>. Der Anblick ist ziemlich... deprimierend.~
 == AC#GROM1 ~So teilt sich der Rat auf. Dunnabar Steinschulter wird neben dem König Wache halten, während seine Söhne die Verteidigung der Stadt aufrecht erhalten.~
-== AC#VRON1 ~Ich werde mich mit Euch, Turbaern, der Erneuerung der zerstörten Runen widmen, die unsere Stadt schützen sollen.~
-== AC#TURB8 ~So werden wir es machen. Ihr seid in der Halle der Omlare immer ein gerngesehener Gast Dumathoins.~
+== AC#VRON1 ~Ich werde mich mit der Frage beschäftigen, welchen Weg wir weiter beschreiten müssen, um unserem König zu helfen.~
+== AC#TURB8 ~Ich werde mich in der Halle der Omlare an die Reparatur unserer Runen machen.~
 == AC#GROM1 ~Dabei fällt mir ein - was sollen wir mit dem heiligen Hammer machen, den <CHARNAME> bei sich trägt?~
 END
 IF ~~ THEN EXTERN ~AC#TURB8~ turbaern_what_to_do_with_hammer

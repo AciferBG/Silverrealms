@@ -22,6 +22,16 @@ END
 
 IF
     Detect([PC])
+    Global("AC#Ruvan_Treason","GLOBAL",2)
+    Global("HatharTreasonUncle","ACIL20",0)
+THEN
+    RESPONSE #100
+        SetGlobal("HatharTreasonUncle","ACIL20",1)
+        StartDialogueNoSet(LastSeenBy(Myself))
+END
+
+IF
+    Detect([PC])
     Range([PC],5)
     Global("AC#_Dwarven_Patrol","ACIL20",1)
     Global("AC#_HatharDwarfPatrol","ACIL20",0)

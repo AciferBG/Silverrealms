@@ -81,7 +81,8 @@ IF ~GlobalGT("AC#IL_Beardmaker","GLOBAL",0)~ THEN REPLY ~Wegen der Materialien f
 		~Falsch? Nein. Gewachsen durch Kunst, Geduld und altes Wissen. Andere schmieden Helme, ich flechte Bärte.~
 		END
 		IF ~~ THEN REPLY ~Und warum braucht ein Zwerg so etwas?~ EXTERN AC#ILBDM why_need
-		IF ~~ THEN REPLY ~Ich muss weiter.~ EXTERN AC#ILBDM bye_first_02
+		IF ~Global("AC#IL_Beardmaker","GLOBAL",0)~ THEN REPLY ~Ich muss weiter.~ EXTERN AC#ILBDM bye_first_02
+		IF ~GlobalGT("AC#IL_Beardmaker","GLOBAL",0)~ THEN REPLY ~Ich muss weiter.~ EXTERN AC#ILBDM bye_01
 						
 
 		CHAIN AC#ILBDM why_need

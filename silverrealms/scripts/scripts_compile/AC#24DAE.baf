@@ -83,65 +83,142 @@ THEN
 END
 
 IF
+    LevelGT(Player1,14)
+    See(NearestEnemyOf(Myself))
+    Global("Gate","LOCALS",0)
+    HaveSpellRES("AC#GATM")  // Tor
+THEN
+    RESPONSE #100
+        SetGlobal("Gate","LOCALS",1)
+        ForceSpellRES("AC#GATM",Myself)  // Tor
+END
+
+IF
     OR(2)
         LevelGT(Player1,12)
         Difficulty(HARDEST)
     See(NearestEnemyOf(Myself))
     HPPercentLT(Myself,30)
-    Global("Gaerscloak","LOCALS",1)
+    Global("Gate","LOCALS",0)
     HaveSpellRES("AC#GATM")  // Tor
 THEN
     RESPONSE #100
         SpellRES("AC#GATM",Myself)  // Tor
+        SetGlobal("Gate","LOCALS",1)
 END
 
 IF
     HitBy([ANYONE],MISSILE)
     HaveSpell(CLERIC_PHYSICAL_MIRROR)  // SPPR613.SPL (Materiespiegel)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
 THEN
     RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
         Spell(Myself,CLERIC_PHYSICAL_MIRROR)  // SPPR613.SPL (Materiespiegel)
+        SetInterrupt(TRUE)
 END
 
 IF
     See(NearestEnemyOf(Myself))
     HaveSpell(CLERIC_CHANT)  // SPPR203.SPL (Gesang)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
 THEN
     RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
         Spell(Myself,CLERIC_CHANT)  // SPPR203.SPL (Gesang)
+        SetInterrupt(TRUE)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    See("AC#24DR1")  // Drow-Krieger
+    HaveSpell(CLERIC_STRENGTH_OF_ONE)  // SPPR312.SPL (Vereinte Stärke)
+THEN
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        Spell(Myself,CLERIC_STRENGTH_OF_ONE)  // SPPR312.SPL (Vereinte Stärke)
+        SetInterrupt(TRUE)
 END
 
 IF
     See(NearestEnemyOf(Myself))
     HaveSpell(CLERIC_CLOAK_OF_FEAR)  // SPPR416.SPL (Mantel der Furcht)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
 THEN
     RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
         Spell(Myself,CLERIC_CLOAK_OF_FEAR)  // SPPR416.SPL (Mantel der Furcht)
+        SetInterrupt(TRUE)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    See("AC#24DR1")  // Drow-Krieger
+    HPPercentLT("AC#24DR1",80)  // Drow-Krieger
+    HaveSpell(CLERIC_MASS_CURE)  // SPPR514.SPL (Massenheilung)
+THEN
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        Spell(Myself,CLERIC_MASS_CURE)  // SPPR514.SPL (Massenheilung)
+        SetInterrupt(TRUE)
 END
 
 IF
     See(NearestEnemyOf(Myself))
     HaveSpell(CLERIC_FLAME_STRIKE)  // SPPR503.SPL (Flammenschlag)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
 THEN
     RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
         Spell(NearestEnemyOf(Myself),CLERIC_FLAME_STRIKE)  // SPPR503.SPL (Flammenschlag)
+        SetInterrupt(TRUE)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    HaveSpell(CLERIC_MENTAL_DOMINATION)  // SPPR405.SPL (Geistige Beherrschung)
+    !StateCheck(LastSeenBy(Myself),STATE_STUNNED)
+    !HasBounceEffects(LastSeenBy(Myself))
+    HPGT(LastSeenBy(Myself),20)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        Spell(NearestEnemyOf(Myself),CLERIC_MENTAL_DOMINATION)  // SPPR405.SPL (Geistige Beherrschung)
+        SetInterrupt(TRUE)
 END
 
 IF
     See(NearestEnemyOf(Myself))
     HaveSpell(CLERIC_HOLD_PERSON)  // SPPR208.SPL (Personen festhalten)
     !StateCheck(LastSeenBy(Myself),STATE_HELPLESS)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
 THEN
     RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
         Spell(NearestEnemyOf(Myself),CLERIC_HOLD_PERSON)  // SPPR208.SPL (Personen festhalten)
+        SetInterrupt(TRUE)
 END
 
 IF
+    Alignment(LastSeenBy(Myself),MASK_GOOD)
+    HaveSpell(CLERIC_UNHOLY_BLIGHT)  // SPPR314.SPL (Unheiliges Verderben)
     See(NearestEnemyOf(Myself))
-    HaveSpell(CLERIC_TRUE_SIGHT)  // SPPR505.SPL (Wahrer Blick)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
 THEN
     RESPONSE #100
-        Spell(NearestEnemyOf(Myself),CLERIC_TRUE_SIGHT)  // SPPR505.SPL (Wahrer Blick)
+        SetInterrupt(FALSE)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        Spell(LastSeenBy(Myself),CLERIC_UNHOLY_BLIGHT)  // SPPR314.SPL (Unheiliges Verderben)
+        SetInterrupt(TRUE)
 END
 
 IF

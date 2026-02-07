@@ -18,6 +18,66 @@ THEN
 END
 
 IF
+    Allegiance(Myself,ENEMY)
+    See(NearestEnemyOf(Myself))
+    See(SixthNearest([GOODCUTOFF]))
+    Global("Ambush06","LOCALS",0)
+THEN
+    RESPONSE #100
+        SetGlobal("Ambush06","LOCALS",1)
+        CreateCreatureObjectEffect("AC#DROW7","AC#ILSH2",SixthNearest([GOODCUTOFF]))  // Drow
+        Continue()
+END
+
+IF
+    Allegiance(Myself,ENEMY)
+    See(NearestEnemyOf(Myself))
+    See(FifthNearest([GOODCUTOFF]))
+    Global("Ambush05","LOCALS",0)
+THEN
+    RESPONSE #100
+        SetGlobal("Ambush05","LOCALS",1)
+        CreateCreatureObjectEffect("AC#DROW7","AC#ILSH2",FifthNearest([GOODCUTOFF]))  // Drow
+        Continue()
+END
+
+IF
+    Allegiance(Myself,ENEMY)
+    See(NearestEnemyOf(Myself))
+    See(FourthNearest([GOODCUTOFF]))
+    Global("Ambush04","LOCALS",0)
+THEN
+    RESPONSE #100
+        SetGlobal("Ambush04","LOCALS",1)
+        CreateCreatureObjectEffect("AC#DROW7","AC#ILSH2",FourthNearest([GOODCUTOFF]))  // Drow
+        Continue()
+END
+
+IF
+    Allegiance(Myself,ENEMY)
+    See(NearestEnemyOf(Myself))
+    See(ThirdNearest([GOODCUTOFF]))
+    Global("Ambush03","LOCALS",0)
+THEN
+    RESPONSE #100
+        SetGlobal("Ambush03","LOCALS",1)
+        CreateCreatureObjectEffect("AC#DROW7","AC#ILSH2",ThirdNearest([GOODCUTOFF]))  // Drow
+        Continue()
+END
+
+IF
+    Allegiance(Myself,ENEMY)
+    See(NearestEnemyOf(Myself))
+    See(SecondNearest([GOODCUTOFF]))
+    Global("Ambush02","LOCALS",0)
+THEN
+    RESPONSE #100
+        SetGlobal("Ambush02","LOCALS",1)
+        CreateCreatureObjectEffect("AC#DROW7","AC#ILSH2",SecondNearest([GOODCUTOFF]))  // Drow
+        Continue()
+END
+
+IF
     See(NearestEnemyOf(Myself))
     Global("SANCTUARY","LOCALS",0)
     !StateCheck(Myself,STATE_INVISIBLE)

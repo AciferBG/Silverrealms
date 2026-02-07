@@ -1859,13 +1859,15 @@ Kann nicht verwendet werden von:
 @8051 = ~Anhänger des Duergar-Gottes Laduguer streben ein Leben lang nach Perfektion. Hier kommt ihnen häufig die finstere Wesensart ihres Gottes in die Quere, der seinen Anbetern ein Dasein in Mühsal und Qualen abverlangt.
 Dies musste auch der grauzwergische Schmied Kromthrun erfahren, als er versuchte, mit dem Segen des Grauen Beschützers, der auch als "Der Harsche" bekannt ist, dieses Paar Handschuhe zu erschaffen. Der Gegenstand schenkte ihm zwar die erhoffte Muskelkraft eines Steinriesen, doch die Gewandheit und Trefferfertigkeit wurde auf das Niveau eines Flumph reduziert.
 
-SPEZIFISCHE EIGENSCHAFTEN:  
+EIGENSCHAFTEN:
+
+Kann nur durch „Fluch brechen“ wieder abgenommen werden. 
 
 Stärke: auf 20 gesetzt
 Geschicklichkeit: wird zu 3
 ETW0: auf 20 gesetzt
-Gewicht: 2
-Kann nicht verwendet werden von:~
+
+Gewicht: 2~
 @8052 = ~Mantel des Schweigens~
 @8053 = ~Mantel des Schweigens 
 Dieser Umhang hüllt seinen Träger in eine Aura unheimlicher Stille und dämpft jegliches Geräusch, das von ihm ausgeht. So beliebt solche Umhänge bei Dieben und Spionen auch sein mögen, so unbeliebt sind sie doch bei den Anwendern arkaner Kunst, da jeder, der diesen Mantel anlegt, zum Schweigen verdammt ist und keine Zaubersprüche mehr wirken kann. Die Legende besagt, dass solch ein Mantel von einem berüchtigten Meuchelmörder Imaskars verwendet wurde. Im passenden Moment stülpte er seinen Umhang über sein ahnungsloses Opfer, dem dadurch jeglicher Hilferuf verwehrt blieb. Dies könnte erklären, weshalb nie jemand die Verbrechen des Assassinen gehört hatte, obwohl sie immer am hellichten Tage stattfanden.
@@ -2145,21 +2147,23 @@ Magiewiderstand: +10 %
 Gewicht: 3
 ~
 @8118 = ~Schattenmastiff-Statuette~
-@8119 = ~Die Statuette, die Ihr da in Eurer Hand haltet, stellt eine schwarze Spinne dar. Wenn man das Befehlswort ausspricht, verwandelt sich die Statuette zu einer halbintelligenten Spinne, die auf den Namen Kitthix hört. Die große Spinne gehorcht den Befehlen ihres Herren, bis eine Stunde verstrichen ist oder bis sie getötet wird. Dann verwandelt sie sich zurück in die Statuette. Es dauert einen Tag, bis die Statuette wieder einsatzbereit ist.
+@8119 = ~Diese kleine, aus schwarzem Obsidian und mattem Onyx gefertigte Statuette zeigt einen sitzenden Schattenmastiff, einer Kreatur aus der Schattenebene.
+
+Einmal täglich kann der Besitzer die Statuette auf den Boden stellen und ein Befehlswort sprechen. Die Figur zerfließt daraufhin lautlos zu lebendigem Schatten und nimmt die Gestalt eines echten Schattenmastiffs an. Die beschworene Kreatur dient dem Beschwörer treu und kämpft an seiner Seite für eine Phase.
+
+Nach Ablauf dieser Zeit löst sich der Mastiff in Rauch und Dunkelheit auf und zieht sich in die Statuette zurück, die reglos und unscheinbar zurückbleibt, bis sie erneut genutzt werden kann.
 
 EIGENSCHAFTEN:
 
 Schattenmastiff beschwören (1x täglich)
  Reichweite: 6 m
- Dauer: 1 Stunde
+ Dauer: 1 Phase
 
 Fähigkeiten des Schattenmastiff:
 – Angriffe pro Runde: 3/2
 – Schaden: 1W8 (Stich)
-– Schadensbonus: Gift
- (Rettungswurf +1 gg. Gift)
-– kann während des Kampfes ein Phasentor einsetzen
-– kann Gegner für 2 Runden in ein Netz verstricken (Rettungswurf -2 gg. Zauber)
+– kann kurzzeitig in die Schatteneben wechseln und sich dadurch unsichtbar machen
+– Schaden durch interhältigen Angriff: x2
 
 Gewicht: 0~
 

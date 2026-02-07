@@ -141,16 +141,16 @@ THEN
 		 TriggerActivation("TrACIL58",TRUE)
 END
 
-/*
+
 IF
-	Global("AC#Ellhimar_Cernd","GLOBAL",1)
-       	!Exists("ac#vron5")  // Vronia#5 in ACIL50
+	Global("AC#IL_NEW_Cernd","GLOBAL",1)
+	!Exists("AC#VRON5")  // Vronia#5 in ACIL50
 THEN
 	RESPONSE #100
-		SetGlobal("AC#Ellhimar_Cernd","GLOBAL",2)
-		CreateCreature("ac#vron5",[2440.947],11)  // Vronia
+		SetGlobal("AC#IL_NEW_Cernd","GLOBAL",2)
+		CreateCreature("AC#VRON5",[2440.947],11)  // Vronia
 END
-*/
+
 
 IF
 	PartyHasItem("AC#DDROW")  // Toter Drow

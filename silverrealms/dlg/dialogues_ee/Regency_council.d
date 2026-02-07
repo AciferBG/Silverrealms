@@ -1459,8 +1459,8 @@ IF ~~ THEN EXTERN ~AC#TURB8~ turbaern_gromi_regencycouncil
 	CHAIN IF ~~ THEN AC#GROM1 gromi_go_to_king
 	~Ich werde Euch zum Thronsaal begleiten. Die Ratssitzung ist hiermit beendet. Der Rat wird erst wieder zusammentreffen, wenn unser König aus dem Schlaf erwacht ist. Ein jeder soll sich Gedanken machen, wie man das Rätsel unseres Königs doch noch lösen könnte.~
 	== AC#VRON1 ~Ich habe schon eine Idee. <CHARNAME>, lasst uns draußen vor der Halle einmal miteinander sprechen.~
-	== AC#GROM1 ~Dass Ihr mir nicht mehr von diesem... diesem Gehirn kostet, Vronia!~
-	== AC#VRON1 ~Nein, ich nicht. Ganz bestimmt nicht...~
+	== AC#GROM1 ~Dass Ihr mir nicht mehr von diesem... diesem Gehirn kostet, Vronia! Es reicht, dass ich schon meinen eigenen Sohn an die Schinder verloren habe, da möchte ich nicht noch ein anderes Ratsmitglied verlieren.~
+	== AC#VRON1 ~Nein, *ich* werde nicht mehr davon kosten. Ich ganz bestimmt nicht...~
 	== AC#GROM1 ~Dann ist der Regentschaftsrat hiermit aufgelöst!~
 	END
 	IF ~~ THEN DO ~SetGlobal("AC#RC_Spiderstalkings","GLOBAL",1)

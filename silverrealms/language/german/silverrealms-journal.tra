@@ -214,15 +214,15 @@ Nach seinem Tod hat sich Ellhimars Leiche in einen Dunkelelfen verwandelt! Ich s
 @50612   = ~Der missmutige Magier
 
 Ich habe Vronia von meinem Kampf mit "Ellhimar", dem Drow erzählt. Sie war geschockt und ist umgehend zum Ratsgebäude aufgebrochen. Ich denke, ich habe nun etwas gut bei ihr.~
-@50700   = ~Hilfe für Ellhimar
+@50700   = ~Verlorene Erinnerungen
 
-Vronia Eisenbieger hat mich wieder um Hilfe gebeten. Ich soll einen Zwerg namens Cernd, der ebenso wie Ellhimar von den Gedankenschindern gequält wurde, um Hilfe bitten. Cernd steht in der großen Bibliothek im Osten der Stadt unter Arrest. Wenn ich mit den Wachen rede, sollte Cernd freigelassen werden und ich muss mit ihm in Sharindlars Tempel gehen, um Ellhimar von seiner geistigen Umnachtung zu befreien.~
-@50701   = ~Hilfe für Ellhimar
+Vronia Eisenbieger hat mich wieder um Hilfe gebeten. Ich soll einen Zwerg namens Khaernd, der einst von den Gedankenschindern gequält wurde, um Hilfe bitten. Khaernd steht in der großen Bibliothek im Osten der Stadt unter Arrest. Wenn ich mit den Wachen rede, sollte Khaernd freigelassen werden und ich muss mit ihm in Sharindlars Tempel gehen, um Ellhimar von seiner geistigen Umnachtung zu befreien.~
+@50701   = ~Verlorene Erinnerungen
 
-Cernd Schüttergeist, der Zwerg-Illithide, hat sich aus seinem Käfig einfach wegteleportiert. Wenn ich Glück habe, finde ich ihn bei Vronia und Ellhimar im Tempel Sharindlars in Haelas Hallen. Wenn ich Pech habe - nein, darüber möchte ich lieber nicht nachdenken...~
-@50702   = ~Hilfe für Ellhimar
+Khaernd Schüttergeist, der Zwerg-Illithide, hat sich aus seinem Käfig einfach wegteleportiert. Wenn ich Glück habe, finde ich ihn bei Vronia und Ellhimar im Tempel Sharindlars in Haelas Hallen. Wenn ich Pech habe - nein, darüber möchte ich lieber nicht nachdenken...~
+@50702   = ~Verlorene Erinnerungen
 
-Cernd Schüttergeists Versuche, Ellhimars geistigen Zustand zu verbessern, dauern an. Bis dahin kann ich mich anderen Aufgaben widmen.~
+Khaernd Schüttergeists Versuche, Ellhimars geistigen Zustand zu verbessern, dauern an. Bis dahin kann ich mich anderen Aufgaben widmen.~
 //___________________________Drachenangriff
 @51000   = ~Ein Drachenangriff?
 

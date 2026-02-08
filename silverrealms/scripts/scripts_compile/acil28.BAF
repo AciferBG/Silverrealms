@@ -222,6 +222,17 @@ THEN
 END
 
 IF
+    PartyHasItem("AC#ILEBL")  // Lappen des Ältestenhirns
+    Global("GithFight","ACIL28",0)
+THEN
+    RESPONSE #100
+        CreateCreature("AC#28GI2",[2850.290],S)  // Githyanki
+        CreateCreature("AC#28GI2",[2722.309],S)  // Githyanki
+        CreateCreature("AC#28GI1",[2797.348],S)  // Githyanki
+        SetGlobal("GithFight","ACIL28",1)
+END
+
+IF
 	Delay(3)
 	Global("Ambush01","ACIL28",1)
 	GlobalLT("Ambush01Stop","ACIL28",5)

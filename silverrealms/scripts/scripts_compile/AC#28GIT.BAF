@@ -1,0 +1,69 @@
+IF
+    Global("GithFight","ACIL28",1)
+    Allegiance(Myself,NEUTRAL)
+THEN
+    RESPONSE #100
+        Enemy()
+END
+
+IF
+    AttackedBy([GOODCUTOFF],DEFAULT)
+    Allegiance(Myself,NEUTRAL)
+THEN
+    RESPONSE #100
+        Shout(89)
+        Enemy()
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    Global("Prep","LOCALS",0)
+THEN
+    RESPONSE #100
+        ApplySpell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Steinhaut)
+        SetGlobal("Prep","LOCALS",1)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    HaveSpell(WIZARD_REMOVE_MAGIC)  // SPWI302.SPL (Magie zerstören)
+THEN
+    RESPONSE #100
+        Spell(NearestEnemyOf(Myself),WIZARD_REMOVE_MAGIC)  // SPWI302.SPL (Magie zerstören)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    Global("SwordSpell","LOCALS",0)
+THEN
+    RESPONSE #100
+        ForceSpell(Myself,WIZARD_MORDENKAINENS_SWORD)  // SPWI716.SPL (Mordenkainens Schwert)
+        SetGlobal("SwordSpell","LOCALS",1)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    HaveSpell(WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magisches Geschoss)
+THEN
+    RESPONSE #30
+        Spell(NearestEnemyOf(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magisches Geschoss)
+    RESPONSE #70
+        Continue()
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    Global("SwordSpell","LOCALS",1)
+THEN
+    RESPONSE #100
+        ForceSpell(Myself,WIZARD_PHANTOM_BLADE)  // SPWI518.SPL (Phantomklinge)
+        SetGlobal("SwordSpell","LOCALS",2)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+THEN
+    RESPONSE #100
+        AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+

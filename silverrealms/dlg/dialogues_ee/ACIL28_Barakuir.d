@@ -54,7 +54,42 @@ IF ~~ THEN BEGIN 2
   IF ~~ THEN EXIT
 END
 
+// Githyanki
 
+BEGIN AC#28GI1
+
+CHAIN IF ~NumTimesTalkedTo(0)~ THEN AC#28GI1 hello_0
+~Die Illithiden sind verschwunden. Gut.~
+END
+IF ~!Dead("AC#ULIT2")~ THEN EXTERN AC#28GI1 illithid_NOT_dead
+IF ~Dead("AC#ULIT2")~ THEN EXTERN AC#28GI1 illithid_YES_dead
+
+	CHAIN AC#28GI1 illithid_NOT_dead
+	~Wenngleich wir es bevorzugt hätten, wenn Ihr sie getötet hättet. Das hätte uns weitere Arbeit erspart.~
+	END
+	IF ~~ THEN EXTERN AC#28GI1 illithid_patrol
+	
+	CHAIN AC#28GI1 illithid_YES_dead
+	~Und Ihr habt sogar ihren Anführer getötet! Das erspart uns reichlich Arbeit.~
+	END
+	IF ~~ THEN EXTERN AC#28GI1 illithid_patrol
+	
+	CHAIN AC#28GI1 illithid_patrol
+	~Doch nun werden wir Euch töten. Ihr habt euch weit genug eingemischt. Wir haben die Gedankenschinder vor Iltkazar beobachtet. Und wir haben sie getötet. Auch jene Patrouille vor Iltkazar, die so töricht war, unser Versteck zu betreten.~
+	END
+	IF ~~ THEN REPLY ~Ihr wart das? Warum?~ EXTERN AC#28GI1 what_do_you_do
+	
+	CHAIN AC#28GI1 what_do_you_do
+	~Es zieht Krieg auf. Ein großer Krieg. Ein Krieg, bei dem auch wir nichts als Handlanger sind. Und Ihr seid kein Teil dieses Krieges. Deshalb werdet Ihr jetzt sterben.~
+	END
+	IF ~~ THEN EXTERN AC#28GI1 bye_fight
+	
+	CHAIN AC#28GI1 bye_fight
+	~Dies endet hier.~
+	DO ~SetGlobal("GithFight","ACIL28",2)
+	Enemy() ~EXIT
+	
+	
 // Undead Elder brain
 
 //first encounter

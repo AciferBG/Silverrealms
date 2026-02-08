@@ -1,6 +1,50 @@
 
 
 /*******************************************************************************************************
+Dialog mit dem Kontrollschädel
+*******************************************************************************************************/
+
+BEGIN ~AC#Skul1~
+
+IF ~NumTimesTalkedToGT(0)~ THEN BEGIN hello_again
+SAY ~Der Schädel pulsiert noch immer in einem blauen Licht. Seine Flammen lecken an Euren Fingern und scheinen auf einen geistigen Befehl von Euch zu warten.~
+++ ~Den Schädel loslassen.~ + 16
+IF ~Global("EarthNodeActivation","ACIL31",7)~ THEN REPLY ~Bringt mich zur Astralebene.~ + 3
+IF ~!Global("EarthNodeActivation","ACIL31",7)~ THEN REPLY ~Bringt mich zur Astralebene.~ + must_node_activate
+END
+
+IF ~NumTimesTalkedTo(0)~ THEN BEGIN 1
+SAY ~Ihr haltet Eure Hand über das blaue Feuer, das aus dem Schädel hervorlodert. Zu Eurer Überraschung ist die Flamme nicht heiß, sondern fühlt sich kühl und weich an. Kurz darauf pulsiert der Schädel mit ungeheurer Energie. Nach einem kurzen geistigen Ringen habt Ihr die Kontrolle über ihn gewonnen. Ihr bemerkt, wie Ihr allein mit Eurer Geisteskraft das Schiff manövrieren könnt.~
+++ ~Den Schädel loslassen.~ + 16
+IF ~Global("EarthNodeActivation","ACIL31",7)~ THEN REPLY ~Bringt mich zur Astralebene.~ + 3
+IF ~!Global("EarthNodeActivation","ACIL31",7)~ THEN REPLY ~Bringt mich zur Astralebene.~ + must_node_activate
+END
+
+IF ~~ THEN BEGIN 3
+   SAY ~Nichts geschieht. Ihr werdet Eure Gedanken genauer fokussieren müssen, um die Reise in Gang zu bringen.~
+++ ~Den Schädel losslassen.~ + 16
+++ ~Ihr stellt Euch die tote Drachengottheit Kalzareinad vor, wie sie Euch der alte Drache Maldraedior beschrieben hat. Vor Eurem geistigen Auge formt sich ein Bild, das Bild eines riesigen Drachenkadavers, der in einem Meer aus Silber zu treiben scheint...~ + 4
+END
+
+IF ~~THEN BEGIN 4
+SAY ~Die Wirklichkeit um Euch verschwimmt, und Ihr habt das gefühl, als würde Euer Geist den Körper verlassen. Ihr fühlt Euch leicht und frei, und die Höhle, in der Ihr Euch gerade noch befandet, verschwindet in einem Meer aus Licht...~
+   IF ~~ THEN DO ~SetGlobal("AC#Astraltravel","ACIL31",1)~  EXIT
+END
+
+IF ~~ THEN BEGIN 16
+   SAY ~Ihr wendet Euch von dem Schädel ab.~
+   IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN must_node_activate
+   SAY ~Es scheint sich im Inneren des Schiffes etwas zu regen, doch so schnell es begonnen hat, so schnell ist es auch wieder vorüber. Ihr könnt zwar das Schiff kontrollieren, aber ohne ein Portal, durch das es sich teleportieren kann, ist das Astralschiff ziemlich nutzlos.~
+   IF ~~ THEN EXIT
+END
+
+
+
+
+/*******************************************************************************************************
 Dialog Area ACIL31 Harmswa
 *******************************************************************************************************/
 BEGIN ~AC#HARM2~

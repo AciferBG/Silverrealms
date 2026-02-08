@@ -143,12 +143,13 @@ END
 
 
 IF
+	InMyArea(Player1)
 	Global("AC#IL_NEW_Cernd","GLOBAL",1)
-	!Exists("AC#VRON5")  // Vronia#5 in ACIL50
 THEN
 	RESPONSE #100
 		SetGlobal("AC#IL_NEW_Cernd","GLOBAL",2)
-		CreateCreature("AC#VRON5",[2440.947],11)  // Vronia
+		CreateCreature("AC#VRON5",[2526.816],NE)  // Vronia: post-Barakuir, pre Cernd
+		CreateCreature("AC#ELER7",[2600.856],NE)  // Elern: post-Barakuir, pre Cernd
 END
 
 

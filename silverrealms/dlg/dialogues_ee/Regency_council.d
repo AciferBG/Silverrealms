@@ -1173,7 +1173,7 @@ IF ~~ THEN EXTERN ~AC#GROM1~ abstimmung
 END
 
 IF ~GlobalGT("RC_Dismissed","ACIL62",0)~ THEN BEGIN hello_dismissed
-SAY ~Jetzt sind sie alle weg. Was soll ich nun machen? Die Schmiede ist zu laut, und mein Weib ist mir zu anstrengend. *Seufz*. Ich glaube, ich bleibe einfach hier.~
+SAY ~Jetzt sind sie alle weg. Was soll ich nun machen? Die Schmiede ist zu laut, die Mine ist zu staubig, und mein Weib ist mir zu anstrengend. *Seufz*. Ich glaube, ich bleibe einfach hier.~
 IF ~~ THEN EXIT 
 END
 
@@ -1468,16 +1468,6 @@ IF ~~ THEN EXTERN ~AC#TURB8~ turbaern_gromi_regencycouncil
 		AddexperienceParty(500)
 		~ EXIT
 
-// OLD: ELERN Bibliothek Borthuns Buch
-/*
-	== AC#ELER1 ~<CHARNAME>, ich bitte Euch, besucht mich in der großen Bibliothek. Ich werde dort gemeinsam mit meinem Vater versuchen, etwas über den Ort in Erfahrung zu bringen, welchen Mith Barak an der Oberfläche aufsuchen wollte.~
-	END
-	IF ~~ THEN DO ~SetGlobal("AC#RC_Spiderstalkings","GLOBAL",1)
-	SetGlobal("AC#IL_NEW_Borthun","GLOBAL",1)
-		//AddJournalEntry(@62022,QUEST)
-		AddexperienceParty(1000)
-		~ EXIT
-		*/
 // Ellhimar appears
 /*
 CHAIN IF ~~ THEN AC#VRON1 chain_is_this_really_ellhimar

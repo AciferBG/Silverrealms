@@ -1,0 +1,8 @@
+IF
+    AreaCheck("ACIL50")
+    Global("AC#IL_NEW_Borthun","GLOBAL",1)
+THEN
+    RESPONSE #100
+        EscapeAreaDestroy(6)
+END
+

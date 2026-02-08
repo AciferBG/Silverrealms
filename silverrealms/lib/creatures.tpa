@@ -1566,7 +1566,7 @@ COPY ~silverrealms/cre/AC#ELER2.cre~ ~override~ // Elern in ACIL50
   SAY SELECT_COMMON5  @5064
   SAY SELECT_COMMON6  @5065
   
-COPY ~silverrealms/cre/AC#ELER5.cre~ ~override/AC#ELER5.cre~ // Elern in ACIL53
+COPY ~silverrealms/cre/AC#ELER5.cre~ ~override~ // Elern in ACIL53
   SAY NAME1 @282 SAY NAME2 @282
       SAY INITIAL_MEETING    @5065
   SAY SELECT_COMMON1  @5060
@@ -1585,8 +1585,18 @@ COPY ~silverrealms/cre/AC#ELER6.cre~ ~override~ // Elern in ACIL50: anthan book 
   SAY SELECT_COMMON4  @5063
   SAY SELECT_COMMON5  @5064
   SAY SELECT_COMMON6  @5065
-  
-COPY ~silverrealms/cre/AC#ELER8.cre~ ~override/AC#ELER8.cre~ // Elern in ACIL27
+
+COPY ~silverrealms/cre/AC#ELER7.cre~ ~override~ // Elern in ACIL50: post-Barakuir, pre-cernd
+  SAY NAME1 @282 SAY NAME2 @282
+      SAY INITIAL_MEETING    @5065
+  SAY SELECT_COMMON1  @5060
+  SAY SELECT_COMMON2  @5061
+  SAY SELECT_COMMON3  @5062
+  SAY SELECT_COMMON4  @5063
+  SAY SELECT_COMMON5  @5064
+  SAY SELECT_COMMON6  @5065
+
+COPY ~silverrealms/cre/AC#ELER8.cre~ ~override~ // Elern in ACIL27
   SAY NAME1 @282 SAY NAME2 @282
       SAY INITIAL_MEETING    @5065
   SAY SELECT_COMMON1  @5060
@@ -1596,7 +1606,7 @@ COPY ~silverrealms/cre/AC#ELER8.cre~ ~override/AC#ELER8.cre~ // Elern in ACIL27
   SAY SELECT_COMMON5  @5064
   SAY SELECT_COMMON6  @5065
   
-COPY ~silverrealms/cre/AC#ELER9.cre~ ~override/AC#ELER9.cre~ // Elern in ACIL20
+COPY ~silverrealms/cre/AC#ELER9.cre~ ~override~ // Elern in ACIL20
   SAY NAME1 @282 SAY NAME2 @282
       SAY INITIAL_MEETING    @5065
   SAY SELECT_COMMON1  @5060

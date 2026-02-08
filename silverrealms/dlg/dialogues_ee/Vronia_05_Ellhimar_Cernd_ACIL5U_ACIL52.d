@@ -53,10 +53,10 @@ END
 					END
 
 /*******************************************************************************************************
-Dialog Vronia cre#5 in Iltkazar, Quest-Start: Help Ellhimar
+Dialog Vronia cre#5 und Elern cre#7in Iltkazar, Quest-Start: Help Ellhimar
 *******************************************************************************************************/
-
-BEGIN ~AC#VRON5~
+BEGIN AC#ELER7
+BEGIN AC#VRON5
 
 IF ~Global("AC#Gromi_Cernd","ACIL52",10)~ THEN BEGIN hello_ellhimar_gone
 SAY  ~So ist nun auch für mich hier alles getan. Ich wünsche Euch viel Erfolg, <CHARNAME>.~
@@ -125,22 +125,61 @@ END
 */
 // in Area ACIL50
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN 1
-SAY  ~Hallo <CHARNAME>. Ich bräuchte wieder Eure Hilfe.~
-++ ~Wenn Ihr wollt, dass ich von diesem Hirnlappen probiere: Vergesst es.~ + not_tasting_lobe
-++ ~Ihr habt eine Idee, wie wir in der Suche weiterkommen, richtig?~ + fate_of_the_king
-++ ~Geht es um den schlafenden König?~ + fate_of_the_king
+SAY  ~<CHARNAME>! Gut, dass Ihr kommt. Wir bräuchten weiter Eure Hilfe.~
+++ ~Wenn Ihr wollt, dass ich von diesem Hirnlappen probiere: Vergesst es.~ EXTERN AC#ELER7 not_tasting_lobe
+++ ~Habt Ihr eine Idee, wie wir in der Suche weiterkommen?~ + fate_of_the_king
+++ ~Natürlich, was wollt Ihr?~ + fate_of_the_king
 END
 
-	CHAIN AC#VRON5 not_tasting_lobe
-	~Das kann ich gut verstehen. Lasst es mich ein wenig ausführen.~
+	CHAIN AC#ELER7 not_tasting_lobe
+	~Das kann ich gut verstehen. Lasst es Vronia ein wenig ausführen.~
 	END
 	IF ~~ THEN EXTERN AC#VRON5 fate_of_the_king
 
 	CHAIN AC#VRON5 fate_of_the_king
-	~Ihr wisst, dass mir das Schicksal des Königs am Herzen liegt. Sein derzeitiger Zustand schmerzt mich.~
+	~Ihr wisst, dass uns das Schicksal unseres Königs am Herzen liegt. Sein derzeitiger Zustand schmerzt uns. Deshalb möchten wir weiter alles daransetzen, ihn aus seinem Schlaf zu befreien.~
+	== AC#ELER7 ~Nun, da sich der Regentschaftsrat aufgelöst hat, bleibt uns nur, auf eigene Faust nach einer Lösung zu suchen.~
+	==AC#VRON5 ~Was ich ohnehin für eine bessere Lösung halte.~
 	END
-	IF ~~ THEN REPLY ~Was kann ich tun?~ EXTERN AC#VRON5 about_gromi_khaernd
+	IF ~~ THEN REPLY ~Was kann ich tun?~ EXTERN AC#VRON5 about_elderbrain_lobe
 
+	CHAIN AC#VRON5 about_elderbrain_lobe
+	~Ihr habt uns berichtet, dass sich Mith Barak mit diesem... diesem untoten Ältestenhirn ausgetauscht hat.~
+	== AC#ELER7 ~Er muss ziemlich verzweifelt gewesen sein, dass er sich zu diesem Schritt hingerissen hat.~
+	==AC#VRON5 ~Wir können seine wahren Absichten nicht ergründen. Aber es muss einen Grund geben, warum Mith Barak ausgerechnet dort nach Antworten gesucht und vielleicht Erinnerungen hinterlassen hat.~
+	==AC#VRON5 ~Ihr habt gesehen, wie ich versucht habe, diese Erinnerungen zu aktivieren, indem ich mir einen Teil des Hirnlappens einverleibt habe.~
+	END
+	IF ~~ THEN REPLY ~Das hat uns aber auch nicht weitergebracht.~ EXTERN AC#VRON5 about_elderbrain_lobe_02
+	
+		CHAIN AC#VRON5 about_elderbrain_lobe_02
+		~Das wusste ich. Ich bin zu alt, zu unbedeutend, zu... nun, sagen wir, ich war einfach nicht die richtige. Das war mir von vornherein klar.~
+		== AC#ELER7 ~Warum habt Ihr es dennoch versucht?~
+		==AC#VRON5 ~Ich wollte sicher sein, dass das Hirn den Kostenden nicht umbringt. Mein Tod durch diese Masse wäre ersetzbar gewesen, andere... vielleicht nicht.~
+		==AC#VRON5 ~Ich will aufhören, die Esse weiter zu schüren, und es geradeheraus sagen: Jemand geeigneteres muss von diesem Hirnlappen kosten und versuchen, die Erinnerungen darin zu aktivieren.~
+		END
+		IF ~~ THEN REPLY ~Also doch.~ EXTERN AC#VRON5 taste_elderbrain_lobe
+		
+		CHAIN AC#VRON5 taste_elderbrain_lobe
+		~Es müsst nicht unbedingt Ihr sein. Aber es könntet Ihr sein. Ich möchte nichts beschönigen: Dieses Ding zu konsumieren ist äußerst unangenehm, und es könnte bei Euch bleibende Schäden hinterlassen.~
+		END
+		IF ~~ THEN REPLY ~Das ist ein abscheulicher Gedanke.~ EXTERN AC#VRON5 taste_elderbrain_lobe_02
+		IF ~~ THEN REPLY ~Gibt es keine andere Lösung?~ EXTERN AC#VRON5 taste_elderbrain_lobe_02
+		IF ~~ THEN REPLY ~Warum ich?~ EXTERN AC#VRON5 taste_elderbrain_lobe_02
+		IF ~~ THEN REPLY ~Bei Euch hat es  nicht gewirkt. Warum sollte es bei mir anders sein?~ EXTERN AC#VRON5 taste_elderbrain_lobe_02
+		
+			CHAIN AC#VRON5 taste_elderbrain_lobe_02
+			~Solltet Ihr Euch dagegen entscheiden, wären wir Euch nicht böse. Jedoch führt uns das zu der Frage, warum Ihr überhaupt hier seid.~
+			== AC#ELER7 ~Beldas hatte Euch aufgesucht, weil Mith Barak von jemandem gehört hatte, der ihm an der Oberfläche helfen könnte. Vielleicht seid Ihr das.~
+			==AC#VRON5 ~Auch wenn ich viele Dinge noch nicht verstehe, sehe ich es genauso. Allerdings kommt mir manches an Mith Baraks Ideen merkwürdig vor. Dazu gehört, dass er jemanden von der Oberfläche, den er nicht einmal kannte, auserkoren hat, seine Hilfe zu sein.~
+			==AC#VRON5 ~Als Mith Barak in seinen letzten Schlaf fiel, wart Ihr wahrscheinlich noch nicht einmal geboren. Was ist so besonders an Euch?~
+			END
+			IF ~~ THEN REPLY ~Das wüsste ich manchmal auch gern.~ EXTERN AC#VRON5 taste_elderbrain_lobe_03
+			
+			CHAIN AC#VRON5 taste_elderbrain_lobe_03
+			~Wie dem auch sei. Meine Hoffnung ist, dass Ihr mehr Erkenntnis aus diesem verfaulten Hirnlappen gewinnen könntet als wir anderen hier. Doch es gibt auch eine zweite Lösung, wenn Ihr Euch nicht imstande fühlt, diese Aufgabe zu übernehmen.~
+			== AC#ELER7 ~Es gibt in der Stadt eine weitere Person, die sich hervorragend für diese Aufgabe eignen würde - vielleicht sogar besser als Ihr. Ohne Euch damit beleidigen zu wollen, versteht sich.~
+			END
+			IF ~~ THEN REPLY ~Wer soll das sein?~ EXTERN AC#VRON5 about_gromi_khaernd
 
 		CHAIN AC#VRON5 about_gromi_khaernd
 		~Ihr habt vielleicht mitbekommen, wie gereizt Gromi auf Gedankenschinder reagiert hat. Nach alldem, was seinem Sohn widerfahren ist, ist das nur allzu verständlich.~
@@ -149,7 +188,7 @@ END
 
 				
 			CHAIN AC#VRON5 what_happened_to_cernd
-			~Gromis Sohn heißt Khaernd. Einst war er der fähigste Zardazil-Schmied Iltkazars und als ältester Sohn Gromi Arnschädels dazu auserkoren, die legendäre Arnschädelhalle zu führen. Doch das Schicksal meinte es nicht gut mit dem armen Jungen.~
+			~Gromis Sohn heißt Khaernd. Einst war er der fähigste Zardazil-Schmied Iltkazars und als ältester Sohn Clan Arnschädels dazu auserkoren, die legendäre Arnschädelhalle zu führen. Doch das Schicksal meinte es nicht gut mit dem armen Jungen.~
 			END
 			IF ~~ THEN REPLY ~Was ist ihm widerfahren?~ EXTERN AC#VRON5 what_happened_to_cernd_02
 
@@ -184,11 +223,11 @@ END
 											CHAIN AC#VRON5 cernd_prison_02
 											~Jedenfalls hat der Rat dann beschlossen, den armen Khaernd in der Halle der Runensteine, unserer großen Bibliothek, für den Rest seiner Tage in einen Käfig zu sperren. Dort sitzt er noch immer und wird bewacht.~
 											END
-											IF ~~ THEN REPLY ~Ihr wollt, dass ich ihn befreie?~ EXTERN AC#VRON5 free_cernd_01
+											IF ~~ THEN REPLY ~Ihr wollt, dass ich ihn befreie?~ EXTERN AC#ELER7 free_cernd_01
 
 											
-												CHAIN AC#VRON5 free_cernd_01
-												~Ich habe schon mit Bettargh gesprochen. Er ist mit mir einer Meinung, dass wir Khaernd nicht mehr eingesperrt lassen sollten. Zum Einen, weil es unzwergisch ist, zum Anderen, weil vielleicht nur er uns helfen kann, bei der Suche nach dem schlafenden König zu helfen.~
+												CHAIN AC#ELER7 free_cernd_01
+												~Ich habe schon mit meinem Vater Bettargh gesprochen. Er ist mit uns einer Meinung, dass wir Khaernd nicht mehr eingesperrt lassen sollten. Zum Einen, weil es unzwergisch ist, zum Anderen, weil vielleicht nur er uns helfen kann, bei der Suche nach dem schlafenden König zu helfen.~
 												END
 												IF ~~ THEN REPLY ~Was sagt Gromi als Cernds Vater dazu?~ EXTERN AC#VRON5 gromi_cernd
 
@@ -202,23 +241,44 @@ END
 														CHAIN AC#VRON5 act_against_rc_01
 														~Der Rat hatte die letzten drei Jahre Zeit zu zeigen, dass er imstande ist, unsere gegenwärtige Krise zu lösen. Wenn wir weiter darauf vertrauen, dass sich alles zum Guten wendet, indem wir einfach so weitermachen, werden wir keinen Erfolg haben. Wir müssen andere Wege gehen, am Rat vorbei. Uns läuft die Zeit davon. König Mith Barak hätte dies mit Sicherheit ebenfalls so gewollt. Warum sonst hättet Ihr in unsere Stadt kommen sollen? Nur, um den Willen des Rates umzusetzen? Das können die Zwerge hier auch ohne Euch. Nein, wir brauchen Euch, weil Ihr Dinge *anders* macht als die Zwerge Iltkazars!~
 														END
-														IF ~~ THEN REPLY ~Und was soll ich tun?~ EXTERN AC#VRON5 free_cernd_02
+														IF ~~ THEN REPLY ~Und was soll ich tun?~ EXTERN AC#ELER7 free_cernd_02
 
 														
-															CHAIN AC#VRON5 free_cernd_02
-															~Geht in die Halle der Runensteine, besucht Khaernd in seiner Zelle im Westen der großen Bibliothek und bittet ihn darum, einen Blick auf den Lappen des Ältestenhirns zu werfen.~ 
-															=
-															~Ich warte auf Euch im Gnädigen Hof, dem Tempel Sharindlars in Haelas Hallen. Bettargh Abgrundlied, der der großen Bibliothek vorsteht und für die Beaufsichtigung Cernds zuständig ist, hat Euch seine Erlaubnis dazu gegeben. Er wird vielleicht so tun, als wüsste er von nichts, um Gromi nicht zu verärgern. Insgeheim denkt er aber genau so wie ich.~
+															CHAIN AC#ELER7 free_cernd_02
+															~Geht in die Halle der Runensteine, der Bibliothek, welcher mein Vater vorsteht. Holt Euch von ihm die Erlaubnis ein, Khaernd in seiner Zelle im Westen der großen Bibliothek zu besuchen. Bittet ihn darum, einen Blick auf den Lappen des Ältestenhirns zu werfen.~ 
+															== AC#VRON5 ~Dies wäre also die zweite Möglichkeit, an die Erinnerung in dem Ältestenhirnlappen zu gelangen: Khaernd soll die Erinnerung aktivieren.~
+															== AC#VRON5 ~Oder wollt Ihr es selbst versuchen? Nun ist der Zeitpunkt gekommen, dass Ihr Euch entscheidet.~
 															END
-															IF ~~ THEN REPLY ~Gut, ich werde mit Khaernd reden.~ EXTERN AC#VRON5 free_cernd_exit
+															IF ~~ THEN REPLY ~Khaernd soll den Hirnlappen konsumieren.~ EXTERN AC#VRON5 free_cernd_exit
+															IF ~~ THEN REPLY ~Ich möchte es gern selbst versuchen.~ EXTERN AC#ELER7 taste_lobe_myself
 
 
-																CHAIN AC#VRON5 free_cernd_exit
-																~Eure Hilfe freut mich sehr. Ich werde mit Isdlara im Tempel Sharindlars warten, bis Khaernd endlich aus seinem Käfig befreit ist.~
+																CHAIN AC#VRON5 free_cernd_exit																
+																~Eine gute Entscheidung. Khaernd ist dafür sicher mehr als geeignet. Und es ist ein guter Anlass, dem armen Kerl wieder mehr Sinn im Leben zu geben. Indem er wieder ein freier Zwerg wird. Und indem er den Hirnlappen kostet.~ 
+																== AC#VRON5 ~Wir sollten diesen Schritt jedoch nicht hier in aller Öffentlichkeit gehen.~
+																== AC#ELER7 ~Ich habe mit meiner Tante Isdlara gesprochen. Sie ist die Hohepriesterin Sharindlars, unserer Göttin des Lebens. In ihrem Tempel lässt sich die Einverleibung des Lappens sicher und diskret vollziehen.~
+																== AC#VRON5 ~Ich warte auf Euch im Gnädigen Hof, dem Tempel Sharindlars in Haelas Hallen, bis Ihr Khaernd befreit habt. Trefft mich dort, um die Erinnerung des Lappens zu aktivieren.~
+																== AC#ELER7 ~<CHARNAME>, es gibt noch eine weitere Aufgabe. Ihr erwähntet "das Buch Iltkazars, das nicht in der Bibliothek liegt". Ich habe eine Idee, was damit gemeint sein könnte. Es wird das Kosten des Hirnlappens nicht ersetzen, aber uns vielleicht ebenfalls weiterhelfen.~
+																== AC#ELER7 ~Ihr müsst ja ohnehin in die Bibliothek, um mit meinem Vater zu sprechen und Khaernd zu befreien. Trefft mich dort, nachdem Ihr mit meinem Vater gesprochen habt.~
+																== AC#VRON5 ~Ich werde derweil mit Isdlara im Tempel Sharindlars warten, bis Khaernd aus seinem Käfig befreit ist. Der Tempel Sharindlars liegt in der Zitadelle Haelas Hallen im Osten der Stadt, neben dem Tempel Dumathoins.~
 																END
-																IF ~~ THEN DO ~SetGlobal("AC#Ellhimar_Cernd","GLOBAL",3)
-																AddJournalEntry(@50700,QUEST)
-																EscapeAreaObject("TrACIL52")~  EXIT
+																IF ~~ THEN DO ~SetGlobal("AC#IL_NEW_Borthun","GLOBAL",1)
+																SetGlobal("AC#Ellhimar_Cernd","GLOBAL",3)
+																AddJournalEntry(@50700,QUEST)~  EXIT
+																
+																CHAIN AC#ELER7 taste_lobe_myself
+																~Ein äußerst mutiger Schritt.~
+																== AC#VRON5 ~Wir sollten diesen Schritt jedoch nicht hier in aller Öffentlichkeit gehen.~
+																== AC#ELER7 ~Ich habe mit meiner Tante Isdlara gesprochen. Sie ist die Hohepriesterin Sharindlars, unserer Göttin des Lebens. In ihrem Tempel lässt sich die Einverleibung des Lappens sicher und diskret vollziehen.~
+																== AC#VRON5 ~Ich warte solange auf Euch im Gnädigen Hof, dem Tempel Sharindlars in Haelas Hallen. Trefft mich dort, um die Erinnerung des Lappens zu aktivieren.~
+																== AC#ELER7 ~<CHARNAME>, es gibt noch eine weitere Aufgabe. Ihr erwähntet "das Buch Iltkazars, das nicht in der Bibliothek liegt". Ich habe eine Idee, was damit gemeint sein könnte. Es wird das Kosten des Hirnlappens nicht ersetzen, aber uns vielleicht ebenfalls weiterhelfen.~
+																== AC#ELER7 ~Besucht mich in der großen Bibliothek. Ich werde dort gemeinsam mit meinem Vater versuchen, etwas über das merkwürdige Buch in Erfahrung zu bringen, welches das Ältestenhirn erwähnt hatte.~																
+																END
+																IF ~~ THEN DO ~SetGlobal("AC#IL_NEW_Borthun","GLOBAL",1)
+																SetGlobal("AC#IL_TasteLobeMyself","GLOBAL",1)
+																AddJournalEntry(@62022,QUEST)																
+																//AddJournalEntry(@50700,QUEST)
+																~  EXIT
 
 
 /*

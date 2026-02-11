@@ -460,6 +460,7 @@ COPY ~silverrealms/bam/bam_desc_BG2EE/AC#ILASD.bam~ ~override~  //    astral shi
 ///////////////////////////////////////////////////////////////////////
 INCLUDE ~silverrealms/lib/add_music_acil21.tph~
 INCLUDE ~silverrealms/lib/add_music_acil20.tph~
+INCLUDE ~silverrealms/lib/add_music_acil55.tph~
 INCLUDE ~silverrealms/lib/add_music_acil56.tph~
 INCLUDE ~silverrealms/lib/add_music_acil57.tph~
 INCLUDE ~silverrealms/lib/add_music_acil58.tph~

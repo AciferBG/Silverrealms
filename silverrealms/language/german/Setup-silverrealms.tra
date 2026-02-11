@@ -1613,7 +1613,7 @@ Diirinka'~
 // ACIL50 - ILtkazar
 @6050 = ~Bartmacher~
 @6051 = ~Schrein des Clangeddin~
-@6052 = ~Gasthaus 'Pilzruh'~
+@6052 = ~Gasthaus 'Pilzruh'~ // Mugcap Inn
 
 
 // ACIL4O
@@ -2237,6 +2237,7 @@ Gewicht: 0~
 @9052 = ~Kragni Haarstein~
 @9053 = ~Schattenmastiff~
 @9054 = ~Bewohner Iltkazars~
+@9055 = ~Schankwirt~
 
 
 

@@ -2,6 +2,9 @@
 
 COPY ~silverrealms/cre/copy~         ~override~
 
+COPY ~silverrealms/cre/AC#ILBR3.cre~ ~override~ // barkeeper in acil5r (mugcap inn)
+  SAY NAME1 @9055 SAY NAME2 @9055
+
 COPY ~silverrealms/cre/AC#IL5RD.cre~ ~override~ // commoner iltkazar
   SAY NAME1 @9054 SAY NAME2 @9054
   SAY INITIAL_MEETING @5201

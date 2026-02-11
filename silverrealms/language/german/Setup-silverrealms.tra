@@ -202,7 +202,7 @@ Klerikern~
 @171 = ~Portalstein~
 @172 = ~Dieser Edelstein glüht mit einer Euch unbekannten magischen Energie.~
 @173 = ~Astrale Steuereinheit~
-@174 = ~In die Oberfläche dieses Steines sind die typisch runden Runen der Githyankisprache eingraviert. Den Überlieferungen zufolge werden Steine dieser Art von den Githyanki-Kommandanten dazu benutzt, Astrale Schiffe in Gang zu setzen.~
+@174 = ~In die Oberfläche dieses Steines sind die typischen Runen der Githyankisprache eingraviert. Den Überlieferungen zufolge werden Steine dieser Art von den Githyanki-Kommandanten dazu benutzt, Astrale Schiffe in Gang zu setzen.~
 @175 = ~Osyluth~
 @176 = ~Shuluth~
 @177 = ~Anor Kytsev~
@@ -1177,7 +1177,7 @@ Die restlichen Runen sind zu stark verwittert, um noch etwas erkennen zu können
 @884 = ~Ein stechender Geruch steigt Euch plötzlich in die Nase. Nach dem, was die Tiefengnome gesagt haben, könnte hier ganz in der Nähe das versteckte Kuo-Toa-Lager liegen, welches Ihr mit dem Stab freilegen könnt.~
 @885 = ~Der Runenstein zerbricht beim Zurücklegen in tausend Teile.~
 @886 = ~Die Energie des Steinkreises scheint in sich zusammenzufallen.~
-@887 = ~Cernd Schüttergeist~
+@887 = ~Khaernd Schüttergeist~
 @888 = ~Die Schwebescheibe der Drow hat Euch sicher nach oben getragen. Wenn Ihr möchtet, könnt Ihr auf dem selben Wege wieder nach unten reisen.~
 @889 = ~Ihr betretet die Scheibe und lasst Euch von ihr langsam nach unten tragen.~
 @890 = ~Schwebescheibe~
@@ -1609,6 +1609,12 @@ Diirinka'~
 @6043 = ~Diese Tür wird durch psionische Macht verschlossen gehalten. Ohne den richtigen Gegenstand lässt sie nicht öffnen.~
 
 // ACIL58: Hall of Omlars
+
+// ACIL50 - ILtkazar
+@6050 = ~Bartmacher~
+@6051 = ~Schrein des Clangeddin~
+@6052 = ~Gasthaus 'Pilzruh'~
+
 
 // ACIL4O
 @6100 = ~Diese Tür hat kein Schloss. Es muss einen anderen Mechanismus geben, um sie zu öffnen.~

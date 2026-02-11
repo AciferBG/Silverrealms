@@ -159,34 +159,40 @@ COPY ~silverrealms/areas/ACIL49.are~          ~override~
 COPY ~silverrealms/areas/ACIL50.are~          ~override/ACIL50.are~
  WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
        //Map-Notes and Info Triggers
-       SAY 0x61b8 @652 // Map Note#0: Ellhimar's house
-       SAY 0x61ec @656 // Map Note#1: Temple of Oghma
+       SAY 0x664c @652 // Map Note#0: Ellhimar's house
+       SAY 0x6680 @656 // Map Note#1: Temple of Oghma
        SAY 0x1a94 @656 // Info Trigger: Temple of Oghma
-       SAY 0x6220 @659 // Map Note#2: Hall of Arnskull
+       SAY 0x66b4 @659 // Map Note#2: Hall of Arnskull
        SAY 0x16c0 @659 // Info Trigger: Hall of Arnskull
-       SAY 0x6288 @709 // Map Note#3: Bhaerynden Place
-       SAY 0x6254 @651 // Map Note#4: Vronia's House
-       SAY 0x62bc @829 // Map Note#5: The Ancient forge
+       SAY 0x671c @709 // Map Note#3: Bhaerynden Place
+       SAY 0x3560 @651 // Info Trigger: Vronia's house
+       SAY 0x66e8 @651 // Map Note#4: Vronia's House
+       SAY 0x6750 @829 // Map Note#5: The Ancient forge
        SAY 0x1848 @829 // Info Trigger: The Ancient forge
-       SAY 0x62f0 @830 // Map Note#6: The Bronze Mask
+       SAY 0x6784 @830 // Map Note#6: The Bronze Mask
        SAY 0x254c @830 // Info Trigger: The Bronze Mask
-       SAY 0x6324 @831 // Map Note#7: The bloody bulwark
+       SAY 0x67b8 @831 // Map Note#7: The bloody bulwark
        SAY 0x1784 @831 // Info Trigger: The bloody bulwark
-       SAY 0x6358 @832 // Map Note#8: Haela's halls
+       SAY 0x67ec @832 // Map Note#8: Haela's halls
        SAY 0x19d0 @832 // Info Trigger: Haela's halls
-       SAY 0x638c @833 // Map Note#9: Hall of Omlars
+       SAY 0x6820 @833 // Map Note#9: Hall of Omlars
        SAY 0x1c1c @833 // Info Trigger: Hall of Omlars
-       SAY 0x63c0 @834 // Map Note#10: Hall of Runestones
+       SAY 0x6854 @834 // Map Note#10: Hall of Runestones
        SAY 0x190c @834 // Info Trigger: Hall of Runestones
-       SAY 0x63f4 @835 // Map Note#11: Regency Council
-       SAY 0x6428 @836 // Map Note#12: Ultoksamrin Gate
-       SAY 0x645c @837 // Map Note#13: Drakkalor Gate
+       SAY 0x6888 @835 // Map Note#11: Regency Council
+       SAY 0x68bc @836 // Map Note#12: Ultoksamrin Gate
+       SAY 0x68f0 @837 // Map Note#13: Drakkalor Gate
        SAY 0x2610 @882 // Info Trigger: Place of the Hammer
        SAY 0x2e7c @883 // Info Trigger: shaggy Door
        SAY 0x30c8 @883 // Info Trigger: shaggy Door
        SAY 0x3004 @883 // Info Trigger: shaggy Door
        SAY 0x2f40 @883 // Info Trigger: shaggy Door
-       SAY 0x60f0 @892 // Rest Interrupt: Dwarven soldier
+
+       SAY 0x3624 @6050 // Info Trigger: beardmaker
+       SAY 0x33d8 @6051 // Info Trigger: shining blades
+       SAY 0x349c @6052 // Info Trigger: pilzruh
+
+       SAY 0x6584 @892 // Rest Interrupt: Dwarven soldier
 
 COPY ~silverrealms/areas/ACIL51.are~          ~override~
  WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type

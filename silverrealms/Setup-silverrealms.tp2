@@ -439,6 +439,21 @@ COPY ~silverrealms/bam/copy~         ~override~
  LAF INSTALL_PVRZ INT_VAR original_base_index new_base_index STR_VAR source_file = ~silverrealms/bam/bam_desc_BG2EE/MOS1045.pvrz~
  END
  END
+ 
+COPY ~silverrealms/bam/bam_desc_BG2EE/AC#ILASD.bam~ ~override~  //    astral ship item desc bam
+ LPF UPDATE_PVRZ_INDICES RET original_base_index new_base_index END
+ ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN 
+ LAF INSTALL_PVRZ INT_VAR original_base_index new_base_index STR_VAR source_file = ~silverrealms/bam/bam_desc_BG2EE/MOS1046.pvrz~
+ END
+ END
+
+ COPY ~silverrealms/bam/bam_desc_BG2EE/AC#ILDWD.bam~ ~override~  //    dwarven beard (handcrafted) desc bam
+ LPF UPDATE_PVRZ_INDICES RET original_base_index new_base_index END
+ ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN 
+ LAF INSTALL_PVRZ INT_VAR original_base_index new_base_index STR_VAR source_file = ~silverrealms/bam/bam_desc_BG2EE/MOS1047.pvrz~
+ END
+ END
+
 ///////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
 // add Music files

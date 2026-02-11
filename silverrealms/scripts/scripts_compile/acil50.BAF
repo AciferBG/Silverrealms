@@ -455,6 +455,6 @@ IF
 THEN
     RESPONSE #100
         SetGlobal("AC#IL_MetBeardmaker","GLOBAL",2)
-		AddMapNote([2486.1302],@221)
+		AddMapNote([2214.1583],@221)
 END
 

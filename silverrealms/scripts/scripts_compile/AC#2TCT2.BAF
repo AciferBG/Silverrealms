@@ -1,17 +1,18 @@
 IF
-	True()
+    True()
 THEN
-	RESPONSE #100
-		CutSceneId(Player1)
-		FadeToColor([30.0],0)
-		ActionOverride("AC#2TTIA",DestroySelf())
-		ActionOverride("ac#mal2t",EscapeAreaDestroy(0))
-		Wait(2)
-		LeaveAreaLUAPanic("ACIL01","",[1259.1902],0)  // Ravimors Höhle
-		LeaveAreaLUA("ACIL01","",[1259.1902],10)  // Ravimors Höhle
-		MultiPlayerSync()
-		MoveViewPoint([1259.1902],INSTANT)
-		SmallWait(5)
-		FadeFromColor([30.0],0)
-		EndCutSceneMode()
+    RESPONSE #100
+        CutSceneId(Player1)
+        FadeToColor([30.0],0)
+        ActionOverride("AC#2TTIA",DestroySelf())
+        ActionOverride("ac#mal2t",EscapeAreaDestroy(0))
+        Wait(2)
+        LeaveAreaLUAPanic("ACIL50","",[3268.1910],S)
+        LeaveAreaLUA("ACIL50","",[3268.1910],NE)
+        MultiPlayerSync()
+        MoveViewPoint([3268.1910],INSTANT)
+        SmallWait(5)
+        FadeFromColor([30.0],0)
+        EndCutSceneMode()
 END
+

@@ -18,6 +18,18 @@ THEN
 END
 
 IF
+    InMyArea(Player1)
+    Global("MalphasCutsceneTiamat","ACIL50",0)
+    GlobalGT("AC#IL_Spiderstalkings","GLOBAL",0)
+THEN
+    RESPONSE #100
+        FadeToColor([8.0],0)
+        SetGlobal("MalphasCutsceneTiamat","ACIL50",1)
+        StartCutSceneMode()
+        StartCutScene("AC#2TCT1")
+END
+
+IF
 	InMyArea(Player1)
 	Global("MalphasCutscene#2","ACIL50",0) 
 	GlobalGT("AC#ACIL64_Open","GLOBAL",0) 

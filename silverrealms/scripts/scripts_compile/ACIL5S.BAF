@@ -1,0 +1,9 @@
+IF
+    Global("TotMGCrossmodRepIncrease","ACIL5S",0)
+    Global("TotMG_Crossmod","ACIL5S",1)
+THEN
+    RESPONSE #100
+        SetGlobal("TotMGCrossmodRepIncrease","ACIL5S",1)
+        IncrementGlobal("AC_Iltkazar_Reputation","GLOBAL",1)
+        DisplayString(Myself,@1021)  // ^0xFF22B4E6Euer Ansehen in Iltkazar ist gestiegen.^-
+END

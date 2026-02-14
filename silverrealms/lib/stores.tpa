@@ -1,5 +1,8 @@
 // Silverrealms Store files
 
+COPY ~silverrealms/sto/AC#2SDW1.sto~ ~override~ // Clangeddin's shrine
+SAY 0xc @6051
+
 COPY ~silverrealms/sto/ac#bar01.sto~ ~override/ac#bar01.sto~
 SAY 0xc @229
 

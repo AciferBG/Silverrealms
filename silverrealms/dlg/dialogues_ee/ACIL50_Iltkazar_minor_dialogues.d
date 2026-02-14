@@ -8,6 +8,67 @@ IF ~True()~ THEN BEGIN no_rest
 	IF ~~ THEN DO ~EscapeArea()~ EXIT
 	END
 
+// Shrine Clangeddins in area ACIL5S
+BEGIN ~AC#2SDW1~
+
+CHAIN IF ~True()~ THEN AC#2SDW1 hello_0
+~Ihr betretet den geweihten Schrein des Herrn der Schlachten. Senkt Eure Stimme.~
+END
+IF ~~ THEN REPLY ~Was ist dies für ein Ort?~ EXTERN AC#2SDW1 what_place
+IF ~~ THEN REPLY ~Ich habe ein paar Fragen.~ EXTERN AC#2SDW1 questions
+IF ~~ THEN REPLY ~Ich muss weiter.~ EXTERN AC#2SDW1 bye
+
+	CHAIN AC#2SDW1 questions
+	~Fragen? Nun gut. Stellt sie.~
+	END
+	IF ~~ THEN REPLY ~Was ist dies für ein Ort?~ EXTERN AC#2SDW1 what_place
+	IF ~~ THEN REPLY ~Wer ist Clangeddin?~ EXTERN AC#2SDW1 who_clangeddin
+	IF ~~ THEN REPLY ~Ich möchte sehen, was für Dienste Ihr anbietet.~ EXTERN AC#2SDW1 store
+	IF ~~ THEN REPLY ~Ich muss weiter.~ EXTERN AC#2SDW1 bye
+
+	CHAIN AC#2SDW1 store
+	~So tretet vor die Zwillingsäxte und wählt mit Bedacht.~
+	END
+	IF ~~ THEN DO ~StartStore("AC#2SDW1")~ EXIT
+	
+	CHAIN AC#2SDW1 what_place
+	~Ein Ort des Stahls. Clangeddin Silberbart wird hier in diesem Schrein geehrt.~
+	END
+	IF ~~ THEN REPLY ~Wer ist Clangeddin?~ EXTERN AC#2SDW1 who_clangeddin
+	IF ~~ THEN REPLY ~Ich möchte sehen, was für Dienste Ihr anbietet.~ EXTERN AC#2SDW1 store
+	IF ~~ THEN REPLY ~Ich muss weiter.~ EXTERN AC#2SDW1 bye
+	
+	CHAIN AC#2SDW1 who_clangeddin
+	~Unser Kriegsherr. Der Schild Iltkazars. Wenn unsere Hämmer auf Feinde statt auf den Amboss schlagen ist es sein Name, der durch die Hallen klingt.~
+	=
+	~Clangeddin ist der Schutzpatron des Königreiches Iltkazars. Dennoch bleibt ihm nur ein kleiner Schrein statt eines großen Tempels in seiner Stadt. Eine Schande, wenn Ihr mich fragt.~
+	END
+	IF ~~ THEN REPLY ~Warum ist das so?~ EXTERN AC#2SDW1 why_only_shrine
+	IF ~~ THEN REPLY ~Ich möchte sehen, was für Dienste Ihr anbietet.~ EXTERN AC#2SDW1 store
+	IF ~~ THEN REPLY ~Ich muss weiter.~ EXTERN AC#2SDW1 bye
+	
+	CHAIN AC#2SDW1 why_only_shrine
+	~Einst gab es viele Tempel, die in Shanatar Clangeddin Silberbart geweiht waren. Nach dem Fall Shanatars haben sich die Zwerge anderen Göttern zugewendet. Doch solange ein Priester des Herrn der Schlachten noch in dieser Stadt betet, ist sein Glaube nicht vergessen!~
+	END
+	IF ~Dead("AC#DOGWI") Global("TotMG_Crossmod","ACIL5S",0)~ THEN REPLY ~Ich habe in den Trollbergen einen großen Tempel Clangeddins gefunden. In einer verfallenen Zwergenfestung, die man heute den "Klagenden Zwerg" nennt.~ EXTERN AC#2SDW1 crossmod_totmg_clangeddin
+	IF ~~ THEN REPLY ~Ich möchte etwas anderes fragen.~ EXTERN AC#2SDW1 questions
+	IF ~~ THEN REPLY ~Ich möchte sehen, was für Dienste Ihr anbietet.~ EXTERN AC#2SDW1 store
+	IF ~~ THEN REPLY ~Ich muss weiter.~ EXTERN AC#2SDW1 bye
+	
+	CHAIN AC#2SDW1 crossmod_totmg_clangeddin
+	~Oh! Dieser Tempel war mir nicht bekannt. In den Trollbergen, an der Oberfläche sagt Ihr? Dann kann es sich nur um das alte Königreich Korolnor handeln. Die Heimat Karlyn Kuldelvers!~
+	END
+	IF ~~ THEN REPLY ~Richtig. Mittlerweile haben Trolle, Riesen und Derro die Festung überrannt. Doch ich habe die meisten von ihnen getötet.~ EXTERN AC#2SDW1 crossmod_totmg_clangeddin_02
+	
+	CHAIN AC#2SDW1 crossmod_totmg_clangeddin_02
+	~Dann habt Ihr dem Herrn der Schlachten große Ehre erwiesen! Wir hätten nicht genügend Männer, um eine Expedition zu diesem Tempel zu unternehmen. Dass Ihr diesen Ort von Monstern gereinigt habt erfüllt mein Kriegerherz mit großer Freude! Habt dank. Ich werde Euch in Erinnerung halten.~
+	END
+	IF ~~ THEN DO ~SetGlobal("TotMG_Crossmod","ACIL5S",1)~ EXIT
+
+	CHAIN AC#2SDW1 bye
+	~Möge der Herr der Schlachten Euch immer gewogen sein.~
+	END
+	IF ~~ THEN EXIT
 // ---------------------------------------------
 // Iltkazar guardians before first encounter in regency council
 // --------------------------------------------- 	

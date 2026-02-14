@@ -297,18 +297,18 @@ Ich habe das Buch gefunden. Nun muss ich es zu Orik am Rande des gro0en Schachts
 
 Ich habe Orik das Buch zurückgegeben. Er ist sogleich in einem Labyrinth verschwunden, welches sich beim Lesen des Buches geöffnet hat.~
 // Bartmacher
-@53400 = ~Iltkazars Bartmacher
+@53400 = ~Materialien für Iltkazars Bartmacher
 
 In Iltkazar habe ich einen zwergischen Bartmacher kennengelernt. Er bat mich, im Unterreich nach seltenen und interessanten Stoffen Ausschau zu halten. Sollte ich auf etwas stoßen, aus dem man einen Bart machen kann, soll ich es ihm bringen.~
 
-@53401 = ~Iltkazars Bartmacher
+@53401 = ~Materialien für Iltkazars Bartmacher
 
 In einer Höhle im Unterreich habe ich Drider-Seide gefunden. Iltkazars Bartmacher in Iltkazar sucht nach selten Materialien. Es könnte genau das sein, wonach er sucht.~
 
-@53402 = ~Iltkazars Bartmacher
+@53402 = ~Materialien für Iltkazars Bartmacher
 
 Ich habe die Drider-Seide übergeben. Iltkazars Bartmacher war zufrieden und möchte mir aus einem Teil der Seide einen Umhang weben. Ich kann diesen nach einem Tag abholen.~
-@53403 = ~Iltkazars Bartmacher
+@53403 = ~Materialien für Iltkazars Bartmacher
 
 Ich habe mit dem Umhang aus Drider-Seide meine wohlverdiente Belohnung von dem Bartmacher Iltkazars erhalten.~
 
@@ -653,6 +653,18 @@ Iltkazar wird angegriffen. Hathar hält vor den Toren die Stellung und bat mich,
 @66001  = ~Angriff auf Iltkazar
 
 Der Angriff auf Iltkazar gilt König Mith Barak. Bresk hat mir den Auftrag gegeben, zur Halle des Regentschaftsrates vorzustoßen und Dunnabar Steinschulter über die Gefahr zu unterrichten.~
+
+
+//Beardmaker quest
+@66050  = ~Der falsche Bart
+
+Ich habe Petben Riesenkrüppler aus der Bronzemaske versprochen, seinen neuen, gefälschten Bart vom Bartmacher in Iltkazar abzuholen. Ich finde den Bartmacher am Platz von Bhaerynden.~
+@66051  = ~Der falsche Bart
+
+Ich habe den neuen Bart abgeholt. Nun muss ich diesen zu seinem neuen Besitzer Petben Riesenkrüppler bringen. Petben wartet in der Speichenbrunnenzitadelle Bronzemaske auf mich, und zwar im Südwesten bei den Zwergenballisten, welche in der "Kugelkammer" stehen.~
+@66052  = ~Der falsche Bart
+
+Als Dank für die Ablieferung seines neuen Bartes hat mir Petben Riesenkrüppler ein Drow-Kettenhemd überlassen.~
 //___________________________Die zwölf Sockel
 @71000  = ~Die zwölf Sockel
 

@@ -292,6 +292,18 @@ IF ~NumTimesTalkedTo(0)~ THEN BEGIN hello_firsttime
   IF ~~ THEN REPLY ~Schon gut. Ich gehe wieder.~ EXIT
 END
 
+IF ~GlobalGT("AC#IL_FalseBeard","GLOBAL",0)
+GlobalLT("AC#IL_FalseBeard","GLOBAL",10)~ THEN BEGIN hello_have_beard
+  SAY ~Oh, Hallo <PRO_RACE> von der Oberfläche! Habt Ihr mir schon meinen Bart mitgebracht, <GIRLBOY>?~
+  IF ~PartyHasItem("AC#ILDWB")~ THEN REPLY ~Ja, hier ist er.~ DO ~TakePartyItem("AC#ILDWB") DestroyItem("AC#ILDWB")~ GOTO retrieved_beard
+  IF ~~ THEN REPLY ~Nein, noch nicht.~ GOTO bye_wait_beard
+END
+
+	IF ~~ THEN BEGIN retrieved_beard
+	SAY ~Was für eine Freude! Seht nur, wie schön er geformt ist! Vielen Dank, <PRO_RACE>!~
+	IF ~~ THEN REPLY ~Dann hätte ich gerne dafür jetzt das Drow-Kettenhemd.~ GOTO give_chainmail01
+	END
+
 IF ~True()~ THEN BEGIN hello_again
   SAY ~Oh, Ihr seid es wieder, der <RACE> von der Oberfläche! Immer noch Interesse an unseren Geschützen, <GIRLBOY>?~
   IF ~~ THEN REPLY ~Ich würde Euch gerne einige Fragen stellen.~ GOTO frage
@@ -311,7 +323,7 @@ IF ~~ THEN BEGIN komische_waffen_2
   =
   ~Ich war mal bei einem Kampf mit den Dunkelelfen dabei, wo eine dieser Kugeln eine Priesterin der Lolth unter sich begraben hat. Ihr feines verzaubertes Kettenhemd war das einzige, das das Ganze unbeschadet überstanden hat, während von der schönen *olven* nur ein Haufen Matsch übrig geblieben ist. Das war ein Anblick, könnt Ihr mir Glauben!~
   IF ~~ THEN REPLY ~Nun, vielen Dank für diesen... äh... ausführlichen Bericht. Ich gehe dann wieder.~ GOTO bye
-  IF ~~ THEN REPLY ~Was habt Ihr mit dem Kettenhemd gemacht?~ GOTO chainmail01
+  IF ~Global("AC#IL_FalseBeard","GLOBAL",0)~ THEN REPLY ~Was habt Ihr mit dem Kettenhemd gemacht?~ GOTO chainmail01
 END
 
 IF ~~ THEN BEGIN bye
@@ -359,16 +371,60 @@ IF ~~ THEN BEGIN chainmail02
 END
 
 IF ~~ THEN BEGIN chainmail03
-  SAY ~Hmm... habe nie mit dem Gedanken gespielt, es zu verkaufen, weil ich dachte, dass es von meinen Clanbrüdern eh niemand haben möchte... lasst mich mal überlegen...~
-  IF ~~ THEN GOTO give_chainmail01
+  SAY ~Hmm... habe nie mit dem Gedanken gespielt, es zu verkaufen, weil ich dachte, dass es von meinen Clanbrüdern eh' niemand haben möchte... lasst mich mal überlegen...~
+  IF ~~ THEN GOTO chain_change_chainmail_beard
 END
 
 IF ~~ THEN BEGIN give_chainmail01
-  SAY ~Abgemacht! Wartet, ich muss es nur eben hervorholen, moment...~
+  SAY ~Abgemacht! Wartet, ich muss es nur eben hervorholen, Moment...~
   = 
   ~So, da ist es. Geht sorgsam damit um, ja? Haltet es in Ehren - möge Gorm Euch in jeder Schlacht wachsam beiseite stehen.~
-  IF ~~ THEN DO ~GiveItemCreate("AC#DWCH1",LastTalkedToBy,0,0,0)~ EXIT
+  IF ~~ THEN DO ~SetGlobal("AC#IL_FalseBeard","GLOBAL",10)
+  GiveItemCreate("AC#DWCH1",LastTalkedToBy,0,0,0)
+  AddJournalEntry(@66052,QUEST_DONE)~ EXIT
 END
+
+	CHAIN AC#56DW7 chain_change_chainmail_beard
+	~Gut. Ich gebe es Euch. Wenn Ihr mir dafür meinen neuen Bart abholt!~
+	END
+	IF ~~ THEN REPLY ~Euren Bart?~ EXTERN AC#56DW7 chain_change_chainmail_beard_02
+	
+		CHAIN AC#56DW7 chain_change_chainmail_beard_02
+		~Mein Bart! Von Iltkazars Bartmacher.~
+		END
+		IF ~~ THEN REPLY ~Ihr tragt einen falschen Bart?~ EXTERN AC#56DW7 wrong_beard
+		IF ~~ THEN REPLY ~Wo finde ich den Bartmacher?~ EXTERN AC#56DW7 find_beardmaker
+		IF ~GlobalGT("AC#IL_MetBeardmaker","GLOBAL",0)~ THEN REPLY ~Ich glaube, ich habe den Bartmacher schon besucht.~ EXTERN AC#56DW7 find_beardmaker
+		
+		CHAIN AC#56DW7 wrong_beard
+		~Psst! Nicht so laut! Das muss nicht jeder mitbekommen. Aber ja, so ist es. Nach einer Verletzung im Kampfe will mein eigener Bart nicht mehr so richtig wachsen. Ein Glück, dass wir in Iltkazar einen Bartmacher haben!~
+		END
+		IF ~~ THEN EXTERN AC#56DW7 find_beardmaker
+		
+		CHAIN AC#56DW7 find_beardmaker
+		~Er hat sein Geschäft am Platz von Bhaerynden, neben dem Schrein Clangeddins.~
+		END
+		IF ~~ THEN REPLY ~In Ordnung, ich werde Euren Bart dort für Euch abholen.~ EXTERN AC#56DW7 bring_beard_yes
+		IF ~~ THEN REPLY ~Nein, das möchte ich nicht machen. Sucht jemand anderen, der Euch Euren Bart bringt.~ EXTERN AC#56DW7 bring_beard_no
+		
+		CHAIN AC#56DW7 bring_beard_no
+		~Wir Euch beliebt. Dann gibt's eben kein DRow-Kettenhemd.~
+		EXIT
+		
+		CHAIN AC#56DW7 bring_beard_yes
+		~Fabelhaft! Bezahlt habe ich den Bart schon im Voraus. Ihr müsst ihn mir nur noch bringen, und schon gehört das Drow-Kettenhemd Euch.~
+		 END
+		 IF ~~ THEN DO ~SetGlobal("AC#IL_FalseBeard","GLOBAL",1)
+		 AddJournalEntry(@66050,QUEST)~ EXIT
+		
+		CHAIN AC#56DW7 bye_wait_beard
+		~Denkt daran: Das Drow-Kettenhemd gibt es nur, wenn Ihr mir meinen Bart besorgt!~
+		EXIT
+		
+		
+		
+		
+		
 
 
 

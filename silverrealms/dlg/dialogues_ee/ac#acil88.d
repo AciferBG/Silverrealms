@@ -18,7 +18,7 @@ SAY  ~Ihr seid diejenigen, die gekommen sind, um mich zu retten, habe ich Recht?
 END
 
 IF ~~ THEN BEGIN 2
-SAY ~Ich bin ebensowenig ein Zwerg, Krähengesicht, wie Ihr Tiamat höchstpersönlich seid. Was wollt Ihr denn noch gegen Eure Gegner ausrichten? Mit den Githyanki habt Ihr Euch überworfen, und die wenigen Diener, die Euch noch bleiben, werden Euch den Rücken kehren, sobald ihnen klar wird, dass Ihr verloren habt, um sich nicht auch noch den Zorn Eurer launischen Herrin auf sich zu ziehen.~
+SAY ~Ich bin ebenso wenig ein Zwerg, Krähengesicht, wie Ihr ein Rabe seid. Denkt Ihr, ich hätte Eure Pläne nicht durchschaut? Ein Fluch zwingt Euch in diesen armseligen Körper - genau wie mich. Doch im Gegensatz zu mir werdet Ihr in dieser jämmerlichen Form sterben! Mit den Githyanki habt Ihr Euch überworfen, und die wenigen Diener, die Euch noch bleiben, werden Euch den Rücken kehren, sobald ihnen klar wird, dass Ihr verloren habt, um sich nicht auch noch den Zorn Eurer launischen Herrin auf sich zu ziehen.~
 IF ~~ THEN EXTERN ~AC#MAL02~ 02
 END
 
@@ -73,7 +73,7 @@ IF ~~ THEN EXTERN ~AC#MITH2~ 3
 END
 
 IF ~~ THEN BEGIN 03
-SAY ~Wisst Ihr, Mithbarakaz, dies ist das Problem mit Euch gutherzigen Kreaturen - Ihr denkt immer, Ihr könntet Euh in den Geist von uns Tyrannen hineinversetzen, aber Euch fehlt der Blick für all die Bösartigkeiten, zu deren Ideen wir jedesmal aufs Neue fähig sind. Meine Version der Geschichte geht nämlich so: Ihr steckt hier in Eurem Käfig fest und müsst mit ansehen, wie diese schlecht geplante Befreiungsaktion ein klägliches Ende finden wird, während dessen ich meinem astralen Kraftfeld triumphieren werde!~
+SAY ~Wisst Ihr, Mithbarakaz, dies ist das Problem mit Euch gutherzigen Kreaturen - Ihr denkt immer, Ihr könntet Euch in den Geist von uns Tyrannen hineinversetzen, aber Euch fehlt der Blick für all die Bösartigkeiten, zu welchen wir jedesmal aufs Neue fähig sind. Meine Version der Geschichte geht nämlich so: Ihr steckt hier in Eurem Käfig fest und müsst mit ansehen, wie diese schlecht geplante Befreiungsaktion ein klägliches Ende finden wird, währenddessen ich in meinem astralen Kraftfeld triumphieren werde!~
 IF ~~ THEN DO ~ClearAllActions()
    StartCutSceneMode()
    StartCutScene("ac#ct88B")~

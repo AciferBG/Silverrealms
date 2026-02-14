@@ -29,7 +29,7 @@ IF ~~ THEN REPLY ~Ich muss weiter.~ EXTERN AC#2SDW1 bye
 	CHAIN AC#2SDW1 store
 	~So tretet vor die Zwillingsäxte und wählt mit Bedacht.~
 	END
-	IF ~~ THEN DO ~StartStore("AC#2SDW1")~ EXIT
+	IF ~~ THEN DO ~StartStore("AC#2SDW1",LastTalkedToBy)~ EXIT
 	
 	CHAIN AC#2SDW1 what_place
 	~Ein Ort des Stahls. Clangeddin Silberbart wird hier in diesem Schrein geehrt.~

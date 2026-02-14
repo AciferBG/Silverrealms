@@ -7,3 +7,13 @@ THEN
 		SetMusic(DAY,%AC#IL55%)	
 END
 
+IF
+    Global("FalseBeardRepIncrease","ACIL56",0)
+    Global("AC#IL_FalseBeard","GLOBAL",10)
+THEN
+    RESPONSE #100
+        SetGlobal("FalseBeardRepIncrease","ACIL56",1)
+        IncrementGlobal("AC_Iltkazar_Reputation","GLOBAL",1)
+        DisplayString(Myself,@1021)  // ^0xFF22B4E6Euer Ansehen in Iltkazar ist gestiegen.^-
+END
+

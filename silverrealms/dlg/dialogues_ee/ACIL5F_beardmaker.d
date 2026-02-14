@@ -17,13 +17,19 @@ GiveItemCreate("AC#ILCK5",Player1,0,0,0) ~ EXIT
 CHAIN IF ~Global("AC#IL_Beardmaker","GLOBAL",5) !GlobalTimerExpired("AC#IL_Beardmaker_Cloak","GLOBAL")~ THEN AC#ILBDM hello_cloak_not_ready
 ~Der Umhang ist noch nicht fertig. Kommt später wieder.~
 END
-IF ~~ THEN EXIT
+IF ~~ THEN REPLY ~Wollte nur einmal kurz vorbeisehen und komme dann später wieder.~ EXTERN AC#ILBDM hello_cloak_not_ready_bye
+IF ~Global("AC#IL_FalseBeard","GLOBAL",1)~ THEN REPLY ~Ich soll für Petben Riesenkrüppler einen neuen Bart abholen.~ EXTERN AC#ILBDM petben_beard
+
+	CHAIN AC#ILBDM hello_cloak_not_ready_bye
+	~Tut das.~
+	EXIT
 
 CHAIN IF ~NumTimesTalkedTo(0)~ THEN AC#ILBDM hello_0
 ~Ein Fremder. Tretet näher! Euer Bart sieht verbesserungswürdig aus.~
 END
 IF ~~ THEN REPLY ~Was genau macht Ihr hier?~ EXTERN AC#ILBDM what_do_you_do
 IF ~~ THEN REPLY ~Ich habe gar keinen Bart.~ EXTERN AC#ILBDM dont_have_a_beard
+IF ~Global("AC#IL_FalseBeard","GLOBAL",1)~ THEN REPLY ~Ich soll für Petben Riesenkrüppler einen neuen Bart abholen.~ EXTERN AC#ILBDM petben_beard
 
 CHAIN IF ~True()~ THEN AC#ILBDM hello_1
 ~Willkommen in meiner Werkstatt. Fasst nichts an. Was auch immer Ihr sucht, es wächst nicht von allein.~
@@ -32,6 +38,14 @@ IF ~~ THEN REPLY ~Was genau macht Ihr hier?~ EXTERN AC#ILBDM what_do_you_do
 IF ~Global("AC#IL_Beardmaker","GLOBAL",0)~ THEN REPLY ~Bin schon wieder weg.~ EXTERN AC#ILBDM bye_first_02
 IF ~GlobalGT("AC#IL_Beardmaker","GLOBAL",0)~ THEN REPLY ~Bin schon wieder weg.~ EXTERN AC#ILBDM bye_01
 IF ~GlobalGT("AC#IL_Beardmaker","GLOBAL",0)~ THEN REPLY ~Wegen der Materialien für Bärte...~ EXTERN AC#ILBDM about_materials
+IF ~Global("AC#IL_FalseBeard","GLOBAL",1)~ THEN REPLY ~Ich soll für Petben Riesenkrüppler einen neuen Bart abholen.~ EXTERN AC#ILBDM petben_beard
+
+		CHAIN AC#ILBDM petben_beard
+		~Traut er sich nicht selbst in mein Geschäft herein? Nun denn, mir ist es gleich. Bezahlt hatte er ihn ja bereits. Hier ist der Bart. Richtet ihm meine Grüße aus.~
+		END
+		IF ~~ THEN DO ~SetGlobal("AC#IL_Beardmaker","GLOBAL",2)
+		AddJournalEntry(@66051,QUEST)
+		GiveItemCreate("AC#ILDWB",Player1,0,0,0) ~ EXIT
 
 	CHAIN AC#ILBDM about_materials
 	~Oh! Habt Ihr etwas gefunden, das ich verwenden könnte?~

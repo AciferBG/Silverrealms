@@ -24,7 +24,7 @@ END
 
 IF
     Range([PC],10)
-    NumberOfTimesTalkedTo(0)
+    Global("AC#IL_NEW_Cernd","GLOBAL",2)
     See([PC])
 THEN
     RESPONSE #100

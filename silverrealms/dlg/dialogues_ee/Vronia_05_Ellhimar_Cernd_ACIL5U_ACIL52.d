@@ -65,15 +65,9 @@ END
 
 IF ~Global("AC#Gromi_Cernd","ACIL52",4)~ THEN BEGIN hello_cernd_gone
 SAY  ~Was für eine schöne Wendung das Schicksal doch genommen hat!~
-//IF ~~ THEN REPLY ~Wegen der Scheibe...~ GOTO still_need_help_driftdisc
 END
 
 /*
-	IF ~~THEN BEGIN still_need_help_driftdisc
-	SAY ~Ach richtig, die Scheibe! Was braucht Ihr, um den Zauber zu wirken, Ellhimar?~
-	IF ~~ THEN EXTERN ~AC#ILEL9~ ellhimar_needs_spellbook
-	END
-
 IF ~Global("AC#Ellhimar_Cernd","GLOBAL",5)~ THEN BEGIN hello_cernd_here_02
 SAY  ~Seid gegrüßt, <CHARNAME>! Khaernd Schüttergeist versucht immer noch, Ellhimar zu heilen.~
 IF ~PartyHasItem("AC#DRFT1")~ THEN REPLY ~Ich habe hier eine Schwebescheibe der Drow, mit der ich an die Oberfläche zurückkehren könnte, wenn sie neu verzaubert wäre. Ich bräuchte jetzt wirklich Ellhimars Hilfe.~ + driftdisc_01
@@ -122,9 +116,11 @@ END
 	SAY ~Beeilt Euch, bitte! Ihr seht, in was für einem Zustand Ellhimar hier ist.~
 	IF ~~ THEN EXIT
 	END
-*/
+	*/
+
 // in Area ACIL50
-IF ~NumTimesTalkedTo(0)~ THEN BEGIN 1
+IF ~NumTimesTalkedTo(0)
+Global("AC#IL_NEW_Cernd","GLOBAL",2)~ THEN BEGIN 1
 SAY  ~<CHARNAME>! Gut, dass Ihr kommt. Wir bräuchten weiter Eure Hilfe.~
 ++ ~Wenn Ihr wollt, dass ich von diesem Hirnlappen probiere: Vergesst es.~ EXTERN AC#ELER7 not_tasting_lobe
 ++ ~Habt Ihr eine Idee, wie wir in der Suche weiterkommen?~ + fate_of_the_king
@@ -165,7 +161,7 @@ END
 		IF ~~ THEN REPLY ~Das ist ein abscheulicher Gedanke.~ EXTERN AC#VRON5 taste_elderbrain_lobe_02
 		IF ~~ THEN REPLY ~Gibt es keine andere Lösung?~ EXTERN AC#VRON5 taste_elderbrain_lobe_02
 		IF ~~ THEN REPLY ~Warum ich?~ EXTERN AC#VRON5 taste_elderbrain_lobe_02
-		IF ~~ THEN REPLY ~Bei Euch hat es  nicht gewirkt. Warum sollte es bei mir anders sein?~ EXTERN AC#VRON5 taste_elderbrain_lobe_02
+		IF ~~ THEN REPLY ~Bei Euch hat es nicht gewirkt. Warum sollte es bei mir anders sein?~ EXTERN AC#VRON5 taste_elderbrain_lobe_02
 		
 			CHAIN AC#VRON5 taste_elderbrain_lobe_02
 			~Solltet Ihr Euch dagegen entscheiden, wären wir Euch nicht böse. Jedoch führt uns das zu der Frage, warum Ihr überhaupt hier seid.~
@@ -264,6 +260,7 @@ END
 																END
 																IF ~~ THEN DO ~SetGlobal("AC#IL_NEW_Borthun","GLOBAL",1)
 																SetGlobal("AC#Ellhimar_Cernd","GLOBAL",3)
+																SetGlobal("AC#IL_NEW_Cernd","GLOBAL",3)
 																AddJournalEntry(@50700,QUEST)~  EXIT
 																
 																CHAIN AC#ELER7 taste_lobe_myself
@@ -276,10 +273,52 @@ END
 																END
 																IF ~~ THEN DO ~SetGlobal("AC#IL_NEW_Borthun","GLOBAL",1)
 																SetGlobal("AC#IL_TasteLobeMyself","GLOBAL",1)
+																SetGlobal("AC#IL_NEW_Cernd","GLOBAL",3)
 																AddJournalEntry(@62022,QUEST)																
 																//AddJournalEntry(@50700,QUEST)
 																~  EXIT
 
+// Vronia #5 in area ACIL52
+CHAIN IF ~Global("AC#IL_NEW_Cernd","GLOBAL",4)~ THEN AC#VRON5 hello_sharindlar
+~Seid gegrüßt, <CHARNAME>. Schön, dass Ihr mich hier in Sharindlars Tempel aufsucht!~
+END
+IF ~Global("AC#IL_TasteLobeMyself","GLOBAL",1)~ THEN EXTERN AC#VRON5 taste_lobe_pc
+IF ~Global("AC#Ellhimar_Cernd","GLOBAL",3)~ THEN EXTERN AC#VRON5 taste_lobe_cernd
+
+	CHAIN AC#VRON5 taste_lobe_pc
+	~Seid Ihr bereit, den Lappen des Ältestenhirns zu kosten, um mehr über die Suche zu erfahren?~
+	END
+	IF ~~ THEN REPLY ~Ja, ich bin bereit.~ EXTERN AC#VRON5 taste_lobe_pc_02
+	IF ~~ THEN REPLY ~Ich bin noch nicht bereit.~ EXTERN AC#VRON5 wait_taste_lobe_pc
+
+	CHAIN AC#VRON5 taste_lobe_pc_02
+	~Sehr gut. Hier ist der Lappen. Gebt acht, es könnte unerwartetet Auswirkungen haben. Eine andere Wahl haben wir jedoch nicht.~
+	END
+	IF ~~ THEN DO ~SetGlobal("AC#IL_NEW_Cernd","GLOBAL",5)
+	SetGlobal("AC#IL_TasteLobeMyself","GLOBAL",2)
+	StartCutSceneMode() 
+	StartCutScene("AC#23CT0")~ EXIT		
+	
+	CHAIN AC#VRON5 taste_lobe_cernd
+	~Cernd ist bisher noch nicht aufgetaucht.~
+	EXIT
+	
+	CHAIN AC#VRON5 wait_taste_lobe_pc
+	~Dann werde ich hier warten, bis Ihr bereit seid.~
+	EXIT
+
+// PLayer tastes lobe
+CHAIN IF ~Global("AC#IL_TasteLobeMyself","GLOBAL",2)
+AreaCheck("ACIL52")~ THEN PLAYER1 taste_lobe_pc_03
+		~Ihr führt den kalten, schwammigen Lappen an Eure Lippen. Ein bitterer Geschmack erfüllt Euren Mund – dann bricht die Welt um Euch auseinander. Ihr spürt, wie sich fremde Gedanken in Euer Bewusstsein drängen – uralte, kalte Intelligenz. Bilder flackern auf, unzusammenhängend, grell wie Blitze in absoluter Dunkelheit. Etwas in Euch begreift mehr… und verliert zugleich etwas anderes.~
+		END
+		IF ~~ THEN EXTERN PLAYER1 taste_lobe_pc_04
+		
+			CHAIN PLAYER1 taste_lobe_pc_04
+			~Ein brennender Schmerz durchfährt Euren Geist. Fremde Visionen überfluten Euch. Dann wird alles schwarz.~
+			END
+			IF ~~ THEN DO ~SetGlobal("AC#IL_TasteLobeMyself","GLOBAL",3)
+			StartCutSceneMode() StartCutScene("AC#23CT1")~ EXIT
 
 /*
 	IF ~~THEN BEGIN ellhimar_awake

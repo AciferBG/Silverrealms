@@ -66,13 +66,11 @@ THEN
 END
 
 IF
-	GlobalGT("AC#Ellhimar_Cernd","GLOBAL",2)
-	Global("Ellhimar","ACIL52",0)
+	Global("AC#IL_NEW_Cernd","GLOBAL",3)
 THEN
 	RESPONSE #100
-        SetGlobal("Ellhimar","ACIL52",1)
-	CreateCreature("AC#ILEL9",[3024.2169],5)
-	CreateCreature("ac#vron5",[2954.2103],15)
+    	SetGlobal("AC#IL_NEW_Cernd","GLOBAL",4)
+		CreateCreature("ac#vron5",[2954.2103],15)
 END
 
 IF
@@ -82,6 +80,18 @@ THEN
 	RESPONSE #100
         SetGlobal("CerndSpawn","ACIL52",1)
 	CreateCreature("AC#CERN1",[3050.2175],8)
+END
+
+IF
+    Global("AC#IL_TasteLobeMyself","GLOBAL",4)
+    Global("ApplySpellElderbrain","ACIL52",0)
+THEN
+    RESPONSE #100
+        Wait(1)
+        SetGlobal("ApplySpellElderbrain","ACIL52",1)
+        ApplySpellRES("AC#ILWI",Player1)  // No such index
+		Wait(1)
+		SetGlobal("AC#IL_TasteLobeMyself","GLOBAL",5)
 END
 /*
 IF

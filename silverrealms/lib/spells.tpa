@@ -2,6 +2,10 @@
 
 COPY ~silverrealms/spl/copy~         ~override~
 
+COPY ~silverrealms/spl/AC#ILWI.spl~            ~override~  // elder brain lobe spell effect
+  SAY 0x9e @1151
+  SAY 0xce @1152
+
 COPY ~silverrealms/spl/AC#ILR6.spl~          ~override~ // drider ring spl file #1
 SAY NAME1 @8108 SAY NAME2 @8108
 

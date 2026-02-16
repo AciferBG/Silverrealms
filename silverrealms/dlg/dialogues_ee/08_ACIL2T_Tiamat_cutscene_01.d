@@ -13,36 +13,23 @@ BEGIN ~AC#MAL2T~
 
 CHAIN IF ~NumTimesTalkedTo(0)~ THEN AC#MAL2T hello
 						~Die Zwerge wurden von dem Wächter vernichtet, Herrin.~ [AC#ILMAB]
-						== AC#2TTIA ~Gut. Warum hat es so lange gedauert?~ 
-						== AC#MAL2T ~Es war schwieriger als gedacht. Die Zwerge hatten einen mächtigen Verbündeten.~
-						== AC#2TTIA ~Wer war das?~ 
-						== AC#MAL2T ~Ein <PRO_RACE> namens <CHARNAME>. Niemand, um den wir uns noch kümmern müssen.~
-						== AC#2TTIA ~Gut. Trefft unsere Verbündeten und sagt ihnen, wir seien dankbar, dass sie uns ihre alte Festung überlassen haben.~
-						== AC#MAL2T ~Natürlich, Herrin.~
-						== AC#2TTIA ~Wir brauchen sie - ohne dass es ihnen bewusst ist. Sie werden sich ganz in der Nähe des Silbernen einen Stützpunkt errichten, der uns bei unseren weiteren Schritten noch von Nutze sein wird.~
-						== AC#MAL2T ~Ihr seid gerissen, wie immer.~
-						== AC#2TTIA ~Ich weiß. Und Ihr macht Euch besser wieder an die Arbeit, um mich endlich aus diesen verfluchten Fesseln zu befreien!~
+						== AC#2TTIA ~Ihr kommt spät, um mir dies mitzuteilen. Warum hat es so lange gedauert?~ 
+						== AC#MAL2T ~Es ist schwieriger als gedacht. Die Zwerge haben einen Verbündeten.~
+						== AC#2TTIA ~Wer soll das sein?~ 
+						== AC#MAL2T ~Ein <PRO_RACE> namens <CHARNAME>. Er scheint sich in der Zwergenstadt aufzuhalten.~
+						== AC#2TTIA ~Woher wisst Ihr das?~
+						== AC#MAL2T ~Unsere Verbündeten haben einen Fehler gemacht und ein Astralportal nicht verschlossen. Ich konnte ihn dadurch sehen.~
+						== AC#2TTIA ~Habt Ihr Euch dessen angenommen?~
+						== AC#MAL2T ~Ich habe das Portal wieder versiegelt, ja.~
+						== AC#2TTIA ~Ich meinte den <PRO_RACE>.~
+						== AC#MAL2T ~Dieser <PRO_RACE> hält sich wahrscheinlich in Iltkazar auf, wo wir ihn nicht erreichen können. Soll ich dennoch unsere Verbündeten anweisen, ihn zu eliminieren?~
+						== AC#2TTIA ~Nein, das würde zu viel Aufmerksamkeit verursachen. Sie sollen ihn aus sicherer Entfernung beobachten. Und Ihr wendet Euch wieder Eurer eigentlichen Aufgabe zu.~						
+						== AC#MAL2T ~Jawohl, Herrin. Ich werde mit der Bewachung unseres Gefangenen fortfahren.~
+						== AC#2TTIA ~Das meinte ich nicht. Ihr solltet Euch besser an die Arbeit machen, um einen Weg zu finden, mich endlich aus diesen verfluchten Fesseln zu befreien!~
 						== AC#MAL2T ~Jawohl, Herrin!~
 						END
 						IF ~~ THEN DO ~StartCutSceneMode()
 						StartCutScene("AC#2TCT2")~ EXIT
 						
 						
-// OLD
-/*
-CHAIN IF ~NumTimesTalkedTo(0)~ THEN AC#MAL2T hello
-						~Ich habe beide Zepter erbeutet, Herrin.~ 
-						== AC#2TTIA ~Ihr kommt spät.~ 
-						== AC#MAL2T ~Es war schwieriger als gedacht. Die Zwerge und der Magier hatten einen mächtigen Verbündeten.~
-						== AC#2TTIA ~Wer war das?~ 
-						== AC#MAL2T ~Ein <PRO_RACE> namens <CHARNAME>. Niemand, um den wir uns noch kümmern müssen.~
-						== AC#2TTIA ~Gut. Behaltet das Zepter für die Feuerreiche. Übergebt das Zepter für die Silberreiche unseren Verbündeten, auf dass sie es gegen ihre alten Feinde einsetzen mögen. Sagt ihnen, es sei als Dank dafür, dass sie uns ihre alte Festung überlassen haben.~
-						== AC#MAL2T ~Ihr seid zu großzügig.~
-						== AC#2TTIA ~Nicht nur. Wir brauchen sie - ohne dass es ihnen bewusst ist. Sie werden sich ganz in der Nähe des Silbernen einen Stützpunkt errichten, der uns bei unseren weiteren Schritten noch von Nutze sein wird.~
-						== AC#MAL2T ~Ihr seid gerissen, wie immer.~
-						== AC#2TTIA ~Ich weiß. Und Ihr macht Euch besser wieder an die Arbeit, um mich endlich aus diesen verfluchten Fesseln zu befreien!~
-						== AC#MAL2T ~Jawohl, Herrin!~
-						END
-						IF ~~ THEN DO ~StartCutSceneMode()
-						StartCutScene("AC#2TCT2")~ EXIT
-*/						
+//

@@ -517,8 +517,23 @@ COPY ~silverrealms/cre/AC#MALG1.cre~ ~override~ // Malphas: 3rd Torglor Githyank
   SAY BATTLE_CRY1 @5147
   SAY BATTLE_CRY1 @5148
 
+COPY ~silverrealms/cre/AC#D2DW1.cre~ ~override~ //King's Guard
+  SAY NAME1 @306 SAY NAME2 @306
+  
+COPY ~silverrealms/cre/AC#DREA1.cre~ ~override/AC#DREA1.cre~ //Mith Barak the Clanless
+  SAY NAME1 @424 SAY NAME2 @424
+  
+COPY ~silverrealms/cre/AC#DREA2.cre~ ~override/AC#DREA2.cre~ //Old King
+  SAY NAME1 @425 SAY NAME2 @425
+  
 COPY ~silverrealms/cre/AC#DREA3.cre~ ~override~   // Mith Barak in elder brain cutscene
+  SAY NAME1 @61 SAY NAME2 @61  
+
+COPY ~silverrealms/cre/AC#DREA8.cre~ ~override/AC#DREA8.cre~ //King Mith Barak
   SAY NAME1 @61 SAY NAME2 @61
+  
+COPY ~silverrealms/cre/AC#DREA9.cre~ ~override/AC#DREA9.cre~ //Bleucorundum
+  SAY NAME1 @430 SAY NAME2 @430
 
 COPY ~silverrealms/cre/AC#MITH2.cre~ ~override~
   SAY NAME1 @61 SAY NAME2 @61

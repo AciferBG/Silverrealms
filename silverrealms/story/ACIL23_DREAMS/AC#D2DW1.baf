@@ -1,8 +1,0 @@
-IF
-	Range("AC#DREA1",15)
-THEN
-	RESPONSE #100
-		SwingOnce()
-		DisplayStringHead(Myself,999999) // ~Ein Hoch auf Mith Barak, den Mithralschild!~
-		Wait(6)
-END

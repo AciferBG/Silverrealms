@@ -296,7 +296,7 @@ IF ~Global("AC#IL_UndecideTasteLobe","GLOBAL",1)~ THEN EXTERN AC#VRON5 taste_lob
 	CHAIN AC#VRON5 taste_lobe_cernd_02
 	~Seid Ihr bereit dafür, Khaernd?~
 	== AC#CERN1 ~(Khaernd nickt zögerlich.)~
-	== AC#VRON5 ~Seid auch IHr bereit, <CHARNAME>, dass Khaernd die Erinnerung des Hirnes mit Euch teilt?~
+	== AC#VRON5 ~Seid auch Ihr bereit, <CHARNAME>, dass Khaernd die Erinnerung des Hirnes mit Euch teilt?~
 	END
 	IF ~~ THEN REPLY ~Ja, ich bin soweit.~ EXTERN AC#VRON5 taste_lobe_cernd_03
 	IF ~~ THEN REPLY ~Nein, ich bin noch nicht soweit.~ EXTERN AC#VRON5 wait_taste_lobe_pc

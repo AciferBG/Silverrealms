@@ -620,5 +620,3 @@ INCLUDE ~silverrealms/lib/silverrealms-worldmap.tpa~
 INCLUDE ~silverrealms/story/ACIL79_01/ACIL79_01.tpa~
 // Tiglath Subplot
 INCLUDE ~silverrealms/story/TIGLATH/tiglath.tpa~
-// ACIL23 Dream Subplot
-INCLUDE ~silverrealms/story/ACIL23_DREAMS/ACIL23_DREAMS.tpa~

@@ -12,7 +12,6 @@ THEN
         FadeFromColor([30.0],0)
         EndCutSceneMode()
         StartMovie("AC#23MVE")
-        RestParty()
         SetGlobal("AC#ACIL23DreamReflection","GLOBAL",1)
         SetGlobal("AC#IL_BrainVision","GLOBAL",1)
 END

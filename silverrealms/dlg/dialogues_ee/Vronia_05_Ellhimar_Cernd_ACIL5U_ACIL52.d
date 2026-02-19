@@ -1,7 +1,7 @@
 /*******************************************************************************************************
 Dialog Vronia cre#6 in Iltkazar, Ellhimar's journal
 *******************************************************************************************************/
-
+/*
 BEGIN ~ac#vron6~
 
 IF ~Global("JournalSpawn","ACIL50",3)~ THEN BEGIN hello_again_after_bloodmoon
@@ -51,7 +51,7 @@ END
 					AddJournalEntry(@23012,QUEST_DONE)
 					EscapeArea()~ EXIT 
 					END
-
+*/
 /*******************************************************************************************************
 Dialog Vronia cre#5 und Elern cre#7in Iltkazar, Quest-Start: Help Ellhimar
 *******************************************************************************************************/
@@ -341,8 +341,10 @@ AreaCheck("ACIL52")~ THEN PLAYER1 taste_lobe_pc_03
 			CHAIN PLAYER1 taste_lobe_pc_04
 			~Ein brennender Schmerz durchfährt Euren Geist. Fremde Visionen überfluten Euch. Dann wird alles schwarz.~
 			END
-			IF ~~ THEN DO ~SetGlobal("AC#IL_TasteLobeMyself","GLOBAL",3)
-			StartCutSceneMode() StartCutScene("AC#23CT1")~ EXIT
+			IF ~~ THEN DO ~SetGlobal("AC#IL_TasteLobeMyself","GLOBAL",3)			
+			StartCutSceneMode()
+			PlayDead(45)
+			StartCutScene("AC#23CT1")~ EXIT
 
 				
 // ---------------------------------------------
@@ -361,7 +363,7 @@ IF ~~ THEN REPLY ~Das war Vronias Idee.~ EXTERN AC#VRON5 gromi_vronia_cernd_01
 	
 	CHAIN AC#VRON5 gromi_vronia_cernd_01
 	~Khaernd wurde auf meine Anweisung und mit Bettarghs Einverständnis freigelassen. Wir brauchten seine Hilfe bei der Suche nach Antworten auf unseren schlafenden Monarchen. Jetzt, da der Rat nicht mehr tagt, gilt es, auch unbequeme Entscheidungen zu akzeptieren.~
-	== AC#GROM6 ~Ihr.. Ihr habt was? Ihr habt Euch über die Entscheidung des Rates hinweggesetzt und diesen... diesen... freigelassen?~
+	== AC#GROM6 ~Ihr... Ihr habt was? Ihr habt Euch über die Entscheidung des Rates hinweggesetzt und diesen... diesen... freigelassen?~
 	END
 	IF ~~ THEN REPLY ~So redet man nicht von seinem eigenen Sohn, Gromi.~ EXTERN AC#CERN1 cernd_gromi_son_02
 	IF ~~ THEN REPLY ~Ich fand es auch unangenehm, aber mir blieb keine andere Wahl.~ EXTERN AC#CERN1 cernd_gromi_son_02
@@ -466,3 +468,20 @@ CHAIN IF ~True()~ THEN AC#CERN1 hello
 ~(Der Zwerg scheint Euch nicht zu beachten.)~
 END
 IF ~~ THEN EXIT	
+
+// Vision in ACILD3 : Mith Barak talking to elder brain
+
+BEGIN ~AC#ILD3E~
+BEGIN ~AC#DREA3~
+
+
+	CHAIN IF ~True()~ THEN AC#ILD3E hello
+	~Sieh an, sieh an. Der verfluchte König Iltkazars schickt sich an, mich lebloses Hirn um Rat zu fragen.~ 
+	== AC#DREA3 ~Das tue ich.~ 
+	== AC#ILD3E ~Nichts im Leben gibt es umsonst. Das müsstet Ihr bestens wissen.~ 
+	== AC#DREA3 ~Was verlangt Ihr?~
+	== AC#ILD3E ~Mich dürstet nach Erinnerung.~	
+	== AC#DREA3 ~Gut, Ihr sollt sie haben.~
+	END
+	IF ~~ THEN DO ~StartCutSceneMode()
+	StartCutScene("AC#23CT6")~ EXIT

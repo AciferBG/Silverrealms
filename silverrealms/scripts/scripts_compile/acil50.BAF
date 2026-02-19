@@ -183,7 +183,7 @@ THEN
 		SetGlobal("Create_Vronia","ACIL50",1)
 		CreateCreature("ac#vron2",[2440.947],11)  // Vronia
 END
-
+/*
 IF
     Global("JournalSpawn","ACIL50",2)
 	PartyHasItem("AC#23ELL")
@@ -192,6 +192,7 @@ THEN
 		SetGlobal("JournalSpawn","ACIL50",3)
 		CreateCreature("ac#vron6",[1067.2391],3)  // Vronia
 END
+*/
 
 IF
     Global("AC#EllhimarGith","GLOBAL",1)
@@ -204,6 +205,7 @@ THEN
 		CreateCreature("AC#BETT7",[2787.1132],13)  // Bettargh
 END
 
+/*
 IF
 	Global("AC#ACIL23DreamReflection","GLOBAL",2)
     Global("JournalSpawn","ACIL50",0)
@@ -212,6 +214,7 @@ THEN
 		SetGlobal("JournalSpawn","ACIL50",1)
 		CreateCreature("ac#vron6",[1067.2391],3)  // Vronia
 END
+*/
 
 IF
 	//CombatCounter(0)

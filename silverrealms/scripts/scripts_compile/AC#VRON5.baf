@@ -1,4 +1,11 @@
 IF
+    Global("AC#IL_BrainVision","GLOBAL",2)
+THEN
+    RESPONSE #100
+        StartDialogueNoSet([PC])
+END
+
+IF
     Global("AC#Ellhimar_Cernd","GLOBAL",4)
     See([PC])
 THEN

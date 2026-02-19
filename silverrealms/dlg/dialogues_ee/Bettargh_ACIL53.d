@@ -82,140 +82,44 @@ SAY ~Seid gegrüßt, <CHARNAME>! Wie ich hörte, habt Ihr seit unserem letzten Z
 									END
 									
 									IF ~~ THEN BEGIN mithbarak_astral_travel_04
-									SAY ~Mith Barak war überzeugt davon, dass in einem der Unterkönigreiche ein Portal in die Astraleben existieren müsse. Ich werde in der Bibliothek weitersuchen, ob sich dazu weitere Hinweise finden lassen. Dennoch ist Euer Weg an die Oberfläche der nächste Schritt, erzählte meine Tochter?~
-									IF ~Global("AC#IL_NEW_BettarghElern","GLOBAL",0)~ THEN REPLY ~Elern meinte, dass Ihr mir sagen könntet, wo an der Oberfläche Mith Barak nach diesem Drachenfriedhof gesucht haben könnte.~  DO ~SetGlobal("AC#IL_NEW_BettarghElern","GLOBAL",1)~ + stone_clans_parting_02
-									//IF ~~ THEN REPLY ~Ich mache mich wieder auf den Weg.~ + keep_on_going_surface
-									END		
+									SAY ~Mith Barak war überzeugt davon, dass in einem der Unterkönigreiche ein Portal in die Astralebene existieren müsse. Ich werde in der Bibliothek weitersuchen, ob sich dazu weitere Hinweise finden lassen. Lassen wir es bis auf weiteres darauf bewenden.~ 				
+									IF ~Global("AC#IL_NEW_BettarghElern","GLOBAL",0)~ THEN + stone_clans_parting_01
+									IF ~Global("AC#Ellhimar_Cernd","GLOBAL",3) Global("Prison_Cernd","ACIL53",0)~ THEN GOTO free_cernd_01	
+									END	
+									
+									IF ~~ THEN BEGIN free_cernd_01
+									SAY ~Elern erzählte mir außerdem, dass Ihr Hilfe bei der Entzifferung dieses... Hirnlappens eines Illithidenhirns benötigt. Vronia hatte Euch bereits über Khaernds Schicksal berichtet. Ich wurde von der Stadt mit der Aufsicht über den armen Tropf betraut, und ich habe beschlossen, dass es das Beste wäre, er würde Euch bei dem Vorgehen unterstützen.~
+									IF ~~ THEN GOTO free_cernd_02
+									END	
+									
+									IF ~~ THEN BEGIN free_cernd_02
+									SAY ~Khaernds Zelle befindet sich im Westen dieser Bibliothek. Ich habe die Wachen bereits angewiesen, Euch durchzulassen. Sprecht mit ihm und bittet um seine Hilfe. Er mag ein wenig verrückt sein, aber er hat ein gutes Herz.~
+									IF ~~ THEN DO ~SetGlobal("Prison_Cernd","ACIL53",1)~ GOTO book_and_cernd_small_hub
+									END	
 
-/*
-IF ~OR(2)
-GlobalGT("AC#Clans_Parting","GLOBAL",1)
-GlobalGT("AC#BackToSurface","GLOBAL",1)~ THEN BEGIN hello_anything_achieved
-SAY ~Der irrende Wanderer lächelt über Euch, <CHARNAME>! Habt Ihr schon etwas erreichen können?~
- IF ~Global("AC#Clans_Parting","GLOBAL",1)~ THEN REPLY ~Habt Ihr schon einmal von einem Drachenfriedhof gehört?~ + stone_clans_parting_01
- //IF ~Global("AC#BackToSurface","GLOBAL",1)~ THEN REPLY ~Wisst Ihr zufällig, wie ich wieder zurück an die Oberfläche komme?~ + back_to_surface_01
-//IF ~PartyHasItem("AC#SRLAD")~ THEN REPLY ~Ich habe diese Leiter hier. Was genau soll ich noch einmal damit machen?~ + eyestalker_tunnels_01
-//IF ~PartyHasItem("ac#eyebe") GlobalLT("AC#BackToSurface","GLOBAL",5)~ THEN REPLY ~Hier ist der Augenstiel eines Betrachters. Wie geht es jetzt mit dem Trank weiter?~ + have_eyestalk
-//IF ~PartyHasItem("ac#eyebe") Global("AC#BackToSurface","GLOBAL",5)~ THEN REPLY ~Was soll ich nocheinmal mit dem Augenstiel machen?~ + what_do_with_eyestalk_again
-//IF ~PartyHasItem("AC#DRFT1") Global("AC#RepairDriftdisc","GLOBAL",1)~ THEN REPLY ~Ich habe eine Schwebescheibe der Drow in den Spinnenschächten gefunden. Wisst Ihr, wie ich sie wieder in Gang setzen könnte?~ GOTO found_driftdisc
-IF ~~ THEN REPLY ~Derzeit nichts. Ich mache mich wieder auf den Weg.~ + keep_on_going_surface
-END				
+									IF ~~ THEN BEGIN book_and_cernd_small_hub
+									SAY ~Es scheint, dass so langsam Licht in das Dunkel unseres schlafenden Königs kommt - dank Eurer Hilfe!~
+									IF ~~ THEN GOTO keep_on_going_surface
+									IF ~Global("AC#IL_NEW_BettarghElern","GLOBAL",0)~ THEN + stone_clans_parting_01
+									END
+									
+										IF ~~ THEN BEGIN stone_clans_parting_01
+										SAY ~Dabei fällt mir ein - Elern wollte mit Euch wegen eines merkwürdigen Buches sprechen...~
+										IF ~~ THEN + stone_clans_parting_02
+										END
 
-IF ~OR(2)
-GlobalGT("AC#Clans_Parting","GLOBAL",0)
-GlobalGT("AC#BackToSurface","GLOBAL",0)~ THEN BEGIN hello_surface_clansparting
-SAY ~Seid gegrüßt, <CHARNAME>! Wie ich hörte, habt Ihr seit unserem letzten Zusammentreffen große Abenteuer bestanden und unserer Stadt einen großen Dienst erwiesen! Was kann ich für Euch tun?~
-IF ~Global("AC#Clans_Parting","GLOBAL",1)~ THEN REPLY ~Habt Ihr schon einmal von einem Drachenfriedhof gehört?~ + stone_clans_parting_01
-//IF ~Global("AC#BackToSurface","GLOBAL",1)~ THEN REPLY ~Wisst Ihr zufällig, wie ich wieder zurück an die Oberfläche komme?~ + back_to_surface_01
-IF ~Global("AC#Ellhimar_Cernd","GLOBAL",3)
-Global("Prison_Cernd","ACIL53",0)~ THEN REPLY ~Ich soll auf Geheiß von Vronia Cernd aus seiner Zelle befreien.~ + free_cernd
-// IF ~PartyHasItem("AC#DRFT1") Global("AC#RepairDriftdisc","GLOBAL",1)~ THEN REPLY ~Ich habe eine Schwebescheibe der Drow in den Spinnenschächten gefunden. Wisst Ihr, wie ich sie wieder in Gang setzen könnte?~ GOTO found_driftdisc
-IF ~~ THEN REPLY ~Derzeit nichts. Ich mache mich wieder auf den Weg.~ + keep_on_going_surface
-END
-*/
-/*
-	IF ~~ THEN BEGIN found_driftdisc
-	SAY ~Hmm... Lasst mich einmal sehen...~
-	=
-	~Das Gerät wäre in der Tat gut geeignet, um Euch den Schacht, den Ihr heruntergekommen seid, wieder nach oben zu bringen. Wenn die Scheibe denn fliegen würde!~
-	IF ~~ THEN REPLY ~Was muss ich tun, damit das Ding wieder fliegt?~ GOTO get_driftdisc_to_work 
-	END
-	
-		IF ~~ THEN BEGIN get_driftdisc_to_work
-		SAY ~Tja, und da bin ich mit meinem Zwergisch am Ende. Ihr benötigt einen mächtigen Zauber, dessen bin ich mir sicher! Ich fürchte nur, es wird in Iltkazar keinen Zwerg geben, der solch arkane Magie anwenden könnte.~
-		=
-		~Wartet! Aber vielleicht könnte Euch Ellhimar helfen!~
-		IF ~~ THEN REPLY ~Ellhimar?~ GOTO driftdisc_ellhimar
-		END
-		
-			IF ~~ THEN BEGIN driftdisc_ellhimar
-			SAY ~Wenn jemand imstande ist, solch einen Zauber zu wirken, dann der Menschenmagier! Ich weiß nur nicht, inwieweit dies in seinem ... Zustand... möglich ist.~
-			IF ~~ THEN REPLY ~Gut, dann sollte ich einmal schauen, ob ich Ellhimar dazu bewegen kann, diese Scheibe zu verzaubern.~ GOTO driftdisc_ellhimar_02 
-			END
-			
-			IF ~~ THEN BEGIN driftdisc_ellhimar_02
-			SAY ~Tut das. Ich wünsche Euch viel Glück.~
-			IF ~Global("ElernSpawn","ACIL53",0)~ THEN DO ~SetGlobal("AC#RepairDriftdisc","GLOBAL",10)
-			EraseJournalEntry(@20802)
-			AddJournalEntry(@20803,QUEST)~ GOTO need_something_else 
-			IF ~GlobalGT("ElernSpawn","ACIL53",0)~ THEN DO ~SetGlobal("AC#RepairDriftdisc","GLOBAL",10)
-			EraseJournalEntry(@20802)
-			AddJournalEntry(@20803,QUEST)~ EXIT 
-			END
-			
-		IF ~~ THEN BEGIN need_something_else
-		SAY ~Ihr seht so aus, als ob Ihr noch etwas mit mir besprechen wolltet.~
-		IF ~~ THEN REPLY ~Habt Ihr schon einmal von einem Drachenfriedhof gehört?~ + stone_clans_parting_01
-		END	
-		*/
 
 	IF ~~ THEN BEGIN keep_on_going_surface
-	SAY ~Gut. Sagt mir Bescheid, wenn Ihr etwas von mir benötigt.~
+	SAY ~Sagt mir Bescheid, wenn Ihr sonst noch etwas von mir benötigt. Ich werde mich so lange meinen Büchern und Runentafeln widmen.~
 	IF ~~ THEN DO ~~ EXIT 
 	END
-
-/*	
-	IF ~~ THEN BEGIN stone_clans_parting_01
-	SAY ~Ein Drachenfriedhof? Um welchen Ort im Unterreich soll es sich dabei handeln?~
-	++ ~So weit ich verstehe, handelt es sich um einen für Elfen heiligen Ort an der Oberfläche.~ + stone_clans_parting_02 
-	END
-*/	
-		IF ~~ THEN BEGIN stone_clans_parting_02
-		SAY ~Aber natürlich! Elern, Liebes, würdest Du bitte einmal zu mir und unserem Gast von der Oberfläche kommen?~
-		IF ~~ THEN DO ~SetGlobal("ElernSpawn","ACIL53",1)~ EXIT
-		END
-		
-/*	
-	IF ~~ THEN BEGIN back_to_surface_01
-	SAY ~Ihr wollt uns wieder verlassen?~
-	++ ~Um Eurer Stadt zu helfen, muss ich an der Oberfläche weiter nach Antworten suchen.~ + back_to_surface_02
-	END
 	
-		IF ~~ THEN BEGIN back_to_surface_02
-		SAY ~Ich verstehe. Hmm. Ihr seid auf Eurem Weg den tiefen Schacht heruntergeschwebt, der zu einer Höhle an der Oberfläche führt, nicht wahr?~
-		++ ~Ja. Die Höhle heißt Ravimors Höhle. Ich habe den Fall dank eines Federfalltrankes schadlos überstanden.~ + back_to_surface_03
+		IF ~~ THEN BEGIN stone_clans_parting_02
+		SAY ~Elern, Liebes, würdest Du bitte einmal zu mir und unserem Gast von der Oberfläche kommen?~
+		IF ~~ THEN DO ~SetGlobal("AC#IL_NEW_BettarghElern","GLOBAL",1)
+		SetGlobal("ElernSpawn","ACIL53",1)~ EXIT
 		END
 		
-			IF ~~ THEN BEGIN back_to_surface_03
-			SAY ~Ich hörte von diesem Schacht. Niemand weiß, wie tief er wirklich ist. Deshalb ist es schwierig, ihn nach oben zu schweben. Man könnte Leviatationszauber auf Euch wirken, aber wenn die Wirkung des Zaubers nachlässt und Ihr noch nicht oben angekommen wäret, würdet Ihr unweigerlich wieder hinab in die Tiefe stürzen.~
-			++ ~Gibt es denn keinen Gegenstand oder ein Artefakt, welches mir das Hinaufschweben erleichtern würde?~ + back_to_surface_artifact
-			++ ~Was schlagt Ihr also vor?~ + back_to_surface_artifact
-			END
-			
-				IF ~~ THEN BEGIN back_to_surface_artifact
-				SAY ~Die Drow benutzen Gegenstände mit Schwebe- und Levitationszauber häufig. Unsere Krieger haben von einem Feldzug gegen die Dunkelelfen sogar eine ihrer berühmten Schwebescheiben erbeutet.~
-				++ ~Schwebescheibe?~ + driftdisc_01
-				//++ ~Was schlagt Ihr also vor?~ + back_to_surface_04
-				END
-				
-					IF ~~ THEN BEGIN driftdisc_01
-					SAY ~Ja. Diese Gegenstände sind aus einem seltsamen Fels geschlagen und aufwändig verziert. Sie ermöglichen es den Drow, willentlich nach oben und unten zu schweben und dabei auch einiges an Gewicht transportieren zu können.~
-					++ ~Und Ihr habt eine solche hier bei Euch?~ + driftdisc_02
-					END
-					
-						IF ~~ THEN BEGIN driftdisc_02
-						SAY ~Wir hatten sie eine zeitlang hier in der Bibliothek im Einsatz, ja. Bei dem tiefen zentralen Schacht bot sich ihre Verwendung förmlich an. Ich fand den Gegenstand eigentlich recht nützlich, aber die anderen Zwerge - selbst die Anhänger Dugmarens! - standen einem Drow-Hilfsmittel äußerst skeptisch gegenüber. Irgendwann haben wir das Ding ausgemustert und zu Shagretor ins " Vermächtnis" gebracht, wo es immer noch herumliegen sollte. Je mehr ich gerade darüber nachdenke, desto besser finde ich die Idee, dass Ihr mit Hilfe dieser Scheibe wieder an die Oberfläche zurückkehren könntet.~
-						++ ~Wo ist das "Vermächtnis"?~ + driftdisc_legacy_01
-						END
-						
-							IF ~~ THEN BEGIN driftdisc_legacy_01
-							SAY ~Im Norden von Haelas Hallen. Fragt Shagretor, den Inhaber vom "Vermächtnis" danach. Wenn Ihr sagt, dass ich Euch geschickt habe, wird er es Euch überlassen. Damit werdet Ihr wieder an die Oberfläche zurückschweben können.~
-							++ ~Und Ihr meint, dass diese... Scheibe noch immer funktionieren wird?~ + driftdisc_still_ready
-							END
-							
-								IF ~~ THEN BEGIN driftdisc_still_ready
-								SAY ~Das müsstet Ihr Shagretor fragen. Er sammelt immer allen möglichen alten Krempel und kennt sich damit am Besten aus.~
-								++ ~Gut, ich werde ihn aufsuchen und versuchen, diese Scheibe in Betrieb zu nehmen.~ + driftdisc_goodbye
-								END
-								
-									IF ~~ THEN BEGIN driftdisc_goodbye
-									SAY ~Tut das. Wenn Ihr Fragen habt, wisst Ihr, wo ich zu finden bin.~
-									IF ~~ THEN DO ~SetGlobal("AC#BackToSurface","GLOBAL",4)
-									EraseJournalEntry(@64200)
-									AddJournalEntry(@64207,QUEST)~ EXIT
-									END	
-				
-*/
 /*
 IF ~GlobalGT("AC#RC_Bettargh_Third","GLOBAL",1)~ THEN BEGIN hello_runestone_barakuir
 SAY ~Seid gegrüßt, <CHARNAME>! Gibt es etwas Neues zu berichten?~
@@ -230,33 +134,6 @@ END
 	IF ~~ THEN EXIT
 	END
 
-	IF ~~ THEN BEGIN keep_work_runstone_barakuir
-	SAY ~Sagt mir Bescheid, wenn Ihr etwas braucht!~
-	IF ~~ THEN DO ~~ EXIT 
-	END
-	
-	IF ~~ THEN BEGIN have_runestone_barakuir
-	SAY ~Da ist ja prächtig! Zeigt einmal her...~
-	IF ~~ THEN DO ~TakePartyItem("ac#run53")~ + have_runestone_02 
-	END
-	
-		IF ~~ THEN BEGIN have_runestone_02
-		SAY ~"Der Den-Dunglor, der große See im Osten der Mithrilstadt, stellte für unsere Boote kein Hindernis dar. Die Wasser blieben ruhig, und so landeten wir nach einiger Zeit an den Ufern der anderen Seite, wo wir die Ausläufer der Stadt Barakuirs ausmachten. Unsere Suche nach Überlebenden blieb jedoch erfolglos." Das sind furchtbare Nachrichten, aber genau das, wonach wir suchen.~
-		=
-		~Der "Den-Dunglor" oder Eisensee liegt im Osten Iltkazars. An seinem anderen Ufer sollte ein Weg nach Barakuir zu finden sein. Zumindest, wenn die Überlieferung dieses Runensteines auch nach tausenden von Jahren seine Gültigkeit nicht verloren hat.~
-		IF ~~ THEN REPLY ~Wie komme ich dorthin?~ + runestone_tell_rc 
-		IF ~~ THEN REPLY ~Ich nehme an, Ihr stellt mir ein Boot zur Verfügung, oder soll ich dahin schwimmen?~ + runestone_tell_rc 
-		END
-		
-			IF ~~ THEN BEGIN runestone_tell_rc
-			SAY ~Diese Dinge muss wieder der Regentschaftsrat entscheiden. Überbringt den Ratsmitgliedern den Inhalt dieser Runentafel. Ihr wisst jetzt, was darin steht. Ich werde sie hier behalten und noch ein wenig weiter studieren.~
-			=
-			~Und haltet mich bei dieser Sache bitte auf dem Laufenden! Ich bin sehr gespannt, was Ihr in Barakuir finden werdet.~
-			IF ~~ THEN DO ~SetGlobal("AC#RC_Bettargh_Third","GLOBAL",10)
-			EraseJournalEntry(@62032)
-			AddJournalEntry(@62033,QUEST)
-			~ EXIT
-			END
 */
 IF ~GlobalGT("AC#TalkedToBettargh","ACIL53",1)~ THEN BEGIN hello_after_first_talk
 SAY ~Oh, seid gegrüßt, <CHARNAME>! Was kann ich für Euch tun?~

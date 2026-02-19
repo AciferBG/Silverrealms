@@ -1,0 +1,10 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId("AC#CERN1")  // Khaernd Schüttergeist
+        ForceSpell(Myself,FLASHY_1)  // SPIN797.SPL (No such index)
+        ForceSpell(Myself,FLASHY_2)  // SPIN796.SPL (No such index)
+        StartCutScene("AC#23CT1")
+END
+

@@ -83,6 +83,14 @@ THEN
 END
 
 IF
+    Global("AC#IL_TasteLobeMyself","GLOBAL",3)
+    Global("AC#IL_BrainVision","GLOBAL",1)
+THEN
+    RESPONSE #100
+		SetGlobal("AC#IL_TasteLobeMyself","GLOBAL",4)
+END
+
+IF
     Global("AC#IL_TasteLobeMyself","GLOBAL",4)
     Global("ApplySpellElderbrain","ACIL52",0)
 THEN
@@ -92,6 +100,13 @@ THEN
         ApplySpellRES("AC#ILWI",Player1)  // No such index
 		Wait(1)
 		SetGlobal("AC#IL_TasteLobeMyself","GLOBAL",5)
+END
+
+IF
+    Global("AC#IL_BrainVision","GLOBAL",1)
+THEN
+    RESPONSE #100
+		SetGlobal("AC#IL_BrainVision","GLOBAL",2)
 END
 /*
 IF

@@ -14,6 +14,6 @@ THEN
         StartMovie("AC#23MVE")
         RestParty()
         SetGlobal("AC#ACIL23DreamReflection","GLOBAL",1)
-        SetGlobal("AC#IL_TasteLobeMyself","GLOBAL",4)
+        SetGlobal("AC#IL_BrainVision","GLOBAL",1)
 END
 

@@ -1,14 +1,5 @@
 // Dream Sequence in Hall of Blooded Moon
 
-COMPILE 
-~silverrealms/story/ACIL23_DREAMS/AC#23CT1.baf~
-COPY_EXISTING ~AC#23CT1.bcs~   ~override/AC#23CT1.bcs~
-       REPLACE ~999999~ @725
-COMPILE
-~silverrealms/story/ACIL23_DREAMS/AC#23CT2.baf~
-~silverrealms/story/ACIL23_DREAMS/AC#23CT3.baf~
-~silverrealms/story/ACIL23_DREAMS/AC#23CT4.baf~
-~silverrealms/story/ACIL23_DREAMS/AC#23CT5.baf~
 COMPILE ~silverrealms/story/ACIL23_DREAMS/AC#D2DW1.baf~
 COPY_EXISTING ~AC#D2DW1.bcs~   ~override/AC#D2DW1.bcs~
        REPLACE ~999999~ @426

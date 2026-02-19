@@ -259,6 +259,7 @@ END
 																== AC#VRON5 ~Ich werde derweil mit Isdlara im Tempel Sharindlars warten, bis Khaernd aus seinem Käfig befreit ist. Der Tempel Sharindlars liegt in der Zitadelle Haelas Hallen im Osten der Stadt, neben dem Tempel Dumathoins.~
 																END
 																IF ~~ THEN DO ~SetGlobal("AC#IL_NEW_Borthun","GLOBAL",1)
+																SetGlobal("AC#IL_CerndTasteLobe","GLOBAL",1)
 																SetGlobal("AC#Ellhimar_Cernd","GLOBAL",3)
 																SetGlobal("AC#IL_NEW_Cernd","GLOBAL",3)
 																AddJournalEntry(@50700,QUEST)~  EXIT
@@ -279,11 +280,33 @@ END
 																~  EXIT
 
 // Vronia #5 in area ACIL52
+
+CHAIN IF ~Global("AC#IL_BrainVision","GLOBAL",2)~ THEN AC#VRON5 hello_it_worked
+~Es hat funktioniert!~
+END
+IF ~GlobalGT("AC#IL_TasteLobeMyself","GLOBAL",3)~ THEN DO ~SetGlobal("AC#IL_BrainVision","GLOBAL",3)~ EXTERN AC#VRON5 worked_taste_lobe_pc
+IF ~GlobalGT("AC#IL_CerndTasteLobe","GLOBAL",1)~ THEN DO ~SetGlobal("AC#IL_BrainVision","GLOBAL",3)~ EXTERN AC#VRON5 worked_taste_lobe_cernd
+
+	CHAIN AC#VRON5 worked_taste_lobe_pc
+	~Wenngleich es Euch einiges an Kraft abverlangt hat, dem bösen Einfluss des Hirnlappens zu widerstehen, scheint Ihr alles unbeschadet überstanden zu haben.~
+	END
+	IF ~~ THEN EXTERN AC#VRON5 worked_what_did_you_see
+	
+	CHAIN AC#VRON5 worked_taste_lobe_cernd
+	~Wenngleich es Cernd einiges an Kraft abverlangt hat, dem bösen Einfluss des Hirnlappens zu widerstehen, scheint er alles unbeschadet überstanden zu haben.~
+	END
+	IF ~~ THEN EXTERN AC#VRON5 worked_what_did_you_see
+	
+	CHAIN AC#VRON5 worked_what_did_you_see
+	~Was habt Ihr gesehen?~
+	END
+	IF ~~ THEN EXIT
+
 CHAIN IF ~Global("AC#IL_NEW_Cernd","GLOBAL",4)~ THEN AC#VRON5 hello_sharindlar
 ~Seid gegrüßt, <CHARNAME>. Schön, dass Ihr mich hier in Sharindlars Tempel aufsucht!~
 END
 IF ~Global("AC#IL_TasteLobeMyself","GLOBAL",1)~ THEN EXTERN AC#VRON5 taste_lobe_pc
-IF ~Global("AC#Ellhimar_Cernd","GLOBAL",3)~ THEN EXTERN AC#VRON5 taste_lobe_cernd
+IF ~Global("AC#IL_CerndTasteLobe","GLOBAL",1)~ THEN EXTERN AC#VRON5 taste_lobe_cernd_01
 
 	CHAIN AC#VRON5 taste_lobe_pc
 	~Seid Ihr bereit, den Lappen des Ältestenhirns zu kosten, um mehr über die Suche zu erfahren?~
@@ -299,9 +322,26 @@ IF ~Global("AC#Ellhimar_Cernd","GLOBAL",3)~ THEN EXTERN AC#VRON5 taste_lobe_cern
 	StartCutSceneMode() 
 	StartCutScene("AC#23CT0")~ EXIT		
 	
-	CHAIN AC#VRON5 taste_lobe_cernd
-	~Cernd ist bisher noch nicht aufgetaucht.~
-	EXIT
+	CHAIN AC#VRON5 taste_lobe_cernd_01
+	~Khaernd sollte den Lappen des Ältestenhirns kosten.~
+	END
+	IF ~Global("CerndSpawn","ACIL52",0)~ THEN EXTERN AC#VRON5 taste_lobe_cernd_not_appeared
+	IF ~GlobalGT("CerndSpawn","ACIL52",0)~ THEN EXTERN AC#VRON5 taste_lobe_cernd_02
+	
+		CHAIN AC#VRON5 taste_lobe_cernd_not_appeared
+		~Allerdings ist er bisher noch nicht aufgetaucht.~
+		EXIT
+	
+	CHAIN AC#VRON5 taste_lobe_cernd_02
+	~Seid Ihr bereit dafür, Khaernd?~
+	== AC#CERN1 ~(Khaernd nickt zögerlich.)~
+	== AC#VRON5 ~Gut. Khaernd wird seine Eindrücke sogleich telepathisch mit Euch teilen. Haltet Euch bereit, <CHARNAME>.~
+	== AC#VRON5 ~Khaernd, hier ist der Hirnlappen...~
+	END
+	IF ~~ THEN DO ~SetGlobal("AC#IL_NEW_Cernd","GLOBAL",5)
+	SetGlobal("AC#IL_CerndTasteLobe","GLOBAL",2)
+	StartCutSceneMode() 
+	StartCutScene("AC#23CTC")~ EXIT	
 	
 	CHAIN AC#VRON5 wait_taste_lobe_pc
 	~Dann werde ich hier warten, bis Ihr bereit seid.~
@@ -553,7 +593,6 @@ END
 		  SAY ~(Dann streckt er seine Arme durch, malt mit seinen Fingern ein komplexes Zeichen in die Luft und ist verschwunden.)~
 		IF ~~ THEN DO ~ClearAllActions()
 		StartCutSceneMode()
-		EraseJournalEntry(@50700)
 		AddJournalEntry(@50701,QUEST)
 		SetGlobal("AC#Ellhimar_Cernd","GLOBAL",4)
 		CreateVisualEffectObject("SPDIMNDR",Myself) 
@@ -569,7 +608,8 @@ END
 
 	IF ~~ THEN BEGIN are_you_cernd
 	  SAY ~(Der Zwerg nickt langsam.)~
-	IF ~~ THEN REPLY ~Ich heiße <CHARNAME>. Vronia schickt mich, um Euch hier abzuholen. Der Magier Ellhimar ist - wie Ihr selbst- von Gedankenschindern übel zugerichtet worden und braucht Eure Hilfe.~ GOTO cernd_help_ellhimar
+	IF ~~ THEN REPLY ~Ich heiße <CHARNAME>. Vronia schickt mich, um Euch hier abzuholen. Wir brauchen bei der Wiederherstellung einer Erinnerung Eure Hilfe.~ GOTO cernd_help_ellhimar
+	IF ~~ THEN REPLY ~Lust, etwas Ältestenhirn zu kosten? Vronia hat etwas übrig.~ GOTO cernd_help_ellhimar
 	IF ~~ THEN REPLY ~Ihr habt da was im Gesicht.~ GOTO cernd_help_ellhimar
 	END
 	

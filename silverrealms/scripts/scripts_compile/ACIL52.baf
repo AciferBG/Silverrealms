@@ -61,21 +61,6 @@ THEN
 		ActionOverride("AC#GROM6",StartDialogueNoSet(Player1))
 END
 
-/*
-IF
-	Global("AC#Ellhimar_Cernd","GLOBAL",6)
-THEN
-	RESPONSE #100
-                 SetInterrupt(FALSE)
-                 ActionOverride("AC#CERN1",ForceSpell(Myself,FLASHY_1))
-                 Wait(1)
-                 Wait(2)
-                 SetInterrupt(TRUE)
-                 SetGlobal("AC#Ellhimar_Cernd","GLOBAL",7)
-                 ActionOverride("AC#ILEL9",StartDialogueNoSet([PC]))
-END
-*/
-
 IF
 	Global("AC#IL_NEW_Cernd","GLOBAL",3)
 THEN

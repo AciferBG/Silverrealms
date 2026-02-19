@@ -1,57 +1,4 @@
-/*******************************************************************************************************
-Dialog Vronia cre#6 in Iltkazar, Ellhimar's journal
-*******************************************************************************************************/
-/*
-BEGIN ~ac#vron6~
 
-IF ~Global("JournalSpawn","ACIL50",3)~ THEN BEGIN hello_again_after_bloodmoon
-SAY ~<CHARNAME>! Wart Ihr bei Eurer Suche erfolgreich?~
-IF ~PartyHasItem("AC#23ELL")~ THEN REPLY ~Ja, ich habe Ellhimars Tagebuch gefunden.~ GOTO have_journal
-IF ~!PartyHasItem("AC#23ELL")~ THEN REPLY ~Nein, leider nicht.~ GOTO dont_have_journal
-END
-
-IF ~Global("JournalSpawn","ACIL50",1)~ THEN BEGIN hello_after_bloodmoon
-SAY ~<CHARNAME>! Ellhimars Zustand scheint sich zu verschlechtern!~
-IF ~~ THEN REPLY ~Das sind keine guten Neuigkeiten. Inwiefern verschlechtert sich sein Zustand?~ GOTO talking_crap
-END
-
-	IF ~~ THEN BEGIN talking_crap
-	SAY ~Er begann plötzlich zu reden. Das freute uns zunächst. Allerdings spricht er nur wirres Zeug! Von einem Blutmond, Statuen, Drachen und dergleichen.~
-	IF ~~ THEN REPLY ~Ich denke nicht, dass dies wirres Zeug ist. Ich komme gerade von dem Ort, an dem Ellhimar verschleppt wurde und hatte ähnliche Visionen.~ GOTO visions
-	END
-	
-		IF ~~ THEN BEGIN visions
-		SAY ~Ihr meint, er beginnt sich zu erinnern?~
-		IF ~~ THEN REPLY ~Vielleicht.~ GOTO need_journal
-		END
-		
-			IF ~~ THEN BEGIN need_journal
-			SAY ~Habt Ihr an diesem Ort irgendetwas gefunden, das uns helfen könnte, Ellhimar zu heilen?~
-			IF ~PartyHasItem("AC#23ELL")~ THEN REPLY ~Ich habe dort sein Tagebuch gefunden.~ GOTO have_journal
-			IF ~!PartyHasItem("AC#23ELL")~ THEN REPLY ~Nein, leider nicht.~ GOTO dont_have_journal
-			END
-			
-				IF ~~ THEN BEGIN dont_have_journal
-				SAY ~Das ist schade. Sollte Euch irgendetwas in die Hände fallen, das Hinweis auf seinen Zustand geben könnte, lasst es mich bitte wissen! Ich harre mit Ellhimar immer noch in Sharindlars Tempel aus. Sucht mich dort auf, wenn es Neuigkeiten jedweder Art gibt.~
-				IF ~~ THEN DO ~SetGlobal("JournalSpawn","ACIL50",2)
-				AddJournalEntry(@23011,QUEST)
-				EscapeArea()~ EXIT 
-				END
-				
-				IF ~~ THEN BEGIN have_journal
-				SAY ~Oh! Das klingt gut! Ich werde einmal einen Blick darauf werfen...~
-				IF ~~ THEN DO ~TakePartyItem("AC#23ELL")~ GOTO check_journal
-				END
-				
-					IF ~~ THEN BEGIN check_journal
-					SAY ~Was steht dort geschrieben? "Der uralte, mythalgleiche Zauber, der diesen Tempel einnimmt wie dichter Nebel ist auffällig. Es scheint so, dass die Erschaffer den Zauber gewebt haben, um in einen tiefen Schlaf fallen zu können. Geht es um Visionen?" Das hört sich genau nach dem Umstand an, von dem Ihr berichtet habt! Ich werde das Tagebuch mit zu Ellhimar nehmen und Khaernd bitten, auf der Grundlage seiner Niederschriften in Ellhimars Geist einzudringen, um ihn so vielleicht wieder auf den rechten Geisteszustand führen zu können! Trefft mich in Sharindlars Tempel in Haelas Hallen - wenngleich ich nicht weiß, ob und wann wir mit unseren Versuchen erfolgreich sein werden!~
-					IF ~~ THEN DO ~SetGlobal("JournalSpawn","ACIL50",10)
-					EraseJournalEntry(@23010)
-					EraseJournalEntry(@23011)
-					AddJournalEntry(@23012,QUEST_DONE)
-					EscapeArea()~ EXIT 
-					END
-*/
 /*******************************************************************************************************
 Dialog Vronia cre#5 und Elern cre#7in Iltkazar, Quest-Start: Help Ellhimar
 *******************************************************************************************************/
@@ -197,8 +144,9 @@ END
 															END
 															IF ~~ THEN REPLY ~Khaernd soll den Hirnlappen konsumieren.~ EXTERN AC#VRON5 free_cernd_exit
 															IF ~~ THEN REPLY ~Ich möchte es gern selbst versuchen.~ EXTERN AC#ELER7 taste_lobe_myself
+															IF ~~ THEN REPLY ~Ich kann mich nicht entscheiden.~ EXTERN AC#VRON5 taste_lobe_cant_decide
 
-
+																// Option #1: Player decides to free Khaernd
 																CHAIN AC#VRON5 free_cernd_exit																
 																~Eine gute Entscheidung. Khaernd ist dafür sicher mehr als geeignet. Und es ist ein guter Anlass, dem armen Kerl wieder mehr Sinn im Leben zu geben. Indem er wieder ein freier Zwerg wird. Und indem er den Hirnlappen kostet.~ 
 																== AC#VRON5 ~Wir sollten diesen Schritt jedoch nicht hier in aller Öffentlichkeit gehen.~
@@ -214,6 +162,7 @@ END
 																SetGlobal("AC#IL_NEW_Cernd","GLOBAL",3)
 																AddJournalEntry(@50700,QUEST)~  EXIT
 																
+																// Option #2: Player decides to consume the elderbrain lobe
 																CHAIN AC#ELER7 taste_lobe_myself
 																~Ein äußerst mutiger Schritt.~
 																== AC#VRON5 ~Wir sollten diesen Schritt jedoch nicht hier in aller Öffentlichkeit gehen.~
@@ -228,6 +177,21 @@ END
 																AddJournalEntry(@62022,QUEST)																
 																//AddJournalEntry(@50700,QUEST)
 																~  EXIT
+																
+																// Option #3: Player can't decide yet
+																CHAIN AC#VRON5 taste_lobe_cant_decide																
+																~Das ist ein Stück weit verständlich. Nun gut, ich werde warten, bis Ihr eine Entscheidung getroffen habt. Ich werde aber nicht hier draußen warten.~ 
+																== AC#ELER7 ~Ich habe mit meiner Tante Isdlara gesprochen. Sie ist die Hohepriesterin Sharindlars, unserer Göttin des Lebens. In ihrem Tempel lässt sich die Einverleibung des Lappens sicher und diskret vollziehen.~
+																== AC#VRON5 ~Ich warte auf Euch im Gnädigen Hof, dem Tempel Sharindlars in Haelas Hallen. Trefft mich dort, um mir mitzuteilen, wer die Erinnerung des Lappens aktivieren soll.~
+																== AC#ELER7 ~<CHARNAME>, es gibt noch eine weitere Aufgabe. Ihr erwähntet "das Buch Iltkazars, das nicht in der Bibliothek liegt". Ich habe eine Idee, was damit gemeint sein könnte. Es wird das Kosten des Hirnlappens nicht ersetzen, aber uns vielleicht ebenfalls weiterhelfen.~
+																== AC#ELER7 ~Sprecht mit meinem Vater in der Bibliothek. Er wird mich rufen und ich kann Euch näheres berichten.~
+																== AC#VRON5 ~Ich werde derweil im Tempel Sharindlars auf Euch warten. Der Tempel Sharindlars liegt in der Zitadelle Haelas Hallen im Osten der Stadt, direkt neben dem Tempel Dumathoins.~
+																END
+																IF ~~ THEN DO ~SetGlobal("AC#IL_NEW_Borthun","GLOBAL",1)
+																SetGlobal("AC#IL_UndecideTasteLobe","GLOBAL",1)
+																SetGlobal("AC#Ellhimar_Cernd","GLOBAL",3)
+																SetGlobal("AC#IL_NEW_Cernd","GLOBAL",3)
+																AddJournalEntry(@50700,QUEST)~  EXIT
 
 // Vronia #5 in area ACIL52
 
@@ -291,7 +255,15 @@ CHAIN IF ~Global("AC#IL_NEW_Cernd","GLOBAL",4)~ THEN AC#VRON5 hello_sharindlar
 END
 IF ~Global("AC#IL_TasteLobeMyself","GLOBAL",1)~ THEN EXTERN AC#VRON5 taste_lobe_pc
 IF ~Global("AC#IL_CerndTasteLobe","GLOBAL",1)~ THEN EXTERN AC#VRON5 taste_lobe_cernd_01
+IF ~Global("AC#IL_UndecideTasteLobe","GLOBAL",1)~ THEN EXTERN AC#VRON5 taste_lobe_who_will_it_be
 
+	CHAIN AC#VRON5 taste_lobe_who_will_it_be
+	~Habt Ihr Euch entschieden, wer den Lappen des Ältestenhirnes konsumieren soll?~
+	END
+	IF ~~ THEN REPLY ~Ich werde es selbst machen.~ DO ~SetGlobal("AC#IL_TasteLobeMyself","GLOBAL",1)~ EXTERN AC#VRON5 taste_lobe_pc_02
+	IF ~~ THEN REPLY ~Khaernd soll es machen machen.~ DO ~SetGlobal("AC#IL_CerndTasteLobe","GLOBAL",1)~ EXTERN AC#VRON5 taste_lobe_cernd_01
+	IF ~~ THEN REPLY ~Ich bin noch nicht bereit.~ EXTERN AC#VRON5 wait_taste_lobe_pc
+	
 	CHAIN AC#VRON5 taste_lobe_pc
 	~Seid Ihr bereit, den Lappen des Ältestenhirns zu kosten, um mehr über die Suche zu erfahren?~
 	END
@@ -307,19 +279,30 @@ IF ~Global("AC#IL_CerndTasteLobe","GLOBAL",1)~ THEN EXTERN AC#VRON5 taste_lobe_c
 	StartCutScene("AC#23CT0")~ EXIT		
 	
 	CHAIN AC#VRON5 taste_lobe_cernd_01
-	~Khaernd sollte den Lappen des Ältestenhirns kosten.~
+	~Khaernd wird also den Lappen des Ältestenhirns kosten.~
 	END
 	IF ~Global("CerndSpawn","ACIL52",0)~ THEN EXTERN AC#VRON5 taste_lobe_cernd_not_appeared
 	IF ~GlobalGT("CerndSpawn","ACIL52",0)~ THEN EXTERN AC#VRON5 taste_lobe_cernd_02
 	
 		CHAIN AC#VRON5 taste_lobe_cernd_not_appeared
-		~Allerdings ist er bisher noch nicht aufgetaucht.~
+		~Allerdings ist er bisher noch nicht aufgetaucht. Habt Ihr ihn schon aus seiner Kammer in der Bibliothek befreien können?~
+		END
+		IF ~~ THEN REPLY ~Nein, noch nicht.~ EXTERN AC#VRON5 go_on_free_cernd
+		
+		CHAIN AC#VRON5 go_on_free_cernd
+		~Dann solltet Ihr dies jetzt tun.~
 		EXIT
 	
 	CHAIN AC#VRON5 taste_lobe_cernd_02
 	~Seid Ihr bereit dafür, Khaernd?~
 	== AC#CERN1 ~(Khaernd nickt zögerlich.)~
-	== AC#VRON5 ~Gut. Khaernd wird seine Eindrücke sogleich telepathisch mit Euch teilen. Haltet Euch bereit, <CHARNAME>.~
+	== AC#VRON5 ~Seid auch IHr bereit, <CHARNAME>, dass Khaernd die Erinnerung des Hirnes mit Euch teilt?~
+	END
+	IF ~~ THEN REPLY ~Ja, ich bin soweit.~ EXTERN AC#VRON5 taste_lobe_cernd_03
+	IF ~~ THEN REPLY ~Nein, ich bin noch nicht soweit.~ EXTERN AC#VRON5 wait_taste_lobe_pc
+
+	CHAIN AC#VRON5 taste_lobe_cernd_03
+	~Gut. Khaernd wird seine Eindrücke sogleich telepathisch mit Euch teilen. Haltet Euch bereit, <CHARNAME>.~
 	== AC#VRON5 ~Khaernd, hier ist der Hirnlappen...~
 	END
 	IF ~~ THEN DO ~SetGlobal("AC#IL_NEW_Cernd","GLOBAL",5)
@@ -474,8 +457,18 @@ IF ~~ THEN EXIT
 BEGIN ~AC#ILD3E~
 BEGIN ~AC#DREA3~
 
-
-	CHAIN IF ~True()~ THEN AC#ILD3E hello
+	CHAIN IF ~NumTimesTalkedTo(1)~ THEN AC#ILD3E hello_2
+	~Interessant! Und Ihr habt nie versucht, den alten Tempel aufzusuchen, um Euren... bedauernswerten Zustand zu beenden?~ 
+	== AC#DREA3 ~Doch, das habe ich.~ 
+	== AC#ILD3E ~An welchem Tempel habt Ihr es versucht?~ 
+	== AC#DREA3 ~Am alten Drachenfriedhof.~
+	== AC#ILD3E ~Oh! Zeigt ihn mir.~	
+	== AC#DREA3 ~Dies ist aber die letzte Erinnerung, die ich mit Euch teilen werde. Dann werdet Ihr mir antworten liefern müssen!~
+	END
+	IF ~~ THEN DO ~StartCutSceneMode()
+	StartCutScene("AC#23CT3")~ EXIT
+	
+	CHAIN IF ~NumTimesTalkedTo(0)~ THEN AC#ILD3E hello
 	~Sieh an, sieh an. Der verfluchte König Iltkazars schickt sich an, mich lebloses Hirn um Rat zu fragen.~ 
 	== AC#DREA3 ~Das tue ich.~ 
 	== AC#ILD3E ~Nichts im Leben gibt es umsonst. Das müsstet Ihr bestens wissen.~ 

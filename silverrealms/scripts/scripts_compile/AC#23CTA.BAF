@@ -1,0 +1,18 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player1)
+        FadeToColor([10.0],0)
+        Wait(1)
+        LeaveAreaLUAPanic("ACILD3","",[0.0],S)
+        LeaveAreaLUA("ACILD3","",[0.0],N)
+        MultiPlayerSync()
+        MoveViewPoint([1003.788],INSTANT)
+        Explore()
+        SmallWait(5)
+        FadeFromColor([15.0],0)
+        Wait(2)
+        ActionOverride("AC#ILD3E",StartDialogueNoSet(Player1))
+END
+

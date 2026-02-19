@@ -9,7 +9,7 @@ IF ~~ THEN DO ~/*SetGlobal("AC#ACIL23CutScene1","GLOBAL",5)*/
 SetGlobal("AC#ACIL23CutScene1","GLOBAL",6)
 ClearAllActions()
 StartCutSceneMode()
-StartCutScene("AC#23CT3")~ EXIT
+StartCutScene("AC#23CTA")~ EXIT
 END
 
 BEGIN AC#DREA1  // Mithbarak

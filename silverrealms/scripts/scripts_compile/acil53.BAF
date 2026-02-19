@@ -89,6 +89,16 @@ THEN
 END
 
 IF
+	GlobalGT("AC#IL_TasteLobeMyself","GLOBAL",4)
+	Global("CloseDoorCerndAgain","ACIL53",0)
+THEN
+	RESPONSE #100
+		CloseDoor("DOOR01")
+		Lock("DOOR01")
+		SetGlobal("CloseDoorCerndAgain","ACIL53",1)
+END
+
+IF
 	Global("Prison_Cernd","ACIL53",1)
 THEN
 	RESPONSE #100

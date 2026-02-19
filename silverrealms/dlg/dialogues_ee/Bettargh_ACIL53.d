@@ -348,6 +348,7 @@ BEGIN ~AC#ELER5~
 IF ~~ THEN BEGIN okidok
 SAY ~Gerne! Kommt, <CHARNAME>, folgt mir zu Borthuns Standbild im Osten der Bibliothek!~
 IF ~~ THEN DO ~SetGlobal("ElernSpawn","ACIL53",3)
+SetGlobal("AC#ElernBorthunBook","GLOBAL",1)
 EraseJournalEntry(@64100)
 AddJournalEntry(@64101,QUEST)
 MoveToPointNoInterrupt([2755.920])~ EXIT
@@ -449,6 +450,7 @@ END
 								IF ~~ THEN BEGIN go_ask_anthan_about_borthun
 								SAY ~Jedenfalls kann ich Euch keinen besseren Rat geben, als Anthan in der Uralten Schmiede, dem Tempel Moradins im Westen der Stadt, aufzusuchen und ihn zu bitten, dass er Euch einmal einen Blick in die Aufzeichnungen seines Ahnen Borthun werfen lässt. Ich werde draußen am Platz von Bhaerynden neben Bresk auf Euch warten.~
 								IF ~~ THEN DO ~SetGlobal("ElernSpawn","ACIL53",4)
+								SetGlobal("AC#ElernBorthunBook","GLOBAL",2)
 								SetGlobal("AC#Clans_Parting","GLOBAL",2)
 								AddJournalEntry(@64102,QUEST)
 								EscapeArea()

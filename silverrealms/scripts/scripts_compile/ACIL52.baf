@@ -44,14 +44,24 @@ THEN
 END
 
 IF
+       Global("AC#Gromi_Cernd","ACIL52",0)
+	   GlobalGT("CerndSpawn","ACIL52",0)
+	   Global("AC#IL_BrainVision","GLOBAL",10)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#Gromi_Cernd","ACIL52",1)
+END
+
+IF
        Global("AC#Gromi_Cernd","ACIL52",1)
 THEN
 	RESPONSE #100
 		SetGlobal("AC#Gromi_Cernd","ACIL52",2)
-		CreateCreatureOffScreen("AC#GROM6",0)
-		ActionOverride("AC#GROM6",Dialogue(Player1))
+		CreateCreature("AC#GROM6",[2629.2389],9)
+		ActionOverride("AC#GROM6",StartDialogueNoSet(Player1))
 END
 
+/*
 IF
 	Global("AC#Ellhimar_Cernd","GLOBAL",6)
 THEN
@@ -64,6 +74,7 @@ THEN
                  SetGlobal("AC#Ellhimar_Cernd","GLOBAL",7)
                  ActionOverride("AC#ILEL9",StartDialogueNoSet([PC]))
 END
+*/
 
 IF
 	Global("AC#IL_NEW_Cernd","GLOBAL",3)

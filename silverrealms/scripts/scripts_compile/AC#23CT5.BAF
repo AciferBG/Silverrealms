@@ -11,7 +11,8 @@ THEN
         MultiPlayerSync()
         FadeFromColor([30.0],0)
         EndCutSceneMode()
-        StartMovie("AC#23MVE")
+        StartMovie("AC#IL70M")
+        //StartMovie("AC#23MVE")
         SetGlobal("AC#ACIL23DreamReflection","GLOBAL",1)
         SetGlobal("AC#IL_BrainVision","GLOBAL",1)
 END

@@ -30,8 +30,11 @@ SAY NAME1 @1148 SAY NAME2 @1148
 
 COPY ~silverrealms/spl/AC#ILPH.spl~          ~override~ // phosphor dragon hit
 
+ADD_PROJECTILE      ~silverrealms/pro/AC#NEOB.PRO~ // neothelid's poisonous breath projectile
 COPY ~silverrealms/spl/AC#NEOB.spl~          ~override~ // neothelid's poisonous breath
-SAY NAME1 @1147 SAY NAME2 @1147
+  SAY NAME1 @1147 SAY NAME2 @1147
+  WRITE_SHORT   0x98 ~%AC#NEOB%~
+
 
 COPY ~silverrealms/spl/AC#ILD1.spl~          ~override~ // intellect devourer's insinuation
 SAY NAME1 @1146 SAY NAME2 @1146

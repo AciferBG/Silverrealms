@@ -4,15 +4,14 @@ THEN
     RESPONSE #100
         CutSceneId(Player1)
         ActionOverride("AC#DREA8",MoveToPoint([372.607]))
-        ActionOverride("AC#DREA9",MoveToPoint([2080.1600]))
         FadeToColor([50.0],0)
         Wait(3)
         RestorePartyLocations()
         MultiPlayerSync()
         FadeFromColor([30.0],0)
         EndCutSceneMode()
-        StartMovie("AC#IL70M")
-        //StartMovie("AC#23MVE")
+        //StartMovie("AC#IL70M")
+        StartMovie("AC#23MVE")
         SetGlobal("AC#ACIL23DreamReflection","GLOBAL",1)
         SetGlobal("AC#IL_BrainVision","GLOBAL",1)
 END

@@ -3,6 +3,8 @@ IF
 THEN
     RESPONSE #100
         CutSceneId(Player1)
+        SetGlobal("AC#_CUTSCENE_BREAKABLE","GLOBAL",1)
+        SetCutSceneBreakable(TRUE)
         FadeToColor([30.0],0)
         Wait(1)
         Wait(1)
@@ -18,6 +20,8 @@ THEN
         MoveViewPoint([1543.379],5)
         Wait(10)
         Wait(3)
+        SetCutSceneBreakable(FALSE)
+        SetGlobal("AC#_CUTSCENE_BREAKABLE","GLOBAL",0)
         ActionOverride("AC#DREA2",StartDialogueNoSet(Player1))
 END
 

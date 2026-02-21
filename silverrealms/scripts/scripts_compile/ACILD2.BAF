@@ -1,0 +1,26 @@
+IF
+    CutSceneBroken()
+THEN
+    RESPONSE #100
+        SetCutSceneBreakable(FALSE)
+        StartCutSceneMode()
+        ClearAllActions()
+        FadeToColor([0.0],0)
+        SetCursorState(FALSE)
+        SetGlobal("AC#_CUTSCENE_BREAKABLE","GLOBAL",0)
+        Continue()
+END
+
+IF
+    CutSceneBroken()
+THEN
+    RESPONSE #100
+        ActionOverride("AC#DREA1",JumpToPoint([1543.379]))
+        MoveViewPoint([1543.379],INSTANT)
+        Explore()
+        SmallWait(5)
+        FadeFromColor([10.0],0)
+        SmallWait(5)
+        ActionOverride("AC#DREA2",StartDialogueNoSet(Player1))
+END
+

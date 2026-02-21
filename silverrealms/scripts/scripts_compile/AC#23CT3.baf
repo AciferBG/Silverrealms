@@ -12,12 +12,15 @@ THEN
         MoveViewPoint([2080.1600],INSTANT)
         Explore()
         SmallWait(5)
+        SetGlobal("AC#_CUTSCENE_BREAKABLE","GLOBAL",1)
+        SetCutSceneBreakable(TRUE)
         FadeFromColor([40.0],0)
         ActionOverride("AC#DREA8",MoveToPoint([1066.1059]))
-        ActionOverride("AC#DREA9",MoveToPoint([1003.1133]))
         MoveViewPoint([1066.1059],5)
         Wait(10)
-        Wait(3)
+        Wait(1)
+        SetCutSceneBreakable(FALSE)
+        SetGlobal("AC#_CUTSCENE_BREAKABLE","GLOBAL",0)
         ActionOverride("AC#DREA8",StartDialogueNoSet(Player1))
 END
 

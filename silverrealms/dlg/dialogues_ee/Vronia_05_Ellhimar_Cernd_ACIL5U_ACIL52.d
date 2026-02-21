@@ -204,20 +204,83 @@ IF ~GlobalGT("AC#IL_CerndTasteLobe","GLOBAL",1)~ THEN DO ~SetGlobal("AC#IL_Brain
 	CHAIN AC#VRON5 worked_taste_lobe_pc
 	~Wenngleich es Euch einiges an Kraft abverlangt hat, dem bösen Einfluss des Hirnlappens zu widerstehen, scheint Ihr alles unbeschadet überstanden zu haben.~
 	END
-	IF ~~ THEN EXTERN AC#VRON5 worked_what_did_you_see
+	IF ~~ THEN EXTERN AC#VRON5 worked_what_did_you_see_01
 	
 	CHAIN AC#VRON5 worked_taste_lobe_cernd
 	~Wenngleich es Cernd einiges an Kraft abverlangt hat, dem bösen Einfluss des Hirnlappens zu widerstehen, scheint er alles unbeschadet überstanden zu haben.~
 	END
-	IF ~~ THEN EXTERN AC#VRON5 worked_what_did_you_see
+	IF ~~ THEN EXTERN AC#VRON5 worked_what_did_you_see_01
 	
-	CHAIN AC#VRON5 worked_what_did_you_see
+	CHAIN AC#VRON5 worked_what_did_you_see_01
 	~Was habt Ihr gesehen?~
 	END
-	IF ~~ THEN REPLY ~Ich weiß nicht recht... einen Drachenfriedhof oder ähnliches...~ EXTERN AC#VRON5 worked_what_did_you_see_final
+	IF ~~ THEN REPLY ~Ich weiß nicht recht... ziemlich vieles...~ EXTERN AC#VRON5 worked_what_did_you_see_02
+	IF ~~ THEN REPLY ~Nichts bestimmtes. Dumme, nichtssagende Visionen, fürchte ich.~ EXTERN AC#VRON5 worked_what_did_you_see_02
+	IF ~~ THEN REPLY ~Oh, eine ganze Menge.~ EXTERN AC#VRON5 worked_what_did_you_see_02
 	
+	CHAIN AC#VRON5 worked_what_did_you_see_02
+	~Lasst uns diese Visionen prüfen wie rohes Erz – und sehen, was an reinem Metall darin verborgen liegt. Was habt Ihr zuerst gesehen?~
+	END
+	IF ~~ THEN REPLY ~Mith Barak im Thronsaal, vor seiner Krönung.~ EXTERN AC#VRON5 worked_what_did_you_see_throneroom
+	
+	CHAIN AC#VRON5 worked_what_did_you_see_throneroom
+	~Wirklich? Die Erinnerungen scheinen weit zurückzureichen. Das ist nach der Zeitrechnung der Oberflächenbewohner... im Jahre 66 gewesen.~
+	END
+	IF ~~ THEN REPLY ~Dann ist König Mith Barak also über tausend Jahre alt?~ EXTERN AC#VRON5 worked_what_did_you_see_mithbarak_old
+	IF ~~ THEN REPLY ~Dann kam die nächste Vision.~ EXTERN AC#VRON5 worked_what_did_you_see_03
+	
+			CHAIN AC#VRON5 worked_what_did_you_see_mithbarak_old
+			~In diesen tausend Jahren hat er uns stets vorbildlich regiert. Doch Ihr habt Recht, selbst nach den Maßstäben der Zwerge ist dies eine unendlich lange Zeitspanne. Unser König gibt uns Rätsel um Rätsel auf.~
+			END
+			IF ~~ THEN EXTERN AC#VRON5 worked_what_did_you_see_03
+	
+	CHAIN AC#VRON5 worked_what_did_you_see_03
+	~Was habt Ihr als nächstes gesehen?~
+	END
+	IF ~~ THEN REPLY ~König Mith Barak auf seinem Thron, zur Statue erstarrt.~ EXTERN AC#VRON5 worked_what_did_you_see_04
+
+	CHAIN AC#VRON5 worked_what_did_you_see_04
+	~Das muss für die Zwerge in der alten Zeit ein beunruhigender Anblick gewesen sein. Mittlerweile haben sich alle daran gewöhnt. Nun, bis jetzt; bis er nicht mehr erwachte.~
+	END
+	IF ~~ THEN EXTERN AC#VRON5 worked_what_did_you_see_dragoncem
+	
+	CHAIN AC#VRON5 worked_what_did_you_see_dragoncem
+	~Wie ging die Vision weiter?~
+	END
+	IF ~~ THEN REPLY ~Mith Barak schien auf dem Weg zu einem alten Tempel der Drachen gewesen zu sein. Er sprach von einer Art Drachenfriedhof an der Oberfläche.~ EXTERN AC#VRON5 worked_what_did_you_see_dragoncem_02
+	
+	CHAIN AC#VRON5 worked_what_did_you_see_dragoncem_02
+	~Ein Drachenfriedhof? Und Mith Barak war dort? Wie ungewöhnlich.~
+	END
+	IF ~~ THEN REPLY ~Er hoffte, dort seinen Fluch loswerden zu können.~ EXTERN AC#VRON5 worked_what_did_you_see_dragoncem_03
+	
+	CHAIN AC#VRON5 worked_what_did_you_see_dragoncem_03
+	~Wenn er gehofft hat, dort seinen Fluch brechen zu können, scheint dies der Ort sein, den Ihr aufsuchen müsst, um ihm zu helfen. Zumindest hoffe ich das. Habt Ihr einen Anhalt, wo dieser Ort an der Oberfläche sein könnte?~
+	END
+	IF ~~ THEN REPLY ~Mith Barak erwähnte ein Buch. Ein Buch, das in Iltkazar ist. Aber nicht an dem Ort, an dem man es vermuten würde. "Das einzige Buch Iltkazars, das nicht in der Bibliothek liegen darf." So nannte er es.~ EXTERN AC#VRON5 worked_what_did_you_see_book
+
+	CHAIN AC#VRON5 worked_what_did_you_see_book
+	~Ein Buch? Nicht in der Bibliothek? Merkwürdig. Und dort soll der Ort vermerkt sein? Noch merkwürdiger.~
+	END
+	IF ~~ THEN REPLY ~Danach hatte ich noch eine Art Vision, bei welcher Drachen den König auf seinem Thron umkreist haben.~ EXTERN AC#VRON5 worked_what_did_you_see_movie
+
+	CHAIN AC#VRON5 worked_what_did_you_see_movie
+	~Noch mehr Drachen! Darauf kann ich mir keinen Reim machen. Habt Ihr sonst noch etwas gesehen?~
+	END
+	IF ~~ THEN REPLY ~Nein, das war dann wirklich alles.~ EXTERN AC#VRON5 worked_what_did_you_see_final
+/*	
+	CHAIN AC#VRON5 worked_what_did_you_see_02
+	~~
+	END
+	IF ~~ THEN REPLY ~~ EXTERN AC#VRON5 worked_what_did_you_see_final
+*/	
 		CHAIN AC#VRON5 worked_what_did_you_see_final
-		~Das alles sind wichtige Erkenntnisse. Ich denke, nun kommt das Buch ins Spiel, um welches sich Elern kümmern wollte. Habt Ihr schon mit ihr gesprochen?~
+		~Das alles sind wichtige Erkenntnisse. Lasst uns nun dieses ganze Mysterium Schicht um Schicht abtragen, wie man einen Gang im Fels freilegt oder Schlacke von Eisen trennt.~ 
+		END
+		IF ~~ THEN EXTERN AC#VRON5 about_book
+		
+		CHAIN AC#VRON5 about_book
+		~Ich denke, nun kommt das Buch ins Spiel, um welches sich Elern kümmern wollte. Habt Ihr schon mit ihr gesprochen?~
 		END
 		IF ~Global("AC#ElernBorthunBook","GLOBAL",0)~ THEN REPLY ~Nein, ich habe noch nicht mit ihr gesprochen.~ EXTERN AC#VRON5 elern_book_not_talked_to_elern_yet
 		IF ~Global("AC#ElernBorthunBook","GLOBAL",1)~ THEN REPLY ~Stimmt, sie wollte mir in der Bibliothek etwas zeigen und wartet an einem Standbild auf mich...~ EXTERN AC#VRON5 elern_book_elern_waits_statue

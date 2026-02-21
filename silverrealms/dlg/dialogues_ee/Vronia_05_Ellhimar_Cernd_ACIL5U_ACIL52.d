@@ -152,11 +152,10 @@ END
 																== AC#VRON5 ~Wir sollten diesen Schritt jedoch nicht hier in aller Öffentlichkeit gehen.~
 																== AC#ELER7 ~Ich habe mit meiner Tante Isdlara gesprochen. Sie ist die Hohepriesterin Sharindlars, unserer Göttin des Lebens. In ihrem Tempel lässt sich die Einverleibung des Lappens sicher und diskret vollziehen.~
 																== AC#VRON5 ~Ich warte auf Euch im Gnädigen Hof, dem Tempel Sharindlars in Haelas Hallen, bis Ihr Khaernd befreit habt. Trefft mich dort, um die Erinnerung des Lappens zu aktivieren.~
-																== AC#ELER7 ~<CHARNAME>, es gibt noch eine weitere Aufgabe. Ihr erwähntet "das Buch Iltkazars, das nicht in der Bibliothek liegt". Ich habe eine Idee, was damit gemeint sein könnte. Es wird das Kosten des Hirnlappens nicht ersetzen, aber uns vielleicht ebenfalls weiterhelfen.~
-																== AC#ELER7 ~Ihr müsst ja ohnehin in die Bibliothek, um mit meinem Vater zu sprechen und Khaernd zu befreien. Trefft mich dort, nachdem Ihr mit meinem Vater gesprochen habt.~
+																== AC#ELER7 ~Ihr solltet zunächst in die Bibliothek gehen, um mit meinem Vater zu sprechen und Khaernd aus seinem Gefängnis zu entlassen.~
 																== AC#VRON5 ~Ich werde derweil mit Isdlara im Tempel Sharindlars warten, bis Khaernd aus seinem Käfig befreit ist. Der Tempel Sharindlars liegt in der Zitadelle Haelas Hallen im Osten der Stadt, neben dem Tempel Dumathoins.~
 																END
-																IF ~~ THEN DO ~SetGlobal("AC#IL_NEW_Borthun","GLOBAL",1)
+																IF ~~ THEN DO ~
 																SetGlobal("AC#IL_CerndTasteLobe","GLOBAL",1)
 																SetGlobal("AC#Ellhimar_Cernd","GLOBAL",3)
 																SetGlobal("AC#IL_NEW_Cernd","GLOBAL",3)
@@ -167,14 +166,12 @@ END
 																~Ein äußerst mutiger Schritt.~
 																== AC#VRON5 ~Wir sollten diesen Schritt jedoch nicht hier in aller Öffentlichkeit gehen.~
 																== AC#ELER7 ~Ich habe mit meiner Tante Isdlara gesprochen. Sie ist die Hohepriesterin Sharindlars, unserer Göttin des Lebens. In ihrem Tempel lässt sich die Einverleibung des Lappens sicher und diskret vollziehen.~
-																== AC#VRON5 ~Ich warte solange auf Euch im Gnädigen Hof, dem Tempel Sharindlars in Haelas Hallen. Trefft mich dort, um die Erinnerung des Lappens zu aktivieren.~
-																== AC#ELER7 ~<CHARNAME>, es gibt noch eine weitere Aufgabe. Ihr erwähntet "das Buch Iltkazars, das nicht in der Bibliothek liegt". Ich habe eine Idee, was damit gemeint sein könnte. Es wird das Kosten des Hirnlappens nicht ersetzen, aber uns vielleicht ebenfalls weiterhelfen.~
-																== AC#ELER7 ~Besucht mich in der großen Bibliothek. Ich werde dort gemeinsam mit meinem Vater versuchen, etwas über das merkwürdige Buch in Erfahrung zu bringen, welches das Ältestenhirn erwähnt hatte.~																
+																== AC#VRON5 ~Ich warte solange auf Euch im Gnädigen Hof, dem Tempel Sharindlars in Haelas Hallen. Trefft mich dort, um die Erinnerung des Lappens zu aktivieren.~															
 																END
-																IF ~~ THEN DO ~SetGlobal("AC#IL_NEW_Borthun","GLOBAL",1)
+																IF ~~ THEN DO ~
 																SetGlobal("AC#IL_TasteLobeMyself","GLOBAL",1)
 																SetGlobal("AC#IL_NEW_Cernd","GLOBAL",3)
-																AddJournalEntry(@62022,QUEST)																
+																//AddJournalEntry(@,QUEST)																
 																//AddJournalEntry(@50700,QUEST)
 																~  EXIT
 																
@@ -182,12 +179,9 @@ END
 																CHAIN AC#VRON5 taste_lobe_cant_decide																
 																~Das ist ein Stück weit verständlich. Nun gut, ich werde warten, bis Ihr eine Entscheidung getroffen habt. Ich werde aber nicht hier draußen warten.~ 
 																== AC#ELER7 ~Ich habe mit meiner Tante Isdlara gesprochen. Sie ist die Hohepriesterin Sharindlars, unserer Göttin des Lebens. In ihrem Tempel lässt sich die Einverleibung des Lappens sicher und diskret vollziehen.~
-																== AC#VRON5 ~Ich warte auf Euch im Gnädigen Hof, dem Tempel Sharindlars in Haelas Hallen. Trefft mich dort, um mir mitzuteilen, wer die Erinnerung des Lappens aktivieren soll.~
-																== AC#ELER7 ~<CHARNAME>, es gibt noch eine weitere Aufgabe. Ihr erwähntet "das Buch Iltkazars, das nicht in der Bibliothek liegt". Ich habe eine Idee, was damit gemeint sein könnte. Es wird das Kosten des Hirnlappens nicht ersetzen, aber uns vielleicht ebenfalls weiterhelfen.~
-																== AC#ELER7 ~Sprecht mit meinem Vater in der Bibliothek. Er wird mich rufen und ich kann Euch näheres berichten.~
-																== AC#VRON5 ~Ich werde derweil im Tempel Sharindlars auf Euch warten. Der Tempel Sharindlars liegt in der Zitadelle Haelas Hallen im Osten der Stadt, direkt neben dem Tempel Dumathoins.~
+																== AC#VRON5 ~Ich werde im Tempel Sharindlars auf Euch warten. Der Tempel Sharindlars liegt in der Zitadelle Haelas Hallen im Osten der Stadt, direkt neben dem Tempel Dumathoins.~
 																END
-																IF ~~ THEN DO ~SetGlobal("AC#IL_NEW_Borthun","GLOBAL",1)
+																IF ~~ THEN DO ~
 																SetGlobal("AC#IL_UndecideTasteLobe","GLOBAL",1)
 																SetGlobal("AC#Ellhimar_Cernd","GLOBAL",3)
 																SetGlobal("AC#IL_NEW_Cernd","GLOBAL",3)
@@ -280,38 +274,15 @@ IF ~GlobalGT("AC#IL_CerndTasteLobe","GLOBAL",1)~ THEN DO ~SetGlobal("AC#IL_Brain
 		IF ~~ THEN EXTERN AC#VRON5 about_book
 		
 		CHAIN AC#VRON5 about_book
-		~Ich denke, nun kommt das Buch ins Spiel, um welches sich Elern kümmern wollte. Habt Ihr schon mit ihr gesprochen?~
-		END
-		IF ~Global("AC#ElernBorthunBook","GLOBAL",0)~ THEN REPLY ~Nein, ich habe noch nicht mit ihr gesprochen.~ EXTERN AC#VRON5 elern_book_not_talked_to_elern_yet
-		IF ~Global("AC#ElernBorthunBook","GLOBAL",1)~ THEN REPLY ~Stimmt, sie wollte mir in der Bibliothek etwas zeigen und wartet an einem Standbild auf mich...~ EXTERN AC#VRON5 elern_book_elern_waits_statue
-		IF ~Global("AC#ElernBorthunBook","GLOBAL",2)
-		Global("AC#Clans_Parting","GLOBAL",2)~ THEN REPLY ~Ich sollte Anthan Diamantklinge nach diesem Buch befragen, habe es aber noch nicht getan.~ EXTERN AC#VRON5 elern_book_ask_anthan
-		IF ~GlobalGT("AC#Clans_Parting","GLOBAL",2)~ THEN REPLY ~Ich habe das Buch, das Elern meinte, von Anthan Diamantklinge erhalten.~ EXTERN AC#VRON5 elern_book_have_book_anthan
-		
-		CHAIN AC#VRON5 elern_book_not_talked_to_elern_yet
-		~Dann wäre jetzt der richtige Zeitpunkt, mit ihr zu reden.~
-		END
+		~Ich denke, nun kommt das Buch ins Spiel. Auch wenn es nicht in der Bibliothek zu liegen schient, solltet Ihr Bettargh in der Bibliothek aufsuchen und ihn um Rat fragen. Wenn jemand weiß, wo Bücher zu finden sind, dann er.~
+		END		
 		IF ~~ THEN EXTERN AC#VRON5 use_book_for_worldmap
-		
-		CHAIN AC#VRON5 elern_book_elern_waits_statue
-		~Dann wäre jetzt der richtige Zeitpunkt, sie an Borthuns Statue in der Bibliothek aufzusuchen.~
-		END
-		IF ~~ THEN EXTERN AC#VRON5 use_book_for_worldmap
-		
-		CHAIN AC#VRON5 elern_book_ask_anthan
-		~Anthan hat Borthuns Buch? Nun, das ergibt Sinn. Ihr werdet dann wohl nicht umhin kommen, mit dem griesgrämigen Zwerg zu reden.~
-		END
-		IF ~~ THEN EXTERN AC#VRON5 use_book_for_worldmap
-		
-		CHAIN AC#VRON5 elern_book_have_book_anthan
-		~Gut! Dann solltet Ihr Elern wieder aufsuchen und von Euren Visionen berichten.~
-		END
-		IF ~~ THEN EXTERN AC#VRON5 use_book_for_worldmap
-		
+				
 		CHAIN AC#VRON5 use_book_for_worldmap
 		~Ich bin mir sicher, dass Ihr in diesem Buch einen Anhalt finden werdet, wo sich dieser Ort, den Ihr in der Vision gesehen habt, befinden könnte. Nutzt das Wissen, um unserem König zu helfen. Unsere Aufgabe hier ist nun getan.~
 		END
-		IF ~~ THEN DO ~SetGlobal("AC#IL_BrainVision","GLOBAL",10)~ EXIT
+		IF ~~ THEN DO ~SetGlobal("AC#IL_NEW_Borthun","GLOBAL",1)
+		SetGlobal("AC#IL_BrainVision","GLOBAL",10)~ EXIT
 
 CHAIN IF ~Global("AC#IL_NEW_Cernd","GLOBAL",4)~ THEN AC#VRON5 hello_sharindlar
 ~Seid gegrüßt, <CHARNAME>. Schön, dass Ihr mich hier in Sharindlars Tempel aufsucht!~

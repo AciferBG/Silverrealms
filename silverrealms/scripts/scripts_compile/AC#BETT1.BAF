@@ -1,16 +1,27 @@
 IF
-	Range([PC],6)
-	NumberOfTimesTalkedTo(0)
-	See([PC])
+    Range([PC],6)
+    NumberOfTimesTalkedTo(0)
+    See([PC])
 THEN
-	RESPONSE #100
-		StartDialogueNoSet([PC])
+    RESPONSE #100
+        StartDialogueNoSet([PC])
 END
 
 IF
-	Global("BettarghMoves","ACIL53",1)
+    Delay(3)
+   GlobalGT("AC#TalkedToBettargh","ACIL53",1)
+    !Range("Tracil50_02",20)
 THEN
-	RESPONSE #100
-		MoveToPoint([1783.847])
+    RESPONSE #100
+        MoveToPoint([1474.1344])
 END
+
+IF
+    Global("BettarghMoves","ACIL53",1)
+THEN
+    RESPONSE #100
+        MoveToPoint([1474.1344])
+END
+
+
 

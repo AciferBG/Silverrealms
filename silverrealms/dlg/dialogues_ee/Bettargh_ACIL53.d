@@ -9,20 +9,48 @@ SAY ~Meine Tochter Elern wird Euch am Standbild von Borthun, dem Wanderer alles 
 IF ~~ THEN EXIT
 END	
 
-IF ~Global("AC#IL_NEW_Borthun","GLOBAL",1)~ THEN BEGIN hello_anything_achieved
-SAY ~Seid gegrüßt, <CHARNAME>! Wie ich hörte, habt Ihr seit unserem letzten Zusammentreffen große Abenteuer bestanden und unserer Stadt einen großen Dienst erwiesen.~
+/*
+IF ~GlobalGT("AC#RC_Spiderstalkings","GLOBAL",0)~ THEN BEGIN hello_anything_achieved
+//IF ~Global("AC#IL_NEW_Borthun","GLOBAL",1)~ THEN BEGIN hello_anything_achieved
+SAY ~Seid gegrüßt, <CHARNAME>! Was kann ich als bescheidener Bibliothekar für Euch tun?~
 // OLD: Astral book talk IF ~~ THEN GOTO not_lazy
-IF ~Global("AC#IL_NEW_BettarghElern","GLOBAL",0)~ THEN + stone_clans_parting_01
-IF ~Global("AC#Ellhimar_Cernd","GLOBAL",3) Global("Prison_Cernd","ACIL53",0)~ THEN GOTO free_cernd_01	
+IF ~Global("AC#IL_NEW_Borthun","GLOBAL",1) Global("AC#IL_NEW_BettarghElern","GLOBAL",0)~ THEN REPLY ~Ich suche ein besonderes Buch.~ + borthun_book_start
+IF ~Global("AC#Ellhimar_Cernd","GLOBAL",3) Global("Prison_Cernd","ACIL53",0)~ THEN REPLY ~Es geht um Khaernd, den Sohn von Gromi, der von Illithiden verschleppt wurde.~ GOTO free_cernd_start	
 END
+*/
 
-
+		IF ~~ THEN BEGIN free_cernd_start
+		SAY ~Ein durch und durch armer Tropf. Ich versuche, ihm hier in der Bibliothek wenigstens ein Leben fernab von Zwergen zu ermöglchen, die ihn als Monster betrachten. Wenngleich er dennoch in einem Käfig steckt - bis jetzt.~
+		IF ~~ THEN GOTO free_cernd_01
+		END
+		
+		IF ~~ THEN BEGIN borthun_book_start
+		SAY ~Davon haben wir hier viele. Welches steht Euch im Sinn?~
+		IF ~~ THEN REPLY ~Allerdings steht es nicht in dieser Bibliothek.~ GOTO borthun_book_start_02
+		END
+		
+			IF ~~ THEN BEGIN borthun_book_start_02
+			SAY ~Was? Wie kommt Ihr denn auf so etwas?~
+			IF ~~ THEN REPLY ~Mith Barak erwähnte ein Buch. Ein Buch, das sich in Iltkazar befindet. Aber nicht an dem Ort, an dem man es vermuten würde. "Das einzige Buch Iltkazars, das nicht in der Bibliothek liegen darf." So nannte er es.~ GOTO borthun_book_start_03
+			END
+			
+			IF ~~ THEN BEGIN borthun_book_start_03
+			SAY ~"Das einzige Buch Iltkazars, das nicht in der Bibliothek liegen darf"? Merkwürdig. Wir haben hier alle Bücher. Mith Barak war sehr belesen und ein gern gesehener Gast unserer Bibliothek. Ein Buch, das nicht hier liegt. Oder vielmehr liegen darf? Hm...~
+			IF ~~ THEN GOTO borthun_book_start_04
+			END
+			
+			IF ~~ THEN BEGIN borthun_book_start_04
+			SAY ~Oh! Ich habe eine Idee. Elern hatte mir vor Kurzem davon berichtet. Das wird es sein! Warum bin ich da nicht vorher schon darauf gekommen?~
+			IF ~~ THEN GOTO stone_clans_parting_02
+			END
+		
 	IF ~~ THEN BEGIN not_lazy
 	SAY ~Doch auch ich war nicht untätig.~
 	IF ~!Global("AC#BettarghHasBook","GLOBAL",1)~ THEN GOTO not_bettargh_has_book_reveal
 	IF ~Global("AC#BettarghHasBook","GLOBAL",1)~ THEN GOTO yes_bettargh__has_book_reveal
 	END
-	
+
+// astral plane book	
 	IF ~~ THEN BEGIN not_bettargh_has_book_reveal
 	SAY ~Beldas war doch auf der Suche nach einem Buch auf der Oberfläche. Habt Ihr es noch?~
 	IF ~PartyHasItem("AC#SRBK1")~ THEN REPLY ~Stimmt, ich sollte es Euch ja geben. Ist es dieses hier, das ich bei mir trage?~ + give_bettargh_book
@@ -99,7 +127,7 @@ END
 									END	
 									
 									IF ~~ THEN BEGIN free_cernd_02
-									SAY ~Vronia hatte Euch bereits über Khaernds Schicksal berichtet. Ich wurde von der Stadt mit der Aufsicht über den armen Tropf betraut, und ich habe beschlossen, dass es das Beste wäre, er würde Euch bei dem Vorgehen unterstützen.~
+									SAY ~Vronia hatte Euch bereits über Khaernds Schicksal berichtet. Ich wurde von der Stadt mit der Aufsicht über Gromis Sohn betraut, und ich habe beschlossen, dass es das Beste wäre, er würde Euch bei dem Vorgehen unterstützen.~
 									IF ~~ THEN REPLY ~Deshalb bin ich hier. Ich würde gerne mit Khaernd sprechen.~ GOTO free_cernd_03
 									IF ~~ THEN REPLY ~Ich brauche Khaernd dafür nicht.~ GOTO not_free_cernd
 									END	
@@ -107,19 +135,14 @@ END
 									IF ~~ THEN BEGIN not_free_cernd
 									SAY ~Wie Ihr meint.~
 									IF ~~ THEN GOTO keep_on_going_surface
-									IF ~Global("AC#IL_NEW_BettarghElern","GLOBAL",0)~ THEN + stone_clans_parting_01
 									END										
 									
 									IF ~~ THEN BEGIN free_cernd_03
 									SAY ~Einverstanden. Khaernds Zelle befindet sich im Westen dieser Bibliothek. Ich habe die Wachen bereits angewiesen, Euch durchzulassen. Sprecht mit ihm und bittet um seine Hilfe. Er mag ein wenig verrückt sein, aber er hat ein gutes Herz.~
-									IF ~~ THEN DO ~SetGlobal("Prison_Cernd","ACIL53",1)~ GOTO book_and_cernd_small_hub
+									IF ~~ THEN DO ~SetGlobal("Prison_Cernd","ACIL53",1)
+									AddJournalEntry(@50702,QUEST)~ EXIT
 									END	
 
-									IF ~~ THEN BEGIN book_and_cernd_small_hub
-									SAY ~Es scheint, dass so langsam Licht in das Dunkel unseres schlafenden Königs kommt.~
-									IF ~~ THEN GOTO keep_on_going_surface
-									IF ~Global("AC#IL_NEW_BettarghElern","GLOBAL",0)~ THEN + stone_clans_parting_01
-									END
 									
 										IF ~~ THEN BEGIN stone_clans_parting_01
 										SAY ~Dabei fällt mir ein - Elern wollte mit Euch wegen eines merkwürdigen Buches sprechen...~
@@ -143,8 +166,8 @@ IF ~GlobalGT("AC#TalkedToBettargh","ACIL53",1)~ THEN BEGIN hello_after_first_tal
 SAY ~Oh, seid gegrüßt, <CHARNAME>! Was kann ich für Euch tun?~
 ++ ~Derzeit nichts.~ + goodbye_02
 IF ~PartyHasItem("AC#SRBK1")~ THEN REPLY ~Ich habe hier ein Buch, welches Beldas bis zu seinem Tode bei sich trug. Ich soll es Euch geben.~ + beldas_book
-IF ~Global("AC#IL_NEW_BettarghElern","GLOBAL",0)~ THEN REPLY ~Elern wollte wegen eines Buches mit mir sprechen.~ + stone_clans_parting_01
-IF ~Global("AC#Ellhimar_Cernd","GLOBAL",3) Global("Prison_Cernd","ACIL53",0)~ THEN REPLY ~Wegen dieses zwergischen Halb-Illithiden...~ GOTO free_cernd_01
+IF ~Global("AC#IL_NEW_Borthun","GLOBAL",1) Global("AC#IL_NEW_BettarghElern","GLOBAL",0)~ THEN REPLY ~Ich suche ein besonderes Buch.~ + borthun_book_start
+IF ~Global("AC#Ellhimar_Cernd","GLOBAL",3) Global("Prison_Cernd","ACIL53",0)~ THEN REPLY ~Es geht um Khaernd, den Sohn von Gromi, der von Illithiden verschleppt wurde.~ GOTO free_cernd_start	
 END
 
 IF ~Global("AC#TalkedToBettargh","ACIL53",1)~ THEN BEGIN 1
@@ -241,7 +264,8 @@ END
 												
 								IF ~~ THEN BEGIN goodbye_01
 								SAY ~Dann werde ich nun in die Haupthalle gehen und mich wieder meinen Studien widmen. Ihr findet mich hier immer im Bereich des großen Schachtes in dieser Bibliothek.~
-								IF ~~ THEN DO ~SetGlobal("BettarghMoves","ACIL53",1)~ EXIT 
+								//IF ~~ THEN DO ~SetGlobal("BettarghMoves","ACIL53",1)~ EXIT 
+								IF ~~ THEN EXIT 
 								END
 								
 								IF ~~ THEN BEGIN goodbye_02
@@ -267,7 +291,7 @@ Dialog Elern in ACIL53
 BEGIN ~AC#ELER5~
 
 IF ~~ THEN BEGIN okidok
-SAY ~Gerne! Kommt, <CHARNAME>, folgt mir zu Borthuns Standbild im Osten der Bibliothek!~
+SAY ~Kommt, <CHARNAME>, folgt mir zu Borthuns Standbild im Osten der Bibliothek!~
 IF ~~ THEN DO ~SetGlobal("ElernSpawn","ACIL53",3)
 SetGlobal("AC#ElernBorthunBook","GLOBAL",1)
 EraseJournalEntry(@64100)
@@ -382,7 +406,11 @@ END
 // Elern Chain #1: Elern taucht auf und spricht mit ihrem Vater
 CHAIN IF WEIGHT #-1 ~NumTimesTalkedTo(0)~ THEN AC#ELER5 yes_dad_whats_up
 ~Ja, Vater, was ist? Oh, <CHARNAME>! Ihr seid gekommen! Es ist schön, Euch wiederzusehen! Es gibt einiges zu berichten.~
-== AC#BETT1 ~Würdet Ihr <CHARNAME> zu der Statue von Borthun führen und ihm berichten, was Ihr über unsere Suche herausgefunden habt?~
+== AC#BETT1 ~Würdet Ihr <CHARNAME> zu der Statue von Borthun führen und ihm berichten, was Ihr über dieses Buch, welches Ihr erwähntet, herausgefunden habt?~
+== AC#ELER5 ~Meint Ihr wirklich, dass dies jetzt der richtige Zeitpunkt ist, Vater?~
+== AC#BETT1 ~Es ist genau der richtige Zeitpunkt. Genau genommen ärgere ich mich, dass ich darauf nicht schon viel früher gekommen bin.~
+== AC#BETT1 ~Wir brauchen das Buch für unsere Suche Elern.~
+== AC#ELER5 ~Nun, wenn das so ist helfe ich gerne!~
 END
 IF ~~ THEN EXTERN ~AC#ELER5~ okidok
 /*******************************************************************************************************

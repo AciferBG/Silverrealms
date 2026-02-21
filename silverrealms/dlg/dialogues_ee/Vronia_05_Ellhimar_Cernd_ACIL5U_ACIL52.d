@@ -83,7 +83,7 @@ END
 			CHAIN AC#VRON5 what_happened_to_cernd
 			~Gromis Sohn heißt Khaernd. Einst war er der fähigste Zardazil-Schmied Iltkazars und als ältester Sohn Clan Arnschädels dazu auserkoren, die legendäre Arnschädelhalle zu führen. Doch das Schicksal meinte es nicht gut mit dem armen Jungen.~
 			END
-			IF ~~ THEN REPLY ~Was ist ihm widerfahren?~ EXTERN AC#VRON5 what_happened_to_cernd_02
+			IF ~~ THEN EXTERN AC#VRON5 what_happened_to_cernd_02
 
 			
 				CHAIN AC#VRON5 what_happened_to_cernd_02
@@ -95,9 +95,10 @@ END
 							~Die *caradhak* haben finstere Experimente an ihm durchgeführt. Offensichtlich wollten sie ihn in einen der Ihren umwandeln.~
 							END
 							IF ~~ THEN REPLY ~Sie wollten aus Gromis Sohn einen Gedankenschinder machen?~ EXTERN AC#VRON5 cernd_ceremorphosis
+							IF ~~ THEN REPLY ~Was für eine widerliche Vorstellung!~ EXTERN AC#VRON5 cernd_ceremorphosis
 							
 								CHAIN AC#VRON5 cernd_ceremorphosis
-								~Ja. Allein seinem starken Willen war es zu verdanken, dass das Experiment fehlschlug. Aus irgendwelchen unerfindlichen Gründen schaffte es Khaernd, aus der Stadt der Gedankenschinder zu fliehen und tauchte eines Tages wieder vor den Toren Iltkazars auf. Obschon von den Qualen stark gezeichnet, war sein Geist klar. Allerdings war er nicht mehr wiederzuerkennen.~
+								~Allein seinem starken Willen war es zu verdanken, dass das Experiment fehlschlug. Aus irgendwelchen unerfindlichen Gründen schaffte es Khaernd, aus der Stadt der Gedankenschinder zu fliehen und tauchte eines Tages wieder vor den Toren Iltkazars auf. Obschon von den Qualen stark gezeichnet, war sein Geist klar. Allerdings war er nicht mehr wiederzuerkennen.~
 								END
 								IF ~~ THEN EXTERN AC#VRON5 cernd_ceremorphosis_02
 								

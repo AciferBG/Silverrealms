@@ -1,6 +1,9 @@
 IF
     AreaCheck("ACIL50")
-    Global("AC#IL_NEW_Borthun","GLOBAL",1)
+    OR(3)
+        Global("AC#IL_CerndTasteLobe","GLOBAL",1)
+        Global("AC#IL_TasteLobeMyself","GLOBAL",1)
+        Global("AC#IL_UndecideTasteLobe","GLOBAL",1)
 THEN
     RESPONSE #100
         EscapeAreaDestroy(6)

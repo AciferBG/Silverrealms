@@ -20,13 +20,13 @@ END
 */
 
 		IF ~~ THEN BEGIN free_cernd_start
-		SAY ~Ein durch und durch armer Tropf. Ich versuche, ihm hier in der Bibliothek wenigstens ein Leben fernab von Zwergen zu ermöglchen, die ihn als Monster betrachten. Wenngleich er dennoch in einem Käfig steckt - bis jetzt.~
+		SAY ~Ein durch und durch armer Tropf. Ich versuche, ihm hier in der Bibliothek wenigstens ein Leben fernab von Zwergen zu ermöglichen, die ihn als Monster betrachten. Wenngleich er dennoch in einem Käfig steckt - bis jetzt.~
 		IF ~~ THEN GOTO free_cernd_01
 		END
 		
 		IF ~~ THEN BEGIN borthun_book_start
 		SAY ~Davon haben wir hier viele. Welches steht Euch im Sinn?~
-		IF ~~ THEN REPLY ~Allerdings steht es nicht in dieser Bibliothek.~ GOTO borthun_book_start_02
+		IF ~~ THEN REPLY ~Eines, das nicht in dieser Bibliothek steht.~ GOTO borthun_book_start_02
 		END
 		
 			IF ~~ THEN BEGIN borthun_book_start_02
@@ -35,12 +35,12 @@ END
 			END
 			
 			IF ~~ THEN BEGIN borthun_book_start_03
-			SAY ~"Das einzige Buch Iltkazars, das nicht in der Bibliothek liegen darf"? Merkwürdig. Wir haben hier alle Bücher. Mith Barak war sehr belesen und ein gern gesehener Gast unserer Bibliothek. Ein Buch, das nicht hier liegt. Oder vielmehr liegen darf? Hm...~
+			SAY ~"Das einzige Buch Iltkazars, das nicht in der Bibliothek liegen darf"? Merkwürdig. Wir haben hier alle Bücher. Mith Barak war sehr belesen und ein gern gesehener Gast in unserer Bibliothek. Ein Buch, das nicht hier liegt. Oder vielmehr liegen darf? Hm...~
 			IF ~~ THEN GOTO borthun_book_start_04
 			END
 			
 			IF ~~ THEN BEGIN borthun_book_start_04
-			SAY ~Oh! Ich habe eine Idee. Elern hatte mir vor Kurzem davon berichtet. Das wird es sein! Warum bin ich da nicht vorher schon darauf gekommen?~
+			SAY ~Oh! Ich habe eine Idee. Elern hatte mir vor Kurzem davon berichtet. Das wird es sein! Warum bin ich nicht schon vorher darauf gekommen?~
 			IF ~~ THEN GOTO stone_clans_parting_02
 			END
 		
@@ -328,7 +328,7 @@ END
 			END
 			
 			IF ~~ THEN BEGIN beldas_borthun_grandpa
-			SAY ~Beldas war ein glühender Verehrer Bortuns. Beide gehörten dem Clan Diamantklinge an. Beldas wollte ihm in jeglicher Hinsicht nacheifern. Leider hat ihm dies kein Glück gebracht, wie Ihr wisst.~			
+			SAY ~Beldas war ein glühender Verehrer Borthuns. Beide gehörten dem Clan Diamantklinge an. Beldas wollte ihm in jeglicher Hinsicht nacheifern. Leider hat ihm dies kein Glück gebracht, wie Ihr wisst.~			
 			=
 			~Ich muss Euch sagen, dass Beldas und ich vor vielen Jahren einmal ein Paar waren. Wir wollten heiraten und einen eigenen Clan gründen. Es war unsere große *taerin*.~
 			++ ~Dann muss Euch sein Verlust also umso mehr schmerzen.~ + beldas_loss	
@@ -351,13 +351,13 @@ END
 					END
 					
 						IF ~~ THEN BEGIN back_to_borthun
-						SAY ~Aber zurück zu Borthuns Buch. Er hat genaue Aufzeichnungen über seine Entdeckungen in den Ländern des Lichts geführt. Es würde mich wundern, wenn er dort nicht diesen Ort, den Mith Barak besucht hat, erwähnt hätte.~
-						++ ~Dann brauchen wir also nur in seiner Chronik nachzuschauen, wo sich dieser Drachenfriedhof befindet?~ + check_borthuns_diary
+						SAY ~Aber zurück zu Borthuns Buch. Er hat genaue Aufzeichnungen über seine Entdeckungen in den Ländern des Lichts geführt.~
+						IF ~~ THEN GOTO check_borthuns_diary
 						END
 			
 							IF ~~ THEN BEGIN check_borthuns_diary
-							SAY ~Eigentlich schon. Nur leider befindet sich die Chronik nicht in dieser Bibliothek.~
-							++ ~Warum nicht?~ + why_diary_not_here	
+							SAY ~Es würde mich also nicht wundern, wenn Borthun in seinem Buch diesen Ort, den Mith Barak besucht hat, erwähnt hat. Und es passt auch zu der Aussage, es sei das einzige Buch Iltkazars, das nicht in der Bibliothek liegen darf. Denn Borthuns Chronik befindet sich tatsächlich nicht in dieser Bibliothek.~
+							IF ~~ THEN GOTO why_diary_not_here	
 							END
 				
 								IF ~~ THEN BEGIN why_diary_not_here
@@ -370,7 +370,7 @@ END
 									=
 									~*Dornar* Mith Barak machte keinen Hehl daraus, dass er Borthuns Aufzeichnungen gerne in die Bibliothek aufgenommen hätte, aber Anthan hat sich strikt geweigert. Sie haben sich damals wohl so geeinigt, dass Mith Barak das besagte Buch im Tempel Moradins lesen durfte. Dies hatte mir Beldas erzählt, bevor Mith Barak nicht mehr aus seinem Schlaf erwachte. Ich hatte es damals so verstanden, dass Beldas gemeinsam mit Mith Barak das Buch studiert hatte und sich deshalb umso mehr bemüßigt fühlte, an der Oberfläche nach einem "Heilmittel" für Mith Baraks Schlaf zu suchen.~ 
 									= 
-									~Dass Mith Barak vielleicht selbst genau aus diesem Grunde ebenfalls in Borthuns Aufzeichnungen nachschlagen wollte, kam mir bis jetzt nicht in den Sinn. Aber so könnte es gewesen sein! Wenn Ihr also glaubt, dass in diesem Buch hilfreiche Anmerkungen zu Mith Baraks Schlaf enthalten sein könnten, müsstet Ihr Anthan überzeugen, Euch dasselbe Zugeständnis zu gewähren, Euch einen Blick in Borthuns Chronik werfen zu lassen.~
+									~Dass Mith Barak vielleicht selbst genau aus diesem Grunde ebenfalls in Borthuns Aufzeichnungen nachschlagen wollte, kam mir bis jetzt nicht in den Sinn. Aber so könnte es gewesen sein! Wenn Ihr also glaubt, dass in diesem Buch hilfreiche Anmerkungen zu Mith Baraks Schlaf enthalten sein könnten, müsstet Ihr Anthan überzeugen, Euch dasselbe Zugeständnis zu gewähren: Euch einen Blick in Borthuns Chronik werfen zu lassen.~
 									=
 									~Das wird nur alles andere als einfach, denn unter den Bewohnern Iltkazars gilt Anthan als der Sturste.~
 									IF ~~ THEN + tell_anthan_about_beldas
@@ -393,7 +393,7 @@ END
 											END
 								
 								IF ~~ THEN BEGIN go_ask_anthan_about_borthun
-								SAY ~Jedenfalls kann ich Euch keinen besseren Rat geben, als Anthan in der Uralten Schmiede, dem Tempel Moradins im Westen der Stadt, aufzusuchen und ihn zu bitten, dass er Euch einmal einen Blick in die Aufzeichnungen seines Ahnen Borthun werfen lässt. Ich werde draußen am Platz von Bhaerynden neben Bresk auf Euch warten.~
+								SAY ~Jedenfalls kann ich Euch keinen besseren Rat geben, als Anthan in der Uralten Schmiede, dem Tempel Moradins im Westen der Stadt, aufzusuchen und ihn zu bitten, dass er Euch einmal einen Blick in die Aufzeichnungen seines Ahnen Borthun werfen lässt. Ich werde draußen am Platz von Bhaerynden neben Bresk auf Euch warten. Wenn Ihr das Buch habt, helfe ich Euch, es zu lesen und zu verstehen. Und diesen Ort zu finden, an den Ihr als Nächstes reisen müsst.~
 								IF ~~ THEN DO ~SetGlobal("ElernSpawn","ACIL53",4)
 								SetGlobal("AC#ElernBorthunBook","GLOBAL",2)
 								SetGlobal("AC#Clans_Parting","GLOBAL",2)
@@ -405,11 +405,11 @@ END
 					
 // Elern Chain #1: Elern taucht auf und spricht mit ihrem Vater
 CHAIN IF WEIGHT #-1 ~NumTimesTalkedTo(0)~ THEN AC#ELER5 yes_dad_whats_up
-~Ja, Vater, was ist? Oh, <CHARNAME>! Ihr seid gekommen! Es ist schön, Euch wiederzusehen! Es gibt einiges zu berichten.~
-== AC#BETT1 ~Würdet Ihr <CHARNAME> zu der Statue von Borthun führen und ihm berichten, was Ihr über dieses Buch, welches Ihr erwähntet, herausgefunden habt?~
+~Ja, Vater, was ist? Oh, <CHARNAME>! Ihr seid gekommen! Es ist schön, Euch wiederzusehen!~
+== AC#BETT1 ~Würdet Ihr <CHARNAME> zu der Statue von Borthun führen und ihm berichten, was Ihr über dieses Buch, welches Ihr vor Kurzem erwähnt habt, herausgefunden habt?~
 == AC#ELER5 ~Meint Ihr wirklich, dass dies jetzt der richtige Zeitpunkt ist, Vater?~
 == AC#BETT1 ~Es ist genau der richtige Zeitpunkt. Genau genommen ärgere ich mich, dass ich darauf nicht schon viel früher gekommen bin.~
-== AC#BETT1 ~Wir brauchen das Buch für unsere Suche Elern.~
+== AC#BETT1 ~Wir brauchen das Buch für unsere weitere Suche, Elern.~
 == AC#ELER5 ~Nun, wenn das so ist helfe ich gerne!~
 END
 IF ~~ THEN EXTERN ~AC#ELER5~ okidok

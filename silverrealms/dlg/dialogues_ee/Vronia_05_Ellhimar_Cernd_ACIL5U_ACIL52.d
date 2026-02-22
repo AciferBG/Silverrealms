@@ -325,7 +325,7 @@ IF ~Global("AC#IL_UndecideTasteLobe","GLOBAL",1)~ THEN EXTERN AC#VRON5 taste_lob
 		IF ~~ THEN REPLY ~Nein, noch nicht.~ EXTERN AC#VRON5 go_on_free_cernd
 		
 		CHAIN AC#VRON5 go_on_free_cernd
-		~Dann solltet Ihr dies jetzt tun.~
+		~Dann solltet Ihr dies jetzt tun. Ich werde hier auf Euch warten.~
 		EXIT
 	
 	CHAIN AC#VRON5 taste_lobe_cernd_02
@@ -487,29 +487,3 @@ CHAIN IF ~True()~ THEN AC#CERN1 hello
 END
 IF ~~ THEN EXIT	
 
-// Vision in ACILD3 : Mith Barak talking to elder brain
-
-BEGIN ~AC#ILD3E~
-BEGIN ~AC#DREA3~
-
-	CHAIN IF ~NumTimesTalkedTo(1)~ THEN AC#ILD3E hello_2
-	~Interessant! Und Ihr habt nie versucht, den alten Tempel aufzusuchen, um Euren... bedauernswerten Zustand zu beenden?~ 
-	== AC#DREA3 ~Doch, das habe ich.~ 
-	== AC#ILD3E ~An welchem Tempel habt Ihr es versucht?~ 
-	== AC#DREA3 ~Am alten Drachenfriedhof.~
-	== AC#ILD3E ~Oh! Zeigt ihn mir.~	
-	== AC#DREA3 ~Dies ist aber die letzte Erinnerung, die ich mit Euch teilen werde. Dann werdet Ihr mir antworten liefern müssen!~
-	END
-	IF ~~ THEN DO ~StartCutSceneMode()
-	StartCutScene("AC#23CT3")~ EXIT
-	
-	CHAIN IF ~NumTimesTalkedTo(0)~ THEN AC#ILD3E hello
-	~Sieh an, sieh an. Der verfluchte König Iltkazars schickt sich an, mich lebloses Hirn um Rat zu fragen.~ 
-	== AC#DREA3 ~Das tue ich.~ 
-	== AC#ILD3E ~Nichts im Leben gibt es umsonst. Das müsstet Ihr bestens wissen.~ 
-	== AC#DREA3 ~Was verlangt Ihr?~
-	== AC#ILD3E ~Mich dürstet nach Erinnerung.~	
-	== AC#DREA3 ~Gut, Ihr sollt sie haben.~
-	END
-	IF ~~ THEN DO ~StartCutSceneMode()
-	StartCutScene("AC#23CT6")~ EXIT

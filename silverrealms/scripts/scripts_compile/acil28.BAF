@@ -216,8 +216,7 @@ THEN
                SetGlobal("ACIL28_BOATGONE","ACIL28",2)
                AmbientActivate("Eyesocket01",FALSE)
                 AmbientActivate("Eyesocket02",FALSE)
-                EndCutSceneMode()
-				EraseJournalEntry(@62046)
+                EndCutSceneMode()				
 				AddJournalEntry(@62047,QUEST)
 END
 
@@ -226,6 +225,7 @@ IF
     Global("GithFight","ACIL28",0)
 THEN
     RESPONSE #100
+		AddJournalEntry(@99509,QUEST)
         CreateCreature("AC#28GI2",[2850.290],S)  // Githyanki
         CreateCreature("AC#28GI2",[2722.309],S)  // Githyanki
         CreateCreature("AC#28GI1",[2797.348],S)  // Githyanki

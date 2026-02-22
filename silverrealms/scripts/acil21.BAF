@@ -17,18 +17,6 @@ THEN
 		//EraseJournalEntry(@21002)
 END
 
-/*
-IF
-	Global("SetMusic","ACIL21",0)
-	THEN
-	RESPONSE #100
-	SetMusic(NIGHT,%AC#IL21%)
-	SetMusic(DAY,%AC#IL21%)
-	SetGlobal("SetMusic","ACIL21",1)
-	Continue()
-END
-*/
-
 IF
 	DifficultyLT(HARD)
 	Global("SetRest","ACIL21",0)
@@ -37,19 +25,6 @@ THEN
 		SetGlobal("SetRest","ACIL21",1)
 		SetRestEncounterProbabilityDay(3)
 		SetRestEncounterProbabilityNight(3)
-END
-
-IF
-	InMyArea(Player1)
-	Global("MalphasGithCutscene#1","ACIL21",0) 
-	GlobalGT("AC#Goodbye_Iltkazar","GLOBAL",9)
-THEN
-	RESPONSE #100
-		FadeToColor([8.0],0)
-		SetGlobal("MalphasGithCutscene#1","ACIL21",1)  
-		SmallWait(3)
-		StartCutSceneMode()
-		StartCutScene("AC#GCT1")
 END
 
 IF

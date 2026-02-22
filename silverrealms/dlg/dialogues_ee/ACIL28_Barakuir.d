@@ -17,8 +17,7 @@ END
 
 	IF ~~ THEN BEGIN edge_barakuir
 	SAY ~Dies sind die Ausläufer Barakuirs. Wir werden keinen weiteren Schritt auf dieses verfluchte Land setzen. Erfüllt Eure Aufgabe und kehrt hierher zurück. Wir warten bei den Booten auf Euch und werden Euch dann sicher wieder zurück nach Iltkazar bringen.~
-	IF ~~ THEN DO ~EraseJournalEntry(@62044)
-	AddJournalEntry(@62045,QUEST)
+	IF ~~ THEN DO ~AddJournalEntry(@62045,QUEST)
 	SetGlobal("AC#RC_Sorni_Fourth","GLOBAL",13)~ EXIT
 	END
 	
@@ -59,13 +58,13 @@ END
 BEGIN AC#28GI1
 
 CHAIN IF ~NumTimesTalkedTo(0)~ THEN AC#28GI1 hello_0
-~Die Illithiden sind verschwunden. Gut.~
+~Die Illithiden sind fort. Gut.~
 END
 IF ~!Dead("AC#ULIT2")~ THEN EXTERN AC#28GI1 illithid_NOT_dead
 IF ~Dead("AC#ULIT2")~ THEN EXTERN AC#28GI1 illithid_YES_dead
 
 	CHAIN AC#28GI1 illithid_NOT_dead
-	~Wenngleich wir es bevorzugt hätten, wenn Ihr sie getötet hättet. Das hätte uns weitere Arbeit erspart.~
+	~Und sie sind in ihre Stadt zurückgekehrt - feige, wie es ihre Art ist. Wir hätten es bevorzugt, wenn Ihr sie getötet hättet. Das hätte uns weitere Arbeit erspart.~
 	END
 	IF ~~ THEN EXTERN AC#28GI1 illithid_patrol
 	
@@ -75,14 +74,15 @@ IF ~Dead("AC#ULIT2")~ THEN EXTERN AC#28GI1 illithid_YES_dead
 	IF ~~ THEN REPLY ~Was wollt Ihr?~ EXTERN AC#28GI1 what_do_you_want
 
 	CHAIN AC#28GI1 what_do_you_want
-	~Zu Schade, dass Ihr hier dafür am letzten Fleck des Unterreiches versauern müsst...~
+	~Bedauerlich, dass Ihr hier, am äußersten Rand des Unterreiches, Euer einsames Ende finden werdet.~
 	END	
-	IF ~~ THEN REPLY ~Warum? Ich fahre mit den Booten einfach wieder zurück.~ EXTERN AC#28GI1 iltkazar_traitor
+	IF ~~ THEN REPLY ~Ich fahre mit den Booten zurück nach Iltkazar.~ EXTERN AC#28GI1 iltkazar_traitor
+	IF ~~ THEN REPLY ~Droht Ihr mir?~ EXTERN AC#28GI1 iltkazar_traitor
 		
 		CHAIN AC#28GI1 iltkazar_traitor
-		~Die Boote, mit denen Ihr hergekommen seid, sind verschwunden. Die Zwerge haben Euch hier zurückgelassen!~
+		~Die Boote, mit denen Ihr hierher gelangtet, sind nicht mehr am Ufer. Die Zwerge haben Euch zurückgelassen.~
 		END
-		IF ~~ THEN REPLY ~Wie bitte? Habt Ihr sie getötet?~ EXTERN AC#28GI1 iltkazar_treason_02
+		IF ~~ THEN REPLY ~Habt Ihr sie getötet?~ EXTERN AC#28GI1 iltkazar_treason_02
 		IF ~~ THEN REPLY ~Vermutlich weil Ihr sie mit Euren bösartigen Fähigkeiten dazu gezwungen habt!~ EXTERN AC#28GI1 iltkazar_treason_02
 		IF ~~ THEN REPLY ~Sie werden schon wieder zurückkommen.~ EXTERN AC#28GI1 crew_is_gone
 		IF ~~ THEN REPLY ~Na und?~ EXTERN AC#28GI1 crew_is_gone
@@ -91,10 +91,10 @@ IF ~Dead("AC#ULIT2")~ THEN EXTERN AC#28GI1 illithid_YES_dead
 		CHAIN AC#28GI1 iltkazar_treason_02 
 		~Das hätten wir tun können, doch viel unterhaltsamer ist es doch, wenn sich die niederen Rassen gegenseitig zerfleischen.~
 		END		
-		IF ~~ THEN EXTERN AC#28GI1 crew_is_gone 
+		IF ~~ THEN DO ~AddJournalEntry(@62046,QUEST)~ EXTERN AC#28GI1 crew_is_gone 
 		
 		CHAIN AC#28GI1 crew_is_gone
-		~Die Bootsbesatzung ist aus freien Stücken zurückgerudert, <CHARNAME>. Die Zwerge haben Euch hier in der Einöde Eurem Schicksal überlassen.~
+		~Die Bootsbesatzung ist aus freien Stücken zurückgerudert. Die Zwerge haben Euch hier in der Einöde Eurem Schicksal überlassen.~
 		END
 		IF ~~ THEN REPLY ~Das kann nicht sein.~ EXTERN AC#28GI1 iltkazar_treason_03
 		IF ~~ THEN REPLY ~Vielleicht haben sie mich betrogen, ja. Das macht mir aber nichts mehr aus.~ EXTERN AC#28GI1 maybe_treason
@@ -102,28 +102,24 @@ IF ~Dead("AC#ULIT2")~ THEN EXTERN AC#28GI1 illithid_YES_dead
 		CHAIN AC#28GI1 iltkazar_treason_03
 			~Seid Ihr Euch da sicher? Sie haben doch außer einem tränenreichen Abschied nichts weiter für Euch getan. Vielleicht ist der einzige Grund, weshalb Ihr für Sie diese Aufträge lösen solltet, der, dass sie Euch schnellstmöglich loswerden wollten.~
 			END
-			IF ~~ THEN REPLY ~Ich glaube Euch das alles nicht!~ EXTERN AC#28GI1 iltkazar_treason_04
-			IF ~~ THEN REPLY ~Redet so viel Ihr wollt. Mich könnt Ihr nicht überzeugen.~ EXTERN AC#28GI1 iltkazar_treason_04
+			IF ~~ THEN REPLY ~Ich glaube Euch das alles nicht!~ EXTERN AC#28GI1 maybe_treason
+			IF ~~ THEN REPLY ~Redet so viel Ihr wollt. Mich könnt Ihr nicht überzeugen.~ EXTERN AC#28GI1 maybe_treason
 			IF ~~ THEN REPLY ~Vielleicht haben sie mich betrogen, ja. Das macht mir aber nichts mehr aus.~ EXTERN AC#28GI1 maybe_treason
-			
-			CHAIN AC#28GI1 iltkazar_treason_04
-			~Dann geht selbst an das Ufer und sucht nach den Booten.~ 			
-			END
-			IF ~~ THEN EXTERN AC#28GI1 maybe_treason
 						
 			CHAIN AC#28GI1 maybe_treason
-			~Ihr sitzt hier fest, <PRO_RACE>.~ 
+			~Hier endet Euer Weg, <PRO_RACE>.~ 
 			END
 			IF ~~ THEN REPLY ~Ich werde schon einen Weg zurück finden!~ EXTERN AC#28GI1 illithid_patrol
 			IF ~~ THEN REPLY ~Davon lasse ich mich nicht aufhalten.~ EXTERN AC#28GI1 illithid_patrol
 	
 	CHAIN AC#28GI1 illithid_patrol
-	~Dann müssen wir Euch leider töten. Ihr habt euch weit genug eingemischt. Wir haben Iltkazar lange aus unserem kleinen Stützpunkt vor der Stadt beobachtet. Die Gedankenschinder sind uns auf die Schliche gekommen. Da haben wir sie getötet. Auch die Zwergenpatrouille vor Iltkazar, die so töricht war, unser Versteck zu betreten.~
+	~Eure Einmischung endet hier. Wir haben Iltkazar lange aus unserem Stützpunkt vor der Stadt beobachtet.~ 
+	= ~Die Gedankenschinder sind uns auf die Schliche gekommen. Natürlich haben wir sie getötet. Auch die Zwergenpatrouille vor Iltkazar, die so töricht war, unser Versteck zu betreten, fand durch unsere Klingen ihren Tod.~
 	END
-	IF ~~ THEN REPLY ~Ihr wart das? Warum?~ EXTERN AC#28GI1 what_do_you_do
+	IF ~~ THEN REPLY ~Ihr wart das?~ EXTERN AC#28GI1 what_do_you_do
 	
 	CHAIN AC#28GI1 what_do_you_do
-	~Es zieht Krieg auf. Ein großer Krieg. Ein Krieg, bei dem auch wir nichts als Söldner sind. Und Ihr seid kein Teil dieses Krieges. Deshalb werdet Ihr jetzt sterben.~
+	~Es zieht Krieg auf. Ein großer Krieg. In ihm sind selbst wir nur Klingen im Dienst. Wir kämpfen darin – nicht aus Wahl, sondern aus Pflicht. Und Ihr seid kein Teil dieses Krieges. Deshalb werdet Ihr jetzt sterben.~
 	END
 	IF ~~ THEN EXTERN AC#28GI1 bye_fight
 	
@@ -251,31 +247,15 @@ IF ~~ THEN REPLY ~Nennt mir einen Grund, warum ich mit Euch nicht dasselbe mache
 												IF ~~ THEN REPLY ~Für was? Was wollte er?~ EXTERN AC#IL28E mith_remember_book_or_dragon_cem
 												
 												CHAIN AC#IL28E mith_remember_book_or_dragon_cem
-												~Er wollte seinen merkwürdigen Schlaf loswerden. Ja! Das war es. Suchte nach einem alten Drachenfriedhof und einem Buch. Jetzt fällt es mir wieder ein!~
-												END
-												IF ~Global("TalkedAboutBook","ACIL28",0)~ THEN REPLY ~Was für ein Buch?~ DO ~SetGlobal("TalkedAboutBook","ACIL28",1)~ EXTERN AC#IL28E mith_remember_book
-												IF ~Global("TalkedAboutDragonCem","ACIL28",0)~ THEN REPLY ~Erzählt mir über den Drachenfriedhof.~ DO ~SetGlobal("TalkedAboutDragonCem","ACIL28",1)~ EXTERN AC#IL28E mith_remember_dragontemple	
-												IF ~Global("TalkedAboutBook","ACIL28",1) Global("TalkedAboutDragonCem","ACIL28",1)~ THEN REPLY ~Woran könnt Ihr Euch sonst noch erinnern?~ EXTERN AC#IL28E mith_remember_continue
+												~Er wollte seinen merkwürdigen Schlaf loswerden. Ja! Das war es. Er war nach einem Ort an der Oberfläche. Doch er wusste nicht, wie er den Fluch brechen könnte. Jetzt fällt es mir wieder ein!~
+												END												
+												IF ~~ THEN REPLY ~Erzählt mir alles, woran Ihr Euch erinnern könnt!~ EXTERN AC#IL28E mith_remember_continue
 												
-													CHAIN AC#IL28E mith_remember_book
-													~Ein Buch, das in Iltkazar ist. Aber nicht an dem Ort, an dem man es vermuten würde. Das einzige Buch Iltkazars, das nicht in der Bibliothek liegen darf. Ja, so nannte er es!~
-													END
-													IF ~Global("TalkedAboutDragonCem","ACIL28",0)~ THEN REPLY ~Erzählt mir über den Drachenfriedhof.~ EXTERN AC#IL28E mith_remember_dragontemple
-													IF ~~ THEN REPLY ~Noch einmal von vorn. Was wollte er?~ EXTERN AC#IL28E mith_remember_book_or_dragon_cem
-													IF ~Global("TalkedAboutBook","ACIL28",1) Global("TalkedAboutDragonCem","ACIL28",1)~ THEN REPLY ~Woran könnt Ihr Euch sonst noch erinnern?~ EXTERN AC#IL28E mith_remember_continue
 													
-
-													CHAIN AC#IL28E mith_remember_dragontemple
-													~Der Drachenfriedhof... ja, so nannte er ihn. Ein Ort an der Oberfläche. Doch warum wollte er dorthin? Ich weiß es nicht mehr.~
-													END
-													IF ~Global("TalkedAboutBook","ACIL28",0)~ THEN REPLY ~Erzählt mir über das Buch.~ EXTERN AC#IL28E mith_remember_book
-													IF ~~ THEN REPLY ~Noch einmal von vorn. Was wollte er?~ EXTERN AC#IL28E mith_remember_book_or_dragon_cem
-													IF ~Global("TalkedAboutBook","ACIL28",1) Global("TalkedAboutDragonCem","ACIL28",1)~ THEN REPLY ~Woran könnt Ihr Euch sonst noch erinnern?~ EXTERN AC#IL28E mith_remember_continue
-
 												CHAIN AC#IL28E mith_remember_continue
-												~Nun ja, darüber haben wir gesprochen. Und er hat mir im Austausch dafür seine Erinnerungen geschenkt.~
+												~Ich habe viel mit Mith Barak gesprochen. Und er hat mir im Austausch dafür seine Erinnerungen geschenkt.~
 												END
-												IF ~~ THEN REPLY ~Warum hat Mith Barak Euch um Hilfe gebeten?~ EXTERN AC#IL28E	mith_remember_02				
+												IF ~~ THEN REPLY ~Was? Was hat er Euch gesagt?~ EXTERN AC#IL28E	mith_remember_02				
 
 												CHAIN AC#IL28E mith_remember_02
 												~Er wollte... wollte...~
@@ -307,7 +287,6 @@ IF ~~ THEN REPLY ~Nennt mir einen Grund, warum ich mit Euch nicht dasselbe mache
 												Wait(1)
 												SetGlobal("MindflayersAppear","ACIL28",1)
 												DestroySelf()
-												//Deactivate(Myself)
 												EndCutSceneMode()
 												~EXIT
 												
@@ -323,18 +302,18 @@ END
   IF ~~ THEN EXTERN AC#ULIT2 illithid_talk_02 
   
 	CHAIN AC#ULIT2 illithid_talk_02
-	~Wir möchten Euch zunächst unser Lob aussprechen. Ihr habt getan, was wir nicht besser hätten tun können, nämlich diesen alten Tempel unserer Rasse von der Geißel, die ihn über Jahrhunderte besessen hat, zu befreien. Ihr habt den Tod und die Verwesung beseitigt.~
+	~Ihr habt die Degeneration beseitigt. Das, was hier verblieb, war kein Teil des Kollektivs mehr. Nur Fäulnis ohne Nutzen. Ihr habt diesen alten Tempel unserer Rasse von der Geißel, die ihn über Jahrhunderte besessen hat, befreit. Der Tempel ist nun frei von abartiger Persistenz.~
 	END
 	IF ~~ THEN EXTERN AC#ULIT2 illithid_talk_03 
 	
 	CHAIN AC#ULIT2 illithid_talk_03
-	~Wir wissen, dass Ihr dies nicht für uns getan habt, sondern, weil Ihr Antworten sucht. Genau wie wir.~
+	~Ihr handeltet nicht für uns. Ihr handelt aus Unwissen. Ein Antrieb, den wir respektieren – und kontrollieren wollen. Ihr sucht Antworten. Dieses Ziel teilen wir mit Euch.~
 	END
-	IF ~~ THEN REPLY ~Warum sollte ich dann überhaupt mit Euch reden?~ EXTERN AC#ULIT2 illithid_talk_04
+	IF ~~ THEN REPLY ~Warum sollte ich überhaupt mit Euch reden?~ EXTERN AC#ULIT2 illithid_talk_04
 	IF ~~ THEN REPLY ~Was für Antworten?~ EXTERN AC#ULIT2 illithid_talk_04
 	
 	CHAIN AC#ULIT2 illithid_talk_04
-	~Wir haben den gleichen Feind. Wir beobachten Iltkazar schon lange, so wie wir alles um uns herum beobachten. Die Stadt der Zwerge übt wegen des dort gehorteten Wissens einen... gewissen Reiz auf uns aus.~
+	~Wir haben den gleichen Feind. Wir beobachten Iltkazar schon lange, so wie wir alles um uns herum beobachten. Die Stadt der Zwerge übt wegen des dort gehorteten Wissens einen großen Reiz auf uns aus.~
 	END
 	IF ~~ THEN EXTERN AC#ULIT2 illithid_talk_05
 	
@@ -355,43 +334,66 @@ END
 	IF ~~ THEN REPLY ~Das ist ja einmal eine gute Nachricht.~ EXTERN AC#ULIT2 what_mistakes
 	
 	CHAIN AC#ULIT2 what_mistakes
-	~Unser Feind macht Fehler. Die getötete Zwergenpatrouille vor den Toren derart offensichtlich zurückzulassen war einer davon. Sicher erinnert Ihr Euch an die Köpfe der Vertreter meiner Rasse. Abscheulich. Schändlich. Dumm. Ein Fehler. Wir Illithiden haben noch weitere bemerkt, die wir Euch jedoch nicht mitteilen werden.~
+	~Unser Feind ist nicht frei von Fehlern. Die getötete Zwergenpatrouille vor den Toren derart offensichtlich zurückzulassen war einer davon.~ 
+	END
+	IF ~~ THEN REPLY ~Ihr wisst von der Patrouille?~ EXTERN AC#ULIT2 dwarf_patrol
+	
+	CHAIN AC#ULIT2 dwarf_patrol
+	~Ihr habt die Köpfe meiner Artgenossen in dieser Kammer gesehen. Eine unnötige Zurschaustellung. Ein solches Signal verrät Präsenz. Präsenz erzeugt Aufmerksamkeit. Aufmerksamkeit führt zu Vergeltung.~
 	END
 	IF ~~ THEN REPLY ~Stimmt, dort waren ja diese Illithiden-Köpfe.~ EXTERN AC#ULIT2 what_mistakes_02
 	IF ~~ THEN REPLY ~Bisher sagt Ihr mir noch nichts Neues.~ EXTERN AC#ULIT2 what_mistakes_02
 	
 	CHAIN AC#ULIT2 what_mistakes_02
-	~Etwas stößt aus den Schatten vor und verschwindet wieder. Als würde es eine Art Portal nutzen.~
+	~Etwas stößt aus den Schatten vor und verschwindet wieder. Habt Ihr das Portal bemerkt?.~
 	END
-	IF ~~ THEN REPLY ~Ich konnte durch ein Portal hindurchsehen und sah ein rabengesichtiges Scheusal.~ EXTERN AC#ULIT2 raven_fiend
+	IF ~~ THEN REPLY ~Ich konnte durch das Portal hindurchsehen und sah ein rabengesichtiges Scheusal.~ EXTERN AC#ULIT2 raven_fiend
+	IF ~~ THEN REPLY ~Das werde ich jemandem wie Euch bestimmt nicht sagen!~ EXTERN AC#ULIT2 raven_fiend_not_telling
 	
 	CHAIN AC#ULIT2 raven_fiend
-	~Ein rabengesichtiges Scheusal? Interessant. Es gibt wenige solcher Kreaturen. Doch eine käme dabei schon in Frage. Malphas. Ein Teufel aus der Unterwelt.~
+	~Ein rabengesichtiges Scheusal? Interessant. Es gibt wenige solcher Kreaturen. Doch eine käme dafür in Frage. Malphas. Ein Teufel aus der Unterwelt.~
 	END
 	IF ~~ THEN REPLY ~Was könnte er hier zu schaffen haben?~ EXTERN AC#ULIT2 malphas_01
+	IF ~~ THEN REPLY ~Ein Teufel?~ EXTERN AC#ULIT2 malphas_01
+	
+	CHAIN AC#ULIT2 raven_fiend_not_telling
+	~Ihr blicktet hindurch und saht wahrscheinlich das rabengesichtige Antlitz von Malphas, dem Teufel.~
+	END
+	IF ~~ THEN REPLY ~Was könnte er hier zu schaffen haben?~ EXTERN AC#ULIT2 malphas_01
+	IF ~~ THEN REPLY ~Ein Teufel?~ EXTERN AC#ULIT2 malphas_01
 	
 		CHAIN AC#ULIT2 malphas_01
 		~So langsam ergibt die Geschichte durchaus einen Sinn. Ja, das tut sie. Und ich denke, ich weiß jetzt, wer uns Illithiden jagt. Und wer vielleicht für den Schlaf des Königs verantwortlich ist.~
 		END
-		IF ~~ THEN REPLY ~Wer? Wer ist es?~ EXTERN AC#ULIT2 what_benefit
+		IF ~~ THEN REPLY ~Wer ist es?~ EXTERN AC#ULIT2 what_benefit
 	
 		CHAIN AC#ULIT2 what_benefit
 		~Das werde ich Euch nicht sagen. Ihr habt mächtige Gegner vor Euch, wenn Ihr das Rätsel des schlafenden Königs lösen wollt. Dabei nützt Ihr uns. So lange dies der Fall ist, werden wir Euch nicht behelligen. Als Zeichen unseres guten Willens lassen wir Euch Eure Suche fortsetzen.~
-		=
-		~(Die Tentakel des Illithiden zucken hin und her, und das Wesen gibt ein glucksendes Geräusch von sich. Ihr seid Euch nicht sicher, ob dies eine seltsame Form des Lachens sein könnte.)~ [MINDF01] 
 		END
-		IF ~~ THEN EXTERN AC#ULIT2 good_bye
+		IF ~~ THEN EXTERN AC#ULIT2 khaernd_mention
+		
+		CHAIN AC#ULIT2 khaernd_mention
+		~Und übermittelt unserem entflohenen Sklaven in Iltkazar, dass wir seine Spur nicht verloren haben.~
+		END
+		IF ~~ THEN REPLY ~Wer soll das sein?~ EXTERN AC#ULIT2 khaernd_mention_02
+		IF ~~ THEN REPLY ~Ein entflohener Sklave in Iltkazar?~ EXTERN AC#ULIT2 khaernd_mention_02
+		IF ~~ THEN REPLY ~Wer immer es ist - dann ist er klüger als seine ehemaligen Herren.~ EXTERN AC#ULIT2 khaernd_mention_02
+		
+		CHAIN AC#ULIT2 khaernd_mention_02
+		~Die Zwerge wissen, wenn wir meinen. Irgendwann versklaven wir sie alle. Doch nun genug der Worte.~
+		END
+		IF ~~ THEN EXTERN AC#ULIT2 wish_success
 								
-				CHAIN AC#ULIT2 good_bye
-				~Wir wünschen Euch viel Erfolg bei der Suche nach unserem gemeinsamen Feind. Betet zu Euren Göttern von der Oberfläche, dass Ihr niemals wieder einen unserer Rasse zu Gesicht bekommen werdet. Wir werden jetzt in unsere Stadt zurückkehren.~			
+				CHAIN AC#ULIT2 wish_success
+				~Verfolgt weiterhin Euren Feind. Unsere Interessen überschneiden sich vorerst. Ruft Eure schwachen Götter der Oberfläche an, dass sich unsere Wege nicht erneut kreuzen. Wir kehren nun in unsere Stadt zurück.~			
 				END
 				IF ~~ THEN REPLY ~Das werdet Ihr nicht. Jedenfalls nicht lebendig!~ EXTERN AC#ULIT2 fight_01
 				IF ~~ THEN REPLY ~Nun gut. ich werde meine Suche fortsetzen.~ EXTERN AC#ULIT2 bye_teleport_away
 				
 				CHAIN AC#ULIT2 fight_01
-				~Wie bitte? Ich habe mich wohl in Euren Gedanken verirrt.~
+				~Was sagt Ihr da? Ich habe mich wohl in Euren Gedanken verirrt.~
 				END
-				IF ~~ THEN REPLY ~Zeit zu sterben, Monster!~ EXTERN AC#ULIT2 fight_bye
+				IF ~~ THEN REPLY ~Ihr habt richtig vernommen. Zeit zu sterben, Monster!~ EXTERN AC#ULIT2 fight_bye
 				IF ~~ THEN REPLY ~Geht schon. ich werde meine Suche fortsetzen.~ EXTERN AC#ULIT2 bye_teleport_away
 				
 				CHAIN AC#ULIT2 fight_bye
@@ -400,7 +402,7 @@ END
 				IF ~~ THEN DO ~Shout(89)
 				SetGlobal("IllithidFight","ACIL28",1)
 				SetGlobal("AC#Ruvan_Treason","GLOBAL",1)				
-				AddJournalEntry(@62046,QUEST) // Barakuir Quest: boats are gone
+				
 				Enemy()~ EXIT
 				
 				CHAIN AC#ULIT2 bye_teleport_away
@@ -408,7 +410,6 @@ END
 				END
 				IF ~~ THEN DO ~SetGlobal("AC#Ruvan_Treason","GLOBAL",1)
 				SetGlobal("IllithidTeleport","ACIL28",1)
-				AddJournalEntry(@62046,QUEST) // Barakuir Quest: boats are gone
 				CreateVisualEffectObject("SPDIMNDR",Myself) 
 				Wait(1)				
 				DestroySelf()~ EXIT
@@ -540,8 +541,7 @@ IF ~~ THEN REPLY ~Ich hoffe, das bringt mir auch etwas.~ DO ~SetGlobal("ElderBra
 	CHAIN AC#IL28G give_lobe_bye
 	~Es war eine Freude, mich mit Euch zu unterhalten, wenngleich Ihr mir nicht sagen konntet, was Ihr hier sucht. Nun denn. Ich bin müde und werde mich wieder zurückziehen. Gehabt Euch wohl.~
 	DO ~SetGlobal("ElderBrainAid","ACIL28",10)
-	StartCutSceneMode()
-	AddJournalEntry(@99508,QUEST) // sleeping king questline
+	StartCutSceneMode()	
 	CreateVisualEffect("ICPRAYI",[2196.1589])
 	ReallyForceSpell(Myself,FLASHY_2)
 	Wait(1)

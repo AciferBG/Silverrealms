@@ -1,16 +1,17 @@
 IF
-	True()
+    True()
 THEN
-	RESPONSE #100
-		CutSceneId(Player1)
-		FadeToColor([30.0],0)
-		ActionOverride("AC#MALG1",EscapeAreaDestroy(0))
-		Wait(2)
-		LeaveAreaLUAPanic("ACIL21","",[3552.1220],0)  
-		LeaveAreaLUA("ACIL21","",[3552.1220],2)  
-		MultiPlayerSync()
-		MoveViewPoint([3552.1220],INSTANT)
-		SmallWait(5)
-		FadeFromColor([30.0],0)
-		EndCutSceneMode()
+    RESPONSE #100
+        CutSceneId(Player1)
+        FadeToColor([30.0],0)
+        ActionOverride("AC#MALG1",EscapeAreaDestroy(0))
+        Wait(2)
+        LeaveAreaLUAPanic("ACIL36","",[337.1660],NE)
+        LeaveAreaLUA("ACIL36","",[337.1660],NE)
+        MultiPlayerSync()
+        MoveViewPoint([337.1660],INSTANT)
+        SmallWait(5)
+        FadeFromColor([30.0],0)
+        EndCutSceneMode()
 END
+

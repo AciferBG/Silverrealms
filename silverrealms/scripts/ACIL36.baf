@@ -1,10 +1,20 @@
 IF
+	InMyArea(Player1)
+	Global("MalphasGithCutscene#1","ACIL36",0) 
+THEN
+	RESPONSE #100
+		FadeToColor([0.0],0)
+		SetGlobal("MalphasGithCutscene#1","ACIL36",1)  
+		StartCutSceneMode()
+		StartCutScene("AC#GCT1")
+END
+
+IF
 	Global("DisableAnimations","ACIL36",0)
 THEN
 	RESPONSE #100
 	SetGlobal("DisableAnimations","ACIL36",1)
     AmbientActivate("Stone_broken",FALSE)
-	EraseJournalEntry(@62047)
 	AddJournalEntry(@62048,QUEST_DONE)
 END
 

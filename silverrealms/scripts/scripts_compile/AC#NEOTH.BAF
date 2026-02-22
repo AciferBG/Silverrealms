@@ -1,4 +1,13 @@
 IF
+    OR(2)
+        HPLT(Myself,15)
+        Die()
+THEN
+    RESPONSE #100
+        DestroyItem("AC#NEO2")  // No such index
+END
+
+IF
     Global("Stronger","LOCALS",0)
     LevelPartyGT(12)
 THEN

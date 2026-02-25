@@ -354,7 +354,8 @@
   
 //_____________________________________________________________________________________________________
 // NWN new Basilisk animation
- LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0x7100 slotMax = slotMin + 0xff RET slot END
+   LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0x7d00 slotMax = 0x7dff RET slot END
+ //LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0x7100 slotMax = slotMin + 0xff RET slot END
   ACTION_IF (slot <= 0) BEGIN
     FAIL ~No free creature animation slot found.~
   END

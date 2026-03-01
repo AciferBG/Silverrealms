@@ -1,0 +1,57 @@
+IF
+    Global("GithFight","ACIL28",2)
+    Allegiance(Myself,NEUTRAL)
+THEN
+    RESPONSE #100
+        Enemy()
+END
+
+IF
+    AttackedBy([GOODCUTOFF],DEFAULT)
+    Allegiance(Myself,NEUTRAL)
+THEN
+    RESPONSE #100
+        Shout(89)
+        Enemy()
+END
+
+IF
+    OR(2)
+        See(NearestEnemyOfType([GOODCUTOFF.0.0.SORCERER]))
+        See(NearestEnemyOfType([GOODCUTOFF.0.0.MAGE_ALL]))
+    GlobalLT("Teleport_start","LOCALS",3)
+    !GlobalTimerNotExpired("BD_Cast","LOCALS")
+    !GlobalTimerNotExpired("Teleport","LOCALS")
+THEN
+    RESPONSE #100
+        IncrementGlobal("Teleport_start","LOCALS",1)
+        ForceSpellRES("AC#ILPT",LastSeenBy(Myself))  // Dimensionstor
+        SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+        SetGlobalTimer("Teleport","LOCALS",THREE_ROUNDS)
+        AttackOneRound(LastSeenBy(Myself))
+END
+
+IF
+    OR(3)
+        See(NearestEnemyOfType([GOODCUTOFF.0.0.BARD]))
+        See(NearestEnemyOfType([GOODCUTOFF.0.0.DRUID_ALL]))
+        See(NearestEnemyOfType([GOODCUTOFF.0.0.CLERIC_ALL]))
+    GlobalLT("Teleport_start","LOCALS",3)
+    !GlobalTimerNotExpired("BD_Cast","LOCALS")
+    !GlobalTimerNotExpired("Teleport","LOCALS")
+THEN
+    RESPONSE #100
+        IncrementGlobal("Teleport_start","LOCALS",1)
+        ForceSpellRES("AC#ILPT",LastSeenBy(Myself))  // Dimensionstor
+        SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+        SetGlobalTimer("Teleport","LOCALS",THREE_ROUNDS)
+        AttackOneRound(LastSeenBy(Myself))
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+THEN
+    RESPONSE #100
+        AttackReevaluate(NearestEnemyOf(Myself),12)
+END
+

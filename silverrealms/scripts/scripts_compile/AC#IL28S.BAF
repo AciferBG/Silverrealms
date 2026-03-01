@@ -1,0 +1,19 @@
+IF
+    See([GOODCUTOFF])
+    Allegiance(Myself,ENEMY)
+    Global("ShoutOnce","LOCALS",0)
+THEN
+    RESPONSE #100
+        Shout(89)
+        SetGlobal("ShoutOnce","LOCALS",1)
+        Continue()
+END
+
+IF
+    Heard([ANYONE],89)
+    !See(NearestEnemyOf(Myself))
+THEN
+    RESPONSE #100
+        MoveToObject(LastHeardBy(Myself))
+END
+

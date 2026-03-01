@@ -1,5 +1,5 @@
 IF
-    Global("GithFight","ACIL28",1)
+    Global("GithFight","ACIL28",2)
     Allegiance(Myself,NEUTRAL)
 THEN
     RESPONSE #100

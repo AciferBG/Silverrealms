@@ -66,7 +66,7 @@ IF ~Dead("AC#ULIT2")~ THEN EXTERN AC#28GI1 illithid_YES_dead
 	CHAIN AC#28GI1 illithid_NOT_dead
 	~Und sie sind in ihre Stadt zurückgekehrt - feige, wie es ihre Art ist. Wir hätten es bevorzugt, wenn Ihr sie getötet hättet. Das hätte uns weitere Arbeit erspart.~
 	END
-	IF ~~ THEN EXTERN AC#28GI1 illithid_patrol
+	IF ~~ THEN REPLY ~Was wollt Ihr?~ EXTERN AC#28GI1 what_do_you_want
 	
 	CHAIN AC#28GI1 illithid_YES_dead
 	~Und Ihr habt sogar ihren Anführer getötet! Das erspart uns reichlich Arbeit.~
@@ -247,7 +247,7 @@ IF ~~ THEN REPLY ~Nennt mir einen Grund, warum ich mit Euch nicht dasselbe mache
 												IF ~~ THEN REPLY ~Für was? Was wollte er?~ EXTERN AC#IL28E mith_remember_book_or_dragon_cem
 												
 												CHAIN AC#IL28E mith_remember_book_or_dragon_cem
-												~Er wollte seinen merkwürdigen Schlaf loswerden. Ja! Das war es. Er war nach einem Ort an der Oberfläche. Doch er wusste nicht, wie er den Fluch brechen könnte. Jetzt fällt es mir wieder ein!~
+												~Er wollte seinen merkwürdigen Schlaf loswerden. Ja! Das war es. Er war auf der Suche nach einem Ort an der Oberfläche. Doch er wusste nicht, wie er den Fluch brechen könnte. Jetzt fällt es mir wieder ein!~
 												END												
 												IF ~~ THEN REPLY ~Erzählt mir alles, woran Ihr Euch erinnern könnt!~ EXTERN AC#IL28E mith_remember_continue
 												
@@ -272,8 +272,14 @@ IF ~~ THEN REPLY ~Nennt mir einen Grund, warum ich mit Euch nicht dasselbe mache
 													CHAIN AC#IL28E tell_me_more_02
 													~Oh! Seid gegrüßt. Haben wir uns schon einmal gesehen? Es tut gut, ein denkendes Geschöpf zu sehen! Was wollt Ihr hier?~												
 													END
-													IF ~~ THEN REPLY ~Ihr wolltet mir helfen.~ EXTERN AC#IL28E illithid_are_coming
-													IF ~~ THEN REPLY ~Das führt doch zu nichts.~ EXTERN AC#IL28E illithid_are_coming
+													IF ~~ THEN REPLY ~Ihr wolltet mir helfen.~ EXTERN AC#IL28E tell_me_more_03
+													IF ~~ THEN REPLY ~Das führt doch zu nichts.~ EXTERN AC#IL28E tell_me_more_03
+													IF ~~ THEN REPLY ~Ich werde wohl anderswo nach Antworten suchen.~ EXTERN AC#IL28E tell_me_more_03
+													
+													CHAIN AC#IL28E tell_me_more_03
+													~Geht nicht! Es tut meinem alten Hirn gut, wieder mit jemandem in Verbindung zu stehen. Vielleicht gibt es eine Möglichkeit für Euch, Euch meine Erinnerungen an Mith Barak zu schenken wenn...~												
+													END
+													IF ~~ THEN EXTERN AC#IL28E illithid_are_coming
 
 												CHAIN AC#IL28E illithid_are_coming
 												~Wartet! Ich spüre eine neue Präsenz... Die Gedankenschinder kommen! Ihr Wille nähert sich. Oh nein! Wenn sie mich hier entdecken ist dies mein Ende. Ich ziehe mein Bewusstsein zurück.~ 
@@ -345,7 +351,7 @@ END
 	IF ~~ THEN REPLY ~Bisher sagt Ihr mir noch nichts Neues.~ EXTERN AC#ULIT2 what_mistakes_02
 	
 	CHAIN AC#ULIT2 what_mistakes_02
-	~Etwas stößt aus den Schatten vor und verschwindet wieder. Habt Ihr das Portal bemerkt?.~
+	~Etwas stößt aus den Schatten vor und verschwindet wieder. Habt Ihr das erloschene Portal vor Iltkazar bemerkt?~
 	END
 	IF ~~ THEN REPLY ~Ich konnte durch das Portal hindurchsehen und sah ein rabengesichtiges Scheusal.~ EXTERN AC#ULIT2 raven_fiend
 	IF ~~ THEN REPLY ~Das werde ich jemandem wie Euch bestimmt nicht sagen!~ EXTERN AC#ULIT2 raven_fiend_not_telling
@@ -463,7 +469,7 @@ BEGIN ~AC#IL28G~
 
 // encounter with illithids
 CHAIN IF ~NumTimesTalkedTo(0)~ THEN AC#IL28G hello_00
-~<PRO_RACE>, helft mir! Rettet mich vor den Illithiden!~
+~Nein, <PRO_RACE>, helft mir! Rettet mich vor den Illithiden!~
 == AC#ULIT2 ~Klammert Euch nicht an diese niedere Kreatur, untote Irrung! Für Euer Dasein habt Ihr nichts als den Tod verdient! Tretet beiseite, <CHARNAME>, und lasst uns dies hier beenden.~
 END
 IF ~~ THEN REPLY ~Nein. Ich werde nicht zulassen, dass Ihr dem Wesen etwas antut.~ EXTERN AC#ULIT2 dont_hurt_brain

@@ -1,3 +1,25 @@
+/*******************************************************************************************************
+Dialog Githyanki
+*******************************************************************************************************/
+
+BEGIN AC#25GI1
+
+CHAIN IF ~NumTimesTalkedTo(0)~ THEN AC#25GI1 hello_0
+~Die Schleier sind dünn an diesem Ort. Und Ihr seid nicht allein.~
+END
+IF ~~ THEN REPLY ~Wer seid Ihr?~ EXTERN AC#25GI1 hall_of_bloodmoon_02
+IF ~~ THEN REPLY ~Was sucht Ihr hier?~ EXTERN AC#25GI1 hall_of_bloodmoon_02
+IF ~~ THEN REPLY ~Verschwindet.~ EXTERN AC#25GI1 hall_of_bloodmoon_03
+
+CHAIN AC#25GI1 hall_of_bloodmoon_02
+~Ihr stellt die falschen Fragen. Hütet Euch davor, die richtigen zu stellen!~
+END
+IF ~~ THEN EXTERN AC#25GI1 hall_of_bloodmoon_03
+
+CHAIN AC#25GI1 hall_of_bloodmoon_03
+~Wir beobachten. Noch. Vielleicht kreuzen sich unsere Wege erneut. Bleibt außerhalb dessen, was folgt.~
+END
+IF ~~ THEN DO ~SetGlobal("GithTeleport","ACIL25",1)~EXIT
 
 /*******************************************************************************************************
 Dialog Tür

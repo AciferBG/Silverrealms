@@ -36,6 +36,29 @@ THEN
 END
 
 IF
+    See(SixthNearestEnemyOf(Myself))
+THEN
+    RESPONSE #50
+        AnkhegHide()
+        MoveToObject(LastSeenBy(Myself))
+        AttackReevaluate(LastSeenBy(Myself),6)
+        Continue()
+    RESPONSE #100
+        Continue()
+END
+
+IF
+    HitBy([ANYONE],CRUSHING)
+THEN
+    RESPONSE #100
+        Continue()
+    RESPONSE #50
+        AnkhegHide()
+        RunAwayFrom(NearestEnemyOf(Myself),12)
+        Continue()
+END
+
+IF
     OR(2)
         Difficulty(EASIEST)
         Difficulty(EASY)
@@ -49,6 +72,7 @@ THEN
         SetGlobalTimer("bd_cast","locals",ONE_ROUND)
         SetGlobal("Neothelid_Breath","LOCALS",1)
         ForceSpellRES("AC#NEOB",LastSeenBy(Myself))  // Enzymatischer Odem
+        AttackOneRound(LastSeenBy(Myself))
 END
 
 IF
@@ -66,6 +90,7 @@ THEN
         SetGlobalTimer("bd_cast","locals",ONE_ROUND)
         IncrementGlobal("Neothelid_Breath","LOCALS",1)
         ForceSpellRES("AC#NEOB",LastSeenBy(Myself))  // Enzymatischer Odem
+        AttackOneRound(LastSeenBy(Myself))
 END
 
 IF
@@ -81,6 +106,7 @@ THEN
         SetGlobalTimer("bd_cast","locals",ONE_ROUND)
         IncrementGlobal("Neothelid_Breath","LOCALS",1)
         ForceSpellRES("AC#NEOB",LastSeenBy(Myself))  // Enzymatischer Odem
+                AttackOneRound(LastSeenBy(Myself))
 END
 
 IF
@@ -96,6 +122,7 @@ THEN
         SetGlobalTimer("bd_cast","locals",ONE_ROUND)
         IncrementGlobal("Neothelid_Breath","LOCALS",1)
         ForceSpellRES("AC#NEOB",LastSeenBy(Myself))  // Enzymatischer Odem
+                AttackOneRound(LastSeenBy(Myself))
 END
 
 IF
@@ -110,7 +137,9 @@ THEN
         AnkhegEmerge()
         SetGlobalTimer("PSIONIC_TASTE_LINK","locals",TWO_ROUNDS)
         SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-        SpellNoDecRES("AC#NEO1",Myself)  // Taste Link
+        SpellNoDecRES("AC#NEO1",Myself)  // Essenzraub
+        AnkhegHide()
+        RunAwayFrom(NearestEnemyOf(Myself),6)
     RESPONSE #35
         Continue()
 END
@@ -152,6 +181,7 @@ THEN
         SetGlobalTimer("PSIONIC_TELEKINESIS","locals",FIVE_ROUNDS)
         SetGlobalTimer("bd_cast","locals",ONE_ROUND)
         SpellNoDecRES("AC#NEO2",LastSeenBy)  // Telekinese
+                AttackOneRound(LastSeenBy(Myself))
     RESPONSE #40
         Continue()
 END
@@ -163,6 +193,7 @@ THEN
     RESPONSE #100
         SetGlobalTimer("bd_cast","locals",ONE_ROUND)
         SpellNoDec(LastSeenBy,PSIONIC_EGOWHIP)  // SPIN909.SPL (Egopeitsche)
+                AttackOneRound(LastSeenBy(Myself))
     RESPONSE #50
         Continue()
 END
@@ -173,7 +204,8 @@ IF
 THEN
     RESPONSE #100
         SetGlobalTimer("bd_cast","locals",ONE_ROUND)
-        SpellNoDecRES("AC#NEO3",LastSeenBy)  // Control Body
+        SpellNoDecRES("AC#NEO3",LastSeenBy)  // Leib beherrschen
+                AttackOneRound(LastSeenBy(Myself))
     RESPONSE #50
         Continue()
 END
@@ -185,6 +217,7 @@ THEN
     RESPONSE #100
         SetGlobalTimer("bd_cast","locals",ONE_ROUND)
         SpellNoDecRES("AC#NEO4",LastSeenBy)  // Geistige Verwirrung
+                AttackOneRound(LastSeenBy(Myself))
     RESPONSE #50
         Continue()
 END
@@ -193,7 +226,7 @@ IF
     See(NearestEnemyOf(Myself))
 THEN
     RESPONSE #100
-        AttackReevaluate(LastSeenBy,30)
+        AttackReevaluate(LastSeenBy,6)
 END
 
 IF

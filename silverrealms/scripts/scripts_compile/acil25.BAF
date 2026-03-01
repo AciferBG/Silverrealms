@@ -1,43 +1,57 @@
 IF
-	Global("AC#EnteredSpiderstalkings","GLOBAL",0)
+    Global("AC#EnteredSpiderstalkings","GLOBAL",0)
 THEN
-	RESPONSE #100
-		SetGlobal("AC#EnteredSpiderstalkings","GLOBAL",1)
-		TriggerActivation("Trap_Drow01",FALSE)
-		SpawnPtDeactivate("MyrlocharSpawn01")
+    RESPONSE #100
+        SetGlobal("AC#EnteredSpiderstalkings","GLOBAL",1)
+        TriggerActivation("Trap_Drow01",FALSE)
+        SpawnPtDeactivate("MyrlocharSpawn01")
 END
 
 IF
-	Global("AC#Door25","ACIL25",2)
-	Global("Deactivate","ACIL25",0)
+    Global("AC#Door25","ACIL25",2)
+    Global("Deactivate","ACIL25",0)
 THEN
-	RESPONSE #100
-		SetGlobal("Deactivate","ACIL25",1)
-		TriggerActivation("Doorhead",FALSE)
-                OpenDoor("DOOR01")
+    RESPONSE #100
+        SetGlobal("Deactivate","ACIL25",1)
+        TriggerActivation("Doorhead",FALSE)
+        OpenDoor("DOOR01")
 END
 
 IF
-	DifficultyGT(EASY)
-	Global("CreateMoreDriders","ACIL25",1)
+    DifficultyGT(EASY)
+    Global("CreateMoreDriders","ACIL25",1)
 THEN
-	RESPONSE #100
+    RESPONSE #100
         SetGlobal("CreateMoreDriders","ACIL25",2)
-		CreateCreature("AC#ILDDF",[939.540],0)  // Drider female 
-		CreateCreature("AC#ILDDF",[1777.920],11) // Drider female
-		CreateCreature("AC#ILDDF",[1530.425],5) // Drider female
+        CreateCreature("AC#ILDDF",[939.540],S)  // Spinnenelf
+        CreateCreature("AC#ILDDF",[1777.920],NEE)  // Spinnenelf
+        CreateCreature("AC#ILDDF",[1530.425],NWW)  // Spinnenelf
 END
 
 IF
-	Global("AC#25_LolthPriestess","GLOBAL",1)
+    Global("AC#25_LolthPriestess","GLOBAL",1)
 THEN
-	RESPONSE #100
+    RESPONSE #100
         SetGlobal("AC#25_LolthPriestess","GLOBAL",2)
-		TriggerActivation("Trap_Drow01",TRUE)
-		SpawnPtActivate("MyrlocharSpawn01")
-		CreateCreature("AC#DROW6",[2428.339],0)  // Zilna Khaven-Ghell 
-		CreateCreature("AC#DROW7",[2309.280],5) // Drow Warrior
-		CreateCreature("AC#DROW8",[2535.285],13) // Drow Warrior
-		CreateCreature("AC#DROW7",[1112.826],9) // Drow Warrior
-		CreateCreature("AC#DROW7",[2206.406],5)  // Drow Warrior
+        TriggerActivation("Trap_Drow01",TRUE)
+        SpawnPtActivate("MyrlocharSpawn01")
+        CreateCreature("AC#DROW6",[2428.339],S)  // Zilna
+        CreateCreature("AC#DROW7",[2309.280],NWW)  // Drow
+        CreateCreature("AC#DROW8",[2535.285],SEE)  // Drow
+        CreateCreature("AC#DROW7",[1112.826],NNE)  // Drow
+        CreateCreature("AC#DROW7",[2206.406],NWW)  // Drow
 END
+
+IF
+    PartyHasItem("AC#ILMBJ")  // Mith Baraks Notizen
+    Global("Spawn_Githyanki","ACIL25",0)
+THEN
+    RESPONSE #100
+        SetGlobal("Spawn_Githyanki","ACIL25",1)
+        CreateCreature("AC#25GI1",[3153.598],N)  // Githyanki
+        CreateCreature("AC#25GI2",[3116.682],N)  // Githyanki
+        CreateCreature("AC#25GI2",[3204.694],N)  // Githyanki
+        CreateCreature("AC#25GI2",[3130.762],N)  // Githyanki
+        CreateCreature("AC#25GI2",[3224.740],N)  // Githyanki
+END
+

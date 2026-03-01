@@ -229,7 +229,7 @@ THEN
 		AddJournalEntry(@99509,QUEST)
         CreateCreature("AC#28GI2",[2850.290],S)  // Githyanki
         CreateCreature("AC#28GI2",[2722.309],S)  // Githyanki
-        CreateCreature("AC#28GI1",[2797.348],S)  // Githyanki
+        CreateCreature("AC#28GI1",[2797.348],S)  // Githyanki Knight
         CreateCreature("AC#28GI3",[2828.243],S)  // Gish
         CreateCreature("AC#28GI3",[2702.252],S)  // Gish
         SetGlobal("GithFight","ACIL28",1)

@@ -112,6 +112,8 @@ END
 		IF ~~ THEN BEGIN tell_us_about_barakuir
 		SAY ~Bitte teilt Eure weiteren Erkenntnisse über Barakuir mit uns, um der ganzen Angelegenheit doch noch ein wenig Sinn zu geben.~
 		IF ~~ THEN REPLY ~Außerhalb der Stadt gab es einen verlassenen Tempel der Illithiden und ich musste gegen einige der Abscheulichsten ihrer Ausgeburten kämpfen.~ EXTERN ~AC#FENY1~ so_it_is_true_about_mindflayers
+		IF ~~ THEN REPLY ~Die Gedankenschinder hatten dort einst eine bedeutende Niederlassung. Ihre Schrecken sind dort geblieben, bis ich sie vernichtet habe.~ EXTERN ~AC#FENY1~ so_it_is_true_about_mindflayers
+		IF ~~ THEN REPLY ~Barakuir war einst ein Versteck der Gedankenschinder. Ein Teil Ihrer Brut lebte dort noch immer. Jetzt nicht mehr.~ EXTERN ~AC#FENY1~ so_it_is_true_about_mindflayers
 		END
 				
 		IF ~~THEN BEGIN who_is_this_lay_down
@@ -958,7 +960,10 @@ BEGIN AC#FENY1  // Fenyl
 
 IF ~~THEN BEGIN so_it_is_true_about_mindflayers
 SAY ~Also ist es wahr! Die *caradhak* sind für die Angriffe und unsere Misere verantwortlich!~
-IF ~~ THEN REPLY ~Nein. Die Illithiden sind dafür nicht verantwortlich. An dem Ort befand sich ein untotes Illithiden-Ältestenhirn. König Mith Barak hatte anscheinend mit diesem über seinen Fluch gesprochen.~ EXTERN ~AC#GROM1~ chain_new_after_barakuir
+IF ~~ THEN REPLY ~Ihr irrt Euch. Die Illithiden sind dafür nicht verantwortlich. An dem Ort befand sich ein untotes Ältestenhirn. König Mith Barak hatte anscheinend mit diesem über seinen Fluch gesprochen.~ EXTERN ~AC#GROM1~ chain_new_after_barakuir
+IF ~~ THEN REPLY ~Nicht ganz. In den Ruinen existiert ein untotes Ältestenhirn, welches von König Mith Barak aufgesucht wurde.~ EXTERN ~AC#GROM1~ chain_new_after_barakuir
+IF ~~ THEN REPLY ~Die Gedankenschinder mögen dort einst gelebt haben, doch sie stecken nicht hinter Eurem Unglück. König Mith Barak sprach dort mit einem untoten Ältestenhirn.~ EXTERN ~AC#GROM1~ chain_new_after_barakuir
+IF ~~ THEN REPLY ~Die Illithiden sind nicht Eure Feinde in dieser Sache. Mith Barak suchte Rat bei einem untoten Ältestenhirn.~ EXTERN ~AC#GROM1~ chain_new_after_barakuir
 END
 
 	IF ~~THEN BEGIN illithids_not_responsable
@@ -1402,21 +1407,49 @@ CHAIN IF ~~ THEN AC#GROM1 chain_community
 == AC#VRON1 ~Mich würde interessieren, was <CHARNAME> über Barakuir zu berichten habt.~
 END
 ++ ~Oh, da gibt es Einiges.~ EXTERN ~AC#GROM1~ tell_us_about_barakuir
+++ ~Die Ruinen bargen mehr Geheimnisse, als Euch lieb ist.~ EXTERN ~AC#GROM1~ tell_us_about_barakuir
+++ ~Das wird eine längere Geschichte.~ EXTERN ~AC#GROM1~ tell_us_about_barakuir
+++ ~Barakuir war nicht so verlassen, wie Ihr geglaubt habt.~ EXTERN ~AC#GROM1~ tell_us_about_barakuir
 
 // CHAIN: Player talks about undead elder brain
 CHAIN IF ~~ THEN AC#GROM1 chain_new_after_barakuir
-~Mith Barak hat diesen Gedankenschinder-Abschaum aufgesucht?~ 
-== AC#FENY1 ~Nach allem, was die Illithiden unserem Sohn angetan haben? Was hatte sich unser König nur dabei gedacht?~
+~Mith Barak hat diesen Gedankenschinder-Abschaum aufgesucht? Wie könnt Ihr Euch so sicher sein, dass die Illithiden nicht hinter all dem stecken?~ 
 END
-++ ~Das Ältestenhirn ist seit langer Zeit untot. Mith Barak schien zu hoffen, dass es ihm mit seinem uralten Wissen weiterhelfen könnte.~ EXTERN ~AC#STUR1~ chain_new_after_barakuir_02
+IF ~~ THEN REPLY ~Ich traf einige von ihnen. Sie wurden genauso vor den Toren Iltkazars abgeschlachtet wie Eure Zwergenpatrouille - von Githyanki.~ EXTERN AC#VRON1 chain_illithid_vs_elderbrain_01
+
+CHAIN AC#VRON1 chain_illithid_vs_elderbrain_01
+~Diese merkwürdigen Krieger stecken hinter alledem?~
+END
+IF ~~ THEN REPLY ~Sie scheinen in diesem Konflikt auch nur Söldner zu sein.~ EXTERN AC#TURB8 chain_illithid_vs_elderbrain_02
+
+CHAIN AC#TURB8 chain_illithid_vs_elderbrain_02
+~Wie dem auch sei. Was ist aus den Illithiden geworden?~
+END
+IF ~!Dead("AC#ULIT2")~ THEN REPLY ~Sie haben sich wieder aus dem Staub gemacht.~ EXTERN AC#GROM1 chain_illithid_vs_elderbrain_cont
+IF ~Dead("AC#ULIT2")~ THEN REPLY ~Ich habe sie getötet.~ EXTERN AC#GROM1 chain_illithid_vs_elderbrain_cont
+
+CHAIN IF ~~ THEN AC#GROM1 chain_illithid_vs_elderbrain_cont
+~Lasst uns den Fokus nicht verlieren. Mith Barak sah seine Hilfe ausgerechnet in einem Ältestenhirn.~
+== AC#FENY1 ~Nach allem, was die Illithiden unserem Sohn angetan haben? Was hatte sich unser König nur dabei gedacht?~
+== AC#GROM1 ~Nicht hier, meine Liebe. Nun sagt, <CHARNAME>, was wollte Mith Barak von dem Ältestenhirn?~
+END
+++ ~Das Ältestenhirn war nur noch ein Schatten seiner selbst. Mith Barak schien zu hoffen, dass es ihm mit seinem uralten Wissen weiterhelfen könnte.~ EXTERN ~AC#STUR1~ chain_new_after_barakuir_02
+++ ~Das Ältestenhirn existiert schon sehr lange. Euer König suchte Antworten, wo immer er sie finden konnte – selbst bei einem verrottenden Ältestenhirn.~ EXTERN ~AC#STUR1~ chain_new_after_barakuir_02
+++ ~Mith Barak war offenbar verzweifelt genug, selbst die uralten Feinde der Zwerge um Hilfe zu bitten.~ EXTERN ~AC#STUR1~ chain_new_after_barakuir_02
+++ ~Vielleicht blieb ihm kein anderer Ort mehr, an dem er Antworten finden konnte. Nur dieser vergammelte Haufen Hirnmasse.~ EXTERN ~AC#STUR1~ chain_new_after_barakuir_02
 
 CHAIN IF ~~ THEN AC#STUR1 chain_new_after_barakuir_02
 ~Wie kann man nur solch eine Kreatur um Rat fragen?~
 == AC#TURB8 ~Das weiß nur unser König ganz allein.~
 == AC#FENY1 ~Unser König scheint sich ja mit allerlei unzwergischen Gedanken beschäftigt zu haben!~
-== AC#GROM1 ~Konntet Ihr wenigstens von diesem... diesem Hirn Antworten erhalten?~
+END
+IF ~~ THEN EXTERN AC#GROM1 chain_brain_answers_anyway
+
+CHAIN IF ~~ THEN AC#GROM1 chain_brain_answers_anyway
+~Konntet Ihr wenigstens von diesem... diesem Hirn Antworten erhalten?~
 END
 ++ ~Leider nein, das Gehirn hat einen Großteil seines Wissens verloren.~ EXTERN ~AC#GROM1~ chain_new_after_barakuir_03
+IF ~Dead("AC#IL28G")~ THEN REPLY ~Das Gehirn starb, bevor ich etwas Wichtiges aus ihm herausbekommen konnte.~ EXTERN ~AC#GROM1~ chain_new_after_barakuir_03
 
 CHAIN IF ~~ THEN AC#GROM1 chain_new_after_barakuir_03
 ~Dann war die ganze Reise nach Barakuir also vergebens!~
@@ -1435,7 +1468,7 @@ IF ~~ THEN DO ~TakePartyItem("AC#ILEBL") DestroyItem("AC#ILEBL")~ EXTERN AC#VRON
 CHAIN IF ~~ THEN AC#VRON1 take_lobe_01
 ~Ein merkwürdiges Ding. Und Ihr sagtet, das Ältestenhirn habe sich an nichts mehr erinnern können?~
 END
-++ ~Ja. Es schien mit dem Namen Mith Baraks etwas zu verbinden, konnte die Erinnerung aber nicht abrufen.~ EXTERN ~AC#VRON1~ take_lobe_02
+++ ~Es schien mit dem Namen Mith Baraks etwas zu verbinden, konnte die Erinnerung aber nicht mehr abrufen.~ EXTERN ~AC#VRON1~ take_lobe_02
 
 CHAIN IF ~~ THEN AC#VRON1 take_lobe_02
 ~Dann bleibt uns nur eine Möglichkeit. Ich werde versuchen, selbst die Erinnerung abzurufen, indem ich mir einen Teil dieses Gehirns einverleibe.~

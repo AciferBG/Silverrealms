@@ -504,11 +504,17 @@ CHAIN IF ~Global("AC#IL_ACIL20Portal","GLOBAL",8)~ THEN AC#TURBX hello_portal_af
 	== AC#VRONX ~Ich habe versucht, die merkwürdige Rune zu aktivieren, und <CHARNAME> hat hindurchgesehen. Irgendetwas auf der anderen Seite hat unseren Ausspähversuch bemerkt und <CHARNAME> einen geistigen Schlag verpasst.~
 	== AC#TURBX ~Was habt Ihr gesehen, <CHARNAME>?~
 	END
-	IF ~~ THEN REPLY ~Ich weiß nicht genau... irgendeine silbrige Ebene. Und das ist plötzlich so ein Rabengesicht aufgetaucht.~ EXTERN AC#VRONX raven_fiend 
+	IF ~~ THEN REPLY ~Ich weiß nicht genau... irgendeine silbrige Ebene. Und das ist plötzlich so ein Rabengesicht aufgetaucht.~ EXTERN AC#TURBX raven_fiend 
 	
-		CHAIN IF ~Global("AC#IL_ACIL20Portal","GLOBAL",7)~ THEN AC#VRONX raven_fiend
+		CHAIN AC#TURBX raven_fiend
+		~Ein Rabengesicht?~
+		== AC#VRONX ~Es gibt viele Wesen, die die Gestalt von Tieren annehmen, wenn es ihnen beliebt. Besonders Scheusale. Und nach dem, wie Ihr reagiert habt, fürchte ich, dass Ihr den Blick mit einer Art Dämon oder Teufel gekreuzt habt.~
+		END
+		IF ~~ THEN EXTERN AC#VRONX portal_gone
+	
+		CHAIN AC#VRONX portal_gone
 		~Was immer es war, es ist fort und kann uns hier nichts anhaben, <CHARNAME>. Das Portal ist erloschen. Wir sind hier in Sicherheit.~
-		== AC#TURBX ~Wir sind *noch* in Sicherheit. Eine so mysteriöse Bedrohung habe ich unter den Bergen noch nicht erlebt.~
+		== AC#TURBX ~Wir sind noch in Sicherheit. Eine so mysteriöse Bedrohung habe ich unter den Bergen noch nicht erlebt.~
 		== AC#TURBX ~Ihr hattet Recht. Es geht so nicht mehr weiter. Wir müssen sehen, was unsere Stadt bedroht, bevor uns das Zepter aus der Hand genommen wird.~
 		== AC#TURBX ~Es war ein Fehler, Euch den Zugang zu den Spinnenschächten zu verwehren, <CHARNAME>. Zeit, diesen Fehler wiedergutzumachen! Hier, nehmt diesen Runenstein. Er wird die versiegelte Pforte zu den Spinnenschächten außerhalb unserer Stadt öffnen. Ruht Euch aus und rüstet Euch.~ 
 		= ~Sobald Ihr wieder gut gerüstet seid, solltet Ihr mit Dumathoins Segen an diesem unheiligen Ort nach der Ursache für unsere Misere suchen, wenn Ihr der Meinung seid, dass dies uns weiterbringt.~

@@ -48,48 +48,49 @@ END
 // a small review of the founding stories of shanatar
 // the patron gods of the subkingdoms
 
+
 BEGIN ~AC#23BO2~
 
 IF ~Global("AC#23Book02","ACIL23",1)~ THEN BEGIN 0 
-  SAY ~Vor Euch liegt ein altes, staubiges Buch, dessen Einband aus silbrig schimmerndem Leder gefertigt ist. Fremdartige Runen ziehen sich über den Rücken des Bandes. Wenn Ihr möchtet, könnt Ihr darin blättern.~ 
+  SAY ~Vor Euch liegt ein altes, staubiges Buch, welches zur Hälfte aufgeschlagen ist. Auf dem Deckel ist das Symbol von Zwillingsäxten eingraviert. Wenn Ihr möchtet, könnt Ihr in dem uralten Einband blättern.~
   IF ~~ THEN REPLY ~Das Buch aufschlagen.~ + page_1
   IF ~~ THEN REPLY ~Das Buch in Ruhe lassen.~ + book_exit
 END
 
 	IF ~~ THEN BEGIN page_1 
-	SAY ~Ihr blättert durch mehrere brüchige Seiten, bis Ihr eine Passage in Gemeinsprache und Thorass entdeckt.~ 
+	SAY ~Ihr blättert durch die verschiedenen Schriften, bis Ihr einen Teil, der in der Gemeinsprache und Thorass geschrieben ist, findet, und beginnt zu lesen.~
 	=
-	~"Jenseits der bekannten Ebenen der Welt liegt ein Reich, welches von den Gelehrten das Silberne Meer genannt wird. Dort gibt es weder Tag noch Nacht, und die Zeit selbst scheint stillzustehen. Viele Magier und Priester behaupten, dass die Seelen der Sterblichen durch diese Weiten reisen, wenn sie sich von ihrem Körper lösen."~
+	~"Ein jedes der Königreiche wählte einen Schutzpatron aus dem Zwergenpantheon. Moradin war Alatorin vorbehalten. Die anderen acht Unterkönigreiche wählten eine passende Gottheit der Morndinsamman aus."~
 	IF ~~ THEN REPLY ~Eine Seite weiterblättern.~ + page_2
 	IF ~~ THEN REPLY ~Das Buch in Ruhe lassen.~ + book_exit
 	END
 	
 		IF ~~ THEN BEGIN page_2 
-		SAY ~"Die Astralebene, wie sie von den Weisen genannt wird, ist kein Land aus Stein oder Erde, sondern ein endloser Ozean aus silbrigem Nebel. Gedanken und Wille formen dort den Weg des Reisenden, während der Körper oft weit entfernt zurückbleibt."~
+		SAY ~"Barakuir wählte Laduguer, Drakkalor Abbathor, Iltkazar Clangeddin, Korolnor Diinkarazan, Sondarr Vergadain, Torglor Diirinka, Ultoksamrin Dumathoin, und Xothaerin Sharindlar als ihre Schutzgottheit aus."~
 		IF ~~ THEN REPLY ~Eine Seite zurückblättern.~ + page_1
 		IF ~~ THEN REPLY ~Eine Seite weiterblättern.~ + page_3
 		IF ~~ THEN REPLY ~Das Buch in Ruhe lassen.~ + book_exit
 		END
 
 			IF ~~ THEN BEGIN page_3 
-			SAY ~"In diesen stillen Weiten treiben seltsame Dinge. Fragmente alter Welten, verlorene Artefakte und – so berichten manche – sogar die sterblichen Überreste gefallener Götter. Diese treiben wie gewaltige Inseln im silbernen Meer der Astralebene."~
+			SAY ~"Ultoksamrin wurde nach dem Fall Alatorins zum führenden Königreich Shanatars auserkoren. So kam es, dass Dumathoin der Schutzgott Shanatars und damit der Rasse der Schildzwerge wurde."~
 			IF ~~ THEN REPLY ~Eine Seite zurückblättern.~ + page_2
 			IF ~~ THEN REPLY ~Eine Seite weiterblättern.~ + page_4
 			IF ~~ THEN REPLY ~Das Buch in Ruhe lassen.~ + book_exit
 			END
 			
 				IF ~~ THEN BEGIN page_4 
-				SAY ~Dies ist die letzte Seite des Buches. "Nur wenige Sterbliche haben dieses Reich je mit eigenen Augen gesehen. Doch alle Berichte stimmen in einem Punkt überein: Die Astralebene ist ein Ort jenseits von Zeit und Tod, ein stilles Meer aus Silber, in dem selbst die Leiber gefallener Götter treiben."~
+				SAY ~Dies ist die letzte Seite des Buches, welche in Gemeinsprache gehalten ist. "Einige der Schutzgötter wandten sich im Laufe der Jahrhunderte bösen Kräften zu, und so kam es, dass bis auf die Symbole in den Wappen der Unterkönigreiche wenig von ihrem einstigen Einfluss übrig geblieben ist.~
 				IF ~~ THEN REPLY ~Eine Seite zurückblättern.~ + page_3
 				IF ~~ THEN REPLY ~Das Buch schließen.~ + book_exit
 				END
 
 	IF ~~ THEN BEGIN book_exit 
-	  SAY ~Ihr wendet Euch wieder von dem Buch ab.~
+	  SAY ~Ihr wendet Euch wieder von Buch ab.~
 	  IF ~~ THEN EXIT
 	END
 	
-//  Book #3
+// Book #3
 // a small review of the founding stories of shanatar
 // the elves of Keltormir
 

@@ -1,7 +1,7 @@
 //Statuen in ACIL23
 
 // Statue #1
-// Frage: Die Frage der Zeit
+// Frage: Torglor = Silberkönigreich
 BEGIN ~AC#23ST1~
 
 IF ~Global("AC#23Statue01","ACIL23",2)~ THEN BEGIN 0 
@@ -10,7 +10,7 @@ IF ~Global("AC#23Statue01","ACIL23",2)~ THEN BEGIN 0
 END
 
 IF ~Global("AC#23Statue01","ACIL23",1)~ THEN BEGIN 0 
-  SAY ~Dies ist eine Halle der Prüfungen. Antwortet weise, und der Weg wird sich Euch öffnen.~ 
+  SAY ~Dies ist die Halle der Geschichte. Stellt Euch den Prüfungen, um ein wahrer Diener Shanatars zu werden.~ 
   IF ~~ THEN REPLY ~Stellt Eure Fragen, Statue.~ + ask_questions
   IF ~~ THEN REPLY ~Lasst die Statue in Ruhe.~ + leave_exit
 END
@@ -21,11 +21,15 @@ END
 	END
 	
 		IF ~~ THEN BEGIN ask_questions 
-		  SAY ~Was vermehrt sich, je mehr man es teilt?~ 
-		  IF ~~ THEN REPLY ~Gold.~ + false		  
-		  IF ~~ THEN REPLY ~Wasser.~ + false
-		  IF ~~ THEN REPLY ~Wissen.~ + right
-		  IF ~~ THEN REPLY ~Feuer.~ + false
+		  SAY ~Acht Königreiche bildeten neben Alatorin den Kern des Zwergenreiches Shanatar. Sagt mir, welches davon wurde das Silberkönigreich genannt?~ 
+		  IF ~~ THEN REPLY ~Iltkazar.~ + false
+		  IF ~~ THEN REPLY ~Korolnor.~ + false
+		  IF ~~ THEN REPLY ~Torglor.~ + right
+		  IF ~~ THEN REPLY ~Drakkalor.~ + false
+		  IF ~~ THEN REPLY ~Xothaerin.~ + false
+		  IF ~~ THEN REPLY ~Ultoksamrin.~ + false
+		  IF ~~ THEN REPLY ~Barakuir.~ + false
+		  IF ~~ THEN REPLY ~Sondarr.~ + false
 		END
 		
 			IF ~~ THEN BEGIN false 
@@ -34,12 +38,12 @@ END
 			END
 			
 			IF ~~ THEN BEGIN right 
-			SAY ~Eure Antwort ist richtig. Wissen schwindet nicht durch Teilen, sondern wächst daran.~ 
+			SAY ~Ihr seid ein wahrer Kenner der Zwerge. Eure Antwort ist richtig.~ 
 			IF ~~ THEN DO ~SetGlobal("AC#23Statue01","ACIL23",2)~ EXIT
 			END
 			
 // Statue #2
-// Frage: Die Frage des Silberreichs
+// Frage: Iltkazar - Schutzpatron
 BEGIN ~AC#23ST2~
 
 IF ~Global("AC#23Statue02","ACIL23",2)~ THEN BEGIN 0 
@@ -48,7 +52,7 @@ IF ~Global("AC#23Statue02","ACIL23",2)~ THEN BEGIN 0
 END
 
 IF ~Global("AC#23Statue02","ACIL23",1)~ THEN BEGIN 0 
-  SAY ~Dies ist eine Halle alter Wahrheit. Nur wer mit Weisheit antwortet, darf weitergehen.~ 
+  SAY ~Dies ist die Halle der Geschichte. Stellt Euch den Prüfungen, um ein wahrer Diener Shanatars zu werden.~ 
   IF ~~ THEN REPLY ~Stellt Eure Fragen, Statue.~ + ask_questions
   IF ~~ THEN REPLY ~Lasst die Statue in Ruhe.~ + leave_exit
 END
@@ -59,11 +63,15 @@ END
 	END
 	
 		IF ~~ THEN BEGIN ask_questions 
-		  SAY ~Wo treiben Götterleiber wie Inseln im silbernen Meer?~ 
-		  IF ~~ THEN REPLY ~In der Astralebene.~ + right
-		  IF ~~ THEN REPLY ~Im Abyss.~ + false
-		  IF ~~ THEN REPLY ~In der Schattenebene.~ + false
-		  IF ~~ THEN REPLY ~In den Neun Höllen.~ + false
+		  SAY ~Die Schutzpatrone boten den neu gegründeten Zwergenreichen Sicherheit und Stabilität. Welchen Schutzpatron wählte das Königreich Iltkazar, welches bis heute das Wappen des Mithrilkönigreiches ziert?~ 
+		  IF ~~ THEN REPLY ~Berronar.~ + false
+		  IF ~~ THEN REPLY ~Selune.~ + false
+		  IF ~~ THEN REPLY ~Clangeddin.~ + right
+		  IF ~~ THEN REPLY ~Dumathoin.~ + false
+		  IF ~~ THEN REPLY ~Moradin.~ + false
+		  IF ~~ THEN REPLY ~Talos.~ + false
+		  IF ~~ THEN REPLY ~Bhaal.~ + false
+		  IF ~~ THEN REPLY ~Laduguer.~ + false
 		END
 		
 			IF ~~ THEN BEGIN false 
@@ -72,12 +80,12 @@ END
 			END
 			
 			IF ~~ THEN BEGIN right 
-			SAY ~Eure Antwort ist richtig. Die silbernen Reiche bergen Wahrheiten, die dem flüchtigen Blick verborgen bleiben.~ 
+			SAY ~Ihr seid ein wahrer Kenner der Zwerge. Eure Antwort ist richtig.~ 
 			IF ~~ THEN DO ~SetGlobal("AC#23Statue02","ACIL23",2)~ EXIT
 			END
 			
 // Statue #3
-// Frage: Die Frage der Tiefen
+// Frage: Zwerge - Elfen
 BEGIN ~AC#23ST3~
 
 IF ~Global("AC#23Statue03","ACIL23",2)~ THEN BEGIN 0 
@@ -86,7 +94,7 @@ IF ~Global("AC#23Statue03","ACIL23",2)~ THEN BEGIN 0
 END
 
 IF ~Global("AC#23Statue03","ACIL23",1)~ THEN BEGIN 0 
-  SAY ~Hier prüfen alte Stimmen das Wissen der Wanderer. Antwortet weise.~ 
+  SAY ~Dies ist die Halle der Geschichte. Stellt Euch den Prüfungen, um ein wahrer Diener Shanatars zu werden.~ 
   IF ~~ THEN REPLY ~Stellt Eure Fragen, Statue.~ + ask_questions
   IF ~~ THEN REPLY ~Lasst die Statue in Ruhe.~ + leave_exit
 END
@@ -97,11 +105,15 @@ END
 	END
 	
 		IF ~~ THEN BEGIN ask_questions 
-		  SAY ~Was kann selbst in tiefster Finsternis wachsen und dennoch kein Licht sehen?~ 
-		  IF ~~ THEN REPLY ~Pilze.~ + false
-		  IF ~~ THEN REPLY ~Hoffnung.~ + right
-		  IF ~~ THEN REPLY ~Moos.~ + false
-		  IF ~~ THEN REPLY ~Schatten.~ + false
+		  SAY ~Die Zwerge suchten sich Verbündete an der Oberfläche, die Elfen. Gegen welchen Feind haben die Elfen in einer ihrer ersten Schlachten gekämpft und ihm die Herrschaft über die oberen Länder abgerungen?~ 
+		  IF ~~ THEN REPLY ~Riesen.~ + false
+		  IF ~~ THEN REPLY ~Dunkelelfen.~ + false
+		  IF ~~ THEN REPLY ~Betrachter.~ + false
+		  IF ~~ THEN REPLY ~Menschen.~ + false
+		  IF ~~ THEN REPLY ~Goblins.~ + false
+		  IF ~~ THEN REPLY ~Drachen.~ + right
+		  IF ~~ THEN REPLY ~Orks.~ + false
+		  IF ~~ THEN REPLY ~Dämonen.~ + false
 		END
 		
 			IF ~~ THEN BEGIN false 
@@ -110,12 +122,12 @@ END
 			END
 			
 			IF ~~ THEN BEGIN right 
-			SAY ~Eure Antwort ist richtig. Hoffnung ist ein Licht, das selbst die Tiefen nicht ersticken können.~
+			SAY ~Eure Antwort ist richtig. Nun wisst Ihr ein wenig mehr über die Verbündeten Shanatars.~ 
 			IF ~~ THEN DO ~SetGlobal("AC#23Statue03","ACIL23",2)~ EXIT
 			END
 			
 // Statue #4
-// Frage: Die Frage der Zwerge
+// Frage: Zwerge - Ursache für den Fall Shanatars
 BEGIN ~AC#23ST4~
 
 IF ~Global("AC#23Statue04","ACIL23",2)~ THEN BEGIN 0 
@@ -124,7 +136,7 @@ IF ~Global("AC#23Statue04","ACIL23",2)~ THEN BEGIN 0
 END
 
 IF ~Global("AC#23Statue04","ACIL23",1)~ THEN BEGIN 0 
-  SAY ~Wir sind die Stimmen aus vergessenen Zeiten. Antwortet weise, Wanderer, und der Weg wird sich Euch öffnen.~ 
+  SAY ~Dies ist die Halle der Geschichte. Stellt Euch den Prüfungen, um ein wahrer Diener Shanatars zu werden.~ 
   IF ~~ THEN REPLY ~Stellt Eure Fragen, Statue.~ + ask_questions
   IF ~~ THEN REPLY ~Lasst die Statue in Ruhe.~ + leave_exit
 END
@@ -135,11 +147,15 @@ END
 	END
 	
 		IF ~~ THEN BEGIN ask_questions 
-		  SAY ~Was wird durch Gebrauch schärfer und durch Stillstand stumpf?~ 
-		  IF ~~ THEN REPLY ~Ein Schwert.~ + false
-		  IF ~~ THEN REPLY ~Ein Hammer.~ + false
-		  IF ~~ THEN REPLY ~Ein Schild.~ + false
-		  IF ~~ THEN REPLY ~Der Verstand.~ + right
+		  SAY ~Was führte zum Untergang Shanatars?~ 
+		  IF ~~ THEN REPLY ~Versklavung durch die Illithiden.~ + false
+		  IF ~~ THEN REPLY ~Baatezu.~ + false
+		  IF ~~ THEN REPLY ~Verrat durch die Duergar.~ + false
+		  IF ~~ THEN REPLY ~Ein Erdbeben.~ + false
+		  IF ~~ THEN REPLY ~Goblins.~ + false
+		  IF ~~ THEN REPLY ~Zwist in den eigenen Reihen.~ + right
+		  IF ~~ THEN REPLY ~Ein Hinterhalt der Elfen.~ + false
+		  IF ~~ THEN REPLY ~Dämonen.~ + false
 		END
 		
 			IF ~~ THEN BEGIN false 
@@ -148,12 +164,12 @@ END
 			END
 			
 			IF ~~ THEN BEGIN right 
-			SAY ~Weise gesprochen. Ein wacher Verstand ist die schärfste Klinge.~ 
+			SAY ~Eure Antwort ist richtig. Einigkeit ist das wichtigste Gut in einer Gemeinschaft.~ 
 			IF ~~ THEN DO ~SetGlobal("AC#23Statue04","ACIL23",2)~ EXIT
 			END
 			
 // Statue #5
-// Frage: Die Frage der Drachen
+// Frage: Mith Barak
 BEGIN ~AC#23ST5~
 
 IF ~Global("AC#23Statue05","ACIL23",2)~ THEN BEGIN 0 
@@ -162,7 +178,7 @@ IF ~Global("AC#23Statue05","ACIL23",2)~ THEN BEGIN 0
 END
 
 IF ~Global("AC#23Statue05","ACIL23",1)~ THEN BEGIN 0 
-  SAY ~Fünf Fragen bewachen den Weg. Antwortet weise – oder kehrt um.~ 
+  SAY ~Dies ist die Halle der Geschichte. Stellt Euch den Prüfungen, um ein wahrer Diener Shanatars zu werden.~ 
   IF ~~ THEN REPLY ~Stellt Eure Fragen, Statue.~ + ask_questions
   IF ~~ THEN REPLY ~Lasst die Statue in Ruhe.~ + leave_exit
 END
@@ -173,11 +189,15 @@ END
 	END
 	
 		IF ~~ THEN BEGIN ask_questions 
-		  SAY ~Was wächst mit jedem Jahrhundert und ist der größte Reichtum eines Drachen?~ 
-		  IF ~~ THEN REPLY ~Sein Hort.~ + false
-		  IF ~~ THEN REPLY ~Seine Macht.~ + false
-		  IF ~~ THEN REPLY ~Sein Alter.~ + right
-		  IF ~~ THEN REPLY ~Sein Feuer.~ + false
+		  SAY ~Woher stammte König Mith Barak?~ 
+		  IF ~~ THEN REPLY ~Aus Mithril-Halle.~ + false
+		  IF ~~ THEN REPLY ~Aus Amn.~ + false
+		  IF ~~ THEN REPLY ~Ich weiß es nicht.~ + right
+		  IF ~~ THEN REPLY ~Aus dem Eiswindtal.~ + false
+		  IF ~~ THEN REPLY ~Aus Calimshan.~ + false
+		  IF ~~ THEN REPLY ~Aus der Zitadelle Felbarr.~ + false
+		  IF ~~ THEN REPLY ~Aus Mirabar.~ + false
+		  IF ~~ THEN REPLY ~Aus der großen Spalte.~ + false
 		END
 		
 			IF ~~ THEN BEGIN false 
@@ -186,6 +206,7 @@ END
 			END
 			
 			IF ~~ THEN BEGIN right 
-			SAY ~Eure Antwort ist richtig. Selbst uralte Macht vergeht, doch was ein Wesen im Innersten ist, überdauert jeden Schatz.~ 
+			SAY ~Eure Antwort ist richtig. Dies weiß keiner der Zwerge. Die Aufzeichnungen enden hier und müssten weitergeschrieben werden, um darauf eine Antwort zu erhalten.~ 
 			IF ~~ THEN DO ~SetGlobal("AC#23Statue05","ACIL23",2)~ EXIT
 			END
+

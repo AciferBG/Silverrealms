@@ -1,198 +1,207 @@
 IF
-	See(NearestEnemyOf(Myself))
-	Global("GazeAttack","LOCALS",0)
+    NumberOfTimesTalkedTo(0)
+    Detect([PC])
 THEN
-	RESPONSE #50
-		SetGlobalTimer("WailingTimer","GLOBAL",THREE_ROUNDS)
-		SetGlobal("GazeAttack","LOCALS",1)
+    RESPONSE #100
+        StartDialogueNoSet(LastSeenBy(Myself))
 END
 
 IF
-	See(NearestEnemyOf(Myself))
-	!StateCheck(LastSeenBy(Myself),STATE_CHARMED)
-	Global("GazeAttack","LOCALS",1)
+    See(NearestEnemyOf(Myself))
+    Global("GazeAttack","LOCALS",0)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
 THEN
-	RESPONSE #50
-		ReallyForceSpellRES("AC#2DB1",NearestEnemyOf(Myself))  // Schreckenszauber
-		SetGlobal("GazeAttack","LOCALS",2)
+    RESPONSE #50
+        SetGlobalTimer("WailingTimer","GLOBAL",THREE_ROUNDS)
+        SetGlobal("GazeAttack","LOCALS",1)
 END
 
 IF
-	See(SecondNearestEnemyOf(Myself))
-	!StateCheck(LastSeenBy(Myself),STATE_CHARMED)
-	Global("GazeAttack","LOCALS",1)
+    See(NearestEnemyOf(Myself))
+    !StateCheck(LastSeenBy(Myself),STATE_CHARMED)
+    Global("GazeAttack","LOCALS",1)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
 THEN
-	RESPONSE #50
-		ReallyForceSpellRES("AC#2DB1",SecondNearestEnemyOf(Myself))  // Schreckenszauber
-		SetGlobal("GazeAttack","LOCALS",2)
+    RESPONSE #50
+        ReallyForceSpellRES("AC#2DB1",NearestEnemyOf(Myself))  // Fluch des Berserkers
+        SetGlobal("GazeAttack","LOCALS",2)
 END
 
 IF
-	See(NearestEnemyOf(Myself))
-	Global("WailAttack","LOCALS",0)
-	GlobalTimerExpired("WailingTimer","GLOBAL")
+    See(SecondNearestEnemyOf(Myself))
+    !StateCheck(LastSeenBy(Myself),STATE_CHARMED)
+    Global("GazeAttack","LOCALS",1)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
 THEN
-	RESPONSE #100
-		ReallyForceSpellRES("AC#2DB2",NearestEnemyOf(Myself))  // Harpyiengesang
-		SetGlobal("WailAttack","LOCALS",1)
+    RESPONSE #50
+        ReallyForceSpellRES("AC#2DB1",SecondNearestEnemyOf(Myself))  // Fluch des Berserkers
+        SetGlobal("GazeAttack","LOCALS",2)
 END
 
 IF
-	!GlobalTimerNotExpired("TrueSeeing","LOCALS")
-	Detect(NearestEnemyOf(Myself))
-	OR(12)
-		StateCheck(NearestEnemyOf(Myself),STATE_INVISIBLE)
-		StateCheck(NearestEnemyOf(Myself),STATE_IMPROVEDINVISIBILITY)
-		StateCheck(SecondNearestEnemyOf(Myself),STATE_INVISIBLE)
-		StateCheck(SecondNearestEnemyOf(Myself),STATE_IMPROVEDINVISIBILITY)
-		StateCheck(ThirdNearestEnemyOf(Myself),STATE_INVISIBLE)
-		StateCheck(ThirdNearestEnemyOf(Myself),STATE_IMPROVEDINVISIBILITY)
-		StateCheck(FourthNearestEnemyOf(Myself),STATE_INVISIBLE)
-		StateCheck(FourthNearestEnemyOf(Myself),STATE_IMPROVEDINVISIBILITY)
-		StateCheck(FifthNearestEnemyOf(Myself),STATE_INVISIBLE)
-		StateCheck(FifthNearestEnemyOf(Myself),STATE_IMPROVEDINVISIBILITY)
-		StateCheck(SixthNearestEnemyOf(Myself),STATE_INVISIBLE)
-		StateCheck(SixthNearestEnemyOf(Myself),STATE_IMPROVEDINVISIBILITY)
+    See(NearestEnemyOf(Myself))
+    Global("WailAttack","LOCALS",0)
+    GlobalTimerExpired("WailingTimer","GLOBAL")
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
 THEN
-	RESPONSE #100
-		SetGlobalTimer("TrueSeeing","LOCALS",ONE_TURN)
-		SpellNoDec(Myself,CLERIC_TRUE_SIGHT)  // SPPR505.SPL (Wahrer Blick)
-		Continue()
+    RESPONSE #100
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        ReallyForceSpellRES("AC#2DB2",NearestEnemyOf(Myself))  // Verfluchter Schlachtruf
+        SetGlobal("WailAttack","LOCALS",1)
 END
 
 IF
-	See(NearestEnemyOf(Myself))
-	HaveSpell(NPC_BLADE_BARRIER)  // SPPR698.SPL (Klingenbarierre)
-	RandomNum(2,1)
-	Global("BladeBarrier","LOCALS",0)
+    See(NearestEnemyOf(Myself))
+    Global("Wailbanshee","LOCALS",0)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
 THEN
-	RESPONSE #100
-		Spell(Myself,NPC_BLADE_BARRIER)  // SPPR698.SPL (Klingenbarierre)
-		SetGlobal("BladeBarrier","LOCALS",1)
+    RESPONSE #100
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        ForceSpellRES("AC#2DDB",NearestEnemyOf(Myself))  // Schrei der Todesfee
+        SetGlobal("Wailbanshee","LOCALS",1)
 END
 
 IF
-	See(NearestEnemyOf(Myself))
-	HitBy([ANYONE],CRUSHING)
-	HaveSpell(CLERIC_IRONSKIN)  // SPPR506.SPL (Eisenhaut)
+    !GlobalTimerNotExpired("TrueSeeing","LOCALS")
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+    Detect(NearestEnemyOf(Myself))
+    OR(12)
+        StateCheck(NearestEnemyOf(Myself),STATE_INVISIBLE)
+        StateCheck(NearestEnemyOf(Myself),STATE_IMPROVEDINVISIBILITY)
+        StateCheck(SecondNearestEnemyOf(Myself),STATE_INVISIBLE)
+        StateCheck(SecondNearestEnemyOf(Myself),STATE_IMPROVEDINVISIBILITY)
+        StateCheck(ThirdNearestEnemyOf(Myself),STATE_INVISIBLE)
+        StateCheck(ThirdNearestEnemyOf(Myself),STATE_IMPROVEDINVISIBILITY)
+        StateCheck(FourthNearestEnemyOf(Myself),STATE_INVISIBLE)
+        StateCheck(FourthNearestEnemyOf(Myself),STATE_IMPROVEDINVISIBILITY)
+        StateCheck(FifthNearestEnemyOf(Myself),STATE_INVISIBLE)
+        StateCheck(FifthNearestEnemyOf(Myself),STATE_IMPROVEDINVISIBILITY)
+        StateCheck(SixthNearestEnemyOf(Myself),STATE_INVISIBLE)
+        StateCheck(SixthNearestEnemyOf(Myself),STATE_IMPROVEDINVISIBILITY)
 THEN
-	RESPONSE #100
-		Spell(Myself,CLERIC_IRONSKIN)  // SPPR506.SPL (Eisenhaut)
+    RESPONSE #100
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        SetGlobalTimer("TrueSeeing","LOCALS",ONE_TURN)
+        SpellNoDec(Myself,CLERIC_TRUE_SIGHT)  // SPPR505.SPL (Wahrer Blick)
+        Continue()
 END
 
 IF
-	See(NearestEnemyOf(Myself))
-	RandomNum(2,1)
-	HaveSpell(CLERIC_CREEPING_DOOM)  // SPPR717.SPL (Kriechender Tod)
+    See(NearestEnemyOf(Myself))
+    HaveSpell(CLERIC_FINGER_OF_DEATH)  // SPPR708.SPL (Finger des Todes)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
 THEN
-	RESPONSE #100
-		Spell(NearestEnemyOf(Myself),CLERIC_CREEPING_DOOM)  // SPPR717.SPL (Kriechender Tod)
+    RESPONSE #100
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        Spell(NearestEnemyOf(Myself),CLERIC_FINGER_OF_DEATH)  // SPPR708.SPL (Finger des Todes)
 END
 
 IF
-	See(NearestEnemyOf(Myself))
-	HaveSpell(CLERIC_FREE_ACTION)  // SPPR403.SPL (Handlungsfreiheit)
-	See(NearestMyGroupOfType)
-	StateCheck(LastSeenBy(Myself),STATE_HELPLESS)
+    See(NearestEnemyOf(Myself))
+    HaveSpell(NPC_BLADE_BARRIER)  // SPPR698.SPL (Klingenbarierre)
+    RandomNum(2,1)
+    Global("BladeBarrier","LOCALS",0)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
 THEN
-	RESPONSE #100
-		Spell(LastSeenBy(Myself),CLERIC_FREE_ACTION)  // SPPR403.SPL (Handlungsfreiheit)
+    RESPONSE #100
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        Spell(Myself,NPC_BLADE_BARRIER)  // SPPR698.SPL (Klingenbarierre)
+        SetGlobal("BladeBarrier","LOCALS",1)
 END
 
 IF
-	See(NearestEnemyOf(Myself))
-	RandomNum(2,1)
-	HaveSpell(CLERIC_FINGER_OF_DEATH)  // SPPR708.SPL (Finger des Todes)
+    See(NearestEnemyOf(Myself))
+    HitBy([ANYONE],CRUSHING)
+    HaveSpell(CLERIC_IRONSKIN)  // SPPR506.SPL (Eisenhaut)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
 THEN
-	RESPONSE #100
-		Spell(NearestEnemyOf(Myself),CLERIC_FINGER_OF_DEATH)  // SPPR708.SPL (Finger des Todes)
+    RESPONSE #100
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        Spell(Myself,CLERIC_IRONSKIN)  // SPPR506.SPL (Eisenhaut)
 END
 
 IF
-	See(NearestEnemyOf(Myself))
-	RandomNum(2,1)
-	HaveSpell(CLERIC_CONFUSION)  // SPPR709.SPL (Verwirrung)
+    See(NearestEnemyOf(Myself))
+    RandomNum(2,1)
+    HaveSpell(CLERIC_CONFUSION)  // SPPR709.SPL (Verwirrung)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
 THEN
-	RESPONSE #100
-		Spell(Myself,CLERIC_CONFUSION)  // SPPR709.SPL (Verwirrung)
+    RESPONSE #100
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        Spell(Myself,CLERIC_CONFUSION)  // SPPR709.SPL (Verwirrung)
 END
 
 IF
-	See(NearestEnemyOf(Myself))
-	RandomNum(2,2)
-	HaveSpell(CLERIC_CONJURE_EARTH_ELEMENTAL)  // SPPR702.SPL (Erdelementar beschwören)
+    See(NearestEnemyOf(Myself))
+    RandomNum(2,2)
+    HaveSpell(CLERIC_CONJURE_EARTH_ELEMENTAL)  // SPPR702.SPL (Erdelementar beschwÃ¶ren)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
 THEN
-	RESPONSE #100
-		Spell(NearestEnemyOf(Myself),CLERIC_CONJURE_EARTH_ELEMENTAL)  // SPPR702.SPL (Erdelementar beschwören)
+    RESPONSE #100
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        Spell(NearestEnemyOf(Myself),CLERIC_CONJURE_EARTH_ELEMENTAL)  // SPPR702.SPL (Erdelementar beschwÃ¶ren)
 END
 
 IF
-	See(NearestEnemyOf(Myself))
-	RandomNum(2,1)
-	HaveSpell(CLERIC_AERIAL_SERVANT)  // SPPR601.SPL (Luftdiener)
+    See(NearestEnemyOf(Myself))
+    HaveSpell(CLERIC_FLAME_STRIKE)  // SPPR503.SPL (Flammenschlag)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
 THEN
-	RESPONSE #100
-		Spell(NearestEnemyOf(Myself),CLERIC_AERIAL_SERVANT)  // SPPR601.SPL (Luftdiener)
+    RESPONSE #100
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        Spell(NearestEnemyOf(Myself),CLERIC_FLAME_STRIKE)  // SPPR503.SPL (Flammenschlag)
 END
 
 IF
-	HaveSpell(CLERIC_SILENCE_15_FOOT)  // SPPR211.SPL (Stille, 4,5 m Radius)
-	OR(2)
-		See(NearestEnemyOfType([0.0.0.MAGE_ALL]))
-		See(NearestEnemyOfType([0.0.0.CLERIC_ALL]))
+    See(NearestEnemyOf(Myself))
+    HaveSpell(CLERIC_HOLD_PERSON)  // SPPR208.SPL (Personen festhalten)
+    !StateCheck(LastSeenBy(Myself),STATE_HELPLESS)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
 THEN
-	RESPONSE #100
-		Spell(LastSeenBy(Myself),CLERIC_SILENCE_15_FOOT)  // SPPR211.SPL (Stille, 4,5 m Radius)
+    RESPONSE #100
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        Spell(NearestEnemyOf(Myself),CLERIC_HOLD_PERSON)  // SPPR208.SPL (Personen festhalten)
 END
 
 IF
-	See(NearestEnemyOf(Myself))
-	HaveSpell(CLERIC_FLAME_STRIKE)  // SPPR503.SPL (Flammenschlag)
+    See(NearestEnemyOf(Myself))
+    HaveSpell(CLERIC_CLOAK_OF_FEAR)  // SPPR416.SPL (Mantel der Furcht)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
 THEN
-	RESPONSE #100
-		Spell(NearestEnemyOf(Myself),CLERIC_FLAME_STRIKE)  // SPPR503.SPL (Flammenschlag)
+    RESPONSE #100
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        Spell(Myself,CLERIC_CLOAK_OF_FEAR)  // SPPR416.SPL (Mantel der Furcht)
 END
 
 IF
-	See(NearestEnemyOf(Myself))
-	HaveSpell(CLERIC_HOLD_PERSON)  // SPPR208.SPL (Personen festhalten)
-	!StateCheck(LastSeenBy(Myself),STATE_HELPLESS)
+    See(NearestEnemyOf(Myself))
+    HaveSpell(CLERIC_PHYSICAL_MIRROR)  // SPPR613.SPL (Materiespiegel)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
 THEN
-	RESPONSE #100
-		Spell(NearestEnemyOf(Myself),CLERIC_HOLD_PERSON)  // SPPR208.SPL (Personen festhalten)
+    RESPONSE #100
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        Spell(Myself,CLERIC_PHYSICAL_MIRROR)  // SPPR613.SPL (Materiespiegel)
 END
 
 IF
-	See(NearestEnemyOf(Myself))
-	HaveSpell(CLERIC_CLOAK_OF_FEAR)  // SPPR416.SPL (Mantel der Furcht)
+    See(NearestEnemyOf(Myself))
+    !Range(NearestEnemyOf(Myself),7)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
 THEN
-	RESPONSE #100
-		Spell(Myself,CLERIC_CLOAK_OF_FEAR)  // SPPR416.SPL (Mantel der Furcht)
+    RESPONSE #100
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        EquipRanged()
+        AttackReevaluate(NearestEnemyOf(Myself),45)
 END
 
 IF
-	See(NearestEnemyOf(Myself))
-	HaveSpell(CLERIC_PHYSICAL_MIRROR)  // SPPR613.SPL (Materiespiegel)
+    See(NearestEnemyOf(Myself))
+    Range(NearestEnemyOf(Myself),7)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
 THEN
-	RESPONSE #100
-		Spell(Myself,CLERIC_PHYSICAL_MIRROR)  // SPPR613.SPL (Materiespiegel)
-END
-
-IF
-	See(NearestEnemyOf(Myself))
-	!Range(NearestEnemyOf(Myself),7)
-THEN
-	RESPONSE #100
-		EquipRanged()
-		AttackReevaluate(NearestEnemyOf(Myself),45)
-END
-
-IF
-	See(NearestEnemyOf(Myself))
-	Range(NearestEnemyOf(Myself),7)
-THEN
-	RESPONSE #100
-		EquipMostDamagingMelee()
-		AttackReevaluate(NearestEnemyOf(Myself),45)
+    RESPONSE #100
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        EquipMostDamagingMelee()
+        AttackReevaluate(NearestEnemyOf(Myself),45)
 END
 

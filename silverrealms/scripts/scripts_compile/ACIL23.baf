@@ -109,6 +109,7 @@ THEN
 END
 */
 
+/*
 IF
 	PartyHasItem("AC#23ELL")
 	Global("AC#EllhimarJournal","GLOBAL",0)
@@ -118,3 +119,4 @@ THEN
 		EraseJournalEntry(@23011)
 		AddJournalEntry(@23010,QUEST)
 END
+*/

@@ -1181,8 +1181,9 @@ Die restlichen Runen sind zu stark verwittert, um noch etwas erkennen zu können
 @888 = ~Die Schwebescheibe der Drow hat Euch sicher nach oben getragen. Wenn Ihr möchtet, könnt Ihr auf dem selben Wege wieder nach unten reisen.~
 @889 = ~Ihr betretet die Scheibe und lasst Euch von ihr langsam nach unten tragen.~
 @890 = ~Schwebescheibe~
-@891 = ~Die Schwebescheibe wurde aus einer besonderen Art von Gestein, das an faerzressreichen Orten abgebaut wurde, hergestellt. Sie ist so von der Strahlung durchdrungen, dass sie einige Zauber, die als Teil eines geheimen, langen und anspruchsvollen Prozesses darauf gewirkt wurden, in ihrer Dauer verlängerte. Im Fall der Schwebescheibe war der Zauber "Tensers schwebende Scheibe". Die Dauer wurde dadurch auf einen Zeitraum zwischen zwei und zwölf Monaten verlängert. Wenn sie dem Sonnenlicht ausgesetzt wurde, verlor eine Schwebescheibe ihre Kraft wie jeder andere Gegenstand der Drow. Der Erstellungsprozess änderte sich auch auf das Wirken von belebten Objekten, Gedanken erkennen und Überlandflug. Schwebescheiben schwebten auf den mentalen Befehl des Zauberers, der den Zauber auf die Steinscheibe sprach. Später wurde die Driftdisc dahingehend verbessert, dass sie von jedem verbal kommandiert werden konnte, der das Kommandowort kannte, das von Driftdisc zu Driftdisc unterschiedlich war. Ohne Kommando schwebten die Scheiben etwa 0,9 m (3 Fuß) über einer horizontalen Oberfläche.
-Die Driftdisc trug häufig die Insignien des DRow-Hauses, welchem sie gehörte.~
+@891 = ~Diese flachen Steinscheiben werden von den Drow des Unterreichs gefertigt. Sie bestehen aus einem seltenen Gestein, das nur in faerzressreichen Regionen gewonnen werden kann. In einem langen und geheimen Herstellungsprozess werden Zauber dauerhaft in den Stein gebunden, wodurch die Scheibe über viele Monate hinweg in der Luft schwebt.
+
+Die Scheibe reagiert auf das Kommandowort ihres Besitzers und gleitet lautlos über dem Boden dahin. Viele dieser Konstruktionen tragen die Insignien des Hauses, das sie erschaffen ließ.~
 @892 = ~Ein Soldat Iltkazars reißt Euch unsanft aus dem Schlaf.~
 @893 = ~Grav~
 @894 = ~Felsbrocken~
@@ -1526,6 +1527,7 @@ Das Buch scheint eine Art magische Aura zu besitzen; es fühlt sich ungewöhnlic
 @1150 = ~Feenfeuer~
 @1151 = ~Permanent einen Punkt Intelligenz verloren, permanent ein Punkt Weisheit gewonnen~
 @1152 = ~Permanent -1 auf Rettungswürfe gegen Zauber~
+@1153 = ~Todesschrei~
 
 
 
@@ -1633,7 +1635,7 @@ Diirinka'~
 
 // ACIL20 - Underdark #2 (other entries at @872ff)
 @6200 = ~Auf diesem Schild sind ein Pfeil nach unten, ein Hammer und mehrere Blitze dargestellt. Die Leiter daneben scheint in tiefere Minenbereiche zu führen.~
-@6201 = ~Nummaks Stollen~
+@6201 = ~Nimmuks Stollen~
 
 // ACIL25 - Spiderstalkings #2 (other entries at @4 ff)
 @6251 = ~Dies ist das Symbol der ausgestoßenen Drow-Göttin Zinzerena, einer Feindin der Spinnenkönigin Lolth und ausgesprochenen Spinnenhasserin.~
@@ -1731,7 +1733,7 @@ Die Priester der Zwerge versuchen noch immer, ihren König mit aller verfügbare
 Ich habe auf eigene Faust Nachforschungen angestellt.  König Mith Barak selbst hatte vor seinem letzten Schlafe versucht, seinen mysteriösen Zustand zu beenden. Berichten der Zwerge zufolge brach er alleine zu einer Expedition in ein Gebiet, das die Zwerge "Spinnenschächte" nennen, auf. Bei seiner Rückkehr ließ er die Eingänge versiegeln. Die Zwerge denken, dass es zu ihrem Schutz sei. Doch ich denke, dass Mith Barak dort etwas hinterlegt hat. Man hat fast den Eindruck, als würde Mith Barak den Zwergen nicht ganz vertrauen. Warum nur?
 
 24. Mirtul 1368, im Jahr des Banners
-Ich bin in der Kapelle des Blutigen Mondes angekommen. Ein uralter Tempel zu Ehren eines Menschen- und eines Zwergengottes. Ich bin unglaublich müde, der Zauber zehrt fürchterlich an meinen Kräften. Die Statuen stellen Fragen zur Geschichte der alten Zwergenreiche. Ich habe vier richtig beantwortet. Nun werde ich gleich die letzte Frage beantworten. Ich muss mich nur noch ausruhen...
+Ich bin in der Kapelle des Blutigen Mondes angekommen. Ein uralter Tempel zu Ehren eines Menschen- und eines Zwergengottes. Die Statuen stellen Fragen, welche man wohl korrekt beantworten muss. Ich habe vier richtig beantwortet. Nun werde ich gleich die letzte Frage beantworten. Ich muss mich nur noch schnell ausruhen...
 ~
 @8018 = ~Tethirs Mondklinge~
 @8019 = ~Mondklingen werden seit der Zeit des alten Myth Drannor von außergewöhnlichen Helden des elfischen Volkes getragen. Die Schwerter werden meist von einer Generation auf die nächste vererbt. In seltenen Fällen kann die Klinge von einem anderen Elfen geführt werden, wenn der ursprüngliche Besitzer gestorben ist und das Schwert den neuen Träger anerkennt. Dies ist jedoch nur bei gut gesinnten Elfen der Fall. Alle anderen Gesinnungen und Rassen scheitern bei dem Versuch, die Klinge anzuheben.

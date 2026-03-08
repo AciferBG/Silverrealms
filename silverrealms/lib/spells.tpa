@@ -2,6 +2,9 @@
 
 COPY ~silverrealms/spl/copy~         ~override~
 
+COPY ~silverrealms/spl/AC#2DDB.spl~          ~override~ // dwarven banshee wail
+SAY NAME1 @1153 SAY NAME2 @1153
+
 COPY ~silverrealms/spl/AC#ILWI.spl~            ~override~  // elder brain lobe spell effect
   SAY 0x9e @1151
   SAY 0xce @1152

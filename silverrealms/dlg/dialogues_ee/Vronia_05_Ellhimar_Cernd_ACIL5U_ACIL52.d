@@ -487,3 +487,17 @@ CHAIN IF ~True()~ THEN AC#CERN1 hello
 END
 IF ~~ THEN EXIT	
 
+// Guards in ACIL5U
+
+BEGIN AC#5UCE1
+
+	CHAIN IF ~GlobalGT("Cernd_Free","ACIL5U",1)~ THEN AC#5UCE1 hello_crend_free
+	~Ein Glück, dass die Bewachung von Khaernd Schüttergeist jetzt nicht mehr unsere Aufgabe ist.~
+	END
+	IF ~~ THEN EXIT
+	
+	CHAIN IF ~GlobalLT("Cernd_Free","ACIL5U",2)~ THEN AC#5UCE1 hello_crend_free
+	~Ihr habt die Erlaubnis von Bettargh Abgrundlied? Dann nehmt diesen verrückten Zwerg auch mit.~
+	END
+	IF ~~ THEN EXIT
+	

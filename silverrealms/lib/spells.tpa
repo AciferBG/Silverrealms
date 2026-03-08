@@ -2,6 +2,9 @@
 
 COPY ~silverrealms/spl/copy~         ~override~
 
+COPY ~silverrealms/spl/AC#IL23.spl~          ~override~ // illusionary dragon breath
+SAY NAME1 @1154 SAY NAME2 @1154
+
 COPY ~silverrealms/spl/AC#2DDB.spl~          ~override~ // dwarven banshee wail
 SAY NAME1 @1153 SAY NAME2 @1153
 

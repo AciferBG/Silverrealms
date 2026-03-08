@@ -1,0 +1,38 @@
+IF
+    Die()
+THEN
+    RESPONSE #100
+        DisplayString(Myself,57749)  // Illusion gebannt
+        ReallyForceSpellDead(Myself,ILLUSION_DEATH)  // SPIN835.SPL (No such index)
+        Wait(1)
+        DestroySelf()
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    Global("StartBreathTimer","LOCALS",0)
+THEN
+    RESPONSE #100
+        SetGlobal("StartBreathTimer","LOCALS",1)
+        SetGlobalTimer("REDDRAGONBREATH","ACIL23",ONE_ROUND)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    GlobalTimerExpired("REDDRAGONBREATH","ACIL23")
+    Global("StartBreathTimer","LOCALS",1)
+THEN
+    RESPONSE #100
+        ForceSpell(LastSeenBy(Myself),RED_DRAGON_BREATH)  // SPIN894.SPL (Roter Drache: Odemwaffe)
+        ReallyForceSpellRES("AC#IL23",LastSeenBy(Myself))  // No such index
+        SetGlobalTimer("REDDRAGONBREATH","ACIL23",THREE_ROUNDS)
+END
+
+IF
+    ActionListEmpty()
+    See(NearestEnemyOf(Myself))
+THEN
+    RESPONSE #100
+        AttackReevaluate(NearestEnemyOf(Myself),12)
+END
+

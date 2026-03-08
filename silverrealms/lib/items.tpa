@@ -488,7 +488,7 @@ COPY ~silverrealms/itm/AC#AMUDU.itm~         ~override/AC#AMUDU.itm~  // Dumatho
   
 COPY ~silverrealms/itm/AC#HIZA1.itm~         ~override/AC#HIZA1.itm~  // Hizagkuur
   SAY NAME1 @694
-  SAY NAME2 @696
+  SAY NAME2 @8122
   SAY UNIDENTIFIED_DESC @695
   SAY DESC @697
   

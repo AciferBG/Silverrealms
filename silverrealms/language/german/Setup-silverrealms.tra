@@ -870,15 +870,15 @@ Besondere Fähigkeiten: Der Träger ist gegen Einkerkerung immun und kann einmal
 @690 = ~Wasserschreck~
 @691 = ~Metagolem~
 @692 = ~Schnaiklu Kobaltwächter~
-@693 = ~Als Ihr den Klumpen Metall berührt, durchdringt Euch plötzlicher ein durchdringender Strom elektrischer Energie.~
+@693 = ~Als Ihr den Klumpen Metall berührt, durchdringt Euch plötzlich ein durchdringender Strom elektrischer Energie.~
 @694 = ~Metallklumpen~
 @695 = ~Dieses Klumpen ist ein helles, grünlich-graues, gesprenkeltes Erz, das die Konsistenz von Ton besitzt.~
-@696 = ~Hizagkuur~
-@697 = ~Hizagkuur ist ein äußerst seltenes Metall, das aus schlammartigen Klumpen gewonnen wird, die tief im Unterreich gefunden werden. Die Methode, das Metall aus seiner natürlich vorkommenden tonartigen Form zu raffinieren, ist ein sorgfältiger Prozess, der nur einigen wenigen Zwergenhandwerkern bekannt ist.
-In seinem natürlichen Zustand erscheint Hizagkuur als helles, grünlich-graues, gesprenkeltes Erz, das die Konsistenz von Ton besitzt. Sobald es angemessen verarbeitet wird, erscheint es als blasssilbernes Metall, das das gleiche Gewicht wie Stahl hat. 
-Fertig verarbeitet besitzt dieses Metall die erstaunliche Wirkung, Elektrizität sowie jegliche magische Energie, die auf seine Oberfläche gerichtet wird, zurück zu reflektieren sowie selbst beträchtliche Mengen an Elektrizität abzugeben.
-Der Prozess zur Verfeinerung von rohem Hizagkuur ist ein komplizierter und unversöhnlicher Prozess. Wenn bei der Herstellung und beim Formen ein einziger Fehler gemacht wird, bleibt nichts als inerter Schlamm übrig. Sobald das Metall in seiner geschmolzenen Form hergestellt worden ist, muss es innerhalb veines Tages gegossen oder geschmiedet werden. Das vollständige Verfahren zur Verfeinerung und Formung von Hizagkuur bleibt ein Geheimnis, das nur von einer kleinen Anzahl von Schmiedemeistern und Zwergenältesten aufbewahrt wurde.
-Aufgrund seiner einzigartigen Eigenschaften kann Hizagkuur nicht zur Herstellung magischer Gegenstände verwendet werden. Es ist jedoch perfekt für die Herstellung wichtiger Sicherheitsvorkehrungen wie Tresortüren, Truhenverschlüssen und Schlössern oder für alles andere, was Gegenstände von großer Bedeutung bewahrt.~
+@696 = ~Hizagkuur (bearbeitet)~
+@697 = ~Hizagkuur ist ein äußerst seltenes Metall aus den Tiefen des Unterreichs. Es wird aus tonartigen Erzklumpen gewonnen und kann nur durch einen komplizierten Prozess verfeinert werden, dessen Geheimnis von wenigen zwergischen Schmiedemeistern bewahrt wird. Im rohen Zustand wirkt das Erz grünlich-grau und schlammartig, doch nach der Verarbeitung entsteht ein blasssilbernes Metall von der Härte und dem Gewicht von Stahl.
+
+Hizagkuur besitzt eine ungewöhnliche Eigenschaft: Es reflektiert elektrische und magische Energien, die auf seine Oberfläche treffen, und kann selbst starke elektrische Entladungen erzeugen.
+
+Da diese Eigenschaften die Verzauberung unmöglich machen, wird Hizagkuur selten für Waffen oder Rüstungen verwendet. Stattdessen dient es häufig zur Herstellung besonders sicherer Schlösser, Truhen oder Tresortüren, in denen wertvolle Gegenstände verwahrt werden.~
 @698 = ~Kopf einer Drow-Priesterin~
 @699 = ~Ein wenig schlechtes Gewissen habt Ihr schon, als Ihr in das schöne Antlitz dieser toten Drow-Priesterin blickt, deren letzter Gesichtszug in einem stummen, ungläubigen Schrei verharrt zu sein scheint.~
 @700 = ~Kramrum~
@@ -1637,6 +1637,7 @@ Diirinka'~
 // ACIL20 - Underdark #2 (other entries at @872ff)
 @6200 = ~Auf diesem Schild sind ein Pfeil nach unten, ein Hammer und mehrere Blitze dargestellt. Die Leiter daneben scheint in tiefere Minenbereiche zu führen.~
 @6201 = ~Nimmuks Stollen~
+@6202 = ~Hizagkuur-Mine~
 
 // ACIL25 - Spiderstalkings #2 (other entries at @4 ff)
 @6251 = ~Dies ist das Symbol der ausgestoßenen Drow-Göttin Zinzerena, einer Feindin der Spinnenkönigin Lolth und ausgesprochenen Spinnenhasserin.~
@@ -2183,6 +2184,7 @@ Gewicht: 0~
 EIGENSCHAFTEN:
 
 Gewicht: 0~
+@8122 = ~Hizagkuur (roh)~
 
 
  

@@ -44,6 +44,8 @@ THEN
 	    AddJournalEntry(@53301,QUEST)
 END
 
+//now in dlg file
+/*
 IF
 	Global("AC#MetagolemIngredients","ACIL53",3)
 THEN
@@ -53,6 +55,7 @@ THEN
                  StartCutSceneMode()
 	         StartCutScene("AC#53CT1")
 END
+*/
 
 IF
 	Global("AC#MetagolemIngredients","ACIL53",6)
@@ -72,12 +75,23 @@ THEN
 END
 
 IF
+    Global("Metagolem_Rep_Increase","ACIL53",0)
+    GlobalGT("AC#MetagolemIngredients","ACIL53",7)
+THEN
+    RESPONSE #100
+        SetGlobal("Metagolem_Rep_Increase","ACIL53",1)
+        IncrementGlobal("AC_Iltkazar_Reputation","GLOBAL",1)
+        DisplayString(Myself,@1021)  // ^0xFF22B4E6Euer Ansehen in Iltkazar ist gestiegen.^-
+END
+/*
+IF
 	Global("AC#MetagolemName","ACIL53",1)
 THEN
 	RESPONSE #100
 	         ActionOverride("AC#GOLM2",SetName(@706))
                  SetGlobal("AC#MetagolemName","ACIL53",2)
 END
+*/
 
 IF
     Global("ElernSpawn","ACIL53",1)

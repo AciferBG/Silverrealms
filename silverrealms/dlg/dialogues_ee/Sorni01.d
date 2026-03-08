@@ -212,7 +212,7 @@ END
 		IF ~~THEN BEGIN change_hizagkuur
 		SAY ~Nicht schlecht für einen <PRO_RACE> von der Oberfläche! Da könnten sich meine Erzschürfer hier mal ein Beispiel nehmen.~
 		=
-		~HABT IHR DAS GEHÖRT, MÄNNER? DIESER <PRO_RACE> HIER SCHÜRFT BESSER HIZAGKUUR ALS EINER VON EUCH!~
+		~HABT IHR DAS GEHÖRT, MÄNNER? Dieser <PRO_RACE> hier schürft besser Hizagkuur als einer von Euch!~
 		++ ~Ach, nicht der Rede wert.~ + not_worth_mention
 		++ ~Ihr wolltet mir das Hizagkuur noch verändern, um es für die Verwendung im Golem brauchbar zu machen.~ + wheres_my_hizagkuur
 		END

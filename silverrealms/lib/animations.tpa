@@ -401,6 +401,10 @@
   COPY ~%MOD_FOLDER%/animations/Earthwhisper/exxx.ini~ ~override/%hexNumber%.ini~
 
 //_____________________________________________________________________________________________________
+// IWD's Animated plate bronze animation - just copy
+  COPY ~silverrealms/animations/Animated_plate_bronze_IWD~         ~override~
+
+//_____________________________________________________________________________________________________
 // Neothelid animation - just copy
   COPY ~silverrealms/animations/Neothelid~         ~override~
 

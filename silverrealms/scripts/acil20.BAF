@@ -467,6 +467,15 @@ THEN
 END
 
 IF
+	GlobalGT("AC#HizagkuurQuest","GLOBAL",1)
+    Global("RevealHizagkuurArea","ACIL20",0)
+THEN
+    RESPONSE #100
+        SetGlobal("RevealHizagkuurArea","ACIL20",1)
+        AddMapNote([1506.1000],@6202)  // Hizaagkur mine
+END
+
+IF
     InMyArea(Player1)
     PartyHasItem("AC#25TEL")  // Drow-Teleportationsstein
 THEN

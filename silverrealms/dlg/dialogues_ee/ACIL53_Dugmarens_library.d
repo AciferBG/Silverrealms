@@ -431,10 +431,12 @@ Dialog Metagolem
 *******************************************************************************************************/
 BEGIN ~AC#GOLME~
 
+/*
 IF ~~ THEN BEGIN golem_name
-SAY ~Ihr habt mir auch noch keinen Namen gegeben, Meister.~
+SAY ~Mein Rat dient nur Eurer Sicherheit.~
 IF ~~ THEN EXTERN ~AC#53SV1~ golem_name_02
 END	
+*/
 /*******************************************************************************************************
 Dialog Metagolem 2
 *******************************************************************************************************/
@@ -520,10 +522,12 @@ END
 				IF ~~ THEN BEGIN given_all
 				SAY ~Was? Oh, ja, tatsächlich! Dann können wir ja jetzt den Metagolem zum Leben erwecken!~
 				=
-				~Tretet bitte einen Schritt zurück! Dies wird ein mächtigiger Moment in meinem Gnomenleben!~
-				IF ~~ THEN DO ~SetGlobal("AC#MetagolemIngredients","ACIL53",3)
-				EraseJournalEntry(@53200)
+				~Tretet bitte einen Schritt zurück! Dies wird ein mächtiger Moment in meinem Gnomenleben!~
+				IF ~~ THEN DO ~SetGlobal("AC#MetagolemIngredients","ACIL53",4)
 				AddJournalEntry(@53201,QUEST_DONE)
+				ClearAllActions()
+				StartCutSceneMode()
+				StartCutScene("AC#53CT1")
 				~ EXIT
 				END
 		
@@ -546,6 +550,10 @@ END
 	IF ~~ THEN BEGIN about_metagolem_02
 	SAY ~Ja? Habt Ihr die Dinge schon gefunden?~
 	IF ~~ THEN REPLY ~Was benötigt Ihr nochmal dafür?~ + what_do_you_need_again
+	IF ~PartyHasItem("AC#ILWES") Global("AC#WaterEleQuest","GLOBAL",1)~ THEN REPLY ~Hier ist die Essenz eines Höheren Wasserelementares.~ + have_water_essence
+	IF ~PartyHasItem("AC#HIZA1")~ THEN REPLY ~Ich habe hier etwas Hizagkuur-Erz.~ + raw_hizagkuur
+	IF ~PartyHasItem("AC#HIZA2")~ THEN REPLY ~Ich habe hier etwas Hizagkuur-Erz.~ + final_hizagkuur
+	IF ~HasItem("AC#HIZA2",Myself)  HasItem("AC#ILWES",Myself)~ THEN REPLY ~Ihr besitzt doch schon alles, um das Ihr mich gebeten hattet.~ + given_all
 	IF ~~ THEN REPLY ~Nein.~ + sit_and_wait
 	END
 	
@@ -561,7 +569,6 @@ END
 	
 	IF ~~ THEN BEGIN will_you_do_it
 	SAY ~Wollt Ihr mir etwa helfen, die Zutaten zu beschaffen?~
-	//IF ~Global("AC#RC_Bettargh_Third","GLOBAL",2)~ THEN REPLY ~Da Bettargh ohne den Metagolem nicht weiterkommt, werde ich mich wohl auf die Suche machen müssen.~ + i_will_do_it
 	IF ~~ THEN REPLY ~Ja.~ + i_will_do_it
 	IF ~~ THEN REPLY ~Nein.~ + have_to_think_about_it
 	END
@@ -581,16 +588,7 @@ END
 	IF ~~ THEN REPLY ~Was ist ein Metagolem?~ DO ~SetGlobal("AC#talkedSchnaiklu","ACIL53",1)
 	SetGlobal("AC#metagolem","ACIL53",1)~ GOTO what_is_metagolem
 	END
-	
-	// old - Bettargh metagolem
-	/*
-	IF ~~ THEN BEGIN bettargh_asked_for_metagolem
-	SAY ~Oh, das ist aber nett von dem Zwerg, dass er endlich Hilfe schickt! Ich komme hier sonst auch nicht mit dem Metagolem weiter, den Bettargh gerne haben möchte.~
-	IF ~~ THEN REPLY ~Was ist ein Metagolem?~ DO ~SetGlobal("AC#talkedSchnaiklu","ACIL53",1)
-	SetGlobal("AC#metagolem","ACIL53",1)~ GOTO what_is_metagolem
-	END
-	*/
-	
+		
 		IF ~~ THEN BEGIN what_is_metagolem
 		SAY ~Ein Metagolem ist ein ganz besonderer Golem. Habt Ihr schon einmal gewöhnliche Golems wie Fleisch-, Lehm- oder Steingolems kennengelernt?~
 		IF ~~ THEN REPLY ~Ich denke schon, ja. Ein mächtiger Magier, der mich gefangennahm, hatte sie als Wächter.~ + what_is_metagolem_02
@@ -728,48 +726,16 @@ END
 	SAY ~Oh! Ich rede gerne über meine Erfindungen. Was wollt Ihr denn wissen?~
 	IF ~Global("AC#talkedSchnaiklu","ACIL53",0)~ THEN REPLY ~Wer seid Ihr?~ + who_are_you
 	IF ~Global("AC#metagolem","ACIL53",0)~ THEN REPLY ~Was ist das für ein seltsam glänzendes Wesen neben Euch?~ + strange_thing
-	//IF ~Global("AC#RC_Bettargh_Third","GLOBAL",2)~ THEN REPLY ~Bettargh meinte, Ihr bräuchtet Hilfe wegen eines speziellen Golems.~ + bettargh_asked_for_metagolem
 	IF ~~ THEN REPLY ~Mehr möchte ich gar nicht wissen. Gutes Gelingen.~ GOTO goodbye_01
 	END
-	
-		// Old - bettargh metagolem
-		/*
-		IF ~~ THEN BEGIN first_task_metagolem
-		SAY ~Ja, aber das wäre fast zu einfach...~
-		IF ~~ THEN REPLY ~Ihr könntet ihn damit beauftragen, die Runenplatte zu suchen, die ich für Bettargh besorgen soll.~ GOTO task_metagolem_seek_runestone
-		END
-		*/
+
 		
 		IF ~~ THEN BEGIN first_task_metagolem
-		SAY ~Ja, aber das wäre fast zu einfach... Über Eure erste Aufgabe muss ich einmal in Ruhe nachdenken...~
-		IF ~~ THEN EXTERN ~AC#GOLME~ golem_name
+		SAY ~Seufz... was soll ich dann nur mit Euch anfangen?~
+		// IF ~~ THEN EXTERN ~AC#GOLME~ golem_name // OLD: Give Player name
+		IF ~~ THEN EXTERN ~AC#GOLME~ bye_new
 		END
-
-// old - bettargh metagolem
-/*	
-			IF ~~ THEN BEGIN task_metagolem_seek_runestone
-			SAY ~...das ist eine gute Idee! Hört zu, Golem, ich möchte, dass Ihr mir alle Runentafeln zu dem Thema...~
-			=
-			~...was war es doch gleich, <CHARNAME>?~
-			IF ~~ THEN REPLY ~Ein Weg nach Barakuir.~ GOTO chain_metagolem_barakuir
-			END
-			
-				IF ~~ THEN BEGIN task_metagolem_finished
-				SAY ~So, <CHARNAME>, jetzt heißt es warten...~
-				IF ~~ THEN DO ~SetGlobal("AC#MetagolemIngredients","ACIL53",6)
-				ActionOverride("AC#GOLME",ReallyForceSpell(Myself,GOLEM_HASTE))
-				ActionOverride("AC#GOLME",EscapeArea())
-				~ EXIT
-				END
-				
-				IF ~~ THEN BEGIN metagolem_take_runestone
-				SAY ~Habt Dank, Geschöpf! <CHARNAME>, hier ist die Tafel, die Ihr suchtet. Ich hoffe, Bettargh kann damit etwas anfangen.~
-				=
-				~Habt nochmals Dank für Eure Hilfe bei der Erschaffung dieses wundervollen Golems. Habt Ihr etwas dagegen, wenn ich ihn <CHARNAME> nenne?~
-				IF ~~ THEN REPLY ~Es wäre mir eine Ehre.~ + golem_change_name
-				IF ~~ THEN REPLY ~Das fände ich ziemlich unpassend.~ + golem_change_name_not
-				END
-*/
+/*
 				IF ~~ THEN BEGIN golem_name_02
 				SAY ~In der Tat! Ihr braucht einen guten Namen. Habt Ihr etwas dagegen, wenn ich ihn <CHARNAME> nenne?~
 				IF ~~ THEN REPLY ~Es wäre mir eine Ehre.~ + golem_change_name
@@ -794,35 +760,38 @@ END
 				GiveItemCreate("AC#RCKEL",LastTalkedToBy,1,1,1)
 				DisplayStringNoName(Player1,@1021)~ EXIT
 				END
-	
+*/	
+
 // Chain #1: Golem erwacht zum Leben
 CHAIN IF WEIGHT #-1 ~Global("AC#MetagolemIngredients","ACIL53",5)~ THEN AC#GOLME awakening
 ~Ich bin erwacht! Welche erste Aufgabe gebt Ihr mir, Meister?~
 == AC#53SV1 ~Es funktioniert! Bevor ich Euch mit einer ersten Aufgabe betraue, lasst mich Euch zunächst testen.~
-== AC#GOLME ~Ich beantworte all Eure Fragen, Meister!~
-== AC#53SV1 ~Hmm... bei der ganzen Aufregung fällt mir jetzt spontan gar keine Frage ein...~
-== AC#GOLME ~Ihr könntet mir beispielsweise eine Rechenaufgabe stellen, für die Ihr normalerweise einen Rechenschieber benötigen würdet.~
+== AC#GOLME ~Ein Test erhöht die Wahrscheinlichkeit von Fehlfunktionen, Meister. Ich rate davon ab.~
+== AC#53SV1 ~Ähm... vielleicht sollte ich Euch dann einfach eine Aufgabe geben.~
+== AC#GOLME ~Aufgaben bergen zu große Risiken von Fehlinterpretationen.~
+== AC#53SV1 ~Nun gut... vielleicht testen wir einfach Eure Stärke.~ 
+== AC#GOLME ~Kraftdemonstrationen enden oft mit strukturellen Schäden.~
+== AC#53SV1 ~Dann könnte ich Euch zumindest durch die Werkstatt marschieren lassen.~ 
+== AC#GOLME ~Bewegung erhöht die Wahrscheinlichkeit von Zusammenstößen.~
+== AC#53SV1 ~Aber wozu habe ich Euch dann gebaut?~
+== AC#GOLME ~Um nichts zu tun, Meister. Die sicherste Vorgehensweise ist Untätigkeit.~
+== AC#53SV1 ~Vielleicht ist es am besten, wenn Ihr einfach hier stehen bleibt.~ 
+== AC#GOLME ~Korrekt. Stillstand ist die sicherste Option.~
 END
 IF ~~ THEN EXTERN ~AC#53SV1~ first_task_metagolem
 
-// old - metagolem runestone
-// Chain #2: Golem bekommt Auftrag
-/*
-CHAIN IF ~~ THEN AC#53SV1 chain_metagolem_barakuir
-~Ja, richtig! Golem, sucht für mich all die Runentafeln heraus, die über einen Weg nach Barakuir berichten!~
-== AC#GOLME ~Euer Wille ist mir Befehl, Meister! Soll ich nur die Runentafeln oder auch die Inschriften im inneren Rundkreis der Bibliothek nach Einträgen absuchen?~
-== AC#53SV1 ~Sucht nach allem, was Ihr finden könnt, und kehrt danach zu mir zurück!~
-== AC#GOLME ~Wie Ihr wünscht, Meister.~
+// Chain #2: Golem bye
+CHAIN AC#GOLME bye_new
+~Nichts, Meister.~
+== AC#53SV1 ~Ihr seid der nutzloseste Golem, den ich je gesehen habe.~ 
+== AC#GOLME ~Diese Einschätzung reduziert Eure Erwartungen und erhöht meine Zufriedenheit.~
+== AC#53SV1 ~Also gut... bleibt einfach hier stehen und tut nichts.~ 
+== AC#GOLME ~Auftrag verstanden. 1 von 1 Aufgaben erfolgreich abgeschlossen!~
+== AC#53SV1 ~*Seufz.* Was soll ich nur mit so einem untätigen Golem anfangen?~
+== AC#53SV1 ~Jedenfalls ein Dank Euch, <CHARNAME>. Ihr habt mir bei meiner Mühe sehr geholfen, und dafür bin ich Euch dankbar! Wenngleich das Ergebnis nicht ganz meinen Erwartungen entspricht. Hier habt Ihr einen besonderen Brocken Fels, der mir bei den Streifzügen meiner Jugend sehr viel geholfen hat.~
 END
-IF ~~ THEN EXTERN ~AC#53SV1~ task_metagolem_finished
-
-CHAIN IF WEIGHT #-1 ~NumTimesTalkedTo(0)~ THEN AC#GOLM2 found_book
-~Ich habe die Runentafeln zu Barakuir gefunden, Meister.~
-== AC#53SV1 ~So schnell? Dieser Golem ist ja wirklich ein Glücksgriff.~
-== AC#GOLM2 ~Die Aufzeichnung, die Ihr suchtet, befand sich im fünfundzwanzigsten Stockwerk der Bibliothek. Hier ist die Tafel.~
-END
-IF ~~ THEN EXTERN ~AC#53SV1~ metagolem_take_runestone
-*/
+IF ~~ DO ~SetGlobal("AC#MetagolemIngredients","ACIL53",8)
+GiveItemCreate("AC#RCKEL",LastTalkedToBy,1,1,1)~ EXIT
 
 // Various priests of Dugmaren
 BEGIN ~AC#IL53S~ 

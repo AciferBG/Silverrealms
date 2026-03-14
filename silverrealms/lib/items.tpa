@@ -3,6 +3,10 @@
 
 COPY ~silverrealms/itm/copy~         ~override~
 
+COPY ~%MOD_FOLDER%/itm/AC#ILHE3.itm~         ~override~    // helmet: deafness
+  SAY NAME2 @8124
+  SAY DESC @8125
+
 COPY ~%MOD_FOLDER%/itm/AC#ILDWB.itm~         ~override~    // dwarven beard
   SAY NAME2 @8120
   SAY DESC @8121

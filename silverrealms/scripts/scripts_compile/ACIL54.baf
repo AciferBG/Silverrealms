@@ -50,6 +50,16 @@ THEN
 END
 
 IF
+	Global("Hero_Rep_Increase","ACIL54",0)
+	GlobalGT("AC#Story_Firkraag","ACIL54",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Hero_Rep_Increase","ACIL54",1)
+		IncrementGlobal("AC_Iltkazar_Reputation","GLOBAL",1)
+	    DisplayString(Myself,@1021)
+END
+
+IF
 	Global("Boar_Rep_Increase","ACIL54",0)
 	GlobalGT("AC#Boar","ACIL54",4)
 THEN

@@ -1,4 +1,50 @@
+/*******************************************************************************************************
+Dialog dwarven warriors (aid or dismiss)
+*******************************************************************************************************/
 
+BEGIN ~AC#27DW8~
+
+CHAIN IF ~True()~ THEN AC#27DW8 hello01
+~Wir folgen Euch, wenn Ihr das wünscht, und helfen Euch im Kampf.~
+END
+IF ~~ THEN REPLY ~Ich benötige Eure Hilfe nicht mehr. Kehrt zurück nach Iltkazar.~ EXTERN AC#27DW8 help_dismiss
+IF ~~ THEN REPLY ~Gehen wir weiter.~ EXTERN AC#27DW8 bye
+
+	CHAIN AC#27DW8 help_dismiss
+	~Gut, wenn das Euer Wunsch ist, werden wir nach Iltkazar zurückkehren.~
+	DO ~SetGlobal("DismissDwarves","ACIL27",1)~ EXIT
+	
+CHAIN AC#27DW8 bye
+~Für Iltkazar!~
+EXIT
+
+// Dwarven Cleric
+BEGIN ~AC#27DW9~
+
+CHAIN IF ~NumTimesTalkedTo(0)~ THEN AC#27DW9 hello_help
+~Da seid Ihr ja. Wir sind bereit, Euch im Kampf durch die Tunnel beizustehen. Wenn Ihr es wünscht.~
+END
+IF ~~ THEN REPLY ~Ich benötige Eure Hilfe nicht. Kehrt zurück nach Iltkazar.~ EXTERN AC#27DW9 help_dismiss
+IF ~~ THEN REPLY ~Eure Hilfe ist willkommen. Folgt mir.~ EXTERN AC#27DW9 help_yes
+
+	CHAIN AC#27DW9 help_dismiss
+	~Gut, wenn das Euer Wunsch ist, werden wir nach Iltkazar zurückkehren.~
+	DO ~SetGlobal("DismissDwarves","ACIL27",1)~ EXIT
+	
+	CHAIN AC#27DW9 help_yes
+	~Sehr gut! Geht voran.~
+	DO ~SetGlobal("AidDwarves","ACIL27",1)~ EXIT
+
+CHAIN IF ~True()~ THEN AC#27DW9 hello01
+~Wir folgen Euch, wenn Ihr das wünscht, und helfen Euch im Kampf.~
+END
+IF ~~ THEN REPLY ~Ich benötige Eure Hilfe nicht mehr. Kehrt zurück nach Iltkazar.~ EXTERN AC#27DW9 help_dismiss
+IF ~~ THEN REPLY ~Gehen wir weiter.~ EXTERN AC#27DW9 bye
+
+
+CHAIN AC#27DW9 bye
+~Für Iltkazar!~
+EXIT
 
 // ---------------------------------------------
 // Bresk Steinschulter

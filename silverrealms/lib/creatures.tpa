@@ -1156,16 +1156,14 @@ COPY ~silverrealms/cre/AC#RAVO1.cre~ ~override/AC#RAVO1.cre~
   
 COPY ~silverrealms/cre/AC#VARK1.cre~ ~override/AC#VARK1.cre~
   SAY NAME1 @204 SAY NAME2 @204
-      
     COPY_EXISTING ~AC#VARK1.cre~ ~override~
-    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~LIZARD_MAN~))
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#LIZARDMAN_GREY~))
     
   
 COPY ~silverrealms/cre/AC#VARK2.cre~ ~override/AC#VARK2.cre~
   SAY NAME1 @205 SAY NAME2 @205
-     
     COPY_EXISTING ~AC#VARK2.cre~ ~override~
-    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~LIZARD_MAN~))
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#LIZARDMAN_GREY~))
     
 
 COPY ~silverrealms/cre/AC#MYZO1.cre~ ~override/AC#MYZO1.cre~
@@ -2802,7 +2800,13 @@ COPY ~silverrealms/cre/AC#50DWF.cre~ ~override~ // Domor the fisherman
   SAY SELECT_COMMON1 @5187
   SAY SELECT_COMMON2 @5186
   SAY SELECT_COMMON3 @5185
+
+COPY ~silverrealms/cre/AC#27DW8.cre~ ~override~ // dwarven warrior in Area ACIL27
+  SAY NAME1 @9000 SAY NAME2 @9000
   
+COPY ~silverrealms/cre/AC#27DW9.cre~ ~override~ // dwarven priest in Area ACIL27
+  SAY NAME1 @9001 SAY NAME2 @9001
+
 COPY ~silverrealms/cre/AC#20DW8.cre~ ~override~ // dwarven warrior in Area ACIL20, guarding the sealed entrance to Barakuir lake
   SAY NAME1 @9000 SAY NAME2 @9000
   

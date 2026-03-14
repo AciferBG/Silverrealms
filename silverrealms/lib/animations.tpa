@@ -399,6 +399,17 @@
   APPEND ~animate.ids~ ~0x%hexNumber% AC#EARTWHISPER~ UNLESS ~AC#EARTWHISPER~
   CLEAR_IDS_MAP
   COPY ~%MOD_FOLDER%/animations/Earthwhisper/exxx.ini~ ~override/%hexNumber%.ini~
+  
+// Lizardman_grey
+  COPY ~%MOD_FOLDER%/animations/Lizardfolk_grey/AC#LIZGR.bmp~ ~override~
+  LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0xE000 slotMax = 0xefff RET slot END
+  ACTION_IF (slot <= 0) BEGIN
+    FAIL ~No free creature animation slot found.~
+  END
+  LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
+  APPEND ~animate.ids~ ~0x%hexNumber% AC#LIZARDMAN_GREY~ UNLESS ~AC#LIZARDMAN_GREY~
+  CLEAR_IDS_MAP
+  COPY ~%MOD_FOLDER%/animations/Lizardfolk_grey/exxx.ini~ ~override/%hexNumber%.ini~
 
 //_____________________________________________________________________________________________________
 // IWD's Animated plate bronze animation - just copy

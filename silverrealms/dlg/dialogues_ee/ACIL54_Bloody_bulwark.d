@@ -103,8 +103,79 @@ SAY ~Ha, <GIRLBOY>, Ihr tragt aber ganz schön dick auf! Ihr wollt einen *DURGAR
 IF ~~ THEN REPLY ~In der Tat, das habe ich. Es war ein harter Kampf, doch letztendlich standen wir siegreich über der schuppigen Bestie.~ EXTERN ~AC#BADW2~ PC_tale_firkraag_02
 END
 
-IF ~~ THEN BEGIN PC_tale_firkraag_03
+IF ~~ THEN BEGIN PC_tale_ShaDra01
+SAY ~Ha, <GIRLBOY>, Ihr tragt aber ganz schön dick auf! Ihr wollt einen *DURGARN* erlegt haben, noch dazu einen aus reinstem Schatten?~
+IF ~~ THEN REPLY ~In der Tat, das habe ich. Es war ein harter Kampf, doch letztendlich standen wir siegreich über der Bestie.~ EXTERN ~AC#BADW2~ PC_tale_ShaDra_02
+END
+
+IF ~~ THEN BEGIN PC_tale_TorGal
+SAY ~Ha, <GIRLBOY>, Ihr tragt aber ganz schön dick auf! Eine ganze Trollfestung gestürmt?~
+IF ~~ THEN REPLY ~In der Tat, das habe ich. Es war ein harter Kampf, doch letztendlich standen wir siegreich über der Bestie.~ EXTERN ~AC#BADW2~ PC_tale_TorGal_02
+END
+
+IF ~~ THEN BEGIN PC_tale_UnseeingEye
+SAY ~Ha, <GIRLBOY>, Ihr tragt aber ganz schön dick auf! Eine ganze Trollfestung gestürmt?~
+IF ~~ THEN REPLY ~In der Tat, das habe ich. Es war ein harter Kampf, doch letztendlich standen wir siegreich über der Bestie.~ EXTERN ~AC#BADW2~ PC_tale_UnseeingEye_02
+END
+
+IF ~~ THEN BEGIN PC_tale_Ardulace
+SAY ~Ha, <GIRLBOY>, Ihr tragt aber ganz schön dick auf! Eine ganze Trollfestung gestürmt?~
+IF ~~ THEN REPLY ~In der Tat, das habe ich. Es war ein harter Kampf, doch letztendlich standen wir siegreich über der Bestie.~ EXTERN ~AC#BADW2~ PC_tale_Ardulace_02
+END
+
+IF ~~ THEN BEGIN PC_tale_vampire
+SAY ~Ha, <GIRLBOY>, Ihr tragt aber ganz schön dick auf! Eine ganze Trollfestung gestürmt?~
+IF ~~ THEN REPLY ~In der Tat, das habe ich. Es war ein harter Kampf, doch letztendlich standen wir siegreich über der Bestie.~ EXTERN ~AC#BADW2~ PC_tale_vampire_02
+END
+
+IF ~~ THEN BEGIN PC_tale_Kangaxx
+SAY ~Ha, <GIRLBOY>, Ihr tragt aber ganz schön dick auf! Eine ganze Trollfestung gestürmt?~
+IF ~~ THEN REPLY ~In der Tat, das habe ich. Es war ein harter Kampf, doch letztendlich standen wir siegreich über der Bestie.~ EXTERN ~AC#BADW2~ PC_tale_Kangaxx_02
+END
+
+IF ~~ THEN BEGIN PC_tale_Durlag
+SAY ~Ha, <GIRLBOY>, Ihr tragt aber ganz schön dick auf! Eine ganze Trollfestung gestürmt?~
+IF ~~ THEN REPLY ~In der Tat, das habe ich. Es war ein harter Kampf, doch letztendlich standen wir siegreich über der Bestie.~ EXTERN ~AC#BADW2~ PC_tale_Durlag_02
+END
+
+IF ~~ THEN BEGIN PC_tale_dragon_end
 SAY ~Dann habt Ihr Euch unseren Respekt verdient, <PRO_RACE>! Ein hoch auf <CHARNAME> Drachentöter!~
+//IF ~~ THEN REPLY ~Ich habe noch weitere Taten, die ich gerne mit Euch teilen möchte.~ EXTERN ~AC#BADW3~ PC_more_tales
+IF ~~ THEN REPLY ~Habt Dank für Eure Worte. Ich werde mich jetzt verabschieden.~ EXTERN ~AC#BADW2~ PC_tales_finished
+END
+
+IF ~~ THEN BEGIN PC_tale_troll_end
+SAY ~Dann habt Ihr Euch unseren Respekt verdient, <PRO_RACE>! Ein hoch auf <CHARNAME> Trolltöter!~
+//IF ~~ THEN REPLY ~Ich habe noch weitere Taten, die ich gerne mit Euch teilen möchte.~ EXTERN ~AC#BADW3~ PC_more_tales
+IF ~~ THEN REPLY ~Habt Dank für Eure Worte. Ich werde mich jetzt verabschieden.~ EXTERN ~AC#BADW2~ PC_tales_finished
+END
+
+IF ~~ THEN BEGIN PC_tale_unseeing_end
+SAY ~Dann habt Ihr Euch unseren Respekt verdient, <PRO_RACE>! Ein hoch auf <CHARNAME> Betrachtertöter!~
+//IF ~~ THEN REPLY ~Ich habe noch weitere Taten, die ich gerne mit Euch teilen möchte.~ EXTERN ~AC#BADW3~ PC_more_tales
+IF ~~ THEN REPLY ~Habt Dank für Eure Worte. Ich werde mich jetzt verabschieden.~ EXTERN ~AC#BADW2~ PC_tales_finished
+END
+
+IF ~~ THEN BEGIN PC_tale_Ardulace_end
+SAY ~Dann habt Ihr Euch unseren Respekt verdient, <PRO_RACE>! Ein hoch auf <CHARNAME> Drowschlächter!~
+//IF ~~ THEN REPLY ~Ich habe noch weitere Taten, die ich gerne mit Euch teilen möchte.~ EXTERN ~AC#BADW3~ PC_more_tales
+IF ~~ THEN REPLY ~Habt Dank für Eure Worte. Ich werde mich jetzt verabschieden.~ EXTERN ~AC#BADW2~ PC_tales_finished
+END
+
+IF ~~ THEN BEGIN PC_tale_vampire_end
+SAY ~Dann habt Ihr Euch unseren Respekt verdient, <PRO_RACE>! Ein hoch auf <CHARNAME> Drowschlächter!~
+//IF ~~ THEN REPLY ~Ich habe noch weitere Taten, die ich gerne mit Euch teilen möchte.~ EXTERN ~AC#BADW3~ PC_more_tales
+IF ~~ THEN REPLY ~Habt Dank für Eure Worte. Ich werde mich jetzt verabschieden.~ EXTERN ~AC#BADW2~ PC_tales_finished
+END
+
+IF ~~ THEN BEGIN PC_tale_Kangaxx_02_end
+SAY ~Dann habt Ihr Euch unseren Respekt verdient, <PRO_RACE>! Ein hoch auf <CHARNAME> Leichnams... ähm... Halbleichnamsschänder!~
+//IF ~~ THEN REPLY ~Ich habe noch weitere Taten, die ich gerne mit Euch teilen möchte.~ EXTERN ~AC#BADW3~ PC_more_tales
+IF ~~ THEN REPLY ~Habt Dank für Eure Worte. Ich werde mich jetzt verabschieden.~ EXTERN ~AC#BADW2~ PC_tales_finished
+END
+
+IF ~~ THEN BEGIN PC_tale_Durlag_end
+SAY ~Dann habt Ihr Euch unseren Respekt verdient, <PRO_RACE>! Ein hoch auf <CHARNAME> Zwergenfreund!~
 //IF ~~ THEN REPLY ~Ich habe noch weitere Taten, die ich gerne mit Euch teilen möchte.~ EXTERN ~AC#BADW3~ PC_more_tales
 IF ~~ THEN REPLY ~Habt Dank für Eure Worte. Ich werde mich jetzt verabschieden.~ EXTERN ~AC#BADW2~ PC_tales_finished
 END
@@ -128,8 +199,49 @@ END
 IF ~~ THEN BEGIN PC_tale_firkraag_02
 SAY ~Dem grimmigen Blick in <HISHER> Augen nach zu schließen spricht er die Wahrheit, Renrak. So redet niemand, der nicht schon dem Tod um Haaresbreite entkommen ist.~
 IF ~~ THEN DO ~SetGlobal("AC#Hero_Story","ACIL54",3)
-IncrementGlobal("AC_Iltkazar_Reputation","GLOBAL",1)
-SetGlobal("AC#Story_Firkraag","ACIL54",1)~ EXTERN ~AC#BADW1~ PC_tale_firkraag_03
+SetGlobal("AC#Story_Firkraag","ACIL54",1)~ EXTERN ~AC#BADW1~ PC_tale_dragon_end
+END
+
+IF ~~ THEN BEGIN PC_tale_ShaDra_02
+SAY ~Dem grimmigen Blick in <HISHER> Augen nach zu schließen spricht er die Wahrheit, Renrak. So redet niemand, der nicht schon dem Tod um Haaresbreite entkommen ist.~
+IF ~~ THEN DO ~SetGlobal("AC#Hero_Story","ACIL54",3)
+SetGlobal("AC#Story_ShaDra","ACIL54",1)~ EXTERN ~AC#BADW1~ PC_tale_dragon_end
+END
+
+IF ~~ THEN BEGIN PC_tale_TorGal_02
+SAY ~Dem grimmigen Blick in <HISHER> Augen nach zu schließen spricht er die Wahrheit, Renrak. So redet niemand, der nicht schon dem Tod um Haaresbreite entkommen ist.~
+IF ~~ THEN DO ~SetGlobal("AC#Hero_Story","ACIL54",3)
+SetGlobal("AC#TorGal","ACIL54",1)~ EXTERN ~AC#BADW1~ PC_tale_troll_end
+END
+
+IF ~~ THEN BEGIN PC_tale_UnseeingEye_02
+SAY ~Dem grimmigen Blick in <HISHER> Augen nach zu schließen spricht er die Wahrheit, Renrak. So redet niemand, der nicht schon dem Tod um Haaresbreite entkommen ist.~
+IF ~~ THEN DO ~SetGlobal("AC#Hero_Story","ACIL54",3)
+SetGlobal("AC#Unseeing","ACIL54",1)~ EXTERN ~AC#BADW1~ PC_tale_unseeing_end
+END
+
+IF ~~ THEN BEGIN PC_tale_Ardulace_02
+SAY ~Dem grimmigen Blick in <HISHER> Augen nach zu schließen spricht er die Wahrheit, Renrak. So redet niemand, der nicht schon dem Tod um Haaresbreite entkommen ist.~
+IF ~~ THEN DO ~SetGlobal("AC#Hero_Story","ACIL54",3)
+SetGlobal("AC#Ardulace","ACIL54",1)~ EXTERN ~AC#BADW1~ PC_tale_Ardulace_end
+END
+
+IF ~~ THEN BEGIN PC_tale_vampire_02
+SAY ~Dem grimmigen Blick in <HISHER> Augen nach zu schließen spricht er die Wahrheit, Renrak. So redet niemand, der nicht schon dem Tod um Haaresbreite entkommen ist.~
+IF ~~ THEN DO ~SetGlobal("AC#Hero_Story","ACIL54",3)
+SetGlobal("AC#Lassal","ACIL54",1)~ EXTERN ~AC#BADW1~ PC_tale_vampire_end
+END
+
+IF ~~ THEN BEGIN PC_tale_Kangaxx_02
+SAY ~Dem grimmigen Blick in <HISHER> Augen nach zu schließen spricht er die Wahrheit, Renrak. So redet niemand, der nicht schon dem Tod um Haaresbreite entkommen ist.~
+IF ~~ THEN DO ~SetGlobal("AC#Hero_Story","ACIL54",3)
+SetGlobal("AC#Kangaxx","ACIL54",1)~ EXTERN ~AC#BADW1~ PC_tale_Kangaxx_02_end
+END
+
+IF ~~ THEN BEGIN PC_tale_Durlag_02
+SAY ~Dem grimmigen Blick in <HISHER> Augen nach zu schließen spricht er die Wahrheit, Renrak. So redet niemand, der nicht schon dem Tod um Haaresbreite entkommen ist.~
+IF ~~ THEN DO ~SetGlobal("AC#Hero_Story","ACIL54",3)
+SetGlobal("AC#Durlag","ACIL54",1)~ EXTERN ~AC#BADW1~ PC_tale_Durlag_end
 END
 
 IF ~~ THEN BEGIN PC_tales_finished
@@ -157,14 +269,14 @@ SAY ~Vielleicht hat dieser <RACE> von der Oberfläche auch schon das ein oder an
 =
 ~Also was ist, <GIRLBOY>, habt Ihr an der Oberfläche eine Tat vollbracht, von er es mit Stolz geschwellter Brust zu berichten gibt?~
 IF ~~ THEN REPLY ~Bedaure, meine Taten können sich mit den Euren in keiner Weise messen. Ich werde Euch jetzt verlassen.~ EXTERN ~AC#BADW1~ PC_no_tale
-IF ~Dead("firkra02")~ THEN REPLY ~Meine Gefährten und ich haben vor einiger Zeit einen roten Drachen erlegt.~ EXTERN ~AC#BADW1~ PC_tale_firkraag
-//IF ~Dead("ShaDra01")~ THEN REPLY ~Ich konnte einmal dem tödlichen Atem eines Schattendrachen widerstehen und ihn niederringen.~ EXTERN ~AC#BADW1~ PC_tale_ShaDra01
-//IF ~Dead("TorGal")~ THEN REPLY ~Ich habe einmal eine Festung voller sich regenerierender Trolle gestürmt und deren Anführer getötet.~ EXTERN ~AC#BADW1~ PC_tale_TorGal
-//IF ~Dead("UnseeingEye")~ THEN REPLY ~Ich habe in einer Stadt auf der Oberfläche einen Betrachterkult ausgelöscht.~ EXTERN ~AC#BADW1~ PC_tale_UnseeingEye
-//IF ~Dead("Ardulace")~ THEN REPLY ~Ich habe in einer Drow-Stadt eine Mutter Oberin durch List und Trug vernichtet.~ EXTERN ~AC#BADW1~ PC_tale_Ardulace
-//IF ~GlobalGT("LassalVampires","GLOBAL",2))~ THEN REPLY ~Wir haben ein Vampirlager unter einem Friedhof in meiner Heimat ausgerottet..~ EXTERN ~AC#BADW1~ PC_tale_vampire
-//IF ~Dead("hldemi")~ THEN REPLY ~Ein Halbleichnam wollte uns zerstören, doch wir seinem untoten Dasein ein Ende bereitet.~ EXTERN ~AC#BADW1~ PC_tale_UnseeingEye
-//IF ~~ THEN REPLY ~Wir haben Durlags Turm von einem Todesritter gesäubert.~ EXTERN ~AC#BADW1~ PC_tale_UnseeingEye
+IF ~Dead("firkra02") Global("AC#Story_Firkraag","ACIL54",0)~ THEN REPLY ~Meine Gefährten und ich haben vor einiger Zeit einen roten Drachen erlegt.~ EXTERN ~AC#BADW1~ PC_tale_firkraag
+IF ~Dead("ShaDra01") Global("AC#Story_ShaDra","ACIL54",0)~ THEN REPLY ~Ich konnte einmal dem tödlichen Atem eines Schattendrachen widerstehen und ihn niederringen.~ EXTERN ~AC#BADW1~ PC_tale_ShaDra01
+IF ~Dead("TorGal") Global("AC#TorGal","ACIL54",0)~ THEN REPLY ~Ich habe einmal eine Festung voller sich regenerierender Trolle gestürmt und deren Anführer getötet.~ EXTERN ~AC#BADW1~ PC_tale_TorGal
+IF ~Dead("UnseeingEye") Global("AC#Unseeing","ACIL54",0)~ THEN REPLY ~Ich habe in einer Stadt auf der Oberfläche einen Betrachterkult ausgelöscht.~ EXTERN ~AC#BADW1~ PC_tale_UnseeingEye
+IF ~Dead("Ardulace") Global("AC#Ardulace","ACIL54",0)~ THEN REPLY ~Ich habe in einer Drow-Stadt eine Mutter Oberin durch List und Trug vernichtet.~ EXTERN ~AC#BADW1~ PC_tale_Ardulace
+IF ~GlobalGT("LassalVampires","GLOBAL",2) Global("AC#Lassal","ACIL54",0)~ THEN REPLY ~Wir haben ein Vampirlager unter einem Friedhof in meiner Heimat ausgerottet..~ EXTERN ~AC#BADW1~ PC_tale_vampire
+IF ~Dead("hldemi") Global("AC#Kangaxx","ACIL54",0)~ THEN REPLY ~Ein Halbleichnam wollte uns zerstören, doch wir haben seinem untoten Dasein ein Ende bereitet.~ EXTERN ~AC#BADW1~ PC_tale_Kangaxx
+IF ~Global("AC#Durlag","ACIL54",0)~ THEN REPLY ~Ich habe Durlags Turm von einem Todesritter gesäubert.~ EXTERN ~AC#BADW1~ PC_tale_Durlag
 END
 
 //

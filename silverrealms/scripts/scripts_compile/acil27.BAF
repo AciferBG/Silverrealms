@@ -1,23 +1,43 @@
 IF
-	Global("DisableAnimations","ACIL27",0)
+    Global("DisableAnimations","ACIL27",0)
 THEN
-	RESPONSE #100
-		SetGlobal("DisableAnimations","ACIL27",1)
-		AmbientActivate("Monolith02on",FALSE)
-		AmbientActivate("Monolith01off",FALSE)
-		AmbientActivate("Monolith03off",FALSE)
-		AmbientActivate("Monolith04off",FALSE)
-		AmbientActivate("Monolith05off",FALSE)
+    RESPONSE #100
+        SetGlobal("DisableAnimations","ACIL27",1)
+        AmbientActivate("Monolith02on",FALSE)
+        AmbientActivate("Monolith01off",FALSE)
+        AmbientActivate("Monolith03off",FALSE)
+        AmbientActivate("Monolith04off",FALSE)
+        AmbientActivate("Monolith05off",FALSE)
+        SpawnPtDeactivate("Madness_spawn_01")
+        SpawnPtDeactivate("Madness_spawn_02")
+        SpawnPtDeactivate("Madness_spawn_03")
+        Continue()
 END
 
 IF
-	Global("SpawnPointManagement","ACIL27",0)
+    Global("CreateDwarvenAid","ACIL27",0)
+    GlobalGT("AC#RC_Sorni_Fourth","GLOBAL",0)
 THEN
-	RESPONSE #100
-		SetGlobal("SpawnPointManagement","ACIL27",1)
-		SpawnPtDeactivate("Madness_spawn_01") // to be activated after Gogondy-wine quest
-		SpawnPtDeactivate("Madness_spawn_02")
-		SpawnPtDeactivate("Madness_spawn_03")
+    RESPONSE #100
+        SetGlobal("CreateDwarvenAid","ACIL27",1)
+        CreateCreature("AC#27DW8",[303.766],SW)  // Zwergenkrieger
+        CreateCreature("AC#27DW8",[306.790],SSW)  // Zwergenkrieger
+        CreateCreature("AC#27DW8",[193.757],S)  // Zwergenkrieger
+        CreateCreature("AC#27DW8",[221.842],NW)  // Zwergenkrieger
+        CreateCreature("AC#27DW9",[262.750],S)  // Zwergenpriester
+END
+
+IF
+    Global("CreateDwarvenAid","ACIL27",0)
+    GlobalGT("AC#RC_Sorni_Fourth","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("CreateDwarvenAid","ACIL27",1)
+        CreateCreature("AC#27DW8",[303.766],SW)  // Zwergenkrieger
+        CreateCreature("AC#27DW8",[306.790],SSW)  // Zwergenkrieger
+        CreateCreature("AC#27DW8",[193.757],S)  // Zwergenkrieger
+        CreateCreature("AC#27DW8",[221.842],NW)  // Zwergenkrieger
+        CreateCreature("AC#27DW9",[262.750],S)  // Zwergenpriester
 END
 
 IF

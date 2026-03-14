@@ -1,0 +1,26 @@
+IF
+    Global("AidDwarves","ACIL27",1)
+    Allegiance(Myself,NEUTRAL)
+THEN
+    RESPONSE #100
+        ChangeEnemyAlly(Myself,GOODBUTBLUE)
+        SetGlobal("AidDwarves","ACIL27",2)
+END
+
+IF
+    See([ENEMY])
+THEN
+    RESPONSE #100
+        AttackReevaluate(NearestEnemyOf(Myself),12)
+END
+
+IF
+    Global("AidDwarves","ACIL27",2)
+    !See([ENEMY])
+    !Range(Player1,12)
+    Delay(6)
+THEN
+    RESPONSE #100
+        MoveToObject(Player1)
+END
+

@@ -5,9 +5,16 @@ SAY 0xc @6051
 
 COPY ~silverrealms/sto/ac#bar01.sto~ ~override/ac#bar01.sto~
 SAY 0xc @229
+SAY 0xa4 @342
+SAY 0xb8 @343
+SAY 0xcc @344
+SAY 0xe0 @345
+SAY 0xf4 @346
 
 COPY ~silverrealms/sto/ac#bar02.sto~ ~override/ac#bar02.sto~
 SAY 0xc @240
+SAY 0xb8 @343
+SAY 0xf4 @346
 
 COPY ~silverrealms/sto/ac#sto01.sto~ ~override/ac#sto01.sto~
 SAY 0xc @230

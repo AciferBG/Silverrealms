@@ -99,43 +99,43 @@ SAY ~Hab' ich mir doch gedacht, dass bei Euch an der Oberfläche nichts los ist.
 END
 
 IF ~~ THEN BEGIN PC_tale_firkraag
-SAY ~Ha, <GIRLBOY>, Ihr tragt aber ganz schön dick auf! Ihr wollt einen *DURGARN* erlegt haben, noch dazu einen Roten?~
-IF ~~ THEN REPLY ~In der Tat, das habe ich. Es war ein harter Kampf, doch letztendlich standen wir siegreich über der schuppigen Bestie.~ EXTERN ~AC#BADW2~ PC_tale_firkraag_02
+SAY ~Ha, <GIRLBOY>, Ihr greift ja gleich nach den höchsten Stollenbalken! Ihr wollt einen *DURGARN* erschlagen haben - und dann noch einen roten?~
+IF ~~ THEN REPLY ~In der Tat. Sein Feuer war heiß, sein Zorn gewaltig, doch am Ende lag Firkraag zu unseren Füßen.~ EXTERN ~AC#BADW2~ PC_tale_firkraag_02
 END
 
 IF ~~ THEN BEGIN PC_tale_ShaDra01
-SAY ~Ha, <GIRLBOY>, Ihr tragt aber ganz schön dick auf! Ihr wollt einen *DURGARN* erlegt haben, noch dazu einen aus reinstem Schatten?~
-IF ~~ THEN REPLY ~In der Tat, das habe ich. Es war ein harter Kampf, doch letztendlich standen wir siegreich über der Bestie.~ EXTERN ~AC#BADW2~ PC_tale_ShaDra_02
+SAY ~Ha! Nun wird's finster. Ihr wollt also einen Schattendrachen bezwungen haben? Einen Wurm aus Finsternis und kaltem Odem?~
+IF ~~ THEN REPLY ~So war es. Sein Atem fraß Licht und Leben, doch wir hielten stand und brachten das Schattenungeheuer zu Fall.~ EXTERN ~AC#BADW2~ PC_tale_ShaDra_02
 END
 
 IF ~~ THEN BEGIN PC_tale_TorGal
-SAY ~Ha, <GIRLBOY>, Ihr tragt aber ganz schön dick auf! Eine ganze Trollfestung gestürmt?~
-IF ~~ THEN REPLY ~In der Tat, das habe ich. Es war ein harter Kampf, doch letztendlich standen wir siegreich über der Bestie.~ EXTERN ~AC#BADW2~ PC_tale_TorGal_02
+SAY ~Eine Trollfestung also? Hah! Das klingt nach ehrlicher Arbeit. Und ihren Häuptling habt Ihr auch erschlagen?~
+IF ~~ THEN REPLY ~Ja. Wir bahnten uns den Weg durch Klauen, Zähne und Regeneration, bis Torgal endlich fiel.~ EXTERN ~AC#BADW2~ PC_tale_TorGal_02
 END
 
 IF ~~ THEN BEGIN PC_tale_UnseeingEye
-SAY ~Ha, <GIRLBOY>, Ihr tragt aber ganz schön dick auf! Eine ganze Trollfestung gestürmt?~
-IF ~~ THEN REPLY ~In der Tat, das habe ich. Es war ein harter Kampf, doch letztendlich standen wir siegreich über der Bestie.~ EXTERN ~AC#BADW2~ PC_tale_UnseeingEye_02
+SAY ~Einen Betrachterkult ausgehoben? Dann wart Ihr entweder sehr tapfer oder vollständig wahnsinnig. Wahrscheinlich beides.~
+IF ~~ THEN REPLY ~Mag sein. Doch ihr abscheuliches Auge sieht nun nichts mehr, und sein Kult ist ausgelöscht.~ EXTERN ~AC#BADW2~ PC_tale_UnseeingEye_02
 END
 
 IF ~~ THEN BEGIN PC_tale_Ardulace
-SAY ~Ha, <GIRLBOY>, Ihr tragt aber ganz schön dick auf! Eine ganze Trollfestung gestürmt?~
-IF ~~ THEN REPLY ~In der Tat, das habe ich. Es war ein harter Kampf, doch letztendlich standen wir siegreich über der Bestie.~ EXTERN ~AC#BADW2~ PC_tale_Ardulace_02
+SAY ~Ihr habt also einer Mutter Oberin in ihrer eigenen Drow-Stadt das Ende bereitet? Hah! Das klingt nach einer Geschichte mit mehr Messern als Ehrlichkeit.~
+IF ~~ THEN REPLY ~List war dort wertvoller als blanker Stahl. Doch am Ende fiel Ardulace trotzdem.~ EXTERN ~AC#BADW2~ PC_tale_Ardulace_02
 END
 
 IF ~~ THEN BEGIN PC_tale_vampire
-SAY ~Ha, <GIRLBOY>, Ihr tragt aber ganz schön dick auf! Eine ganze Trollfestung gestürmt?~
-IF ~~ THEN REPLY ~In der Tat, das habe ich. Es war ein harter Kampf, doch letztendlich standen wir siegreich über der Bestie.~ EXTERN ~AC#BADW2~ PC_tale_vampire_02
+SAY ~Ein Nest von Vampiren unter einem Friedhof? Bei Moradins Bart, an der Oberfläche grabt ihr euch also auch gern in Ärger hinein.~
+IF ~~ THEN REPLY ~Das stimmt wohl. Doch wir stiegen hinab, fanden ihre Gruft und rotteten die Blutsauger bis auf den letzten aus.~ EXTERN ~AC#BADW2~ PC_tale_vampire_02
 END
 
 IF ~~ THEN BEGIN PC_tale_Kangaxx
-SAY ~Ha, <GIRLBOY>, Ihr tragt aber ganz schön dick auf! Eine ganze Trollfestung gestürmt?~
-IF ~~ THEN REPLY ~In der Tat, das habe ich. Es war ein harter Kampf, doch letztendlich standen wir siegreich über der Bestie.~ EXTERN ~AC#BADW2~ PC_tale_Kangaxx_02
+SAY ~Ein Halbleichnam? Jetzt erzählt Ihr Geschichten, bei denen selbst ein nüchterner Zwerg nach dem Krug greift.~
+IF ~~ THEN REPLY ~Er war alt, boshaft und kaum noch von dieser Welt - doch auch Kangaxx fand sein endgültiges Ende.~ EXTERN ~AC#BADW2~ PC_tale_Kangaxx_02
 END
 
 IF ~~ THEN BEGIN PC_tale_Durlag
-SAY ~Ha, <GIRLBOY>, Ihr tragt aber ganz schön dick auf! Eine ganze Trollfestung gestürmt?~
-IF ~~ THEN REPLY ~In der Tat, das habe ich. Es war ein harter Kampf, doch letztendlich standen wir siegreich über der Bestie.~ EXTERN ~AC#BADW2~ PC_tale_Durlag_02
+SAY ~Durlags Turm? Dann seid Ihr also in die Hallen eines unserer grimmigsten Ahnen gestiegen und lebend wieder herausgekommen?~
+IF ~~ THEN REPLY ~So ist es. Ich trotzte den Fallen, den Schrecken des Ortes und erschlug den Todesritter, der dort lauerte.~ EXTERN ~AC#BADW2~ PC_tale_Durlag_02
 END
 
 IF ~~ THEN BEGIN PC_tale_dragon_end
@@ -151,19 +151,19 @@ IF ~~ THEN REPLY ~Habt Dank für Eure Worte. Ich werde mich jetzt verabschieden.
 END
 
 IF ~~ THEN BEGIN PC_tale_unseeing_end
-SAY ~Dann habt Ihr Euch unseren Respekt verdient, <PRO_RACE>! Ein hoch auf <CHARNAME> Betrachtertöter!~
+SAY ~Dann habt Ihr Euch unseren Respekt verdient, <PRO_RACE>! Ein Hoch auf <CHARNAME>, den Betrachterbrecher!~
 //IF ~~ THEN REPLY ~Ich habe noch weitere Taten, die ich gerne mit Euch teilen möchte.~ EXTERN ~AC#BADW3~ PC_more_tales
 IF ~~ THEN REPLY ~Habt Dank für Eure Worte. Ich werde mich jetzt verabschieden.~ EXTERN ~AC#BADW2~ PC_tales_finished
 END
 
 IF ~~ THEN BEGIN PC_tale_Ardulace_end
-SAY ~Dann habt Ihr Euch unseren Respekt verdient, <PRO_RACE>! Ein hoch auf <CHARNAME> Drowschlächter!~
+SAY ~Dann habt Ihr Euch unseren Respekt verdient, <PRO_RACE>! Ein Hoch auf <CHARNAME>, die Geißel der Drow!~
 //IF ~~ THEN REPLY ~Ich habe noch weitere Taten, die ich gerne mit Euch teilen möchte.~ EXTERN ~AC#BADW3~ PC_more_tales
 IF ~~ THEN REPLY ~Habt Dank für Eure Worte. Ich werde mich jetzt verabschieden.~ EXTERN ~AC#BADW2~ PC_tales_finished
 END
 
 IF ~~ THEN BEGIN PC_tale_vampire_end
-SAY ~Dann habt Ihr Euch unseren Respekt verdient, <PRO_RACE>! Ein hoch auf <CHARNAME> Drowschlächter!~
+SAY ~Dann habt Ihr Euch unseren Respekt verdient, <PRO_RACE>! Ein Hoch auf <CHARNAME>, den Fluch der Vampire!~
 //IF ~~ THEN REPLY ~Ich habe noch weitere Taten, die ich gerne mit Euch teilen möchte.~ EXTERN ~AC#BADW3~ PC_more_tales
 IF ~~ THEN REPLY ~Habt Dank für Eure Worte. Ich werde mich jetzt verabschieden.~ EXTERN ~AC#BADW2~ PC_tales_finished
 END
@@ -175,7 +175,7 @@ IF ~~ THEN REPLY ~Habt Dank für Eure Worte. Ich werde mich jetzt verabschieden.
 END
 
 IF ~~ THEN BEGIN PC_tale_Durlag_end
-SAY ~Dann habt Ihr Euch unseren Respekt verdient, <PRO_RACE>! Ein hoch auf <CHARNAME> Zwergenfreund!~
+SAY ~Dann habt Ihr Euch unseren Respekt verdient, <PRO_RACE>! Ein Hoch auf <CHARNAME>, den Freund zwergischer Ahnen!~
 //IF ~~ THEN REPLY ~Ich habe noch weitere Taten, die ich gerne mit Euch teilen möchte.~ EXTERN ~AC#BADW3~ PC_more_tales
 IF ~~ THEN REPLY ~Habt Dank für Eure Worte. Ich werde mich jetzt verabschieden.~ EXTERN ~AC#BADW2~ PC_tales_finished
 END
@@ -196,50 +196,58 @@ IF ~~ THEN EXIT
 END
 
 /**************** HIER GEHT ES WEITER ****************************************************/
+/*
 IF ~~ THEN BEGIN PC_tale_firkraag_02
 SAY ~Dem grimmigen Blick in <HISHER> Augen nach zu schließen spricht er die Wahrheit, Renrak. So redet niemand, der nicht schon dem Tod um Haaresbreite entkommen ist.~
 IF ~~ THEN DO ~SetGlobal("AC#Hero_Story","ACIL54",3)
 SetGlobal("AC#Story_Firkraag","ACIL54",1)~ EXTERN ~AC#BADW1~ PC_tale_dragon_end
 END
+*/
+
+IF ~~ THEN BEGIN PC_tale_firkraag_02
+SAY ~Dem Blick in <HISHER> Augen nach zu urteilen ist daran nichts erfunden, Renrak. Wer einem roten Wurm gegenüberstand, trägt den Atem des Feuers noch lange mit sich herum.~
+IF ~~ THEN DO ~SetGlobal("AC#Hero_Story","ACIL54",3)
+SetGlobal("AC#Story_Firkraag","ACIL54",1)~ EXTERN ~AC#BADW1~ PC_tale_dragon_end
+END
 
 IF ~~ THEN BEGIN PC_tale_ShaDra_02
-SAY ~Dem grimmigen Blick in <HISHER> Augen nach zu schließen spricht er die Wahrheit, Renrak. So redet niemand, der nicht schon dem Tod um Haaresbreite entkommen ist.~
+SAY ~Ja ... so sieht jemand aus, der in die Finsternis selbst geblickt und dennoch nicht gewankt hat. Ich glaube <HIMHER>, Renrak.~
 IF ~~ THEN DO ~SetGlobal("AC#Hero_Story","ACIL54",3)
 SetGlobal("AC#Story_ShaDra","ACIL54",1)~ EXTERN ~AC#BADW1~ PC_tale_dragon_end
 END
 
 IF ~~ THEN BEGIN PC_tale_TorGal_02
-SAY ~Dem grimmigen Blick in <HISHER> Augen nach zu schließen spricht er die Wahrheit, Renrak. So redet niemand, der nicht schon dem Tod um Haaresbreite entkommen ist.~
+SAY ~So redet jemand, der Trollblut gerochen und sich trotzdem weiter durchgebissen hat. Das klingt nach ehrlicher Schlacht, Renrak.~
 IF ~~ THEN DO ~SetGlobal("AC#Hero_Story","ACIL54",3)
 SetGlobal("AC#TorGal","ACIL54",1)~ EXTERN ~AC#BADW1~ PC_tale_troll_end
 END
 
 IF ~~ THEN BEGIN PC_tale_UnseeingEye_02
-SAY ~Dem grimmigen Blick in <HISHER> Augen nach zu schließen spricht er die Wahrheit, Renrak. So redet niemand, der nicht schon dem Tod um Haaresbreite entkommen ist.~
+SAY ~Wer sich einem Betrachter entgegenstellt und noch beide Augen im Kopf trägt, verdient es, dass man ihm zuhört. Ich glaube die Geschichte.~
 IF ~~ THEN DO ~SetGlobal("AC#Hero_Story","ACIL54",3)
 SetGlobal("AC#Unseeing","ACIL54",1)~ EXTERN ~AC#BADW1~ PC_tale_unseeing_end
 END
 
 IF ~~ THEN BEGIN PC_tale_Ardulace_02
-SAY ~Dem grimmigen Blick in <HISHER> Augen nach zu schließen spricht er die Wahrheit, Renrak. So redet niemand, der nicht schon dem Tod um Haaresbreite entkommen ist.~
+SAY ~So spricht niemand, der nur tavernentaugliche Lügen spinnt. Wer einer Mutter Oberin entkommt, lernt seine Worte knapp und vorsichtig zu wählen.~
 IF ~~ THEN DO ~SetGlobal("AC#Hero_Story","ACIL54",3)
 SetGlobal("AC#Ardulace","ACIL54",1)~ EXTERN ~AC#BADW1~ PC_tale_Ardulace_end
 END
 
 IF ~~ THEN BEGIN PC_tale_vampire_02
-SAY ~Dem grimmigen Blick in <HISHER> Augen nach zu schließen spricht er die Wahrheit, Renrak. So redet niemand, der nicht schon dem Tod um Haaresbreite entkommen ist.~
+SAY ~Ich höre Gruftstaub und kalten Stein in <HISHER> Stimme. So klingt jemand, der zwischen Särgen gekämpft und überlebt hat.~
 IF ~~ THEN DO ~SetGlobal("AC#Hero_Story","ACIL54",3)
 SetGlobal("AC#Lassal","ACIL54",1)~ EXTERN ~AC#BADW1~ PC_tale_vampire_end
 END
 
 IF ~~ THEN BEGIN PC_tale_Kangaxx_02
-SAY ~Dem grimmigen Blick in <HISHER> Augen nach zu schließen spricht er die Wahrheit, Renrak. So redet niemand, der nicht schon dem Tod um Haaresbreite entkommen ist.~
+SAY ~Ich verstehe nicht jedes Wort davon, aber ich erkenne eines: <HESHE> hat etwas gesehen, das kein vernünftiger Zwerg sehen will, und es dennoch bezwungen.~
 IF ~~ THEN DO ~SetGlobal("AC#Hero_Story","ACIL54",3)
 SetGlobal("AC#Kangaxx","ACIL54",1)~ EXTERN ~AC#BADW1~ PC_tale_Kangaxx_02_end
 END
 
 IF ~~ THEN BEGIN PC_tale_Durlag_02
-SAY ~Dem grimmigen Blick in <HISHER> Augen nach zu schließen spricht er die Wahrheit, Renrak. So redet niemand, der nicht schon dem Tod um Haaresbreite entkommen ist.~
+SAY ~Wer Durlags Hallen betritt und mit klarem Verstand wiederkehrt, verdient allein dafür schon ein Fass. Und einen Todesritter noch dazu zu fällen ... ja, das glaube ich.~
 IF ~~ THEN DO ~SetGlobal("AC#Hero_Story","ACIL54",3)
 SetGlobal("AC#Durlag","ACIL54",1)~ EXTERN ~AC#BADW1~ PC_tale_Durlag_end
 END
@@ -255,7 +263,7 @@ END
 
 BEGIN AC#BADW3  // Otur Palaad
 IF ~Global("AC#Battle_Tales","ACIL54",3)~ THEN BEGIN 0
-SAY ~Ein hoch auf <CHARNAME>, unseren Helden der Oberfläche!~ // ~Ein hoch auf <CHARNAME>, unseren Helden der Oberfläche!~
+SAY ~Ein hoch auf <CHARNAME>, unseren Helden der Oberfläche!~
 IF ~~ THEN EXIT
 END
 
@@ -395,7 +403,7 @@ CHAIN IF ~~ THEN AC#BADW3 chain_angeber_06
 == AC#BADW3 ~Genau! Ich spürte noch, wie ich meine Axt fallen ließ, und dann überkam mich eine warme, tiefe Gefühllosigkeit. Ich konnte mich nicht mehr rühren! Dann sah ich den *caradhak*. Er nahm den Kopf eines meiner betäubten Gefährten in seine dreifingerigen Hände und stülpte ihm seine Tentakel übers Gesicht. Auch wenn ich mich nicht bewegen konnte, so hatte ich doch all' meine anderen Sinne beisammen, und ich konnte das Geräusch hören, als der Illithid meinem armen Kumpan mit einem Ruck das Gehirn aus dem Schädel riss! Seine Tentakel bewegten sich kurz schmatzend hin und her, und dann ließ er unseren Bruder achtlos zu Boden fallen.~
 == AC#BADW1 ~Was ist dann passiert?~
 == AC#BADW3 ~Ich konnte in meinem Geiste hören, wie der *caradhak* den überlebenden Duergar befahl, meine anderen Kameraden mitzunehmen, da er sie als Basis für die Umwandlung seiner Larven haben wollte.~
-== AC#BADW2 ~Bei Haela! Das gleiche Schicksal, das unserem armen Schüttergeist vom Clan Arnschädel widerfahren ist!~
+== AC#BADW2 ~Bei Haela! Das gleiche Schicksal, das Khaernd Schüttergeist vom Clan Arnschädel widerfahren ist!~
 == AC#BADW1 ~... der aber wieder entkommen konnte! Wo in unserer Stadt lebt der Schüttergeist denn nun?~
 == AC#BADW2 ~Ich glaube, sie haben ihn in der Halle der Runensteine eingesperrt, weil sie sich nicht sicher sind, ob er nach ganz bei Sinnen ist.~
 == AC#BADW3 ~Ja, er ist in einer Kammer bei Bettargh Abgrundlied unter Beobachtung. Aber jetzt möchte ich mit meiner Geschichte fortahren, ja?~
@@ -903,10 +911,36 @@ IF ~True()~ THEN BEGIN 0
   SAY ~Heda, wer stört mich hier schon wieder beim Bierbrauen? Hier gibt's nix für Euch, schon gar nicht für einen Oberflächen-<RACE> mit so wenig Bartwuchs!~
   IF ~~ THEN REPLY ~Ihr braut Bier hier?~  GOTO 2
   IF ~~ THEN REPLY #47379 /* ~Ach nichts. Bin schon wieder weg.~ */ GOTO 1
+  IF ~PartyHasItem("AC#MGTNK") Global("ShowMGTankard","ACIL54",0)~ THEN REPLY ~Seht, ich habe hier einen zwergischen Bierkrug, der sich jeden Tag auf neue füllt!~  GOTO show_tankard
 END
 
+	IF ~~ THEN BEGIN show_tankard
+	SAY ~Bei Moradins Bart... das ist Zwergenarbeit! Die Runen am Henkel stammen aus Korolnor. Ein Krug, der sich selbst füllt, sagt Ihr? Dann habt Ihr da mehr Reichtum in der Hand als manch eine Brauerei besitzt.~
+		IF ~~ THEN REPLY ~Wenn Ihr möchtet, könnt Ihr das Bier darin gerne probieren.~ GOTO show_tankard_02
+		IF ~~ THEN REPLY ~Genug gesehen. Gebt ihn wieder her.~ GOTO show_tankard_rude
+	END
+	
+	IF ~~ THEN BEGIN show_tankard_02
+	SAY ~Ihr... Ihr wollt mich wirklich probieren lassen? Das ist sehr anständig von Euch, wisst Ihr?~
+	=
+	~...~ [GULP]
+	=
+	~Bei Moradins Spucke... das ist *echtes* Zwergenbier! Kein Wlfentrank, kein Gnomenwein. *Das* ist Handwerk, gepaart mit ein wenig Segen der Götter.~
+		IF ~~ THEN GOTO show_tankard_polite
+	END
+	
+	IF ~~ THEN BEGIN show_tankard_rude
+	SAY ~Ist ja gut. Ich würde nie auf den Gedanken kommen, Euren Krug zu leeren. Hier habt ihr ihn zurück. Und jetzt lasst mich wieder an die Brauarbeit gehen.~
+		IF ~~ THEN DO ~SetGlobal("ShowMGTankard","ACIL54",1)~ EXIT
+	END
+	
+	IF ~~ THEN BEGIN show_tankard_polite
+	SAY ~Wer immer diesen Krug geschmiedet und gesegnet hat, verstand sein Handwerk. So etwas stammt aus den alten Tagen Shanatars. Ihr habt da ein gutes Stück unserer Geschichte in der Hand! Geht sorgsam damit um! Und... ähm... Danke, dass Ihr mich habt kosten lassen, Zwergenbierfreund!~
+		IF ~~ THEN DO ~SetGlobal("ShowMGTankard","ACIL54",2)~ EXIT
+	END
+
 IF ~~ THEN BEGIN 2
-SAY ~Jau, und wenn Ihr davon was probieren wollt, dann geht gefälligst ins "Blutige Bollwerk" oder den "Zwitschernden Kanarienvogel" und zahlt anständig dafür! Immer kommen alle zu dem alten Danko und wollen "nur einmal kosten" und schwups ist die ganze Maische des Vortages im Eimer!~
+SAY ~Jau, und wenn Ihr davon was probieren wollt, dann geht gefälligst ins "Blutige Bollwerk" oder den "Zwitschernden Kanarienvogel" und zahlt anständig dafür! Immer kommen alle zu mir und wollen "nur einmal kosten" und schwups ist die ganze Maische des Vortages im Eimer!~
     IF ~~ THEN REPLY ~Keine Angst, ich möchte nichts probieren, mich interessiert nur, woraus Ihr hier Euer Bier braut.~  GOTO 3
   IF ~~ THEN REPLY #47379 /* ~Ach nichts. Bin schon wieder weg.~ */ GOTO 1
 END

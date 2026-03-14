@@ -50,8 +50,26 @@ THEN
 END
 
 IF
+	Global("Tankard_Rep_Increase","ACIL54",0)
+	Global("ShowMGTankard","ACIL54",2)
+THEN
+	RESPONSE #100
+		SetGlobal("Tankard_Rep_Increase","ACIL54",1)
+		IncrementGlobal("AC_Iltkazar_Reputation","GLOBAL",1)
+	    DisplayString(Myself,@1021)
+END
+
+IF
 	Global("Hero_Rep_Increase","ACIL54",0)
-	GlobalGT("AC#Story_Firkraag","ACIL54",0)
+	OR(8)
+		GlobalGT("AC#Story_Firkraag","ACIL54",0)
+		GlobalGT("AC#Story_ShaDra","ACIL54",0)
+		GlobalGT("AC#TorGal","ACIL54",0)
+		GlobalGT("AC#Unseeing","ACIL54",0)
+		GlobalGT("AC#Ardulace","ACIL54",0)
+		GlobalGT("AC#Lassal","ACIL54",0)
+		GlobalGT("AC#Kangaxx","ACIL54",0)
+		GlobalGT("AC#Durlag","ACIL54",0)
 THEN
 	RESPONSE #100
 		SetGlobal("Hero_Rep_Increase","ACIL54",1)

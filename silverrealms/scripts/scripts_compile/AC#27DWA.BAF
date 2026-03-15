@@ -1,17 +1,9 @@
 IF
-    Global("DismissDwarves","ACIL27",2)
-THEN
-    RESPONSE #100
-        EscapeAreaObject("TrACIL20")
-        EscapeAreaDestroy(3)
-END
-
-IF
     Global("DismissDwarves","ACIL27",1)
 THEN
     RESPONSE #100
-        SetGlobal("AidDwarves","ACIL27",10)
-        SetGlobal("DismissDwarves","ACIL27",2)
         ChangeEnemyAlly(Myself,NEUTRAL)
+        EscapeAreaObject("TrACIL20")
+        EscapeAreaDestroy(3)
 END
 

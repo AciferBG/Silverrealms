@@ -1,10 +1,11 @@
 IF
     Global("AidDwarves","ACIL27",1)
+    Global("ChangeAI","LOCALS",0)
     Allegiance(Myself,NEUTRAL)
 THEN
     RESPONSE #100
         ChangeEnemyAlly(Myself,GOODBUTBLUE)
-        SetGlobal("AidDwarves","ACIL27",2)
+        SetGlobal("ChangeAI","LOCALS",1)
 END
 
 IF

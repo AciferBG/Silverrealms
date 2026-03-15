@@ -3,8 +3,123 @@ IF
 THEN
     RESPONSE #100
         MoveViewObject(Myself,INSTANT)
-        CreateItem("MISC21",1,0,0)  // Himmelstropfen
+        SetInterrupt(FALSE)
+        DisplayStringHead(Myself,@7008)  
+        Wait(2)
+        CreateVisualEffectObject("SPFLESHS",Myself)
+        CreateItem("MISC21",0,0,0)  // Himmelstropfen
         DropItem("MISC21",[-1.-1])  // Himmelstropfen
-        DisplayString(Myself,999)  // Dann gibt es wohl nichts mehr zu besprechen.
+        SetInterrupt(TRUE)
+        DestroySelf()
+    RESPONSE #100
+        MoveViewObject(Myself,INSTANT)
+        SetInterrupt(FALSE)
+        DisplayStringHead(Myself,@7008)  
+        Wait(2)
+        CreateVisualEffectObject("SPFLESHS",Myself)
+        CreateItem("MISC22",0,0,0)  // Andar
+        DropItem("MISC22",[-1.-1])  // Andar
+        SetInterrupt(TRUE)
+        DestroySelf()
+    RESPONSE #100
+        MoveViewObject(Myself,INSTANT)
+        SetInterrupt(FALSE)
+        DisplayStringHead(Myself,@7008)  
+        Wait(2)
+        CreateVisualEffectObject("SPFLESHS",Myself)
+        CreateItem("MISC23",0,0,0)  // Jaspis
+        DropItem("MISC23",[-1.-1])  // Jaspis
+        SetInterrupt(TRUE)
+        DestroySelf()
+    RESPONSE #100
+        MoveViewObject(Myself,INSTANT)
+        SetInterrupt(FALSE)
+        DisplayStringHead(Myself,@7008)  
+        Wait(2)
+        CreateVisualEffectObject("SPFLESHS",Myself)
+        CreateItem("MISC24",0,0,0)  // Tchazar
+        DropItem("MISC24",[-1.-1])  // Tchazar
+        SetInterrupt(TRUE)
+        DestroySelf()
+    RESPONSE #100
+        MoveViewObject(Myself,INSTANT)
+        SetInterrupt(FALSE)
+        DisplayStringHead(Myself,@7008)  
+        Wait(2)
+        CreateVisualEffectObject("SPFLESHS",Myself)
+        CreateItem("MISC25",0,0,0)  // Zirkon
+        DropItem("MISC25",[-1.-1])  // Zirkon
+        SetInterrupt(TRUE)
+        DestroySelf()
+    RESPONSE #50
+        MoveViewObject(Myself,INSTANT)
+        SetInterrupt(FALSE)
+        DisplayStringHead(Myself,@7008)  
+        Wait(2)
+        CreateVisualEffectObject("SPFLESHS",Myself)
+        CreateItem("MISC30",0,0,0)  // Chrysoberyll
+        DropItem("MISC30",[-1.-1])  // Chrysoberyll
+        SetInterrupt(TRUE)
+        DestroySelf()
+    RESPONSE #50
+        MoveViewObject(Myself,INSTANT)
+        SetInterrupt(FALSE)
+        DisplayStringHead(Myself,@7008)  
+        Wait(2)
+        CreateVisualEffectObject("SPFLESHS",Myself)
+        CreateItem("MISC35",0,0,0)  // Koralle
+        DropItem("MISC35",[-1.-1])  // Koralle
+        SetInterrupt(TRUE)
+        DestroySelf()
+    RESPONSE #5
+        MoveViewObject(Myself,INSTANT)
+        SetInterrupt(FALSE)
+        DisplayStringHead(Myself,@7008)  
+        Wait(2)
+        CreateVisualEffectObject("SPFLESHS",Myself)
+        CreateItem("MISC41",0,0,0)  // Sternsaphir
+        DropItem("MISC41",[-1.-1])  // Sternsaphir
+        SetInterrupt(TRUE)
+        DestroySelf()
+    RESPONSE #5
+        MoveViewObject(Myself,INSTANT)
+        SetInterrupt(FALSE)
+        DisplayStringHead(Myself,@7008)  
+        Wait(2)
+        CreateVisualEffectObject("SPFLESHS",Myself)
+        CreateItem("MISC42",0,0,0)  // Diamant
+        DropItem("MISC42",[-1.-1])  // Diamant
+        SetInterrupt(TRUE)
+        DestroySelf()
+    RESPONSE #5
+        MoveViewObject(Myself,INSTANT)
+        SetInterrupt(FALSE)
+        DisplayStringHead(Myself,@7008)  
+        Wait(2)
+        CreateVisualEffectObject("SPFLESHS",Myself)
+        CreateItem("MISC43",0,0,0)  // Smaragd
+        DropItem("MISC43",[-1.-1])  // Smaragd
+        SetInterrupt(TRUE)
+        DestroySelf()
+    RESPONSE #5
+        MoveViewObject(Myself,INSTANT)
+        SetInterrupt(FALSE)
+        DisplayStringHead(Myself,@7008)  
+        Wait(2)
+        CreateVisualEffectObject("SPFLESHS",Myself)
+        CreateItem("MISC44",0,0,0)  // Königsträne
+        DropItem("MISC44",[-1.-1])  // Königsträne
+        SetInterrupt(TRUE)
+        DestroySelf()
+    RESPONSE #5
+        MoveViewObject(Myself,INSTANT)
+        SetInterrupt(FALSE)
+        DisplayStringHead(Myself,@7008)  
+        Wait(2)
+        CreateVisualEffectObject("SPFLESHS",Myself)
+        CreateItem("MISC45",0,0,0)  // Spitzbubenstein
+        DropItem("MISC45",[-1.-1])  // Spitzbubenstein
+        SetInterrupt(TRUE)
+        DestroySelf()
 END
 

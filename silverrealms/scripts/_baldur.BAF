@@ -1,4 +1,13 @@
 IF
+	PartyHasItem("MISC36")
+	Global("AC#IL_CathorGems","GLOBAL",2)
+THEN
+	RESPONSE #100
+        SetGlobal("AC#IL_CathorGems","GLOBAL",3)
+		AddJournalEntry(@54401,QUEST)
+END
+
+IF
 	OR(2)
 	PartyHasItemIdentified("AC#24DRL")
 	PartyHasItem("AC#24DR2")

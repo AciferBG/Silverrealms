@@ -2,15 +2,28 @@ IF
     True()
 THEN
     RESPONSE #100
-        CreateCreatureObjectOffset("AC#ILAMB",Player1,[15.15])  // No such index
+        ActionOverride(LastSummonerOf(Myself),DisplayStringHead(Myself,118179))  // Das Amulett spürt diesmal keinen Edelstein auf.
         DestroySelf()
-END
-
-IF
-    True()
-THEN
-    RESPONSE #100
-        ActionOverride(LastSummonerOf(Myself),DisplayStringHead(Myself,1))  // Nein, tut mir leid. Nichts davon klingt mir vertraut.
+    RESPONSE #50
+        CreateCreatureObjectOffset("AC#ILAMB",Player1,[-60.-60])  // Amulett des Edelsteinfindens
+        DestroySelf()
+    RESPONSE #50
+        CreateCreatureObjectOffset("AC#ILAMB",Player1,[60.60])  // Amulett des Edelsteinfindens
+        DestroySelf()
+    RESPONSE #50
+        CreateCreatureObjectOffset("AC#ILAMB",Player1,[40.30])  // Amulett des Edelsteinfindens
+        DestroySelf()
+    RESPONSE #50
+        CreateCreatureObjectOffset("AC#ILAMB",Player1,[50.50])  // Amulett des Edelsteinfindens
+        DestroySelf()
+    RESPONSE #50
+        CreateCreatureObjectOffset("AC#ILAMB",Player1,[75.50])  // Amulett des Edelsteinfindens
+        DestroySelf()
+    RESPONSE #50
+        CreateCreatureObjectOffset("AC#ILAMB",Player1,[-75.-75])  // Amulett des Edelsteinfindens
+        DestroySelf()
+    RESPONSE #50
+        CreateCreatureObjectOffset("AC#ILAMB",Player1,[-80.-80])  // Amulett des Edelsteinfindens
         DestroySelf()
 END
 

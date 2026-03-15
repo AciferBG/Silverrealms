@@ -78,6 +78,16 @@ THEN
 END
 
 IF
+	Global("Gem_Rep_Increase","ACIL54",0)
+	Global("AC#IL_CathorGems","GLOBAL",10)
+THEN
+	RESPONSE #100
+		SetGlobal("Gem_Rep_Increase","ACIL54",1)
+		IncrementGlobal("AC_Iltkazar_Reputation","GLOBAL",1)
+	    DisplayString(Myself,@1021)
+END
+
+IF
 	Global("Boar_Rep_Increase","ACIL54",0)
 	GlobalGT("AC#Boar","ACIL54",4)
 THEN

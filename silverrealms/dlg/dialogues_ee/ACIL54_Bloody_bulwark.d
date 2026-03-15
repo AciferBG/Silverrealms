@@ -551,8 +551,8 @@ Dialog Cathor Steinschnitter
 *******************************************************************************************************/
 BEGIN ~AC#ILDW4~
 
-IF ~PartyHasItem("MISC36") Global("AC#IL_CathorGems","GLOBAL",3)~ THEN BEGIN hello_have_kings_tear
-SAY ~Ihr habt tatsächlich eine Perle in Eurem Gepäck!~
+IF ~~ THEN BEGIN have_kings_tear
+SAY ~Oh, Ihr habt tatsächlich eine Perle für mich mitgebracht?~
 IF ~~ THEN REPLY ~Ja, hier, nehmt sie.~  GOTO take_kings_tear
 IF ~~ THEN REPLY ~Ich möchte sie noch nicht verkaufen.~ GOTO not_sell_kings_tear
 END
@@ -600,7 +600,7 @@ END
 		END
 		
 		IF ~~ THEN BEGIN yes_kings_tear
-		SAY ~Ich bin ein Juwelenhändler, der schon so ziemlich jede Gemme zwischen hier und Mithril Halle in der Hand hatte. Aber eine fehlt mir noch immer in meinem Sortiment: Eine Perle.~
+		SAY ~Ich bin ein Juwelenhändler, der schon so ziemlich jeden Edelstein zwischen hier und Mithril Halle in der Hand hatte. Aber eines fehlt mir noch immer in meinem Sortiment: Eine Perle.~
 		=
 		~Hier unten findet Ihr Rubine, Smaragde und Diamanten in den Tiefen des Felses. Aber eine Perle? Die wächst nur in den Meeren der Oberfläche. Für uns hier unten ist so ein Ding fast seltener als ein Sternsaphir.~
 		=
@@ -633,6 +633,7 @@ IF ~True()~ THEN BEGIN 2
   IF ~~ THEN REPLY ~Gerne! Lasst mich einen Blick auf Eure Waren werfen.~  DO ~StartStore("AC#ILDW4",LastTalkedToBy())~ EXIT
   IF ~Global("AC#BackToSurface","GLOBAL",2)
   !PartyHasItem("AC#SRLAD")~ THEN REPLY ~Ich suche nach einer Strickleiter, mit der ich einen Schacht hinuntersteigen kann. Könnt Ihr mir sagen, wo ich so etwas finde?~  GOTO ladder
+  IF ~PartyHasItem("MISC36") Global("AC#IL_CathorGems","GLOBAL",3)~ THEN REPLY ~Ich habe eine Perle für Euch gefunden.~ GOTO have_kings_tear
   IF ~~ THEN REPLY #26059 /* ~Nichts für mich, danke.~ */ GOTO 1
 END
 

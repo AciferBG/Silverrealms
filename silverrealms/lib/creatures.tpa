@@ -2,6 +2,12 @@
 
 COPY ~silverrealms/cre/copy~         ~override~
 
+COPY ~silverrealms/cre/AC#ILAM2.cre~ ~override~ // amulet of gem detection
+  SAY NAME1 @8126 SAY NAME2 @8126
+  
+COPY ~silverrealms/cre/AC#ILAMB.cre~ ~override~ // amulet of gem detection
+  SAY NAME1 @8126 SAY NAME2 @8126
+
 COPY ~silverrealms/cre/AC#2SDW1.cre~ ~override~ // priest clangeddins
   SAY NAME1 @9056 SAY NAME2 @9056
   SAY INITIAL_MEETING @5270

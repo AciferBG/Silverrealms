@@ -1,0 +1,10 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        MoveViewObject(Myself,INSTANT)
+        CreateItem("MISC21",1,0,0)  // Himmelstropfen
+        DropItem("MISC21",[-1.-1])  // Himmelstropfen
+        DisplayString(Myself,999)  // Dann gibt es wohl nichts mehr zu besprechen.
+END
+

@@ -1,0 +1,16 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CreateCreatureObjectOffset("AC#ILAMB",Player1,[15.15])  // No such index
+        DestroySelf()
+END
+
+IF
+    True()
+THEN
+    RESPONSE #100
+        ActionOverride(LastSummonerOf(Myself),DisplayStringHead(Myself,1))  // Nein, tut mir leid. Nichts davon klingt mir vertraut.
+        DestroySelf()
+END
+

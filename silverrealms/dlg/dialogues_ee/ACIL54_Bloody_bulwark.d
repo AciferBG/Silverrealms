@@ -551,13 +551,84 @@ Dialog Cathor Steinschnitter
 *******************************************************************************************************/
 BEGIN ~AC#ILDW4~
 
+IF ~PartyHasItem("MISC44") Global("AC#IL_CathorGems","GLOBAL",2)~ THEN BEGIN hello_have_kings_tear
+SAY ~Ihr habt tatsächlich eine Königsträne in Eurem Gepäck!~
+IF ~~ THEN REPLY ~Ja, hier, nehmt sie.~  GOTO take_kings_tear
+IF ~~ THEN REPLY ~Ich möchte sie noch nicht verkaufen.~ GOTO not_sell_kings_tear
+END
+
+	IF ~~ THEN BEGIN not_sell_kings_tear
+	SAY ~Oh, das wäre Schade! Ich werde Euch reich entlohnen, mit einem wertvollen Amulett, das Euch den Weg zu Edelsteinen und Reichtum weisen wird - ein Leben lang!~
+	IF ~~ THEN REPLY ~In Ordnung. Hier, nehmt die Königsträne.~  GOTO take_kings_tear
+	IF ~~ THEN REPLY ~Nein, ich möchte sie Euch nicht verkaufen.~ GOTO not_sell_kings_tear_02
+	END
+	
+		IF ~~ THEN BEGIN not_sell_kings_tear_02
+		SAY ~Seid Ihr sicher, dass Ihr sie mir nicht im Austausch für ein wertvolles Amulett geben wollt?~
+		IF ~~ THEN REPLY ~In Ordnung. Hier, nehmt die Königsträne.~  GOTO take_kings_tear
+		IF ~~ THEN REPLY ~Nein, ich möchte sie Euch nicht verkaufen.~ GOTO not_sell_kings_tear_bye
+		END
+		
+		IF ~~ THEN BEGIN not_sell_kings_tear_bye
+		SAY ~Eine Schande. Wie Ihr meint. Wenn Ihr doch einmal ein paar Edelsteine zu Geld machen wollt, wisst Ihr ja, wo Ihr mich findet.~
+		IF ~~ THEN DO ~SetGlobal("AC#IL_CathorGems","GLOBAL",20)
+		EraseJournalEntry(@54400)
+		EraseJournalEntry(@54401)~ EXIT
+		END
+		
+		IF ~~ THEN BEGIN take_kings_tear
+		SAY ~Welche ein Glück! Vergadain ist mir hold. Seht sie Euch an! Ihr habt einen alten Händler heute äußerst glücklich gemacht.~
+		IF ~~ THEN DO ~TakePartyItemNum("MISC44",1)~ GOTO kings_tear_reward
+		END
+		
+			IF ~~ THEN BEGIN kings_tear_reward
+			SAY ~Und hier ist Eure Belohnung. Ein Amulett aus meinen Wanderzeiten, als ich noch darauf angewiesen war, selbst nach Edelsteinen Ausschau zu halten.~
+			IF ~~ THEN DO ~SetGlobal("AC#IL_CathorGems","GLOBAL",10)
+			GiveItemCreate("AC#ILAM2",LastTalkedToBy,1,0,0)
+			AddJournalEntry(@54402,QUEST)~ EXIT
+			END
+
+IF ~Global("AC#IL_CathorGems","GLOBAL",1)~ THEN BEGIN hello_kings_tear
+SAY ~He, Ihr seid doch die Neuankömmlinge von der Oberfläche, nicht wahr? Vielleicht kann ich Euch ein kleines Geschäft anbieten, wenn Ihr interessiert seid.~
+IF ~~ THEN REPLY ~Gerne, worum geht es?~  GOTO yes_kings_tear
+IF ~~ THEN REPLY ~Nein, dafür habe ich keine Zeit.~ GOTO no_kings_tear
+END
+
+		IF ~~ THEN BEGIN no_kings_tear
+		SAY ~Wie Ihr meint. Wenn Ihr doch einmal ein paar Edelsteine zu Geld machen wollt, wisst Ihr ja, wo Ihr mich findet.~
+		IF ~~ THEN DO ~SetGlobal("AC#IL_CathorGems","GLOBAL",20)~ EXIT
+		END
+		
+		IF ~~ THEN BEGIN yes_kings_tear
+		SAY ~Ich bin ein Juwelenhändler, der schon so ziemlich jede Gemme zwischen hier und Mithril Halle in der Hand hatte. Aber eine fehlt mir noch immer in meinem Sortiment: Eine Königsträne.~
+		=
+		~Ein klarer, tropfenförmiger Stein, glatt wie polierter Kristall und hart wie Zwergenstolz. Manche nennen ihn auch eine gefrorene Träne. Im Unterreich tauchen solche Stücke so gut wie nie auf.~
+		=
+		~Wenn Ihr also wieder über die Oberfläche streift, haltet die Augen offen. Bringt mir eine Königsträne, und ich werde Euch angemessen dafür entlohnen.~
+		IF ~PartyHasItem("MISC44")~ THEN REPLY ~Ihr meint so eine Königsträne wie ich sie bereits bei mir habe?~ GOTO already_have_kings_tear_bye
+		IF ~~ THEN REPLY ~In Ordnung, ich werde meine Augen offen halten.~ GOTO yes_kings_tear_bye
+		IF ~~ THEN REPLY ~Nein, das ist nichts für mich. Sucht Euch jemand anderen.~ GOTO no_kings_tear
+		END
+		
+			IF ~~ THEN BEGIN already_have_kings_tear_bye
+			SAY ~Ihr tragt eine Königsträne mit Euch spazieren? Was für ein Glück für mich! Ich nehme sie Euch ab und gebe Euch ein wertvolles Amulett.~
+			IF ~~ THEN REPLY ~In Ordnung. Hier, nehmt die Königsträne.~  GOTO take_kings_tear
+			IF ~~ THEN REPLY ~Nein, ich möchte sie Euch nicht verkaufen.~ GOTO not_sell_kings_tear_02
+			END
+		
+		IF ~~ THEN BEGIN yes_kings_tear_bye
+		SAY ~Gut! Viel Glück bei Eurer Suche. Möge Vergadain Eurem Blick für Edelsteine etwas nachhelfen.~
+		IF ~~ THEN DO ~SetGlobal("AC#IL_CathorGems","GLOBAL",2)
+		AddJournalEntry(@54400,QUEST)~ EXIT
+		END
+		
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN 0
   SAY ~Cathor Steinschnitter, vom Clan Steinschnitter, zu Euren Diensten. Ihr werdet in Iltkazar niemanden finden, der sich besser mit *glander* auskennt wie der alte Cathor.~
     IF ~~ THEN REPLY ~Was sind "Glander"?~  GOTO glander
   IF ~~ THEN REPLY #26059 /* ~Nichts für mich, danke.~ */ GOTO 1
 END
 
-IF ~NumTimesTalkedToGT(0)~ THEN BEGIN 2
+IF ~True()~ THEN BEGIN 2
   SAY ~Schön, Euch wiederzusehen! Möchtet Ihr meine Schätze begutachten?~
   IF ~~ THEN REPLY ~Gerne! Lasst mich einen Blick auf Eure Waren werfen.~  DO ~StartStore("AC#ILDW4",LastTalkedToBy())~ EXIT
   IF ~Global("AC#BackToSurface","GLOBAL",2)

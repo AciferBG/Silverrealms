@@ -1,0 +1,10 @@
+IF
+    NumberOfTimesTalkedTo(1)
+    See([PC])
+    Global("AC#IL_CathorGems","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("AC#IL_CathorGems","GLOBAL",1)
+        StartDialogueNoSet([PC])
+END
+

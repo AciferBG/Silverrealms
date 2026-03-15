@@ -2205,6 +2205,14 @@ Immunität gegen schallbasierte Angriffe (Heulen eines Halbleichnams, Schrei ein
 Schützt vor kritischen Treffern
 
 Gewicht: 8~
+@8126 = ~Amulett des Edelsteinfindens~
+@8127 = ~Dieses schlichte Amulett besitzt die Fähigkeit, in der Umgebung versteckte Edelsteine aufzuspüren.
+
+EIGENSCHAFTEN:
+
+Einmal täglich Edelstein aufspüren
+Mit einer gewissen Wahrscheinlichkeit erscheint ein zufälliger Edelstein in der Nähe des Trägers
+Manchmal findet sich jedoch kein Edelstein~
 
 
  

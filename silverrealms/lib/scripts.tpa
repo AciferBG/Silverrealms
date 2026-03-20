@@ -790,10 +790,6 @@ COMPILE ~silverrealms/scripts/AC#DRLI1.baf~
 COMPILE ~silverrealms/scripts/AC#36GO1.baf~
 COMPILE ~silverrealms/scripts/ACIL36.baf~
 
-COMPILE ~silverrealms/scripts/AC#48CH1.baf~
-COPY_EXISTING ~AC#48CH1.bcs~   ~override/AC#48CH1.bcs~
-       REPLACE ~999999~ @766
-
 COMPILE ~silverrealms/scripts/AC#44DU1.baf~
 
 COMPILE ~silverrealms/scripts/ACIL45.baf~

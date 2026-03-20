@@ -967,16 +967,14 @@ Ernelis~
 
 SPEZIFISCHE EIGENSCHAFTEN:
 
-Erschafft mit jedem Treffer eine Goldmünze im Inventar des Gegners.
+Erschafft mit jedem Treffer eine Goldmünze im Inventar des Trägers.
 ETW0: -1
 Schaden: 1W4+1 (Stichwaffe)
 Gewicht: 1
 Initiativefaktor: 1
 Waffenfertigkeit: Dolch
 Waffentyp: einhändig
-Mindeststärke: 3
-Kann nicht verwendet werden von:
-Klerikern~
+Mindeststärke: 3~
 @769 = ~Drakkalor-Zepter~
 @770 = ~Dies ist das Drakkalor-Zepter, eines der alten Herrschaftszepter des Zwergenreiches Shanatar. Der Griff ist aus Mithril gefertigt, und der Kopf ist mit einer Bronzeplatte verziert, der auf der einen Seite die Insignien eines unbekannten Clans zeigt, auf der anderen Seite das Symbol Abbathors, des alten und gefallenen Schutzpatrons Drakkalors. Trotz seiner Größe eignet sich das Zepter erstaunlich gut als Waffe und kann wie ein Streitkolben geschwungen werden, da es sich auf wundersame Weise verkleineren und vergrößern kann, um leicht in einer Hand im Kampf geschwungen zu werden. Allein diese Fähigkeit zeigt eindrucksvoll, welches handwerkliche Geschick die Zwerge in das Relikt eingearbeitet haben.
 Es verfügt sicher noch über weitere versteckte Kräfte, die sich Euch jedoch nicht ohne weiteres erschließen.

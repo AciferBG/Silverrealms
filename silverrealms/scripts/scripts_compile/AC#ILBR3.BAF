@@ -1,0 +1,36 @@
+IF
+    !GlobalTimerNotExpired("amtalk1","LOCALS")
+    !Global("notalk","LOCALS",1)
+    OnScreen(Myself)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("amtalk1","LOCALS",FIVE_ROUNDS)
+    RESPONSE #15
+        SetGlobalTimer("amtalk1","LOCALS",FIVE_ROUNDS)
+        DisplayStringHead(Myself,@7009) 
+    RESPONSE #15
+        SetGlobalTimer("amtalk1","LOCALS",FIVE_ROUNDS)
+        DisplayStringHead(Myself,@7010) 
+    RESPONSE #15
+        SetGlobalTimer("amtalk1","LOCALS",FIVE_ROUNDS)
+        DisplayStringHead(Myself,@7011) 
+    RESPONSE #15
+        SetGlobalTimer("amtalk1","LOCALS",FIVE_ROUNDS)
+        DisplayStringHead(Myself,@7012)  
+    RESPONSE #15
+        SetGlobalTimer("amtalk1","LOCALS",FIVE_ROUNDS)
+        DisplayStringHead(Myself,@7013) 
+    RESPONSE #15
+        SetGlobalTimer("amtalk1","LOCALS",FIVE_ROUNDS)
+        DisplayStringHead(Myself,@7014) 
+    RESPONSE #15
+        SetGlobalTimer("amtalk1","LOCALS",FIVE_ROUNDS)
+        DisplayStringHead(Myself,@7015) 
+    RESPONSE #15
+        SetGlobalTimer("amtalk1","LOCALS",FIVE_ROUNDS)
+        DisplayStringHead(Myself,@7016) 
+    RESPONSE #15
+        SetGlobalTimer("amtalk1","LOCALS",FIVE_ROUNDS)
+        DisplayStringHead(Myself,@7017) 
+END
+

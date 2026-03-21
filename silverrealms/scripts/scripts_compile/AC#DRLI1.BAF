@@ -24,7 +24,7 @@ IF
 	!GlobalTimerNotExpired("DracoliskSpitAcid","LOCALS")
 THEN
 	RESPONSE #100
-		ReallyForceSpellRES("AC#DRLI2",LastSeenBy(Myself))
+		ReallyForceSpellRES("AC#DRL4",LastSeenBy(Myself))
 		IncrementGlobal("DracoliskAcidAttacks","LOCALS",1)
 		SetGlobalTimer("DracoliskSpitAcid","LOCALS",24)
 END
@@ -36,7 +36,7 @@ IF
 	!GlobalTimerNotExpired("BasiliskStoneGaze","LOCALS")
 THEN
 	RESPONSE #100
-		ReallyForceSpellRES("AC#DRLI1",LastSeenBy(Myself))
+		ReallyForceSpellRES("AC#DRL3",LastSeenBy(Myself))
 		SetGlobalTimer("BasiliskStoneGaze","LOCALS",30)
 END
 
@@ -47,7 +47,7 @@ IF
 	!GlobalTimerNotExpired("BasiliskStoneGaze","LOCALS")
 THEN
 	RESPONSE #100
-		ReallyForceSpellRES("AC#DRLI1",LastSeenBy(Myself))
+		ReallyForceSpellRES("AC#DRL3",LastSeenBy(Myself))
 		SetGlobalTimer("BasiliskStoneGaze","LOCALS",30)
 END
 
@@ -58,7 +58,7 @@ IF
 	!GlobalTimerNotExpired("BasiliskStoneGaze","LOCALS")
 THEN
 	RESPONSE #100
-		ReallyForceSpellRES("AC#DRLI1",LastSeenBy(Myself))
+		ReallyForceSpellRES("AC#DRL3",LastSeenBy(Myself))
 		SetGlobalTimer("BasiliskStoneGaze","LOCALS",30)
 END
 
@@ -69,7 +69,7 @@ IF
 	!GlobalTimerNotExpired("BasiliskStoneGaze","LOCALS")
 THEN
 	RESPONSE #100
-		ReallyForceSpellRES("AC#DRLI1",LastSeenBy(Myself))
+		ReallyForceSpellRES("AC#DRL3",LastSeenBy(Myself))
 		SetGlobalTimer("BasiliskStoneGaze","LOCALS",30)
 END
 
@@ -80,7 +80,7 @@ IF
 	!GlobalTimerNotExpired("BasiliskStoneGaze","LOCALS")
 THEN
 	RESPONSE #100
-		ReallyForceSpellRES("AC#DRLI1",LastSeenBy(Myself))
+		ReallyForceSpellRES("AC#DRL3",LastSeenBy(Myself))
 		SetGlobalTimer("BasiliskStoneGaze","LOCALS",30)
 END
 
@@ -91,7 +91,7 @@ IF
 	!GlobalTimerNotExpired("BasiliskStoneGaze","LOCALS")
 THEN
 	RESPONSE #100
-		ReallyForceSpellRES("AC#DRLI1",LastSeenBy(Myself))
+		ReallyForceSpellRES("AC#DRL3",LastSeenBy(Myself))
 		SetGlobalTimer("BasiliskStoneGaze","LOCALS",30)
 END
 

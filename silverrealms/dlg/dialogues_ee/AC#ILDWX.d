@@ -101,27 +101,77 @@ END
 
 BEGIN ~AC#ILDW2~
 
-IF ~RandomNum(4,1)~ THEN BEGIN 0 
+IF ~RandomNum(14,1)~ THEN BEGIN 0 
   SAY ~Verschwindet! Es bleibt uns ohnehin wenig genug Zeit, um zu entspannen!~ 
   IF ~~ THEN EXIT
 END
 
-IF ~RandomNum(4,2)~ THEN BEGIN 1 
-  SAY ~Ihr gehört zu den Fremden, die gerade eben in der Stadt angekommen sind, oder? Nun, wir dürfen geschäftliche Dinge nicht mit Euch besprechen. Wenn Ihr also bitte gehen wollt ...~ 
+IF ~RandomNum(14,2)~ THEN BEGIN 1 
+  SAY ~Ihr gehört zu den Fremden, die gerade eben in der Stadt angekommen sind, oder? Wenn Ihr also bitte gehen wollt ...~ 
   IF ~~ THEN EXIT
 END
 
-IF ~RandomNum(4,3)~ THEN BEGIN 2 
-  SAY ~Ich trinke hier nur mein Bier. Lasst mich einfach in Ruhe und trinkt Euer Bier, Fremder!~ 
+IF ~RandomNum(14,3)~ THEN BEGIN 2 
+  SAY ~Ich trinke hier nur mein Bier. Lasst mich einfach in Ruhe und trinkt Euer Bier!~ 
   IF ~~ THEN EXIT
 END
 
-IF ~RandomNum(4,4)~ THEN BEGIN 3 
+IF ~RandomNum(14,4)~ THEN BEGIN 3 
   SAY ~Wenn Ihr gerne Arbeit erledigen möchtet, redet mit den Priestern in den Speichenbrunnenzitadellen.~ 
   IF ~~ THEN EXIT
 END
 
-IF ~~ THEN BEGIN 4 
+IF ~RandomNum(14,5)~ THEN BEGIN 4
+  SAY ~Die Steine hören alles. Also haltet Eure Stimme niedrig, Fremder.~ 
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(14,6)~ THEN BEGIN 5
+  SAY ~Ein weiteres Gesicht, das bald wieder verschwunden ist. So ist es hier unten.~ 
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(14,7)~ THEN BEGIN 6
+  SAY ~Wenn Ihr Ärger sucht, geht zu den Toren. Dort findet Ihr mehr, als Euch lieb ist.~ 
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(14,8)~ THEN BEGIN 7
+  SAY ~Die alten Hallen waren einst voller Gesang. Heute hört man nur noch das Tropfen des Wassers.~ 
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(14,9)~ THEN BEGIN 8
+  SAY ~Passt auf, wo Ihr hintretet. Nicht alles hier unten ist so tot, wie es scheint.~ 
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(14,10)~ THEN BEGIN 9
+  SAY ~Ein starkes Bier ist das Einzige, was uns noch aufrecht hält.~ 
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(14,11)~ THEN BEGIN 10
+  SAY ~Früher kamen Händler aus allen Reichen hierher. Jetzt kommen nur noch Narren und Abenteurer.~ 
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(14,12)~ THEN BEGIN 11
+  SAY ~Wenn Ihr in die tieferen Schächte geht, nehmt Licht mit. Viel Licht.~ 
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(14,13)~ THEN BEGIN 12
+  SAY ~Der König schläft, und mit ihm der Stolz Iltkazars.~ 
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(14,14)~ THEN BEGIN 13
+  SAY ~*Rülps*~ 
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN sorry 
   SAY ~Ähhh ... oh. Ahem, tut mir Leid, <LADYLORD>. Verzeiht, dass ich so unhöflich war ...~ 
   IF ~~ THEN EXIT
 END

@@ -1,0 +1,21 @@
+IF
+    Detect([PC])
+    Global("walk","LOCALS",0)
+THEN
+    RESPONSE #50
+        Wait(1)
+        MoveToObject("Way1")
+    RESPONSE #50
+        Wait(2)
+        MoveToObject("Way2")
+    RESPONSE #50
+        Wait(1)
+        MoveToObject("Way3")
+    RESPONSE #50
+        Wait(2)
+        MoveToObject("Way4")
+    RESPONSE #50
+        Wait(1)
+        MoveToObject("Way5")
+END
+

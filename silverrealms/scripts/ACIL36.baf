@@ -19,6 +19,18 @@ THEN
 END
 
 IF
+    Global("CreateWaterWeird","ACIL36",0)
+THEN
+    RESPONSE #100
+        SetGlobal("CreateWaterWeird","ACIL36",1)
+        CreateCreatureImpassableAllowOverlap("AC#WATW2",[646.1002],S)
+        CreateCreatureImpassableAllowOverlap("AC#WATW2",[972.1388],NW)
+        CreateCreatureImpassableAllowOverlap("AC#WATW2",[1448.852],NW)
+        CreateCreatureImpassableAllowOverlap("AC#WATW2",[1153.655],S)
+        CreateCreatureImpassableAllowOverlap("AC#WATW2",[1965.1324],NW)
+END
+
+IF
 	Global("GolemDoor","ACIL36",1)
         OpenState("DOOR01",FALSE)
 THEN

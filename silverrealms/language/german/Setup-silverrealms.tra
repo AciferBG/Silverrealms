@@ -2223,6 +2223,19 @@ EIGENSCHAFTEN:
 Einmal täglich Edelstein aufspüren
 Mit einer gewissen Wahrscheinlichkeit erscheint ein zufälliger Edelstein in der Nähe des Trägers
 Manchmal findet sich jedoch kein Edelstein~
+@8128 = ~Schädelgeschoss~
+@8129 = ~Diese Schädel könnten von einem Gerät verschossen werden.
+
+EIGENSCHAFTEN:
+
+Bei jedem Treffer wird das Ziel für 2 Runden betäubt (Rettungswurf gg. Zauber).
+
+ETW0-Bonus: -1
+Schaden: 2W8 +1 (Geschoss)
+Schusswaffe: Blitzbombenwerfer
+Mindestintelligenz: 9
+
+Gewicht: 0~
 
 
  

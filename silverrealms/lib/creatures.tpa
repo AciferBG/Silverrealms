@@ -91,6 +91,10 @@ COPY ~silverrealms/cre/AC#ILNCM.cre~ ~override~  // Necromental in ACIL57
   SAY NAME1 @9045 SAY NAME2 @9045
   WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~NECROMENTAL_ACIFER~))
 
+COPY ~silverrealms/cre/AC#ILNC2.cre~ ~override~  // Necromental in ACIL36
+  SAY NAME1 @9045 SAY NAME2 @9045
+  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~NECROMENTAL_ACIFER~))
+
 COPY ~silverrealms/cre/AC#ILHEZ.cre~ ~override~  // Hezrou in ACIL02
   SAY NAME1 @9044 SAY NAME2 @9044
   WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~HEZROU_ACIFER~))
@@ -2260,6 +2264,9 @@ COPY ~silverrealms/cre/AC#58PR1.cre~ ~override~  // Thammout Hammermantel, Pries
   SAY NAME1 @685 SAY NAME2 @685
   
 COPY ~silverrealms/cre/AC#WATWR.cre~ ~override~  // Water weird
+  SAY NAME1 @690 SAY NAME2 @690
+  
+COPY ~silverrealms/cre/AC#WATW2.cre~ ~override~  // Water weird
   SAY NAME1 @690 SAY NAME2 @690
   
 COPY ~silverrealms/cre/AC#GOLME.cre~ ~override/AC#GOLME.cre~  // Meta Golem

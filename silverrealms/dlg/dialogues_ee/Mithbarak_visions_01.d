@@ -16,7 +16,11 @@ BEGIN ~AC#DREA3~
 	== AC#ILD3E ~Ravimors Höhle. Ein fast vergessener Ort. Und an welchem Ort an der Oberfläche wolltet Ihr um Rücknahme Eures Fluches bitten.~ 	
 	== AC#DREA3 ~Am alten Drachenfriedhof.~
 	== AC#ILD3E ~Oh! Zeigt ihn mir.~	
-	== AC#DREA3 ~Dies ist aber die letzte Erinnerung, die ich mit Euch teilen werde. Dann werdet Ihr mir antworten liefern müssen!~
+	== AC#DREA3 ~Dies ist aber die letzte Erinnerung, die ich mit Euch teilen werde! Dann werdet Ihr mir Antworten liefern müssen!~
+	== AC#ILD3E ~Ich gebe sie Euch schon vorher. Wenn Ihr wieder auf Eure... Reisen aufbrecht: Hütet Euch vor Malphas, dem Raben.~
+	== AC#DREA3 ~Malphas? Meine Gegner haben ausgerechnet dieses rabengesichtige Scheusal auf mich angesetzt? Warum?~
+	== AC#ILD3E ~Weil er genauso verflucht ist wie Ihr selbst. Und er hofft, durch Eure Beseitigung seiner Herrin zu gefallen.~
+	== AC#DREA3 ~Ich werde es beherzigen.~
 	END
 	IF ~~ THEN DO ~StartCutSceneMode()
 	StartCutScene("AC#23CT3")~ EXIT

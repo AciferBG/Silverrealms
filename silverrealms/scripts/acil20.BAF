@@ -16,9 +16,33 @@ THEN
 		SpawnPtDeactivate("East_spawn_hard")
 		SpawnPtDeactivate("Mephits") 
 		SpawnPtDeactivate("Elementals")  
+		OpenDoor("DOOR05")
 		SetMusic(NIGHT,%AC#IL20%)
 		SetMusic(DAY,%AC#IL20%)	
 		SetGlobal("EnteredArea","ACIL20",1)
+		SetGlobal("AC#IL_Entered_ACIL20","GLOBAL",1)
+		DisplayString(Myself,@7102)
+        AdvanceTime(FOUR_HOURS)
+END
+
+IF
+    Global("AC#_IL_Area_45","GLOBAL",1)
+	InMyArea(Player1)
+THEN
+    RESPONSE #100
+        SetGlobal("AC#_IL_Area_45","GLOBAL",0)
+        DisplayString(Myself,@7100)
+        AdvanceTime(TWENTYONE_HOURS)
+END
+
+IF
+    Global("AC#_IL_Area_21","GLOBAL",1)
+	InMyArea(Player1)
+THEN
+    RESPONSE #100
+        SetGlobal("AC#_IL_Area_21","GLOBAL",0)
+        DisplayString(Myself,@7102)
+        AdvanceTime(FOUR_HOURS)
 END
 
 IF

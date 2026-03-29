@@ -3,6 +3,10 @@
 
 COPY ~silverrealms/itm/copy~         ~override~
 
+COPY ~%MOD_FOLDER%/itm/AC#ILKY8.itm~         ~override~    // anthan's keystone
+  SAY NAME2 @8130
+  SAY DESC @8131
+
 ADD_PROJECTILE      ~silverrealms/pro/AC#ILNSK.PRO~ // necromental skull projectile
 COPY ~%MOD_FOLDER%/itm/AC#ILNSK.itm~         ~override~    // necromental skull projectile
   SAY NAME2 @8128

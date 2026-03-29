@@ -1638,6 +1638,9 @@ Diirinka'~
 @6110 = ~Axtbrücke~
 @6111 = ~Ein starkes Feuer hat diese Bäume vollständig niedergebrannt.~
 
+// ACIL36 - Barakuir
+@6136 = ~Diese Tür ist durch geschmolzenes Metall versiegelt worden. Es gibt keine Möglichkeit, sie zu öffnen; Ihr müsst Euch einen anderen Weg suchen.~
+
 // ACIL20 - Underdark #2 (other entries at @872ff)
 @6200 = ~Auf diesem Schild sind ein Pfeil nach unten, ein Hammer und mehrere Blitze dargestellt. Die Leiter daneben scheint in tiefere Minenbereiche zu führen.~
 @6201 = ~Nimmuks Stollen~
@@ -1674,6 +1677,10 @@ Diirinka'~
 @7015 = ~Wenn Ihr Ärger sucht, geht woanders graben!~
 @7016 = ~Schankmaid! Noch ein Krug für den da – und diesmal nicht halb leer!~
 @7017 = ~Bei Moradins Bart, benehmt Euch oder ich werfe Euch eigenhändig hinaus!~
+
+@7100 = ~^0xFFC8FFC8Die Reise dauerte 21 Stunden. ^-~
+@7101 = ~^0xFFC8FFC8Die Reise dauerte 20 Stunden. ^-~
+@7102 = ~^0xFFC8FFC8Die Reise dauerte 4 Stunden. ^-~
 
 
 
@@ -2236,6 +2243,8 @@ Schusswaffe: Blitzbombenwerfer
 Mindestintelligenz: 9
 
 Gewicht: 0~
+@8130 = ~Anthans Runenstein~
+@8131 = ~Diesen Runenstein habt Ihr von Anthan Diamantklinge erhalten. Ihr könnt damit einen Geheimtür im UNterreich in der Nähe des Zugangs zu den Spinnenschächten öffnen, der Euch nach Rrinnoroth, dem Lager des Drachen Charvekannathor, bringt. Anthan hat Euch gebeten, den Wyrm zu erschlagen, um seinen Sohn zu rächen.~
 
 
  

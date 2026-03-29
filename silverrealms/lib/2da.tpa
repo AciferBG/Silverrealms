@@ -38,11 +38,19 @@ APPEND ~MastArea.2da~
 UNLESS ~ACIL09~
 
 APPEND ~MastArea.2da~
+~ACIL20     value~ //Making Rain Effect Work in Star Bridge
+UNLESS ~ACIL20~
+
+APPEND ~MastArea.2da~
 ~ACIL34     value~ //Making Rain Effect Work in Dhalnadar Bridge
 UNLESS ~ACIL34~
 
 APPEND ~MastArea.2da~
 ~ACIL41     value~
+UNLESS ~ACIL41~
+
+APPEND ~MastArea.2da~
+~ACIL45     value~
 UNLESS ~ACIL41~
 
 APPEND ~MastArea.2da~

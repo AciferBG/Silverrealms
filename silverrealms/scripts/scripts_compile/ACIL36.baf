@@ -19,6 +19,16 @@ THEN
 END
 
 IF
+    InMyArea(Player1)
+    Global("AC#_IL_Area_37","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("AC#_IL_Area_37","GLOBAL",0)
+        DisplayString(Myself,@7101)
+        AdvanceTime(TWENTY_HOURS)
+END
+
+IF
     Global("CreateWaterWeird","ACIL36",0)
 THEN
     RESPONSE #100

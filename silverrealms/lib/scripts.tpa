@@ -761,7 +761,6 @@ COPY_EXISTING ~AC#28DW3.bcs~   ~override/AC#28DW3.bcs~
        REPLACE ~999999~ @714
 
 COMPILE ~silverrealms/scripts/AC#HATH8.baf~
-COMPILE ~silverrealms/scripts/ACIL37.baf~
 
 COMPILE ~silverrealms/scripts/AC#50BSM.baf~
 
@@ -787,14 +786,8 @@ COMPILE ~silverrealms/scripts/ACIL07.baf~
 COMPILE ~silverrealms/scripts/AC#FITI1.baf~
 
 COMPILE ~silverrealms/scripts/AC#36GO1.baf~
-COMPILE ~silverrealms/scripts/ACIL36.baf~
 
 COMPILE ~silverrealms/scripts/AC#44DU1.baf~
-
-COMPILE ~silverrealms/scripts/ACIL45.baf~
-COPY_EXISTING ~ACIL45.bcs~   ~override/ACIL45.bcs~
-       REPLACE ~999999~ @45000
-
 
 COMPILE ~silverrealms/scripts/AC#WAND7.baf~
 COPY_EXISTING ~AC#WAND7.bcs~   ~override/AC#WAND7.bcs~

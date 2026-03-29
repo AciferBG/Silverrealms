@@ -18,6 +18,17 @@ THEN
 END
 
 IF
+    Global("AC#_IL_Area_21","GLOBAL",0)
+    GlobalGT("AC#IL_Entered_ACIL20","GLOBAL",0)
+	InMyArea(Player1)
+THEN
+    RESPONSE #100
+        SetGlobal("AC#_IL_Area_21","GLOBAL",1)
+        DisplayString(Myself,@7102)
+        AdvanceTime(FOUR_HOURS)
+END
+
+IF
 	DifficultyLT(HARD)
 	Global("SetRest","ACIL21",0)
 THEN

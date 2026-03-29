@@ -1,15 +1,25 @@
 IF
+    InMyArea(Player1)
+    Global("AC#_IL_Area_45","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("AC#_IL_Area_45","GLOBAL",1)
+        DisplayString(Myself,@7100)
+        AdvanceTime(TWENTYONE_HOURS)
+END
+
+/*
+IF
 	Global("EnteredArea","ACIL45",0)
 THEN
 	RESPONSE #100
-		FadeToColor([0.0],0)
 		SetGlobal("EnteredArea","ACIL45",1)
-		FadeFromColor([15.0],0)
-		AddJournalEntry(999999,INFO)
+		AddJournalEntry(@45000,INFO)
 END
+*/
 /*
 Rest in the city of greed
-*/
+
 IF
 	Global("Theft","ACIL45",1)
 THEN
@@ -26,3 +36,4 @@ THEN
                  TakePartyGold(250)
                  SetGlobal("Theft","ACIL45",1)
 END
+*/

@@ -63,7 +63,7 @@ COPY ~silverrealms/areas/ACIL20.are~          ~override~
   SAY 0x1950 @875       // Illithidhead Info Trigger
   SAY 0x188c @876       // Illithidheads Info Trigger
   SAY 0x20f8 @6200       // Hizaagkur mine sign Info Trigger
-  SAY 0x21bc @6201       // Nummak's delve Info Trigger
+  SAY 0x21bc @6201       // Nimmuk's delve Info Trigger
 
 COPY ~silverrealms/areas/ACIL21.are~          ~override~
   WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type

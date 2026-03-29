@@ -23,7 +23,7 @@ IF ~~ THEN EXTERN ~AC#MAL02~ 02
 END
 
 IF ~~ THEN BEGIN 3
-SAY ~Werdet Ihr was? Ihr könnt mich bekanntermaßen noch nicht einmal töten, denn das würde meine Rückkehr in meinen Körper auf der materiellen Ebene und damit meine Befreiung bedeuten.~
+SAY ~Vernichtet? Ihr könnt mich bekanntermaßen nicht töten, denn das würde meine Rückkehr in meinen Körper auf der materiellen Ebene und damit meine Befreiung bedeuten. UNd meine Befreier sind schon auf dem Weg hierher!~
 IF ~~ THEN EXTERN ~AC#MAL02~ 03
 END
 
@@ -68,12 +68,12 @@ IF ~~ THEN EXTERN ~AC#MITH2~ 2
 END
 
 IF ~~ THEN BEGIN 02
-SAY ~Wagt es nicht, mich zu verhöhnen, denn sonst werde ich...~
+SAY ~Wir unterscheiden uns gar nicht so sehr, "König"... Ihr tragt Ketten aus Fleisch. Ich trage Federn. Und indem ich Euch habe, werde ich bald wieder meine wahre gestalt zurückerlangen, während Ihr vernichtet werdet!~
 IF ~~ THEN EXTERN ~AC#MITH2~ 3
 END
 
 IF ~~ THEN BEGIN 03
-SAY ~Wisst Ihr, Mithbarakaz, dies ist das Problem mit Euch gutherzigen Kreaturen - Ihr denkt immer, Ihr könntet Euch in den Geist von uns Tyrannen hineinversetzen, aber Euch fehlt der Blick für all die Bösartigkeiten, zu welchen wir jedesmal aufs Neue fähig sind. Meine Version der Geschichte geht nämlich so: Ihr steckt hier in Eurem Käfig fest und müsst mit ansehen, wie diese schlecht geplante Befreiungsaktion ein klägliches Ende finden wird, währenddessen ich in meinem astralen Kraftfeld triumphieren werde!~
+SAY ~Wisst Ihr, Mithbarakaz, der Silberdrache: Dies ist das Problem mit Euch gutherzigen Kreaturen - Ihr denkt, Ihr könntet Euch in den Geist von uns Tyrannen hineinversetzen, aber Euch fehlt der Blick für all die Bösartigkeiten, zu welchen wir jedesmal aufs Neue fähig sind. Meine Version der Geschichte geht nämlich so: Ihr steckt hier in Eurem Käfig fest und müsst mit ansehen, wie diese schlecht geplante Befreiungsaktion ein klägliches Ende finden wird, währenddessen ich in meinem astralen Kraftfeld triumphieren werde!~
 IF ~~ THEN DO ~ClearAllActions()
    StartCutSceneMode()
    StartCutScene("ac#ct88B")~

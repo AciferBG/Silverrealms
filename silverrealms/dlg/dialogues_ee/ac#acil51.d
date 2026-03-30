@@ -11,11 +11,11 @@ BEGIN ~AC#ANT01~
 	  IF ~OR(2)
 	  Dead("AC#CHARV")
 	  Dead("AC#CHARR")
-	  Global("AC#AnthanDragon","GLOBAL",0)~ THEN REPLY ~Ich habe den Drachen getötet.~ + killed_dragon
+	  GlobalLT("AC#AnthanDragon","GLOBAL",10)~ THEN REPLY ~Ich habe den Drachen getötet.~ + killed_dragon
 	END
 	
 		IF ~~ THEN BEGIN killed_dragon
-		SAY ~Ihr habt was? Ihr habt wirklich den Drachen erschlagen, der meinen Sohn ermordet hatte?~
+		SAY ~Ihr habt wirklich den Drachen erschlagen, der meinen Sohn ermordet hatte?~
 		IF ~~ THEN REPLY ~Ja. Mit meinen eigenen Händen. Und vielleicht etwas Magie.~ GOTO killed_dragon_02 
 		END
 		
@@ -26,7 +26,7 @@ BEGIN ~AC#ANT01~
 			
 				IF ~~ THEN BEGIN killed_dragon_03
 				SAY ~Nun kann ich wieder besser ruhen. Gleiches wurde mit Gleichem vergolten. Eines Tages werde ich meinen Sohn in der Seelenschmiede wiedersehen! Von jetzt an werde ich ihm wieder in die Augen schauen können. Habt Dank dafür! Und nun entschuldigt mich, ich muss einige stille Worte an den Allvater richten. Möge der Erbauer der Zwerge Euch für diese gute Tat segnen!~
-				IF ~~ THEN DO ~SetGlobal("AC#AnthanDragon","GLOBAL",1)
+				IF ~~ THEN DO ~SetGlobal("AC#AnthanDragon","GLOBAL",10)
 				EraseJournalEntry(@51100)~ EXIT 
 				END
 				
@@ -112,71 +112,15 @@ IF ~~ THEN BEGIN died_fighting_a_dragon_02
   SAY ~So hat er also in seinen letzten Atemzügen die Ehre seines Clans doch noch gewahrt... und wird nicht ganz vergessen sein. Ihr habt mir mehr Frieden gebracht, als ich zu hoffen wagte. Habt Dank, Ihr habt einem alten Zwerg sehr geholfen.~
   IF ~~ THEN REPLY ~Gerne geschehen.~ GOTO what_else
 END
-				
-/*
-IF ~NumTimesTalkedTo(0)~ THEN BEGIN hello_firsttime_late
-  SAY ~Ihr seid der <PRO_RACE> von der Oberfläche, der meinen Sohn getroffen hat, bevor er starb. Ihr kommt reichlich spät, um mir von seinem Tod zu berichten.~
-  IF ~~ THEN REPLY ~Das tut mir wirklich sehr leid.~ GOTO im_sorry
-  IF ~~ THEN REPLY ~Ich bin so schnell gekommen wir ich konnte.~ GOTO im_sorry
-  IF ~~ THEN REPLY ~Ich hatte vorher einfach nicht die Zeit.~ GOTO no_time
-END
-
-	IF ~~ THEN BEGIN no_time
-	  SAY ~Nicht die Zeit? Das wäre ja wohl das Mindeste gewesen, einen Vater vom Tode seines Sohnes zu unterrichten!~ 
-	  IF ~~ THEN REPLY ~Ich hatte gehört, Ihr standed Euch ohnehin nicht mehr sehr nahe.~ GOTO didnt_like_your_son
-	  IF ~~ THEN REPLY ~Im Nachhinein betrachtet ja, tut mir leid.~ GOTO im_sorry
-	END
-	
-		IF ~~ THEN BEGIN didnt_like_your_son
-		SAY ~Das ist richtig. Er hat die alten Wege verlassen und den Preis dafür gezahlt.~
-		IF ~~ THEN GOTO im_sorry
-		END
-	
-		IF ~~ THEN BEGIN im_sorry
-		SAY ~Nun, davon wird er jetzt auch nicht mehr lebendig. Sagt mir wenigstens Eines: Ist er als Held oder als Feigling gestorben?~ 
-		IF ~~ THEN REPLY ~Als Held.~ GOTO died_as_hero
-		IF ~~ THEN REPLY ~Als Feigling.~ GOTO died_as_coward
-		IF ~~ THEN REPLY ~Was spielt denn das für eine Rolle?~ GOTO why_matter
-		END
-		
-			IF ~~ THEN BEGIN why_matter
-			SAY ~Es spielt eine Rolle für die Ehre des Clans, dem ich schon ein Leben lang vorstehe! So antwortet mir: Starb er als Held oder als Feigling?~ 
-			IF ~~ THEN REPLY ~Als Held.~ DO ~EraseJournalEntry(@51200) AddJournalEntry(@51201,QUEST_DONE)~ GOTO died_as_hero
-			IF ~~ THEN REPLY ~Als Feigling.~ DO ~EraseJournalEntry(@51200) AddJournalEntry(@51201,QUEST_DONE)~ GOTO died_as_coward
-			END
-		
-			IF ~~ THEN BEGIN died_as_coward
-			SAY ~Das habe ich mir schon gedacht. So ergeht es einem, der nicht auf die Regeln seiner Rasse hört!~
-			IF ~~ THEN REPLY ~Er begegnete einem roten Drachen, überließ aber mir das Kämpfen.~ GOTO coward_fighting_a_dragon
-			END
-			
-				IF ~~ THEN BEGIN coward_fighting_a_dragon
-				SAY ~So blieb ihm denn auch ein anständiges Begräbnis verwehrt. Habt Dank, dass Ihr mich über die Umstände seines Todes unterrichtet habt, auch wenn dies für mich keine guten Neuigkeiten waren und ich nichts anderes erwartet hatte.~
-				IF ~~ THEN REPLY ~Gerne geschehen.~ DO ~SetGlobal("AC#CondolenceAnthan","GLOBAL",2)~ GOTO what_else
-				END
-		
-			IF ~~ THEN BEGIN died_as_hero
-			SAY ~Als Held? Das kann ich kaum glauben. Aber es würde mein Vaterherz mit Freude füllen, wenn Ihr denn die Wahrheit sprächet.~
-			IF ~~ THEN REPLY ~Er fiel im Kampf gegen einen roten Drachen.~ GOTO died_fighting_a_dragon
-			END
-			
-				IF ~~ THEN BEGIN died_fighting_a_dragon
-				SAY ~Gegen einen *durgarn*? *Mein* Beldas hat gegen einen *bardurgarn* gekämpft?~
-				IF ~~ THEN REPLY ~Ja, in einem alten zwergischen Wachposten an der Oberfläche, oben auf einer Bergspitze. Er hat dort im Rahmen seiner Ahnen seine letzte Ruhe gefunden.~ DO ~SetGlobal("AC#CondolenceAnthan","GLOBAL",2)
-				SetGlobal("AC#AnthanBeldasTruth","GLOBAL",1)~ GOTO died_fighting_a_dragon_02
-				END
-				
-					IF ~~ THEN BEGIN died_fighting_a_dragon_02
-					SAY ~So hat er also doch noch seinem Clan zur Ehre gereicht. Nun, da ich weiß, dass mein Sohn als Held gestorben ist, kann ich wieder ruhiger schlafen. Habt Dank, Ihr habt einem alten Zwerg sehr geholfen.~
-					IF ~~ THEN REPLY ~Gerne geschehen.~ GOTO what_else
-					END
-*/					
+								
 	IF ~~ THEN BEGIN what_else
 	  SAY ~Ihr seht so aus, als wolltet Ihr sonst noch etwas von mir.~ 
 	  IF ~Global("AC#Clans_Parting","GLOBAL",2)~ THEN REPLY ~Ich würde gerne einen Blick in die Reisechronik Eures Ahnen Borthun werfen.~ GOTO take_a_look_at_borthuns_book
+	  IF ~GlobalLT("AC#AnthanDragon","GLOBAL",2)~ THEN REPLY ~Ich könnte den Drachen erschlagen, um Euren Sohn zu rächen.~ GOTO chain_slay_dragon
 	  IF ~~ THEN REPLY ~Nein, nichts mehr.~ GOTO no_nothing_else
 	END
 
+			
 			IF ~~ THEN BEGIN take_a_look_at_borthuns_book
 			SAY ~Was? Auf keinen Fall! Diese verfluchte Buch hat jedem, der es bisher gelesen hat, nichts als Pech und Verderben gebracht.~
 			IF ~~ THEN REPLY ~Was soll das bedeuten?~ GOTO book_nothing_but_bad_luck
@@ -227,7 +171,54 @@ END
 	IF ~~ THEN BEGIN no_nothing_else 
 	SAY ~Möge der Erbauer über Euch wachen. Und über meinen toten Sohn!~
 	IF ~~ THEN EXIT
-	END	
+	END
+
+	CHAIN AC#ANT01 chain_slay_dragon
+	~Ihr wollt den Drachen erschlagen? Ihr seid entweder töricht oder tollkühn!~
+	END
+	IF ~~ THEN EXTERN AC#ANT01 chain_slay_dragon_02
+
+		CHAIN AC#ANT01 chain_slay_dragon_02
+		~Und doch... kann ich nicht leugnen, dass mich Eurer Wunsch nicht ganz kalt lässt.~
+		END
+		IF ~~ THEN EXTERN AC#ANT01 chain_slay_dragon_03
+		
+			CHAIN AC#ANT01 chain_slay_dragon_03
+			~Mein Sohn suchte einen Weg aus dem Unterreich. Wenn Beldas diesem Drachen bei seinem Weg an die Oberfläche begegnet ist, habe ich einen Anhalt, wo sich der Drache befinden könnte.~
+			END
+			IF ~~ THEN EXTERN AC#ANT01 chain_slay_dragon_04
+
+			CHAIN AC#ANT01 chain_slay_dragon_04
+			~Es gibt alte Geschichten über einen versteckten Weg nach Norden. Ein Weg, der vor langer Zeit versiegelt wurde. Von Priestern des Moradin. Denn der Weg führt nach Rrinnoroth, einer alten Zwergenstadt des Nachbarkönigreiches Drakkalor, die nun zur Geisterstadt verkommen ist.~
+			END
+			IF ~~ THEN REPLY ~Der Drache scheint einen Weg an die Oberfläche zu bewachen.~ EXTERN AC#ANT01 chain_slay_dragon_05	
+			
+			CHAIN AC#ANT01 chain_slay_dragon_05
+			~Die Gänge, die nach Rrinnoroth führen, sind zu schmal, als dass sie ein Drache nehmen könnte. Iltkazar ist sicher. Und doch... nahm Beldas diesen Weg, um seiner Stadt zu helfen. Eine törichte Entscheidung!~
+			END
+			IF ~~ THEN EXTERN AC#ANT01 chain_slay_dragon_06	
+			
+				CHAIN AC#ANT01 chain_slay_dragon_06
+				~Das Schicksal wollte es, dass ich als Priester des Moradin die Siegelsteine bewachte, die über den Zugang nach Norden wachen. Ob Beldas mir einen davon entwendete? Ich kann es nicht sagen. Ich habe all dem wenig Beachtung geschenkt. Und nun ist mein Sohn tot!~
+				END
+				IF ~~ THEN REPLY ~Ich könnte Euren Sohn rächen, indem ich den Drachen töte.~ EXTERN AC#ANT01 chain_slay_dragon_07	
+				IF ~~ THEN REPLY ~Der Weg an die Oberfläche wäre für mich von großem Nutzen.~ EXTERN AC#ANT01 chain_slay_dragon_07
+
+					CHAIN AC#ANT01 chain_slay_dragon_07
+					~Einem Zwerg Iltkazars würde ich einen solchen Wunsch sicher verwehren. Doch ein <PRO_RACE> von der Oberfläche? Diese Entscheidung müsst Ihr alleine tragen.~
+					END
+					IF ~~ THEN REPLY ~Gebt mir den Siegelstein. Ich werde dem Drachen alsbald gegenübertreten!~ EXTERN AC#ANT01 chain_give_dragonward
+
+						CHAIN AC#ANT01 chain_give_dragonward
+						~Hier ist der Siegelstein. Er öffnet einen versteckten Gang in der zentralen Höhle direkt neben dem Zugang zu den Spinnenschächten. Nehmt das Ultoksamrin-Tor, verlasst Iltkazar gen Westen, und wendet Euch in der großen Höhle gen Norden. Der Siegelstein wird alle verschlossenen Türen auf dem Weg nach Norden für Euch öffnen. Der Weg ist lang und verschlungen, Ihr werdet viele Stunden nach Rrinnoroth unterwegs sein. Doch letztlich führt Euch dieser Weg zu Beldas' Mörder, und vielleicht auch aus dem Unterreich hinaus.~
+						END
+						IF ~~ THEN EXTERN AC#ANT01 chain_give_dragonward_02
+
+						CHAIN AC#ANT01 chain_give_dragonward_02
+						~Tut, was Ihr tun müsst. Ich werde Euch weder aufhalten noch danken.~
+						END
+						IF ~~ THEN DO ~GiveItemCreate("AC#ILKY8",Player1,1,0,0)
+						SetGlobal("AC#AnthanDragon","GLOBAL",2)~ EXIT						
 
 
 // ---------------------------------------------

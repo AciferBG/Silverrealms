@@ -244,30 +244,58 @@ END
 			SAY ~Das muss dann aber ein ganz schön mächtiger Trank gewesen sein! Und viel schwieriger wird es werden, Euch wieder hinauf zu schicken. Wir hantieren hier viel mit Levitationstränken, um die Bibliothek zu bewirtschaften. Aus diesem Grunde kann ich Euch sagen, dass ein solcher Trank Euch niemals unbeschadet wieder ganz nach oben bringen würde.~
 			=
 			~Ich hatte auch mit dem ein oder anderen Baumeister unserer Steinmetzgilde gesprochen. Leitern, Seile und dergleichen scheiden leider auch aus. Wir müssen eine andere Möglichkeit in Betracht ziehen.~
-			IF ~~ THEN REPLY ~Was schlagt Ihr also vor?~ GOTO idea_01
+			IF ~~ THEN REPLY ~Was schlagt Ihr also vor?~ GOTO about_passage_of_underdark
+			IF ~GlobalGT("AC#IL_CharvDead","GLOBAL",0)~ THEN REPLY ~Ich habe schon einen Ausgang aus dem Unterreich gefunden. Der rote Drache, der ihn bewachte, wurde von mir erschlagen.~ GOTO charv_dead
 			END
 			
-				IF ~~ THEN BEGIN idea_01
+				IF ~~ THEN BEGIN charv_dead
+				SAY ~Ihr habt den Drachen, der Beldas getötet haben soll, erschlagen? Das ist gut. Sehr gut!~
+				=
+				~Unabhängig davon wäre es aber eine gute Idee, den direkten Zugang, den Ihr herunter gekommen seid, für einen Weg an die Oberfläche nutzbar zu machen. Hört zu.~
+				IF ~~ THEN GOTO  about_passage_of_underdark
+				END
+				
+				IF ~~ THEN BEGIN about_passage_of_underdark
+						SAY ~Die meisten Passagen wurden von unserer Rasse schon vor langer Zeit versiegelt. Die Zwerge des alten Shanatar haben sich komplett von der Außenwelt abgekapselt. Viele Zwerge halten das für eine gute Sache. Ich habe die Befürchtung, dass wir dadurch auch in einer großen, unterirdischen Falle sitzen.~
+						IF ~~ THEN REPLY ~Ihr helft mir auch, zurück an die Oberfläche zu gelangen, weil Ihr Euch damit einen Vorteil für die Stadt erhofft, oder?~ + help_to_be_free						
+						END
+						
+							IF ~~ THEN BEGIN help_to_be_free
+							SAY ~So ist es. Seht, die anderen Zwerge mögen uns Anhänger des irrenden Wanderers zwar belächeln, aber im Unterschied zu all den anderen Zwergen, die immer nur nach unten sehen, blicken wir auch ab und zu nach oben.~
+							IF ~~ THEN + about_passage_of_underdark02 
+							END
+							
+							IF ~~ THEN BEGIN about_passage_of_underdark02
+							SAY ~Insofern ist mir sehr daran gelegen, einen Weg an die Oberfläche zu nutzen. Derer gab es einst viele, heute... keinen einzigen mehr.~
+							IF ~Global("AC#IL_CharvDead","GLOBAL",0)~ THEN + other_wayout_charv_not_dead
+							IF ~GlobalGT("AC#IL_CharvDead","GLOBAL",0)~ THEN + other_wayout_charv_dead
+							IF ~GlobalGT("AC#AnthanDragon","GLOBAL",0)~ THEN + other_wayout_charv_not_dead 
+							END
+			
+									
+						IF ~~ THEN BEGIN other_wayout_charv_not_dead
+						SAY ~Es gibt zwar noch einen weiteren Weg. Der Weg, den unser Beldas - Dugmaren sei seiner Seele gnädig - genommen hatte, führte ihn jedoch direkt in die Fänge dieses roten Drachen. Wenn Ihr Euch zutraut, den Drachen zu erschlagen, hättet Ihr einen weiteren Zugang geöffnet.~
+						=
+						~Die Zugänge zu dem Drachen sind jedoch versiegelt. Ihr solltet diesbezüglich mit Beldas' Vater, Anthan Diamantklinge, sprechen. Er könnte Euch sagen, wie Ihr den Weg zu dem Drachen finden könntet.~						
+						=
+						~Nichtsdestotrotz würde ich es gutheißen, wenn Ihr den Weg, den Ihr herabgenommen habt, für uns wieder gangbar machen würdet.~
+						IF ~~ THEN + idea_01
+						END
+						
+						IF ~~ THEN BEGIN other_wayout_charv_dead
+						SAY ~Ihr habt diesen roten Drachen zwar erschlagen, der einen Zugang bewachte. Doch ich habe noch eine andere - einfachere Idee, wie Ihr wieder an die Oberfläche reisen könntet.~
+						IF ~~ THEN + idea_01
+						END
+												 
+						IF ~~ THEN BEGIN idea_01
 				SAY ~Vor längerer Zeit brachte mir ein Spähtrupp unserer Krieger eine seltsame Scheibe vorbei, die sie bei einem Kampf gegen Drow erbeutet hatten. Ich erkannte sofort, dass es sich dabei nur um eine der berüchtigten Drow-Schwebescheiben handeln konnte, welche die Dunkelelfen dazu verwenden, in ihren finsteren Städten emporzuschweben.~
 				IF ~~ THEN REPLY ~Ihr denkt, eine Schwebescheibe der Drow könnte mich wieder nach oben bringen?~ GOTO  drow_driftdisc_01
 				END
 				
 					IF ~~ THEN BEGIN drow_driftdisc_01
 					SAY ~Genau! Nachdem ich die Schwebescheibe untersucht hatte, habe ich sie beseite gelegt, und fast vergessen, weil wir in der Stadt keine Verwendung für sie zu haben schienen. Welcher Zwerg, der etwas auf sich hält, möchte schon dabei gesehen werden, wie er in der Stadt mit einer Scheibe aus Drow-Handwerkskunst herumschwebt! Doch für Euch Oberflächler wäre dieser Gegenstand von großem Nutzen.~ 
-					IF ~~ THEN REPLY ~Wo ist die Scheibe jetzt?~ + wheres_driftdisc
-					IF ~~ THEN REPLY ~Gibt es keinen anderen Weg zurück an die Oberfläche?~ + other_wayout_01
-					END
-					
-						IF ~~ THEN BEGIN other_wayout_01
-						SAY ~Nein. Die meisten Passagen wurden von unserer Rasse schon vor langer Zeit versiegelt. Der Weg, den unser Beldas - Dugmaren sei seiner Seele gnädig - genommen hatte, führte ihn direkt die Fänge dieses roten Drachen. Die Zwerge des alten Shanatar haben sich komplett von der Außenwelt abgekapselt. Viele Zwerge halten das für eine gute Sache. Ich habe die Befürchtung, dass wir dadurch auch in einer großen, unterirdischen Falle sitzen.~
-						IF ~~ THEN REPLY ~Ihr helft mir auch, zurück an die Oberfläche zu gelangen, weil Ihr Euch damit einen Vorteil für die Stadt erhofft, oder?~ + help_to_be_free
-						IF ~~ THEN REPLY ~Wo ist die Drow-Schwebescheibe jetzt?~ + wheres_driftdisc
-						END
-						
-							IF ~~ THEN BEGIN help_to_be_free
-							SAY ~So ist es. Seht, die anderen Zwerge mögen uns Anhänger des irrenden Wanderers zwar belächeln, aber im Unterschied zu all den anderen Zwergen, die immer nur nach unten sehen, blicken wir auch ab und zu nach oben.~
-							IF ~~ THEN REPLY ~Wo ist die Drow-Schwebescheibe jetzt?~ + wheres_driftdisc 
-							END
+					IF ~~ THEN REPLY ~Wo ist diese Drow-Schwebescheibe jetzt?~ + wheres_driftdisc					
+					END				
 					
 					IF ~~ THEN BEGIN wheres_driftdisc
 					SAY ~Ich habe sie dem alten Shagretor im "Vermächtnis" gespendet. Dort müsste sie immer noch zu finden sein.~

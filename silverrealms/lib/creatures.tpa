@@ -2499,9 +2499,25 @@ COPY ~silverrealms/cre/AC#2UCHA.cre~ ~override~ // Charvekannathor: Malphas cuts
   
 COPY ~silverrealms/cre/AC#CHARV.cre~ ~override~ // Charvekannathor: Boss fight
   SAY NAME1 @43 SAY NAME2 @43
+  SAY INITIAL_MEETING @5293
+  SAY SELECT_COMMON1 @5291
+  SAY SELECT_COMMON2 @5292
+  SAY SELECT_COMMON3 @5294
+  SAY BATTLE_CRY1 @5295
+  SAY BATTLE_CRY2 @5296
+  SAY BATTLE_CRY3 @5297
+  SAY BATTLE_CRY4 @5298
   
 COPY ~silverrealms/cre/AC#CHARR.cre~ ~override~ // Charvekannathor: Boss fight (Rest interrupt)
   SAY NAME1 @43 SAY NAME2 @43
+  SAY INITIAL_MEETING @5293
+  SAY SELECT_COMMON1 @5291
+  SAY SELECT_COMMON2 @5292
+  SAY SELECT_COMMON3 @5294
+  SAY BATTLE_CRY1 @5295
+  SAY BATTLE_CRY2 @5296
+  SAY BATTLE_CRY3 @5297
+  SAY BATTLE_CRY4 @5298
 
   COPY ~silverrealms/cre/AC#47RST.cre~ ~override~ // spawn creature (Rest interrupt)
   SAY NAME1 @43 SAY NAME2 @43

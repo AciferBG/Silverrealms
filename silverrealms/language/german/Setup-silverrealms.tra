@@ -1645,6 +1645,9 @@ Diirinka'~
 @6200 = ~Auf diesem Schild sind ein Pfeil nach unten, ein Hammer und mehrere Blitze dargestellt. Die Leiter daneben scheint in tiefere Minenbereiche zu führen.~
 @6201 = ~Nimmuks Stollen~
 @6202 = ~Hizagkuur-Mine~
+@6203 = ~Spinnenschächte~
+@6204 = ~Nach Rrinnoroth - 
+Charvekannathors Hort~
 
 // ACIL25 - Spiderstalkings #2 (other entries at @4 ff)
 @6251 = ~Dies ist das Symbol der ausgestoßenen Drow-Göttin Zinzerena, einer Feindin der Spinnenkönigin Lolth und ausgesprochenen Spinnenhasserin.~
@@ -2245,6 +2248,8 @@ Mindestintelligenz: 9
 Gewicht: 0~
 @8130 = ~Anthans Runenstein~
 @8131 = ~Diesen Runenstein habt Ihr von Anthan Diamantklinge erhalten. Ihr könnt damit einen Geheimtür im Unterreich in der Nähe des Zugangs zu den Spinnenschächten öffnen, der Euch nach Rrinnoroth, dem Lager des Drachen Charvekannathor, bringt. Anthan hat Euch gebeten, den Wyrm zu erschlagen, um seinen Sohn zu rächen.~
+@8132 = ~Schlüssel von Rrinnoroth~
+@8133 = ~Dieser Schlüssel befand sich im Besitz von Charvekannathor, dem roten Drachen. Mit dem Gegenstand lässt sich das Tor von Rrinnoroth öffnen, welches einen alten Zugang aus dem Unterreich verschließt.~
 
 
  

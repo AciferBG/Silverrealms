@@ -4,6 +4,13 @@
 
 BEGIN ~AC#ANT01~
 
+	IF ~Global("AC#AnthanDragon","GLOBAL",1)
+	Global("AnthanAsksForDragon","ACIL51",0)~ THEN BEGIN hello_please_slay_dragon
+	  SAY ~Wartet noch einen Augenblick, <CHARNAME>. Ich habe eine Bitte an Euch.~ 	
+	  IF ~~ THEN REPLY ~Sicher, worum geht es?~ DO ~SetGlobal("AnthanAsksForDragon","ACIL51",1)~ EXTERN AC#ANT01 chain_please_slay_dragon_yes
+	  IF ~~ THEN REPLY ~Dafür habe ich jetzt keine Zeit.~ DO ~SetGlobal("AnthanAsksForDragon","ACIL51",1)~ EXTERN AC#ANT01 chain_please_slay_dragon_no
+	END
+
 	IF ~GlobalGT("AC#CondolenceAnthan","GLOBAL",1)~ THEN BEGIN hello_what_else
 	  SAY ~Wollt Ihr noch etwas?~ 
 	  IF ~Global("AC#Clans_Parting","GLOBAL",2)~ THEN REPLY ~Ich würde gerne einen Blick in die Reisechronik Eures Ahnen Borthun werfen.~ GOTO take_a_look_at_borthuns_book
@@ -27,6 +34,7 @@ BEGIN ~AC#ANT01~
 				IF ~~ THEN BEGIN killed_dragon_03
 				SAY ~Nun kann ich wieder besser ruhen. Gleiches wurde mit Gleichem vergolten. Eines Tages werde ich meinen Sohn in der Seelenschmiede wiedersehen! Von jetzt an werde ich ihm wieder in die Augen schauen können. Habt Dank dafür! Und nun entschuldigt mich, ich muss einige stille Worte an den Allvater richten. Möge der Erbauer der Zwerge Euch für diese gute Tat segnen!~
 				IF ~~ THEN DO ~SetGlobal("AC#AnthanDragon","GLOBAL",10)
+				AddJournalEntry(@51102,QUEST_DONE)
 				EraseJournalEntry(@51100)~ EXIT 
 				END
 				
@@ -173,51 +181,83 @@ END
 	IF ~~ THEN EXIT
 	END
 
+	CHAIN AC#ANT01 chain_please_slay_dragon_no 
+	~Es dauert nicht lange.~
+	END
+	IF ~~ THEN EXTERN AC#ANT01 chain_please_slay_dragon_yes
+	
+	CHAIN AC#ANT01 chain_please_slay_dragon_yes 
+	~Es... es ist lediglich die große Bitte eines... trauernden Vaters.~
+	END
+	IF ~~ THEN EXTERN AC#ANT01 chain_please_slay_dragon__02
+
+	CHAIN AC#ANT01 chain_please_slay_dragon__02 
+	~Der Drache, dem Ihr begegnet seid; der Drache, der... Beldas getötet hat. Ich weiß, wo er sich aufhält.~
+	END
+	IF ~~ THEN EXTERN AC#ANT01 chain_slay_dragon_03
+	
 	CHAIN AC#ANT01 chain_slay_dragon
 	~Ihr wollt den Drachen erschlagen? Ihr seid entweder töricht oder tollkühn!~
 	END
 	IF ~~ THEN EXTERN AC#ANT01 chain_slay_dragon_02
 
 		CHAIN AC#ANT01 chain_slay_dragon_02
-		~Und doch... kann ich nicht leugnen, dass mich Eurer Wunsch nicht ganz kalt lässt.~
+		~Und doch... kann ich nicht leugnen, dass mir Euer Ansinnen nicht gleichgültig ist.~
 		END
 		IF ~~ THEN EXTERN AC#ANT01 chain_slay_dragon_03
-		
+
 			CHAIN AC#ANT01 chain_slay_dragon_03
-			~Mein Sohn suchte einen Weg aus dem Unterreich. Wenn Beldas diesem Drachen bei seinem Weg an die Oberfläche begegnet ist, habe ich einen Anhalt, wo sich der Drache befinden könnte.~
+			~Mein Sohn suchte einen Weg aus dem Unterreich. Wenn Beldas dem roten Wyrm auf seinem Weg an die Oberfläche begegnete, weiß ich, wo man nach seinem Mörder suchen muss.~
 			END
 			IF ~~ THEN EXTERN AC#ANT01 chain_slay_dragon_04
 
 			CHAIN AC#ANT01 chain_slay_dragon_04
-			~Es gibt alte Geschichten über einen versteckten Weg nach Norden. Ein Weg, der vor langer Zeit versiegelt wurde. Von Priestern des Moradin. Denn der Weg führt nach Rrinnoroth, einer alten Zwergenstadt des Nachbarkönigreiches Drakkalor, die nun zur Geisterstadt verkommen ist.~
+			~Es gibt alte Berichte über einen verborgenen Weg nach Norden. Einen Weg, der vor langer Zeit versiegelt wurde – von Priestern Moradins selbst. Er führt nach Rrinnoroth, einer alten Zwergenstadt des Nachbarreiches Drakkalor. Heute ist sie nichts als eine Geisterstadt.~
 			END
-			IF ~~ THEN REPLY ~Der Drache scheint einen Weg an die Oberfläche zu bewachen.~ EXTERN AC#ANT01 chain_slay_dragon_05	
+			IF ~~ THEN EXTERN AC#ANT01 chain_slay_dragon_05	
 			
 			CHAIN AC#ANT01 chain_slay_dragon_05
 			~Die Gänge, die nach Rrinnoroth führen, sind zu schmal, als dass sie ein Drache nehmen könnte. Iltkazar ist sicher. Und doch... nahm Beldas diesen Weg, um seiner Stadt zu helfen. Eine törichte Entscheidung!~
 			END
-			IF ~~ THEN EXTERN AC#ANT01 chain_slay_dragon_06	
+			IF ~~ THEN EXTERN AC#ANT01 chain_slay_dragon_06							
 			
 				CHAIN AC#ANT01 chain_slay_dragon_06
-				~Das Schicksal wollte es, dass ich als Priester des Moradin die Siegelsteine bewachte, die über den Zugang nach Norden wachen. Ob Beldas mir einen davon entwendete? Ich kann es nicht sagen. Ich habe all dem wenig Beachtung geschenkt. Und nun ist mein Sohn tot!~
+				~Das Schicksal will es, dass ich als Hohepriester des Moradin die Siegelsteine bewache, die den Zugang nach Norden sichern. Ob Beldas mir einen davon entwendete? Ich kann es nicht sagen. Ich achtete nicht darauf. Auf vieles achtete ich zu wenig. Nun ist er tot, und all mein Grübeln wird daran nichts ändern.~
 				END
 				IF ~~ THEN REPLY ~Ich könnte Euren Sohn rächen, indem ich den Drachen töte.~ EXTERN AC#ANT01 chain_slay_dragon_07	
-				IF ~~ THEN REPLY ~Der Weg an die Oberfläche wäre für mich von großem Nutzen.~ EXTERN AC#ANT01 chain_slay_dragon_07
+				IF ~~ THEN REPLY ~Ein weiterer Weg an die Oberfläche wäre für mich von großem Nutzen.~ EXTERN AC#ANT01 chain_slay_dragon_08
+				IF ~~ THEN REPLY ~Und was hat das mit mir zu tun?~ EXTERN AC#ANT01 chain_slay_dragon_08
+				IF ~~ THEN REPLY ~Nein, vergesst es.~ EXTERN AC#ANT01 chain_slay_dragon_08
 
 					CHAIN AC#ANT01 chain_slay_dragon_07
 					~Einem Zwerg Iltkazars würde ich einen solchen Wunsch sicher verwehren. Doch ein <PRO_RACE> von der Oberfläche? Diese Entscheidung müsst Ihr alleine tragen.~
 					END
+					IF ~~ THEN EXTERN AC#ANT01 chain_slay_dragon_08
+					
+					CHAIN AC#ANT01 chain_slay_dragon_08
+					~Es würde einem trauernden Vater Genugtuung schaffen, wenn Ihr diesem roten Drachen ein schreckliches Ende bereiten würdet. Aus diesem Grunde habe ich beschlossen, Euch einen Siegelstein zu geben, der den Zugang nach Norden, nach Rrinnoroth, für Euch öffnet.~
+					END
+					IF ~~ THEN REPLY ~Ich mochte Beldas wirklich sehr, aber dieser Drache war groß und gefährlich, ich weiß nicht...~ EXTERN AC#ANT01 really_slay_dragon
+					IF ~~ THEN REPLY ~Ihr traut mir zu, dass ich einfach so einen Drachen erschlage?~ EXTERN AC#ANT01 really_slay_dragon
+					IF ~~ THEN REPLY ~Ich kann nichts versprechen, aber ich werde mein Bestes geben, dieses Untier zur Strecke zu bringen.~ EXTERN AC#ANT01 chain_give_dragonward
 					IF ~~ THEN REPLY ~Gebt mir den Siegelstein. Ich werde dem Drachen alsbald gegenübertreten!~ EXTERN AC#ANT01 chain_give_dragonward
+					IF ~~ THEN REPLY ~Das ist eine ehrenvolle Aufgabe, die ich gerne annehme.~ EXTERN AC#ANT01 chain_give_dragonward
 
+					CHAIN AC#ANT01 really_slay_dragon
+					~Ihr hattet den Drachen schon einmal fast besiegt. Versetzt ihm für mich den letzten Schlag und lasst Gerechtigkeit walten!~
+					END
+					IF ~~ THEN EXTERN AC#ANT01 chain_give_dragonward
+					
 						CHAIN AC#ANT01 chain_give_dragonward
 						~Hier ist der Siegelstein. Er öffnet einen versteckten Gang in der zentralen Höhle direkt neben dem Zugang zu den Spinnenschächten. Nehmt das Ultoksamrin-Tor, verlasst Iltkazar gen Westen, und wendet Euch in der großen Höhle gen Norden. Der Siegelstein wird alle verschlossenen Türen auf dem Weg nach Norden für Euch öffnen. Der Weg ist lang und verschlungen, Ihr werdet viele Stunden nach Rrinnoroth unterwegs sein. Doch letztlich führt Euch dieser Weg zu Beldas' Mörder, und vielleicht auch aus dem Unterreich hinaus.~
 						END
 						IF ~~ THEN EXTERN AC#ANT01 chain_give_dragonward_02
 
 						CHAIN AC#ANT01 chain_give_dragonward_02
-						~Tut, was Ihr tun müsst. Ich werde Euch weder aufhalten noch danken.~
+						~Tut, was Ihr tun müsst. Ich kann nichts mehr tun, um das Geschehene rückgängig zu machen. Ich bitte Euch jedoch um eine Sache: Tötet den Drachen, der meinen Jungen ermordet hat. Zeigt dieser Kreatur, dass es immer noch Gerechtigkeit auf dieser Welt gibt!~
 						END
 						IF ~~ THEN DO ~GiveItemCreate("AC#ILKY8",Player1,1,0,0)
+						AddJournalEntry(@51100,QUEST)
 						SetGlobal("AC#AnthanDragon","GLOBAL",2)~ EXIT						
 
 

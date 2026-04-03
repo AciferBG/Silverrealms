@@ -1,0 +1,17 @@
+IF
+    NumTimesTalkedToGT(0)
+    Global("AC#AnthanDragon","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("AC#AnthanDragon","GLOBAL",1)
+END
+
+IF
+    Global("AC#AnthanDragon","GLOBAL",1)
+    See([PC])
+    !Range(LastSeenBy(Myself),6)
+THEN
+    RESPONSE #100
+        StartDialogueNoSet([PC])
+END
+

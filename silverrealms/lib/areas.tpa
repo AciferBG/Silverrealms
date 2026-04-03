@@ -198,10 +198,9 @@ COPY ~silverrealms/areas/ACIL50.are~          ~override/ACIL50.are~
 COPY ~silverrealms/areas/ACIL51.are~          ~override~
  WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
   SAY 0x1324 @6040  // temple of Moradin
+  SAY 0x2edc @6040  // temple of Moradin map note
   SAY 0x13e8 @829  // ancient forge
   SAY 0x1260 @829  // ancient forge
-  
-  ADD_MAP_NOTE #697 #463 ~gray~ @6040 //temple of Moradin
 
 COPY ~silverrealms/areas/ACIL52.are~          ~override~  // Haela's Halls
  WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type

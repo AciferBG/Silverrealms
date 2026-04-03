@@ -9,6 +9,17 @@ END
 
 IF
 	OR(2)
+		Dead("AC#CHARV")
+		Dead("AC#CHARR")
+	Global("AC#IL_CharvDead","GLOBAL",0) 
+THEN
+	RESPONSE #100
+		SetGlobal("AC#IL_CharvDead","GLOBAL",1)  
+		AddJournalEntry(@51101,QUEST)
+END
+
+IF
+	OR(2)
 	Dead("AC#CHARV")
 	Dead("AC#CHARR")
 	Global("DeactivateRest","ACIL47",0) 

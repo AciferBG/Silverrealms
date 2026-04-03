@@ -230,11 +230,18 @@ Ich bin auf der Axtbrücke unfreiwillig Zeuge der Zerstörungswut eines feuerspe
 @51001 = ~Ein Drachenangriff?
 
 Die Elfen, denen der Angriff des Drachen gegolten hat, haben sich in eine nahegelegene Höhle geflüchtet. Sie haben behauptet, den Reiter des Drachen aus dem Sattel geschossen zu haben. Wenn ich Glück habe, finde ich irgendwo draußen an der Brücke seine zertrümmerten Überreste. Irgendetwas sagt mir, dass die Elfen mir noch nützlich sein könnten.~
-//___________________________Töte Charvekannathor
-@51100   = ~Töte Charvekannathor
+//___________________________Charvekannathor, der rote Drache
+@51100   = ~Charvekannathor, der rote Drache
 
-Ich habe Anthan Diamantklinge versprochen, den roten Drachen Charvekannathor, der seinen Sohn Beldas umgebracht hat, im Namen der Gerechtigkeit zu töten.~
+Anthan Diamantklinge hat mich gebeten, den roten Drachen Charvekannathor, der seinen Sohn Beldas umgebracht hat, zu töten.~
+@51101   = ~Charvekannathor, der rote Drache
 
+Ich habe Charvekannathor getötet und sollte Anthan Diamantklinge in der "Uralten Schmiede" davon in Kenntnis setzen.~
+@51102   = ~Charvekannathor, der rote Drache
+
+Anthan Diamantklinge war erfreut zu hören, dass Charvekannathor durch mich getötet wurde und der Tod seines Sohnes gerächt wurde.~
+
+//________________________________Unterrichte Beldas' Vater vom Tod seines Sohnes
 @51200   = ~Unterrichte Beldas' Vater vom Tod seines Sohnes
 
 Ich muss zu Beldas' Vater Anthan Diamantklinge in die Uralte Schmiede gehen und ihm vom Tod seines Sohnes berichten.~

@@ -361,7 +361,7 @@ THEN
 END
 
 // when Hizagkuur Quest active
-
+/*
 IF
 	Global("HizagkuurRegion","ACIL20",1)
 	Global("AC#HizagkuurQuest","GLOBAL",2)
@@ -371,20 +371,21 @@ THEN
                 TriggerActivation("Info_Hizagkuur",FALSE)
 		SetGlobal("HizagkuurRegion","ACIL20",2)
 END
+*/
 
 
-// ???: Travel Trigger to ACIL2H is already reachable right from the start
-/*
+// Travel Trigger to ACIL2H is already reachable right from the start
+
 IF
 	Global("HizagkuurRegion","ACIL20",0)
 THEN
 	RESPONSE #100
-                TriggerActivation("TrACIL2H",TRUE)
-                TriggerActivation("Info_Hizagkuur",FALSE) // InfoTrigger is not needed anymore
+        TriggerActivation("TrACIL2H",TRUE)
+        TriggerActivation("Info_Hizagkuur",FALSE) // InfoTrigger is not needed anymore
 		SetGlobal("HizagkuurRegion","ACIL20",1)
 END
-*/
 
+/*
 //Travel Region only accessible when Quest is active
 IF
 	Global("HizagkuurRegion","ACIL20",0)
@@ -394,19 +395,8 @@ THEN
                 TriggerActivation("Info_Hizagkuur",TRUE)
 		SetGlobal("HizagkuurRegion","ACIL20",1)
 END
-
-
-/*
-// not needed anymore, block is now executed together w/ closing door and spawning dwarven guards
-IF
-	Global("SpawnPoint1Activation","ACIL20",0)
-	GlobalGT("AC#RC_Sorni_Fourth","GLOBAL",4)
-THEN
-	RESPONSE #100
-                SpawnPtDeactivate("Spawn Point 1") // deactivate Kuo Toa Spawnpoint before the party is heading to Barakuir
-                SetGlobal("SpawnPoint1Activation","ACIL20",1)
-END
 */
+
 
 IF
 
@@ -419,17 +409,34 @@ THEN
 	        ActionOverride("AC#HATH1",Face(4))
 END
 
-/*
+
 IF
-	Global("AC#BackToSurface","GLOBAL",4)
+	PartyHasItem("AC#SRLAD")
 	Global("MapNote_Beholder","ACIL20",0)
 THEN
 	RESPONSE #100
 		SetGlobal("MapNote_Beholder","ACIL20",1)
-		TriggerActivation("Trigger_Ladder",TRUE)
 		AddMapNote([1480.2635],@728)
 END
-*/
+
+IF
+	PartyHasItem("ac#ky1")
+	Global("MapNoteSpiderstalk","ACIL20",0)
+THEN
+	RESPONSE #100
+		SetGlobal("MapNoteSpiderstalk","ACIL20",1)
+		AddMapNote([855.532],@6203)
+END
+
+IF
+	PartyHasItem("AC#ILKY8")
+	Global("MapNoteCharve","ACIL20",0)
+THEN
+	RESPONSE #100
+		SetGlobal("MapNoteCharve","ACIL20",1)
+		AddMapNote([1801.757],@6204)
+END
+
 
 IF
 	Global("AC#EyestalkLadder","ACIL20",2)

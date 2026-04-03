@@ -202,10 +202,14 @@ IF ~~ THEN EXTERN ~AC#DUN03~ 17
 END
 
 /*******************************************************************************************************
-Anthan-Dialogue before departure to torglor
+Anthan-Dialogue before departure to Charvekannathor's lair
 *******************************************************************************************************/
 BEGIN ~AC#ANT50~
-
+IF ~NumTimesTalkedTo(0)~ THEN BEGIN hello_before_charvekannathor
+SAY ~<CHARNAME>, gut dass Ihr kommt. Ich hatte Euch den Siegelstein gegeben, um zu dem Drachen zu gelangen. Ich möchte Euch noch etwas anderes auf diese gefährliche Mission mitgeben.~
+IF ~~ THEN GOTO forged_weapon
+END
+/*
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN hello_before_torglor
 SAY ~<CHARNAME>, ich weiß, ich war sehr unfreundlich zu Euch, als wir uns das erste Mal getroffen haben.~
 IF ~~ THEN REPLY ~Das wart Ihr in der Tat, Anthan. Was wollt Ihr von mir?~ + 1
@@ -245,9 +249,9 @@ END
 				SAY ~Danke, dass Ihr den Herzenswunsch eines alten Mannes nicht so einfach ausschlagt!~
 				IF ~~ THEN + 6
 				END	
-
-					IF ~~ THEN BEGIN 6
-					SAY ~Hier, ich habe auch eine Waffe geschmiedet, die dieser Bestie das Fürchten lehren sollte. Ich habe all mein Wissen, all meine lebenslange Erfahrung in die Erschaffung dieser Waffe gelegt, und ich denke, sie gehört zu den besten Stücken, die ich jemals geschmiedet habe.~
+*/
+					IF ~~ THEN BEGIN forged_weapon
+					SAY ~Hier, ich habe eine Waffe geschmiedet, die dieser Bestie das Fürchten lehren sollte. Ich habe all mein Wissen, all meine lebenslange Erfahrung in die Erschaffung dieser Waffe gelegt, und ich denke, sie gehört zu den besten Stücken, die ich jemals geschmiedet habe.~
 					IF ~~ THEN + 7
 					END	
 				
@@ -264,8 +268,6 @@ END
 
 									IF ~~ THEN BEGIN 9
 								   SAY ~So. Das war der Grund, weshalb ich hier auf Euch gewartet habe. Nun möchte ich Euch nicht länger hinhalten. Auf Euch warten wichtige Schritte hinaus ins Ungewisse. Ich erwarte nicht, dass Ihr dem Drachen sofort gegenübertretet. Eure wichtigste Mission ist, unsere Stadt zu retten. Doch wenn Ihr auf die Bestie trefft, tötet sie im Namen meines Sohnes!~
-								   IF ~~ THEN DO ~SetGlobal("AC#AnthanDragon","GLOBAL",1)
-								   GiveItemCreate("AC#HAMAN",Player1,0,0,0) 
-								   AddJournalEntry(@51100,QUEST)								   
-								   EscapeAreaObject("TrACIL51")~ EXIT
+								   IF ~~ THEN DO ~GiveItemCreate("AC#HAMAN",Player1,0,0,0) 								   								   
+								   EscapeAreaDestroy(3)~ EXIT
 									END							

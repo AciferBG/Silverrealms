@@ -364,13 +364,21 @@ THEN
 END
 
 IF
+	Global("AnthanGiveHammer","ACIL50",0)
+	PartyHasItem("AC#ILKY8")
+THEN
+	RESPONSE #100
+		SetGlobal("AnthanGiveHammer","ACIL50",1)
+        CreateCreature("AC#ANT50",[745.2433],SE)  // Anthan
+END
+
+IF
 	Global("AC#Torglor","GLOBAL",1)
 THEN
 	RESPONSE #100
 		SetGlobal("AC#Torglor","GLOBAL",2)
 		Unlock("DOOR01")
 		OpenDoor("DOOR01")
-                CreateCreature("AC#ANT50",[1929.243],9)  // Anthan
                 CreateCreature("AC#SORN5",[2189.281],0)  // Sorni
                 CreateCreature("AC#50DW1",[1903.211],0)  // Gate guard
                 CreateCreature("AC#50DW1",[2094.236],0)  // Gate guard

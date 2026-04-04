@@ -16,7 +16,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("EnteredArea","ACIL41",2)
-		CreateCreature("AC#41PAL",[550.678],12) // Dragon slayer (too late)
+		CreateCreature("AC#41PAL",[550.678],NE) // Dragon slayer (too late)
 END
 
 IF

@@ -3,6 +3,10 @@
 
 COPY ~silverrealms/itm/copy~         ~override~
 
+ COPY ~%MOD_FOLDER%/itm/AC#IL47R.itm~         ~override~    // charvekannathor's ruby
+  SAY NAME2 @8134
+  SAY DESC @8135
+
 COPY ~%MOD_FOLDER%/itm/AC#IL47K.itm~         ~override~    // anthan's keystone
   SAY NAME2 @8132
   SAY DESC @8133

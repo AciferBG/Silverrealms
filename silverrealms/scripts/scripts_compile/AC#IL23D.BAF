@@ -3,6 +3,7 @@ IF
 THEN
     RESPONSE #100
         DisplayString(Myself,57749)  // Illusion gebannt
+        CreateVisualEffectObject("AC#IL23D",Myself)
         ReallyForceSpellDead(Myself,ILLUSION_DEATH)  // SPIN835.SPL (No such index)
         Wait(1)
         DestroySelf()
@@ -13,11 +14,13 @@ IF
     HasItemEquipedReal("sw2h10",LastHitter)  // Carsomyr +5
 THEN
     RESPONSE #100
+        SetInterrupt(FALSE)
         DisplayString(Myself,57749)  // Illusion gebannt
         SetSequence(SEQ_DIE)
-        Wait(1)
+        CreateVisualEffectObject("AC#IL23D",Myself)
         ReallyForceSpell(Myself,ILLUSION_DEATH)  // SPIN835.SPL (No such index)
         Wait(1)
+        SetInterrupt(TRUE)
         DestroySelf()
 END
 
@@ -31,12 +34,29 @@ IF
         SpellCast([PC],WIZARD_DETECT_ILLUSION)  // SPWI322.SPL (Illusion entdecken)
     See([PC])
 THEN
-    RESPONSE #100        
+    RESPONSE #100
+        SetInterrupt(FALSE)
         DisplayString(Myself,57749)  // Illusion gebannt
         SetSequence(SEQ_DIE)
-        Wait(1)
+        CreateVisualEffectObject("AC#IL23D",Myself)
         ReallyForceSpell(Myself,ILLUSION_DEATH)  // SPIN835.SPL (No such index)
         Wait(1)
+        SetInterrupt(TRUE)
+        DestroySelf()
+END
+
+IF
+    See([PC.0.0.THIEF_ALL])
+    CheckStatGT([PC.0.0.THIEF_ALL],65,DETECTILLUSIONS)
+THEN
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        DisplayString(Myself,57749)  // Illusion gebannt
+        SetSequence(SEQ_DIE)
+        CreateVisualEffectObject("AC#IL23D",Myself)
+        ReallyForceSpell(Myself,ILLUSION_DEATH)  // SPIN835.SPL (No such index)
+        Wait(1)
+        SetInterrupt(TRUE)
         DestroySelf()
 END
 

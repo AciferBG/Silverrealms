@@ -24,89 +24,189 @@ END
 
 IF
     See(NearestEnemyOf(Myself))
+    HPPercentLT(Myself,50)
+    Global("MoveToHeal","ACIL47",0)
+THEN
+    RESPONSE #100
+        SetGlobal("MoveToHeal","ACIL47",1)
+        ForceSpell(LastSeenBy(Myself),DRAGON_WING_BUFFET)  // SPIN695.SPL (Flügelschlag)
+        MoveToPointNoInterrupt([609.661])
+        ReallyForceSpell(Myself,FLASHY_1)  // SPIN797.SPL (No such index)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
     Global("DRAGONFEAR","LOCALS",0)
 THEN
     RESPONSE #100
         ReallyForceSpell(NearestEnemyOf(Myself),DRAGON_FEAR)  // SPIN895.SPL (Drachenfurcht)
-        ReallyForceSpell(NearestEnemyOf(Myself),DRAGON_LOWER_FIRE)  // SPIN682.SPL (Feuerresistenz senken)
         SetGlobal("DRAGONFEAR","LOCALS",1)
-        SetGlobalTimer("A#ILCHARVBREATH","GLOBAL",1)
-        ForceSpell(LastSeenBy(Myself),DRAGON_WING_BUFFET)  // SPIN695.SPL (Flügelschlag)
 END
 
 IF
-    GlobalTimerExpired("A#ILCHARVBREATH","GLOBAL")
     See(NearestEnemyOf(Myself))
-    Range(LastSeenBy(Myself),11)
-    Global("WingBuffet","LOCALS",0)
+    !GlobalTimerNotExpired("WINGBUFFET","LOCALS")
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+    Global("Wingbuffet","LOCALS",0)
 THEN
     RESPONSE #100
+        SetGlobalTimer("WINGBUFFET","LOCALS",TWO_ROUNDS)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        SetGlobal("Wingbuffet","LOCALS",1)
         ForceSpell(LastSeenBy(Myself),DRAGON_WING_BUFFET)  // SPIN695.SPL (Flügelschlag)
         Wait(1)
-        SetGlobal("WingBuffet","LOCALS",1)
-    RESPONSE #60
-        Continue()
 END
 
 IF
     See(NearestEnemyOf(Myself))
-    !Range(LastSeenBy(Myself),10)
-    GlobalTimerExpired("A#IL_CHARVBREATH","GLOBAL")
+    !GlobalTimerNotExpired("WINGBUFFET","LOCALS")
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+    Range(LastSeenBy(Myself),10)
+    RandomNum(2,1)
 THEN
     RESPONSE #100
-        SetGlobal("WingBuffet","LOCALS",0)
+        SetGlobalTimer("WINGBUFFET","LOCALS",TWO_ROUNDS)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        ForceSpell(LastSeenBy(Myself),DRAGON_WING_BUFFET)  // SPIN695.SPL (Flügelschlag)
+        Wait(1)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    !GlobalTimerNotExpired("WINGBUFFET","LOCALS")
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+    Range(NearestEnemyOf(Myself),10)
+    Range(SecondNearestEnemyOf(Myself),10)
+    RandomNum(2,1)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("WINGBUFFET","LOCALS",TWO_ROUNDS)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        ForceSpell(NearestEnemyOf(Myself),DRAGON_WING_BUFFET)  // SPIN695.SPL (Flügelschlag)
+        Wait(1)
+END
+
+IF
+    OR(3)
+        SpellCast([GOODCUTOFF],WIZARD_CLOUDKILL)  // SPWI502.SPL (Todeswolke)
+        SpellCast([GOODCUTOFF],WIZARD_INCENDIARY_CLOUD)  // SPWI810.SPL (Flammende Wolke)
+        SpellCast([GOODCUTOFF],WIZARD_DEATH_FOG)  // SPWI614.SPL (Tödlicher Nebel)
+    !GlobalTimerNotExpired("WINGBUFFET","LOCALS")
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+    RESPONSE #100
+        SetGlobalTimer("WINGBUFFET","LOCALS",8)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        ForceSpell(NearestEnemyOf(Myself),DRAGON_WING_BUFFET)  // SPIN695.SPL (Flügelschlag)
+        Wait(1)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    !GlobalTimerNotExpired("DRAGONBREATH","LOCALS")
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+    RESPONSE #100
+        SetGlobalTimer("DRAGONBREATH","LOCALS",THREE_ROUNDS)
         VerbalConstant(Myself,BATTLE_CRY)
-        Wait(1)
         ForceSpell(LastSeenBy(Myself),RED_DRAGON_BREATH)  // SPIN894.SPL (Roter Drache: Odemwaffe)
         ReallyForceSpell(LastSeenBy(Myself),RED_DRAGON_HIT)  // SPIN693.SPL (No such index)
-        SetGlobalTimer("A#ILCHARVBREATH","GLOBAL",THREE_ROUNDS)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
 END
 
 IF
-    Global("WingBuffet","LOCALS",1)
     See(NearestEnemyOf(Myself))
-    Range(LastSeenBy(Myself),11)
+    Global("SpellDeflection","LOCALS",0)
+    SpellCastOnMe([PC],WIZARD_LOWER_RESISTANCE)  // SPWI514.SPL (Magiewiderstand senken)
+    CheckStatLT(Myself,65,RESISTMAGIC)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
 THEN
     RESPONSE #100
-        SetGlobal("WingBuffet","LOCALS",0)
-        SetGlobalTimer("A#ILCHARVBREATH","GLOBAL",THREE_ROUNDS)
+        ForceSpell(Myself,WIZARD_MINOR_SPELL_DEFLECTION)  // SPWI318.SPL (Geringere Zauberabwehr)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        SetGlobal("SlowPerson","LOCALS",1)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    HasItem("POTN33",Myself)  // Magieabwehrtrank
+    SpellCastOnMe([PC],WIZARD_LOWER_RESISTANCE)  // SPWI514.SPL (Magiewiderstand senken)
+    CheckStatLT(Myself,65,RESISTMAGIC)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+    RESPONSE #100
+        UseItem("POTN33",Myself)  // Magieabwehrtrank
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        SetGlobal("SlowPerson","LOCALS",1)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    HasItem("POTN34",Myself)  // Magiewiderstandstrank
+    GlobalLT("IncreaseMagicResist","LOCALS",4)
+    CheckStatLT(Myself,65,RESISTMAGIC)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+    RESPONSE #100
+        UseItem("POTN34",Myself)  // Magiewiderstandstrank
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        IncrementGlobal("IncreaseMagicResist","LOCALS",1)
 END
 
 IF
     See(NearestEnemyOf(Myself))
     Global("Offense1","LOCALS",0)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
 THEN
     RESPONSE #100
         ForceSpell(LastSeenBy(Myself),WIZARD_GREATER_MALISON)  // SPWI412.SPL (Größeres Unbehagen)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
         SetGlobal("Offense1","LOCALS",1)
 END
 
 IF
     See(NearestEnemyOf(Myself))
+    Global("SlowPerson","LOCALS",0)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+    RESPONSE #100
+        ForceSpell(LastSeenBy(Myself),WIZARD_SLOW)  // SPWI312.SPL (Verlangsamen)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        SetGlobal("SlowPerson","LOCALS",1)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
     Global("Haste","LOCALS",0)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
 THEN
     RESPONSE #100
         ForceSpell(Myself,WIZARD_HASTE)  // SPWI305.SPL (Hast)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
         SetGlobal("Haste","LOCALS",1)
 END
 
 IF
     See(NearestEnemyOf(Myself))
     Global("HoldPerson","LOCALS",0)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
 THEN
     RESPONSE #100
         ForceSpell(LastSeenBy(Myself),CLERIC_HOLD_PERSON)  // SPPR208.SPL (Personen festhalten)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
         SetGlobal("HoldPerson","LOCALS",1)
 END
 
 IF
     Global("Silence","LOCALS",0)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
     OR(2)
         See(NearestEnemyOfType([0.0.0.MAGE_ALL]))
         See(NearestEnemyOfType([0.0.0.CLERIC_ALL]))
 THEN
     RESPONSE #100
         ForceSpell(LastSeenBy(Myself),DRAGON_SILENCE)  // SPIN692.SPL (Stille: 4,5 m Radius)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
         SetGlobal("Silence","LOCALS",1)
         AttackOneRound(LastSeenBy(Myself))
         AttackOneRound(LastSeenBy(Myself))
@@ -116,27 +216,24 @@ IF
     See(NearestEnemyOf(Myself))
     Delay(6)
     GlobalLT("CharmPerson","LOCALS",3)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
 THEN
     RESPONSE #100
         ForceSpell(NearestEnemyOf(Myself),WIZARD_CHARM_PERSON)  // SPWI104.SPL (Personen bezaubern)
         IncrementGlobal("CharmPerson","LOCALS",1)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
 END
 
 IF
     See(NearestEnemyOf(Myself))
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
 THEN
     RESPONSE #100
         EquipMostDamagingMelee()
         AttackReevaluate(NearestEnemyOf(Myself),35)
     RESPONSE #10
         ForceSpell(LastSeenBy(Myself),WIZARD_MELF_ACID_ARROW)  // SPWI211.SPL (Melfs Säurepfeil)
-END
-
-IF
-    Allegiance(Myself,ENEMY)
-THEN
-    RESPONSE #100
-        MoveToObject(NearestEnemyOf(Myself))
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
 END
 
 IF
@@ -145,5 +242,12 @@ IF
 THEN
     RESPONSE #100
         Enemy()
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+THEN
+    RESPONSE #100
+        AttackReevaluate(NearestEnemyOf(Myself),6)
 END
 

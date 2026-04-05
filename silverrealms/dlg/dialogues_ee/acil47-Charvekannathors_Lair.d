@@ -10,6 +10,7 @@ IF ~~ THEN REPLY ~Ich habe die ganze Zeit auf Euch gewartet. Da Ihr nicht zu mir
 IF ~~ THEN REPLY ~Endlich treffen wir uns wieder. Jetzt werde ich das vollenden, was auf dem Berggipfel begonnen hat!~ + bold 
 IF ~~ THEN REPLY ~Wir haben uns schon einmal gegenübergestanden. Diesmal endet es anders.~ GOTO bold
 IF ~~ THEN REPLY ~Ich suche einen Weg an die Oberfläche. Ihr steht mir im Weg.~ GOTO way_surface
+IF ~~ THEN REPLY ~Genug geredet - jetzt wird gekämpft!~ GOTO fight
 END
 
 
@@ -35,6 +36,11 @@ END
 
 IF ~~ THEN BEGIN glass
 SAY ~Mein feuriger Atem hat sie nahezu in Glas verwandelt! Heute wird meine Höhle noch ein wenig mehr glänzen, wenn ich mit Euch fertig bin!~
+IF ~~ THEN + fight
+END
+
+IF ~~ THEN BEGIN fight
+SAY ~So verbrennt in meinen lodernden Flammen!~
 IF ~~ THEN DO ~Enemy()~ EXIT
 END
 

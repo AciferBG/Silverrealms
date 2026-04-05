@@ -1,4 +1,16 @@
 IF
+    HPPercentLT("AC#CHARV",50)  // Charvekannathor
+    Global("MoveToHeal","ACIL47",0)
+    !Global("HealWorkaround","ACIL47",3)
+THEN
+    RESPONSE #100
+        SetGlobal("MoveToHeal","ACIL47",1)
+        ActionOverride("AC#CHARV",ForceSpell(LastSeenBy(Myself),DRAGON_WING_BUFFET))  // SPIN695.SPL (Flügelschlag)
+        ActionOverride("AC#CHARV",MoveToPointNoInterrupt([609.661]))
+END
+
+/*
+IF
 	GlobalGT("AC#ShanatarScepters","GLOBAL",0)
 	Global("CreateScepter","ACIL47",0)
 THEN
@@ -6,6 +18,7 @@ THEN
 		SetGlobal("CreateScepter","ACIL47",1)
                 ActionOverride("Drakkalor_scepter",CreateItem("AC#ZEPDR",0,0,0))
 END
+*/
 
 IF
 	OR(2)

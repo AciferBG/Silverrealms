@@ -1,0 +1,63 @@
+IF
+    IsOverMe("AC#CHARV")  // Charvekannathor
+    HPPercentLT("AC#CHARV",50)  // Charvekannathor
+    Global("MoveToHeal","ACIL47",1)
+    Global("HealWorkaround","ACIL47",0)
+THEN
+    RESPONSE #100
+        StartCutSceneMode()
+        MoveViewPoint([609.661],INSTANT)
+        Wait(1)
+        SetGlobal("MoveToHeal","ACIL47",0)
+        CreateVisualEffect("ICMAGICH",[483.378])
+        ActionOverride("AC#CHARV",DisplayStringHead(Myself,@6470))  // Ihr könnt mich nicht besiegen! In meinem Hort bin ich unbesiegbar!
+        Wait(2)
+        ReallyForceSpell("AC#CHARV",CLERIC_BLESS)  // Charvekannathor
+        ReallyForceSpell("AC#CHARV",CLERIC_HEAL)  // Charvekannathor
+        Wait(1)
+        SetGlobal("HealWorkaround","ACIL47",1)
+        EndCutSceneMode()
+END
+
+IF
+    IsOverMe("AC#CHARV")  // Charvekannathor
+    HPPercentLT("AC#CHARV",50)  // Charvekannathor
+    Global("MoveToHeal","ACIL47",1)
+    Global("HealWorkaround","ACIL47",1)
+THEN
+    RESPONSE #100
+        StartCutSceneMode()
+        MoveViewPoint([609.661],INSTANT)
+        Wait(1)
+        SetGlobal("MoveToHeal","ACIL47",0)
+        CreateVisualEffect("ICMAGICH",[483.378])
+        ActionOverride("AC#CHARV",DisplayStringHead(Myself,@6471))  
+        Wait(2)
+        ReallyForceSpell("AC#CHARV",CLERIC_BLESS)  // Charvekannathor
+        ReallyForceSpell("AC#CHARV",CLERIC_HEAL)  // Charvekannathor
+        Wait(1)
+        SetGlobal("HealWorkaround","ACIL47",2)
+        EndCutSceneMode()
+END
+
+IF
+    IsOverMe("AC#CHARV")  // Charvekannathor
+    HPPercentLT("AC#CHARV",50)  // Charvekannathor
+    Global("MoveToHeal","ACIL47",1)
+    Global("HealWorkaround","ACIL47",2)
+THEN
+    RESPONSE #100
+        StartCutSceneMode()
+        MoveViewPoint([609.661],INSTANT)
+        Wait(1)       
+        CreateVisualEffect("ICMAGICH",[483.378])
+        ActionOverride("AC#CHARV",DisplayStringHead(Myself,@6472))  
+        Wait(2)
+        ReallyForceSpell("AC#CHARV",CLERIC_BLESS)  // Charvekannathor
+        ReallyForceSpell("AC#CHARV",CLERIC_HEAL)  // Charvekannathor
+        Wait(1)
+        SetGlobal("HealWorkaround","ACIL47",3)
+        SetGlobal("MoveToHeal","ACIL47",3)
+        EndCutSceneMode()
+END
+

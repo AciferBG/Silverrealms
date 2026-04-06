@@ -2767,13 +2767,8 @@ COPY ~silverrealms/cre/AC#ALDY3.cre~ ~override~ // Aldym: crumbled tower-dying
 COPY ~silverrealms/cre/AC#ALDY4.cre~ ~override~ // Aldym#4: crumbled tower-rescued
   SAY NAME1 @504 SAY NAME2 @504
 
-COPY ~silverrealms/cre/AC#LIZS1.cre~ ~override~ // Lizard Shaman
-/*
-ADD_MEMORIZED_SPELL ~SPPR203~ #1 ~priest~ ( 1 ) // chant
-ADD_MEMORIZED_SPELL ~SPPR204~ #1 ~priest~ ( 2 ) // charm person
-ADD_MEMORIZED_SPELL ~SPPR416~ #3 ~priest~ ( 1 ) // cloak of fear
-ADD_MEMORIZED_SPELL ~AC#C402~ #3 ~priest~ ( 1 ) // summon animals (snakes)
-*/
+COPY ~silverrealms/cre/AC#LIZS1.cre~ ~override~ // Issk’var, Lizard Shaman 
+SAY NAME1 @9057 SAY NAME2 @9057
 
 COPY ~silverrealms/cre/AC#CROW1.cre~ ~override~ // Endfight: Crow
   SAY NAME1 @959 SAY NAME2 @959

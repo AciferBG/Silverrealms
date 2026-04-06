@@ -9,6 +9,46 @@ THEN
         ActionOverride("AC#CHARV",MoveToPointNoInterrupt([609.661]))
 END
 
+IF
+    Global("Deactivate_Ruby01","ACIL47",1)
+    Global("Deactivate_Ruby02","ACIL47",1)
+    Global("Deactivate_Ruby03","ACIL47",1)
+    Global("MoveToHeal","ACIL47",0)
+THEN
+    RESPONSE #100
+        SetGlobal("MoveToHeal","ACIL47",3)
+END
+
+IF
+    !Contains("AC#IL47R","Ruby01")  // Riesiger Rubin
+    Global("Deactivate_Ruby01","ACIL47",0)
+THEN
+    RESPONSE #100
+        SetGlobal("Deactivate_Ruby01","ACIL47",1)
+        ContainerEnable("Ruby01",FALSE)
+        AmbientActivate("Ruby_bam01",FALSE)
+END
+
+IF
+    !Contains("AC#IL47R","Ruby02")  // Riesiger Rubin
+    Global("Deactivate_Ruby02","ACIL47",0)
+THEN
+    RESPONSE #100
+        SetGlobal("Deactivate_Ruby02","ACIL47",1)
+        ContainerEnable("Ruby02",FALSE)
+        AmbientActivate("Ruby_bam02",FALSE)
+END
+
+IF
+    !Contains("AC#IL47R","Ruby03")  // Riesiger Rubin
+    Global("Deactivate_Ruby03","ACIL47",0)
+THEN
+    RESPONSE #100
+        SetGlobal("Deactivate_Ruby03","ACIL47",1)
+        ContainerEnable("Ruby03",FALSE)
+        AmbientActivate("Ruby_bam03",FALSE)
+END
+
 /*
 IF
 	GlobalGT("AC#ShanatarScepters","GLOBAL",0)

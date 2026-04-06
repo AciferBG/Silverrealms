@@ -1,84 +1,222 @@
 IF
-	GlobalGT("AC#Talked_to_Maldraedior","GLOBAL",0)
+    GlobalGT("AC#Talked_to_Maldraedior","GLOBAL",0)
 THEN
-	RESPONSE #100
-		DestroySelf()
+    RESPONSE #100
+        DestroySelf()
 END
 
 IF
-	Range([PC],12)
-	See([PC])
-	Allegiance(Myself,NEUTRAL)
+    Range([PC],12)
+    See([PC])
+    Allegiance(Myself,NEUTRAL)
 THEN
-	RESPONSE #100
-		Enemy()
-		SetGlobal("Lizard_Attack","ACIL70",1)
+    RESPONSE #100
+        Enemy()
+        SetGlobal("Lizard_Attack","ACIL70",1)
 END
 
 IF
-	HaveSpellRES("AC#C402")  // summon animals (snakes)
-	OR(2)
-		See(NearestEnemyOfType([0.0.0.MAGE_ALL]))
-		See(NearestEnemyOfType([0.0.0.CLERIC_ALL]))
+    See(NearestEnemyOf(Myself))
+    OR(2)
+        LevelPartyGT(16)
+        DifficultyGT(HARD)
+    Global("AnimateSkeletons","LOCALS",0)
+    GlobalGT("Lizard_Attack","ACIL70",0)
+    !GlobalTimerNotExpired("BD_Cast","LOCALS")
 THEN
-	RESPONSE #100
-		//DisplayString(Myself,12091)
-                SpellRES("AC#C402",LastSeenBy(Myself))
+    RESPONSE #100
+        SetGlobal("AnimateSkeletons","LOCALS",1)
+        ReallyForceSpellRES("AC#IL70","AC#IL701")  // Tote beleben
+        ActionOverride("AC#IL701",DestroySelf())
+        ReallyForceSpellRES("AC#IL70","AC#IL702")  // Tote beleben
+        ActionOverride("AC#IL702",DestroySelf())
+        ReallyForceSpellRES("AC#IL70","AC#IL703")  // Tote beleben
+        ActionOverride("AC#IL703",DestroySelf())
+        ReallyForceSpellRES("AC#IL70","AC#IL704")  // Tote beleben
+        ActionOverride("AC#IL704",DestroySelf())
+        ReallyForceSpellRES("AC#IL70","AC#IL705")  // Tote beleben
+        ActionOverride("AC#IL705",DestroySelf())
+        ReallyForceSpellRES("AC#IL70","AC#IL706")  // Tote beleben
+        ActionOverride("AC#IL706",DestroySelf())
+        ReallyForceSpellRES("AC#IL70","AC#IL707")  // Tote beleben
+        ActionOverride("AC#IL707",DestroySelf())
+        ReallyForceSpellRES("AC#IL70","AC#IL708")  // Tote beleben
+        ActionOverride("AC#IL708",DestroySelf())
+        ReallyForceSpellRES("AC#IL70","AC#IL709")  // Tote beleben
+        ActionOverride("AC#IL709",DestroySelf())
+        SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
 END
 
 IF
-	See(NearestEnemyOf(Myself))
-	HaveSpell(CLERIC_CHANT)  // SPPR203.SPL (Gesang)
+    See(NearestEnemyOf(Myself))
+    OR(2)
+        LevelPartyGT(14)
+        DifficultyGT(NORMAL)
+    Global("AnimateSkeletons","LOCALS",0)
+    GlobalGT("Lizard_Attack","ACIL70",0)
+    !GlobalTimerNotExpired("BD_Cast","LOCALS")
 THEN
-	RESPONSE #100
-		Spell(Myself,CLERIC_CHANT)  // SPPR203.SPL (Gesang)
+    RESPONSE #100
+        SetGlobal("AnimateSkeletons","LOCALS",1)
+        ReallyForceSpellRES("AC#IL7B","AC#IL701")  // Tote beleben
+        ActionOverride("AC#IL701",DestroySelf())
+        ReallyForceSpellRES("AC#IL7B","AC#IL702")  // Tote beleben
+        ActionOverride("AC#IL702",DestroySelf())
+        ReallyForceSpellRES("AC#IL7B","AC#IL703")  // Tote beleben
+        ActionOverride("AC#IL703",DestroySelf())
+        ReallyForceSpellRES("AC#IL7B","AC#IL704")  // Tote beleben
+        ActionOverride("AC#IL704",DestroySelf())
+        ReallyForceSpellRES("AC#IL7B","AC#IL705")  // Tote beleben
+        ActionOverride("AC#IL705",DestroySelf())
+        ReallyForceSpellRES("AC#IL70","AC#IL706")  // Tote beleben
+        ActionOverride("AC#IL706",DestroySelf())
+        ReallyForceSpellRES("AC#IL70","AC#IL707")  // Tote beleben
+        ActionOverride("AC#IL707",DestroySelf())
+        ReallyForceSpellRES("AC#IL70","AC#IL708")  // Tote beleben
+        ActionOverride("AC#IL708",DestroySelf())
+        ReallyForceSpellRES("AC#IL70","AC#IL709")  // Tote beleben
+        ActionOverride("AC#IL709",DestroySelf())
+        SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
 END
 
 IF
-	See(NearestEnemyOf(Myself))
-	HaveSpell(CLERIC_CHANT)  // SPPR203.SPL (Gesang)
+    See(NearestEnemyOf(Myself))
+    OR(2)
+        LevelPartyGT(11)
+        DifficultyGT(EASY)
+    Global("AnimateSkeletons","LOCALS",0)
+    GlobalGT("Lizard_Attack","ACIL70",0)
+    !GlobalTimerNotExpired("BD_Cast","LOCALS")
 THEN
-	RESPONSE #100
-		Spell(Myself,CLERIC_CHANT)  // SPPR203.SPL (Gesang)
+    RESPONSE #100
+        SetGlobal("AnimateSkeletons","LOCALS",1)
+        ReallyForceSpellRES("AC#IL7B","AC#IL701")  // Tote beleben
+        ActionOverride("AC#IL701",DestroySelf())
+        ReallyForceSpellRES("AC#IL7B","AC#IL702")  // Tote beleben
+        ActionOverride("AC#IL702",DestroySelf())
+        ReallyForceSpellRES("AC#IL7B","AC#IL703")  // Tote beleben
+        ActionOverride("AC#IL703",DestroySelf())
+        ReallyForceSpellRES("AC#IL7B","AC#IL704")  // Tote beleben
+        ActionOverride("AC#IL704",DestroySelf())
+        ReallyForceSpellRES("AC#IL7B","AC#IL705")  // Tote beleben
+        ActionOverride("AC#IL705",DestroySelf())
+        ReallyForceSpellRES("AC#IL7B","AC#IL706")  // Tote beleben
+        ActionOverride("AC#IL706",DestroySelf())
+        ReallyForceSpellRES("AC#IL7B","AC#IL707")  // Tote beleben
+        ActionOverride("AC#IL707",DestroySelf())
+        ReallyForceSpellRES("AC#IL70","AC#IL708")  // Tote beleben
+        ActionOverride("AC#IL708",DestroySelf())
+        ReallyForceSpellRES("AC#IL70","AC#IL709")  // Tote beleben
+        ActionOverride("AC#IL709",DestroySelf())
+        SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
 END
 
 IF
-	HaveSpell(CLERIC_SILENCE_15_FOOT)  // SPPR211.SPL (Stille, 4,5 m Radius)
-	See(NearestEnemyOf(Myself))
+    See(NearestEnemyOf(Myself))
+    Global("AnimateSkeletons","LOCALS",0)
+    GlobalGT("Lizard_Attack","ACIL70",0)
+    !GlobalTimerNotExpired("BD_Cast","LOCALS")
 THEN
-	RESPONSE #100
-		Spell(LastSeenBy(Myself),CLERIC_SILENCE_15_FOOT)  // SPPR211.SPL (Stille, 4,5 m Radius)
+    RESPONSE #100
+        SetGlobal("AnimateSkeletons","LOCALS",1)
+        ReallyForceSpellRES("AC#IL7B","AC#IL701")  // Tote beleben
+        ActionOverride("AC#IL701",DestroySelf())
+        ReallyForceSpellRES("AC#IL7B","AC#IL702")  // Tote beleben
+        ActionOverride("AC#IL702",DestroySelf())
+        ReallyForceSpellRES("AC#IL7B","AC#IL703")  // Tote beleben
+        ActionOverride("AC#IL703",DestroySelf())
+        ReallyForceSpellRES("AC#IL7B","AC#IL704")  // Tote beleben
+        ActionOverride("AC#IL704",DestroySelf())
+        ReallyForceSpellRES("AC#IL7B","AC#IL705")  // Tote beleben
+        ActionOverride("AC#IL705",DestroySelf())
+        ReallyForceSpellRES("AC#IL7B","AC#IL706")  // Tote beleben
+        ActionOverride("AC#IL706",DestroySelf())
+        ReallyForceSpellRES("AC#IL7B","AC#IL707")  // Tote beleben
+        ActionOverride("AC#IL707",DestroySelf())
+        ReallyForceSpellRES("AC#IL7B","AC#IL708")  // Tote beleben
+        ActionOverride("AC#IL708",DestroySelf())
+        ReallyForceSpellRES("AC#IL7B","AC#IL709")  // Tote beleben
+        ActionOverride("AC#IL709",DestroySelf())
+        SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
 END
 
 IF
-	See(NearestEnemyOf(Myself))
-	HaveSpell(CLERIC_CHARM_PERSON)  // SPPR204.SPL (Personen oder S�ugetiere bezaubern)
+    HaveSpellRES("AC#C402")  // Tiere beschwören I
+    OR(2)
+        See(NearestEnemyOfType([0.0.0.MAGE_ALL]))
+        See(NearestEnemyOfType([0.0.0.CLERIC_ALL]))
+    !GlobalTimerNotExpired("BD_Cast","LOCALS")
 THEN
-	RESPONSE #100
-		Spell(NearestEnemyOf(Myself),CLERIC_CHARM_PERSON)  // SPPR204.SPL (Personen oder S�ugetiere bezaubern)
+    RESPONSE #100
+        SpellRES("AC#C402",LastSeenBy(Myself))  // Tiere beschwören I
+        SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
 END
 
 IF
-	See(NearestEnemyOf(Myself))
-	HaveSpell(CLERIC_HOLD_PERSON)  // SPPR208.SPL (Personen festhalten)
-	!StateCheck(LastSeenBy(Myself),STATE_HELPLESS)
+    See(NearestEnemyOf(Myself))
+    !GlobalTimerNotExpired("BD_Cast","LOCALS")
+    HaveSpell(CLERIC_CHANT)  // SPPR203.SPL (Gesang)
 THEN
-	RESPONSE #100
-		Spell(NearestEnemyOf(Myself),CLERIC_HOLD_PERSON)  // SPPR208.SPL (Personen festhalten)
+    RESPONSE #100
+        Spell(Myself,CLERIC_CHANT)  // SPPR203.SPL (Gesang)
+        SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
 END
 
 IF
-	See(NearestEnemyOf(Myself))
-	HaveSpell(CLERIC_CLOAK_OF_FEAR)  // SPPR416.SPL (Mantel der Furcht)
+    See(NearestEnemyOf(Myself))
+    !GlobalTimerNotExpired("BD_Cast","LOCALS")
+    HaveSpell(CLERIC_CHANT)  // SPPR203.SPL (Gesang)
 THEN
-	RESPONSE #100
-		Spell(Myself,CLERIC_CLOAK_OF_FEAR)  // SPPR416.SPL (Mantel der Furcht)
+    RESPONSE #100
+        Spell(Myself,CLERIC_CHANT)  // SPPR203.SPL (Gesang)
+        SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
 END
 
 IF
-	See(NearestEnemyOf(Myself))
+    HaveSpell(CLERIC_SILENCE_15_FOOT)  // SPPR211.SPL (Stille: 4,5 m Radius)
+    See(NearestEnemyOf(Myself))
+    !GlobalTimerNotExpired("BD_Cast","LOCALS")
 THEN
-	RESPONSE #100
-		AttackReevaluate(NearestEnemyOf(Myself),15)
+    RESPONSE #100
+        Spell(LastSeenBy(Myself),CLERIC_SILENCE_15_FOOT)  // SPPR211.SPL (Stille: 4,5 m Radius)
+        SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    !GlobalTimerNotExpired("BD_Cast","LOCALS")
+    HaveSpell(CLERIC_CHARM_PERSON)  // SPPR204.SPL (Personen oder Säugetiere bezaubern)
+THEN
+    RESPONSE #100
+        Spell(NearestEnemyOf(Myself),CLERIC_CHARM_PERSON)  // SPPR204.SPL (Personen oder Säugetiere bezaubern)
+        SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    !GlobalTimerNotExpired("BD_Cast","LOCALS")
+    HaveSpell(CLERIC_HOLD_PERSON)  // SPPR208.SPL (Personen festhalten)
+    !StateCheck(LastSeenBy(Myself),STATE_HELPLESS)
+THEN
+    RESPONSE #100
+        Spell(NearestEnemyOf(Myself),CLERIC_HOLD_PERSON)  // SPPR208.SPL (Personen festhalten)
+        SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    !GlobalTimerNotExpired("BD_Cast","LOCALS")
+    HaveSpell(CLERIC_CLOAK_OF_FEAR)  // SPPR416.SPL (Mantel der Furcht)
+THEN
+    RESPONSE #100
+        Spell(Myself,CLERIC_CLOAK_OF_FEAR)  // SPPR416.SPL (Mantel der Furcht)
+        SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+THEN
+    RESPONSE #100
+        AttackReevaluate(NearestEnemyOf(Myself),15)
 END
 

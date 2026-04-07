@@ -1,0 +1,7 @@
+IF
+    Heard([ANYONE],153)
+THEN
+    RESPONSE #100
+        Attack(LastAttackerOf(LastHeardBy(Myself)))
+END
+

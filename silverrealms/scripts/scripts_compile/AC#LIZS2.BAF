@@ -1,0 +1,98 @@
+IF
+    See(NearestEnemyOf(Myself))
+    See("AC#IL73S")  // Kriegerskelett
+    StateCheck("AC#IL73S",STATE_DEAD)  // Kriegerskelett
+    GlobalGT("Lizard_Attack","ACIL70",0)
+    !GlobalTimerNotExpired("BD_Cast","LOCALS")
+    !GlobalTimerNotExpired("Raise_Skeletons","LOCALS")
+THEN
+    RESPONSE #100
+        ReallyForceSpellRES("AC#IL70","AC#IL73S")  // Tote beleben
+        ActionOverride("AC#IL73S",DestroySelf())
+        SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+        SetGlobalTimer("Raise_Skeletons","LOCALS",THREE_ROUNDS)
+        IncrementGlobal("Spells_Cast","LOCALS",1)
+END
+
+IF
+    HaveSpellRES("AC#C402")  // Tiere beschwören I
+    OR(2)
+        See(NearestEnemyOfType([0.0.0.MAGE_ALL]))
+        See(NearestEnemyOfType([0.0.0.CLERIC_ALL]))
+    !GlobalTimerNotExpired("BD_Cast","LOCALS")
+THEN
+    RESPONSE #100
+        SpellRES("AC#C402",LastSeenBy(Myself))  // Tiere beschwören I
+        SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+        IncrementGlobal("Spells_Cast","LOCALS",1)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    !GlobalTimerNotExpired("BD_Cast","LOCALS")
+    HaveSpell(CLERIC_CHANT)  // SPPR203.SPL (Gesang)
+THEN
+    RESPONSE #100
+        Spell(Myself,CLERIC_CHANT)  // SPPR203.SPL (Gesang)
+        SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    !GlobalTimerNotExpired("BD_Cast","LOCALS")
+    HaveSpell(CLERIC_CHANT)  // SPPR203.SPL (Gesang)
+THEN
+    RESPONSE #100
+        Spell(Myself,CLERIC_CHANT)  // SPPR203.SPL (Gesang)
+        SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+END
+
+IF
+    HaveSpell(CLERIC_SILENCE_15_FOOT)  // SPPR211.SPL (Stille: 4,5 m Radius)
+    See(NearestEnemyOf(Myself))
+    !GlobalTimerNotExpired("BD_Cast","LOCALS")
+THEN
+    RESPONSE #100
+        Spell(LastSeenBy(Myself),CLERIC_SILENCE_15_FOOT)  // SPPR211.SPL (Stille: 4,5 m Radius)
+        SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    !GlobalTimerNotExpired("BD_Cast","LOCALS")
+    HaveSpell(CLERIC_CHARM_PERSON)  // SPPR204.SPL (Personen oder Säugetiere bezaubern)
+THEN
+    RESPONSE #100
+        Spell(NearestEnemyOf(Myself),CLERIC_CHARM_PERSON)  // SPPR204.SPL (Personen oder Säugetiere bezaubern)
+        SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    !GlobalTimerNotExpired("BD_Cast","LOCALS")
+    HaveSpell(CLERIC_HOLD_PERSON)  // SPPR208.SPL (Personen festhalten)
+    !StateCheck(LastSeenBy(Myself),STATE_HELPLESS)
+THEN
+    RESPONSE #100
+        Spell(NearestEnemyOf(Myself),CLERIC_HOLD_PERSON)  // SPPR208.SPL (Personen festhalten)
+        SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    !GlobalTimerNotExpired("BD_Cast","LOCALS")
+    HaveSpell(CLERIC_CLOAK_OF_FEAR)  // SPPR416.SPL (Mantel der Furcht)
+THEN
+    RESPONSE #100
+        Spell(Myself,CLERIC_CLOAK_OF_FEAR)  // SPPR416.SPL (Mantel der Furcht)
+        SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    GlobalGT("Spells_Cast","LOCALS",0)
+THEN
+    RESPONSE #100
+        AttackReevaluate(NearestEnemyOf(Myself),15)
+END
+

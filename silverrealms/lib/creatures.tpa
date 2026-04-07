@@ -2,6 +2,9 @@
 
 COPY ~silverrealms/cre/copy~         ~override~
 
+COPY ~silverrealms/cre/AC#LIZS2.cre~ ~override~ // Lizardfolk shaman
+  SAY NAME1 @223 SAY NAME2 @223
+
 COPY ~silverrealms/cre/AC#IL70C.cre~ ~override~ // bone golem
 
 COPY ~silverrealms/cre/AC#ILBR4.cre~ ~override~ // tavern mugcap inn maid

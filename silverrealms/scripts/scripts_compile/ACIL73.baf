@@ -1,9 +1,32 @@
 IF
-             Global("CircleOfMagic","ACIL73",4)
+    Global("CircleOfMagic","ACIL73",4)
 THEN
     RESPONSE #100
-             TriggerActivation("Magic_well",FALSE)
-             AmbientActivate("Magic_power",FALSE)
-             SoundActivate("AM_Glowing Ball",FALSE)
+        TriggerActivation("Magic_well",FALSE)
+        AmbientActivate("Magic_power",FALSE)
+        SoundActivate("AM_Glowing Ball",FALSE)
+END
+
+IF
+    Global("LevelAdjustment","ACIL73",0)
+    OR(2)
+        DifficultyGT(NORMAL)
+        LevelPartyGT(12)
+THEN
+    RESPONSE #100
+        SetGlobal("LevelAdjustment","ACIL73",1)
+        CreateCreature("AC#IL70C",[917.424],SW)  // Knochengolem
+        CreateCreature("AC#IL70C",[512.698],SW)  // Knochengolem
+END
+
+IF
+    Global("LevelAdjustment","ACIL73",0)
+    OR(2)
+        DifficultyGT(EASY)
+        LevelPartyGT(10)
+THEN
+    RESPONSE #100
+        SetGlobal("LevelAdjustment","ACIL73",1)
+        CreateCreature("AC#IL70C",[917.424],SW)  // Knochengolem
 END
 

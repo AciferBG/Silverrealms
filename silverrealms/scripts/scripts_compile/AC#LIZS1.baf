@@ -45,6 +45,7 @@ THEN
         ReallyForceSpellRES("AC#IL70","AC#IL709")  // Tote beleben
         ActionOverride("AC#IL709",DestroySelf())
         SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+        IncrementGlobal("Spells_Cast","LOCALS",1)
 END
 
 IF
@@ -77,6 +78,7 @@ THEN
         ReallyForceSpellRES("AC#IL70","AC#IL709")  // Tote beleben
         ActionOverride("AC#IL709",DestroySelf())
         SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+        IncrementGlobal("Spells_Cast","LOCALS",1)
 END
 
 IF
@@ -109,6 +111,7 @@ THEN
         ReallyForceSpellRES("AC#IL70","AC#IL709")  // Tote beleben
         ActionOverride("AC#IL709",DestroySelf())
         SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+        IncrementGlobal("Spells_Cast","LOCALS",1)
 END
 
 IF
@@ -138,6 +141,7 @@ THEN
         ReallyForceSpellRES("AC#IL7B","AC#IL709")  // Tote beleben
         ActionOverride("AC#IL709",DestroySelf())
         SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+        IncrementGlobal("Spells_Cast","LOCALS",1)
 END
 
 IF
@@ -150,6 +154,7 @@ THEN
     RESPONSE #100
         SpellRES("AC#C402",LastSeenBy(Myself))  // Tiere beschwören I
         SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+        IncrementGlobal("Spells_Cast","LOCALS",1)
 END
 
 IF
@@ -215,6 +220,7 @@ END
 
 IF
     See(NearestEnemyOf(Myself))
+    GlobalGT("Spells_Cast","LOCALS",1)
 THEN
     RESPONSE #100
         AttackReevaluate(NearestEnemyOf(Myself),15)

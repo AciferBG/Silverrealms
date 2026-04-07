@@ -1,0 +1,38 @@
+IF
+    IsOverMe([PC])
+    Global("AnimateGolems","ACIL70",0)
+THEN
+    RESPONSE #100
+        CreateVisualEffectObject("SPFLESH2","AC#IL70E")  // Knochengolem
+        CreateCreature("AC#IL70C",[768.956],SSW)  // Knochengolem
+        ActionOverride("AC#IL70E",DestroySelf())
+        CreateVisualEffectObject("SPFLESH2","AC#IL70F")  // Knochengolem
+        CreateCreature("AC#IL70C",[467.1049],SSW)  // Knochengolem
+        ActionOverride("AC#IL70F",DestroySelf())
+        SetGlobal("AnimateGolems","ACIL70",1)
+END
+
+/*
+IF
+    IsOverMe([PC])
+    Global("AnimateGolems","ACIL70",0)
+THEN
+    RESPONSE #100
+        SetGlobal("AnimateGolems","ACIL70",1)
+END
+*/
+
+/*
+IF
+    IsOverMe([PC])
+    Global("AnimateGolems","ACIL70",0)
+THEN
+    RESPONSE #100
+        ReallyForceSpellRES("AC#IL7C","AC#IL70E")  // Tote beleben
+        ActionOverride("AC#IL70E",DestroySelf())
+        ReallyForceSpellRES("AC#IL7C","AC#IL70F")  // Tote beleben
+        ActionOverride("AC#IL70F",DestroySelf())
+        SetGlobal("AnimateGolems","ACIL70",1)
+END
+*/
+

@@ -1,0 +1,46 @@
+IF
+    //Clicked(Player1)
+    Clicked([ANYONE])
+    Range(LastTrigger,15)
+    Global("PortalOpen","ACIL71",0)
+THEN
+    RESPONSE #100
+        SetGlobal("PortalOpen","ACIL71",1)
+        DisplayString(Myself,@7110)  
+END
+
+IF
+    //Clicked(Player1)
+    Clicked([ANYONE])
+    Range(LastTrigger,10)
+    Global("PortalOpen","ACIL71",1)
+THEN
+    RESPONSE #100
+        SaveGame(0)
+        ClearAllActions()
+        SetGlobal("PortalOpen","ACIL71",2)
+        StartCutSceneMode()
+        DisplayString(Myself,@7111)  
+        ActionOverride(Player1,MoveToPoint([1377.524]))
+        Wait(1)
+        FadeToColor([20.0],0)
+        Wait(1)
+        StartCutScene("AC#IL72C")
+END
+
+IF
+    Clicked([ANYONE])
+    Range(LastTrigger,10)
+THEN
+    RESPONSE #100
+        DisplayString(Myself,@7112)  
+END
+
+IF
+    Clicked([ANYONE])
+    !Range(LastTrigger,10)
+THEN
+    RESPONSE #100
+        DisplayString(Myself,14702)  // Ihr seid zu weit entfernt, um das zu benutzen.
+END
+

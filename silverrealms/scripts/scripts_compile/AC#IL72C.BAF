@@ -1,0 +1,13 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player1)
+        LeaveAreaLUAPanic("ACIL72","",[949.1072],NE)
+        LeaveAreaLUA("ACIL72","",[949.1072],NE)
+        MultiPlayerSync()
+        Wait(1)
+        EndCutSceneMode()
+        FadeFromColor([30.0],0)
+END
+

@@ -1,0 +1,10 @@
+IF
+    IsOverMe([PC])
+    Global("AC#Maldraedior","ACIL72",0)
+THEN
+    RESPONSE #100
+        TriggerActivation("Maldraedior_spawn",FALSE)
+        TriggerActivation("WalkToTrigger",FALSE)
+        SetGlobal("AC#Maldraedior","ACIL72",1)
+END
+

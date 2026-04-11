@@ -1,0 +1,10 @@
+IF
+    Global("AC#Maldraedior","ACIL72",1)
+THEN
+    RESPONSE #100
+        ClearAllActions()
+        Wait(1)
+        SetGlobal("AC#Maldraedior","ACIL72",2)
+        CreateCreature("AC#MALD3",[1337.636],NE)  // Maldraedior
+END
+

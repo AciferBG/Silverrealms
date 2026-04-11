@@ -1,5 +1,23 @@
 
 /*******************************************************************************************************
+Dialog Lizard king
+*******************************************************************************************************/
+BEGIN ~AC#LIKI1~
+
+IF ~NumTimesTalkedTo(0)~ THEN BEGIN 0
+  SAY ~Ihr wandelt auf vergessenen Schuppen. Tief unten... ruht er noch. Der Verzehrer der Häute... Kalzareinad! Er mag es nicht, gestört zu werden. Vor allem nicht von einem Wesen mit warmem Blut!~
+  IF ~~ THEN REPLY ~Ihr redet wirres Zeug, Kreatur.~ GOTO hostile
+  IF ~~ THEN REPLY ~Kalzareinad? Was verbirgt sich hier unten?~ GOTO hostile
+  IF ~~ THEN REPLY ~Tretet beiseite, oder ich werde Euch erschlagen.~ GOTO hostile
+END
+
+IF ~~ THEN BEGIN hostile
+  SAY ~Sein Zorn kriecht bereits durch euer Fleisch. Sterbt und nährt Ihn weiter!~
+  IF ~~ THEN DO ~Enemy()~ EXIT
+END
+
+
+/*******************************************************************************************************
 Dialog Nuzam
 *******************************************************************************************************/
 

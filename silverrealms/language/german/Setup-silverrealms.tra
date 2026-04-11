@@ -1689,6 +1689,10 @@ Charvekannathors Hort~
 @7101 = ~^0xFFC8FFC8Die Reise dauerte 20 Stunden. ^-~
 @7102 = ~^0xFFC8FFC8Die Reise dauerte 4 Stunden. ^-~
 
+@7110 = ~Wenn Ihr möchtet, könnt Ihr durch dieses Portal schreiten - aber, wie es scheint, nur <CHARNAME> allein.~
+@7111 = ~<CHARNAME> schreitet alleine durch das Portal auf die andere Seite...~
+@7112 = ~Nur <CHARNAME> scheint dieses Portal benutzen zu können.~
+
 
 
 // Item Strings
@@ -2260,6 +2264,22 @@ Gewicht: 0~
 EIGENSCHAFTEN:
 
 Gewicht: 20~
+@8136 = ~~
+@8137 = ~Dieser schwere beschlagene Lederwams wurde einst von den Echsenstämmen der dampfenden Sümpfe von Samarach gefertigt, wo Hitze und Fäulnis das Leben bestimmen und nur die Zähesten überdauern. Seine dichten, ledernen Schuppen stärken den Körper ihres Trägers und verleihen ihm eine ungewöhnliche Widerstandskraft, doch die Kälte fremder Länder kriecht ungehindert durch die urtümliche Struktur. Man sagt, die Panzer würden aus den Häuten besiegter Echsenfürsten gewonnen.
+
+EIGENSCHAFTEN:
+
+Konstitution: +1
+Kälteresistenz: -20%
+
+Rüstungsklasse: 4
+RK-Bonus:
+ -1 gg. Geschosswaffen
+ -1 gg. Stichwaffen
+ -2 gg. Klingenwaffen
+Mindeststärke: 6
+
+Gewicht: 7~
 
 
  

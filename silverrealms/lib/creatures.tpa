@@ -1028,7 +1028,8 @@ COPY ~silverrealms/cre/AC#SZAG1.cre~ ~override/AC#SZAG1.cre~
 
 COPY ~silverrealms/cre/AC#MALD1.cre~ ~override/AC#MALD1.cre~
   SAY NAME1 @123 SAY NAME2 @123
-
+  SAY INITIAL_MEETING  @5300
+  SAY SELECT_COMMON1  @5300
 COPY ~silverrealms/cre/AC#BUGB1.cre~ ~override/AC#BUGB1.cre~
   SAY NAME1 @125 SAY NAME2 @125
   
@@ -1040,7 +1041,9 @@ COPY ~silverrealms/cre/AC#BUGB2.cre~ ~override/AC#BUGB2.cre~
   
 COPY ~silverrealms/cre/AC#MALD3.cre~ ~override/AC#MALD3.cre~
   SAY NAME1 @131 SAY NAME2 @131
-  
+  SAY INITIAL_MEETING   @5303
+  SAY SELECT_COMMON1  @5302
+  SAY SELECT_COMMON2  @5302
 COPY ~silverrealms/cre/AC#BLOTH.cre~ ~override/AC#BLOTH.cre~
   SAY NAME1 @132 SAY NAME2 @132
   

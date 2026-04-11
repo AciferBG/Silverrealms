@@ -1,4 +1,12 @@
 IF
+    NumberOfTimesTalkedTo(0)
+    See([PC])
+THEN
+    RESPONSE #100
+        StartDialogueNoSet([PC])
+END
+
+IF
     HitBy([GOODCUTOFF],CRUSHING)
 THEN
     RESPONSE #100

@@ -3,7 +3,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("Acil71_Phosphor","ACIL71",2)
-	        AddJournalEntry(@71000,QUEST)
+	    AddJournalEntry(@71000,QUEST)
 END
 
 IF
@@ -85,18 +85,47 @@ THEN
 		SetGlobal("AC#_DragonSummon","GLOBAL",13)
 END
 
+//OLD:
+/*
 IF
-	Global("AC#Maldraedior","ACIL71",1)
+    Global("AC#Maldraedior","ACIL71",1)
 THEN
-	RESPONSE #100
-                ClearAllActions()
-		StartCutSceneMode()
+    RESPONSE #100
+        ClearAllActions()
+        StartCutSceneMode()
+        SetGlobal("AC#Maldraedior","ACIL71",2)
+        Wait(1)
+        CreateVisualEffect("SPDIMNDR",[835.378])
+        Wait(1)
+        CreateCreature("AC#MALD3",[835.378],NWW)  // Maldraedior
+        Wait(2)
+        EndCutSceneMode()
+END
+*/
+
+// NEW:
+IF
+    Global("AC#Maldraedior","ACIL71",1)
+THEN
+    RESPONSE #100
+        ClearAllActions()
+        StartCutSceneMode()
+		MoveViewObject("Tracil72",INSTANT)
+		Wait(1)
+		AmbientActivate("Portal",TRUE)
+		TriggerActivation("Tracil72",TRUE) 
 		SetGlobal("AC#Maldraedior","ACIL71",2)
-		Wait(1)
-		CreateVisualEffect("SPDIMNDR",[835.378])
-		Wait(1)
-                CreateCreature("AC#MALD3",[835.378],5)
-               	EndCutSceneMode()
+        EndCutSceneMode()
+END
+
+IF
+	Global("AC#Talked_to_Maldraedior","GLOBAL",1)
+    Global("DeactivatePortalsAgain","ACIL71",0)
+THEN
+    RESPONSE #100
+		AmbientActivate("Portal",FALSE)
+		TriggerActivation("Tracil72",FALSE) 
+		SetGlobal("DeactivatePortalsAgain","ACIL71",1)
 END
 
 IF
@@ -125,8 +154,6 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("DisableAnimations","ACIL71",1)
-		//FadeToColor([0.0],0)
-		//StartMovie("AC#71MVE")
 		AmbientActivate("Burning_heart",FALSE)
 		AmbientActivate("Firedoor02",FALSE)
                 AmbientActivate("Firedoor03",FALSE)
@@ -142,7 +169,8 @@ THEN
                 AmbientActivate("Firedoor13",FALSE)
 				AmbientActivate("Cold_veil",FALSE)
 				SoundActivate("Coldveil_amb",FALSE)
-                //AmbientActivate("Dracolich02",FALSE)
+                AmbientActivate("Portal",FALSE)
+				TriggerActivation("Tracil72",FALSE)
                 OpenDoor("Dragon_eyes")
                 OpenDoor("Door02")
                 OpenDoor("Door03")
@@ -157,7 +185,6 @@ THEN
                 OpenDoor("Door12")
                 OpenDoor("Door13")
 				OpenDoor("Door14")
-		//FadeFromColor([30.0],0)
 END
 
 IF

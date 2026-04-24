@@ -299,11 +299,13 @@ COPY ~silverrealms/cre/ac#drim3.cre~ ~override/ac#drim3.cre~
 COPY ~silverrealms/cre/ac#magm1.cre~ ~override/ac#magm1.cre~
   SAY NAME1 @287 SAY NAME2 @287
 
-COPY ~silverrealms/cre/AC#DRAGR.cre~ ~override/AC#DRAGR.cre~
+/*
+COPY ~silverrealms/cre/AC#DRAGR.cre~ ~override/AC#DRAGR.cre~   //Dragonwraith - unused
   SAY NAME1 @20 SAY NAME2 @20
-  
-COPY ~silverrealms/cre/AC#DRAG1.cre~ ~override/AC#DRAG1.cre~
+*/
+COPY ~silverrealms/cre/AC#DRAG1.cre~ ~override/AC#DRAG1.cre~ //Dragonwraith
   SAY NAME1 @20 SAY NAME2 @20
+  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~DRAGONWRAITH_ACIFER~))
 
 COPY ~silverrealms/cre/ac#cy1.cre~ ~override/ac#cy1.cre~
   SAY NAME1 @21 SAY NAME2 @21

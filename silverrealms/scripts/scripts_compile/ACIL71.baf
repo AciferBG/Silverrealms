@@ -78,7 +78,7 @@ THEN
 	    ActionOverride("AC#71CR4",DestroySelf())
 	    ActionOverride("AC#71CR5",DestroySelf())
 		ActionOverride("AC#71CR6",DestroySelf())
-		//AmbientActivate("Dracolich02",FALSE)
+		AmbientActivate("Dracolich02",FALSE)
 		CreateCreature("AC#DRAG1",[885.807],9)
 		EndCutSceneMode()
 		SetGlobal("AC#_TransformDracolich","GLOBAL",2)
@@ -113,6 +113,7 @@ THEN
 		MoveViewObject("Tracil72",INSTANT)
 		Wait(1)
 		AmbientActivate("Portal",TRUE)
+		SoundActivate("Portal_sound",TRUE)
 		TriggerActivation("Tracil72",TRUE) 
 		SetGlobal("AC#Maldraedior","ACIL71",2)
         EndCutSceneMode()
@@ -124,6 +125,7 @@ IF
 THEN
     RESPONSE #100
 		AmbientActivate("Portal",FALSE)
+		SoundActivate("Portal_sound",FALSE)
 		TriggerActivation("Tracil72",FALSE) 
 		SetGlobal("DeactivatePortalsAgain","ACIL71",1)
 END
@@ -170,6 +172,7 @@ THEN
 				AmbientActivate("Cold_veil",FALSE)
 				SoundActivate("Coldveil_amb",FALSE)
                 AmbientActivate("Portal",FALSE)
+				SoundActivate("Portal_sound",FALSE)
 				TriggerActivation("Tracil72",FALSE)
                 OpenDoor("Dragon_eyes")
                 OpenDoor("Door02")

@@ -1,8 +1,9 @@
 
 /*******************************************************************************************************
-Dialogue DRacolich
+Dialogue Dracolich
 *******************************************************************************************************/
 
+/*
 BEGIN ~AC#71DRL~
 
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN 0
@@ -11,11 +12,13 @@ SAY  ~Uuuuhh.... tausend Jahre tot... und jetzt wieder... Leben?~
    SetGlobal("AC#_TransformDracolich","GLOBAL",1)
    Enemy()~  EXIT
 END
+*/
 
 /*******************************************************************************************************
-Dialog Ringreemeralxot
+Dialogue Dragonwraith
 *******************************************************************************************************/
 
+/*
 BEGIN ~AC#DRAGR~
 
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN 0
@@ -24,6 +27,7 @@ SAY  ~Wer wagt es, die alte Beschwörung Kalzareinads zu vollziehen? Ein <PRO_RA
    SetGlobal("AC#_TransformDracolich","GLOBAL",1)
    Enemy()~  EXIT
 END
+*/
 
 /*******************************************************************************************************
 Dialog Drachenstatue

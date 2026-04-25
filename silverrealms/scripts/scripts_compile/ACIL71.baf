@@ -79,7 +79,7 @@ THEN
 	    ActionOverride("AC#71CR5",DestroySelf())
 		ActionOverride("AC#71CR6",DestroySelf())
 		AmbientActivate("Dracolich02",FALSE)
-		CreateCreature("AC#DRAG1",[885.807],9)
+		CreateCreature("AC#DRAG1",[885.807],0)
 		EndCutSceneMode()
 		SetGlobal("AC#_TransformDracolich","GLOBAL",2)
 		SetGlobal("AC#_DragonSummon","GLOBAL",13)

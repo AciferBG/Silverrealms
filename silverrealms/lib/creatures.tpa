@@ -2,6 +2,10 @@
 
 COPY ~silverrealms/cre/copy~         ~override~
 
+COPY ~silverrealms/cre/AC#ILDMS.cre~ ~override~ // Doomspawn
+  SAY NAME1 @9058 SAY NAME2 @9058
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~DOOMSPAWN_ACIFER~))
+
 COPY ~silverrealms/cre/AC#LIZS2.cre~ ~override~ // Lizardfolk shaman
   SAY NAME1 @223 SAY NAME2 @223
 

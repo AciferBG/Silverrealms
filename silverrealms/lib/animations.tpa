@@ -33,7 +33,6 @@
   ACTION_BASH_FOR ~%MOD_FOLDER%/animations/Doomspawn~ ~^.+\.bam$~ BEGIN
     COPY ~%BASH_FOR_FILESPEC%~ ~override~
   COPY ~%MOD_FOLDER%/animations/Doomspawn/Doomspawn-sounds~ ~override~
-  COPY ~%MOD_FOLDER%/animations/Doomspawn/RBAC#F_1.bmp~ ~override~
   END
 
 //_____________________________________________________________________________________________________

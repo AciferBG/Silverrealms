@@ -95,13 +95,13 @@ END
 
 
 IF
-	Detect([PC])
+	//Detect([PC])
 	Global("AC#Goodbye_Iltkazar","GLOBAL",1)
 	Global("AC#BreskGoodbye","ACIL50",0)
 THEN
 	RESPONSE #100
 		SetGlobal("AC#BreskGoodbye","ACIL50",1)
-		StartDialogueNoSet(LastSeenBy(Myself))
+		//StartDialogueNoSet(LastSeenBy(Myself))
 END
 
 // NEW

@@ -7,36 +7,56 @@ BEGIN ~AC#LIZS1~
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN 1
 SAY  ~Diesss issst nicht Euer Platzzz! Kehrt um!~
 ++ ~Wer seid Ihr?~ + who_are_you
+++ ~Und wenn ich bleibe?~ + who_are_you
+++ ~Nicht mein Platz? Jetzt bin ich erst recht neugierig geworden.~ + who_are_you
 END
 
 	IF ~~ THEN BEGIN who_are_you
 	SAY ~Wir sssind die Sssuchenden, die den Ssschläfer erwecken werden!~
 	++ ~Der Schläfer?~ + the_sssleeper
+	++ ~Ich nehme an, Ihr wisst wenigstens, wen Ihr da erwecken wollt?~ + the_sssleeper
+	++ ~Ihr klingt wie Kultisten. Das beunruhigt mich stets ein wenig.~ + the_sssleeper
 	END
 	
 		IF ~~ THEN BEGIN the_sssleeper
 		SAY ~Jaaa... der Ssschläfer. Unssser Gott!~
 		++ ~Hier ruht ein Gott?~ + the_sssleeper_02
+		++ ~Aus Erfahrung kann ich Euch sagen, dass uralte Wesen nach dem Erwachen selten gute Laune haben.~ + the_sssleeper_bad_mood
 		END
+		
+			IF ~~ THEN BEGIN the_sssleeper_bad_mood
+			SAY ~Der Ssschläfer wartet auf unsss! Issst unssser Gott!~
+			++ ~Warum schläft er?~ + why_sssleeper
+			++ ~Dann hoffe ich für Euch, dass er nicht hungrig aufwacht.~ + sssleeper_hungry
+			END
 		
 			IF ~~ THEN BEGIN the_sssleeper_02
 			SAY ~Nicccht ein Gott! Unssser Gott!~
 			++ ~Warum schläft er?~ + why_sssleeper
+			++ ~Liegt Euer Gott zufällig in einer Art Drachentempel? Da müsste ich nämlich einmal kurz hinein.~ + dragontemple
 			END
+			
+				IF ~~ THEN BEGIN sssleeper_hungry
+				SAY ~Dass wird er nicht tun! Wir sssehen ihn, doch können wir niccht mit ihm sssprechen...~
+				++ ~Liegt Euer Gott zufällig in einer Art Drachentempel? Da müsste ich nämlich einmal kurz hinein.~ + dragontemple
+				++ ~Vielleicht sollte ich ihn zuerst finden und erschlagen. Rein vorsorglich.~ + dragontemple
+				END
 			
 				IF ~~ THEN BEGIN why_sssleeper
 				SAY ~Wir wisssen esss nicccht! Wir sssehen ihn, doch können wir niccht mit ihm sssprechen...~
 				++ ~Liegt Euer Gott zufällig in einer Art Drachentempel? Da müsste ich nämlich einmal kurz hinein.~ + dragontemple
+				++ ~Vielleicht sollte ich ihn zuerst finden und erschlagen. Rein vorsorglich.~ + dragontemple
 				END
 				
 				IF ~~ THEN BEGIN dragontemple
 				SAY ~Nein! Ihr dürft dorrrt nicccht hinein, niemand darrrf dort hinein - zzzu unssstet issst ssseine jetzzzige Form...~
-				++ ~Ich fürchte, das bringt nichts. Sagt, würde Eure Haut vielleicht als Tasche taugen?~ + skin
 				++ ~Ich muss dort wirklich hinein.~ + need_to_go_there
 				END
 				
 					IF ~~ THEN BEGIN need_to_go_there
 					SAY ~Wir sssind die Wächter. Kehrt um, und Euch wird nichtsss geschehen. Tretet einen Sschritt näher, und Ihr werdet unssseren Zzzorn erwecken.~
+					++ ~Ich muss dort hinein. Ob Euch das gefällt oder nicht.~ + skin
+					++ ~Ihr habt Eure Warnung ausgesprochen. Nun hört die meine: Geht mir aus dem Weg!~ + skin
 					++ ~Ich fürchte, das bringt nichts. Sagt, würde Eure Haut vielleicht als Tasche taugen?~ + skin
 					++ ~Also gut, ich gehe.~ + i_am_gone
 					END

@@ -490,6 +490,7 @@ IF
 	Global("AC#_Iltkazar_Destroyed","GLOBAL",0)
 	Global("Door02ClosedDuergar","ACIL20",0)
 	OpenState("DOOR02",TRUE)
+	Global("AbishaiSpawn","ACIL20",0)
 THEN
 	RESPONSE #100
 		SetGlobal("Door02ClosedDuergar","ACIL20",1)

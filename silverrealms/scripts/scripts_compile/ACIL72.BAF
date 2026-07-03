@@ -1,4 +1,21 @@
 IF
+    Global("Entered","ACIL72",0)
+THEN
+    RESPONSE #100
+        TriggerActivation("TrACIL71",FALSE)
+        SetGlobal("Entered","ACIL72",1)
+END
+
+IF
+    Global("Entered","ACIL72",1)
+    GlobalGT("AC#Talked_to_Maldraedior","GLOBAL",0)
+THEN
+    RESPONSE #100
+        TriggerActivation("TrACIL71",TRUE)
+        SetGlobal("Entered","ACIL72",2)
+END
+
+IF
     Global("AC#Maldraedior","ACIL72",1)
 THEN
     RESPONSE #100

@@ -13,7 +13,7 @@ BEGIN ~AC#DREA3~
 	== AC#DREA3 ~Doch, das habe ich.~ 
 	== AC#ILD3E ~Welchen Weg habt Ihr an die Oberfläche gewählt?~ 
 	== AC#DREA3 ~Den Weg über Ravimors Höhle. Ich habe dort einen Federfalltrank bereitgelegt, sollte ich den Rückweg ebenfalls über die Höhle antreten.~
-	== AC#ILD3E ~Ravimors Höhle. Ein fast vergessener Ort. Und an welchem Ort an der Oberfläche wolltet Ihr um Rücknahme Eures Fluches bitten.~ 	
+	== AC#ILD3E ~Ravimors Höhle. Ein fast vergessener Ort. Und an welchem Ort an der Oberfläche wolltet Ihr um Rücknahme Eures Fluches bitten?~ 	
 	== AC#DREA3 ~Am alten Drachenfriedhof.~
 	== AC#ILD3E ~Oh! Zeigt ihn mir.~	
 	== AC#DREA3 ~Dies ist aber die letzte Erinnerung, die ich mit Euch teilen werde! Dann werdet Ihr mir Antworten liefern müssen!~

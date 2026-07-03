@@ -1773,7 +1773,7 @@ Ich bin in der Kapelle des Blutigen Mondes angekommen. Ein uralter Tempel zu Ehr
 ~
 @8018 = ~Tethirs Mondklinge~
 @8019 = ~Mondklingen werden seit der Zeit des alten Myth Drannor von außergewöhnlichen Helden des elfischen Volkes getragen. Die Schwerter werden meist von einer Generation auf die nächste vererbt. In seltenen Fällen kann die Klinge von einem anderen Elfen geführt werden, wenn der ursprüngliche Besitzer gestorben ist und das Schwert den neuen Träger anerkennt. Dies ist jedoch nur bei gut gesinnten Elfen der Fall. Alle anderen Gesinnungen und Rassen scheitern bei dem Versuch, die Klinge anzuheben.
-Die Mondklinge ist eine mächtige Waffe. Jede verfügt über ganz individuelle Fähigkeiten, die nicht mit einer anderen Mondklinge identisch sind und maßgeblich vom ersten Träger beeinflusst werden. In diesem Falle schenkt Tethirs Mondklinge ihrem Träger Schutz vor Feuer. Außerdem kann der Besitzer einmal täglich einen Elfschatten, ein identisches Duplikat seiner selbst, erschaffen, welches für ihn kämpft. Die Stufe des Elfschattens betragt 60% der Stufe des Trägers. Es verfügt über alle Zauber und Fähigkeiten, über die der Träger auf dieser Stufe verfügen könnte. Seine Trefferpunkte betragen 60% der Trefferpunkte des Trägers. Der Elfschatten steht unter der vollständigen Kontrolle des Trägers. Wird der Elfschatten getötet, kehrt er in das Schwert zurück. 
+Die Mondklinge ist eine mächtige Waffe. Jede verfügt über ganz individuelle Fähigkeiten, die nicht mit einer anderen Mondklinge identisch sind und maßgeblich vom ersten Träger beeinflusst werden. In diesem Falle schenkt Tethirs Mondklinge ihrem Träger Schutz vor Feuer. Außerdem kann der Besitzer einmal täglich einen Elfschatten, ein identisches Duplikat seiner selbst, erschaffen, welches für ihn kämpft. Die Stufe des Elfschattens beträgt 60% der Stufe des Trägers. Es verfügt über alle Zauber und Fähigkeiten, über die der Träger auf dieser Stufe verfügen könnte. Seine Trefferpunkte betragen 60% der Trefferpunkte des Trägers. Der Elfschatten steht unter der vollständigen Kontrolle des Trägers. Wird der Elfschatten getötet, kehrt er in das Schwert zurück. 
 
 SPEZIFISCHE EIGENSCHAFTEN:
 
@@ -2264,7 +2264,7 @@ Gewicht: 0~
 EIGENSCHAFTEN:
 
 Gewicht: 20~
-@8136 = ~~
+@8136 = ~Echsenschuppenpanzer~
 @8137 = ~Dieser schwere beschlagene Lederwams wurde einst von den Echsenstämmen der dampfenden Sümpfe von Samarach gefertigt, wo Hitze und Fäulnis das Leben bestimmen und nur die Zähesten überdauern. Seine dichten, ledernen Schuppen stärken den Körper ihres Trägers und verleihen ihm eine ungewöhnliche Widerstandskraft, doch die Kälte fremder Länder kriecht ungehindert durch die urtümliche Struktur. Man sagt, die Panzer würden aus den Häuten besiegter Echsenfürsten gewonnen.
 
 EIGENSCHAFTEN:

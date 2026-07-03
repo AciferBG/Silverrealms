@@ -298,6 +298,7 @@ COPY_EXISTING ~ANOMEN.BCS~ ~override~
         PATCH_IF (num_matches > 0) BEGIN
             REPLACE_TEXTUALLY ~%textToReplace%~ ~!AreaType(%area_type_id_explan%)
             !AreaType(%area_type_id_underdark%)
+            !AreaCheck("ACIL70")
             !AreaCheck("ACIL90")
             !AreaCheck("ACIL01")
             !AreaCheck("ACIL0A")

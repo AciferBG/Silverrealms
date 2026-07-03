@@ -187,7 +187,7 @@ END
 	IF ~~ THEN EXTERN AC#ANT01 chain_please_slay_dragon_yes
 	
 	CHAIN AC#ANT01 chain_please_slay_dragon_yes 
-	~Es... es ist lediglich die große Bitte eines... trauernden Vaters.~
+	~Es... es ist lediglich die Bitte eines... trauernden Vaters.~
 	END
 	IF ~~ THEN EXTERN AC#ANT01 chain_please_slay_dragon__02
 

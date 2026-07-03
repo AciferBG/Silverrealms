@@ -49,7 +49,7 @@ END
 	END
 	
 IF ~~THEN BEGIN seek_dwarf_long_time
-SAY ~Vor längerer Zeit sagt Ihr... doch im Zeitalter der Drachen nicht länger als ein Atemzug...Mithbarakaz war hier, doch ein Zwerg ist er nicht.~
+SAY ~Vor längerer Zeit sagt Ihr... doch im Zeitalter der Drachen nicht länger als ein Atemzug... Mithbarakaz war hier, doch ein Zwerg ist er nie gewesen.~
 IF ~~ THEN GOTO no_dwarf
 END
 

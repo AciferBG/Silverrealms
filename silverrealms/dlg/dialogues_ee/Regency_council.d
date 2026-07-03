@@ -1377,9 +1377,9 @@ CHAIN IF ~~ THEN AC#GROM1 chain_gromi_turbaern_01
 == AC#TURB8 ~Ja, hier bin ich, und ich sehe, gerade zur rechten Zeit!~
 == AC#CHEM1 ~Ihr seid kein Mitglied des Regentschaftsrates, Turbaern vom Clan Ghalmrin!~
 == AC#TURB8 ~Ich wollte auch nie eins sein!~
-= ~Der Rat hat seine Aufgabe nicht erfüllt! Er sollte Iltkazar durch die schweren Stunden führen, stattdessen hätte er die Stadt fast in den Abgrund geführt!~
+= ~Der Rat hat seine Aufgabe nicht erfüllt! Er sollte Iltkazar durch die schweren Stunden führen, stattdessen hätte er die Stadt fast in den Abgrund geführt.~
 == AC#FENY1 ~Dies sind harte Worte, Turbaern.~
-== AC#GROM1 ~Der Hohe Omlar spricht leider die Wahrheit. Wir haben versagt.~ 
+== AC#GROM1 ~Der Hohe Omlar spricht die Wahrheit. Wir haben leider versagt.~ 
 == AC#TURB8 ~Nur durch Dumathoins Eingreifen scheint es <CHARNAME> überhaupt wieder zurück nach Iltkazar geschafft zu haben.~
 == AC#DUN01 ~Wie sollen wir nun mit meinem Bruder Ruvan weiterverfahren?~
 == AC#GROM1 ~Ruvan hat unser Vertrauen verspielt. Bis diese Krise vorüber ist, sollen er und seine Frau in der Bronzemaske im Kerker in Haft bleiben.~
@@ -1458,9 +1458,9 @@ END
 
 CHAIN IF ~~ THEN AC#FENY1 chain_new_after_barakuir_04
 ~Das ist ja widerlich!~
+== AC#STUR1 ~Ugh! Wie das stinkt!~
 == AC#ELER1 ~Vielleicht ist dies unsere einzige Möglichkeit, dem König zu helfen?~
 == AC#TORT1 ~Indem wir einen Teil eines Ältestenhirnes um Rat fragen?~
-== AC#STUR1 ~Ugh! Wie das stinkt!~
 == AC#VRON1 ~Zeigt mir bitte einmal diesen Gehirnlappen, <CHARNAME>.~
 END
 IF ~~ THEN DO ~TakePartyItem("AC#ILEBL") DestroyItem("AC#ILEBL")~ EXTERN AC#VRON1 take_lobe_01

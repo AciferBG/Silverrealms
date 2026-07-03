@@ -567,7 +567,8 @@ END
 /* IF Timer of 20 Minutes is not yet expired */
 IF ~Global("AC#Bresk_Council","LOCALS",2)
 /*GlobalTimerNotExpired("waiting_council","LOCALS")*/~ THEN BEGIN go_on
-  SAY ~An Eurer Stelle würde ich den Regentschaftsrat nicht zu lange warten lassen, <CHARNAME>!~
+  //SAY ~An Eurer Stelle würde ich den Regentschaftsrat nicht zu lange warten lassen, <CHARNAME>!~
+  SAY ~Wenn Ihr etwas für Iltkazar tun könnt, dann tut es. Die Feinde Shanatars schlafen niemals. Vergesst das nicht, <CHARNAME>.~
   IF ~~ THEN EXIT
 END
 
@@ -630,6 +631,11 @@ END
 // ---------------------------------------------
 BEGIN ~AC#ELER6~
 
+IF ~Global("AC#Goodbye_Iltkazar","GLOBAL",1)~ THEN BEGIN talk_to_bresk
+SAY ~Sprecht Bresk an, wenn Ihr bereit zum Aufbruch seid. Ich hoffe, dass ich bis dahin auch das Buch in neues Zwergisch übersetzt habe und Euch sagen kann, wohin Euch der Weg zum Drachenfriedhof führen wird.~
+IF ~~ THEN EXIT	
+END
+
 IF ~Global("WaitForDriftdisc","ACIL50",1)~ THEN BEGIN hello_have_driftdisc
 SAY ~Habt Ihr schon mit meiner Mutter über die Rückkehr an die Oberfläche gesprochen?~
 IF ~OR(2)
@@ -653,6 +659,9 @@ END
 	IF ~~ THEN BEGIN yes_talked_to_anthan
 	SAY ~Oh! Und? Hat er es Euch gegeben?~
 	IF ~~ THEN REPLY ~Mit einigem Widerwillen - ja.~ DO ~SetGlobal("ElernWaitsBookAnthan","ACIL50",1)~ + chain_yes_talked_to_anthan_02
+	IF ~~ THEN REPLY ~Nach etwas Überzeugungsarbeit hat er es mir überlassen.~ DO ~SetGlobal("ElernWaitsBookAnthan","ACIL50",1)~ + chain_yes_talked_to_anthan_02
+	IF ~~ THEN REPLY ~Offenbar kann selbst ein Zwerg manchmal vernünftige Entscheidungen treffen.~ DO ~SetGlobal("ElernWaitsBookAnthan","ACIL50",1)~ + chain_yes_talked_to_anthan_02
+	IF ~~ THEN REPLY ~Das Buch befindet sich nun jedenfalls in meinem Besitz.~ DO ~SetGlobal("ElernWaitsBookAnthan","ACIL50",1)~ + chain_yes_talked_to_anthan_02
 	END
 				
 
@@ -1159,6 +1168,10 @@ END
 			== AC#BRES1 ~Nur damit Ihr's wisst: Ich werde bald befehlen, alle Tore Iltkazars zu verriegeln. Es wird unruhig draußen im Unterreich. Die Streitmacht der Duergar nähert sich. Ihr solltet sehen, dass Ihr hier in der Stadt alles Wichtige erledigt und dann schleunigst an die Oberfläche aufbrechen.~
 			END
 			IF ~~ THEN REPLY ~Soll ich Euch im anstehenden Kampf gegen die Grauzwerge nicht besser helfen?~ EXTERN AC#BRES1 chain_help_with_duergar	
+			IF ~~ THEN REPLY ~Ich habe nicht die Absicht, vor ein paar Grauzwergen davonzulaufen.~ EXTERN AC#BRES1 chain_help_with_duergar	
+			IF ~~ THEN REPLY ~Schade. Ein Krieg vor den Toren hätte die Stimmung etwas aufgelockert.~ EXTERN AC#BRES1 chain_help_with_duergar	
+			IF ~~ THEN REPLY ~Dann sollte ich wohl keine Zeit verlieren.~ EXTERN AC#ELER6 do_you_know_how_to_get_to_dragoncem	
+			IF ~~ THEN REPLY ~Verstehe. Ich werde meine Angelegenheiten in Iltkazar rasch zu Ende bringen.~ EXTERN AC#ELER6 do_you_know_how_to_get_to_dragoncem	
 
 			CHAIN AC#BRES1 chain_help_with_duergar
 			~Pah! Damit kommen wir schon alleine zurecht. Ihr helft uns mehr, wenn Ihr an der Oberfläche nach diesem... diesem scheußlichen Drachenfriedhof sucht.~
@@ -1197,7 +1210,7 @@ END
 			CHAIN AC#ELER6 yes_ready_for_back_to_surface
 			~Das ist gut! Ich wünsche unserer Stadt und unserem König, dass Ihr bald mit Antworten wieder zu uns zurückkehren werdet.~
 			=
-			~Wir würden Euch gerne gebührend verabschieden. Rüstet Euch für den Rückweg gut aus. Sprecht Bresk am Platz von Bhaerynden an, wenn Ihr fertig seid. Er wird uns Bescheid sagen und wir werden Euch alle Lebewohl sagen. Ich hoffe, dass ich bis dahin auch das Buch in neues Zwergisch übersetzt habe und Euch sagen kann, wohin Euch der Weg zum DRachendriedhof führen wird.~
+			~Wir würden Euch gerne gebührend verabschieden. Rüstet Euch für den Rückweg gut aus. Sprecht Bresk an, wenn Ihr fertig seid. Er wird uns Bescheid sagen und wir werden Euch alle Lebewohl sagen. Ich hoffe, dass ich bis dahin auch das Buch in neues Zwergisch übersetzt habe und Euch sagen kann, wohin Euch der Weg zum Drachenfriedhof führen wird.~
 			END
 			IF ~~ THEN DO ~SetGlobal("AC#Goodbye_Iltkazar","GLOBAL",1)
 			AddJournalEntry(@64300,QUEST)~ EXIT	
@@ -1216,6 +1229,8 @@ END
 			== AC#ELER6 ~Kennt Ihr vielleicht dieses Gebirge?~
 			END
 			IF ~~ THEN REPLY ~Die Wolkengipfel? Aber natürlich!~ EXTERN AC#ELER6 cloudpeaks_02
+			IF ~~ THEN REPLY ~Natürlich kenne ich sie. Man muss schon sein ganzes Leben unter einem Stein verbracht haben, um noch nie von ihnen gehört zu haben.~ EXTERN AC#ELER6 cloudpeaks_02
+			IF ~~ THEN REPLY ~Wer kennt sie nicht? Sie sind an der Oberfläche kaum zu übersehen.~ EXTERN AC#ELER6 cloudpeaks_02
 			
 			CHAIN AC#ELER6 cloudpeaks_02
 			~Das ist ja fantastisch!~
@@ -1224,7 +1239,7 @@ END
 			=
 			~Dort soll jedoch auch ein alter Tempel eines alten Drachengottes gelegen sein. Borthun berichtet, dass sich früher Drachen zum Sterben an diesen Ort zurückgezogen haben. Warum, sagt er nicht.~
 			== AC#BRES1 ~Na, da bleibe ich doch lieber in meinem schönen, sicheren Unterreich.~
-			== AC#ELER6 ~Jedenfalls wird dies der Ort sein, welchen Ihr aufsuchen müsst. Mith Barak schien überzeugt zu sein, dass sein Schlaf an diesem Ort quasi geheilt werden könnte.~
+			== AC#ELER6 ~Jedenfalls muss dies der Ort sein, den Ihr aufsuchen müsst. Mith Barak war überzeugt, dass dort die Ursache seines Schlafes beseitigt werden könne.~
 			END
 			IF ~~ THEN DO ~RevealAreaOnMap("ACIL70")~ EXTERN AC#BRES1 ready_to_leave_03
 

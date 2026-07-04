@@ -59,7 +59,7 @@ END
 	END
 	
 		IF ~~ THEN BEGIN open_watergate
-		SAY ~Hier ist der Schlüssel zum Wassertor. Ihr müsst das Tor öffnen und das Wasser einlassen. Danach habt Ihr nicht viel Zeit, die Halle zu verlassen. Sobald das Wasser auf die Schlacke in den Hochöfen trifft, wird es eine gewaltige Explosion geben.~
+		SAY ~Jetzt müsst Ihr Wasser in die Halle strömen lassen. Hier ist der Schlüssel zum Wassertor. Öffnet es! Danach habt Ihr nicht viel Zeit, die Halle zu verlassen. Sobald das Wasser auf die Schlacke in den Hochöfen trifft, wird es eine gewaltige Explosion geben.~
 		IF ~~ THEN DO ~SetGlobal("AC#SorniQuest","ACIL61",2)
 		SetGlobal("HeatUpOven","ACIL61",2)
 		EraseJournalEntry(@61010)
@@ -77,36 +77,64 @@ END
 
 
 		IF ~~ THEN BEGIN destroy_hall
-		   SAY ~Wir müssen die gesamte Halle zum Einsturz bringen.~
-		++ ~Wie Bitte? Ihr wollt das alles zerstören? Was wird aus der Schmiede und den Öfen?~ + 9
+		   SAY ~Das Portal kann nicht geschlossen werden, und zum Durchschreiten ist es zu heiß. Uns bleibt nur eine Möglichkeit, um der Lage Herr zu werden: Wir müssen die gesamte Halle zum Einsturz bringen.~
+		++ ~Ihr wollt das alles zerstören?~ + 9
+		++ ~ Was wird aus der Schmiede und den Öfen?~ + 9
 		IF ~IsValidForPartyDialog("Korgan")~ THEN EXTERN ~KORGANJ~ Korgan_comment_destruction
 		END
 
 		IF ~~ THEN BEGIN 9
-		   SAY ~Alles, was Ihr hier seht, wäre dann unter einem riesigen Berg Stein begraben. Eine neue Gießerei könnten wir in einigen Jahrzehnten wieder aufbauen, eine gesamte Stadt nicht mehr.~
+		   SAY ~Alles, was Ihr hier seht, wäre dann unter einem riesigen Berg Stein begraben. Das Portal, doch auch unsere Hochöfen. Ein notwendiges Übel. Eine neue Gießerei könnten wir in einigen Jahrzehnten wieder aufbauen, die gesamte Stadt nicht mehr.~
 		++ ~Und wenn die ganze Stadt ebenso in sich zusammenbricht?~ + 10
 		IF ~IsValidForPartyDialog("Edwin")~ THEN EXTERN ~EDWINJ~ edwin_comment_halls
 		END
 
 		IF ~~ THEN BEGIN 10
-		   SAY ~Das wird nicht passieren, denn die Arnschädel- und Azerkyn-Hallen sind auf der anderen Seite des Flusses. Es wäre wie bei einer faulen und nässenden Wunde- besser, den kranken Körperteil abtrennen, als durch die Fäulnis komplett zugrundegerichtet zu werden.~
+		   SAY ~Das wird nicht passieren. Die Arnschädel- und Azerkyn-Hallen befinden sich auf der anderen Seite des Flusses. Es wäre wie bei einer faulen und nässenden Wunde: Besser, den kranken Körperteil abtrennen, als durch die Fäulnis komplett zugrundegerichtet zu werden.~
 		++ ~Wie wollt Ihr das denn überhaupt hinbekommen? Und was ist mit den Arbeitern?~ + 11
 		IF ~IsValidForPartyDialog("Jaheira")~ THEN EXTERN ~JAHEIRAJ~ Jaheira_wound_comment
 		END
 
 		IF ~~ THEN BEGIN 11
-		   SAY ~Ich habe alle Arbeiter, die ich erreichen konnte, bereits nach draußen geschickt. Um ehrlich zu sein, habe ich das Loch in die Kuppel geschlagen, um meinen Leuten die Flucht zu ermöglichen. Um die Halle einstürzen zu lassen, brauche ich Eure Hilfe.~
+		SAY ~Ich habe alle Arbeiter, die ich erreichen konnte, bereits nach draußen geschickt. Um ehrlich zu sein, war ich es, die das Loch in die Kuppel geschlagen hat: Um meinen Leuten die Flucht zu ermöglichen. Um die ganze Halle nun einstürzen zu lassen, brauche ich nun Eure Hilfe.~
 		++ ~Wie schön.~ + 12
 		IF ~GlobalGT("EarQ1","GLOBAL",1)~ THEN REPLY ~Ich habe im Unterreich schon einmal eine Grube zum Einsturz bringen müssen, nachdem ich gegen einen Dämon gekämpft habe. Und diese Grube war wesentlich kleiner als diese ganze Halle.~ + 12
 		END
 
 		IF ~~ THEN BEGIN 12
-		   SAY ~Erwähnte nicht einer von Euch einmal, schon einmal eine ganze Mine des Orothiar-Clans überflutet zu haben?~
-		++ ~Das ist richtig, ja. Aber ich bezweifle, ob sich Scheusale aus den unteren Ebenen von ein bisschen Wasser aufhalten lassen würden.~ + 13
+		SAY ~Erwähnte nicht einer von Euch einmal, schon einmal eine ganze Mine des Orothiar-Clans überflutet zu haben?~
+		++ ~Das ist richtig, ja. Aber ich bezweifle, ob sich Scheusale von ein bisschen Wasser aufhalten lassen würden.~ + 13
+		END
+		
+		IF ~~ THEN BEGIN 13
+		SAY ~Wasser allein wird nichts ausrichten. Doch diese Halle ist voller Lava, glühenden Eisens und Hochöfen. Wenn wir die Öfen bis an ihre Grenzen anheizen und anschließend die Wasserschleusen öffnen, wird die entstehende Dampfexplosion die ganze Halle zusammenbrechen lassen!~
+		++ ~Diese Kreaturen scheinen gegen Feuer und Hitze immun zu sein.~ + 14
+		++ ~Das wird ein Spektakel!~ + bury_them
 		END
 
+			IF ~~ THEN BEGIN 14
+			  SAY ~Mag sein. Aber gegen eine einstürzende Höhlendecke hilft ihnen keine teuflische Widerstandskraft.~ 
+			IF ~~ THEN GOTO bury_them
+			END
+		
+		IF ~~ THEN BEGIN bury_them
+		  SAY  ~Wir begraben die Teufel, ihr Portal und die ganze Azerkyn-Halle unter Tonnen von Fels und erstarrtem Eisen.~
+		  ++ ~Und wie kommen wir dabei lebend heraus?~ + 15
+		END
+
+IF ~~ THEN BEGIN 15
+  SAY ~Indem wir schnell sind.~
+  IF ~~ THEN REPLY ~Und Bresk? Er ist noch irgendwo hier unten.~ GOTO bresk_01
+  ++ ~Was muss ich tun?~ + heat_up_oven
+END
+
+IF ~~ THEN BEGIN bresk_01
+  SAY ~Als ich ihn zuletzt sah, kämpfte er sich zu den oberen Zugängen durch. Konzentriert Euch auf das Portal. Wenn Iltkazar fällt, spielt Bresk keine Rolle mehr.~
+  ++ ~Was muss ich tun?~ + heat_up_oven
+END
+	/*
 		IF ~~ THEN BEGIN 13
-		   SAY ~Seht, ich will Euch erklären, was ich vorhabe. Wasser allein wird hier nichts nützen, das ist wohl wahr. Aber die ganze Halle ist voll Lava und Hochöfen. Wenn Wasser auf diese Massen trifft, gibt es eine riesige Dampfexplosion. Größer als alles, was Zauberer und Priester mit mächtiger Magie hervorrufen könnten. Bevor wir Wasserschleusen öffnen, müssen wir alles Eisen in den Hochöfen zum Schmelzen bringen und die Öfen so stark mit Anthrazit anfeuern, dass die Explosion groß genug ist, um den Biestern das Gemisch aus flüssigem Eisen und Lava um die Hörner fliegen zu lassen.~
+		   SAY ~Ich werde Euch erklären, was ich vorhabe. Wasser allein wird hier nichts nützen, das ist wohl wahr. Aber die ganze Halle ist voll Lava und Hochöfen. Wenn Wasser auf diese Massen trifft, gibt es eine riesige Dampfexplosion. Größer als alles, was Zauberer und Priester mit mächtiger Magie hervorrufen könnten. Bevor wir Wasserschleusen öffnen, müssen wir alles Eisen in den Hochöfen zum Schmelzen bringen und die Öfen so stark mit Anthrazit anfeuern, dass die Explosion groß genug ist, um den Biestern das Gemisch aus flüssigem Eisen und Lava um die Hörner fliegen zu lassen.~
 		++ ~Ich habe schon gegen genug der Kreaturen gekämpft, um zu wissen, dass diese Wesen gegen Hitze absolut immun sind.~ + 14
 		END
 
@@ -125,13 +153,13 @@ END
 				SAY ~Ich hatte Bresk auf der anderen Seite getroffen und zurück nach oben geschickt, damit er dort die Arbeiter gegen die Scheusale verteidigen kann. Um ihn müsst Ihr Euch zunächst keine Sorgen machen.~		   
 				++ ~Was müssen wir also tun, um die Halle zum Einsturz zu bringen?~ + heat_up_oven
 				END
-		
+*/		
 			IF ~~ THEN BEGIN heat_up_oven
 			SAY ~Zunächst die Öfen anheizen. Wir haben hier unten viele Anthrazitquellen. Wisst Ihr, was Anthrazit ist?~
 			IF ~~ THEN REPLY ~Ja.~ GOTO anthrazit_yes
 			IF ~~ THEN REPLY ~Nein.~ GOTO anthrazit_no
 			END
-			
+
 				IF ~~ THEN BEGIN anthrazit_yes
 				SAY ~Gut.~				
 				IF ~!PartyHasItem("ac#antr1")~ THEN GOTO heat_up_oven_02
@@ -167,7 +195,39 @@ END
 							END
 
 
+IF ~NumTimesTalkedTo(0)~ THEN BEGIN 1
+  SAY ~Den Göttern sei Dank, dass Ihr kommt, <CHARNAME>! Ich stehe hier allein gegen diese Horde Unholde, und ich weiß nicht, wie lange ich noch standhalten kann!~
+  IF ~~ THEN GOTO 2
+END
 
+IF ~~ THEN BEGIN 2
+  SAY ~Die Bestien kommen durch ein Portal bei den Hochöfen. Ich konnte den südlichen Aufgang mit meinem Schmetterhorn zum Einsturz bringen, doch das hält sie nicht lange auf. Sie sammeln sich bereits für die nächste Welle.~
+  ++ ~Wer hat das Portal geöffnet?~ + 3
+END
+
+IF ~~ THEN BEGIN 3
+  SAY ~Ich weiß es nicht. Ich fürchte, das Portal war schon immer hier. Versiegelt, gebändigt, als Feuerquelle für unsere Hochöfen. Nun sind die Siegel gebrochen.~
+  ++ ~Ihr habt ein Portal unter der Stadt geduldet?~ + 5
+  ++ ~Wohin führt es?~ + 4
+  ++ ~Dann müssen wir es schließen. Sofort.~ + no_time
+END
+
+IF ~~ THEN BEGIN 4
+  SAY ~In Feuer und Glut. Vielleicht zur Feuerebene, vielleicht an einen schlimmeren Ort. Für Erklärungen bleibt keine Zeit. Wenn wir dieses Tor nicht jetzt schließen, ist Iltkazar verloren.~
+  IF ~~ THEN GOTO no_time
+  IF ~IsValidForPartyDialog("Viconia")~ THEN EXTERN ~VICONIJ~ viconia_comment_portal
+END
+
+IF ~~ THEN BEGIN 5
+  SAY ~Es hat seit Jahrhunderten unsere Hochöfen gespeist. Clan Azerkyn verstand solche Dinge besser als wir heute. Jetzt ist aus ihrer alten Kunst unser Verderben geworden.~
+  IF ~~ THEN GOTO no_time
+END
+
+IF ~~ THEN BEGIN no_time
+  SAY ~Wir vergeuden gerade viel zu viel Zeit. Wenn wir nichts tun, wird die Stadt untergehen. Und wir mit ihr!~
+  IF ~~ THEN REPLY ~Was sollen wir tun?~ GOTO destroy_hall
+END
+/*
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN 1
 SAY  ~Den Göttern sei Dank, dass Ihr kommt, <CHARNAME>! Ich stehe hier allein gegen die Horde Unholde, und ich weiß nicht, wie lange ich noch standhalten kann.~
 ++ ~Bresk hat mich hier heruntergeschickt, um Euch zu helfen. Wie ist die Lage?~ + 2
@@ -176,21 +236,17 @@ END
 IF ~~ THEN BEGIN 2
 SAY ~Nicht gut. Ich habe zwar mit Hilfe meines Schmetterhorns den südlichen Aufgang zum Einsturz bringen können, doch das wird die Biester sicher nicht lange aufhalten. Es drängen immer weitere in diese Hallen, wenngleich es gerade etwas ruhiger geworden ist. Doch ich habe das Gefühl, sie sammeln sich für die nächste Angriffswelle, denn es strömen immer wieder Scheusale durch das Portal.~
 ++ ~Wer hat das Portal geöffnet?~ + 3
-/*
-IF ~IsValidForPartyDialog("Jaheira")~ THEN EXTERN ~JAHEIRAJ~ Jaheira_Comment_Dumathoin
-IF ~!IsValidForPartyDialog("Jaheira")~ THEN REPLY ~Was ist hier geschehen?~ + 3
-*/
 END
 
 IF ~~ THEN BEGIN 3
    SAY ~Wer es geöffnet hat - ich weiß es nicht. Ich wagte nicht, einen Blick auf die andere Seite zu werfen. Das Schreckliche ist, dass ich mir mittlerweile sicher bin, dass das Portal schon die ganze Zeit da war. Es war nur versiegelt, doch nun ist es den Wesen von der anderen Seite gelungen, die Siegel zu durchbrechen.~
-++ ~Es war schon immer da? Wohin führt es denn? Und wer hat es angelegt?~ + 4
-++ ~Ich habe so eine Ahnung, wie das Portal wieder eröffnet worden sein könnte. Wo führt es hin?~ + 4
+++ ~Es war schon immer da?~ + 4
+++ ~Wo führt es hin?~ + 4
 END
 
 IF ~~ THEN BEGIN 4
    SAY ~Es führt direkt in das Feuer, <CHARNAME>. Wir haben nicht viel Zeit zu Erklärungen, doch ich denke, ich sollte Euch kurz erzählen, was ich darüber weiß.~
-++ ~Ihr habt es schon vorher gewusst und in Kauf genommen, dass unter der Stadt ein Zugang in andere Ebenen existiert?~ + 5
+++ ~Ihr habt es schon vorher gewusst und in Kauf genommen, dass unter der Stadt solch ein Portal existiert?~ + 5
 IF ~~ THEN REPLY ~Ich höre.~ + about_portal
 END
 
@@ -207,20 +263,18 @@ END
 
 IF ~~ THEN BEGIN 6
    SAY ~Ich weiß es nicht. Man kann sie nicht mehr fragen, denn der Azerkyn-Clan und sein Reich Xothaerin sind schon lange von dieser Welt verschwunden. Vielleicht gibt es in den Aufzeichnungen unserer Bibliothek Hinweise darüber, aber darüber solltet Ihr mit Bettargh reden und nicht mit mir.~
-IF ~~ THEN REPLY ~Ich hatte vor einiger Zeit ein Zepter dieses Clans in der Hand, das mir aber wieder von einem Scheusal gestohlen wurde.~ GOTO xothaerin_scepter
+IF ~~ THEN GOTO no_time
 END
-
-	IF ~~ THEN BEGIN xothaerin_scepter
-	SAY ~Ihr hattet ein Herrschaftszepter Xothaerins? Das erklärt einiges. Warum sagt Ihr das erst jetzt?~
-	IF ~~ THEN REPLY ~Weil ich nicht wusste, dass es wichtig war.~ GOTO no_time
-	IF ~~ THEN REPLY ~Ich hatte es zwischenzeitlich vergessen.~ + no_time
-	END
 
 IF ~~ THEN BEGIN no_time
-SAY ~Egal. Wir vergeuden gerade sowieso viel zu viel Zeit, <CHARNAME>. Wenn wir nichts tun, wird die Stadt untergehen.~
-++ ~Was sollen wir denn Eurer Meinung nach unternehmen?~ + check_portal
+SAY ~Wir vergeuden gerade sowieso viel zu viel Zeit, <CHARNAME>. Wenn wir nichts tun, wird die Stadt untergehen.~
+//++ ~Was sollen wir denn Eurer Meinung nach unternehmen?~ + check_portal
+IF ~~ THEN GOTO destroy_hall
 END
+*/
 
+// OLD: Check POrtal
+/*
 	IF ~~ THEN BEGIN check_portal
 	SAY ~Die einfachste Möglichkeit bestünde darin, durch das Portal auf die andere Seite zu wechseln und zu sehen, ob es von dort irgendwie wieder verschlossen werden kann. Ehrlich gesagt glaube ich nicht, dass dies klappen wird, aber es wäre einen Versuch wert.~
 	IF ~~ THEN REPLY ~Ihr wollt, dass ich durch das Portal schreite?~ GOTO walk_portal
@@ -237,14 +291,14 @@ END
 		AddJournalEntry(@61000,QUEST)
 		AddJournalEntry(@61020,QUEST)~  EXIT
 		END
-
+*/
 /******************************************************************
 NPC comments
 *****************************************************************/
 // Jaheira
 APPEND ~JAHEIRAJ~
 IF ~~ THEN BEGIN Jaheira_wound_comment
-   SAY ~Ein passender Vergleich. Der Vorschlag klingt scheußlich, aber vernünftig.~
+   SAY ~Ein passender Vergleich. Der Vorschlag klingt verzweifelt, aber vernünftig.~
    IF ~~ THEN EXTERN ~AC#SORN2~ 11
 END
 END
@@ -268,6 +322,6 @@ END
 APPEND ~VICONIJ~
 IF ~~ THEN BEGIN viconia_comment_portal
    SAY ~Wie töricht von den Zwergen! Vor lauter Gier trifft sie nun eine gerechte Strafe. Und jetzt wird wieder gejammert. Sollen sie doch selbst sehen, wie sie sich aus diesem Unheil retten!~
-   IF ~~ THEN EXTERN ~AC#SORN2~ about_portal  
+   IF ~~ THEN EXTERN ~AC#SORN2~ no_time  
 END
 END

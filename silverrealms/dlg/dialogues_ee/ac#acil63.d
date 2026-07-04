@@ -51,28 +51,6 @@ IF ~~ THEN BEGIN 4
   IF ~~ THEN DO ~SetGlobal("AC#Goapspawn","GLOBAL",1)
   EraseJournalEntry(@66001)~ EXIT
 END
-/*
-IF ~NumTimesTalkedTo(0)~ THEN BEGIN 1
-SAY  ~Gut, dass Ihr hier seid, <CHARNAME>! Das Böse ist über unsere Stadt hereingebrochen! Sagt, habt Ihr meine Söhne gesehen? Was geschieht da draußen?~
-++ ~Harthar bewacht das äußere Tor, und Bresk organisiert in der Stadt die Verteidigungsmaßnahmen. Sie haben mich hierher geschickt, um den König zu beschützen.~ + 2
-END
-
-IF ~~ THEN BEGIN 2
-SAY ~Den König zu beschützen? Als Priester des Gorm obliegt mir diese Verantwortung. Die Hizaagkur-Tore nach außen wurden nach Eurem Eintreffen versiegelt, es wird keinem Wesen gelingen, hier einzudringen.~
-++ ~Bresk ist sich sicher, dass die Kreaturen hergekommen sind, um König Mith Barak zu holen und alles daransetzen werden, in die Hallen vorzudringen. Wir müssen uns auf einen Kampf hier Innen gefasst machen.~ + 3
-END
-
-IF ~~ THEN BEGIN 3
-   SAY ~Sie sind hinter dem König her? Das sind wahrhaft schlimme Nachrichten. Ihr habt schon viel für unsere Stadt getan, <CHARNAME>, doch ich bitte Euch, uns in dieser Stunde der Not erneut beizustehen. Werdet Ihr unser Waffengefährte sein?~
-++ ~Ich werde Euch helfen, das Leben des Königs und der Bewohner Iltkazars zu beschützen.~ + 4
-END
-
-IF ~~ THEN BEGIN 4
-   SAY ~Wohlan Zwerge Iltkazars, habt Ihr es gehört? Heute kämpfen wir Seite an Seite mit unseren Freunden, um weiter in Frieden und Freiheit leben zu dürfen! Rüstet Euch für den Kampf. Für den König!~
-   IF ~~ THEN DO ~SetGlobal("AC#Goapspawn","GLOBAL",1)
-   EraseJournalEntry(@66001)~  EXIT
-END
-*/
 
 IF ~~ THEN BEGIN 10
    SAY ~Kehrt zurück in die  Hölle, aus der Ihr entsprungen seid, Scheusal! Euer Weg endet hier, denn meine Gefährten und ich werden keinen Fuß zurückweichen!~

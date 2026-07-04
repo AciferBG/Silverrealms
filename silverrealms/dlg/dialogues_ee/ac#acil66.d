@@ -6,8 +6,11 @@ Dialog Bresk Steinschulter
 BEGIN ~AC#BRES2~
 
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN 1
-SAY  ~<CHARNAME>! Die Stadt wird angegriffen! Wir haben die alten Runenzauber aktiviert, und die Speicherbrunnen sind alle versiegelt, doch der Angriff dauert dennoch unvermindert an. Geht zur großen Halle und helft den Wachen, den König zu schützen. Er ist in großer Gefahr.~
+SAY ~<CHARNAME>! Die Stadt wird angegriffen! Die Runenzauber sind aktiv und die Zitadellen versiegelt, doch die Feinde dringen weiter vor. Geht zur Großen Halle und schützt den König!~
 ++ ~Ich habe Hathar vor den Toren getroffen, wie er gegen eine Horde Ungeheuer kämpfte.~ + 2
+++ ~Wisst Ihr etwas darüber, wer uns angreift?~ + 3
+++ ~Ich schaue einmal, was ich tun kann.~ + 4
+++ ~Kämpft Ihr ruhig weiter gegen diese Scheusale. Ich sehe nach dem König.~ + bye_protect_king
 END
 
 IF ~Global("AC#BreskQuest","GLOBAL",3)~ THEN BEGIN 5
@@ -21,8 +24,9 @@ SAY  ~Ich danke Euch für Eure Hilfe, Freunde. Ohne Euch hätten wir diesen Angr
 END
 
 IF ~~ THEN BEGIN 2
-SAY ~Ihr habt meinen Bruder getroffen? Er ist noch auf seinem Posten? Gut. Es freut mich, dass er tapfer vor den Toren der Stadt seine Pflicht erfüllt. Doch es ist schrecklich, dass diese Biester bereits vor die Tore gelangt sind. Ich werde den Befehl geben müssen, die Stadt in der Zeit des Angriffs abzuriegeln, dass niemand mehr hinein, aber auch niemand heraus kann.~
+SAY ~Hathar hält stand? Dann besteht Hoffnung. Die Stadttore bleiben verriegelt. Niemand kommt mehr hinein oder hinaus!~
 ++ ~Wisst Ihr etwas darüber, wer uns angreift?~ + 3
+++ ~Was gibt es zu tun?~ + bye_protect_king
 /*
 IF ~IsValidForPartyDialog("Jaheira")~ THEN EXTERN ~JAHEIRAJ~ Jaheira_Comment_Dumathoin
 IF ~!IsValidForPartyDialog("Jaheira")~ THEN REPLY ~Was ist hier geschehen?~ + 3
@@ -30,7 +34,7 @@ IF ~!IsValidForPartyDialog("Jaheira")~ THEN REPLY ~Was ist hier geschehen?~ + 3
 END
 
 IF ~~ THEN BEGIN 3
-   SAY ~Nach allem, was ich weiß, sind dies Wesen aus den unteren Ebenen, Kreaturen aus der Hölle - doch woher sie kommen -oder was sie wollen- konnte ich noch nicht herausfinden. Doch sie streben zum Königspalast, so als ob sie es ganz auf unseren geliebten Herrscher abgesehen haben. Ich bitte Euch, <CHARNAME>, helft mir in dieser Stunde der Not und beschützt unseren König. Ich werde mit meinen verbliebenen Männern erkunden, wo diese Untiere herkommen und versuchen, sie in ihre verfluchte Ebene zurückzudrängen.~
+SAY ~Diese Kreaturen stammen aus den unteren Ebenen. Warum sie hier sind, wissen wir nicht. Doch sie streben zum Königspalast. Geht zu meinem Vater Dunnabar und beschützt den König! Ich werde mit meinen Männern die Quelle dieses Angriffs aufspüren.~
 ++ ~Gut. Ich verspreche, den König mit meinem Leben zu beschützen.~ + 4
 ++ ~Ich schaue einmal, was ich tun kann.~ + 4
 ++ ~Kämpft Ihr ruhig weiter gegen diese Scheusale. Ich sehe nach dem König.~ + bye_protect_king
@@ -42,9 +46,9 @@ IF ~~ THEN GOTO bye_protect_king
 END 
  
 IF ~~ THEN BEGIN bye_protect_king
-   SAY ~Geht zur Halle des Regentschaftrates und meldet Euch bei meinem Vater, der dort seiner Pflicht gemäß Stellung bezogen hat. Ihr müsst ihn überzeugen, dass wir alles daransetzen müssen, die Biester aus dem Königspalast fernzuhalten, sonst ist der König verloren.~
+   SAY ~Geht zur Halle des Regentschaftrates und meldet Euch bei meinem Vater. Wir müssen alles daransetzen, die Biester aus dem Königspalast fernzuhalten!~
    =
-   ~Männer! Zu mir! Wir werden in der Stadt die Truppen sammeln und einen Vorstoß in das Gebiet machen, aus dem Teufel kommen!~
+   ~Männer! Zu mir! Wir werden die Truppen sammeln und einen Vorstoß in das Gebiet machen, aus dem die Teufel kommen!~
    IF ~~ THEN DO ~SetGlobal("AC#BreskQuest","GLOBAL",1)
    SetGlobal("AC#BreskMoves01","ACIL66",1)
    EraseJournalEntry(@66000)
@@ -65,3 +69,59 @@ IF ~~ THEN BEGIN 9
    SAY ~Von irgendwoher müssen diese Biester ja kommen. Wir müssen uns zum Ursprung ihres Eindringens durchschlagen. Im Augenblick scheinen sie nicht weiter vorzudringen. Vielleicht sammeln sie sich für einen neuen Angriff. Folgt mir in die Arnschädelhallen, damit wir sehen können, wo die Kreaturen herkommen.~
    IF ~~ THEN DO ~SetGlobal("AC#BreskQuest","GLOBAL",5)~  EXIT
 END
+
+//_________________________________________________
+BEGIN ~AC#66DW1~
+
+IF ~RandomNum(5,1)~ THEN BEGIN hello_fight_1
+  SAY ~Für Iltkazar! Haltet die Linie!~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,2)~ THEN BEGIN hello_fight_2
+  SAY ~Kein Feind wird diese Hallen lebend betreten!~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,3)~ THEN BEGIN hello_fight_3
+  SAY ~Für König und Heimat!~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,4)~ THEN BEGIN hello_fight_4
+  SAY ~Die Feinde sollen an unseren Schilden zerschellen!~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,5)~ THEN BEGIN hello_fight_5
+  SAY ~Kein Schritt zurück!~
+  IF ~~ THEN EXIT
+END
+//_______________________________________________
+BEGIN ~AC#66DW2~
+
+IF ~RandomNum(5,1)~ THEN BEGIN hello_fight_1
+  SAY ~Für Iltkazar! Haltet die Linie!~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,2)~ THEN BEGIN hello_fight_2
+  SAY ~Kein Feind wird diese Hallen lebend betreten!~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,3)~ THEN BEGIN hello_fight_3
+  SAY ~Für König und Heimat!~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,4)~ THEN BEGIN hello_fight_4
+  SAY ~Die Feinde sollen an unseren Schilden zerschellen!~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,5)~ THEN BEGIN hello_fight_5
+  SAY ~Kein Schritt zurück!~
+  IF ~~ THEN EXIT
+END
+

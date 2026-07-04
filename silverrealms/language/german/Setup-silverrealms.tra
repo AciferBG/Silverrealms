@@ -1641,6 +1641,9 @@ Diirinka'~
 // ACIL36 - Barakuir
 @6136 = ~Diese Tür ist durch geschmolzenes Metall versiegelt worden. Es gibt keine Möglichkeit, sie zu öffnen; Ihr müsst Euch einen anderen Weg suchen.~
 
+// ACIL61 - Azyerkan hall - portal open
+@6140 = ~Dieser Durchgang ist verschüttet.~
+
 // ACIL20 - Underdark #2 (other entries at @872ff)
 @6200 = ~Auf diesem Schild sind ein Pfeil nach unten, ein Hammer und mehrere Blitze dargestellt. Die Leiter daneben scheint in tiefere Minenbereiche zu führen.~
 @6201 = ~Nimmuks Stollen~

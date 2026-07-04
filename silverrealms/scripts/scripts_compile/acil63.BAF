@@ -1,152 +1,148 @@
 IF
-	GlobalGT("AC#AzerkynDestroyed","GLOBAL",1)
-	Global("Deactivate","ACIL63",0)
+    Global("EnteredArea","ACIL63",0)
 THEN
-	RESPONSE #100
-		SetGlobal("Deactivate","ACIL63",1)
-		ActionOverride("AC#DUN02",Deactivate(Myself))
-		TriggerActivation("Tracil66",FALSE)
-		TriggerActivation("Tracil50",TRUE)
-		TriggerActivation("Tracil64",TRUE)
-		SoundActivate("Screams",FALSE)
+    RESPONSE #100
+        FadeToColor([0.0],0)
+        SetGlobal("EnteredArea","ACIL63",1)
+        TriggerActivation("Tracil50",FALSE)
+        TriggerActivation("Tracil64",FALSE)
+        TriggerActivation("Tracil66",FALSE)
 END
 
 IF
-	Global("EnteredArea","ACIL63",0)
+    Global("EnteredArea","ACIL63",1)
 THEN
-	RESPONSE #100
-		FadeToColor([0.0],0)
-		SetGlobal("EnteredArea","ACIL63",1)
-		TriggerActivation("Tracil50",FALSE)
-		TriggerActivation("Tracil64",FALSE)
-		TriggerActivation("Tracil66",FALSE)
-END
-
-/*
-Die PCs werden an die richtige Stelle teleportiert, das Gespr�ch mit dem Regentschaftsrat Iltkazars beginnt.
-*/
-
-IF
-	Global("EnteredArea","ACIL63",1)
-THEN
-	RESPONSE #100
-                 ClearAllActions()
-                 StartCutSceneMode()
-                 SetGlobal("EnteredArea","ACIL63",2)
-                 Explore()
-		Wait(1)
-		ActionOverride(Player1,JumpToPoint([1412.1232]))
-		ActionOverride(Player2,JumpToPoint([1408.1235]))
-		ActionOverride(Player3,JumpToPoint([1410.1238]))
-		ActionOverride(Player4,JumpToPoint([1419.1228]))
-		ActionOverride(Player5,JumpToPoint([1415.1230]))
-		ActionOverride(Player6,JumpToPoint([1420.1226]))
-		MoveViewPoint([1412.1232],INSTANT)
-		Wait(1)
-		FadeFromColor([30.0],0)
-		EndCutSceneMode()
-		ActionOverride("AC#DUN02",Dialogue(Player1))
+    RESPONSE #100
+        ClearAllActions()
+        StartCutSceneMode()
+        SetGlobal("EnteredArea","ACIL63",2)
+        Explore()
+        Wait(1)
+        ActionOverride(Player1,JumpToPoint([1412.1232]))
+        ActionOverride(Player2,JumpToPoint([1408.1235]))
+        ActionOverride(Player3,JumpToPoint([1410.1238]))
+        ActionOverride(Player4,JumpToPoint([1419.1228]))
+        ActionOverride(Player5,JumpToPoint([1415.1230]))
+        ActionOverride(Player6,JumpToPoint([1420.1226]))
+        MoveViewPoint([1412.1232],INSTANT)
+        Wait(1)
+        FadeFromColor([30.0],0)
+        EndCutSceneMode()
+        ActionOverride("AC#DUN02",Dialogue(Player1))
 END
 
 IF
-	Global("AC#Goapspawn","GLOBAL",1)
+    GlobalGT("AC#AzerkynDestroyed","GLOBAL",1)
+    Global("Deactivate","ACIL63",0)
 THEN
-	RESPONSE #100
-	         SetGlobalTimer("AC#GoapTimer","ACIL63",15)
-                 SetGlobal("AC#Goapspawn","GLOBAL",2)
+    RESPONSE #100
+        SetGlobal("Deactivate","ACIL63",1)
+        ActionOverride("AC#DUN02",Deactivate(Myself))
+        TriggerActivation("Tracil66",FALSE)
+        TriggerActivation("Tracil50",TRUE)
+        TriggerActivation("Tracil64",TRUE)
+        SoundActivate("Screams",FALSE)
 END
 
 IF
-	Global("AC#Goapspawn","GLOBAL",2)
-	GlobalTimerNotExpired("AC#GoapTimer","ACIL63")
+    Global("AC#Goapspawn","GLOBAL",1)
 THEN
-	RESPONSE #100
-	         Wait(1)
-                 PlaySound("AM5000G2")
-                 ScreenShake([30.30],15)
+    RESPONSE #100
+        SetGlobalTimer("AC#GoapTimer","ACIL63",THREE_MINUTES)
+        SetGlobal("AC#Goapspawn","GLOBAL",2)
 END
 
 IF
-	Global("AC#Goapspawn","GLOBAL",2)
-	GlobalTimerExpired("AC#GoapTimer","ACIL63")
+    Global("AC#Goapspawn","GLOBAL",2)
+    GlobalTimerNotExpired("AC#GoapTimer","ACIL63")
 THEN
-	RESPONSE #100
-                 SetGlobal("AC#Goapspawn","GLOBAL",3)
-END
-
-
-IF
-	Global("AC#Goapspawn","GLOBAL",3)
-THEN
-	RESPONSE #100
-                ClearAllActions()
-		SetGlobal("AC#Goapspawn","GLOBAL",4)
-		StartCutSceneMode()
-		PlaySound("AM5000G2")
-		ScreenShake([50.50],15)
-		ActionOverride(Player1,PlayDead(35))
-		ActionOverride(Player2,PlayDead(35))
-		ActionOverride(Player3,PlayDead(35))
-		ActionOverride(Player4,PlayDead(35))
-		ActionOverride(Player5,PlayDead(35))
-		ActionOverride(Player6,PlayDead(35))
-		ApplyDamage(Player1,1,CRUSHING)
-		ApplyDamage(Player2,1,CRUSHING)
-		ApplyDamage(Player3,1,CRUSHING)
-                ApplyDamage(Player4,1,CRUSHING)
-                ApplyDamage(Player5,1,CRUSHING)
-                ApplyDamage(Player6,1,CRUSHING)
-                Wait(1)
-                PlaySound("AM5000G1")
-		OpenDoor("DOOR01")
-		CreateCreature("AC#GOAP1",[1195.1414],11)
-		CreateCreature("AC#CORN1",[1200.1408],11)
-		CreateCreature("AC#CORN2",[1213.1430],15)
-		Wait(2)
-		EndCutSceneMode()
-		//ActionOverride("AC#GOAP1",Dialogue(Player1))
+    RESPONSE #100
+        Wait(1)
+        PlaySound("AM5000G2")
+        ScreenShake([15.15],8)
 END
 
 IF
-	Global("AC#Goapspawn","GLOBAL",5)
-	Allegiance("AC#CORN1",NEUTRAL)
+    Global("AC#Goapspawn","GLOBAL",2)
+    GlobalTimerExpired("AC#GoapTimer","ACIL63")
 THEN
-	RESPONSE #100
-		ActionOverride("AC#CORN1",ChangeEnemyAlly(Myself,ENEMY))
+    RESPONSE #100
+        SetGlobal("AC#Goapspawn","GLOBAL",3)
 END
 
 IF
-	Global("AC#Goapspawn","GLOBAL",5)
-	Allegiance("AC#CORN2",NEUTRAL)
+    Global("AC#Goapspawn","GLOBAL",3)
 THEN
-	RESPONSE #100
-		ActionOverride("AC#CORN2",ChangeEnemyAlly(Myself,ENEMY))
+    RESPONSE #100
+        ClearAllActions()
+        SetGlobal("AC#Goapspawn","GLOBAL",4)
+        StartCutSceneMode()
+        PlaySound("AM5000G2")
+        ScreenShake([50.50],15)
+        ActionOverride(Player1,PlayDead(35))
+        ActionOverride(Player2,PlayDead(35))
+        ActionOverride(Player3,PlayDead(35))
+        ActionOverride(Player4,PlayDead(35))
+        ActionOverride(Player5,PlayDead(35))
+        ActionOverride(Player6,PlayDead(35))
+        ApplyDamage(Player1,1,CRUSHING)
+        ApplyDamage(Player2,1,CRUSHING)
+        ApplyDamage(Player3,1,CRUSHING)
+        ApplyDamage(Player4,1,CRUSHING)
+        ApplyDamage(Player5,1,CRUSHING)
+        ApplyDamage(Player6,1,CRUSHING)
+        Wait(1)
+        PlaySound("AM5000G1")
+        OpenDoor("DOOR01")
+        CreateCreature("AC#GOAP1",[1195.1414],NEE)  // Goap
+        CreateCreature("AC#CORN1",[1200.1408],NEE)  // Cornugon
+        CreateCreature("AC#CORN2",[1213.1430],SSE)  // Cornugon
+        Wait(2)
+        ActionOverride("AC#GOAP1",MoveToPoint([1315.1310]))
+        ActionOverride("AC#GOAP1",StartDialogueNoSet([PC]))
 END
 
 IF
-	InMyArea(Player1)
-	Global("AC#Goapspawn","GLOBAL",5)
-	Dead("AC#GOAP1")
-	CombatCounter(0)
+    Global("AC#Goapspawn","GLOBAL",5)
+    Allegiance("AC#CORN1",NEUTRAL)  // Cornugon
 THEN
-	RESPONSE #100
-                ClearAllActions()
-		SetGlobal("AC#Goapspawn","GLOBAL",6)
-		CreateCreatureObjectOffScreen("AC#DWMS1",Player1,0,0,0) // W�chter Iltkazars
-		ActionOverride("AC#DUN02",MoveToObjectNoInterrupt(Player1))
-		Wait(1)
-		Unlock("DOOR02")
-		Unlock("DOOR03")
-		OpenDoor("DOOR02")
-		OpenDoor("DOOR03")
-		TriggerActivation("Tracil66",TRUE)
-		ActionOverride("AC#DWMS1",Dialogue([PC]))
+    RESPONSE #100
+        ActionOverride("AC#CORN1",ChangeEnemyAlly(Myself,ENEMY))
 END
 
 IF
-	Global("AC#BreskQuest","GLOBAL",1)
+    Global("AC#Goapspawn","GLOBAL",5)
+    Allegiance("AC#CORN2",NEUTRAL)  // Cornugon
 THEN
-	RESPONSE #100
-                SetGlobal("AC#BreskQuest","GLOBAL",2)
-		ActionOverride("AC#BRES2",MoveToPointNoInterrupt([818.649]))
+    RESPONSE #100
+        ActionOverride("AC#CORN2",ChangeEnemyAlly(Myself,ENEMY))
 END
+
+IF
+    InMyArea(Player1)
+    Global("AC#Goapspawn","GLOBAL",5)
+    Dead("AC#GOAP1")  // Goap
+    CombatCounter(0)
+THEN
+    RESPONSE #100
+        ClearAllActions()
+        SetGlobal("AC#Goapspawn","GLOBAL",6)
+        CreateCreatureObjectOffset("AC#DWMS1",Player1,[15.15])  // Wächter Iltkazars
+        ActionOverride("AC#DUN02",MoveToObjectNoInterrupt(Player1))
+        Wait(1)
+        Unlock("DOOR02")
+        Unlock("DOOR03")
+        OpenDoor("DOOR02")
+        OpenDoor("DOOR03")
+        TriggerActivation("Tracil66",TRUE)
+        ActionOverride("AC#DWMS1",Dialogue([PC]))
+END
+
+IF
+    Global("AC#BreskQuest","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("AC#BreskQuest","GLOBAL",2)
+        ActionOverride("AC#BRES2",MoveToPointNoInterrupt([818.649]))
+END
+

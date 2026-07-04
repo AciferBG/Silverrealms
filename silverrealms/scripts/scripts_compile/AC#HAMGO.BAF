@@ -1,83 +1,38 @@
 IF
-	See(NearestEnemyOf(Myself))
-	Range(NearestEnemyOf(Myself),15)
-	Global("CastEarthquake","LOCALS",0)
-	!GlobalTimerNotExpired("EarthquakeTimer","LOCALS")
+    See(NearestEnemyOf(Myself))
+    Range(NearestEnemyOf(Myself),15)
+    Global("CastEarthquake","LOCALS",0)
+    !GlobalTimerNotExpired("EarthquakeTimer","LOCALS")
+    False()
 THEN
-	RESPONSE #100
-		ForceSpellRES("AC#HAMG",NearestEnemyOf(Myself))  // Stampfende Kraft
-		SetGlobal("CastEarthquake","LOCALS",1)
+    RESPONSE #100
+        ForceSpellRES("AC#HAMG",NearestEnemyOf(Myself))  // Stampfende Kraft
+        SetGlobal("CastEarthquake","LOCALS",1)
 END
 
 IF
-	Global("CastEarthquake","LOCALS",1)
-	See(NearestEnemyOf(Myself))
+    Global("CastEarthquake","LOCALS",1)
+    See(NearestEnemyOf(Myself))
+    False()
 THEN
-	RESPONSE #100
-		SetGlobal("CastEarthquake","LOCALS",0)
-		SetGlobalTimer("EarthquakeTimer","LOCALS",ONE_TURN)
+    RESPONSE #100
+        SetGlobal("CastEarthquake","LOCALS",0)
+        SetGlobalTimer("EarthquakeTimer","LOCALS",ONE_TURN)
 END
 
 IF
-	See(Player1)
-	HasItem("AC#ZEPXS",LastSeenBy(Myself))  // Zepterkopf
+    See(NearestEnemyOf(Myself))
 THEN
-	RESPONSE #100
-		AttackReevaluate(LastSeenBy(Myself),30)
+    RESPONSE #100
+        AttackReevaluate(NearestEnemyOf(Myself),12)
 END
 
 IF
-	See(Player2)
-	HasItem("AC#ZEPXS",LastSeenBy(Myself))  // Zepterkopf
+    ActionListEmpty()
+    !See([ENEMY])
+    !See(NearestEnemyOf(Myself))
 THEN
-	RESPONSE #100
-		AttackReevaluate(LastSeenBy(Myself),30)
-END
-
-IF
-	See(Player3)
-	HasItem("AC#ZEPXS",LastSeenBy(Myself))  // Zepterkopf
-THEN
-	RESPONSE #100
-		AttackReevaluate(LastSeenBy(Myself),30)
-END
-
-IF
-	See(Player4)
-	HasItem("AC#ZEPXS",LastSeenBy(Myself))  // Zepterkopf
-THEN
-	RESPONSE #100
-		AttackReevaluate(LastSeenBy(Myself),30)
-END
-
-IF
-	See(Player5)
-	HasItem("AC#ZEPXS",LastSeenBy(Myself))  // Zepterkopf
-THEN
-	RESPONSE #100
-		AttackReevaluate(LastSeenBy(Myself),30)
-END
-
-IF
-	See(Player6)
-	HasItem("AC#ZEPXS",LastSeenBy(Myself))  // Zepterkopf
-THEN
-	RESPONSE #100
-		AttackReevaluate(LastSeenBy(Myself),30)
-END
-
-IF
-	AttackedBy([GOODCUTOFF],DEFAULT)
-	!Allegiance(Myself,ENEMY)
-THEN
-	RESPONSE #100
-		Enemy()
-END
-
-IF
-	See(NearestEnemyOf(Myself))
-THEN
-	RESPONSE #100
-		AttackReevaluate(NearestEnemyOf(Myself),30)
+    RESPONSE #100
+        RandomWalk()
 END
 

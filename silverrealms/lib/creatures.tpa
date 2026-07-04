@@ -2592,8 +2592,11 @@ COPY ~silverrealms/cre/AC#59DW5.cre~ ~override~ // oremaster in ACIL59 (Azerkyn-
 
 COPY ~silverrealms/cre/AC#59DW6.cre~ ~override~ // worker #6 (fire elemental encounter) in ACIL59 (Azerkyn-hall)
   SAY NAME1 @933 SAY NAME2 @933
-  
-COPY ~silverrealms/cre/AC#66DW2.cre~ ~override~ // Iltkazar Soldier inb ACIL66 (Iltkazar under siege)
+
+COPY ~silverrealms/cre/AC#66DW1.cre~ ~override~ // Iltkazar Soldier inb ACIL66 (Iltkazar under siege)
+  SAY NAME1 @838 SAY NAME2 @838
+
+COPY ~silverrealms/cre/AC#66DW2.cre~ ~override~ // Iltkazar Soldier in ACIL66 (Iltkazar under siege)
   SAY NAME1 @838 SAY NAME2 @838
   
 COPY ~silverrealms/cre/AC#66DW3.cre~ ~override~ // Iltkazar Soldier inb ACIL66 (Iltkazar under siege)

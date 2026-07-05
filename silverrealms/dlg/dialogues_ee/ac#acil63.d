@@ -53,7 +53,7 @@ IF ~~ THEN BEGIN 4
 END
 
 IF ~~ THEN BEGIN 10
-   SAY ~Kehrt zurück in die  Hölle, aus der Ihr entsprungen seid, Scheusal! Euer Weg endet hier, denn meine Gefährten und ich werden keinen Fuß zurückweichen!~
+   SAY ~Kehrt zurück in die Hölle, aus der Ihr entsprungen seid, Scheusal! Euer Weg endet hier, denn meine Gefährten und ich werden keinen Fuß zurückweichen!~
 IF ~~ THEN EXTERN ~AC#GOAP1~ 2
 END
 

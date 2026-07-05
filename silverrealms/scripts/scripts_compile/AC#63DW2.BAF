@@ -1,0 +1,30 @@
+IF
+	AttackedBy([PC],DEFAULT)
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@938)
+END
+
+IF
+    Heard([ANYONE],153)
+    InMyGroup(LastHeardBy(Myself))
+THEN
+    RESPONSE #100
+        AttackReevaluate(LastAttackerOf(LastHeardBy(Myself)),30)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+THEN
+    RESPONSE #100
+        AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+    !See(NearestEnemyOf(Myself))
+    GlobalGT("AC#Goapspawn","GLOBAL",4)
+THEN
+    RESPONSE #100
+        MoveToObject(NearestEnemyOf(Myself))
+END
+

@@ -1,13 +1,3 @@
-/*
-IF
-    See([ANYONE])
-    NumberOfTimesTalkedTo(0)
-THEN
-    RESPONSE #100
-        StartDialogueNoSet(LastSeenBy(Myself))
-END
-*/
-
 IF
     See(NearestEnemyOf(Myself))
     Global("PITFEAR","LOCALS",0)
@@ -69,7 +59,7 @@ THEN
 END
 
 IF
-    HPLT("AC#DUN02",15)
+    HPLT("AC#DUN02",15)  // Dunnabar Steinschulter
     Global("AttackPC","LOCALS",0)
 THEN
     RESPONSE #100
@@ -77,13 +67,51 @@ THEN
 END
 
 IF
+    AttackedBy("AC#DUN02",DEFAULT)  // Dunnabar Steinschulter
+THEN
+    RESPONSE #100
+        RunAwayFrom(LastAttackerOf(Myself),6)
+END
+
+IF
     See(NearestEnemyOf(Myself))
+    !Name("AC#DUN02",LastSeenBy(Myself))  // Dunnabar Steinschulter
     Global("AttackPC","LOCALS",0)
 THEN
-    RESPONSE #70
-        AttackReevaluate(NearestEnemyOf(Myself),15)
-    RESPONSE #20
-        SetGlobal("PITFIRE","LOCALS",0)
+    RESPONSE #100
+        AttackReevaluate(NearestEnemyOf(Myself),6)
+    RESPONSE #100
+        Continue()
+END
+
+IF
+    See(SecondNearestEnemyOf(Myself))
+    !Name("AC#DUN02",LastSeenBy(Myself))  // Dunnabar Steinschulter
+    Global("AttackPC","LOCALS",0)
+THEN
+    RESPONSE #100
+        AttackReevaluate(LastSeenBy(Myself),6)
+    RESPONSE #100
+        Continue()
+END
+
+IF
+    See(ThirdNearestEnemyOf(Myself))
+    !Name("AC#DUN02",LastSeenBy(Myself))  // Dunnabar Steinschulter
+    Global("AttackPC","LOCALS",0)
+THEN
+    RESPONSE #100
+        AttackReevaluate(LastSeenBy(Myself),6)
+    RESPONSE #100
+        Continue()
+END
+
+IF
+    See([PC])
+    Global("AttackPC","LOCALS",0)
+THEN
+    RESPONSE #100
+        AttackReevaluate(LastSeenBy(Myself),6)
 END
 
 IF

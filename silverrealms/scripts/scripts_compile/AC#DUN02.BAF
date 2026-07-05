@@ -33,26 +33,49 @@ THEN
 END
 
 IF
-	Exists("AC#GOAP1")  // Goap
-	!See("AC#GOAP1")  // Goap
-	!See(NearestEnemyOf(Myself))
-	ActionListEmpty()
+    Exists("AC#GOAP1")  // Goap
+    !See("AC#GOAP1")  // Goap
+    !See(NearestEnemyOf(Myself))
+    !CheckStat(Myself,1,SANCTUARY)
+    ActionListEmpty()
 THEN
-	RESPONSE #100
-		MoveToObject("AC#GOAP1")  // Goap
+    RESPONSE #100
+        MoveToObject("AC#GOAP1")  // Goap
 END
 
 IF
-	See("AC#GOAP1")  // Goap
+    Allegiance(Myself,NEUTRAL)
+    OR(2)
+        HPGT(Myself,10)
+        !CheckStat(Myself,1,SANCTUARY)
 THEN
-	RESPONSE #100
-		AttackReevaluate("AC#GOAP1",30)  // Goap
+    RESPONSE #100
+        ChangeEnemyAlly(Myself,GOODBUTBLUE)
 END
 
 IF
-	See(NearestEnemyOf(Myself))
+    HPLT(Myself,10)
+    Global("Damaged","LOCALS",0)
 THEN
-	RESPONSE #100
-		AttackReevaluate(NearestEnemyOf(Myself),30)
+    RESPONSE #100
+        SetGlobal("Damaged","LOCALS",1)
+        ReallyForceSpell(Myself,CLERIC_SANCTUARY)  // SPPR109.SPL (Heiligtum)
+        ChangeEnemyAlly(Myself,NEUTRAL)
+END
+
+IF
+    See("AC#GOAP1")  // Goap
+    !CheckStat(Myself,1,SANCTUARY)
+THEN
+    RESPONSE #100
+        AttackReevaluate("AC#GOAP1",30)  // Goap
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    !CheckStat(Myself,1,SANCTUARY)
+THEN
+    RESPONSE #100
+        AttackReevaluate(NearestEnemyOf(Myself),30)
 END
 

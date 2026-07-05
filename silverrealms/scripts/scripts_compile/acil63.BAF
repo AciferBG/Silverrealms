@@ -3,19 +3,16 @@ IF
 THEN
     RESPONSE #100
         FadeToColor([0.0],0)
+        ClearAllActions()
+        StartCutSceneMode()
         SetGlobal("EnteredArea","ACIL63",1)
         TriggerActivation("Tracil50",FALSE)
         TriggerActivation("Tracil64",FALSE)
         TriggerActivation("Tracil66",FALSE)
-END
-
-IF
-    Global("EnteredArea","ACIL63",1)
-THEN
-    RESPONSE #100
-        ClearAllActions()
-        StartCutSceneMode()
-        SetGlobal("EnteredArea","ACIL63",2)
+        CloseDoor("DOOR02")
+        CloseDoor("DOOR03")
+        Lock("DOOR02")
+        Lock("DOOR03")
         Explore()
         Wait(1)
         ActionOverride(Player1,JumpToPoint([1412.1232]))
@@ -58,7 +55,7 @@ IF
 THEN
     RESPONSE #100
         Wait(1)
-        PlaySound("AM5000G2")
+        PlaySound("AC#63GT2")
         ScreenShake([15.15],8)
 END
 
@@ -77,7 +74,7 @@ THEN
         ClearAllActions()
         SetGlobal("AC#Goapspawn","GLOBAL",4)
         StartCutSceneMode()
-        PlaySound("AM5000G2")
+        PlaySound("AC#63GT3")
         ScreenShake([50.50],15)
         ActionOverride(Player1,PlayDead(35))
         ActionOverride(Player2,PlayDead(35))

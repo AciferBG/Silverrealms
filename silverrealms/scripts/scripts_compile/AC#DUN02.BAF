@@ -43,6 +43,15 @@ THEN
 END
 
 IF
+    AttackedBy([EVILCUTOFF],DEFAULT)
+    Global("Whined","LOCALS",0)
+THEN
+    RESPONSE #100
+        Shout(153)
+        SetGlobal("Whined","LOCALS",1)
+END
+
+IF
     Exists("AC#GOAP1")  // Goap
     !See("AC#GOAP1")  // Goap
     !See(NearestEnemyOf(Myself))

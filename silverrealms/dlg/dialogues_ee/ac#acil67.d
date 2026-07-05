@@ -14,6 +14,7 @@ END
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN 1
 SAY  ~Los, schnell zum Aufzug! Die Halle beginnt einzustürzen, und wenn wir den Aufzug nicht erreichen, sind wir alle verloren! Ich hoffe, Bresk ist schon dort und wartet auf uns.~
    IF ~~ THEN DO ~SetGlobal("AC#SorniEscape","GLOBAL",1)
+   AddJournalEntry(@61014,QUEST)
    EraseJournalEntry(@61011)~  EXIT
 END
 
@@ -124,3 +125,9 @@ IF ~NumTimesTalkedTo(0)~ THEN BEGIN 1
 SAY  ~Meisterin Sorni! Unser Kriegsmeister Bresk wird vermisst!~
 IF ~~ THEN EXTERN ~AC#SORN4~ 2
 END
+
+IF ~True()~ THEN BEGIN hello_again
+SAY  ~Sammelt Euch und dann nichts wie raus hier!~
+IF ~~ THEN EXIT
+END
+

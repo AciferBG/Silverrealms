@@ -2052,6 +2052,7 @@ COPY ~silverrealms/cre/AC#BETT2.cre~ ~override/AC#BETT2.cre~ // Bettargh Abgrund
   
 COPY ~silverrealms/cre/AC#BETT6.cre~ ~override/AC#BETT6.cre~ // Bettargh Abgrundlied in ACIL63
   SAY NAME1 @613 SAY NAME2 @613
+  SAY INITIAL_MEETING @5241
   SAY SELECT_COMMON1 @5240
   SAY SELECT_COMMON2 @5241
   SAY SELECT_COMMON3 @5242

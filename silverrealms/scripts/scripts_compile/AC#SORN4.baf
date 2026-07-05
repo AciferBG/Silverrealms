@@ -1,22 +1,26 @@
 IF
-	NumTimesTalkedTo(0)
-	Detect([PC])
+    NumberOfTimesTalkedTo(0)
+    Detect([PC])
 THEN
-	RESPONSE #100
-		StartDialogueNoSet(LastSeenBy(Myself))
+    RESPONSE #100
+        StartDialogueNoSet(LastSeenBy(Myself))
 END
 
 IF
-	Global("AC#SorniEscape","GLOBAL",1)
+    Global("SorniMoves","ACIL67",0)
+    Range("TrACIL50",25)
 THEN
-	RESPONSE #100
-                SetGlobal("AC#SorniEscape","GLOBAL",2)
-		MoveToPointNoInterrupt([2005.1352])
+    RESPONSE #100
+        SetGlobal("SorniMoves","ACIL67",1)
+        MoveToPointNoInterrupt([2005.1352])
 END
 
-
-
-
-
-
+IF
+    Global("AC#SorniEscape","GLOBAL",1)
+    Global("SorniMoves","ACIL67",0)
+    !Range("TrACIL50",25)
+THEN
+    RESPONSE #100
+        MoveToPoint([2005.1352])
+END
 

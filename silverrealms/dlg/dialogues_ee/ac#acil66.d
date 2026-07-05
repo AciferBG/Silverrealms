@@ -60,16 +60,18 @@ END
 
 IF ~~ THEN BEGIN 8
   SAY ~Gorm beschütze uns! Ist unser König wohlauf?~
-  ++ ~Ja. Die Angreifer wurden zurückgeschlagen. Doch die Tore zum Ratssaal hielten ihnen kaum stand.~ + 9
-  ++ ~Der König ist in Sicherheit. Aber diese Kreaturen könnten wiederkommen.~ + 9
-  ++ ~Für den Augenblick. Doch die Bestien drangen bis in das Herz der Stadt vor.~ + 9
+  ++ ~Ja. Die Angreifer wurden zurückgeschlagen.~ + 9
+  ++ ~Der König ist in Sicherheit. Vorerst.~ + 9
+  ++ ~Sagen wir es so: Die Angreifer hingegen haben einen sehr schlechten Tag erwischt.~ + 9
+  ++ ~Ja. Zum Glück! Ich hätte nur ungern in einem einstürzenden Thronsaal sterben wollen.~ + 9
 END
 
 IF ~~ THEN BEGIN 9
   SAY ~Wir dürfen keine Zeit verlieren. Irgendwoher kommen diese Unholde, und solange wir ihre Quelle nicht finden, ist Iltkazar nicht sicher. Im Augenblick scheinen sie sich neu zu sammeln.~ 
   =
-  ~Folgt mir in die Arnschädelhalle! Wir werden ihren Ursprung finden.~
-  IF ~~ THEN DO ~SetGlobal("AC#BreskQuest","GLOBAL",5)~ EXIT
+  ~Folgt mir in die Arnschädelhalle! Wir werden herausfinden, woher diese Bestien kommen.~
+  IF ~~ THEN DO ~AddJournalEntry(@66003,QUEST)
+  SetGlobal("AC#BreskQuest","GLOBAL",5)~ EXIT
 END
 
 //_________________________________________________

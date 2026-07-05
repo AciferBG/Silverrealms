@@ -442,20 +442,24 @@ Der Erzmeister in der Azerkyn-Halle ist unglücklich, weil seine verschiedenen E
 
 Ich habe das Erz in der Azerkyn-Halle wieder geordnet. Vielleicht habe ich den Erzmeister damit sogar ein klein wenig beeindruckt.~
 
-//___________________________Das Portal in der Azerkyn-Halle
+//___________________________Angriff auf Iltkazar
 
-@61000  = ~Das Portal in der Azerkyn-Halle
 
-Die Scheusale strömen aus einem Portal in Massen in die Azerkyn-Halle. Sorni bat mich, durch dieses Portal zu schreiten und zu untersuchen, ob es von der anderen Seite wieder verschlossen werden kann.~
-@61001  = ~Das Portal in der Azerkyn-Halle
+@61010  = ~Angriff auf Iltkazar
 
-Es scheint keine Möglichkeit zu geben, das Portal von der Feuerseite aus zu schließen. Ich sollte zu Sorni zurückkehren und Ihr diese Erkenntnis mitteilen, bevor mich die Flammen an diesem feurigen Ort noch verschlingen.~
-@61010  = ~Das Portal in der Azerkyn-Halle
-
-Sorni möchte ernsthaft die gesamte Halle einstürzen lassen, um das Portal zu verschließen! Ich soll im ersten Schritt die drei Hochöfen mit Anthrazit befeuern.~
-@61011  = ~Das Portal in der Azerkyn-Halle
+Die Scheusale strömen aus einem Portal in die Azerkyn-Halle. Sorni möchte die gesamte Halle einstürzen lassen, um das Portal zu verschließen. Ich soll im ersten Schritt die drei Hochöfen mit Anthrazit befeuern.~
+@61011  = ~Angriff auf Iltkazar
 
 Um die Explosion auszulösen, muss das Wasser auf die überhitzten Hochöfen treffen. Ich muss das Wassertor im Norden öffnen und sollte dann schleunigst die Beine in die Hand nehmen.~
+@61012  = ~Angriff auf Iltkazar
+
+Ich habe alle Hochöfen befeuert. Nun muss ich zurück zu Sorni gehen. Sie wird mir sagen, wie es weitergeht.~
+@61013  = ~Angriff auf Iltkazar
+
+Das Wassertor ist offen, und schon bald wird die ganze Halle überflutet sein. Ich sollte schleunigst zusehen, dass ich die Azerkyn-Halle verlasse.~
+@61014  = ~Angriff auf Iltkazar
+
+Die Explosion hat die Azerykn-Halle zerstört. Auch die darüber liegende Arnschädelhalle wird bald zusammenstürzen. Sorni riet mir, mich schnell zum Ausgang zu begeben, wo sie auf mich wartet.~
 
 //___________________________Überlebende
 
@@ -672,7 +676,15 @@ Iltkazar wird angegriffen. Hathar hält vor den Toren die Stellung und bat mich,
 @66001  = ~Angriff auf Iltkazar
 
 Der Angriff auf Iltkazar gilt König Mith Barak. Bresk hat mir den Auftrag gegeben, zur Halle des Regentschaftsrates vorzustoßen und Dunnabar Steinschulter über die Gefahr zu unterrichten.~
+@66002  = ~Angriff auf Iltkazar
 
+Der Angriff auf den Thronsaal konnte abgewehrt werden, doch die Gefahr ist noch nicht gebannt. Die Angreifer dringen offenbar aus den Tiefen der Arnschädelhalle in die Stadt vor. Bresk erwartet mich dort im Nordwesten an der Brücke. Wir müssen die Ursache der Invasion finden, bevor Iltkazar überrannt wird.~
+@66003  = ~Angriff auf Iltkazar
+
+Die Kämpfe in der Stadt dauern an. Bresk glaubt, dass die Angreifer aus den Tiefen der Arnschädelhalle kommen. Ich soll mit ihm hinabsteigen und den Ursprung der Invasion finden. Solange dieser nicht beseitigt wird, bleibt Iltkazar in höchster Gefahr.~
+@66004 = ~Angriff auf Iltkazar
+
+Bresk vermutet, dass das die Invasoren durch ein Portal in der Azerkyn-Halle in die Stadt gelangen. Wir haben uns aufgeteilt, um in der Azerkyn-Halle nach Sorni Arnschädel zu suchen. Wenn jemand weiß, wie dieser Angriff gestoppt werden kann, dann sie. Ich soll den nördlichen Zugang zur Azerkyn-Halle nehmen.~
 
 //Beardmaker quest
 @66050  = ~Der falsche Bart

@@ -62,6 +62,29 @@ THEN
 		AddMapNote([1922.927],999999)
 END
 */
+IF
+	GlobalGT("AC#SorniQuest","ACIL61",19)		
+	Global("Hall_Explodes","ACIL61",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Hall_Explodes","ACIL61",1)
+		SetGlobalTimer("Hall_Explosion_Timer","ACIL61",TWO_MINUTES)
+END
+
+IF
+	GlobalTimerExpired("Hall_Explosion_Timer","ACIL61")		
+	Global("Hall_Explodes","ACIL61",1)
+THEN
+	RESPONSE #100
+		SetGlobal("Hall_Explodes","ACIL61",2)
+		StartMovie("ac#61mve")
+		Kill(Player1)
+		Kill(Player2)
+		Kill(Player3)
+		Kill(Player4)
+		Kill(Player5)
+		Kill(Player6)
+END
 
 IF
 	Global("AC#_Destroy_Oven","ACIL61",3)
@@ -69,5 +92,6 @@ THEN
 	RESPONSE #100
 		SetGlobal("AC#_Destroy_Oven","ACIL61",4)
 		Wait(1)
-                DisplayString(Player1,@110)
+        DisplayStringHead(Player1,@110)
+		AddJournalEntry(@61012,QUEST)
 END

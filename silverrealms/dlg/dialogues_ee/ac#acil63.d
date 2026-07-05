@@ -42,7 +42,7 @@ IF ~~ THEN BEGIN 4
 END
 
 IF ~~ THEN BEGIN 10
-   SAY ~Kehrt zurück in die Hölle, aus der Ihr entsprungen seid, Scheusal! Euer Weg endet hier, denn meine Gefährten und ich werden keinen Fuß zurückweichen!~
+   SAY ~Kehrt zurück in die Hölle, aus der Ihr entsprungen seid, Scheusal! Und richtet Eurer Göttin aus, dass ich mich einen feuchten Dreck um sie schere. Meine Gefährten und ich werden keinen Schritt zurückweichen, um unseren König zu schützen!~
 IF ~~ THEN EXTERN ~AC#GOAP1~ 2
 END
 
@@ -52,12 +52,12 @@ Goap-Dialog
 BEGIN ~AC#GOAP1~
 
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN 1
-SAY  ~Die Verderbnis ist über Eure Stadt gekommen, Zwergenpriester. Geht beiseite und überlasst uns Euren greisen König, denn Euer Kampf ist ohnehin vergebens.~
+SAY ~Die Verderbnis ist über Eure Stadt gekommen, Zwergenpriester. Geht beiseite und überlasst mir Euren greisen König. Die Göttin Tiamat verlangt nach ihm, und wer ihrer Forderung trotzt, wird auf ewig in den Neun Höllen schmoren.~
 IF ~~ THEN EXTERN ~AC#DUN02~ 10
 END
 
 IF ~~ THEN BEGIN 2
-   SAY ~So sei es denn. Ich hätte Euch einen raschen Tod gegönnt, doch nun sollt Ihr ewig in den Neun Höllen leiden.~
+   SAY ~So sei es denn. Ich hätte Euch einen raschen Tod gegönnt. Doch Tiamat wird Gefallen daran finden, Euch leiden zu sehen!~
    IF ~~ THEN DO ~SetGlobal("AC#Goapspawn","GLOBAL",5)
    Enemy()
    ActionOverride("AC#CORN1",Enemy())
@@ -96,6 +96,47 @@ CHAIN AC#DWMS1 4
 ~Beeilt Euch! Ich werde versuchen, in der Stadt weitere versprengte Verteidiger zusammen zu trommeln.~
 END
    IF ~~ THEN DO ~SetGlobal("AC#Goapspawn","GLOBAL",7)
+   AddJournalEntry(@66002,QUEST)
    EscapeArea()~  EXIT
+   
+/*******************************************************************************************************
+Dialog Bettargh - Tiamat Symbol
+*******************************************************************************************************/
+BEGIN ~AC#BETT6~
+
+CHAIN IF ~NumTimesTalkedTo(0)~ THEN AC#BETT6 hello_0
+~Beim wandernden Tüftler! Ihr lebt! Und der Angriff auf den Thronsaal scheint vorerst abgewehrt!~
+== AC#DUN02 ~Vorerst. Und dank <CHARNAME>. Sonst wären wir jetzt alle verloren.~
+== AC#DUN02 ~Seht Euch dieses Brandmal an! Die Scheusale haben es in den Boden des Thronsaals gebrannt.~
+== AC#BETT6 ~Ein fünfköpfiger Drache...~
+== AC#DUN02 ~Das Zeichen Tiamats?~
+== AC#BETT6 ~Wie kommt Ihr darauf?~
+== AC#DUN02 ~Das Scheusal dort drüben hatte es uns gesagt, bevor es in den Staub geschickt wurde.~
+== AC#BETT6 ~Dann wird es so sein. Tiamat, die Drachenkönigin... Herrin zahlloser böser Drachen und Gebieterin über die Abishai. Jener Teufel, die gerade unsere Stadt angreifen!~
+== AC#DUN02 ~Dann steckt also tatsächlich sie hinter diesem Wahnsinn?~
+== AC#BETT6 ~Vielleicht. Doch für Spekulationen bleibt keine Zeit. Die Kämpfe an der Brücke zur Arnschädelhalle dauern an, und die Lage dort ist unklar.~
+== AC#BETT6 ~Dunnabar, Ihr solltet zum König zurückkehren. <CHARNAME> wird an der Brücke gebraucht.~
+== AC#DUN02 ~Nun denn, <CHARNAME>! Scheint, wir haben keine Zeit zum Ausruhen. Ich werde neben dem König Wache halten, und Ihr geht schnell und sucht meinen Sohn im Nordwesten der Stadt an der Brücke zur Arnschädelhalle.~
+END
+IF ~~ THEN DO ~SetGlobal("AC#IL_TiamatSymbol","GLOBAL",1)
+ActionOverride("AC#BETT6",EscapeArea())
+EscapeAreaObject("TrACIL64")
+~ EXIT
+/*
+CHAIN IF ~NumTimesTalkedTo(0)~ THEN AC#BETT6 hello_0
+~Beim wandernden Tüftler! Ihr lebt! Und der Angriff auf den Thronsaal scheint abgewehrt!~ 
+== AC#DUN02 ~Nur um Haaresbreite. Und Dank <CHARNAME>!~
+== AC#DUN02 ~Seht Euch dieses scheußliche Symbol an, das man uns hier in den schönen Boden gebrannt hat!~
+== AC#BETT6 ~Ein fünfköpfiger Drache? Das Symbol von...~
+== AC#DUN02 ~...einer gewissen Tiamat. Wenn ich die erwische werde ich...~
+== AC#BETT6 ~Darum kümmern wir uns später! <CHARNAME> wird an der brücke erwartet, der Angriff scheint abgeebbt zu sein, doch er iost noch nicht vorbei! Dunnabar, Ihr solltet zum Thron des Königs gehen und dort nach dem rechten sehen.~
+== AC#DUN02 ~Nun denn, <CHARNAME>, wir haben keine Zeit zum Ausruhen! Ich werde neben dem König Wache halten, und Ihr geht shcnell und sucht meinen Sohn im Nordwesten der Stadt an der Brücke zur Arnschädelhalle.~
+END
+IF ~~ THEN DO ~ActionOverride("AC#BETT6",EscapeArea())
+EscapeAreaObject("TrACIL64")~  EXIT   
+*/
+   
+   
+   
 
 

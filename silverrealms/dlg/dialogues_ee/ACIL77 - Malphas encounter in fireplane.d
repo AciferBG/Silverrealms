@@ -64,8 +64,8 @@ END
 							IF ~~ THEN BEGIN bye
 							SAY ~Diese Plauderei ist jetzt zu Ende. Meine Herrin ruft mich, und Ihr solltet Euch überlegen, auf welche Weise Ihr von dieser Welt scheiden möchtet!~
 							IF ~~ THEN DO ~SetGlobal("AC#ACIL77TalkedToMalphas","GLOBAL",1)
-							EraseJournalEntry(@61000)
-							AddJournalEntry(@61001,QUEST)
+							//EraseJournalEntry(@61000)
+							//AddJournalEntry(@61001,QUEST)
 							CreateVisualEffectObject("SPDIMNDR",Myself) 
 							Wait(1)				
 							DestroySelf()~ EXIT 

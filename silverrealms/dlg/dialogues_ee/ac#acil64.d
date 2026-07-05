@@ -602,12 +602,12 @@ CHAIN IF ~~ THEN AC#BETTA chain_gith_in_torglor
 == AC#ELERN ~Ihr meint, dass die Githyanki mit dieser Drachengöttin unter einer Decke stecken?~
 END
 IF ~GlobalGT("AC#HatharQuest","GLOBAL",2)~ THEN REPLY ~Das stimmt. Dies erwähnte der Githyanki, der Hathar umgebracht hatte.~ EXTERN ~AC#GROM2~ chain_bettargh_whats_next
-++ ~Ich bin schon einem drachenreitenden Githyanki begegnet.~ EXTERN ~AC#GROM2~ chain_bettargh_whats_next
+++ ~Ich bin schon mehreren Githyanki begegnet, die mich von unserem Vorhaben abhalten wollten.~ EXTERN ~AC#GROM2~ chain_bettargh_whats_next
 
 CHAIN IF ~~ THEN AC#GROM2 chain_bettargh_whats_next
 ~Was schlagt Ihr also vor, Bettargh?~
 == AC#BETTA ~Der einzige nächste sinnvolle Schritt besteht darin, nach Torglor zu reisen. Dort werden sich sehr wahrscheinlich die Githyanki aufhalten, die zumindest als Handlanger dieser Drachengöttin in Erscheinung getreten sind.~
-= ~Mit etwas Glück existiert dort auch ein Portal in die Astralebene, welches man benutzen könnte, um Mith Barak - beziehungsweise Mithbarakaz - zu befreien.~
+= ~Sicherlich existiert dort auch ein Portal in die Astralebene, welches man benutzen könnte, um Mith Barak - beziehungsweise Mithbarakaz - zu befreien.~
 END
 IF ~~ THEN REPLY ~Ihr denkt, dass ich diese Reise unternehmen sollte, richtig?~ + chain_who_is_gonna_do_it
 
@@ -620,19 +620,10 @@ END
 
 CHAIN IF ~~ THEN AC#TURBA chain_torglor_via_drakkalor
 ~Torglor liegt im Norden. Wir müssen <CHARNAME> durch das Drakkalor-Tor gen Norden reisen lassen.~
-== AC#ELERN ~Diesen Weg ist auch Beldas gegangen, als er an die Oberfläche aufbrach.~
-== AC#FENYL ~Drakkalor... sollte dort nicht dieser Drache hausen?~
-== AC#BETTA ~Ja, das ist richtig. <CHARNAME>, Ihr erwähntet den Drachen, der Beldas getötet hatte.~
-END
-++ ~Ja, ein großer Roter, der davonflog, als ich ihn fast besiegt hätte.~ EXTERN ~AC#BETTA~ chain_charvekannathor
-
-CHAIN IF ~~ THEN AC#BETTA chain_charvekannathor
-~Dieser Drache hat sein Lager in Drakkalor eingerichtet. Um nach Torglor zu gelangen, müsstet Ihr Euch möglichst unauffällig durch die Ruinen dieser alten Zwergenstadt schleichen, wenn Ihr nicht auf den Drachen treffen wollt. Torglor liegt jenseits von Drakkalor weiter nördlich. Drakkalor war einst ein wichtiges Handelszentrum der alten Zwerge Shanatars, bevor die Gier seine Bewohner ergriffen hat und die Stadt nur noch als "Stadt des Geizes" in Erinnerung geblieben ist.~
-= ~Da Beldas diesen Weg gewählt hat, könnte dort auch ein Weg an die Oberfläche führen, falls Ihr Euch in Eurer Heimat vor der Reise nach Torglor ausrüsten wollt.~
 == AC#GROM2 ~Selbstverständlich steht Euch auch unsere Stadt immer offen, wenn Ihr Verpflegung für Eure Reise benötigt.~
 == AC#TURBA ~Ich werde die Wachen anweisen, das Drakkalor-Tor im Norden der Stadt zu öffnen.~
 END
-++ ~Ich werde also durch das Drakkalor-Tor nach Norden aufbrechen, an Drakkalor und dem Drachen vorbei weiter nordwärts ziehen, bis ich Torglor erreiche und dort hoffentlich ein Portal in die Astralebene finde.~ EXTERN ~AC#GROM2~ chain_good_plan
+++ ~Ich werde also durch das Drakkalor-Tor nach Norden aufbrechen, bis ich Torglor erreiche und dort ein Portal in die Astralebene finde.~ EXTERN ~AC#GROM2~ chain_good_plan
 
 CHAIN IF ~~ THEN AC#GROM2 chain_good_plan
 ~Das ist ein guter Plan.~

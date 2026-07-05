@@ -34,6 +34,8 @@ IF
 THEN
     RESPONSE #100
         SetGlobal("Deactivate","ACIL63",1)
+        SetMusic(NIGHT,71)
+		SetMusic(DAY,71)	
         ActionOverride("AC#DUN02",Deactivate(Myself))
         TriggerActivation("Tracil66",FALSE)
         TriggerActivation("Tracil50",TRUE)

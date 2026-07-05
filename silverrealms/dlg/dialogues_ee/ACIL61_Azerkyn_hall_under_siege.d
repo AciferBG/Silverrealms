@@ -30,20 +30,19 @@ BEGIN ~AC#SORN2~
 
 IF ~Global("AC#SorniQuest","ACIL61",3)~ THEN BEGIN hello_escape
 SAY ~Los, schnell nach oben!~
-IF ~~ THEN DO ~SetGlobal("AC#SorniQuest","ACIL61",20)
-EscapeArea()~ EXIT 
+IF ~~ THEN DO ~AddJournalEntry(@61013,QUEST)
+SetGlobal("AC#SorniQuest","ACIL61",20)
+EscapeAreaObject("TrACIL65A")~ EXIT 
 END
 
 IF ~Global("AC#SorniQuest","ACIL61",2)~ THEN BEGIN hello_opengate
-SAY ~Öfnnet das Wassertor, <CHARNAME>!~
+SAY ~Öffnet das Wassertor, <CHARNAME>!~
 IF ~~ THEN EXIT
 END
 
 IF ~Global("AC#SorniQuest","ACIL61",1)~ THEN BEGIN 1
 SAY  ~Habt Ihr schon etwas in Erfahrung bringen können?~
 ++ ~Nein, noch nicht.~ + hurry_up
-IF ~Global("AC#ACIL77TalkedToMalphas","GLOBAL",1)
-Global("HeatUpOven","ACIL61",0)~ THEN REPLY ~Es gibt von der anderen Seite keine Möglichkeit, das Portal zu verschließen.~ + met_malphas
 IF ~Global("AC#_Destroy_Oven","ACIL61",4)
 Global("HeatUpOven","ACIL61",1)~ THEN REPLY ~Ich habe alle Öfen mit Anthrazit befeuert.~ + anthrazit_done
 END
@@ -70,7 +69,7 @@ END
 	
 	IF ~~ THEN BEGIN met_malphas
 	SAY ~So, wie ich befürchtet hatte. Dann bleibt uns nur noch eine Möglichkeit.~
-	IF ~~ THEN DO ~EraseJournalEntry(@61001)~ GOTO destroy_hall
+	IF ~~ THEN DO ~~ GOTO destroy_hall
 	END
 	
 // hier Teil: Halle einstürzen lassen
@@ -85,31 +84,51 @@ END
 
 		IF ~~ THEN BEGIN 9
 		   SAY ~Alles, was Ihr hier seht, wäre dann unter einem riesigen Berg Stein begraben. Das Portal, doch auch unsere Hochöfen. Ein notwendiges Übel. Eine neue Gießerei könnten wir in einigen Jahrzehnten wieder aufbauen, die gesamte Stadt nicht mehr.~
-		++ ~Und wenn die ganze Stadt ebenso in sich zusammenbricht?~ + 10
+		++ ~Das klingt nach einem gewaltigen Risiko.~ + 10
+		++ ~Ein hoher Preis, selbst für einen Sieg.~ + 10
+		++ ~Wenn es die Stadt rettet, dann haben wir keine Wahl.~ + 11
+		++ ~Dann begraben wir eben alles unter den Trümmern. Mir soll es recht sein.~ + 10
+		++ ~Lasst uns damit keine Zeit verlieren. Jede Minute kostet Leben.~ + 11
 		IF ~IsValidForPartyDialog("Edwin")~ THEN EXTERN ~EDWINJ~ edwin_comment_halls
 		END
 
 		IF ~~ THEN BEGIN 10
-		   SAY ~Das wird nicht passieren. Die Arnschädel- und Azerkyn-Hallen befinden sich auf der anderen Seite des Flusses. Es wäre wie bei einer faulen und nässenden Wunde: Besser, den kranken Körperteil abtrennen, als durch die Fäulnis komplett zugrundegerichtet zu werden.~
+		   SAY ~Die Arnschädel- und Azerkyn-Hallen befinden sich auf der anderen Seite des Flusses als die übrige Stadt. Dem Stadtkern wird nichts passieren. Es wäre wie bei einer faulen und nässenden Wunde: Besser, den kranken Körperteil abtrennen, als durch die Fäulnis komplett zugrundegerichtet zu werden.~
 		++ ~Wie wollt Ihr das denn überhaupt hinbekommen? Und was ist mit den Arbeitern?~ + 11
+		++ ~Ein paar eingestürzte Hallen erscheinen mir ein geringer Preis für das Überleben der Stadt.~ + 11
+		++ ~Eine bittere Entscheidung, aber ich verstehe Eure Rechnung.~ + 11
 		IF ~IsValidForPartyDialog("Jaheira")~ THEN EXTERN ~JAHEIRAJ~ Jaheira_wound_comment
 		END
 
 		IF ~~ THEN BEGIN 11
-		SAY ~Ich habe alle Arbeiter, die ich erreichen konnte, bereits nach draußen geschickt. Um ehrlich zu sein, war ich es, die das Loch in die Kuppel geschlagen hat: Um meinen Leuten die Flucht zu ermöglichen. Um die ganze Halle nun einstürzen zu lassen, brauche ich nun Eure Hilfe.~
-		++ ~Wie schön.~ + 12
+		SAY ~Ich habe alle Arbeiter, die ich erreichen konnte, bereits nach draußen geschickt. Um ehrlich zu sein, war ich diejenige, die das Loch in die Kuppel geschlagen hat: Um meinen Leuten die Flucht zu ermöglichen. Um die ganze Halle einstürzen zu lassen, brauche ich nun Eure Hilfe.~
+		++ ~Natürlich.~ + 12
+		++ ~Das erklärt zumindest, warum die Kuppel nun ein Loch hat.~ + 12
+		++ ~Ich hatte gehofft, Ihr hättet einen einfacheren Plan.~ + 12
 		IF ~GlobalGT("EarQ1","GLOBAL",1)~ THEN REPLY ~Ich habe im Unterreich schon einmal eine Grube zum Einsturz bringen müssen, nachdem ich gegen einen Dämon gekämpft habe. Und diese Grube war wesentlich kleiner als diese ganze Halle.~ + 12
 		END
 
 		IF ~~ THEN BEGIN 12
 		SAY ~Erwähnte nicht einer von Euch einmal, schon einmal eine ganze Mine des Orothiar-Clans überflutet zu haben?~
+		++ ~Die Mine zu fluten war deutlich einfacher als eine ganze Halle zum Einsturz zu bringen.~ + iron_and_lava
+		++ ~Ich beginne mich zu fragen, warum ich ständig in Katastrophen dieser Größenordnung gerate.~ + iron_and_lava
+		++ ~Ich versichere Euch, damals sah die Sache ebenfalls nach einer schlechten Idee aus.~ + iron_and_lava
 		++ ~Das ist richtig, ja. Aber ich bezweifle, ob sich Scheusale von ein bisschen Wasser aufhalten lassen würden.~ + 13
+		++ ~Wenn die Stadt dadurch gerettet werden kann, werde ich tun, was nötig ist.~ + iron_and_lava
 		END
 		
-		IF ~~ THEN BEGIN 13
-		SAY ~Wasser allein wird nichts ausrichten. Doch diese Halle ist voller Lava, glühenden Eisens und Hochöfen. Wenn wir die Öfen bis an ihre Grenzen anheizen und anschließend die Wasserschleusen öffnen, wird die entstehende Dampfexplosion die ganze Halle zusammenbrechen lassen!~
+			IF ~~ THEN BEGIN 13
+			SAY ~Wasser allein wird nichts ausrichten, das stimmt.~ 
+			IF ~~ THEN GOTO iron_and_lava			
+			END
+		
+		IF ~~ THEN BEGIN iron_and_lava
+		SAY
+		~Diese Halle ist voller Lava, glühenden Eisens und Hochöfen. Wenn wir die Öfen bis an ihre Grenzen anheizen und anschließend die Wasserschleusen öffnen, wird die entstehende Dampfexplosion die ganze Halle zusammenbrechen lassen!~
 		++ ~Diese Kreaturen scheinen gegen Feuer und Hitze immun zu sein.~ + 14
-		++ ~Das wird ein Spektakel!~ + bury_them
+		++ ~Wenn das Portal dadurch verschwindet, bin ich dabei.~ + bury_them
+		++ ~Den Knall wird man sicher bis an die Oberfläche hören!~ + bury_them
+		++ ~Dann sollten wir besser weit genug weg sein, wenn es soweit ist.~ + bury_them
 		END
 
 			IF ~~ THEN BEGIN 14
@@ -119,13 +138,16 @@ END
 		
 		IF ~~ THEN BEGIN bury_them
 		  SAY  ~Wir begraben die Teufel, ihr Portal und die ganze Azerkyn-Halle unter Tonnen von Fels und erstarrtem Eisen.~
-		  ++ ~Und wie kommen wir dabei lebend heraus?~ + 15
+		  ++ ~Und wie werden wir dabei selbst nicht verschüttet?~ + 15
+		  ++ ~Ich höre den Teil des Plans noch nicht, in dem wir danach wieder lebend herauskommen.~ + 15
+		  ++ ~Ein passendes Grab für Teufel!~ + heat_up_oven
+		  ++ ~Was muss ich also tun?~ + heat_up_oven
 		END
 
 IF ~~ THEN BEGIN 15
-  SAY ~Indem wir schnell sind.~
+  SAY ~Wir überleben, indem wir schnell sind.~
   IF ~~ THEN REPLY ~Und Bresk? Er ist noch irgendwo hier unten.~ GOTO bresk_01
-  ++ ~Was muss ich tun?~ + heat_up_oven
+  ++ ~Was muss ich also tun?~ + heat_up_oven
 END
 
 IF ~~ THEN BEGIN bresk_01
@@ -155,7 +177,7 @@ END
 				END
 */		
 			IF ~~ THEN BEGIN heat_up_oven
-			SAY ~Zunächst die Öfen anheizen. Wir haben hier unten viele Anthrazitquellen. Wisst Ihr, was Anthrazit ist?~
+			SAY ~Ihr müsst zunächst die Öfen anheizen. Wir haben hier unten viele Anthrazitquellen. Wisst Ihr, was Anthrazit ist?~
 			IF ~~ THEN REPLY ~Ja.~ GOTO anthrazit_yes
 			IF ~~ THEN REPLY ~Nein.~ GOTO anthrazit_no
 			END
@@ -189,8 +211,10 @@ END
 						END
 						
 							IF ~~ THEN BEGIN heat_up_oven_03
-							SAY ~Ich warte hier. Passt nur auf, dass Ihr Euch nicht verbrennt! Kehrt schnell zu mir zurück, wenn alle drei Hochöfen am Brennen sind.~
+							SAY ~Ich warte hier. Passt nur auf, dass Ihr Euch nicht verbrennt! Ach so, noch etwas: Wenn Ihr Überlebende in diesen verfluchten Hallen findet, schickt sie zu mir, damit ich sie sicher nach draußen schicken kann. Kehrt danach schnell zu mir zurück, wenn alle drei Hochöfen am Brennen sind. ~
 							IF ~~ THEN DO ~SetGlobal("HeatUpOven","ACIL61",1)
+							SetGlobal("AC#SorniQuest","ACIL61",1)
+							AddJournalEntry(@61020,QUEST)
 							AddJournalEntry(@61010,QUEST)~  EXIT
 							END
 
@@ -202,11 +226,14 @@ END
 
 IF ~~ THEN BEGIN 2
   SAY ~Die Bestien kommen durch ein Portal bei den Hochöfen. Ich konnte den südlichen Aufgang mit meinem Schmetterhorn zum Einsturz bringen, doch das hält sie nicht lange auf. Sie sammeln sich bereits für die nächste Welle.~
-  ++ ~Wer hat das Portal geöffnet?~ + 3
+  ++ ~Wie hat sich das Portal geöffnet?~ + 3
+  ++ ~Dann lasst uns dieses Portal zerstören, bevor noch mehr von ihnen hindurchkommen!~ + destroy_hall
+  ++ ~Das erklärt, warum die Stadt plötzlich voller Teufelsbrut ist.~ + 3
+  ++ ~Dann sollten wir keine Zeit verlieren. Was ist der Plan?~ + destroy_hall
 END
 
 IF ~~ THEN BEGIN 3
-  SAY ~Ich weiß es nicht. Ich fürchte, das Portal war schon immer hier. Versiegelt, gebändigt, als Feuerquelle für unsere Hochöfen. Nun sind die Siegel gebrochen.~
+  SAY ~Ich kann mir nicht erklären, wie die Biester es geschafft haben, dieses Tor zu öffnen. Doch ich fürchte, das Portal war schon immer hier. Versiegelt, gebändigt, als Feuerquelle für unsere Hochöfen. Nun sind die Siegel gebrochen.~
   ++ ~Ihr habt ein Portal unter der Stadt geduldet?~ + 5
   ++ ~Wohin führt es?~ + 4
   ++ ~Dann müssen wir es schließen. Sofort.~ + no_time

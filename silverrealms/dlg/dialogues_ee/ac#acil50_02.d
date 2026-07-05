@@ -128,7 +128,7 @@ IF ~~ THEN EXTERN ~AC#DUN03~ dunnabar_bresk_01
 END
 
 IF ~~ THEN BEGIN dunnabar_bresk_02
-SAY ~Dankt lieber diesem dürren <PRO_RACE> hier. Ohne <PRO_HISHER> Hilfe wäre ich nicht am Leben!~
+SAY ~Dankt lieber diesem dürren <PRO_RACE> hier. Ohne <PRO_HISHER>e Hilfe wäre ich nicht am Leben!~
 =
 ~Und nennt mich nicht ständig Junge, Vater. Ich bin der Kriegsmeister von Iltkazar! Und wir haben immer noch eine Schlacht zu schlagen.~
 IF ~~ THEN EXTERN ~AC#DUN03~ where_is_hathar 
@@ -170,7 +170,7 @@ END
 					END
 					
 						IF ~~ THEN BEGIN thanks
-						SAY ~Ach, wisst Ihr, ich möchte einfach, dass Ihr wieder gut zurückkommt. Und jetzt gehe ich lieber wieder in meine Schmiede, bevor ich noch anfange zu heulen. Passt auf Euch, <CHARNAME>!~
+						SAY ~Ach, wisst Ihr, ich möchte einfach, dass Ihr wieder gut zurückkommt. Und jetzt gehe ich lieber wieder in meine Schmiede, bevor ich noch sentimental werde. Passt auf Euch, <CHARNAME>!~
 						IF ~~ THEN DO ~EscapeAreaObject("TrACIL51")~ EXIT
 						END
 

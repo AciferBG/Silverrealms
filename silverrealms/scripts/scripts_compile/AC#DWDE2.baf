@@ -1,17 +1,11 @@
 IF
-	NumTimesTalkedTo(0)
-	Detect([PC])
+    NumberOfTimesTalkedTo(0)
+    Detect([PC])
+    Range([PC],15)
 THEN
-	RESPONSE #100
-                ActionOverride("AC#SORN4",JumpToPoint([2005.1352]))
-                Wait(1)
-		StartDialogueNoSet(LastSeenBy(Myself))
+    RESPONSE #100
+        ActionOverride("AC#SORN4",JumpToPoint([2005.1352]))
+        Wait(1)
+        StartDialogueNoSet(LastSeenBy(Myself))
 END
-
-
-
-
-
-
-
 

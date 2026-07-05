@@ -1,0 +1,15 @@
+IF
+    Clicked([ANYONE])
+    GlobalGT("AC#IL_TiamatSymbol","GLOBAL",0)
+THEN
+    RESPONSE #100
+        DisplayString(Myself,@6150)  
+END
+
+IF
+    Clicked([ANYONE])
+THEN
+    RESPONSE #100
+        DisplayString(Myself,@6151)  
+END
+

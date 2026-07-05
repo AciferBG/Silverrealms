@@ -29,7 +29,7 @@ THEN
     RESPONSE #20
         ForceSpell(LastSeenBy(Myself),WIZARD_SYMBOL_FEAR)  // SPWI811.SPL (Symbol der Furcht)
         SetGlobal("DeathAttack","LOCALS",1)
-    RESPONSE #60        
+    RESPONSE #60
         SetGlobal("DeathAttack","LOCALS",1)
         Continue()
 END
@@ -122,5 +122,12 @@ THEN
         AttackReevaluate(NearestEnemyOf(Myself),15)
     RESPONSE #20
         SetGlobal("PITFIRE","LOCALS",0)
+END
+
+IF
+    !See([PC])
+THEN
+    RESPONSE #100
+        MoveToObject([PC])
 END
 

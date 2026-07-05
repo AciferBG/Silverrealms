@@ -1,4 +1,13 @@
 IF
+    GlobalGT("AC#Goapspawn","GLOBAL",6)
+   Global("Move","Locals",0)
+THEN
+    RESPONSE #100
+        SetGlobal("Move","Locals",1)
+        MoveToPointNoInterrupt([907.1542])
+END
+
+IF
 	Global("AC#Goapspawn","GLOBAL",2)
 	Global("Prep","LOCALS",0)
 THEN
@@ -23,6 +32,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("Prep","LOCALS",3)
 		ForceSpell(Myself,CLERIC_DEFENSIVE_HARMONY)  // SPPR406.SPL (Koordinierte Verteidigung)
+        DisplayStringHead(Myself,@6152)  // Macht Euch bereit! Sie kommen!
 END
 
 IF
@@ -64,11 +74,52 @@ THEN
 END
 
 IF
+    CheckStat(Myself,1,SANCTUARY)
+    HaveSpell(CLERIC_REMOVE_FEAR)  // SPPR108.SPL (Furcht bannen)
+THEN
+    RESPONSE #100
+        Spell(Myself,CLERIC_REMOVE_FEAR)  // SPPR108.SPL (Furcht bannen)
+END
+
+IF
+    CheckStat(Myself,1,SANCTUARY)
+    HaveSpell(CLERIC_BLESS)  // SPPR101.SPL (Segen)
+THEN
+    RESPONSE #100
+        Spell(Myself,CLERIC_BLESS)  // SPPR101.SPL (Segen)
+END
+
+IF
+    CheckStat(Myself,1,SANCTUARY)
+    HaveSpell(CLERIC_PROTECTION_FROM_EVIL_10_FOOT)  // SPPR408.SPL (Schutz vor Bösem: 3 m Radius)
+THEN
+    RESPONSE #100
+        Spell(Myself,CLERIC_PROTECTION_FROM_EVIL_10_FOOT)  // SPPR408.SPL (Schutz vor Bösem: 3 m Radius)
+END
+
+IF
+    CheckStat(Myself,1,SANCTUARY)
+    HaveSpell(CLERIC_DEFENSIVE_HARMONY)  // SPPR406.SPL (Koordinierte Verteidigung)
+THEN
+    RESPONSE #100
+        Spell(Myself,CLERIC_DEFENSIVE_HARMONY)  // SPPR406.SPL (Koordinierte Verteidigung)
+END
+
+IF
     See("AC#GOAP1")  // Goap
     !CheckStat(Myself,1,SANCTUARY)
 THEN
     RESPONSE #100
         AttackReevaluate("AC#GOAP1",30)  // Goap
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    !CheckStat(Myself,1,SANCTUARY)
+    HaveSpell(CLERIC_CHANT)  // SPPR203.SPL (Gesang)
+THEN
+    RESPONSE #100
+        Spell(Myself,CLERIC_CHANT)  // SPPR203.SPL (Gesang)
 END
 
 IF

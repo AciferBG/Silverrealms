@@ -667,7 +667,7 @@ COPY ~silverrealms/cre/AC#DURG1.cre~ ~override/AC#DURG1.cre~
 COPY ~silverrealms/cre/AC#DURG2.cre~ ~override/AC#DURG2.cre~
   SAY NAME1 @98 SAY NAME2 @98
 
-COPY ~silverrealms/cre/ac#dun01.cre~ ~override/ac#dun01.cre~
+COPY ~silverrealms/cre/ac#dun01.cre~ ~override~
   SAY NAME1 @101 SAY NAME2 @101
       SAY INITIAL_MEETING   @5092
   SAY SELECT_COMMON1  @5091
@@ -679,7 +679,7 @@ COPY ~silverrealms/cre/ac#dun01.cre~ ~override/ac#dun01.cre~
   SAY BATTLE_CRY1 @5090
   SAY BATTLE_CRY2 @5090
 
-COPY ~silverrealms/cre/ac#dun02.cre~ ~override/ac#dun02.cre~
+COPY ~silverrealms/cre/ac#dun02.cre~ ~override~
   SAY NAME1 @101 SAY NAME2 @101
        SAY INITIAL_MEETING   @5092
   SAY SELECT_COMMON1  @5091
@@ -691,7 +691,7 @@ COPY ~silverrealms/cre/ac#dun02.cre~ ~override/ac#dun02.cre~
   SAY BATTLE_CRY1 @5090
   SAY BATTLE_CRY2 @5090
 
-COPY ~silverrealms/cre/ac#dun03.cre~ ~override/ac#dun03.cre~  // Dunnabar in ACIL60
+COPY ~silverrealms/cre/ac#dun03.cre~ ~override~  // Dunnabar in ACIL60
   SAY NAME1 @101 SAY NAME2 @101
       SAY INITIAL_MEETING   @5092
   SAY SELECT_COMMON1  @5091
@@ -703,7 +703,7 @@ COPY ~silverrealms/cre/ac#dun03.cre~ ~override/ac#dun03.cre~  // Dunnabar in ACI
   SAY BATTLE_CRY1 @5090
   SAY BATTLE_CRY2 @5090
 
-COPY ~silverrealms/cre/ac#dun50.cre~ ~override/ac#dun50.cre~  // Dunnabar in ACIL50
+COPY ~silverrealms/cre/ac#dun50.cre~ ~override~  // Dunnabar in ACIL50
   SAY NAME1 @101 SAY NAME2 @101
       SAY INITIAL_MEETING   @5092
   SAY SELECT_COMMON1  @5091
@@ -715,7 +715,7 @@ COPY ~silverrealms/cre/ac#dun50.cre~ ~override/ac#dun50.cre~  // Dunnabar in ACI
   SAY BATTLE_CRY1 @5090
   SAY BATTLE_CRY2 @5090
   
-COPY ~silverrealms/cre/ac#dun64.cre~ ~override/ac#dun64.cre~  // Dunnabar in ACIL64 (Throneroom)
+COPY ~silverrealms/cre/ac#dun64.cre~ ~override~  // Dunnabar in ACIL64 (Throneroom)
   SAY NAME1 @101 SAY NAME2 @101
       SAY INITIAL_MEETING   @5092
   SAY SELECT_COMMON1  @5091
@@ -727,7 +727,7 @@ COPY ~silverrealms/cre/ac#dun64.cre~ ~override/ac#dun64.cre~  // Dunnabar in ACI
   SAY BATTLE_CRY1 @5090
   SAY BATTLE_CRY2 @5090
   
-COPY ~silverrealms/cre/AC#DUN20.cre~ ~override/AC#DUN20.cre~  // Dunnabar in ACIL20
+COPY ~silverrealms/cre/AC#DUN20.cre~ ~override~  // Dunnabar in ACIL20
   SAY NAME1 @101 SAY NAME2 @101
       SAY INITIAL_MEETING   @5092
   SAY SELECT_COMMON1  @5091
@@ -2049,6 +2049,15 @@ COPY ~silverrealms/cre/AC#BETT2.cre~ ~override/AC#BETT2.cre~ // Bettargh Abgrund
   SAY SELECT_COMMON5 @5244
   SAY SELECT_COMMON6 @5245
   //SAY BG2EE_SELECT_RARE1 @5246
+  
+COPY ~silverrealms/cre/AC#BETT6.cre~ ~override/AC#BETT6.cre~ // Bettargh Abgrundlied in ACIL63
+  SAY NAME1 @613 SAY NAME2 @613
+  SAY SELECT_COMMON1 @5240
+  SAY SELECT_COMMON2 @5241
+  SAY SELECT_COMMON3 @5242
+  SAY SELECT_COMMON4 @5243
+  SAY SELECT_COMMON5 @5244
+  SAY SELECT_COMMON6 @5245
 
 COPY ~silverrealms/cre/AC#BETT7.cre~ ~override~ // Bettargh Abgrundlied in ACIL50 Ellhimar's death / kidnapping
   SAY NAME1 @613 SAY NAME2 @613

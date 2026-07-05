@@ -124,6 +124,13 @@ THEN
     RESPONSE #100
         ClearAllActions()
         SetGlobal("AC#Goapspawn","GLOBAL",6)
+        ApplySpell(Player1,DISPEL_NO_SAVE)  // SPIN647.SPL (Personen festhalten)
+        ApplySpell(Player2,DISPEL_NO_SAVE)  // SPIN647.SPL (Personen festhalten)
+        ApplySpell(Player3,DISPEL_NO_SAVE)  // SPIN647.SPL (Personen festhalten)
+        ApplySpell(Player4,DISPEL_NO_SAVE)  // SPIN647.SPL (Personen festhalten)
+        ApplySpell(Player5,DISPEL_NO_SAVE)  // SPIN647.SPL (Personen festhalten)
+        ApplySpell(Player6,DISPEL_NO_SAVE)  // SPIN647.SPL (Personen festhalten)
+        ApplySpellRES("AC#63DI","AC#DUN02")  // Magie bannen
         CreateCreatureObjectOffset("AC#DWMS1",Player1,[15.15])  // Wächter Iltkazars
         ActionOverride("AC#DUN02",MoveToObjectNoInterrupt(Player1))
         Wait(1)
@@ -133,6 +140,15 @@ THEN
         OpenDoor("DOOR03")
         TriggerActivation("Tracil66",TRUE)
         ActionOverride("AC#DWMS1",Dialogue([PC]))
+END
+
+IF
+    GlobalGT("AC#Goapspawn","GLOBAL",6)
+    Global("BettarghSpawn","ACIL63",0)
+THEN
+    RESPONSE #100
+        SetGlobal("BettarghSpawn","ACIL63",1)
+        CreateCreature("AC#BETT6",[822.1667],E)  // Bettargh Abgrundlied
 END
 
 IF

@@ -26,7 +26,7 @@ IF ~~ THEN BEGIN 3
 END
 
 IF ~~THEN BEGIN 4
-SAY ~Ihr nehmt ein kleines Messer und ritzt eine kleine Wunde in Eure Handfläche. Langsam lasst Ihr die Blutstropfen auf das riesige Herz träufeln und beobachtet, wie das Blut langsam an seinen Seiten herunterrinnt.~
+SAY ~Ihr nehmt ein kleines Messer, ritzt eine kleine Wunde in Eure Handfläche, lasst die Blutstropfen auf das riesige Herz träufeln und beobachtet, wie das Blut langsam an seinen Seiten herunterrinnt.~
    IF ~~ THEN DO ~SetGlobal("AC#Heart","ACIL79",3)
    ApplyDamage(Player1,1,SLASHING)~  EXIT
 END

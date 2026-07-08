@@ -1,8 +1,0 @@
-// ACIL79 Story-Part
-// Kalzareinad und Ochir Naal
-
-COMPILE
-~silverrealms/story/ACIL79_01/AC#HEAR2.d~
-       
-COPY ~silverrealms/story/ACIL79_01/AC#HEAR2.cre~ ~override/AC#HEAR2.cre~
-  SAY NAME1 @152 SAY NAME2 @152

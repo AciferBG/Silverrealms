@@ -6,12 +6,12 @@ IF ~Global("AC#Heart","ACIL79",4)~ THEN BEGIN 0
 END
 
 	IF ~~ THEN BEGIN 1 // from: 0.0
-	  SAY ~Whedabra... marfedelom... thric vers, ergriff plythe... Svaust mi si?~ // [AC#KALZ1] 
-	  IF ~~ THEN REPLY ~Ich verstehe Euch nicht, Drache.~  GOTO 2
+	  SAY ~Uuhhh...~ [AC#KALZ1] 
+	  IF ~~ THEN REPLY ~Könnt Ihr mich verstehen?~  GOTO 2
 	END
 
 		IF ~~ THEN BEGIN 2 // from: 1.0
-		  SAY ~Was für ein Wesen, das nicht der Sprache der Drachen mächtig ist, wagt es, mich aus meinem Schlaf zu erwecken und hier in meiner Essenz zu stehen? Ein <PRO_RACE>?~ 
+		  SAY ~Was für ein Wesen, das nicht der Sprache der Drachen mächtig ist, wagt es, mich aus meinem Schlaf zu erwecken und hier inmitten meiner Essenz zu stehen? Ein niederer <PRO_RACE>?~ 
 		  IF ~~ THEN REPLY ~Ihr habt nicht geschlafen, Gottheit, Ihr wart tot.~ GOTO 3
 		END
 

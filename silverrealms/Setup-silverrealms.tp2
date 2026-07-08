@@ -666,7 +666,5 @@ INCLUDE ~silverrealms/lib/silverrealms-worldmap.tpa~
 // Story-Elements
 // silverrealms/story
 ///////////////////////////////////////////////////////////////////////
-// Story-Path_ Kalzareinads Heart
-INCLUDE ~silverrealms/story/ACIL79_01/ACIL79_01.tpa~
 // Tiglath Subplot
 INCLUDE ~silverrealms/story/TIGLATH/tiglath.tpa~

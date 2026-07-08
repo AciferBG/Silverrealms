@@ -1,5 +1,10 @@
 // Silverrealms Spell Files
 
+COPY ~silverrealms/spl/AC#ILWD.spl~         ~override~ // NEW #2 wild magic spell effect in ACIL30
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@6330) STR_VAR bam_file = AC#WILIL RET icon END
+COPY_EXISTING ~AC#ILWD.spl~         ~override~
+LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 0 parameter2 = icon END
+
 COPY ~silverrealms/spl/copy~         ~override~
 
 COPY ~silverrealms/spl/AC#IL23.spl~          ~override~ // illusionary dragon breath

@@ -2,6 +2,9 @@
 
 COPY ~silverrealms/cre/copy~         ~override~
 
+COPY ~silverrealms/cre/AC#HEAR2.cre~ ~override~
+  SAY NAME1 @152 SAY NAME2 @152
+
 COPY ~silverrealms/cre/AC#ILDMS.cre~ ~override~ // Doomspawn
   SAY NAME1 @9058 SAY NAME2 @9058
     WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~DOOMSPAWN_ACIFER~))

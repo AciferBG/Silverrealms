@@ -1,65 +1,65 @@
 IF
-	Global("EnteredArea","ACIL79",0)
+    Global("EnteredArea","ACIL79",0)
 THEN
-	RESPONSE #100
-		SetGlobal("EnteredArea","ACIL79",1)
-		AmbientActivate("Heart_dead",FALSE)
-		AmbientActivate("Heartbeat",FALSE)
-		SoundActivate("Heartsound",FALSE)
+    RESPONSE #100
+        SetGlobal("EnteredArea","ACIL79",1)
+        AmbientActivate("Heart_dead",FALSE)
+        AmbientActivate("Heartbeat",FALSE)
+        SoundActivate("Heartsound",FALSE)
 END
 
 IF
-	Global("AC#Heart","ACIL79",3)
+    Global("AC#Heart","ACIL79",3)
 THEN
-	RESPONSE #100
-                ClearAllActions()
-		StartCutSceneMode()
-		ActionOverride(Player1,JumpToPoint([1294.409]))
-		CreateVisualEffectObject("SPFLESHS",Player1)
-		PlaySound("EFF_M63")
-		FadeToColor([30.0],0)
-		Wait(2)
-		//ActionOverride("AC#HEAR1",DestroySelf())
-		AmbientActivate("Heart_start",FALSE)
-		AmbientActivate("Heartbeat",TRUE)
-		SoundActivate("Heartsound",TRUE)
-		SetGlobal("AC#Heart","ACIL79",4)
-		Wait(3)
-		CreateCreatureImpassable("AC#HEAR2",[1261.340],13)
-		FadeFromColor([30.0],0)
-		Wait(3)
-		EndCutSceneMode()
-		ActionOverride("AC#HEAR2",StartDialogueNoSet([PC]))
+    RESPONSE #100
+        ClearAllActions()
+        StartCutSceneMode()
+        ActionOverride(Player1,JumpToPoint([1294.409]))
+        CreateVisualEffectObject("SPFLESHS",Player1)
+        PlaySound("EFF_M63")
+        FadeToColor([30.0],0)
+        Wait(2)
+        AmbientActivate("Heart_start",FALSE)
+        AmbientActivate("Heartbeat",TRUE)
+        SoundActivate("Heartsound",TRUE)
+        SetGlobal("AC#Heart","ACIL79",4)
+        Wait(5)
+        CreateCreatureImpassable("AC#HEAR2",[1261.340],SEE)  // Kalzareinads Herz
+        FadeFromColor([30.0],0)
+        Wait(2)
+        EndCutSceneMode()
+        ActionOverride("AC#HEAR2",StartDialogueNoSet([PC]))
 END
 
 IF
-	Global("AC#Heart","ACIL79",5)
+    Global("AC#Heart","ACIL79",5)
 THEN
-	RESPONSE #100
-                ClearAllActions()
-		StartCutSceneMode()
-		ScreenShake([100.100],50)
-		PlaySound("EFF_P92")
-		SetGlobal("AC#Heart","ACIL79",6)
-		Wait(3)
-		EndCutSceneMode()
-		ActionOverride("AC#HEAR2",StartDialogueNoSet([PC]))
+    RESPONSE #100
+        ClearAllActions()
+        StartCutSceneMode()
+        ScreenShake([100.100],50)
+        PlaySound("AC#HEARD")
+        SetGlobal("AC#Heart","ACIL79",6)
+        Wait(5)
+        EndCutSceneMode()
+        ActionOverride("AC#HEAR2",StartDialogueNoSet([PC]))
 END
 
 IF
-	Global("AC#Heart","ACIL79",8)
+    Global("AC#Heart","ACIL79",8)
 THEN
-	RESPONSE #100
-                ClearAllActions()
-		StartCutSceneMode()
-		ActionOverride("AC#HEAR1",DestroySelf())
-		ScreenShake([100.100],50)
-		PlaySound("EFF_P92")
-		AmbientActivate("Heart_dead",TRUE)
-		AmbientActivate("Heartbeat",FALSE)
-		SoundActivate("Heartsound",FALSE)
-		TriggerActivation("Heart_Trigger",FALSE)
-		SetGlobal("AC#Heart","ACIL79",9)
-		SetGlobal("AC#KalzareinadDead","GLOBAL",1)
-		EndCutSceneMode()
+    RESPONSE #100
+        ClearAllActions()
+        StartCutSceneMode()
+        ActionOverride("AC#HEAR1",DestroySelf())
+        ScreenShake([100.100],50)
+        PlaySound("EFF_P92")
+        AmbientActivate("Heart_dead",TRUE)
+        AmbientActivate("Heartbeat",FALSE)
+        SoundActivate("Heartsound",FALSE)
+        TriggerActivation("Heart_Trigger",FALSE)
+        SetGlobal("AC#Heart","ACIL79",9)
+        SetGlobal("AC#KalzareinadDead","GLOBAL",1)
+        EndCutSceneMode()
 END
+

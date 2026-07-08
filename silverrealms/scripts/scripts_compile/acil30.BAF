@@ -35,10 +35,20 @@ THEN
 END
 
 IF
+    !GlobalTimerNotExpired("WildmagicTimer","ACIL30")
+THEN
+    RESPONSE #100
+        ApplySpellRES("AC#ILWD",Player1)  // SPIN645.SPL (No such index)
+        SetGlobalTimer("WildmagicTimer","ACIL30",3)
+END
+
+/*
+IF
 	!GlobalTimerNotExpired("WildmagicTimer","ACIL30")
 THEN
 	RESPONSE #100
 		ApplySpell(Player1,WILD_MAGIC_AREA)
 		SetGlobalTimer("WildmagicTimer","ACIL30",3)
 END
+*/
 

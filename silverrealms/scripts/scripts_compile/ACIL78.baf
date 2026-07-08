@@ -17,6 +17,7 @@ THEN
 		StartCutScene("ac#cut78")
 END
 
+/*
 IF
 	Global("AC#RevealACIL80","GLOBAL",1)
 	Global("Malphasspawn","ACIL78",0)
@@ -29,6 +30,7 @@ THEN
                 CreateCreature("AC#GITHA",[564.971],9)  // Githyanki in ACIL78
                 CreateCreature("AC#GITHA",[650.1008],8)  // Githyanki in ACIL78
 END
+*/
 
 /*
 IF

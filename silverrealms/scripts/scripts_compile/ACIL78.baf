@@ -17,32 +17,6 @@ THEN
 		StartCutScene("ac#cut78")
 END
 
-/*
-IF
-	Global("AC#RevealACIL80","GLOBAL",1)
-	Global("Malphasspawn","ACIL78",0)
-THEN
-	RESPONSE #100
-                SetGlobal("Malphasspawn","ACIL78",1)
-                CreateCreature("AC#MAL78",[470.803],8)  // Malphas in ACIL78
-                CreateCreature("AC#GITHA",[540.936],9)  // Githyanki in ACIL78
-                CreateCreature("AC#GITHA",[674.833],6)  // Githyanki in ACIL78
-                CreateCreature("AC#GITHA",[564.971],9)  // Githyanki in ACIL78
-                CreateCreature("AC#GITHA",[650.1008],8)  // Githyanki in ACIL78
-END
-*/
-
-/*
-IF
-	Global("AC#CutScene1","ACIL78",0)
-THEN
-	RESPONSE #100
-		SetGlobal("AC#CutScene1","ACIL78",1)
-                ClearAllActions()
-		StartCutSceneMode()
-		StartCutScene("AC#76CS1")
-END
-*/
 
 
 

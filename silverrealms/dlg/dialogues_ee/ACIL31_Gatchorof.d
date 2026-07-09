@@ -51,22 +51,27 @@ BEGIN ~AC#HARM2~
 
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN 1
 SAY ~Ihr habt es tatsächlich bis hier herunter in unseren Stützpunkt geschafft. Keine schlechte Leistung für einen <RACE>.~
-++  ~Es braucht schon mehr als eine Horde Kobolde, um mich von meinem Ziel abzubringen, Githyanki.~ + 2
+++  ~Es braucht schon mehr als eine Horde Kobolde, um mich von meinem Ziel abzubringen!~ + 2
+++ ~Keine schlechte Leistung für einen <RACE> wie mich, aber eine schlechte Leistung für Euch Githyanki.~ + 2
+++ ~Ich habe schon größere Stützpunkte zu Fall gebracht als diesen armseligen Außenposten.~ + 2
 END
 
 IF ~~ THEN BEGIN 2
 SAY ~Was kümmern uns schon die Kobolde? Die Krieger meiner Rasse sind die Besten im gesamten Multiversum! Weiter als hierher werdet Ihr nicht mehr kommen, denn wir sind Euch in jeder Hinsicht überlegen!~
 ++  ~Das werden wir ja sehen.~ + 3
 ++ ~Ich bin schon mit mehr von Eurer Art zusammengetroffen, und ich muss sagen, dass es bisher für mich immer besser ausgegangen ist als für Euresgleichen.~ + 3
+++ ~Ihr redet viel für jemanden, der gleich um sein Leben kämpfen muss.~ + 3
 END
 
 IF ~~ THEN BEGIN 3
 SAY ~Glaubt Ihr wirklich, dass ein Sieg über uns an dem Konflikt etwas bewirken könnte? In diesem Kampf sind wir lediglich genauso Söldner wie Ihr auch, gebunden an unseren Auftrag durch einen uralten Pakt. Sollten wir wirklich fallen, werden andere meiner Art für unsere Sache eintreten.~
 ++  ~Ich werde alles, was sich mir in den Weg stellt, beiseite räumen!~ + 4
+++ ~Dann werde ich wohl dafür sorgen müssen, dass Ihr niemandem mehr Bericht erstatten könnt.~ + 4
+++ ~Dann sterbt Ihr heute für einen Auftrag, der Euch nicht einmal gehört.~ + 4
 END
 
 IF ~~ THEN BEGIN 4
-SAY ~Es wird Zeit, Euren frechen Mund zu stopfen! Meine Hauptmänner werden Euch die Haut abziehen und mir daraus ein Paar Stiefel machen! Soldaten, zeigt diesem <RACE>, weshalb die Githyanki über die ganzen Ebenen hinweg so gefürchtet sind!~
+SAY ~Es wird Zeit, Eure frechen Mäuler zu stopfen! Meine Hauptmänner werden Euch die Haut abziehen und mir daraus ein Paar Stiefel machen! Soldaten, zeigt diesem <RACE>, weshalb die Githyanki über die ganzen Ebenen hinweg so gefürchtet sind!~
 IF ~~ THEN DO
    ~EraseJournalEntry(@64900)
    ForceSpell(Myself,DRYAD_TELEPORT)
@@ -119,43 +124,50 @@ END
 
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN 1
 SAY ~Ihr gehört nicht zu den Gith, <RACE>. Was sucht Ihr hier?~
-++  ~Dasselbe könnte ich Euch fragen. Ein gefangener Gedankenschinder?~ + prisoner_01
+++ ~Dasselbe könnte ich Euch fragen. Ein gefangener Gedankenschinder?~ + prisoner_01
+++ ~Ich hatte vieles erwartet. Einen eingesperrten Illithiden allerdings nicht.~ + prisoner_01
+++ ~Ihr habt Glück, Illithide. Heute töte ich zuerst die Gith.~ + prisoner_01
+++ ~Was sucht *Ihr* hier? Sprecht schnell, denn meine Geduld mit Hirnfressern ist begrenzt.~ + prisoner_01
 END
 
 	IF ~~ THEN BEGIN prisoner_01
-	SAY ~In der Tat, die Gith haben mich geschnappt. Wenn Ihr mich freilasst, werde ich Euch helfen.~
-	++  ~Ihr wollt mir helfen? Solche Worte habe ich noch nie aus dem... Mund... eines Illithiden gehört.~ + free_me_01
+	SAY ~In der Tat. Die Gith haben mich gefangen genommen. Befreit mich, und ich werde Euch unterstützen!~
+	++ ~Ihr wollt mir helfen? Solche Worte habe ich noch nie aus dem... ähm, Mund... eines Gedankenschinders gehört.~ + free_me_01
+	++ ~Ich bin nicht hier, um Euch zu retten.~ + free_me_01
+	++ ~Ich kann mich nicht entscheiden, wen ich mehr verabscheue: Euch oder die Gith.~ + free_me_01
+	++ ~Vielleicht seid Ihr mein Feind. Aber im Augenblick seid Ihr vielleicht mein Verbündeter.~ + harmswa_not_dead
 	END
-	
-		IF ~~ THEN BEGIN free_me_01
-		SAY ~Die Gith werden Euch ebenso töten wie den Rest meiner Einheit, wenn wir hier nicht zusammenarbeiten! Hütet Euch vor der Anführerin, sie hat ein Silberschwert, mit dem sie Euch mühelos den Kopf abschlagen kann!~
-		IF ~!Dead("AC#GITH1")~ THEN REPLY ~Was schlagt Ihr also vor?~ + harmswa_not_dead
-		IF ~Dead("AC#GITH1")~ THEN REPLY ~Um die habe ich mich schon gekümmert.~ + harmswa_dead
-		END
-		
-			IF ~~ THEN BEGIN harmswa_not_dead
-			SAY ~Öffnet die Tür, dann werde ich Euch im Kampf unterstützen und danach das Weite suchen und Euch weiterziehen lassen.~
-			++  ~Ihr bekommt die Tür nicht selbst auf?~ + open_door_01
-			END
-			
-				IF ~~ THEN BEGIN open_door_01
-				SAY ~Die Gith haben das Schloss manipuliert, dass ich es mit meinen vier Fingern nicht öffnen kann.~
-				++  ~Das ist gut zu wissen. Dann bleibt Ihr dort auf alle Ewigkeiten gefangen.~ + not_open_door
-				++  ~Gut, das kann ich machen.~ + yes_open_door
-				END
-				
-					IF ~~ THEN BEGIN not_open_door
-					SAY ~Nein! Das könnt Ihr doch nicht machen!~
-					IF ~~ THEN EXIT
-					END
-					
-					IF ~~ THEN BEGIN yes_open_door
-					SAY ~Hervorragend! Ich werde Euch nach Kräften unterstützen, wenn die Tür geöffnet ist!~
-					IF ~~ THEN EXIT
-					END
 
-			IF ~~ THEN BEGIN harmswa_dead
-			SAY ~Dann könnt Ihr mich ja jetzt gehen lassen. Öffnet die Tür, und ich werde meines Weges ziehen.~
-			++  ~Ihr bekommt die Tür nicht selbst auf?~ + open_door_01
-			END
-			
+	IF ~~ THEN BEGIN free_me_01
+	SAY ~Die Gith werden Euch ebenso töten wie den Rest meiner eigenen Einheit, wenn wir hier nicht zusammenarbeiten! Hütet Euch vor der Anführerin, sie hat ein Silberschwert, mit dem sie Euch mühelos den Kopf abschlagen kann!~
+	IF ~!Dead("AC#GITH1")~ THEN REPLY ~Was schlagt Ihr also vor?~ + harmswa_not_dead
+	IF ~Dead("AC#GITH1")~ THEN REPLY ~Um die habe ich mich bereits gekümmert.~ + harmswa_dead
+	END
+
+	IF ~~ THEN BEGIN harmswa_not_dead
+	SAY ~Öffnet meine Zelle. Ich werde an Eurer Seite gegen die Gith kämpfen. Sobald sie vernichtet sind, werde ich verschwinden.~
+	++ ~Ihr bekommt die Tür nicht selbst auf?~ + open_door_01
+	++ ~Niemals!~ + not_open_door
+	END
+
+	IF ~~ THEN BEGIN open_door_01
+	SAY ~Die Gith haben das Schloss verändert. Meine Hände sind für diesen Mechanismus nicht geschaffen.~
+	++ ~Das ist gut zu wissen. Dann bleibt Ihr dort, wo Ihr seid.~ + not_open_door
+	++ ~Gut. Ich werde Euch freilassen.~ + yes_open_door
+	END
+
+	IF ~~ THEN BEGIN not_open_door
+	SAY ~Eine schlechte Entscheidung. Die Gith bleiben Eure Feinde an diesem Ort.~
+	IF ~~ THEN EXIT
+	END
+
+	IF ~~ THEN BEGIN yes_open_door
+	SAY ~Ausgezeichnet. Ihr werdet feststellen, dass diese Entscheidung für beide Seiten von praktischem Nutzen ist!~
+	IF ~~ THEN EXIT
+	END
+
+	IF ~~ THEN BEGIN harmswa_dead
+	SAY ~Dann besteht kein Grund mehr, mich hier festzuhalten. Öffnet die Tür, und ich werde meines Weges ziehen.~
+	++ ~Ihr bekommt die Tür nicht selbst auf?~ + open_door_01
+	++ ~Niemals!~ + not_open_door
+	END

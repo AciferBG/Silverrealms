@@ -1,0 +1,22 @@
+IF
+    See(NearestEnemyOf(Myself))
+    Global("mindblast","LOCALS",0)
+THEN
+    RESPONSE #40
+        ForceSpell(LastSeenBy(Myself),PSIONIC_MIND_BLAST)  // SPIN775.SPL (Psi-Schlag)
+        SetGlobal("mindblast","LOCALS",1)
+    RESPONSE #60
+        SetGlobal("mindblast","LOCALS",1)
+        Continue()
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    Delay(12)
+THEN
+    RESPONSE #25
+        ForceSpell(LastSeenBy(Myself),PSIONIC_MIND_BLAST)  // SPIN775.SPL (Psi-Schlag)
+    RESPONSE #75
+        Continue()
+END
+

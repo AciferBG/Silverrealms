@@ -1,0 +1,74 @@
+IF
+    HPPercentLT(Myself,50)
+    !GlobalTimerNotExpired("GithHealTimer","LOCALS")
+    !GlobalTimerNotExpired("CastTimer","LOCALS")
+    Range(NearestEnemyOf(Myself),10)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("GithHealTimer","LOCALS",TWO_MINUTES)
+        SetGlobalTimer("CastTimer","LOCALS",ONE_ROUND)
+        ForceSpell(NearestEnemyOf(Myself),PSIONIC_LIFE_DRAIN)  // SPIN545.SPL (Lebenskraftentzug)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    !GlobalTimerNotExpired("GithMindBlast","LOCALS")
+    !GlobalTimerNotExpired("CastTimer","LOCALS")
+THEN
+    RESPONSE #60
+        ForceSpell(LastSeenBy(Myself),PSIONIC_MIND_BLAST)  // SPIN775.SPL (Psi-Schlag)
+        SetGlobalTimer("GithMindBlast","LOCALS",TWO_ROUNDS)
+        SetGlobalTimer("CastTimer","LOCALS",ONE_ROUND)
+    RESPONSE #40
+        SetGlobalTimer("GithMindBlast","LOCALS",TWO_ROUNDS)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    !GlobalTimerNotExpired("CastTimer","LOCALS")
+THEN
+    RESPONSE #45
+        ForceSpell(LastSeenBy(Myself),PSIONIC_MIND_BLAST)  // SPIN775.SPL (Psi-Schlag)
+        SetGlobalTimer("CastTimer","LOCALS",ONE_ROUND)
+    RESPONSE #45
+        ForceSpell(LastSeenBy(Myself),PSIONIC_INFLICT_PAIN)  // SPIN543.SPL (Schmerz verursachen)
+        SetGlobalTimer("CastTimer","LOCALS",ONE_ROUND)
+    RESPONSE #25
+        ForceSpell(LastSeenBy(Myself),PSIONIC_PROJECT_FORCE)  // SPIN547.SPL (Kraft projizieren)
+        SetGlobalTimer("CastTimer","LOCALS",ONE_ROUND)
+    RESPONSE #75
+        Continue()
+END
+
+IF
+    Heard([ANYONE],111)
+THEN
+    RESPONSE #100
+        MoveToObject(NearestEnemyOf(Myself))
+END
+
+IF
+    AttackedBy([GOODCUTOFF],DEFAULT)
+    !Allegiance(Myself,ENEMY)
+THEN
+    RESPONSE #100
+        Enemy()
+END
+
+IF
+    AttackedBy([GOODCUTOFF],DEFAULT)
+    Global("Shout","LOCALS",0)
+THEN
+    RESPONSE #100
+        Shout(111)
+        SetGlobal("Shout","LOCALS",1)
+END
+
+IF
+    ActionListEmpty()
+    See(NearestEnemyOf(Myself))
+THEN
+    RESPONSE #100
+        AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+

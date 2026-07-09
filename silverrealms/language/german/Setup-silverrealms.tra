@@ -1208,7 +1208,7 @@ Besondere Fähigkeiten: Beschwört einmal täglich einen Erdelementar für eine 
 @904 = ~Borug? Borug! Hilfe, er greift mich an!~
 @905 = ~Thardumin Goldblick~ 
 @906 = ~Dies ist das größte Stück Silber, das Ihr jemals gesehen habt~
-@907 = ~Dieser Zwerg streckt stolz sein Schwert in die Höhe.~
+@907 = ~Dieser Zwerg streckt stolz sein Kurzschwert in die Höhe.~
 @908 = ~Dieser grimmig dreinblickende Zwergenkrieger schwingt drohend seinen Hammer~
 @909 = ~Ein Zwerg, der eine stumpfe Waffe schwingt - ob es sich um eine Keule oder einen Streitkolben handeln soll, könnt Ihr nicht mehr erkennen~
 @910 = ~Ein archetypischer Zwergenkrieger mit der Streitaxt~
@@ -1665,6 +1665,7 @@ Charvekannathors Hort~
 @6300 = ~Tempel des Dugmaren~
 
 @6330 = ~Wilde Magie~
+@6331 = ~Magie scheint hier wieder normal zu funktionieren.~
 
 @6470 = ~Ihr könnt mich nicht besiegen! In meinem Hort bin ich unbesiegbar!~
 @6471 = ~Habt Ihr noch immer nicht genug?~

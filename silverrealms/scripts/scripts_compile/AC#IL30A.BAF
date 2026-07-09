@@ -1,0 +1,12 @@
+IF
+    Entered([ANYONE])
+    Global("GithyankiSpawn","ACIL30",0)
+THEN
+    RESPONSE #100
+        SetGlobal("GithyankiSpawn","ACIL30",1)
+        CreateCreatureDoor("AC#IL30G",[1767.966],NNW)  // Githyanki
+        CreateCreatureDoor("AC#IL30G",[1885.952],NNW)  // Githyanki
+        CreateCreatureDoor("AC#IL30G",[1545.689],SSE)  // Githyanki
+        CreateCreatureDoor("AC#IL30G",[1894.644],S)  // Githyanki
+END
+

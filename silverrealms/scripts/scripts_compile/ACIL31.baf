@@ -5,6 +5,7 @@ THEN
 		AmbientActivate("Skullfire",FALSE)
 		SoundActivate("AM0413A",FALSE)
 		TriggerActivation("CSKULL",FALSE)
+		DisplayString(Myself,@6331)
 		SetGlobal("EnteredArea","ACIL31",1)
 END
 

@@ -119,7 +119,7 @@ COPY ~silverrealms/areas/ACIL30.are~          ~override~
   SAY 0x234c @909           // Info_Dwarf_Club
   SAY 0x2288 @910           // Info_Dwarf_Axe
   SAY 0x24d4 @6030          // Info_Torglor
-  SAY 0x3310 @911           // Info Locked DOOR01
+  SAY 0x33d4 @911           // Info Locked DOOR01
   
 COPY ~silverrealms/areas/ACIL31.are~          ~override~
  WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type

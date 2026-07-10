@@ -713,28 +713,31 @@ Mir ist eine kleine drachenartige Kreatur begegnet, die viel über meine Suche n
 //___________________________Kalzareinads Herz
 @79500  = ~Kalzareinads Herz
 
-Ich habe das schlagende Herz, das von dem einstigen Drachengott namens Kalzareinad als letzter Rest übrig war, vernichtet. Dies wird mir sicherlich den Zorn seines letzten Anhängers Maldraedior einbringen, doch nun ist die einst mächtige Gottheit ein für allemal tot. Damit gibt es nun aber keine Möglichkeit mehr, den Fluch von Mithbarakaz zu nehmen, aber das ist nicht mein Problem.~
+Ich habe das schlagende Herz, das von dem einstigen Drachengott namens Kalzareinad als letzter Rest übrig war, vernichtet. Damit gibt es nun aber keine Möglichkeit mehr, den Fluch von Mithbarakaz zu nehmen, aber das ist nicht mein Problem.~
 @79501  = ~Kalzareinads Herz
 
-Ich habe das schlagende Herz, das von dem einstigen Drachengott namens Kalzareinad als letzter Rest übrig war, vernichtet. Dies wird mir sicherlich den Zorn seines letzten Anhängers Maldraedior einbringen, doch nun ist die einst mächtige Gottheit ein für allemal tot. Zum Glück habe ich ihn vorher noch den Fluch von Mithbarakaz nehmen lassen. Der "Zwergenkönig" vom Fluch befreit, die Gottheit tot - das nenne ich einen guten Verlauf des Abenteuers!~
+Ich habe das schlagende Herz, das von dem einstigen Drachengott namens Kalzareinad als letzter Rest übrig war, vernichtet. Zum Glück habe ich ihn vorher noch den Fluch von Mithbarakaz nehmen lassen. Der "Zwergenkönig" vom Fluch befreit, die Gottheit tot - das nenne ich einen guten Verlauf des Abenteuers!~
 //___________________________Der letzte Gläubige
-@79600  = ~Der letzte Gläubige
-
-Ich habe dem alten blauen Drachen Maldraedior versprochen, seiner toten Gottheit Kalzareinad mitzuteilen, dass noch ein Gläubiger in der Welt existiert, der ihm die Treue hält.~
 @79600  = ~Der letzte Gläubige
 
 Ich habe dem alten blauen Drachen Maldraedior versprochen, seiner toten Gottheit Kalzareinad mitzuteilen, dass noch ein Gläubiger in der Welt existiert, der ihm die Treue hält.~
 @79601  = ~Der letzte Gläubige
 
 Ich habe der Drachengottheit Kalzareinad mitgeteilt, dass noch ein Gläubiger in der Welt existiert, der ihm die Treue hält. Der blaue Drache Maldraedior wird sich darüber freuen.~
+@79602  = ~Der letzte Gläubige
+
+Mit dem endgültigen Tod Kalzareinads wird auch der Glaube an ihn bald versiegen. Dies wird mir sicherlich den Zorn seines letzten Anhängers Maldraedior einbringen.~
 //___________________________Mith Baraks Fluch
 @79700  = ~Mith Baraks Fluch
 
 Ich habe den Fluch, der auf Mith Barak lastet, von ihm nehmen lassen. Für diese gute Tat wird er mir sicher sehr dankbar sein.~
-//___________________________Palast der zerschmetterten Seelen
-@80000  = ~Palast der zerschmetterten Seelen
+//___________________________Mith Baraks Gefängnis
+@80000  = ~Befreie König Mith Barak
 
-Ich weiß jetzt, wo Mith Barak festgehalten wird. Der Ort nennt sich 'Palast der zerschmetterten Seelen' und liegt in der Astralebene. Obwohl ich noch nie dort gewesen bin, weiß ich durch die Beschreibung des toten Gottes Kalzareinad, wie ich mit dem Astralschiff der Githyanki dorthin gelangen kann.~
+Ich weiß jetzt, wo Mith Barak festgehalten wird: Bei einem anderen toten Gott in der Astralebene. Obwohl ich noch nie dort gewesen bin, weiß ich durch die Beschreibung des Gottes Kalzareinad, wie ich mit dem Astralschiff der Githyanki dorthin gelangen kann.~
+@80001  = ~Befreie König Mith Barak
+
+Ich bin an Mith Baraks Gefängnis angekommen. Ich muss mich zu ihm vorkämpfen und befreien, um wieder zurück in meine Heimat kehren zu können.~
 //___________________________Flucht durch den Tunnel
 @90010  = ~Flucht durch den Tunnel
 

@@ -31,11 +31,6 @@ SAY ~Ihr nehmt ein kleines Messer, ritzt eine kleine Wunde in Eure Handfläche, 
    ApplyDamage(Player1,1,SLASHING)~  EXIT
 END
 
-/*
-IF ~IsValidForPartyDialog("Jaheira")~ THEN EXTERN ~JAHEIRAJ~ Jaheira_Comment_Dumathoin
-IF ~!IsValidForPartyDialog("Jaheira")~ THEN REPLY ~Was ist hier geschehen?~ + 3
-*/
-
 IF ~~ THEN BEGIN 16
    SAY ~Ihr wendet Euch von dem Herz ab.~
    IF ~~ THEN EXIT
@@ -43,9 +38,7 @@ END
 
 IF ~~THEN BEGIN kill_heart
 SAY ~Die Waffe dringt mühelos in das Innere des pulsierenden Herzens ein. Es gibt einen Ruck, bevor das Organ kraftlos in sich zusammenfällt.~
-   IF ~~ THEN DO ~SetGlobal("AC#Heart","ACIL79",8)
-   AddexperienceParty(1000)
-   AddJournalEntry(@79500,QUEST)~  EXIT
+   IF ~~ THEN DO ~SetGlobal("AC#Heart","ACIL79",8)~  EXIT
 END
 
 IF ~~THEN BEGIN kill_heart_mith_cured

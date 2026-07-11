@@ -80,8 +80,8 @@ END
 								END
 
 									IF ~~ THEN BEGIN 14 
-									  SAY ~Und was hat es Mithbarakaz gebracht? Tiamat, die Habgierige, ist dadurch stärker geworden. Sie war meine erbittertste Feindin. In meinen Händen wäre dieses Wissen bewahrt, verstanden und beherrscht worden...~ 
-									  IF ~~ THEN REPLY ~Ihr wolltet es wohl vor allem zu Eurem Vorteil nutzen.~ GOTO 15
+									  SAY ~Und was hat es Mithbarakaz gebracht? Tiamat, die Habgierige, ist dadurch stärker geworden. Sie war meine erbittertste Feindin. In meinen Händen wäre dieses Wissen bewahrt, verstanden und beherrscht worden. In Tiamats Klauen ist es nichts weiter als ein Werkzeug ihrer selbstsüchtigen Ränke.~ 
+									  IF ~~ THEN REPLY ~Ihr wolltet es wohl auch zu Eurem eigenen Vorteil nutzen.~ GOTO 15
 									  IF ~~ THEN REPLY ~Vielleicht hat Mith Barak erkannt, dass niemand über ein solches Wissen verfügen sollte.~ GOTO 15
 									  IF ~~ THEN REPLY ~Ihr gebt Mithbarakaz die Schuld für Euren Ab- und Tiamats Aufstieg? Das erscheint mir etwas bequem.~ GOTO 15										  								  
 									  IF ~~ THEN REPLY ~Dann habt Ihr beide versagt. Ihr konntet das Wissen nicht erlangen, und er konnte es nicht für immer verbergen.~ GOTO 15
@@ -92,17 +92,18 @@ END
 										  IF ~~ THEN REPLY ~Mithbarakaz war ein Diener Bahamuts, der wiederum ein Bruder Tiamats ist?~  GOTO 16
 										  IF ~~ THEN REPLY ~Deshalb stellte er sich gegen Eure Pläne.~ GOTO 16
 										  IF ~~ THEN REPLY ~Oh. Das scheint ein ziemlich großer Konflikt zu sein, in den wir hier hineingeraten sind. Euch ist er jedenfalls nicht gut bekommen.~ GOTO 16
+										  IF ~~ THEN REPLY ~Mit Streit unter göttlichen Geschwistern kenne ich mich ein wenig aus.~ GOTO 16
 										END
 
 											IF ~~ THEN BEGIN 16 
-											  SAY ~Mithbarakaz stand fest an Bahamuts Seite in diesem uraltem Krieg. Als Diener des Platinvaters misstraute er allem, was mit Macht, Unsterblichkeit und dunklem Wissen zu tun hatte. Deshalb stellte er sich gegen mich. Dadurch stärkte er letztlich nur Tiamat, meine Feindin. Bahamut und seine Diener teilen dieselbe Schwäche. Sie vergeuden ihre Kraft an die Niederen. Sie schützen die Schwachen, statt über sie zu herrschen. Sie halten Mitgefühl für eine Tugend. Und genau deshalb werden sie stets von jenen besiegt, die bereit sind, Macht zu nutzen. Wie Tiamat.~
+											  SAY ~Mithbarakaz stand fest an Bahamuts Seite in dessen Krieg gegen Tiamat. Als dessen treuer Diener stellte er sich auch gegen mich; doch stärkte er damit letztlich nur unsere gemeinsame Feindin.~
 											  //IF ~GlobalGT("AC#Bahamut","GLOBAL",0)~ THEN REPLY ~Einem alten Mann mit Kanarienvögeln bin ich kürzlich begegnet! Das war Bahamut, der Drachengott?~  GOTO 17
 											  //IF ~~ THEN REPLY ~Ich habe das Gefühl, dass ich wieder einmal der Spielball eines Gottes geworden bin.~  GOTO 17
 											  IF ~~ THEN GOTO 17
 											END
 
 												IF ~~ THEN BEGIN 17 
-												  SAY ~Bald seid Ihr verloren, wie all diejenigen, die sich in die Ränke der Götter einmischen... Doch ich, ich bin  müde... Ihr seid mir zu nichts nütze, kleiner <PRO_RACE>, lasst mich allein...~ 
+												  SAY ~Bald seid Ihr verloren, wie all diejenigen, die sich in die Ränke der Götter einmischen... Doch ich, ich bin... müde... Ihr seid mir zu nichts nütze, kleiner <PRO_RACE>, lasst mich allein...~ 
 												  IF ~~ THEN REPLY ~Wartet! Ich habe noch einige Fragen an Euch, bevor Ihr wieder in Eure Starre verfallt.~ GOTO 18
 												  IF ~~ THEN REPLY ~Bevor Ihr geht, müssen wir noch einige Dinge klären.~ GOTO 18
 												  IF ~~ THEN REPLY ~Ihr schuldet mir zumindest ein paar Antworten. Schließlich habe ich Euch geweckt.~ GOTO 18
@@ -112,7 +113,7 @@ END
 													  SAY ~Warum sollten für einen Gott die Wünsche eines Sterblichen von Belang sein?~ 
 													  IF ~~ THEN REPLY ~Weil ich Euch im Austausch etwas anbieten kann, von dem möglicherweise Eure weitere Existenz abhängt.~  GOTO 19
 													  IF ~~ THEN REPLY ~Schließlich hatte ich die Macht, Euch aus Eurem erbärmlichen Zustand zu erwecken.~  GOTO 19
-													  IF ~~ THEN REPLY ~Weil ich ansonsten die letzte Seele sein werde, die mit Euch gesprochen hat.~ GOTO 19
+													  IF ~~ THEN REPLY ~Weil ich ansonsten die letzte Seele sein werde, die jemals mit Euch gesprochen haben wird.~ GOTO 19
 													  IF ~~ THEN REPLY ~Ihr seid gerade nicht in der Position, das zu entscheiden.~ GOTO 19
 													  IF ~~ THEN REPLY ~Vor Euch steht kein Sterblicher. In mir fließt auch das Blut der Götter!~ GOTO 19
 													END
@@ -120,28 +121,34 @@ END
 														IF ~~ THEN BEGIN 19 
 														  SAY ~Ihr... droht... MIR? Mutig. Mutig, aber auch töricht. So sagt mir, was habt Ihr als Sterblicher anzubieten, das für einen vergessenen Gott von Belang ist?~
 														  IF ~~ THEN REPLY ~Ihr seid noch nicht ganz vergessen. Ihr habt einen letzten Anhänger auf Faerun, der Euch die Treue hält.~ + not_forgotten
-														  IF ~~ THEN REPLY ~Seht Ihr diese Waffen in unseren Händen? Ich habe Euch einen einzigen funken Leben eingehaucht, aber wenn Ihr nicht tut, was ich sage, werden wir unsere Waffen tief in Euer Herz bohren.~ + kill_you
+														  IF ~~ THEN REPLY ~Seht Ihr diese Waffen in unseren Händen? Ich habe Euch einen einzigen Funken Leben eingehaucht, aber wenn Ihr nicht tut, was ich sage, werden wir unsere Waffen tief in Euer Herz bohren.~ + kill_you
 														END
 														
 															IF ~~ THEN BEGIN not_forgotten 
 															SAY ~Was sagt Ihr da? Es besteht noch ein Funken Glaube an mich?~ 
 															IF ~~ THEN REPLY ~Zuerst sagt Ihr, wo sich Mithbarakaz jetzt befindet.~  GOTO where_is_mithbarakaz
+															IF ~~ THEN REPLY ~Dieses Wissen hat seinen Preis. Meiner lautet: Wo ist Mithbarakaz?~ GOTO where_is_mithbarakaz															
+															IF ~~ THEN REPLY ~Das hängt davon ab, was ich von Euch erfahre. Beginnen wir mit Mith Baraks Aufenthaltsort.~ GOTO where_is_mithbarakaz
 															END
 															
 																IF ~~ THEN BEGIN where_is_mithbarakaz 
-																SAY ~Mir ist es gleich. Was kümmert mich noch Mithbarakaz' Schicksal? Er war hier, ich spürte ihn. Doch er konnte mich nicht erwecken. Nicht so wie Ihr. Er zog unverrichteter Dinge wieder von dannen. Draußen haben sie auf ihn gewartet...~ 
+																SAY ~Was kümmert mich noch Mithbarakaz' Schicksal? Er war hier, ja. Ich spürte seine Gegenwart. Doch er konnte mich nicht aus meinem Tod erwecken; nicht wie Ihr. Schließlich zog er wieder davon. Draußen warteten bereits die Häscher Tiamats auf ihn.~
 																=
-																~...die Diener Tiamats! Sie haben ihn fortgeschleift, den stolzen Silbernen... tief in meinem Schlaf konnte ich es hören. Ich weiß, wohin sie ihn brachten.~
+																~Sie schleppten den stolzen Silbernen fort. Selbst in meinem Schlaf nahm ich es wahr. Ich weiß, wohin sie ihn brachten.~
 																IF ~~ THEN REPLY ~Wohin?~  GOTO palace_of_shattered_souls
+																IF ~~ THEN REPLY ~Sagt mir, wo ich ihn finden kann.~ GOTO palace_of_shattered_souls
+																IF ~~ THEN REPLY ~Dann habe ich keine Zeit zu verlieren. Wo brachten sie ihn hin?~ GOTO palace_of_shattered_souls
 																END
 																
 																	IF ~~ THEN BEGIN palace_of_shattered_souls 
-																	SAY ~Zu einem anderen Toten, vergessen, so wie ich. Doch dieser andere ruht schon seit Jahrtausenden, und niemand kennt mehr seinen Namen. Keine Macht kann ihn zurückbringen. Dort halten sie Mithbarakaz gefangen.~ 
+																	SAY ~Zu einem anderen toten Gott in der Astralebene. Vergessen, verlassen: So wie ich. Doch der andere ruht schon seit Jahrtausenden, und niemand kennt mehr seinen Namen. Die Githyanki hatten ihn besiedelt, doch wieder verlassen. Jetzt dient die Festung als Mithbarakaz' Gefängnis. Dort halten sie Mithbarakaz gefangen.~ 
 																	IF ~~ THEN REPLY ~Sie haben ihn zu einem anderen toten Gott gebracht?~  GOTO palace_of_shattered_souls_02
+																	IF ~~ THEN REPLY ~Ein Gefängnis auf dem Leichnam eines vergessenen Gottes...~ GOTO palace_of_shattered_souls_02
+																	IF ~~ THEN REPLY ~Natürlich. Warum sollte man einen solchen Gefangenen auch an einen gewöhnlichen Ort bringen?~ GOTO palace_of_shattered_souls_02
 																	END
 																	
 																		IF ~~ THEN BEGIN palace_of_shattered_souls_02 
-																		SAY ~Ja. Die Githyanki hatten ihn besiedelt, doch wieder verlassen. Jetzt dient die Festung als Mithbarakaz' Gefängnis.~ 
+																		SAY ~Der Name dieses Gottes ist längst verloren. Selbst die Erinnerung an ihn ist vollkommen erloschen. Nur seine sterbliche Hülle treibt noch immer durch die Astralebene. Dort haben die Diener Tiamats ihre Zuflucht gefunden. Wenn Mithbarakaz noch atmet, dann wird er dort gefangen gehalten.~ 
 																		IF ~~ THEN REPLY ~Wie komme ich dorthin?~ DO ~SetGlobal("AC#RevealACIL80","GLOBAL",1)
 																		AddJournalEntry(@80000,QUEST)~ GOTO how_do_i_get_there
 																		END
@@ -197,15 +204,18 @@ END
 																			
 																				IF ~~ THEN BEGIN last_follower_02 
 																				SAY ~Maldraedior der Blaue ... lebt?~ 
-																				IF ~~ THEN REPLY ~Ja. Ich habe selbst mit ihm gesprochen.~ DO ~SetGlobal("AC#KalzareinadsFaith","GLOBAL",1)
-																				EraseJournalEntry(@79600)
-																				AddJournalEntry(@79601,QUEST_DONE)~ GOTO last_follower_03
+																				IF ~~ THEN REPLY ~Ja. Ich habe selbst mit ihm gesprochen.~ DO ~SetGlobal("AC#KalzareinadsFaith","GLOBAL",1) AddJournalEntry(@79601,QUEST_DONE)~ GOTO last_follower_03
+																				IF ~~ THEN REPLY ~Maldraedior lebt und erinnert sich noch an Euch.~ DO ~SetGlobal("AC#KalzareinadsFaith","GLOBAL",1) AddJournalEntry(@79601,QUEST_DONE)~ GOTO last_follower_03
+																				IF ~~ THEN REPLY ~Euer letzter treuer Diener wandelt noch immer auf Toril.~ DO ~SetGlobal("AC#KalzareinadsFaith","GLOBAL",1) AddJournalEntry(@79601,QUEST_DONE)~ GOTO last_follower_03
 																				END
 																				
 																					IF ~~ THEN BEGIN last_follower_03 
-																					SAY ~Das sind... gute Nachrichten, die Ihr mir bringt. Ja... jetzt vernehme ich seine Gebete an mich... zum ersten Mal seit Jahrzehnten spüre ich wieder den Glauben an mich... es macht... mich stärker!~ 
+																					SAY ~Dann bin ich noch nicht vergessen! Es gibt noch immer einen, der sich an mich erinnert! Ja... jetzt vernehme ich seine Gebete an mich... leise, doch... unüberhörbar. Zum ersten Mal spüre ich wieder Glauben an mich... es macht mich stärker! Nach all dieser Zeit! Ihr habt einem vergessenen Gott wieder Hoffnung gebracht.~ 
 																					IF ~~ THEN REPLY ~Dann könnt Ihr ja jetzt auch den Fluch von Mithbarakaz nehmen.~ GOTO cure_curse_02
-																					IF ~~ THEN REPLY ~Schön zu wissen. Dann werde ich Euch einmal wieder alleine lassen.~ GOTO whats_next
+																					IF ~~ THEN REPLY ~Somit hat sich die Reise für uns ausgezahlt. Ihr habt einen Gläubigen wiedergefunden, und ich werde jetzt Mith Barak finden.~ GOTO whats_next
+																					IF ~~ THEN REPLY ~Also habt Ihr jetzt wieder einen Anhänger. Passt auf, dass Ihr ihn nicht auch noch verliert.~ GOTO whats_next
+																					IF ~~ THEN REPLY ~Ihr seid jetzt wohl die kleinste Religion der Reiche. Herzlichen Glückwunsch!~ GOTO whats_next
+																					IF ~~ THEN REPLY ~Schön. Dann werde ich Euch einmal wieder alleine lassen.~ GOTO whats_next
 																					END
 																																											
 																						
@@ -235,11 +245,19 @@ END
 																									IF ~~ THEN REPLY ~Ich danke Euch für diese Tat.~ DO ~SetGlobal("AC#MithbarakazCurse","GLOBAL",1)
 																									AddJournalEntry(@79700,QUEST_DONE)
 																									ReputationInc(1)
-																									AddexperienceParty(7500)~ GOTO whats_next
+																									AddexperienceParty(7500)~ GOTO bye_getting_tired
 																									END
 																									
 																					IF ~~ THEN BEGIN whats_next 
-																					SAY ~Ich werde müde. Lasst mich nun in Ruhe weiter dämmern, Sterblicher.~ 
+																					SAY ~Ich werde müde. Lasst mich nun in Ruhe wieder dämmern, Sterblicher.~ 
+																					IF ~~ THEN REPLY ~Dann schlaft gut. Diesmal hoffentlich etwas weniger lang.~ GOTO bye_getting_tired
+																					IF ~~ THEN REPLY ~Keine Sorge; ich habe nicht vor, Euch noch einmal zu wecken.~ GOTO bye_getting_tired
+																					IF ~~ THEN REPLY ~Kehrt zurück in die Dunkelheit. Die Welt wird auch ohne Euch weiter zurechtkommen.~ GOTO bye_getting_tired
+																					IF ~Global("AC#MithbarakazCurse","GLOBAL",0)~ THEN REPLY ~Vorher solltet Ihr noch Mithbarakaz von seinem Fluch erlösen.~ GOTO cure_curse_02
+																					END
+																					
+																					IF ~~ THEN BEGIN bye_getting_tired 
+																					SAY ~Die Stimmen werden wieder fern. Die Welt entschwindet mir. Vielleicht... bin ich doch nicht ganz vergessen...~ 
 																					IF ~~ THEN DO ~SetGlobal("AC#Heart","ACIL79",7)~ EXIT
 																					END
 																			

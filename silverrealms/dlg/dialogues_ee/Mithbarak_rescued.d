@@ -66,7 +66,7 @@ END
 				END
 				
 					IF ~~ THEN BEGIN rescue_bye
-					SAY ~Jedenfalls ist Euch der Dank des ganzen Zwergenvolkes gewiss - und auch derjenige der guten Drachen! Ich werde mich nun in den Ratssaal begeben müssen. Ich bin lange fortgewesen! Es gibt sicher viel zu regeln. Euch anderen Danke ich für den herzlichen Empfang, Ihr habt einem alten Drachen eine große Freude bereitet. So kehren wir denn zu unserem Tagesgeschäft zurück. Und Euch, <CHARNAME>, noch einmal alles Gute.~
+					SAY ~Jedenfalls ist Euch der Dank des ganzen Zwergenvolkes gewiss - und auch derjenige der guten Drachen! Ich werde mich nun in den Ratssaal begeben müssen. Ich bin lange fort gewesen! Es gibt sicher viel zu regeln. Euch anderen danke ich für den herzlichen Empfang, Ihr habt einem alten Drachen eine große Freude bereitet. So kehren wir denn zu unserem Tagesgeschäft zurück. Und Euch, <CHARNAME>, noch einmal alles Gute.~
 					IF ~~ THEN DO ~SetGlobal("AC#Mithbarak_Rescued","GLOBAL",19)
 					AddJournalEntry(@99000,QUEST_DONE)								   
 					EscapeArea()~ EXIT

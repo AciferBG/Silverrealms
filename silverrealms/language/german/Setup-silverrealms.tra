@@ -244,17 +244,13 @@ Der Hersteller des Trankes scheint außergewöhnliche Mühen aufgewendet zu habe
 @210 = ~Schuppenpanzer~
 @211 = ~Messingdrachenschuppenpanzer~
 @212 = ~Dies ist ein Schuppenpanzer, der aus den Schuppen irgendeiner Bestie hergestellt wurde.~
-@213 = ~Drachenschuppenpanzer sind leicht, widerstandsfähig und feuerresistent. Natürlich sind diese Rüstungen sehr begehrt, doch es ist äußerst schwierig, wenn nicht gar unmöglich, einen uralten Drachen zu finden und ihn zu töten, um aus seinen Schuppen eine derartige Rüstung anzufertigen. Normalerweise ist es leichter, wenn man gleich nach einem bereits existierenden Drachenschuppenpanzer wie diesem sucht. Man sollte ihn jedoch nicht unbedingt in der Gegenwart von Drachen tragen. Dies ist ein Panzer, der aus den Schuppen des guten ehrwürdigen Messingdrachen Mimmeshtuaroth aus der Raurinwüste gefertigt worden ist.
+@213 = ~Messingdrachenschuppenpanzer sind leicht, widerstandsfähig und von Natur aus feuerresistent. Aus den Schuppen uralter Messingdrachen gefertigt, zählen sie zu den wertvollsten und seltensten Rüstungen Faerûns. Allerdings ist es eine abgrundtief böse Tat, einen Messingdrachen zu töten und aus seinen Schuppen solch eine Rüstung herzustellen. Dieser Panzer wurde aus den Schuppen des ehrwürdigen Messingdrachen Mimmeshtuaroth aus der Raurinwüste gefertigt.
 
 SPEZIFISCHE EIGENSCHAFTEN:
 
 Besondere Fähigkeiten: Träger erhält 25% Feuerresistenz und ist gegen die gasförmigen Zauber "Stinkende Wolke" und "Todeswolke" immun.
 Rüstungsklasse: -1
-Gewicht: 30
-Kann nicht verwendet werden von:
-Barden
-Magiern
-Dieben~
+Gewicht: 30~
 @214 = ~An dieser Stelle scheint die Metallmauer einmal durchbrochen und hastig wieder ausgebessert worden zu sein. Mit normalen Möglichkeiten gibt es aber keine Möglichkeit, die starken Metallbeschläge zu zerschlagen.~
 @215 = ~Ihr nehmt das Bein des Bebilith und schlagt mit voller Wucht auf die Metallteile, die mit einem lauten Schlag zerbersten.~
 @216 = ~Ihr benötigt irgendein Objekt, das Metall zum Brechen bringen kann, um die Mauer an dieser Stelle zu zerstören.~
@@ -1666,6 +1662,8 @@ Charvekannathors Hort~
 
 @6330 = ~Wilde Magie~
 @6331 = ~Magie scheint hier wieder normal zu funktionieren.~
+
+@6400 = ~Ein Hoch auf <CHARNAME>, den Retter unseres Königs!~
 
 @6470 = ~Ihr könnt mich nicht besiegen! In meinem Hort bin ich unbesiegbar!~
 @6471 = ~Habt Ihr noch immer nicht genug?~

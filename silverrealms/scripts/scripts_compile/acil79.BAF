@@ -68,22 +68,23 @@ END
 IF
     Global("AC#KalzareinadDead","GLOBAL",1)
     Global("AC#MithbarakazCurse","GLOBAL",0)
-    Global("JournalKalzaDead","ACIL79",0)
+    Global("AC#JourKalzaDead","GLOBAL",0)
 THEN
     RESPONSE #100
-        SetGlobal("JournalKalzaDead","ACIL79",1)
+        SetGlobal("AC#JourKalzaDead","GLOBAL",1)
         AddJournalEntry(@79500,QUEST_DONE)
         AddJournalEntry(@79602,QUEST_DONE)
+        AddJournalEntry(@79701,QUEST_DONE) 
 END
 
 IF
     Global("AC#KalzareinadDead","GLOBAL",1)
     Global("AC#MithbarakazCurse","GLOBAL",1)
-    Global("JournalKalzaDead","ACIL79",0)
+    Global("AC#JourKalzaDead","GLOBAL",0)
 THEN
     RESPONSE #100
-        SetGlobal("JournalKalzaDead","ACIL79",1)
+        SetGlobal("AC#JourKalzaDead","GLOBAL",1)
         AddJournalEntry(@79501,QUEST_DONE)
-         AddJournalEntry(@79602,QUEST_DONE)       
+        AddJournalEntry(@79602,QUEST_DONE)       
 END
 

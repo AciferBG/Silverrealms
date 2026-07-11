@@ -1,47 +1,45 @@
 IF
-	!Contains("ac#80pst",Myself)
-	Global("AC#80PortalOn_A","ACIL80",1)
+    !Contains("ac#80pst",Myself)  // Portalstein
+    Global("AC#80PortalOff_A","ACIL80",0)
 THEN
-	RESPONSE #100
-                SetGlobal("AC#80PortalOn_A","ACIL80",0)
+    RESPONSE #100
+        ClearAllActions()
+        StartCutSceneMode()
+        SetGlobal("AC#80PortalOff_A","ACIL80",1)
+        TriggerActivation("Travel_A_B",FALSE)
+        CreateVisualEffectObject("ICMAGICH",Myself)
+        AmbientActivate("Portala",FALSE)
+        SoundActivate("Amb_portal_a",FALSE)
+        EndCutSceneMode()
 END
 
 IF
-	Contains("ac#80pst",Myself)
-	Global("AC#80PortalOff_A","ACIL80",1)
+    !Contains("ac#80pst",Myself)  // Portalstein
+    Global("AC#80PortalOn_A","ACIL80",1)
 THEN
-	RESPONSE #100
-                SetGlobal("AC#80PortalOff_A","ACIL80",0)
+    RESPONSE #100
+        SetGlobal("AC#80PortalOn_A","ACIL80",0)
 END
 
 IF
-	Contains("ac#80pst",Myself)
-	Global("AC#80PortalOn_A","ACIL80",0)
+    Contains("ac#80pst",Myself)  // Portalstein
+    Global("AC#80PortalOff_A","ACIL80",1)
 THEN
-	RESPONSE #100
-                SetInterrupt(FALSE)
-                SetGlobal("AC#80PortalOn_A","ACIL80",1)
-		CreateVisualEffectObject("ICMAGICH",Myself)
-		AmbientActivate("Portala",TRUE)
-		SoundActivate("Amb_portal_a",TRUE)
-		TriggerActivation("Travel_A_B",TRUE)
-		//ContainerEnable("AC#61CO2",FALSE)
-                SetInterrupt(TRUE)
+    RESPONSE #100
+        SetGlobal("AC#80PortalOff_A","ACIL80",0)
 END
 
 IF
-	!Contains("ac#80pst",Myself)
-	Global("AC#80PortalOff_A","ACIL80",0)
+    Contains("ac#80pst",Myself)  // Portalstein
+    Global("AC#80PortalOn_A","ACIL80",0)
 THEN
-	RESPONSE #100
-                ClearAllActions()
-		StartCutSceneMode()
-                SetGlobal("AC#80PortalOff_A","ACIL80",1)
-	        TriggerActivation("Travel_A_B",FALSE)
-		CreateVisualEffectObject("ICMAGICH",Myself)
-		AmbientActivate("Portala",FALSE)
-		SoundActivate("Amb_portal_a",FALSE)
-		//ContainerEnable("AC#61CO2",FALSE)
-		EndCutSceneMode()
+    RESPONSE #100
+        SetInterrupt(FALSE)
+        SetGlobal("AC#80PortalOn_A","ACIL80",1)
+        CreateVisualEffectObject("ICMAGICH",Myself)
+        AmbientActivate("Portala",TRUE)
+        SoundActivate("Amb_portal_a",TRUE)
+        TriggerActivation("Travel_A_B",TRUE)
+        SetInterrupt(TRUE)
 END
 

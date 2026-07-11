@@ -508,6 +508,8 @@ COPY ~silverrealms/cre/AC#MAL88.cre~ ~override~ // Malphas: Boss fight, kill- an
   SAY BATTLE_CRY1 @5146
   SAY BATTLE_CRY1 @5147
   SAY BATTLE_CRY1 @5148
+  SAY DAMAGE @5149
+  SAY DYING @5150
 
 COPY ~silverrealms/cre/AC#MAL2T.cre~ ~override~ // Malphas: First Tiamat Cutscene
   SAY NAME1 @62 SAY NAME2 @62
@@ -1208,7 +1210,7 @@ COPY ~silverrealms/cre/AC#MYZO1.cre~ ~override/AC#MYZO1.cre~
   
 COPY ~silverrealms/cre/AC#CYLL1.cre~ ~override/AC#CYLL1.cre~
   SAY NAME1 @208 SAY NAME2 @208
-
+/*
 ADD_MEMORIZED_SPELL ~SPPR208~ #1 ~priest~ ( 1 ) // CLERIC_HOLD_PERSON
 ADD_MEMORIZED_SPELL ~SPPR204~ #1 ~priest~ ( 1 ) // CLERIC_CHARM_PERSON
 ADD_MEMORIZED_SPELL ~SPPR409~ #3 ~priest~ ( 1 ) // CLERIC_DEATH_WARD
@@ -1219,6 +1221,7 @@ ADD_MEMORIZED_SPELL ~SPPR505~ #4 ~priest~ ( 1 ) // CLERIC_TRUE_SIGHT
 ADD_MEMORIZED_SPELL ~SPPR607~ #5 ~priest~ ( 2 ) // CLERIC_HEAL
 ADD_MEMORIZED_SPELL ~SPPR711~ #6 ~priest~ ( 1 ) // CLERIC_REGENERATE
 ADD_MEMORIZED_SPELL ~SPPR709~ #6 ~priest~ ( 1 ) // CLERIC_CONFUSION
+*/
 
   
 COPY ~silverrealms/cre/AC#BEBI1.cre~ ~override/AC#BEBI1.cre~

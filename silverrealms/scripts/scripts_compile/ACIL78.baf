@@ -1,23 +1,7 @@
 IF
-	Global("EnteredArea","ACIL78",0)
+    Global("EnteredArea","ACIL78",0)
 THEN
-	RESPONSE #100
-		SetGlobal("EnteredArea","ACIL78",1)
-		FadeFromColor([30.0],0)
+    RESPONSE #100
+        SetGlobal("EnteredArea","ACIL78",1)
+        FadeFromColor([30.0],0)
 END
-
-IF
-	Global("AC#Astraltravel","ACIL78",1)
-THEN
-	RESPONSE #100
-                SetGlobal("AC#Astraltravel","ACIL78",2)
-                ClearAllActions()
-		StartCutSceneMode()
-		Wait(2)
-		StartCutScene("ac#cut78")
-END
-
-
-
-
-

@@ -451,10 +451,9 @@ END
 														IF ~~ THEN BEGIN finito_02
 														SAY ~Ich muss zugeben, dass ich schon jahrhundertelang nicht mehr solch ein anregendes Gespräch geführt habe, <CHARNAME>. Lebt wohl, und viel Glück bei Eurer Aufgabe. Wenn Ihr scheitert, werden wir uns nie wiedersehen. Wenn Ihr mich hintergeht, schon, und dann würdet Ihr Euch wünschen, gescheitert zu sein!~
 														IF ~~ THEN DO ~SetGlobal("AC#Talked_to_Maldraedior","GLOBAL",1)
-														EraseJournalEntry(@64104)
-														EraseJournalEntry(@71000)
 														AddJournalEntry(@71010,QUEST_DONE)
 														AddJournalEntry(@71100,QUEST)
+														AddJournalEntry(@79690,QUEST)
 														CreateVisualEffectObject("SPDIMNDR",Myself) 
 														Wait(2)				
 														DestroySelf()~ EXIT

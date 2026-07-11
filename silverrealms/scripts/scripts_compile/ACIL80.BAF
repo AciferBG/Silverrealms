@@ -18,7 +18,6 @@ THEN
 		AmbientActivate("Portale",TRUE)
 		SoundActivate("Amb_portal_e",TRUE)
 		TriggerActivation("Travel_E_D",TRUE)
-		SpawnPtDeactivate("Allips02")
 		SpawnPtDeactivate("Skeletonarmy01")
 		SpawnPtDeactivate("Skeletonarmy02")
 		SpawnPtDeactivate("Skeletonwarriors")
@@ -32,13 +31,21 @@ THEN
 END
 
 IF
+    Global("AC#MithbarakazCurse","GLOBAL",0)
+    Global("AC#JourKalzaDead","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("AC#JourKalzaDead","GLOBAL",1)
+        AddJournalEntry(@79701,QUEST_DONE) 
+END
+
+IF
 	OpenState("DOOR01",TRUE)
 	Global("SpawnXP","ACIL80",0)
 THEN
 	RESPONSE #100
 		SetGlobal("SpawnXP","ACIL80",1)
 		AddExperienceParty(10000)
-		SpawnPtActivate("Allips02")
 		SpawnPtActivate("Skeletonarmy01")
 		SpawnPtActivate("Skeletonarmy02")
 		SpawnPtActivate("Skeletonwarriors")

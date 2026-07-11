@@ -703,13 +703,10 @@ Ich habe im Inneren des alten Drachentempels zwölf angebrannte Sockel entdeckt.
 @71010  = ~Die zwölf Sockel
 
 Ich habe mithilfe eines alten Rituals Kontakt zu einem Diener der Gottheit aufgenommen, die Mith Barak verflucht hatte. Sein Name war Maldraedior.~
-@71100  = ~Der verfluchte Silberdrache
+@71100  = ~Der Schlafende König
 
-Ich weiß nicht, wo ich anfangen soll, also fasse ich mich kurz. Mithbarakaz ist in Wahrheit ein verfluchter Silberdrache. Der Gott Kalzareinad, der den Fluch ausgesprochen hat, treibt tot in der Astralebene. Dort scheint auch Mithbarakaz gefangen zu sein. Ich muss ein Portal in die Astralebene finden und dort Kalzareinads Körper aufsuchen, um herauszufinden, wo sich Mithbarakaz gerade aufhält. Ich bin gespannt, wie die Zwerge Iltkazars auf diesen Neuigkeiten reagieren werden.~
-//___________________________Tiglath
-@79000  = ~Tiglath
+Ich fasse mich kurz: König Mith Barak ist in Wahrheit ein verfluchter Silberdrache. Der Gott Kalzareinad, der den Fluch ausgesprochen hat, treibt tot in der Astralebene. Dort scheint auch Mithbarakaz gefangen zu sein. Ich muss ein Portal in die Astralebene finden und dort Kalzareinads Körper aufsuchen, um herauszufinden, wo sich Mithbarakaz gerade aufhält. Ich bin gespannt, wie die Zwerge Iltkazars auf diesen Neuigkeiten reagieren werden.~
 
-Mir ist eine kleine drachenartige Kreatur begegnet, die viel über meine Suche nach Mith Barak zu wissen scheint. Die Herrin des kleinen Wesens, eine Person namens Tiglath, möchte mich im Stadttorviertel Athkatlas treffen. Vielleicht sollte ich dort einmal vorbeischauen, denn es würde mich beunruhigen, wenn jemand Unbekanntes derart gut über meine Schritte informiert ist.~
 //___________________________Kalzareinads Herz
 @79500  = ~Kalzareinads Herz
 
@@ -728,9 +725,18 @@ Ich habe der Drachengottheit Kalzareinad mitgeteilt, dass noch ein Gläubiger in
 
 Mit dem endgültigen Tod Kalzareinads wird auch der Glaube an ihn bald versiegen. Dies wird mir sicherlich den Zorn seines letzten Anhängers Maldraedior einbringen.~
 //___________________________Mith Baraks Fluch
+@79690 = ~Mith Baraks Fluch
+
+König Mith Barak ist in Wirklichkeit ein Silberdrache, der von der toten Drachengottheit Kalzareinad verflucht wurde und seitdem im Körper eines Zwerges leben muss. Um den Fluch zu brechen, muss Kalzareinad dazu bewegt werden, diesen von ihm zu nehmen.~
 @79700  = ~Mith Baraks Fluch
 
 Ich habe den Fluch, der auf Mith Barak lastet, von ihm nehmen lassen. Für diese gute Tat wird er mir sicher sehr dankbar sein.~
+
+@79701  = ~Mith Baraks Fluch
+
+Mith Baraks Fluch wurde nicht gebrochen. Der Silberdrache wird also zeitlebens als Zwerg auf dieser Welt wandeln müssen.~
+
+
 //___________________________Mith Baraks Gefängnis
 @80000  = ~Befreie König Mith Barak
 
@@ -761,10 +767,10 @@ Beldas erwähnte eine Leiter, die er im Inneren der Turboldfeste zurückgelassen
 @90021  = ~Der Abstieg vom Turboldberg
 
 Ich habe die Leiter gefunden. Wenn ich sie im Freien an dem Felsvorsprung festmache, werde ich den Turboldberg wieder verlassen können.~
-//___________________________Der Abstieg vom Turboldberg
-@99000  = ~Iltkazar ist gerettet
+//___________________________Schlafender König
+@99000  = ~Befreie König Mith Barak
 
-Ich habe Iltkazar vor der Bedrohung Tiamats gerettet. Sowohl König Mith Barak als auch die Zwerge waren mir äußerst dankbar, und ich werde von nun in Iltkazar ein- und ausgehen können, wie es mir beliebt.~
+Ich habe Mith Barak befreit und damit Iltkazar seinen rechtmäßigen König zurückgegeben und außerdem vor der Bedrohung Tiamats gerettet. Sowohl König Mith Barak als auch die Zwerge waren mir äußerst dankbar, und ich werde von nun in Iltkazar ein- und ausgehen können, wie es mir beliebt.~
 
 @99500   = ~Der Schlafende König
 

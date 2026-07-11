@@ -1,0 +1,12 @@
+IF
+    Range(Player1,20)
+    GlobalGT("AC#Mithbarak_Rescued","GLOBAL",18)
+    Global("HelloCharname","LOCALS",0)
+THEN
+    RESPONSE #100
+        SetGlobal("HelloCharname","LOCALS",1)
+        SwingOnce()
+        DisplayStringHead(Myself,@6400)  // ~Ein Hoch auf <CHARNAME>, den Retter unseres Königs!~
+        Wait(6)
+END
+

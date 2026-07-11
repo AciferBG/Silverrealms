@@ -23,7 +23,7 @@ IF ~~ THEN EXTERN ~AC#MAL02~ 02
 END
 
 IF ~~ THEN BEGIN 3
-SAY ~Vernichtet? Ihr könnt mich bekanntermaßen nicht töten, denn das würde meine Rückkehr in meinen Körper auf der materiellen Ebene und damit meine Befreiung bedeuten. UNd meine Befreier sind schon auf dem Weg hierher!~
+SAY ~Vernichtet? Ihr könnt mich hier nicht töten, denn das würde meine Rückkehr in meinen Körper auf der materiellen Ebene bedeuten! Und damit meine Befreiung! Und meine Befreier sind schon auf dem Weg hierher!~
 IF ~~ THEN EXTERN ~AC#MAL02~ 03
 END
 
@@ -68,7 +68,7 @@ IF ~~ THEN EXTERN ~AC#MITH2~ 2
 END
 
 IF ~~ THEN BEGIN 02
-SAY ~Wir unterscheiden uns gar nicht so sehr, "König"... Ihr tragt Ketten aus Fleisch. Ich trage Federn. Und indem ich Euch habe, werde ich bald wieder meine wahre gestalt zurückerlangen, während Ihr vernichtet werdet!~
+SAY ~Wir unterscheiden uns gar nicht so sehr, "König"... Ihr tragt Ketten aus Fleisch. Ich trage Federn. Und indem ich Euch habe, werde ich bald wieder meine wahre Gestalt zurückerlangen, während Ihr vernichtet werdet!~
 IF ~~ THEN EXTERN ~AC#MITH2~ 3
 END
 

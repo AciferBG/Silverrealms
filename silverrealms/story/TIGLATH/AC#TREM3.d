@@ -23,7 +23,6 @@ END
 	
 				IF ~~ THEN BEGIN said_too_much
 				  SAY ~Ooh! Habe schon zuviel gesagt! Müsst mit Herrin sprechen! Ihr Name ist Tiglath. Sie wartet in Athkatla bei den Stadttoren auf Euch! Aber beeilt Euch, denn sie wird nicht ewig dort auf Euch warten können.~
-				   IF ~~ THEN DO ~SetGlobal("AC#_TiglathSpawn","GLOBAL",1)
-				   AddJournalEntry(@79000,QUEST)
+				   IF ~~ THEN DO ~SetGlobal("AC#_TiglathSpawn","GLOBAL",1)				   
 				   EscapeArea()~  EXIT
 				END	

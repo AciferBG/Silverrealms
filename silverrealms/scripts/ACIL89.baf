@@ -1,0 +1,29 @@
+IF
+	Global("EnteredArea","ACIL89",0)
+THEN
+	RESPONSE #100
+		SetMusic(NIGHT,%AC#IL56%)
+		SetMusic(DAY,%AC#IL56%)		
+		SetGlobal("EnteredArea","ACIL89",1)	
+        Continue()
+END
+
+IF
+    Global("AC#MithbarakazCurse","GLOBAL",0)
+    Global("CreateMithBarakDwarf","ACIL89",0)
+THEN
+    RESPONSE #100
+        SetGlobal("CreateMithBarakDwarf","ACIL89",1)
+        CreateCreature("AC#MITH5",[1372.566],SW)  // König Mith Barak
+        Continue()
+END
+
+IF
+    Global("AC#MithbarakazCurse","GLOBAL",1)
+    Global("CreateMithBarakDwarf","ACIL89",0)
+THEN
+    RESPONSE #100
+        SetGlobal("CreateMithBarakDwarf","ACIL89",1)
+        CreateCreature("AC#MITHD",[1372.566],SW)  // Mithbarakaz
+        Continue()
+END

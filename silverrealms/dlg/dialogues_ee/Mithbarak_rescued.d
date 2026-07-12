@@ -5,6 +5,11 @@
 
 BEGIN ~AC#GROM5~
 
+BEGIN AC#TURBB 
+BEGIN AC#GROMB 
+BEGIN AC#BETTB 
+BEGIN AC#ILFNB 
+
 BEGIN ~AC#MITH5~
 
 IF ~Global("AC#Mithbarak_Rescued","GLOBAL",20)
@@ -15,14 +20,14 @@ IF ~~ THEN REPLY ~Ihr habt mir eine ganze Menge zu erklären.~ GOTO throne_room_
 END
 
 IF ~~ THEN BEGIN throne_room_explain
-SAY ~Und das werde ich auch. Über Kalzareinad, über den Fluch und über all die Jahre meines Exils werden wir noch sprechen. Doch zuvor gibt es eine Pflicht, der ich mich nicht entziehen kann.~
+SAY ~Und das werde ich auch. Über Kalzareinad, den Fluch und all die Jahre meines Exils werden wir noch sprechen. Doch zuvor gibt es eine Pflicht, der ich mich nicht entziehen kann.~
 IF ~~ THEN GOTO throne_room_02
 END
 
 IF ~~ THEN BEGIN throne_room_02
-SAY ~Mein Volk hat lange auf diesen Tag gewartet. Zu lange! Viele von ihnen glaubten nicht, ihren König jemals wiederzusehen. Und noch weniger hätten geglaubt, dass ein Fremder von der Oberfläche derjenige sein würde, der Iltkazar rettet.~
+SAY ~Mein Volk hat lange auf diesen Tag gewartet. Viel zu lange! Viele von ihnen glaubten nicht, ihren König jemals wiederzusehen. Und noch weniger hätten geglaubt, dass ein Fremder von der Oberfläche derjenige sein würde, der Iltkazar rettet.~
 = 
-~Nein, <CHARNAME>. Heute soll es nicht um mich gehen. Heute soll Iltkazar erfahren, wem es seine Rettung verdankt.~
+~Und heute soll Iltkazar auch erfahren, wem es seine Rettung verdankt.~
 = 
 ~Lasst die Hörner erklingen! Ruft die Bürger in den Thronsaal! Heute ehren wir den Retter Iltkazars!~
 IF ~~ THEN DO ~SetGlobal("AC#IltkazarCelebration","GLOBAL",1)							   
@@ -30,7 +35,7 @@ IF ~~ THEN DO ~SetGlobal("AC#IltkazarCelebration","GLOBAL",1)
 END	
 
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN hello_0
-SAY ~Ihr habt es geschafft! Ich war mir nicht sicher, wie lange ich das Portal noch hätte offenhalten können.~
+SAY ~Ihr habt es geschafft! Ich war mir nicht sicher, wie lange ich das Portal noch hätte offenhalten können.~ [AC#ILMIZ]
 IF ~Global("AC#MithbarakazCurse","GLOBAL",1)~ THEN  + mith_dragon_01
 IF ~Global("AC#MithbarakazCurse","GLOBAL",0)~ THEN  + mith_dwarf_01
 END
@@ -155,4 +160,30 @@ CHAIN IF ~~ THEN AC#MITH5 chain_many_victims
 == AC#ELERN ~Ein Hoch auf <CHARNAME>!~
 END
 IF ~~ THEN + dwarves_impressed
+
+CHAIN IF ~Global("AC#IltkazarCelebration","GLOBAL",2)~ THEN AC#MITH5 chain_mith_celebration_01
+~Bürger von Iltkazar! Freunde! Kinder Shanatars!~
+= ~Zu lange lag ein Schatten über unserer Stadt. Zu lange hattet Ihr Sorge, dass Euer König niemals aus seinem Schlaf wieder erwachen würde.~
+= ~Und doch stehen wir heute alle hier. Frei. Ungebrochen. Stolz. Nicht durch mein Werk. Nein!~
+= ~Diesen Tag verdanken wir einem Bewohner der Oberfläche, der unsere Not zu seiner eigenen machte. Der für uns kämpfte, als andere uns längst vergessen hatten. Der durch Flammen, Dunkelheit und Verrat ging und dennoch nicht von <PRO_HISHER>em Weg abwich.~
+= ~<CHARNAME>!~
+= ~Im Namen Iltkazars, im Namen des Zwergenvolkes und im Namen aller guten Drachen danke ich Euch.~
+= ~Mögen die Barden der Oberfläche Eure Taten besingen. Mögen die Schmiede des Unterreichs Euren Namen in Stahl schlagen. Mögen unsere Kinder sich an Euch erinnern, wenn wir selbst längst zu Staub geworden sind.~
+= ~Ein Hoch auf <CHARNAME>, den Retter Iltkazars!~
+== AC#TURBB ~Hoch lebe <CHARNAME>!~
+== AC#GROMB ~Hoch!~
+== AC#BETTB ~Hoch!~
+== AC#ILFNB ~Hoch!~ [AC#ILFNB]
+== AC#MITH5~Ruhe, meine Freunde! Ruhe!~
+= ~Es erfreut mein Herz mehr, als Worte es ausdrücken können, Euch alle heute hier versammelt zu sehen. Lange habe ich von diesem Augenblick geträumt. Lange genug. Doch Feste gehen vorüber, und Königreiche regieren sich nicht von selbst.~
+= ~Iltkazar muss wieder aufgebaut werden. Unsere Verluste müssen gezählt, unsere Bündnisse erneuert und unsere Wunden geheilt werden. Viel Arbeit liegt vor uns.~
+= ~Für heute jedoch sollen die Schmieden schweigen, die Gelehrten ihre Bücher schließen und die Krieger ihre Waffen niederlegen. Heute wird gefeiert!~
+== AC#ILFNB ~Hurra!~ [AC#ILFNB]
+== AC#MITH5 ~Heute beginnt die Zukunft Iltkazars.~
+= ~Und nun geht in die Tavernen und leert Euren Met zu Ehren unserer Stadt! Ich werde mich hier im Thronsaal an die Arbeit machen, die letzten hundert Jahre nachzuarbeiten. Euer König hat nach seiner Abwesenheit einen Berg von Angelegenheiten zu regeln.~
+== AC#ILFNB ~Wir trinken auf unseren König! Heute soll der Met niemals versiegen.~ [AC#ILFNB]
+== AC#MITH5 ~Zieht aus in die Stadt und feiert!~
+== AC#MITH5 ~<CHARNAME>, bleibt noch eine Weile. Sobald das Volk mit den Feierlichkeiten beginnt, möchte ich mit Euch sprechen. Es gibt vieles zu erzählen.~
+END
+
 	

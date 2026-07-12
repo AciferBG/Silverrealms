@@ -2,6 +2,9 @@
 
 COPY ~silverrealms/cre/copy~         ~override~
 
+COPY ~silverrealms/cre/AC#ILFNB.cre~ ~override~
+  SAY NAME1 @9059 SAY NAME2 @9059 
+
 COPY ~silverrealms/cre/AC#HEAR2.cre~ ~override~
   SAY NAME1 @152 SAY NAME2 @152
 
@@ -582,6 +585,7 @@ COPY ~silverrealms/cre/AC#MITHD.cre~ ~override/AC#MITHD.cre~ // rescued Mithbara
   SAY INITIAL_MEETING   @5400
   SAY SELECT_COMMON1  @5401
   SAY SELECT_COMMON2  @5402
+  SAY SELECT_COMMON2  @5403
 
 COPY ~silverrealms/cre/AC#DWCU1.cre~ ~override/AC#DWCU1.cre~
   SAY NAME1 @44 SAY NAME2 @44
@@ -648,6 +652,17 @@ COPY ~silverrealms/cre/AC#TURB9.cre~ ~override/AC#TURB9.cre~ // Turbaern in ACIL
   SAY BATTLE_CRY1 @5110
 
 COPY ~silverrealms/cre/AC#TURBA.cre~ ~override/AC#TURBA.cre~ // Turbaern in ACIL64
+  SAY NAME1 @90 SAY NAME2 @90
+        SAY INITIAL_MEETING   @5111
+  SAY SELECT_COMMON1  @5111
+  SAY SELECT_COMMON2  @5112
+  SAY SELECT_COMMON3  @5113
+  SAY SELECT_COMMON4  @5114
+  SAY SELECT_COMMON5  @5115
+  SAY SELECT_COMMON6  @5116
+  SAY BATTLE_CRY1 @5110
+  
+COPY ~silverrealms/cre/AC#TURBB.cre~ ~override~ // Turbaern celebration
   SAY NAME1 @90 SAY NAME2 @90
         SAY INITIAL_MEETING   @5111
   SAY SELECT_COMMON1  @5111
@@ -736,6 +751,18 @@ COPY ~silverrealms/cre/ac#dun64.cre~ ~override~  // Dunnabar in ACIL64 (Thronero
   SAY BATTLE_CRY2 @5090
   
 COPY ~silverrealms/cre/AC#DUN20.cre~ ~override~  // Dunnabar in ACIL20
+  SAY NAME1 @101 SAY NAME2 @101
+      SAY INITIAL_MEETING   @5092
+  SAY SELECT_COMMON1  @5091
+  SAY SELECT_COMMON2  @5092
+  SAY SELECT_COMMON3  @5093
+  SAY SELECT_COMMON4  @5094
+  SAY SELECT_COMMON5  @5095
+  SAY SELECT_COMMON6  @5096
+  SAY BATTLE_CRY1 @5090
+  SAY BATTLE_CRY2 @5090
+  
+COPY ~silverrealms/cre/AC#DUNNB.cre~ ~override~  // Dunnabar celebration
   SAY NAME1 @101 SAY NAME2 @101
       SAY INITIAL_MEETING   @5092
   SAY SELECT_COMMON1  @5091
@@ -972,6 +999,19 @@ SAY BATTLE_CRY1 @5130
 SAY DAMAGE @5137
 SAY DYING @5138
 
+COPY ~silverrealms/cre/AC#SORNB.cre~ ~override~
+  SAY NAME1 @105 SAY NAME2 @105
+  SAY INITIAL_MEETING   @5131
+  SAY SELECT_COMMON1  @5132
+  SAY SELECT_COMMON2  @5133
+  SAY SELECT_COMMON3  @5134
+  SAY SELECT_COMMON4  @5135
+  SAY SELECT_COMMON5  @5136
+  SAY SELECT_COMMON6  @5131
+SAY BATTLE_CRY1 @5130
+SAY DAMAGE @5137
+SAY DYING @5138
+
 COPY ~silverrealms/cre/ac#ant01.cre~ ~override/ac#ant01.cre~ // Anthan Diamondblade in ACIL51 (Ancient Forge, Moradin's Temple)
   SAY NAME1 @113 SAY NAME2 @113
   SAY INITIAL_MEETING @5211
@@ -1000,6 +1040,15 @@ COPY ~silverrealms/cre/AC#ANT20.cre~ ~override/AC#ANT20.cre~ // Anthan Diamondbl
   SAY SELECT_COMMON5 @5216
   
 COPY ~silverrealms/cre/AC#ANT64.cre~ ~override/AC#ANT64.cre~ // Anthan Diamondblade in ACIL64
+  SAY NAME1 @113 SAY NAME2 @113
+    SAY INITIAL_MEETING @5211
+  SAY SELECT_COMMON1 @5212
+  SAY SELECT_COMMON2 @5213
+  SAY SELECT_COMMON3 @5214
+  SAY SELECT_COMMON4 @5215
+  SAY SELECT_COMMON5 @5216
+  
+COPY ~silverrealms/cre/AC#ANTAB.cre~ ~override~ // Anthan Diamondblade celebration
   SAY NAME1 @113 SAY NAME2 @113
     SAY INITIAL_MEETING @5211
   SAY SELECT_COMMON1 @5212
@@ -1534,6 +1583,16 @@ COPY ~silverrealms/cre/AC#GROM9.cre~ ~override~ // Gromi in ACIL20
   SAY SELECT_COMMON4  @5054
   SAY SELECT_COMMON5  @5055
   SAY SELECT_COMMON6  @5056
+  
+COPY ~silverrealms/cre/AC#GROMB.cre~ ~override~ // Gromi celebration
+  SAY NAME1 @280 SAY NAME2 @280
+  SAY INITIAL_MEETING   @5056
+  SAY SELECT_COMMON1  @5057
+  SAY SELECT_COMMON2  @5052
+  SAY SELECT_COMMON3  @5053
+  SAY SELECT_COMMON4  @5054
+  SAY SELECT_COMMON5  @5055
+  SAY SELECT_COMMON6  @5056
 
 COPY ~silverrealms/cre/AC#VRON1.cre~ ~override~ // Vronia Ironledger: Regency Coucil
   SAY NAME1 @281 SAY NAME2 @281
@@ -1616,6 +1675,16 @@ COPY ~silverrealms/cre/AC#VRON9.cre~ ~override~ // Vronia Ironledger: ACIL20
   SAY SELECT_COMMON6  @5126
 
 COPY ~silverrealms/cre/AC#VRONI.cre~ ~override~ // Vronia Ironledger: ACIL64
+  SAY NAME1 @281 SAY NAME2 @281
+  SAY INITIAL_MEETING   @5126
+  SAY SELECT_COMMON1  @5121
+  SAY SELECT_COMMON2  @5122
+  SAY SELECT_COMMON3  @5123
+  SAY SELECT_COMMON4  @5124
+  SAY SELECT_COMMON5  @5125
+  SAY SELECT_COMMON6  @5126
+  
+COPY ~silverrealms/cre/AC#VRONB.cre~ ~override~ // Vronia Ironledger: celebration
   SAY NAME1 @281 SAY NAME2 @281
   SAY INITIAL_MEETING   @5126
   SAY SELECT_COMMON1  @5121
@@ -1715,19 +1784,25 @@ COPY ~silverrealms/cre/AC#ELERN.cre~ ~override/AC#ELERN.cre~ // Elern in ACIL64
   SAY SELECT_COMMON5  @5064
   SAY SELECT_COMMON6  @5065
   
-COPY ~silverrealms/cre/AC#CHEM1.cre~ ~override/AC#CHEM1.cre~
+COPY ~silverrealms/cre/AC#CHEM1.cre~ ~override~
   SAY NAME1 @283 SAY NAME2 @283
   
-COPY ~silverrealms/cre/AC#FENY1.cre~ ~override/AC#FENY1.cre~
+COPY ~silverrealms/cre/AC#FENY1.cre~ ~override~
   SAY NAME1 @284 SAY NAME2 @284
   
-COPY ~silverrealms/cre/AC#FENYL.cre~ ~override/AC#FENYL.cre~
+COPY ~silverrealms/cre/AC#FENYL.cre~ ~override~
   SAY NAME1 @284 SAY NAME2 @284
   
-COPY ~silverrealms/cre/AC#STUR1.cre~ ~override/AC#STUR1.cre~
+COPY ~silverrealms/cre/AC#FENYB.cre~ ~override~
+  SAY NAME1 @284 SAY NAME2 @284
+  
+COPY ~silverrealms/cre/AC#STUR1.cre~ ~override~
   SAY NAME1 @285 SAY NAME2 @285
   
-COPY ~silverrealms/cre/AC#STURV.cre~ ~override/AC#STURV.cre~
+COPY ~silverrealms/cre/AC#STURV.cre~ ~override~
+  SAY NAME1 @285 SAY NAME2 @285
+  
+COPY ~silverrealms/cre/AC#STURB.cre~ ~override~
   SAY NAME1 @285 SAY NAME2 @285
 
 COPY ~silverrealms/cre/AC#QUAG1.cre~ ~override/AC#QUAG1.cre~
@@ -2088,6 +2163,15 @@ COPY ~silverrealms/cre/AC#BETTA.cre~ ~override/AC#BETTA.cre~ // Bettargh Abgrund
   SAY SELECT_COMMON5 @5244
   SAY SELECT_COMMON6 @5245
   //SAY BG2EE_SELECT_RARE1 @5246
+  
+COPY ~silverrealms/cre/AC#BETTB.cre~ ~override~ // Bettargh Abgrundlied celebration
+  SAY NAME1 @613 SAY NAME2 @613
+  SAY SELECT_COMMON1 @5246
+  SAY SELECT_COMMON2 @5241
+  SAY SELECT_COMMON3 @5242
+  SAY SELECT_COMMON4 @5243
+  SAY SELECT_COMMON5 @5244
+  SAY SELECT_COMMON6 @5245
   
 COPY ~silverrealms/cre/AC#XOTH1.cre~ ~override/AC#XOTH1.cre~ // Xothar
   SAY NAME1 @614 SAY NAME2 @614

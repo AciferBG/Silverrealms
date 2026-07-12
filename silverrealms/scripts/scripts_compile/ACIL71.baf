@@ -16,6 +16,7 @@ THEN
 		CreateCreature("CUTSPY",[870.750],8)
         DisplayStringHead("CUTSPY",@121)
 		ScreenShake([50.50],15)
+		TakePartyItemNum("AC#P01",10)
 		AmbientActivate("Cold_veil",TRUE)
 		SoundActivate("Coldveil_amb",TRUE)
 		CloseDoor("Door14")

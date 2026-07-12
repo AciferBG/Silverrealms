@@ -380,37 +380,40 @@ COPY ~silverrealms/areas/ACIL69.are~          ~override~
  WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
  
 COPY ~silverrealms/areas/ACIL77.are~          ~override~
- WRITE_SHORT 0x48 (THIS | area_type_id_explan)  // Set EYTRAPLANAR area type
+ WRITE_SHORT 0x48 (THIS | area_type_id_explan)  // Set EXTRAPLANAR area type
  
 COPY ~silverrealms/areas/ACIL78.are~          ~override~
- WRITE_SHORT 0x48 (THIS | area_type_id_explan)  // Set EYTRAPLANAR area type
+ WRITE_SHORT 0x48 (THIS | area_type_id_explan)  // Set EXTRAPLANAR area type
  
 COPY ~silverrealms/areas/ACIL79.are~          ~override~
- WRITE_SHORT 0x48 (THIS | area_type_id_explan)  // Set EYTRAPLANAR area type
+ WRITE_SHORT 0x48 (THIS | area_type_id_explan)  // Set EXTRAPLANAR area type
  
 COPY ~silverrealms/areas/ACIL80.are~          ~override~
- WRITE_SHORT 0x48 (THIS | area_type_id_explan)  // Set EYTRAPLANAR area type
+ WRITE_SHORT 0x48 (THIS | area_type_id_explan)  // Set EXTRAPLANAR area type
  
 COPY ~silverrealms/areas/ACIL81.are~          ~override~
- WRITE_SHORT 0x48 (THIS | area_type_id_explan)  // Set EYTRAPLANAR area type
+ WRITE_SHORT 0x48 (THIS | area_type_id_explan)  // Set EXTRAPLANAR area type
  
  COPY ~silverrealms/areas/ACIL82.are~          ~override~
- WRITE_SHORT 0x48 (THIS | area_type_id_explan)  // Set EYTRAPLANAR area type
+ WRITE_SHORT 0x48 (THIS | area_type_id_explan)  // Set EXTRAPLANAR area type
  
  COPY ~silverrealms/areas/ACIL83.are~          ~override~
- WRITE_SHORT 0x48 (THIS | area_type_id_explan)  // Set EYTRAPLANAR area type
+ WRITE_SHORT 0x48 (THIS | area_type_id_explan)  // Set EXTRAPLANAR area type
  
  COPY ~silverrealms/areas/ACIL84.are~          ~override~
- WRITE_SHORT 0x48 (THIS | area_type_id_explan)  // Set EYTRAPLANAR area type
+ WRITE_SHORT 0x48 (THIS | area_type_id_explan)  // Set EXTRAPLANAR area type
  
  COPY ~silverrealms/areas/ACIL85.are~          ~override~
- WRITE_SHORT 0x48 (THIS | area_type_id_explan)  // Set EYTRAPLANAR area type
+ WRITE_SHORT 0x48 (THIS | area_type_id_explan)  // Set EXTRAPLANAR area type
  
  COPY ~silverrealms/areas/ACIL86.are~          ~override~
- WRITE_SHORT 0x48 (THIS | area_type_id_explan)  // Set EYTRAPLANAR area type
- 
+ WRITE_SHORT 0x48 (THIS | area_type_id_explan)  // Set EXTRAPLANAR area type
+
  COPY ~silverrealms/areas/ACIL88.are~          ~override~
- WRITE_SHORT 0x48 (THIS | area_type_id_explan)  // Set EYTRAPLANAR area type
+ WRITE_SHORT 0x48 (THIS | area_type_id_explan)  // Set EXTRAPLANAR area type
+
+ COPY ~silverrealms/areas/ACIL89.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
 
 COPY ~silverrealms/areas/ACIL90.are~          ~override~
  SAY 0xf7c  @862

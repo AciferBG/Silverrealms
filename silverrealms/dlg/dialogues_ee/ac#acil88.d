@@ -13,7 +13,7 @@ END
 IF ~Global("AC#Cut1","ACIL88",2)
 Global("AC#Mithbarak_Free","GLOBAL",0)
 !Dead("AC#MAL02")~ THEN BEGIN 4
-SAY  ~Ihr seid diejenigen, die gekommen sind, um mich zu retten, habe ich Recht?~ [AC#ILMIB]
+SAY  ~Ihr seid diejenigen, die gekommen sind, um mich zu retten, habe ich Recht? Gut.~ [AC#ILMIB]
 ++ ~Das sind wir, ja.~ + 5
 END
 

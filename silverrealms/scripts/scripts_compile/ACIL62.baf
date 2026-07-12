@@ -123,16 +123,13 @@ THEN
 		ActionOverride("AC#ILEL6",DestroySelf())
 END
 
-/*
-// OLD: Bettargh appears in RC
 IF
-	Global("AC#Goodbye_Iltkazar","GLOBAL",1)
-	Global("AC#BettarghBookAstral","GLOBAL",0)
+    GlobalGT("AC#Mithbarak_Rescued","GLOBAL",0)
+    Global("DeactivateTorth","ACIL62",0)
+	InMyArea("AC#TORT1")
 THEN
-	RESPONSE #100
-		SetGlobal("AC#BettarghBookAstral","GLOBAL",1)
-		CreateCreature("AC#BETT2",[2505.542],9)  // Bettargh Abgrundlied
-		ActionOverride("AC#BETT2",StartDialogNoSet(Player1))
+    RESPONSE #100
+        SetGlobal("DeactivateTorth","ACIL62",1)
+        ActionOverride("AC#TORT1",DestroySelf())
 END
-*/
 

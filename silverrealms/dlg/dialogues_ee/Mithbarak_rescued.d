@@ -7,6 +7,28 @@ BEGIN ~AC#GROM5~
 
 BEGIN ~AC#MITH5~
 
+IF ~Global("AC#Mithbarak_Rescued","GLOBAL",20)
+Global("AC#IltkazarCelebration","GLOBAL",0)~ THEN BEGIN hello_throneroom
+SAY ~Willkommen im Thronsaal von Iltkazar, <CHARNAME>! Zum ersten Mal begegnet Ihr hier nicht einer stummen Statue aus Mithril, sondern dem König selbst. Es ist eine Freude, Euch als Freund in diesen Hallen begrüßen zu dürfen.~
+IF ~~ THEN REPLY ~Es freut mich, Euch wohlauf zu sehen.~ GOTO throne_room_02
+IF ~~ THEN REPLY ~Ihr habt mir eine ganze Menge zu erklären.~ GOTO throne_room_explain
+END
+
+IF ~~ THEN BEGIN throne_room_explain
+SAY ~Und das werde ich auch. Über Kalzareinad, über den Fluch und über all die Jahre meines Exils werden wir noch sprechen. Doch zuvor gibt es eine Pflicht, der ich mich nicht entziehen kann.~
+IF ~~ THEN GOTO throne_room_02
+END
+
+IF ~~ THEN BEGIN throne_room_02
+SAY ~Mein Volk hat lange auf diesen Tag gewartet. Zu lange! Viele von ihnen glaubten nicht, ihren König jemals wiederzusehen. Und noch weniger hätten geglaubt, dass ein Fremder von der Oberfläche derjenige sein würde, der Iltkazar rettet.~
+= 
+~Nein, <CHARNAME>. Heute soll es nicht um mich gehen. Heute soll Iltkazar erfahren, wem es seine Rettung verdankt.~
+= 
+~Lasst die Hörner erklingen! Ruft die Bürger in den Thronsaal! Heute ehren wir den Retter Iltkazars!~
+IF ~~ THEN DO ~SetGlobal("AC#IltkazarCelebration","GLOBAL",1)							   
+~ EXIT
+END	
+
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN hello_0
 SAY ~Ihr habt es geschafft! Ich war mir nicht sicher, wie lange ich das Portal noch hätte offenhalten können.~
 IF ~Global("AC#MithbarakazCurse","GLOBAL",1)~ THEN  + mith_dragon_01
@@ -16,16 +38,24 @@ END
 	IF ~~ THEN BEGIN mith_dragon_01
 	SAY  ~Und wie es scheint, habt Ihr auch den Fluch, der seit tausend Jahren auf mir lastete, von mir genommen.~
 	IF ~~ THEN REPLY ~Das sehe ich, ja. Ihr seid Mithbarakaz, der Silberdrache.~ + silverdragon
+	IF ~~ THEN REPLY ~Ein Silberdrache auf dem Thron von Iltkazar. Das dürfte einige Anwesende ziemlich sprachlos machen!~ GOTO silverdragon
+	IF ~~ THEN REPLY ~Tausend Jahre Fluch, und jetzt seid Ihr frei. Die Götter verschwenden ihre Strafen wirklich an die Falschen.~ GOTO silverdragon
+	IF ~~ THEN REPLY ~Ich werde nie wieder einem Zwerg begegnen können, ohne mich zu fragen, ob er heimlich ein Drache ist.~ GOTO silverdragon
 	END
 	
 		IF ~~ THEN BEGIN silverdragon
-		SAY  ~Das bin ich, ja. Auch wenn mich die Zwerge Iltkazars mich nur als Mith Barak den Clanlosen kannten, war ich doch immer ein Drache gewesen.~
-		IF ~~ THEN DO ~~ + you_rescued_me
+		SAY ~Auch wenn die Zwerge Iltkazars in mir nur Mith Barak, den Clanlosen, sahen, schlug doch stets das Herz eines Drachen in meiner Brust.~
+		IF ~~ THEN + you_rescued_me
 		END
 
 	IF ~~ THEN BEGIN mith_dwarf_01
-	SAY  ~Hier stehe ich also vor Euch als König Mith Barak, der Zwergenkönig. Eigentlich ein Silberdrache, scheint der Fluch immer noch auf meinen Schultern zu lasten.~
+	SAY  ~Ich habe meinen Thron zurückerlangt und stehe wieder als König Mith Barak vor Euch. Doch meine wahre Gestalt bleibt mir weiterhin verwehrt. Der Fluch lastet noch immer auf meiner Drachenseele.~
 	IF ~~ THEN REPLY ~Es war mir nicht möglich, den Fluch von Euch zu nehmen.~ + not_remove_curse
+	IF ~~ THEN REPLY ~Ich habe alles getan, was in meiner Macht stand.~ GOTO not_remove_curse
+	IF ~~ THEN REPLY ~Nach allem, was geschehen ist, erwartet Ihr noch mehr vom Schicksal?~ GOTO not_remove_curse
+	IF ~~ THEN REPLY ~Ihr seid frei und habt Euer Königreich zurück. Das muss fürs Erste genügen.~ GOTO not_remove_curse
+	IF ~~ THEN REPLY ~Es gibt wahrlich schlimmere Schicksale, als König einer großen Zwergenstadt zu sein.~ GOTO not_remove_curse
+	IF ~~ THEN REPLY ~Immerhin müsst Ihr Euch nun nicht ständig den Kopf an Türstürzen stoßen.~ GOTO not_remove_curse
 	END
 	
 		IF ~~ THEN BEGIN not_remove_curse
@@ -34,7 +64,7 @@ END
 		END
 
 			IF ~~ THEN BEGIN you_rescued_me
-			SAY  ~Das Einzige, das zählt, ist, dass Ihr mich aus der Gefangenschaft der Anhänger Tiamats befreit habt und ich wieder hier, in meiner Stadt, bin.~
+			SAY  ~Das Einzige, das zählt, ist jedoch, dass Ihr mich aus der Gefangenschaft der Anhänger Tiamats befreit habt und ich wieder hier, in meiner Stadt, bin!~
 			IF ~Global("AC#MithbarakazCurse","GLOBAL",1)~ THEN  + chain_mith_dragon_02
 			IF ~Global("AC#MithbarakazCurse","GLOBAL",0)~ THEN  + chain_mith_dwarf_02
 			END
@@ -62,15 +92,26 @@ END
 			
 				IF ~~ THEN BEGIN dwarves_impressed
 				SAY  ~Dem kann ich mich mich nur anschließen. Ihr habt ja hier ordentlich Eindruck gemacht, <CHARNAME>!~
-				IF ~~ THEN GOTO rescue_bye			
+				IF ~~ THEN REPLY ~Dann hoffe ich, dieser Eindruck hält eine Weile an.~ GOTO rescue_questions
+				IF ~~ THEN REPLY ~Ach, das ist doch nicht der Rede wert.~ GOTO rescue_questions
+				IF ~~ THEN REPLY ~Der Ruhm gebührt allen, die an meiner Seite gekämpft haben.~ GOTO rescue_questions
+				IF ~~ THEN REPLY ~Ihr habt Recht. Solche Taten sieht man nicht alle Tage.~ GOTO rescue_questions	
+				IF ~~ THEN REPLY ~Gut. Dann hat sich das Ganze wenigstens gelohnt.~ GOTO rescue_questions	
+				IF ~~ THEN REPLY ~Und das war noch einer meiner schlechteren Tage.~ GOTO rescue_questions	
+				IF ~~ THEN REPLY ~Vergesst niemals, wem Ihr Euer Leben verdankt.~ GOTO rescue_questions
+				IF ~~ THEN REPLY ~Weil es kein anderer tun wollte, habe ich es eben selbst gemacht.~ GOTO rescue_questions				
 				END
 				
-					IF ~~ THEN BEGIN rescue_bye
-					SAY ~Jedenfalls ist Euch der Dank des ganzen Zwergenvolkes gewiss - und auch derjenige der guten Drachen! Ich werde mich nun in den Ratssaal begeben müssen. Ich bin lange fort gewesen! Es gibt sicher viel zu regeln. Euch anderen danke ich für den herzlichen Empfang, Ihr habt einem alten Drachen eine große Freude bereitet. So kehren wir denn zu unserem Tagesgeschäft zurück. Und Euch, <CHARNAME>, noch einmal alles Gute.~
+					IF ~~ THEN BEGIN rescue_questions
+					SAY ~Jedenfalls sind Euch der Dank Iltkazars und die Achtung des gesamten Zwergenvolkes gewiss – ebenso meine eigene und die aller guten Drachen. Ich weiß, dass Ihr viele Fragen habt, <CHARNAME>, und glaubt mir: Auch mein Volk verlangt nach Antworten. Doch dies ist weder die Zeit noch der Ort dafür. Lasst uns zunächst in den Thronsaal gehen und gemeinsam die Rettung Iltkazars feiern. Danach will ich Euch Rede und Antwort stehen, denn auch für mich hat die Heimkehr nach so langer Zeit vieles verändert.~
+					=
+					~Nun muss ich mich in den Thronsaal begeben. Zu lange war ich fort, und ein König hat Pflichten gegenüber seinem Volk. Kommt, Freunde! Lasst uns diesen Tag nicht mit Sorgen, sondern mit Freude beschließen. Heute feiern wir die Rettung Iltkazars. Und Ihr, <CHARNAME>, seid dort als Ehrengast willkommen. Wenn die Feierlichkeiten vorüber sind, werden wir Gelegenheit haben, über alles zu sprechen, was geschehen ist.~
 					IF ~~ THEN DO ~SetGlobal("AC#Mithbarak_Rescued","GLOBAL",19)
 					AddJournalEntry(@99000,QUEST_DONE)								   
 					EscapeArea()~ EXIT
-					END		
+					END	
+
+//~Ich werde mich nun in den Ratssaal begeben müssen. Ich bin lange fort gewesen! Es gibt sicher viel zu regeln. Euch anderen danke ich für den herzlichen Empfang, Ihr habt einem alten Drachen eine große Freude bereitet. So kehren wir denn zu unserem Tagesgeschäft zurück. Und Euch, <CHARNAME>, noch einmal alles Gute.~					
 				
 CHAIN IF ~~ THEN AC#MITH5 chain_mith_dragon_02
 ~Und wie ich sehe, haben sich meine treuen Zwerge auch ohne meine Hilfe wacker geschlagen.~

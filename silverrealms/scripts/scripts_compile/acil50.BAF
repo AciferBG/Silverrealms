@@ -432,27 +432,39 @@ THEN
 END
 
 IF
-	InMyArea(Player1)
-	Global("AC#Mithbarak_Rescued","GLOBAL",1)
-	Global("AC#MithbarakazCurse","GLOBAL",0)
-	Global("CreateMithBarakDwarf","ACIL50",0)  // Iltkazar
+    InMyArea(Player1)
+    Global("AC#Mithbarak_Rescued","GLOBAL",1)
+    Global("AC#MithbarakazCurse","GLOBAL",0)
+    Global("CreateMithBarakDwarf","ACIL50",0)
 THEN
-	RESPONSE #100
-		SetGlobal("CreateMithBarakDwarf","ACIL50",1)  // Iltkazar
-		CreateCreature("AC#MITH5",[1845.1713],3)  // König Mith Barak
-		Continue()
+    RESPONSE #100
+        SetGlobal("CreateMithBarakDwarf","ACIL50",1)
+        CreateCreature("AC#MITH5",[1845.1713],SW)  // König Mith Barak
+        CreateVisualEffectObject("ICRMPARI",Player1)
+        CreateVisualEffectObject("ICRMPARI",Player2)
+        CreateVisualEffectObject("ICRMPARI",Player3)
+        CreateVisualEffectObject("ICRMPARI",Player4)
+        CreateVisualEffectObject("ICRMPARI",Player5)
+        CreateVisualEffectObject("ICRMPARI",Player6)
+        Continue()
 END
 
 IF
-	InMyArea(Player1)
-	Global("AC#Mithbarak_Rescued","GLOBAL",1)
-	Global("AC#MithbarakazCurse","GLOBAL",1)
-	Global("CreateMithBarakDwarf","ACIL50",0)  // Iltkazar
+    InMyArea(Player1)
+    Global("AC#Mithbarak_Rescued","GLOBAL",1)
+    Global("AC#MithbarakazCurse","GLOBAL",1)
+    Global("CreateMithBarakDwarf","ACIL50",0)
 THEN
-	RESPONSE #100
-		SetGlobal("CreateMithBarakDwarf","ACIL50",1)  // Iltkazar
-		CreateCreature("AC#MITHD",[1845.1713],3)  // Mithbarakaz
-		Continue()
+    RESPONSE #100
+        SetGlobal("CreateMithBarakDwarf","ACIL50",1)
+        CreateCreature("AC#MITHD",[1845.1713],SW)  // Mithbarakaz
+        CreateVisualEffectObject("ICRMPARI",Player1)
+        CreateVisualEffectObject("ICRMPARI",Player2)
+        CreateVisualEffectObject("ICRMPARI",Player3)
+        CreateVisualEffectObject("ICRMPARI",Player4)
+        CreateVisualEffectObject("ICRMPARI",Player5)
+        CreateVisualEffectObject("ICRMPARI",Player6)
+        Continue()
 END
 
 IF
@@ -462,13 +474,11 @@ THEN
 	RESPONSE #100
 		ClearAllActions()
 		StartCutSceneMode()
+		TriggerActivation("Tracil62",TRUE)
+        TriggerActivation("Tracil63",FALSE)
+		Lock("DOOR01")
+		CloseDoor("DOOR01")
 		SetGlobal("CreateMithBarakDwarf","ACIL50",2)  // Iltkazar
-		CreateVisualEffectObject("ICRMPARI",Player1)
-		CreateVisualEffectObject("ICRMPARI",Player2)
-		CreateVisualEffectObject("ICRMPARI",Player3)
-		CreateVisualEffectObject("ICRMPARI",Player4)
-		CreateVisualEffectObject("ICRMPARI",Player5)
-		CreateVisualEffectObject("ICRMPARI",Player6)
 		Wait(3)
 		ActionOverride("AC#MITH5",StartDialogNoSet(Player1))
 END

@@ -579,6 +579,9 @@ COPY ~silverrealms/cre/AC#MITH5.cre~ ~override/AC#MITH5.cre~  // rescued Mith Ba
   
 COPY ~silverrealms/cre/AC#MITHD.cre~ ~override/AC#MITHD.cre~ // rescued Mithbarakaz: Dragon
   SAY NAME1 @783 SAY NAME2 @783
+  SAY INITIAL_MEETING   @5400
+  SAY SELECT_COMMON1  @5401
+  SAY SELECT_COMMON2  @5402
 
 COPY ~silverrealms/cre/AC#DWCU1.cre~ ~override/AC#DWCU1.cre~
   SAY NAME1 @44 SAY NAME2 @44

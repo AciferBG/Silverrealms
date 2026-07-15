@@ -1,0 +1,27 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player1)
+        FadeToColor([30.0],0)
+        Wait(2)
+        LeaveAreaLUAPanic("ACIL89","",[1173.708],SW)
+        LeaveAreaLUA("ACIL89","",[1173.708],SW)
+        ActionOverride(Player2,LeaveAreaLUA("ACIL89","",[1154.677],SW))
+        ActionOverride(Player3,LeaveAreaLUA("ACIL89","",[1208.714],SW))
+        ActionOverride(Player4,LeaveAreaLUA("ACIL89","",[1238.725],SW))
+        ActionOverride(Player5,LeaveAreaLUA("ACIL89","",[1129.663],SW))
+        ActionOverride(Player6,LeaveAreaLUA("ACIL89","",[1110.631],SW))
+        MultiPlayerSync()
+        MoveViewPoint([1173.708],INSTANT)
+        CreateCreature("AC#MITH5",[1372.566],SW)  // König Mith Barak
+        ActionOverride("AC#MITH5",SetNumTimesTalkedTo(2))
+        SetMusic(NIGHT,%AC#IL56%)
+		SetMusic(DAY,%AC#IL56%)	
+        FadeFromColor([30.0],0)
+        Wait(3)
+        SetGlobal("AC#IltkazarCelebration","GLOBAL",2)
+        PlaySong(%AC#IL56%)
+        ActionOverride("AC#MITH5",StartDialogueNoSet([PC]))
+END
+

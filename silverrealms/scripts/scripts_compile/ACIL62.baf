@@ -133,3 +133,13 @@ THEN
         ActionOverride("AC#TORT1",DestroySelf())
 END
 
+IF
+    GlobalGT("AC#IltkazarCelebration","GLOBAL",2)
+    Global("EndScreen","ACIL62",0)
+THEN
+    RESPONSE #100
+        SetGlobal("EndScreen","ACIL62",1)
+        TextScreen("AC#MOS89")
+END
+
+

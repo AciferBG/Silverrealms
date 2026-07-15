@@ -76,5 +76,8 @@ COPY ~silverrealms/2da/copy~         ~override~
 COPY ~silverrealms/2da/AC#MOS01.2DA~ ~override~
 REPLACE ~999999~ @97
 
-COPY ~silverrealms/2da/AC#MOS27.2DA~ ~override/AC#MOS27.2da~
+COPY ~silverrealms/2da/AC#MOS27.2DA~ ~override~
 REPLACE ~999999~ @58
+
+COPY ~silverrealms/2da/AC#MOS89.2DA~ ~override~
+REPLACE ~999999~ @7200

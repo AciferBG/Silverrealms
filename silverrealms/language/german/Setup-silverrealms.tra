@@ -1701,6 +1701,16 @@ Charvekannathors Hort~
 @7111 = ~<CHARNAME> schreitet alleine durch das Portal auf die andere Seite...~
 @7112 = ~Nur <CHARNAME> scheint dieses Portal benutzen zu können.~
 
+//Epilog:
+@7200 = ~Ihr habt Iltkazar einen großen Dienst erwiesen.
+
+Ihr habt Euch ihren Feinden entgegengestellt, ihre Geheimnisse ergründet und ihren rechtmäßigen Herrscher befreit. Durch Eure Taten erhielt das alte Königreich eine neue Zukunft. 
+König Mith Barak hat seinen Thron zurückerlangt. Die Schmieden brennen wieder, die Händler kehren in die Straßen zurück, und in den Tavernen Iltkazars werden Geschichten über Eure Heldentaten erzählt.
+
+Doch die Wege eines Abenteurers führen stets weiter.
+
+Wenn die Tore Iltkazars langsam hinter Euch verschwinden, wisst Ihr, dass Ihr hier im Unterreich mehr zurücklasst als eine gerettete Stadt: Ihr lasst Freunde zurück. Und ein Volk, das Euren Namen nicht vergessen wird.~
+
 
 
 // Item Strings

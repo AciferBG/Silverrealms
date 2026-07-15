@@ -13,6 +13,9 @@ COMPILE ~silverrealms/scripts/ACIL59.baf~ EVAL
 COMPILE ~silverrealms/scripts/ACIL64.baf~ EVAL
 COMPILE ~silverrealms/scripts/ACIL89.baf~ EVAL
 
+COMPILE ~silverrealms/scripts/AC#IL89A.baf~ EVAL
+COMPILE ~silverrealms/scripts/AC#IL89B.baf~ EVAL
+
 // story start
 EXTEND_TOP ~ar0300.bcs~ ~silverrealms/scripts/_atkatla.baf~
 EXTEND_TOP ~ar0500.bcs~ ~silverrealms/scripts/_atkatla.baf~

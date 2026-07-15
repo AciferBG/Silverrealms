@@ -12,6 +12,86 @@ BEGIN AC#ILFNB
 
 BEGIN ~AC#MITH5~
 
+
+IF ~Global("AC#IltkazarCelebration","GLOBAL",3)~ THEN BEGIN hello_throne_final
+  SAY ~<CHARNAME>. Die Ansprache an mein Volk ist vorüber. Nun endlich haben wir Gelegenheit, in Ruhe miteinander zu sprechen. Ihr habt Iltkazar mehr gegeben, als ich jemals zurückzahlen könnte. Wenn Ihr Fragen habt, werde ich sie beantworten, so gut ich kann.~
+  IF ~~ THEN REPLY ~Erzählt mir von Euch. Wer ist Mithbarakaz wirklich?~ GOTO who_are_you
+  IF ~~ THEN REPLY ~Wie seid Ihr überhaupt König von Iltkazar geworden?~ GOTO king_of_iltkazar
+  IF ~~ THEN REPLY ~Wie lange lastete der Fluch bereits auf Euch?~ GOTO curse
+  IF ~~ THEN REPLY ~Wie konntet Ihr all die Jahre als Zwerg leben?~ GOTO life_as_dwarf
+  IF ~~ THEN REPLY ~Was wird nun aus Iltkazar werden?~ GOTO future
+  IF ~~ THEN REPLY ~Was wird aus dem Regentschaftsrat?~ GOTO regency
+  IF ~~ THEN REPLY ~Wusste irgendjemand, dass Ihr ein Drache seid?~ GOTO secret
+  IF ~~ THEN REPLY ~Was bedeutet Iltkazar Euch persönlich?~ GOTO meaning
+  IF ~~ THEN REPLY ~Ich denke, es ist Zeit für meinen Abschied.~ GOTO farewell
+END
+
+	IF ~~ THEN BEGIN throne_final_hub
+	  SAY ~Habt Ihr weitere Fragen?~
+	  IF ~~ THEN REPLY ~Erzählt mir von Euch. Wer ist Mithbarakaz wirklich?~ GOTO who_are_you
+	  IF ~~ THEN REPLY ~Wie seid Ihr überhaupt König von Iltkazar geworden?~ GOTO king_of_iltkazar
+	  IF ~~ THEN REPLY ~Wie lange lastete der Fluch bereits auf Euch?~ GOTO curse
+	  IF ~~ THEN REPLY ~Wie konntet Ihr all die Jahre als Zwerg leben?~ GOTO life_as_dwarf
+	  IF ~~ THEN REPLY ~Was wird nun aus Iltkazar werden?~ GOTO future
+	  IF ~~ THEN REPLY ~Was wird aus dem Regentschaftsrat?~ GOTO regency
+	  IF ~~ THEN REPLY ~Wusste irgendjemand, dass Ihr ein Drache seid?~ GOTO secret
+	  IF ~~ THEN REPLY ~Was bedeutet Iltkazar Euch persönlich?~ GOTO meaning
+	  IF ~~ THEN REPLY ~Ich denke, es ist Zeit für meinen Abschied.~ GOTO farewell
+	END
+
+IF ~~ THEN BEGIN who_are_you
+  SAY ~Ich wurde vor vielen Jahrhunderten geboren, lange bevor die meisten Reiche der Menschen überhaupt existierten. Wie viele Silberdrachen zog es mich einst hinaus in die Welt der Sterblichen. Während andere meinesgleichen ferne Gipfel oder einsame Täler bevorzugten, fand ich Gefallen an den Hallen der Zwerge. Ihre Beharrlichkeit, ihre Treue und ihre Kunstfertigkeit beeindruckten mich. Mit den Jahren wurde aus Bewunderung Zuneigung und schließlich Verantwortung.~
+  IF ~~ THEN GOTO throne_final_hub
+END
+
+IF ~~ THEN BEGIN king_of_iltkazar
+  SAY ~Ein König wird nicht allein durch Blut oder einen Thron zum Herrscher. Die Zwerge Iltkazars baten mich einst, über sie zu wachen. Zunächst als Freund, später als Berater und schließlich als König. Es war nie die Krone, die mir wichtig war. Es waren die Menschen – oder besser gesagt die Zwerge – die hinter ihr standen.~
+  IF ~~ THEN GOTO throne_final_hub
+END
+
+IF ~~ THEN BEGIN curse
+  SAY ~Länger, als manche Königreiche bestanden haben. Jahrhunderte vergingen, während ich in dieser Gestalt gefangen war. Anfangs zählte ich die Jahre. Später die Generationen. Schließlich hörte ich auf zu zählen.~
+  IF ~~ THEN GOTO throne_final_hub
+END
+
+IF ~~ THEN BEGIN life_as_dwarf
+  SAY ~Schlechter, als Ihr vielleicht denkt. Besser, als Ihr vielleicht erwartet. Anfangs empfand ich jede Einschränkung als Demütigung. Doch mit der Zeit lernte ich, die Welt durch die Augen jener zu sehen, die ich beschützen wollte. Vielleicht machte mich der Fluch zu einem besseren König, als ich es jemals als Drache gewesen wäre.~
+  IF ~~ THEN GOTO throne_final_hub
+END
+
+IF ~~ THEN BEGIN future
+  SAY ~Der schwierigste Teil beginnt erst jetzt. Eine Stadt zu retten ist leichter, als sie wieder aufzubauen. Unsere Hallen müssen repariert, Handelswege gesichert und alte Bündnisse erneuert werden. Doch zum ersten Mal seit langer Zeit blicke ich mit Zuversicht in die Zukunft.~
+  IF ~~ THEN GOTO throne_final_hub
+END
+
+IF ~~ THEN BEGIN regency
+  SAY ~Der Regentschaftsrat hat Iltkazar durch schwere Zeiten geführt. Manche Entscheidungen hätte ich anders getroffen, andere nicht. Doch sie hielten die Stadt zusammen, als viele längst jede Hoffnung aufgegeben hatten. Dafür schulde ich ihnen Dank.~
+  IF ~~ THEN GOTO throne_final_hub
+END
+
+IF ~~ THEN BEGIN secret
+  SAY ~Einige ahnten es. Wenige wussten es mit Gewissheit. Die meisten hielten die Wahrheit für eine Legende. Das war mir stets recht. Ein König sollte nach seinen Taten beurteilt werden, nicht nach der Gestalt, die er annimmt.~
+  IF ~~ THEN GOTO throne_final_hub
+END
+
+IF ~~ THEN BEGIN meaning
+  SAY ~Iltkazar ist mein Zuhause. Nicht meine Höhle. Nicht mein Hort. Mein Zuhause. Ich habe hier Freunde gefunden, Verbündete verloren, Siege gefeiert und Niederlagen ertragen. Die Stadt hat mich ebenso geprägt, wie ich sie geprägt habe.~
+  IF ~~ THEN GOTO throne_final_hub
+END
+
+IF ~~ THEN BEGIN farewell
+  SAY ~Dann bleibt mir nur noch eines zu sagen. Ihr seid jederzeit in Iltkazar willkommen! Nicht nur als Gast. Auch nicht nur als Verbündeter. Sondern als Freund!~
+  IF ~~ THEN REPLY ~Vielleicht sehen wir uns eines Tages wieder.~ GOTO bye
+  IF ~~ THEN REPLY ~Passt gut auf Eure Stadt auf.~ GOTO bye
+  IF ~~ THEN REPLY ~Lebt wohl, Mith Barak.~ GOTO bye
+END
+
+IF ~~ THEN BEGIN bye
+  SAY ~Lebt wohl, <CHARNAME>. Mögen Dumathoin und Bahamut über Euch wachen und Eure Wege stets sicher sein. Die Tore Iltkazars werden Euch immer offenstehen.~
+  IF ~~ THEN EXIT
+END
+
+
 IF ~Global("AC#Mithbarak_Rescued","GLOBAL",20)
 Global("AC#IltkazarCelebration","GLOBAL",0)~ THEN BEGIN hello_throneroom
 SAY ~Willkommen im Thronsaal von Iltkazar, <CHARNAME>! Zum ersten Mal begegnet Ihr hier nicht einer stummen Statue aus Mithril, sondern dem König selbst. Es ist eine Freude, Euch als Freund in diesen Hallen begrüßen zu dürfen.~
@@ -25,14 +105,30 @@ IF ~~ THEN GOTO throne_room_02
 END
 
 IF ~~ THEN BEGIN throne_room_02
-SAY ~Mein Volk hat lange auf diesen Tag gewartet. Viel zu lange! Viele von ihnen glaubten nicht, ihren König jemals wiederzusehen. Und noch weniger hätten geglaubt, dass ein Fremder von der Oberfläche derjenige sein würde, der Iltkazar rettet.~
-= 
-~Und heute soll Iltkazar auch erfahren, wem es seine Rettung verdankt.~
-= 
-~Lasst die Hörner erklingen! Ruft die Bürger in den Thronsaal! Heute ehren wir den Retter Iltkazars!~
-IF ~~ THEN DO ~SetGlobal("AC#IltkazarCelebration","GLOBAL",1)							   
-~ EXIT
-END	
+SAY ~Mein Volk hat lange auf diesen Tag gewartet. Viel zu lange! Heute soll Iltkazar erfahren, wem es seine Rettung verdankt.~
+IF ~Global("AC#MithbarakazCurse","GLOBAL",1)~ THEN  + throneroom_mith_dragon_cutscene
+IF ~Global("AC#MithbarakazCurse","GLOBAL",0)~ THEN  + throneroom_mith_dwarf_cutscene
+END
+
+	IF ~~ THEN BEGIN throneroom_mith_dragon_cutscene
+	SAY ~Viele von ihnen glaubten nicht, ihren König jemals wiederzusehen. Nun werden Sie sehen, was er wirklich ist. Und dass er auch in seiner wahren Gestalt zu dem - seinem! - Zwergenvolk steht.~
+	=
+	~Lasst die Hörner erklingen! Ruft die Bürger in den Thronsaal!~
+	IF ~~ THEN DO ~StartCutSceneMode()
+	StartCutScene("AC#IL89A")
+	SetGlobal("AC#IltkazarCelebration","GLOBAL",1)							   
+	~ EXIT
+	END
+
+	IF ~~ THEN BEGIN throneroom_mith_dwarf_cutscene
+	SAY ~Viele von ihnen glaubten nicht, ihren König in seiner gewohnten Gestalt wiederzusehen.~
+	=
+	~Lasst die Hörner erklingen! Ruft die Bürger in den Thronsaal!~
+	IF ~~ THEN DO ~StartCutSceneMode()
+	StartCutScene("AC#IL89B")
+	SetGlobal("AC#IltkazarCelebration","GLOBAL",1)							   
+	~ EXIT
+	END	
 
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN hello_0
 SAY ~Ihr habt es geschafft! Ich war mir nicht sicher, wie lange ich das Portal noch hätte offenhalten können.~ [AC#ILMIZ]
@@ -164,26 +260,29 @@ IF ~~ THEN + dwarves_impressed
 CHAIN IF ~Global("AC#IltkazarCelebration","GLOBAL",2)~ THEN AC#MITH5 chain_mith_celebration_01
 ~Bürger von Iltkazar! Freunde! Kinder Shanatars!~
 = ~Zu lange lag ein Schatten über unserer Stadt. Zu lange hattet Ihr Sorge, dass Euer König niemals aus seinem Schlaf wieder erwachen würde.~
-= ~Und doch stehen wir heute alle hier. Frei. Ungebrochen. Stolz. Nicht durch mein Werk. Nein!~
+= ~Doch heute stehen wir alle hier. Frei. Ungebrochen. Vereint.~
 = ~Diesen Tag verdanken wir einem Bewohner der Oberfläche, der unsere Not zu seiner eigenen machte. Der für uns kämpfte, als andere uns längst vergessen hatten. Der durch Flammen, Dunkelheit und Verrat ging und dennoch nicht von <PRO_HISHER>em Weg abwich.~
-= ~<CHARNAME>!~
-= ~Im Namen Iltkazars, im Namen des Zwergenvolkes und im Namen aller guten Drachen danke ich Euch.~
-= ~Mögen die Barden der Oberfläche Eure Taten besingen. Mögen die Schmiede des Unterreichs Euren Namen in Stahl schlagen. Mögen unsere Kinder sich an Euch erinnern, wenn wir selbst längst zu Staub geworden sind.~
+= ~<CHARNAME>! Im Namen Iltkazars, im Namen des Zwergenvolkes und im Namen aller guten Drachen danke ich Euch.~
+= ~Mögen die Barden der Oberfläche Eure Taten besingen. Mögen die Schmiede des Unterreichs Euren Namen in Stahl schlagen. Mögen unsere Nachfahren sich an Euer Werk erinnern, wenn wir selbst längst zu Staub zerfallen sind.~
 = ~Ein Hoch auf <CHARNAME>, den Retter Iltkazars!~
 == AC#TURBB ~Hoch lebe <CHARNAME>!~
 == AC#GROMB ~Hoch!~
 == AC#BETTB ~Hoch!~
 == AC#ILFNB ~Hoch!~ [AC#ILFNB]
 == AC#MITH5~Ruhe, meine Freunde! Ruhe!~
-= ~Es erfreut mein Herz mehr, als Worte es ausdrücken können, Euch alle heute hier versammelt zu sehen. Lange habe ich von diesem Augenblick geträumt. Lange genug. Doch Feste gehen vorüber, und Königreiche regieren sich nicht von selbst.~
+= ~Es erfreut mein Herz mehr, als Worte es ausdrücken können, Euch alle heute hier versammelt zu sehen. Lange habe ich von diesem Augenblick geträumt. Sehr lange. Doch Königreiche regieren sich nicht von selbst.~
 = ~Iltkazar muss wieder aufgebaut werden. Unsere Verluste müssen gezählt, unsere Bündnisse erneuert und unsere Wunden geheilt werden. Viel Arbeit liegt vor uns.~
 = ~Für heute jedoch sollen die Schmieden schweigen, die Gelehrten ihre Bücher schließen und die Krieger ihre Waffen niederlegen. Heute wird gefeiert!~
 == AC#ILFNB ~Hurra!~ [AC#ILFNB]
 == AC#MITH5 ~Heute beginnt die Zukunft Iltkazars.~
-= ~Und nun geht in die Tavernen und leert Euren Met zu Ehren unserer Stadt! Ich werde mich hier im Thronsaal an die Arbeit machen, die letzten hundert Jahre nachzuarbeiten. Euer König hat nach seiner Abwesenheit einen Berg von Angelegenheiten zu regeln.~
+= ~Geht in die Tavernen und leert Euren Met bis zum letzten Fass. Zu Ehren unserer Stadt! Ich werde mich hier im Thronsaal an die Arbeit machen, die letzten hundert Jahre nachzuarbeiten. Euer König hat nach seiner Abwesenheit einen Berg von Angelegenheiten zu regeln.~
 == AC#ILFNB ~Wir trinken auf unseren König! Heute soll der Met niemals versiegen.~ [AC#ILFNB]
 == AC#MITH5 ~Zieht aus in die Stadt und feiert!~
-== AC#MITH5 ~<CHARNAME>, bleibt noch eine Weile. Sobald das Volk mit den Feierlichkeiten beginnt, möchte ich mit Euch sprechen. Es gibt vieles zu erzählen.~
+== AC#MITH5 ~<CHARNAME>, wenn Ihr noch Zeit habt, würde ich nun, da das Volk zufrieden und glücklich ist, unter uns alleine einige vertrauliche Worte wechseln. Es gibt vieles zu erzählen!~
 END
+IF ~~ THEN DO ~StartCutSceneMode()
+	StartCutScene("AC#IL89C")
+	SetGlobal("AC#IltkazarCelebration","GLOBAL",3)							   
+	~ EXIT	
 
 	

@@ -5,9 +5,16 @@
 
 BEGIN ~AC#GROM5~
 
+BEGIN AC#SORNB 
+BEGIN AC#ANTAB 
 BEGIN AC#TURBB 
 BEGIN AC#GROMB 
-BEGIN AC#BETTB 
+BEGIN AC#BETTB
+BEGIN AC#ELERB 
+BEGIN AC#STURB
+BEGIN AC#FENYB
+BEGIN AC#VRONB
+ 
 BEGIN AC#ILFNB 
 
 BEGIN ~AC#MITH5~
@@ -94,7 +101,7 @@ END
 
 IF ~Global("AC#Mithbarak_Rescued","GLOBAL",20)
 Global("AC#IltkazarCelebration","GLOBAL",0)~ THEN BEGIN hello_throneroom
-SAY ~Willkommen im Thronsaal von Iltkazar, <CHARNAME>! Zum ersten Mal begegnet Ihr hier nicht einer stummen Statue aus Mithril, sondern dem König selbst. Es ist eine Freude, Euch als Freund in diesen Hallen begrüßen zu dürfen.~
+SAY ~Willkommen im Thronsaal von Iltkazar, <CHARNAME>! Zum ersten Mal begegnet Ihr hier nicht einer stummen Statue aus Mithril, sondern dem König selbst. Es ist mir eine Freude, Euch als Freund in diesen Hallen begrüßen zu dürfen.~
 IF ~~ THEN REPLY ~Es freut mich, Euch wohlauf zu sehen.~ GOTO throne_room_02
 IF ~~ THEN REPLY ~Ihr habt mir eine ganze Menge zu erklären.~ GOTO throne_room_explain
 END
@@ -284,5 +291,35 @@ IF ~~ THEN DO ~StartCutSceneMode()
 	StartCutScene("AC#IL89C")
 	SetGlobal("AC#IltkazarCelebration","GLOBAL",3)							   
 	~ EXIT	
+	
+CHAIN IF ~Global("AC#ILRegencyCouncilDone","GLOBAL",1)~ THEN AC#GROMB chain_regency_council_thank_you
+~Bevor Ihr Iltkazar verlasst, wartet noch einen Augenblick. Auch der Regentschaftsrat möchte Euch seinen Dank aussprechen.~
+== AC#STURB ~Unsere Kinder werden eines Tages fragen, weshalb Iltkazar noch steht. Dann werden wir Euren Namen nennen. Das allein macht Eure Tat unvergänglich.~
+== AC#ELERB ~Ich hielt Bücher und Werkstätten stets für wichtiger als Heldengeschichten. Heute werde ich wohl ein neues Kapitel schreiben müssen. Und darin werdet Ihr einen Ehrenplatz erhalten.~
+== AC#GROMB ~Ich habe viele Krieger kommen und gehen sehen. Nur wenige hätte ich ohne Zögern an meiner Seite in die tiefsten Tunnel geführt. Euch schon. Das ist das größte Lob, das ich vergeben kann.~
+== AC#FENYB ~Mein Clan verdankt Euch mehr, als Worte ausdrücken können. Manche Wunden werden niemals ganz heilen... doch Ihr habt uns die Hoffnung zurückgegeben, dass unser Volk wieder nach vorne blicken kann.~
+== AC#TURBB ~Dumathoin wacht über die verborgenen Schätze der Erde. Heute hat er uns gezeigt, dass der größte Schatz ein treuer Verbündeter ist. Sein Segen begleite Euch auf allen Wegen.~
+== AC#VRONB ~Die alten Runen sprechen davon, dass das Schicksal manchmal einen einzelnen Fremden erwählt, den Lauf eines ganzen Volkes zu verändern. Ich hielt das stets für eine Legende. Nun weiß ich es besser.~
+== AC#BETTB ~Die Hallen der Runensteine werden Euren Namen bewahren, solange ein Zwerg sie zu lesen vermag. Kein Gelehrter könnte sich einen würdigeren Eintrag wünschen.~
+== AC#SORNB ~Viele Helden vermögen ein Schwert zu führen. Doch nur wenige hinterlassen ein Reich, das noch lange nach ihrem Fortgang Bestand haben wird. Ihr habt unseren Schmieden eine Zukunft zurückgegeben. Dafür danke ich Euch.~
+== AC#ANTAB ~Moradin lehrt, dass jedes große Werk mit einem einzigen Hammerschlag beginnt. Ihr habt den entscheidenden Schlag geführt. Möge der Allvater jeden Eurer weiteren Schritte segnen.~
+== AC#GROMB ~Ihr hört es selbst, <CHARNAME>. Ganz Iltkazar steht in Eurer Schuld. Mögen die Hallen Moradins Euch eines fernen Tages ebenso freudig empfangen, wie die Hallen Shanatars es heute tun.~
+== AC#VRONB ~Wir haben lange beraten, womit wir Euch für Eure Taten angemessen danken könnten.~
+== AC#GROMB ~Es gibt nur eine angemessene Antwort. Eines der größten Artefakte, das Iltkazar je besessen hat, soll fortan Euch gehören.~
+== AC#ANTAB ~Bei Euch ist es in guten Händen. Geht weise damit um.~
+== AC#ELERB ~Nehmt diesen Talisman. Möge er Euch stets an uns und unser Volk erinnern.~
+== AC#GROMB ~Und nun, <CHARNAME>, ist es auch für uns Zeit, Abschied zu nehmen. Unsere Zitadellen müssen wieder aufgebaut und unser König unterstützt werden. Zu lange hat unser Volk stillgestanden. Nun wartet Arbeit auf uns.~
+== AC#VRONB ~So lebt denn wohl, wundersamer <PRO_RACE> von der Oberfläche!~
+== AC#ANTAB ~Möge Moradin Euch stets beschützen!~
+== AC#BETTB ~Und Dugmaren Euch stets weise Einfälle schenken.~
+== AC#TURBB ~Und Dumathoin Euren tiefsten Wunsch erfüllen.~
+== AC#ELERB ~Lebt wohl! Ich werde Euch nie vergessen.~
+== AC#STURB ~Jetzt habt Ihr doch tatsächlich einen alten Zwerg zum Weinen gebracht!~
+== AC#GROMB ~So, das genügt! Genug der Sentimentalität. Mitglieder des Regentschaftsrates und der Schmieden, lasst uns Haltung bewahren und uns wieder unseren Aufgaben nachgehen. Gehabt Euch wohl, <CHARNAME>. Iltkazar wird Euch niemals vergessen.~
+END
+
+IF ~~ THEN DO ~SetGlobal("AC#ILRegencyCouncilDone","GLOBAL",2)
+SetGlobal("Regency_Council_Thanks","ACIL64",10)~ EXIT	
+	
 
 	

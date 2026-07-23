@@ -123,3 +123,20 @@ THEN
         ActionOverride("AC#MITH5",SetNumTimesTalkedTo(1))
 END
 
+IF
+    Global("Regency_Council_Thanks","ACIL64",0)
+    GlobalGT("AC#IltkazarCelebration","GLOBAL",2)
+THEN
+    RESPONSE #100
+        CreateCreature("AC#SORNB",[477.1130],NE)  // Sorni Arnschädel
+        CreateCreature("AC#ANTAB",[514.1145],NE)  // Anthan Diamantklinge
+        CreateCreature("AC#ELERB",[611.1172],NE)  // Elern Abgrundlied
+        CreateCreature("AC#GROMB",[687.1191],NE)  // Torth Schwarzstahl
+        CreateCreature("AC#STURB",[435.1175],NE)  // Sturvis Abgrundlied
+        CreateCreature("AC#FENYB",[529.1197],NE)  // Fenyl Arnschädel
+        CreateCreature("AC#TURBB",[599.1263],NE)  // Turbaern Ghalmrin
+        CreateCreature("AC#VRONB",[436.1231],NE)  // Vronia Eisenbieger
+        CreateCreature("AC#BETTB",[496.1274],E)  // Bettargh Abgrundlied
+        SetGlobal("Regency_Council_Thanks","ACIL64",1)
+END
+

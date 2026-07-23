@@ -1,0 +1,7 @@
+IF
+    Global("Regency_Council_Thanks","ACIL64",10)
+THEN
+    RESPONSE #100
+        EscapeArea()
+END
+

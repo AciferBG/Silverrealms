@@ -1,0 +1,11 @@
+IF
+    Global("Regency_Council_Thanks","ACIL64",1)
+    See([PC])
+    Range([PC],15)
+THEN
+    RESPONSE #100
+        SetGlobal("Regency_Council_Thanks","ACIL64",2)
+        SetGlobal("AC#ILRegencyCouncilDone","GLOBAL",1)
+        StartDialogueNoSet([PC])
+END
+

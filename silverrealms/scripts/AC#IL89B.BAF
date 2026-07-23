@@ -21,6 +21,7 @@ THEN
         FadeFromColor([30.0],0)
         Wait(3)
         SetGlobal("AC#IltkazarCelebration","GLOBAL",2)
+        Explore()
         PlaySong(%AC#IL56%)
         ActionOverride("AC#MITH5",StartDialogueNoSet([PC]))
 END

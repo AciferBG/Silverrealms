@@ -1,0 +1,14 @@
+IF
+    Entered([ANYONE])
+    !StateCheck(LastTrigger,STATE_INVISIBLE)
+    !StateCheck(LastTrigger,STATE_IMPROVEDINVISIBILITY)
+THEN
+    RESPONSE #50
+        CreateCreatureDoor("AC#GITH5",[2435.1595],E)  // Githyanki-Klingenläufer
+        CreateCreatureDoor("AC#GITH5",[2911.1633],W)  // Githyanki-Klingenläufer
+        CreateCreatureDoor("AC#GITH7",[2510.1626],E)  // Githyanki-Infiltrator
+        CreateCreatureDoor("AC#GITH7",[2854.1622],E)  // Githyanki-Infiltrator
+        CreateCreatureDoor("AC#GITHM",[3027.1601],W)  // Githyanki-Geistklinge
+        TriggerActivation("Trap_githyanki",FALSE)
+END
+

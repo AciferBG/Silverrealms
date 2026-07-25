@@ -2,6 +2,18 @@
 
 COPY ~silverrealms/cre/copy~         ~override~
 
+COPY ~silverrealms/cre/AC#GITHM.cre~ ~override~ // Githyanki-Geistklinge
+  SAY NAME1 @9069 SAY NAME2 @9069
+
+COPY ~silverrealms/cre/AC#GITH7.cre~ ~override~ // Githyanki-Infiltrator
+  SAY NAME1 @9068 SAY NAME2 @9068
+
+COPY ~silverrealms/cre/AC#GITH6.cre~ ~override~ // Githyanki-Phasenjäger
+  SAY NAME1 @9067 SAY NAME2 @9067
+  
+COPY ~silverrealms/cre/AC#GITH5.cre~ ~override~   // Githyanki-Klingenläufer
+  SAY NAME1 @9066 SAY NAME2 @9066
+
 COPY ~silverrealms/cre/AC#IL805.cre~ ~override~
   SAY NAME1 @9065 SAY NAME2 @9065 
 

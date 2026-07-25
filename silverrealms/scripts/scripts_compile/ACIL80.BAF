@@ -80,5 +80,58 @@ THEN
 		CreateVisualEffectObject("ICMAGICH",Player1)
 		DisplayStringHead(Player1,@7800)
 		SetGlobal("AC#IL_TiamatKey","GLOBAL",1)
+        SetGlobal("SpawnInfiltrators","ACIL80",10)
+END
+
+IF
+   Global("SpawnInfiltrators","ACIL80",0)
+   Dead("AC#BERB1")
+THEN
+    RESPONSE #100
+        SetGlobal("SpawnInfiltrators","ACIL80",1)
+END
+
+IF
+    Global("SpawnInfiltrators","ACIL80",0)
+    !CombatCounter(0)
+THEN
+    RESPONSE #100
+        CreateCreatureObjectDoor("AC#GITH5",Player1,0,0,0)  // Githyanki-Klingenläufer
+        CreateCreatureObjectDoor("AC#GITH5",Player2,0,0,0)  // Githyanki-Klingenläufer
+        CreateCreatureObjectDoor("AC#GITH7",Player3,0,0,0)  // Githyanki-Infiltrator
+        CreateCreatureObjectDoor("AC#GITH7",Player4,0,0,0)  // Githyanki-Infiltrator
+        CreateCreatureObjectDoor("AC#GITHM",Player5,0,0,0)  // Githyanki-Geistklinge
+        SetGlobal("SpawnInfiltrators","ACIL80",1)
+END
+
+IF
+    Global("SpawnInfiltrators","ACIL80",1)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("SpawnGithTimer","ACIL80",ONE_TURN)
+        SetGlobal("SpawnInfiltrators","ACIL80",2)
+END
+
+IF
+    Global("SpawnInfiltrators","ACIL80",2)
+    GlobalTimerExpired("SpawnGithTimer","ACIL80")
+    CombatCounter(0)
+THEN
+    RESPONSE #15
+        SetGlobalTimer("SpawnGithTimer","ACIL80",TWO_TURNS)
+        CreateCreatureObjectDoor("AC#GITH5",Player1,0,0,0)  // Githyanki-Klingenläufer
+        CreateCreatureObjectDoor("AC#GITH5",Player2,0,0,0)  // Githyanki-Klingenläufer
+        CreateCreatureObjectDoor("AC#GITH7",Player3,0,0,0)  // Githyanki-Infiltrator
+        CreateCreatureObjectDoor("AC#GITH7",Player4,0,0,0)  // Githyanki-Infiltrator
+        CreateCreatureObjectDoor("AC#GITHM",Player5,0,0,0)  // Githyanki-Geistklinge
+   RESPONSE #20
+        SetGlobalTimer("SpawnGithTimer","ACIL80",TWO_TURNS)
+        CreateCreatureObjectDoor("AC#GITH5",Player1,0,0,0)  // Githyanki-Klingenläufer
+        CreateCreatureObjectDoor("AC#GITH7",Player3,0,0,0)  // Githyanki-Infiltrator
+        CreateCreatureObjectDoor("AC#GITHM",Player5,0,0,0)  // Githyanki-Geistklinge
+   RESPONSE #20
+        SetGlobalTimer("SpawnGithTimer","ACIL80",TWO_TURNS)
+        CreateCreatureObjectDoor("AC#GITH5",Player1,0,0,0)  // Githyanki-Klingenläufer
+        CreateCreatureObjectDoor("AC#GITH5",Player2,0,0,0)  // Githyanki-Klingenläufer
 END
 

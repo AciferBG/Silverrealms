@@ -1,40 +1,24 @@
 IF
-    Heard([ANYONE],111)
-THEN
-    RESPONSE #100
-        MoveToObject(NearestEnemyOf(Myself))
-        Continue()
-END
-
-IF
     See(NearestEnemyOf(Myself))
     OR(2)
         StateCheck(Myself,STATE_INVISIBLE)
         StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
 THEN
     RESPONSE #100
-        AttackReevaluate(NearestEnemyOf(Myself),45)
+        EquipMostDamagingMelee()
+        AttackReevaluate(WorstAC([PC]),12)
 END
 
 IF
     See(NearestEnemyOf(Myself))
     !StateCheck(Myself,STATE_INVISIBLE)
     !StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
-    HasItemSlot(Myself,SLOT_MISC0)
+    HasItem("POTN10",Myself)  // Unsichtbarkeitstrank
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
 THEN
     RESPONSE #100
-        UseItemSlot(Myself,SLOT_MISC0)
-END
-
-IF
-    See(NearestEnemyOf(Myself))
-    !StateCheck(Myself,STATE_INVISIBLE)
-    !StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
-    !HasItemSlot(Myself,SLOT_MISC0)
-THEN
-    RESPONSE #100
-        RunAwayFrom(NearestEnemyOf(Myself),70)
-        Hide()
+        UseItem("POTN10",Myself)  // Unsichtbarkeitstrank
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
 END
 
 IF

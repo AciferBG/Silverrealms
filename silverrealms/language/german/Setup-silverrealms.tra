@@ -1673,6 +1673,7 @@ Charvekannathors Hort~
 // ACIL55 - Arnskullhall
 @6500 = ~Zur Azerkynhalle~
 
+
 // Area script Strings
 @7000 = ~Ihr müsst die Schwebescheibe, das Quecksilber und den Levitationstrank auf den Altar legen, um die Scheibe wieder verzaubern zu können.~
 @7001 = ~In dieser Position klemmt ein Zahnrad, welches wohl jenseits dieses Raumes aktiviert wird.~
@@ -1711,6 +1712,8 @@ König Mith Barak hat seinen Thron zurückerlangt. Die Schmieden brennen wieder,
 Doch die Wege eines Abenteurers führen stets weiter.
 
 Wenn die Tore Iltkazars langsam hinter Euch verschwinden werden, wisst Ihr, dass Ihr hier im Unterreich mehr zurücklasst als eine gerettete Stadt: Ihr lasst Freunde zurück. Und ein Volk, das Euren Namen niemals vergessen wird.~ [AC#ILFIN]
+
+@7800 = ~Die fünf Fragmente verschmelzen zu einem vollständigen Schlüssel.~
 
 
 
@@ -2326,6 +2329,20 @@ Edelsteinschutz
 Gewicht: 2~
 @8142 = ~Chromatischer Schlüssel~
 @8143 = ~Dieser kunstvoll gearbeitete Schlüssel besteht aus fünf geschwungenen Drachenklauen, deren Farben den chromatischen Drachen Tiamats entsprechen. Im Zentrum hält ein kunstvoll gearbeitetes Schloss die Klauen zusammen. Der finstere Gegenstand gewährt Zugang zu den inneren Hallen der Festung.~
+@8144 = ~Rote Drachenklaue~
+@8145 = ~Diese einzelne Klaue eines roten Drachen ist an einem Ende mit einer Fassung versehen – ganz so, als wäre sie einst Teil eines größeren Mechanismus gewesen.~
+
+@8146 = ~Blaue Drachenklaue~
+@8147 = ~Diese einzelne Klaue eines blauen Drachen ist an einem Ende mit einer Fassung versehen – ganz so, als wäre sie einst Teil eines größeren Mechanismus gewesen.~
+
+@8148 = ~Grüne Drachenklaue~
+@8149 = ~Diese einzelne Klaue eines grünen Drachen ist an einem Ende mit einer Fassung versehen – ganz so, als wäre sie einst Teil eines größeren Mechanismus gewesen.~
+
+@8150 = ~Schwarze Drachenklaue~
+@8151 = ~Diese einzelne Klaue eines schwarzen Drachen ist an einem Ende mit einer Fassung versehen – ganz so, als wäre sie einst Teil eines größeren Mechanismus gewesen.~
+
+@8152 = ~Weiße Drachenklaue~
+@8153 = ~Diese einzelne Klaue eines weißen Drachen ist an einem Ende mit einer Fassung versehen – ganz so, als wäre sie einst Teil eines größeren Mechanismus gewesen.~
 
 
  

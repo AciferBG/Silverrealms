@@ -3,6 +3,26 @@
 
 COPY ~silverrealms/itm/copy~         ~override~
 
+COPY ~%MOD_FOLDER%/itm/AC#KY801.itm~         ~override~    // red dragon claw
+  SAY NAME2 @8144
+  SAY DESC  @8145
+
+COPY ~%MOD_FOLDER%/itm/AC#KY802.itm~         ~override~    // blue dragon claw
+  SAY NAME2 @8146
+  SAY DESC  @8147
+
+COPY ~%MOD_FOLDER%/itm/AC#KY803.itm~         ~override~    // green dragon claw
+  SAY NAME2 @8148
+  SAY DESC  @8149
+
+COPY ~%MOD_FOLDER%/itm/AC#KY804.itm~         ~override~    // black dragon claw
+  SAY NAME2 @8150
+  SAY DESC  @8151
+
+COPY ~%MOD_FOLDER%/itm/AC#KY805.itm~         ~override~    // white dragon claw
+  SAY NAME2 @8152
+  SAY DESC  @8153
+
  COPY ~%MOD_FOLDER%/itm/AC#ILAM8.itm~         ~override~    // heart of Iltkazar
   SAY NAME2 @8140
   SAY DESC @8141

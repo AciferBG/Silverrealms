@@ -60,6 +60,25 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("SpawnSkelMage","ACIL80",1)
-		CreateCreature("AC#80SK4",[2584.445],3)  // Skelett-Magier
+		CreateCreature("AC#80SK4",[1618.993],3)  // Skelett-Magier
+END
+
+IF
+    Global("AC#IL_TiamatKey","GLOBAL",0)
+    PartyHasItem("AC#KY801")
+    PartyHasItem("AC#KY802")
+    PartyHasItem("AC#KY803")
+    PartyHasItem("AC#KY804")
+    PartyHasItem("AC#KY805")
+THEN
+    RESPONSE #100
+        TakePartyItem("AC#KY802")
+        TakePartyItem("AC#KY803")
+        TakePartyItem("AC#KY804")
+        TakePartyItem("AC#KY805")
+        TakeItemReplace("AC#KEY80","AC#KY801",Player1)
+		CreateVisualEffectObject("ICMAGICH",Player1)
+		DisplayStringHead(Player1,@7800)
+		SetGlobal("AC#IL_TiamatKey","GLOBAL",1)
 END
 

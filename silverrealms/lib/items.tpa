@@ -3,6 +3,14 @@
 
 COPY ~silverrealms/itm/copy~         ~override~
 
+ COPY ~%MOD_FOLDER%/itm/AC#ILAM8.itm~         ~override~    // heart of Iltkazar
+  SAY NAME2 @8140
+  SAY DESC @8141
+
+ COPY ~%MOD_FOLDER%/itm/AC#ILRI8.itm~         ~override~    // Dragon ring
+  SAY NAME2 @8138
+  SAY DESC @8139
+
  COPY ~%MOD_FOLDER%/itm/AC#ILLE6.itm~         ~override~    // Lizard king's leather armor
   SAY NAME2 @8136
   SAY DESC @8137

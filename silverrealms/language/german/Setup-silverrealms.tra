@@ -1529,6 +1529,7 @@ Das Buch scheint eine Art magische Aura zu besitzen; es fühlt sich ungewöhnlic
 @1152 = ~Permanent -1 auf Rettungswürfe gegen Zauber~
 @1153 = ~Todesschrei~
 @1154 = ~Drachenodem~
+@1155 = ~Edelsteinschutz~
 
 
 
@@ -2166,7 +2167,9 @@ Schutz vor Netzen
 
 Gewicht: 3~
 @8106 = ~Ring verstärkten Leids~
-@8107 = ~Drow Ring für Gift
+@8107 = ~Ring der schwarzen Adern
+
+Die Priesterinnen Lolths schenken diese Ringe gerne ihren treuesten männlichen Liebhabern. Sein Zweck ist ebenso grausam wie raffiniert: Gelangt Gift in den Körper seines Trägers, entfesselt der Ring dessen volle zerstörerische Kraft.
 
 EIGENSCHAFTEN:
 
@@ -2298,6 +2301,29 @@ RK-Bonus:
 Mindeststärke: 6
 
 Gewicht: 7~
+@8138 = ~Drachenring~
+@8139 = ~Diesen silbernen Ring ziert ein Drachenkopf. Er wurde von Generation zu Generation guter Silberdrachen weitergegeben, um den Wesen im Kapf gegen böse Drachen zusätzlichen Schutz zu gewähren. Ihr habt diesen Ring von König Mith Barak – dem Silberdrachen Mithbarakaz – als Dank für seine Befreiung aus den Fängen Tiamats erhalten.
+
+EIGENSCHAFTEN:
+
+RK-Bonus: -2
+RW-Bonus: -2
+Magiewiderstand: +10 %
+
+Gewicht: 0~
+@8140 = ~Herz von Iltkazar~
+@8141 = ~Dieses Amulett ist als das Herz Iltkazars bekannt. Sein Mittelpunkt ist ein großer, grüner Omlar – ein seltener Edelstein, der ausschließlich in den Tiefen des Mithrilreiches Iltkazar vorkommt. Omlare besitzen die außergewöhnliche Fähigkeit, magische Energien über lange Zeiträume zu speichern. Seit Generationen wird dieses Amulett von den Herrschern Iltkazars als Symbol der Standhaftigkeit ihres Reiches gehütet.
+
+EIGENSCHAFTEN:
+
+Edelsteinschutz
+ Dauer: 1 Phase
+ Bereich: Anwender
+ Der Träger wird vollständig von einem schimmernden Omlar-Kristall umschlossen. Während dieser Zeit ist er gegen sämtliche Angriffe und Zauber geschützt, kann jedoch selbst weder handeln noch auf die Welt außerhalb des Kristalls einwirken. Der Kristall ist unzerstörbar und kann nur durch ein erfolgreiches „Magie bannen“ aufgelöst werden. Die Wirkung ist vergleichbar mit dem Zauber Otilukes elastische Kugel, außer, dass der Träger unter dem Einfluss des Kristalls einen Trefferpunkt pro Sekunde regeneriert.
+ Träger regeneriert unter dem Einfluss des Kristalls alle 3 Sekunden einen Trefferpunkt
+
+
+Gewicht: 2~
 
 
  

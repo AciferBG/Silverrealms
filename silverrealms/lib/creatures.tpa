@@ -5,6 +5,18 @@ COPY ~silverrealms/cre/copy~         ~override~
 COPY ~silverrealms/cre/AC#ILFNB.cre~ ~override~
   SAY NAME1 @9059 SAY NAME2 @9059 
 
+COPY ~silverrealms/cre/AC#ILFNC.cre~ ~override~
+  SAY NAME1 @9059 SAY NAME2 @9059 
+
+COPY ~silverrealms/cre/AC#ILFND.cre~ ~override~
+  SAY NAME1 @9059 SAY NAME2 @9059 
+
+COPY ~silverrealms/cre/AC#ILFNE.cre~ ~override~
+  SAY NAME1 @9059 SAY NAME2 @9059
+  
+COPY ~silverrealms/cre/AC#ILFNF.cre~ ~override~
+  SAY NAME1 @9059 SAY NAME2 @9059 
+
 COPY ~silverrealms/cre/AC#HEAR2.cre~ ~override~
   SAY NAME1 @152 SAY NAME2 @152
 

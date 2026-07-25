@@ -16,12 +16,34 @@ BEGIN AC#FENYB
 BEGIN AC#VRONB
  
 BEGIN AC#ILFNB 
+BEGIN AC#ILFND 
+BEGIN AC#ILFNF 
+
 
 BEGIN ~AC#MITH5~
 
+IF ~Global("AC#IltkazarCelebration","GLOBAL",3)
+Global("AC#IL_GiveDragonRing","GLOBAL",0)~ THEN BEGIN hello_throne_final_0
+  SAY ~<CHARNAME>. Die Ansprache an mein Volk ist vorüber. Nun endlich haben wir Gelegenheit, in Ruhe miteinander zu sprechen. Ihr habt Iltkazar mehr gegeben, als ich jemals zurückzahlen könnte. Doch zunächst möchte ich Euch dies als Zeichen meiner Dankbarkeit geben: Ein Ring meiner Ahnen. Nehmt ihn. Ihr verdient ihn, fortan zu tragen.~
+	IF ~~ THEN DO ~GiveItemCreate("AC#ILRI8",Player1,1,1,1) ~ GOTO throne_final_questions_1
+END
 
-IF ~Global("AC#IltkazarCelebration","GLOBAL",3)~ THEN BEGIN hello_throne_final
-  SAY ~<CHARNAME>. Die Ansprache an mein Volk ist vorüber. Nun endlich haben wir Gelegenheit, in Ruhe miteinander zu sprechen. Ihr habt Iltkazar mehr gegeben, als ich jemals zurückzahlen könnte. Wenn Ihr Fragen habt, werde ich sie beantworten, so gut ich kann.~
+	IF ~~ THEN BEGIN throne_final_questions_1
+	  SAY ~Wenn Ihr Fragen habt, werde ich sie beantworten, so gut ich kann.~
+	  IF ~~ THEN REPLY ~Erzählt mir von Euch. Wer ist Mithbarakaz wirklich?~ GOTO who_are_you
+	  IF ~~ THEN REPLY ~Wie seid Ihr überhaupt König von Iltkazar geworden?~ GOTO king_of_iltkazar
+	  IF ~~ THEN REPLY ~Wie lange lastete der Fluch bereits auf Euch?~ GOTO curse
+	  IF ~~ THEN REPLY ~Wie konntet Ihr all die Jahre als Zwerg leben?~ GOTO life_as_dwarf
+	  IF ~~ THEN REPLY ~Was wird nun aus Iltkazar werden?~ GOTO future
+	  IF ~~ THEN REPLY ~Was wird aus dem Regentschaftsrat?~ GOTO regency
+	  IF ~~ THEN REPLY ~Wusste irgendjemand, dass Ihr ein Drache seid?~ GOTO secret
+	  IF ~~ THEN REPLY ~Was bedeutet Iltkazar Euch persönlich?~ GOTO meaning
+	  IF ~~ THEN REPLY ~Ich denke, es ist Zeit für meinen Abschied.~ GOTO farewell
+	END
+
+IF ~Global("AC#IltkazarCelebration","GLOBAL",3)
+GlobalGT("AC#IL_GiveDragonRing","GLOBAL",0)~ THEN BEGIN hello_throne_final_01
+  SAY ~Nun endlich haben wir Gelegenheit, in Ruhe miteinander zu sprechen. Ihr habt Iltkazar mehr gegeben, als ich jemals zurückzahlen könnte. Wenn Ihr Fragen habt, werde ich sie beantworten, so gut ich kann.~
   IF ~~ THEN REPLY ~Erzählt mir von Euch. Wer ist Mithbarakaz wirklich?~ GOTO who_are_you
   IF ~~ THEN REPLY ~Wie seid Ihr überhaupt König von Iltkazar geworden?~ GOTO king_of_iltkazar
   IF ~~ THEN REPLY ~Wie lange lastete der Fluch bereits auf Euch?~ GOTO curse
@@ -308,7 +330,11 @@ CHAIN IF ~Global("AC#ILRegencyCouncilDone","GLOBAL",1)~ THEN AC#GROMB chain_rege
 == AC#GROMB ~Es gibt nur eine angemessene Antwort. Eines der größten Artefakte, das Iltkazar je besessen hat, soll fortan Euch gehören.~
 == AC#ANTAB ~Bei Euch ist es in guten Händen. Geht weise damit um.~
 == AC#ELERB ~Nehmt diesen Talisman. Möge er Euch stets an uns und unser Volk erinnern.~
-== AC#GROMB ~Und nun, <CHARNAME>, ist es auch für uns Zeit, Abschied zu nehmen. Unsere Zitadellen müssen wieder aufgebaut und unser König unterstützt werden. Zu lange hat unser Volk stillgestanden. Nun wartet Arbeit auf uns.~
+END
+IF ~~ THEN DO ~GiveItemCreate("AC#ILAM8",Player1,1,1,1)~ EXTERN AC#GROMB chain_regency_council_thank_you_02 
+
+CHAIN IF ~~ THEN AC#GROMB chain_regency_council_thank_you_02
+~Und nun, <CHARNAME>, ist es auch für uns an der Zeit, Abschied zu nehmen. Unsere Zitadellen müssen wieder aufgebaut und unser König unterstützt werden. Zu lange hat unser Volk stillgestanden. Nun wartet Arbeit auf uns.~
 == AC#VRONB ~So lebt denn wohl, wundersamer <PRO_RACE> von der Oberfläche!~
 == AC#ANTAB ~Möge Moradin Euch stets beschützen!~
 == AC#BETTB ~Und Dugmaren Euch stets weise Einfälle schenken.~

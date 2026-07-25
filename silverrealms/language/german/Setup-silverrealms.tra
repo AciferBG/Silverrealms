@@ -2324,6 +2324,8 @@ Edelsteinschutz
 
 
 Gewicht: 2~
+@8142 = ~Chromatischer Schlüssel~
+@8143 = ~Dieser kunstvoll gearbeitete Schlüssel besteht aus fünf geschwungenen Drachenklauen, deren Farben den chromatischen Drachen Tiamats entsprechen. Im Zentrum hält ein kunstvoll gearbeitetes Schloss die Klauen zusammen. Der finstere Gegenstand gewährt Zugang zu den inneren Hallen der Festung.~
 
 
  
@@ -2388,6 +2390,12 @@ Gewicht: 2~
 @9057 = ~Issk’var~
 @9058 = ~Verdammnisbrut~ // Doomspawn
 @9059 = ~Bürger Iltkazars~
+
+@9061 = ~Rote Klaue Tiamats~
+@9062 = ~Blaue Klaue Tiamats~
+@9063 = ~Grüne Klaue Tiamats~
+@9064 = ~Schwarze Klaue Tiamats~
+@9065 = ~Weiße Klaue Tiamats~
 
 
 

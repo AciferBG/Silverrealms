@@ -490,7 +490,6 @@ COPY_EXISTING ~AC#82DO3.bcs~   ~override/AC#82DO3.bcs~
        
 COMPILE ~silverrealms/scripts/AC#HARM1.baf~
 
-COMPILE ~silverrealms/scripts/AC#CUT78.baf~
 
 //COMPILE ~silverrealms/scripts/ACIL88.baf~
 COMPILE ~silverrealms/scripts/ac#cut88.baf~

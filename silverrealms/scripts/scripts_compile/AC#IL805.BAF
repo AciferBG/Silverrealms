@@ -1,0 +1,49 @@
+IF
+    See(NearestEnemyOf(Myself))
+    GlobalLT("Icestorm","LOCALS",4)
+    !GlobalTimerNotExpired("IcestormTimer","LOCALS")
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+    RESPONSE #100
+        ForceSpell(NearestEnemyOf(Myself),WIZARD_ICE_STORM)  // SPWI404.SPL (Eissturm)
+        SetGlobalTimer("IcestormTimer","LOCALS",THREE_ROUNDS)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        IncrementGlobal("Icestorm","LOCALS",1)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    GlobalLT("Slow","LOCALS",2)
+    !GlobalTimerNotExpired("SlowTimer","LOCALS")
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+    RESPONSE #100
+        ForceSpell(NearestEnemyOf(Myself),WIZARD_SLOW)  // SPWI312.SPL (Verlangsamen)
+        SetGlobalTimer("SlowTimer","LOCALS",TEN_ROUNDS)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        IncrementGlobal("Slow","LOCALS",1)
+END
+
+IF
+    Heard([ANYONE],111)
+THEN
+    RESPONSE #100
+        MoveToObject(NearestEnemyOf(Myself))
+END
+
+IF
+    AttackedBy([GOODCUTOFF],DEFAULT)
+    !Allegiance(Myself,ENEMY)
+THEN
+    RESPONSE #100
+        Enemy()
+END
+
+IF
+    ActionListEmpty()
+    See(NearestEnemyOf(Myself))
+THEN
+    RESPONSE #100
+        AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+

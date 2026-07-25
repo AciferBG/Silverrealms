@@ -243,7 +243,7 @@ COPY ~silverrealms/itm/ac#02wo1.itm~         ~override/ac#02wo1.itm~ // wolf pel
   SAY NAME2 @141
   SAY DESC @142
 
-COPY ~silverrealms/itm/ac#80pst.itm~         ~override/ac#80pst.itm~ // Portal stone (for jumping around in area acil80)
+COPY ~silverrealms/itm/AC#80PST.itm~         ~override~ // Portal stone (for jumping around in area acil80)
   SAY NAME1 @171
   SAY NAME2 @171
   SAY DESC @172
@@ -696,8 +696,9 @@ COPY ~silverrealms/itm/AC#RCKEL.itm~         ~override~   // Stone of earth elem
   SAY UNIDENTIFIED_DESC @896
   SAY DESC @897
   
-COPY ~silverrealms/itm/ac#key80.itm~         ~override~   // Key for the Gate in Area ACIL80
-  SAY DESC @915
+COPY ~silverrealms/itm/AC#KEY80.itm~         ~override~   // Key for the Gate in Area ACIL80
+  SAY NAME2 @8142
+  SAY DESC @8143
 
 COPY ~silverrealms/itm/AC#SW2H1.itm~         ~override~   // Githyanki Silver sword in Area ACIL81, key for door to exit
   SAY DESC @918

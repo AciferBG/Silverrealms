@@ -1,0 +1,64 @@
+IF
+    Heard([ANYONE],111)
+THEN
+    RESPONSE #100
+        MoveToObject(NearestEnemyOf(Myself))
+        Continue()
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    OR(2)
+        StateCheck(Myself,STATE_INVISIBLE)
+        StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
+THEN
+    RESPONSE #100
+        AttackReevaluate(NearestEnemyOf(Myself),45)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    !StateCheck(Myself,STATE_INVISIBLE)
+    !StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
+    HasItemSlot(Myself,SLOT_MISC0)
+THEN
+    RESPONSE #100
+        UseItemSlot(Myself,SLOT_MISC0)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    !StateCheck(Myself,STATE_INVISIBLE)
+    !StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
+    !HasItemSlot(Myself,SLOT_MISC0)
+THEN
+    RESPONSE #100
+        RunAwayFrom(NearestEnemyOf(Myself),70)
+        Hide()
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    !Range(NearestEnemyOf(Myself),5)
+THEN
+    RESPONSE #100
+        EquipRanged()
+        AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    Range(NearestEnemyOf(Myself),5)
+THEN
+    RESPONSE #100
+        EquipMostDamagingMelee()
+        AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+    AttackedBy([ANYONE],DEFAULT)
+THEN
+    RESPONSE #100
+        AttackReevaluate(LastAttackerOf(Myself),30)
+END
+

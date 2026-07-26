@@ -2046,18 +2046,12 @@ COPY ~silverrealms/cre/AC#DWIN1.cre~ ~override/AC#DWIN1.cre~ //Verwundeter Zwerg
   
 COPY ~silverrealms/cre/AC#RAVEN.cre~ ~override/AC#RAVEN.cre~ //Raven
   SAY NAME1 @479 SAY NAME2 @479
-  
-    
-    COPY_EXISTING ~ac#RAVEN.cre~ ~override~
-    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#RAVEN~))
+  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#RAVEN~))
     
 
 COPY ~silverrealms/cre/AC#RAVE1.cre~ ~override/AC#RAVE1.cre~ //Raven
   SAY NAME1 @479 SAY NAME2 @479
-  
-    
-    COPY_EXISTING ~ac#RAVE1.cre~ ~override~
-    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#RAVEN~))
+  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#RAVEN~))
     
 COPY ~silverrealms/cre/AC#RAVE0.cre~ ~override/AC#RAVE0.cre~ //Raven
   SAY NAME1 @479 SAY NAME2 @479

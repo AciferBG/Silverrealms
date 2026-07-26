@@ -14,6 +14,26 @@ THEN
 END
 
 IF
+    See(NearestEnemyOf(Myself))
+    OR(5)
+        See(NearestEnemyOfType([GOODCUTOFF.0.0.BARD]))
+        See(NearestEnemyOfType([GOODCUTOFF.0.0.DRUID_ALL]))
+        See(NearestEnemyOfType([GOODCUTOFF.0.0.CLERIC_ALL]))
+        See(NearestEnemyOfType([GOODCUTOFF.0.0.SORCERER]))
+        See(NearestEnemyOfType([GOODCUTOFF.0.0.MAGE_ALL]))
+    !HasBounceEffects(LastSeenBy(Myself))
+    GlobalLT("MelfsArrow","LOCALS",4)
+    !GlobalTimerNotExpired("MelfsArrowTimer","LOCALS")
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+    RESPONSE #100
+        ForceSpell(LastSeenBy(Myself),WIZARD_MELF_ACID_ARROW)  // SPWI211.SPL (Melfs Säurepfeil)
+        SetGlobalTimer("MelfsArrowTimer","LOCALS",THREE_ROUNDS)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        IncrementGlobal("MelfsArrow","LOCALS",1)
+END
+
+IF
     ActionListEmpty()
     See(NearestEnemyOf(Myself))
 THEN

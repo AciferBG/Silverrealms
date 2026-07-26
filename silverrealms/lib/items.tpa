@@ -3,6 +3,13 @@
 
 COPY ~silverrealms/itm/copy~         ~override~
 
+COPY ~%MOD_FOLDER%/itm/AC#ILCL8.itm~         ~override~    // Malphas' claw
+  SAY NAME2 @8154
+  SAY DESC  @8155
+
+COPY ~%MOD_FOLDER%/itm/AC#ILRAV.itm~         ~override~    // raven itm
+  WRITE_LONG 0x16e (IDS_OF_SYMBOL (~animate~ ~AC#RAVEN~))
+
 COPY ~%MOD_FOLDER%/itm/AC#KY801.itm~         ~override~    // red dragon claw
   SAY NAME2 @8144
   SAY DESC  @8145

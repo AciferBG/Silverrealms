@@ -14,6 +14,98 @@ THEN
 END
 
 IF
+    Global("Fireball","LOCALS",0)
+    DifficultyLT(NORMAL)
+THEN
+    RESPONSE #100
+        SetGlobal("Fireball","LOCALS",1)
+END
+
+IF
+    !GlobalTimerNotExpired("CDFireball","LOCALS")
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+    GlobalLT("Fireball","LOCALS",3)
+    Allegiance(Myself,ENEMY)
+    See(SixthNearest([PC]))
+THEN
+    RESPONSE #100
+        ReallyForceSpellRES("AC#ILC1",SixthNearest([PC]))  // Feuerodem
+        IncrementGlobal("Fireball","LOCALS",1)
+        SetGlobalTimer("CDFireball","LOCALS",TEN_ROUNDS)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+END
+
+IF
+    !GlobalTimerNotExpired("CDFireball","LOCALS")
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+    GlobalLT("Fireball","LOCALS",3)
+    Allegiance(Myself,ENEMY)
+    See(FifthNearest([PC]))
+THEN
+    RESPONSE #100
+        ReallyForceSpellRES("AC#ILC1",FifthNearest([PC]))  // Feuerodem
+        IncrementGlobal("Fireball","LOCALS",1)
+        SetGlobalTimer("CDFireball","LOCALS",TEN_ROUNDS)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+END
+
+IF
+    !GlobalTimerNotExpired("CDFireball","LOCALS")
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+    GlobalLT("Fireball","LOCALS",3)
+    Allegiance(Myself,ENEMY)
+    See(FourthNearest([PC]))
+THEN
+    RESPONSE #100
+        ReallyForceSpellRES("AC#ILC1",FourthNearest([PC]))  // Feuerodem
+        IncrementGlobal("Fireball","LOCALS",1)
+        SetGlobalTimer("CDFireball","LOCALS",TEN_ROUNDS)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+END
+
+IF
+    !GlobalTimerNotExpired("CDFireball","LOCALS")
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+    GlobalLT("Fireball","LOCALS",3)
+    Allegiance(Myself,ENEMY)
+    See(ThirdNearest([PC]))
+THEN
+    RESPONSE #100
+        ReallyForceSpellRES("AC#ILC1",ThirdNearest([PC]))  // Feuerodem
+        IncrementGlobal("Fireball","LOCALS",1)
+        SetGlobalTimer("CDFireball","LOCALS",TEN_ROUNDS)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+END
+
+IF
+    !GlobalTimerNotExpired("CDFireball","LOCALS")
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+    GlobalLT("Fireball","LOCALS",3)
+    Allegiance(Myself,ENEMY)
+    See(SecondNearest([PC]))
+THEN
+    RESPONSE #100
+        ReallyForceSpellRES("AC#ILC1",SecondNearest([PC]))  // Feuerodem
+        IncrementGlobal("Fireball","LOCALS",1)
+        SetGlobalTimer("CDFireball","LOCALS",TEN_ROUNDS)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+END
+
+IF
+    !GlobalTimerNotExpired("CDFireball","LOCALS")
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+    GlobalLT("Fireball","LOCALS",3)
+    Allegiance(Myself,ENEMY)
+    See(NearestEnemyOf(Myself))
+THEN
+    RESPONSE #100
+        ReallyForceSpellRES("AC#ILC1",NearestEnemyOf(Myself))  // Feuerodem
+        IncrementGlobal("Fireball","LOCALS",1)
+        SetGlobalTimer("CDFireball","LOCALS",TEN_ROUNDS)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+END
+
+IF
     ActionListEmpty()
     See(NearestEnemyOf(Myself))
 THEN

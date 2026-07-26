@@ -244,7 +244,9 @@ Der Hersteller des Trankes scheint außergewöhnliche Mühen aufgewendet zu habe
 @210 = ~Schuppenpanzer~
 @211 = ~Messingdrachenschuppenpanzer~
 @212 = ~Dies ist ein Schuppenpanzer, der aus den Schuppen irgendeiner Bestie hergestellt wurde.~
-@213 = ~Messingdrachenschuppenpanzer sind leicht, widerstandsfähig und von Natur aus feuerresistent. Aus den Schuppen uralter Messingdrachen gefertigt, zählen sie zu den wertvollsten und seltensten Rüstungen Faerûns. Allerdings ist es eine abgrundtief böse Tat, einen Messingdrachen zu töten und aus seinen Schuppen solch eine Rüstung herzustellen. Dieser Panzer wurde aus den Schuppen des ehrwürdigen Messingdrachen Mimmeshtuaroth aus der Raurinwüste gefertigt.
+@213 = ~Messingdrachenschuppenpanzer sind leicht, außerordentlich widerstandsfähig und von Natur aus feuerresistent. Aus den Schuppen uralter Messingdrachen gefertigt, zählen sie zu den wertvollsten und seltensten Rüstungen Faerûns.
+
+Doch einen Messingdrachen zu erschlagen und aus seinen Schuppen eine solche Rüstung zu fertigen, ist eine Tat von abgrundtiefer Bosheit. Der Träger dieser Schuppen fiel im Kampf gegen die Fünf Klauen Tiamats, die seinen Leib als Trophäe an sich rissen. Als fanatische Diener der Drachenkönigin haben sie es sich zum Ziel gesetzt, jeden metallischen Drachen zu erschlagen. Aus ihren Schuppen fertigen sie Waffen, Rüstungen und Trophäen – grausame Zeichen ihres Sieges über die Erzfeinde ihrer Herrin.
 
 SPEZIFISCHE EIGENSCHAFTEN:
 
@@ -1530,6 +1532,7 @@ Das Buch scheint eine Art magische Aura zu besitzen; es fühlt sich ungewöhnlic
 @1153 = ~Todesschrei~
 @1154 = ~Drachenodem~
 @1155 = ~Edelsteinschutz~
+@1156 = ~Feuerodem~
 
 
 
@@ -2343,6 +2346,22 @@ Gewicht: 2~
 
 @8152 = ~Weiße Drachenklaue~
 @8153 = ~Diese einzelne Klaue eines weißen Drachen ist an einem Ende mit einer Fassung versehen – ganz so, als wäre sie einst Teil eines größeren Mechanismus gewesen.~
+
+@8154 = ~Malphas' Mantel~
+@8155 = ~Dies ist der Mantel von Malphas, einem Wesen in Rabengestalt im Dienste Tiamats. Der Mantel ist aus zahlreichen Federn von Raben und Krähen hergestellt. 
+
+Man sagt, Malphas sei durch einen uralten Fluch in die Gestalt eines Raben gezwungen worden. Über seine ursprüngliche Gestalt ist nichts bekannt: Manche vermuten einen gefallenen Deva, andere gar einen Teufel, oder dass er einst selbst ein mächtiger roter Drache gewesen sei.
+
+Tiamat versprach ihm Erlösung, sollte es ihm gelingen, sie aus ihrem Gefängnis in den Neun Höllen zu befreien. Ob sie die Einzige war, die seinen Fluch hätte lösen können – oder ob sie ihn gar selbst über ihn gebracht hatte –, wird wohl für immer ein Geheimnis bleiben. Malphas suchte jedenfalls unermüdlich nach einem Weg, den Fluch zu brechen, bis er in der Astralebene von dem <PRO_RACE> <CHARNAME> erschlagen wurde. 
+
+EIGENSCHAFTEN:
+
+RK-Bonus: -1
+RW-Bonus: -1
+
+Der Träger kann sich auf Wunsch für 2 Phasen in einen Raben verwandeln.
+
+Gewicht: 3~
 
 
  

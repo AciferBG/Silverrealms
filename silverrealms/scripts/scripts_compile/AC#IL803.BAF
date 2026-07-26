@@ -11,6 +11,20 @@ END
 
 IF
     See(NearestEnemyOf(Myself))
+    Delay(18)
+    GlobalLT("Cloudkill","LOCALS",2)
+    !GlobalTimerNotExpired("CloudkillTimer","LOCALS")
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+    RESPONSE #100
+        ForceSpell(NearestEnemyOf(Myself),WIZARD_CLOUDKILL)  // SPWI502.SPL (Todeswolke)
+        SetGlobalTimer("CloudkillTimer","LOCALS",ONE_TURN)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        IncrementGlobal("Cloudkill","LOCALS",1)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
     !StateCheck(Myself,STATE_INVISIBLE)
     !StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
     HasItem("POTN10",Myself)  // Unsichtbarkeitstrank

@@ -7,6 +7,9 @@ LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 0 parameter2 = ic
 
 COPY ~silverrealms/spl/copy~         ~override~
 
+COPY ~silverrealms/spl/AC#ILC1.spl~          ~override~ // fire odem
+SAY NAME1 @1156 SAY NAME2 @1156
+
 COPY ~silverrealms/spl/AC#ILHE.spl~          ~override~ // Protective gem
 SAY NAME1 @1155 SAY NAME2 @1155
 

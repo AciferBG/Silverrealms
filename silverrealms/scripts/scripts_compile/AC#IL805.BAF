@@ -1,12 +1,12 @@
 IF
     See(NearestEnemyOf(Myself))
-    GlobalLT("Icestorm","LOCALS",4)
+    GlobalLT("Icestorm","LOCALS",3)
     !GlobalTimerNotExpired("IcestormTimer","LOCALS")
     !GlobalTimerNotExpired("OH_Cast","LOCALS")
 THEN
     RESPONSE #100
         ForceSpell(NearestEnemyOf(Myself),WIZARD_ICE_STORM)  // SPWI404.SPL (Eissturm)
-        SetGlobalTimer("IcestormTimer","LOCALS",THREE_ROUNDS)
+        SetGlobalTimer("IcestormTimer","LOCALS",SEVEN_ROUNDS)
         SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
         IncrementGlobal("Icestorm","LOCALS",1)
 END
@@ -22,6 +22,20 @@ THEN
         SetGlobalTimer("SlowTimer","LOCALS",TEN_ROUNDS)
         SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
         IncrementGlobal("Slow","LOCALS",1)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    Delay(12)
+    GlobalLT("ConeOfCold","LOCALS",4)
+    !GlobalTimerNotExpired("ConeOfColdTimer","LOCALS")
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+    RESPONSE #100
+        ForceSpell(NearestEnemyOf(Myself),WIZARD_CONE_OF_COLD)  // SPWI503.SPL (Kältekegel)
+        SetGlobalTimer("ConeOfColdTimer","LOCALS",SIX_ROUNDS)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        IncrementGlobal("ConeOfCold","LOCALS",1)
 END
 
 IF

@@ -9,6 +9,15 @@ THEN
 END
 
 IF
+    HPLT(Myself,20)
+    Global("AC#MalphasDies","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("AC#MalphasDies","GLOBAL",1)
+        StartDialogueNoSet([PC])
+END
+
+IF
     HPPercentLT(Myself,75)
     Global("Malphasteleport","ACIL88",0)
 THEN

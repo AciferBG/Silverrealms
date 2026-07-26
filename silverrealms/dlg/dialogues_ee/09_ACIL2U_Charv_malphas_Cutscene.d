@@ -19,7 +19,7 @@ CHAIN IF ~NumTimesTalkedTo(0)~ THEN AC#2UCHA hello_charv
 
 
 CHAIN IF ~True()~ THEN AC#2UMAL hello_Malphas
-						~Seid gegrüßt, Roter. Wie ich sehe, leckt Ihr noch immer Eure Wunden. Hat der Kampf gegen drei Zwerge Euch derart mitgenommen?~ [AC#ILMAA]
+						~Seid gegrüßt, Roter. Wie ich sehe, leckt Ihr noch immer Eure Wunden. Hat der Kampf gegen drei Zwerge Euch derart mitgenommen?~ [AC#ILMAR]
 						== AC#2UCHA ~Malphas, durchdrungener Teufel! Wagt es nicht, Euch über mich lustig zu machen!~ 
 						== AC#2UMAL ~Ich möchte nur mein Bedauern über Euren mühsam errungenen Sieg zum Ausdruck bringen. Und Euch mitteilen, dass unsere Herrin sehr genau Euren Fortschritt beobachtet, das Zwergenreich von jeglicher Hilfe abzuschotten.~
 						== AC#2UCHA ~Solange *Eure* Herrin in ihrem elenden Gefängnis weilt, diene ich lediglich freiwillig, Malphas. Vergesst das nicht.~

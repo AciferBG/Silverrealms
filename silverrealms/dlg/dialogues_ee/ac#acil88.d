@@ -53,6 +53,21 @@ IF ~~ THEN DO ~SetGlobal("AC#Mithbarak_Free","GLOBAL",1)~
 END
 
 /*******************************************************************************************************
+Dialog AC#MAL88
+*******************************************************************************************************/
+BEGIN ~AC#MAL88~
+
+IF ~Global("AC#MalphasDies","GLOBAL",1)~ THEN BEGIN hello_die
+SAY  ~Verdammt sollt Ihr sein! Besiegt von einem niederen <PRO_RACE>?~ 
+=
+~So muss ich denn in diesem Körper sterben...~ [AC#ILMAX]
+IF ~~ THEN DO ~SetGlobal("AC#MalphasDies","GLOBAL",10)
+DestroyItem("MINHP1")
+Kill(Myself)~
+   EXIT
+END
+
+/*******************************************************************************************************
 Dialog AC#MAL02
 *******************************************************************************************************/
 BEGIN ~AC#MAL02~

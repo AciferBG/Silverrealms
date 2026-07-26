@@ -1,124 +1,181 @@
 IF
-	See([ANYONE])
-	Global("hostile","LOCALS",0)
+    See([ANYONE])
+    Global("hostile","LOCALS",0)
 THEN
-	RESPONSE #100
-		ApplySpell(Myself,CLERIC_HEAL)  // SPPR607.SPL (Heilung)
-		SetGlobal("hostile","LOCALS",1)
-		Enemy()
+    RESPONSE #100
+        ApplySpell(Myself,CLERIC_HEAL)  // SPPR607.SPL (Heilung)
+        SetGlobal("hostile","LOCALS",1)
+        Enemy()
 END
 
 IF
-	HPPercentLT(Myself,75)
-	Global("teleport","LOCALS",0)
+    HPPercentLT(Myself,75)
+    Global("Malphasteleport","ACIL88",0)
 THEN
-	RESPONSE #100
-		SetGlobal("teleport","LOCALS",1)
-		ReallyForceSpellRES("AC#TEL1",Myself)  // Teleportieren
-		Wait(1)
-		JumpToPoint([856.1629])
-		Face(13)
-		ReallyForceSpell(Myself,CLERIC_HEAL)  // SPPR607.SPL (Heilung)
-		CreateCreatureDoor("AC#CORN3",[1300.1257],10)  // Cornugon
-		SetGlobalTimer("Teleportation","LOCALS",THREE_ROUNDS)
+    RESPONSE #100
+        SetGlobal("Malphasteleport","ACIL88",1)
+        ReallyForceSpellRES("AC#TEL1",Myself)  // Teleportieren
+        Wait(1)
+        JumpToPoint([856.1629])
+        Face(SEE)
 END
 
 IF
-	HPPercentLT(Myself,55)
-	Global("teleport","LOCALS",1)
-	GlobalTimerExpired("Teleportation","LOCALS")
+    Global("Malphasteleport","ACIL88",1)
+    Global("MalphasHeal","ACIL88",0)
 THEN
-	RESPONSE #100
-		SetGlobal("teleport","LOCALS",2)
-		ReallyForceSpellRES("AC#TEL1",Myself)  // Teleportieren
-		Wait(1)
-		JumpToPoint([1790.823])
-		Face(3)
-		ReallyForceSpell(Myself,CLERIC_HEAL)  // SPPR607.SPL (Heilung)
-		CreateCreatureDoor("AC#ABRE1",[1522.791],0)  // Roter Abishai
-		CreateCreatureDoor("AC#ABRE1",[1871.1099],5)  // Roter Abishai
+    RESPONSE #100
+        SetGlobal("MalphasHeal","ACIL88",1)
+        ReallyForceSpell(Myself,CLERIC_HEAL)  // SPPR607.SPL (Heilung)
+        SetGlobalTimer("Teleportation","LOCALS",THREE_ROUNDS)
+        CreateCreatureDoor("AC#CORN3",[1300.1257],NE)  // Cornugon
+        CreateCreatureDoor("AC#ERIN1",[1026.1773],NNW)  // Erinnye
+        CreateCreatureDoor("AC#ERIN1",[634.1465],NNW)  // Erinnye
+        CreateCreatureDoor("AC#ERIN1",[704.1749],NNW)  // Erinnye
 END
 
 IF
-	See(NearestEnemyOf(Myself))
-	Global("Dispel_Magic","LOCALS",0)
+    HPPercentLT(Myself,55)
+    Global("Malphasteleport","ACIL88",1)
+    GlobalTimerExpired("Teleportation","LOCALS")
 THEN
-	RESPONSE #100
-		ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_DISPEL_MAGIC)  // SPWI302.SPL (Magie bannen)
-		SetGlobal("Dispel_Magic","LOCALS",1)
+    RESPONSE #100
+        SetGlobal("Malphasteleport","ACIL88",2)
+        ReallyForceSpellRES("AC#TEL1",Myself)  // Teleportieren
+        Wait(1)
+        JumpToPoint([1790.823])
+        Face(SWW)
 END
 
 IF
-	See(NearestEnemyOf(Myself))
-	Global("PITFEAR","LOCALS",0)
+    Global("Malphasteleport","ACIL88",2)
+    Global("MalphasHeal","ACIL88",1)
 THEN
-	RESPONSE #100
-		ForceSpell(NearestEnemyOf(Myself),DEMON_FEAR)  // SPIN890.SPL (Dämonenfurcht)
-		SetGlobal("PITFEAR","LOCALS",1)
+    RESPONSE #100
+        SetGlobal("MalphasHeal","ACIL88",2)
+        ReallyForceSpell(Myself,CLERIC_HEAL)  // SPPR607.SPL (Heilung)
+        CreateCreatureDoor("AC#ABRE1",[1522.791],S)  // Roter Abishai
+        CreateCreatureDoor("AC#ABRE1",[1871.1099],NWW)  // Roter Abishai
+        CreateCreatureDoor("AC#ERIN1",[1640.875],SW)  // Erinnye
+        CreateCreatureDoor("AC#ERIN1",[1812.930],SW)  // Erinnye
 END
 
 IF
-	See(NearestEnemyOf(Myself))
-	!StateCheck(NearestEnemyOf(Myself),STATE_PANIC)
-	Global("Symbol_Pain","LOCALS",0)
+    See(NearestEnemyOf(Myself))
+    Global("Malphasteleport","ACIL88",1)
+    GlobalLT("MalphasFireball","ACIL88",4)
+    !GlobalTimerNotExpired("Fireball","LOCALS")
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
 THEN
-	RESPONSE #100
-		SetGlobal("Symbol_Pain","LOCALS",1)
-		ReallyForceSpellRES("SPWI955",NearestEnemyOf(Myself))  // Symbol des Schmerzes
+    RESPONSE #100
+        ForceSpell(LastSeenBy(Myself),WIZARD_FIREBALL)  // SPWI304.SPL (Feuerball)
+        IncrementGlobal("MalphasFireball","ACIL88",1)
+        SetGlobalTimer("Fireball","LOCALS",THREE_ROUNDS)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
 END
 
 IF
-	See(NearestEnemyOf(Myself))
-	!GlobalTimerNotExpired("Flame_Arrow","LOCALS")
+    See(NearestEnemyOf(Myself))
+    Global("Malphasteleport","ACIL88",2)
+    GlobalLT("MalphasFireball02","ACIL88",4)
+    !GlobalTimerNotExpired("Fireball02","LOCALS")
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
 THEN
-	RESPONSE #40
-		ForceSpell(NearestEnemyOf(Myself),WIZARD_FLAME_ARROW)  // SPWI303.SPL (Flammenpfeil)
-		SetGlobalTimer("Flame_Arrow","LOCALS",ONE_ROUND)
-	RESPONSE #60
-		AttackReevaluate(NearestEnemyOf(Myself),15)
-		Continue()
+    RESPONSE #100
+        ForceSpell(LastSeenBy(Myself),WIZARD_FIREBALL)  // SPWI304.SPL (Feuerball)
+        IncrementGlobal("MalphasFireball02","ACIL88",1)
+        SetGlobalTimer("Fireball02","LOCALS",THREE_ROUNDS)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
 END
 
 IF
-	See(NearestEnemyOf(Myself))
-	StateCheck(NearestEnemyOf(Myself),STATE_HASTED)
+    See(NearestEnemyOf(Myself))
+    Global("PITFEAR","LOCALS",0)
 THEN
-	RESPONSE #40
-		ForceSpell(NearestEnemyOf(Myself),WIZARD_DISPEL_MAGIC)  // SPWI302.SPL (Magie bannen)
-	RESPONSE #60
-		AttackReevaluate(NearestEnemyOf(Myself),15)
+    RESPONSE #100
+        ForceSpell(NearestEnemyOf(Myself),DEMON_FEAR)  // SPIN890.SPL (Dämonenfurcht)
+        SetGlobal("PITFEAR","LOCALS",1)
 END
 
 IF
-	See(NearestEnemyOf(Myself))
-	RandomNum(2,1)
-	!GlobalTimerNotExpired("Flame_Arrow","LOCALS")
+    See(NearestEnemyOf(Myself))
+    Global("Dispel_Magic","LOCALS",0)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
 THEN
-	RESPONSE #10
-		ForceSpell(NearestEnemyOf(Myself),WIZARD_FLAME_ARROW)  // SPWI303.SPL (Flammenpfeil)
-		SetGlobalTimer("Flame_Arrow","LOCALS",ONE_ROUND)
-	RESPONSE #10
-		ForceSpell(SecondNearestEnemyOf(Myself),WIZARD_FLAME_ARROW)  // SPWI303.SPL (Flammenpfeil)
-		SetGlobalTimer("Flame_Arrow","LOCALS",ONE_ROUND)
-	RESPONSE #10
-		ForceSpell(ThirdNearestEnemyOf(Myself),WIZARD_FLAME_ARROW)  // SPWI303.SPL (Flammenpfeil)
-		SetGlobalTimer("Flame_Arrow","LOCALS",ONE_ROUND)
-	RESPONSE #10
-		ForceSpell(FourthNearestEnemyOf(Myself),WIZARD_FLAME_ARROW)  // SPWI303.SPL (Flammenpfeil)
-		SetGlobalTimer("Flame_Arrow","LOCALS",ONE_ROUND)
-	RESPONSE #10
-		ForceSpell(FifthNearestEnemyOf(Myself),WIZARD_FLAME_ARROW)  // SPWI303.SPL (Flammenpfeil)
-		SetGlobalTimer("Flame_Arrow","LOCALS",ONE_ROUND)
-	RESPONSE #10
-		ForceSpell(SixthNearestEnemyOf(Myself),WIZARD_FLAME_ARROW)  // SPWI303.SPL (Flammenpfeil)
-		SetGlobalTimer("Flame_Arrow","LOCALS",ONE_ROUND)
+    RESPONSE #100
+        ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_REMOVE_MAGIC)  // SPWI302.SPL (Magie zerstören)
+        SetGlobal("Dispel_Magic","LOCALS",1)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
 END
 
 IF
-	See(NearestEnemyOf(Myself))
-	Allegiance(Myself,ENEMY)
+    See(NearestEnemyOf(Myself))
+    !StateCheck(NearestEnemyOf(Myself),STATE_PANIC)
+    Global("Symbol_Pain","LOCALS",0)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
 THEN
-	RESPONSE #100
-		AttackReevaluate(NearestEnemyOf(Myself),15)
+    RESPONSE #100
+        SetGlobal("Symbol_Pain","LOCALS",1)
+        ReallyForceSpellRES("SPWI955",NearestEnemyOf(Myself))  // Symbol des Schmerzes
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    !GlobalTimerNotExpired("Flame_Arrow","LOCALS")
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+    RESPONSE #40
+        ForceSpell(NearestEnemyOf(Myself),WIZARD_FLAME_ARROW)  // SPWI303.SPL (Flammenpfeil)
+        SetGlobalTimer("Flame_Arrow","LOCALS",ONE_ROUND)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+    RESPONSE #60
+        AttackReevaluate(NearestEnemyOf(Myself),15)
+        Continue()
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    StateCheck(NearestEnemyOf(Myself),STATE_HASTED)
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+    RESPONSE #40
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        ForceSpell(NearestEnemyOf(Myself),WIZARD_REMOVE_MAGIC)  // SPWI302.SPL (Magie zerstören)
+    RESPONSE #60
+        AttackReevaluate(NearestEnemyOf(Myself),15)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    RandomNum(2,1)
+    !GlobalTimerNotExpired("Flame_Arrow","LOCALS")
+THEN
+    RESPONSE #10
+        ForceSpell(NearestEnemyOf(Myself),WIZARD_FLAME_ARROW)  // SPWI303.SPL (Flammenpfeil)
+        SetGlobalTimer("Flame_Arrow","LOCALS",ONE_ROUND)
+    RESPONSE #10
+        ForceSpell(SecondNearestEnemyOf(Myself),WIZARD_FLAME_ARROW)  // SPWI303.SPL (Flammenpfeil)
+        SetGlobalTimer("Flame_Arrow","LOCALS",ONE_ROUND)
+    RESPONSE #10
+        ForceSpell(ThirdNearestEnemyOf(Myself),WIZARD_FLAME_ARROW)  // SPWI303.SPL (Flammenpfeil)
+        SetGlobalTimer("Flame_Arrow","LOCALS",ONE_ROUND)
+    RESPONSE #10
+        ForceSpell(FourthNearestEnemyOf(Myself),WIZARD_FLAME_ARROW)  // SPWI303.SPL (Flammenpfeil)
+        SetGlobalTimer("Flame_Arrow","LOCALS",ONE_ROUND)
+    RESPONSE #10
+        ForceSpell(FifthNearestEnemyOf(Myself),WIZARD_FLAME_ARROW)  // SPWI303.SPL (Flammenpfeil)
+        SetGlobalTimer("Flame_Arrow","LOCALS",ONE_ROUND)
+    RESPONSE #10
+        ForceSpell(SixthNearestEnemyOf(Myself),WIZARD_FLAME_ARROW)  // SPWI303.SPL (Flammenpfeil)
+        SetGlobalTimer("Flame_Arrow","LOCALS",ONE_ROUND)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    Allegiance(Myself,ENEMY)
+THEN
+    RESPONSE #100
+        AttackReevaluate(NearestEnemyOf(Myself),15)
 END
 

@@ -1219,6 +1219,7 @@ COPY ~silverrealms/cre/AC#BLEUC.cre~ ~override/AC#BLEUC.cre~
 
 COPY ~silverrealms/cre/AC#DRAS1.cre~ ~override~
   SAY NAME1 @163 SAY NAME2 @163
+  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~DRAGON_WHITE_SMALL_ACIFER~))
 
 COPY ~silverrealms/cre/AC#GITH1.cre~ ~override~ // Harmswa, Gith captain (Underdark 3e, p. 151)
   SAY NAME1 @164 SAY NAME2 @164
@@ -1975,8 +1976,9 @@ COPY ~silverrealms/cre/AC#23ST1.cre~ ~override/AC#23ST5.cre~ //Statue
 COPY ~silverrealms/cre/AC#ULIT2.cre~ ~override~ //Ulitharid: Malinthid
   SAY NAME1 @428 SAY NAME2 @428
   
-COPY ~silverrealms/cre/ac#dras2.cre~ ~override~ //Scorlachash: young Red Dragon
+COPY ~silverrealms/cre/ac#dras2.cre~ ~override~ //Scorlachash: young Red Dragon in ACIL83
   SAY NAME1 @429 SAY NAME2 @429
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~DRAGON_WHITE_SMALL_ACIFER~))
   
 COPY ~silverrealms/cre/AC#CRAT1.cre~ ~override~ //Cranium Rat
   SAY NAME1 @442 SAY NAME2 @442
@@ -2550,9 +2552,11 @@ COPY ~silverrealms/cre/AC#53SV2.cre~ ~override~  // Fruntuck
   
 COPY ~silverrealms/cre/AC#DRAS3.cre~ ~override~ // Cragnortherma in ACIL46
   SAY NAME1 @744 SAY NAME2 @744
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~DRAGON_WHITE_SMALL_ACIFER~))
   
 COPY ~silverrealms/cre/AC#DRAS4.cre~ ~override~ // Cragnortherma in ACIL09
   SAY NAME1 @744 SAY NAME2 @744
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~DRAGON_WHITE_SMALL_ACIFER~))
 
 COPY ~silverrealms/cre/AC#GITH8.cre~ ~override~ // Gith Warrior Krarak in ACIL09 (Axe Bridge Area)
   SAY NAME1 @745 SAY NAME2 @745

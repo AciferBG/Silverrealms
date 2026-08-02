@@ -1,0 +1,16 @@
+IF
+    See(NearestEnemyOf(Myself))
+    Range(LastSeenBy(Myself),15)
+    Delay(10)
+THEN
+    RESPONSE #100
+        ReallyForceSpell(NearestEnemyOf(Myself),HELL_HOUND_FLAME)  // SPIN956.SPL (Höllenhund: Feuerodem)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+THEN
+    RESPONSE #100
+        AttackReevaluate(NearestEnemyOf(Myself),5)
+END
+

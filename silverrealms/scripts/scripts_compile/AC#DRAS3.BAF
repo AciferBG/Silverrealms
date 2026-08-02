@@ -44,13 +44,6 @@ THEN
 END
 
 IF
-    Allegiance(Myself,ENEMY)
-THEN
-    RESPONSE #100
-        MoveToObject(NearestEnemyOf(Myself))
-END
-
-IF
     AttackedBy([GOODCUTOFF],DEFAULT)
     Allegiance(Myself,NEUTRAL)
 THEN

@@ -29,7 +29,7 @@ THEN
     RESPONSE #100
         SetGlobal("WingBuffet","LOCALS",0)
         ForceSpell(LastSeenBy(Myself),RED_DRAGON_BREATH)  // SPIN894.SPL (Roter Drache: Odemwaffe)
-        ReallyForceSpell(LastSeenBy(Myself),RED_DRAGON_HIT)  // SPIN693.SPL (No such index)
+        ReallyForceSpellRES("AC#RDRJ",LastSeenBy(Myself))  // No such index
         SetGlobalTimer("REDDRAGONBREATH","GLOBAL",THREE_ROUNDS)
 END
 
@@ -44,17 +44,10 @@ THEN
 END
 
 IF
-    Allegiance(Myself,ENEMY)
+    ActionListEmpty()
+    See(NearestEnemyOf(Myself))
 THEN
     RESPONSE #100
-        MoveToObject(NearestEnemyOf(Myself))
-END
-
-IF
-    AttackedBy([GOODCUTOFF],DEFAULT)
-    Allegiance(Myself,NEUTRAL)
-THEN
-    RESPONSE #100
-        Enemy()
+        AttackReevaluate(NearestEnemyOf(Myself),12)
 END
 

@@ -1,17 +1,4 @@
 IF
-    !Detect([PC])
-    HPLT(Myself,50)
-    CombatCounter(0)
-THEN
-    RESPONSE #100
-        SetGlobal("RemoveMagic","LOCALS",0)
-        SetGlobal("WingBuffet","LOCALS",0)
-        SetGlobal("Haste","LOCALS",0)
-        SetGlobal("DRAGONFEAR","LOCALS",0)
-        ForceSpell(Myself,CLERIC_HEAL)  // SPPR607.SPL (Heilung)
-END
-
-IF
     See(NearestEnemyOf(Myself))
     Global("DRAGONFEAR","LOCALS",0)
 THEN
@@ -19,7 +6,6 @@ THEN
         ReallyForceSpell(NearestEnemyOf(Myself),DRAGON_FEAR)  // SPIN895.SPL (Drachenfurcht)
         SetGlobal("DRAGONFEAR","LOCALS",1)
         SetGlobalTimer("REDDRAGONBREATH","GLOBAL",1)
-        ForceSpell(LastSeenBy(Myself),DRAGON_WING_BUFFET)  // SPIN695.SPL (Flügelschlag)
 END
 
 IF
@@ -29,7 +15,6 @@ IF
     Global("WingBuffet","LOCALS",0)
 THEN
     RESPONSE #100
-        ForceSpell(LastSeenBy(Myself),DRAGON_WING_BUFFET)  // SPIN695.SPL (Flügelschlag)
         Wait(1)
         SetGlobal("WingBuffet","LOCALS",1)
     RESPONSE #60
@@ -38,15 +23,13 @@ END
 
 IF
     See(NearestEnemyOf(Myself))
-    OR(2)
-        HPPercentLT(Myself,30)
-        !Range([0.0.GITHYANKI],30)
+    !Range(LastSeenBy(Myself),10)
     GlobalTimerExpired("REDDRAGONBREATH","GLOBAL")
 THEN
     RESPONSE #100
         SetGlobal("WingBuffet","LOCALS",0)
-        ForceSpellRES("AC#DRJ1",LastSeenBy(Myself))  // Roter Drache: Odemwaffe
-        ReallyForceSpellRES("AC#DRJ2",LastSeenBy(Myself))  // No such index
+        ForceSpell(LastSeenBy(Myself),RED_DRAGON_BREATH)  // SPIN894.SPL (Roter Drache: Odemwaffe)
+        ReallyForceSpellRES("AC#RDRJ",LastSeenBy(Myself))  // No such index
         SetGlobalTimer("REDDRAGONBREATH","GLOBAL",THREE_ROUNDS)
 END
 
@@ -58,19 +41,6 @@ THEN
     RESPONSE #100
         SetGlobal("WingBuffet","LOCALS",0)
         SetGlobalTimer("REDDRAGONBREATH","GLOBAL",THREE_ROUNDS)
-END
-
-IF
-    Global("Silence","LOCALS",0)
-    OR(2)
-        See(NearestEnemyOfType([0.0.0.MAGE_ALL]))
-        See(NearestEnemyOfType([0.0.0.CLERIC_ALL]))
-THEN
-    RESPONSE #100
-        ForceSpell(LastSeenBy(Myself),DRAGON_SILENCE)  // SPIN692.SPL (Stille: 4,5 m Radius)
-        SetGlobal("Silence","LOCALS",1)
-        AttackOneRound(LastSeenBy(Myself))
-        AttackOneRound(LastSeenBy(Myself))
 END
 
 IF

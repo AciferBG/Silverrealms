@@ -499,6 +499,16 @@ THEN
 END
 
 IF
+    Global("AnthanGiveHammer","ACIL20",0)
+    PartyHasItem("AC#ILKY8")  // Anthans Runenstein
+	OpenState("DOOR08",TRUE)
+THEN
+    RESPONSE #100
+        SetGlobal("AnthanGiveHammer","ACIL20",1)
+        CreateCreature("AC#ANT50",[1840.326],S)  // Anthan Diamantklinge
+END
+
+IF
 	GlobalGT("AC#HizagkuurQuest","GLOBAL",1)
     Global("RevealHizagkuurArea","ACIL20",0)
 THEN

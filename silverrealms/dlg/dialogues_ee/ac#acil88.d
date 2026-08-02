@@ -59,11 +59,10 @@ BEGIN ~AC#MAL88~
 
 IF ~Global("AC#MalphasDies","GLOBAL",1)~ THEN BEGIN hello_die
 SAY  ~Verdammt sollt Ihr sein! Besiegt von einem niederen <PRO_RACE>?~ 
-=
-~So muss ich denn in diesem Körper sterben...~ [AC#ILMAX]
 IF ~~ THEN DO ~SetGlobal("AC#MalphasDies","GLOBAL",10)
 DestroyItem("MINHP1")
-Kill(Myself)~
+Kill(Myself)
+AddexperienceParty(15000)~
    EXIT
 END
 

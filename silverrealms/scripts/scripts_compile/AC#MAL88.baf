@@ -9,12 +9,21 @@ THEN
 END
 
 IF
-    HPLT(Myself,20)
-    Global("AC#MalphasDies","GLOBAL",0)
+    Global("Stronger","LOCALS",0)
+    LevelPartyGT(12)
 THEN
     RESPONSE #100
-        SetGlobal("AC#MalphasDies","GLOBAL",1)
-        StartDialogueNoSet([PC])
+        ApplySpellRES("AC#ILXP",Myself)  // No such index
+        SetGlobal("Stronger","LOCALS",1)
+END
+
+IF
+    Global("Stronger","LOCALS",1)
+    LevelPartyGT(15)
+THEN
+    RESPONSE #100
+        ApplySpellRES("AC#ILXP",Myself)  // No such index
+        SetGlobal("Stronger","LOCALS",2)
 END
 
 IF
@@ -67,6 +76,15 @@ THEN
         CreateCreatureDoor("AC#ABRE1",[1871.1099],NWW)  // Roter Abishai
         CreateCreatureDoor("AC#ERIN1",[1640.875],SW)  // Erinnye
         CreateCreatureDoor("AC#ERIN1",[1812.930],SW)  // Erinnye
+END
+
+IF
+    HPLT(Myself,20)
+    Global("AC#MalphasDies","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("AC#MalphasDies","GLOBAL",1)
+        StartDialogueNoSet([PC])
 END
 
 IF

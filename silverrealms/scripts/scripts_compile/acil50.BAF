@@ -364,15 +364,6 @@ THEN
 END
 
 IF
-	Global("AnthanGiveHammer","ACIL50",0)
-	PartyHasItem("AC#ILKY8")
-THEN
-	RESPONSE #100
-		SetGlobal("AnthanGiveHammer","ACIL50",1)
-        CreateCreature("AC#ANT50",[745.2433],SE)  // Anthan
-END
-
-IF
 	Global("AC#Torglor","GLOBAL",1)
 THEN
 	RESPONSE #100

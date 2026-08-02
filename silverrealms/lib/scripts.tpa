@@ -618,8 +618,6 @@ COPY_EXISTING ~AC#52DW5.bcs~   ~override/AC#52DW5.bcs~
        REPLACE ~999997~ @296
        REPLACE ~999996~ @297
 
-COMPILE ~silverrealms/scripts/AC#GTDIS.baf~
-
 COMPILE ~silverrealms/scripts/AC#09DRS.baf~
 COPY_EXISTING ~AC#09DRS.bcs~   ~override/AC#09DRS.bcs~
        REPLACE ~999999~ @587 // Entered Dragonsound

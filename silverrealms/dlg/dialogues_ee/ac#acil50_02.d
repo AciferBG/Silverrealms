@@ -206,50 +206,10 @@ Anthan-Dialogue before departure to Charvekannathor's lair
 *******************************************************************************************************/
 BEGIN ~AC#ANT50~
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN hello_before_charvekannathor
-SAY ~<CHARNAME>, gut dass Ihr kommt. Ich hatte Euch den Siegelstein gegeben, um zu dem Drachen zu gelangen. Ich möchte Euch noch etwas anderes auf diese gefährliche Mission mitgeben.~
+SAY ~<CHARNAME>, gut dass Ihr kommt. Ich hatte Euch den Siegelstein gegeben, um zu dem Drachen zu gelangen. Doch ich möchte Euch noch etwas anderes auf diese gefährliche Mission mitgeben.~
 IF ~~ THEN GOTO forged_weapon
 END
-/*
-IF ~NumTimesTalkedTo(0)~ THEN BEGIN hello_before_torglor
-SAY ~<CHARNAME>, ich weiß, ich war sehr unfreundlich zu Euch, als wir uns das erste Mal getroffen haben.~
-IF ~~ THEN REPLY ~Das wart Ihr in der Tat, Anthan. Was wollt Ihr von mir?~ + 1
-IF ~~ THEN REPLY ~Ich nehme an, Ihr seid gekommen, um Euch zu entschuldigen.~ + 1
-IF ~~ THEN REPLY ~Ach, das war nicht der Rede wert.~ + 1
-END
 
-	IF ~~ THEN BEGIN 1
-	SAY ~Nun ja, ich möchte Euch um Entschuldigung bitten. Und ich habe ein Anliegen, das mir sehr wichtig ist.~
-	IF ~~ THEN REPLY ~Dafür habe ich jetzt keine Zeit.~ + 2
-	IF ~~ THEN REPLY ~Sicher, worum geht es?~ + 3
-	END
-	
-		IF ~~ THEN BEGIN 2
-		SAY ~Gut, ich verstehe. Dann wünsche ich Euch viel Glück auf Eurer Reise nach Torglor, <CHARNAME>! Möge Euch der Seelenschmied beschützen.~
-		IF ~~ THEN DO ~EscapeAreaObject("TrACIL51")~ EXIT
-		END
-	
-		IF ~~ THEN BEGIN 3
-		SAY ~Der Gedanke, dass dieses Monstrum, das meinen Sohn getötet hat, immer noch da draußen ist, geht mir nicht aus dem Kopf. Ich hatte zwar mein Leben lang kein gutes Verhältnis zu Beldas, weil er in meinen Augen kein richtiger *Held* war. Doch nun bereue ich meine Taten zutiefst.~
-		=
-		~Ich kann nichts mehr tun, um das Geschehene rückgängig zu machen. Ich bitte Euch jedoch um eine Sache: Tötet den Drachen, der meinen Jungen ermordet hat. Zeigt dieser Kreatur, dass es immer noch Gerechtigkeit auf dieser Welt gibt!~
-		IF ~~ THEN REPLY ~Ich mochte Beldas wirklich sehr, aber dieser Drache war groß und gefährlich, ich weiß nicht...~ + 4
-		IF ~~ THEN REPLY ~Ihr traut mir zu, dass ich einfach so einen Drachen umlege?~ + 4
-		IF ~~ THEN REPLY ~Ich kann nichts versprechen, aber ich werde mein Bestes geben, dieses Untier zur Strecke zu bringen.~ + 5
-		IF ~~ THEN REPLY ~Das ist eine ehrenvolle Aufgabe, die ich gerne annehme.~ + 5
-		END
-
-			IF ~~ THEN BEGIN 4
-			SAY ~Ihr habt in der kurzen Zeit, die Ihr hier verweiltet, schon so viel gute Taten vollbracht, die in die Lieder unserer Krieger eingehen könnten. Wenn jemand mit dieser Echse fertig wird, dann Ihr, <CHARNAME>.~
-			IF ~~ THEN REPLY ~Nein, bedaure, aber das kann ich nicht machen.~ + 2
-			IF ~~ THEN REPLY ~Das ist eine ehrenvolle Aufgabe, die ich gerne annehme.~ + 5
-			IF ~~ THEN REPLY ~Ich kann nichts versprechen, aber ich werde mein Bestes geben, dieses Untier zur Strecke zu bringen.~ + 5
-			END	
-			
-				IF ~~ THEN BEGIN 5
-				SAY ~Danke, dass Ihr den Herzenswunsch eines alten Mannes nicht so einfach ausschlagt!~
-				IF ~~ THEN + 6
-				END	
-*/
 					IF ~~ THEN BEGIN forged_weapon
 					SAY ~Hier, ich habe eine Waffe geschmiedet, die dieser Bestie das Fürchten lehren sollte. Ich habe all mein Wissen, all meine lebenslange Erfahrung in die Erschaffung dieser Waffe gelegt, und ich denke, sie gehört zu den besten Stücken, die ich jemals geschmiedet habe.~
 					IF ~~ THEN + 7
@@ -267,7 +227,8 @@ END
 							END	
 
 									IF ~~ THEN BEGIN 9
-								   SAY ~So. Das war der Grund, weshalb ich hier auf Euch gewartet habe. Nun möchte ich Euch nicht länger hinhalten. Auf Euch warten wichtige Schritte hinaus ins Ungewisse. Ich erwarte nicht, dass Ihr dem Drachen sofort gegenübertretet. Eure wichtigste Mission ist, unsere Stadt zu retten. Doch wenn Ihr auf die Bestie trefft, tötet sie im Namen meines Sohnes!~
+								   SAY ~So. Das war der Grund, weshalb ich hier auf Euch gewartet habe. Nun möchte ich Euch nicht länger hinhalten. Auf Euch warten wichtige Schritte hinaus ins Ungewisse. Ich erwarte nicht, dass Ihr dem Drachen sofort gegenübertretet. Doch wenn Ihr auf die Bestie trefft, tötet sie im Namen meines Sohnes!~
 								   IF ~~ THEN DO ~GiveItemCreate("AC#HAMAN",Player1,0,0,0) 								   								   
-								   EscapeAreaDestroy(3)~ EXIT
+									ForceSpell(Myself,POOF_GONE)
+									DestroySelf()~ EXIT
 									END							

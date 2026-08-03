@@ -1,0 +1,9 @@
+IF
+    GlobalGT("AC#_Iltkazar_Destroyed","GLOBAL",0)
+    Global("CreateSorni","ACIL51",0)
+THEN
+    RESPONSE #100
+        SetGlobal("CreateSorni","ACIL51",1)
+        CreateCreature("AC#SORN0",[573.492],E)  // Sorni Arnschädel
+END
+

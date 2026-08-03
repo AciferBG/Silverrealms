@@ -34,8 +34,8 @@ END
 	END
 
 	IF ~~ THEN BEGIN 5
-	   SAY ~Ihr habt vermutlich Recht. Meine Pflicht liegt hier oben in der Stadt. Es ist gut, Euch hier an unserer Seite zu haben Anthan.~
-	   IF ~~ EXTERN ~AC#ANT03~ 3
+	   SAY ~Ihr habt vermutlich Recht. Meine Pflicht liegt hier oben in der Stadt.~
+	   IF ~~ GOTO 15
 	END
 
 	IF ~~ THEN BEGIN 15
@@ -44,7 +44,7 @@ END
 	END
 
 IF ~~ THEN BEGIN where_is_hathar
-SAY ~Wo ist mein Sohn Hathar? Er soll vorübergehend die Verteidigung der Stadt organisieren.~
+SAY ~Und wo ist mein Sohn Hathar? Er soll vorübergehend die Verteidigung der Stadt organisieren.~
 IF ~Global("AC#HatharQuest","GLOBAL",1)~ THEN REPLY ~Das letzte Mal, als ich ihn sah, kämpfte er vor den Toren der Stadt gegen einige dieser Ausgeburten der Hölle.~ + 16
 IF ~Global("AC#HatharQuest","GLOBAL",0)~ THEN REPLY ~Das letzte Mal, als ich ihn sah, kämpfte er vor den Toren der Stadt gegen einige dieser Ausgeburten der Hölle.~ + proud_hathar
 END
@@ -109,8 +109,8 @@ IF ~~ THEN EXTERN ~AC#DUN03~ 4
 END
 
 IF ~~ THEN BEGIN 5
-SAY ~So schrecklich es auch klingen mag, <CHARNAME> hat Recht. Wir müssen hier nach dem Rechten sehen und die Überlebenden um uns scharen. Wie ist die Lage?~
-IF ~~ THEN EXTERN ~AC#ANT03~ 2
+SAY ~So schrecklich es auch klingen mag, <CHARNAME> hat Recht. Wir müssen hier nach dem Rechten sehen und die Überlebenden um uns scharen.?~
+IF ~~ THEN EXTERN ~AC#DUN03~ 5
 END
 
 IF ~~ THEN BEGIN 6
@@ -184,6 +184,16 @@ END
 						SAY ~Ach, wisst Ihr, ich möchte einfach, dass Ihr wieder gut zurückkommt. Und jetzt gehe ich lieber wieder in meine Schmiede, bevor ich noch sentimental werde. Passt auf Euch, <CHARNAME>!~
 						IF ~~ THEN DO ~EscapeAreaObject("TrACIL51")~ EXIT
 						END
+
+/*******************************************************************************************************
+Sorni-Dialogue in ACIL51 - Moradin's temple
+*******************************************************************************************************/
+BEGIN ~AC#SORN0~
+
+IF ~True()~ THEN BEGIN hello_0
+SAY ~Es ist gut, hier eine neue Heimat für mich und meine Schmiede gefunden zu haben!~
+IF ~~ THEN EXIT
+END
 
 /*******************************************************************************************************
 Anthan-Dialogue after destruction of Arnskull Hall

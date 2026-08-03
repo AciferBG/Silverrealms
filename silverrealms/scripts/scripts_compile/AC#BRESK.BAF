@@ -1,0 +1,7 @@
+IF
+    Global("BreskPostMoves01","ACIL50",1)
+THEN
+    RESPONSE #100
+        MoveToPoint([1692.1704])
+END
+

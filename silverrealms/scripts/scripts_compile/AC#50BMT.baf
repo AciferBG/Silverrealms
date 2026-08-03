@@ -1,17 +1,25 @@
 IF
-	IsOverMe("AC#BRES1")
-	Global("AC#BreskMoves01","ACIL50",1)
+    IsOverMe("AC#BRES1")  // Bresk Steinschulter
+    Global("AC#BreskMoves01","ACIL50",1)
 THEN
-	RESPONSE #100
-		ActionOverride("AC#BRES1",MoveToPointNoInterrupt([1761.1785]))
-		SetGlobal("AC#BreskMoves01","ACIL50",2)
+    RESPONSE #100
+        ActionOverride("AC#BRES1",MoveToPointNoInterrupt([1761.1785]))
+        SetGlobal("AC#BreskMoves01","ACIL50",2)
 END
 
 IF
-	IsOverMe("AC#BRES1")
-	Global("AC#BreskMoves02","ACIL50",1)
+    IsOverMe("AC#BRES1")  // Bresk Steinschulter
+    Global("AC#BreskMoves02","ACIL50",1)
 THEN
-	RESPONSE #100
-		//ActionOverride("AC#BRES1",MoveToPointNoInterrupt([1761.1785]))
-		SetGlobal("AC#BreskMoves02","ACIL50",2)
+    RESPONSE #100
+        SetGlobal("AC#BreskMoves02","ACIL50",2)
 END
+
+IF
+    IsOverMe("AC#BRESK")  // Bresk Steinschulter
+    Global("BreskPostMoves01","ACIL50",1)
+THEN
+    RESPONSE #100
+        SetGlobal("BreskPostMoves01","ACIL50",2)
+END
+

@@ -201,8 +201,8 @@ END
 			
 				IF ~~ THEN BEGIN nice_to_be_back
 				SAY  ~Es ist so schön, Euch alle wiederzusehen!~
-				IF ~Global("AC#BreskRescued","GLOBAL",0)~ THEN + bresk_dead_where_is_bresk
-				IF ~Global("AC#BreskRescued","GLOBAL",20)~ THEN + chain_many_victims				
+				IF ~GlobalLT("AC#BreskRescued","GLOBAL",20)~ THEN + bresk_dead_where_is_bresk
+				IF ~Global("AC#BreskRescued","GLOBAL",20)~ THEN + chain_bresk_alive				
 				END
 				
 					IF ~~ THEN BEGIN bresk_dead_where_is_bresk
@@ -218,7 +218,8 @@ END
 							IF ~~ THEN BEGIN dunnabar_gone_01
 							SAY  ~Dies erklärt dann auch, weshalb Dunnabar nicht zugegen ist.~
 							IF ~~ THEN + chain_many_victims
-							END
+							END							
+					
 			
 				IF ~~ THEN BEGIN dwarves_impressed
 				SAY  ~Dem kann ich mich mich nur anschließen. Ihr habt ja hier ordentlich Eindruck gemacht, <CHARNAME>!~
@@ -343,9 +344,16 @@ CHAIN IF ~~ THEN AC#GROMB chain_regency_council_thank_you_02
 == AC#STURB ~Jetzt habt Ihr doch tatsächlich einen alten Zwerg zum Weinen gebracht!~
 == AC#GROMB ~So, das genügt! Genug der Sentimentalität. Mitglieder des Regentschaftsrates und der Schmieden, lasst uns Haltung bewahren und uns wieder unseren Aufgaben nachgehen. Gehabt Euch wohl, <CHARNAME>. Iltkazar wird Euch niemals vergessen.~
 END
-
 IF ~~ THEN DO ~SetGlobal("AC#ILRegencyCouncilDone","GLOBAL",2)
 SetGlobal("Regency_Council_Thanks","ACIL64",10)~ EXIT	
+
+CHAIN IF ~~ THEN AC#MITH5 chain_bresk_alive
+~Und unser tapferer Kriegsmeister Bresk ist auch zugegen!~
+== AC#BRESK ~Nur dank <CHARNAME>s Hilfe, mein König.~
+== AC#MITH5 ~Ihr habt Euch wohl nicht damit zufrieden gegeben, nur einen König zu retten, <CHARNAME>? Ich sehe, es gibt viel zu erzählen. Ich habe während meines Schlafes wohl einiges verpasst!~
+END
+IF ~~ THEN + chain_many_victims
+
 	
 
 	

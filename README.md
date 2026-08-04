@@ -1,90 +1,99 @@
 # Silverrealms
 
-![Silverrealms Logo](https://github.com/AciferBG/Silverrealms/blob/main/pics/silverrealms_icon_01.png)
+![Silverrealms-Logo](https://github.com/AciferBG/Silverrealms/blob/main/pics/silverrealms_icon_01.png)
 
-**Silverrealms** is a quest mod for *Baldur’s Gate II: Enhanced Edition (BG2EE)* and *Enhanced Edition Trilogy (EET)*.  
-It introduces a new storyline, areas, enemies, and treasures to uncover in the city of Athkatla and beyond.
+**Silverrealms** ist eine Quest-Mod für *Baldur’s Gate II: Enhanced Edition (BG2EE)* und die *Enhanced Edition Trilogy (EET)*.  
+Sie führt eine neue Quest, neue Gebiete, Gegner und Gegenstände für den "Schattenvon Amn"-Teil der Trilogie ein.
 
-## Table of Contents
+## Inhaltsverzeichnis
 
 - [Features](#features)
-- [Compatibility](#compatibility)
+- [Kompatibilität](#kompatibilität)
 - [Download](#download)
 - [Installation](#installation)
-- [How to Start the Mod](#how-to-start-the-mod)
-- [Recommended Character Level](#recommended-character-level)
-- [Language Support](#language-support)
+- [Start der Mod](#start-der-mod)
+- [Empfohlene Charakterstufe](#empfohlene-charakterstufe)
+- [Unterstützte Sprachen](#unterstützte-sprachen)
 - [Feedback & Support](#feedback--support)
-- [License](#license)
+- [Lizenz](#lizenz)
 
 ---
 
 ## Features
-Features:
-- A compelling new storyline deeply rooted in Forgotten Realms lore
-- Over 100 brand-new handcrafted areas, including a sprawling dwarven city with multiple unique districts
-- New enemies with custom animations - never seen before in Baldur's Gate
-- Explore a world of hidden lore, clever puzzles, and multi-layered intrigue
-- Countless new magical items, forged in forgotten times and brimming with mystery
-- Approximately 20 hours of gameplay    
-- Playable from the beginning of the game  
+
+- Eine fesselnde neue Handlung, die tief in die Geschichte der Forgotten Realms eingebettet ist
+- Mehr als 100 vollständig neue, handgefertigte Areas, darunter eine weitläufige Zwergenstadt mit mehreren einzigartigen Stadtvierteln
+- Neue Gegner mit eigens erstellten Animationen, die es so noch nie in der Baldur’s Gate Serie zu sehen gab
+- Erkundet eine Welt voller  Geheimnisse, Rätsel und Intrigen
+- Zahlreiche neue magische Gegenstände
+- Ungefähr 20 Stunden Spielzeit
+- Ab dem Beginn von "Schatten von Amn" spielbar
 
 ---
 
-## Compatibility
-Silverrealms is compatible with:
-- **Baldur’s Gate II: Enhanced Edition (BG2EE)**  
+## Kompatibilität
+
+Silverrealms ist kompatibel mit:
+
+- **Baldur’s Gate II: Enhanced Edition (BG2EE)**
 - **Enhanced Edition Trilogy (EET)**
 
-The mod is designed to integrate naturally and should be compatible with most other mods.
+Die Mod wurde so gestaltet, dass sie sich nahtlos in das Spiel einfügt und sollte mit den meisten anderen Mods kompatibel sein.
 
 ---
 
 ## Download
-You can download the latest version of **Silverrealms** as a `.zip` archive including a **WeiDU installer** from the **Releases** section of this GitHub page.
 
-Click on the **“Releases”** tab on the right side (or at the top, depending on your screen size), and download the `.zip` file of the latest release.  
-After downloading, extract the archive into your game's installation folder and run the installer as described below.
+Die aktuelle Version von **Silverrealms** kann als `.zip`-Archiv einschließlich eines **WeiDU-Installationsprogramms** im Bereich **Releases** dieser GitHub-Seite heruntergeladen werden.
+
+Klickt rechts auf den Reiter **„Releases“** beziehungsweise – abhängig von eurer Bildschirmgröße – oben auf der Seite und ladet die `.zip`-Datei der neuesten Version herunter.  
+Entpackt das Archiv anschließend in das Installationsverzeichnis eures Spiels und führt das Installationsprogramm wie unten beschrieben aus.
 
 ---
 
 ## Installation
-1. **Remove any previous version** of the mod before installing a new one.  
-2. **Extract** the contents of the mod archive into your game's main directory (`BG2EE` / `EET`, where `CHITIN.KEY` is located).  
-3. After extraction, your game folder should contain:  
-   - A folder named **silverrealms**  
-   - A file named **setup-silverrealms.exe**  
-4. **Run the installer:**  
-   - Double-click `setup-silverrealms.exe` and follow the instructions on screen.  
-5. **To reinstall, uninstall, or change components:**  
-   - Run `setup-silverrealms.exe` again.
+
+1. **Entfernt alle früheren Versionen** der Mod, bevor ihr eine neue Version installiert.
+2. **Entpackt** den Inhalt des Mod-Archivs in das Hauptverzeichnis eures Spiels (`BG2EE` / `EET`, in dem sich die Datei `CHITIN.KEY` befindet).
+3. Nach dem Entpacken sollte sich Folgendes in eurem Spielverzeichnis befinden:
+   - Ein Ordner namens **silverrealms**
+   - Eine Datei namens **setup-silverrealms.exe**
+4. **Führt das Installationsprogramm aus:**
+   - Doppelklickt auf `setup-silverrealms.exe` und folgt den Anweisungen auf dem Bildschirm.
+5. **Um die Mod erneut zu installieren, zu deinstallieren oder Komponenten zu ändern:**
+   - Führt `setup-silverrealms.exe` erneut aus.
 
 ---
 
-## How to Start the Mod
-- **Start a new BG2EE game.**  
-- After arriving in Athkatla, your party will be **approached by a messenger** to trigger the beginning of the mod.
+## Starten der Mod
+
+- **Beginnt ein neues Spiel in BG2EE.**
+- Nach eurer Ankunft in Athkatla wird eure Gruppe **von einem Boten angesprochen**, wodurch die Handlung der Mod beginnt.
 
 ---
 
-## Recommended Character Level
-- **Level 9+**  
-- Dynamic difficulty adjustment based on party level and game difficulty settings.
+## Empfohlene Charakterstufe
+
+- **Stufe 9 oder höher**
+- Dynamische Anpassung des Schwierigkeitsgrades an die Stufe der Gruppe und die gewählten Schwierigkeitseinstellungen des Spiels.
 
 ---
 
-## Language Support
-This mod is available in **English** and **German**.  
-The appropriate language version will be selected automatically based on your game installation.
+## Unterstützte Sprachen
+
+Diese Mod ist derzeit **nur auf Deutsch** verfügbar.  
+Nach erfolgreichem Abschluss der Open Beta wird die englische Version folgen.
 
 ---
 
 ## Feedback & Support
-If you encounter issues or have suggestions, please report them in the official forum thread (link to be added once available).
+
+Solltet ihr auf Probleme stoßen oder Vorschläge haben, meldet diese bitte im offiziellen Kerzneburg-Forenthread. 
 
 ---
 
-## License
-**© 2025 Acifer – All Rights Reserved**
+## Lizenz
 
-This mod and all its contents may not be copied, modified, distributed, or used in any form without explicit permission from the author.
+**© 2025 Acifer – Alle Rechte vorbehalten**
+
+Diese Mod und sämtliche darin enthaltenen Inhalte dürfen ohne ausdrückliche Genehmigung des Autors weder kopiert, verändert, verbreitet noch in anderer Form verwendet werden.

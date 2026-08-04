@@ -3,7 +3,9 @@
 ![Silverrealms-Logo](https://github.com/AciferBG/Silverrealms/blob/main/pics/silverrealms_icon_01.png)
 
 **Silverrealms** ist eine Quest-Mod für *Baldur’s Gate II: Enhanced Edition (BG2EE)* und die *Enhanced Edition Trilogy (EET)*.  
-Sie führt eine neue Quest, neue Gebiete, Gegner und Gegenstände für den "Schattenvon Amn"-Teil der Trilogie ein.
+Sie führt eine neue Questreihe, neue Gebiete, Gegner und Gegenstände für den Schatten von Amn-Teil der Trilogie ein.
+
+**Die Mod ist zunächst als deutsche Open Beta erhältlich. Inhaltlich ist diese Version bereits vollständig und enthält keine Einschränkungen. Aufgrund des großen Umfangs der Mod bin ich jedoch vor der Veröffentlichung der englischen Version auf das Feedback der deutschsprachigen Community angewiesen.**
 
 ## Inhaltsverzeichnis
 

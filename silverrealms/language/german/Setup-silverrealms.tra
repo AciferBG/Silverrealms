@@ -27,12 +27,20 @@
 @26= ~Drachenskelett~
 //@27= ~Diese aus holz geschnitzte Statue stellt die Göttin des Friedens Eldath dar~
 @28 = ~Narrenstecken~
-@29 = ~Dieser Stab geht zurück auf Hurlbert, Hofnarr König Alemanders des I. von Tethyr. 
-Der Narr hatte keinen leichten Stand, galt sein König doch als ausgesprochen missmutiger und übellauniger Zeitgenosse. Mit Hilfe eines Magiers versuchte Hurlbert diesen Stecken zu erschaffen, um wenigstens ein klein wenig Freude in das Herz seines kaltherzigen Königs zu pflanzen. Dieser Versuch misslang gründlich, denn beim nächsten Bankett wälzte sich zwar der halbe Festsaal vor Lachen auf dem Boden, der König saß jedoch weiterhin mit eisern erstarrter Miene auf seinem Thron. Es versteht sich von selbst, dass der Hofnarr mitsamt aller Mitlacher am nächsten Tage vor den Stadttoren Zazesspurs seinen Kopf verlor. Zeitgenossen zufolge zauberte die Hinrichtung wenigstens den leisen Anflug eines Lächelns auf des Königs grausames Antlitz.
+@29 = ~Dieser Stab geht zurück auf Hurlbert, Hofnarr König Alemanders des I. von Tethyr. Der Narr hatte keinen leichten Stand, galt sein König doch als ausgesprochen missmutiger und übellauniger Zeitgenosse. 
+
+Mit Hilfe eines Magiers versuchte Hurlbert diesen Stecken zu erschaffen, um wenigstens ein klein wenig Freude in das Herz seines kaltherzigen Königs zu pflanzen. Dieser Versuch misslang gründlich, denn beim nächsten Bankett wälzte sich zwar der halbe Festsaal vor Lachen auf dem Boden, der König saß jedoch weiterhin mit eisern erstarrter Miene auf seinem Thron. 
+
+Es versteht sich von selbst, dass der Hofnarr mitsamt aller Mitlacher am nächsten Tage vor den Stadttoren Zazesspurs seinen Kopf verlor. Zeitgenossen zufolge zauberte die Hinrichtung wenigstens den leisen Anflug eines Lächelns auf des Königs grausames Antlitz.
 
 SPEZIFISCHE EIGENSCHAFTEN
 
-Spezielle Merkmale: Wirkt 1x täglich "Tashas fürchterlicher, unbezähmbarer Lachanfall" auf das Zielgebiet. Im Gegensatz zu dem gleichnamigen Zauber setzt die Wirkung sofort ein. Jeder Humanoide, dem ein Rettungswurf gegen Zauber misslingt, wälzt sich eine Runde vor Lachen halb ohnmächtig auf dem Boden. In der nächsten Runde kann das ausgepumpte Opfer wieder aufstehen, erleidet jedoch die nächsten drei Runden einen Malus von -2 auf seine Stärke (-2 auf die Angriffswürfe). Der Stecken wirkt nur bei zweibeinigen menschlichen, halbmenschlichen oder humanoiden Wesen, die menschengroß oder kleiner sind. Gegen andere Wesen, z.B. Tiere oder Riesen, ist er völlig wirkungslos.
+Spezielle Merkmale: Wirkt 1x täglich "Tashas fürchterlicher, unbezähmbarer Lachanfall" auf das Zielgebiet. 
+
+Im Gegensatz zu dem gleichnamigen Zauber setzt die Wirkung sofort ein. Jeder Humanoide, dem ein Rettungswurf gegen Zauber misslingt, wälzt sich eine Runde vor Lachen halb ohnmächtig auf dem Boden. In der nächsten Runde kann das ausgepumpte Opfer wieder aufstehen, erleidet jedoch die nächsten drei Runden einen Malus von -2 auf seine Stärke (-2 auf die Angriffswürfe). 
+
+Der Stecken wirkt nur bei zweibeinigen menschlichen, halbmenschlichen oder humanoiden Wesen, die menschengroß oder kleiner sind. Gegen andere Wesen, z.B. Tiere oder Riesen, ist er völlig wirkungslos.
+
 Reichweite: 30 m
 Wirkungsbereich: 6 m Radius
 Wirkungsdauer: 4 Runden
@@ -65,8 +73,13 @@ Königreich Xothaerin im Westen".~
 @44   = ~Beldas~
 @45   = ~Dieser Stein ist mit zahlreichen elfischen Runen und Zeichnungen überzogen.~
 @46   = ~Nachricht~
-@47   = ~<CHARNAME>, wir hörten, dass Ihr in der Stadt seid und den ein oder anderen Auftrag annehmt. Wir benötigen Eure Dienste und können leider nicht selbst zu Euch kommen. Trefft uns im Wirtshaus "Zum Tanzenden Riesen" in Zweiwasser. Solltet Ihr auf Ruhm und Ehre aus sein, so können wir Euch davon reichlich bieten - und tut Ihr alles nur des lieben Goldes wegen, so bieten wir Euch dessen noch viel mehr. 
-Beldas Diamantklinge.~
+@47   = ~<CHARNAME>, wir hörten, dass Ihr in der Stadt seid und den ein oder anderen Auftrag annehmt. Wir benötigen Eure Dienste und können leider nicht selbst zu Euch kommen. 
+
+Trefft uns im Wirtshaus "Zum Tanzenden Riesen" in Zweiwasser. 
+
+Solltet Ihr auf Ruhm und Ehre aus sein, so können wir Euch davon reichlich bieten - und tut Ihr alles nur des lieben Goldes wegen, so bieten wir Euch dessen noch viel mehr. 
+
+Beldas Diamantklinge~
 
 @56   = ~Fomorischer Riese~
 @57   = ~Verbeeg~
@@ -445,6 +458,8 @@ Mithril ist das leichteste und geschmeidigste Metall, das jedoch hart genug ist,
 
 @393 = ~Schmiedearbeiter~
 @394 = ~Tiefenrothé~
+
+@405 = ~Zwergischer Runenstein~
 
 /*
 @398 = ~Angeschmolzener Schlüssel~

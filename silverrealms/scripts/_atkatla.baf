@@ -1,4 +1,4 @@
-// The messenger apperas in athkatla and delivers a note from beldas
+// The messenger appears in athkatla and delivers a note from beldas
 
 IF
 	InMyArea(Player1)
@@ -7,7 +7,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("AC#BeldasPlotStart","GLOBAL",1)
-		CreateCreatureObjectOffScreen("AC#S#MS1",Player1,0,0,0) // Bote
+		CreateCreatureObjectOffset("AC#S#MS1",Player1,[15.15]) // Bote
 		ActionOverride("AC#S#MS1",Dialogue([PC]))
 END
 

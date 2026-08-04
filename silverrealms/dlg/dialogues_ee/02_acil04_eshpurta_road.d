@@ -513,7 +513,7 @@ END
 	END
 	
 	IF ~~ THEN BEGIN not_helm_but_armor
-	SAY ~Oh, verflucht! Nun, wie dem auch sei - Hier habt Ihr alle Goldmünzen, die ich gerade bei mir trage. Und jetzt gehabt Euch wohl, denn ich werde jetzt schleunigst alleine meine Reise fortsetzen.~
+	SAY ~Oh, verflucht! Nun, wie dem auch sei. Hier habt Ihr alle Goldmünzen, die ich gerade bei mir trage. Und jetzt gehabt Euch wohl, denn ich werde jetzt schleunigst alleine meine Reise fortsetzen.~
 	IF ~~ THEN DO ~GiveGoldForce(800)
 	SetGlobal("AttackMerchant","ACIL04",10) 
 	EscapeArea()~ EXIT

@@ -3,6 +3,11 @@
 
 COPY ~silverrealms/itm/copy~         ~override~
 
+COPY ~silverrealms/itm/ac#sr#r1.itm~ ~override/ac#sr#r1.itm~ // Dwarven Runestone
+  SAY NAME1 @405
+  SAY NAME2 @405
+  SAY DESC @1008
+
 COPY ~%MOD_FOLDER%/itm/AC#ILCL8.itm~         ~override~    // Malphas' claw
   SAY NAME2 @8154
   SAY DESC  @8155

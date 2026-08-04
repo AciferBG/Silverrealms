@@ -264,7 +264,7 @@ END
 												=
 												~Auf der Suche nach einem Heilmittel für Mith Barak habe ich die Aufzeichnungen des Königs und unsere eigene Büchersammlung studiert und bin auf diesem Wege auf Hinweise einer großen Bibliothek an der Oberfläche, die man Kerzenburg nennt, gestoßen. Ihr sollt aus Kerzenburg stammen, wie ich hörte.~
 												IF ~~ THEN REPLY ~In einer von Iltkazars Notizen stand, dass ich aus Kerzenburg komme?~ GOTO hail_from_candlekeep
-												IF ~~ THEN REPLY ~Mein Ruf eilt mir anscheinend bereits voraus bis hinab ins Unterreich...~ GOTO hail_from_candlekeep
+												IF ~~ THEN REPLY ~Mein Ruf eilt mir anscheinend bereits voraus bis hinab ins Unterreich.~ GOTO hail_from_candlekeep
 												END
 												
 													IF ~~ THEN BEGIN hail_from_candlekeep

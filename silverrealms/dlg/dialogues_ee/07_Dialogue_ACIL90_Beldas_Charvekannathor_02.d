@@ -246,7 +246,7 @@ END
 	END
 
 IF ~~ THEN BEGIN need_key
-SAY ~Ich habe den Schlüssel ins Innere der Turblodfeste bei mir. In ihrem Inneren befindet sich ...eine Geheimtür... bei der Statue Iltkazars... die Ihr nach unten nehmen müsst... auf diesem... Wege... sind wir nach oben gelangt... Sie ist Euer einziger Weg von diesem Berg herunter... Ihr... Ihr müsst vorher mit Hilfe der Räder die Platte auf Clangeddins Schild ausrichten, um sie zu öffnen...~
+SAY ~Ich habe den Schlüssel ins Innere der Turblodfeste bei mir. Dort drinnen befindet sich ...eine Geheimtür... bei der Statue Iltkazars... die Ihr nach unten nehmen müsst... auf diesem... Wege... sind wir nach oben gelangt... Sie ist Euer einziger Weg von diesem Berg herunter... Ihr... Ihr müsst vorher mit Hilfe der Räder die Platte auf Clangeddins Schild ausrichten, um sie zu öffnen...~
 IF ~~ THEN DO ~AddJournalEntry(@90010,QUEST)~ + ladder
 END
 

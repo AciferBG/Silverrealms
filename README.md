@@ -1,4 +1,4 @@
-# Silverrealms
+# Silverrealms - deutsche Open Beta
 
 ![Silverrealms-Logo](https://github.com/AciferBG/Silverrealms/blob/main/pics/silverrealms_icon_01.png)
 
@@ -88,7 +88,7 @@ Nach erfolgreichem Abschluss der Open Beta wird die englische Version folgen.
 
 ## Feedback & Support
 
-Solltet ihr auf Probleme stoßen oder Vorschläge haben, meldet diese bitte im offiziellen Kerzneburg-Forenthread. 
+Solltet ihr auf Probleme stoßen oder Vorschläge haben, meldet diese bitte im offiziellen Kerzenburg-Forenthread. 
 
 ---
 

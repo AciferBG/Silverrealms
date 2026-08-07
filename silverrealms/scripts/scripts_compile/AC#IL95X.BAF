@@ -1,0 +1,75 @@
+
+IF
+    Opened([ANYONE])
+    Global("AC#IL_Wheel_repaired","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("AC#IL_Wheel_repaired","GLOBAL",1)
+        DisplayStringHead("Mechanism",@7002)  // Dies scheint ein defekter Mechanismus zu sein, der eine Tür öffnet. Es fehlt ein Zahnrad.
+END
+
+IF
+    Global("RepairWheels","ACIL95",0)
+    Contains("AC#IL95W","Mechanism")  // Zahnrad
+THEN
+    RESPONSE #100
+        SetGlobal("RepairWheels","ACIL95",1)
+        TakePartyItem("AC#IL95W")  // Zahnrad
+        DisplayStringHead("Mechanism",@7005)  // Ihr setzt das Zahnrad an die dafür passende Stelle.
+        SetGlobal("AC#IL_Wheel_repaired","GLOBAL",10)
+        DestroyItem("AC#IL95W") 
+        ContainerEnable("Mechanism",FALSE)
+END
+
+//OLD trigger mechanism:
+/*
+IF
+    Clicked([ANYONE])
+    Range(LastTrigger,12)
+    GlobalGT("RepairWheels","ACIL95",0)
+    GlobalGT("AC#IL_Wheel_repaired","GLOBAL",9)
+THEN
+    RESPONSE #100
+        DisplayString(Myself,@7005)   // Ihr setzt das Zahnrad an die dafür passende Stelle.
+END
+
+IF
+    Clicked([ANYONE])
+    Range(LastTrigger,12)
+    Global("AC#IL_Wheel_repaired","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("AC#IL_Wheel_repaired","GLOBAL",1)
+        DisplayString(Myself,@7002) 
+END
+
+IF
+    Clicked([ANYONE])
+    Range(LastTrigger,12)
+    Global("RepairWheels","ACIL95",0)
+    PartyHasItem("AC#IL95W")  // Zahnrad
+THEN
+    RESPONSE #100
+        SetGlobal("RepairWheels","ACIL95",1)
+        TakePartyItem("AC#IL95W")  // Zahnrad
+        DisplayString(Myself,@7003)   // Ihr setzt das Zahnrad an die dafür passende Stelle.
+        SetGlobal("AC#IL_Wheel_repaired","GLOBAL",10)
+END
+
+IF
+    Clicked([ANYONE])
+    Range(LastTrigger,12)
+    !PartyHasItem("AC#IL95W")  // Zahnrad
+THEN
+    RESPONSE #100
+        DisplayString(Myself,@7004)   // Ihr benötigt ein Zahnrad, um den Mechanismus wieder in Gang zu bringen.
+END
+
+IF
+    Clicked([ANYONE])
+    !Range(LastTrigger,12)
+THEN
+    RESPONSE #100
+        DisplayString(Myself,14702)  // Ihr seid zu weit entfernt, um das zu benutzen.
+END
+*/

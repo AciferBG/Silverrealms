@@ -189,7 +189,7 @@ END
 						
 								IF ~~ THEN BEGIN hail_from_underdark
 								SAY ~In der Tat, wir sind den langen Weg durch das Unterreich auf der Suche nach Hilfe für unseren König bis hierher nach Amn gekommen.~
-								IF ~~ THEN REPLY ~Euer König ist krank?~ GOTO king_ill
+								IF ~~ THEN REPLY ~Ist Euer König krank?~ GOTO king_ill
 								IF ~~ THEN REPLY ~Was stimmt nicht mit ihm?~ GOTO whats_wrong_with_king
 								IF ~~ THEN REPLY ~Ein weiter Weg, den Ihr für Euren König auf Euch genommen habt.~ GOTO whats_wrong_with_king
 								END
@@ -252,7 +252,9 @@ END
 												END
 												
 												IF ~~ THEN BEGIN city_not_as_expected
-												SAY ~Seht, unsere Stadt ist vielleicht nicht ganz genau das, was Ihr Euch unter einer typischen Zwergenstadt vorstellt. Wir sind ein Hort des Wissens und besitzen eine der größten Bibliotheken des Unterreiches. Ich selbst bin auch Gelehrter, kein Krieger - ein Diener Dugmarens, um genau zu sein.~ [AC#BELDC]
+												SAY ~Seht, unsere Stadt ist vielleicht nicht ganz genau das, was Ihr Euch unter einer typischen Zwergenstadt vorstellt.~ [AC#BELDC] 
+												=
+												~Wir sind ein Hort des Wissens und besitzen eine der größten Bibliotheken des Unterreiches. Ich selbst bin auch Gelehrter, kein Krieger - ein Diener Dugmarens, des zwergischen Gottes des Wissens, um genau zu sein.~ 
 												=
 												~Auf der Suche nach einem Heilmittel für Mith Barak habe ich die Aufzeichnungen des Königs und unsere eigene Büchersammlung studiert und bin auf diesem Wege auf Hinweise einer großen Bibliothek an der Oberfläche, die man Kerzenburg nennt, gestoßen. Ihr sollt aus Kerzenburg stammen, wie ich hörte.~
 												IF ~~ THEN REPLY ~In einer von Iltkazars Notizen stand, dass ich aus Kerzenburg komme?~ GOTO hail_from_candlekeep
@@ -565,7 +567,7 @@ IF ~~ THEN EXIT
 END
 
 			IF ~~ THEN BEGIN thraedear_say_hello_01
-			SAY ~...~
+			SAY ~...~ [AC#DWF32]
 			IF ~~ THEN EXTERN ~AC#DWF00~ thraedear_say_hello_02
 			END
 			

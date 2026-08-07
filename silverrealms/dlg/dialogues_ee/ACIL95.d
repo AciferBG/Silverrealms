@@ -20,7 +20,7 @@ DO ~SetGlobal("Iltkazar_revealed","ACIL95",3)~ EXTERN AC#95MAP iltkazar_entry
 	IF~~THEN REPLY ~Wie komme ich dorthin?~ EXTERN AC#95MAP ravimors_cave_01
 	
 	CHAIN IF ~~ THEN AC#95MAP ravimors_cave_01
-	~Ravimors Höhle liegt in den Kuldingipfeln. Auch diese Höhle ist als unsicher markiert. Die Höhle wurde nicht von Zwergenhand geschaffen. Sie ist so alt wie die Schöpferrassen, beinahe älter als die Berge selbst.~
+	~Ravimors Höhle liegt in den Kuldingipfeln. Auch dieser Zugang ist als unsicher markiert. Doch er bleibt die einzige Wahl. Die Höhle wurde nicht von Zwergenhand geschaffen. Sie ist so alt wie die Schöpferrassen, beinahe älter als die Berge selbst.~
 	=
 	~Die Figur zeigt Euch den Weg zu Ravimors Höhle...~
 	DO ~SetGlobal("Ravimor_revealed","ACIL95",1)
@@ -39,7 +39,7 @@ END
 IF~~THEN DO ~SetGlobal("TalkToStatue","ACIL95",1)~ EXTERN AC#95MAP hello_00_cont
 
 	CHAIN IF ~~ THEN AC#95MAP hello_00_cont
-	~Jeder Zwerg, der seinen Weg nicht kennt, kommt hierher. Danach weiß er, wo er hingehen muss. Wo wird soll es Euch hinführen?~
+	~Jeder Zwerg, der seinen Weg nicht kennt, kommt hierher. Danach weiß er, wo er hingehen muss. Wo wird es Euch hinführen?~
 	END
 	IF~~THEN REPLY ~Ihr könnt mir Orte zeigen, die ich noch nicht kenne?~ EXTERN AC#95MAP show_places_start
 	IF~~THEN REPLY ~Ich muss nach Iltkazar.~ EXTERN AC#95MAP seek_Iltkazar
@@ -68,12 +68,12 @@ IF~~THEN EXTERN AC#95MAP hello_00_cont
 		StartCutScene("AC#IL95I")~ EXIT
 		
 		CHAIN IF ~~ THEN AC#95MAP candlekeep
-		~Kerzenburg? Solch ein Ort exisitert nicht.~
+		~Kerzenburg? Solch ein Ort existiert nicht.~
 		END
 		IF~~THEN EXTERN AC#95MAP show_places_start
 		
 		CHAIN IF ~~ THEN AC#95MAP athkatla
-		~Athkatla? Solch ein Ort exisitert nicht.~
+		~Athkatla? Solch ein Ort existiert nicht.~
 		END
 		IF~~THEN EXTERN AC#95MAP show_places_start
 		

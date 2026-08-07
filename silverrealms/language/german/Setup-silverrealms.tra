@@ -1395,7 +1395,11 @@ Die restlichen Seiten sind durch Feuer unlesbar geworden.~
 @1005 = ~An dieser Stelle könntet Ihr die kleine Leiter anbringen, die Ihr von Beldas erhalten habt, um den Felsvorsprung hinabzusteigen.~
 @1006 = ~Ihr befestigt die Leiter an einer kleinen Felsnase. Sie sollte fest genug vertaut sein, um sich daran herunterzulassen.~
 @1007 = ~Ihr benötigt eine Leiter, um von diesem Felsvorsprung wieder herunterzugelangen.~
-@1008 = ~Dies ist ein zwergischer Runenstein, der offensichtlich einen Teil der bewegten Geschichte der Zwerge beschreibt. Er ist überraschenderweise neben dem Zwergischen auch in der Gemeinsprache verfasst. Eine Passage nennt einen Zwergenhelden namens Turbold: "Alle Eingänge nach Shanatar nördlich von Korolnor wurden versiegelt. Turbold und seine Kuldar halten den Weg unter den Bergen des Kuldin offen, kämpfen aber auf verlorenem Posten." Ihr könnt nur hoffen, dass Beldas mit dieser Beschreibung etwas anfangen kann.~
+@1008 = ~Dies ist ein zwergischer Runenstein, der offensichtlich einen Teil der bewegten Geschichte der Zwerge beschreibt. Er ist überraschenderweise neben dem Zwergischen auch in der Gemeinsprache verfasst. 
+
+Eine Passage nennt einen Zwergenhelden namens Turbold: "Alle Eingänge nach Shanatar nördlich von Korolnor wurden versiegelt. Turbold und seine Kuldar halten den Weg unter den Bergen des Kuldin offen, kämpfen aber auf verlorenem Posten." 
+
+Ihr könnt nur hoffen, dass Beldas mit dieser Beschreibung etwas anfangen kann.~
 @1009 = ~Ihr hört das Rauschen von Wasser in der Nähe. Die Axtbrücke scheint nicht weit entfernt zu sein.~
 @1010 = ~Frawa~
 @1011 = ~Hegaf~
@@ -1484,7 +1488,7 @@ Magiern~
 
 Euer Auftrag lautet, einer Gruppe Zwerge zu folgen, die von Kerzenburg Richtung Süden reisen. Wahrscheinlich werden sie von Nashkell kommend den Fangpass überqueren. Heftet Euch unbemerkt an Ihre Fersen und entwendet ihnen in einem günstigen Moment jenes Buch, welches sie aus Kerzenburg mit sich führen. Wir können Euch nicht sagen, um welches Buch es sich handelt. Dies müsst Ihr selbst herausfinden. 
 
-Auch wenn die Zeit drängt, solltet Ihr mit Bedacht vorgehen. Da sie sich jenseits der Wolkengipfel noch mit jemandem treffen wollen, werden sie einige Zeit lang in Amn verweilen. Spätestens wenn dieser Unbekannte mit ihnen in Kontakt tritt, müsst Ihr zuschlagen, denn die Zwerge dürfen mit dem Buch nicht wieder nach Tethyr zurückkehren! Trefft mich danach am vereinbarten Treffpunkt, um mir Eure Beute zu überbringen.
+Auch wenn die Zeit drängt, solltet Ihr mit Bedacht vorgehen. Da sie sich jenseits der Wolkengipfel noch mit jemandem treffen wollen, werden sie einige Zeit lang in Amn verweilen. Spätestens wenn dieser Unbekannte mit ihnen in Kontakt tritt, müsst Ihr zuschlagen, denn die Zwerge dürfen mit dem Buch nicht wieder in ihre Heimat zurückkehren! Trefft mich danach am vereinbarten Treffpunkt, um mir das Buch zu überbringen.
 
 Larkonlan~
 @1118 = ~Stoffkappe~
@@ -1695,10 +1699,10 @@ Charvekannathors Hort~
 // Area script Strings
 @7000 = ~Ihr müsst die Schwebescheibe, das Quecksilber und den Levitationstrank auf den Altar legen, um die Scheibe wieder verzaubern zu können.~
 @7001 = ~In dieser Position klemmt ein Zahnrad, welches wohl jenseits dieses Raumes aktiviert wird.~
-@7002 = ~Dies scheint ein defekter Mechanismus zu sein, der eine Tür öffnet. Es fehlt ein Zahnrad.~
+@7002 = ~Dies scheint ein Getriebe zu sein, das einen Mechanismus im Nebenraum aktiviert. Es fehlt jedoch ein Zahnrad.~
 @7003 = ~Ihr setzt das Zahnrad an die dafür passende Stelle.~
 @7004 = ~Ihr benötigt ein Zahnrad, um den Mechanismus wieder in Gang zu bringen.~
-@7005 = ~Ihr habt das Zahnrad bereits eingesetzt und könnt nun den Mechanismus im anderen Raum dazu verwenden, die Türe in den Tunnel zu öffnen.~
+@7005 = ~Ihr setzt das Zahnrad ein. Nun könnt Ihr den Mechanismus im anderen Raum dazu verwenden, um den Ausgang in den Tunnel zu öffnen.~
 @7006 = ~Aus dem Osten spürt Ihr eine starke Energie. Es nähern sich tatsächlich Kreaturen.~
 @7007 = ~Das Amulett spürt diesmal keinen Edelstein auf.~
 @7008 = ~Das Amulett lässt Euch einen kleinen, verborgenen Edelstein entdecken.~

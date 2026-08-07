@@ -21,7 +21,7 @@ THEN
     RESPONSE #100
         SetGlobal("MapHint","ACIL91",1)
         AddJournalEntry(@20012,QUEST)
-        AddJournalEntry(@90015,QUEST)   
+        //AddJournalEntry(@90015,QUEST)   
         DisplayString(Myself,@984)  
 END
 

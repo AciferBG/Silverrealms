@@ -367,20 +367,14 @@ COPY ~silverrealms/cre/AC#DRAG1.cre~ ~override/AC#DRAG1.cre~ //Dragonwraith
 COPY ~silverrealms/cre/ac#cy1.cre~ ~override/ac#cy1.cre~
   SAY NAME1 @21 SAY NAME2 @21
 
-COPY ~silverrealms/cre/ac#verb2.cre~ ~override~
+COPY ~silverrealms/cre/AC#ILVB2.cre~ ~override~
   SAY NAME1 @57 SAY NAME2 @57
-  
-    
-    COPY_EXISTING ~ac#verb2.cre~ ~override~
     WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~GIANT_VERBEEG~))
     
 
-COPY ~silverrealms/cre/ac#verb4.cre~ ~override~
+COPY ~silverrealms/cre/AC#ILVB4.cre~ ~override~
   SAY NAME1 @57 SAY NAME2 @57
-  
-    
-    COPY_EXISTING ~ac#verb4.cre~ ~override~
-    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~GIANT_VERBEEG~))
+  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~GIANT_VERBEEG~))
     
     
 COPY ~silverrealms/cre/AC#MAL02.cre~ ~override~ // Final Fight - Cutscene

@@ -1,14 +1,14 @@
 // Character sounds
 // Beldas:
 @5000 = ~Seid mir gegrüßt!~ [AC#BELD1] 
-@5001 = ~Every road teaches something.~ [AC#BELD2] 
-@5002 = ~Dugmaren smiles on the curious.~ [AC#BELD3] 
+@5001 = ~Jeder Weg lehrt uns Neues.~ [AC#BELD2] //@5001 = ~Every road teaches something.~ [AC#BELD2] 
+@5002 = ~Dugmaren lächelt mit den Neugierigen.~ [AC#BELD3] //@5002 = ~Dugmaren smiles on the curious.~ [AC#BELD3] 
 @5003 = ~~ [AC#BELD2]
 @5004 = ~~ [AC#BELD5]
 @5005 = ~~ [AC#BELD6]
 @5006 = ~Ugh...~ [AC#BELD9]
-@5007 = ~Onward, friends!~ [AC#BELD4]
-@5008 = ~For Iltkazar!~ [AC#BELD0]
+@5007 = ~Vorwärts, Freunde!~ [AC#BELD4] //@5007 = ~Onward, friends!~ [AC#BELD4]
+@5008 = ~Für Iltkazar!~ [AC#BELD0] //@5008 = ~For Iltkazar!~ [AC#BELD0]
 
 @5010 = ~(...)~ [AC#DWF32]
 @5011 = ~Hrm.~ [AC#DWF33]

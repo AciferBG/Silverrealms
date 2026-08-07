@@ -6,9 +6,7 @@
 @20000   = ~Die Nachricht der Zwerge
 
 Auf meinem Weg durch die Straßen Athkatlas ist mir ein Bote begegnet, der mir eine Nachricht überbracht hat. Sie stammt wohl von einer Gruppe Zwerge, die mich in der Taverne "Zum Tanzenden Riesen" in Zweiwasser, einem kleinen Nest entlang der Eshpurtastraße, treffen möchte.~
-@20002   = ~Ein Weg ins Unterreich
 
-Eine Gruppe Zwerge in der Taverne "Zum tanzenden Riesen" hat mich gebeten, sie in ihre Heimatstadt Iltkazar ins Unterreich zu begleiten, um ihren König aus einem mysteriösen Schlaf zu befreien. Ihr Anführer, ein Zwerg namens Beldas, hat mich beauftragt, einen Weg zurück ins Unterreich und seine Heimat zu finden.~
 @20008   = ~Ein Weg ins Unterreich
 
 Es gibt eine Brücke östlich von Athkatla, die von Zwergen erbaut worden ist. Sie wird "Axtbrücke" genannt. Dort sollte ich nach Hinweisen suchen, um einen Weg ins Unterreich zu finden.~
@@ -22,7 +20,7 @@ Die Gruppe Zwerge aus Iltkazar ist aus der Taverne verschwunden. Sie möchten si
 
 Beldas und seine Gefährten sind tot. Sie wurden von einem roten Drachen getötet. Der Turboldberg war eine ausgeklügelte Falle! Nun muss ich meinen Weg nach Iltkazar alleine finden. Im Inneren der Turboldfeste gibt es einen alten Kartenraum. Beldas besitzt den Schlüssel für das Innere der Zwergenfestung.~@20012   = ~Ein Weg ins Unterreich
 
-Die Zwerge haben ihre Türen mit einem Schutzmechanismus gesichert. Um den Kartenraum zu öffnen müsse ich die "Axt" auf die Türe ausrichten, um nach dem Ort zu suchen, der mich ins Unterreich nach Iltkazar bringt.~
+Die Zwerge haben ihre Türen mit einem Schutzmechanismus gesichert. Um den Kartenraum zu öffnen muss ich diesen Mechanismus nutzen, um einen Hinweis nach dem Ort zu finden, der mich ins Unterreich nach Iltkazar bringt.~
 @20019   = ~Ein Weg ins Unterreich
 
 Es gibt eine vergessene Höhle in den Kuldingipfeln in Tethyr, die man "Ravimors Höhle" nennt. Dort soll sich ein Zugang ins Unterreich und damit nach Iltkazar befinden.~
@@ -76,7 +74,7 @@ Leider ist die Geschichte mit dem Raben nicht gut für seinen "Meister" ausgegan
 
 In dem Wolkengipfel-Gebirge gibt es eine alte Zwergenschmiede, in deren Innerem ich versuchen soll, die beiden Zepterteile wieder zu vereinigen.~
 // bis hierhin________________________________________________________________
-@20050	= ~Die Axtbrücke
+@20050	= ~Ein Weg ins Unterreich
 
 Mein erster Auftrag für die Zwerge aus Iltkazar lautet, an einer alten Zwergenbrücke, die passenderweise Axtbrücke genannt wird, nach Hinweisen zu suchen, wo es hier in der Nähe einen Weg zurück ins Unterreich Richtung Iltkazar geben könnte. Ich finde die Brücke, indem ich der Straße gen Osten Richtung Eshpurta folge.~
 @20060	= ~Das Buch für den Zwergenkönig
@@ -765,7 +763,7 @@ Der Mechanismus, der die Tür herab von diesem Berg öffnen soll, klemmt. Ich mu
 Ich habe den Mechanismus, der die Ausgangstüre öffnen soll, repariert. Nun sollte ich zurück in den Statuenraum gehen und von diesem Berg verschwinden.~
 @90014  = ~Der Abstieg vom Turboldberg
 
-Ich habe den defekten Mechanismus gefunden. Wenn ich ein passendes Zahnrad finde, könnte ich ihn wieder in Gang setzen, um die Tür im Nebenraum zu öffnen.~
+Ein fehlendes Zahnrad verhindert wohl, dass ich einen Mechanismus zum Öffnen der Ausgangstür aktivieren kann.~
 @90015  = ~Der Abstieg vom Turboldberg
 
 Um die Geheimtür zu öffnen muss ich die "Axt" auf Clangeddins Zwillingsäxte ausrichten.~
@@ -780,6 +778,10 @@ Ich habe die Leiter gefunden. Wenn ich sie im Freien an dem Felsvorsprung festma
 @99000  = ~Befreie König Mith Barak
 
 Ich habe Mith Barak befreit und damit Iltkazar seinen rechtmäßigen König zurückgegeben und außerdem vor der Bedrohung Tiamats gerettet. Sowohl König Mith Barak als auch die Zwerge waren mir äußerst dankbar, und ich werde von nun in Iltkazar ein- und ausgehen können, wie es mir beliebt.~
+
+@20002   = ~Der Schlafende König
+
+Eine Gruppe Zwerge in der Taverne "Zum tanzenden Riesen" hat mich gebeten, sie in ihre Heimatstadt Iltkazar ins Unterreich zu begleiten, um ihren König aus einem mysteriösen Schlaf zu befreien. Ihr Anführer, ein Zwerg namens Beldas, hat mich beauftragt, einen Weg zurück ins Unterreich und seine Heimat zu finden.~
 
 @99500   = ~Der Schlafende König
 

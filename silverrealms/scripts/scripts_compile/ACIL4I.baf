@@ -19,7 +19,7 @@ THEN
 		Deactivate("ac#dwf20")
 		Deactivate("ac#dwf30")
 		SetGlobal("AC#IltkazarQuest#2","GLOBAL",11)
-		EraseJournalEntry(@20062)
+		//EraseJournalEntry(@20062)
 		AddJournalEntry(@20070,QUEST)
 END
 

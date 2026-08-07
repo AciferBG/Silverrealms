@@ -62,9 +62,7 @@ END
 			IF ~~ THEN BEGIN bye_02
 			SAY ~Gerne! Haben gut gezahlt und viel gebechert - zumindest zwei von ihnen. Der Dritte wollte immer nur Quellwasser statt Bier trinken, komischer Kauz. Aber sagt ihnen, dass sie hier jederzeit wieder willkommen sind! Und jetzt entschuldigt mich, ich muss mich um meine anderen Gäste kümmern.~
 			IF ~~ THEN DO ~SetGlobal("AC#IltkazarQuest#2","GLOBAL",20)
-		RevealAreaOnMap("ACIL0A")
-		EraseJournalEntry(@20070)
-		EraseJournalEntry(@20002)		
+		RevealAreaOnMap("ACIL0A")			
 		AddJournalEntry(@20010,QUEST)~ EXIT
 			END
 
@@ -135,7 +133,6 @@ END
 							SAY ~Gerne! Dann kann ich mich nun ja wieder um meine ehrliche Kundschaft kümmern.~
 							IF ~~ THEN
 							DO ~SetGlobal("AC#IltkazarQuest#2","GLOBAL",2)
-							EraseJournalEntry(@20060)
 							AddJournalEntry(@20065,QUEST)~ EXIT 
 							END
 /*		

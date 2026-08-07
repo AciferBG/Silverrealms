@@ -14,8 +14,7 @@ END
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN 1
 SAY  ~Los, schnell zum Aufzug! Die Halle beginnt einzustürzen, und wenn wir den Aufzug nicht erreichen, sind wir alle verloren! Ich hoffe, Bresk ist schon dort und wartet auf uns.~
    IF ~~ THEN DO ~SetGlobal("AC#SorniEscape","GLOBAL",1)
-   AddJournalEntry(@61014,QUEST)
-   EraseJournalEntry(@61011)~  EXIT
+   AddJournalEntry(@61014,QUEST)~  EXIT
 END
 
 IF ~Global("AC#SorniEscape","GLOBAL",3)~ THEN BEGIN 4

@@ -1,6 +1,6 @@
 
 /*
-Die beschwörung des Glabrezu
+Die beschwï¿½rung des Glabrezu
 */
 IF
 	Global("AC#Baphometspawn","GLOBAL",1)
@@ -39,7 +39,7 @@ IF
 THEN
 	RESPONSE #100
 	 AddJournalEntry(@58007,QUEST)
-	 EraseJournalEntry(@58006)
+	 //EraseJournalEntry(@58006)
          SetGlobal("DurhgathuDead","ACIL49",1)
 END
 

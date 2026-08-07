@@ -100,7 +100,6 @@ IF ~Global("Jorboud_Runestone","ACIL53",2)~ THEN BEGIN hello_have_runstone
   SAY ~Geht damit zu Bettargh. Er sollte wissen, was mit diesem Runenstein anzufangen ist.~
 IF ~~ THEN DO ~SetGlobal("Jorboud_Runestone","ACIL53",10)
 SetGlobal("AC#RC_Bettargh_Third","GLOBAL",3)
-EraseJournalEntry(@62031)
 GiveItemCreate("AC#RUN53",LastTalkedToBy,0,0,0)  
 ~ EXIT
 END
@@ -212,8 +211,6 @@ END
 			SAY ~Eure Entscheidung. Jedenfalls werde ich meinen Schülern zeigen, dass selbst ein <RACE> von der Oberfläche Bücher binden kann!~
 			IF ~~ THEN DO ~SetGlobal("AC#bookbinder","ACIL53",10)
 			IncrementGlobal("AC_Iltkazar_Reputation","GLOBAL",1)
-			EraseJournalEntry(@53100)
-			EraseJournalEntry(@53109)
 			AddJournalEntry(@53110,QUEST_DONE)
 			AddexperienceParty(500)
 			DisplayStringNoName(Player1,@1021)~ EXIT
@@ -233,8 +230,7 @@ END
 GiveItemCreate("AC#53PA2",LastTrigger,0,0,0)
 GiveItemCreate("AC#53PA3",LastTrigger,0,0,0)
 GiveItemCreate("AC#53PA4",LastTrigger,0,0,0)
-GiveItemCreate("AC#53PA5",LastTrigger,0,0,0)
-EraseJournalEntry(@53109)~ EXIT
+GiveItemCreate("AC#53PA5",LastTrigger,0,0,0)~ EXIT
 			END
 
 IF ~Global("AC#Explosion","ACIL53",1)~ THEN BEGIN new_here
@@ -338,9 +334,6 @@ END
 							=
 							~Fertig! Das ging doch schnell, oder? Hier, ich gieße es noch in eine schicke Flasche. Das Schöne ist, dass man die Flasche niemals fallen lassen kann, da sie durch die Wirkung des Trankes kontinuierlich schwebt.~
 							IF ~~ THEN DO ~GiveItemCreate("AC#POTL2",Player1,1,1,1)
-							EraseJournalEntry(@64203)
-				EraseJournalEntry(@64204)
-				EraseJournalEntry(@64205)
 				AddJournalEntry(@64206,QUEST_DONE)
 				SetGlobal("AC#FruntuckHealed","GLOBAL",1)~ EXIT
 				END
@@ -890,7 +883,6 @@ IF~~THEN REPLY ~Ich muss weiter.~ EXTERN AC#IL53T bye
 				Wait(1)
 				EndCutSceneMode()
 				IncrementGlobal("AC_Iltkazar_Reputation","GLOBAL",1)
-				EraseJournalEntry(@53301)
 				AddJournalEntry(@53302,QUEST_DONE)
 				AddexperienceParty(500)
 				DisplayStringNoName(Player1,@1021)

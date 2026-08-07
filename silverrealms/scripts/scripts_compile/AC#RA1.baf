@@ -37,7 +37,7 @@ THEN
 	RESPONSE #100
         SetGlobal("AC#RavomirLevitate","GLOBAL",1)
         DisplayString(Myself,@9) //An dieser Stelle scheint die H�hle ins Bodenlose zu fallen. Von unten dringt weit entfernt das Pl�tschern von Wasser zu Euch hinauf.
-        EraseJournalEntry(@20011)
+        //EraseJournalEntry(@20011)
 		AddJournalEntry(@21002,QUEST_DONE)
 END
 

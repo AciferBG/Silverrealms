@@ -22,7 +22,7 @@ THEN
     RESPONSE #100
         SetGlobal("AC#Driftdisc","GLOBAL",1)
         TakePartyItem("AC#DRFT2")
-        EraseJournalEntry(@64211)
+        //EraseJournalEntry(@64211)
         AddJournalEntry(@64212,QUEST_DONE)
         AmbientActivate("Driftdisc",TRUE)
         AmbientActivate("Ac#turni",TRUE)

@@ -24,7 +24,6 @@ END
 	IF ~~THEN BEGIN stone_clans_parting
 	SAY ~Nach einigem Blättern findet Ihr tatsächlich Borthuns Eintrag zum Drachenfriedhof: "Der Drachenfriedhof liegt am Rande der Wolkengipfel an einer Gebirgskette, die nur als "der Grat" bezeichnet wird. Dieser Ort ist den Elfen heilig, denn dort erschlug Tethir, der erste Drachentöter, vor vielen Jahrtausenden zwei Rote Drachen."~
 	IF ~~ THEN DO ~SetGlobal("AC#Clans_Parting","GLOBAL",4)
-	EraseJournalEntry(@64103)
 	AddJournalEntry(@64104,QUEST)
 	RevealAreaOnMap("ACIL70")~ GOTO stone_clans_parting_02
 	END

@@ -138,7 +138,6 @@ END
 					SetGlobal("AC#25_LolthPriestess","GLOBAL",10)
 					SetGlobal("VhaeraunLeaves","ACIL24",10)
 					SetGlobal("AC#25_Bloodmoon","GLOBAL",1)
-					EraseJournalEntry(@62026)
 					AddJournalEntry(@62027,QUEST_DONE)
 					AddJournalEntry(@23000,QUEST)
 					CreateVisualEffectObject("SPDIMNDR",Myself)
@@ -169,7 +168,6 @@ END
 		IF ~~ THEN DO ~
 		SetGlobal("VhaeraunKillDrow","ACIL24",5)
 		SetGlobal("AC#25_LolthPriestess","GLOBAL",1)
-		EraseJournalEntry(@62022)
 		AddJournalEntry(@62025,QUEST)~ EXIT
 		END
 	

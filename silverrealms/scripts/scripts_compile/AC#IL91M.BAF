@@ -1,0 +1,27 @@
+IF
+    Clicked([ANYONE])
+    !Range(LastTrigger,12)
+THEN
+    RESPONSE #100
+        DisplayString(Myself,14702)  // Ihr seid zu weit entfernt, um das zu benutzen.
+END
+
+IF
+    Clicked([ANYONE])
+    GlobalGT("MapHint","ACIL91",0)
+THEN
+    RESPONSE #100
+        DisplayString(Myself,@984)  
+END
+
+IF
+    Clicked([ANYONE])
+    Global("MapHint","ACIL91",0)
+THEN
+    RESPONSE #100
+        SetGlobal("MapHint","ACIL91",1)
+        AddJournalEntry(@20012,QUEST)
+        AddJournalEntry(@90015,QUEST)   
+        DisplayString(Myself,@984)  
+END
+

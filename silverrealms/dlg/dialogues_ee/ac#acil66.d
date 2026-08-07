@@ -49,7 +49,6 @@ IF ~~ THEN BEGIN bye_protect_king
    ~Männer! Zu mir! Wir werden die Truppen sammeln und einen Vorstoß in das Gebiet machen, aus dem die Teufel kommen!~
    IF ~~ THEN DO ~SetGlobal("AC#BreskQuest","GLOBAL",1)
    SetGlobal("AC#BreskMoves01","ACIL66",1)
-   EraseJournalEntry(@66000)
    AddJournalEntry(@66001,QUEST)~  EXIT
 END
 

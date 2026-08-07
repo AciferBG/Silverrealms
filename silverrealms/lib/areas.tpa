@@ -428,7 +428,7 @@ COPY ~silverrealms/areas/ACIL90.are~          ~override~
  SAY 0x1040  @871
 
 COPY ~silverrealms/areas/ACIL91.are~          ~override~
- SAY 0x618  @984
+ //SAY 0x618  @984
 
 COPY ~silverrealms/areas/ACIL94.are~          ~override~
  SAY 0x354  @881

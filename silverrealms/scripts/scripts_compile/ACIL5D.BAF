@@ -12,7 +12,7 @@ IF
 THEN
 	RESPONSE #100
         SetGlobal("AC#DRIFR","GLOBAL",3)
-        EraseJournalEntry(@64225)
+        //EraseJournalEntry(@64225)
         AddJournalEntry(@64226,QUEST)
 END
 

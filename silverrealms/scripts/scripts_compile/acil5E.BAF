@@ -131,7 +131,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("AC#Vronia_Quest","GLOBAL",11)
-		EraseJournalEntry(@50610)
+		//EraseJournalEntry(@50610)
 		AddJournalEntry(@50611,QUEST)
 END
 

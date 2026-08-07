@@ -356,7 +356,7 @@ THEN
 	RESPONSE #100
         SetGlobal("Acil20_DrowPriestess","ACIL20",2)
 		SpawnPtActivate("Hook Horror") //  activate  Hook Horror Spawn when drow priestess is dead
-		EraseJournalEntry(@50020)
+		//EraseJournalEntry(@50020)
 		AddJournalEntry(@50021,QUEST)
 END
 

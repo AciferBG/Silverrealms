@@ -132,7 +132,6 @@ END
 			SAY ~Das sieht ganz gut aus. Naja, war ja auch nicht allzu schwer. Aber trotzdem nicht schlecht für einen <RACE> von der Oberfläche! Werd' den anderen erzählen, dass mir einer von Euch beim Erzsortieren geholfen hat.~
 			IF ~~ THEN DO ~IncrementGlobal("AC_Iltkazar_Reputation","GLOBAL",1)
 			SetGlobal("OreJob","ACIL59",10)
-			EraseJournalEntry(@59200)
 			AddJournalEntry(@59201,QUEST_DONE)
 			AddexperienceParty(500)
 			DisplayStringNoName(Player1,@1021)~EXIT

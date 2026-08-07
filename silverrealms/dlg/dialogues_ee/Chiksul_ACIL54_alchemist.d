@@ -32,7 +32,6 @@ END
 			IF ~~ THEN BEGIN buy_mercury
 			SAY ~Kunden wie Euch mag ich am gernsten, wisst Ihr? Sich einfach einmal eine handvoll Quecksilber zu leisten, alle Achtung! Also passt auf, hier ist das Zeug, aber gebt Acht, dass es Euch nicht zwischen den Fingern entrinnt.~
 			IF ~~ THEN DO ~GiveItemCreate("AC#MERC1",LastTalkedToBy,1,0,0)
-			EraseJournalEntry(@64220)
 			AddJournalEntry(@64221,QUEST)~ EXIT 
 			END
 		

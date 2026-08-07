@@ -9,7 +9,6 @@ SAY ~Toll! Habt Ihr das Wunder Dugmarens gesehen? Ich wünsche Euch viel Erfolg 
 =
 ~Bis dahin möge der Irrende Wanderer jeden Eurer Schritte segnen. Ich werde mich wieder an meine Arbeit hier unten im Tempel machen. Ihr wisst, wo Ihr mich finden könnt.~
 IF ~~ THEN DO ~SetGlobal("AC#DRIFR","GLOBAL",3)
-EraseJournalEntry(@64225)
 AddJournalEntry(@64226,QUEST_DONE)~ EXIT 
 END
 
@@ -83,10 +82,6 @@ END
 				SAY ~Legt die Schwebescheibe mitsamt dem Quecksilber und dem Levitationstrank auf den Opfertisch. Hier ist die Spruchrolle mit dem Zauber "Tensers fliegende Scheibe". Sprecht den Zauber danach aus, dann sollte die Schwebescheibe - so der Irrende Wanderer möchte - wieder funktionieren.~
 				IF ~~ THEN DO ~SetGlobal("AC#Return_to_Surface","GLOBAL",5)
 				GiveItemCreate("AC#5DTFD",Player1,1,0,0)
-				EraseJournalEntry(@64224)
-				EraseJournalEntry(@64221)
-				EraseJournalEntry(@64223)
-				EraseJournalEntry(@64206)
 				AddJournalEntry(@64225,QUEST)~ EXIT 
 				END
 	
@@ -136,8 +131,7 @@ END
 		
 			IF ~~ THEN BEGIN driftdisc_not_working_02
 			SAY ~Lasst mich einmal sehen...~
-			IF ~~ THEN DO ~TakePartyItem("AC#DRFT1")
-			EraseJournalEntry(@64209)~ GOTO driftdisc_not_working_03
+			IF ~~ THEN DO ~TakePartyItem("AC#DRFT1")~ GOTO driftdisc_not_working_03
 			END
 			
 				IF ~~ THEN BEGIN driftdisc_not_working_03
@@ -310,7 +304,6 @@ END
 							IF ~~ THEN BEGIN legacy_02
 							SAY ~Der Inhaber des "Vermächtnis", der alte Shagretor, hat sie zu dem anderen Drow-Gerümpel, das ihm so wichtig ist, gelegt. Ich hätte sie ja eher in den Müllstollen geworfen, aber ein Glück für Euch, dass wir in Iltkazar einen Zwerg haben, dem die alten Devotionalien wichtig sind! Ihr solltet also Shagretor im "Vermächtnis" danach fragen. Ihr findet seine Ausstellung in Haelas Hallen im Südosten der Stadt, gegenüber des alten Dumathoin-Tempels.~
 							IF ~~ THEN DO ~SetGlobal("AC#Return_to_Surface","GLOBAL",2)
-							EraseJournalEntry(@63001)
 							AddJournalEntry(@64207,QUEST)~ EXIT
 							END
 

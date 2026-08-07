@@ -111,6 +111,7 @@ IF ~Global("AC#BeldasDies","GLOBAL",1)~ THEN BEGIN its_over
 SAY ~Es... tut mir leid, <CHARNAME>.~ [AC#BELD9] 
 IF ~~ THEN REPLY ~Was tut Euch leid?~ + what
 IF ~~ THEN REPLY ~Ich sehe, dass Euch das Sprechen anstrengt, Beldas.~ + do_not_talk
+IF ~~ THEN REPLY ~Ich tue mir auch leid.~ + do_not_talk
 IF ~~ THEN REPLY ~Tut mir bitte einen letzten Gefallen und sterbt schneller.~ + not_much_time
 END
 
@@ -123,18 +124,19 @@ IF ~~ THEN BEGIN what
 SAY ~Ich... hätte Euch sagen sollen, was... Euch erwarten könnte...~
 IF ~~ THEN REPLY ~Das ist jetzt nicht mehr zu ändern.~ + others
 IF ~~ THEN REPLY ~Das hättet Ihr wirklich.~ + i_am_sorry
+IF ~~ THEN REPLY ~Dann wäre ich sicher nicht gekommen!~ + i_am_sorry
 END
 
 	IF ~~ THEN BEGIN i_am_sorry
-	SAY ~Ich ... entschuldige mich... für ... mein Verhalten. Ich wollte uns alle nicht in Gefahr bringen .... und habe es dadurch erst Recht getan!~
+	SAY ~Ich ... entschuldige mich... für ... mein Verhalten. Ich wollte uns alle nicht in Gefahr bringen... und habe es dadurch erst Recht getan!~
 	IF ~~ THEN + others
 	END
 
 IF ~~ THEN BEGIN others
 SAY ~Wo... sind... meine Gefährten? Ich... kann nichts mehr erkennen, dieser... Drache hat mich geblendet...~
 IF ~~ THEN REPLY ~Sie sind alle tot, Beldas.~ + all_dead
+IF ~~ THEN REPLY ~Euer Leichtsinn hat sie das Leben gekostet.~ + all_dead
 IF ~~ THEN REPLY ~Ich weiß es nicht.~ + no_idea
-
 END
 
 	IF ~~ THEN BEGIN no_idea
@@ -144,7 +146,7 @@ END
 	END
 
 	IF ~~ THEN BEGIN all_dead
-	SAY ~Tot.. mögen sie in der Seelenschmiede in Frieden Ruhen...~
+	SAY ~Tot... mögen sie in der Seelenschmiede in Frieden Ruhen!~
 	IF ~NumInParty(1)~ THEN REPLY ~Ihr seid noch am Leben. Wir werden Euch heilen.~ + no_heal
 	IF ~NumInPartyGT(1)~ THEN GOTO your_comrades_dead
 	END
@@ -159,19 +161,7 @@ END
 		HPLT(Player5,1)
 		HPLT(Player6,1)~ THEN GOTO some_are_dead
 		END
-		// Dead(Player2)
-		/*
-		IF ~~ THEN BEGIN your_comrades_dead
-		SAY ~Wie hat es Eure Gruppe getroffen, <CHARNAME>? *hust*...~
-		IF ~~ THEN GOTO comrades_alive
-		IF ~OR(5)
-		Dead(Player2)
-		Dead(Player3)
-		Dead(Player4)
-		Dead(Player5)
-		Dead(Player6)~ THEN GOTO some_are_dead
-		END
-		*/
+
 		
 		IF ~~ THEN BEGIN comrades_alive
 		SAY ~Sind noch alle am Leben?~
@@ -213,7 +203,6 @@ END
 
 IF ~~ THEN BEGIN your_job
 SAY ~Ich war ... so... vermessen zu glauben, dass die Rolle *mir* zustehen würde, unseren... geliebten König zu retten... doch diese Aufgabe ist für Euch bestimmt! Ich ... kann ... es spüren!~
-IF ~~ THEN REPLY ~Also ich...~ + not_much_time
 IF ~~ THEN REPLY ~Ich denke nicht, dass ich dafür auserkoren bin.~ + not_much_time
 IF ~~ THEN REPLY ~Das ist albern.~ + not_much_time
 IF ~~ THEN REPLY ~Da habt Ihr sicher Recht!~ + not_much_time
@@ -221,8 +210,11 @@ END
 
 IF ~~ THEN BEGIN not_much_time
 SAY ~Wartet... lass mich sprechen. Ich habe... nicht mehr viel Zeit, bevor der Allvater mich zu sich rufen wird...~
-=
-~Hört gut... zu!  Ihr müsst das Buch... in unsere Stadt... bringen. Ich hoffe, Ihr habt es noch...~
+IF ~~ THEN DO ~AddJournalEntry(@20067,QUEST)~ GOTO not_much_time02
+END
+
+IF ~~ THEN BEGIN not_much_time02
+SAY ~Hört gut zu! Ihr müsst das Buch... in unsere Stadt bringen. Ich hoffe, Ihr habt es noch...~
 IF ~PartyHasItem("AC#SRBK1")~ THEN REPLY ~Im Großen und Ganzen habe ich es noch, ja.~ + secret_door
 IF ~PartyHasItem("AC#SRBK1")~ THEN REPLY ~Es ist ziemlich mitgenommen. Man kann es kaum noch lesen.~ + secret_door
 IF ~!PartyHasItem("AC#SRBK1")~ THEN REPLY ~Scheint, dass ich es unterwegs verloren habe.~ + dont_have_book
@@ -234,31 +226,32 @@ END
 	END
 
 IF ~~ THEN BEGIN secret_door
-SAY  ~Ihr müsst wieder von diesem Berg herunter. Der direkte Weg ist Euch versperrt, da die Zugbrücke eingestürzt ist. Wir sind bei unserem Aufstieg durch eine kleine Höhle ins Innere des Berges geklettert und dann durch die alten Zwergenkammern an den Gipfel gelangt. Wir dachten, wir könnten auf diese Weise den Drachen abschütteln, der uns auf den Fersen war.~
+SAY  ~Zunächst müsst Ihr von diesem Berg herunter. Der direkte Weg ist Euch versperrt, da die Zugbrücke eingestürzt ist. Es gibt aber noch einen anderen Weg zurück.~
+=
+~Wir sind bei unserem Aufstieg durch eine kleine Höhle ins Innere des Berges geklettert und dann durch die alte Zwergenfestung an den Gipfel gelangt. Wir hofften, wir könnten auf diese Weise den Drachen abschütteln, der uns auf den Fersen war. Ihr könnt diesen Weg in umgekehrter Richtung nehmen, um von hier zu verschwinden.~
 IF ~~ THEN REPLY ~Warum hat der Drache Euch eigentlich verfolgt?~ GOTO about_the_dragon
 IF ~~ THEN REPLY ~Das hat ja wunderbar funktioniert.~ + need_key
 IF ~~ THEN REPLY ~Fahrt fort.~ + need_key
 END
 
 	IF ~~ THEN BEGIN about_the_dragon
-	SAY ~Das ist eine schwierige Geschichte. Ich fürchte, ich habe nicht mehr so viel Zeit, Euch alles zu erklären. Lasst mich Euch zunächst sagen, wie Ihr von diesem Berg wieder herunterkommt.~
+	SAY ~Das ist eine schwierige Geschichte. Ich fürchte, ich habe nicht mehr so viel Zeit, Euch alles zu erklären. Lasst mich Euch zunächst sagen, wie Ihr von diesem Berg wieder herunterkommt und einen Weg ins Unterreich findet.~
 	IF ~~ THEN GOTO need_key
 	END
 
 IF ~~ THEN BEGIN need_key
-SAY ~Ich habe den Schlüssel ins Innere der Turblodfeste bei mir. Dort drinnen befindet sich ...eine Geheimtür... bei der Statue Iltkazars... die Ihr nach unten nehmen müsst... auf diesem... Wege... sind wir nach oben gelangt... Sie ist Euer einziger Weg von diesem Berg herunter... Ihr... Ihr müsst vorher mit Hilfe der Räder die Platte auf Clangeddins Schild ausrichten, um sie zu öffnen...~
-IF ~~ THEN DO ~AddJournalEntry(@90010,QUEST)~ + ladder
+SAY ~Ich habe den Schlüssel ins Innere der Turboldfeste bei mir. Öffnet das Tor hinter mir. Dort drinnen befindet sich eine große Kammer, die Euch sowohl den Weg von dem Berg herunter als auch einen Zugang nach Iltkazar weisen wird! Alle Türen sind jedoch durch einen Mechanismus geschützt.~
+IF ~~ THEN + maproom_reveal
 END
 
-IF ~~ THEN BEGIN ladder
-SAY  ~Und... Ihr braucht eine Leiter, um wieder... vollends... herunterzukommen... wir haben eine Strickleiter im Inneren der Zwergenkammern zurückgelassen.~
-IF ~~ THEN DO ~AddJournalEntry(@90020,QUEST)~ + way_underdark_01
+IF ~~ THEN BEGIN maproom_reveal
+SAY ~Ihr müsst Euch mit dem Mechanismus vertraut machen und zunächst den Kartenraum öffnen, der Euch einen sicheren Zugang ins Unterreich weisen wird.~
+IF ~~ THEN + way_underdark_01
 END
 
 	IF ~~ THEN BEGIN way_underdark_01
 	SAY  ~Wenn Ihr den Berg herabgestiegen seid, müsst Ihr ins Unterreich gelangen und meine Stadt retten!~
-	IF ~~ THEN REPLY ~Wie soll ich denn ohne Zugang ins Unterreich kommen?~ GOTO way_underdark_02
-	IF ~~ THEN REPLY ~Dann sagt mir jetzt, wie Ihr aus Iltkazar hier heraufgekommen seid, und ich nehme den gleichen Weg zurück.~ GOTO way_underdark_dragon
+	IF ~~ THEN REPLY ~Sagt mir lieber, wie Ihr aus Iltkazar hier heraufgekommen seid, und ich nehme den gleichen Weg zurück.~ GOTO way_underdark_dragon
 	IF ~~ THEN REPLY ~Natürlich! Berg heruntersteigen, und dann weiter ins Unterreich...~ + way_underdark_02
 	IF ~~ THEN REPLY ~Ach ja, stimmt. Das hatte ich vor lauter Drachen fast vergessen.~ + way_underdark_02
 	END
@@ -269,23 +262,30 @@ END
 		END
 		
 		IF ~~ THEN BEGIN way_underdark_02
-		SAY  ~Der... der Weg, den wir gekommen sind... er führte durch den Hort des roten Drachen, den Ihr gerade kennengelernt habt. Es ist schlimm, doch der einzige bekannte Weg von Iltkazar an die Oberfläche wird von diesem Biest bewacht! Wir schafften es mit viel List, uns an ihm vorbeizuschleichen... wir hätten nicht gedacht, dass der Drache den Auftrag hatte, den Zugang zu bewachen... und... uns weiter daran hindern würde. Er verfolgte uns gen Norden, doch wir konnten ihn abschütteln. Irgendwie muss er uns wieder gefunden haben und hier seine Falle platziert haben.~
-		IF ~~ THEN GOTO way_underdark_03
-		END
-		
-		IF ~~ THEN BEGIN way_underdark_03
-		SAY  ~Doch... es gibt auch eine gute Nachricht. Im Inneren dieser Festung hinter mir entdeckten wir in einer gesonderten Kammer eine große alte metallene Zwergenkarte, die weitere Zugänge ins Unterreich markiert. Ihr müsst... den Mechanismus, mit dem Ihr auch die Ausgangstüre öffnen könnt, auf die Tür ausrichten, um den Kartenraum zu öffnen. Und zwar, bevor Ihr den Berg verlasst!~
-		IF ~~ THEN DO ~EraseJournalEntry(@20010)
-		EraseJournalEntry(@20062)
-		AddJournalEntry(@20011,QUEST)~ GOTO ravimors_cave_01
+		SAY  ~Der... der Weg, den wir gekommen sind... er führte durch den Hort dieses roten Drachen. Wir schafften es zwar, uns an ihm vorbeizuschleichen... doch wir hätten nicht gedacht, dass er uns an der Oberfläche weiter folgen würde. Irgendwie muss er uns gefunden und hier oben seine Falle platziert haben.~
+		IF ~~ THEN DO ~AddJournalEntry(@20011,QUEST)~ GOTO ravimors_cave_01
 		END
 		
 		IF ~~ THEN BEGIN ravimors_cave_01
-		SAY ~Geht ins Innere und seht Euch die Karte an! Danach müsst Ihr die Geheimtüre öffnen, indem Ihr die Axt auf das Wappen Iltkazars - Clangeddins Zwillingsäxte - einstellt!~
-		IF ~~ THEN REPLY ~Das klingt alles mächtig kompliziert.~ GOTO vow_01
-		IF ~~ THEN REPLY ~Natürlich. Nichts leichter als das.~ GOTO vow_01
-		IF ~~ THEN REPLY ~Ich hoffe, ich kann mir all das merken.~ GOTO vow_01
+		SAY ~Geht ins Innere und seht Euch die Karte an! Danach müsst Ihr die Geheimtüre öffnen, indem Ihr den Mechanismus auf das Wappen Iltkazars - Clangeddins Zwillingsäxte - einstellt, um den Berg zu verlassen!~
+		IF ~~ THEN REPLY ~Das klingt alles mächtig kompliziert.~ GOTO secret_door_clangeddin
+		IF ~~ THEN REPLY ~Natürlich. Nichts leichter als das.~ GOTO secret_door_clangeddin
+		IF ~~ THEN REPLY ~Ich hoffe, ich kann mir all das merken.~ GOTO secret_door_clangeddin
 		END
+		
+
+IF ~~ THEN BEGIN secret_door_clangeddin		
+SAY ~Sucht die Geheimtür... bei der Statue Iltkazars... die Ihr nach unten nehmen müsst... auf diesem... Wege... sind wir nach oben gelangt... Sie ist Euer einziger Weg von diesem Berg herunter... Ihr... Ihr müsst vorher mit Hilfe der Räder die Platte auf Clangeddins Schild ausrichten, um sie zu öffnen...~
+IF ~~ THEN DO ~AddJournalEntry(@90010,QUEST)~ GOTO ladder
+END
+
+IF ~~ THEN BEGIN ladder
+SAY  ~Und... Ihr braucht eine Leiter, um wieder... vollends... herunterzukommen... wir haben eine Strickleiter im Inneren der Zwergenkammern zurückgelassen.~
+IF ~~ THEN DO ~
+//AddJournalEntry(@90020,QUEST)
+~ + vow_01
+END
+
 								
 IF ~~ THEN BEGIN vow_01
 SAY ~Sucht einen Zugang ins Unterreich! Flieht von diesem verfluchten Berg! Begebt Euch nach Iltkazar! Bitte, <CHARNAME>, rettet... meine Heimat!~

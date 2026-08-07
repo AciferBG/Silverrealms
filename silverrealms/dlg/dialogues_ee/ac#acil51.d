@@ -34,8 +34,7 @@ BEGIN ~AC#ANT01~
 				IF ~~ THEN BEGIN killed_dragon_03
 				SAY ~Nun kann ich wieder besser ruhen. Gleiches wurde mit Gleichem vergolten. Eines Tages werde ich meinen Sohn in der Seelenschmiede wiedersehen! Von jetzt an werde ich ihm wieder in die Augen schauen können. Habt Dank dafür! Und nun entschuldigt mich, ich muss einige stille Worte an den Allvater richten. Möge der Erbauer der Zwerge Euch für diese gute Tat segnen!~
 				IF ~~ THEN DO ~SetGlobal("AC#AnthanDragon","GLOBAL",10)
-				AddJournalEntry(@51102,QUEST_DONE)
-				EraseJournalEntry(@51100)~ EXIT 
+				AddJournalEntry(@51102,QUEST_DONE)~ EXIT 
 				END
 				
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN hello_firsttime_late
@@ -92,8 +91,8 @@ END
 
 IF ~~ THEN BEGIN why_matter
   SAY ~Es spielt eine Rolle für die Ehre des Clans, dem ich schon ein Leben lang vorstehe! So antwortet mir: Starb er als Held oder als Feigling?~
-  IF ~~ THEN REPLY ~Als Held.~ DO ~EraseJournalEntry(@51200) AddJournalEntry(@51201,QUEST_DONE)~ GOTO died_as_hero
-  IF ~~ THEN REPLY ~Als Feigling.~ DO ~EraseJournalEntry(@51200) AddJournalEntry(@51201,QUEST_DONE)~ GOTO died_as_coward
+  IF ~~ THEN REPLY ~Als Held.~ DO ~AddJournalEntry(@51201,QUEST_DONE)~ GOTO died_as_hero
+  IF ~~ THEN REPLY ~Als Feigling.~ DO ~AddJournalEntry(@51201,QUEST_DONE)~ GOTO died_as_coward
 END
 
 IF ~~ THEN BEGIN died_as_coward
@@ -168,7 +167,7 @@ END
 									
 										IF ~~ THEN BEGIN have_the_book_02
 										SAY ~Natürlich. Nachdem mein eigener Sohn hinter meinem Rücken herumgeschnüffelt hatte, habe ich es lieber an mich genommen. Jetzt tragt Ihr die Verantwortung dafür, <PRO_RACE>! Geht mit dieser Verantwortung weise um.~
-										IF ~~ THEN DO ~EraseJournalEntry(@64102)
+										IF ~~ THEN DO ~
 										//AddJournalEntry(@64103,QUEST)
 										//SetGlobal("AC#Clans_Parting","GLOBAL",3)
 										SetGlobal("AC#Clans_Parting","GLOBAL",4)

@@ -10,7 +10,7 @@ THEN
     RESPONSE #100
          SetGlobal("Acil20_DeadDwarves","GLOBAL",1)
          DisplayString(Myself,@310)
-         EraseJournalEntry(@62010)
+         //EraseJournalEntry(@62010)
         AddJournalEntry(@62011,QUEST)
          ActionOverride("AC#DEAD7",Kill(Myself))
 END

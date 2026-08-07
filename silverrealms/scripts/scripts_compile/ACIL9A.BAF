@@ -14,8 +14,8 @@ IF
 THEN
 	RESPONSE #100
 	        AddJournalEntry(@20009,QUEST)
-                EraseJournalEntry(@20008)
-				EraseJournalEntry(@20050)
+                //EraseJournalEntry(@20008)
+				//EraseJournalEntry(@20050)
 		SetGlobal("Runestone","ACIL9A",1)
 END
 

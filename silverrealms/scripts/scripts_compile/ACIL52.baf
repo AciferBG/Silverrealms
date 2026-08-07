@@ -11,7 +11,7 @@ IF
 	PartyHasItem("AC#DRFT1")
 THEN
 	RESPONSE #100
-	EraseJournalEntry(@64208)
+	//EraseJournalEntry(@64208)
 	AddJournalEntry(@64209,QUEST)
         SetGlobal("Driftdisc","ACIL52",3)
 END

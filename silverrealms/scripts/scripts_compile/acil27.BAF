@@ -77,7 +77,7 @@ THEN
 		ContainerEnable("Runecontainer02",FALSE)
 		ContainerEnable("Runecontainer03",FALSE)
 		SetGlobal("MonolithsDeactivated","ACIL27",1)
-		EraseJournalEntry(@27000)
+		//EraseJournalEntry(@27000)
 END
 
 IF
@@ -89,7 +89,7 @@ THEN
 	MoveViewPoint([2034.1461],INSTANT)
 	ScreenShake([20.20],20)
         OpenDoor("Door03")
-		EraseJournalEntry(@56101)
+		//EraseJournalEntry(@56101)
 		AddJournalEntry(@56102,QUEST)
         SetGlobal("AC#DOOR03","ACIL27",2) // DOOR03 to ACIL2K is opened
 END
@@ -166,7 +166,7 @@ THEN
 			 Kill("raksha01")			 			 
 	         Wait(1)
 	         DisplayStringHead(Player1,@711)
-			 EraseJournalEntry(@56111)
+			 //EraseJournalEntry(@56111)
                SetGlobal("AC#RC_Sorni_Fourth","GLOBAL",8)
 END
 

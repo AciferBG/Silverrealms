@@ -162,12 +162,10 @@ END
 										
 					
 						IF ~~ THEN BEGIN reward_book
-						SAY ~Hier ist das Buch. Und nochmal Danke für Eure Hilfe! Vielleicht kann ich mich in ein paar Jahren, wenn ich groß bin, bei Euch revanchieren!~
+						SAY ~Hier ist das Buch. Und nochmal Danke für Eure Hilfe! Vielleicht kann ich Euch ja irgendwann auch mal helfen, wenn ich groß bin!~
 						IF ~~ THEN DO ~SetGlobal("AC#EndrikQuest","ACIL04",10)
 						SetGlobal("AC#DragonToy","GLOBAL",10)
 						GiveItemCreate("ac#s#bkt",Player1,1,0,0)
-						EraseJournalEntry(@20400)
-						EraseJournalEntry(@20401)
 						AddJournalEntry(@20402,QUEST_DONE)
 						~ EXIT
 						END	
@@ -297,6 +295,11 @@ END
 																			AddJournalEntry(@20400,QUEST)
 																			~ EXIT
 																			END	
+																			
+IF ~True()~ THEN BEGIN hello_true
+SAY  ~Wenn ich groß bin werde ich ein echter Abenteurer und Drachentöter!~  
+IF ~~ THEN EXIT
+END																			
 
 // Old Start: Book before Dragon figurine
 /*
@@ -553,82 +556,14 @@ END
 					IF ~~ THEN DO ~SetGlobal("TalkedToOnnor","ACIL04",1)
 					SetGlobal("AC#IltkazarQuest#2","GLOBAL",3)
 					RevealAreaOnMap("ACIL4M")
-					EraseJournalEntry(@20065)
 					AddJournalEntry(@20066,QUEST)~ EXIT 
 					END
-/*
-	IF ~~ THEN BEGIN milking_grease_01
-	SAY ~Oh! Möchtet Ihr auch etwas davon haben?~
-	IF ~~ THEN REPLY ~Wofür benötigt man das denn?~ GOTO why_milking_grease
-	IF ~~ THEN REPLY ~Ich interessiere mich eher dafür, warum der Elf es haben wollte.~ + elf_milking_grease_01
-	IF ~IsValidForPartyDialog("Jaheira")
-	IsValidForPartyDialog("Korgan")~ THEN EXTERN ~JAHEIRAJ~ Jaheira_korgan_beard
-	END
-	
-	IF ~~ THEN BEGIN why_milking_grease
-	SAY ~Nun, zum Melken natürlich. Oder für einige andere Dinge.~
-	IF ~~ THEN REPLY ~Warum wollte der Elf es haben?~ + elf_milking_grease_01	 
-	END
-	
-		IF ~~ THEN BEGIN elf_milking_grease_01
-		SAY ~Ach so. Der wollte damit sein Schuhwerk einfetten.~
-		IF ~~ THEN REPLY ~Ach?~ GOTO elf_milking_grease_02
-		END
-		
-			IF ~~ THEN BEGIN elf_milking_grease_02
-			SAY ~Melkfett ist ein wirksames Mittel, wenn man irgendwohin geht, wo es feucht ist und man keine nassen Füße bekommen möchte!~
-			IF ~~ THEN REPLY ~Und wo könnte der Elf hingegangen sein, wo er nasse Füße bekommen würde?~ GOTO elf_milking_grease_03
-			END
-			
-				IF ~~ THEN BEGIN elf_milking_grease_03
-				SAY ~Das hat er nicht gesagt. Da gibt es ja unzählige Möglichkeiten! Bei den Straßen hier in Amn mit all den Schlaglöchern...~
-				IF ~~ THEN REPLY ~Danke, das war alles, was ich wissen wollte. Gehabt Euch wohl!~ GOTO elf_milking_grease_bye
-				END
-				
-					IF ~~ THEN BEGIN elf_milking_grease_bye
-					SAY ~He! Und was ist mit dem Melkfett?~
-					IF ~~ THEN DO ~SetGlobal("TalkedToOnnor","ACIL04",1)
-							EraseJournalEntry(@20063)
-							AddJournalEntry(@20064,QUEST)~ EXIT 
-					END
 
-*/
 IF ~~ THEN BEGIN bye
 SAY ~Nun denn.~
 IF ~~ THEN EXIT
 END
 
-// CHAIN
-/*
-CHAIN IF ~~ THEN AC#S#BY1 chain_seen_dragon
-~Er ist direkt herüber zur Axtbrücke geflogen. Warum glaubt Ihr mir denn nicht?~
-== ac#dwf30 ~Kommt, sagt es mir, Gormar, sagt es mir!~
-== ac#dwf20 ~Einen Vierling!~
-== ac#dwf30 ~Muahaha!~
-== ac#dwf00 ~Seid doch bitte etwas leiser, Freunde!~
-END
-IF ~~ THEN DO ~SetGlobal("Dwarf_joke","ACIL4I",2)~ EXIT
-*/
-/*******************************************************************************************************
-NPC-Dialoge
-*******************************************************************************************************/
-/*
-// Korgan
-APPEND ~KORGANJ~
-IF ~~ THEN BEGIN Korgan_korgan_beard
-SAY ~Hä? Nicht frech werden Weibsbild!~
-IF ~~ THEN REPLY ~Ich interessiere mich eher dafür, warum der Elf es haben wollte.~ EXTERN ~AC#IL04O~ elf_milking_grease_01 
-END
-END
-
-// Jaheira
-APPEND ~JAHEIRAJ~
-IF ~~ THEN BEGIN Jaheira_korgan_beard
-   SAY ~Unser Zwerg hier möchte sich damit gerne seinen Bart einfetten, um seine Intelligenz zu steigern.~
-   IF ~~ THEN EXTERN ~KORGANJ~ Korgan_korgan_beard
-END
-END
-*/
 
 // Anomen
 APPEND ~ANOMENJ~

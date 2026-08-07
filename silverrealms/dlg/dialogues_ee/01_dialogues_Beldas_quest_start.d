@@ -21,19 +21,12 @@ IF ~GlobalGT("AC#BeldasPlotStart","GLOBAL",3)~ THEN BEGIN hello_again
 SAY ~Seid gegrüßt, <CHARNAME>! Habt Ihr bereits etwas in Erfahrung bringen können?~
 ++ ~Nein, ich habe noch nichts Neues zu berichten.~ + nothing_new
 IF ~PartyHasItem("AC#SR#R1")~ THEN REPLY ~Vielleicht habe ich einen Hinweis gefunden, wo ein Zugang ins Unterreich zu finden ist.~ GOTO pc_found_dwarven_runestone
-//IF ~Global("AC#MountTurboldMap","GLOBAL",1)~ THEN REPLY ~Ich konnte etwas herausfinden, wo vielleicht ein Zugang ins Unterreich zu finden ist.~ GOTO pc_found_dwarven_map
 END
 
 	IF ~~ THEN BEGIN nothing_new
 	SAY ~Wir warten hier, bis Ihr uns Neuigkeiten bringt.~
 	IF ~~ THEN EXIT
 	END
-	/*
-	IF ~~ THEN BEGIN pc_found_dwarven_map
-	SAY ~Wirklich? Das sind ja erfreuliche Neuigkeiten!~
-	IF ~~ THEN EXIT
-	END
-	*/
 	
 	IF ~~ THEN BEGIN pc_found_dwarven_runestone
 	SAY ~Wirklich? Das sind ja erfreuliche Neuigkeiten! Was habt Ihr zu berichten?~
@@ -98,7 +91,6 @@ END
 						SAY ~Das wissen wir leider nicht. Fragt am Besten zunächst einmal den Schankwirt, vielleicht kann der Euch Genaueres sagen.~
 						IF ~~ THEN DO ~SetGlobal("AC#BeldasPlotStart","GLOBAL",10)
 						SetGlobal("AC#IltkazarQuest#2","GLOBAL",1)
-						EraseJournalEntry(@20009)
 						AddJournalEntry(@20060,QUEST)~ EXIT
 						END
 
@@ -109,7 +101,7 @@ IF ~~ THEN DO ~SetNumTimesTalkedTo(0)~ EXIT
 END
 
 IF ~Global("AC#BeldasPlotStart","GLOBAL",3)~ THEN BEGIN hello
-SAY ~Seid mir gegrüßt, <PRO_RACE>! Nach den Schilderungen, die uns bescheidenen Wanderern zu Ohren getragen wurden, steht vor uns gewiss <CHARNAME> aus Kerzenburg. Ist es so, dass Ihr jener seid, den wir suchen?~ [AC#BELDZ]
+SAY ~Seid mir gegrüßt! Wir suchen nach <CHARNAME>, einem <PRO_RACE> wie Euch, aus Kerzenburg. Seid Ihr derjenige, den wir suchen?~ [AC#BELDZ]
 IF ~~ THEN REPLY ~Wer will das wissen?~ GOTO 02
 IF ~~ THEN REPLY ~Das bin ich, ja.~ GOTO 03
 IF ~~ THEN REPLY ~Ihr habt aber gute Manieren für einen Zwerg!~ GOTO good_education
@@ -416,7 +408,7 @@ END
 																							END
 																							
 																									IF ~~ THEN BEGIN beldas_cromwell_sage
-																									SAY ~Dugmaren, der irrende Wanderer, wird uns schon wieder zurück nach Iltkazar führen, dessen bin ich mir sicher, Freunde.~
+																									SAY ~Dugmaren, der irrende Wanderer, wird uns schon wieder zurück nach Iltkazar führen, dessen bin ich mir sicher.~
 																									IF ~LevelGT(Player1,8)~ THEN + axe_bridge_01
 																									IF ~LevelLT(Player1,9)~ THEN EXTERN ~ac#dwf20~ too_young_too_die
 																									END
@@ -454,7 +446,7 @@ END
 																												END
 
 																														IF ~~ THEN BEGIN quest_axe_bridge
-																														SAY ~Wir werden hier in der Taverne auf Euch warten und hoffen, dass Ihr erfolgreich sein werdet. So aufregend die Zeit hier an der Oberfläche auch sein mag, wir sind alle froh, wenn wir wieder in unsere Heimat zurückgekehrt sind, um unserem König helfen zu können. Aber jetzt habe ich schon genug Eurer Zeit gestohlen. Ihr wisst, wo wir zu finden sind. Ich freue mich auf ein Wiedersehen!~ [AC#BELDE]
+																														SAY ~Wir werden hier in der Taverne auf Euch warten und hoffen, dass Ihr erfolgreich sein werdet. Ihr wisst, wo wir zu finden sind.~ [AC#BELDE]
 																														IF ~~ THEN DO ~SetGlobal("AC#BeldasPlotStart","GLOBAL",4)
 																														RevealAreaOnMap("ACIL06")
 																														EraseJournalEntry(@20000)

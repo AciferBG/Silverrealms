@@ -80,7 +80,6 @@ END
 					SetGlobal("AC#Vronia_Alert","GLOBAL",10)
 					IncrementGlobal("AC_Iltkazar_Reputation","GLOBAL",3)
 					AddexperienceParty(1000)
-					EraseJournalEntry(@50611)
 					AddJournalEntry(@50612,QUEST_DONE)
 					DisplayStringNoName(Player1,@1021)
 					EscapeArea()~ EXIT
@@ -93,8 +92,6 @@ END
 					SetGlobal("AC#Vronia_Alert","GLOBAL",10)
 					IncrementGlobal("AC_Iltkazar_Reputation","GLOBAL",3)
 					AddexperienceParty(1000)
-					EraseJournalEntry(@50611)
-					EraseJournalEntry(@62060)
 					AddJournalEntry(@62061,QUEST)
 					AddJournalEntry(@50612,QUEST_DONE)
 					DisplayStringNoName(Player1,@1021)
@@ -155,7 +152,6 @@ END
 					IF ~~ THEN DO ~SetGlobal("AC#Vronia_Quest","GLOBAL",12)
 					IncrementGlobal("AC_Iltkazar_Reputation","GLOBAL",3)
 					AddexperienceParty(1000)
-					EraseJournalEntry(@50611)
 					AddJournalEntry(@50612,QUEST_DONE)
 					DisplayStringNoName(Player1,@1021)
 					EscapeArea()~ EXIT
@@ -167,8 +163,6 @@ END
 					IF ~~ THEN DO ~SetGlobal("AC#Vronia_Quest","GLOBAL",12)
 					IncrementGlobal("AC_Iltkazar_Reputation","GLOBAL",3)
 					AddexperienceParty(1000)
-					EraseJournalEntry(@50611)
-					EraseJournalEntry(@62060)
 					AddJournalEntry(@62061,QUEST)
 					AddJournalEntry(@50612,QUEST_DONE)
 					DisplayStringNoName(Player1,@1021)
@@ -270,7 +264,6 @@ END
 			IF ~~THEN BEGIN go_to_oghma_02
 			SAY ~Gut. Der Schrein Oghmas befindet sich im Südosten ganz am Rande der Stadt. Kehrt zu mir zurück, wenn Ihr etwas in Erfahrung bringen konntet.~
 			   IF ~~ THEN DO ~SetGlobal("AC#Vronia_Quest","GLOBAL",5)
-			EraseJournalEntry(@50602)
 			AddJournalEntry(@50603,QUEST)~  EXIT
 			END
 
@@ -305,7 +298,6 @@ END
 		SAY ~Ich danke Euch. Sobald Sorni einverstanden ist, müsst Ihr Ellhimar aufsuchen und warten, bis er sein Haus verlässt. Hier ist der Runenstein, den Ihr am Schreibtisch platzieren sollt. Kehrt danach zu mir zurück, dann besprechen wir die nächsten Schritte.~
 		   IF ~~ THEN DO ~SetGlobal("AC#Vronia_Quest","GLOBAL",7)
 		GiveItemCreate("AC#5QRUN",Player1,1,0,0)
-		EraseJournalEntry(@50604)
 		AddJournalEntry(@50607,QUEST)~  EXIT
 		END
 
@@ -375,7 +367,6 @@ END
 		IF ~~THEN BEGIN 4
 		SAY ~Fangt nur Bitte keinen Streit an, denn viele Zwerge haben mittlerweile Vertrauen in diesen Magier gefasst, so seltsam es auch scheinen mag. Kehrt zu mir zurück, wenn Ihr etwas herausgefunden habt - auch dann, wenn Ihr der Meinung seid, dass mit dem Menschen alles in Ordnung ist und alles nur ein Hirngespinst einer alten Zwergenfrau war. Ich werde hier auf Euch warten.~
 		   IF ~~ THEN DO ~SetGlobal("AC#Vronia_Quest","GLOBAL",3)
-		EraseJournalEntry(@50600)
 		AddJournalEntry(@50601,QUEST)~  EXIT
 		END
 

@@ -106,7 +106,6 @@ END
 													IF ~~ THEN BEGIN summary_01
 													SAY ~Benutzt den Stab, um Zugang zu ihrem Tempel zu erlangen. Der Wächter des goldenen Hügels möge Euch beistehen.~
 													IF ~~ THEN REPLY ~Habt Dank. Ich werde mein Bestes geben.~ DO ~AddJournalEntry(@56101,QUEST)
-													EraseJournalEntry(@56100)
 													SetGlobal("AC#StoneMelter","ACIL56",20)~ GOTO exit
 													END
 													

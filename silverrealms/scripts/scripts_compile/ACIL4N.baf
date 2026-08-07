@@ -7,10 +7,10 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("AC#IltkazarQuest#2","GLOBAL",10)
-		EraseJournalEntry(@20061)
-		EraseJournalEntry(@20063)
-		EraseJournalEntry(@20064)
-		EraseJournalEntry(@20066)
+		//EraseJournalEntry(@20061)
+		//EraseJournalEntry(@20063)
+		//EraseJournalEntry(@20064)
+		//EraseJournalEntry(@20066)
 		AddJournalEntry(@20062,QUEST)
 END
 

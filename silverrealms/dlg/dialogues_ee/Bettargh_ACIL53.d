@@ -230,7 +230,6 @@ END
 							SAY ~Der arme Beldas, ja. Ich habe von seinem Schicksal gehört. Er war ein guter Zwerg und ein formidabler Schüler. Lasst mich das Buch einmal sehen...~
 							IF ~~ THEN DO ~SetGlobal("AC#BettarghHasBook","GLOBAL",1)
 							TakePartyItem("AC#SRBK1")
-							EraseJournalEntry(@62101)
 							AddJournalEntry(@62102,QUEST_DONE)
 							~ + beldas_book_02
 							END
@@ -294,7 +293,6 @@ IF ~~ THEN BEGIN okidok
 SAY ~Kommt, <CHARNAME>, folgt mir zu Borthuns Standbild im Osten der Bibliothek!~
 IF ~~ THEN DO ~SetGlobal("ElernSpawn","ACIL53",3)
 SetGlobal("AC#ElernBorthunBook","GLOBAL",1)
-EraseJournalEntry(@64100)
 AddJournalEntry(@64101,QUEST)
 MoveToPointNoInterrupt([2755.920])~ EXIT
 END

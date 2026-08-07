@@ -22,7 +22,6 @@ END
 	=
 	~Lebt wohl, <CHARNAME>, und passt gut auf Euch auf.~
 	IF ~~ THEN DO ~SetGlobal("AC#Goodbye_Iltkazar","GLOBAL",6)
-	EraseJournalEntry(@64300)
 	AddJournalEntry(@64301,QUEST_DONE)~ EXIT
 	END
 
@@ -190,7 +189,6 @@ END
 	GlobalLT("AC#RC_Sorni_Fourth","GLOBAL",7)~ THEN BEGIN bye_kuo_toa
 	SAY ~Gut gemacht! An der ganzen Kuo-Toa-Matsche müsst Ihr aber schon alleine vorbeikommen. Möge der Fels der Schlacht mit Euch sein!~
 	IF ~~ THEN DO ~SetGlobal("AC#RC_Sorni_Fourth","GLOBAL",7)
-	EraseJournalEntry(@62042)
 	AddJournalEntry(@62043,QUEST)
 	JumpToPoint([3252.652])
 	MoveToPointNoInterrupt([3252.652])
@@ -331,8 +329,7 @@ IF ~~THEN BEGIN 11
 SAY ~Ich möchte Euch jedoch zu bedenken geben, dass alle Entscheidungen, die Euch betreffen, mit Sicherheit vom Regentschaftsrat abgesegnet werden müssen. Und dessen Mitglieder sind leider manchmal sehr schwierig, wenn es um Fremdlinge wie Euch geht. Doch es steht mir nicht zu, dies zu entscheiden. Ich kann Euch nur in die Stadt hineinlassen, wie es dort mit Euch weitergeht, werden andere entscheiden müssen.~
 = 
 ~Öffnet die Tore! Und heißt <CHARNAME> aus Amn in der Mithrilstadt willkommen!~
-IF ~~ THEN DO ~EraseJournalEntry(@21021)
-AddJournalEntry(@21022,QUEST_DONE)
+IF ~~ THEN DO ~AddJournalEntry(@21022,QUEST_DONE)
 SetGlobal("AC#_HatharCombat","ACIL20",2)~ EXIT
 END
 

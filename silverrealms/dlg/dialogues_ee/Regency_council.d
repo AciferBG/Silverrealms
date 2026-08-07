@@ -242,7 +242,6 @@ END
 				SAY ~Ich bin sicher, dass Sorni eine Lösung finden wird. *Kal maerdh*, <CHARNAME>.~
 				IF ~~ THEN DO ~SetGlobal("AC#RC_Sorni_Fourth","GLOBAL",1)
 				//SetGlobal("AC#RC_Bettargh_Third","GLOBAL",20)
-				//EraseJournalEntry(@62033)
 				AddJournalEntry(@62040,QUEST)
 				AddexperienceParty(1000)
 				~ EXIT
@@ -292,7 +291,6 @@ END
 					~Bittet ihn, Euch darin zu unterstützen, einen Weg nach Barakuir zu finden.~
 					IF ~~ THEN DO ~SetGlobal("AC#RC_Bettargh_Third","GLOBAL",1)
 					SetGlobal("AC#RC_Turbaern_Second","GLOBAL",20)
-					EraseJournalEntry(@62021)
 					AddJournalEntry(@62030,QUEST)
 					AddexperienceParty(1000)
 					~ EXIT
@@ -302,7 +300,7 @@ END
 IF ~Global("AC#RC_Ellhimar_First","GLOBAL",1)
 GlobalGT("AC#Vronia_Quest","GLOBAL",11)~ THEN BEGIN hello_ellhimar_solved
 SAY ~Gut, dass Ihr da seid, <CHARNAME>. Unsere Runenmeisterin hat uns bereits über die Situation mit Ellhimar unterrichtet.~
-IF ~~ THEN DO ~EraseJournalEntry(@62061)~ + Ellhimar_quest_finished
+IF ~~ THEN DO ~~ + Ellhimar_quest_finished
 END
 
 // Gromi Ellhimar First: Quest given by Vronia, Regency Council awaits
@@ -375,8 +373,7 @@ END
 							SAY ~Mit Eurer Hilfe könnt Ihr der Stadt einen großen Dienst erweisen. Kehrt zu uns zurück, wenn Ihr etwas herausgefunden habt. Die Hallen des Regentschaftsrates sind für Euch ab sofort jederzeit geöffnet.~
 							IF ~~ THEN DO ~SetGlobal("AC_Regency_Patrol","GLOBAL",1)
 							SetGlobal("AC#Iltkazar_Council_Second_Quest","GLOBAL",3)
-							AddJournalEntry(@62010,QUEST)
-							EraseJournalEntry(@55101)~ GOTO gromi_driftdisquest_01
+							AddJournalEntry(@62010,QUEST)~ GOTO gromi_driftdisquest_01
 							END
 							
 							IF ~~ THEN BEGIN gromi_driftdisquest_01
@@ -392,8 +389,7 @@ END
 // dwarven patrol quest given
 IF ~Global("AC_Regency_Patrol","GLOBAL",1)~ THEN BEGIN patrol_dead_01
 SAY ~Ich nehme an, Ihr kehrt zurück, um den Rat über die Situation der vermissten Patrouille zu unterrichten?~
-  IF ~Global("Acil20_DeadDwarves","GLOBAL",1)~ THEN DO ~SetGlobal("AC_Regency_Patrol","GLOBAL",2)
-  EraseJournalEntry(@62011)~ REPLY ~Die Zwergenpatrouille ist tot. Ich fand sie in einer Höhle in den südlichen Tunneln.~ EXTERN ~AC#CHEM1~ patrol_dead_02
+  IF ~Global("Acil20_DeadDwarves","GLOBAL",1)~ THEN DO ~SetGlobal("AC_Regency_Patrol","GLOBAL",2)~ REPLY ~Die Zwergenpatrouille ist tot. Ich fand sie in einer Höhle in den südlichen Tunneln.~ EXTERN ~AC#CHEM1~ patrol_dead_02
 IF ~Global("Acil20_DeadDwarves","GLOBAL",0)~ THEN REPLY ~Ich habe noch nichts gefunden, tut mir leid.~ GOTO patrol_keep_searching
 END
 

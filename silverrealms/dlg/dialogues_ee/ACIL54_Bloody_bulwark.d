@@ -897,7 +897,6 @@ END
 		SAY ~Wisst Ihr was? Ihr seid ein feiner <PRO_RACE>. Ihr habt doch Dhundala Ihre Hacke gebracht. Ich schenke Euch die beste Leiter, die es in Iltkazar gibt. Sie ist leicht und lässt sich bis auf 300 Fuß auseinanderklappen!~
 		IF ~~ THEN  DO ~SetGlobal("AcquiredLadder","ACIL54",1)
 		GiveItemCreate("AC#SRLAD",LastTalkedToBy,0,0,0)
-		EraseJournalEntry(@64201)
 		AddJournalEntry(@64203,QUEST)~ EXIT
 		END
 		
@@ -912,7 +911,6 @@ END
 			IF ~~ THEN  DO ~TakePartyGold(100)
 			SetGlobal("AcquiredLadder","ACIL54",1)
 			GiveItemCreate("AC#SRLAD",LastTalkedToBy,0,0,0)
-			EraseJournalEntry(@64201)
 			AddJournalEntry(@64203,QUEST)~ EXIT
 			END
 			
@@ -1221,15 +1219,13 @@ IF ~~ THEN BEGIN give_potions
 SAY ~Danke, das ist sehr nett von Euch! Hier ist der Diamant. Den wollte ich eigentlich meiner Hilfilda schenken, aber die Rothé sind nun einmal wichtiger! Das wird sie sicher verstehen.~
 IF ~~ THEN DO ~SetGlobal("AC#RotheQuest","GLOBAL",10)
 GiveItemCreate("MISC42",Player1,1,0,0)
-EraseJournalEntry(@54200)
 AddJournalEntry(@54210,QUEST_DONE)~
 + give_borug_potn28
 END
 
 	IF ~~ THEN BEGIN give_borug_potn28
-	SAY ~Hier, ich werde meinem Borug gleich diese Tränke einfößen. Wäre doch gelacht, wenn er nicht gleich ein wenig... aktiver werden würde!~
-	IF ~~ THEN DO ~SetGlobal("RotheAttack","ACIL54",1)
-	EraseJournalEntry(@54200)~ EXIT
+	SAY ~Hier, ich werde meinem Borug gleich diese Tränke einflößen. Wäre doch gelacht, wenn er nicht gleich ein wenig... aktiver werden würde!~
+	IF ~~ THEN DO ~SetGlobal("RotheAttack","ACIL54",1)~ EXIT
 	END
 
 IF ~~ THEN BEGIN talk_to_alchemist
@@ -1289,7 +1285,6 @@ END
 			SAY ~Danke für Eure Hilfe, <RACE>. Hier ist Eure Belohnung. Ein Helm aus meiner Ahnentruhe. Ihr könnt ihn mehr gebrauchen als ich. Ihr seid gar nicht so verkehrt! Und werde ich den Käfern einmal beibringen, was für eine Delikatesse unsere Ratten hier mit sich herumtragen! Nur noch einen werde ich mir selbst gönnen...*mmm*~
 			IF ~~ THEN DO ~SetGlobal("AC#Catch_the_rat","ACIL54",10)
 				AddexperienceParty(1000)
-				EraseJournalEntry(@54500)
 				AddJournalEntry(@54501,QUEST_DONE)
 				GiveItemCreate("AC#HELMI",Player1,1,0,0)~ EXIT
 			END

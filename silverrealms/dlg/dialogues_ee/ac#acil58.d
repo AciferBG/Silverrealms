@@ -189,7 +189,6 @@ ____________________________________________________________________*/
 																		IF ~~ THEN BEGIN send_me_back
 																		SAY ~Ja. Es gibt nichts mehr zu dieser Angelegenheit zu sagen. Dumathoin sei mit Euch, <CHARNAME>.~
 																		IF ~~ THEN DO ~SetGlobal("AC#RC_Turbaern_Second","GLOBAL",2)
-																		EraseJournalEntry(@62020)
 																		AddJournalEntry(@62021,QUEST)
 																		~ EXIT
 																		END
@@ -475,9 +474,7 @@ END
 				SetGlobalTimer("Turbaern_recovered","ACIL58",ONE_DAY)
 				ActionOverride("AC#58DW9",EscapeAreaObject("TrACIL57"))
 				ActionOverride("ac#58dw8",EscapeAreaObject("TrACIL50")) 
-				EraseJournalEntry(@58008)
 				AddJournalEntry(@58009,QUEST_DONE)
-				EraseJournalEntry(@58020)
 				AddJournalEntry(@58021,QUEST)
 				AddexperienceParty(1000)
 				DisplayStringNoName(Player1,@1021)
@@ -507,7 +504,6 @@ END
 IF ~Global("Use_Elevator","ACIL58",3)~ THEN BEGIN ready_set_action
 	SAY ~So, haltet Euch gut fest! Und wackelt nicht so arg, wenn es abwärts geht. Der Sarg in der Mitte sollte den Träger stabilisieren, dass er nicht so stark hin- und herschwingt. Und haltet Euch nicht an den Seilen fest, die sind durch die Last ohnehin schon sehr stark beansprucht! Wenn Ihr unten seid, ziehen wir den Träger wieder nach oben und lassen die nächste Fuhre herunter. Also los jetzt, gebt uns das Zeichen, wenn Ihr bereit seid!~
 	IF ~~ THEN DO ~SetGlobal("Use_Elevator","ACIL58",4)
-	EraseJournalEntry(@58004)
 	AddJournalEntry(@58005,QUEST)
 	~ EXIT
 END
@@ -550,7 +546,6 @@ END
 		=
 		~Also gut. Dann könnten die anderen Talhund versuchen, den reguären Zugang nach unten wieder freizubekommen. Sagt mir, wann Ihr soweit seid, dann hieven wir Euch auf den Träger!~
 		IF ~~ THEN DO ~SetGlobal("Use_Elevator","ACIL58",1)
-		EraseJournalEntry(@58001)
 		AddJournalEntry(@58004,QUEST)~ EXIT
 		END
 	

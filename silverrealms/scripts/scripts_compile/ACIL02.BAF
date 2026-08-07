@@ -33,7 +33,7 @@ THEN
 		CreateCreature("ac#ravo1",[1189.507],11)  // Naturgeist
 		ActionOverride("ac#ravo1",ReallyForceSpell(Myself,CLERIC_ZONE_OF_SWEET_AIR))  // SPPR318.SPL (Bereich der frischen Luft)
 		SetGlobal("AC#Door01Open","ACIL02",1)
-        EraseJournalEntry(@20019)
+        //EraseJournalEntry(@20019)
 		MoveViewObject("ac#ravo1",INSTANT)
 		StartCutScene("ac#cutra")
 END

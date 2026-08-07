@@ -20,8 +20,7 @@ Global("AC#BoatTest","ACIL59",2)~THEN BEGIN boat_that_works
 	
 	IF ~~THEN BEGIN place_of_bhaerynden
 	SAY ~Auf den Platz von Bhaerynden? In Ordnung. Es wird nicht lange dauern, in Metallverarbeitung kenne ich mich aus!~
-	IF ~~ THEN DO ~EraseJournalEntry(@62040)
-	AddJournalEntry(@62041,QUEST)
+	IF ~~ THEN DO ~AddJournalEntry(@62041,QUEST)
 	SetGlobal("AC#RC_Sorni_Fourth","GLOBAL",2)
 	~  EXIT
 	END
@@ -115,17 +114,14 @@ END
 	
 		IF ~~THEN BEGIN what_is_hizagkuur_02
 		SAY ~Wir verwenden es, um Beschläge für Türen, Truhen und dergleichen damit zu verkleiden. Einen besseren Schutz gegen Eindringlinge gibt es nicht! Aber jetzt, wo ich es bei Euch sehe - in der Halle der Runensteine, unserer Bibliothek, arbeitet ein Gnom an einem merkwürdigen Konstrukt und belästigt mich schon seit Längerem, weil er Hizagkuur benötigt. Ihm könntet Ihr es bringen - er würde sich bestimmt freuen und ich hätte meine Ruhe.~
-		IF ~~ THEN REPLY ~Gut, ich werde ihn dort einmal aufsuchen.~ DO ~AddJournalEntry(@53236,QUEST)
-		EraseJournalEntry(@53235)~ + deepgnome_construct
+		IF ~~ THEN REPLY ~Gut, ich werde ihn dort einmal aufsuchen.~ DO ~AddJournalEntry(@53236,QUEST)~ + deepgnome_construct
 		++ ~Könnt Ihr es nicht verwenden?~ + do_you_need_hizagkuur
 		END
 		
 				IF ~~THEN BEGIN do_you_need_hizagkuur
 				SAY ~Natürlich, ja. Aber da *Ihr* es gefunden habt, würde ich Euch raten, selbst nach einer Verwendung zu suchen.~
-				IF ~~ THEN REPLY ~Gut, ich werde den Tiefengnom in der Bibliothek einmal aufsuchen.~ DO ~AddJournalEntry(@53236,QUEST)
-				EraseJournalEntry(@53235)~ + deepgnome_construct
-				IF ~~ THEN REPLY ~Ich kann ja einmal sehen, was ich damit machen kann.~ DO ~AddJournalEntry(@53236,QUEST)
-				EraseJournalEntry(@53235)~ + deepgnome_construct
+				IF ~~ THEN REPLY ~Gut, ich werde den Tiefengnom in der Bibliothek einmal aufsuchen.~ DO ~AddJournalEntry(@53236,QUEST)~ + deepgnome_construct
+				IF ~~ THEN REPLY ~Ich kann ja einmal sehen, was ich damit machen kann.~ DO ~AddJournalEntry(@53236,QUEST)~ + deepgnome_construct
 				END
 	
 					IF ~~THEN BEGIN deepgnome_construct
@@ -197,8 +193,7 @@ END
 			
 				IF ~~THEN BEGIN seek_hizagkuur
 				SAY ~Wenn Ihr welches habt, bringt es mir zügig vorbei! Das Zeug zerrinnt schneller unter Euren Fingern als ein Glas Met im Blutigen Bollwerk...~
-				IF ~~ THEN DO ~EraseJournalEntry(@53230)
-				AddJournalEntry(@59100,QUEST)
+				IF ~~ THEN DO ~AddJournalEntry(@59100,QUEST)
 				SetGlobal("AC#HizagkuurQuest","GLOBAL",2)
 				~  EXIT
 				END
@@ -224,8 +219,7 @@ END
 	
 				IF ~~THEN BEGIN not_worth_mention
 				SAY ~Hier, ich habe Euer Hizagkuur-Erz schon vorbereitet. Jetzt, da ich neues habe, überlasse ich Euch diese Kugel. Damit sollte es dem Gnom möglich sein, seine... Maschine in Gang zu bringen. Auch wenn ich dabei einen Schritt zurücktreten würde.~
-				IF ~~ THEN DO ~EraseJournalEntry(@59100)
-				AddJournalEntry(@59101,QUEST)
+				IF ~~ THEN DO ~AddJournalEntry(@59101,QUEST)
 				SetGlobal("AC#HizagkuurQuest","GLOBAL",3)
 				GiveItemCreate("AC#HIZA2",LastTalkedToBy,0,0,0)
 				~  + hizagkuur_received_02
@@ -284,21 +278,17 @@ END
 							IF ~~THEN BEGIN zardazil
 							SAY ~Dazu habe ich jetzt wirklich keine Zeit. Da könnt Ihr auch meine Schmiede fragen. Geht zu Ellhimar und richtet ihm mein Anliegen aus. Ich muss mal wieder nach meinen Jungs hier sehen, die bestimmt wieder irgendwelchen *tindul* machen...~
 							IF ~GlobalGT("Plug","ACIL59",0)~ THEN DO ~SetGlobal("AC#Vronia_Quest","GLOBAL",8)
-							EraseJournalEntry(@50607)
 							AddJournalEntry(@50608,QUEST)~  EXIT
 							IF ~Global("Plug","ACIL59",0)~ THEN DO ~SetGlobal("AC#Vronia_Quest","GLOBAL",8)
-							EraseJournalEntry(@50607)
 							AddJournalEntry(@50608,QUEST)~  + job_plug
 							END
 					
 						IF ~~THEN BEGIN arrange
 						SAY ~Gerne. Ihr seid gar nicht so verkehrt für einen Oberflächen-<PRO_RACE>. Und jetzt muss ich mal wieder nach meinen Jungs hier sehen, die bestimmt wieder irgendwelchen *tindul* machen...~
-							IF ~GlobalGT("Plug","ACIL59",0)~ THEN DO ~
-							SetGlobal("AC#Vronia_Quest","GLOBAL",8)EraseJournalEntry(@50607)
+							IF ~GlobalGT("Plug","ACIL59",0)~ THEN DO ~SetGlobal("AC#Vronia_Quest","GLOBAL",8)
 							AddJournalEntry(@50608,QUEST)
 							~  EXIT
 							IF ~Global("Plug","ACIL59",0)~ THEN DO ~SetGlobal("AC#Vronia_Quest","GLOBAL",8)
-							EraseJournalEntry(@50607)
 							AddJournalEntry(@50608,QUEST)
 							~  + job_plug
 							END

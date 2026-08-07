@@ -40,8 +40,7 @@ END
 				
 					IF ~~ THEN BEGIN make_mercury_02
 					SAY ~Na dann los.~
-					IF ~~ THEN DO ~EraseJournalEntry(@64222)
-					AddJournalEntry(@64223,QUEST)~ EXIT
+					IF ~~ THEN DO ~AddJournalEntry(@64223,QUEST)~ EXIT
 					END
 				
 		IF ~~ THEN BEGIN no
@@ -222,8 +221,7 @@ END
 
 IF ~~ THEN BEGIN take_care
 SAY ~Gut. Und jetzt lasst mich schnell weiter mit meinem Tiegel arbeiten, bevor sich das Fiebereisen noch wieder erhitzt.~
-    IF ~~ THEN DO ~AddJournalEntry(@52101,QUEST)
-EraseJournalEntry(@52100)~ EXIT
+    IF ~~ THEN DO ~AddJournalEntry(@52101,QUEST)~ EXIT
 END
 
 

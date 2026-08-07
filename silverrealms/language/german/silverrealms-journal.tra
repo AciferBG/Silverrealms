@@ -20,7 +20,9 @@ In einer Höhle an der Axtbrücke habe ich eine Runentafel gefunden, die viellei
 Die Gruppe Zwerge aus Iltkazar ist aus der Taverne verschwunden. Sie möchten sich am Gipfel des Turboldberges mit mir treffen, um einen sicheren Weg ins Unterreich und damit nach Iltkazar zu finden.~
 @20011   = ~Ein Weg ins Unterreich
 
-Beldas und seine Gefährten sind tot. Sie wurden von einem roten Drachen getötet. Der ganze Zugang auf dem Turboldberg war eine ausgeklügelte Falle - ich weiß aber nicht von wem. Nun muss ich meinen Weg nach Iltkazar alleine finden. Im Inneren der Turboldfeste gibt es einen alten Kartenraum, in welchem Zugänge in das Unterreich markiert sind. Ich kann die Tür öffnen, indem ich einen Zeiger auf das Tor richte. Dies teilte mir Beldas mit, bevor er verstarb.~
+Beldas und seine Gefährten sind tot. Sie wurden von einem roten Drachen getötet. Der Turboldberg war eine ausgeklügelte Falle! Nun muss ich meinen Weg nach Iltkazar alleine finden. Im Inneren der Turboldfeste gibt es einen alten Kartenraum. Beldas besitzt den Schlüssel für das Innere der Zwergenfestung.~@20012   = ~Ein Weg ins Unterreich
+
+Die Zwerge haben ihre Türen mit einem Schutzmechanismus gesichert. Um den Kartenraum zu öffnen müsse ich die "Axt" auf die Türe ausrichten, um nach dem Ort zu suchen, der mich ins Unterreich nach Iltkazar bringt.~
 @20019   = ~Ein Weg ins Unterreich
 
 Es gibt eine vergessene Höhle in den Kuldingipfeln in Tethyr, die man "Ravimors Höhle" nennt. Dort soll sich ein Zugang ins Unterreich und damit nach Iltkazar befinden.~
@@ -98,6 +100,10 @@ Der Schankwirt kann mir leider auch nicht sagen, wohin sich der Dieb abgesetzt h
 @20066	= ~Das Buch für den Zwergenkönig
 
 Ein Bauer teilte mir mit, dass der Dieb, der das Buch der Zwerge gestohlen hat, nach Osten zu einem alten Steinbruch aufgebrochen ist. Wenn ich Glück habe, finde ich ihn dort. Hoffentlich ist er nicht bereits weitergezogen.~
+@20067	= ~Das Buch für den Zwergenkönig
+
+Nun, da Beldas tot ist, liegt es mir, das Buch aus Kerzenburg nach Iltkazar zu bringen.~
+// where is Beldas?
 @20070	= ~Wo ist Beldas?
 
 Ich bin in die Taverne "Zum Tanzenden Riesen" zurückgekehrt, um das Buch, das Mith Barak benötigt, zu überbringen. Allerdings sind Beldas und seine Gefährten Gormar und Thradear verschwunden. Ich hoffe, mir kann jemand sagen, wo sie hingegangen sind.~
@@ -744,22 +750,25 @@ Ich weiß jetzt, wo Mith Barak festgehalten wird: Bei einem anderen toten Gott i
 @80001  = ~Befreie König Mith Barak
 
 Ich bin an Mith Baraks Gefängnis angekommen. Ich muss mich zu ihm vorkämpfen und befreien, um wieder zurück in meine Heimat kehren zu können.~
-//___________________________Flucht durch den Tunnel
-@90010  = ~Flucht durch den Tunnel
+//___________________________Der Abstieg vom Turboldberg
+@90010  = ~Der Abstieg vom Turboldberg
 
-Um die Passage herunter vom Turboldberg zu öffnen, muss ich eine Bodenplatte im Inneren der Kammer aktivieren, indem ich einen Zeiger auf das Symbol Iltkazars - ein Schild mit gekreuzten Äxten - ausrichte. Dies sollte die Geheimtür öffnen, die den Tunnel freigibt, durch den Beldas und seine Freunde den Berg hinaufgelangt sind. Leider können sie mich nicht mehr nach unten begleiten.~
-@90011  = ~Flucht durch den Tunnel
+Um die Passage herunter vom Turboldberg zu öffnen, muss ich die Turboldfeste betreten und im Inneren eine Bodenplatte aktivieren, indem ich einen Zeiger auf das Symbol Iltkazars - ein Schild mit gekreuzten Äxten - ausrichte. Dies sollte die Geheimtür öffnen, durch die Beldas und seine Freunde den Berg hinaufgelangt sind. Beldas erwähnte eine Leiter, die er weiter unten im Inneren zurückgelassen habe. Damit könnte ich mich an einem Felssims herunterlassen und den Berg wieder verlassen. Vorher muss ich jedoch in einer weiteren Kammer nach einer Karte suchen, die mir einen sicheren Weg nach Iltkazar weist.~
+@90011  = ~Der Abstieg vom Turboldberg
 
 Ich habe die Tür geöffnet, die mich durch den Tunnel und hoffentlich herunter von diesem verfluchten Berg bringt.~
-@90012  = ~Flucht durch den Tunnel
+@90012  = ~Der Abstieg vom Turboldberg
 
 Der Mechanismus, der die Tür herab von diesem Berg öffnen soll, klemmt. Ich muss sehen, ob es in einem anderen Raum eine Möglichkeit gibt, den Mechanismus zu reparieren.~
-@90013  = ~Flucht durch den Tunnel
+@90013  = ~Der Abstieg vom Turboldberg
 
 Ich habe den Mechanismus, der die Ausgangstüre öffnen soll, repariert. Nun sollte ich zurück in den Statuenraum gehen und von diesem Berg verschwinden.~
-@90014  = ~Flucht durch den Tunnel
+@90014  = ~Der Abstieg vom Turboldberg
 
-Ich habe den defekten Mechanismus gefunden. Wenn ich ein passendes Zahnrad finde, könnte ich ihn wieder in Gang setzen, um die Tür im Nebenraum zu öffnen~
+Ich habe den defekten Mechanismus gefunden. Wenn ich ein passendes Zahnrad finde, könnte ich ihn wieder in Gang setzen, um die Tür im Nebenraum zu öffnen.~
+@90015  = ~Der Abstieg vom Turboldberg
+
+Um die Geheimtür zu öffnen muss ich die "Axt" auf Clangeddins Zwillingsäxte ausrichten.~
 //___________________________Der Abstieg vom Turboldberg
 @90020  = ~Der Abstieg vom Turboldberg
 

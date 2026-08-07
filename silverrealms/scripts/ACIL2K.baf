@@ -42,7 +42,7 @@ IF
 THEN
 	RESPONSE #100
 	        TakePartyItem("AC#GOGON")
-	        EraseJournalEntry(@56200)
+	        //EraseJournalEntry(@56200)
 	        AddJournalEntry(@56201,QUEST_DONE)
 			AddExperienceParty(10000)
 		SetGlobal("AC#kuotoa_madness","GLOBAL",1)
@@ -54,6 +54,6 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("Runestone","ACIL2K",1)
-		EraseJournalEntry(@56102)
+		//EraseJournalEntry(@56102)
 		AddJournalEntry(@56111,QUEST)
 END

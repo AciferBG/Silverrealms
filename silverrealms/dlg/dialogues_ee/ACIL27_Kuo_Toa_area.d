@@ -300,8 +300,7 @@ END
 			
 			IF ~~ THEN BEGIN step_on_boat_02
 			SAY ~Steigt einfach in das Eine der zwei Boote, <CHARNAME>. Wir werden Euch dann zu Wasser lassen und auf den See hinausschieben.~
-			IF ~~ THEN DO ~EraseJournalEntry(@62043)
-			AddJournalEntry(@62044,QUEST)
+			IF ~~ THEN DO ~AddJournalEntry(@62044,QUEST)
 			SetGlobal("AC#RC_Sorni_Fourth","GLOBAL",12)~ EXIT
 			END
 		

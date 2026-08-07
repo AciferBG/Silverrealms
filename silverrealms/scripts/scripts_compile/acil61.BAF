@@ -26,7 +26,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("RescueDwarves","ACIL61",20)
-		EraseJournalEntry(@61020)
+		//EraseJournalEntry(@61020)
 		AddJournalEntry(@61021,QUEST_DONE)
 		AddExperienceParty(1000)
 END

@@ -76,9 +76,7 @@ IF ~~ THEN REPLY ~Wo sind die Zwerge, die sich bisher in der Taverne aufgehalten
 			~Ich... fürchte... das war das Letzte, was ich in diesem Leben getan habe...~
 			END
 			IF ~~ THEN DO ~SetGlobal("AC#IltkazarQuest#2","GLOBAL",20)
-		RevealAreaOnMap("ACIL0A")
-		EraseJournalEntry(@20070)
-		EraseJournalEntry(@20002)		
+		RevealAreaOnMap("ACIL0A")		
 		AddJournalEntry(@20010,QUEST)
 		Kill(Myself)~ EXIT
 

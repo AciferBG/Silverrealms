@@ -4,7 +4,7 @@ IF
 THEN
 	RESPONSE #100
             SetGlobal("AC#XothaerinHead","GLOBAL",2)
-            EraseJournalEntry(@20033)
+            //EraseJournalEntry(@20033)
 	        AddJournalEntry(@20034,QUEST)
 END
 // Old quest: retrieve first dagger

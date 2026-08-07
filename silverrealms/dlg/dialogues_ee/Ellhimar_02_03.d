@@ -22,7 +22,6 @@ SAY  ~Habe ich es mir doch gedacht! Ihr seid hier, um herumzuschnüffeln! Na war
 IF ~~ THEN DO ~
 			SetGlobal("AC#Vronia_Quest","GLOBAL",10)
 			SetGlobal("EllhimarAngry","ACIL5E",2)
-			EraseJournalEntry(@50609)
 			AddJournalEntry(@50610,QUEST)
 			Enemy()
 			~ EXIT
@@ -75,7 +74,6 @@ END
 				SAY ~Da habt Ihr vielleicht sogar Recht. Also gut, ich mache mich auf den Weg. Wehe, es ist nichts Wichtiges!~
 				IF ~~ THEN DO ~
 				SetGlobal("AC#Vronia_Quest","GLOBAL",9)
-				EraseJournalEntry(@50608)
 				AddJournalEntry(@50609,QUEST)
 				EscapeArea()~  EXIT
 				END
@@ -198,7 +196,6 @@ END
 									SAY ~Eine seltsame Art legt Ihr dabei an den Tag. Vielleicht ist später ein besserer Zeitpunkt, um ins Gespräch zu kommen. Bis dahin muss ich mich meinen Büchern widmen. Gehabt Euch wohl.~
 									   IF ~~ THEN DO ~SetGlobal("AC#TalkedToEllhimar","GLOBAL",1)
 									SetGlobal("AC#Vronia_Quest","GLOBAL",4)
-									EraseJournalEntry(@50601)
 									AddJournalEntry(@50602,QUEST)~  EXIT
 									END
 
@@ -316,7 +313,6 @@ SAY  ~Habe ich es mir doch gedacht! Ihr seid hier, um herumzuschnüffeln! Na war
 IF ~~ THEN DO ~
 			SetGlobal("AC#Vronia_Quest","GLOBAL",10)
 			SetGlobal("EllhimarAngry","ACIL5E",2)
-			EraseJournalEntry(@50609)
 			AddJournalEntry(@50610,QUEST)
 			Enemy()
 			~ EXIT

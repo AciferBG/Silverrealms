@@ -37,7 +37,6 @@ END
 		IF ~~ THEN BEGIN has_hammer
 		SAY ~Ihr seid ein großartiger <PRO_RACE>! Wenn Ihr mich nach oben tragen könntet, kann ich Euch den Weg aus dieser Krypta weisen!~
 		IF ~~ THEN DO ~GiveItemCreate("AC#57TUR",Player1,1,0,0)
-		EraseJournalEntry(@58007)
 		AddJournalEntry(@58008,QUEST)
 		DestroySelf()~  EXIT
 		END
@@ -118,7 +117,6 @@ END
 IF ~~ THEN BEGIN 8
    SAY ~Um mich braucht Ihr Euch am wenigsten Sorgen zu machen. Ich wünschte, ich könnte Euch eine Hilfe sein, doch alles, was ich tun kann, ist hier liegen und für Euren Sieg beten.~ [AC#ILTUC]
    IF ~~ THEN DO ~GiveItemCreate("AC#KEY57",Player1,1,0,0)
-   EraseJournalEntry(@58005)
 	AddJournalEntry(@58006,QUEST)~  EXIT
 END
 

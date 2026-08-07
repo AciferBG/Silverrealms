@@ -15,7 +15,7 @@ IF
 THEN
     RESPONSE #100
         SetGlobal("HizagkuurJournal","ACIL2H",1)
-		EraseJournalEntry(@59100)
+		//EraseJournalEntry(@59100)
         AddJournalEntry(@59102,QUEST)
 END
 

@@ -417,8 +417,6 @@ SAY ~Das bleibt Euch überlassen. Für uns hat das Schwert seinen Wert bewiesen.
 IF ~~ THEN DO ~IncrementGlobal("AC_Iltkazar_Reputation","GLOBAL",1)
 SetGlobal("AC#BetrangridQuest","GLOBAL",10)
 AddJournalEntry(@52110,QUEST_DONE)
-EraseJournalEntry(@52100)
-EraseJournalEntry(@52101)
 DisplayStringNoName(Player1,@1021)~
 EXIT
 END
@@ -428,8 +426,6 @@ SAY ~Schlagt damit ein paar Orks den Schädel ein, in Ordnung? Gehabt Euch wohl,
 IF ~~ THEN DO ~IncrementGlobal("AC_Iltkazar_Reputation","GLOBAL",1)
 SetGlobal("AC#BetrangridQuest","GLOBAL",10)
 AddJournalEntry(@52110,QUEST_DONE)
-EraseJournalEntry(@52100)
-EraseJournalEntry(@52101)
 DisplayStringNoName(Player1,@1021)~
 EXIT
 END
@@ -564,7 +560,6 @@ END
 				SAY ~Jedenfalls ist die Scheibe da hinten. Nehmt sie Euch, hier ist sie eh' zu nichts mehr nütze.~
 				IF ~~ THEN DO ~SetGlobal("AC#Return_to_Surface","GLOBAL",3)
 				SetGlobal("Driftdisc","ACIL52",1)
-				EraseJournalEntry(@64207)
 				AddJournalEntry(@64208,QUEST)
 				~ EXIT
 				END

@@ -22,7 +22,7 @@ THEN
 		TriggerActivation("TrACIL90L",TRUE)
 		TriggerActivation("TrACIL90_Ladderup",TRUE)
 		SetGlobal("LadderActivate","ACIL90",2)
-		EraseJournalEntry(@90020)
+		//EraseJournalEntry(@90020)
 END
 
 IF

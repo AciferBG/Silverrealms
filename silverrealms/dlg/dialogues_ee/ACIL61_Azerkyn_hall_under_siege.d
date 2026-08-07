@@ -61,7 +61,6 @@ END
 		SAY ~Jetzt müsst Ihr Wasser in die Halle strömen lassen. Hier ist der Schlüssel zum Wassertor. Öffnet es! Danach habt Ihr nicht viel Zeit, die Halle zu verlassen. Sobald das Wasser auf die Schlacke in den Hochöfen trifft, wird es eine gewaltige Explosion geben.~
 		IF ~~ THEN DO ~SetGlobal("AC#SorniQuest","ACIL61",2)
 		SetGlobal("HeatUpOven","ACIL61",2)
-		EraseJournalEntry(@61010)
 		AddJournalEntry(@61011,QUEST)
 		SetGlobal("AC#_Destroy_Oven","ACIL61",5)
 		GiveItemCreate("AC#61KEY",LastTalkedToBy,1,0,0)~  EXIT

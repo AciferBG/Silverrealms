@@ -33,8 +33,8 @@ IF
 THEN
 	RESPONSE #100
         SetGlobal("Letter","ACIL24",1)
-		EraseJournalEntry(@62025)
-		EraseJournalEntry(@62026)
+		//EraseJournalEntry(@62025)
+		//EraseJournalEntry(@62026)
 		AddJournalEntry(@23004,QUEST)
 END
 

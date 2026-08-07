@@ -17,11 +17,12 @@ DO ~SetGlobal("Iltkazar_revealed","ACIL95",3)~ EXTERN AC#95MAP iltkazar_entry
 	~Drakkalor ist von einem unbekannten Übel befallen und nicht sicher. Die Halle des Blutmondes ist versiegelt. Als einziger Zugang nach Iltkazar bleibt Ravimors Höhle; im Norden der Kuldingipfel nördlich der Omlarandinberge gelegen.~ 
 	END
 	IF~~THEN REPLY ~Ravimors Höhle?~ EXTERN AC#95MAP ravimors_cave_01
+	IF~~THEN REPLY ~Wie komme ich dorthin?~ EXTERN AC#95MAP ravimors_cave_01
 	
 	CHAIN IF ~~ THEN AC#95MAP ravimors_cave_01
-	~Ravimors Höhle. Doch auch dieser Zugang ist als unsicher markiert. Die Höhle wurde nicht von Zwergenhand geschaffen. Sie ist so alt wie die Schöpferrassen, beinahe älter als die Berge selbst.~
+	~Ravimors Höhle liegt in den Kuldingipfeln. Auch diese Höhle ist als unsicher markiert. Die Höhle wurde nicht von Zwergenhand geschaffen. Sie ist so alt wie die Schöpferrassen, beinahe älter als die Berge selbst.~
 	=
-	~Hier, seht, die Figur zeigt Euch den Weg in die Kuldingipfel und zu Ravimors Höhle...~
+	~Die Figur zeigt Euch den Weg zu Ravimors Höhle...~
 	DO ~SetGlobal("Ravimor_revealed","ACIL95",1)
 		ClearAllActions()
 		StartCutSceneMode()

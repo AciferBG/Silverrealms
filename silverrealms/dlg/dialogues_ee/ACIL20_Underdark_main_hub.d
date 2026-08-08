@@ -326,10 +326,10 @@ IF ~~ THEN GOTO 11
 END
 
 IF ~~THEN BEGIN 11
-SAY ~Ich möchte Euch jedoch zu bedenken geben, dass alle Entscheidungen, die Euch betreffen, mit Sicherheit vom Regentschaftsrat abgesegnet werden müssen. Und dessen Mitglieder sind leider manchmal sehr schwierig, wenn es um Fremdlinge wie Euch geht. Doch es steht mir nicht zu, dies zu entscheiden. Ich kann Euch nur in die Stadt hineinlassen, wie es dort mit Euch weitergeht, werden andere entscheiden müssen.~
+SAY ~Ich möchte Euch jedoch zu bedenken geben, dass alle Entscheidungen, die Euch betreffen, mit Sicherheit vom Regentschaftsrat abgesegnet werden müssen. Und dessen Mitglieder sind manchmal schwierig, wenn es um Fremdlinge wie Euch geht. Doch es steht mir nicht zu, dies zu beurteilen. Ich kann Euch nur in die Stadt hineinlassen, wie es dort mit Euch weitergeht, werden andere entscheiden.~
 = 
 ~Öffnet die Tore! Und heißt <CHARNAME> aus Amn in der Mithrilstadt willkommen!~
-IF ~~ THEN DO ~AddJournalEntry(@21022,QUEST_DONE)
+IF ~~ THEN DO ~AddJournalEntry(@21022,QUEST)
 SetGlobal("AC#_HatharCombat","ACIL20",2)~ EXIT
 END
 
@@ -349,7 +349,7 @@ CHAIN IF ~~ THEN AC#HATH1 chain_hathar_viconia
 == ViconiJ  ~Natürlich erkenne ich es. Es ist das Symbol der Spinnenkönigin. Warum tragt Ihr es mit Euch herum, Zwerg?~
 == AC#HATH1 ~Habe es einer Drow-Priesterin vor einigen Tagen abgenommen. Die Schöne hatte ganz schön geröchelt, als ich ihr ganz langsam meine Axt durch die Kehle trieb. Aber mein Sieg soll nicht Eure Sorge sein. Spuckt auf das Symbol Lolths und verflucht ihren Namen hier und jetzt, als Zeichen Eures Bruchs mit der Spinnenkönigin.~
 == ViconiJ ~Ich... soll vor einem Zwerg den Namen der Spinnenkönigin in den Schmutz ziehen?~
-== AC#HATH1 ~Ganz genau, schönes schwarzes Mädchen. Wenn Ihr ihr wirklich abgeschworen habt, müsst Ihr ohnehin bergein, bergauf um Euer Leben fürchten - ob Ihr ihren Namen hier vor mir zusätzlich durch den Dreck zieht ist dabei nicht mehr von Belang!~
+== AC#HATH1 ~Ganz genau, schönes Mädchen. Wenn Ihr ihr wirklich abgeschworen habt, müsst Ihr ohnehin bergein, bergauf um Euer Leben fürchten - ob Ihr ihren Namen hier vor mir zusätzlich durch den Dreck zieht ist dabei nicht mehr von Belang!~
 == ViconiJ ~Nun gut. Lolth mag die Gebieterin der Lügen und der Täuschung sein, aber ich diene ihr nicht mehr. Mögen die Spinnen, die sie so liebt, sich gegen sie wenden und ihre Netze zu ihrem eigenen Gefängnis spinnen. Ich spucke auf ihren Namen und verachte ihren Glauben.~
 == AC#HATH1 ~Das ist ein schöner starker Fluch, Dunkelelfe. Ich werde Euch einlassen, aber bedenkt: Die Augen von Iltkazar ruhen auf Euch. Jeder Schritt, jeder Atemzug wird beobachtet werden. Ihr wäret nicht die erste, die versucht, uns zu täuschen, und es wäre klug, wenn Ihr nicht versucht, die letzte zu sein.~
 END

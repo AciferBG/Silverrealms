@@ -549,21 +549,18 @@ SPEZIFISCHE EIGENSCHAFTEN:
 Katzenhafte Anmut 1x pro Tag
 Katzenartige Tiere bezaubern 1x pro Tag~
 @451 = ~Dzances Wächter~
-@452 = ~Dzances Wächter
-Der Waldläufer Dzance fand dieses Schild einst in einer Truhe in den Tiefen Gauntlgryms, der verlorenen Stadt. Die Herkunft des Schildes ist unbekannt, wenngleich vermutet wird, dass es von Zwergenhand geschaffen wurde. 
-Es hat eine besondere Verteidigungskraft: Wenn es getragen wird, strahlt es ein substanzloses magisches Energiefeld aus, das seinen Träger - und nur ihn - wie eine Aura umgibt. Jedes magische Geschoss, das aus irgendeiner Richtung - nicht nur von vorne - auf den Träger des Wächters gerichtet ist, trifft auf dieses Feld und wird zielsicher auf den Absender zurückgeworfen, ohne dass der Schildträger Schaden nimmt.
+@452 = ~Der Waldläufer Dzance fand dieses Schild einst in einer Truhe in den Tiefen Gauntlgryms, der verlorenen Stadt. 
+Die Herkunft des Schildes ist unbekannt, wenngleich vermutet wird, dass es von Zwergenhand geschaffen wurde. 
+
+Es hat eine besondere Verteidigungskraft: Wenn es getragen wird, strahlt es ein substanzloses magisches Energiefeld aus, das seinen Träger - und nur ihn - wie eine Aura umgibt. Jedes magische Geschoss, das aus irgendeiner Richtung auf den Träger des Wächters gerichtet ist, trifft auf dieses Feld und wird zielsicher auf den Absender zurückgeworfen, ohne dass der Schildträger Schaden nimmt.
+
 Das Feld absorbiert auch alle elektrischen Entladungen natürlichen oder magischen Ursprungs, wie z.B. Schockgriffe, Blitze oder Kettenblitze, ohne dem Träger zu schaden. Diese Angriffe lösen sich allmählich und harmlos auf, wenn der Schild abgenommen wird.
 
 SPEZIFISCHE EIGENSCHAFTEN:
 
 Besondere Fähigkeiten: Reflektiert alle elektrischen Angriffe und magischen Geschosse auf den Angreifer.
 -1 auf Rüstungsklasse
-Gewicht: 3
-Kann nicht verwendet werden von:
-Barden
-Druiden
-Magiern
-Dieben~
+Gewicht: 3~
 @453 = ~Löchriger Schädel~
 @454 = ~Diesem menschlichen Schädel hat man die Schädeldecke entfernt. In seinem Inneren könnt Ihr noch Reste verschiedener festgetrockneter Substanzen erkennen, ganz so, als hätte jemand den Schädel als Trink- oder Ess-Schale verwendet.~
 @455 = ~Haelas Tempel~

@@ -104,7 +104,7 @@ IF ~True()~ THEN BEGIN haelas_halls_closed
 END
 
 	IF ~~ THEN BEGIN haelas_halls_01
-	SAY ~Haelas Hallen sind eine Zitadelle mit einem großen Tempel an Haela Leuchtaxt. Außerdem beherbergen sie den Gnädigen Hof, unser Lazarett mit einem Tempel, der Sharindlar geweiht ist.~
+	SAY ~Haelas Hallen sind eine Zitadelle mit einem großen Tempel für Haela Leuchtaxt. Außerdem beherbergen sie den Gnädigen Hof, unser Lazarett mit einem Tempel, der Sharindlar geweiht ist.~
 	IF ~~ THEN GOTO exit
 	END
 	

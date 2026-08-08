@@ -106,7 +106,7 @@ IF ~Global("AC#IL_FalseBeard","GLOBAL",1)~ THEN REPLY ~Ich soll für Petben Ries
 						
 
 			CHAIN AC#ILBDM bye_first
-			~Wenn Ihr je Eindruck machen wollt – bei einem Rat, einer Feier oder einem Duell – Ihr wisst, wo Ihr mich findet.~
+			~Wenn Ihr je Eindruck machen wollt – bei einem Rat, einer Feier oder einem Duell: Ihr wisst, wo Ihr mich finden könnt!~
 			END
 			IF ~Global("AC#IL_Beardmaker","GLOBAL",0)~ THEN REPLY ~Ich werde es beherzigen. Lebt wohl.~ EXTERN AC#ILBDM bye_first_02
 			IF ~GlobalGT("AC#IL_Beardmaker","GLOBAL",0)~ THEN REPLY ~Ich werde es beherzigen. Lebt wohl.~ EXTERN AC#ILBDM bye_01

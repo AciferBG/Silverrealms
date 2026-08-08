@@ -1203,7 +1203,7 @@ DO ~SetGlobal("AC#RegencyCouncil","ACIL62",3)~
 == AC#GROM1 ~Was, <PRO_HESHE> stammt aus der Oberwelt? Mit Leuten dieser Art haben wir seit Langem nichts mehr zu schaffen.~
 == AC#FENY1 ~Wie kommt es überhaupt, dass ein <PRO_RACE> von der Oberfläche so einfach in die Stadt und dann noch zu dem Regentschaftsrat vorgelassen wird, Ruvan? Erfüllt Euer Clan seine Aufgaben, die Stadt zu schützen, etwa nicht richtig?~
 == AC#RUVA1 ~Ich bin mir sicher, mein Bruder Dunnabar hatte als Herr der Bronzemaske Iltkazars gute Gründe, diese Gruppe zu uns vorzulassen, Fenyl.~
-== AC#CHEM1 ~Dann sollten wir Eurem Bruder nun auch wieder befehlen, diesen <PRO_RACE> wieder aus unseren Hallen zu entfernen, Ruvan.~
+== AC#CHEM1 ~Dann sollten wir Eurem Bruder nun befehlen, diesen <PRO_RACE> wieder aus unseren Hallen zu entfernen, Ruvan.~
 END
 IF ~~ THEN EXTERN ~AC#ELER1~ listen
 

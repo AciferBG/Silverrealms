@@ -20,7 +20,7 @@ DO ~SetGlobal("Iltkazar_revealed","ACIL95",3)~ EXTERN AC#95MAP iltkazar_entry
 	IF~~THEN REPLY ~Wie komme ich dorthin?~ EXTERN AC#95MAP ravimors_cave_01
 	
 	CHAIN IF ~~ THEN AC#95MAP ravimors_cave_01
-	~Ravimors Höhle liegt in den Kuldingipfeln. Auch dieser Zugang ist als unsicher markiert. Doch er bleibt die einzige Wahl. Die Höhle wurde nicht von Zwergenhand geschaffen. Sie ist so alt wie die Schöpferrassen, beinahe älter als die Berge selbst.~
+	~Ravimors Höhle... auch dieser Zugang ist als unsicher markiert. Doch er bleibt Eure einzige Wahl. Die Höhle wurde nicht von Zwergenhand geschaffen. Sie ist so alt wie die Schöpferrassen, beinahe älter als die Berge selbst.~
 	=
 	~Die Figur zeigt Euch den Weg zu Ravimors Höhle...~
 	DO ~SetGlobal("Ravimor_revealed","ACIL95",1)
@@ -28,10 +28,22 @@ DO ~SetGlobal("Iltkazar_revealed","ACIL95",3)~ EXTERN AC#95MAP iltkazar_entry
 		StartCutSceneMode()
 		StartCutScene("AC#IL95R")~ EXIT
 
+CHAIN IF ~GlobalGT("Ravimor_map","ACIL95",0)~ THEN AC#95MAP hello_01_revealed
+~Seid gegrüßt, Suchender. Steht in Ehrfurcht und staunt über die Errungenschaften der zwergischen Rasse. Dieser Raum zeigt Euch jeden Ort, den Ihr im glorreichen Shanatar erreichen wollt. Geschaffen in zahllosen Stunden harter Arbeit unter den wachsamen Augen Borthuns des Wanderers. In ewiges Metall gegossen, um die Reise zwischen allen Zwergenreichen zu ermöglichen.~ [AC#MGSS1]
+END
+IF~~THEN DO ~SetGlobal("TalkToStatue","ACIL95",2)~ EXTERN AC#95MAP hello_01_cont
+
+	CHAIN IF ~~ THEN AC#95MAP hello_01_cont
+	~Jeder Zwerg, der seinen Weg nicht kennt, kommt hierher. Danach weiß er, wo er hingehen muss. Wo wird es Euch hinführen?~
+	END
+	IF~~THEN REPLY ~Ihr könnt mir Orte zeigen, die ich noch nicht kenne?~ EXTERN AC#95MAP show_places_start
+	IF~~THEN REPLY ~Ich muss nach Iltkazar.~ EXTERN AC#95MAP seek_Iltkazar
+	IF~~THEN REPLY ~Ich komme später wieder.~ EXTERN AC#95MAP leave
+
 CHAIN IF ~Global("TalkToStatue","ACIL95",1)~ THEN AC#95MAP hello_wheel
 ~Seid gegrüßt, Suchender. Steht in Ehrfurcht und staunt über die Errungenschaften der zwergischen Rasse. Dieser Raum zeigt Euch jeden Ort, den Ihr im glorreichen Shanatar erreichen wollt. Geschaffen in zahllosen Stunden harter Arbeit unter den wachsamen Augen Borthuns des Wanderers. In ewiges Metall gegossen, um die Reise zwischen allen Zwergenreichen zu ermöglichen.~ [AC#MGSS1]
 END
-IF~~THEN DO ~SetGlobal("TalkToStatue","ACIL95",2)~ EXTERN AC#95MAP hello_00_cont
+IF~~THEN DO ~SetGlobal("TalkToStatue","ACIL95",2)~ EXTERN AC#95MAP hello_00_cont	
 
 CHAIN IF ~Global("TalkToStatue","ACIL95",0)~ THEN AC#95MAP hello_00
 ~Seid gegrüßt, Suchender. Steht in Ehrfurcht und staunt über die Errungenschaften der zwergischen Rasse. Dieser Raum zeigt Euch jeden Ort, den Ihr im glorreichen Shanatar erreichen wollt. Geschaffen in zahllosen Stunden harter Arbeit unter den wachsamen Augen Borthuns des Wanderers. In ewiges Metall gegossen, um die Reise zwischen allen Zwergenreichen zu ermöglichen.~ [AC#MGSS1]
@@ -41,9 +53,9 @@ IF~~THEN DO ~SetGlobal("TalkToStatue","ACIL95",1)~ EXTERN AC#95MAP hello_00_cont
 	CHAIN IF ~~ THEN AC#95MAP hello_00_cont
 	~Jeder Zwerg, der seinen Weg nicht kennt, kommt hierher. Danach weiß er, wo er hingehen muss. Wo wird es Euch hinführen?~
 	END
-	IF~~THEN REPLY ~Ihr könnt mir Orte zeigen, die ich noch nicht kenne?~ EXTERN AC#95MAP show_places_start
+	//IF~~THEN REPLY ~Ihr könnt mir Orte zeigen, die ich noch nicht kenne?~ EXTERN AC#95MAP show_places_start
 	IF~~THEN REPLY ~Ich muss nach Iltkazar.~ EXTERN AC#95MAP seek_Iltkazar
-	IF~~THEN REPLY ~Ich komme später wieder.~ EXTERN AC#95MAP leave
+	//IF~~THEN REPLY ~Ich komme später wieder.~ EXTERN AC#95MAP leave
 
 CHAIN IF ~True()~ THEN AC#95MAP hello_01
 ~Seid gegrüßt, Suchender. Steht in Ehrfurcht und staunt über die Errungenschaften der zwergischen Rasse. Dieser Raum zeigt Euch jeden Ort, den Ihr im glorreichen Shanatar erreichen wollt. Geschaffen in zahllosen Stunden harter Arbeit unter den wachsamen Augen Borthuns des Wanderers. In ewiges Metall gegossen, um die Reise zwischen allen Zwergenreichen zu ermöglichen.~ [AC#MGSS1]

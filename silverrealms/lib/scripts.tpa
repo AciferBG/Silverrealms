@@ -667,23 +667,7 @@ COMPILE ~silverrealms/scripts/AC#5CROP.baf~
         COPY_EXISTING ~AC#5CROP.bcs~   ~override/AC#5CROP.bcs~
         REPLACE ~999999~ @627 // Broken wheel: Description
         REPLACE ~999998~ @628 // Broken wheel: repaired
-        
-COMPILE ~silverrealms/scripts/AC#DISPB.baf~
 
-//COMPILE ~silverrealms/scripts/ACIL52.baf~
-        //COPY_EXISTING ~ACIL52.bcs~   ~override/ACIL52.bcs~
-        //REPLACE ~999999~ @52100 // Betrangrid's sword: Quest start
-        //REPLACE ~999998~ @52110 // Betrangrid's sword: Quest end
-
-/*
-COMPILE ~silverrealms/scripts/ACIL5Q.baf~
-*/
-/*
-COMPILE ~silverrealms/scripts/ACIL5E.baf~
-        COPY_EXISTING ~ACIL5E.bcs~   ~override/ACIL5E.bcs~
-        //REPLACE ~999999~ @50610 // Erase Journal
-        //REPLACE ~999998~ @50611 // A drow?!?
-*/
 COMPILE ~silverrealms/scripts/AC#5ETR1.baf~
         COPY_EXISTING ~AC#5ETR1.bcs~   ~override/AC#5ETR1.bcs~
         REPLACE ~999999~ @661 // detect secret door
@@ -694,20 +678,6 @@ COMPILE ~silverrealms/scripts/AC#5ETR2.baf~
         COPY_EXISTING ~AC#5ETR2.bcs~   ~override/AC#5ETR2.bcs~
         REPLACE ~999999~ @662 // touch mirror
         REPLACE ~999998~ @663 // touched mirror
-
-/*
-COMPILE ~silverrealms/scripts/ACIL49.baf~
-COPY_EXISTING ~ACIL49.bcs~   ~override/ACIL49.bcs~
-        REPLACE ~999999~ @58007 // durga dead
-        REPLACE ~999998~ @58006 // found turbaern
-        REPLACE ~999997~ @58020 // hammer retrieved
-*/
-
-/*
-COMPILE ~silverrealms/scripts/ACIL58.baf~
-        REPLACE ~999999~ @58022 // solved journal_ hammer back
-        REPLACE ~999998~ @58021 // erase journal: bring back
-*/
 
 COMPILE ~silverrealms/scripts/AC#STGO1.baf~
 

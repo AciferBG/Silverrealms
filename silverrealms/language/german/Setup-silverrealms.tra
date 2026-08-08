@@ -243,14 +243,20 @@ In der Mitte der Münze ist das Symbol eines sich endlos drehenden Wirbels einge
 @198 = ~Diese Tür ist mit zwei Äxten und zwei zunehmenden Monden verziert. Sie besteht aus einem Euch unbekannten Metall und hat keine sichtbaren Schlösser oder ähnliche Vorrichtungen, um sie zu bewegen. Es muss einen anderen Mechanismus geben, um sie öffnen zu können. Die in die Tür eingravierten Zwergenrunen bedeuten "Tretet ein im Namen der Schutzherren des zunehmenden Mondes."~
 @199 = ~Verwitterte Zwergenstatue~
 @200 = ~Mächtiger Federfalltrank~
-@201 = ~Dieser Trank lässt den Anwender langsam zu Boden gleiten, ähnlich des Zaubers "Federfall". Die Wirkung des Trankes hält jedoch nicht ewig an, und der Anwender muss sich beeilen, bis zum Wirkungsende wieder festen Boden unter den Füßen zu haben, um nicht unsanft auf dem Grund aufzuschlagen. 
-Der Trank, den Ihr in den Händen haltet, scheint jedoch besonders wirkungsstark zu sein - ganz so, als ob man mit ihm eine lange Zeit herunterschweben könnte. 
-Der Hersteller des Trankes scheint außergewöhnliche Mühen aufgewendet zu haben, um solch ein potentes Ingredienz herstellen zu können.~
+@201 = ~Dieser Trank lässt den Anwender langsam zu Boden gleiten, ähnlich des Zaubers "Federfall". 
+
+Die Wirkung des Trankes hält nicht ewig an, und der Anwender muss sich beeilen, bis zum Wirkungsende wieder festen Boden unter den Füßen zu haben, um nicht unsanft auf dem Grund aufzuschlagen. 
+
+Der Trank, den Ihr in den Händen haltet, scheint besonders wirkungsstark zu sein - ganz so, als ob man mit ihm eine lange Zeit herunterschweben könnte. Der Hersteller des Trankes scheint außergewöhnliche Mühen aufgewendet zu haben, um solch ein potentes Ingredienz herstellen zu können.~
 @202 = ~Naturgeist~
 @203 = ~Die Hüter der Höhle wurden besiegt. Das Tor in die tiefen Lande steht Euch offen.~
 @204 = ~Varkha~
 @205 = ~Sllith~
-@206 = ~Endlich habe ich den Durchgang in Ravimors Höhle gefunden. Heute Nacht werde ich hier nächtigen, und morgen werde ich in die Tiefen hinabsteigen. Mir ist klar, dass es keinen einfachen Weg zurück geben wird, denn für einen Levitationszauber, um die Spalte einfach wieder emporzusteigen, ist der Schacht vermutlich zu tief. So bleibt mir nur, mir bei der Rast meine besten Zaubersprüche einzuprägen und mich für die bevorstehende lange Reise zu wappnen. Welch Glück, dass ich mir hier mit meiner Magie ein kleines Feuer entfachen kann, denn der kalte Luftzug von unten ließe mich sonst die Nacht über nicht schlafen.~
+@206 = ~Endlich habe ich den Durchgang in Ravimors Höhle gefunden! Neben dem Schacht lag ein starker Federfalltrank – merkwürdig. Wer mag ihn hier zurückgelassen haben? Wie dem auch sei: Dieser Trank leistet mir große Dienste, den Schacht hinabzuschweben.
+
+Mir ist jedoch klar, dass es keinen einfachen Weg zurück geben wird, denn für einen Levitationszauber, um die Spalte einfach wieder emporzusteigen, ist der Schacht vermutlich zu tief. 
+
+So bleibt mir nur, mir bei der nächsten Rast meine besten Zaubersprüche einzuprägen und mich für die bevorstehende lange Reise zu wappnen. Heute Nacht werde ich hier nächtigen, und morgen werde ich in die Tiefen hinabsteigen. Welch Glück, dass ich mir hier mit meiner Magie ein kleines Feuer entfachen kann, denn der kalte Luftzug von unten ließe mich sonst die Nacht über nicht schlafen.~
 @207 = ~Animierte Leiche~
 @208 = ~Cylla~
 @209 = ~Bebilith~
@@ -1123,9 +1129,16 @@ Klerikern
 Magiern
 Dieben~
 @827 = ~Marams Schädel~
-@828 = ~Es gab Zeiten, als noch keine Götter auf Faerun wandelten. Die mächtigsten Wesen jener Zeit waren kraftvolle Ausgeburten des Chaos, die Primordiale. Mit der Ankunft der Götter wurden diese Kreaturen jedoch von der Welt verdrängt, auch wenn Kulte dieser unsterblichen Wesen immer wieder in der Welt auftauchten. Insbesondere bei niederen Kulturen erfreuten sich die Primordiale größter Verehrung.
-Eines dieser Wesen war Maram vom großen Speer. Er schaffte es immer wieder, in die Welt der Sterblichen zurückzukehren und Unheil zu stiften, bis er schließlich von einer mächtigen Gruppe Sterblicher, die später als die "Toten Drei" in die Geschichtsbücher eingehen sollten, vernichtet wurde.
-Dieser Schädel ist eines der Werke von Marams Kult. Wird er geworfen, schwebt er an der betreffenden Stelle, vergleichbar der Wirkung des Zaubers "Schädelfalle". Wenn sich dem schwebenden Schädel ein Wesen auf 6 m nähert, explodiert er und verursacht bei jedem Wesen in 9 m Radius 1-6 Schadenspunkte je Stufe des Anwenders. Es bestehen Gerüchte, dass der gleichwirkende Zauber auch von einem Anhänger Marams entwickelt wurde, doch die Beweise hierfür sind im Nebel der Zeit in Vergessenheit geraten. ~
+@828 = ~Es gab Zeiten, als noch keine Götter auf Faerun wandelten. Die mächtigsten Wesen jener Zeit waren kraftvolle Ausgeburten des Chaos, die Primordiale. 
+
+Mit der Ankunft der Götter wurden diese Kreaturen jedoch von der Welt verdrängt, auch wenn Kulte dieser unsterblichen Wesen immer wieder in der Welt auftauchten. Insbesondere bei niederen Kulturen erfreuten sich die Primordiale größter Verehrung.
+
+Eines dieser Wesen war Maram vom großen Speer. 
+Maram schaffte es immer wieder, in die Welt der Sterblichen zurückzukehren und Unheil zu stiften, bis er schließlich von einer mächtigen Gruppe Sterblicher, die später als die "Toten Drei" in die Geschichtsbücher eingehen sollten, vernichtet wurde.
+
+Dieser Schädel ist eines der Werke von Marams Kult. Wird er geworfen, schwebt er an der betreffenden Stelle, vergleichbar der Wirkung des Zaubers "Schädelfalle". Wenn sich dem schwebenden Schädel ein Wesen auf 6 m nähert, explodiert er und verursacht bei jedem Wesen in 9 m Radius 1-6 Schadenspunkte je Stufe des Anwenders. 
+
+Es bestehen Gerüchte, dass der gleichwirkende Zauber auch von einem Anhänger Marams entwickelt wurde, doch die Beweise hierfür sind im Nebel der Zeit in Vergessenheit geraten. ~
 @829 = ~Die Uralte Schmiede~
 @830 = ~Die Bronzemaske~
 @831 = ~Das blutige Bollwerk~
@@ -1468,7 +1481,15 @@ Kann nicht verwendet werden von:
 @1109 = ~Beutel voll Silbermünzen~
 @1110 = ~Dies ist der Münzbeutel, der dem Wirt der Taverne "Zum tanzenden Riesen" in Zweiwasser gehört. Er ist voll amnischer Silbermünzen, die "Taran" genannt werden. Sie gelten neben den Kupfermünzen als Zahlungsmittel der einfachen Leute. Personen, die etwas auf sich halten (wozu in Amn sicher die Merhheit der gehobenen Bevölkerung zählen dürfte), verwenden lieber die "Danter", wie die Goldmünzen in Amn genannt werden, oder besser noch die "Roldon", Münzen aus Platin, die den Gipfel der Angeberei darstellen und deshalb gerne als Zahlungsmittel bei Geschäftsabschlüssen eingesetzt werden. Deshalb werden die Platinmünzen auch "Perlen" genannt, wohingegen die silbernen Taran es nicht wert sind, einen zusätzlichen Namen zu erhalten.~
 @1111 = ~Beldas' Nachricht~
-@1112 = ~<CHARNAME>, bitte entschuldigt unseren abrupten Aufbruch, doch es gibt hier an der Oberfläche Kräfte, die unsere Mission zu verhindern trachten. Deshalb sind wir bereits zu dem Berg aufgebrochen, von dem wir - hoffentlich! - ins sichere Unterreich zurückkehren können.  Denn die gute Nachricht lautet: Ich weiß, auf welchem Berg der Zwerg Turbold die im Runenstein erwähnte Schlacht schlug! Die Menschen haben den Berg ganz einfach "Turboldberg" genannt - was für ein Glück! Er liegt in den Kuldingipfeln im südöstlichen Teil Tethyrs. Trefft uns dort, wir werden auf seinem Gipfel auf Euch warten und versuchen, bereits den Zugang ins Unterreich vorzubereiten. 
+@1112 = ~<CHARNAME>, bitte entschuldigt unseren abrupten Aufbruch! 
+
+Es gibt hier an der Oberfläche Kräfte, die unsere Mission zu verhindern trachten. Deshalb sind wir bereits zu dem Berg aufgebrochen, von dem wir ins sichere Unterreich zurückkehren können. 
+
+Denn die gute Nachricht lautet: Ich weiß, auf welchem Berg der Zwerg Turbold die im Runenstein erwähnte Schlacht schlug! Die Menschen haben den Berg "Turboldberg" genannt.
+
+Er liegt in den Kuldingipfeln im südöstlichen Teil Tethyrs. Trefft uns dort. 
+Wir werden auf seinem Gipfel auf Euch warten und versuchen, den Zugang ins Unterreich vorzubereiten. 
+
 Beldas~
 @1113 = ~Onnor~
 @1114 = ~Fiebereisen-Plattenpanzer~

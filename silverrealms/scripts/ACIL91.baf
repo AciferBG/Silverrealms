@@ -187,7 +187,7 @@ THEN
     OpenDoor("DOOR01")
     AddExperienceParty(500)
     //EraseJournalEntry(@90013)
-    AddJournalEntry(@90011,QUEST_DONE)
+    AddJournalEntry(@90011,QUEST)
 END
 
 IF

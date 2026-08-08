@@ -245,7 +245,7 @@ IF ~~ THEN + maproom_reveal
 END
 
 IF ~~ THEN BEGIN maproom_reveal
-SAY ~Ihr müsst Euch mit dem Mechanismus vertraut machen und zunächst den Kartenraum öffnen, der Euch einen sicheren Zugang ins Unterreich weisen wird.~
+SAY ~Ihr müsst Euch mit dem Mechanismus vertraut machen und zunächst den Kartenraum öffnen, der Euch einen sicheren Zugang ins Unterreich weisen wird. Denn hier oben gibt es keinen Zugang ins Unterreich. Woanders schon. Sucht diesen Ort!~
 IF ~~ THEN + way_underdark_01
 END
 
@@ -267,7 +267,7 @@ END
 		END
 		
 		IF ~~ THEN BEGIN ravimors_cave_01
-		SAY ~Geht ins Innere und seht Euch die Karte an! Danach müsst Ihr die Geheimtüre öffnen, indem Ihr den Mechanismus auf das Wappen Iltkazars - Clangeddins Zwillingsäxte - einstellt, um den Berg zu verlassen!~
+		SAY ~Geht ins Innere und seht Euch die Karte an! Danach müsst Ihr die Geheimtüre öffnen, indem Ihr den Mechanismus auf das Wappen Iltkazars, Clangeddins Zwillingsäxte, einstellt, um den Berg zu verlassen.~
 		IF ~~ THEN REPLY ~Das klingt alles mächtig kompliziert.~ GOTO secret_door_clangeddin
 		IF ~~ THEN REPLY ~Natürlich. Nichts leichter als das.~ GOTO secret_door_clangeddin
 		IF ~~ THEN REPLY ~Ich hoffe, ich kann mir all das merken.~ GOTO secret_door_clangeddin

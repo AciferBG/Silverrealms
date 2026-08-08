@@ -3,15 +3,6 @@
 
 COPY ~silverrealms/areas/copy~         ~override~
 
-/*
-// Throne of the mad god content
-COPY ~silverrealms/areas/ACIL1R.are~          ~override~
-  SAY 0x244 @514
-  
-COPY ~silverrealms/areas/ACIL1W.are~          ~override~
-  SAY 0x354 @565
-*/
-
 COPY ~silverrealms/areas/ACIL02.are~          ~override~
  SAY 0xc98 @877 // info wolf
  SAY 0xd5c @878  // info deer

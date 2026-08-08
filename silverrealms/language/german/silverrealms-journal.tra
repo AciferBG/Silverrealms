@@ -15,7 +15,7 @@ Es gibt eine Brücke östlich von Athkatla, die von Zwergen erbaut worden ist. S
 In einer Höhle an der Axtbrücke habe ich eine Runentafel gefunden, die vielleicht einen Weg in das Unterreich benennt. Ich sollte sie zu Beldas Diamantklinge bringen.~
 @20010   = ~Ein Weg ins Unterreich
 
-Die Gruppe Zwerge aus Iltkazar ist aus der Taverne verschwunden. Sie möchten sich am Gipfel des Turboldberges mit mir treffen, um einen sicheren Weg ins Unterreich und damit nach Iltkazar zu finden.~
+Zweiwasser ist niedergebrannt worden. Von Beldas und seinen beiden Gefährten fehlt jede Spur. In einem zurückgelassenen Brief erwähnten die Zwerge den Gipfel des Turboldbergs. Dort wollten sie einen sicheren Weg ins Unterreich finden, der nach Iltkazar führen könnte.~
 @20011   = ~Ein Weg ins Unterreich
 
 Beldas und seine Gefährten sind tot. Sie wurden von einem roten Drachen getötet. Der Turboldberg war eine ausgeklügelte Falle! Nun muss ich meinen Weg nach Iltkazar alleine finden. Im Inneren der Turboldfeste gibt es einen alten Kartenraum. Beldas besitzt den Schlüssel für das Innere der Zwergenfestung.~@20012   = ~Ein Weg ins Unterreich
@@ -100,7 +100,7 @@ Der Schankwirt kann mir leider auch nicht sagen, wohin sich der Dieb abgesetzt h
 Ein Bauer teilte mir mit, dass der Dieb, der das Buch der Zwerge gestohlen hat, nach Osten zu einem alten Steinbruch aufgebrochen ist. Wenn ich Glück habe, finde ich ihn dort. Hoffentlich ist er nicht bereits weitergezogen.~
 @20067	= ~Das Buch für den Zwergenkönig
 
-Nun, da Beldas tot ist, liegt es mir, das Buch aus Kerzenburg nach Iltkazar zu bringen.~
+Nun, da Beldas tot ist, liegt es an mir, das Buch aus Kerzenburg nach Iltkazar zu bringen.~
 // where is Beldas?
 @20070	= ~Wo ist Beldas?
 
@@ -133,10 +133,10 @@ Bettargh weiß auch nicht weiter. Meine letzte Hoffnung ist, den Magier Ellhimar
 
 Ich habe den Zugang ins Unterreich gefunden. Es ist ein großer Schacht in unbekannte Tiefen. Es gibt nur einen Weg, herauszufinden, ob dies der Richtige ist. So, wie es aussieht, gibt es aber keinen Weg zurück. Ich sollte mich deshalb auf die bevorstehende Reise gut vorbereiten.~
 //___________________________Suche nach Iltkazar
-@21021   = ~Die Suche nach Iltkazar
+@21021   = ~Der Schlafende König
 
-Ich bin auf der Suche nach der Stadt der Zwerge im Unterreich angelangt. Von nun an geht es nur noch vorwärts, denn der Weg, den ich gekommen bin, führte mich mehrere Meilen abwärts einen tiefen Schacht herunter. Ich hoffe, ich werde irgendwann einmal wieder die Oberfläche zu Gesicht bekommen.~
-@21022   = ~Die Suche nach Iltkazar
+Ich bin auf der Suche nach Iltkazar im Unterreich angelangt. Von nun an geht es nur noch vorwärts, denn der Weg, den ich gekommen bin, führte mich mehrere Meilen abwärts einen tiefen Schacht herunter. Ich hoffe, ich werde irgendwann einmal wieder die Oberfläche zu Gesicht bekommen.~
+@21022   = ~Der Schlafende König
 
 Ich habe die Tore von Iltkazar erreicht und mir wurde Einlass gewährt.~
 //___________________________Die Halle des Blutmondes
@@ -760,7 +760,7 @@ Ich habe die Tür geöffnet, die mich durch den Tunnel und hoffentlich herunter 
 Der Mechanismus, der die Tür herab von diesem Berg öffnen soll, klemmt. Ich muss sehen, ob es in einem anderen Raum eine Möglichkeit gibt, den Mechanismus zu reparieren.~
 @90013  = ~Der Abstieg vom Turboldberg
 
-Ich habe den Mechanismus, der die Ausgangstüre öffnen soll, repariert. Nun sollte ich zurück in den Statuenraum gehen und von diesem Berg verschwinden.~
+Ich habe den Mechanismus, der die Ausgangstüre öffnen könnte, repariert. Nun sollte ich zurück in den Statuenraum gehen, den Mechanismus zum Öffnen der Tür aktivieren und von diesem Berg verschwinden.~
 @90014  = ~Der Abstieg vom Turboldberg
 
 Ein fehlendes Zahnrad verhindert wohl, dass ich einen Mechanismus zum Öffnen der Ausgangstür aktivieren kann.~

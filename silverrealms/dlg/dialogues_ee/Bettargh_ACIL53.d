@@ -268,7 +268,7 @@ END
 								END
 								
 								IF ~~ THEN BEGIN goodbye_02
-								SAY ~Dann werde ich mich wieder meinen Studien widmen.~
+								SAY ~Dann werde ich mich wieder meinen Studien widmen. Ihr findet mich hier in der Bibliothek meist am zentralen Schacht neben der Treppe, falls Ihr später weitere Fragen habt.~
 								IF ~~ THEN EXIT 
 								END
 

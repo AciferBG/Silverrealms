@@ -290,10 +290,10 @@ Schnaiklu benötigt die Essenz eines Höheren Wasserelementares, um seinen Golem
 @53230  = ~Hizagkuur
 
 Sorni Arnschädel kann mir bei der Beschaffung des Hizagkuur-Metalls weiterhelfen.~
-@53235  = ~Seltsames Metall
+@53235  = ~Hizagkuur
 
 Ich habe in einem der Minenschächte eine seltsame Art von Metall gefunden. Vielleicht kann mir jemand, der sich mit Metallverarbeitung auskennt, mehr darüber sagen.~
-@53236  = ~Seltsames Metall
+@53236  = ~Hizagkuur
 
 Sorni Arnschädel konnte mir sagen, um welches Metall es sich bei meinem Fund handelt: Hizagkuur. Ich soll in der großen Bibliothek Iltkazars nach einem Tiefengnom Ausschau halten, der solch eine Art Metall benötigt.~
 
@@ -303,7 +303,7 @@ Sorni Arnschädel konnte mir sagen, um welches Metall es sich bei meinem Fund ha
 Der zerstreute Priester Dugmarens Orik Dunkelschrift in der Halle der Runensteine, Iltkazars Bibliothek, sucht sein Buch 'Die verschlungenen Pfade des verlorenen Wissens'. Es soll in dunkelgrünes Leder gebunden sein. Den Buchdeckel ziert eine Silberprägung, die ein Labyrinth darstellt. Das Buch muss sich hier irgendwo in der Bibliothek befinden. Sobald ich es gefunden habe, sollte ich es Orik zurückbringen, da er ziemlich vergesslich ist.~
 @53301  = ~Das verirrte Buch
 
-Ich habe das Buch gefunden. Nun muss ich es zu Orik am Rande des gro0en Schachts im Westen der Bibliothek zurückbringen.~
+Ich habe das Buch gefunden. Nun muss ich es zu Orik am Rande des großen Schachts im Westen der Bibliothek zurückbringen.~
 @53302  = ~Das verirrte Buch
 
 Ich habe Orik das Buch zurückgegeben. Er ist sogleich in einem Labyrinth verschwunden, welches sich beim Lesen des Buches geöffnet hat.~
@@ -564,14 +564,14 @@ Da ich das Rätsel um den Magier Ellhimar gelöst habe sollte ich erneut im Rege
 @62100  = ~Die Astrale See
 
 Bettargh hat das Buch, welches Beldas in Kerzenburg erworben hatte, gelesen. Es handelt von der Astralebene im Allgemeinen und im Besonderen von Reisen in diese Ebene. Er hat mir eine Niederschrift davon in Borthuns Tagebuch gelegt, damit ich dort jederzeit darauf zugreifen kann.~
-//_______________________________Das Buch aus Kerzenburg
-@62101  = ~Das Buch aus Kerzenburg
+//_______________________________Das Buch für den Zwergenkönig
+@62101  = ~Das Buch für den Zwergenkönig
 
 Ich soll das Buch, das König Mith Barak aus meiner alten Heimat Kerzenburg erhalten wollte, zu dem zwergischen Gelehrten Bettargh Abgrundlied in die Halle der Runensteine bringen.~
 
-@62102  = ~Das Buch aus Kerzenburg
+@62102  = ~Das Buch für den Zwergenkönig
 
-Ich habe das Buch aus meiner alten Heimat Kerzenburg zu dem zwergischen Gelehrten Bettargh Abgrundlied in die Halle der Runensteine gebracht. Er lässt davon Abschriften anfertigen und meldet sich dann wieder.~
+Ich habe das Buch aus meiner alten Heimat Kerzenburg zu dem zwergischen Gelehrten Bettargh Abgrundlied in die Halle der Runensteine gebracht. Er lässt davon Abschriften anfertigen und meldet sich wieder, wenn neue Erkenntnisse vorliegen.~
 //_______________________________Githyanki
 @62200  = ~Githyanki
 

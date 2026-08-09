@@ -81,7 +81,7 @@ END
 	END
 	
 		IF ~~ THEN BEGIN store_01
-		SAY ~Aber ich habe noch andere Dinge, die Euch für einen kleinen Obulus verkaufen könnte!~
+		SAY ~Aber ich habe noch andere Dinge, die ich Euch für einen kleinen Obulus verkaufen könnte!~
 		IF ~~ THEN REPLY ~Sicher, zeigt mir einmal, was Ihr anzubieten habt.~ DO ~StartStore("AC#53SVM",LastTalkedToBy(Myself)) ~ EXIT 
 		IF ~~ THEN REPLY ~Vielleicht später einmal.~ + bye
 		END
@@ -481,7 +481,8 @@ Global("AC#MetagolemIngredients","ACIL53",0)~ THEN REPLY ~Bettargh meinte, Ihr b
 */
 IF ~Global("AC#MetagolemIngredients","ACIL53",1)~ THEN REPLY ~Wegen Eures Metagolems...~ + will_you_do_it
 IF ~Global("AC#MetagolemIngredients","ACIL53",2)~ THEN REPLY ~Wegen Eures Metagolems...~ + about_metagolem_02
-IF ~PartyHasItem("AC#HIZA1")~ THEN REPLY ~Ich habe hier etwas Hizagkuur-Erz.~ + raw_hizagkuur
+IF ~GlobalGT("AC#MetagolemIngredients","ACIL53",0)
+PartyHasItem("AC#HIZA1")~ THEN REPLY ~Ich habe hier etwas Hizagkuur-Erz.~ + raw_hizagkuur
 IF ~PartyHasItem("AC#HIZA2")~ THEN REPLY ~Ich habe hier etwas Hizagkuur-Erz.~ + final_hizagkuur
 IF ~PartyHasItem("AC#ILWES")
 Global("AC#WaterEleQuest","GLOBAL",1)~ THEN REPLY ~Hier ist die Essenz eines Höheren Wasserelementares.~ + have_water_essence

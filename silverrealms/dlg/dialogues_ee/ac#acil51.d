@@ -401,9 +401,15 @@ IF ~~ THEN BEGIN moradin_1
 END
 
 IF ~~ THEN BEGIN moradin_priesthood
-  SAY ~Wir Priester des Moradin - oder Sonnlinnor, wie wir von Unseresgleichen auch genannt werden - haben verschiedene Ränge. Jeder dieser Ränge hat einen Titel. Bei den ersten, niederen Rängen legen die Novizen ihren Namen ab und werden nur mit ihrem Titel angesprochen. Diejenigen, die keine Ahnung vom Schmiedehandwerk haben und gerade das erste Mal ihren Bart geflochten haben -wie dieser Kerl da drüben- nennt man die Unbearbeiteten. Die, die schon etwas weiter sind, bekommen hier einen eigenen Amboss zugewiesen. Wir nennen sie die Adepten des Amboss, und sie lernen zunächst einmal die Grundlagen des Schmiedehandwerks - welche unterschiedlichen Hämmer und Zangen es gibt, wie man Eisen bearbeitet und Werkstücke zusammenfügt. Danach kommen die Hämmerer des Krieges, die sich in der Bearbeitung von Stahl weiterbilden müssen.~
+  SAY ~Wir Priester des Moradin - oder Sonnlinnor, wie wir von Unseresgleichen auch genannt werden - haben verschiedene Ränge. Jeder dieser Ränge hat einen Titel. Bei den ersten, niederen Rängen legen die Novizen ihren Namen ab und werden nur mit ihrem Titel angesprochen.~ 
+  =
+  ~Diejenigen, die keine Ahnung vom Schmiedehandwerk haben und gerade das erste Mal ihren Bart geflochten haben -wie dieser Kerl da drüben- nennt man die Unbearbeiteten. Die, die schon etwas weiter sind, bekommen hier einen eigenen Amboss zugewiesen.~ 
+  =
+  ~Wir nennen sie die Adepten des Amboss, und sie lernen zunächst einmal die Grundlagen des Schmiedehandwerks - welche unterschiedlichen Hämmer und Zangen es gibt, wie man Eisen bearbeitet und Werkstücke zusammenfügt. Danach kommen die Hämmerer des Krieges, die sich in der Bearbeitung von Stahl weiterbilden müssen.~
   = 
-  ~Ich bin der Ausbilder dieses ganzen Haufens und werde Künstler der Schmiede genannt. Meine Aufgabe ist es, aus den jungen Burschen gute Waffen- und Rüstungsschmiede zu machen. Irgendwann werde ich zu einem Runenhandwerker aufsteigen. Das zweithöchste Amt in unserem Tempel hier hat der Seelenschmied Vichorn Goldhammer, der den Tempelbetrieb überwacht, inne. Unser geschätzter Anführer ist der Hohe Seelenschmied Anthan Diamantklinge, höchster unseres Ordens und ein Meister an der Schmiede und dem Hammer. Es gibt niemanden hier in Iltkazar, der Werkstücke von so großer Schönheit und Macht erschaffen kann wie Anthan, Sohn des Thratur, Leiter der Uralten Schmiede und Auserwählter des Moradin.~
+  ~Ich bin der Ausbilder dieses ganzen Haufens und werde Künstler der Schmiede genannt. Meine Aufgabe ist es, aus den jungen Burschen gute Waffen- und Rüstungsschmiede zu machen.~
+	=
+	~Irgendwann werde ich zu einem Runenhandwerker aufsteigen. Das zweithöchste Amt in unserem Tempel hier hat der Seelenschmied Vichorn Goldhammer, der den Tempelbetrieb überwacht, inne. Unser geschätzter Anführer ist der Hohe Seelenschmied Anthan Diamantklinge, höchster unseres Ordens und ein Meister an der Schmiede und dem Hammer. Es gibt niemanden hier in Iltkazar, der Werkstücke von so großer Schönheit und Macht erschaffen kann wie Anthan, Sohn des Thratur, Leiter der Uralten Schmiede und Auserwählter des Moradin.~
   IF ~~ THEN REPLY ~Interessant. Ich habe noch eine weitere Frage.~ GOTO question
   IF ~~ THEN REPLY ~Wo kann ich Anthan Diamantklinge finden?~ GOTO anthan
 END

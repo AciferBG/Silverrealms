@@ -502,6 +502,8 @@ END
 IF ~~ THEN BEGIN what_dwarf
 SAY ~Aus einer Bücherei also. Nun sagt mir, welchen Bewohner unserer Stadt habt Ihr an der Oberfläche getroffen?~
 IF ~~ THEN REPLY ~Ich habe in Amn, einem Land der Oberfläche, eine Gruppe Zwerge um ihren Anführer Beldas getroffen, die mich um Hilfe für diese Stadt gebeten haben.~ EXTERN ~AC#CHEM1~ xothor
+IF ~~ THEN REPLY ~Ich traf an der Oberfläche einen Zwerg namens Beldas. Er bat mich, Iltkazar zu helfen.~ EXTERN ~AC#CHEM1~ xothor
+IF ~~ THEN REPLY ~Beldas. Er schien der Meinung zu sein, dass Ihr meine Hilfe dringend nötig habt.~ EXTERN ~AC#CHEM1~ xothor
 END
 
 IF ~~ THEN BEGIN only_king_knows
@@ -736,13 +738,6 @@ SAY ~Beruhigt Euch, meine Liebe. Dies sind doch nichts als Schauergeschichten. <
 IF ~~ THEN REPLY ~Ihr erwartet also von vorneherein, dass ich diese Überfahrt auf mich nehme?~ EXTERN ~AC#ELER1~ barakuir_sorry
 END
 
-/* bad news twice? CHECK!!!
-IF ~~ THEN BEGIN bad_news
-SAY ~Das sind schlimme Neuigkeiten, die diese Fremden von der Oberfläche hier überbringen. Der Rat muss über das weitere Vorgehen in den nächsten Tagen eingehend beraten. Dies sind schwere Zeiten, und wir sollten jetzt keine leichtfertigen Entscheidungen treffen, die wir dann später bereuen könnten. Meine verehrten Ratsmitglieder, ich beantrage, dass wir die Versammlung  vertagen und diese Gruppe solange unter Arrest stellen.~
-IF ~~ THEN EXTERN ~AC#ELER1~ what_uncle
-END
-*/
-
 IF ~~ THEN BEGIN travel_to_XY
 SAY ~Ihr wollt <CHARNAME> nach...~
 IF ~~ THEN EXTERN ~AC#GROM1~ dont_talk_about_duergar_here
@@ -776,12 +771,14 @@ END
 IF ~~ THEN BEGIN book_01
 SAY ~Ein Buch? Auf diesen Gedanken kann sie nur mein Vetter Bettargh gebracht haben. Was für ein Buch sollte das denn sein?~
 IF ~~ THEN REPLY ~Es heißt "Die Astrale See, ein Reisebericht in das Reich aus Silber von Maskyr dem Einäugigen."~ EXTERN ~AC#CHEM1~ mit_so_etwas
+IF ~~ THEN REPLY ~Ein dicker Wälzer über die Astralebene. Sagt Euch das etwas?~ EXTERN ~AC#CHEM1~ mit_so_etwas
+IF ~~ THEN REPLY ~Was interessiert mich dieses Buch? Euer König hielt es offenbar für wichtig.~ EXTERN ~AC#CHEM1~ mit_so_etwas
 END
 
 IF ~~ THEN BEGIN bad_news
 SAY ~Das sind schlimme Neuigkeiten, die diese Fremden von der Oberfläche hier überbringen. Der Rat muss über das weitere Vorgehen in den nächsten Wochen eingehend beraten. Dies sind schwere Zeiten, und wir sollten jetzt keine leichtfertigen Entscheidungen treffen, die wir dann später bereuen könnten.~
 = 
-~Meine verehrten Ratsmitglieder, ich beantrage, dass wir die Versammlung vertagen und diese Gruppe solange unter Arrest stellen.~
+~Meine verehrten Ratsmitglieder, ich beantrage, dass wir die Versammlung vertagen und <CHARNAME> solange unter Arrest stellen.~
 IF ~~ THEN EXTERN ~AC#ELER1~ what_uncle
 END
 

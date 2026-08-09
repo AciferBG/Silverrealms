@@ -540,7 +540,10 @@ Kann nicht verwendet werden von:
  Klerikern
  Magiern~
  @449 = ~Gürtel der Löwen~
- @450 = ~Dieser Gürtel ermöglicht es dem Anwender, typische Eigenschaften katzenartiger Säugetiere anzunehmen und sich damit einiger ihrer Fähigkeiten zu bedienen. Der Träger erhält einen Bonus von +30% auf Leise bewegen und kann einmal täglich den Zauber "katzenhafte Anmut" wirken, welcher ihm einen Geschicklichkeitsbonus spendet.
+ @450 = ~Dieser Gürtel ermöglicht es dem Anwender, typische Eigenschaften katzenartiger Säugetiere anzunehmen und sich damit einiger ihrer Fähigkeiten zu bedienen. 
+ 
+Der Träger erhält einen Bonus von +30% auf Leise bewegen und kann einmal täglich den Zauber "katzenhafte Anmut" wirken, welcher ihm einen Geschicklichkeitsbonus spendet.
+ 
 Weiterhin ist ihm möglich, einmal täglich katzenartige Tiere wie Hauskatzen, Geparden, Panther, Leoparden, Pumas, Luchse, Tiger und Löwen zu bezaubern.
 
 SPEZIFISCHE EIGENSCHAFTEN:
@@ -2399,6 +2402,31 @@ RW-Bonus: -1
 Der Träger kann sich auf Wunsch für 2 Phasen in einen Raben verwandeln.
 
 Gewicht: 3~
+
+@8156 = ~Betrunkenes Zwinkern~
+@8157 = ~Der „Betrunkenes Zwinkern“ ist ein magischer Streitkolben, den der berühmte Braumeister und Vergadain-Priester Bardain Goldmug, auch bekannt als Bardain der Gesalbte, schwang. Sein Leitsatz war: „Vergadain hortet Gold mit Gier, Bardain ertränkt es in Bier.“
+ 
+Der Kopf dieser Waffe ist ein metallener Krug, dessen stabiler Griff zu einem tödlichen Knüppel umfunktioniert wurde. Dieser zeremonielle Streitkolben wurde häufig bei heiligen Ritualen verwendet, um die versammelten Gläubigen mit Bier zu übergießen – ein Segen im Namen des göttlichen Festes des Braumeisters. Noch heute tropft aus dem oberen Rand des Streitkolbens ein stetiges Rinnsal von Bier. Nach längerer Einwirkung können sowohl der getroffene Gegner als auch der Träger selbst berauscht werden. In den Schaft ist ein alter Zwergenspruch eingraviert: „Wenn Ihr sie nicht besiegen könnt, sauft sie unter den Tisch!“
+
+Der Streitkolben gilt als eine göttliche Mischung aus zwergischer Handwerkskunst und völliger Verantwortungslosigkeit. 
+
+EIGENSCHAFTEN:
+
+Heiliges Wort (1x täglich)
+  Der Anwender kann, wenn er betrunken ist, ein heiliges Wort aussprechen, indem er einen donnernden Rülpser von sich lässt.
+
+Bei jedem Treffer erleidet entweder das Ziel oder der Träger einen Malus von +10 auf Trunkenheit. 
+
+Konstitution: +1 für Zwerge
+
+ETW0-Bonus: –3
+Schaden: 1W6 +4 (Wucht)
+Initiativefaktor: 4
+Fertigkeit: Streitkolben
+Typ: 1-händig
+Mindeststärke: 10
+
+Gewicht: 6~
 
 
  

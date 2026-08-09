@@ -13,7 +13,7 @@ AddJournalEntry(@64226,QUEST_DONE)~ EXIT
 END
 
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN hello_01
-SAY  ~Ihr seid der <PRO_RACE> von der Oberfläche, von der mir meine Tochter Elern berichtet hat! Mein Name ist Dorna Abgrundlied, Frau des Bettargh Abgrundlied. Mein Mann leitet die große Bibliothek, und ich stehe dem Tempel Dugmarens vor. Es freut mich, dass Ihr dem Tempel des wandernden Tüftlers einen Besuch abstattet.~ 
+SAY  ~Ihr seid der <PRO_RACE> von der Oberfläche, von dem mir meine Tochter Elern berichtet hat! Mein Name ist Dorna Abgrundlied, Frau des Bettargh Abgrundlied. Mein Mann leitet die große Bibliothek, und ich stehe dem Tempel Dugmarens vor. Es freut mich, dass Ihr dem Tempel des wandernden Tüftlers einen Besuch abstattet.~ 
 IF ~~ THEN REPLY ~Was ist das für ein Ort?~ GOTO what_is_it 
 IF ~~ THEN REPLY ~Ich muss weiter.~ + bye
 IF ~Global("AC#Return_to_Surface","GLOBAL",1)~ THEN REPLY ~Eure Tochter meinte, Ihr könntet mir bei meinem Weg zurück an die Oberfläche helfen.~ + way_to_surface

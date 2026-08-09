@@ -362,7 +362,9 @@ CHAIN IF ~~ THEN AC#BADW2 chain_angeber_05
 ~Das erinnert mich daran, wie ich einmal in den Kazardaern alleine vor einer Horde Grottenschrate stand.~
 == AC#BADW3 ~Grottenschrate! Das sind in einer Gruppe ebenbürtige Gegner für einen einzelnen *dwar*!~
 == AC#BADW1 ~Wie hast Du die Käferbären denn besiegt, Nalric?~
-== AC#BADW2 ~Bin mittenrein gesprungen in die Gruppe, und einer war so verwundert, dass er seinem Kameraden vor Schreck den Kopf abschlug, weil er mich verfehlte. Zwei hab ich mit einem Schildstoss von der Klippe gestoßen, drei andere in einem langen Kampf niedergerungen. Der Anführer wollte abhauen, dem hab ich meine Wurfaxt in die Beine geworfen, dass es ihn von seinen Stiefeln geholt hat. Glaube, er hat noch in seiner fauligen Goblinsprache um Gnade geröchelt, als ich ihm schlussendlich meinen Dolch in den Hals trieb. Glaubt mir, Freunde, ich war so voller Grottenschrat-Blut, dass mich die Wache am Tor der Stadt nicht reinlassen wollte, weil sie mich nicht erkannte. Und mein Weib zuhause war so stolz auf mich, dass ich mich eine ganze Woche nicht waschen durfte!~
+== AC#BADW2 ~Bin mittenrein gesprungen in die Gruppe, und einer war so verwundert, dass er seinem Kameraden vor Schreck den Kopf abschlug, weil er mich verfehlte. Zwei hab ich mit einem Schildstoss von der Klippe gestoßen, drei andere in einem langen Kampf niedergerungen.~ 
+=
+~Der Anführer wollte abhauen, dem hab ich meine Wurfaxt in die Beine geworfen, dass es ihn von seinen Stiefeln geholt hat. Glaube, er hat noch in seiner fauligen Goblinsprache um Gnade geröchelt, als ich ihm schlussendlich meinen Dolch in den Hals trieb. Glaubt mir, Freunde, ich war so voller Grottenschrat-Blut, dass mich die Wache am Tor der Stadt nicht reinlassen wollte, weil sie mich nicht erkannte. Und mein Weib zuhause war so stolz auf mich, dass ich mich eine ganze Woche nicht waschen durfte!~
 == AC#BADW3 ~Auf Nalric Dunron, Sohn des Tarak, den wir Blutbart nennen wollen!~
 == AC#BADW1 ~Auf Nalric Blutbart!~
 END
@@ -400,7 +402,9 @@ CHAIN IF ~~ THEN AC#BADW3 chain_angeber_06
 == AC#BADW1 ~Ein Gedankenschinder?~
 == AC#BADW3 ~Korrekt. Ich war mit meiner Einheit vor vielen Herdfeuern im nördlichen Unterreich auf Patrouille, als wir auf eine Gruppe Duergar stießen. Sie schienen eine leichte Beute, und sofort stürzten wir uns in Hoffnung auf einen fairen Kampf auf sie. Als wir die Hälfte erschlagen hatten, traf uns plötzlich eine Welle verwirrender Gedanken, Geräusche und Gefühle wie ein Faustschlag aus dem Nichts.~
 == AC#BADW2 ~Der Gedankenschlag eines *caradhak*!~
-== AC#BADW3 ~Genau! Ich spürte noch, wie ich meine Axt fallen ließ, und dann überkam mich eine warme, tiefe Gefühllosigkeit. Ich konnte mich nicht mehr rühren! Dann sah ich den *caradhak*. Er nahm den Kopf eines meiner betäubten Gefährten in seine dreifingerigen Hände und stülpte ihm seine Tentakel übers Gesicht. Auch wenn ich mich nicht bewegen konnte, so hatte ich doch all' meine anderen Sinne beisammen, und ich konnte das Geräusch hören, als der Illithid meinem armen Kumpan mit einem Ruck das Gehirn aus dem Schädel riss! Seine Tentakel bewegten sich kurz schmatzend hin und her, und dann ließ er unseren Bruder achtlos zu Boden fallen.~
+== AC#BADW3 ~Genau! Ich spürte noch, wie ich meine Axt fallen ließ, und dann überkam mich eine warme, tiefe Gefühllosigkeit. Ich konnte mich nicht mehr rühren! Dann sah ich den *caradhak*. Er nahm den Kopf eines meiner betäubten Gefährten in seine dreifingerigen Hände und stülpte ihm seine Tentakel übers Gesicht.~ 
+=
+~Auch wenn ich mich nicht bewegen konnte, so hatte ich doch all' meine anderen Sinne beisammen, und ich konnte das Geräusch hören, als der Illithid meinem armen Kumpan mit einem Ruck das Gehirn aus dem Schädel riss! Seine Tentakel bewegten sich kurz schmatzend hin und her, und dann ließ er unseren Bruder achtlos zu Boden fallen.~
 == AC#BADW1 ~Was ist dann passiert?~
 == AC#BADW3 ~Ich konnte in meinem Geiste hören, wie der *caradhak* den überlebenden Duergar befahl, meine anderen Kameraden mitzunehmen, da er sie als Basis für die Umwandlung seiner Larven haben wollte.~
 == AC#BADW2 ~Bei Haela! Das gleiche Schicksal, das Khaernd Schüttergeist vom Clan Arnschädel widerfahren ist!~
@@ -410,7 +414,9 @@ CHAIN IF ~~ THEN AC#BADW3 chain_angeber_06
 = ~Also, die Duergar schultern meine betäubten Kameraden und machen sich auf den Weg zurück. Da wendet sich der *caradhak* mit seinem leeren Blick mir zu und streckt die Tentakel nach mir aus.~
 == AC#BADW2 ~Bei Moradin!~
 == AC#BADW3 ~Ich spürte, wie seine Tentakel in meine Nase glitten und mir das Hirn herausreißen wollten. Glaubt mir, es gibt kein schlimmeres Gefühl in den Reichen! Und ich konnte meine Arme doch nicht bewegen und meine Waffe greifen! Doch aus irgendeinem Grund - Moradin sei Dank - merkte ich, dass ich meine Kiefer noch bewegen konnte! Also tat ich das Einzige, das zu tun ich imstande war...~
-= ~Rückartig drehte ich meinen Kopf, um die Tentakel des *caradhak* zwischen meine Zähne zu bekommen, und biss mit aller Macht, die mir Moradin der Allvater in diesem Moment noch ließ, zu. Zu meiner Überraschung waren meine Zähne stark genug, denn ich spürte zwei sich windende Illithiden-Tentakel in meinem Mund, die ich dem Scheusal abgebissen hatte! Mit seinen verbliebenen beiden weiteren fügte mir der *caradhak* meine Wunden im Gesicht zu, doch mein Kampfesgeist war wieder - Clangeddin sei gepriesen - erwacht! Ich konnte meine linke Hand wieder heben, und mit aller macht rammte ich dem Biest meinen Daumen in seine lidlosen Augen!~
+= ~Ruckartig drehte ich meinen Kopf, um die Tentakel des *caradhak* zwischen meine Zähne zu bekommen, und biss mit aller Macht, die mir Moradin der Allvater in diesem Moment noch ließ, zu. Zu meiner Überraschung waren meine Zähne stark genug, denn ich spürte zwei sich windende Illithiden-Tentakel in meinem Mund, die ich dem Scheusal abgebissen hatte!~ 
+=
+~Mit seinen verbliebenen beiden weiteren fügte mir der *caradhak* meine Wunden im Gesicht zu, doch mein Kampfesgeist war wieder - Clangeddin sei gepriesen - erwacht! Ich konnte meine linke Hand wieder heben, und mit aller mMcht rammte ich dem Biest meinen Daumen in seine lidlosen Augen!~
 == AC#BADW1 ~Was für ein *arglar*!~
 == AC#BADW3 ~Nun bekam ich auch meinen rechten Arm frei und konnte dem Illithiden schließlich den Schädel brechen, bevor die zurückeilenden Duergar etwas unternehmen konnten. Entmutigt von meinem Sieg, ergriffen sie rasch die Flucht.~
 == AC#BADW2 ~Was für eine Geschichte! Auf Otur Palaad, den Schinderschlächter!~

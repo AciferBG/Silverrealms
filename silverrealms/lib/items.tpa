@@ -3,6 +3,12 @@
 
 COPY ~silverrealms/itm/copy~         ~override~
 
+/*
+COPY ~%MOD_FOLDER%/itm/AC#MGDRW.itm~         ~override~    // drunken wink
+  SAY NAME2 @8156
+  SAY DESC @8157
+  */
+
 COPY ~silverrealms/itm/ac#sr#r1.itm~ ~override/ac#sr#r1.itm~ // Dwarven Runestone
   SAY NAME1 @405
   SAY NAME2 @405

@@ -952,7 +952,7 @@ IF ~NumTimesTalkedTo(0)~ THEN BEGIN hello_0
 SAY ~Oh! Hallo! Neu in der Stadt?~
 IF ~~ THEN REPLY ~Ja.~ GOTO new_in_town
 IF ~~ THEN REPLY ~Ein wenig.~ GOTO new_in_town
-IF ~~ THEN REPLY ~Bin nur rauf der Durchreise.~ GOTO new_in_town
+IF ~~ THEN REPLY ~Bin nur auf der Durchreise.~ GOTO new_in_town
 END
 
 	IF ~~ THEN BEGIN new_in_town

@@ -91,7 +91,7 @@ END
 								END
 								
 									IF ~~ THEN BEGIN cinnabar_reprise
-									SAY ~Gleich außerhalb Iltkazars südlich der Stadt gibt es einen verlassenen Stollen, in welchem früher Cinnabar abgebaut wurde. Wir nennen ihn "Nummaks Stollen". Schon lange sind die Zugänge versiegelt, aber ich habe einen Schlüssel, mit dem Ihr das Tor wieder öffnen könnt.~
+									SAY ~Gleich außerhalb Iltkazars südlich der Stadt gibt es einen verlassenen Stollen, in welchem früher Cinnabar abgebaut wurde. Wir nennen ihn "Nimmuks Stollen". Schon lange sind die Zugänge versiegelt, aber ich habe einen Schlüssel, mit dem Ihr das Tor wieder öffnen könnt.~
 									IF ~~ THEN GOTO cinnabar_reprise_02
 									END
 									
@@ -182,7 +182,7 @@ END
 								END
 								
 									IF ~~ THEN BEGIN cinnabar_01
-									SAY ~Gleich außerhalb Iltkazars südlich der Stadt gibt es einen verlassenen Stollen, in welchem früher Cinnabar abgebaut wurde. Wir nennen ihn "Nummaks Stollen". Schon lange sind die Zugänge versiegelt, aber ich habe einen Schlüssel, mit dem Ihr das Tor wieder öffnen könnt.~
+									SAY ~Gleich außerhalb Iltkazars südlich der Stadt gibt es einen verlassenen Stollen, in welchem früher Cinnabar abgebaut wurde. Wir nennen ihn "Nimmuks Stollen". Schon lange sind die Zugänge versiegelt, aber ich habe einen Schlüssel, mit dem Ihr das Tor wieder öffnen könnt.~
 									IF ~~ THEN DO ~SetGlobal("createmercury","LOCALS",1)~ GOTO cinnabar_02
 									END
 									
@@ -211,7 +211,7 @@ END
 									SAY ~Darum kümmern wir uns später. Besorgt erst einmal das Quecksilber.~
 									IF ~~ THEN REPLY ~Wo kann ich noch einmal das Quecksilber kaufen?~ GOTO buy_mercury 
 									IF ~~ THEN REPLY ~Könnt Ihr mir noch einmal erklären, wie ich Quecksilber selbst herstellen kann?~ GOTO create_mercury
-									IF ~~ THEN REPLY ~Alles klar! los geht's~ + mercury_lets_go
+									IF ~~ THEN REPLY ~Alles klar! los geht's.~ + mercury_lets_go
 									END
 									
 										IF ~~ THEN BEGIN mercury_lets_go
@@ -297,7 +297,7 @@ END
 					END
 					
 						IF ~~ THEN BEGIN legacy
-						SAY ~Das "Vermächtnis" ist ein Sammelort für alle Objekte, die uns Zwergen Shanatars schöne Erinnerungen schenkt. Neben alten Bronzetafeln und Standarten findet man dort auch ausgewählte Beutestücke, die wir den ganzen bösen Rassen des Unterreiches abgenommen haben. Und dort habe ich diese Schwebescheibe abgegeben.~ 
+						SAY ~Das "Vermächtnis" ist ein Sammelort für all jene Objekte, welche uns Zwergen Shanatars schöne Erinnerungen schenken. Neben alten Bronzetafeln und Standarten findet man dort auch ausgewählte Beutestücke, die wir den ganzen bösen Rassen des Unterreiches abgenommen haben. Und dort habe ich diese Schwebescheibe abgegeben.~ 
 						IF ~~ THEN GOTO legacy_02
 						END
 						

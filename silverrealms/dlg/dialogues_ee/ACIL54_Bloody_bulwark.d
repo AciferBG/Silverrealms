@@ -1072,7 +1072,7 @@ END
 	END
 
 		IF ~~ THEN BEGIN 3
-		SAY ~Aber jetzt ist ja alles wieder im Reinen. Vielleicht sieht man sich mal wieder. Ich werde jetzt mal die Sau ausweiden, für ein gutes Stück Fleisch im zwitschernden Kanarielvogel ist das allemal Wert!~
+		SAY ~Aber jetzt ist ja alles wieder im Reinen. Vielleicht sieht man sich mal wieder. Ich werde jetzt mal die Sau ausweiden, für ein gutes Stück Fleisch im zwitschernden Kanarienvogel ist das allemal Wert!~
 		IF ~~ THEN
 		EXIT
 		END

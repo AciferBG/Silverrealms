@@ -1762,7 +1762,13 @@ Wenn die Tore Iltkazars langsam hinter Euch verschwinden werden, wisst Ihr, dass
 
 // Item Strings
 @8000 = ~Schlauschopf~
-@8001 = ~Zwerge gelten nicht gerade als Inbegriffe geistiger Höchstleistungen. Auf Baldric traf dies jedoch nicht zu. Er war ein Liebhaber von Kraknakur, einem zwergischen Brettspiel, welches entfernt an Schach erinnert und mit Steinfiguren gespielt wird. Baldric schien jeden Zug seiner Kontrahenten vorauszusehen und brachte es so zu Ruhm und Ehre. Der Legende nach forderte der Zwerg in einem epischen Spiel den Ulithariden einer benachbarten, verfeindeten Gedankenschinder-Enklave zum Duell am Steinbrett heraus. Es ging um nicht weniger als die Freiheit oder Versklavung seines Clans. Allen Berichten zufolge gewann Baldric hauchdünn gegen den Illithiden, welcher sich jedoch nicht an die Abmachung hielt und das Hirn des armen Baldric verschlang, bevor er von den zwergischen Zuschauern niedergeschlagen werden konnte. Baldrics Helm galt seit dieser Zeit als Reliquie in den Hallen seines Clans, bis die Zwergengemeinde schlussendlich doch von den Illithiden versklavt wurde. Danach verlor sich die Spur des Helmes in den Weiten des Unterreiches.
+@8001 = ~Zwerge gelten nicht gerade als Inbegriffe geistiger Höchstleistungen. Auf Baldric traf dies jedoch nicht zu. 
+
+Baldric war ein Liebhaber von Kraknakur, einem zwergischen Brettspiel, welches entfernt an Schach erinnert und mit Steinfiguren gespielt wird. Baldric schien jeden Zug seiner Kontrahenten vorauszusehen und brachte es so zu Ruhm und Ehre. 
+
+Der Legende nach forderte der Zwerg in einem epischen Spiel den Ulithariden einer benachbarten, verfeindeten Gedankenschinder-Enklave zum Duell am Steinbrett heraus. Es ging um nicht weniger als die Freiheit oder Versklavung seines Clans. Allen Berichten zufolge gewann Baldric hauchdünn gegen den Illithiden, welcher sich jedoch nicht an die Abmachung hielt und das Hirn des armen Baldric verschlang, bevor er von den zwergischen Zuschauern niedergeschlagen werden konnte. 
+
+Baldrics Helm galt seit dieser Zeit als Reliquie in den Hallen seines Clans, bis die Zwergengemeinde schlussendlich doch von den Illithiden versklavt wurde. Danach verlor sich die Spur des Helmes in den Weiten des Unterreiches.
 
 SPEZIFISCHE EIGENSCHAFTEN:
 
@@ -2301,13 +2307,15 @@ Schützt vor kritischen Treffern
 
 Gewicht: 8~
 @8126 = ~Amulett des Edelsteinfindens~
-@8127 = ~Dieses schlichte Amulett besitzt die Fähigkeit, in der Umgebung versteckte Edelsteine aufzuspüren.
+@8127 = ~Dieses prachtvolle Amulett ziert ein großer, hellblauer Luriyl. Der seltene Kristall verleiht dem Schmuckstück die Fähigkeit, verborgene Edelsteine in der näheren Umgebung aufzuspüren – sofern welche vorhanden sind. 
+
+Die kunstvolle Gestaltung deutet darauf hin, dass der Anhänger einst einem Priester Vergadains, des zwergischen Gottes des Reichtums und Handels, gehörte.
 
 EIGENSCHAFTEN:
 
-Einmal täglich Edelstein aufspüren
-Mit einer gewissen Wahrscheinlichkeit erscheint ein zufälliger Edelstein in der Nähe des Trägers
-Manchmal findet sich jedoch kein Edelstein~
+Einmal täglich: Edelsteine aufspüren
+
+Bei Benutzung besteht eine gewisse Wahrscheinlichkeit, dass in der Nähe des Trägers ein zufälliger Edelstein entdeckt wird. Mitunter bleibt die Suche jedoch erfolglos.~
 @8128 = ~Schädelgeschoss~
 @8129 = ~Diese Schädel könnten von einem Gerät verschossen werden.
 

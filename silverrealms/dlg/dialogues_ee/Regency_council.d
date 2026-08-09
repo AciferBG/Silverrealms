@@ -329,8 +329,11 @@ END
 
 IF ~~ THEN BEGIN better_reputation
 SAY ~Ihr habt bei einigen unserer Mitbewohner einen guten Eindruck hinterlassen. In der Stadt spricht man über Euch, und das anfängliche Misstrauen ist verschwunden.~
-=
-~Eure wahren Absichten sind dem Rat noch immer nicht klar. Jedoch haben wir beschlossen, den Arrest, den wir Euch auferlegt haben, aufzuheben.~
+IF ~~ THEN DO ~AddJournalEntry(@55102,QUEST_DONE)~ GOTO better_reputation_02
+END
+
+IF ~~ THEN BEGIN better_reputation_02
+SAY ~Eure wahren Absichten sind dem Rat noch immer nicht klar. Jedoch haben wir beschlossen, den Arrest, den wir Euch auferlegt haben, aufzuheben.~
   IF ~~ THEN REPLY ~Das sind schöne Nachrichten!~ + debate
   IF ~~ THEN REPLY ~Darf ich jetzt endlich einmal Euren König sehen?~ + debate
   IF ~~ THEN REPLY ~Ihr habt Euch mit dieser Entscheidung reichlich Zeit gelassen.~ + debate
@@ -594,7 +597,7 @@ END
 	END
 	
 		IF ~~ THEN BEGIN elern_driftdisquest_02
-		SAY ~Also passt auf. Unsere Gelehrten und Baumeister meinen, dass Ihr den Schacht, der offensichtlich an die Oberfläche führt, weder mit Leitern noch durch einfache Magie wieder hinaufgelangen könnt. Allerdings hatte meine Mutter, Dorna Abgrundlied, einen anderen Einfall.~
+		SAY ~Also passt auf. Unsere Gelehrten und Baumeister meinen, dass Ihr den Schacht, der an die Oberfläche führt, unmöglich mit Leitern oder durch Magie hinaufgelangen könnt. Allerdings hatte meine Mutter, Dorna Abgrundlied, einen anderen Einfall.~
 		IF ~~ THEN REPLY ~Was für ein Einfall ist das?~ GOTO elern_driftdisquest_03
 		IF ~~ THEN REPLY ~Erzählt mir mehr.~ GOTO elern_driftdisquest_03
 		IF ~~ THEN REPLY ~Das klingt interessant.~ GOTO elern_driftdisquest_03

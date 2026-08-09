@@ -15,7 +15,6 @@ IF ~~ THEN BEGIN arrest_finished
   SAY ~Das kann ich Euch nicht sagen. Wichtig für Euch wäre jedenfalls, dass Ihr den Rat nicht lange warten lassen solltet! Geht am Besten gleich ins Ratsgebäude im Norden - Ihr wart ja schon einmal da und werdet es hoffentlich wieder finden.~
    IF ~~ THEN DO ~
    SetGlobal("AC#Iltkazar_Council_Second_Quest","GLOBAL",2)
-   EraseJournalEntry(@55100)
    AddJournalEntry(@55101,QUEST)
    EscapeAreaObject("Tracil62")
    ~ EXIT

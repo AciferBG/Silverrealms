@@ -52,7 +52,7 @@ END
 	SAY ~Oh! Habt Ihr es schon gefunden?~
 	IF ~PartyHasItem("AC#MERC1")~ THEN REPLY ~Ja, hier ist es.~ GOTO have_mercury
 	IF ~!PartyHasItem("AC#MERC1")~ THEN REPLY ~Nein. Ich muss mich wieder verabschieden.~ GOTO bye
-	IF ~~ THEN REPLY ~Wo kann ich noch einmal das Quecksilber kaufen?~ GOTO buy_mercury_reprise
+	//IF ~~ THEN REPLY ~Wo kann ich noch einmal das Quecksilber kaufen?~ GOTO buy_mercury_reprise
 	IF ~~ THEN REPLY ~Könnt Ihr mir noch einmal erklären, wie ich Quecksilber selbst herstellen kann?~ GOTO create_mercury_reprise
 	IF ~~ THEN REPLY ~Wie war das noch einmal mit dem Zauber, den ich auf die Scheibe wirken sollte?~ + spell_tenser_reprise
 	END
@@ -86,7 +86,7 @@ END
 				END
 	
 								IF ~~ THEN BEGIN create_mercury_reprise
-								SAY ~Wenn Ihr selbst Quecksilber herstellen wollt, benötigt Ihr das passende Erz. Ich bin keine *delvar*, keine Erzschürferin, aber ich habe mich auch dazu ein wenig belesen. Ihr benötigt ein spezielles Erz, das wir Zwerge "Cinnabar" nennen. Man kann daraus Färbemittel herstellen - aber auch Quecksilber gewinnen.~
+								SAY ~Wenn Ihr selbst Quecksilber herstellen wollt, benötigt Ihr zunächst das passende Erz. Ich bin keine *delvar*, keine Erzschürferin, aber ich habe mich auch dazu ein wenig belesen. Ihr benötigt ein spezielles Erz, das wir Zwerge "Cinnabar" nennen. Man kann daraus Färbemittel herstellen - aber auch Quecksilber gewinnen.~
 								IF ~~ THEN REPLY ~Wo finde ich dieses Cinnabar-Erz?~ GOTO cinnabar_reprise
 								END
 								
@@ -100,11 +100,12 @@ END
 										IF ~~ THEN + driftdisc_summary_reprise
 										END
 																		
-
+								/*
 								IF ~~ THEN BEGIN buy_mercury_reprise
 								SAY ~Wenn Ihr Quecksilber kaufen wollt, könnt Ihr das in der Stadt tun. Wir haben hier einige Alchemisten, die es für ihre Kunst benötigen. Chiksul in der Zitadelle zum "Blutigen Bollwerk" wird Euch sicher welches verkaufen können. Aber ich warne Euch vor: Das lassen sich die Alchemisten teuer bezahlen! Ihr werdet viele, viele Goldmünzen berappen müssen, um Euch ein wenig dieser Flüssigkeit leisten zu können.~
 								IF ~~ THEN GOTO driftdisc_summary_reprise
 								END
+								*/
 								
 								IF ~~ THEN BEGIN driftdisc_summary_reprise
 								SAY ~Wenn Ihr das Quecksilber habt, kehrt zu mir zurück. Dann versuchen wir, den Zauber zu wirken. Mit Dugmarens Beistand werden wir die Scheibe wieder zum Schweben bringen.~
@@ -113,7 +114,7 @@ END
 								
 									IF ~~ THEN BEGIN spell_tenser_reprise
 									SAY ~Darum kümmern wir uns später. Besorgt erst einmal das Quecksilber und den Levitationstrank..~
-									IF ~~ THEN REPLY ~Wo kann ich noch einmal das Quecksilber kaufen?~ GOTO buy_mercury_reprise 
+									//IF ~~ THEN REPLY ~Wo kann ich noch einmal das Quecksilber kaufen?~ GOTO buy_mercury_reprise 
 									IF ~~ THEN REPLY ~Könnt Ihr mir noch einmal erklären, wie ich Quecksilber selbst herstellen kann?~ GOTO create_mercury_reprise
 									IF ~~ THEN REPLY ~Mehr wollte ich gar nicht wissen. Ich muss weiter.~ + bye
 									END
@@ -155,10 +156,16 @@ END
 						SAY ~Wenn Ihr es nicht selbst hinbekommt, die Scheibe zu verzaubern, müssen wir auf den Segen Dugmarens hoffen. Mein Gott hat mich in der Beziehung aber noch nie im Stich gelassen. Dazu aber später mehr. Denn wir brauchen noch zwei weitere Komponenten, um die Verzauberung abzuschließen.~
 						IF ~~ THEN GOTO driftdisc_component
 						END
-						
+						/*
 							IF ~~ THEN BEGIN driftdisc_component
 							SAY ~Ihr benötigt noch einen Levitationstrank und etwas Quecksilber. Den Levitationstrank stellen wir hier in der Bibliothek selbst her. Quecksilber ist jedoch äußerst selten. Ihr könnt es entweder in der Stadt kaufen oder selbst herstellen.~
 							IF ~~ THEN REPLY ~Wo kann ich Quecksilber kaufen?~ GOTO buy_mercury 
+							IF ~~ THEN REPLY ~Wie kann ich Quecksilber selbst herstellen?~ GOTO create_mercury 
+							IF ~~ THEN REPLY ~Wo bekomme ich den Levitationstrank her?~ GOTO levitation_potion 
+							END
+						*/	
+							IF ~~ THEN BEGIN driftdisc_component
+							SAY ~Ihr benötigt noch einen Levitationstrank und etwas Quecksilber. Den Levitationstrank stellen wir hier in der Bibliothek selbst her. Quecksilber ist jedoch äußerst selten. Ihr werdet es selbst herstellen müssen.~							
 							IF ~~ THEN REPLY ~Wie kann ich Quecksilber selbst herstellen?~ GOTO create_mercury 
 							IF ~~ THEN REPLY ~Wo bekomme ich den Levitationstrank her?~ GOTO levitation_potion 
 							END
@@ -170,7 +177,7 @@ END
 									
 										IF ~~ THEN BEGIN driftdisc_components_tutti
 										SAY ~Wenn Ihr den Levitationstrank und etwas Quecksilber habt, kommt wieder hier vorbei. Könnt Ihr mir folgen?~
-										IF ~~ THEN REPLY ~Wo kann ich Quecksilber kaufen?~ GOTO buy_mercury 
+										//IF ~~ THEN REPLY ~Wo kann ich Quecksilber kaufen?~ GOTO buy_mercury 
 										IF ~~ THEN REPLY ~Wie kann ich Quecksilber selbst herstellen?~ GOTO create_mercury 
 										IF ~~ THEN REPLY ~Wo bekomme ich den Levitationstrank her?~ GOTO levitation_potion 
 										IF ~~ THEN REPLY ~Soweit alles klar.~ + driftdisc_summary
@@ -188,20 +195,22 @@ END
 									
 										IF ~~ THEN BEGIN cinnabar_02
 										SAY ~Wenn Ihr das Cinnabar geschürft habt, müsst Ihr es in die erste Ebene der Arnschädelhalle bringen. Dort wird Euch Thargrun Drunkensang helfen, aus dem Erz Quecksilber zu gewinnen.~
-										IF ~Global("buymercury","LOCALS",1)~ THEN DO ~~ GOTO driftdisc_components_tutti 
-										IF ~Global("buymercury","LOCALS",0)~ THEN DO ~~ GOTO buy_mercury 
+										IF ~~ THEN DO ~~ GOTO driftdisc_components_tutti 
+										//IF ~Global("buymercury","LOCALS",1)~ THEN DO ~~ GOTO driftdisc_components_tutti 
+										//IF ~Global("buymercury","LOCALS",0)~ THEN DO ~~ GOTO buy_mercury 
 										END
 																		
-
+								/*
 								IF ~~ THEN BEGIN buy_mercury
 								SAY ~Wenn Ihr Quecksilber kaufen wollt, könnt Ihr das in der Stadt tun. Wir haben hier einige Alchemisten, die es für ihre Kunst benötigen. Chiksul in der Zitadelle zum "Blutigen Bollwerk" wird Euch sicher welches verkaufen können. Aber ich warne Euch vor: Das lassen sich die Alchemisten teuer bezahlen! Ihr werdet viele, viele Goldmünzen berappen müssen, um Euch ein wenig dieser Flüssigkeit leisten zu können.~
 								IF ~Global("createmercury","LOCALS",0)~ THEN DO ~SetGlobal("buymercury","LOCALS",1)~ GOTO create_mercury
 								IF ~Global("createmercury","LOCALS",1)~ THEN DO ~SetGlobal("buymercury","LOCALS",1)~ GOTO driftdisc_components_tutti
 								END
+								*/
 								
 								IF ~~ THEN BEGIN driftdisc_summary
 								SAY ~Gemeinsam versuchen wir dann, den Zauber zu wirken. Mit Dugmarens Beistand werden wir die Scheibe wieder zum Schweben bringen! Habt Ihr noch Fragen?~
-								IF ~~ THEN REPLY ~Wo kann ich noch einmal das Quecksilber kaufen?~ GOTO buy_mercury 
+								//IF ~~ THEN REPLY ~Wo kann ich noch einmal das Quecksilber kaufen?~ GOTO buy_mercury 
 								IF ~~ THEN REPLY ~Könnt Ihr mir noch einmal erklären, wie ich Quecksilber selbst herstellen kann?~ GOTO create_mercury
 								IF ~~ THEN REPLY ~Wie war das noch einmal mit dem Zauber, den ich auf die Scheibe wirken sollte?~ + spell_tenser_01
 								IF ~~ THEN REPLY ~Alles klar! Los geht's.~ + mercury_lets_go
@@ -209,13 +218,13 @@ END
 								
 									IF ~~ THEN BEGIN spell_tenser_01
 									SAY ~Darum kümmern wir uns später. Besorgt erst einmal das Quecksilber.~
-									IF ~~ THEN REPLY ~Wo kann ich noch einmal das Quecksilber kaufen?~ GOTO buy_mercury 
+									//IF ~~ THEN REPLY ~Wo kann ich noch einmal das Quecksilber kaufen?~ GOTO buy_mercury 
 									IF ~~ THEN REPLY ~Könnt Ihr mir noch einmal erklären, wie ich Quecksilber selbst herstellen kann?~ GOTO create_mercury
 									IF ~~ THEN REPLY ~Alles klar! los geht's.~ + mercury_lets_go
 									END
 									
 										IF ~~ THEN BEGIN mercury_lets_go
-										SAY ~Hier ist der Schlüssel in den Stollen, falls Ihr Euch um das Cinnabar-Erz selbst kümmern wollt. Der Stollen wurde von uns versiegelt, weil es darin spuken soll, aber das ist sicher nur ein Hirngespinst der abergläubigen Zwerge. Viel Erfolg, <CHARNAME>!~
+										SAY ~Hier ist der Schlüssel in den Stollen, der Euch zum Cinnabar-Erz führt. Er wurde von uns versiegelt, weil es darin spuken soll, aber das ist sicher nur ein Hirngespinst der abergläubigen Zwerge. Viel Erfolg, <CHARNAME>!~
 										IF ~~ THEN DO ~SetGlobal("AC#Return_to_Surface","GLOBAL",4)
 										SetGlobal("AC#Fruntuck_Levitate","GLOBAL",1)
 										GiveItemCreate("AC#5DKY1",LastTrigger,0,0,0)

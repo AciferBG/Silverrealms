@@ -79,8 +79,11 @@ Dialog Isdlara Riftsong, high priestess of Sharindlar
 BEGIN ~AC#52DW9~
 
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN 0 // from:
-  SAY ~Oh, ein neues Gesicht im "Gnädigen Hof"! Wie schön. Seid Ihr hier, um Euch der Liebe und dem Tanz der mildtätigen Mädchen anzuschließen?~ 
+  SAY ~Oh, ein neues Gesicht im "Gnädigen Hof"! Wie schön. Seid Ihr hier, um Euch der Liebe und dem Tanz Sharindlars, der mildtätigen Maid, anzuschließen?~ 
   IF ~~ THEN REPLY ~So einen Tempel hatte ich hier nicht erwartet.~ GOTO 1
+  IF ~~ THEN REPLY ~Erzählt mir mehr über Sharindlar.~ GOTO 3
+  IF ~~ THEN REPLY ~Ich möchte die Dienste Eures Tempels in Anspruch nehmen.~  GOTO 6
+  IF ~~ THEN REPLY ~Derzeit nicht. Vielleicht später.~  GOTO bye_sharindlar
 END
 
 IF ~~ THEN BEGIN 1 // from: 0.0
@@ -118,13 +121,18 @@ END
 IF ~HPPercentLT(LastTalkedToBy(Myself),100)~ THEN BEGIN 7 // from:
   SAY ~Ihr seht verletzt aus. Sollen wir im Namen Sharindlars Eure Verletzungen kurieren?~ 
   IF ~~ THEN REPLY ~Ich benötige die Dienste Eures Tempels.~ GOTO 6
-  IF ~~ THEN REPLY ~Derzeit keins von beiden. Vielleicht später.~EXIT
+  IF ~~ THEN REPLY ~Derzeit keins von beiden. Vielleicht später.~GOTO bye_sharindlar
 END
 
 IF ~True()~ THEN BEGIN 8 // from:
   SAY ~Ihr seid zurück! Wollt Ihr die Annehmlichkeiten des Gnädigen Hofes genießen oder benötigt Ihr Unterstützung unseres Tempels?~ 
   IF ~~ THEN REPLY ~Ich benötige die Dienste Eures Tempels.~ GOTO 6
-  IF ~~ THEN REPLY ~Derzeit keins von beiden. Vielleicht später.~  EXIT
+  IF ~~ THEN REPLY ~Derzeit keins von beiden. Vielleicht später.~  GOTO bye_sharindlar
+END
+
+	IF ~~ THEN BEGIN bye_sharindlar
+  SAY ~Wie Ihr wollt. Die Dame des Lebens wird Euch immer gnädig gesonnen sein.~ 
+  IF ~~ THEN EXIT
 END
 
 /*******************************************************************************************************

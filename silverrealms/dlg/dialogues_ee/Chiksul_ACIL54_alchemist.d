@@ -6,9 +6,9 @@ IF ~True()~ THEN BEGIN 0
   Global("ChiksulRothe","ACIL54",0)~ THEN REPLY ~Ich benötige einen speziellen... Trank, der das Feuer der Liebe wieder neu entfachen könnte.~ + potion_for_rothe
   IF ~~ THEN REPLY #26058 /* ~Ihr habt Tränke? Lasst mich einen Blick darauf werfen.~ */ DO ~StartStore("AC#STO01",LastTalkedToBy())~ EXIT
   IF ~~ THEN REPLY #26059 /* ~Nichts für mich, danke.~ */ GOTO 1
-  IF ~Global("AC#Return_to_Surface","GLOBAL",4)~ THEN REPLY ~Ich benötige etwas Quecksilber.~ + need_mercury
+  //IF ~Global("AC#Return_to_Surface","GLOBAL",4)~ THEN REPLY ~Ich benötige etwas Quecksilber.~ + need_mercury
 END
-
+/*
 	IF ~~ THEN BEGIN need_mercury
 	SAY ~Quecksilber? Ich kann Euch einige Tropfen geben. Das macht dann 4000 Goldmünzen.~
 	IF ~~ THEN REPLY ~4000 Goldmünzen?~ GOTO 4000_coins 
@@ -39,6 +39,7 @@ END
 		SAY ~Wir Ihr meint. Ich kann auch nichts für die hohen Preise. Einige Zwerge sind ganz besessen davon, aus Quecksilber Gold herzustellen. Geschafft hat's noch keiner, aber gut für's Geschäft ist es allemal. Irgendwo in einer verlassenen Mine soll noch etwas Erz zu finden sein. Viel Hoffnung würde ich mir dabei nicht machen.~
 		IF ~~ THEN EXIT
 		END
+		*/
 
 IF ~~ THEN BEGIN 1 // from: 0.1
   SAY #26057 /* ~Ganz wie Ihr wollt.~ */

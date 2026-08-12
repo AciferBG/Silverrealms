@@ -719,11 +719,13 @@ Der Besitzer der Schale kann einmal am Tag den Zauber "Irrgarten" wirken. Es bes
 @640 = ~Betrangrid~
 @641 = ~Fiebereisenklinge~
 @642 = ~Fiebereisen ist ein seltenes Metall, dessen Herstellung nur wenigen Schmieden bekannt ist. In seiner natürlichen Form ist es flüssig. Um es zu formen, muss es auf eine extreme Temperatur heruntergekühlt werden, ein Prozess, der von den Zwergen Iltkazars im Laufe der Jahrhunderte immer weiter perfektioniert wurde. 
+Dieses Schwert wurde aus Fiebereisen hergestellt und brennt in einem rötlichen Licht. Allerdings muss sich der Träger selbst auch vor dem heißen Metall schützen, um nicht kontinuierlich Schaden zu nehmen.
 
 SPEZIFISCHE EIGENSCHAFTEN:
+Träger erleidet jede Runde 15 Schadenspunkte durch Feuer
 
 ETW0: -2
-Schaden: 1W10+2 +1 durch Feuer (Klingenwaffe)
+Schaden: 1W10+2, +5 durch Feuer (Klingenwaffe)
 Gewicht: 10
 Initiativefaktor: 8
 Waffenfertigkeit: Zweihänder
@@ -2281,6 +2283,15 @@ Typ: 1-händig
 Mindeststärke: 10
 
 Gewicht: 6~
+@8158 = ~Amulett der Glücksmaid~
+@8159 = ~Dieses Amulett wurde von Haela Leuchtaxt gesegnet. 
+Es soll seinen Träger daran erinnern, dass Mut und Wagemut bisweilen ebenso entscheidend sind wie Stärke und Geschick: Wer sich jedem Kampf mit Vertrauen Lachen stellt, dem ist die Glücksgöttin der Zwerge besonders wohlgesonnen.
+
+EIGENSCHAFTEN:
+
+Glück: +1
+
+Gewicht: 0~
 
 
  

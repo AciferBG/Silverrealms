@@ -1,7 +1,10 @@
 IF
-	PartyHasItem("AC#DRFT2")  // Quecksilber
-	Global("AC#DRIFR","GLOBAL",2)
+    PartyHasItem("AC#DRFT2")  // Schwebescheibe
+    GlobalGT("AC#DRIFR","GLOBAL",1)
+    Global("DornaDriftdiscReaction","ACIL5D",0)
 THEN
-	RESPONSE #100
-		StartDialogNoSet([PC])
+    RESPONSE #100
+        SetGlobal("DornaDriftdiscReaction","ACIL5D",1)
+        StartDialogueNoSet([PC])
 END
+

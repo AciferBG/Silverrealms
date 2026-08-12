@@ -232,12 +232,12 @@ IF ~~ THEN GOTO forged_weapon
 END
 
 					IF ~~ THEN BEGIN forged_weapon
-					SAY ~Hier, ich habe eine Waffe geschmiedet, die dieser Bestie das Fürchten lehren sollte. Ich habe all mein Wissen, all meine lebenslange Erfahrung in die Erschaffung dieser Waffe gelegt, und ich denke, sie gehört zu den besten Stücken, die ich jemals geschmiedet habe.~
+					SAY ~Hier, ich habe eine Waffe geschmiedet, die diese Bestie das Fürchten lehren sollte. Ich habe all mein Wissen, all meine lebenslange Erfahrung in die Erschaffung dieser Waffe gelegt, und ich denke, sie gehört zu den besten Stücken, die ich jemals geschmiedet habe.~
 					IF ~~ THEN + 7
 					END	
 				
 						IF ~~ THEN BEGIN 7
-						SAY ~Es ist ein Hammer, die all den Zorn eines Vaters über seinen verlorenen Sohn in seinem Schaft trägt. Dies ist mein Geschenk an Euch. Tragt ihn mit Würde, <CHARNAME>, und möge er Euch in dem bevorstehenden Kampf ein treuer Gefährte sein.~
+						SAY ~Es ist ein Hammer, die all den Zorn eines Vaters über seinen verlorenen Sohn in seinem Schaft trägt. Dies ist mein Geschenk an Euch. Tragt es mit Würde, <CHARNAME>, und möge es Euch in dem bevorstehenden Kampf ein treuer Gefährte sein.~
 						IF ~~ THEN REPLY ~Das ist sehr großzügig von Euch, Anthan. Habt dank. Es ist mir eine Ehre, diese Waffe in Eurem namen zu führen.~ + 9
 						IF ~~ THEN REPLY ~Ein Hammer? Mit dem kann ich aber nicht viel anfangen.~ + 8
 						END

@@ -67,8 +67,14 @@ IF ~~ THEN DO ~~ EXTERN ~ac#52HA1~ yes_maam
 END
 
 IF ~~ THEN BEGIN give_sword_back
-  SAY ~Seid so nett und gebt <CHARNAME> das Schwert zurück; <HESHE> kann es in der Arnschädelhalle gegen eine Waffe seiner Wahl eintauschen.~
-IF ~~ THEN DO ~~ EXTERN ~ac#52HA1~ give_sword_back_02
+  SAY ~Seid so nett und gebt <CHARNAME> den Talisman.~
+IF ~Global("AC#ILFEV","GLOBAL",1)~ THEN EXTERN ~ac#52HA1~ give_sword_back_02_lie
+IF ~Global("AC#ILFEV","GLOBAL",0)~ THEN EXTERN ~ac#52HA1~ give_sword_back_02
+END
+
+IF ~~ THEN BEGIN yes_give_sword_back
+  SAY ~Auch dann.~
+IF ~~ THEN EXTERN ~ac#52HA1~ give_sword_back_02
 END
 
 
@@ -316,26 +322,56 @@ END
 
 IF ~~ THEN BEGIN took_sword
 SAY ~Das Schwert liegt richtig gut in der Hand. Und seht nur, wie es aus dem Inneren glüht! Ja, wirklich, eine feine Waffe für einen edlen Krieger.~
-=
-~Ich glaube, wir können dem <PRO_RACE> von der Oberfläche vertrauen, Strahlendes Schwert Schwarzhorn!~
+IF ~~ THEN GOTO tried_sword
+END
+
+	IF ~~ THEN BEGIN tried_sword
+	SAY ~Habt Ihr das Schwert eigentlich einmal selbst ausprobiert?~
+	IF ~Global("AC#ILFEV","GLOBAL",1)~ THEN REPLY ~Ja, es hat mich ziemlich angesengt.~ GOTO yes_tried_sword
+	IF ~Global("AC#ILFEV","GLOBAL",0)~ THEN REPLY ~Nein, habe ich nicht.~ GOTO no_tried_sword_true
+	IF ~Global("AC#ILFEV","GLOBAL",1)~ THEN REPLY ~Nein, habe ich nicht.~ GOTO no_tried_sword_lie 
+	END
+	
+		IF ~~ THEN BEGIN yes_tried_sword
+		SAY ~Schön, dass Ihr das zugebt.~
+		IF ~~ THEN GOTO trust_PC_01
+		END
+		
+		IF ~~ THEN BEGIN no_tried_sword_true
+		SAY ~Oh, hätte nicht gedacht, dass es Euch nicht auch einmal in den Fingern juckt, die Klinge zu versuchen.~
+		IF ~~ THEN GOTO trust_PC_01
+		END
+		
+		IF ~~ THEN BEGIN no_tried_sword_lie
+		SAY ~Wirklich? Dafür sind Eure Handflächen aber ziemlich angebrannt...~
+		IF ~~ THEN GOTO trust_PC_01
+		END
+
+IF ~~ THEN BEGIN trust_PC_01
+SAY ~Man muss sich nur gut vor dem Feuer schützen. Nun, wie dem auch sei. Meint Ihr, wir können dem <PRO_RACE> von der Oberfläche vertrauen, Strahlendes Schwert Schwarzhorn?~
 IF ~~ THEN DO ~SetGlobal("AC#TalkedToBetrangrid","ACIL52",10)~ EXTERN ~AC#52DW1~ trust_PC
 END
 
 IF ~~ THEN BEGIN yes_maam
-SAY ~Ja, Herrin?~
+SAY ~Ja, Strahlendes Schwert?~
 IF ~~ THEN DO ~~ EXTERN ~AC#52DW1~ give_sword_back
 END
 
 IF ~~ THEN BEGIN give_sword_back_02
-SAY ~Jawohl. Hier habt Ihr die Klinge zurück, <CHARNAME>.~
-IF ~~ THEN DO ~GiveItem("ac#52HA1",Player1)~ GOTO give_sword_back_03
+SAY ~Gut. Hier habt Ihr ein Abzeichen der Glücksmaid, <CHARNAME>. Tragt es mit stolz.~
+IF ~~ THEN DO ~GiveItemCreate("AC#IL52T",Player1,1,0,0)~ GOTO thanks_4_talisman
 END
 
-IF ~~ THEN BEGIN give_sword_back_03
-SAY ~Schwingt sie mit stolz in Eurem Herzen.~
-++ ~Ich möchte die Klinge nicht mehr.~ + dont_want_blade
-++ ~Habt Dank.~ + thanks_4_blade
+IF ~~ THEN BEGIN give_sword_back_02_lie
+SAY ~Auch, wenn <PRO_HESHE> uns belogen hat?~
+IF ~~ THEN EXTERN ~AC#52DW1~ yes_give_sword_back
 END
+/*
+IF ~~ THEN BEGIN give_sword_back_03
+SAY ~Fühlt das Glück in Eurem Herzen.~
+++ ~Habt Dank.~ + thanks_4_talisman
+END
+*/
 
 IF ~~ THEN BEGIN 2
 SAY  ~Ich bin Betrangrid, treue Kriegerin Haelas. Sagt, kämpft Ihr gegen viele Ungeheuer an der Oberfläche?~
@@ -420,21 +456,10 @@ SAY ~Naja, egal, ich werde dann mal wieder weiter den Schwertkampf üben.~
 IF ~~ THEN EXIT
 END
 
-IF ~~ THEN BEGIN dont_want_blade
-SAY ~Das bleibt Euch überlassen. Für uns hat das Schwert seinen Wert bewiesen. Gehabt Euch wohl, <CHARNAME> Klingenträger.~
-IF ~~ THEN DO ~IncrementGlobal("AC_Iltkazar_Reputation","GLOBAL",1)
-SetGlobal("AC#BetrangridQuest","GLOBAL",10)
-AddJournalEntry(@52110,QUEST_DONE)
-DisplayStringNoName(Player1,@1021)~
-EXIT
-END
-
-IF ~~ THEN BEGIN thanks_4_blade
-SAY ~Schlagt damit ein paar Orks den Schädel ein, in Ordnung? Gehabt Euch wohl, <CHARNAME> Klingenträger.~
-IF ~~ THEN DO ~IncrementGlobal("AC_Iltkazar_Reputation","GLOBAL",1)
-SetGlobal("AC#BetrangridQuest","GLOBAL",10)
-AddJournalEntry(@52110,QUEST_DONE)
-DisplayStringNoName(Player1,@1021)~
+IF ~~ THEN BEGIN thanks_4_talisman
+SAY ~Haela lächelt stets auf Euch. Vergesst das nicht und gehabt Euch wohl, <CHARNAME> Klingenbringer.~
+IF ~~ THEN DO ~SetGlobal("AC#BetrangridQuest","GLOBAL",10)
+AddJournalEntry(@52110,QUEST_DONE)~
 EXIT
 END
 

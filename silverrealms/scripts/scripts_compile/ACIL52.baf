@@ -104,26 +104,16 @@ THEN
     RESPONSE #100
 		SetGlobal("AC#IL_BrainVision","GLOBAL",2)
 END
-/*
-IF
-	Global("AC#TalkedToBetrangrid","ACIL52",5)
-	Global("AC#BetrangridQuest","GLOBAL",0)
-THEN
-	RESPONSE #100
-		SetGlobal("AC#BetrangridQuest","GLOBAL",1)
-	        AddJournalEntry(999999,QUEST)
-END
 
 IF
-        Global("AC#TalkedToBetrangrid","ACIL52",10)
-        Global("AC#BetrangridQuest","GLOBAL",1)
+	Global("Haela_Rep_Increase","ACIL52",0)
+	Global("AC#BetrangridQuest","GLOBAL",10)
 THEN
 	RESPONSE #100
-		SetGlobal("AC#BetrangridQuest","GLOBAL",10)
-		EraseJournalEntry(999999)
-	        AddJournalEntry(999998,QUEST_DONE)
+		SetGlobal("Haela_Rep_Increase","ACIL52",1)
+		IncrementGlobal("AC_Iltkazar_Reputation","GLOBAL",1)
+	    DisplayString(Myself,@1021)
 END
-*/
 
 
 

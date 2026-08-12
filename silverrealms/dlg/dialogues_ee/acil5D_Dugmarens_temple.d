@@ -4,12 +4,11 @@ Dialog Spriggan in ACIL9C
 
 BEGIN ~AC#DORNA~
 
-IF ~Global("AC#DRIFR","GLOBAL",2)~ THEN BEGIN hello_driftdisc_ready
+IF ~Global("DornaDriftdiscReaction","ACIL5D",1)~ THEN BEGIN hello_driftdisc_ready
 SAY ~Toll! Habt Ihr das Wunder Dugmarens gesehen? Ich wünsche Euch viel Erfolg dabei, mit Eurer Schwebescheibe an die Oberfläche zurückzukehren. Ein wenig beneide ich Euch schon, dass Ihr so einfach hin- und herreisen könnt! Wer weiß, vielleicht finden wir Zwerge irgendwann einmal den Mut, Euch an die Oberfläche zu folgen?~ 
 =
 ~Bis dahin möge der Irrende Wanderer jeden Eurer Schritte segnen. Ich werde mich wieder an meine Arbeit hier unten im Tempel machen. Ihr wisst, wo Ihr mich finden könnt.~
-IF ~~ THEN DO ~SetGlobal("AC#DRIFR","GLOBAL",3)
-AddJournalEntry(@64226,QUEST_DONE)~ EXIT 
+IF ~~ THEN DO ~SetGlobal("DornaDriftdiscReaction","ACIL5D",2)~ EXIT 
 END
 
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN hello_01

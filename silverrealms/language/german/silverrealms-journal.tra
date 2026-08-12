@@ -262,7 +262,7 @@ In Haelas Tempel habe ich von einer der dortigen Kriegerinnen namens Betrangrid 
 Ich habe Betrangrids Schwert von Whundaed, einem der Schmiede der Arnschädelhalle erhalten und kann es nun der zukünftigen Besitzerin in Haelas Tempel im Osten der Stadt übergeben.~
 @52110   = ~Das Schwert der Glücksmaid
 
-Die Besorgung des Schwertes war nur ein Prüfung. In Wahrheit ging es den Priesterinnen darum, meine Glaubwürdigkeit auf die Probe zu stellen. Ich denke, dies ist mir gelungen, und als Dank darf ich die Klinge behalten, die ich eigentlich überbringen sollte.~
+Die Besorgung des Schwertes war eine Prüfung. Es ging den Priesterinnen darum, meine Glaubwürdigkeit auf die Probe zu stellen. Ich denke, dies ist mir gelungen, und als Dank habe ich einen Talisman erhalten.~
 //___________________________ACIL52: Dendritic Crystal armor
 @52200   = ~Die Kristallrüstung
 
@@ -658,10 +658,10 @@ Um aus dem Cinnabar-Erz Quecksilber zu schürfen, muss ich das Erz in den Ofen n
 @64224  = ~Quecksilber
 
 Ich habe etwas Quecksilber hergestellt. Jetzt muss ich die Substanz zu Dorna in Dugmarens Tempel bringen, um die Verzauberung der Drow-Schwebescheibe zu vollenden.~
-@64225  = ~Die Drow-Schwebescheibe
+@64225  = ~Zurück an die Oberfläche
 
 Um die Verzauberung der Drow-Schwebescheibe zu erneuern, muss ich die Scheibe mitsamt dem Quecksilber und dem Levitationstrank auf Dugmarens Altar platzieren. Dann sollte ich den Zauberspruch von der Spruchrolle lesen, welche mir Dorna gegeben hat.~
-@64226  = ~Die Drow-Schwebescheibe
+@64226  = ~Zurück an die Oberfläche
 
 Ich habe die Schwebescheibe hergestellt. Nun kann ich sie am Boden des Schachtes benutzen, den ich von der Oberfläche herabgeschwebt bin.~
 

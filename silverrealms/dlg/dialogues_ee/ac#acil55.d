@@ -12,7 +12,8 @@ END
 IF ~True()~ THEN BEGIN hello_0
 SAY ~Ihr seid kein Schmied und erst recht kein Erzarbeiter. Was sollt Ihr?~
 IF ~~ THEN REPLY ~Darf ich Euch etwas fragen?~ + nope
-IF ~GlobalGT("AC#Return_to_Surface","GLOBAL",3)~ THEN REPLY ~Dorna Abgrundlied meinte, Ihr könntet mir helfen, aus Erz Quecksilber herzustellen.~ + mercury_01
+IF ~GlobalGT("AC#Return_to_Surface","GLOBAL",3)
+GlobalLT("MercuryCreation","ACIL55",10)~ THEN REPLY ~Dorna Abgrundlied meinte, Ihr könntet mir helfen, aus Erz Quecksilber herzustellen.~ + mercury_01
 IF ~~ THEN REPLY ~Bin schon wieder weg.~ GOTO bye
 END
 

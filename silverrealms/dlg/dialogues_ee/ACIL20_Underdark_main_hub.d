@@ -262,26 +262,8 @@ IF ~~ THEN REPLY ~Habt Dank für diesen freundlichen Abschied. Dies bedeutet mir
 IF ~~ THEN REPLY ~Eigentlich kann ich tränenreiche Abschiede nicht leiden.~ EXTERN ~AC#BRES9~ bad_goodbye
 END
 
-/*
-IF ~~ THEN BEGIN Githtalk02
-SAY ~Warum dieser Verrat? Wir lieferten Euch wie vereinbart alle Illithidenköpfe, die wir finden konnten...~
-IF ~~ THEN EXTERN ~AC#SZAG1~ 15
-END
-
-IF ~~ THEN BEGIN Githtalk03
-SAY ~...was sich als großer Fehler erwiesen hat, wie ich sehe! Ihr steckt hinter dem Angriff auf unsere Stadt, verfluchter Githyanki!~
-IF ~~ THEN EXTERN ~AC#SZAG1~ 16
-END
-
-
-IF ~~ THEN BEGIN Githtalk04
-SAY ~Vergesst es, ich werde Euch nicht noch weiter helfen!~
-IF ~~ THEN DO ~~ EXIT
-END
-*/
-
 IF ~~THEN BEGIN patrol_dead
-SAY ~Bei den Morndinsamman! Sie sind tot! Ich hatte es befürchtet. Schnell, kehrt in die Stadt zurück und erstattet meinem Bruder Bresk und dem Rat Bericht. Ich werde die Wachen am Tor verstärken lassen, denn was immer sie getötet hat, könnte immer noch da draußen sein.~
+SAY ~Bei den Morndinsamman! Sie sind tot! Ich hatte es befürchtet. Schnell, kehrt in die Stadt zurück und erstattet dem Rat Bericht. Ich werde die Wachen am Tor verstärken lassen, denn was immer sie getötet hat, könnte immer noch da draußen sein.~
 IF ~~ THEN DO ~~ EXIT
 END
 

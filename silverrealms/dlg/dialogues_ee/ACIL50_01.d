@@ -100,27 +100,6 @@ END
 			  IF ~~ THEN REPLY ~Ich bin jetzt bereit, die Stadt zu verlassen.~ GOTO ready_to_leave_02
 			END
 
-/*
-IF ~Global("AC#BreskEyestalk","ACIL50",1)~ THEN BEGIN eyestalk_01
-  SAY ~Hab' gehört, Ihr wollt die alten Betrachtertunnel im Süden einmal kräftig ausräuchern, stimmt's?~
-  IF ~~ THEN REPLY ~Ja, ich bin auf der Suche dem Augenstiel eines Betrachters.~ GOTO eyestalk_02
-END
-
-		IF ~~ THEN BEGIN eyestalk_02
-		SAY ~Da tummeln sich sicher eine Menge dieser Biester. Man hört sie manchmal aus der Ferne, wie sie mit Ihren Augenstrahlen das Gestein zum Schmelzen bringen. Wenn Ihr ein paar davon plattmacht, wäre ich Euch als Kriegsmeister dankbar. Hab' leider zu wenig Männer, um den Glotzern einmal selbst einen Besuch abzustatten.~
-		IF ~~ THEN DO ~SetGlobal("AC#BreskEyestalk","ACIL50",2)~ GOTO eyestalk_03
-		END
-		
-			IF ~~ THEN BEGIN eyestalk_03
-			SAY ~Passt aber auf, dass Ihr nicht in den Augenstrahl eines Betrachters kommt, sonst ist es ruck, zuck aus mit Eurer zarten Haut!~
-			IF ~~ THEN REPLY ~Ich werde Eure Warnung beherzigen, Danke!~ GOTO eyestalk_04
-			END
-			
-				IF ~~ THEN BEGIN eyestalk_04
-				SAY ~Wir Zwerge haben eine lange Tradition im Kampf gegen Betrachter, wisst Ihr? Und jetzt verderbt den *estcorlar* einmal ihren Tag!~
-				IF ~~ THEN EXIT
-				END
-*/
 
 // Quest: Kuo-Toa Bresk start
 IF ~GlobalGT("AC#RC_Sorni_Fourth","GLOBAL",0)
@@ -173,15 +152,6 @@ Global("AC#KuoToaStone","GLOBAL",0)~ THEN BEGIN hello_kuo_toa_problem
   SAY ~<CHARNAME>! Ist ja interessant, dass Euch der Rat jetzt nach Barak... in diese alte verfluchte Duergar-Heimat schicken will. Ganz so einfach, wie es sich der Rat vorstellt, ist es aber nicht.~
   IF ~~ THEN REPLY ~Warum?~ GOTO what_boat_problems
 END
-
-// old: Bresk sagt erst wenn Bootsbauer da sind, dass es Probleme gibt
-/*
-IF ~Global("AC#RC_Sorni_Fourth","GLOBAL",3)
-Global("AC#KuoToaStone","GLOBAL",0)~ THEN BEGIN hello_boats_problem
-  SAY ~<CHARNAME>! Gut, dass Ihr kommt. Sornis Bootsbauer sind gerade eingetroffen. Es gibt allerdings Probleme mit unserer Expedition nach Barakuir.~
-  IF ~~ THEN REPLY ~Probleme?~ GOTO what_boat_problems
-END
-*/
 
 			IF ~~ THEN BEGIN what_boat_problems
 			SAY ~Meine Kundschafter haben an den Ufern des Sees, der Euch nach Barakuir bringen soll, zahlreiche Wasser-Elementarwesen angetroffen, die jedesmal aufs Neue an das Ufer kriechen, sobald eines dieser Monster erschlagen wurde.~
@@ -454,7 +424,10 @@ END
 			IF ~~ THEN EXTERN ~AC#ELER2~ chain_ruvan
 			END
 
-
+IF ~True()~ THEN BEGIN go_on
+  SAY ~Wenn Ihr etwas für Iltkazar tun könnt, dann tut es. Die Feinde Shanatars schlafen niemals. Vergesst das nicht, <CHARNAME>.~
+  IF ~~ THEN EXIT
+END
 // ---------------------------------------------
 // Elern Riftsong: Diamondblade book questline
 // ---------------------------------------------
@@ -570,17 +543,6 @@ IF ~~ THEN BEGIN what_else
   ~Nun schaut doch nicht so grimmig drein, Bresk.~
   IF ~~ THEN EXTERN ~AC#BRES1~ no_trust
 END
-
-/*
-IF ~~ THEN BEGIN elern_bye
-  SAY ~Bitte... sprecht das jetzt hier nicht an, Kriegsmeister. Dabei fällt mir ein - Jemand sollte Beldas' Vater, Anthan Diamantklinge, von dem Tod seines Sohnes unterrichten. 
-  
-  
-  
-  Ich werde wieder zurück ins Ratsgebäude gehen, <CHARNAME>, und versuchen, auf die anderen Mitglieder einzuwirken. Gehabt Euch wohl, <PRO_RACE> von der Oberfläche.~
-  IF ~~ THEN EXTERN ~AC#BRES1~ bresk_bye
-END
-*/
 
 IF ~~ THEN BEGIN start_barakuir_adventure
   SAY ~Ha! Ich hätte nicht gedacht, dass ich einmal ein so großes Abenteuer erleben würde! Los geht's!~

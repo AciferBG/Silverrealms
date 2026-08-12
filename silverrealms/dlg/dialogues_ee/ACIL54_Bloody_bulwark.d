@@ -885,10 +885,10 @@ IF ~Name("Viconia",LastTalkedToBy)~ THEN BEGIN hello_viconia
 END
 
 IF ~True()~ THEN BEGIN 0
-  SAY ~Delvars Ausrüstungen! Alles zum Graben, Meißeln, Schürfen! Schaufeln, Spitzhacken, Grubenlampen! Was kann Thifthic heute für Euch tun?~
+  SAY ~Schürferbedarf - alle Ausrüstungen für einen *delvar*! Alles zum Graben und Meißeln! Schaufeln, Spitzhacken, Grubenlampen! Was kann Thifthic heute für Euch tun?~
   IF ~~ THEN REPLY ~Warum verkauft Ihr all diese Dinge hier?~  GOTO 2
   IF ~Global("AC#Fruntuck","GLOBAL",1)
-  Global("AcquiredLadder","ACIL54",0)~ THEN REPLY ~Ich suche nach einer Strickleiter, mit der ich einen Schacht hinuntersteigen kann. Könnt Ihr mir sagen, wo ich so etwas finde?~  GOTO ladder
+  Global("AcquiredLadder","ACIL54",0)~ THEN REPLY ~Ich suche nach einer Strickleiter, mit der ich einen Schacht hinuntersteigen kann.~  GOTO ladder
   IF ~~ THEN REPLY #47378 /* ~Ich würde gerne Eure Dienste in Anspruch nehmen.~ */ GOTO 4
   IF ~~ THEN REPLY #47379 /* ~Ach nichts. Bin schon wieder weg.~ */ GOTO 1
 END

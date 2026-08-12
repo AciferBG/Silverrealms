@@ -40,6 +40,14 @@ THEN
 END
 
 IF
+	Global("MapNoteDelvar","ACIL54",0)
+THEN
+	RESPONSE #100
+		SetGlobal("MapNoteDelvar","ACIL54",1)
+	     AddMapNote([246.1203],@250)
+END
+
+IF
 	Global("Rothe_Rep_Increase","ACIL54",0)
 	GlobalGT("RotheAttack","ACIL54",19)
 THEN

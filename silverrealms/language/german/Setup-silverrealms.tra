@@ -43,10 +43,7 @@ Der Stecken wirkt nur bei zweibeinigen menschlichen, halbmenschlichen oder human
 
 Reichweite: 30 m
 Wirkungsbereich: 6 m Radius
-Wirkungsdauer: 4 Runden
-Kann nicht verwendet werden von:
- Kämpfern 
- Dieben~
+Wirkungsdauer: 4 Runden~
 @30 = ~Als Zwerg erkennt Ihr sofort, dass diese Statue einer wohlgeformten Zwergin das Abbild von Sharindlar, der zwergischen Göttin der Liebe und Fruchtbarkeit darstellen soll.~
 @31 = ~Diese Statue stellt Sharindlar, die zwergische Göttin der Liebe und Fruchtbarkeit dar.~
 @32 = ~Dies ist das merkwürdigste Abbild einer Zwergin, das Ihr je gesehen habt. Die Statue ist unbekleidet. Ihre langen Haare verdecken nur dezent ihre weiblichen Reize und sie scheint zu tanzen.~
@@ -208,10 +205,7 @@ Schaden: 1W8+3 (Klingenwaffe)
 Gewicht: 4
 Initiativefaktor: 2
 Waffenfertigkeit: Krummsäbel/Wakizashi/Ninja-To
-Waffentyp: einhändig
-Kann nicht verwendet werden von:
-Magiern
-Klerikern~
+Waffentyp: einhändig~
 @171 = ~Portalstein~
 @172 = ~Dieser Edelstein glüht mit einer Euch unbekannten magischen Energie.~
 @173 = ~Astrale Steuereinheit~
@@ -306,7 +300,7 @@ Gewicht: 30~
 @247 = ~Fargil~
 @248 = ~Nili~
 @249 = ~Thifthic Gurarr~
-@250 = ~Delvars Ausrüstung~
+@250 = ~Schürferbedarf~
 @251 = ~Eber~
 @252 = ~*grunz*~ [AC#BOA1]
 @253 = ~*grunz*~ [AC#BOA2]
@@ -340,11 +334,7 @@ Schaden: 1W6 (Fernkampf- und Stichwaffe)
 Spezielle Merkmale: Reduziert bei jedem Treffer die Stärke des Opfers kumulativ um -1
 Gewicht: 0
 Dauer: 1 Phase
-Wird verschossen von: Bogen
-Kann nicht verwendet werden von:
- Druiden
- Klerikern
-Magiern~
+Wird verschossen von: Bogen~
 @277 = ~Die Bronzemaske~
 @278 = ~Torth Schwarzstahl~
 @279 = ~Ruvan Steinschulter~
@@ -517,11 +507,7 @@ SPEZIFISCHE EIGENSCHAFTEN:
 Schaden: 1W6 (Fernkampf- und Stichwaffe)
 Spezielle Merkmale. 1W6 Feuerschaden bei dem Anwender
 Gewicht: 0
-Wird verschossen von: Bogen
-Kann nicht verwendet werden von:
- Druiden
- Klerikern
-Magiern~
+Wird verschossen von: Bogen~
 @447 = ~Verfluchte Giftpfeile~
 @448 = ~Verfluchte Giftpfeile
 Ob durch falsches Wissen oder in böser Absicht, bei diesen "beißenden" Pfeilen wurde das Gift anstelle auf die Spitze auf die Befiederung aufgebracht, sodass der Schütze bei jedem Schuss Gefahr läuft, sich selbst zu vergiften. Einige Gelehrte vermuten, dass Pfeile dieser Art von den Anhängern Talonas, der Mutter aller Plagen, in Umlauf gebracht wurden, um auf diese niederträchtige Weise ihrer bösen Herrin zu dienen.
@@ -534,11 +520,7 @@ Gewicht: 0
 Wird verschossen von: Bogen
 
 Gewicht: 0
-Wird verschossen von: Bogen
-Kann nicht verwendet werden von:
- Druiden
- Klerikern
- Magiern~
+Wird verschossen von: Bogen~
  @449 = ~Gürtel der Löwen~
  @450 = ~Dieser Gürtel ermöglicht es dem Anwender, typische Eigenschaften katzenartiger Säugetiere anzunehmen und sich damit einiger ihrer Fähigkeiten zu bedienen. 
  
@@ -622,34 +604,6 @@ Gewicht: 2~
 @481 = ~Isdlara Abgrundlied~
 @482 = ~Der Gnädige Hof~
 @483 = ~Allip~ 
-/*
-@485 = ~Ring der Sagenkunde~
-@486 = ~Dieser unscheinbare Ring erweitert das Wissen seines Trägers beträchtlich, indem er ihm kleinere Erinnerungen an lange zurückliegende Ereignisse übermittelt sowie geschichtliche Zusammenhänge besser einordnen und alte Schriften und Sprachen einfacher verstehen lässt. Gegenstände dieser Art sind somit begehrte Objekte von Gelehrten.
-
-SPEZIFISCHE EIGENSCHAFTEN:
-Sagenkunde +20
-Kann nicht verwendet werden von:
-~
-@487 = ~Ildanfal~
-@488 = ~Auf Jotun, der Sprache der Riesen, bedeutet Ildanfal "Feuerangriff". Diese Waffe ist der Beweis, dass auch Feuerriesen hervorragende Schmiedemeister sein können. Der mächtige Hammer ist allerdings viel zu schwer für jemand Schwächeren als einen Feuerriesen. Außerdem besteht die Gefahr, dass gelegentlich der Träger der Waffe in Flammen aufgeht, und was Feuerriesen für einen angenehmen und heilsamen Flammenschauer halten dürften, könnte für jeden anderen eine tödliche Feuerfalle sein.
-SPEZIFISCHE EIGENSCHAFTEN:
-ETW0: -3
-Schaden: 2W4+3 (Wuchtwaffe)
-Besondere Fähigkeiten: +1w8 Schaden durch Feuer
-Es besteht das Risiko, dass in 5% aller Treffer ein Flammenschlag auf dem Träger niedergeht
-Gewicht: 20
-Initiativefaktor: 1
-Waffenfertigkeit: Kriegshammer
-Waffentyp: Einhändig
-Mindeststärke: 22
-Kann nicht verwendet werden von:
-Druiden
-Magiern
-Dieben~
-
-
-@490 = ~Trollhund~
-*/
 
 @492 = ~Bariaur~
 
@@ -676,9 +630,7 @@ SPEZIFISCHE EIGENSCHAFTEN:
 Verfluchter Gegenstand
 Rüstungsklasse: 5 (15 gegen Fernkampfwaffen)
 Gewicht: 8
-Mindeststärke: 8
-Kann nicht verwendet werden von:
-Magiern~
+Mindeststärke: 8~
 
 @557 = ~Ursummnogh der Untötbare
 
@@ -699,27 +651,6 @@ Der selbsterklärte Herrscher im oberen Teil des klagenden Zwerges, der sich sel
 
 @575 = ~Zwergenwächterstatue~
 
-/*
-@578 = ~Die Luft in dieser Kammer riecht nach Fäulnis, Verfall und abgrundtiefer Bosheit. Der Nebel, der sich auf dem Boden abgesetzt hat, lässt nicht erahnen, wie tief der Abgrund weiter nach unten reicht.~
-@579 = ~Korolnor-Zepter~
-@580 = ~Dies ist eines der alten Herrschaftszepter des Zwergenreiches Shanatars. Der Griff ist aus Mithril gefertigt, und der Kopf ist aus einer Bronzeplatte gestaltet, der auf der einen Seite die Insignien des Clans Kuldelver zeigt, auf der anderen Seite das Symbol Diinkarazans, des alten und gefallenen Schutzpatrons Korolnors. Trotz seiner Größe eignet sich das Zepter erstaunlich gut als Waffe und kann wie ein Streitkolben geschwungen werden, da es sich auf wundersame Weise verkleineren und vergrößern kann, um leicht in einer Hand im Kampf geschwungen zu werden. Allein diese Fähigkeit zeigt eindrucksvoll, welches handwerkliche Geschick die Zwerge in das Relikt eingearbeitet haben.
-Es verfügt sicher noch über weitere versteckte Kräfte, die sich Euch jedoch nicht ohne weiteres erschließen.
-
-SPEZIFISCHE EIGENSCHAFTEN:
-
-ETW0: -2
-Schaden: 1W6+3 (Wuchtwaffe)
-Gewicht: 7 
-Initiativefaktor: 5
-Waffenfertigkeit: Streitkolben
-Waffentyp: Einhändig
-Kann nicht verwendet werden von:
-Druiden
-Magiern
-Dieben~
-@581 = ~Zepter~
-@582 = ~Dies ist ein altes Zepter. Der Griff ist aus einem seltsamen Metall gefertigt, den Kopf ziert eine Bronzeplatte mit Zwergenrunen auf der einen und sieben Juwelen auf der anderen Seite.~
-*/
 @583 = ~Die Regalien Shanatars
 
 Ich bin endlich am alten Thron von Korolnor angelangt, den man auch den Thron des verrückten Gottes nennt. Warum er so genannt wird, werde ich vielleicht bald herausfinden, falls es Tymora nicht gut mit mir meint.~
@@ -766,9 +697,7 @@ Radvam nutzte sein beträchtliches Vermögen, um bei einem Magier die Herstellun
 SPEZIFISCHE EIGENSCHAFTEN:
 ETW0: -2 
 Kann einmal täglich fünf vergiftete Wurfdolche erschaffen
-Gewicht: 2
-Kann nicht verwendet werden von:
-Klerikern (auch mehrklassig und mit Klassenkombination)~
+Gewicht: 2~
 @625 = ~Dieses Zahnrad klemmt, weil ein Stein dazwischensteckt. Ihr könntet den Stein mühelos entfernen, wenn Ihr wolltet.~
 @626 = ~Ihr entfernt den eingeklemmten Stein. Das Rad sollte sich jetzt wieder bewegen lassen.~
 @627 = ~Ihr zieht an dem Seil, doch nichts passiert.~
@@ -798,12 +727,7 @@ Schaden: 1W10+2 +1 durch Feuer (Klingenwaffe)
 Gewicht: 10
 Initiativefaktor: 8
 Waffenfertigkeit: Zweihänder
-Waffentyp: Beidhändig
-Kann nicht verwendet werden von:
-Druiden
-Klerikern
-Magiern
-Dieben~
+Waffentyp: Beidhändig~
 @643 = ~Whundaed Silberlunker~
 @644 = ~Dendritische Kristallrüstung~
 @645 = ~Diese Rüstung ist eine Spezialität der Zwerge des Unterreiches. Während Rüstungen normalerweise geschmiedet werden müssen, ist dieses Exemplar aus gewachsenen Kristallen hergestellt. 
@@ -854,11 +778,7 @@ Gewicht: 3
 Initiativefaktor: 0
 Waffenfertigkeit: Kriegshammer
 Waffentyp: Einhändig
-Mindeststärke: 16
-Kann nicht verwendet werden von:
-Dieben
-Druiden
-Magiern~
+Mindeststärke: 16~
 @672 = ~Untoter Zwerg~
 @673 = ~Talhund, Priester des Dumathoin~
 @674 = ~Bulmick~
@@ -881,11 +801,7 @@ SPEZIFISCHE EIGENSCHAFTEN:
 
 Rüstungsklasse: 3
 Gewicht: 55
-Mindeststärke: 13
-Kann nicht verwendet werden von:
- Barden 
- Magiern
- Dieben~
+Mindeststärke: 13~
 @688 = ~Amulett Dumathoins~
 @689 = ~Dieses Amulett habt Ihr von Turbaern Ghalmrin, dem Hohen Omlar Dumathoins, als Dank für seine Rettung erhalten. Es schützt den Träger vor den Wirkungen des Zaubers "Einkerkerung". Weiterhin kann der Träger des Amuletts einmal täglich diesen Zauber rückgängig machen, indem er "Freiheit" wirkt.
 
@@ -1005,11 +921,7 @@ Schaden: 1W6+3 (Wuchtwaffe)
 Gewicht: 7 
 Initiativefaktor: 5
 Waffenfertigkeit: Streitkolben
-Waffentyp: Einhändig
-Kann nicht verwendet werden von:
-Druiden
-Magiern
-Dieben~
+Waffentyp: Einhändig~
 @771 = ~Zepter~
 @772 = ~Dies ist ein altes Zepter. Der Griff ist aus einem seltsamen Metall gefertigt, den Kopf ziert eine Bronzeplatte mit Zwergenrunen auf der einen und dem Symbol eines Dolches auf der anderen Seite.~
 @773 = ~Cheat-Schlüssel~
@@ -1026,11 +938,7 @@ Schaden: 2W4+3 (Wuchtwaffe), +8 gegen Drachen
 Gewicht: 4 
 Initiativefaktor: 1
 Waffenfertigkeit: Kriegshammer
-Waffentyp: Einhändig
-Kann nicht verwendet werden von:
-Druiden
-Magiern
-Dieben~
+Waffentyp: Einhändig~
 @778 = ~Sterbender Duergar~
 @779 = ~Adamantrüstung~
 @780 = ~Diese Rüstung wurde für Euch von Sorni Arnschädel geschmiedet. Reines Adamant ist das am Schwersten zu bearbeitende Material in ganz Faerun. Rüstungen dieser Art bieten zwar wenig Schutz gegen Hiebe und Schläge, lassen sich aber gut verzaubern und bieten einen enormen Schutz vor jeglicher Art von Feuer. Adamant ist sehr spröde, und allein schon eine Rüstung herzustellen, die nicht bei dem ersten Hieb auseinanderfällt, ist eine große Kunst.
@@ -1040,12 +948,7 @@ SPEZIFISCHE EIGENSCHAFTEN:
 Feuerresistenz: 80%
 Rüstungsklasse: 3
 Gewicht: 15
-Mindeststärke: 9
-Kann nicht verwendet werden von:
- Barden 
- Druiden
- Magiern
- Dieben~
+Mindeststärke: 9~
 @781 = ~Diese elektrischen Blöcke scheinen dem Kraftfeld in der Mitte Energie zu verleihen. Ihr könnt sie deaktivieren, riskiert dabei jedoch, eine unbekannte an Elektrizität abzubekommen.~
 @782 = ~Ihr berührt das Kraftfeld und spürt, wie seine Energie Euren Körper durchdringt. Kurz darauf ist seine Aktivität erloschen.~
 @783 = ~Mithbarakaz~
@@ -1122,12 +1025,7 @@ Schaden: 1W8+3 (Klingenwaffe)
 Gewicht: 7
 Initiativefaktor: 4
 Waffenfertigkeit: Axt
-Waffentyp: Einhändig
-Kann nicht verwendet werden von:
-Druiden
-Klerikern
-Magiern
-Dieben~
+Waffentyp: Einhändig~
 @827 = ~Marams Schädel~
 @828 = ~Es gab Zeiten, als noch keine Götter auf Faerun wandelten. Die mächtigsten Wesen jener Zeit waren kraftvolle Ausgeburten des Chaos, die Primordiale. 
 
@@ -1287,12 +1185,7 @@ SPEZIFISCHE EIGENSCHAFTEN:
 Spezielle Merkmale: Der Träger der Rüstung gerät in einen rasenden Blutrausch.
 Kann nur durch einen Bannzauber entfernt werden.
 Rüstungsklasse: 0
-Gewicht: 27
-Kann nicht verwendet werden von:
-Barden
-Druiden
-Magiern
-Dieben~
+Gewicht: 27~
 @943 = ~Händler~
 @944 = ~Ring der falschen Gesinnung~
 @945 = ~Dieser unscheinbare Ring birgt ein mächtiges Geheimnis. Der Träger des Ringes ist vor allen Versuchen, seine Beweggründe herauszufinden, geschützt und kann somit seine wahre Natur vor seinem Gegenüber vollständig verbergen. Es ist keine große Überraschung, dass die meisten solcher Ringe von Spitzeln und Attentätern verwendet werden, um sich unbemerkt an ihr ahnungsloses Opfer heranzuschleichen.
@@ -1319,11 +1212,7 @@ Gewicht: 9
 Initiativefaktor: 5
 Waffenfertigkeit: Flegel/Morgenstern
 Waffentyp: Einhändig
-Mindeststärke: 11
-Kann nicht verwendet werden von:
-Druiden
-Magiern
-Dieben~
+Mindeststärke: 11~
 @959 = ~Krähe~
 @960 = ~Abishai beschwören~
 @961 = ~Auf dem Boden steht eine kleine Zwergenstatue. In Dethek-Runen steht daneben geschrieben: "Drakkalor, Stadt des Geizes"~
@@ -1371,11 +1260,7 @@ Schaden: 1W6+3 (Wuchtwaffe)
 Gewicht: 7 
 Initiativefaktor: 5
 Waffenfertigkeit: Streitkolben
-Waffentyp: Einhändig
-Kann nicht verwendet werden von:
-Druiden
-Magiern
-Dieben~
+Waffentyp: Einhändig~
 @997 = ~Dies ist ein altes Zepter. Der Griff ist aus einem seltsamen Metall gefertigt, den Kopf ziert eine Bronzeplatte mit Zwergenrunen auf der einen und dem Symbol einer brennenden Nadel auf der anderen Seite.~
 @998 = ~Remorhaz~
 
@@ -1433,9 +1318,7 @@ Schaden: 2W4+2 (Fernkampfwaffe, Stichwaffe), +4 gegen Drachen; +1W2 durch Feuer
 Gewicht: 1
 Initiativefaktor: 1
 Waffenfertigkeit: Dolch
-Waffentyp: Einhändig
-Kann nicht verwendet werden von:
-Klerikern~
+Waffentyp: Einhändig~
 @1019 = ~Sauerschnitter +2~
 @1020 = ~Sauerschnitter, Wurfdolch +2
 Sauerschnitter, auch "Die Grüne Klinge" genannt, ist ein weiterer Dolch aus der Fertigungsreihe der Zwerge und deren Versuch, effektive Waffen im Kampf gegen Drachen zu entwickeln. Die Grüne Klinge befand sich eine Zeit lang in den Händen einer kleinen Zelle des Drachenkultes in Elversult, aber Intrigen unter den Anhängern von Sammaster führten zu ihrem Diebstahl und anschließendem Verschwinden im Jahre des Drachen (1352 TZ). Während einer Seeschlacht gegen Piraten wanderte Sauerschnitter in kurzer Zeit durch mehrere Hände, fiel jedoch ins Meer und trieb auf das Hmur-Plateau im Meer des Sternenregens hinunter. Wie die Klinge von dort wieder in die Hände des Drachenkultes gelangte, ist nicht bekannt.
@@ -1448,9 +1331,7 @@ Schaden: 2W4+2 (Fernkampfwaffe, Stichwaffe), +1W2 durch Säure
 Gewicht: 1
 Initiativefaktor: 1
 Waffenfertigkeit: Dolch
-Waffentyp: Einhändig
-Kann nicht verwendet werden von:
-Klerikern~
+Waffentyp: Einhändig~
 @1021 = ~^0xFF22B4E6Euer Ansehen in Iltkazar ist gestiegen.^-~
 @1022 = ~Schlüssel der Turboldfeste~
 @1023 = ~Diesen Schlüssel habt Ihr von Beldas erhalten. Mit ihm lässt sich die schwere Zwergentür ins Innere des Turboldberges öffnen.~
@@ -1468,12 +1349,7 @@ Gewicht: 5
 Initiativefaktor: 5
 Waffenfertigkeit: Axt
 Waffentyp: einhändig
-Mindeststärke: 10
-Kann nicht verwendet werden von:
- Druiden
- Klerikern
- Magiern
- Dieben~
+Mindeststärke: 10~
 @1105 = ~Mein lieber Leutnant Rahman, leider hat sich meine Expedition anders entwickelt als erhofft. Ich bete, dass Dir der Bote, den ich aus diesem feuchten Ort zurückgesandt habe, Dir auch diese Axt zur Garnison ins Hafenviertel gebracht hat und nicht einfach davongerannt ist. Diese Axt darf niemals mehr an den Ort, von dem wir sie genommen haben, zurückgebracht werden! Bitte erfülle mir diesen letzten Wunsch, denn ich fürchte, dass wir uns nicht mehr wiedersehen werden. Ihr seid der einzige, dem ich vertrauen kann. Eigentlich sollte ich meiner lieben Frau noch ein paar Zeilen schicken, doch ich weiß wirklich nicht, was ich ihr sagen könnte, um ihr Leid zu lindern. Richtet Ihr aus, dass ich sie für immer liebe. Möge Kelemvor mir gnädig sein. Euer Hauptmann Bryam Lancameth~
 @1106 = ~Zum Tanzenden Riesen~
 @1107 = ~Der trockene Seabert~
@@ -1499,11 +1375,7 @@ SPEZIFISCHE EIGENSCHAFTEN:
 
 Besondere Fähigkeiten: Träger erhält 15% Feuerresistenz
 Rüstungsklasse: 2
-Gewicht: 30
-Kann nicht verwendet werden von:
-Barden
-Druiden
-Magiern~
+Gewicht: 30~
 @1116 = ~Das Xothaerin-Zepter beginnt plötzlich in Eurem Rucksack zu vibrieren. Offensichtlich hat es einen Einfluss auf das verschlossene Portal neben dem Amboss.~
 @1117 = ~Grayson,
 
@@ -1774,11 +1646,7 @@ SPEZIFISCHE EIGENSCHAFTEN:
 
 Intelligenz: +2
 Besondere Eigenschaften: Schützt vor kritischen Treffern
-Gewicht: 2
-Kann nicht verwendet werden von:
-Magiern
-Barden
-Dieben~
+Gewicht: 2~
 @8002 = ~Frischer Fang~
 @8003 = ~Frischer Fang +2, +5 gegen Fischwesen
 Der Speer war eine der ersten Waffen, die von Menschenhand gefertigt wurde. Die ersten Speere waren nicht viel mehr als Holzstangen, die an einem Ende zugespitzt waren. Als die Menschheit lernte, mit Metall zu arbeiten, wurden die Speerspitzen aus Eisen oder Stahl gefertigt. Dann begannen die Waffenschmiede, mit verschiedenen Arten von Speerspitzen zu experimentieren. Aus den Experimenten heraus entstanden die verschiedenen Arten von Stangenwaffen. Weitere Experimente führten zur Herstellung magischer Speere. So wurden Speere beispielsweise vom Schamanen eines Stammes verzaubert, damit sie der Stammeskrieger rascher führen konnte und ein Treffer beim Feind mehr Schaden anrichtete.
@@ -1790,11 +1658,7 @@ Schaden: 1W6+2 (Stichwaffe), doppelter Schaden gegen fischartige Wesen wie Kuo-T
 Gewicht: 3
 Initiativefaktor: 4
 Waffenfertigkeit: Speer
-Waffentyp: Beidhändig
-Kann nicht verwendet werden von:
-Klerikern
-Magiern
-Dieben~
+Waffentyp: Beidhändig~
 @8004 = ~Drow-Elfenkettenhemd +1~
 @8005 = ~Drow-Elfenkettenhemd +1
 Die Drow verstehen es, Werkstücke äußerst grazil, aber gleichzeitig stabil zu fertigen. Dadurch können sie wunderbare Dinge schaffen, die dennoch praktisch verwendbar sind. Dazu gehören beispielsweise Drow-Kettenhemden. Derartige Kettenhemden sind so fein gewebt, dass man sie unauffällig unter normaler Kleidung tragen kann. Sie behindern in keiner Weise und sind so leicht, dass sie auch Diebe und Krieger/Magier einsetzen können, ohne dass ihre Fähigkeiten eingeschränkt werden. Aufgrund des grazilen Schnittmusters ist dieses Kettenhemd nur für Elfen und Halbelfen geeignet. Während sich höherwertige Drow-Rüstungen jedem neuen Träger anpassen, haben die Drow bei der Herstellung einfacher magischer Gegenstände wie diesem darauf verzichtet - vermutlich auch, um ihren zahlreichen Feinden nicht gut gearbeitete Rüstungen in die hände fallen zu lassen, denn Kettenhemden wie dieses sind die Standardausrüstung der klassischen Fußsoldaten der Drow, die in großen Einheiten das Unterreich heimsuchen.
@@ -1803,11 +1667,7 @@ Die Rüstung ist, wie die meisten Ausrüstungsgegenstände der Drow, aus einer A
 SPEZIFISCHE EIGENSCHAFTEN:
 Kann nur verwendet werden von: Elfen und Halbelfen
 Rüstungsklasse: 4
-Gewicht: 12
-Kann nicht verwendet werden von:
-Druiden
-Magiern
-Kensai~
+Gewicht: 12~
 @8006 = ~Kupferplatte~
 @8007 = ~Qualith-Runenplatte~
 @8008 = ~Diese Platte aus angelaufenem Kupfer zieren seltsame, horizontal verlaufende Linien.~
@@ -1877,11 +1737,7 @@ Gewicht: 3
 Initiativefaktor: 3
 Waffenfertigkeit: Langschwert
 Waffentyp: einhändig
-Mindeststärke: 6
-Kann nicht verwendet werden von:
- Druiden
- Klerikern
- Magiern~
+Mindeststärke: 6~
 @8026 = ~Schutz vor Gift~
 @8027 = ~Schutz vor Gift (Bannzauber)
 Schutz- und Elementarzyklus
@@ -1904,11 +1760,7 @@ Schaden: 1W6+3 (Wuchtwaffe)
 Gewicht: 7 
 Initiativefaktor: 5
 Waffenfertigkeit: Streitkolben
-Waffentyp: Einhändig
-Kann nicht verwendet werden von:
-Druiden
-Magiern
-Dieben~
+Waffentyp: Einhändig~
 @8030 = ~Brüchige Substanz~
 @8031 = ~Gottesblut~
 @8032 = ~Ihr habt keinen blassen Schimmer, was diese Substanz sein könnte. Es ist kristallin, aber für ein Mineral viel zu weich und klebrig. Man kann es mit den bloßen Händen in kleine Klumpen zerreiben.~
@@ -1928,15 +1780,7 @@ Schaden: 1W10+4 (Klingenwaffe)
 Gewicht: 10
 Initiativefaktor: 6
 Waffenfertigkeit: Zweihänder
-Waffentyp: Beidhändig
-Kann nicht verwendet werden von:
-Druiden
-Klerikern
-Magiern
-Dieben
-Charakteren mit guter Gesinnung
-
-~
+Waffentyp: Beidhändig~
 @8037 = ~Todesbolzen~
 @8038 = ~Dieser Bolzen ist pechschwarz. Er wurde hergestellt, um ein bestimmtes Wesen, und nur dieses eine Wesen, zu töten. Der unglückliche Auserwählte ist in diesem Fall ein Kuo-Toa.
 
@@ -1958,18 +1802,21 @@ ETW0: -1
 Schaden: 1W1+1 (Stichwaffe)
 Spezielle Merkmale: Heilt bei einem erfolgreichen Treffer 2w10 Trefferpunkte bei dem Ziel
 Gewicht: 0
-Wird verschossen von: Bogen
-Kann nicht verwendet werden von:
- Klerikern
- Druiden
- Magiern~
+Wird verschossen von: Bogen~
 @8041 = ~Drow-Brief~
 @8042 = ~Drow-Brief (entziffert)~
 @8043 = ~Fridj ka usstan'bal ulu sultha nindel zhuanth dwarven yath wun lil' har'olen: lil' lgor ssrig'luin natha kaas de' draa phraktos: Clangeddin lueth nindol rivvil drathir Quarval-sharess usstan h'ros ajak.  Xsa shinduago xellased!~
 @8044 = ~Falls ich wieder diesen alten Zwergentempel in den Höhlen betreten muss notiere ich mir die Parole: Die Steinfigur verlangt die Namen zweier Götter, um Einlass zu gewähren - Clangeddin und den Namen dieser menschlichen Mondgöttin, an den ich mich nicht erinnern kann. Verdammte Oberflächenbewohner!~ 
 @8045 = ~Cinnabarit~
-@8046 = ~Cinnabarit ist ein durchscheinendes bis undurchsichtiges Mineral und weist auf sichtbaren Kristallflächen einen diamant- bis metallähnlichen Glanz auf. Die Farbe von Cinnabarit ist von einem charakteristisch leuchtenden und auch als Farbe bekannten Zinnoberrot. Durch Fremdbeimengungen kann das Mineral aber auch eine braunrote bis bleigraue Farbe annehmen. Seine Strichfarbe ist jedoch immer ein kräftiges Rot. Cinnabarit ist das wichtigste und häufigste Quecksilber-Mineral. Daneben wurde Zinnober als Farbe seit Anbeginn der Kunst von vielen Rassen in der Malerei verwendet.~
-@8047 = ~Quecksilber ist ein silberweißes, flüssiges Schwermetall. Es wird manchmal noch zu den Edelmetallen gezählt. Es bildet mit sehr vielen Metallen Legierungen und wird für verschiedene Verzauberungen als Komponente benötigt. Dieses Quecksilber habt Ihr aus Cinnabarit hergestellt, um es für die Verzauberung der Drow-Schwebescheibe zu verwenden. Dorna Abgrundlied im Tempel Dugmarens in der Halle der Runensteine benötigt diesen Gegenstand, um Euch zu helfen.~
+@8046 = ~Cinnabarit ist ein seltenes Mineral von charakteristisch leuchtend roter Farbe, die auch als Zinnober bekannt ist. 
+
+Es gilt als wichtigste natürliche Quelle für Quecksilber. 
+
+Fein zermahlen wird das Mineral zudem seit alters her von zahlreichen Völkern als kräftiges rotes Farbpigment verwendet.~
+@8047 = ~Quecksilber ist ein silberweißes, flüssiges Schwermetall. Es wird manchmal noch zu den Edelmetallen gezählt und bildet mit sehr vielen Metallen Legierungen, außerdem wird es für verschiedenste Verzauberungen benötigt. 
+
+Dieses Quecksilber habt Ihr aus Cinnabarit hergestellt, um es für die Verzauberung der Drow-Schwebescheibe zu verwenden. 
+Dorna Abgrundlied im Tempel Dugmarens in der Halle der Runensteine benötigt diesen Gegenstand, um Euch zu helfen.~
 @8048 = ~Schlüssel zu Nimmuks Stollen~
 @8049 = ~Ihr habt diesen Schlüssel von Dorna Abgrundlied erhalten, um den Zugang zu einem alten Stollen, der "Nimmuks Stollen" genannt wird, öffnen zu können. Dorna erwähnte noch, dass der Stollen versiegelt wurde, da es darin spuken soll.~
 @8050 = ~Kromthruns Handschuhe~
@@ -1995,8 +1842,7 @@ Auf dem Träger liegt "Stille".
 Im Schatten verstecken +30% 
 Leise bewegen +30%
 
-Gewicht: 3
-Kann nicht verwendet werden von:~
+Gewicht: 3~
 
 @8054 = ~Diese Riesenspinnen sind tot sogar noch widerlicher als lebendig. Ihre hervorstehenden, kristallklaren Augen starren leer in deine Richtung, und ab und zu zuckt eines ihrer acht Beine krampfartig. Der Name der Minen, in dem Ihr die Spinne erschlagen hat - die Spinnenschächte - scheint passend gewählt, denn es wimmelt dort nur so vor diesen achtbeinigen Insekten. Vielleicht ist der tote Körper einer Spinne in diesen Gängen noch für etwas nütze?~
 

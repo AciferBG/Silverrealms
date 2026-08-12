@@ -118,6 +118,14 @@ THEN
 END
 
 IF
+    Global("CreateBeholder","ACIL20",0)
+THEN
+    RESPONSE #100
+		SetGlobal("CreateBeholder","ACIL20",1)
+		CreateCreatureImpassableAllowOverlap("AC#ILBH1",[1477.2663],S) // Beholder
+END
+
+IF
     Global("ShriekerAttractMonster","ACIL20",1)
     Global("ShriekMonstTimerStart","ACIL20",0)
 THEN
@@ -435,6 +443,15 @@ THEN
 	RESPONSE #100
 		SetGlobal("MapNoteCharve","ACIL20",1)
 		AddMapNote([1801.757],@6204)
+END
+
+IF
+	PartyHasItem("AC#5DKY1")
+	Global("MapNoteNimmuk","ACIL20",0)
+THEN
+	RESPONSE #100
+		SetGlobal("MapNoteNimmuk","ACIL20",1)
+		AddMapNote([2627.1703],@6201)
 END
 
 

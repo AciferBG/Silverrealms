@@ -378,6 +378,8 @@ END
 			IF ~~ THEN BEGIN need_beholder_eyestalk
 			SAY ~Den Augenstiel eines -*Hicks*!- Betrachters.~ [HICCUP]
 			++ ~Ihr trinkt hier Tränke, in denen der Augenstiel eines Betrachters schwimmt?~ + need_beholder_eyestalk_02
+			++ ~Bitte sagt mir, dass Ihr das Ding vorher kocht.~ + need_beholder_eyestalk_02
+			++ ~Natürlich. Dafür sind Betrachter ja schließlich da.~ + need_beholder_eyestalk_02
 			END
 						
 							IF ~~ THEN BEGIN need_beholder_eyestalk_02
@@ -385,15 +387,18 @@ END
 							=
 							~Bringt mir einen *hicks* Augenstiel, dann kann ich wieder weitere derartige Tränke brauen.~
 							++ ~Nun gut, und wo soll ich einen Betrachter finden, den ich überzeugen kann, sich von einem Augenstiel zu trennen?~ + need_beholder_eyestalk_03
+							++ ~Ihr Gnome habt wirklich seltsame Vorstellungen von seltenen Zutaten.~ + need_beholder_eyestalk_03
 							END
 							
 								IF ~~ THEN BEGIN need_beholder_eyestalk_03
-								SAY ~Nun, glücklicherweise sind Betrachter in dieser Region des Unterreiches nicht sehr selten.~
+								SAY ~Glücklicherweise sind Betrachter in dieser Region des Unterreiches nicht selten!~
 								++ ~Das ist ja äußerst beruhigend!~ + need_beholder_eyestalk_04
+								++ ~Dann dürfte es ja ein Leichtes sein, einen von ihnen um einen Augenstiel zu erleichtern.~ + need_beholder_eyestalk_04
+								++ ~Ihr werdet bald wieder genug Zutaten für Eure Levitationstränke haben.~ + need_beholder_eyestalk_04
 								END
 								
 									IF ~~ THEN BEGIN need_beholder_eyestalk_04
-									SAY ~Die Betrachter suchen seit Jahren nach einem Weg, Iltkazar -*Hicks*!- zu schaden. Nicht weit entfernt von dieser Stadt befinden sich noch alte Schächte, die aus den Zeiten herrühren, als die Betrachter uns Gnomen... nun ja, -*Hicks*!- nach dem Leben trachteten.~ [HICCUP]
+									SAY ~Die Betrachter suchen seit Jahren nach einem Weg, Iltkazar -*Hicks*!- zu schaden. Nicht weit entfernt von dieser Stadt befinden sich noch alte Schächte, die aus den Zeiten herrühren, als die Betrachter uns Einwohnern... nun ja, -*Hicks*!- nach dem Leben trachteten.~ [HICCUP]
 									++ ~Gut. Wie komme ich dorthin?~ + need_beholder_eyestalk_05
 									END
 									
@@ -408,7 +413,7 @@ END
 												IF ~~ THEN BEGIN not_have_ladder
 												SAY ~Dann müsst Ihr Euch eine -*Hicks*!- neue Leiter besorgen. Mit derlei Dingen kenne ich mich nicht -*Hicks*!- gut aus. Ich denke, in der Zi-*Hicks*!-sterne, in der auch das blutige Boll-*Hicks*!-werk beheimatet ist, könntet Ihr jedoch fündig werden.~ [HICCUP]
 												=
-												~Fragt einmal bei Thif*hicks*... ich meine *Hicks*tic... ach, verdammt... Thiftic! Er sollte solche Dinge im *Hicks*gebot haben.~
+												~Fragt einmal bei Thif*hicks*... ich meine *Hicks*tic... ach, verdammt... Thiftic! Er sollte in seinem Laden "Schürferbedarf" solche Dinge im *Hicks*gebot haben.~
 												IF ~~ THEN DO ~SetGlobal("AC#Fruntuck","GLOBAL",1)
 												SetGlobal("AC#Fruntuck_Levitate","GLOBAL",2)
 												AddJournalEntry(@64201,QUEST)

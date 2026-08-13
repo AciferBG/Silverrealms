@@ -232,7 +232,7 @@ END
 		END
 
 		IF ~~THEN BEGIN reputation_low
-		SAY ~Ihr mögt zwar nicht immer die edelsten Absichten an den Tag legen, <CHARNAME>, aber Eure Beweggründe sind für mich dennoch nachvollziehbar. Bei Ellhimar hingegen tappe ich im Dunkeln.~
+		SAY ~Ihr mögt zwar nicht immer die edelsten Manieren an den Tag legen, <CHARNAME>, aber Eure Beweggründe sind für mich dennoch nachvollziehbar. Bei Ellhimar hingegen tappe ich im Dunkeln.~
 		IF ~~ THEN GOTO further_investigation
 		END
 
@@ -244,7 +244,7 @@ END
 // Quest: Temple of Oghma
 
 			IF ~~THEN BEGIN further_investigation
-			SAY ~Eure Beobachtungen haben mich leider nicht beruhigt, sondern eher meine Zweifel genährt. Allerdings war Ellhimar bisher immer ein Mensch mit edelsten Absichten. Ich brauche die Meinung eines weiteren Bewohners Iltkazars, um sicher zu sein, dass ich dem Magier kein Unrecht tue.~
+			SAY ~Eure Beobachtungen haben mich leider nicht beruhigt, sondern eher meine Zweifel genährt. Allerdings war Ellhimar bisher immer ein Mensch mit guten Absichten. Ich brauche die Meinung eines weiteren Bewohners Iltkazars, um sicher zu sein, dass ich dem Magier kein Unrecht tue.~
 			=
 			~Ganz am Rande der Stadt befindet sich ein kleiner Schrein, der dem Menschengott Oghma geweiht ist.~
 			++ ~Ihr verehrt hier unten Oghma?~ + oghma_01

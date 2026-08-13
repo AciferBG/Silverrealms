@@ -402,11 +402,11 @@ END
 	END
 
 	IF ~~ THEN BEGIN what_next_01
-	SAY ~Mit der Patrouille soll sich zunächst die Bronzemaske weiter befassen. Ich möchte wissen, was es mit den Illithidenköpfen auf sich hat! Wer hat sie abgetrennt? Unsere eigenen Leute? Jemand anderes? Und einige Priester sollen sich dieses Symbol ansehen und untersuchen, ob ein feindlicher Dweomer darin enthalten ist. Das wird eine Weile dauern, denn ich erwarte, dass dieser Vorfall gründlich untersucht wird!~ 
+	SAY ~Mit der toten Patrouille soll sich zunächst die Bronzemaske weiter befassen. Und einige Priester sollen sich dieses merkwürdige Symbol ansehen. Wir erwarten, dass dieser Vorfall gründlich untersucht wird!~ 
 	=
-	~Und die *delvesonns* sollen den Gefallenen ein würdiges Begräbnis geben. Solange dieser Vorfall untersucht wird, müssen wir uns weiteren Fragen widmen.~
+	~Solange dieser Vorfall untersucht wird, müssen wir uns weiteren Fragen widmen.~
 	=
-	~<CHARNAME> hat <HISHER> Versprechen gehalten und unser Vertrauen wirklich verdient, verehrte Ratsmitglieder. Dafür gebührt <PRO_HIMHER> unser aufrichtiger Dank.~ 
+	~<CHARNAME> hat <HISHER> Versprechen gehalten und unser Vertrauen verdient, verehrte Ratsmitglieder. Dafür gebührt <PRO_HIMHER> unser aufrichtiger Dank.~ 
 	IF ~~ THEN + discussion
 	END
 
@@ -973,7 +973,7 @@ IF ~~ THEN EXTERN ~AC#GROM1~ gromi_boat_sorni
 END
 
 IF ~~THEN BEGIN illithid_02
-SAY ~Illithiden so nahe vor unseren Häusern! Wie sollen wir weiter verfahren, Meister Gromi?~
+SAY ~Illithiden so nahe vor unseren Häusern! Wie sollen wir weiter verfahren, Gromi?~
 IF ~~ THEN EXTERN ~AC#GROM1~ what_next_01
 END
 

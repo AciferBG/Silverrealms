@@ -184,38 +184,38 @@ Vor den Toren Iltkazars ist eine Kampftruppe der Drow vorbeigezogen, die von ein
 @50021   = ~Die Zofe Lolths
 
 Ich habe die Drow-Priesterin getötet. Jetzt muss ich nur noch ihren Kopf zu Bresk Steinschulter bringen.~
-//___________________________Der missmutige Magier
-@50600   = ~Ein Gefallen für Vronia
+//___________________________Ein ungewöhnlicher Gast
+@50600   = ~Ein ungewöhnlicher Gast
 
 Vronia Eisenbieger hat mich in Iltkazar um Hilfe gebeten. Ich finde sie in ihrem Haus im Osten der Stadt.~
-@50601   = ~Der missmutige Magier
+@50601   = ~Ein ungewöhnlicher Gast
 
 Vronia Eisenbieger hat mich gebeten, dem Magier Ellhimar, einem Menschen von der Oberfläche, einen Besuch abzustatten, da sie der Meinung ist, dass etwas mit ihm nicht stimmt. Vielleicht freut es ihn ja, wieder ein Gesicht von der Oberfläche zu sehen.~
-@50602   = ~Der missmutige Magier
+@50602   = ~Ein ungewöhnlicher Gast
 
 Ich habe mich mit Ellhimar unterhalten. Dafür, dass er aus der Nähe Amns kommt, hat er überraschend wenig Ahnung von den Gebieten, die ein Gelehrter von dort eigentlich kennen sollte. Ich sollte Vronia unterrichten, dass ich meine Zweifel habe, ob er wirklich aus der Region stammt, die er vorgibt.~
-@50603   = ~Der missmutige Magier
+@50603   = ~Ein ungewöhnlicher Gast
 
 Vronia möchte, dass ich mich mit Neeritha Runenschrift über Ellhimar, den Magier unterhalte. Überraschenderweise leben in Iltkazar einige Anhänger Oghmas, und Neeritha unterhält einen kleinen Schrein zu seinen Ehren im Südosten der Stadt.~
-@50604   = ~Der missmutige Magier
+@50604   = ~Ein ungewöhnlicher Gast
 
 Neeritha hat mir berichtet, dass sich Ellhimar seit Längerem auch in ihren Augen sonderbar verhält. Offenbar suchte er nach einem Weg, König Mith Barak zu helfen und ist nach einem Ausflug in eine alte Mine namens "Spinnenschächte" wie verwandelt zurückgekommen. Ich möchte gar nicht wissen, woher diese Mine ihren Namen erhalten hat. Jedenfalls sollte ich Vronia von dieser Erkenntnis berichten.~
-@50607   = ~Der missmutige Magier
+@50607   = ~Ein ungewöhnlicher Gast
 
 Vronia ist der Meinung, dass man Ellhimar besser beobachten müsste. Ich soll zuerst Sorni Arnschädel in den Schmiedehallen im Westen der Stadt aufsuchen und sie um einen Vorwand bitten, Ellhimar aus seinem Haus zu locken. Danach habe ich ein wenig Zeit, einen verzauberten Runenstein in Ellhimars Schreibtischschublade zu legen, um zu erkennen, ob er etwas Böses im Schilde führt.~
-@50608   = ~Der missmutige Magier
+@50608   = ~Ein ungewöhnlicher Gast
 
 Sorni Arnschädel möchte, dass ich Ellhimar in die Azerkyn-Halle bestelle. Dies sollte mir Zeit verschaffen, den Runenstein, den mir Vronia gegeben hat, in seinem Schreibtisch zu platzieren.~
-@50609   = ~Der missmutige Magier
+@50609   = ~Ein ungewöhnlicher Gast
 
 Ellhimar hat sich tatsächlich zu Sorni aufgemacht, und ich habe Zeit, den Runenstein in seinem Schreibtisch zu platzieren.~
-@50610   = ~Der missmutige Magier
+@50610   = ~Ein ungewöhnlicher Gast
 
 Ellhimar mochte es gar nicht, dass ich mich in seinem Zuhause umsehe und hat mich angegriffen.~
-@50611   = ~Ein Drow?
+@50611   = ~Ein ungewöhnlicher Gast
 
 Nach seinem Tod hat sich Ellhimars Leiche in einen Dunkelelfen verwandelt! Ich sollte den Körper Vronia zeigen. Ich bin gespannt, was sie von dieser Entwicklung hält.~
-@50612   = ~Der missmutige Magier
+@50612   = ~Ein ungewöhnlicher Gast
 
 Ich habe Vronia von meinem Kampf mit "Ellhimar", dem Drow erzählt. Sie war geschockt und ist umgehend zum Ratsgebäude aufgebrochen. Ich denke, ich habe nun etwas gut bei ihr.~
 @50700   = ~Verlorene Erinnerungen
@@ -556,10 +556,10 @@ Ich habe die Außenbezirke der ehemaligen Stadt der Duergar betreten und hoffe, 
 @62059	= ~Verrat in Barakuir
 
 Ruvan Steinschulter ist aus dem Rat ausgeschlossen worden und muss jetzt die nächste Zeit im Gefängnis der Stadt unter der Bronzemaske verbringen. Eine gerechte Strafe dafür, dass er mich in Barakuir dem Tod überlassen wollte.~
-@62060	= ~Ellhimar, der Magier
+@62060	= ~Ein ungewöhnlicher Gast
 
 Im Auftrag des Rates soll ich mich mit Vronia in Ihrer Behausung abstimmen, um dem Magier Ellhimar auf den Zahn zu fühlen.~
-@62061	= ~Ellhimar, der Magier
+@62061	= ~Ein ungewöhnlicher Gast
 
 Da ich das Rätsel um den Magier Ellhimar gelöst habe sollte ich erneut im Regentschaftsrat vorbeisehen, wie er mit dieser Nachricht umgeht.~
 

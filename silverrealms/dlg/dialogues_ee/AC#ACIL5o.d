@@ -68,7 +68,7 @@ END
 							END
 							
 								IF ~~ THEN BEGIN nightwars
-								SAY ~Irgendein Krieg, den die Zwerge Shanatars in einem vergangenen Zeitalter gegen die Dunkelelfen ausgefochten haben. Mehr weiß ich auch nicht. Darüber solltet Ihr mit Bettargh Abgrundlied in der Halle der Runensteine, der großen Bibliothek Dugmarens im Nordosten der Stadt, reden.~
+								SAY ~Irgendein Krieg, den die Zwerge Shanatars in einem vergangenen Zeitalter gegen die Dunkelelfen ausgefochten haben. Mehr weiß ich auch nicht.~
 								++ ~Was könnte Ellhimar in den Spinnenschächten gesucht haben?~ + ellhimar_search_03
 								END
 								

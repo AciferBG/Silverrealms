@@ -4,7 +4,7 @@
 
 BEGIN ~AC#59DW2~
 
-IF ~NumTimesTalkedTo(0)~ THEN BEGIN 1
+IF ~True()~ THEN BEGIN 1
 SAY ~Seid gegrüßt, <RACE>!~
 ++ ~Was macht Ihr hier?~ + i_am_the_watermaster
 ++ ~Ich muss weiter.~ + bye

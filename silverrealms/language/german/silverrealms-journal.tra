@@ -401,26 +401,26 @@ Ich habe das Buch 'Die leisen Stimmen der Wahrheit' gefunden. Nun muss ich es zu
 @57110  = ~Oghmas Lehren für Iltkazar
 
 Neeritha Runenschrift war sehr erfreut darüber, dass ich ihr das Buch überbracht habe.~
-//___________________________Die Rettung von Turbaern Ghalmrin
+//___________________________Aufruhr im Tempel Dumathoins
 @58001  = ~Aufruhr im Tempel Dumathoins
 
 Irgendetwas ist im Tempel Dumathoins passiert, das die Zwerge dort sehr beunruhigt. Ich sollte mich umsehen und nach jemandem suchen, der mir mehr über die Ereignisse sagen kann.~
-@58004  = ~Ein Weg nach unten in die Krypta
+@58004  = ~Aufruhr im Tempel Dumathoins
 
 Da die Durchgänge in die tieferen Krypten des Tempels verschlossen sind, möchten die Zwerge mit Hilfe eines Lastenaufzuges Verstärkung nach unten schicken. Dies wäre ein gute Möglichkeit, meinen Mut unter Beweis zu stellen- oder meine Torheit.~
-@58005  = ~Ein Weg nach unten in die Krypta
+@58005  = ~Aufruhr im Tempel Dumathoins
 
 Ich habe mich bereiterklärt, nach unten in die Krypta gelassen zu werden. Dort muss ich den "Hohen Omlar" Turbaern Ghalmrin finden. Er ist der Hohepriester des Tempels und wird wissen, wie weiter zu verfahren ist.~
-@58006  = ~Die Rettung von Turbaern Ghalmrin
+@58006  = ~Aufruhr im Tempel Dumathoins
 
 Ich habe den Priester Turbaern gefunden. Er ist in sehr schlechtem Zustand. Er hat mir in aller Kürze berichtet, was sich hier unten zugetragen hat: Offensichtlich hat eine Zwergin namens Durhgathu Maendrar mit Hilfe eines heiligen Hammers die Schutzrunen, die sich hier unten befinden, zerstört. Was immer sie vorhat, ich muss sie aufhalten. Da viele Türen über einen Sicherheitsmechanismus verfügen, sollte ich erst die Maschinen, die dieses Stockwerk mit Dampf versorgen, wieder in Betrieb nehmen, um zumindest eine Tür öffnen zu können. Dies bringt mich dann hoffentlich näher zu der verrückten Zwergin. Ich bin gespannt, was die Zwergin mit all dem Chaos bezwecken will - ich fürchte, nichts Gutes.~
-@58007  = ~Die Rettung von Turbaern Ghalmrin
+@58007  = ~Aufruhr im Tempel Dumathoins
 
 Durhgathu Maendrar, die Zwergin, die hinter all dem Chaos steckt, ist tot. Sie hatte einen Dämon beschworen und deshalb vorher mit Hilfe des Hammers die Schutzrunen außer Kraft gesetzt. Ich sollte den Hammer an mich nehmen und mit Turbaern schnell von diesem Ort verschwinden.~
-@58008  = ~Die Rettung von Turbaern Ghalmrin
+@58008  = ~Aufruhr im Tempel Dumathoins
 
 Da Turbaern es alleine nicht schaffen würde, werde ich ihn Huckepack aus der Krypta nach oben tragen. Er wird die Tür zur Treppe öffnen können. Wenn ich das obere Stockwerk erreicht habe, werden sich die Kleriker Dumathoins hoffentlich schnell um den Priester kümmern können.~
-@58009  = ~Die Rettung von Turbaern Ghalmrin
+@58009  = ~Aufruhr im Tempel Dumathoins
 
 Ich habe Turbaern den Klerikern Dumathoins übergeben. Mit ihrer Hilfe dürfte es nicht lange dauern, bis der Priester wieder genesen ist. Ich sollte in den nächsten Tagen im Tempel wieder nach ihm sehen, um die ganze Sache aufzuarbeiten.~
 @58020  = ~Der Hammer Dumathoins
@@ -485,15 +485,15 @@ Der Regentschaftsrat hat mich beauftragt, außerhalb von Iltkazar nach einer ver
 
 Ich habe die Patrouille gefunden - zumindest das, was davon übrig ist. Es scheint ein harter Kampf stattgefunden zu haben. Keiner der Zwerge hat überlebt. Ich sollte dem Regentschaftsrat wieder Bericht erstatten.~
 
-//___________________________Ein Weg in die Spinnenschächte
+//___________________________Die Spinnenschächte
 
-@62020  = ~Ein Weg in die Spinnenschächte
+@62020  = ~Die Spinnenschächte
 
 Der Regentschaftsrat möchte, dass ich den Priester Turbaern Ghalmrin in der "Halle der Omlare" bitte, den Runenstein für den Zugang in die versiegelte Mine der "Spinnenschächte" herauszugeben.~
-@62021  = ~Ein Weg in die Spinnenschächte
+@62021  = ~Die Spinnenschächte
 
 Turbaern Ghalmrin hat es abgelehnt, den Siegelstein für die Spinnenschächte herauszugeben. Diese schlechte Nachricht muss ich jetzt dem Regentschaftsrat übermitteln. Wie es danach weitergehen soll, weiß ich nicht.~
-@62022  = ~Ein Weg in die Spinnenschächte
+@62022  = ~Die Spinnenschächte
 
 Ich habe den Schlüsselstein für das Tor in die Spinnenschächte erhalten und sollte nun in diesem Gebiet nach Antworten auf den mysteriösen Schlaf König Mith Baraks suchen.~
 // Im Netz der Spinne

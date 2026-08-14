@@ -10,10 +10,10 @@ IF ~Global("AC#EllhimarHurt","ACIL5E",1)~ THEN BEGIN ellhimar_hurt
 SAY  ~Verdammt sollt Ihr sein! Besiegt von einem <PRO_RACE>! Die einzige Genugtuung in meinem Tode wird sein, dass diese Stadt dem Untergang geweiht sein wird!~
 IF ~~ THEN DO ~
 			SetGlobal("AC#EllhimarHurt","ACIL5E",2)
+			AddexperienceParty(3000)
 			DropItem("AC#DDROW",[-1.-1])
 			ReallyForceSpell(Myself,LONG_RED_MIGHT)
 			Kill(Myself)
-			//DestroySelf()
 			~ EXIT
 END
 
@@ -301,10 +301,10 @@ IF ~Global("AC#EllhimarHurt","ACIL5E",1)~ THEN BEGIN ellhimar_hurt
 SAY  ~Verdammt sollt Ihr sein! Besiegt von einem <PRO_RACE>! Die einzige Genugtuung in meinem Tode wird sein, dass diese Stadt dem Untergang geweiht sein wird!~
 IF ~~ THEN DO ~
 			SetGlobal("AC#EllhimarHurt","ACIL5E",2)
+			AddexperienceParty(3000)
 			DropItem("AC#DDROW",[-1.-1])
 			ReallyForceSpell(Myself,LONG_RED_MIGHT)
 			Kill(Myself)
-			//DestroySelf()
 			~ EXIT
 END
 

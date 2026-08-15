@@ -1119,12 +1119,11 @@ Die Scheibe reagiert auf das Kommandowort ihres Besitzers und gleitet lautlos ü
 @894 = ~Felsbrocken~
 @895 = ~Stein der Erdelementarbeschwörung~
 @896 = ~Ein seltsam geformter Felsbrocken mit eindeutig magischen Fähigkeiten.~
-@897 = ~Stein der Erdelementarbeschwörung
-Steine dieser Art werden häufig von den Tiefengnomen eingesetzt, um bei Bergbautätigkeiten und im Kampfe zusätzliche Hilfe zu beschwören. Aufgrund ihrer Verbundenheit mit dem Fels erscheinen die beschworenen Elementare stets freiwillig und dienen dem Träger bereitwillig. In diesem Falle habt Ihr den Stein von dem Erfinder Schnaiklu Kobaltwächter erhalten und der Name des Erdelementares lautet "Grav".
+@897 = ~Steine dieser Art werden häufig von den Tiefengnomen eingesetzt, um bei Bergbautätigkeiten und im Kampfe zusätzliche Hilfe zu beschwören. Aufgrund ihrer Verbundenheit mit dem Fels erscheinen die beschworenen Elementare stets freiwillig und dienen dem Träger treu und sicher. 
 
 SPEZIFISCHE EIGENSCHAFTEN:
 
-Besondere Fähigkeiten: Beschwört einmal täglich einen Erdelementar für eine Minute.~
+Beschwört einmal täglich einen Erdelementar für eine Minute.~
 @898 = ~Clan Eisenbieger~
 @899 = ~Clan Arnschädel~
 @900 = ~Clan Steinschulter~
@@ -2129,8 +2128,8 @@ Schattenmastiff beschwören (1x täglich)
 Fähigkeiten des Schattenmastiff:
 – Angriffe pro Runde: 3/2
 – Schaden: 1W8 (Stich)
-– kann kurzzeitig in die Schatteneben wechseln und sich dadurch unsichtbar machen
-– Schaden durch interhältigen Angriff: x2
+– kann kurzzeitig in die Schattenebene wechseln und sich dadurch unsichtbar machen
+– Schaden durch hinterhältigen Angriff: x2
 
 Gewicht: 0~
 @8120 = ~Zwergenbart (handgearbeitet)~
@@ -2292,6 +2291,22 @@ EIGENSCHAFTEN:
 Glück: +1
 
 Gewicht: 0~
+@8160 = ~Mächtiges Multfunktionsvisier~
+@8161 = ~Das Mächtige Multifunktionsvisier ist eine komplexe gnomische Apparatur aus Linsen, Kristallen und fein justierten Metallstreben. 
+
+Es analysiert fortwährend die Umgebung, berechnet Flugbahnen, stabilisiert die Gedanken seines Trägers und gleicht selbst kleinere Fehlentscheidungen mit verblüffender Zuverlässigkeit aus.
+
+EIGENSCHAFTEN:
+
+- Gefahrenberechnung: RK-Bonus von -2 gegen Geschosse
+- Geistige Stabilisierung: Immunität gegen Bezauberung und Verwirrung
+- Gnomischer Entfernungsmesser: +2 ETW0 mit Fernkampfwaffen
+- Fehlertoleranz: Glück +1
+
+Gewicht: 0
+~
+@8162 = ~Seltsame gnomische Apparatur~
+@8163 = ~Ein kompliziertes Geflecht aus Metallstreben, kleinen Kristallen und beweglichen Linsen. Wozu diese offenbar für den Kopf bestimmte gnomische Konstruktion dient, ist auf den ersten Blick nicht zu erkennen.~
 
 
  

@@ -2723,7 +2723,7 @@ COPY ~silverrealms/cre/AC#5UCE2.cre~ ~override~ // Iltkazar Soldier #1 guarding 
   SAY NAME1 @838 SAY NAME2 @838
   
 COPY ~silverrealms/cre/AC#S#EAR.cre~ ~override~ // Grav, earth elemental
-  SAY NAME1 @893 SAY NAME2 @893
+  //SAY NAME1 @893 SAY NAME2 @893
   
 COPY ~silverrealms/cre/AC#52DEN.cre~ ~override~ // Dendritic armor seller Thardumin Goliew
   SAY NAME1 @905 SAY NAME2 @905

@@ -480,10 +480,6 @@ IF ~~ THEN BEGIN oh_hello
 SAY ~Huch! Oh, Hallo <RACE>! Ich hatte Euch gar nicht bemerkt.~
 IF ~Global("AC#talkedSchnaiklu","ACIL53",0)~ THEN REPLY ~Wer seid Ihr?~ + who_are_you
 IF ~Global("AC#metagolem","ACIL53",0)~ THEN REPLY ~Was ist das für ein seltsam glänzendes Wesen neben Euch?~ + strange_thing
-// old - metagolem for bettargh
-/*IF ~Global("AC#RC_Bettargh_Third","GLOBAL",2)
-Global("AC#MetagolemIngredients","ACIL53",0)~ THEN REPLY ~Bettargh meinte, Ihr bräuchtet Hilfe wegen eines speziellen Golems.~ + bettargh_asked_for_metagolem
-*/
 IF ~Global("AC#MetagolemIngredients","ACIL53",1)~ THEN REPLY ~Wegen Eures Metagolems...~ + will_you_do_it
 IF ~Global("AC#MetagolemIngredients","ACIL53",2)~ THEN REPLY ~Wegen Eures Metagolems...~ + about_metagolem_02
 IF ~GlobalGT("AC#MetagolemIngredients","ACIL53",0)
@@ -782,15 +778,15 @@ IF ~~ THEN EXTERN ~AC#53SV1~ first_task_metagolem
 // Chain #2: Golem bye
 CHAIN AC#GOLME bye_new
 ~Nichts, Meister.~
-== AC#53SV1 ~Ihr seid der nutzloseste Golem, den ich je gesehen habe.~ 
-== AC#GOLME ~Diese Einschätzung reduziert Eure Erwartungen und erhöht meine Zufriedenheit.~
+== AC#53SV1 ~Ihr seid der nutzloseste Golem, den ich je geschaffen habe!~ 
+== AC#GOLME ~Diese Einschätzung reduziert zwar Eure Erwartungen, erhöht jedoch meine Zufriedenheit.~
 == AC#53SV1 ~Also gut... bleibt einfach hier stehen und tut nichts.~ 
 == AC#GOLME ~Auftrag verstanden. 1 von 1 Aufgaben erfolgreich abgeschlossen!~
 == AC#53SV1 ~*Seufz.* Was soll ich nur mit so einem untätigen Golem anfangen?~
-== AC#53SV1 ~Jedenfalls ein Dank Euch, <CHARNAME>. Ihr habt mir bei meiner Mühe sehr geholfen, und dafür bin ich Euch dankbar! Wenngleich das Ergebnis nicht ganz meinen Erwartungen entspricht. Hier habt Ihr einen besonderen Brocken Fels, der mir bei den Streifzügen meiner Jugend sehr viel geholfen hat.~
+== AC#53SV1 ~Jedenfalls ein Dank Euch, <CHARNAME>. Ihr habt mir sehr geholfen, wenngleich das Ergebnis nicht ganz meinen Erwartungen entspricht. Hier - ich habe noch einen Hut, den ich nicht mehr benötige. Diesen könnt Ihr sicher besser gebrauchen als ich. Er soll Lohn für Eure Mühen sein.~
 END
 IF ~~ DO ~SetGlobal("AC#MetagolemIngredients","ACIL53",8)
-GiveItemCreate("AC#RCKEL",LastTalkedToBy,1,1,1)~ EXIT
+GiveItemCreate("AC#ILMFV",LastTalkedToBy,1,1,1)~ EXIT
 
 // Various priests of Dugmaren
 BEGIN ~AC#IL53S~ 

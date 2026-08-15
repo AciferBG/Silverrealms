@@ -22,8 +22,10 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("EnteredArea","ACIL58",1)
-		SetMusic(NIGHT,%AC#IL58%)
-		SetMusic(DAY,%AC#IL58%)	
+		SetMusic(NIGHT,%AC#IL55%)
+		SetMusic(DAY,%AC#IL55%)	
+		//SetMusic(NIGHT,%AC#IL58%)
+		//SetMusic(DAY,%AC#IL58%)	
 END
 
 IF

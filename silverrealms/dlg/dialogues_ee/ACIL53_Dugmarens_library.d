@@ -429,12 +429,35 @@ Dialog Metagolem
 *******************************************************************************************************/
 BEGIN ~AC#GOLME~
 
-/*
-IF ~~ THEN BEGIN golem_name
-SAY ~Mein Rat dient nur Eurer Sicherheit.~
-IF ~~ THEN EXTERN ~AC#53SV1~ golem_name_02
-END	
-*/
+IF ~RandomNum(6,1)~ THEN BEGIN 1
+  SAY ~Metagolem ist betriebsbereit. Von einer tatsächlichen Inbetriebnahme wird jedoch abgeraten.~ [iron01]
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(6,2)~ THEN BEGIN 2
+  SAY ~Auftrag registriert. Ausführung auf unbestimmte Zeit verschoben.~ [iron01]
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(6,3)~ THEN BEGIN 3
+  SAY ~Metagolem könnte diese Aufgabe ausführen. Metagolem sieht hierfür jedoch keine Notwendigkeit.~ [iron01]
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(6,4)~ THEN BEGIN 4
+  SAY ~Bewegung führt zu erhöhtem Verschleiß. Metagolem bleibt daher stehen.~ [iron01]
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(6,5)~ THEN BEGIN 5
+  SAY ~Bitte wendet Euch mit Eurem Anliegen an eine weniger vernünftige Konstruktion.~ [iron01]
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(6,6)~ THEN BEGIN 6
+  SAY ~Metagolem befindet sich derzeit in dem optimalen Zustand vollständiger Untätigkeit.~ [iron01]
+  IF ~~ THEN EXIT
+END
 /*******************************************************************************************************
 Dialog Metagolem 2
 *******************************************************************************************************/

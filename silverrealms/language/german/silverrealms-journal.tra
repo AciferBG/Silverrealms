@@ -361,6 +361,9 @@ Ich habe die Rattenschwänze bei Hamli abgeliefert und einen Helm als Belohnung 
 @54601  = ~Die Spitzhacke
 
 Ich soll eine Spitzhacke zu einem zwergischen Bergarbeiter namens Dhundala zur Delvarsgilde in der Halle der Omlare bringen.~
+@54602  = ~Die Spitzhacke
+
+Ich habe die Spitzhacke bei Dhundala in der Halle der Omlare abgeliefert und dafür einen Edelstein erhalten.~
 //___________________________Unter Arrest in Iltkazar
 @55100  = ~Gefangener in der Mithrilstadt
 
@@ -413,7 +416,7 @@ Da die Durchgänge in die tieferen Krypten des Tempels verschlossen sind, möcht
 Ich habe mich bereiterklärt, nach unten in die Krypta gelassen zu werden. Dort muss ich den "Hohen Omlar" Turbaern Ghalmrin finden. Er ist der Hohepriester des Tempels und wird wissen, wie weiter zu verfahren ist.~
 @58006  = ~Aufruhr im Tempel Dumathoins
 
-Ich habe den Priester Turbaern gefunden. Er ist in sehr schlechtem Zustand. Er hat mir in aller Kürze berichtet, was sich hier unten zugetragen hat: Offensichtlich hat eine Zwergin namens Durhgathu Maendrar mit Hilfe eines heiligen Hammers die Schutzrunen, die sich hier unten befinden, zerstört. Was immer sie vorhat, ich muss sie aufhalten. Da viele Türen über einen Sicherheitsmechanismus verfügen, sollte ich erst die Maschinen, die dieses Stockwerk mit Dampf versorgen, wieder in Betrieb nehmen, um zumindest eine Tür öffnen zu können. Dies bringt mich dann hoffentlich näher zu der verrückten Zwergin. Ich bin gespannt, was die Zwergin mit all dem Chaos bezwecken will - ich fürchte, nichts Gutes.~
+Ich habe den Priester Turbaern Ghalmrin gefunden. Er ist in sehr schlechtem Zustand und hat mir in aller Kürze berichtet, was sich hier unten zugetragen hat: Offensichtlich hat eine Zwergin namens Durhgathu Maendrar mit Hilfe eines heiligen Hammers die Schutzrunen, die sich hier unten befinden, zerstört. Da einige Türen über einen Sicherheitsmechanismus verfügen, sollte ich erst die Maschinen, die dieses Stockwerk mit Dampf versorgen, wieder in Betrieb nehmen, um den Zugang nach Westen öffnen zu können.~
 @58007  = ~Aufruhr im Tempel Dumathoins
 
 Durhgathu Maendrar, die Zwergin, die hinter all dem Chaos steckt, ist tot. Sie hatte einen Dämon beschworen und deshalb vorher mit Hilfe des Hammers die Schutzrunen außer Kraft gesetzt. Ich sollte den Hammer an mich nehmen und mit Turbaern schnell von diesem Ort verschwinden.~
@@ -422,14 +425,14 @@ Durhgathu Maendrar, die Zwergin, die hinter all dem Chaos steckt, ist tot. Sie h
 Da Turbaern es alleine nicht schaffen würde, werde ich ihn Huckepack aus der Krypta nach oben tragen. Er wird die Tür zur Treppe öffnen können. Wenn ich das obere Stockwerk erreicht habe, werden sich die Kleriker Dumathoins hoffentlich schnell um den Priester kümmern können.~
 @58009  = ~Aufruhr im Tempel Dumathoins
 
-Ich habe Turbaern den Klerikern Dumathoins übergeben. Mit ihrer Hilfe dürfte es nicht lange dauern, bis der Priester wieder genesen ist. Ich sollte in den nächsten Tagen im Tempel wieder nach ihm sehen, um die ganze Sache aufzuarbeiten.~
-@58020  = ~Der Hammer Dumathoins
+Ich habe Turbaern den Klerikern Dumathoins übergeben. Mit ihrer Hilfe dürfte es nicht lange dauern, bis der Priester wieder genesen ist. Ich sollte ihn im Tempel Dumathoins aufsuchen, um die ganze Sache aufzuarbeiten.~
+@58020  = ~Aufruhr im Tempel Dumathoins
 
 Ich habe den Hammer vom Leichnam Durhgathus geborgen. Turbaern wird mir sagen können, was ich weiter mit ihm machen soll.~
-@58021  = ~Der Hammer Dumathoins
+@58021  = ~Aufruhr im Tempel Dumathoins
 
 Turbaern bat mich, den Hammer wieder an seinen angestammten Platz im Nordosten des Tempels zu legen. Dies scheint eine große Ehre zu sein.~
-@58022  = ~Der Hammer Dumathoins
+@58022  = ~Aufruhr im Tempel Dumathoins
 
 Ich habe den Hammer Dumathoins auf dem Sockel niedergelegt und dafür den Segen Dumathoins erhalten. Nun müsste es mir möglich sein, den Tempel wieder zu verlassen und mich anderen Aufgaben zu widmen.~
 //___________________________Hizagkuur

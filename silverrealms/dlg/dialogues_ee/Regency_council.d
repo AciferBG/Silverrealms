@@ -1328,7 +1328,7 @@ CHAIN AC#VRON1 NEW_acil20_portal_investigate
 == AC#CHEM1 ~Wir sollten dieses magische Ding dann sofort zerstören!~
 == AC#VRON1 ~Das sollten wir. Doch nicht sofort. Ich habe einen Vorschlag.~
 == AC#FENY1 ~Wir schicken <CHARNAME> durch dieses Portal!~
-== AC#VRON1 ~So etwas hatte ich mir auch überlegt. Ich möchte gemeinsam mit Charname dieses Portal untersuchen.~
+== AC#VRON1 ~So etwas hatte ich mir auch überlegt. Ich möchte gemeinsam mit <CHARNAME> dieses Portal untersuchen.~
 END
 IF ~~ THEN REPLY ~Na toll. Ihr wollt mich durch ein Portal jagen?~ EXTERN ~AC#VRON1~ NEW_acil20_portal_investigate_02
 

@@ -312,7 +312,7 @@ END
 IF ~~ THEN BEGIN has_pickaxe
 SAY ~Oh! Sagt das doch gleich! Das ist ein gutes Stück. Hoffentlich hält sie länger als die letzte, die ich bei Thifthic in Auftrag gegeben hatte.~
   IF ~~ THEN DO ~TakePartyItem("AC#SRPAX")
-  EraseJournalEntry(@54601)~ GOTO no_thanks_01
+  AddJournalEntry(@54602,QUEST_DONE)~ GOTO no_thanks_01
 END
 
 IF ~~ THEN BEGIN no_thanks_01
@@ -474,7 +474,7 @@ END
 				SetGlobalTimer("Turbaern_recovered","ACIL58",ONE_DAY)
 				ActionOverride("AC#58DW9",EscapeAreaObject("TrACIL57"))
 				ActionOverride("ac#58dw8",EscapeAreaObject("TrACIL50")) 
-				AddJournalEntry(@58009,QUEST_DONE)
+				AddJournalEntry(@58009,QUEST)
 				AddJournalEntry(@58021,QUEST)
 				AddexperienceParty(1000)
 				DisplayStringNoName(Player1,@1021)
@@ -549,3 +549,35 @@ END
 		AddJournalEntry(@58004,QUEST)~ EXIT
 		END
 	
+// Guards 
+BEGIN AC#58DW8
+
+IF ~RandomNum(6,1)~ THEN BEGIN 1
+  SAY ~Nicht jedes Geheimnis, das unter dem Stein liegt, will gefunden werden.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(6,2)~ THEN BEGIN 2
+  SAY ~Was hier ruht, bleibt ewig hier.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(6,3)~ THEN BEGIN 3
+  SAY ~Haltet Euch von den unteren Grabkammern fern.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(6,4)~ THEN BEGIN 4
+  SAY ~Die tiefsten Schätze Iltkazars gehören nicht den Lebenden.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(6,5)~ THEN BEGIN 5
+  SAY ~Die Omlare bewahren mehr als nur Gebeine.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(6,6)~ THEN BEGIN 6
+  SAY ~Wir bewachen die Toten. Manchmal auch vor den Lebenden.~
+  IF ~~ THEN EXIT
+END

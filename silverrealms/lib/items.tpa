@@ -256,7 +256,7 @@ COPY ~silverrealms/itm/AC#MES01.itm~         ~override/AC#MES01.itm~ // message:
   SAY NAME2 @46
   SAY DESC @47
 
-COPY_EXISTING ~key01.itm~   ~override/ac#key57.itm~   // Turbaern's key
+COPY ~silverrealms/itm/AC#KEY57.itm~    ~override~   // Turbaern's key
   SAY NAME1 @91
   SAY NAME2 @91
   SAY DESC @92

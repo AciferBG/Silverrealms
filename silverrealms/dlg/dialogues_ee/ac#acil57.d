@@ -74,7 +74,8 @@ END
 	
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN 1
 SAY  ~Wohlauf, Fremde! Seid Ihr die, die als Verstärkung geschickt wurden? Beim Wächter und Schild des Berges, Ihr kommt zu spät.~ [AC#ILTUA]
-++ ~Wir wurden von den anderen Priestern Dumathoins hier herunter geschickt, um Euch zu helfen. Wer seid Ihr und was ist hier passiert?~ + 2
+++ ~Wir wurden von den anderen Priestern Dumathoins hier herunter geschickt, um Euch zu helfen.~ + 2
+++ ~Wer seid Ihr und was ist hier passiert?~ + 2
 END
 
 IF ~~ THEN BEGIN 2
@@ -84,7 +85,7 @@ IF ~!IsValidForPartyDialog("Jaheira")~ THEN REPLY ~Was ist hier geschehen?~ + 3
 END
 
 IF ~~ THEN BEGIN 3
-   SAY ~Wir wurden von einer der Unseren hintergangen. Diese Zwergin, Durhgathu Maendrar, hat uns hierher gelockt. Ich hielt sie für eine viel versprechende angehende Priesterin Dumathoins, doch in Wahrheit diente sie niemals dem Hüter der Berge. Sie dient irgendwelchen dunklen Mächten und hofft, diese hier in den tiefsten Ebenen der Krypta freisetzen zu können.~
+   SAY ~Wir wurden von einer der Unseren hintergangen. Diese Zwergin, Durhgathu Maendrar, hat uns hierher gelockt. Ich hielt sie für eine viel versprechende angehende Priesterin Dumathoins, doch in Wahrheit diente sie niemals dem Hüter der Berge.~
    =
    ~Sie stahl den heiligen Hammer Dumathoins! Mit dessen Hilfe zerstörte sie die vielen Schutzrunen, die unserer Stadt hier unten seit Jahrhunderten Sicherheit und Obhut schenken.~
    =
@@ -93,29 +94,41 @@ IF ~~ THEN BEGIN 3
 END
 
 IF ~~ THEN BEGIN 4
-   SAY ~Ich weiß es nicht. Ich bin diesem Wesen nur um Haaresbreite entkommen, das könnt Ihr mir glauben. Es ist immer noch in der Kammer nebenan. All meine Zauber hatte ich gegen das Untier geschleudert, doch am Ende blieb mir nicht viel mehr, als die verdammte Decke einstürzen zu lassen. Letztendlich hat mir der Fels das Leben gerettet. All meine Gefährten hatten weniger Glück.~
+   SAY ~Ich weiß es nicht. Ich bin diesem Wesen nur um Haaresbreite entkommen, das könnt Ihr mir glauben. All meine Zauber hatte ich gegen das Untier geschleudert, doch am Ende blieb mir nicht viel mehr, als die verdammte Decke einstürzen zu lassen.~
+	=
+   ~Letztendlich hat mir der Fels das Leben gerettet. All meine Gefährten hatten weniger Glück.~
 ++ ~Was ist mit den Anderen passiert?~ + 5
 END
 
 IF ~~ THEN BEGIN 5
-   SAY ~Sie wurden von dem Wesen in Fetzen gerissen, und die, die flüchten konnten, wurden von Horden von Untoten, die ihren Gräbern entstiegen sind, überrannt. Ich konnte gerade noch die Türen zu den südlichen Krypten versiegeln, bevor die Monster auch über mich hergefallen wären. Ich hörte die Schreie meiner sterbenden Männer, und das Geräusch, wie die Untoten ihnen nach ihrem Tod das Fleisch von den Knochen abnagten, verfolgt mich noch bis jetzt. So liege ich nun hier und sterbe den Tod eines Feiglings, anstelle zu kämpfen und auf dem Schlachtfeld zu fallen.~
+   SAY ~Sie wurden von dem Wesen in Fetzen gerissen, und die, die flüchten konnten, wurden von Horden von Untoten, die ihren Gräbern entstiegen sind, überrannt.~
+	=
+~Ich konnte gerade noch die Türen zu den südlichen Krypten versiegeln, bevor die Monster auch über mich hergefallen wären. Ich hörte die Schreie meiner sterbenden Männer!~ 
+=
+~Das Geräusch, wie die Untoten ihnen nach ihrem Tod das Fleisch von den Knochen abnagten, verfolgt mich noch bis jetzt. So liege ich nun hier und sterbe den Tod eines Feiglings, anstelle zu kämpfen.~
 ++ ~Wir werden versuchen, Euch zu heilen.~ + 6
 END
 
 IF ~~ THEN BEGIN 6
-   SAY ~Nein, spart Euch Eure Zauber für die bevorstehenden Kämpfe auf. Ihr könnt mir einen anderen Dienst erweisen. Durhgathu Maendrar, diese Verräterin an unseren zwergischen Rasse, ist immer noch am Leben. Ich kann sie im nördlichen Altarraum hören, wie sie versucht, irgendeine Zeremonie vorzubereiten. Leider hat sie die Türen dort hinein verriegelt, doch es gibt eine Möglichkeit, diese wieder von außen zu öffnen. Ihr müsst Euch Zugang zum Altarraum verschaffen und die falsche Priesterin vernichten, bevor sie noch schlimmeres Unheil anrichten kann.~
-++ ~Wie soll ich die Tore öffnen?~ + 7
+   SAY ~Nein, spart Euch Eure Zauber für die bevorstehenden Kämpfe auf. Ihr könnt mir einen anderen Dienst erweisen.~ 
+   =
+   ~Durhgathu Maendrar, diese Verräterin an unseren zwergischen Rasse, ist immer noch am Leben. Ich kann sie im nördlichen Altarraum hören, wie sie versucht, irgendeine Zeremonie vorzubereiten. Sie hat die Türen dort hinein verriegelt, doch es gibt eine Möglichkeit, diese wieder von außen zu öffnen.~ 
+  IF ~~ THEN + 7
 END
 
 IF ~~ THEN BEGIN 7
-   SAY ~Die großen Steintore lassen sich mit Körperkraft allein nicht bewegen, auch wenn Ihr über die Stärke eines Riesen verfügen würdet. Wir benutzen Wasserdampf, um die Tore zu öffnen und zu schließen. Durhgathu hat den Druck abgedreht, bevor sie sich in der Kammer eingeschlossen hat. Glücklicherweise liegt der Regler hierfür außerhalb des Altarraumes, im Einbalsamierungsraum im Norden. Allerdings weiß ich nicht, welche Gefahren auf dem Weg dorthin auf Euch lauern, doch es ist die einzige Möglichkeit, den Machenschaften Durhgathus Einhalt zu gebieten.~
+   SAY ~Die großen Steintore lassen sich mit Körperkraft allein nicht bewegen, auch wenn Ihr über die Stärke eines Riesen verfügen würdet. Wir benutzen Wasserdampf, um die Tore zu öffnen und zu schließen.~ 
+   =
+   ~Durhgathu hat den Druck abgedreht, bevor sie sich in der Kammer eingeschlossen hat. Glücklicherweise liegt der Regler hierfür außerhalb des Altarraumes, im Einbalsamierungsraum im Norden. Ihr müsst Euch Zugang zum Altarraum verschaffen und die falsche Priesterin vernichten, bevor sie noch schlimmeres Unheil anrichten kann.~
    =
    ~Hier habe ich den Schlüssel zu der Tür in die südliche Krypta. Im Norden befindet sich eine Kammer, in der meine Priester allerlei Tränke gelagert haben. Rüstet Euch gut aus, denn die Gefahren hier sind zahlreich.~
 ++ ~Ich werde die Tore öffnen, die Priesterin besiegen und Euch danach retten.~ + 8
 END
 
 IF ~~ THEN BEGIN 8
-   SAY ~Um mich braucht Ihr Euch am wenigsten Sorgen zu machen. Ich wünschte, ich könnte Euch eine Hilfe sein, doch alles, was ich tun kann, ist hier liegen und für Euren Sieg beten.~ [AC#ILTUC]
+   SAY ~Um mich braucht Ihr Euch am wenigsten Sorgen zu machen.~ 
+   =
+   ~Ich wünschte, ich könnte Euch eine Hilfe sein, doch alles, was ich tun kann, ist hier liegen und für Euren Sieg beten.~ [AC#ILTUC]
    IF ~~ THEN DO ~GiveItemCreate("AC#KEY57",Player1,1,0,0)
 	AddJournalEntry(@58006,QUEST)~  EXIT
 END
@@ -231,9 +244,11 @@ IF ~~ THEN BEGIN 2
 END
 
 IF ~~ THEN BEGIN 3
-   SAY ~Sie...sie zogen in den Krieg... und ich... ich blieb hier. Ich musste verweilen- als Pfand. Ich musste warten -auf die Rückkehr meines treuen Prinzen. Doch er kam nicht, er konnte nicht, er kam nimmer mehr, denn die Zwerge hatten ihn verraten, hatten uns verraten, und mich, mich stolze Prinzessin... sie wollten mich nicht gehen lassen, sperrten mich ein- hinter kalten Mauern, unter kaltem Fels, und ich weinte, ich weinte... ich weinte... vergoss Tränen des Leids, der Liebe und des Zorns, bis ich keine Tränen mehr hatte, die ich vergießen konnte. Aber sie hatten keine Gnade, zeigten kein Erbarmen... ich musste bleiben, musste hoffen...~
+   SAY ~Sie...sie zogen in den Krieg... und ich... ich blieb hier. Ich musste verweilen- als Pfand. Ich musste warten -auf die Rückkehr meines treuen Prinzen. Doch er kam nicht, er konnte nicht, er kam nimmer mehr, denn die Zwerge hatten ihn verraten, hatten uns verraten, und mich, mich stolze Prinzessin... sie wollten mich nicht gehen lassen, sperrten mich ein- hinter kalten Mauern, unter kaltem Fels...~ 
    =
-   ~Doch nun bin ich frei, und suche meinen Gemahl. Oh Glaerzofir, mein Prinz, wo sied Ihr? Ihr seid fort, ich spüre es, und auch ich möchte gehen, doch ich kann nicht. Mein Herz hat vor langer Zeit aufgehört zu schlagen, und doch fühle ich noch etwas... ich fühle... Rache! Ich werde die Zwerge für das, was sie uns angetan haben, bezahlen lassen! Ihr räche uns, mein Liebster, und dann warte ich...~
+   ~Ich weinte, ich weinte... ich weinte... vergoss Tränen des Leids, der Liebe und des Zorns, bis ich keine Tränen mehr hatte, die ich vergießen konnte. Aber sie hatten keine Gnade, zeigten kein Erbarmen... ich musste bleiben, musste hoffen...~
+   =
+   ~Doch nun bin ich frei, und suche meinen Gemahl. Oh Glaerzofir, mein Prinz, wo seid Ihr? Ihr seid fort, ich spüre es, und auch ich möchte gehen, doch ich kann nicht. Mein Herz hat vor langer Zeit aufgehört zu schlagen, und doch fühle ich noch etwas... ich fühle... Rache! Ich werde die Zwerge für das, was sie uns angetan haben, bezahlen lassen! Ihr räche uns, mein Liebster, und dann warte ich...~
    =
    ~Ich warte auf Dich in den Gewölben des Todes mein Liebster!~ //[AC#BAN01]
    IF ~~ THEN DO ~SetGlobal("AC#Banshee_free","GLOBAL",1)

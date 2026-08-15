@@ -37,9 +37,11 @@ THEN
                 ApplyDamage(Player6,1,CRUSHING)
 		CreateCreature("ZOMBIE01",[440.2343],6)
 		CreateCreature("ZOMBIE01",[449.2360],11)
+		 SpawnPtSpawn("Spawn_zombie_entry_01")
+        SpawnPtSpawn("Spawn_zombie_entry_01")
 		Wait(2)
 		ScreenShake([50.50],15)
-		ActionOverride("AC#SKAR1",Shout(89))
+		//ActionOverride("AC#SKAR1",Shout(89))
 		FadeFromColor([30.0],0)
 END
 

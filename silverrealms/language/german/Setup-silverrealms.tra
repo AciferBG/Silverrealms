@@ -1589,6 +1589,13 @@ Charvekannathors Hort~
 // ACIL55 - Arnskullhall
 @6500 = ~Zur Azerkynhalle~
 
+// ACIL58 - Dumathoins Crypts
+@6801 = ~Zentraler Schacht~
+@6802 = ~Lastenaufzug~
+@6802 = ~Lastenaufzug~
+@6803 = ~Kammer des Hüters~
+@6804 = ~Tempel Dumathoins~
+
 
 // Area script Strings
 @7000 = ~Ihr müsst die Schwebescheibe, das Quecksilber und den Levitationstrank auf den Altar legen, um die Scheibe wieder verzaubern zu können.~
@@ -2298,10 +2305,10 @@ Es analysiert fortwährend die Umgebung, berechnet Flugbahnen, stabilisiert die 
 
 EIGENSCHAFTEN:
 
-- Gefahrenberechnung: RK-Bonus von -2 gegen Geschosse
-- Geistige Stabilisierung: Immunität gegen Bezauberung und Verwirrung
-- Gnomischer Entfernungsmesser: +2 ETW0 mit Fernkampfwaffen
-- Fehlertoleranz: Glück +1
+– Gefahrenberechnung: RK-Bonus von -2 gegen Geschosse
+– Geistige Stabilisierung: Immunität gegen Bezauberung und Verwirrung
+– Gnomischer Entfernungsmesser: +2 ETW0 mit Fernkampfwaffen
+– Fehlertoleranz: Glück +1
 
 Gewicht: 0
 ~

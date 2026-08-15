@@ -276,7 +276,15 @@ COPY ~silverrealms/areas/ACIL57.are~          ~override~
 
 COPY ~silverrealms/areas/ACIL58.are~          ~override~
  WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
- 
+  SAY 0x18f8 @6801 // info central shaft
+  SAY 0x19bc @6802 // info elevator shaft
+  SAY 0x16ac @6803 // info face dumathoin
+  SAY 0x1524 @6804 // info dumathoin
+  SAY 0x15e8 @6804 // info dumathoin
+  SAY 0x3608 @6802 // map elevator shaft
+  SAY 0x35d4 @6804 // map dumathoin
+  SAY 0x363c @6803 // map face dumathoin
+
 COPY ~silverrealms/areas/ACIL59.are~          ~override~
  WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
  

@@ -444,7 +444,7 @@ END
 // CHAIN - Vronia und das Portal
 // ---------------------------------------------
 CHAIN IF ~Global("AC#IL_ACIL20Portal","GLOBAL",2)~ THEN AC#VRONX hello_portal_01
-~Da seid Ihr ja.  Kommt, gehen wir in die Kammer der toten Patrouille und sehen und dieses Portal einmal genauer an.~
+~Da seid Ihr ja. Kommt, gehen wir in die Kammer der toten Patrouille und sehen und dieses Portal einmal genauer an.~
 == AC#HATH1 ~Seid vorsichtig, Herrin Vronia. Es sind viele gefährliche Gestalten unterwegs dieser Tage.~
 == AC#VRONX ~Keine Bange. Diese alte Zwergin weiß sich gut zu schützen, wenn sie durch die Steine wandelt. Kommt, <CHARNAME>, gehen wir.~
 END
@@ -462,7 +462,8 @@ StartCutScene("AC#ILP20")~ EXIT
 	CHAIN IF ~Global("AC#IL_ACIL20Portal","GLOBAL",5)~ THEN AC#VRONX hello_portal_02
 	~Versucht einmal, hindurch zu sehen, <CHARNAME>.~
 	END
-	IF ~~ THEN DO ~SetGlobal("AC#IL_ACIL20Portal","GLOBAL",6)~ EXIT
+	IF ~~ THEN DO ~SetGlobal("AC#IL_ACIL20Portal","GLOBAL",6)
+	AddJournalEntry(@58101,QUEST)~ EXIT
 	
 	CHAIN IF ~Global("AC#IL_ACIL20Portal","GLOBAL",7)~ THEN AC#VRONX hello_portal_02
 	~<CHARNAME>! Was ist passiert! Los, schnell zurück in die Stadt...~
@@ -501,6 +502,7 @@ CHAIN IF ~Global("AC#IL_ACIL20Portal","GLOBAL",8)~ THEN AC#TURBX hello_portal_af
 		IF ~~ THEN DO ~SetGlobal("AC#IL_ACIL20Portal","GLOBAL",10)
 		SetGlobal("AC#IL_Spiderstalkings","GLOBAL",1)
 		GiveItemCreate("ac#ky1",PLayer1,0,0,0)
+		AddJournalEntry(@58102,QUEST_DONE)
 		AddJournalEntry(@62022,QUEST)~ EXIT
 // ---------------------------------------------
 // CHAIN - Abschied aus Iltkazar 01

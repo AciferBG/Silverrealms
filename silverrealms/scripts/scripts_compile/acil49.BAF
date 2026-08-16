@@ -1,6 +1,6 @@
 
 /*
-Die beschw�rung des Glabrezu
+Die beschw�rung des Cornugon
 */
 IF
 	Global("AC#Baphometspawn","GLOBAL",1)
@@ -26,10 +26,11 @@ THEN
 		Wait(2)
 		CreateVisualEffect("SPFIREPI",[830.560])
 		Wait(2)
-		CreateCreature("AC#GLAB1",[830.560],12)
-		ActionOverride("AC#GLAB1",FaceObject("AC#DURG1"))
-		MoveViewObject("AC#GLAB1",VERY_FAST)
-		EndCutSceneMode()
+		CreateCreature("AC#IL49C",[830.560],12)
+		ActionOverride("AC#IL49C",FaceObject("AC#DURG1"))
+		MoveViewObject("AC#IL49C",VERY_FAST)
+		Wait(2)
+		ActionOverride("AC#IL49C",StartDialogNoSet("AC#DURG1"))
 END
 
 IF

@@ -1338,7 +1338,8 @@ IF ~~ THEN REPLY ~Na toll. Ihr wollt mich durch ein Portal jagen?~ EXTERN ~AC#VR
 	== AC#GROM1 ~Ein hervorragender Vorschlag, Vronia. <CHARNAME>, Ihr würdet uns damit erneut einen großen Dienst erweisen.~
 	== AC#VRON1 ~Dann steht der Entschluss fest. <CHARNAME>, trefft mich vor den Toren der Stadt. Ich werde da sein, wenn Ihr soweit seid.~
 	END
-	IF ~~ THEN DO ~SetGlobal("AC#IL_ACIL20Portal","GLOBAL",1)~ EXIT
+	IF ~~ THEN DO ~SetGlobal("AC#IL_ACIL20Portal","GLOBAL",1)
+	AddJournalEntry(@58100,QUEST)~ EXIT
 
 CHAIN IF ~~ THEN AC#RUVA1 chain_ruvan_treason_01
 ~Ja, Meister Gromi. Sie haben es mit ihren eigenen Augen gesehen.~

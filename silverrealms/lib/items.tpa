@@ -524,7 +524,7 @@ COPY ~silverrealms/itm/AC#SRPAX.itm~         ~override/AC#SRPAX.itm~  // Pickaxe
   
 COPY ~silverrealms/itm/AC#MIMAZ.itm~         ~override/AC#MIMAZ.itm~  // Minotaurenschale
   SAY NAME1 @633
-  SAY NAME2 @633
+  SAY NAME2 @634
   SAY UNIDENTIFIED_DESC @635
   SAY DESC @636
   

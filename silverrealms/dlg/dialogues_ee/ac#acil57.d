@@ -153,12 +153,12 @@ END
 
 IF ~~ THEN BEGIN durga_help_me
 SAY ~Helft mir im Kampf gegen all die Ungläubigen und Ihr dürft Euch an den Gefallenen dieser Stadt laben!~
-IF ~~ THEN EXTERN ~AC#GLAB1~ good_proposal
+IF ~~ THEN EXTERN ~AC#IL49C~ good_proposal
 END
 
 IF ~~ THEN BEGIN 4
    SAY ~Ich grüße Euch, mächtiger Maexhar. Ich möchte Iltkazar wieder zu dem rechten Glauben an die alten Wege zurückführen, so wie es einst war, als in dieser Stadt Baphomet verehrt wurde. Seht, ich habe den heiligen Hammer Dumathoins aus dem Tempel gestohlen und mit ihm die Siegel der Stadt zerstört, um Euch beschwören zu können. Nun biete ich Euch die Waffe als Austausch für Eure Dienste an!~
-IF ~~ THEN EXTERN ~AC#GLAB1~ 2
+IF ~~ THEN EXTERN ~AC#IL49C~ 2
 END
 
 IF ~~ THEN BEGIN 5
@@ -178,30 +178,30 @@ END
 		
 			IF ~~ THEN BEGIN 3
 			SAY ~Ich weiß nichts-rein gar nichts, und es ist mir auch reichlich egal, was mit ihm passiert ist. Ich weiß nur, dass ich diese Situation jetzt für mich ausnutzen sollte, und Ihr werdet jetzt Zeuge meiner neu gewonnenen Kräfte werden!~
-			IF ~~ THEN EXTERN ~AC#GLAB1~ 3
+			IF ~~ THEN EXTERN ~AC#IL49C~ 3
 			END
 
 					IF ~~ THEN BEGIN 6
 					   SAY ~So nehmt den Hammer, mächtiger Maexhar, und steht mir in dem Kampf mit den Ungläubigen bei!~
 					   IF ~~ THEN DO ~SetGlobal("AC#Baphometspawn","GLOBAL",3)
 					   Enemy()
-					   ActionOverride("AC#GLAB1",Enemy())~  EXIT
+					   ActionOverride("AC#IL49C",Enemy())~  EXIT
 					END
 					
 					IF ~~ THEN BEGIN fight
 					   SAY ~Und schon kommen die ersten Narren, die den bitteren Geschmack der Verdammnis kosten wollen!~
 					   IF ~~ THEN DO ~SetGlobal("AC#Baphometspawn","GLOBAL",3)
 					   Enemy()
-					   ActionOverride("AC#GLAB1",Enemy())~  EXIT
+					   ActionOverride("AC#IL49C",Enemy())~  EXIT
 					END
 
 /*******************************************************************************************************
 Glabrezu-Dialog
 *******************************************************************************************************/
-BEGIN ~AC#GLAB1~
+BEGIN ~AC#IL49C~
 
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN hello_01
-SAY  ~Wer ruft Maexhar, den Diener des Gehörnten? Ein Zwergenweib?~
+SAY  ~Wer ruft die Diener der Dunklen Dame? Ein Zwergenweib?~ [cornu01]
 IF ~~ THEN EXTERN ~AC#DURG1~ durga_help_me
 END
 /*

@@ -2,6 +2,8 @@
 
 COPY ~silverrealms/cre/copy~         ~override~
 
+COPY ~silverrealms/cre/AC#IL49C.cre~ ~override~ // summoned Cornugon in ACIL49
+
 COPY ~silverrealms/cre/AC#GITHM.cre~ ~override~ // Githyanki-Geistklinge
   SAY NAME1 @9069 SAY NAME2 @9069
 
@@ -324,10 +326,12 @@ COPY ~silverrealms/cre/AC#62DW1.cre~ ~override/AC#62DW1.cre~
   SAY SELECT_COMMON3 @5040
   SAY SELECT_COMMON4 @5041
 
-COPY ~silverrealms/cre/AC#OSYL1.cre~ ~override/AC#OSYL1.cre~
+COPY ~silverrealms/cre/AC#OSYL1.cre~ ~override~
   SAY NAME1 @175 SAY NAME2 @175
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#OSYLUTH~))
 
-    COPY_EXISTING ~AC#OSYL1.cre~ ~override~
+COPY ~silverrealms/cre/AC#IL57O.cre~ ~override~
+  SAY NAME1 @175 SAY NAME2 @175
     WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#OSYLUTH~))
 
 COPY ~silverrealms/cre/AC#ILDDF.cre~ ~override~

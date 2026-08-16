@@ -347,14 +347,17 @@ Wird verschossen von: Bogen~
 @286 = ~Auf diese merkwürdige Scheibe ist ein Spinnensymbol aufgezeichnet~
 @287 = ~Magma-Elementar~
 @288 = ~Fledermausumhang~
-@289 = ~Umhang der Fledermaus
-Ein Umhang dieser Art, der aus dunkelbraunem oder schwarzem Stoff gefertigt ist, fällt nicht ohne weiteres als ungewöhnlich auf. Er strahlt jedoch Verzauberungs- und Veränderungsmagie zu gleichen Teilen aus. Der Umhang verleiht eine 90%ige Wahrscheinlichkeit, unentdeckt zu bleiben, wenn der Träger an einem schattigen oder dunklen Ort unbeweglich verharrt. Der Träger ist zusätzlich in der Lage, wie eine Fledermaus kopfüber von der Decke zu hängen.
-Durch Halten der Ränder des Kleidungsstücks kann sich der Träger, wenn er es wünscht, in eine gewöhnliche Fledermaus verwandeln - alles, was er bei sich trägt, wird Teil der Verwandlung sein - und entsprechend fliegen. Das Fliegen als gewöhnliche Fledermaus kann nur in der Dunkelheit (entweder unter dem Nachthimmel oder in einer lichtlosen oder nahezu lichtlosen Umgebung unter der Erde) durchgeführt werden. Die Verwandlung kann bis zu einer Stunde anhalten.
-Der Umhang bietet außerdem einen +2 Bonus auf die Rüstungsklasse. Dieser Vorteil erstreckt sich auch auf den Träger, wenn er in Fledermausform ist.
+@289 = ~Ein Umhang dieser Art, aus dunkelbraunem oder schwarzem Stoff gefertigt, fällt nicht ohne weiteres als ungewöhnlich auf. Er strahlt jedoch Verzauberungs- und Veränderungsmagie zu gleichen Teilen aus. 
+
+Durch Halten der Ränder des Kleidungsstücks kann sich der Träger, wenn er es wünscht, in eine gewöhnliche Fledermaus verwandeln - alles, was er bei sich trägt, wird Teil der Verwandlung sein - und entsprechend fliegen. Die Verwandlung kann bis zu einer Stunde anhalten.
+
+Der Umhang bietet außerdem einen +2 Bonus auf die Rüstungsklasse. Dieser Vorteil erstreckt sich auch auf den Träger, wenn er in Fledermausform ist. Zusätzlich ist der Träger in der Lage, beim Schlafen wie eine Fledermaus kopfüber von der Decke zu hängen.
 
 SPEZIFISCHE EIGENSCHAFTEN:
 
-Besondere Fähigkeiten: Träger erhält -2 auf RK und verfügt über Infravision mit einer Reichweite von bis zu 36 m. Einmal täglich kann sich der Träger in eine Fledermaus verwandeln und erhält in dieser Form 30% auf die Fertigkeit, sich im Schatten zu verstecken.~
+Träger erhält -2 auf Rüstungsklasse 
+Infravision mit einer Reichweite von bis zu 36 m. 
+Einmal täglich kann sich der Träger in eine Fledermaus verwandeln und erhält in dieser Form 30% auf die Fertigkeit, sich im Schatten zu verstecken.~
 @290 = ~Unbekanntes Erz~
 @291 = ~Mithril-Erz~
 @292 = ~Unbekanntes Erz
@@ -1693,7 +1696,7 @@ Der Anwender kann sich dreimal täglich an einen Ort in seiner Sichtweite telepo
 Die Wirkung des Steines ist auf die Spinnenschächte begrenzt.
 ~
 @8016 = ~Ellhimars Notizen~
-@8017 = ~Dies sind Notizen des Magiers Ellhimar aus Iltkazar. Er scheint es hier verloren zu haben, als er von den Drow überwältigt worden ist. Es ist in einer feinen, akkuraten Handschrift verfasst.
+@8017 = ~Dies sind Notizen des Magiers Ellhimar aus Iltkazar. Er scheint sie hier verloren zu haben, als er von den Drow überwältigt worden ist. Sie sind in einer feinen, akkuraten Handschrift verfasst.
 
 23. Alturiak 1367, im Jahr des Schildes
 Der König ist nicht zu der errechneten Zeit aus seinem Schlaf erwacht. In den ersten Wochen, die seitdem verstrichen sind, hat sich die Zwergengemeinde noch keine großen Sorgen gemacht. Dies ist nun, seit der zweite Monat verstrichen ist, anders. Ganz Iltkazar sucht hektisch nach einer Möglichkeit, den König aus seinem mysteriösen Zustand zu befreien.
@@ -1708,7 +1711,7 @@ Die Priester der Zwerge versuchen noch immer, ihren König mit aller verfügbare
 Ich habe auf eigene Faust Nachforschungen angestellt.  König Mith Barak selbst hatte vor seinem letzten Schlafe versucht, seinen mysteriösen Zustand zu beenden. Berichten der Zwerge zufolge brach er alleine zu einer Expedition in ein Gebiet, das die Zwerge "Spinnenschächte" nennen, auf. Bei seiner Rückkehr ließ er die Eingänge versiegeln. Die Zwerge denken, dass es zu ihrem Schutz sei. Doch ich denke, dass Mith Barak dort etwas hinterlegt hat. Man hat fast den Eindruck, als würde Mith Barak den Zwergen nicht ganz vertrauen. Warum nur?
 
 24. Mirtul 1368, im Jahr des Banners
-Ich bin in der Kapelle des Blutigen Mondes angekommen. Ein uralter Tempel zu Ehren eines Menschen- und eines Zwergengottes. Die Statuen stellen Fragen, welche man wohl korrekt beantworten muss. Ich habe vier richtig beantwortet. Nun werde ich gleich die letzte Frage beantworten. Ich muss mich nur noch schnell ausruhen...
+Ich bin in der Kapelle des Blutigen Mondes angekommen. Ein uralter Tempel zu Ehren eines Menschen- und eines Zwergengottes. Die Statuen stellen Fragen, welche man wohl korrekt beantworten muss. Ich habe vier richtig beantwortet. Nun werde ich gleich die letzte Frage beantworten. Ich muss mich nur noch schnell sammeln...
 ~
 @8018 = ~Tethirs Mondklinge~
 @8019 = ~Mondklingen werden seit der Zeit des alten Myth Drannor von außergewöhnlichen Helden des elfischen Volkes getragen. Die Schwerter werden meist von einer Generation auf die nächste vererbt. In seltenen Fällen kann die Klinge von einem anderen Elfen geführt werden, wenn der ursprüngliche Besitzer gestorben ist und das Schwert den neuen Träger anerkennt. Dies ist jedoch nur bei gut gesinnten Elfen der Fall. Alle anderen Gesinnungen und Rassen scheitern bei dem Versuch, die Klinge anzuheben.
@@ -2084,7 +2087,15 @@ RW-Bonus: -1
 
 Gewicht: 0~
 @8108 = ~Letztes Aufbäumen~
-@8109 = ~Dieser Ring wurde an der Hand eines Abenteurers gefunden, dessen Körper noch immer in Spinnenseide eingesponnen ist. In den letzten Atemzügen vor seinem Tod mobilisierte er alle verbleibenden Kräfte, um sich aus dem Netz zu befreien – ein verzweifeltes Aufbäumen gegen das Unvermeidliche. Wer diesen Ring trägt, spürt denselben jähen Ausbruch an Energie… gefolgt von lähmender Erschöpfung.~
+@8109 = ~Dieser Ring wurde an der Hand eines Abenteurers gefunden, dessen Körper noch immer in Spinnenseide eingesponnen ist. In den letzten Atemzügen vor seinem Tod mobilisierte er alle verbleibenden Kräfte, um sich aus dem Netz zu befreien – ein verzweifeltes Aufbäumen gegen das Unvermeidliche. Wer diesen Ring trägt, spürt denselben jähen Ausbruch an Energie… gefolgt von lähmender Erschöpfung.
+
+EIGENSCHAFTEN:
+
+RK-Bonus: -1
+RW-Bonus: -1
+Wenn die Trefferpunkte des Trägers unter 25% fallen, wird der Träger von Hast betroffen.
+
+Gewicht: 0~
 @8110 = ~Lappen des Ältestenhirns~
 @8111 = ~Dies ist ein stark verfaulter Teil des Hirnlappens des untoten Ältestenhirns von Barakuir. Trotz seines Zustands wirkt dieses Gewebe besser erhalten als der Rest des Organismus und scheint eine eigentümliche, kalte Präsenz auszustrahlen.
 

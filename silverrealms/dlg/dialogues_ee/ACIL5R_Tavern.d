@@ -55,3 +55,16 @@ IF ~~ THEN BEGIN 14
   SAY ~Wie Ihr meint. Ruft, wenn Ihr etwas braucht. Aber nicht zu leise — bei dem Lärm hier geht sonst jedes Wort verloren.~
   IF ~~ THEN EXIT
 END
+
+BEGIN ~AC#ILBR3~
+
+//Dialog mit Viconia
+IF ~Name("Viconia",LastTalkedToBy)~ THEN BEGIN hello_viconia
+  SAY ~Leute Eures Schlages bediene ich nicht. Macht, dass Ihr rauskommt, Drow!~
+  IF ~~ THEN EXIT
+END
+
+IF ~True()~ THEN BEGIN 1
+  SAY ~Wenn Ihr etwas wollt sprecht mit der Schankmaid! Wo kämen wir denn dahin, wenn einfach jeder auf ein Schwätzchen bei mir vorbeikommen dürfte?~
+  IF ~~ THEN EXIT
+END

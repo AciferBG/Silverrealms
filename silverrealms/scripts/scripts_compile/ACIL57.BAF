@@ -1,0 +1,96 @@
+IF
+    Global("EnteredArea","ACIL57",0)
+THEN
+    RESPONSE #100
+        FadeToColor([0.0],0)
+        SetGlobal("EnteredArea","ACIL57",1)
+        SetMusic(NIGHT,111)
+        SetMusic(DAY,111)
+        StartMovie("ac#57mve")
+END
+
+IF
+    Global("EnteredArea","ACIL57",1)
+THEN
+    RESPONSE #100
+        ClearAllActions()
+        SetGlobal("EnteredArea","ACIL57",2)
+        ActionOverride(Player1,PlayDead(35))
+        ActionOverride(Player2,PlayDead(35))
+        ActionOverride(Player3,PlayDead(35))
+        ActionOverride(Player4,PlayDead(35))
+        ActionOverride(Player5,PlayDead(35))
+        ActionOverride(Player6,PlayDead(35))
+        ApplyDamage(Player1,1,CRUSHING)
+        ApplyDamage(Player2,1,CRUSHING)
+        ApplyDamage(Player3,1,CRUSHING)
+        ApplyDamage(Player4,1,CRUSHING)
+        ApplyDamage(Player5,1,CRUSHING)
+        ApplyDamage(Player6,1,CRUSHING)
+        CreateCreature("ZOMBIE01",[440.2343],NW)  // Zombie
+        CreateCreature("ZOMBIE01",[449.2360],NEE)  // Zombie
+        SpawnPtSpawn("Spawn_zombie_entry_01")
+        SpawnPtSpawn("Spawn_zombie_entry_01")
+        Wait(2)
+        ScreenShake([50.50],15)
+        FadeFromColor([30.0],0)
+END
+
+IF
+    Global("EnteredArea","ACIL57",2)
+THEN
+    RESPONSE #100
+        SetGlobal("EnteredArea","ACIL57",3)
+        AmbientActivate("Steam01",FALSE)
+        AmbientActivate("Steam02",FALSE)
+        SoundActivate("Steamsound01",FALSE)
+        SoundActivate("Steamsound02",FALSE)
+END
+
+IF
+    Global("CreateOsyluth","ACIL57",0)
+    LevelPartyGT(10)
+THEN
+    RESPONSE #100
+        SetGlobal("CreateOsyluth","ACIL57",1)
+        CreateCreature("AC#IL57O",[816.385],NW)  // Osyluth
+        CreateCreature("AC#IL57O",[461.628],NEE)  // Osyluth
+END
+
+IF
+    OpenState("DOOR09",TRUE)
+    OpenState("DOOR10",TRUE)
+    OpenState("DOOR08",FALSE)
+    Global("DOOR08","ACIL57",0)
+THEN
+    RESPONSE #100
+        SetGlobal("DOOR08","ACIL57",1)
+        DisplayString(Myself,104832)  // Irgendwo hat sich eine Tür geöffnet.
+        OpenDoor("DOOR08")
+        ActionOverride("AC#DURG2",DestroySelf())
+        TriggerActivation("AC#57TR1",FALSE)
+END
+
+IF
+    Global("Info_Hammer_Doors","ACIL57",0)
+    OR(6)
+        HasItem("AC#HADUM",Player1)  // Siegelbrecher +4
+        HasItem("AC#HADUM",Player2)  // Siegelbrecher +4
+        HasItem("AC#HADUM",Player3)  // Siegelbrecher +4
+        HasItem("AC#HADUM",Player4)  // Siegelbrecher +4
+        HasItem("AC#HADUM",Player5)  // Siegelbrecher +4
+        HasItem("AC#HADUM",Player6)  // Siegelbrecher +4
+THEN
+    RESPONSE #100
+        DisplayStringHeadOwner("AC#HADUM",104833)  // Der Hammer Dumathoins pulsiert plötzlich in einem strahlenden Licht. Ihr könnt mit seiner Macht die bisher verschlossenen Türen öffnen.
+        SetGlobal("Info_Hammer_Doors","ACIL57",1)
+END
+
+IF
+    Global("AC#Banshee_free","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SoundActivate("Cries",FALSE)
+        SetGlobal("AC#Banshee_free","GLOBAL",2)
+END
+

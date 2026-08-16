@@ -111,17 +111,12 @@ END
 		END
 		
 			IF ~~ THEN BEGIN just_say_names
-			SAY ~Schmückt es noch ein bisschen aus, fuchtelt mit den Händen umher- was auch immer Ihr für richtig haltet. So hat jedenfalls dieser Magier Ellhimar die uralte Tür geöffnet. Eine letzte Warnung noch: Auf diesem Tempel liegt ein Fluch.~
-			IF ~~ THEN REPLY ~Wie bitte? Das sagt Ihr mir erst jetzt?~ + a_curse_01
+			SAY ~Schmückt es noch ein bisschen aus, fuchtelt mit den Händen umher- was auch immer Ihr für richtig haltet. So hat jedenfalls dieser Magier Ellhimar die uralte Tür geöffnet.~
+			IF ~~ THEN GOTO a_curse_02
 			END
-			
-				IF ~~ THEN BEGIN a_curse_01
-				SAY ~Kein besonders schlimmer Fluch- zumindest für uns nicht. Jeder, der den Tempel betritt, wird von übernatürlicher Müdigkeit betroffen und fällt in einen tiefen Schlaf. Daran ist auch Euer Vorgänger kläglich gescheitert.~
-				IF ~~ THEN REPLY ~Müdigkeit? Könnte es sein, dass dies mit dem Schlaf des Königs zu tun?~ GOTO a_curse_02
-				END
-				
+
 					IF ~~ THEN BEGIN a_curse_02
-					SAY ~Ich denke nicht. Der Zauber des Tempels ist alt, viel älter als der älteste Zwerg. Nach allem, was wir wissen, war auch dieser König Mith Barak vor langer Zeit in diesem Tempel, hat ihn aber wieder unbehelligt verlassen. Sonst würde er jetzt nicht auf seinem Thron in der Zwergenstadt sitzen. Deshalb denke ich nicht, dass dieser Zauber etwas mit dem Schlaf zu tun hat - jedenfalls nicht direkt. Dieser Magier Ellhimar war jedoch überzeugt davon, dass der Zwergenkönig in diesem Tempel etwas versteckt haben könnte. Jedenfalls faselte er so etwas, bevor wir ihn den Illithiden übergaben.~
+					SAY ~Nach allem, was wir wissen, war auch König Mith Barak vor langer Zeit in diesem Tempel, hat ihn aber wieder verlassen. Der Magier Ellhimar war überzeugt davon, dass der Zwergenkönig in diesem Tempel etwas versteckt haben könnte. Jedenfalls faselte er so etwas, bevor wir ihn den Illithiden übergaben.~
 					IF ~~ THEN REPLY ~Könntet Ihr mir nicht helfen, Ellhimar wieder aus der Gewalt der Illithiden zurückzubekommen?~ GOTO bring_ellhimar_back_to_sanity
 					END
 

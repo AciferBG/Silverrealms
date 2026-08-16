@@ -18,6 +18,32 @@ THEN
 END
 
 IF
+    Global("JorunalUpdate","ACIL25",0)
+THEN
+    RESPONSE #100
+    AddJournalEntry(@62023,QUEST_DONE)
+        SetGlobal("JorunalUpdate","ACIL25",1)
+END
+
+IF
+    Global("AC#IL25_MithrilGone","GLOBAL",0)
+    Contains("AC#MITH1","Mithril_vein")
+THEN
+    RESPONSE #100
+    ActionOverride("Mithril_vein",DestroyItem("AC#MITH1"))
+        SetGlobal("AC#IL25_MithrilGone","GLOBAL",1)
+END
+
+IF
+    Global("AC#IL25_RubiesGone","GLOBAL",0)
+THEN
+    RESPONSE #100
+        ActionOverride("Gems01",DestroyItem("ac#ruby1"))
+        ActionOverride("Gems02",DestroyItem("ac#ruby1"))
+        SetGlobal("AC#IL25_RubiesGone","GLOBAL",1)
+END
+
+IF
     DifficultyGT(EASY)
     Global("CreateMoreDriders","ACIL25",1)
 THEN

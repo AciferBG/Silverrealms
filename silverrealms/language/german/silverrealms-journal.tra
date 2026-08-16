@@ -184,6 +184,9 @@ Vor den Toren Iltkazars ist eine Kampftruppe der Drow vorbeigezogen, die von ein
 @50021   = ~Die Zofe Lolths
 
 Ich habe die Drow-Priesterin getötet. Jetzt muss ich nur noch ihren Kopf zu Bresk Steinschulter bringen.~
+@50022   = ~Die Zofe Lolths
+
+Bresk war zufrieden mit mir, da ich ihm den Kopf der Drow-Zofe überbracht habe.~
 //___________________________Ein ungewöhnlicher Gast
 @50600   = ~Ein ungewöhnlicher Gast
 
@@ -511,6 +514,10 @@ Turbaern Ghalmrin hat es abgelehnt, den Siegelstein für die Spinnenschächte he
 @62022  = ~Die Spinnenschächte
 
 Ich habe den Schlüsselstein für das Tor in die Spinnenschächte erhalten und sollte nun in diesem Gebiet nach Antworten auf den mysteriösen Schlaf König Mith Baraks suchen.~
+
+@62023  = ~Die Spinnenschächte
+
+Ich habe die Spinnenschächte betreten. Irgendwo in diesen Minen muss sich auch Ellhimar aufgehalten haben, um etwas über den schlafenden König zu erfahren.~
 // Im Netz der Spinne
 @62025  = ~Im Netz der Spinne
 

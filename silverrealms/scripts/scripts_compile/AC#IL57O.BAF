@@ -1,0 +1,44 @@
+IF
+    See(NearestEnemyOf(Myself))
+    !GlobalTimerNotExpired("BD_Cast","LOCALS")
+    Global("PITFEAR","LOCALS",0)
+THEN
+    RESPONSE #100
+        ForceSpell(NearestEnemyOf(Myself),DEMON_FEAR)  // SPIN890.SPL (Dämonenfurcht)
+        SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+        SetGlobal("PITFEAR","LOCALS",1)
+END
+
+IF
+    Global("BD_Bhave","LOCALS",2)
+    !GlobalTimerNotExpired("BD_Cast","LOCALS")
+    !GlobalTimerNotExpired("BD_CharmT","LOCALS")
+    See(NearestEnemyOf(Myself))
+THEN
+    RESPONSE #30
+        SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+        SetGlobalTimer("BD_CharmT","LOCALS",THREE_ROUNDS)
+        ForceSpell(LastSeenBy,WIZARD_CHARM_PERSON)  // SPWI104.SPL (Personen bezaubern)
+    RESPONSE #70
+        SetGlobalTimer("BD_CharmT","LOCALS",THREE_ROUNDS)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    !StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
+    HPPercentLT(Myself,25)
+    Global("Invisible","LOCALS",0)
+THEN
+    RESPONSE #100
+        SetGlobal("Invisible","LOCALS",1)
+        ReallyForceSpell(Myself,WIZARD_IMPROVED_INVISIBILITY)  // SPWI405.SPL (Verbesserte Unsichtbarkeit)
+        Continue()
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+THEN
+    RESPONSE #100
+        AttackReevaluate(NearestEnemyOf(Myself),6)
+END
+

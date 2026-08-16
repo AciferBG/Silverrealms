@@ -226,11 +226,12 @@ END
 		END
 		
 			IF ~~ THEN BEGIN drow_quest_yes_finished_02
-			SAY ~Gut gemacht! Was für hässliche Dinger diese Drow doch sind, mit ihren großen Augen, langen Nasen und wenig Haaren.~
+			SAY ~Gut gemacht. Was für hässliche Dinger diese Drow doch sind, mit ihren großen Augen, glatten Gesichtern und weißen Haaren!~
 			=
 			~Also, hier ist Eure wohlverdiente Belohnung. Macht Spaß, mit Euch zusammenzuarbeiten!~
 			IF ~~ THEN DO ~SetGlobal("AC#BreskDrowPriestess","GLOBAL",10)
-			GiveItemCreate("MISC43",Player1,3,0,0)~ EXIT
+			GiveItemCreate("MISC43",Player1,3,0,0)
+			AddJournalEntry(@50022,QUEST_DONE)~ EXIT
 			END
 			
 			IF ~~ THEN BEGIN drow_quest_not_finished

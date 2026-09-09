@@ -147,7 +147,7 @@ END
 			IF ~~ THEN EXIT 
 			END
 
-IF ~Global("AC#RC_Sorni_Fourth","GLOBAL",1)
+IF ~GlobalGT("AC#RC_Sorni_Fourth","GLOBAL",0)
 Global("AC#KuoToaStone","GLOBAL",0)~ THEN BEGIN hello_kuo_toa_problem
   SAY ~<CHARNAME>! Ist ja interessant, dass Euch der Rat jetzt nach Barak... in diese alte verfluchte Duergar-Heimat schicken will. Ganz so einfach, wie es sich der Rat vorstellt, ist es aber nicht.~
   IF ~~ THEN REPLY ~Warum?~ GOTO what_boat_problems
@@ -200,7 +200,7 @@ END
 									END
 									
 									IF ~~ THEN BEGIN ask_svirfnebli_bye
-									SAY ~Wir warten hier auf Euch. Sobald die Kuo-Toa vernichtet und die Wege wieder passierbar sind, brechen wir mit den Booten auf, wenn Ihr mit Sorni gesprochen habt.~
+									SAY ~Wir warten hier auf Euch. Sobald die Kuo-Toa vernichtet und die Wege wieder passierbar sind, brechen wir mit den Booten auf.~
 									IF ~~ THEN DO ~SetGlobal("AC#KuoToaStone","GLOBAL",1)
 									AddJournalEntry(@56100,QUEST)~ EXIT
 									END

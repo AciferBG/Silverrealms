@@ -208,6 +208,18 @@ END
 		END
 		
 			IF ~~ THEN BEGIN gromi_boat_sorni
+			SAY ~Unsere Tochter Sorni Arnschädel. Sie wird die Boote für Eure Überfahrt bereitstellen.~
+			IF ~~ THEN GOTO gromi_boat_talk_to_sorni
+			END
+			
+			IF ~~THEN BEGIN gromi_boat_talk_to_sorni
+				SAY ~Wir benötigen auch Zwerge, die die Boote bedienen und über den See navigieren. Dies möchte ich unseren Besuchern von der Oberfläche nicht zumuten. Und wir können es uns nicht leisten, dass sie in der Dunkelheit die Orientierung verlieren und scheitern.~
+				IF ~~ THEN EXTERN ~AC#ELER1~ sailors_boat
+				END
+		
+		//OLD
+		/*
+			IF ~~ THEN BEGIN gromi_boat_sorni
 			SAY ~Unsere Tochter Sorni Arnschädel.~
 			=
 			~Ihr solltet einmal mit Sorni reden, <CHARNAME>. Vielleicht kann sie Verbesserungen an dem Boot vornehmen, damit es Euch auch über das Wasser trägt.~
@@ -219,12 +231,13 @@ END
 				SAY ~Gut. Wir benötigen auch Zwerge, die die Boote bedienen und über den See navigieren. Dies möchte ich unseren Besuchern von der Oberfläche nicht zumuten. Und wir können es uns nicht leisten, dass sie in der Dunkelheit die Orientierung verlieren und scheitern.~
 				IF ~~ THEN EXTERN ~AC#ELER1~ sailors_boat
 				END
+				*/
 				
 // Hier gehts weiter__________________________________________________________________________________________________________________________________________________________________________	
 				IF ~~THEN BEGIN enough_sailors_barakuir
 				SAY ~Genug. Dies sollte nun wirklich nicht der Anlass für einen Streit sein. Elern hat recht, wir könnten einige der Anhänger des irrenden Wanderers mit dieser Aufgabe betrauen.~
 				=
-				~Elern, Ihr kümmert Euch darum, eine Mannschaft zusammenzustellen. <CHARNAME>, Ihr sprecht mit Sorni. Der Treffpunkt für den Beginn der Unternehmung ist am Platz von Bhaerynden. Noch Fragen?~
+				~Elern, Ihr kümmert Euch darum, eine Mannschaft zusammenzustellen. <CHARNAME>, der Treffpunkt für den Beginn der Expedition ist am Platz von Bhaerynden. Noch Fragen?~
 				IF ~~ THEN EXTERN ~AC#RUVA1~ boat_one_word
 				END
 				
@@ -234,14 +247,14 @@ END
 					END
 
 				IF ~~THEN BEGIN end_pc_talk_sorni_boat
-				SAY ~Nun gut. <CHARNAME>, geht zu meiner Tochter Sorni. Wenn sie die Sache mit den Booten vorbereitet hat, trefft Euch mit der Mannschaft am Platz von Bhaerynden.~
+				SAY ~Nun gut. <CHARNAME>, geht zum Platz von Bhaerynden und holt Euch Anweisungen von unserem Kriegsmeister Bresk. Sorni sollte die Sache mit den Booten zügig vorbereitet haben. Ihre Mannschaft wird dann ebenso am Platz von Bhaerynden warten.~
 				IF ~~ THEN REPLY ~Gut. Ich werde dort auf die Mannschaft warten.~ + end_pc_talk_sorni_boat_02
 				END
 				
 				IF ~~THEN BEGIN end_pc_talk_sorni_boat_02
-				SAY ~Ich bin sicher, dass Sorni eine Lösung finden wird. *Kal maerdh*, <CHARNAME>.~
-				IF ~~ THEN DO ~SetGlobal("AC#RC_Sorni_Fourth","GLOBAL",1)
-				//SetGlobal("AC#RC_Bettargh_Third","GLOBAL",20)
+				SAY ~Ich bin sicher, dass wir mit Barakuir ein großes Stück weiterkommen werden. *Kal maerdh*, <CHARNAME>.~
+				IF ~~ THEN DO ~SetGlobal("AC#RC_Sorni_Fourth","GLOBAL",2)
+				//SetGlobal("AC#RC_Sorni_Fourth","GLOBAL",1)
 				AddJournalEntry(@62040,QUEST)
 				AddexperienceParty(1000)
 				~ EXIT

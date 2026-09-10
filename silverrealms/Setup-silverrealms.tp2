@@ -1,8 +1,9 @@
 /*************************************************************************
- * silverrealms Version 1.3
+ * Silverrealms 
  *************************************************************************/
 BACKUP ~silverrealms/backup~
 AUTHOR "Acifer"
+VERSION ~v0.901~
 
 AUTO_TRA ~silverrealms\language\%LANGUAGE%\%s~
 
@@ -33,7 +34,7 @@ ALWAYS
 END
 ///////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
-// silverrealms Version 1.3
+// Silverrealms
 ///////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
 
@@ -72,7 +73,7 @@ LANGUAGE ~Deutsch~
          ~silverrealms/language/german/silverrealms-voiceover.tra~
 
 
-BEGIN ~Tales of the Silverrealms Version 1.3~ 
+BEGIN ~Silverrealms - deutsche Open Beta~
 
 INCLUDE ~silverrealms/lib/extra_regexp_vars.tph~
 INCLUDE ~silverrealms/lib/functions.tph~

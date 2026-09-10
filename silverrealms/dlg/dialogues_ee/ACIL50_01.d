@@ -169,27 +169,27 @@ END
 					END
 					
 						IF ~~ THEN BEGIN boat_problem_04
-						SAY ~Die Kuo-Toa scheinen durch den alten Steinkreis die Elementare kontrollieren zu können. Wenn wir ihr Lager finden, finden wir hoffentlich auch eine Möglichkeit, die Kräfte des Sees wieder zu beruhigen.~
+						SAY ~Die Kuo-Toa scheinen durch einen alten Steinkreis jene Elementare kontrollieren zu können. Wenn wir das Lager der Kuo-Toa fänden, böte sich uns auch die Möglichkeit, die Elemente des Sees wieder zu beruhigen.~
 						IF ~~ THEN GOTO find_kuotoa_lair
 						END
 						
 							IF ~~ THEN BEGIN find_kuotoa_lair
-							SAY ~Meine Männer haben die Tunnel nach einem versteckten Durchgang abgesucht, sind aber nicht fündig geworden und mussten sich schließlich unter dem Druck der ständigen Attacken der Kuo-Toa wieder zurückziehen. Wir haben vorerst die Tunnel nach Osten mit Steinen und Metall versiegelt, damit uns die Biester in Ruhe lassen.~
+							SAY ~Meine Männer haben die Tunnel nach einem versteckten Durchgang abgesucht, sind aber nicht fündig geworden. Sie mussten sich schließlich unter dem Druck der ständigen Attacken der Kuo-Toa wieder zurückziehen. Wir haben vorerst die östlichen Tunnel mit Steinen und Metall versiegelt, damit uns die Biester in Ruhe lassen.~
 							=							
-							~Ich bin mir jedoch sicher, dass ganz in der Nähe der für uns erreichbaren Passagen ein geheimes Lager der Kuo-Toa sein muss. Sie nutzen die unter Wasser liegenden Areale, um sich ungehindert fortzubewegen. Diese Möglichkeit bleibt uns verwehrt.~
+							~Ich bin mir jedoch sicher, dass sich ganz in der Nähe der für uns erreichbaren Passagen ein geheimes Lager der Kuo-Toa befindet! Sie nutzen die unter Wasser liegenden Areale, um sich ungehindert fortzubewegen. Diese Möglichkeit bleibt uns verwehrt.~
 							IF ~~ THEN REPLY ~Und wie soll ich dabei helfen?~ GOTO find_kuotoa_lair_02
-							IF ~~ THEN REPLY ~Ihr verlangt wohl kaum von mir, dass ich durch die Höhlen tauchen soll?~ GOTO find_kuotoa_lair_02
+							IF ~~ THEN REPLY ~Ihr verlangt wohl kaum von mir, dass ich durch die Höhlen tauche?~ GOTO find_kuotoa_lair_02
 							END
 							
 								IF ~~ THEN BEGIN find_kuotoa_lair_02
 								SAY ~Mein Bruder Hathar meinte, wir sollten einfach die ganzen verdammten Höhlendecken über dem See zum Einsturz bringen. Das würde aber erstens zu lange dauern und zweitens uns einen wertvollen Durchgang verbauen. Wir brauchen eine andere Möglichkeit, um das Lager der Kuo-Toa zu erreichen.~ 
 								=								
-								~Die Svirfnebli hier in der Stadt sind Meister in Gesteinsverformung. Dort, wo wir unsere Hämmer und Meißel einsetzen, verwenden sie merkwürdige Magie. Vielleicht finden die Tiefengnome einen Weg, den versperrten Zugang zu den Kuo-Toa zu öffnen.~
-								IF ~~ THEN REPLY ~Also gut, ich werde mit den Tiefengnomen reden.~ GOTO ask_svirfnebli_01
+								~Die Tiefengnome unserer Stadt sind Meister in Gesteinsverformung. Wo wir unsere Hämmer und Meißel einsetzen, verwenden sie ihre merkwürdige Magie. Vielleicht haben sie ja eine Idee, den versperrten Zugang zu dem Kuo-Toa-Heiligtum zu öffnen.~
+								IF ~~ THEN GOTO ask_svirfnebli_01
 								END
 								
 									IF ~~ THEN BEGIN ask_svirfnebli_01
-									SAY ~Die Svirfnebli wären uns eine große Hilfe. Wenn man als Zwerg nicht mehr mit dem Kopf durch die Wand kommt, sollte man einen Gnom zu Rate ziehen. Fragt den Anführer der Svirfnebli in Gaerdals Tempel. Sein Name ist Schnotnell Samrynarr. Er könnte wissen, wie wir weiterkommen.~
+									SAY ~Die Svirfnebli wären uns daher eine große Hilfe. Wenn man als Zwerg nicht mehr mit dem Kopf durch die Wand kommt, sollte man einen Gnom zu Rate ziehen! Fragt den Anführer der Svirfnebli in Gaerdals Tempel. Sein Name ist Schnotnell Samrynarr. Er sollte wissen, wie wir weiterkommen.~
 									IF ~~ THEN REPLY ~Wo finde ich ihn?~ GOTO ask_svirfnebli_02
 									IF ~~ THEN REPLY ~Gut, ich werde ihn um Rat fragen.~ GOTO ask_svirfnebli_bye
 									END

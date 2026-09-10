@@ -12,7 +12,7 @@ IF ~~ THEN REPLY ~Gehen wir weiter.~ EXTERN AC#27DW8 bye
 
 	CHAIN AC#27DW8 help_dismiss
 	~Gut, wenn das Euer Wunsch ist, werden wir nach Iltkazar zurückkehren.~
-	DO ~SetGlobal("DismissDwarves","ACIL27",1)~ EXIT
+	DO ~SetGlobal("AC#IL27_DismissDwarves","GLOBAL",1)~ EXIT
 	
 CHAIN AC#27DW8 bye
 ~Für Iltkazar!~
@@ -29,11 +29,11 @@ IF ~~ THEN REPLY ~Eure Hilfe ist willkommen. Folgt mir.~ EXTERN AC#27DW9 help_ye
 
 	CHAIN AC#27DW9 help_dismiss
 	~Gut, wenn das Euer Wunsch ist, werden wir nach Iltkazar zurückkehren.~
-	DO ~SetGlobal("DismissDwarves","ACIL27",1)~ EXIT
+	DO ~SetGlobal("AC#IL27_DismissDwarves","GLOBAL",1)~ EXIT
 	
 	CHAIN AC#27DW9 help_yes
 	~Sehr gut! Geht voran.~
-	DO ~SetGlobal("AidDwarves","ACIL27",1)~ EXIT
+	DO ~SetGlobal("AC#IL27_AidDwarves","GLOBAL",1)~ EXIT
 
 CHAIN IF ~True()~ THEN AC#27DW9 hello01
 ~Wir folgen Euch, wenn Ihr das wünscht, und helfen Euch im Kampf.~

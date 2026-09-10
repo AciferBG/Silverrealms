@@ -90,7 +90,7 @@ THEN
 	ScreenShake([20.20],20)
         OpenDoor("Door03")
 		//EraseJournalEntry(@56101)
-		AddJournalEntry(@56102,QUEST)
+		AddJournalEntry(@56102,QUEST_DONE)
         SetGlobal("AC#DOOR03","ACIL27",2) // DOOR03 to ACIL2K is opened
 END
 

@@ -169,8 +169,8 @@ Vronia bat mich, an dem Ort von Ellhimars verschwinden nach Hinweisen zu suchen,
 Vronia hat Ellhimars Tagebuch an sich genommen, um mit Hilfe der Niederschriften Ellhimars geistigen Zustand zu verbessern.~
 
 
-//___________________________Boote für Barakuir
-@27000   = ~Boote für Barakuir
+//___________________________Die Reise nach Barakuir
+@27000   = ~Die Reise nach Barakuir
 
 Bresk und die anderen Zwerge werden die Boote am See zu Wasser lassen, wenn ich das Gebiet gesichert und von den Elementarwesen und Kuo-Toas befreit habe.~
 //___________________________Die Stadt des Geizes
@@ -387,14 +387,14 @@ Ich habe von den Svirfnebli einen Stab erhalten, der mir Zugang in den bisher un
 @56102  = ~Ein Weg ins Kuo-Toa-Lager
 
 Der gnomische Stab hat gute Arbeit geleistet. Mit seiner Magie konnte ich einen verborgenen Zugang ins Kuo-Toa-Lager öffnen. Jetzt muss ich dort eine Möglichkeit finden, den Elementar-Steinkreis zu deaktivieren.~
-@56111  = ~Der alte Steinkreis am See
+@56111  = ~Die Reise nach Barakuir
 
 Ich habe im Kuo-Toa-Heiligtum einen Runenstein gefunden, der eventuell den Steinkreis deaktivieren könnte, damit keine Elementare mehr herbeigerufen werden.~
-//___________________________Gogondy-Wein: Wein, Wahnsinn und Kuo-Toa
-@56200  = ~Wein, Wahnsinn und Kuo-Toa
+//___________________________Gogondy-Wein: Ein berauschender Plan der Svirfnebli
+@56200  = ~Ein berauschender Plan der Svirfnebli
 
 Der Svirfneblin Schnotnell Samrynarr hat vorgeschlagen, eine Flasche seines magischen Gogondy-Weines im Kampf gegen die Kuo-Toa einzusetzen, indem ich das Getränk im Tempel der Kreaturen zum Verdampfen bringe. Das sollte sie in den Wahnsinn treiben und mir den Kampf gegen sie gehörig erleichtern.~
-@56201  = ~Wein, Wahnsinn und Kuo-Toa
+@56201  = ~Ein berauschender Plan der Svirfnebli
 
 Ich habe den Gogondy-Wein der Tiefengnome im Heiligtum der Kuo-Toa verdunsten lassen. Ich hoffe, das reicht aus, um sie in den Wahnsinn zu treiben.~
 
@@ -553,29 +553,29 @@ Ich soll nach Osten über einen See zu der alten Heimstatt des Clan Duergar, nac
 @62041  = ~Die Reise nach Barakuir
 
 Sorni kann ein Metallboot bauen, welches auf dem Wasser gleitet. Sie schickt es in die Stadt und ich soll am Platz von Bhaerynden darauf warten.~
-@62042   = ~Der Weg nach Barakuir
+@62042   = ~Die Reise nach Barakuir
 
 Bresk und Elern warten in Iltkazar darauf, bis ich mich vorbereitet habe. Dann werden wir in die Tunnel zu dem unterirdischen See aufbrechen.~
-@62043   = ~Der Weg nach Barakuir
+@62043   = ~Die Reise nach Barakuir
 
 Hathar wartet vor den Tunneln, die zum See führen, auf den Rest der Truppe, während ich die ehrenvolle Aufgabe übernommen habe, gegen die Kuo Toa vorzugehen, bis zu den Ufern des Sees vorzustoßen, den Steinkreis zu deaktivieren und dann darauf zu warten, dass die Boote startklar gemacht werden.~
-@62044   = ~Der Weg nach Barakuir
+@62044   = ~Die Reise nach Barakuir
 
 Die Boote sind startklar. Alle warten nun darauf, dass ich das Boot betrete und damit das Zeichen zum Aufbruch gebe.~
-@62045   = ~Der Weg nach Barakuir
+@62045   = ~Die Reise nach Barakuir
 
 Ich bin an den Ausläufern des ehemaligen Barakuir angekommen. Von nun an geht mein Weg allein weiter. Sobald ich einen Hinweis gefunden habe, was es mit dem Schlaf König Mith Baraks auf sich hat, sollte ich zurück zum Anlegeplatz der Boote gehen, damit mich die Mannschaft zurück nach Iltkazar bringt.~
-@62046   = ~Verrat in Barakuir
+@62046   = ~Die Reise nach Barakuir
 
 Es scheint, dass mich die Bootsbesatzung allein in Barakuir zurückgelassen hat. Ich sollte schnellstmöglich ans Ufer zurückkehren und feststellen, ob das stimmt.~
-@62047   = ~Verrat in Barakuir
+@62047   = ~Die Reise nach Barakuir
 
 Aus heiterem Himmel ist der Hammer Dumathoins am Ufer Barakuirs aufgetaucht. Vielleicht hilft er mir, von diesem schrecklichen Ort zu verschwinden?~
-@62048   = ~Verrat in Barakuir
+@62048   = ~Die Reise nach Barakuir
 
 Ich habe die Außenbezirke der ehemaligen Stadt der Duergar betreten und hoffe, ich finde auf diesem Wege zurück nach Iltkazar.~
 
-@62059	= ~Verrat in Barakuir
+@62059	= ~Die Reise nach Barakuir
 
 Ruvan Steinschulter ist aus dem Rat ausgeschlossen worden und muss jetzt die nächste Zeit im Gefängnis der Stadt unter der Bronzemaske verbringen. Eine gerechte Strafe dafür, dass er mich in Barakuir dem Tod überlassen wollte.~
 @62060	= ~Ein ungewöhnlicher Gast

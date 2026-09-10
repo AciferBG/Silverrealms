@@ -981,8 +981,11 @@ Rettungswurf: Speziell~
 @797 = ~Ihr schüttet ein wenig des Gogondy-Weines ins Becken, und sofort steigt purpurner Rauch auf, dessen süßlich-magischer Duft sich rasch im gesamten Höhlenkomplex verbreitet und Eure Sinne betört. Mit etwas Glück wird dies den Zusammenhalt der Kuo-Toa erheblich schwächen.~ [EFF_M04]
 @798 = ~Der rote Rauch steigt unaufhörlich weiter auf.~
 @799 = ~Gogondy-Wein~
-@800 = ~Gogondy ist ein purpurrotes Getränk, dem man die Beimischung fein gemahlenen Rubins nachsagt. Sein betörender Duft verheißt Visionen und verbotene Erkenntnis.
-Für Nicht-Gnome jedoch endet ein einziger Schluck oft in rasender Verwirrung, geistigem Verfall – oder Schlimmerem.~
+@800 = ~Gogondy ist ein purpurrotes Getränk, dem man die Beimischung fein gemahlenen Rubins nachsagt. 
+Sein betörender Duft verheißt Visionen und verbotene Erkenntnisse.
+Für Nicht-Gnome jedoch endet ein einziger Schluck oft in rasender Verwirrung, geistigem Verfall – oder Schlimmerem.
+
+Ihr sollt diesen Wein im Kuo-Toa-Heiligtum östlich von Iltkazar benutzen, um die Kuo-Toa in den Wahnsinn zu treiben, damit sie sich gegenseitig an die Kiemen gehen.~
 @801 = ~Ihr habt einen weiteren Ausgang aus dem Unterreich gefunden, den Ihr von nun an benutzen könnt, um schneller nach Iltkazar zu reisen.~
 @802 = ~Durch das Öffnen der Tür scheint sich der Mechanismus außer Betrieb gesetzt zu haben.~
 @803 = ~Auf diesem mächtigen Schild ist ein Dolch, das Symbol Abbathors, des zwergischen Gottes des Geizes, eingraviert.~

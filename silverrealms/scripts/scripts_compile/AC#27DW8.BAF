@@ -1,11 +1,17 @@
 IF
-    Global("AidDwarves","ACIL27",1)
-    Global("ChangeAI","LOCALS",0)
+    Global("AC#IL27_DismissDwarves","GLOBAL",1)
+THEN
+    RESPONSE #100
+        EscapeArea()
+END
+
+IF
+    Global("AC#IL27_AidDwarves","GLOBAL",1)
     Allegiance(Myself,NEUTRAL)
 THEN
     RESPONSE #100
         ChangeEnemyAlly(Myself,GOODBUTBLUE)
-        SetGlobal("ChangeAI","LOCALS",1)
+        SetGlobal("AC#IL27_AidDwarves","GLOBAL",2)
 END
 
 IF
@@ -16,7 +22,7 @@ THEN
 END
 
 IF
-    Global("AidDwarves","ACIL27",2)
+    Global("AC#IL27_AidDwarves","GLOBAL",2)
     !See([ENEMY])
     !Range(Player1,12)
     Delay(6)

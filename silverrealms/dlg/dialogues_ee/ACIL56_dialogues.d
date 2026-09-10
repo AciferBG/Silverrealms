@@ -57,12 +57,18 @@ END
 				END
 				
 					IF ~~ THEN BEGIN rock_to_mud_02
-					SAY ~Meine Rasse besitzt die Gabe, Fels zu verformen. Da Ihr auf Euch alleine gestellt seid, wird Euch das nichts nützen. Glücklicherweise besitze ich einen Stab, der diese Fähigkeit innehat. Wenn Ihr ihn in den Kuo-Toa-Tunneln an der richtigen Stelle einsetzt, könnte dies eine dünne Felswand zum Schmelzen bringen und so ihr Lager freilegen. Hier ist der Stab. Geht sorgsam mit ihm um.~
+					SAY ~Meine Rasse besitzt die Gabe, Fels zu verformen. Glücklicherweise besitze ich auch einen Stab, der diese Fähigkeit innehat. Wenn Ihr diesen in den Kuo-Toa-Tunneln an der richtigen Stelle einsetzt, könnte dies die dünne Felswand zum Schmelzen bringen und ihr Lager freilegen. Hier ist der Stab. Geht sorgsam mit ihm um.~
 					IF ~~ THEN REPLY ~Ihr wollt, dass ich mit Eurem Stab Fels zum Schmelzen bringe?~ DO ~GiveItemCreate("AC#WAND7",LastTalkedToBy(),1,0,0)~ GOTO rock_to_mud_03
+					IF ~~ THEN REPLY ~Klingt nach einem guten Plan.~ DO ~GiveItemCreate("AC#WAND7",LastTalkedToBy(),1,0,0)~ GOTO rock_to_mud_04
 					END
 					
 						IF ~~ THEN BEGIN rock_to_mud_03
 						SAY ~Genauer gesagt - zu Schlamm verwandelt! Das wird die Kreaturen mächtig verrückt machen. Um zu wissen, wo Ihr ihn einsetzen könnt, solltet Ihr dem strengen Geruch folgen, der häufig aus den Ritzen ihres Versteckes nach draußen dringt.~
+						IF ~~ THEN GOTO gogondy
+						END
+						
+						IF ~~ THEN BEGIN rock_to_mud_04
+						SAY ~Um zu wissen, wo Ihr ihn einsetzen könnt, solltet Ihr dem strengen Geruch folgen, der häufig aus den Ritzen ihres verrückten Versteckes nach draußen dringt.~
 						IF ~~ THEN GOTO gogondy
 						END
 						

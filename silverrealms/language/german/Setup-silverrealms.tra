@@ -554,8 +554,7 @@ Gewicht: 3~
 @455 = ~Haelas Tempel~
 @456 = ~Phaeba Schwarzhorn~
 @457 = ~Illithidenrobe~
-@458 = ~Illithidenrobe
-Diese Robe wurde einst von einem Gedankenschinder angefertigt und getragen. Es ist wahrscheinlich, dass die positiven Eigenschaften, die diese Robe dem Träger verleiht, durch psionische Energie eingebracht wurde. Die unterschiedlichen Stoffe sind zu einem verwirrenden, schillernden bunten Mix aus verschiedenen Farben verwoben worden.
+@458 = ~Diese Robe wurde einst von einem Gedankenschinder angefertigt und getragen. Es ist wahrscheinlich, dass die positiven Eigenschaften, die diese Robe dem Träger verleiht, durch psionische Energie eingebracht wurde. Die unterschiedlichen Stoffe sind zu einem verwirrenden, schillernden bunten Mix aus verschiedenen Farben verwoben worden.
 Die Robe bietet dem Träger vor allen Dingen Widerstandskraft gegen Nahkampfangriffe, für die die weiche Haut eines Gedankenschinders besonders anfällig zu sein scheint.
 
 SPEZIFISCHE EIGENSCHAFTEN:
@@ -563,9 +562,7 @@ SPEZIFISCHE EIGENSCHAFTEN:
 -1 auf Rüstungsklasse gegen Wuchtwaffen
 Rettungswurf gegen Odemwaffen: +1
 Besondere Fähigkeiten: Träger erhält +1 auf Intelligenz und +10 auf Sagenkunde
-Gewicht: 4
-Kann nur verwendet werden von:
-Magiern (auch mehrklassig und mit Klassenkombination)~
+Gewicht: 4~
 @459 = ~Grüner Abishai~
 @460 = ~Roter Abishai~
 @461 = ~Schwarzer Abishai~

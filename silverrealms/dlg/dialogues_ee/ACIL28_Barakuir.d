@@ -277,7 +277,7 @@ IF ~~ THEN REPLY ~Nennt mir einen Grund, warum ich mit Euch nicht dasselbe mache
 													IF ~~ THEN REPLY ~Ich werde wohl anderswo nach Antworten suchen.~ EXTERN AC#IL28E tell_me_more_03
 													
 													CHAIN AC#IL28E tell_me_more_03
-													~Geht nicht! Es tut meinem alten Hirn gut, wieder mit jemandem in Verbindung zu stehen. Vielleicht gibt es eine Möglichkeit für Euch, Euch meine Erinnerungen an Mith Barak zu schenken wenn...~												
+													~Geht nicht fort! Es tut meinem alten Hirn gut, wieder mit jemandem in Verbindung zu stehen. Vielleicht gibt es eine Möglichkeit für Euch, Euch meine Erinnerungen an Mith Barak zu schenken wenn...~												
 													END
 													IF ~~ THEN EXTERN AC#IL28E illithid_are_coming
 

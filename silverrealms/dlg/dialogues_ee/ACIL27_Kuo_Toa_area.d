@@ -109,7 +109,7 @@ END
 			END
 			
 				IF ~~ THEN BEGIN not_afraid
-				SAY ~Seht Ihr? Ich wusste es! <CHARNAME> gefällt mir mit jedem <PRO_HISHER> Sätze besser!~
+				SAY ~Seht Ihr? Ich wusste es! <CHARNAME> gefällt mir mit jedem <PRO_HISHER>er Sätze besser!~
 				IF ~~ THEN REPLY ~Danke. Wir sollten die Boote zu Wasser lassen.~ GOTO build_the_boats
 				END
 				
@@ -124,7 +124,7 @@ END
 				END
 				
 					IF ~~ THEN BEGIN build_the_boats
-					SAY ~Wahr gesprochen, <CHARNAME>! Wohlan, Bootsschmiede, zeigt einmal, was Ihr könnt!~
+					SAY ~Wahr gesprochen! Bootsschmiede, zeigt, was Ihr könnt!~
 					IF ~~ THEN DO ~SetGlobal("AC#RC_Sorni_Fourth","GLOBAL",10)~ EXIT
 					END
 					

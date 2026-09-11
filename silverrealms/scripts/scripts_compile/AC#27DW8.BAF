@@ -6,12 +6,11 @@ THEN
 END
 
 IF
-    Global("AC#IL27_AidDwarves","GLOBAL",1)
+    GlobalGT("AC#IL27_AidDwarves","GLOBAL",1)
     Allegiance(Myself,NEUTRAL)
 THEN
     RESPONSE #100
         ChangeEnemyAlly(Myself,GOODBUTBLUE)
-        SetGlobal("AC#IL27_AidDwarves","GLOBAL",2)
 END
 
 IF

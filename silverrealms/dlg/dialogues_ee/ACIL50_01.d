@@ -106,7 +106,7 @@ IF ~GlobalGT("AC#RC_Sorni_Fourth","GLOBAL",0)
 Global("AC#KuoToaStone","GLOBAL",1)
 Global("AC#StoneMelter","ACIL50",0)~ THEN BEGIN hello_boats_wait_svirfnebli
   SAY ~Und, habt Ihr schon mit den Gnomen gesprochen?~
-  IF ~PartyHasItem("AC#WAND7")~ THEN REPLY ~Ja, ich habe hier einen Stab bei mir, der Fels in Schlamm verwandeln kann. Mit etwas Glück lässt sich dadurch der Zugang zum Lager der Kuo-Toa finden.~ DO ~SetGlobal("AC#StoneMelter","ACIL50",11)
+  IF ~PartyHasItem("AC#WAND7")~ THEN REPLY ~Der Gnom gab mir einen Stab, der Fels in Schlamm verwandelt. Er soll uns den Weg zum Kuo-Toa-Lager öffnen.~ DO ~SetGlobal("AC#StoneMelter","ACIL50",11)
   SetGlobal("AC#KuoToaStone","GLOBAL",10)~ GOTO use_that_staff
   IF ~~ THEN REPLY ~Es gibt noch nichts Neues zu berichten.~ + not_talked_to_svrirfs_yet
 END
@@ -130,6 +130,7 @@ END
 			IF ~~ THEN BEGIN yes_talked_to_sorni_yet
 			SAY ~Also gut, hier ist der Plan. Ihr versucht, die Kuo-Toa zu verjagen und den Steinkreis auszuschalten. Sobald die Höhle sicher ist, rücken wir mit den Booten nach.~
 			IF ~~ THEN REPLY ~Ihr lasst mich wieder die Drecksarbeit machen.~ GOTO drecksarbeit
+			IF ~~ THEN REPLY ~Ein guter Plan!~ GOTO bresk_ready_to_leave
 			END
 			
 				IF ~~ THEN BEGIN drecksarbeit
@@ -138,7 +139,7 @@ END
 				END
 			
 			IF ~~ THEN BEGIN bresk_ready_to_leave
-			  SAY ~Alle bereit zum Aufbruch? Elern hier neben mir ist schon ganz nervös!~
+			  SAY ~Alle bereit zum Aufbruch? Elern ist schon ganz nervös!~
 			  IF ~~ THEN EXTERN ~AC#ELER2~ elern_hello_boats_02
 			END
 			
@@ -149,10 +150,21 @@ END
 
 IF ~GlobalGT("AC#RC_Sorni_Fourth","GLOBAL",0)
 Global("AC#KuoToaStone","GLOBAL",0)~ THEN BEGIN hello_kuo_toa_problem
-  SAY ~<CHARNAME>! Ist ja interessant, dass Euch der Rat jetzt nach Barak... in diese alte verfluchte Duergar-Heimat schicken will. Ganz so einfach, wie es sich der Rat vorstellt, ist es aber nicht.~
+  SAY ~<CHARNAME>! Ist ja interessant, dass Euch der Regentschaftsrat jetzt nach Barak... in diese alte verfluchte Duergar-Heimstatt schicken will... doch ganz so einfach, wie es sich der Rat vorstellt, wird es nicht.~
   IF ~~ THEN REPLY ~Warum?~ GOTO what_boat_problems
 END
 
+IF ~~ THEN BEGIN what_boat_problems
+  SAY ~Der Seeweg ist voller Wasserelementare und Kuo-Toa. Meine Kundschafter glauben, dass die Fischwesen diese Elementare über einen alten Steinkreis kontrollieren. Das Kuo-Toa Lager muss ganz in dessen Nähe liegen, aber die Biester erreichen es durch überflutete Tunnel, die für uns unpassierbar sind.~
+  IF ~~ THEN REPLY ~Und wie sollen wir hineinkommen?~ GOTO find_kuotoa_lair
+END
+
+IF ~~ THEN BEGIN find_kuotoa_lair
+  SAY ~Wenn man als Zwerg nicht mehr mit dem Kopf durch die Wand kommt, sollte man einen Gnom zu Rate ziehen. Wo wir unsere Hämmer und Meißel einsetzen, verwenden sie ihre merkwürdige Magie. Die Tiefengnome verstehen mehr von Gesteinsverformung als wir. Fragt Schnotnell Samrynarr in Gaerdals Heiligtum in der Bronzemaske um Hilfe.~
+  IF ~~ THEN REPLY ~Gut. Ich werde mit ihm sprechen.~ GOTO ask_svirfnebli_bye
+END
+
+/*
 			IF ~~ THEN BEGIN what_boat_problems
 			SAY ~Meine Kundschafter haben an den Ufern des Sees, der Euch nach Barakuir bringen soll, zahlreiche Wasser-Elementarwesen angetroffen, die jedesmal aufs Neue an das Ufer kriechen, sobald eines dieser Monster erschlagen wurde.~
 			IF ~~ THEN GOTO boat_problem_02
@@ -198,9 +210,9 @@ END
 									SAY ~Die Gnome haben in der Bronzemaske, der Heimstatt meines Clans, zu Ehren ihres Gottes Gaerdal ein Heiligtum errichtet.~
 									IF ~~ THEN REPLY ~Dann werde ich dort nach diesem Schnotnell suchen.~ GOTO ask_svirfnebli_bye
 									END
-									
+*/									
 									IF ~~ THEN BEGIN ask_svirfnebli_bye
-									SAY ~Wir warten hier auf Euch. Sobald die Kuo-Toa vernichtet und die Wege wieder passierbar sind, brechen wir mit den Booten auf.~
+									SAY ~Wir warten hier auf Euch. Ich bin mir sicher, dass der Anführer der Tiefengnome einen Einfall hat, wie wir das Kuo-Toa-Lager erreichen können.~
 									IF ~~ THEN DO ~SetGlobal("AC#KuoToaStone","GLOBAL",1)
 									AddJournalEntry(@56100,QUEST)~ EXIT
 									END
@@ -416,13 +428,19 @@ END
 	END
 
 		IF ~~ THEN BEGIN bresk_ready
-		  SAY ~Meine Männer stehen an den Toren bereit.~
+		  SAY ~Von mir aus kann es losgehen.~
 		  IF ~~ THEN EXTERN ~AC#ELER2~ elern_one_word
 		END
-		
+	/*	
 			IF ~~ THEN BEGIN what_ruvan
 			SAY ~Was? Die Männer meines Onkels begleiten <CHARNAME>? Warum das denn? Hätte ich das gewusst, hätte ich einige Mitglieder der Garnison bereitstellen können.~
 			IF ~~ THEN EXTERN ~AC#ELER2~ chain_ruvan
+			END
+			*/
+			
+			IF ~~ THEN BEGIN what_ruvan 
+			SAY ~Onkel Ruvans Männer? Hätte ich das gewusst, hätte ich besser einige Mitglieder der Garnison bereitgestellt!~ 
+			IF ~~ THEN EXTERN ~AC#ELER2~ chain_ruvan 
 			END
 
 IF ~True()~ THEN BEGIN go_on
@@ -503,7 +521,7 @@ Global("AC#StoneMelter","ACIL50",0)~ THEN BEGIN hello_elern_boats_wait_svirfnebl
 END
 
 	IF ~~ THEN BEGIN elern_hello_boats_02
-  SAY ~Ihr seid charmant wie immer, Bresk. Also was ist, <CHARNAME>, seid Ihr bereit für unser Abenteuer?~
+  SAY ~Wie immer ein Muster an Feingefühl, Bresk. Also, <CHARNAME>, seid Ihr bereit?~
   IF ~~ THEN REPLY ~Ich brauche noch etwas Zeit, um mich vorzubereiten.~ GOTO need__more_time
   IF ~~ THEN REPLY ~Ich bin bereit, aufzubrechen.~ GOTO ready_to_go
 	END
@@ -517,12 +535,20 @@ END
 		SAY ~Das ist gut. Bresk, seid Ihr auch bereit?~
 	  IF ~~ THEN EXTERN ~AC#BRES1~ bresk_ready
 	END
-	
+	/*
 		IF ~~ THEN BEGIN elern_one_word
 		  SAY ~Eine Sache noch. Ich hatte Euch versprochen, dass die Anhänger des Dugmaren Euch begleiten werden - alles treue Diener unserer Familie Abgrundlied.~
 		  =
 		  ~Der Rat hat auf Antrag von Ruvan Steinschulter anders beschlossen. Es werden nun seine persönlichen Krieger die Expedition anführen und Euch begleiten. Laut Protokoll muss ich mich dem beugen.~
 			IF ~~ THEN EXTERN ~AC#BRES1~ what_ruvan
+		END
+		*/
+		
+		IF ~~ THEN BEGIN elern_one_word 
+		SAY ~Eine Sache noch: Ich hatte Euch versprochen, dass die Anhänger des Dugmaren von Clan Abgrundlied Euch begleiten werden. Doch der Rat hat anders entschieden.~ 
+		= 
+		~Auf Antrag Ruvan Steinschulters werden nun seine Männer die Expedition anführen.~ 
+		IF ~~ THEN EXTERN ~AC#BRES1~ what_ruvan 
 		END
 
 IF ~~ THEN BEGIN help_party
@@ -546,10 +572,14 @@ IF ~~ THEN BEGIN what_else
 END
 
 IF ~~ THEN BEGIN start_barakuir_adventure
-  SAY ~Ha! Ich hätte nicht gedacht, dass ich einmal ein so großes Abenteuer erleben würde! Los geht's!~
-  IF ~~ THEN DO ~SetGlobal("AC#RC_Sorni_Fourth","GLOBAL",4)
-  EraseJournalEntry(@62041)
-  AddJournalEntry(@27000,QUEST)~ EXIT
+  SAY ~Ich hätte nicht gedacht, dass ich einmal ein so großes Abenteuer erleben würde! Los geht's!~
+  IF ~~ THEN DO ~AddJournalEntry(@27000,QUEST)
+          ClearAllActions()
+        StartCutSceneMode()
+        SetGlobal("AC#RC_Sorni_Fourth","GLOBAL",5)
+        FadeToColor([15.0],0)
+        Wait(1)
+        StartCutScene("ac#ct50B")~ EXIT
 END
 
 						CHAIN IF ~~ THEN AC#ELER2 elern_bye
@@ -1036,13 +1066,13 @@ END
 			IF ~~ THEN DO ~RevealAreaOnMap("ACIL70")~ EXTERN AC#BRES1 ready_to_leave_03
 
 CHAIN IF ~~ THEN AC#ELER2 chain_ruvan
-~Der Rat ist der Meinung, dass Eure Männer hier zur Verteidigung der Stadt benötigt werden und Ihr keinen einzigen Krieger entbehren könnt.~
-== AC#BRES1 ~Wisst Ihr, es gibt einen Grund, warum mein Vater und wir hier die Verteidigung der Stadt übernehmen mussten. Mein Vater Dunnabar meint, die Hände seines Bruders Ruvan taugen nur zum Gold zählen.~
-== AC#ELER2 ~Ich hätte mir auch ein anderes Vorgehen gewünscht, Bresk, aber so ist nun einmal der Entschluss des Rates.~
-== AC#BRES1 ~Naja, <CHARNAME>, ich habe meine Meinung über Euch in der letzten Zeit ohnehin geändert. Ihr seid ein feiner <PRO_RACE> und könnt auf Euch selbst aufpassen. Das müsst Ihr aber auch.~
-== AC#ELER2 ~Sind wir bereit aufzubrechen?~
+~Der Rat ist der Meinung, dass Eure Männer hier zur Verteidigung der Stadt benötigt werden.~
+== AC#BRES1 ~Pah! Es gibt einen einfachen Grund, warum mein Vater, mein Bruder und ich die Verteidigung dieser Stadt übernehmen. Die Hände meines Onkels Ruvan taugen doch nur zum Gold zählen!~
+== AC#ELER2 ~Ich hätte ebenfalls anders entschieden, Bresk. Aber der Beschluss steht.~
+== AC#BRES1 ~Nun, <CHARNAME>, ich habe meine Meinung über Euch ohnehin geändert. Ihr seid ein feiner <PRO_RACE> und könnt gut auf Euch selbst aufpassen. Ich traue Euch zu, auch mit schlechter Begleitung heil zurückzukommen.~
+== AC#ELER2 ~Dann sind wir uns zumindest darin einig. Sind alle bereit aufzubrechen?~
 == AC#50BSM ~Wir sind bereit.~
-== AC#BRES1 ~Die Schmiede und wir anderen treffen uns vor den Toren. <CHARNAME>, Ihr solltet von dort nach Südosten durch die Tunnel vorstoßen und die Ufer des Den-Dunglor, des Eisensees, aufsuchen. Versucht, die Kuo-Toa und den Steinkreis auszuschalten. Wir folgen Euch und sichern die Mannschaft mit den Booten, wenn Ihr Eure Aufgabe erfüllt habt.~
+== AC#BRES1 ~Bereit. Hört zu, <CHARNAME>: Mein Bruder Hathar bringt Euch vor den versiegelten Bereich und räumt den Weg frei. Ihr beseitigt die Kuo-Toa und legt den Steinkreis still. Wir folgen mit den Booten und sichern den Rückweg. Danach treffen wir uns am Seeufer und lassen die Boote zu Wasser.~
 END
 IF ~~ THEN EXTERN ~AC#ELER2~ start_barakuir_adventure
 

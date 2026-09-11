@@ -163,25 +163,33 @@ END
 
 IF ~Global("AC#RC_Sorni_Fourth","GLOBAL",6)
 Global("ClearPassage","ACIL20",0)~ THEN BEGIN need_time_for_boats
-SAY ~Mein Bruder Bresk und die anderen brauchen noch ein wenig, um die Boote hierher zu bekommen. Er hat mich beauftragt, hier auf sie zu warten.~
+SAY ~Mein Bruder Bresk und die anderen brauchen noch ein wenig, um die Boote hierher zu bekommen. Er hat mich beauftragt, für Euch den Weg freizumachen.~
 =
-~Ihr solltet die Vorhut bilden und schon einmal in die Tunnel bis zu den Ufern des Den-Dunglor vorstoßen, <CHARNAME>. Sobald das Gebiet gesichert ist, werden wir mit den Booten nachziehen.~
-IF ~~ THEN REPLY ~Gut. Was könnte mich da erwarten?~ + whats_in_tunnels
+~Ihr werdet die Vorhut bilden und die Tunnel bis zu den Ufern des Sees säubern. Sobald das Gebiet gesichert ist, werden wir mit den Booten nachziehen.~
+IF ~~ THEN REPLY ~Was könnte mich in den Tunneln erwarten?~ + whats_in_tunnels
+IF ~~ THEN REPLY ~Dann verschwenden wir keine Zeit. Öffnet den Weg.~ + wheres_the_cleric
 END
 
 	IF ~~ THEN BEGIN whats_in_tunnels
 	SAY ~Kuo-Toa wahrscheinlich. Genau weiß man das aber nie, was da so alles aus dem Wasser gekrochen kommt.~
 	IF ~~ THEN REPLY ~Wie soll ich an den ganzen Steinbrocken und Metallkugeln vorbeikommen, die Ihr hier verteilt habt?~ GOTO stones_hr_01
+	IF ~~ THEN REPLY ~Dann räumen wir das Kuo-Toa-Problem aus dem Weg.~ GOTO wheres_the_cleric
+	IF ~~ THEN REPLY ~Was auch dort wartet, wir stellen uns ihm.~ GOTO wheres_the_cleric
 	END
 	
 	IF ~~ THEN BEGIN stones_hr_01
-	SAY ~Das lasst einmal meine Sorge sein. Kleriker? Wo steckt denn der verdammte Priester?~
+	SAY ~Das lasst einmal meine Sorge sein.~ 
+	IF ~~ THEN GOTO wheres_the_cleric
+	END
+	
+	IF ~~ THEN BEGIN wheres_the_cleric
+	SAY ~Kleriker? Wo steckt denn der verdammte Priester?~
 	IF ~~ THEN DO ~SetGlobal("Wheres_Cleric","ACIL20",1)~ EXIT
 	END
 	
 	
 		IF ~~ THEN BEGIN remove_stones_hr
-		SAY ~Tut das. Und Ihr anderen helft auch mit. Los geht's! Zeigen wir dem Oberflächen-<PRO_RACE> mal, wie wir hier in Iltkazar die Straßen reinigen. Ich will hier keinen Stein auf dem anderen mehr sehen!~
+		SAY ~Tut das! Zeigen wir dem Oberflächen-<PRO_RACE>, wie wir hier im Unterreich die Straße reinigen. Ich will keinen Stein mehr auf dem anderen mehr sehen!~
 		IF ~~ THEN DO ~SetGlobal("ClearPassage","ACIL20",1)~ EXIT 
 		END
 	

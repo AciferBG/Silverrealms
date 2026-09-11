@@ -339,6 +339,8 @@ THEN
 		CreateCreature("AC#50BSM",[1825.1829],3)  // Boatsmith
 END
 
+// now triggered via dlg:
+/*
 IF
 	Global("AC#RC_Sorni_Fourth","GLOBAL",4)
 THEN
@@ -350,6 +352,7 @@ THEN
 		Wait(1)
 		StartCutScene("ac#ct50B")
 END
+*/
 
 IF
 	Global("AC#Goodbye_Iltkazar","GLOBAL",2)

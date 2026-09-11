@@ -36,6 +36,33 @@ IF ~~ THEN BEGIN question
    Global("AC#StoneMelter","ACIL56",0)~ THEN REPLY ~Bresk Steinschulter meinte, Ihr könntet mir bei der Befreiung von der Kuo-Toa-Plage in den östlichen Tunneln helfen.~ GOTO kuo_toa_problem_01
 END
 
+
+IF ~~ THEN BEGIN kuo_toa_problem_01
+  SAY ~Oh! Haben sie endlich beschlossen, sich der Sache anzunehmen? Gut. Wenn die Kuo-Toa tatsächlich ein verborgenes Lager besitzen, erreichen sie es sicher durch überflutete Gänge. Und der alte Steinkreis könnte erklären, wie sie die anwesenden Wasserelementare kontrollieren. Hmm...~
+  IF ~~ THEN GOTO rock_to_mud_01
+END
+
+IF ~~ THEN BEGIN rock_to_mud_01
+  SAY ~Ha! Tauchen müsst Ihr nicht. Denn jeder Fels lässt sich verformen! Und ich besitze einen Stab, mit dem Ihr eine Felswand zu Schlamm verwandeln könnt. Sucht in den Kuo-Toa-Tunneln nach Stellen, aus denen ihr strenger Geruch dringt. Dahinter dürfte ihr Versteck liegen. Lasst den Stab den Fels auflösen und den Weg in ihr stinkendes Lager preisgeben.~
+  IF ~~ THEN REPLY ~Ich werde es gerne versuchen.~ DO ~GiveItemCreate("AC#WAND7",LastTalkedToBy(),1,0,0)~ GOTO gogondy
+  IF ~~ THEN REPLY ~Na schön. Gebt mir das Ding. Was kann schon schiefgehen?~ DO ~GiveItemCreate("AC#WAND7",LastTalkedToBy(),1,0,0)~ GOTO gogondy
+  IF ~~ THEN REPLY ~Wenn schon Drecksarbeit, dann wenigstens mit Magie.~ DO ~GiveItemCreate("AC#WAND7",LastTalkedToBy(),1,0,0)~ GOTO gogondy
+  IF ~~ THEN REPLY ~Klingt brauchbar. Her mit dem Stab.~ DO ~GiveItemCreate("AC#WAND7",LastTalkedToBy(),1,0,0)~ GOTO gogondy
+END
+
+IF ~~ THEN BEGIN gogondy
+  SAY ~Wartet. Wenn Ihr in ihr Heiligtum eingedrungen seid, könnt Ihr Euch noch eine ihrer Schwächen zunutze machen. Kuo-Toa schrammen ständig am Rande des Wahnsinns entlang.~
+  IF ~~ THEN REPLY ~Was habt Ihr vor?~ GOTO gogondy_02
+  IF ~~ THEN REPLY ~Das bedeutet?~ GOTO gogondy_02
+END
+
+IF ~~ THEN BEGIN gogondy_02
+  SAY ~Wir helfen ihnen dabei ein bisschen nach. Mit Gogondy. Dem Wein der Svirfnebli. Bei uns sorgt er für Visionen, bei anderen Völkern für Halluzinationen. Wenn Ihr ihn an ihrem Ort der Anbetung verdampfen lasst, könnte das unter den Kuo-Toa ziemliches Chaos auslösen.~
+  IF ~~ THEN REPLY ~Es ist einen Versuch wert. Gebt mir den Wein.~ GOTO gogondy_yes
+  IF ~~ THEN REPLY ~Nein. Den Stab nehme ich, aber auf den Wein verzichte ich.~ GOTO gogondy_no
+END
+
+/*
 	IF ~~ THEN BEGIN kuo_toa_problem_01
 	SAY ~Oh! Haben sie endlich beschlossen, sich dieser Sache anzunehmen? Das ist gut.~
 	IF ~~ THEN REPLY ~Sie vermuten, dass die Kuo-Toa irgendwo ein Schlupfloch haben, das sich auf normalem Wege nicht erreichen lässt und dort einen Gegenstand versteckt halten, der die Wasserelementare kontrollieren kann.~ GOTO kuo_toa_problem_02
@@ -97,6 +124,7 @@ END
 												IF ~~ THEN REPLY ~Es wäre ein Versuch wert. Gebt mir den Wein.~ GOTO gogondy_yes
 												IF ~~ THEN REPLY ~Das ist mir zuviel Hokuspokus. Ich werde mit den Wesen auch ohne den Wein fertig!~ GOTO gogondy_no
 												END
+*/												
 												
 														IF ~~ THEN BEGIN gogondy_yes
 														SAY ~Hier ist eine Flasche. Ihr solltet schauen, dass Ihr den Wein möglichst nahe an ihrem Heiligtum zum Verdunsten bringt. Und trinkt ihn nicht vorher aus! Das würde Euch nicht gut bekommen.~
@@ -110,7 +138,7 @@ END
 														END
 													
 													IF ~~ THEN BEGIN summary_01
-													SAY ~Benutzt den Stab, um Zugang zu ihrem Tempel zu erlangen. Der Wächter des goldenen Hügels möge Euch beistehen.~
+													SAY ~Benutzt den Stab, um Zugang zu dem Kuo-Toa Tempel zu erlangen. Der Wächter des goldenen Hügels möge Euch dabei beistehen!~
 													IF ~~ THEN REPLY ~Habt Dank. Ich werde mein Bestes geben.~ DO ~AddJournalEntry(@56101,QUEST)
 													SetGlobal("AC#StoneMelter","ACIL56",20)~ GOTO exit
 													END

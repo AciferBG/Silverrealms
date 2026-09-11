@@ -325,22 +325,25 @@ IF
 	Global("ClearPassage","ACIL20",1)
 THEN
 	RESPONSE #100
-		Wait(1)
-		ClearAllActions()
-		StartCutSceneMode()
-		ActionOverride("AC#20DW9",ForceSpell(Myself,DO_NOTHING))
-		Wait(2)
-		FadeToColor([20.0],0)
-		Wait(2)
-		OpenDoor("DOOR05")
-		CreateCreature("AC#20KDD",[4122.2595],0)  // dead kuo toa
-		CreateCreature("AC#20KDD",[4118.2598],3)  // dead kuo toa
-		CreateCreature("AC#20KDD",[4053.2578],13)  // dead kuo toa
-		CreateCreature("AC#20KDD",[4089.2610],6)  // dead kuo toa
-		FadeFromColor([20.0],0)
-		EndCutSceneMode()
-		SetGlobal("ClearPassage","ACIL20",10)
-		ActionOverride("AC#HATH1",StartDialogNoSet(Player1))
+        Wait(1)
+        ClearAllActions()
+        StartCutSceneMode()
+        ActionOverride("AC#20DW9",ForceSpell(Myself,DO_NOTHING))  // SPIN905.SPL (No such index)
+        PlaySound("AC#IL20T")
+        Wait(2)
+        FadeToColor([20.0],0)
+        Wait(1)
+        PlaySound("AC#IL20S")
+        Wait(1)
+        OpenDoor("DOOR05")
+        CreateCreature("AC#20KDD",[4122.2595],S)  // Dieb
+        CreateCreature("AC#20KDD",[4118.2598],SWW)  // Dieb
+        CreateCreature("AC#20KDD",[4053.2578],SEE)  // Dieb
+        CreateCreature("AC#20KDD",[4089.2610],NW)  // Dieb
+        FadeFromColor([20.0],0)
+        EndCutSceneMode()
+        SetGlobal("ClearPassage","ACIL20",10)
+        ActionOverride("AC#HATH1",StartDialogueNoSet(Player1))
 END
 
 IF

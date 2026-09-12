@@ -156,14 +156,15 @@ IF ~~ THEN DO ~SetGlobal("TalkToElderBrain","ACIL28",1)
 MoveViewObject(Player1,INSTANT)~ EXIT
 
 CHAIN IF ~Global("TalkToElderBrain","ACIL28",1)~ THEN AC#IL28E hello_again
-~Ihr habt den Neothelid vernichtet. Dafür gebührt Euch mein Dank.~
+~Ihr habt den Neothelid vernichtet! Dafür gebührt Euch mein aufrichtiger Dank.~
 END
 IF ~~ THEN REPLY ~Wer seid Ihr?~ EXTERN AC#IL28E who_are_you
+IF ~~ THEN REPLY ~Mit Euch hatte ich jetzt nicht gerechnet.~ EXTERN AC#IL28E who_are_you
 IF ~~ THEN REPLY ~Ich habe es nicht für Euch getan.~ EXTERN AC#IL28E who_are_you
-IF ~~ THEN REPLY ~Nennt mir einen Grund, warum ich mit Euch nicht dasselbe machen sollte.~ EXTERN AC#IL28E who_are_you
+IF ~~ THEN REPLY ~Nennt mir einen Grund, warum ich mit Euch nicht dasselbe machen sollte!~ EXTERN AC#IL28E who_are_you
 
 	CHAIN AC#IL28E who_are_you
-	~Einst war ich das Ältestenhirn dieser Siedlung. Ein Nexus aus Wissen, Macht und Kontrolle. Nun bin ich... seht mich an.~
+	~Einst war ich das Ältestenhirn dieser Siedlung und vereinte tausende Gehirne in einem einzigen Geist. Ich war ein Nexus aus Wissen, Macht und Kontrolle. Nun bin ich... seht mich an.~
 	END
 	IF ~~ THEN REPLY ~Was ist geschehen?~ EXTERN AC#IL28E what_happened
 	IF ~~ THEN REPLY ~Ein verfaulter Haufen Gehirnmasse.~ EXTERN AC#IL28E what_happened
@@ -172,41 +173,48 @@ IF ~~ THEN REPLY ~Nennt mir einen Grund, warum ich mit Euch nicht dasselbe mache
 		CHAIN AC#IL28E what_happened
 		~Die Siedlung zerfiel, als die Duergar rebellierten. Der Zustrom an Nahrung versiegte. Ordnung fiel Hunger anheim.~
 		=
-		~Illithiden wandten sich gegeneinander. Kannibalismus. Ich verlor die Kontrolle. Larven fraßen Larven, bis nur eine verblieb – und zu jenem Ding heranwuchs, das Ihr gerade vernichtet habt und vor dem ich mich verstecken musste.~
+		~Illithiden wandten sich gegeneinander. Kannibalismus. Ich verlor die Kontrolle. Larven fraßen Larven, bis nur eine verblieb – und zu jenem Ding heranwuchs, das Ihr gerade vernichtet habt und vor dem ich mich verstecken musste: Ein Neothelid.~
 		END
-		IF ~~ THEN REPLY ~Dieses Monstrum war einmal eine kleine Larve? Widerlich.~ EXTERN AC#IL28E neothelid
-		IF ~~ THEN REPLY ~Der Neothelid sollte zu einem Gedankenschinder werden?~ EXTERN AC#IL28E neothelid
+		IF ~~ THEN REPLY ~Dieses Monstrum von vorhin war einmal eine kleine Larve? Widerlich.~ EXTERN AC#IL28E neothelid
+		IF ~~ THEN REPLY ~Eine Larve frisst ihre Artgenossen und wächst zu so etwas heran; selbst für Illithiden ist das abstoßend.~ EXTERN AC#IL28E neothelid
+		IF ~~ THEN REPLY ~Ihr musstet Euch also vor Eurer eigenen Larve verstecken.~ EXTERN AC#IL28E neothelid
+		IF ~~ THEN REPLY ~Das muss bitter sein. Einst habt Ihr ganze Illithiden gelenkt, und am Ende jagte Euch eine Larve aus Eurem eigenen Becken.~ EXTERN AC#IL28E neothelid
 
 			CHAIN AC#IL28E neothelid
-			~Für Euch widerlich. Für mich... drohender Untergang. Ein Neothelid begehrt Bewusstsein, kennt keine Fessel. Er hätte auch mich vernichtet.~
+			~Für Euch widerlich. Für mich drohte der Untergang. Ein Neothelid begehrt Bewusstsein, kennt keine Fessel. Er verzehrt alles, was Intellekt besitzt. Und in meinem schutzlosen Zustand hätte er auch mich vernichtet.~
 			=
-			~Um mich zu bewahren, löste ich meinen Geist von meinem Leib. Mein Becken vertrocknete. Das Gewebe starb. Die Gedanken blieben. So wurde ich zu der untoten Masse, die Ihr nun hört und seht.~
+			~Um mich zu bewahren, löste ich meinen Geist von meinem Leib und wechselte die Ebene. Mein Becken vertrocknete. Das materielle Gewebe starb. Doch meine Gedanken blieben! So wurde ich zu der untoten Masse, die Ihr nun seht und hört.~
 			END
 			IF ~~ THEN REPLY ~Ihr seid also eine Art Zombie-Gehirn?~ EXTERN AC#IL28E astral_plane
 			IF ~~ THEN REPLY ~Übel.~ EXTERN AC#IL28E astral_plane
 
 				CHAIN AC#IL28E astral_plane
-				~Nennt es, wie Ihr wollt. Mir bleibt nur dieser untote Körper, keine Untergebenen mehr. Ich bin, was von einem großen Geist übrig blieb. Einst herrschte ich über viele Gedanken, nun hüte ich nur noch Erinnerung.~
+				~Nennt es, wie Ihr wollt. Mir bleibt nur dieser untote Körper, denn Untergebene gibt es keine mehr. Ich bin, was von einem großen Geist übrig blieb. Einst herrschte ich über viele Gedanken, nun hüte ich nur noch Erinnerung.~
 				=
-				~Jeder Gedankenschinder würde mich vernichten, sobald er mich entdeckt. Mein Dasein ist ihnen ein Frevel. Darum lebe ich die meiste Zeit versteckt vor ihrem Bewusstsein, in ständiger Angst, vollständig vernichtet zu werden.~
+				~Durch mein untotes Dasein würde mich jeder Gedankenschinder vernichten, sobald er mich entdeckt. Meine Existenz ist ihnen ein Frevel. Darum lebe ich die meiste Zeit versteckt vor ihrem Bewusstsein, in ständiger Angst, eines Tages vollständig vernichtet zu werden.~
 				=
-				~Es ist daher angenehm, wieder mit einem denkenden Wesen zu kommunizieren. Zu Lebzeiten hätte ich Euer Gehirn gerne konsumiert und Euer Bewusstsein in mich aufgenommen. Doch die Zeiten werden anders, schwieriger. Ihr habt mir geholfen.~
+				~Es ist daher angenehm, wieder mit einem einfachen denkenden Wesen wie Euch kommunizieren zu dürfen. Zu Lebzeiten hätte ich Euer Gehirn gerne konsumiert und Euer Bewusstsein in mich aufgenommen. Doch die Zeiten werden anders, schwieriger. Ihr habt mir geholfen.~
 				END
 				IF ~~ THEN REPLY ~Dann helft Ihr mir jetzt.~ EXTERN AC#IL28E now_help_me
+				IF ~~ THEN REPLY ~Das habe ich nicht ohne Grund getan. Ich brauche etwas von Euch.~ EXTERN AC#IL28E now_help_me
 				
 					CHAIN AC#IL28E now_help_me
-					~Oh, gerne. Wenngleich mir... das Denken zunehmend schwer fällt. Die Erinnerungen... sie verblassen..~
+					~Oh, gerne. Wenngleich mir... das Denken zunehmend schwer fällt. Die Erinnerungen... sie verblassen. Was wollt Ihr von mir?~
 					END
 					IF ~~ THEN REPLY ~Der Zwergenkönig Mith Barak erwähnte diesen Ort. Sagt Euch sein Name etwas?~ EXTERN AC#IL28E how_help
+					//IF ~~ THEN REPLY ~König Mith Barak aus Iltkazar scheint etwas mit diesem Ort verbunden zu haben. Könnt Ihr mir sagen, was?~ EXTERN AC#IL28E how_help
+					IF ~~ THEN REPLY ~Ich brauche Informationen über Mith Barak. Vielleicht findet Ihr noch etwas über ihn in Euren Erinnerungen.~ EXTERN AC#IL28E how_help
+					IF ~~ THEN REPLY ~Kennt Ihr den Namen Mith Barak? Ich vermute, dass er Euch einst aufgesucht hat.~ EXTERN AC#IL28E how_help
 
 					CHAIN AC#IL28E how_help
-					~Mith Barak? Mith Barak.... ja, ganz dunkel erinnere mich an den Namen. Oder doch nicht? Es ist vage, sehr vage.~
+					~Mith Barak? Mith Barak.... ja, ganz dunkel erinnere mich an den Namen. Oder doch nicht? Es ist vage, sehr vage. Hmm... Ich kenne diesen Namen. Ich... kann nur nicht mehr sagen, woher.~
 					END
-					IF ~~ THEN REPLY ~Seid Ihr ihm begegnet?~ EXTERN AC#IL28E met_mith_01
+					IF ~~ THEN REPLY ~Seid Ihr ihm einmal begegnet?~ EXTERN AC#IL28E met_mith_01
 					IF ~~ THEN REPLY ~Erinnert Euch noch ein wenig mehr.~ EXTERN AC#IL28E met_mith_01
+					IF ~~ THEN REPLY ~Sucht tiefer in Euren Erinnerungen! Was verbindet Ihr mit Mith Barak?~ EXTERN AC#IL28E met_mith_01
 
 						CHAIN AC#IL28E met_mith_01
-						~Ich... ich glaube... ich kenne diesen... wie war noch gleich sein Name?~
+						~Ich weiß, von wem Ihr sprecht! Ja, ich weiß es ganz genau! Wie hieß er noch gleich? Ich... ich glaube... ich kenne diesen... wie war noch gleich sein Name?~
 									END
 									IF ~~ THEN REPLY ~Mith Barak.~ EXTERN AC#IL28E mith_curse
 									IF ~~ THEN REPLY ~M-I-T-H-B-A-R-A-K!~ EXTERN AC#IL28E mith_curse
@@ -217,11 +225,12 @@ IF ~~ THEN REPLY ~Nennt mir einen Grund, warum ich mit Euch nicht dasselbe mache
 										IF ~~ THEN EXTERN AC#IL28E mith_forgot_again
 										
 											CHAIN AC#IL28E mith_forgot_again
-											~...und jetzt ist es wieder weg. Vergessen! So etwas aber auch. Können wir uns nicht über etwas anderes unterhalten? Wo sagtet Ihr kommt Ihr noch gleich her?~
+											~...und jetzt ist es wieder weg. Vergessen! So etwas aber auch. Das geschieht in letzter Zeit häufiger. Ich hatte beinahe den Eindruck, es wäre wichtig gewesen. Können wir uns nicht über etwas anderes unterhalten?~
 											== JaheiraJ IF ~InParty("jaheira") !StateCheck("jaheira",CD_STATE_NOTVALID)~ THEN ~Von allen Ältestenhirnen dieser Welt haben wir uns ausgerechnet eines mit Gedächtnisschwund ausgesucht.~
 											== BEDWIN IF ~InParty("EDWIN") !StateCheck("EDWIN",CD_STATE_NOTVALID)~ THEN ~Das ist Zeitverschwendung, <CHARNAME>. Dieses Ding ist zu stark verwest, um sich mit ihm abzugeben.~
 											END
 											IF ~~ THEN REPLY ~Mith Barak meinte, dass in Barakuir eine Lösung für seinen Fluch liegen könnte.~ EXTERN AC#IL28E barakuir_forgotten
+											IF ~~ THEN REPLY ~Der König von Iltkazar hat diesen ganzen Weg nach Barakuir auf sich genommen, um mit Euch zu sprechen.~ EXTERN AC#IL28E barakuir_forgotten
 											
 											CHAIN AC#IL28E barakuir_forgotten
 											~Barakuir? Was ist das?~
@@ -233,36 +242,57 @@ IF ~~ THEN REPLY ~Nennt mir einen Grund, warum ich mit Euch nicht dasselbe mache
 											~Oh! Barakuir. Interessant. Das wusste ich nicht mehr. Es tut gut, sich mit Euch zu unterhalten! Ich lerne viele neue Dinge hinzu, nun, da die alten Gedanken verschwunden sind.~
 											END
 											IF ~~ THEN REPLY ~Ihr müsst versuchen, Euch an die alten Gedanken zu erinnern!~ EXTERN AC#IL28E try_remember_old_thoughts
+											//IF ~~ THEN REPLY ~Dann helft mir, Eure Gedanken wiederzufinden. Mith Baraks Schicksal könnte davon abhängen.~ EXTERN AC#IL28E try_remember_old_thoughts	
+											IF ~~ THEN REPLY ~Wenn noch etwas von Eurem alten Wissen übrig ist, dann brauchen wir es jetzt.~ EXTERN AC#IL28E try_remember_old_thoughts	
+											IF ~~ THEN REPLY ~Genießt Eure neuen Erkenntnisse später. Im Augenblick seid Ihr nur nützlich, wenn Ihr Euch an die alten erinnert.~ EXTERN AC#IL28E try_remember_old_thoughts											
 											
 												CHAIN AC#IL28E try_remember_old_thoughts
-												~Ach, es ist so anstrengend. Doch die Erinnerung an die alte Zeit tut auch gut. Macht, Stärke, Gedanken... Barakuir. Mith Barak. Ja.~ 
+												~Ach, es ist so anstrengend. Doch die Erinnerung an die alte Zeit tut auch gut. Macht, Stärke, Gedanken... Barakuir. Ja. Wartet! Da kommt etwas zurück: Stimmen. Gedanken. Mith Barak...~ 
 												=
-												~Mith Barak? Wer war Mith Barak noch gleich?~
+												~Wer war Mith Barak noch gleich?~
 												END
-												IF ~~ THEN REPLY ~Der Zwergenkönig.~ EXTERN AC#IL28E mith_remember												
+												IF ~~ THEN REPLY ~Der Zwergenkönig.~ EXTERN AC#IL28E mith_remember
+												IF ~~ THEN REPLY ~Mith Barak, der Zwergenkönig. Versucht bitte, wenigstens diesen Teil zu behalten.~ EXTERN AC#IL28E mith_remember	
+												IF ~~ THEN REPLY ~Mith Barak: König von Iltkazar. Ich beginne, mich zu wiederholen.~ EXTERN AC#IL28E mith_remember												
 												
 												CHAIN AC#IL28E mith_remember
-												~Der Zwergenkönig Mith Barak. Ja. Er war hier! Er sprach mit mir. Teilte einige seiner Erinnerungen mit mir! Im Austausch für etwas.~
+												~Der Zwergenkönig Mith Barak. Ja. Er war hier! Er sprach mit mir. Teilte einige seiner Erinnerungen mit mir! Im Austausch für etwas...~
 												END
+												IF ~~ THEN REPLY ~Versucht Euch bitte auch noch an den wichtigen Teil zu erinnern: Was wollte er?~ EXTERN AC#IL28E mith_remember_book_or_dragon_cem
 												IF ~~ THEN REPLY ~Für was? Was wollte er?~ EXTERN AC#IL28E mith_remember_book_or_dragon_cem
 												
 												CHAIN AC#IL28E mith_remember_book_or_dragon_cem
-												~Er wollte seinen merkwürdigen Schlaf loswerden. Ja! Das war es. Er war auf der Suche nach einem Ort an der Oberfläche. Doch er wusste nicht, wie er den Fluch brechen könnte. Jetzt fällt es mir wieder ein!~
+												~Er wollte... er wollte... oh, ist das schwierig... er wollte...~
 												END												
-												IF ~~ THEN REPLY ~Erzählt mir alles, woran Ihr Euch erinnern könnt!~ EXTERN AC#IL28E mith_remember_continue
+												IF ~~ THEN REPLY ~Geht in Euch! Ihr seid fast dort. Was wollte Mith Barak?~ EXTERN AC#IL28E mith_remember_book_or_dragon_cem_02
+												IF ~~ THEN REPLY ~Wir sind so nah dran. Bitte macht es jetzt nicht wieder kaputt.~ EXTERN AC#IL28E mith_remember_book_or_dragon_cem_02
+												IF ~~ THEN REPLY ~Falls Ihr vorhabt, mich mit Spannung zu ärgern: Es funktioniert. Weiter!~ EXTERN AC#IL28E mith_remember_book_or_dragon_cem_02
+												
+												CHAIN AC#IL28E mith_remember_book_or_dragon_cem_02
+												~Er wollte seinen merkwürdigen Schlaf loswerden. Ja! Das war es! Er war auf der Suche nach einem Ort an der Oberfläche. Doch er wusste nicht, wie er den Fluch brechen könnte. Jetzt fällt es mir wieder ein!~
+												END												
+												IF ~~ THEN REPLY ~Erzählt mir alles, woran Ihr Euch noch erinnern erinnern könnt!~ EXTERN AC#IL28E mith_remember_continue
+												IF ~~ THEN REPLY ~Endlich kommen wir voran! Was fällt Euch noch ein?~ EXTERN AC#IL28E mith_remember_continue
+												IF ~~ THEN REPLY ~Ihr habt also doch noch etwas Brauchbares in diesem Becken. Weiter.~ EXTERN AC#IL28E mith_remember_continue
+												IF ~~ THEN REPLY ~Ausgezeichnet. Jetzt nur nicht wieder alles vergessen.~ EXTERN AC#IL28E mith_remember_continue
 												
 													
 												CHAIN AC#IL28E mith_remember_continue
-												~Ich habe viel mit Mith Barak gesprochen. Und er hat mir im Austausch dafür seine Erinnerungen geschenkt.~
+												~Ich... ich... habe viel mit Mith Barak gesprochen. Und er hat mir im Austausch dafür einige seiner Erinnerungen geschenkt.~
 												END
-												IF ~~ THEN REPLY ~Was? Was hat er Euch gesagt?~ EXTERN AC#IL28E	mith_remember_02				
+												IF ~~ THEN REPLY ~Ihr habt seine Erinnerungen?~ EXTERN AC#IL28E	mith_remember_02
+												IF ~~ THEN REPLY ~Dann befinden sich Teile seiner Erinnerung noch immer in Euren verfaulten Gehirn?~ EXTERN AC#IL28E mith_remember_02												
 
 												CHAIN AC#IL28E mith_remember_02
-												~Er wollte... wollte...~
+												~Ja. Seine Erinnerungen. Sie sind irgendwo hier. Zwischen meinen. Oder unter ihnen. Gedanken lassen sich so schlecht sortieren! Wo sind sie denn nun? Hoffentlich nicht in einem Teil von mir, der schon abgefallen ist...~
 												=
-												~Ich weiß es nicht mehr. Meine Hirnmasse ist wohl schon zu arg verfallen. Wenn ich sie irgendwie konsumieren und reaktivieren könnte...~
+												~Irgendwo hier müssten sie doch noch sein...~
+												=
+												~Ich weiß es nicht mehr. Meine Hirnmasse ist wohl schon zu arg verfault. Wenn ich sie doch nur erneut konsumieren könnte...~
 												END
-												IF ~~ THEN REPLY ~Ich helfe Euch gerne. Was soll ich tun?~ EXTERN AC#IL28E tell_me_more
+												IF ~~ THEN REPLY ~Was soll ich tun?~ EXTERN AC#IL28E tell_me_more
+												IF ~~ THEN REPLY ~Wenn ich Euch dafür Teile Eures eigenen Gehirns verfüttern muss, dann gerne!~ EXTERN AC#IL28E tell_me_more
+												IF ~~ THEN REPLY ~Ich hoffe, Ihr meint das nicht wörtlich.~ EXTERN AC#IL28E tell_me_more
 												
 												CHAIN AC#IL28E tell_me_more
 												~Hm...~												
@@ -270,14 +300,14 @@ IF ~~ THEN REPLY ~Nennt mir einen Grund, warum ich mit Euch nicht dasselbe mache
 												IF ~~ THEN REPLY ~Was?~ EXTERN AC#IL28E tell_me_more_02
 												
 													CHAIN AC#IL28E tell_me_more_02
-													~Oh! Seid gegrüßt. Haben wir uns schon einmal gesehen? Es tut gut, ein denkendes Geschöpf zu sehen! Was wollt Ihr hier?~												
+													~Oh! Seid gegrüßt. Es tut gut, ein denkendes Geschöpf zu sehen! Haben wir uns schon einmal gesehen? Was wollt Ihr hier?~												
 													END
 													IF ~~ THEN REPLY ~Ihr wolltet mir helfen.~ EXTERN AC#IL28E tell_me_more_03
 													IF ~~ THEN REPLY ~Das führt doch zu nichts.~ EXTERN AC#IL28E tell_me_more_03
 													IF ~~ THEN REPLY ~Ich werde wohl anderswo nach Antworten suchen.~ EXTERN AC#IL28E tell_me_more_03
 													
 													CHAIN AC#IL28E tell_me_more_03
-													~Geht nicht fort! Es tut meinem alten Hirn gut, wieder mit jemandem in Verbindung zu stehen. Vielleicht gibt es eine Möglichkeit für Euch, Euch meine Erinnerungen an Mith Barak zu schenken wenn...~												
+													~Moment! Geht nicht fort! Es tut meinem alten Hirn gut, wieder mit jemandem in Verbindung zu stehen. Vielleicht besteht die Möglichkeit, Euch meine Erinnerungen zu schenken wenn...~												
 													END
 													IF ~~ THEN EXTERN AC#IL28E illithid_are_coming
 
@@ -470,7 +500,9 @@ BEGIN ~AC#IL28G~
 // encounter with illithids
 CHAIN IF ~NumTimesTalkedTo(0)~ THEN AC#IL28G hello_00
 ~Nein, <PRO_RACE>, helft mir! Rettet mich vor den Illithiden!~
-== AC#ULIT2 ~Klammert Euch nicht an diese niedere Kreatur, untote Irrung! Für Euer Dasein habt Ihr nichts als den Tod verdient! Tretet beiseite, <CHARNAME>, und lasst uns dies hier beenden.~
+== AC#ULIT2 ~Endlich offenbart Ihr Euch! Eure untote Existenz ist eine Schande für alles, was wir sind!~
+== AC#IL28G ~<PRO_RACE>, tötet die Gedankenschinder! Lasst sie meinem Becken nicht näher kommen!~
+== AC#ULIT2 ~Hört nicht auf dieses verfaulte Echo. Es ist kein Ältestenhirn mehr, sondern nur noch eine Leiche, die sich an alte Gedanken klammert. Tretet beiseite, <CHARNAME>! Lasst uns dies hier beenden.~
 END
 IF ~~ THEN REPLY ~Nein. Ich werde nicht zulassen, dass Ihr dem Wesen etwas antut.~ EXTERN AC#ULIT2 dont_hurt_brain
 IF ~~ THEN REPLY ~Mir ist es gleich. Tötet es, wenn Ihr müsst.~ EXTERN AC#IL28G i_dont_mind_kill_brain
@@ -479,18 +511,18 @@ CHAIN AC#ULIT2 dont_hurt_brain
 ~Was? Ihr seid nicht ganz bei Trost, Euch gegen uns zu stellen!~
 END
 IF ~~ THEN REPLY ~Ich meine es ernst.~ EXTERN AC#ULIT2 dont_hurt_brain_02
-IF ~~ THEN REPLY ~Natürlich.~ EXTERN AC#IL28G i_dont_mind_kill_brain
+IF ~~ THEN REPLY ~Ihr habt recht. Tötet es.~ EXTERN AC#IL28G i_dont_mind_kill_brain
 
 	CHAIN AC#ULIT2 dont_hurt_brain_02
-	~Ihr wollt Euch wirklich auf die Seite dieses Wesens stellen?~
+	~Ihr wollt Euch wirklich auf die Seite dieses untoten Wesens stellen?~
 	=
-	~Wir haben den gleichen Feind, <CHARNAME>. Ihr habt die toten Illithiden bei der Zwergenpatrouille gesehen! Wir wissen von dem schlafenden König.~
+	~Bedenkt dies: Wir haben in dieser Sache den gleichen Feind, <CHARNAME>. Ihr habt die toten Illithiden bei der Zwergenpatrouille gesehen! Wir wissen von dem schlafenden König.~
 	END
 	IF ~~ THEN REPLY ~Nein. Ich bleibe dabei.~ EXTERN AC#ULIT2 dont_hurt_brain_fight
 	IF ~~ THEN REPLY ~Ihr habt Recht. Also gut, tötet dieses untote Ding.~ EXTERN AC#IL28G i_dont_mind_kill_brain
 
 	CHAIN AC#ULIT2 dont_hurt_brain_fight
-	~So sei es! Es wird uns großes Vergnügen bereiten, Euch als Sklaven in unsere Stadt zu bringen, wo Ihr den Rest Eures armseligen Lebens unter unserer Herrschaft verbringen werdet!~
+	~Ihr habt Euch für die falsche Seite entschieden! Es wird uns großes Vergnügen bereiten, Euch als Sklaven in unsere Stadt zu bringen, wo Ihr den Rest Eures armseligen Lebens unter unserer Herrschaft verbringen werdet!~
 	DO ~SetGlobal("ElderBrainAid","ACIL28",1)
 	Shout(89)
 	Enemy()~EXIT	
@@ -503,24 +535,38 @@ IF ~~ THEN REPLY ~Natürlich.~ EXTERN AC#IL28G i_dont_mind_kill_brain
 
 // after killing ulitharid
 CHAIN IF ~GlobalLT("ElderBrainAid","ACIL28",2)~ THEN AC#IL28G hello_02
-~Ihr habt mich gerettet!~
+~Ihr habt mein Fortbestehen gesichert! Ich existiere noch. Das ist bereits mehr, als ich vor wenigen Augenblicken erwartet hatte. Dafür bin ich Euch dankbar.~
 END
 IF ~~ THEN REPLY ~Ich hoffe, das bringt mir auch etwas.~ DO ~SetGlobal("ElderBrainAid","ACIL28",2)~ EXTERN AC#IL28G saved_me_01
+IF ~~ THEN REPLY ~Gern geschehen. Nun schuldet Ihr mir allerdings eine Antwort.~ DO ~SetGlobal("ElderBrainAid","ACIL28",2)~ EXTERN AC#IL28G saved_me_01
+IF ~~ THEN REPLY ~Dann versucht, Euch diesen Gefallen etwas länger als unsere letzten Gespräche zu merken.~ DO ~SetGlobal("ElderBrainAid","ACIL28",2)~ EXTERN AC#IL28G saved_me_01
+
 
 	CHAIN AC#IL28G saved_me_01
 	~Wer wart Ihr noch gleich?~
 	END
 	IF ~~ THEN REPLY ~Ich suche nach Hilfe für den schlafenden König Mith Barak in Iltkazar.~ EXTERN AC#IL28G saved_me_02
+	IF ~~ THEN REPLY ~Mith Barak. Iltkazar. Schlafender König. Schreibt Euch wenigstens diese drei Dinge hinter die... was auch immer.~ EXTERN AC#IL28G saved_me_02
+	IF ~~ THEN REPLY ~Ich bin derjenige, der Euch gerade das Leben gerettet hat. Und ich brauche Hilfe für König Mith Barak!~ EXTERN AC#IL28G saved_me_02
 
 	CHAIN AC#IL28G saved_me_02
 	~Oh! Mith Barak! Diesen Namen habe schon einmal gehört.~
 	END
 	IF ~~ THEN REPLY ~Ihr sagtet, er habe Euch etwas anvertraut.~ EXTERN AC#IL28G saved_me_03
+	IF ~~ THEN REPLY ~Wir machen Fortschritte. Mith Barak vertraute Euch etwas an. Was war es?~ EXTERN AC#IL28G saved_me_03
+	IF ~~ THEN REPLY ~Haltet diesen Namen fest: Mith Barak. Erinnerungen. Was genau hat er Euch gegeben?~ EXTERN AC#IL28G saved_me_03
 
 	CHAIN AC#IL28G saved_me_03
-	~Ja, das hatte er... was war es noch gleich?~
+	~Ja, er hatte mit etwas gegeben... was war es noch gleich?~
+	END
+	IF ~~ THEN REPLY ~Das, woran es Euch gerade fehlt: Erinnerungen.~ EXTERN AC#IL28G saved_me_04
+	IF ~~ THEN REPLY ~Erinnerungen. Offenbar nicht gerade Eure größte Stärke.~ EXTERN AC#IL28G saved_me_04
+	IF ~~ THEN REPLY ~Von all den Dingen musste er Euch ausgerechnet seine Erinnerungen anvertrauen.~ EXTERN AC#IL28G saved_me_04
+
+	CHAIN AC#IL28G saved_me_04
+	~Erinnerungen! Das war es. Es war eine angenehme Unterhaltung mit ihm. Doch welche?~
 	=
-	~Ich fürchte, es ist mir entfallen. Ich kann auf meine Erinnerungen nicht mehr zurückgreifen, weil ich... nun ja, auseinanderfalle.~
+	~Ich fürchte, es ist mir entfallen. Mein Zugriff auf ältere Gedanken scheint zu eingeschränkt, weil ich... nun ja, ein wenig auseinanderfalle.~
 	END
 	IF ~~ THEN EXTERN AC#IL28G idea_lobe
 	
@@ -528,16 +574,23 @@ IF ~~ THEN REPLY ~Ich hoffe, das bringt mir auch etwas.~ DO ~SetGlobal("ElderBra
 	~Wartet, mir kommt ein Einfall!~
 	END
 	IF ~~ THEN REPLY ~Zur Abwechslung einmal ein Nützlicher?~ EXTERN AC#IL28G idea_lobe_02
+	IF ~~ THEN REPLY ~Bitte sagt mir, dass dieser Einfall etwas mit Mith Barak zu tun hat.~ EXTERN AC#IL28G idea_lobe_02
+	IF ~~ THEN REPLY ~Dann heraus damit, bevor er wieder verschwindet!~ EXTERN AC#IL28G idea_lobe_02
 	
 	CHAIN AC#IL28G idea_lobe_02
-	~Hier, nehmt diesen Teil meines Gehirn. Vielleicht enthält dieser die Erinnerung, die Ihr sucht.~
+	~Ich kann nicht mehr auf meine Erinnerungen zurückgreifen, Ihr aber vielleicht schon! Hier, nehmt diesen Teil meines Gehirn. Mit etwas Glück enthält dieser die Erinnerung, die Ihr sucht.~
 	END
 	IF ~~ THEN REPLY ~Und wie soll ich darauf zurückgreifen?~ EXTERN AC#IL28G idea_lobe_03
+	IF ~~ THEN REPLY ~Was genau soll ich mit einem Stück Eures Gehirns anfangen?~ EXTERN AC#IL28G idea_lobe_03
+	IF ~~ THEN REPLY ~Wenn die Erinnerung darin steckt, brauche ich also nur noch zu wissen, wie ich sie dort herausbekomme!~ EXTERN AC#IL28G idea_lobe_03
+	IF ~~ THEN REPLY ~Das ist vermutlich der widerlichste Hinweis, den ich je erhalten habe.~ EXTERN AC#IL28G idea_lobe_03	
 	
 	CHAIN AC#IL28G idea_lobe_03
-	~Das kann ich Euch nicht sagen. Doch vielleicht weiß jemand in der Zwergenstadt etwas damit anzufangen.~
+	~Ich fürchte, mein Einfall endet an dieser Stelle. Wie Ihr aus meinem Hirnteil eine Erinnerung daraus hervorholt, müsst Ihr selbst herausfinden. Wenn ich das wüsste, hätte ich es vermutlich selbst getan. Vielleicht können Euch die Zwerge helfen.~
 	END
 	IF ~~ THEN REPLY ~Gut. Gebt mir Euren, ähm, Hirnlappen.~ EXTERN AC#IL28G give_lobe
+	IF ~~ THEN REPLY ~Dann her mit diesem Hirnteil.~ EXTERN AC#IL28G give_lobe
+	IF ~~ THEN REPLY ~Na schön. Ein Stück Ältestenhirn für unterwegs. Warum auch nicht.~ EXTERN AC#IL28G give_lobe
 	
 	CHAIN AC#IL28G give_lobe
 	~Hier ist er.~

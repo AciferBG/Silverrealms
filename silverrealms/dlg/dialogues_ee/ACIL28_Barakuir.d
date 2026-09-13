@@ -67,11 +67,15 @@ IF ~Dead("AC#ULIT2")~ THEN EXTERN AC#28GI1 illithid_YES_dead
 	~Die Schinder sind in ihre Stadt zurückgekehrt - feige, wie es ihre Art ist. Wir hätten es bevorzugt, wenn Ihr sie getötet hättet. Das hätte uns weitere Arbeit erspart.~
 	END
 	IF ~~ THEN REPLY ~Was wollt Ihr?~ EXTERN AC#28GI1 what_do_you_want
+	IF ~~ THEN REPLY ~Ich habe nicht vor, Eure persönlichen Rechnungen mit den Gedankenschindern zu begleichen.~ EXTERN AC#28GI1 what_do_you_want
+	IF ~~ THEN REPLY ~Das klingt jetzt nach Eurem Problem, nicht nach meinem.~ EXTERN AC#28GI1 what_do_you_want
 	
 	CHAIN AC#28GI1 illithid_YES_dead
 	~Und Ihr habt sogar ihren Anführer, diesen Ulitharid, getötet! Das erspart uns reichlich Arbeit.~
 	END
 	IF ~~ THEN REPLY ~Was wollt Ihr?~ EXTERN AC#28GI1 what_do_you_want
+	IF ~~ THEN REPLY ~Dann sagt mir, warum Ihr hier seid.~ EXTERN AC#28GI1 what_do_you_want
+	IF ~~ THEN REPLY ~Ich habe die Illithiden nicht für Euch getötet. Also kommt zur Sache.~ EXTERN AC#28GI1 what_do_you_want
 
 	CHAIN AC#28GI1 what_do_you_want
 	~Euer Einsatz war heldenhaft, doch nutzlos. Bedauerlich, dass Ihr nun hier, am äußersten Rand des Unterreiches, Eure Reise nicht weiter fortsetzen könnt.~
@@ -114,12 +118,12 @@ IF ~Dead("AC#ULIT2")~ THEN EXTERN AC#28GI1 illithid_YES_dead
 	
 	CHAIN AC#28GI1 illithid_patrol
 	~Eure Einmischung in unsere Angelegenheiten ist damit auch vorüber. Wir haben Iltkazar lange aus unserem Stützpunkt vor der Stadt beobachtet und wurden mehrere Male unangenehm gestört.~ 
-	= ~Die Gedankenschinder sind uns auf die Schliche gekommen. Natürlich haben wir sie getötet. Auch die Zwergenpatrouille vor Iltkazar, die so töricht war, unser Versteck zu betreten, fand durch unsere Klingen ihren Tod.~
+	= ~Die Gedankenschinder waren uns damals auf die Schliche gekommen. Natürlich haben wir sie getötet. Auch die Zwergenpatrouille vor Iltkazar, die so töricht war, unser Versteck zu betreten, fand durch unsere Klingen ihren Tod!~
 	END
 	IF ~~ THEN EXTERN AC#28GI1 what_do_you_do
 	
 	CHAIN AC#28GI1 what_do_you_do
-	~Denn es zieht Krieg auf. Ein großer Krieg! In ihm sind selbst wir nur Klingen im Dienst. Wir kämpfen darin – nicht aus Wahl, sondern aus Pflichtgefühl. Und Ihr seid kein Teil dieses Krieges. Deshalb werdet Ihr jetzt sterben!~	
+	~Denn es zieht Krieg auf. Ein großer Krieg! In ihm sind selbst wir nur Söldner. Wir kämpfen darin auf der richtigen Seite – nicht aus Ehre, sondern aus Pflichtgefühl. Und Ihr dürft kein Teil dieses Krieges werden. Deshalb müsst Ihr jetzt sterben!~	
 	DO ~SetGlobal("GithFight","ACIL28",2)
 	Enemy() ~EXIT
 	
@@ -302,9 +306,13 @@ IF ~~ THEN REPLY ~Nennt mir einen Grund, warum ich mit Euch nicht dasselbe mache
 													IF ~~ THEN REPLY ~Ich werde wohl anderswo nach Antworten suchen.~ EXTERN AC#IL28E tell_me_more_03
 													
 													CHAIN AC#IL28E tell_me_more_03
-													~Moment! Geht nicht fort! Es tut meinem alten Hirn gut, wieder mit jemandem in Verbindung zu stehen. Vielleicht besteht die Möglichkeit, Euch meine Erinnerungen zu schenken wenn...~												
+													~Moment! Geht nicht fort! In Euch ist eine Spur von etwas, das lange Zeit tot war. Etwas, das nicht Euch alleine gehört! Ich spüre seine Gedanken... Alt. Sehr alt. Ein Gott? Ich spüre... Blut. Blut! Irgendjemand wollte etwas mit Eurem Blut. Der Zwergenkönig! Um seinen Fluch zu brechen. Obwohl er Euch gar nicht kannte? Kann das sein? Ich... weiß es nicht mehr.~
+													=
+													~Mith Barak wollte jemanden wiedererwecken. Wegen seines Fluchs. Dafür brauchte er Blut... besonderes Blut. Eures? Nein... doch. Vielleicht. Ich weiß es nicht mehr. Das Denken daran ist ausgesprochen anstrengend...~												
 													END
-													IF ~~ THEN EXTERN AC#IL28E illithid_are_coming
+													IF ~~ THEN REPLY ~Was hat Mith Barak über mein Blut gesagt?~ EXTERN AC#IL28E illithid_are_coming
+													IF ~~ THEN REPLY ~Woher sollte Mith Barak von mir gewusst haben?~ EXTERN AC#IL28E illithid_are_coming
+													IF ~~ THEN REPLY ~Mein Blut? Was hat das mit Mith Baraks Fluch zu tun?~ EXTERN AC#IL28E illithid_are_coming
 
 												CHAIN AC#IL28E illithid_are_coming
 												~Wartet! Ich spüre eine neue Präsenz... Die Gedankenschinder kommen! Ihr Wille nähert sich. Oh nein! Wenn sie mich hier entdecken ist dies mein Ende. Ich ziehe mein Bewusstsein zurück.~ 
@@ -547,19 +555,32 @@ IF ~~ THEN REPLY ~Dann versucht, Euch diesen Gefallen etwas länger als unsere l
 	CHAIN AC#IL28G saved_me_02
 	~Oh! Mith Barak! Diesen Namen habe schon einmal gehört.~
 	END
+	IF ~~ THEN REPLY ~Ja. Und kurz bevor wir unterbrochen wurden, habt Ihr etwas über mein Blut gesagt.~ EXTERN AC#IL28G saved_me_03
+	IF ~~ THEN REPLY ~Mith Barak. Mein Blut. Ein Fluch. Versucht Euch an diese Dinge zu erinnern.~ EXTERN AC#IL28G saved_me_03
+	//IF ~~ THEN REPLY ~Ihr sagtet, Mith Barak habe etwas mit meinem Blut vorgehabt. Was genau?~ EXTERN AC#IL28G saved_me_03
+	IF ~~ THEN REPLY ~Wir waren gerade dabei herauszufinden, warum Mith Barak jemanden mit besonderem Blut brauchte.~ EXTERN AC#IL28G saved_me_03
+	IF ~~ THEN REPLY ~Haltet diesen Gedanken fest: Mith Barak kannte etwas über mein Blut, obwohl er mich nicht kannte. Warum?~ EXTERN AC#IL28G saved_me_03
+
+	
+	/*
+	CHAIN AC#IL28G saved_me_02
+	~Oh! Mith Barak! Diesen Namen habe schon einmal gehört.~
+	END
 	IF ~~ THEN REPLY ~Ihr sagtet, er habe Euch etwas anvertraut.~ EXTERN AC#IL28G saved_me_03
 	IF ~~ THEN REPLY ~Wir machen Fortschritte. Mith Barak vertraute Euch etwas an. Was war es?~ EXTERN AC#IL28G saved_me_03
 	IF ~~ THEN REPLY ~Haltet diesen Namen fest: Mith Barak. Erinnerungen. Was genau hat er Euch gegeben?~ EXTERN AC#IL28G saved_me_03
+	*/
 
 	CHAIN AC#IL28G saved_me_03
-	~Ja, er hatte mit etwas gegeben... was war es noch gleich?~
+	~Hmmm... er hatte mir etwas darüber erzählt, ja. Und etwas gegeben... was war es noch gleich?~
 	END
-	IF ~~ THEN REPLY ~Das, woran es Euch gerade fehlt: Erinnerungen.~ EXTERN AC#IL28G saved_me_04
-	IF ~~ THEN REPLY ~Erinnerungen. Offenbar nicht gerade Eure größte Stärke.~ EXTERN AC#IL28G saved_me_04
-	IF ~~ THEN REPLY ~Von all den Dingen musste er Euch ausgerechnet seine Erinnerungen anvertrauen.~ EXTERN AC#IL28G saved_me_04
+	//IF ~~ THEN REPLY ~Das, woran es Euch gerade fehlt: Erinnerungen.~ EXTERN AC#IL28G saved_me_04
+	//IF ~~ THEN REPLY ~Erinnerungen. Offenbar nicht gerade Eure größte Stärke.~ EXTERN AC#IL28G saved_me_04
+	IF ~~ THEN REPLY ~Von allen Kreaturen musste er Euch ausgerechnet seine Geheimnisse anvertrauen.~ EXTERN AC#IL28G saved_me_04
+	IF ~~ THEN REPLY ~Wenn das etwas mit mir zu tun hatte, wäre jetzt ein guter Zeitpunkt, Euch daran zu erinnern.~ EXTERN AC#IL28G saved_me_04
 
 	CHAIN AC#IL28G saved_me_04
-	~Erinnerungen! Das war es. Es war eine angenehme Unterhaltung mit ihm. Doch welche?~
+	~Erinnerungen! Das war es. Er gab mir seine Erinnerung. Doch welche?~
 	=
 	~Ich fürchte, es ist mir entfallen. Mein Zugriff auf ältere Gedanken scheint zu eingeschränkt, weil ich... nun ja, ein wenig auseinanderfalle.~
 	END

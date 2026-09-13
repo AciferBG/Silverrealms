@@ -113,7 +113,7 @@ IF ~Dead("AC#ULIT2")~ THEN EXTERN AC#28GI1 illithid_YES_dead
 			IF ~~ THEN REPLY ~Davon lasse ich mich nicht aufhalten.~ EXTERN AC#28GI1 illithid_patrol
 	
 	CHAIN AC#28GI1 illithid_patrol
-	~Eure Einmischung in unsere Angelegenheiten ist damit auch vorüber. Wir haben Iltkazar lange aus unserem Stützpunkt vor der Stadt beobachtet und wurden mehrere Male gestört.~ 
+	~Eure Einmischung in unsere Angelegenheiten ist damit auch vorüber. Wir haben Iltkazar lange aus unserem Stützpunkt vor der Stadt beobachtet und wurden mehrere Male unangenehm gestört.~ 
 	= ~Die Gedankenschinder sind uns auf die Schliche gekommen. Natürlich haben wir sie getötet. Auch die Zwergenpatrouille vor Iltkazar, die so töricht war, unser Versteck zu betreten, fand durch unsere Klingen ihren Tod.~
 	END
 	IF ~~ THEN EXTERN AC#28GI1 what_do_you_do

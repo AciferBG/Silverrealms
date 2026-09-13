@@ -58,32 +58,32 @@ END
 BEGIN AC#28GI1
 
 CHAIN IF ~NumTimesTalkedTo(0)~ THEN AC#28GI1 hello_0
-~Die Illithiden sind fort. Gut.~
+~Die Illithiden sind fort. Das erleichtert einiges.~
 END
 IF ~!Dead("AC#ULIT2")~ THEN EXTERN AC#28GI1 illithid_NOT_dead
 IF ~Dead("AC#ULIT2")~ THEN EXTERN AC#28GI1 illithid_YES_dead
 
 	CHAIN AC#28GI1 illithid_NOT_dead
-	~Und sie sind in ihre Stadt zurückgekehrt - feige, wie es ihre Art ist. Wir hätten es bevorzugt, wenn Ihr sie getötet hättet. Das hätte uns weitere Arbeit erspart.~
+	~Die Schinder sind in ihre Stadt zurückgekehrt - feige, wie es ihre Art ist. Wir hätten es bevorzugt, wenn Ihr sie getötet hättet. Das hätte uns weitere Arbeit erspart.~
 	END
 	IF ~~ THEN REPLY ~Was wollt Ihr?~ EXTERN AC#28GI1 what_do_you_want
 	
 	CHAIN AC#28GI1 illithid_YES_dead
-	~Und Ihr habt sogar ihren Anführer getötet! Das erspart uns reichlich Arbeit.~
+	~Und Ihr habt sogar ihren Anführer, diesen Ulitharid, getötet! Das erspart uns reichlich Arbeit.~
 	END
 	IF ~~ THEN REPLY ~Was wollt Ihr?~ EXTERN AC#28GI1 what_do_you_want
 
 	CHAIN AC#28GI1 what_do_you_want
-	~Bedauerlich, dass Ihr hier, am äußersten Rand des Unterreiches, Euer einsames Ende finden werdet.~
+	~Euer Einsatz war heldenhaft, doch nutzlos. Bedauerlich, dass Ihr nun hier, am äußersten Rand des Unterreiches, Eure Reise nicht weiter fortsetzen könnt.~
 	END	
-	IF ~~ THEN REPLY ~Ich fahre mit den Booten zurück nach Iltkazar.~ EXTERN AC#28GI1 iltkazar_traitor
+	IF ~~ THEN REPLY ~Ich fahre einfach mit den Booten zurück nach Iltkazar.~ EXTERN AC#28GI1 iltkazar_traitor
 	IF ~~ THEN REPLY ~Droht Ihr mir?~ EXTERN AC#28GI1 iltkazar_traitor
 		
 		CHAIN AC#28GI1 iltkazar_traitor
-		~Die Boote, mit denen Ihr hierher gelangtet, sind nicht mehr am Ufer. Die Zwerge haben Euch zurückgelassen.~
+		~Es gibt für Euch keinen Weg zurück. Die Boote, mit denen Ihr hierher gebracht wurdet, sind verschwunden. Die Zwerge, denen Ihr so blind vertraut habt, haben Euch zurückgelassen!~
 		END
-		IF ~~ THEN REPLY ~Habt Ihr sie getötet?~ EXTERN AC#28GI1 iltkazar_treason_02
-		IF ~~ THEN REPLY ~Vermutlich weil Ihr sie mit Euren bösartigen Fähigkeiten dazu gezwungen habt!~ EXTERN AC#28GI1 iltkazar_treason_02
+		IF ~~ THEN REPLY ~Ihr habt sie getötet!~ EXTERN AC#28GI1 iltkazar_treason_02
+		IF ~~ THEN REPLY ~Vermutlich weil Ihr sie dazu gezwungen habt!~ EXTERN AC#28GI1 iltkazar_treason_02
 		IF ~~ THEN REPLY ~Sie werden schon wieder zurückkommen.~ EXTERN AC#28GI1 crew_is_gone
 		IF ~~ THEN REPLY ~Na und?~ EXTERN AC#28GI1 crew_is_gone
 
@@ -94,10 +94,10 @@ IF ~Dead("AC#ULIT2")~ THEN EXTERN AC#28GI1 illithid_YES_dead
 		IF ~~ THEN DO ~AddJournalEntry(@62046,QUEST)~ EXTERN AC#28GI1 crew_is_gone 
 		
 		CHAIN AC#28GI1 crew_is_gone
-		~Die Bootsbesatzung ist aus freien Stücken zurückgerudert. Die Zwerge haben Euch hier in der Einöde Eurem Schicksal überlassen.~
+		~Die Bootsbesatzung ist aus freien Stücken zurückgerudert. Die Zwerge haben Euch hier in der Einöde ganz bewusst Eurem Schicksal überlassen, weil sie Euch loswerden wollten.~
 		END
 		IF ~~ THEN REPLY ~Das kann nicht sein.~ EXTERN AC#28GI1 iltkazar_treason_03
-		IF ~~ THEN REPLY ~Vielleicht haben sie mich betrogen, ja. Das macht mir aber nichts mehr aus.~ EXTERN AC#28GI1 maybe_treason
+		IF ~~ THEN REPLY ~Vielleicht haben sie mich betrogen. Das macht mir aber nichts aus.~ EXTERN AC#28GI1 maybe_treason
 		
 		CHAIN AC#28GI1 iltkazar_treason_03
 			~Seid Ihr Euch da sicher? Sie haben doch außer einem tränenreichen Abschied nichts weiter für Euch getan. Vielleicht ist der einzige Grund, weshalb Ihr für Sie diese Aufträge lösen solltet, der, dass sie Euch schnellstmöglich loswerden wollten.~
@@ -107,24 +107,19 @@ IF ~Dead("AC#ULIT2")~ THEN EXTERN AC#28GI1 illithid_YES_dead
 			IF ~~ THEN REPLY ~Vielleicht haben sie mich betrogen, ja. Das macht mir aber nichts mehr aus.~ EXTERN AC#28GI1 maybe_treason
 						
 			CHAIN AC#28GI1 maybe_treason
-			~Hier endet Euer Weg, <PRO_RACE>.~ 
+			~Hier endet jedenfalls Euer Weg, <PRO_RACE>.~ 
 			END
 			IF ~~ THEN REPLY ~Ich werde schon einen Weg zurück finden!~ EXTERN AC#28GI1 illithid_patrol
 			IF ~~ THEN REPLY ~Davon lasse ich mich nicht aufhalten.~ EXTERN AC#28GI1 illithid_patrol
 	
 	CHAIN AC#28GI1 illithid_patrol
-	~Eure Einmischung endet hier. Wir haben Iltkazar lange aus unserem Stützpunkt vor der Stadt beobachtet.~ 
+	~Eure Einmischung in unsere Angelegenheiten ist damit auch vorüber. Wir haben Iltkazar lange aus unserem Stützpunkt vor der Stadt beobachtet und wurden mehrere Male gestört.~ 
 	= ~Die Gedankenschinder sind uns auf die Schliche gekommen. Natürlich haben wir sie getötet. Auch die Zwergenpatrouille vor Iltkazar, die so töricht war, unser Versteck zu betreten, fand durch unsere Klingen ihren Tod.~
 	END
-	IF ~~ THEN REPLY ~Ihr wart das?~ EXTERN AC#28GI1 what_do_you_do
+	IF ~~ THEN EXTERN AC#28GI1 what_do_you_do
 	
 	CHAIN AC#28GI1 what_do_you_do
-	~Es zieht Krieg auf. Ein großer Krieg. In ihm sind selbst wir nur Klingen im Dienst. Wir kämpfen darin – nicht aus Wahl, sondern aus Pflicht. Und Ihr seid kein Teil dieses Krieges. Deshalb werdet Ihr jetzt sterben.~
-	END
-	IF ~~ THEN EXTERN AC#28GI1 bye_fight
-	
-	CHAIN AC#28GI1 bye_fight
-	~Dies endet hier.~
+	~Denn es zieht Krieg auf. Ein großer Krieg! In ihm sind selbst wir nur Klingen im Dienst. Wir kämpfen darin – nicht aus Wahl, sondern aus Pflichtgefühl. Und Ihr seid kein Teil dieses Krieges. Deshalb werdet Ihr jetzt sterben!~	
 	DO ~SetGlobal("GithFight","ACIL28",2)
 	Enemy() ~EXIT
 	

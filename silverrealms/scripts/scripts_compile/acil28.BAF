@@ -14,6 +14,7 @@ THEN
 		FadeFromColor([30.0],0)
 END
 
+/*
 IF
 	OpenState("DOOR05",TRUE)
 	Global("HiddenVoiceSpawn","ACIL28",0)
@@ -22,6 +23,7 @@ THEN
 		SetGlobal("HiddenVoiceSpawn","ACIL28",1)
 		CreateCreatureImpassableAllowOverlap("AC#IL28F",[2232.1675],S)  // Hidden Voice: Undead Elderbrain
 END
+*/
 
 IF
     GlobalGT("MindflayersAppear","ACIL28",0)

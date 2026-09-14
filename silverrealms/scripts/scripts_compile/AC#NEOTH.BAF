@@ -1,4 +1,5 @@
 IF
+    HasItem("AC#NEO2",Myself)  // No such index
     OR(2)
         HPLT(Myself,15)
         Die()
@@ -65,7 +66,6 @@ IF
     See(NearestEnemyOf(Myself))
     !GlobalTimerNotExpired("bd_cast","locals")
     Global("Neothelid_Breath","LOCALS",0)
-    Difficulty(EASY)
 THEN
     RESPONSE #100
         AnkhegEmerge()
@@ -106,7 +106,7 @@ THEN
         SetGlobalTimer("bd_cast","locals",ONE_ROUND)
         IncrementGlobal("Neothelid_Breath","LOCALS",1)
         ForceSpellRES("AC#NEOB",LastSeenBy(Myself))  // Enzymatischer Odem
-                AttackOneRound(LastSeenBy(Myself))
+        AttackOneRound(LastSeenBy(Myself))
 END
 
 IF
@@ -122,7 +122,7 @@ THEN
         SetGlobalTimer("bd_cast","locals",ONE_ROUND)
         IncrementGlobal("Neothelid_Breath","LOCALS",1)
         ForceSpellRES("AC#NEOB",LastSeenBy(Myself))  // Enzymatischer Odem
-                AttackOneRound(LastSeenBy(Myself))
+        AttackOneRound(LastSeenBy(Myself))
 END
 
 IF
@@ -181,7 +181,7 @@ THEN
         SetGlobalTimer("PSIONIC_TELEKINESIS","locals",FIVE_ROUNDS)
         SetGlobalTimer("bd_cast","locals",ONE_ROUND)
         SpellNoDecRES("AC#NEO2",LastSeenBy)  // Telekinese
-                AttackOneRound(LastSeenBy(Myself))
+        AttackOneRound(LastSeenBy(Myself))
     RESPONSE #40
         Continue()
 END
@@ -193,7 +193,7 @@ THEN
     RESPONSE #100
         SetGlobalTimer("bd_cast","locals",ONE_ROUND)
         SpellNoDec(LastSeenBy,PSIONIC_EGOWHIP)  // SPIN909.SPL (Egopeitsche)
-                AttackOneRound(LastSeenBy(Myself))
+        AttackOneRound(LastSeenBy(Myself))
     RESPONSE #50
         Continue()
 END
@@ -205,7 +205,7 @@ THEN
     RESPONSE #100
         SetGlobalTimer("bd_cast","locals",ONE_ROUND)
         SpellNoDecRES("AC#NEO3",LastSeenBy)  // Leib beherrschen
-                AttackOneRound(LastSeenBy(Myself))
+        AttackOneRound(LastSeenBy(Myself))
     RESPONSE #50
         Continue()
 END
@@ -217,7 +217,7 @@ THEN
     RESPONSE #100
         SetGlobalTimer("bd_cast","locals",ONE_ROUND)
         SpellNoDecRES("AC#NEO4",LastSeenBy)  // Geistige Verwirrung
-                AttackOneRound(LastSeenBy(Myself))
+        AttackOneRound(LastSeenBy(Myself))
     RESPONSE #50
         Continue()
 END

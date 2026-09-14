@@ -6,3 +6,11 @@ THEN
 		DisplayString(Myself,@717)
 		SetGlobal("ACIL28_BOATGONE","ACIL28",1)
 END
+
+IF
+	Clicked([ANYONE])
+	GlobalGT("ACIL28_BOATGONE","ACIL28",0)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@717)
+END

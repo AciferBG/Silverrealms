@@ -1989,6 +1989,7 @@ COPY ~silverrealms/cre/AC#CRAT1.cre~ ~override~ //Cranium Rat
 
 COPY ~silverrealms/cre/AC#NEOTH.cre~ ~override/AC#NEOTH.cre~ //Neothelid
   SAY NAME1 @443 SAY NAME2 @443 
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~NEOTHELID~))
   
 COPY ~silverrealms/cre/AC#RAT20.cre~ ~override~ //Cranium Rat Swarm old
   SAY NAME1 @444 SAY NAME2 @444

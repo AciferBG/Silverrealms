@@ -40,9 +40,9 @@ END
 
 IF ~~ THEN BEGIN bye
    SAY ~So, nun werde ich wohl wieder meiner Arbeit an den Docks nachgehen müssen. War ziemlich leicht verdientes Geld, diese Nachricht an Euch zu übermitteln. Die Zwerge, die mir die Nachricht gaben, zahlen gut. Wieviel Sie wohl Euch bieten werden? Aber das ist nicht meine Sache. Gehabt Euch wohl.~
-   IF ~~ THEN DO ~EscapeArea()
-   RevealAreaOnMap("ACIL04")
-   AddJournalEntry(@20000,QUEST)~ EXIT
+   IF ~~ THEN DO ~RevealAreaOnMap("ACIL04")
+   AddJournalEntry(@20000,QUEST)
+   EscapeArea()~ EXIT
 END
 
 IF ~~ THEN BEGIN escape

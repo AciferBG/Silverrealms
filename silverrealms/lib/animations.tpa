@@ -1,24 +1,23 @@
 // Silverrealms animation files
 
 //_____________________________________________________________________________________________________
-// DRACOLICH animation
-/*
-  LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0x1200 slotMax = 0x1300 RET slot END
+// Neothelid animation
+  LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0x3000 slotMax = slotMin + 0xff RET slot END
   ACTION_IF (slot <= 0) BEGIN
     FAIL ~No free creature animation slot found.~
   END
-
   LAF TO_HEX_NUMBER INT_VAR value = slot minDigits = 4 RET hexNumber END
-  APPEND ~animate.ids~ ~0x%hexNumber% AC#DRACOLICH~ UNLESS ~AC#DRACOLICH~
+  APPEND ~animate.ids~ ~0x%hexNumber% NEOTHELID~ UNLESS ~NEOTHELID~
   CLEAR_IDS_MAP
-
-  COPY ~%MOD_FOLDER%/animations/dracolich_ini/exxx.ini~ ~override/%hexNumber%.ini~
-
-  ACTION_BASH_FOR ~%MOD_FOLDER%/animations/dracolich~ ~^.+\.bam$~ BEGIN
+  COPY ~%MOD_FOLDER%/animations/Neothelid/3001.ini~ ~override/%hexNumber%.ini~
+  ACTION_BASH_FOR ~%MOD_FOLDER%/animations/Neothelid~ ~^.+\.bam$~ BEGIN
     COPY ~%BASH_FOR_FILESPEC%~ ~override~
-  COPY ~%MOD_FOLDER%/animations/intellect_devourer/intellect_devourer_sounds~ ~override~
+   COPY ~%MOD_FOLDER%/animations/Neothelid/Neothelid-sounds~ ~override~
   END
-*/
+  
+//_____________________________________________________________________________________________________
+// Neothelid animation - just copy
+//  COPY ~silverrealms/animations/Neothelid~         ~override~  
 
 //_____________________________________________________________________________________________________
 // White dragon animation
@@ -459,10 +458,6 @@
 //_____________________________________________________________________________________________________
 // IWD's Animated plate bronze animation - just copy
   COPY ~silverrealms/animations/Animated_plate_bronze_IWD~         ~override~
-
-//_____________________________________________________________________________________________________
-// Neothelid animation - just copy
-  COPY ~silverrealms/animations/Neothelid~         ~override~
 
 //_____________________________________________________________________________________________________
 // dragon white animation - just copy

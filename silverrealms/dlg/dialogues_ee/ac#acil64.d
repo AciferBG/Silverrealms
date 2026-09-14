@@ -116,8 +116,8 @@ END
 
 	IF ~~ THEN BEGIN goodbye_hathar
 	SAY ~Was für eine verfluchte Stadt dies doch ist! Die Götter haben uns verlassen!~
-	IF ~~ THEN DO ~EscapeArea()
-	SetGlobal("AC#HatharQuest","GLOBAL",10)~ EXIT
+	IF ~~ THEN DO ~SetGlobal("AC#HatharQuest","GLOBAL",10)
+	EscapeArea()~ EXIT
 	END
 	
 IF ~Global("AC#RC_Spiderstalkings","GLOBAL",1)~ THEN BEGIN hello_in_throneroom

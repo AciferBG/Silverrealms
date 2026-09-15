@@ -1,5 +1,5 @@
 // Silverrealms animation files
-
+/*
 //_____________________________________________________________________________________________________
 // Neothelid animation
   LAF FIND_FREE_ANIM_SLOT INT_VAR slotMin = 0x3000 slotMax = slotMin + 0xff RET slot END
@@ -14,10 +14,10 @@
     COPY ~%BASH_FOR_FILESPEC%~ ~override~
    COPY ~%MOD_FOLDER%/animations/Neothelid/Neothelid-sounds~ ~override~
   END
-  
+*/
 //_____________________________________________________________________________________________________
 // Neothelid animation - just copy
-//  COPY ~silverrealms/animations/Neothelid~         ~override~  
+  COPY ~silverrealms/animations/Neothelid~         ~override~  
 
 //_____________________________________________________________________________________________________
 // White dragon animation

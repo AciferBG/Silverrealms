@@ -3,6 +3,7 @@ IF
 THEN
     RESPONSE #100
         CutSceneId(Player1)
+        FadeToColor([40.0],150)
         ActionOverride("AC#27DW1",EscapeAreaDestroy(1))
         ActionOverride("AC#27DW2",EscapeAreaDestroy(1))
         ActionOverride("AC#27DW3",DropItem("SPER01",[-1.-1]))  // Speer
@@ -13,6 +14,17 @@ THEN
         ActionOverride("AC#27DW5",EscapeAreaDestroy(1))
         ActionOverride("AC#HATH8",EscapeAreaDestroy(1))
         Wait(1)
+        LeaveAreaLUAPanic("ACIL20","",[3783.2493],S)
+        LeaveAreaLUA("ACIL50","",[643.2364],SE)
+        ActionOverride(Player2,LeaveAreaLUA("ACIL50","",[643.2364],SE))
+        ActionOverride(Player3,LeaveAreaLUA("ACIL50","",[669.2332],SE))
+        ActionOverride(Player4,LeaveAreaLUA("ACIL50","",[637.2401],SE))
+        ActionOverride(Player5,LeaveAreaLUA("ACIL50","",[591.2282],SE))
+        ActionOverride(Player6,LeaveAreaLUA("ACIL50","",[550.2363],SE))
+        MultiPlayerSync()
+        MoveViewPoint([643.2364],INSTANT)
+        Wait(1)
+        FadeFromColor([40.0],150)
         EndCutSceneMode()
 END
 

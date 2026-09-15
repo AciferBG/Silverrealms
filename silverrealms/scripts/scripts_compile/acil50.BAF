@@ -115,6 +115,15 @@ THEN
 END
 
 IF
+	GlobalGT("AC#Ruvan_Treason","GLOBAL",1)
+	Global("AC#IL_RuvJournal","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("AC#IL_RuvJournal","GLOBAL",1)
+	    AddJournalEntry(@62049,QUEST)
+END
+
+IF
 	GlobalGT("AC#BreskMoves01","ACIL50",1)
 	Global("Bystanders","ACIL50",0)
 THEN

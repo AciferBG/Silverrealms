@@ -15,7 +15,7 @@ THEN
 	RESPONSE #100
 	SetGlobal("DisableAnimations","ACIL36",1)
     AmbientActivate("Stone_broken",FALSE)
-	AddJournalEntry(@62048,QUEST_DONE)
+	AddJournalEntry(@62048,QUEST)
 END
 
 IF

@@ -111,8 +111,8 @@ END
 
 		IF ~~ THEN BEGIN tell_us_about_barakuir
 		SAY ~Bitte teilt Eure weiteren Erkenntnisse über Barakuir mit uns, um der ganzen Angelegenheit doch noch ein wenig Sinn zu geben.~
-		IF ~~ THEN REPLY ~Außerhalb der Stadt gab es einen verlassenen Tempel der Illithiden und ich musste gegen einige der Abscheulichsten ihrer Ausgeburten kämpfen.~ EXTERN ~AC#FENY1~ so_it_is_true_about_mindflayers
-		IF ~~ THEN REPLY ~Die Gedankenschinder hatten dort einst eine bedeutende Niederlassung. Ihre Schrecken sind dort geblieben, bis ich sie vernichtet habe.~ EXTERN ~AC#FENY1~ so_it_is_true_about_mindflayers
+		IF ~~ THEN REPLY ~Außerhalb der Stadt gab es einen verlassenen Tempel der Illithiden und ich musste gegen einige der abscheulichsten ihrer Ausgeburten kämpfen.~ EXTERN ~AC#FENY1~ so_it_is_true_about_mindflayers
+		IF ~~ THEN REPLY ~Die Gedankenschinder hatten dort einst eine bedeutende Niederlassung. Ihre Schrecken sind geblieben, bis ich sie vernichtet habe.~ EXTERN ~AC#FENY1~ so_it_is_true_about_mindflayers
 		IF ~~ THEN REPLY ~Barakuir war einst ein Versteck der Gedankenschinder. Ein Teil Ihrer Brut lebte dort noch immer. Jetzt nicht mehr.~ EXTERN ~AC#FENY1~ so_it_is_true_about_mindflayers
 		END
 				
@@ -969,7 +969,7 @@ BEGIN AC#FENY1  // Fenyl
 
 IF ~~THEN BEGIN so_it_is_true_about_mindflayers
 SAY ~Also ist es wahr! Die *caradhak* sind für die Angriffe und unsere Misere verantwortlich!~
-IF ~~ THEN REPLY ~Ihr irrt Euch. Die Illithiden sind dafür nicht verantwortlich. An dem Ort befand sich ein untotes Ältestenhirn. König Mith Barak hatte anscheinend mit diesem über seinen Fluch gesprochen.~ EXTERN ~AC#GROM1~ chain_new_after_barakuir
+IF ~~ THEN REPLY ~Ihr irrt Euch. Die Illithiden sind dafür nicht verantwortlich. An dem Ort befand sich ein untotes Ältestenhirn. König Mith Barak hatte mit diesem über seinen Fluch gesprochen.~ EXTERN ~AC#GROM1~ chain_new_after_barakuir
 IF ~~ THEN REPLY ~Nicht ganz. In den Ruinen existiert ein untotes Ältestenhirn, welches von König Mith Barak aufgesucht wurde.~ EXTERN ~AC#GROM1~ chain_new_after_barakuir
 IF ~~ THEN REPLY ~Die Gedankenschinder mögen dort einst gelebt haben, doch sie stecken nicht hinter Eurem Unglück. König Mith Barak sprach dort mit einem untoten Ältestenhirn.~ EXTERN ~AC#GROM1~ chain_new_after_barakuir
 IF ~~ THEN REPLY ~Die Illithiden sind nicht Eure Feinde in dieser Sache. Mith Barak suchte Rat bei einem untoten Ältestenhirn.~ EXTERN ~AC#GROM1~ chain_new_after_barakuir
@@ -1428,9 +1428,9 @@ END
 IF ~~ THEN REPLY ~Ich traf einige von ihnen. Sie wurden genauso vor den Toren Iltkazars abgeschlachtet wie Eure Zwergenpatrouille - von Githyanki.~ EXTERN AC#VRON1 chain_illithid_vs_elderbrain_01
 
 CHAIN AC#VRON1 chain_illithid_vs_elderbrain_01
-~Diese merkwürdigen Krieger stecken hinter alledem?~
+~Diese merkwürdigen Astralkrieger stecken hinter alledem?~
 END
-IF ~~ THEN REPLY ~Sie scheinen in diesem Konflikt auch nur Söldner zu sein.~ EXTERN AC#TURB8 chain_illithid_vs_elderbrain_02
+IF ~~ THEN REPLY ~Sie scheinen in diesem Konflikt zumindest beteiligt zu sein.~ EXTERN AC#TURB8 chain_illithid_vs_elderbrain_02
 
 CHAIN AC#TURB8 chain_illithid_vs_elderbrain_02
 ~Wie dem auch sei. Was ist aus den Illithiden geworden?~

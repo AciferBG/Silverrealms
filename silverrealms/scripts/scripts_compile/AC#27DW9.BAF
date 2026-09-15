@@ -7,6 +7,13 @@ THEN
 END
 
 IF
+    GlobalGT("AC#Ruvan_Treason","GLOBAL",0)
+THEN
+    RESPONSE #100
+        DestroySelf()
+END
+
+IF
     Global("AC#IL27_DismissDwarves","GLOBAL",1)
 THEN
     RESPONSE #100

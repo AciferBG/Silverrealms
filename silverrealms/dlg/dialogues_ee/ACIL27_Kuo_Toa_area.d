@@ -241,6 +241,8 @@ END
 						IF ~~ THEN BEGIN go_alone
 						SAY ~Gut. Los, Abmarsch, Männer, und dass Ihr mir keine Faxen macht!~
 						IF ~~ THEN DO ~SetGlobal("AC#Ruvan_Treason","GLOBAL",2)
+						SetGlobal("AC#IL_RuvJournal","GLOBAL",1)
+						AddJournalEntry(@62049,QUEST)
 						ActionOverride("AC#27DW1",EscapeAreaObject("TrACIL20"))
 						ActionOverride("AC#27DW2",EscapeAreaObject("TrACIL20"))
 						 ActionOverride("AC#27DW3",DropItem("SPER01",[-1.-1]))

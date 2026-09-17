@@ -75,6 +75,7 @@ THEN
 		CreateCreature("ac#vron1",[2012.964],5)  // Vronia Eisenbieger
 END
 
+/*
 IF
 	Global("AC#Ruvan_Treason","GLOBAL",3)
 THEN
@@ -85,7 +86,9 @@ THEN
 		CreateCreature("AC#TURB8",[1736.1077],9)  // Turbaern Ghalmrin
 		ActionOverride("AC#TURB8",StartDialogNoSet(Player1))
 END
+*/
 
+/*
 IF
 	Global("AC#ACIL64_Open","GLOBAL",1)
 THEN
@@ -104,6 +107,7 @@ THEN
 		SetGlobal("AC#ACIL64_Open","GLOBAL",2)
 		ActionOverride("AC#DUN01",StartDialogNoSet(Player1))
 END
+*/
 
 IF
 	Global("AC#RC_Spiderstalkings","GLOBAL",1)

@@ -1,0 +1,12 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        Wait(1)
+        SetGlobal("AC#Ruvan_Treason","GLOBAL",4)
+        CreateCreature("AC#62DW2",[2086.794],SWW)  // Soldat der Bronzemaske
+        CreateCreature("AC#62DW3",[2204.871],SWW)  // Soldat der Bronzemaske
+        CreateCreature("AC#TURB8",[1736.1077],NNE)  // Turbaern Ghalmrin
+        ActionOverride("AC#TURB8",StartDialogueNoSet(Player1))
+END
+

@@ -35,8 +35,10 @@ END
 BEGIN AC#DUN01  // Dunnabar Steinschulter - Dialog 01
 
 IF ~Global("AC#ACIL64_Open","GLOBAL",2)~ THEN BEGIN guard_the_king
-SAY ~Ich werde meiner Aufgabe nachgehen, an der Seite des Königs Wache zu stehen.~
-  IF ~~ THEN REPLY ~Ich würde mir gerne auch einmal ein Bild der Lage machen.~ EXTERN ~AC#GROM1~ chain_go_check_throneroom
+SAY ~So ist zum ersten Mal in der Geschichte dieser Stadt das Tor zum Thronsaal offen, während unser König schläft.~
+  IF ~~ THEN REPLY ~Ich würde mir gerne auch einmal ein Bild vom König machen.~ EXTERN ~AC#GROM1~ chain_go_check_throneroom
+  IF ~~ THEN REPLY ~Dann sehen wir uns an, welcher Anblick hinter diesem offenen Tor auf uns wartet.~ EXTERN ~AC#GROM1~ chain_go_check_throneroom
+  IF ~~ THEN REPLY ~Und jetzt?~ EXTERN ~AC#GROM1~ chain_go_check_throneroom
 END
 
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN hello
@@ -110,7 +112,7 @@ IF ~~ THEN EXTERN ~AC#DUN01~ chain_dunnabar_own_brother
 END
 
 		IF ~~ THEN BEGIN tell_us_about_barakuir
-		SAY ~Bitte teilt Eure weiteren Erkenntnisse über Barakuir mit uns.~
+		SAY ~Bitte teilt Eure weiteren Erkenntnisse über Barakuir mit uns. In welchem Zustand habt Ihr die Stadt vorgefunden?~
 		IF ~~ THEN REPLY ~Es gab dort einen verlassenen Tempel der Illithiden. Ich musste gegen einige der abscheulichsten ihrer Ausgeburten kämpfen.~ EXTERN ~AC#FENY1~ so_it_is_true_about_mindflayers
 		IF ~~ THEN REPLY ~Barakuir war einst ein Versteck der Gedankenschinder. Ein Teil Ihrer Brut lebte dort noch immer, bis ich sie vernichtet habe.~ EXTERN ~AC#FENY1~ so_it_is_true_about_mindflayers
 		END
@@ -135,7 +137,7 @@ END
 		
 		
 		IF ~~ THEN BEGIN turbaern_gromi_regencycouncil_02
-		SAY ~Es ist kein Geheimnis, dass Ihr dem Rat gegenüber schon immer abgeneigt wart, Turbaern.~
+		SAY ~Es ist kein Geheimnis, dass Ihr dem Rat gegenüber schon immer abgeneigt wart, Turbaern. Dennoch dürfen wir gerade jetzt nicht in Untätigkeit zurückfallen!~
 		IF ~~ THEN EXTERN ~AC#VRON1~ vronia_turbaern_what_do_you_propose
 		END
 		
@@ -143,9 +145,9 @@ END
 		SAY ~Ein gewagtes Unterfangen. Warum sollte dies die Bürger unserer Stadt nicht noch niedergeschlagener machen?~
 		IF ~~ THEN REPLY ~Damit sie vielleicht endlich wieder sehen, dass sie noch einen König haben?~ + chain_open_throneroom
 		IF ~~ THEN REPLY ~Ein sichtbarer König stärkt den Mut, er schwächt ihn nicht.~ + chain_open_throneroom
-		IF ~~ THEN REPLY ~Weil der Rat ohne sichtbares Oberhaupt bereits zerfällt.~ + chain_open_throneroom
-		IF ~~ THEN REPLY ~Weil Feinde draußen stärker werden, während wir drinnen zaudern.~ + chain_open_throneroom
-		IF ~~ THEN REPLY ~Verstecken ist Feigheit.~ + chain_open_throneroom
+		IF ~~ THEN REPLY ~Weil die Stadt ohne sichtbares Oberhaupt bereits zerfällt?~ + chain_open_throneroom
+		//IF ~~ THEN REPLY ~Weil Feinde draußen stärker werden, während wir drinnen zaudern.~ + chain_open_throneroom
+		//IF ~~ THEN REPLY ~Verstecken ist Feigheit.~ + chain_open_throneroom
 		END
 		
 		
@@ -155,9 +157,9 @@ END
 		~Wohlan denn, Königsgarde - öffnet die Tore in den Thronsaal!~
 		IF ~~ THEN DO ~SetGlobal("AC#Ruvan_Treason","GLOBAL",10)
 		SetGlobal("AC#Ellhimar_Illithid","GLOBAL",4)
-		FaceObject("DOOR02")
-		Wait(1)
 		SetGlobal("AC#ACIL64_Open","GLOBAL",1)
+        StartCutSceneMode()
+		StartCutScene("AC#ILD62")		
 		~ EXIT
 		END
 		
@@ -622,8 +624,9 @@ END
 			END
 
 IF ~~ THEN BEGIN who_else_illithids
-SAY ~Wer sonst könnte denn hinter alldem hier stecken?.~ 
-IF ~~ THEN REPLY ~Jemand, der Gedankenschinder genauso wenig leiden kann wie Euch.~ EXTERN ~AC#STUR1~ no_one_likes_illithids
+SAY ~Wer sonst könnte hinter alldem stecken?.~ 
+IF ~~ THEN REPLY ~Jemand, der Gedankenschinder genauso wenig leiden kann wie Zwerge.~ EXTERN ~AC#STUR1~ no_one_likes_illithids
+IF ~~ THEN REPLY ~Ich traf die Gedankenschinder. Sie wurden genauso vor den Toren Iltkazars abgeschlachtet wie Eure Zwergenpatrouille.~ EXTERN AC#VRON1 chain_illithid_vs_elderbrain_01
 END
 
 IF ~~ THEN BEGIN elern_houseguard
@@ -830,14 +833,9 @@ END
 		*/
 		
 		IF ~~ THEN BEGIN turbaern_gromi_regencycouncil
-		SAY ~Bei allem Respekt, Gromi, aber dies ist nicht mehr die Zeit für Entscheidungen im Regentschaftsrat.~
+		SAY ~Bei allem Respekt, Gromi, aber dies ist nicht mehr die Zeit für alleinige Entscheidungen im Regentschaftsrat.~
 		IF ~~ THEN EXTERN ~AC#GROM1~ turbaern_gromi_regencycouncil_02
-		END
-		
-		IF ~~ THEN BEGIN no_more_regency_council
-		SAY ~Legen wir die alten Fehden beiseite. Löst den Regentschaftsrat auf. Unser Volk braucht jetzt seinen König! Lasst uns die Hallen zum Thronsaal wieder öffnen.~
-		IF ~~ THEN EXTERN ~AC#GROM1~ turbaern_open_throneroom
-		END
+		END			
 		
 		IF ~~ THEN BEGIN turbaern_what_to_do_with_hammer
 		SAY ~Dies muss <CHARNAME> entscheiden. Da <PRO_HIMHER> der Hammer von Dumathoin überlassen wurde, kann <PRO_HESHE> ihn solange schwingen, bis sich Dumathoin einen anderen Träger wünscht. Oder <PRO_HESHE> legt ihn wieder auf seinen angestammten Platz im Tempel zurück. Was sagt Ihr, <CHARNAME>?~
@@ -871,12 +869,17 @@ IF ~~ THEN BEGIN charname_has_dumathoins_hammer
 SAY ~Das könnt Ihr nicht tun! <CHARNAME> ist die Person, die Euch hinters Licht führen will! Wie sollte er denn aus Barakuir entkommen sein?~
 IF ~~ THEN REPLY ~Der Hammer Dumathoins war meine Rettung. Er erschien vor mir, als ich feststellen musste, dass die Boote verschwunden waren.~ + hammer_appeared
 IF ~~ THEN REPLY ~Ihr ließt mich in Barakuir zurück - Dumathoin nicht! Sein Hammer ebnete mir den Weg zurück.~ + hammer_appeared
-IF ~~ THEN REPLY ~Wie? Fragt Dumathoin. Fragt seinen Hammer.~ + hammer_appeared
+IF ~~ THEN REPLY ~Wie? Fragt Dumathoin und seinen Hammer.~ + hammer_appeared
+IF ~~ THEN REPLY ~Irgendein göttlicher Zwergenhammer erschien aus dem Nichts. Mein Glück, Euer Pech.~ + hammer_appeared
+IF ~~ THEN REPLY ~Dieser Hammer fiel praktisch vom Himmel und rettete mir das Leben. Offenbar mögen mich Eure Götter mehr als Ihr.~ + hammer_appeared
+
 END
 
 	IF ~~ THEN BEGIN hammer_appeared
-	SAY ~Was für eine dreiste Lüge! Niemandem von der Oberfläche wäre es gestattet, diesen Hammer zu führen! Glaubt mir, <PRO_HESHE> hat ihn gestohlen!~
-	IF ~~ THEN DO ~SetGlobal("AC#Ruvan_Treason","GLOBAL",3)												
+	SAY ~Dumathoins Hammer? Was für eine dreiste Lüge! Niemandem von der Oberfläche wäre es gestattet, diesen Hammer zu führen! Glaubt mir, <PRO_HESHE> hat ihn gestohlen!~
+	IF ~~ THEN DO ~SetGlobal("AC#Ruvan_Treason","GLOBAL",3)
+StartCutSceneMode()
+StartCutScene("AC#ILC62")	
 	~ EXIT
 	END
 	
@@ -895,10 +898,10 @@ END
 	END
 	
 		IF ~~ THEN BEGIN why_do_you_think_i_am_dead
-		SAY ~M-meine Männer! Sie haben mich falsch informiert! Sie haben Euch zurückgelassen! So eine Feigheit!~
-		IF ~~ THEN REPLY ~Eure Leute haben Hathar gegenüber schon zugegeben, dass sie von Euch angehalten wurden, mich in Barakuir zurückzulassen.~ + chain_accusation
+		SAY ~Meine Männer! Sie haben mich falsch informiert! Sie haben Euch eigenmächtig zurückgelassen! So eine Feigheit!~
 		IF ~~ THEN REPLY ~So leicht kommt Ihr nicht davon!~ + chain_accusation
 		IF ~~ THEN REPLY ~Ihr habt den Befehl dazu gegeben!~ + chain_accusation
+		IF ~~ THEN REPLY ~Eure Leute haben Hathar gegenüber schon zugegeben, dass sie von Euch angehalten wurden, mich in Barakuir zurückzulassen.~ + chain_accusation
 		END
 
 IF ~~ THEN BEGIN ruvan_boat_one_word_02
@@ -966,9 +969,9 @@ BEGIN AC#FENY1  // Fenyl
 
 
 IF ~~THEN BEGIN so_it_is_true_about_mindflayers
-SAY ~Also ist es wahr! Die *caradhak* sind für die Angriffe und unsere Misere verantwortlich!~
-IF ~~ THEN REPLY ~Die Gedankenschinder mögen dort einst gelebt haben, doch sie stecken nicht hinter Eurem Unglück.~ GOTO illithids_not_responsable
-IF ~~ THEN REPLY ~Die Illithiden sind nicht Eure Feinde in dieser Sache.~ GOTO illithids_not_responsable
+SAY ~Also ist es wahr! Die *caradhak* haben Clan Duergar einst unterworfen. Nun sind sie für die Angriffe auf unsere Stadt und unsere Misere verantwortlich!~
+IF ~~ THEN REPLY ~Die Gedankenschinder mögen einst Barakuir beherrscht haben, doch sie stecken nicht hinter Eurem Unglück.~ GOTO illithids_not_responsable
+IF ~~ THEN REPLY ~Die Illithiden sind nicht die Urheber von alldem, was Eurer Stadt widerfahren ist.~ GOTO illithids_not_responsable
 END
 	/*
 	IF ~~THEN BEGIN so_it_is_true_about_mindflayers
@@ -981,10 +984,9 @@ END
 	*/
 
 	IF ~~THEN BEGIN illithids_not_responsable
-	SAY ~Die Illithiden sind also nicht die Schuldigen?~
-	IF ~~ THEN REPLY ~So, wie es aussieht, nicht.~ EXTERN ~AC#ELER1~ who_else_illithids
-	IF ~~ THEN REPLY ~Erinnert Ihr Euch an Illithidenköpfe?~ EXTERN ~AC#ELER1~ who_else_illithids
-	IF ~~ THEN REPLY ~Ich traf einige von ihnen. Sie wurden genauso vor den Toren Iltkazars abgeschlachtet wie Eure Zwergenpatrouille.~ EXTERN AC#VRON1 chain_illithid_vs_elderbrain_01
+	SAY ~Warum seid Ihr Euch so sicher, dass die Illithiden nicht die Schuldigen sind?~
+	IF ~~ THEN REPLY ~Erinnert Ihr Euch an diese Illithidenköpfe?~ EXTERN ~AC#ELER1~ who_else_illithids
+	IF ~~ THEN REPLY ~Ich traf einige von ihnen. Sie wurden genauso vor den Toren Iltkazars abgeschlachtet wie Eure Zwergenpatrouille.~ EXTERN ~AC#ELER1~ who_else_illithids
 	END
 
 IF ~~THEN BEGIN boat_azerkyn_fenyl
@@ -1396,9 +1398,9 @@ CHAIN IF ~~ THEN AC#GROM1 chain_gromi_turbaern_01
 == AC#TURB8 ~Ich wollte auch nie eins sein!~
 = ~Der Rat hat seine Aufgabe wieder einmal nicht erfüllt. Er sollte Iltkazar durch die schweren Stunden führen, stattdessen hätte er die Stadt fast weiter an den Abgrund geführt.~
 == AC#FENY1 ~Dies sind harte Worte, Turbaern!~
-== AC#GROM1 ~Der Hohe Omlar spricht die Wahrheit. Wir haben versagt.~ 
-== AC#TURB8 ~Nur durch Dumathoins Eingreifen konnte <CHARNAME> nach Iltkazar zurückkehren! Einst war es Dumathoin, der König Mith Barak auf den Thron führte – und nun hat er <CHARNAME> den Weg zurück nach Iltkazar gewiesen. Erkennt Ihr denn nicht die Zeichen?~
-== AC#GROM1 ~Dumathoin hat schon einmal über Iltkazars Schicksal gewacht. Es wäre töricht, seine Hand ausgerechnet jetzt nicht erkennen zu wollen.~
+== AC#GROM1 ~Der Hohe Omlar spricht die Wahrheit.~ 
+== AC#TURB8 ~Nur durch Dumathoins Eingreifen konnte <CHARNAME> nach Iltkazar zurückkehren! Einst war es Dumathoin, der König Mith Barak auf den Thron führte – und nun hat er <CHARNAME> den Weg zurück nach Iltkazar gewiesen. Erkennt Ihr denn nicht diese Zeichen?~
+== AC#GROM1 ~Der Hohe Omlar hat Recht. Dumathoin hat schon einmal über Iltkazars Schicksal gewacht. Es wäre töricht, seine Handlung ausgerechnet jetzt nicht erkennen zu wollen.~
 == AC#DUN01 ~Wie sollen wir nun mit meinem Bruder Ruvan weiterverfahren?~
 == AC#GROM1 ~Ruvan hat unser Vertrauen verspielt. Bis diese Krise vorüber ist, sollen er und seine Frau in der Bronzemaske im Kerker in Haft bleiben.~
 == AC#RUVA1 ~Das werdet Ihr nicht wagen!~
@@ -1430,7 +1432,7 @@ END
 
 
 CHAIN IF ~~ THEN AC#STUR1 no_one_likes_illithids
-~Das trifft auf so ziemlich auf jede Rasse des Unterreiches zu.~
+~Das trifft auf so ziemlich auf jede Rasse des Unterreiches zu. Wer hasst Gedankenschinder mehr als wir? Und wer besitzt die Fähigkeit, es mit ihnen aufzunehmen?~
 END
 IF ~~ THEN REPLY ~Ich traf auf eine Gruppe Githyanki, die zugab, sowohl die Illithiden als auch Eure Patrouille getötet zu haben.~ EXTERN AC#VRON1 chain_illithid_vs_elderbrain_01
 
@@ -1442,32 +1444,34 @@ END
 IF ~~ THEN REPLY ~Ich traf einige von ihnen. Sie wurden genauso vor den Toren Iltkazars abgeschlachtet wie Eure Zwergenpatrouille - von Githyanki.~ EXTERN AC#VRON1 chain_illithid_vs_elderbrain_01
 
 CHAIN AC#VRON1 chain_illithid_vs_elderbrain_01
-~Diese merkwürdigen Astralkrieger stecken hinter alledem?~
+~Diese merkwürdigen Astralkrieger stecken hinter alledem? Das würde erklären, was es mit diesem mysteriösen Portal vor Iltkazar auf sich hatte!~
 END
-IF ~~ THEN REPLY ~Sie scheinen in diesem Konflikt zumindest beteiligt zu sein.~ EXTERN AC#TURB8 chain_illithid_vs_elderbrain_02
-IF ~~ THEN REPLY ~Die Githyanki verfolgen ihre eigenen Ziele. Zufällig richten die sich im Moment gegen dieselben Feinde, mit denen auch wir es zu tun haben.~ EXTERN AC#TURB8 chain_illithid_vs_elderbrain_02
-IF ~~ THEN REPLY ~Sie ein weiterer Spieler auf dem Brett. Die eigentliche Bedrohung eher nicht.~ EXTERN AC#TURB8 chain_illithid_vs_elderbrain_02
+IF ~~ THEN EXTERN AC#TURB8 chain_illithid_vs_elderbrain_02
+//IF ~~ THEN REPLY ~Sie scheinen in diesem Konflikt zumindest beteiligt zu sein.~ EXTERN AC#TURB8 chain_illithid_vs_elderbrain_02
+//IF ~~ THEN REPLY ~Die Githyanki verfolgen ihre eigenen Ziele.~ EXTERN AC#TURB8 chain_illithid_vs_elderbrain_02
+//IF ~~ THEN REPLY ~Sie ein weiterer Spieler auf dem Brett. Die eigentliche Bedrohung eher nicht.~ EXTERN AC#TURB8 chain_illithid_vs_elderbrain_02
 
 CHAIN AC#TURB8 chain_illithid_vs_elderbrain_02
-~Wie dem auch sei. Was ist aus den Illithiden in Barakuir geworden, die Ihr getroffen habt?~
+~Das Portal ist geschlossen und bedroht uns nicht mehr. Von dieser Seite droht keine Gefahr mehr für unsere Stadt.~ 
+== AC#GROM1 ~Verlieren wir nicht den Faden. Ihr habt in Barakuir mit Illithiden gesprochen. Das ist ein gefährliches Unterfangen, wie ich selbst nur zu gut weiß.  Was ist aus ihnen geworden?~
 END
 IF ~!Dead("AC#ULIT2")~ THEN REPLY ~Sie haben sich wieder aus dem Staub gemacht.~ EXTERN AC#GROM1 chain_illithid_vs_elderbrain_cont
 IF ~Dead("AC#ULIT2")~ THEN REPLY ~Ich habe sie getötet.~ EXTERN AC#GROM1 chain_illithid_vs_elderbrain_cont
 
 CHAIN IF ~~ THEN AC#GROM1 chain_illithid_vs_elderbrain_cont
-~Lasst uns den Fokus nicht verlieren. Mith Barak sah seine Hilfe ausgerechnet in Barakuir. Warum?~
+~Dennoch sah Mith Barak damals seine Hilfe ausgerechnet in Barakuir, auch wenn er wahrscheinlich wusste, dass ihn dort Gedankenschinder erwarteten. Warum?~
 END
 	IF ~~ THEN REPLY ~An dem Ort befand sich ein untotes Ältestenhirn. König Mith Barak hatte mit diesem über seinen Fluch gesprochen.~ EXTERN ~AC#STUR1~ chain_illithid_vs_elderbrain_cont_02
 	IF ~~ THEN REPLY ~Mith Barak suchte Rat bei einem untoten Ältestenhirn.~ EXTERN ~AC#STUR1~ chain_illithid_vs_elderbrain_cont_02
 
 CHAIN IF ~~ THEN AC#STUR1 chain_illithid_vs_elderbrain_cont_02
-~Wie kann man nur solch eine Kreatur um Rat fragen?~
-== AC#TURB8 ~Das weiß nur unser König ganz allein.~
+~Ein Illithiden-Ältestenhirn? Und noch dazu in untotem Zustand? Wie kann man nur solch eine Kreatur um Rat fragen?~
+== AC#VRON1 ~Das weiß nur unser König ganz allein.~
 == AC#FENY1 ~Nach allem, was die Illithiden unserem Sohn angetan haben? Was hatte sich unser König nur dabei gedacht?~
-== AC#GROM1 ~Nicht hier, meine Liebe. Nun sagt, <CHARNAME>, was wollte Mith Barak von dem Ältestenhirn?~
+== AC#GROM1 ~Nicht hier, meine Liebe. Sagt, <CHARNAME>, was wollte Mith Barak von diesem Ältestenhirn?~
 END
-++ ~Mith Barak schien zu hoffen, dass es ihm mit seinem uralten Wissen weiterhelfen könnte.~ EXTERN ~AC#STUR1~ chain_new_after_barakuir_02
-++ ~Euer König suchte Antworten, wo immer er sie finden konnte – selbst bei einem verrottenden Ältestenhirn.~ EXTERN ~AC#STUR1~ chain_new_after_barakuir_02
+++ ~Mith Barak schien zu hoffen, dass es ihm mit seinem uralten Wissen bei der Erlösung seines Fluchs weiterhelfen könnte.~ EXTERN ~AC#STUR1~ chain_new_after_barakuir_02
+++ ~Euer König suchte Antworten zu seinem Fluch, wo immer er sie finden konnte – selbst bei einem verrottenden Ältestenhirn.~ EXTERN ~AC#STUR1~ chain_new_after_barakuir_02
 ++ ~Mith Barak war offenbar verzweifelt genug, selbst die uralten Feinde der Zwerge um Hilfe zu bitten.~ EXTERN ~AC#STUR1~ chain_new_after_barakuir_02
 ++ ~Vielleicht blieb ihm kein anderer Ort mehr, an dem er Antworten finden konnte. Nur dieser vergammelte Haufen Hirnmasse.~ EXTERN ~AC#STUR1~ chain_new_after_barakuir_02
 
@@ -1492,8 +1496,8 @@ END
 CHAIN IF ~~ THEN AC#FENY1 chain_new_after_barakuir_04
 ~Das ist ja widerlich!~
 == AC#STUR1 ~Ugh! Wie das stinkt!~
-== AC#ELER1 ~Vielleicht ist dies unsere einzige Möglichkeit, dem König zu helfen?~
-== AC#TORT1 ~Indem wir einen Teil eines Ältestenhirnes um Rat fragen?~
+== AC#ELER1 ~Vielleicht ist dies der nächste Schritt, unserem König zu helfen?~
+== AC#TORT1 ~Indem wir den abgetrennten Teil eines Ältestenhirnes um Rat fragen?~
 == AC#VRON1 ~Zeigt mir bitte einmal diesen Gehirnlappen, <CHARNAME>.~
 END
 IF ~~ THEN DO ~TakePartyItem("AC#ILEBL") DestroyItem("AC#ILEBL")~ EXTERN AC#VRON1 take_lobe_01
@@ -1518,9 +1522,19 @@ CHAIN IF ~~ THEN AC#VRON1 take_lobe_03
 ~Uh... nicht angenehm...~
 == AC#VRON1 ~Das ist... ich spüre etwas... doch...~
 == AC#VRON1 ~Nein. Es offenbart sich mir nicht. Vielleicht ist meine zwergische Widerstandskraft zu groß, um meinen Geist der Erinnerung zu öffnen. Wenn jemand anderes einmal versuchen würde zu...~
-== AC#GROM1 ~Schluss mit diesem Unsinn! Der Rat wird diesen Weg nicht weiter beschreiten!~
+== AC#GROM1 ~Schluss mit diesem Unsinn! Niemand wird diesen Weg weiter beschreiten! Der Rat wird jetzt beschließen, wie es nach den Nachrichten von <CHARNAME> über Barakuir in unserer Stadt weitergehen soll.~
 END
 IF ~~ THEN EXTERN ~AC#TURB8~ turbaern_gromi_regencycouncil
+
+CHAIN IF ~~ THEN AC#TURB8 no_more_regency_council
+~Lasst die alten Zwistigkeiten ruhen. Der Regentschaftsrat war für eine andere Zeit geschaffen. Diese Zeit ist vorüber. Wir brauchen ihn nicht mehr. Löst ihn auf.~ 
+== AC#FENY1 ~Was ist das für ein alberner Vorschlag?~
+== AC#STUR1 ~Ja, wer soll dann weiter Entscheidungen treffen, wenn nicht wir hier im Rat?~
+== AC#TURB8 ~Es braucht keinen Rat mehr. Jeder von uns soll die Pflicht übernehmen, die ihm zukommt - für unsere Stadt, für unseren König.~
+== AC#TURB8 ~Und unser Volk braucht gerade jetzt seinen König! Lasst uns die Hallen zum Thronsaal wieder öffnen und sehen, wofür wir einstehen!~
+		END
+		IF ~~ THEN EXTERN ~AC#GROM1~ turbaern_open_throneroom
+		
 
 // go to throneroom
 	CHAIN IF ~~ THEN AC#GROM1 gromi_go_to_king
@@ -1564,16 +1578,16 @@ END
 //++ ~Ihr wusstet davon, Turbaern?~ EXTERN ~AC#TURB8~ know_about_spiderstalkings
 
 CHAIN IF ~~ THEN AC#GROM1 chain_open_throneroom
-~Es war bisher noch nie in der Schlafensperiode unseres Königs der Fall, dass jedem Zutritt zum Thronsaal gewährt wurde.~
-== AC#DUN01 ~Und die Sicherheit unseres Königs steht an erster Stelle!~
+~Es war bisher noch nie in den Schlafensperioden unseres Königs der Fall, dass dem Volk Zutritt zum Thronsaal gewährt wurde.~
+== AC#DUN01 ~Denn die Sicherheit unseres Königs steht an erster Stelle!~
 == AC#ELER1 ~Ich finde, wir sollten es einmal versuchen.~
 == AC#FENY1 ~Warum nicht? Wir können den Regentschaftsrat jetzt, da Ruvan im Gefängnis sitzt, ohnehin nicht mehr regulär einberufen.~
-== AC#STUR1 ~Vielleicht könnte <CHARNAME> auch einmal einen Blick auf unseren König werfen.~
+== AC#STUR1 ~Vielleicht könnte <CHARNAME> dann auch einmal einen Blick auf unseren König werfen.~
 END
 IF ~~ THEN EXTERN ~AC#GROM1~ ok_open_throneroom
 
 CHAIN IF ~~ THEN AC#GROM1 chain_go_check_throneroom
-~Selbstverständlich. Dies war ja der Grund, weshalb Ihr uns aufgesucht habt. Es wäre nun mehr als angemessen, Euch Zutritt zu unserem König zu ermöglichen.~
+~Seht nach unserem König. Es ist nun mehr als angemessen, Euch Zutritt zu unserem König zu ermöglichen.~
 == AC#ELER1 ~Erwartet nicht zu viel, <CHARNAME>. Der Anblick ist ziemlich... deprimierend.~
 == AC#GROM1 ~So teilt sich der Rat auf. Dunnabar Steinschulter wird neben dem König Wache halten, während seine Söhne die Verteidigung der Stadt aufrecht erhalten.~
 == AC#VRON1 ~Ich werde mich mit der Frage beschäftigen, welchen Weg wir weiter beschreiten müssen, um unserem König zu helfen.~

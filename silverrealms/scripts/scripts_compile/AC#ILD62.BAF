@@ -1,0 +1,20 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId("AC#GROM1")  // Gromi Arnschädel
+        FaceObject("DOOR02")
+        Wait(1)
+        Wait(1)
+        Unlock("DOOR02")
+        OpenDoor("DOOR02")
+        Wait(1)
+        FaceObject("DOOR03")
+        Wait(1)
+        Unlock("DOOR03")
+        OpenDoor("DOOR03")
+        Wait(1)
+        SetGlobal("AC#ACIL64_Open","GLOBAL",2)
+        ActionOverride("AC#DUN01",StartDialogueNoSet(Player1))
+END
+

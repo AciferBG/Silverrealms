@@ -2044,7 +2044,14 @@ Wieder sitze ich in der Abgeschiedenheit meiner Kammer. Doch diesmal habe ich ei
 1272 DR
 Mir bleibt wenig Zeit. Bald werde ich erneut erstarren, reglos auf dem Thron sitzend. Wenn ich wieder erwache, werden Jahre vergangen sein. Darum hinterlasse ich diese Worte mir selbst. Barakuir soll mein nächstes Ziel sein. Und sollte ich dort scheitern, muss ich weiterziehen – durch die Überreste der Unterkönigreiche, vielleicht sogar jenseits dieser Welt.~
 @8098 = ~Amulett des Salzwahrers~
-@8099 = ~Eigenschaften:~
+@8099 = ~Dieses schwere Amulett stellt den grotesken Kopf eines Kuo-Toa dar. Sein weit aufgerissenes Maul ist mit groben Salzkristallen gefüllt, die sich immer wieder erneuern. Einmal täglich kann der Träger eine Handvoll davon hervorbrechen lassen und seinem Gegner entgegenschleudern.
+
+Eigenschaften:
+Salzkristalle: Diese Fähigkeit schleudert ein Projektil aus scharfkantigen Salzkristallen, die beim Aufprall zerbersten und dem Ziel 1W4 Wuchtschaden zufügen und es betäuben, wenn ihm kein Rettungswurf gegen Odemwaffen gelingt.
+RK-Bonus: -1
+RW-Bonus: -1
+
+Gewicht: 1~
 @8100 = ~Helm des letzten Gedankens~
 @8101 = ~Dieser Helm gehörte einst dem Duergar-Krieger Talnukk. Als der Neothelid den Duergar verschlang, löste seine Verdauung Fleisch und Knochen des Zwerges vollständig auf. Lediglich einige Schädelreste mit Gehirnmasse und der Helm widerstanden – als hätte sich der letzte Gedanke des Duergars selbst verankert. Verdaut, aber nicht gebrochen.
 

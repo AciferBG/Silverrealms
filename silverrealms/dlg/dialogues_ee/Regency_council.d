@@ -110,10 +110,9 @@ IF ~~ THEN EXTERN ~AC#DUN01~ chain_dunnabar_own_brother
 END
 
 		IF ~~ THEN BEGIN tell_us_about_barakuir
-		SAY ~Bitte teilt Eure weiteren Erkenntnisse über Barakuir mit uns, um der ganzen Angelegenheit doch noch ein wenig Sinn zu geben.~
-		IF ~~ THEN REPLY ~Außerhalb der Stadt gab es einen verlassenen Tempel der Illithiden und ich musste gegen einige der abscheulichsten ihrer Ausgeburten kämpfen.~ EXTERN ~AC#FENY1~ so_it_is_true_about_mindflayers
-		IF ~~ THEN REPLY ~Die Gedankenschinder hatten dort einst eine bedeutende Niederlassung. Ihre Schrecken sind geblieben, bis ich sie vernichtet habe.~ EXTERN ~AC#FENY1~ so_it_is_true_about_mindflayers
-		IF ~~ THEN REPLY ~Barakuir war einst ein Versteck der Gedankenschinder. Ein Teil Ihrer Brut lebte dort noch immer. Jetzt nicht mehr.~ EXTERN ~AC#FENY1~ so_it_is_true_about_mindflayers
+		SAY ~Bitte teilt Eure weiteren Erkenntnisse über Barakuir mit uns.~
+		IF ~~ THEN REPLY ~Es gab dort einen verlassenen Tempel der Illithiden. Ich musste gegen einige der abscheulichsten ihrer Ausgeburten kämpfen.~ EXTERN ~AC#FENY1~ so_it_is_true_about_mindflayers
+		IF ~~ THEN REPLY ~Barakuir war einst ein Versteck der Gedankenschinder. Ein Teil Ihrer Brut lebte dort noch immer, bis ich sie vernichtet habe.~ EXTERN ~AC#FENY1~ so_it_is_true_about_mindflayers
 		END
 				
 		IF ~~THEN BEGIN who_is_this_lay_down
@@ -738,11 +737,6 @@ END
 
 BEGIN AC#STUR1  // Sturvis
 
-IF ~~ THEN BEGIN no_one_likes_illithids
-SAY ~Das trifft auf so ziemlich auf jede Rasse des Unterreiches zu.~
-IF ~~ THEN REPLY ~Die Illithiden vermuten, dass unser Gegner gar nicht aus dem Unterreich kommt.~ + why_not_from_underdark
-END
-
 // Party Has Ellhimar
 	IF ~~ THEN BEGIN why_not_from_underdark
 	SAY ~Und wie kommen sie darauf?~
@@ -874,8 +868,10 @@ BEGIN AC#RUVA1  // Ruvan
 
 
 IF ~~ THEN BEGIN charname_has_dumathoins_hammer
-SAY ~Das könnt Ihr nicht tun! <CHARNAME> ist die Person, die Euch hinters Licht führen will! Wie wollt Ihr denn aus Barakuir entkommen sein?~
+SAY ~Das könnt Ihr nicht tun! <CHARNAME> ist die Person, die Euch hinters Licht führen will! Wie sollte er denn aus Barakuir entkommen sein?~
 IF ~~ THEN REPLY ~Der Hammer Dumathoins war meine Rettung. Er erschien vor mir, als ich feststellen musste, dass die Boote verschwunden waren.~ + hammer_appeared
+IF ~~ THEN REPLY ~Ihr ließt mich in Barakuir zurück - Dumathoin nicht! Sein Hammer ebnete mir den Weg zurück.~ + hammer_appeared
+IF ~~ THEN REPLY ~Wie? Fragt Dumathoin. Fragt seinen Hammer.~ + hammer_appeared
 END
 
 	IF ~~ THEN BEGIN hammer_appeared
@@ -894,11 +890,13 @@ END
 	IF ~~ THEN BEGIN c_c_charnames_alive
 	SAY ~W-w-was? W-wie ist das möglich? Ihr lebt?~
 	IF ~~ THEN REPLY ~Ich würde von Euch eher gerne wissen, wie es möglich ist, dass Ihr mich für tot haltet!~ + why_do_you_think_i_am_dead
+	IF ~~ THEN REPLY ~Ich habe schon Schlimmeres überlebt.~ + why_do_you_think_i_am_dead
+		IF ~~ THEN REPLY ~Ja, ich lebe! Für Einige könnte sich das als ausgesprochen schlechte Nachricht erweisen.~ + why_do_you_think_i_am_dead
 	END
 	
 		IF ~~ THEN BEGIN why_do_you_think_i_am_dead
-		SAY ~M-meine Männer! Sie haben mich falsch informiert! Sie haben Euch zurückgelassen! So eine Feigheit muss mit dem Tod bestraft werden. Ich werde sie umgehend hinrichten lassen!~
-		IF ~~ THEN REPLY ~Und damit wichtige Zeugen ausschalten? Eure Leute haben Hathar gegenüber schon zugegeben, dass sie von Euch angehalten wurden, mich in Barakuir zurückzulassen.~ + chain_accusation
+		SAY ~M-meine Männer! Sie haben mich falsch informiert! Sie haben Euch zurückgelassen! So eine Feigheit!~
+		IF ~~ THEN REPLY ~Eure Leute haben Hathar gegenüber schon zugegeben, dass sie von Euch angehalten wurden, mich in Barakuir zurückzulassen.~ + chain_accusation
 		IF ~~ THEN REPLY ~So leicht kommt Ihr nicht davon!~ + chain_accusation
 		IF ~~ THEN REPLY ~Ihr habt den Befehl dazu gegeben!~ + chain_accusation
 		END
@@ -969,15 +967,24 @@ BEGIN AC#FENY1  // Fenyl
 
 IF ~~THEN BEGIN so_it_is_true_about_mindflayers
 SAY ~Also ist es wahr! Die *caradhak* sind für die Angriffe und unsere Misere verantwortlich!~
-IF ~~ THEN REPLY ~Ihr irrt Euch. Die Illithiden sind dafür nicht verantwortlich. An dem Ort befand sich ein untotes Ältestenhirn. König Mith Barak hatte mit diesem über seinen Fluch gesprochen.~ EXTERN ~AC#GROM1~ chain_new_after_barakuir
-IF ~~ THEN REPLY ~Nicht ganz. In den Ruinen existiert ein untotes Ältestenhirn, welches von König Mith Barak aufgesucht wurde.~ EXTERN ~AC#GROM1~ chain_new_after_barakuir
-IF ~~ THEN REPLY ~Die Gedankenschinder mögen dort einst gelebt haben, doch sie stecken nicht hinter Eurem Unglück. König Mith Barak sprach dort mit einem untoten Ältestenhirn.~ EXTERN ~AC#GROM1~ chain_new_after_barakuir
-IF ~~ THEN REPLY ~Die Illithiden sind nicht Eure Feinde in dieser Sache. Mith Barak suchte Rat bei einem untoten Ältestenhirn.~ EXTERN ~AC#GROM1~ chain_new_after_barakuir
+IF ~~ THEN REPLY ~Die Gedankenschinder mögen dort einst gelebt haben, doch sie stecken nicht hinter Eurem Unglück.~ GOTO illithids_not_responsable
+IF ~~ THEN REPLY ~Die Illithiden sind nicht Eure Feinde in dieser Sache.~ GOTO illithids_not_responsable
 END
+	/*
+	IF ~~THEN BEGIN so_it_is_true_about_mindflayers
+	SAY ~Also ist es wahr! Die *caradhak* sind für die Angriffe und unsere Misere verantwortlich!~
+	IF ~~ THEN REPLY ~Die Illithiden sind dafür nicht verantwortlich. An dem Ort befand sich ein untotes Ältestenhirn. König Mith Barak hatte mit diesem über seinen Fluch gesprochen.~ EXTERN ~AC#GROM1~ chain_new_after_barakuir
+	IF ~~ THEN REPLY ~Nicht ganz. In den Ruinen existierte ein untotes Ältestenhirn, welches von König Mith Barak aufgesucht wurde.~ EXTERN ~AC#GROM1~ chain_new_after_barakuir
+	IF ~~ THEN REPLY ~Die Gedankenschinder mögen dort einst gelebt haben, doch sie stecken nicht hinter Eurem Unglück. König Mith Barak sprach dort mit einem untoten Ältestenhirn.~ EXTERN ~AC#GROM1~ chain_new_after_barakuir
+	IF ~~ THEN REPLY ~Die Illithiden sind nicht Eure Feinde in dieser Sache. Mith Barak suchte Rat bei einem Ältestenhirn.~ EXTERN ~AC#GROM1~ chain_new_after_barakuir
+	END
+	*/
 
 	IF ~~THEN BEGIN illithids_not_responsable
 	SAY ~Die Illithiden sind also nicht die Schuldigen?~
 	IF ~~ THEN REPLY ~So, wie es aussieht, nicht.~ EXTERN ~AC#ELER1~ who_else_illithids
+	IF ~~ THEN REPLY ~Erinnert Ihr Euch an Illithidenköpfe?~ EXTERN ~AC#ELER1~ who_else_illithids
+	IF ~~ THEN REPLY ~Ich traf einige von ihnen. Sie wurden genauso vor den Toren Iltkazars abgeschlachtet wie Eure Zwergenpatrouille.~ EXTERN AC#VRON1 chain_illithid_vs_elderbrain_01
 	END
 
 IF ~~THEN BEGIN boat_azerkyn_fenyl
@@ -1378,7 +1385,7 @@ CHAIN IF ~~ THEN AC#RUVA1 chain_accusation
 == AC#FENY1 ~Dies spielt alles keine Rolle mehr, Ruvan. Ihr habt uns absichtlich hinters Licht geführt.~
 == AC#ELER1 ~Und Ihr wolltet <CHARNAME> beseitigen.~
 == AC#STUR1 ~Dass Ihr aus niederen Motiven einen <PRO_RACE> umbringen wolltet, ist für einen Vertreter unserer Stadt eine Schande!~
-== AC#TORT1 ~Ich sage, wir sperren ihn vorerst ins Gefängnis. Es gibt drängendere Probleme, als mit so einem Abschaum zu verhandeln.~
+== AC#TORT1 ~Ich sage, wir sperren ihn vorerst ins Gefängnis. Es gibt drängendere Probleme, um die wir uns kümmern müssen.~
 END
 IF ~~ THEN EXTERN ~AC#RUVA1~ charname_has_dumathoins_hammer
 
@@ -1387,10 +1394,11 @@ CHAIN IF ~~ THEN AC#GROM1 chain_gromi_turbaern_01
 == AC#TURB8 ~Ja, hier bin ich, und ich sehe, gerade zur rechten Zeit!~
 == AC#CHEM1 ~Ihr seid kein Mitglied des Regentschaftsrates, Turbaern vom Clan Ghalmrin!~
 == AC#TURB8 ~Ich wollte auch nie eins sein!~
-= ~Der Rat hat seine Aufgabe nicht erfüllt! Er sollte Iltkazar durch die schweren Stunden führen, stattdessen hätte er die Stadt fast in den Abgrund geführt.~
-== AC#FENY1 ~Dies sind harte Worte, Turbaern.~
-== AC#GROM1 ~Der Hohe Omlar spricht die Wahrheit. Wir haben leider versagt.~ 
-== AC#TURB8 ~Nur durch Dumathoins Eingreifen scheint es <CHARNAME> überhaupt wieder zurück nach Iltkazar geschafft zu haben.~
+= ~Der Rat hat seine Aufgabe wieder einmal nicht erfüllt. Er sollte Iltkazar durch die schweren Stunden führen, stattdessen hätte er die Stadt fast weiter an den Abgrund geführt.~
+== AC#FENY1 ~Dies sind harte Worte, Turbaern!~
+== AC#GROM1 ~Der Hohe Omlar spricht die Wahrheit. Wir haben versagt.~ 
+== AC#TURB8 ~Nur durch Dumathoins Eingreifen konnte <CHARNAME> nach Iltkazar zurückkehren! Einst war es Dumathoin, der König Mith Barak auf den Thron führte – und nun hat er <CHARNAME> den Weg zurück nach Iltkazar gewiesen. Erkennt Ihr denn nicht die Zeichen?~
+== AC#GROM1 ~Dumathoin hat schon einmal über Iltkazars Schicksal gewacht. Es wäre töricht, seine Hand ausgerechnet jetzt nicht erkennen zu wollen.~
 == AC#DUN01 ~Wie sollen wir nun mit meinem Bruder Ruvan weiterverfahren?~
 == AC#GROM1 ~Ruvan hat unser Vertrauen verspielt. Bis diese Krise vorüber ist, sollen er und seine Frau in der Bronzemaske im Kerker in Haft bleiben.~
 == AC#RUVA1 ~Das werdet Ihr nicht wagen!~
@@ -1414,12 +1422,18 @@ END
 
 CHAIN IF ~~ THEN AC#GROM1 chain_community
 ~Letztlich bleibt uns jetzt nur, nach vorne zu sehen!~
-== AC#VRON1 ~Mich würde interessieren, was <CHARNAME> über Barakuir zu berichten habt.~
+== AC#VRON1 ~Wir müssen erfahren, was in Barakuir geschehen ist. <CHARNAME>, erzählt uns, was Ihr über Barakuir zu berichten habt.~
 END
 ++ ~Oh, da gibt es Einiges.~ EXTERN ~AC#GROM1~ tell_us_about_barakuir
 ++ ~Die Ruinen bargen mehr Geheimnisse, als Euch lieb ist.~ EXTERN ~AC#GROM1~ tell_us_about_barakuir
 ++ ~Das wird eine längere Geschichte.~ EXTERN ~AC#GROM1~ tell_us_about_barakuir
-++ ~Barakuir war nicht so verlassen, wie Ihr geglaubt habt.~ EXTERN ~AC#GROM1~ tell_us_about_barakuir
+
+
+CHAIN IF ~~ THEN AC#STUR1 no_one_likes_illithids
+~Das trifft auf so ziemlich auf jede Rasse des Unterreiches zu.~
+END
+IF ~~ THEN REPLY ~Ich traf auf eine Gruppe Githyanki, die zugab, sowohl die Illithiden als auch Eure Patrouille getötet zu haben.~ EXTERN AC#VRON1 chain_illithid_vs_elderbrain_01
+
 
 // CHAIN: Player talks about undead elder brain
 CHAIN IF ~~ THEN AC#GROM1 chain_new_after_barakuir
@@ -1431,34 +1445,43 @@ CHAIN AC#VRON1 chain_illithid_vs_elderbrain_01
 ~Diese merkwürdigen Astralkrieger stecken hinter alledem?~
 END
 IF ~~ THEN REPLY ~Sie scheinen in diesem Konflikt zumindest beteiligt zu sein.~ EXTERN AC#TURB8 chain_illithid_vs_elderbrain_02
+IF ~~ THEN REPLY ~Die Githyanki verfolgen ihre eigenen Ziele. Zufällig richten die sich im Moment gegen dieselben Feinde, mit denen auch wir es zu tun haben.~ EXTERN AC#TURB8 chain_illithid_vs_elderbrain_02
+IF ~~ THEN REPLY ~Sie ein weiterer Spieler auf dem Brett. Die eigentliche Bedrohung eher nicht.~ EXTERN AC#TURB8 chain_illithid_vs_elderbrain_02
 
 CHAIN AC#TURB8 chain_illithid_vs_elderbrain_02
-~Wie dem auch sei. Was ist aus den Illithiden geworden?~
+~Wie dem auch sei. Was ist aus den Illithiden in Barakuir geworden, die Ihr getroffen habt?~
 END
 IF ~!Dead("AC#ULIT2")~ THEN REPLY ~Sie haben sich wieder aus dem Staub gemacht.~ EXTERN AC#GROM1 chain_illithid_vs_elderbrain_cont
 IF ~Dead("AC#ULIT2")~ THEN REPLY ~Ich habe sie getötet.~ EXTERN AC#GROM1 chain_illithid_vs_elderbrain_cont
 
 CHAIN IF ~~ THEN AC#GROM1 chain_illithid_vs_elderbrain_cont
-~Lasst uns den Fokus nicht verlieren. Mith Barak sah seine Hilfe ausgerechnet in einem Ältestenhirn.~
+~Lasst uns den Fokus nicht verlieren. Mith Barak sah seine Hilfe ausgerechnet in Barakuir. Warum?~
+END
+	IF ~~ THEN REPLY ~An dem Ort befand sich ein untotes Ältestenhirn. König Mith Barak hatte mit diesem über seinen Fluch gesprochen.~ EXTERN ~AC#STUR1~ chain_illithid_vs_elderbrain_cont_02
+	IF ~~ THEN REPLY ~Mith Barak suchte Rat bei einem untoten Ältestenhirn.~ EXTERN ~AC#STUR1~ chain_illithid_vs_elderbrain_cont_02
+
+CHAIN IF ~~ THEN AC#STUR1 chain_illithid_vs_elderbrain_cont_02
+~Wie kann man nur solch eine Kreatur um Rat fragen?~
+== AC#TURB8 ~Das weiß nur unser König ganz allein.~
 == AC#FENY1 ~Nach allem, was die Illithiden unserem Sohn angetan haben? Was hatte sich unser König nur dabei gedacht?~
 == AC#GROM1 ~Nicht hier, meine Liebe. Nun sagt, <CHARNAME>, was wollte Mith Barak von dem Ältestenhirn?~
 END
-++ ~Das Ältestenhirn war nur noch ein Schatten seiner selbst. Mith Barak schien zu hoffen, dass es ihm mit seinem uralten Wissen weiterhelfen könnte.~ EXTERN ~AC#STUR1~ chain_new_after_barakuir_02
-++ ~Das Ältestenhirn existiert schon sehr lange. Euer König suchte Antworten, wo immer er sie finden konnte – selbst bei einem verrottenden Ältestenhirn.~ EXTERN ~AC#STUR1~ chain_new_after_barakuir_02
+++ ~Mith Barak schien zu hoffen, dass es ihm mit seinem uralten Wissen weiterhelfen könnte.~ EXTERN ~AC#STUR1~ chain_new_after_barakuir_02
+++ ~Euer König suchte Antworten, wo immer er sie finden konnte – selbst bei einem verrottenden Ältestenhirn.~ EXTERN ~AC#STUR1~ chain_new_after_barakuir_02
 ++ ~Mith Barak war offenbar verzweifelt genug, selbst die uralten Feinde der Zwerge um Hilfe zu bitten.~ EXTERN ~AC#STUR1~ chain_new_after_barakuir_02
 ++ ~Vielleicht blieb ihm kein anderer Ort mehr, an dem er Antworten finden konnte. Nur dieser vergammelte Haufen Hirnmasse.~ EXTERN ~AC#STUR1~ chain_new_after_barakuir_02
 
 CHAIN IF ~~ THEN AC#STUR1 chain_new_after_barakuir_02
-~Wie kann man nur solch eine Kreatur um Rat fragen?~
-== AC#TURB8 ~Das weiß nur unser König ganz allein.~
-== AC#FENY1 ~Unser König scheint sich ja mit allerlei unzwergischen Gedanken beschäftigt zu haben!~
+~Unser König scheint sich ja mit allerlei unzwergischen Gedanken beschäftigt zu haben!~
 END
 IF ~~ THEN EXTERN AC#GROM1 chain_brain_answers_anyway
 
 CHAIN IF ~~ THEN AC#GROM1 chain_brain_answers_anyway
 ~Konntet Ihr wenigstens von diesem... diesem Hirn Antworten erhalten?~
 END
-++ ~Leider nein, das Gehirn hat einen Großteil seines Wissens verloren.~ EXTERN ~AC#GROM1~ chain_new_after_barakuir_03
+++ ~Das Gehirn hat einen Großteil seines Wissens verloren.~ EXTERN ~AC#GROM1~ chain_new_after_barakuir_03
+++ ~Leider hatte das Gehirn ausgerechnet die nützlichen Teile seines Gedächtnisses eingebüßt.~ EXTERN ~AC#GROM1~ chain_new_after_barakuir_03
+++ ~Es wusste vermutlich einst sehr viel. Bedauerlicherweise nur nicht mehr, was davon.~ EXTERN ~AC#GROM1~ chain_new_after_barakuir_03
 IF ~Dead("AC#IL28G")~ THEN REPLY ~Das Gehirn starb, bevor ich etwas Wichtiges aus ihm herausbekommen konnte.~ EXTERN ~AC#GROM1~ chain_new_after_barakuir_03
 
 CHAIN IF ~~ THEN AC#GROM1 chain_new_after_barakuir_03
@@ -1479,6 +1502,7 @@ CHAIN IF ~~ THEN AC#VRON1 take_lobe_01
 ~Ein merkwürdiges Ding. Und Ihr sagtet, das Ältestenhirn habe sich an nichts mehr erinnern können?~
 END
 ++ ~Es schien mit dem Namen Mith Baraks etwas zu verbinden, konnte die Erinnerung aber nicht mehr abrufen.~ EXTERN ~AC#VRON1~ take_lobe_02
+++ ~Für ein Wesen, das nur aus Gehirn besteht, war seine Erinnerung enttäuschend schlecht.~ EXTERN ~AC#VRON1~ take_lobe_02
 
 CHAIN IF ~~ THEN AC#VRON1 take_lobe_02
 ~Dann bleibt uns nur eine Möglichkeit. Ich werde versuchen, selbst die Erinnerung abzurufen, indem ich mir einen Teil dieses Gehirns einverleibe.~
@@ -1488,7 +1512,7 @@ CHAIN IF ~~ THEN AC#VRON1 take_lobe_02
 == AC#GROM1 ~Ruhe! Darüber wird hier nicht gesprochen!~
 == AC#VRON1 ~Es gibt keine andere Möglichkeit, Ratsmitglieder.~
 END
-IF ~~ THEN DO ~~ EXTERN AC#VRON1 take_lobe_03
+IF ~~ THEN DO ~ApplySpellRES("AC#ILPN",Myself)~ EXTERN AC#VRON1 take_lobe_03
 
 CHAIN IF ~~ THEN AC#VRON1 take_lobe_03
 ~Uh... nicht angenehm...~

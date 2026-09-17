@@ -373,7 +373,7 @@ END
 	END
 
 IF ~Global("AC#Ruvan_Treason","GLOBAL",2)~ THEN BEGIN hello_ruvan_treason
-SAY ~<CHARNAME>! Ihr seid wohlauf. Ihr hörte schon von dem Verrat. Geht in die Halle des Regentschaftsrates! Mein Onkel wird für seine Lügen bezahlen, das schwöre ich!~
+SAY ~<CHARNAME>! Ihr seid wohlauf. Ihr hörte von dem Verrat. Wenn mein Onkel wirklich dahintersteckt, soll er sich vor dem Regentschaftsrat verantworten. Schnell, geht in die Ratshalle und berichtet alles, was Ihr erfahren habt!~
 IF ~~ THEN EXIT
 END
 /* IF Timer of 20 Minutes is not yet expired */

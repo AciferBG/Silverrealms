@@ -224,7 +224,7 @@ END
 					END
 					
 					IF ~~ THEN BEGIN whats_with_you
-					SAY ~Ich nehme die Jammerlappen mit in die Bronzemaske. Ihr solltet wie gesagt schnell vor den Rat treten. Wollt Ihr uns begleiten oder alleine nach Iltkazar vorrücken?~
+					SAY ~Ich nehme die Jammerlappen mit in die Bronzemaske. Ihr solltet schnell vor den Rat treten. Wollt Ihr uns begleiten oder alleine nach Iltkazar zurückkehren?~
 					IF ~~ THEN REPLY ~Ich komme schon alleine zurecht.~ + go_alone
 					IF ~~ THEN REPLY ~Ich begleite Euch gerne.~ + go_with_you
 					END
@@ -333,8 +333,13 @@ BEGIN ~AC#27DW3~
 IF ~~ THEN BEGIN n_no_1
 SAY ~N-n-nein! Wir haben doch nur...~
 IF ~~ THEN REPLY ~Ihr habt doch nur Eure Befehle ausgeführt, richtig?~ EXTERN ~AC#HATH8~ only_orders
-IF ~~ THEN REPLY ~Was?~ EXTERN ~AC#HATH8~ only_orders
+IF ~~ THEN REPLY ~Was?~ GOTO n_no_2
 END
+
+	IF ~~ THEN BEGIN n_no_2
+	SAY ~W-wir haben nur unsere Befehle...~
+	IF ~~ THEN EXTERN ~AC#HATH8~ only_orders
+	END
 
 IF ~~ THEN BEGIN y_y_yes_01
 SAY ~J-j-ja, Hathar.~

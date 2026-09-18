@@ -2,6 +2,9 @@
 
 COPY ~silverrealms/cre/copy~         ~override~
 
+COPY ~silverrealms/cre/AC#ILSPW.cre~ ~override~ // Githyanki-Geistklinge
+  SAY NAME1 @9070 SAY NAME2 @9070
+
 COPY ~silverrealms/cre/AC#IL49C.cre~ ~override~ // summoned Cornugon in ACIL49
 
 COPY ~silverrealms/cre/AC#GITHM.cre~ ~override~ // Githyanki-Geistklinge

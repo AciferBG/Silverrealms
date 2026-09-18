@@ -121,7 +121,8 @@ END
 	END
 	
 IF ~Global("AC#RC_Spiderstalkings","GLOBAL",1)~ THEN BEGIN hello_in_throneroom
-  SAY ~Nur damit das klar ist- ich lasse den König keinen Wimpernschlag aus den Augen, <CHARNAME>!~
+  SAY ~Nur damit das klar ist – ich lasse den König keinen Wimpernschlag aus den Augen, <CHARNAME>!~
+	++ ~Verstanden.~ + hrmpf
 	++ ~Aber ich...~ + hrmpf
 END
 
@@ -129,59 +130,7 @@ END
 	SAY ~Hrmpf.~
 	IF ~~ THEN  EXIT
 	END
-/*	
-	IF ~~ THEN BEGIN its_true
-	SAY ~Das ist wahr, Meister Gromi. Ich habe ihn dorthin begleitet.~
-	++ ~Was?~ EXTERN ~AC#GROM2~ you_did_WHAT
-	END
-	
-		IF ~~ THEN BEGIN i_am_bodyguard
-		SAY ~Ich bin als Herr der Bronzemaske der Leibwächter des Königs und ihm zu absoluter Treue verpflichtet!~
-		++ ~Er hat Euch nie gesagt, was er mit seinen Ausflügen bezwecken wollte, nicht wahr?~ + mith_never_said_anything
-		END
-		
-			IF ~~ THEN BEGIN mith_never_said_anything
-			SAY ~Er verlor kein Sterbenswörtchen, was er an der Oberfläche überhaupt suchte.~
-			++ ~Dann wart Ihr also der mysteriöse Begleiter, der Mith Barak zu diesem toten Drachen begleitet hat?~ + mith_dragon_cemetary
-			END
-			
-				IF ~~ THEN BEGIN mith_dragon_cemetary
-				SAY ~Nein, dorthin ist er alleine aufgebrochen. Ich dachte immer, es geht um die Suche nach seinen Ahnen, aber dass es etwas mit seinem Zustand zu tun haben könnte - darauf bin ich wirklich nicht gekommen.~
-				++ ~Dunnabar, Ihr müsst uns sagen, an welchem Ort der Oberfläche Ihr gewesen seid. Vielleicht hängt dies mit Mith Baraks Schlaf zusammen!~ + where_have_you_been
-				END
-				
-					IF ~~ THEN BEGIN where_have_you_been
-					SAY ~Das kann ich nicht. Ich habe dem König geschworen, mit keinem Bewohner des Unterreichs jemals darüber zu reden.~
-					++ ~Deshalb komme ich ja von der Oberfläche. Ist Euch da vielleicht schon ein Zusammenhang aufgefallen?~ EXTERN ~AC#GROM2~ where_have_you_been_02
-					END
-					
-						IF ~~ THEN BEGIN where_have_you_been_03
-						SAY ~Hmm... so habe ich das noch gar nicht betrachtet... Wir sind aus dem Unterreich tatsächlich zu zweit aus Iltkazar aufgebrochen, weil Mith Barak zu diesem Ort im Norden wollte, den man den Drachenfriedhof nennt.~
-						++ ~Wie seid Ihr von Iltkazar aus dem Unterreich gekommen?~ + how_did_you_get_there
-						END
-						
-							IF ~~ THEN BEGIN how_did_you_get_there
-							SAY ~Durch Drakkalor.~
-							++ ~Drakkalor?~ EXTERN ~AC#GROM2~ drakkalor
-							END
-	
-								IF ~~ THEN BEGIN no_dragon_seen
-								SAY ~Der König erwähnte, dass wir in diesem Gebiet aufpassen müssen. Von einem Drachen hat er nichts gesagt. Wir haben auch keinen gesehen.~
-								=
-								~Jedenfalls sind wir tatsächlich irgendwann an das helle Licht des Tages gekommen. Den Rest des Weges ist Mith Barak allein gegangen. Der Drachenfriedhof befand sich irgendwo weiter nördlich, meinte er.~
-								IF ~~ THEN REPLY ~Geht es vielleicht auch etwas genauer?~ + dont_know_location
-								END
-								
-									IF ~~ THEN BEGIN dont_know_location
-									SAY ~An der Oberfläche sieht alles so gleich aus! Mith Barak führte uns zu diesem großen Gebirge, in der Ferne sahen wir sogar schneebedeckte Gipfel!~
-									++ ~Das klingt nach den Wolkengipfeln. Ihr könnt mir nicht genauer sagen, wo sich dieser Ort befindet?~ + dont_know_location_02
-									END
-									
-										IF ~~ THEN BEGIN dont_know_location_02
-										SAY ~Beim besten Willen, nein. Und die letzte Strecke wollte er wie gesagt ganz allein zurücklegen. Er hatte den Ort wohl in einem Buch nachgelesen.~
-										IF ~~ THEN EXTERN ~AC#GROM2~ mithbarak_should_know_location
-										END
-										*/
+
 // ---------------------------------------------
 // Gromi Arnskull in Thronsaal ACIL64
 // ---------------------------------------------
@@ -252,7 +201,7 @@ IF ~Global("AC#RC_Spiderstalkings","GLOBAL",1)~ THEN BEGIN hello_in_throneroom
 	IF ~GlobalGT("AC#Clans_Parting","GLOBAL",2)~ THEN REPLY ~Wegen des Drachenfriedhofes...~ + about_clans_parting
 	IF ~Global("AC#BackToSurface","GLOBAL",6)~ THEN REPLY ~Wegen meiner Rückkehr an die Oberfläche...~ + about_back_to_surface
 	IF ~Global("TalkedToMithBarak","ACIL64",0)~ THEN REPLY ~Wie geht es dem König?~ GOTO not_talked_to_mithbarak_yet
-	//IF ~Global("AC#ACIL23DreamReflection","GLOBAL",2) Global("AC#BackToSurface","GLOBAL",0)~ THEN REPLY ~Wegen der Spinnenschächte...~ GOTO about_spiderstalkings
+	++ ~Ich werde Euch wieder allein lassen.~ + good_bye
 END
 
 	IF ~~ THEN BEGIN about_back_to_surface
@@ -366,10 +315,13 @@ BEGIN ~AC#MITH1~
 IF ~True()~ THEN BEGIN hello
 SAY ~Ihr steht vor König Mith Barak. Sein Anblick ist ergreifend und furchteinflößend zugleich, wie er Euch als glänzende Statue aus seinen leblosen Augen heraus anstarrt. Ihr könnt nicht sagen, ob sich noch ein Funken Leben in diesem Körper befindet.~
 IF ~~ THEN REPLY ~König Mith Barak in Ruhe lassen.~ + leave_him_be
+IF ~~ THEN REPLY ~Eine Weile schweigend vor dem König verweilen.~ + leave_him_be
+IF ~~ THEN REPLY ~Ich werde herausfinden, was mit Euch geschehen ist.~ + leave_him_be
+IF ~~ THEN REPLY ~Wenn Ihr mich hören könnt, Mith Barak: Ich hoffe, Ihr wisst, was für einen Aufwand Ihr uns bereitet.~ + leave_him_be
 END
 
 	IF ~~ THEN BEGIN leave_him_be
-	SAY ~Ihr wendet Euch wieder von Mith Barak ab.~
+	SAY ~Die Statue bleibt vollkommen reglos. Kein Zeichen verrät, ob Mith Barak Euch hören oder sehen kann.~
 	IF ~~ THEN DO ~SetGlobal("TalkedToMithBarak","ACIL64",1)~ EXIT
 	END
 	

@@ -626,7 +626,7 @@ END
 IF ~~ THEN BEGIN who_else_illithids
 SAY ~Wer sonst könnte hinter alldem stecken?.~ 
 IF ~~ THEN REPLY ~Jemand, der Gedankenschinder genauso wenig leiden kann wie Zwerge.~ EXTERN ~AC#STUR1~ no_one_likes_illithids
-IF ~~ THEN REPLY ~Ich traf die Gedankenschinder. Sie wurden genauso vor den Toren Iltkazars abgeschlachtet wie Eure Zwergenpatrouille.~ EXTERN AC#VRON1 chain_illithid_vs_elderbrain_01
+IF ~~ THEN REPLY ~Die Gedankenschinder wurden genauso vor den Toren Iltkazars abgeschlachtet wie Eure Zwergenpatrouille - von Githyanki.~ EXTERN AC#VRON1 chain_illithid_vs_elderbrain_01
 END
 
 IF ~~ THEN BEGIN elern_houseguard
@@ -986,7 +986,7 @@ END
 	IF ~~THEN BEGIN illithids_not_responsable
 	SAY ~Warum seid Ihr Euch so sicher, dass die Illithiden nicht die Schuldigen sind?~
 	IF ~~ THEN REPLY ~Erinnert Ihr Euch an diese Illithidenköpfe?~ EXTERN ~AC#ELER1~ who_else_illithids
-	IF ~~ THEN REPLY ~Ich traf einige von ihnen. Sie wurden genauso vor den Toren Iltkazars abgeschlachtet wie Eure Zwergenpatrouille.~ EXTERN ~AC#ELER1~ who_else_illithids
+	IF ~~ THEN REPLY ~Auch die Illithiden haben Verluste erlitten.~ EXTERN ~AC#ELER1~ who_else_illithids
 	END
 
 IF ~~THEN BEGIN boat_azerkyn_fenyl
@@ -1444,7 +1444,7 @@ END
 IF ~~ THEN REPLY ~Ich traf einige von ihnen. Sie wurden genauso vor den Toren Iltkazars abgeschlachtet wie Eure Zwergenpatrouille - von Githyanki.~ EXTERN AC#VRON1 chain_illithid_vs_elderbrain_01
 
 CHAIN AC#VRON1 chain_illithid_vs_elderbrain_01
-~Diese merkwürdigen Astralkrieger stecken hinter alledem? Das würde erklären, was es mit diesem mysteriösen Portal vor Iltkazar auf sich hatte!~
+~Diese merkwürdigen Astralkrieger stecken hinter der toten Patrouille? Das würde erklären, was es mit diesem mysteriösen Portal vor Iltkazar auf sich hatte!~
 END
 IF ~~ THEN EXTERN AC#TURB8 chain_illithid_vs_elderbrain_02
 //IF ~~ THEN REPLY ~Sie scheinen in diesem Konflikt zumindest beteiligt zu sein.~ EXTERN AC#TURB8 chain_illithid_vs_elderbrain_02
@@ -1455,9 +1455,19 @@ CHAIN AC#TURB8 chain_illithid_vs_elderbrain_02
 ~Das Portal ist geschlossen und bedroht uns nicht mehr. Von dieser Seite droht keine Gefahr mehr für unsere Stadt.~ 
 == AC#GROM1 ~Verlieren wir nicht den Faden. Ihr habt in Barakuir mit Illithiden gesprochen. Das ist ein gefährliches Unterfangen, wie ich selbst nur zu gut weiß.  Was ist aus ihnen geworden?~
 END
-IF ~!Dead("AC#ULIT2")~ THEN REPLY ~Sie haben sich wieder aus dem Staub gemacht.~ EXTERN AC#GROM1 chain_illithid_vs_elderbrain_cont
-IF ~Dead("AC#ULIT2")~ THEN REPLY ~Ich habe sie getötet.~ EXTERN AC#GROM1 chain_illithid_vs_elderbrain_cont
+IF ~!Dead("AC#ULIT2")~ THEN REPLY ~Sie haben sich wieder aus dem Staub gemacht.~ EXTERN AC#GROM1 chain_illithid_killed_no
+IF ~Dead("AC#ULIT2")~ THEN REPLY ~Ich habe sie getötet.~ EXTERN AC#GROM1 chain_illithid_killed_yes
 
+	CHAIN IF ~~ THEN AC#GROM1 chain_illithid_killed_no
+	~Schade. Aber gut, sie sind vorerst aus unserer Reichweite verschwunden.~
+	END
+	IF ~~ THEN EXTERN ~AC#GROM1~ chain_illithid_vs_elderbrain_cont
+	
+	CHAIN IF ~~ THEN AC#GROM1 chain_illithid_killed_yes
+	~Das ist gut.~
+	END
+	IF ~~ THEN EXTERN ~AC#GROM1~ chain_illithid_vs_elderbrain_cont
+	
 CHAIN IF ~~ THEN AC#GROM1 chain_illithid_vs_elderbrain_cont
 ~Dennoch sah Mith Barak damals seine Hilfe ausgerechnet in Barakuir, auch wenn er wahrscheinlich wusste, dass ihn dort Gedankenschinder erwarteten. Warum?~
 END
@@ -1471,9 +1481,9 @@ CHAIN IF ~~ THEN AC#STUR1 chain_illithid_vs_elderbrain_cont_02
 == AC#GROM1 ~Nicht hier, meine Liebe. Sagt, <CHARNAME>, was wollte Mith Barak von diesem Ältestenhirn?~
 END
 ++ ~Mith Barak schien zu hoffen, dass es ihm mit seinem uralten Wissen bei der Erlösung seines Fluchs weiterhelfen könnte.~ EXTERN ~AC#STUR1~ chain_new_after_barakuir_02
-++ ~Euer König suchte Antworten zu seinem Fluch, wo immer er sie finden konnte – selbst bei einem verrottenden Ältestenhirn.~ EXTERN ~AC#STUR1~ chain_new_after_barakuir_02
-++ ~Mith Barak war offenbar verzweifelt genug, selbst die uralten Feinde der Zwerge um Hilfe zu bitten.~ EXTERN ~AC#STUR1~ chain_new_after_barakuir_02
-++ ~Vielleicht blieb ihm kein anderer Ort mehr, an dem er Antworten finden konnte. Nur dieser vergammelte Haufen Hirnmasse.~ EXTERN ~AC#STUR1~ chain_new_after_barakuir_02
+++ ~Euer König suchte Antworten zu seinem Fluch, wo immer er sie finden konnte – selbst bei einem Ältestenhirn.~ EXTERN ~AC#STUR1~ chain_new_after_barakuir_02
+//++ ~Mith Barak war offenbar verzweifelt genug, selbst die uralten Feinde der Zwerge um Hilfe zu bitten.~ EXTERN ~AC#STUR1~ chain_new_after_barakuir_02
+//++ ~Vielleicht blieb ihm kein anderer Ort mehr, an dem er Antworten finden konnte. Nur dieser vergammelte Haufen Hirnmasse.~ EXTERN ~AC#STUR1~ chain_new_after_barakuir_02
 
 CHAIN IF ~~ THEN AC#STUR1 chain_new_after_barakuir_02
 ~Unser König scheint sich ja mit allerlei unzwergischen Gedanken beschäftigt zu haben!~
@@ -1483,7 +1493,7 @@ IF ~~ THEN EXTERN AC#GROM1 chain_brain_answers_anyway
 CHAIN IF ~~ THEN AC#GROM1 chain_brain_answers_anyway
 ~Konntet Ihr wenigstens von diesem... diesem Hirn Antworten erhalten?~
 END
-++ ~Das Gehirn hat einen Großteil seines Wissens verloren.~ EXTERN ~AC#GROM1~ chain_new_after_barakuir_03
+++ ~Nein. Das Gehirn hat einen Großteil seines Wissens bereits verloren.~ EXTERN ~AC#GROM1~ chain_new_after_barakuir_03
 ++ ~Leider hatte das Gehirn ausgerechnet die nützlichen Teile seines Gedächtnisses eingebüßt.~ EXTERN ~AC#GROM1~ chain_new_after_barakuir_03
 ++ ~Es wusste vermutlich einst sehr viel. Bedauerlicherweise nur nicht mehr, was davon.~ EXTERN ~AC#GROM1~ chain_new_after_barakuir_03
 IF ~Dead("AC#IL28G")~ THEN REPLY ~Das Gehirn starb, bevor ich etwas Wichtiges aus ihm herausbekommen konnte.~ EXTERN ~AC#GROM1~ chain_new_after_barakuir_03
@@ -1538,15 +1548,22 @@ CHAIN IF ~~ THEN AC#TURB8 no_more_regency_council
 
 // go to throneroom
 	CHAIN IF ~~ THEN AC#GROM1 gromi_go_to_king
-	~Ich werde Euch zum Thronsaal begleiten. Die Ratssitzung ist hiermit beendet. Der Rat wird erst wieder zusammentreffen, wenn unser König aus dem Schlaf erwacht ist. Ein jeder soll sich Gedanken machen, wie man das Rätsel unseres Königs doch noch lösen könnte.~
+	~Ich begleite Euch zum Thronsaal. Die Ratssitzung ist hiermit beendet. Der Rat wird erst wieder zusammentreffen, wenn unser König aus dem Schlaf erwacht ist. Ein jeder soll sich Gedanken machen, wie man das Rätsel unseres Königs doch noch lösen könnte.~
 	== AC#VRON1 ~Ich habe schon eine Idee. <CHARNAME>, lasst uns draußen vor der Halle einmal miteinander sprechen.~
 	== AC#GROM1 ~Dass Ihr mir nicht mehr von diesem... diesem Gehirn kostet, Vronia! Es reicht, dass ich schon meinen eigenen Sohn an die Schinder verloren habe, da möchte ich nicht noch ein anderes Ratsmitglied verlieren.~
-	== AC#VRON1 ~Nein, *ich* werde nicht mehr davon kosten. Ich ganz bestimmt nicht...~
-	== AC#GROM1 ~Dann ist der Regentschaftsrat hiermit aufgelöst!~
+	== AC#VRON1 ~Nein, ich werde nicht mehr davon kosten. Ich ganz bestimmt nicht...~
+	== AC#VRON1 ~<CHARNAME>, trefft mich draußen in der Stadt vor dem Ratsgebäude. Vielleicht können wir die Erinnerung aus diesem Ältestenhirnlappen doch noch aktivieren.~
+	== AC#GROM1 ~Dann ist der Regentschaftsrat hiermit aufgelöst. Möge ein jeder von uns künftig seinen Teil dazu beitragen, Iltkazar zu bewahren. Und wenn wir uns eines Tages wieder alle an diesem Ort versammeln, dann hoffentlich, um die Rückkehr unseres Königs zu feiern! Ein Hoch auf König Mith Barak!~
+	== AC#TURB8 ~Hoch König Mith Barak!~
+	== AC#ELER1 ~Lang lebe unser König!~
+	== AC#FENY1 ~Ein Hoch auf unseren König!~
+	== AC#STUR1 ~Auf dass er bald wieder unter uns weilen möge!~
+	== AC#VRON1 ~Auf seine baldige Rückkehr.~
 	END
 	IF ~~ THEN DO ~SetGlobal("AC#RC_Spiderstalkings","GLOBAL",1)
 	SetGlobal("AC#IL_NEW_Cernd","GLOBAL",1)
-		AddexperienceParty(500)
+	AddJournalEntry(@99510,QUEST)
+	AddexperienceParty(500)
 		~ EXIT
 
 // Ellhimar appears
@@ -1587,7 +1604,7 @@ END
 IF ~~ THEN EXTERN ~AC#GROM1~ ok_open_throneroom
 
 CHAIN IF ~~ THEN AC#GROM1 chain_go_check_throneroom
-~Seht nach unserem König. Es ist nun mehr als angemessen, Euch Zutritt zu unserem König zu ermöglichen.~
+~Besucht unseren König im Thronsaal. Es ist nun mehr als angemessen, Euch Zutritt zu ihm zu ermöglichen, nach allem, was Ihr für unsere Stadt getan habt.~
 == AC#ELER1 ~Erwartet nicht zu viel, <CHARNAME>. Der Anblick ist ziemlich... deprimierend.~
 == AC#GROM1 ~So teilt sich der Rat auf. Dunnabar Steinschulter wird neben dem König Wache halten, während seine Söhne die Verteidigung der Stadt aufrecht erhalten.~
 == AC#VRON1 ~Ich werde mich mit der Frage beschäftigen, welchen Weg wir weiter beschreiten müssen, um unserem König zu helfen.~

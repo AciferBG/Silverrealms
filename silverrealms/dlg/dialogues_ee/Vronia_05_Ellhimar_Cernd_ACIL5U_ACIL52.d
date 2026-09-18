@@ -43,6 +43,9 @@ END
 	==AC#VRON5 ~Ihr habt gesehen, wie ich versucht habe, diese Erinnerungen zu aktivieren, indem ich mir einen Teil des Hirnlappens einverleibt habe.~
 	END
 	IF ~~ THEN REPLY ~Das hat uns aber auch nicht weitergebracht.~ EXTERN AC#VRON5 about_elderbrain_lobe_02
+	IF ~~ THEN REPLY ~Damit habt Ihr Euch vor allem selbst in Gefahr gebracht.~ EXTERN AC#VRON5 about_elderbrain_lobe_02
+	IF ~~ THEN REPLY ~Zumindest der Geschmack war wahrscheinlich einprägsam.~ EXTERN AC#VRON5 about_elderbrain_lobe_02
+
 	
 		CHAIN AC#VRON5 about_elderbrain_lobe_02
 		~Das wusste ich. Ich bin zu alt, zu unbedeutend, zu... nun, sagen wir, ich war einfach nicht die richtige. Das war mir von vornherein klar.~
@@ -67,6 +70,16 @@ END
 			==AC#VRON5 ~Als Mith Barak in seinen letzten Schlaf fiel, wart Ihr wahrscheinlich noch nicht einmal geboren. Was ist so besonders an Euch?~
 			END
 			IF ~~ THEN REPLY ~Das wüsste ich manchmal auch gern.~ EXTERN AC#VRON5 taste_elderbrain_lobe_03
+			IF ~~ THEN REPLY ~Ich bin das Kind eines Gottes.~ EXTERN AC#VRON5 godchild_01
+			IF ~~ THEN REPLY ~Besonders genug, dass mich ständig irgendwelche Mächte in ihre Angelegenheiten hineinziehen.~ EXTERN AC#VRON5 taste_elderbrain_lobe_03
+			IF ~~ THEN REPLY ~Offenbar genug, dass selbst schlafende Könige und vergessliche Riesenhirne auf mich reagieren.~ EXTERN AC#VRON5 taste_elderbrain_lobe_03
+			IF ~~ THEN REPLY ~Ich habe irgendwann aufgehört, meine Besonderheiten zu zählen.~ EXTERN AC#VRON5 taste_elderbrain_lobe_03
+			//IF ~~ THEN REPLY ~Was an mir besonders ist? Wo soll ich da anfangen?~ EXTERN AC#VRON5 taste_elderbrain_lobe_03
+			
+				CHAIN AC#VRON5 godchild_01
+				~Das ist für uns Zwerge nicht weiter beeindruckend, weil wir glauben, alle von Moradin abzustammen.~
+				END
+				IF ~~ THEN EXTERN AC#VRON5 taste_elderbrain_lobe_03
 			
 			CHAIN AC#VRON5 taste_elderbrain_lobe_03
 			~Wie dem auch sei. Meine Hoffnung ist, dass Ihr mehr Erkenntnis aus diesem verfaulten Hirnlappen gewinnen könntet als wir anderen hier. Doch es gibt auch eine zweite Lösung, wenn Ihr Euch nicht imstande fühlt, diese Aufgabe zu übernehmen.~
@@ -106,6 +119,9 @@ END
 									~Er war zwar äußerlich noch ein Zwerg, aber anstelle seines Mundes ragten ihm diese... scheußlichen Saugnäpfe eines Illithiden aus dem Gesicht! Ihr könnt Euch vorstellen, wie entsetzt Gromi bei dem Anblick seines geliebten Sohnes war, der offensichtlich als ein Mischwesen - halb Zwerg, halb Illithide, aus der Gefangenschaft der *caradhak* entflohen war.~
 									END
 									IF ~~ THEN REPLY ~Das ist ja scheußlich! Was habt Ihr danach mit ihm gemacht?~ EXTERN AC#VRON5 cernd_prison_01
+									IF ~~ THEN REPLY ~Das muss für einen Zwergenvater schlimmer gewesen sein, als seinen Sohn tot zu wissen.~ EXTERN AC#VRON5 cernd_prison_01
+									IF ~~ THEN REPLY ~Wenigstens einmal scheinen die Illithiden bei ihrer Arbeit halbe Sachen gemacht zu haben.~ EXTERN AC#VRON5 cernd_prison_01
+
 
 									
 										CHAIN AC#VRON5 cernd_prison_01
@@ -118,10 +134,12 @@ END
 											~Jedenfalls hat der Rat dann beschlossen, den armen Khaernd in der Halle der Runensteine, unserer großen Bibliothek, für den Rest seiner Tage in einen Käfig zu sperren. Dort sitzt er noch immer und wird bewacht.~
 											END
 											IF ~~ THEN REPLY ~Ihr wollt, dass ich ihn befreie?~ EXTERN AC#ELER7 free_cernd_01
+											IF ~~ THEN REPLY ~Immerhin hatte er vermutlich genug zu lesen.~ EXTERN AC#ELER7 free_cernd_01
+											IF ~~ THEN REPLY ~Ihr glaubt doch nicht etwa, dass dieser Khaernd uns helfen kann?~ EXTERN AC#ELER7 free_cernd_01
 
 											
 												CHAIN AC#ELER7 free_cernd_01
-												~Ich habe schon mit meinem Vater Bettargh gesprochen. Er ist mit uns einer Meinung, dass wir Khaernd nicht mehr eingesperrt lassen sollten. Zum Einen, weil es unzwergisch ist, zum Anderen, weil vielleicht nur er uns helfen kann, bei der Suche nach dem schlafenden König zu helfen.~
+												~Ich habe schon mit meinem Vater Bettargh gesprochen. Er ist mit uns einer Meinung, dass wir Khaernd nicht länger eingesperrt lassen sollten. Zum Einen, weil es unzwergisch ist, zum Anderen, weil vielleicht nur er uns helfen kann, bei der Suche nach dem schlafenden König zu helfen.~
 												END
 												IF ~~ THEN REPLY ~Was sagt Gromi als Cernds Vater dazu?~ EXTERN AC#VRON5 gromi_cernd
 
@@ -133,7 +151,7 @@ END
 
 													
 														CHAIN AC#VRON5 act_against_rc_01
-														~Der Rat hatte die letzten drei Jahre Zeit zu zeigen, dass er imstande ist, unsere gegenwärtige Krise zu lösen. Wenn wir weiter darauf vertrauen, dass sich alles zum Guten wendet, indem wir einfach so weitermachen, werden wir keinen Erfolg haben. Wir müssen andere Wege gehen, am Rat vorbei. Uns läuft die Zeit davon. König Mith Barak hätte dies mit Sicherheit ebenfalls so gewollt. Warum sonst hättet Ihr in unsere Stadt kommen sollen? Nur, um den Willen des Rates umzusetzen? Das können die Zwerge hier auch ohne Euch. Nein, wir brauchen Euch, weil Ihr Dinge *anders* macht als die Zwerge Iltkazars!~
+														~Der Rat hatte die letzten drei Jahre Zeit zu zeigen, dass er imstande ist, unsere gegenwärtige Krise zu lösen. Wenn wir weiter darauf vertrauen, dass sich alles zum Guten wendet, indem wir einfach so weitermachen, werden wir keinen Erfolg haben. Wir müssen andere Wege gehen, jetzt, da der Rat aufgelöst ist. Uns läuft die Zeit davon. König Mith Barak hätte dies mit Sicherheit ebenfalls so gewollt. Warum sonst hättet Ihr in unsere Stadt kommen sollen? Nur, um den Willen des Rates umzusetzen? Das können die Zwerge hier auch ohne Euch. Nein, wir brauchen Euch, weil Ihr Dinge *anders* macht als die Zwerge Iltkazars!~
 														END
 														IF ~~ THEN REPLY ~Und was soll ich tun?~ EXTERN AC#ELER7 free_cernd_02
 
@@ -202,7 +220,7 @@ IF ~GlobalGT("AC#IL_CerndTasteLobe","GLOBAL",1)~ THEN DO ~SetGlobal("AC#IL_Brain
 	IF ~~ THEN EXTERN AC#VRON5 worked_what_did_you_see_01
 	
 	CHAIN AC#VRON5 worked_taste_lobe_cernd
-	~Wenngleich es Cernd einiges an Kraft abverlangt hat, dem bösen Einfluss des Hirnlappens zu widerstehen, scheint er alles unbeschadet überstanden zu haben.~
+	~Wenngleich es Khaernd einiges an Kraft abverlangt hat, dem bösen Einfluss des Hirnlappens zu widerstehen, scheint er alles unbeschadet überstanden zu haben.~
 	END
 	IF ~~ THEN EXTERN AC#VRON5 worked_what_did_you_see_01
 	
@@ -352,12 +370,12 @@ IF ~Global("AC#IL_UndecideTasteLobe","GLOBAL",1)~ THEN EXTERN AC#VRON5 taste_lob
 // PLayer tastes lobe
 CHAIN IF ~Global("AC#IL_TasteLobeMyself","GLOBAL",2)
 AreaCheck("ACIL52")~ THEN PLAYER1 taste_lobe_pc_03
-		~Ihr führt den kalten, schwammigen Lappen an Eure Lippen. Ein bitterer Geschmack erfüllt Euren Mund – dann bricht die Welt um Euch auseinander. Ihr spürt, wie sich fremde Gedanken in Euer Bewusstsein drängen – uralte, kalte Intelligenz. Bilder flackern auf, unzusammenhängend, grell wie Blitze in absoluter Dunkelheit. Etwas in Euch begreift mehr… und verliert zugleich etwas anderes.~
+		~Ihr führt den kalten, schwammigen Lappen an Eure Lippen. Ein bitterer Geschmack erfüllt Euren Mund – dann bricht die Welt um Euch auseinander. Ihr spürt, wie sich fremde Gedanken in Euer Bewusstsein drängen – uralte, kalte Intelligenz. Bilder flackern auf, unzusammenhängend, grell wie Blitze in absoluter Dunkelheit. Etwas in Euch begreift mehr... und verliert zugleich etwas anderes...~
 		END
 		IF ~~ THEN EXTERN PLAYER1 taste_lobe_pc_04
 		
 			CHAIN PLAYER1 taste_lobe_pc_04
-			~Ein brennender Schmerz durchfährt Euren Geist. Fremde Visionen überfluten Euch. Dann wird alles schwarz.~
+			~Ein brennender Schmerz durchfährt Euren Geist. Fremde Visionen überfluten Euch...~
 			END
 			IF ~~ THEN DO ~SetGlobal("AC#IL_TasteLobeMyself","GLOBAL",3)			
 			StartCutSceneMode()
@@ -454,7 +472,7 @@ IF ~~ THEN REPLY ~Das war Vronias Idee.~ EXTERN AC#VRON5 gromi_vronia_cernd_01
 		DestroySelf()~ EXIT
 
 	CHAIN IF ~NumTimesTalkedTo(0)~ THEN AC#CERN1 0
-	~(Vor Euch steht der sonderlichste Zwerg, der Euch je begegnet ist. Seine Haut ist grün, und anstelle eines Mundes ragen vier lange, sich stetig windende Tentakel aus seinem Gesicht heraus. Das Wesen schaut Euch aus seinen trüben Augen heraus traurig und resigniert an.)~
+	~(Vor Euch steht der sonderlichste Zwerg, der Euch je begegnet ist. Seine Haut ist grün, und anstelle eines Mundes ragen lange, sich stetig windende Tentakel aus seinem Gesicht heraus. Das Wesen schaut Euch aus seinen trüben Augen heraus traurig und resigniert an.)~
 	END
 	IF ~~ THEN REPLY ~Seid Ihr Khaernd?~ GOTO are_you_cernd
 

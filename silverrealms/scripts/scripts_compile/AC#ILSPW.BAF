@@ -1,12 +1,5 @@
 IF
     See(NearestEnemyOf(Myself))
-THEN
-    RESPONSE #100
-        AttackReevaluate(NearestEnemyOf(Myself),15)
-END
-
-IF
-    See(NearestEnemyOf(Myself))
     See(SixthNearestEnemyOf(Myself))
     !GlobalTimerNotExpired("Fireball","LOCALS")
     !GlobalTimerNotExpired("OH_Cast","LOCALS")
@@ -14,17 +7,26 @@ THEN
     RESPONSE #100
         ForceSpell(NearestEnemyOf(Myself),WIZARD_FIREBALL)  // SPWI304.SPL (Feuerball)
         ReallyForceSpell(SixthNearestEnemyOf(Myself),WIZARD_FIREBALL)  // SPWI304.SPL (Feuerball)
-        SetGlobalTimer("Fireball","LOCALS",THREE_ROUNDS)
+        SetGlobalTimer("Fireball","LOCALS",FIVE_ROUNDS)
         SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
 END
 
 IF
     See(NearestEnemyOf(Myself))
     !GlobalTimerNotExpired("OH_Cast","LOCALS")
+    Global("FirstSequence","LOCALS",0)
 THEN
     RESPONSE #100
         ForceSpell(NearestEnemyOf(Myself),WIZARD_GREATER_MALISON)  // SPWI412.SPL (Größeres Unbehagen)
         ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_SLOW)  // SPWI312.SPL (Verlangsamen)
         SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        IncrementGlobal("FirstSequence","LOCALS",1)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+THEN
+    RESPONSE #100
+        AttackReevaluate(NearestEnemyOf(Myself),15)
 END
 

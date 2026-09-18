@@ -3,6 +3,10 @@
 
 COPY ~silverrealms/itm/copy~         ~override~
 
+COPY ~silverrealms/itm/AC#ILRSW.itm~ ~override~ // Spellweaver ring
+  SAY NAME2 @8164
+  SAY DESC @8165
+
 /*
 COPY ~%MOD_FOLDER%/itm/AC#MGDRW.itm~         ~override~    // drunken wink
   SAY NAME2 @8156

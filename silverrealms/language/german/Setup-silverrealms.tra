@@ -2333,6 +2333,20 @@ Gewicht: 0
 @8162 = ~Seltsame gnomische Apparatur~
 @8163 = ~Ein kompliziertes Geflecht aus Metallstreben, kleinen Kristallen und beweglichen Linsen. Wozu diese offenbar für den Kopf bestimmte gnomische Konstruktion dient, ist auf den ersten Blick nicht zu erkennen.~
 
+@8164 = ~Zauberweberring~
+@8165 = ~Dieser fremdartige Ring ist gestaltet wie ineinandergreifende Arme und Hände. Er stammt von einem Zauberweber, einem rätselhaften, sechsarmigen Wesen, dessen Art für ihre außergewöhnliche Beherrschung arkaner Magie bekannt ist. So sind diese Kreaturen in der Lage, mehrere Zauber in rascher Folge zu wirken. Ein Teil dieser fremden Magie haftet dem Ring noch immer an.
+Der Ring beschleunigt die Zauber seines Trägers und verstärkt ihre Wirkung, doch seine ungewohnte arkane Struktur stört zugleich Wahrnehmung und Reaktionsvermögen.
+
+EIGENSCHAFTEN:
+
+Zeitaufwand beim Zaubern: verringert um 1
+Zauberstufe: +1
+
+
+RK-Bonus: +1 (Malus)
+RW-Bonus: +1 (Malus)
+
+Gewicht: 0~
 
  
 // creature strings

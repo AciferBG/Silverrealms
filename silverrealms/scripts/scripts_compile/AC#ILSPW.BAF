@@ -1,14 +1,10 @@
 IF
-    See(NearestEnemyOf(Myself))
-    See(SixthNearestEnemyOf(Myself))
-    !GlobalTimerNotExpired("Fireball","LOCALS")
-    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+    See([GOODCUTOFF.0.0.0.0.SUMMONED])
+    Global("summon","LOCALS",0)
 THEN
     RESPONSE #100
-        ForceSpell(NearestEnemyOf(Myself),WIZARD_FIREBALL)  // SPWI304.SPL (Feuerball)
-        ReallyForceSpell(SixthNearestEnemyOf(Myself),WIZARD_FIREBALL)  // SPWI304.SPL (Feuerball)
-        SetGlobalTimer("Fireball","LOCALS",FIVE_ROUNDS)
-        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        ReallyForceSpell(LastSeenBy(Myself),WIZARD_DEATH_SPELL)  // SPWI605.SPL (Todeszauber)
+        SetGlobal("summon","LOCALS",1)
 END
 
 IF
@@ -17,10 +13,161 @@ IF
     Global("FirstSequence","LOCALS",0)
 THEN
     RESPONSE #100
-        ForceSpell(NearestEnemyOf(Myself),WIZARD_GREATER_MALISON)  // SPWI412.SPL (Größeres Unbehagen)
-        ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_SLOW)  // SPWI312.SPL (Verlangsamen)
+        ForceSpell(NearestEnemyOf(Myself),WIZARD_REMOVE_MAGIC)  // SPWI302.SPL (Magie zerstören)
+        Wait(2)
+        ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_GREATER_MALISON)  // SPWI412.SPL (Größeres Unbehagen)
         SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
-        IncrementGlobal("FirstSequence","LOCALS",1)
+        SetGlobal("FirstSequence","LOCALS",1)
+END
+
+IF
+    NumInPartyGT(3)
+    See(NearestEnemyOf(Myself))
+    See(FourthNearestEnemyOf(Myself))
+    !GlobalTimerNotExpired("Fireball","LOCALS")
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+    RESPONSE #100
+        ForceSpell(NearestEnemyOf(Myself),WIZARD_FIREBALL)  // SPWI304.SPL (Feuerball)
+        ReallyForceSpell(FourthNearestEnemyOf(Myself),WIZARD_FIREBALL)  // SPWI304.SPL (Feuerball)
+        SetGlobalTimer("Fireball","LOCALS",SIX_ROUNDS)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+END
+
+IF
+    NumInPartyLT(4)
+    See(NearestEnemyOf(Myself))
+    !GlobalTimerNotExpired("Fireball","LOCALS")
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+    RESPONSE #100
+        ForceSpell(NearestEnemyOf(Myself),WIZARD_FIREBALL)  // SPWI304.SPL (Feuerball)
+        ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_FIREBALL)  // SPWI304.SPL (Feuerball)
+        SetGlobalTimer("Fireball","LOCALS",SIX_ROUNDS)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    !GlobalTimerNotExpired("Invisibility","LOCALS")
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+    RESPONSE #30
+        ApplySpell(Myself,WIZARD_INVISIBILITY)  // SPWI206.SPL (Unsichtbarkeit)
+        SetGlobalTimer("Invisibility","LOCALS",THREE_ROUNDS)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+    RESPONSE #100
+        Continue()
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+    Global("FirstSequence","LOCALS",1)
+THEN
+    RESPONSE #100
+        ForceSpell(NearestEnemyOf(Myself),WIZARD_HOLD_PERSON)  // SPWI306.SPL (Personen festhalten)
+        ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_LIGHTNING_BOLT)  // SPWI308.SPL (Blitzstrahl)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        SetGlobal("FirstSequence","LOCALS",2)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+    Global("FirstSequence","LOCALS",2)
+THEN
+    RESPONSE #100
+        ForceSpell(NearestEnemyOf(Myself),WIZARD_SLOW)  // SPWI312.SPL (Verlangsamen)
+        ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_CONE_OF_COLD)  // SPWI503.SPL (Kältekegel)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+        SetGlobal("FirstSequence","LOCALS",1)
+END
+
+IF
+    See(SixthNearestEnemyOf(Myself))
+    See(FifthNearestEnemyOf(Myself))
+    See(FourthNearestEnemyOf(Myself))
+    See(ThirdNearestEnemyOf(Myself))
+    See(SecondNearestEnemyOf(Myself))
+    See(NearestEnemyOf(Myself))
+    !GlobalTimerNotExpired("Magic_Missile","LOCALS")
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+THEN
+    RESPONSE #100
+        ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magisches Geschoss)
+        ReallyForceSpell(FourthNearestEnemyOf(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magisches Geschoss)
+        SetGlobalTimer("Magic_Missile","LOCALS",FIVE_ROUNDS)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+    RESPONSE #100
+        ReallyForceSpell(SecondNearestEnemyOf(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magisches Geschoss)
+        ReallyForceSpell(FifthNearestEnemyOf(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magisches Geschoss)
+        SetGlobalTimer("Magic_Missile","LOCALS",FIVE_ROUNDS)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+    RESPONSE #100
+        ReallyForceSpell(ThirdNearestEnemyOf(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magisches Geschoss)
+        ReallyForceSpell(SixthNearestEnemyOf(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magisches Geschoss)
+        SetGlobalTimer("Magic_Missile","LOCALS",FIVE_ROUNDS)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+    RESPONSE #100
+        ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magisches Geschoss)
+        ReallyForceSpell(SixthNearestEnemyOf(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magisches Geschoss)
+        SetGlobalTimer("Magic_Missile","LOCALS",FIVE_ROUNDS)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+    RESPONSE #100
+        ReallyForceSpell(SecondNearestEnemyOf(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magisches Geschoss)
+        ReallyForceSpell(FourthNearestEnemyOf(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magisches Geschoss)
+        SetGlobalTimer("Magic_Missile","LOCALS",FIVE_ROUNDS)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+    RESPONSE #100
+        ReallyForceSpell(ThirdNearestEnemyOf(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magisches Geschoss)
+        ReallyForceSpell(FifthNearestEnemyOf(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magisches Geschoss)
+        SetGlobalTimer("Magic_Missile","LOCALS",FIVE_ROUNDS)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+    RESPONSE #100
+        ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magisches Geschoss)
+        ReallyForceSpell(ThirdNearestEnemyOf(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magisches Geschoss)
+        SetGlobalTimer("Magic_Missile","LOCALS",FIVE_ROUNDS)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+    RESPONSE #100
+        ReallyForceSpell(FourthNearestEnemyOf(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magisches Geschoss)
+        ReallyForceSpell(SixthNearestEnemyOf(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magisches Geschoss)
+        SetGlobalTimer("Magic_Missile","LOCALS",FIVE_ROUNDS)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+    RESPONSE #100
+        ReallyForceSpell(SecondNearestEnemyOf(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magisches Geschoss)
+        ReallyForceSpell(SixthNearestEnemyOf(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magisches Geschoss)
+        SetGlobalTimer("Magic_Missile","LOCALS",FIVE_ROUNDS)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+    RESPONSE #100
+        ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magisches Geschoss)
+        ReallyForceSpell(FifthNearestEnemyOf(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magisches Geschoss)
+        SetGlobalTimer("Magic_Missile","LOCALS",FIVE_ROUNDS)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+    RESPONSE #100
+        ReallyForceSpell(ThirdNearestEnemyOf(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magisches Geschoss)
+        ReallyForceSpell(FourthNearestEnemyOf(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magisches Geschoss)
+        SetGlobalTimer("Magic_Missile","LOCALS",FIVE_ROUNDS)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+    RESPONSE #100
+        ReallyForceSpell(SecondNearestEnemyOf(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magisches Geschoss)
+        ReallyForceSpell(ThirdNearestEnemyOf(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magisches Geschoss)
+        SetGlobalTimer("Magic_Missile","LOCALS",FIVE_ROUNDS)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
+    RESPONSE #100
+        Continue()
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    !GlobalTimerNotExpired("OH_Cast","LOCALS")
+    !GlobalTimerNotExpired("Magic_Missile","LOCALS")
+THEN
+    RESPONSE #100
+        ForceSpell(NearestEnemyOf(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magisches Geschoss)
+        ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magisches Geschoss)
+        SetGlobalTimer("Magic_Missile","LOCALS",FIVE_ROUNDS)
+        SetGlobalTimer("OH_Cast","LOCALS",ONE_ROUND)
 END
 
 IF

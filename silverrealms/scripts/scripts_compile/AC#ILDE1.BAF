@@ -1,0 +1,181 @@
+IF
+    Heard([ANYONE],35)
+    Global("SpellTrigger","LOCALS",0)
+THEN
+    RESPONSE #100
+        Enemy()
+        DisplayString(Myself,39968)  // Zauberauslöser: Ausgelöst
+        ReallyForceSpell(Myself,WIZARD_FIRE_SHIELD_RED)  // SPWI418.SPL (Roter Feuerschild)
+        ReallyForceSpell(Myself,WIZARD_MINOR_GLOBE_OF_INVULNERABILITY)  // SPWI406.SPL (Kleinere Kugel der Unverwundbarkeit)
+        SetGlobal("SpellTrigger","LOCALS",1)
+        SetGlobalTimer("BD_Cast","LOCALS",ONE_ROUND)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    HaveSpell(WIZARD_SHADOW_DOOR)  // SPWI505.SPL (Phantomtor)
+THEN
+    RESPONSE #100
+        ApplySpell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Steinhaut)
+        Spell(Myself,WIZARD_SHADOW_DOOR)  // SPWI505.SPL (Phantomtor)
+END
+
+IF
+    Detect([PC])
+    !See([PC])
+    Allegiance(Myself,ENEMY)
+    HaveSpell(WIZARD_DETECT_INVISIBILITY)  // SPWI203.SPL (Unsichtbares entdecken)
+THEN
+    RESPONSE #100
+        SetGlobal("Detect","LOCALS",1)
+        Spell(Myself,WIZARD_DETECT_INVISIBILITY)  // SPWI203.SPL (Unsichtbares entdecken)
+END
+
+IF
+    Allegiance(Myself,ENEMY)
+    See([GOODCUTOFF.0.0.0.0.SUMMONED])
+    HaveSpell(WIZARD_DEATH_SPELL)  // SPWI605.SPL (Todeszauber)
+THEN
+    RESPONSE #100
+        Spell(LastSeenBy(Myself),WIZARD_DEATH_SPELL)  // SPWI605.SPL (Todeszauber)
+END
+
+IF
+    See([EVILCUTOFF.0.DWARF])
+    HaveSpell(WIZARD_RESIST_FEAR)  // SPWI210.SPL (Furcht bannen)
+    StateCheck(LastSeenBy(Myself),STATE_PANIC)
+THEN
+    RESPONSE #100
+        Spell(LastSeenBy(Myself),WIZARD_RESIST_FEAR)  // SPWI210.SPL (Furcht bannen)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    HaveSpell(WIZARD_REMOVE_MAGIC)  // SPWI302.SPL (Magie zerstören)
+    Global("Haste","LOCALS",0)
+    OR(5)
+        CheckSpellState(LastSeenBy(Myself),RESIST_FEAR)
+        CheckSpellState(LastSeenBy(Myself),BENEFICIAL_CHANT)
+        CheckSpellState(LastSeenBy(Myself),PROTECTION_FROM_EVIL)
+        CheckSpellState(LastSeenBy(Myself),BLESS)
+        StateCheck(LastSeenBy(Myself),STATE_HASTED)
+    !StateCheck(LastSeenBy(Myself),STATE_SLOWED)
+THEN
+    RESPONSE #100
+        Spell(NearestEnemyOf(Myself),WIZARD_REMOVE_MAGIC)  // SPWI302.SPL (Magie zerstören)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    HaveSpell(WIZARD_HASTE)  // SPWI305.SPL (Hast)
+    Global("Haste","LOCALS",0)
+    See([EVILCUTOFF.0.DWARF])
+THEN
+    RESPONSE #100
+        SetGlobal("Haste","LOCALS",1)
+        Spell([EVILCUTOFF.0.DWARF],WIZARD_HASTE)  // SPWI305.SPL (Hast)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    HaveSpell(WIZARD_MIRROR_IMAGE)  // SPWI212.SPL (Spiegelbild)
+THEN
+    RESPONSE #100
+        Spell(Myself,WIZARD_MIRROR_IMAGE)  // SPWI212.SPL (Spiegelbild)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    See([PC])
+    !StateCheck(LastSeenBy(Myself),STATE_DEAD)
+    !HasBounceEffects(LastSeenBy(Myself))
+    !StateCheck(LastSeenBy(Myself),STATE_STUNNED)
+    HasItem("wand04",Myself)  // Stab der Lähmung
+    GlobalLT("Behavior","LOCALS",5)
+THEN
+    RESPONSE #50
+        UseItem("wand04",NearestEnemyOf(Myself))  // Stab der Lähmung
+        DisplayStringHead(Myself,31971)  // verwendet einen Stab
+        IncrementGlobal("Behavior","LOCALS",1)
+        Continue()
+    RESPONSE #100
+        Continue()
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    HasItem("POTN18",Myself)  // Absorptionstrank
+THEN
+    RESPONSE #100
+        UseItem("POTN18",Myself)  // Absorptionstrank
+        DisplayStringHead(Myself,46150)  // trinkt einen Trank
+        Continue()
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    HaveSpell(WIZARD_LIGHTNING_BOLT)  // SPWI308.SPL (Blitzstrahl)
+THEN
+    RESPONSE #100
+        Spell(NearestEnemyOf(Myself),WIZARD_LIGHTNING_BOLT)  // SPWI308.SPL (Blitzstrahl)
+        Continue()
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    HaveSpell(WIZARD_LIGHTNING_BOLT)  // SPWI308.SPL (Blitzstrahl)
+THEN
+    RESPONSE #100
+        Spell(NearestEnemyOf(Myself),WIZARD_LIGHTNING_BOLT)  // SPWI308.SPL (Blitzstrahl)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    HasItem("POTN34",Myself)  // Magiewiderstandstrank
+THEN
+    RESPONSE #100
+        UseItem("POTN34",Myself)  // Magiewiderstandstrank
+        DisplayStringHead(Myself,46150)  // trinkt einen Trank
+        Continue()
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    HaveSpell(WIZARD_ICE_STORM)  // SPWI404.SPL (Eissturm)
+THEN
+    RESPONSE #100
+        Spell(NearestEnemyOf(Myself),WIZARD_ICE_STORM)  // SPWI404.SPL (Eissturm)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    HaveSpell(WIZARD_CLOUDKILL)  // SPWI502.SPL (Todeswolke)
+THEN
+    RESPONSE #100
+        Spell(NearestEnemyOf(Myself),WIZARD_CLOUDKILL)  // SPWI502.SPL (Todeswolke)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    HaveSpell(WIZARD_CHARM_PERSON)  // SPWI104.SPL (Personen bezaubern)
+    !StateCheck(LastSeenBy(Myself),STATE_CHARMED)
+THEN
+    RESPONSE #100
+        Spell(NearestEnemyOf(Myself),WIZARD_CHARM_PERSON)  // SPWI104.SPL (Personen bezaubern)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    HaveSpell(WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magisches Geschoss)
+THEN
+    RESPONSE #100
+        Spell(NearestEnemyOf(Myself),WIZARD_MAGIC_MISSILE)  // SPWI112.SPL (Magisches Geschoss)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+THEN
+    RESPONSE #100
+        AttackReevaluate(NearestEnemyOf(Myself),15)
+END
+

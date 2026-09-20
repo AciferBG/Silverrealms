@@ -58,6 +58,15 @@ END
 */
 
 IF
+    GlobalGT("AC#IL_NEW_Cernd","GLOBAL",0)
+    Global("Chronicler","ACIL53",0)
+THEN
+    RESPONSE #100
+        SetGlobal("Chronicler","ACIL53",1)
+        CreateCreature("AC#IL53C",[991.1025],E)  // chronicler
+	END
+
+		IF
 	Global("AC#MetagolemIngredients","ACIL53",6)
 THEN
 	RESPONSE #100

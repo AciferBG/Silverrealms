@@ -1,0 +1,73 @@
+IF
+    OR(3)
+        SpellCast([PC],WIZARD_TRUE_SIGHT)  // SPWI609.SPL (Wahrer Blick)
+        SpellCastPriest([PC],CLERIC_TRUE_SIGHT)  // SPPR505.SPL (Wahrer Blick)
+        SpellCastInnateRES("SPCL232",[PC])  // Wahrer Blick
+    Global("True_sight","ACIL37",0)
+THEN
+    RESPONSE #100
+        SetGlobal("True_sight","ACIL37",1)
+        SetGlobal("derrotrap","ACIL37",1)
+END
+
+IF
+    Allegiance(Myself,NEUTRAL)
+    OR(2)
+        BecameVisible()
+        Global("derrotrap","ACIL37",1)
+THEN
+    RESPONSE #100
+        Shout(35)
+        Enemy()
+        Continue()
+END
+
+IF
+    Allegiance(Myself,NEUTRAL)
+    Heard([ANYONE],35)
+THEN
+    RESPONSE #100
+        Shout(35)
+        Enemy()
+        Continue()
+END
+
+IF
+    HitBy([GOODCUTOFF],CRUSHING)
+THEN
+    RESPONSE #100
+        Shout(35)
+        Continue()
+END
+
+IF
+    Allegiance(Myself,ENEMY)
+    HasItem("MAGE01",Myself)  // Sanddiebring
+THEN
+    RESPONSE #100
+        DestroyItem("MAGE01")  // Sanddiebring
+END
+
+IF
+    OR(5)
+        AttackedBy([PC],DEFAULT)
+        AttackedBy([FAMILIAR],DEFAULT)
+        AttackedBy([ALLY],DEFAULT)
+        AttackedBy([CONTROLLED],DEFAULT)
+        AttackedBy([CHARMED],DEFAULT)
+    Allegiance(Myself,ENEMY)
+    ActionListEmpty()
+THEN
+    RESPONSE #100
+        Shout(35)
+        Continue()
+END
+
+IF
+    Heard([ANYONE],35)
+    !See(NearestEnemyOf(Myself))
+THEN
+    RESPONSE #100
+        MoveToObject(LastHeardBy(Myself))
+END
+

@@ -1,4 +1,190 @@
 // ---------------------------------------------
+//Chronist
+// ---------------------------------------------
+BEGIN ~AC#IL53C~
+
+CHAIN IF ~NumTimesTalkedTo(0)~ THEN AC#IL53C hello_01
+~Oh, Ihr seid doch der <PRO_RACE> von der Oberfläche, richtig? Ich wurde beauftragt, eine Chronik über Euch zu erstellen und bräuchte Hilfe bei einigen Angaben.~
+END
+IF ~~ THEN REPLY ~Ach, ich glaube nicht, dass ich es wert bin, auf einer Runenplatte verewigt zu werden.~ EXTERN AC#IL53C not_worthy
+IF ~~ THEN REPLY ~Ich fühle mich geehrt.~ EXTERN AC#IL53C honor
+IF ~~ THEN REPLY ~Nehmt besser gleich eine zweite Platte. Meine Taten passen wohl kaum auf so ein kleines Stück Stein.~ EXTERN AC#IL53C second_plate
+IF ~~ THEN REPLY ~Schön. Aber macht es kurz.~ EXTERN AC#IL53C name_01
+IF ~~ THEN REPLY ~Ich habe keine Zeit für so etwas.~ EXTERN AC#IL53C bye_no_time
+
+	CHAIN AC#IL53C not_worthy
+	~Das zu beurteilen, überlassen wir lieber denjenigen, die diese Platte in ein paar hundert Jahren lesen. Wir müssen lediglich dafür sorgen, dass sie etwas über Euch zu lesen haben.~
+	END
+	IF ~~ THEN REPLY ~Nun gut. Legen wir los.~ EXTERN AC#IL53C name_01
+
+
+	CHAIN AC#IL53C honor
+	~Sehr vernünftig. Die meisten Oberflächenbewohner scheinen erst nach ihrem Tod zu erfahren, ob jemand eine Chronik über sie verfasst hat.~
+	END
+	IF ~~ THEN REPLY ~Dann hoffe ich, dass Ihr Euch Mühe gebt.~ EXTERN AC#IL53C name_01
+	IF ~~ THEN REPLY ~Dann wollen wir keine Zeit verlieren.~ EXTERN AC#IL53C name_01
+
+
+	CHAIN AC#IL53C second_plate
+	~Eine zweite? Hm. Wartet erst einmal ab. Sollte der Platz nicht reichen, haben wir noch eine Rückseite.~
+	END
+	IF ~~ THEN REPLY ~Ihr seid ja bestens vorbereitet.~ EXTERN AC#IL53C name_01
+	IF ~~ THEN REPLY ~Die werdet Ihr brauchen.~ EXTERN AC#IL53C name_01
+
+
+	CHAIN AC#IL53C bye_no_time
+	~Bedauerlich. Geschichte nimmt gewöhnlich keine Rücksicht darauf, ob ihre Beteiligten gerade beschäftigt sind. Seid Ihr sicher, dass Ihr mir nicht helfen wollt, die Chronik über Euch zu verfassen?~
+	END
+	IF ~~ THEN REPLY ~Gut, ich helfe Euch. Aber macht es kurz.~ EXTERN AC#IL53C name_01
+	IF ~~ THEN REPLY ~Nein, für so etwas habe ich keine Zeit.~  EXTERN AC#IL53C bye_no_time_exit
+	
+		CHAIN AC#IL53C bye_no_time_exit
+		~Schade, doch ich komme auch alleine zurecht. beschwert Euch aber später nicht, wenn etwas falsch geschrieben ist, ja?~
+		END
+		IF ~~ THEN EXIT
+		
+	// the name 	
+	CHAIN AC#IL53C name_01
+	~Dann beginnen wir mit dem Wesentlichen. Habe ich <CHARNAME> richtig geschrieben?~
+	END
+	IF ~~ THEN REPLY ~Ja, genau so.~ EXTERN AC#IL53C name_correct
+	IF ~~ THEN REPLY ~Korrekt. Aber schreibt den Namen größer.~ EXTERN AC#IL53C name_bigger
+	IF ~~ THEN REPLY ~Richtig. Und wenn Ihr schon dabei seid, könnt Ihr diese Runen gleich mit Gold auslegen.~ EXTERN AC#IL53C name_gold
+	IF ~~ THEN REPLY ~Wenn Ihr mich schon verewigt, dann bitte ohne Schreibfehler.~ EXTERN AC#IL53C name_careful
+	IF ~~ THEN REPLY ~Schreibt einfach <CHARNAME>. Der Rest dürfte ohnehin bekannt sein.~ EXTERN AC#IL53C name_famous
+
+		CHAIN AC#IL53C name_correct
+		~Gut. Dann bleibt es dabei.~
+		END
+		IF ~~ THEN EXTERN AC#IL53C father_01
+
+
+		CHAIN AC#IL53C name_bigger
+		~Größer? Hm. Dann muss ich die übrigen Angaben etwas enger setzen.~
+		END
+		IF ~~ THEN REPLY ~Das klingt nach einem vernünftigen Kompromiss.~ EXTERN AC#IL53C father_01
+		IF ~~ THEN REPLY ~Solange mein Name gut zu erkennen ist.~ EXTERN AC#IL53C father_01
+
+
+		CHAIN AC#IL53C name_gold
+		~Gold? Für eine gewöhnliche Chronik? Ihr habt recht eigenartige Vorstellungen davon, wie wir unsere Archive führen.~
+		END
+		IF ~~ THEN REPLY ~Es war nur ein Vorschlag.~ EXTERN AC#IL53C father_01
+		IF ~~ THEN REPLY ~Dann gebt Euch wenigstens besonders Mühe beim Schreiben.~ EXTERN AC#IL53C father_01
+
+
+		CHAIN AC#IL53C name_careful
+		~Darum frage ich Euch ja. Einen Fehler in Stein zu korrigieren ist deutlich lästiger als auf diesem Papier.~
+		END
+		IF ~~ THEN REPLY ~Ein überzeugendes Argument.~ EXTERN AC#IL53C father_01
+
+
+		CHAIN AC#IL53C name_famous
+		~Das hoffe ich nicht. Eine Chronik, die sich auf Hörensagen verlässt, wird eine schlechte Chronik.~
+		END
+		IF ~~ THEN REPLY ~Dann fragt nur.~ EXTERN AC#IL53C father_01
+		
+	// the father
+		CHAIN AC#IL53C father_01
+		~Gut. Dann zur Abstammung. <CHARNAME>, Sohn des ...?~ ~Gut. Dann zur Abstammung. <CHARNAME>, Tochter des ...?~
+		END
+		IF ~~ THEN REPLY ~Bhaal.~ EXTERN AC#IL53C father_bhaal
+		IF ~~ THEN REPLY ~Gorion.~ EXTERN AC#IL53C father_gorion		
+		IF ~~ THEN REPLY ~Das ist... etwas kompliziert.~ EXTERN AC#IL53C father_complicated
+		IF ~~ THEN REPLY ~Über meinen Vater soll nichts vermerkt sein.~ EXTERN AC#IL53C father_not_telling
+		IF ~~ THEN REPLY ~Meine Abstammung geht niemanden etwas an.~ EXTERN AC#IL53C father_none
+
+
+		CHAIN AC#IL53C father_gorion
+		~Gorion. Gut.~
+		=
+		~Und sein Clan?~
+		END
+		IF ~~ THEN REPLY ~Er hatte keinen Clan. Er war ein Mensch.~ EXTERN AC#IL53C father_human
+
+
+		CHAIN AC#IL53C father_bhaal
+		~Bhaal.~
+		=
+		~...Bhaal?~
+		END
+		IF ~~ THEN REPLY ~Ja. Der Gott des Mordes.~ EXTERN AC#IL53C father_bhaal_02
+		IF ~~ THEN REPLY ~Ihr habt richtig gehört.~ EXTERN AC#IL53C father_bhaal_02
+		IF ~~ THEN REPLY ~Ich sagte doch, es ist kompliziert.~ EXTERN AC#IL53C father_bhaal_02
+
+
+			CHAIN AC#IL53C father_bhaal_02
+			~Hm. Gut. Ungewöhnlich, aber gut.~
+			END
+			IF ~~ THEN REPLY ~Ihr wolltet es schließlich wissen.~ EXTERN AC#IL53C birthplace_01
+			IF ~~ THEN REPLY ~Lasst einfach ein wenig Platz für eine Fußnote.~ EXTERN AC#IL53C birthplace_01
+
+
+		CHAIN AC#IL53C father_complicated
+		~Oh. Verstehe. Nun... solche Umstände kommen vor. Ihr müsst Euch nicht dafür schämen, dass Ihr in einem Bordell gezeugt wurdet. Ich werde einfach vermerken, dass die genauen Verhältnisse nicht zweifelsfrei überliefert sind.~
+		END
+		IF ~~ THEN REPLY ~So war das nicht gemeint!~ EXTERN AC#IL53C father_none
+		IF ~~ THEN REPLY ~Bitte schreibt auf keinen Fall etwas von einem Bordell auf diese Platte.~ EXTERN AC#IL53C father_none
+		IF ~~ THEN REPLY ~Belassen wir es einfach dabei.~ EXTERN AC#IL53C birthplace_01
+
+		CHAIN AC#IL53C father_not_telling
+		~Das sagen erstaunlich viele Leute, wenn eine Chronik über sie geschrieben wird.~
+		END
+		IF ~~ THEN EXTERN AC#IL53C birthplace_01
+
+		
+		CHAIN AC#IL53C father_none
+		~Wie Ihr meint. Dann lasse ich die Zeile frei. Leere Stellen machen spätere Historiker ohnehin glücklicher. Sie können dann jahrhundertelang darüber streiten.~
+		END
+		IF ~~ THEN EXTERN AC#IL53C birthplace_01
+
+
+		CHAIN AC#IL53C father_human
+		~Ein Mensch ohne Clan. Ihr Oberflächenbewohner macht das Erfassen von Stammbäumen wirklich schwierig!~
+		END
+		IF ~~ THEN REPLY ~Wir geben uns Mühe.~ EXTERN AC#IL53C birthplace_01
+		IF ~~ THEN REPLY ~Bislang bin ich auch ohne Clan ganz gut zurechtgekommen.~ EXTERN AC#IL53C birthplace_01
+		
+		CHAIN AC#IL53C birthplace_01
+		~Geburtsort?~
+		END
+		IF ~~ THEN REPLY ~Kerzenburg.~ EXTERN AC#IL53C birthplace_candlekeep
+
+		CHAIN AC#IL53C birthplace_candlekeep 
+		~Kerzenburg. Gut. Das ist ja erstaunlich einfach.~ 
+		END 
+		IF ~~ THEN EXTERN AC#IL53C chronic_cont_01
+
+
+		CHAIN AC#IL53C chronic_cont_01
+		~Damit habe ich alles, was ich brauche. Den Rest der Chronik kann ich selbst ergänzen.~
+		END
+		IF ~~ THEN REPLY ~Ihr braucht meine Hilfe dabei nicht?~ EXTERN AC#IL53C chronic_help
+		IF ~~ THEN REPLY ~Ihr kennt meine Geschichte also bereits?~ EXTERN AC#IL53C chronic_help
+		IF ~~ THEN REPLY ~Gut. Dann bin ich gespannt, was Ihr daraus macht.~ EXTERN AC#IL53C chronic_end
+
+
+		CHAIN AC#IL53C chronic_help
+		~Über Eure Taten gibt es inzwischen mehr als genug Berichte. Die Schwierigkeit wird eher darin liegen, herauszufinden, welche davon wichtig sind.~
+		END
+		IF ~~ THEN REPLY ~Das könnte Euch eine Weile beschäftigen.~ EXTERN AC#IL53C chronic_end
+		IF ~~ THEN REPLY ~Nehmt im Zweifel die beeindruckendere Version.~ EXTERN AC#IL53C chronic_end
+		IF ~~ THEN REPLY ~Schreibt lieber weniger als mehr. Ich habe sicher nicht alles richtig gemacht.~ EXTERN AC#IL53C chronic_end
+		IF ~~ THEN REPLY ~Streicht bitte alles, was irgendwie peinlich klingt.~ EXTERN AC#IL53C chronic_end
+
+
+		CHAIN AC#IL53C chronic_end
+		~Ich werde mein Bestes tun. Danke für Eure Hilfe, <CHARNAME> von Kerzenburg! Und nun widme ich mich wieder dieser Runenplatte hier.~
+		END
+		IF ~~ THEN EXIT
+
+CHAIN IF ~True()~ THEN AC#IL53C hello_again
+~Ah, <CHARNAME>! Ich komme mit Eurer Chronik gut voran. Es ist nur erstaunlich schwierig, bei all den Berichten Wahrheit und Übertreibung auseinanderzuhalten.~
+END
+IF ~~ THEN EXIT
+
+
+// ---------------------------------------------
 //Guards
 // ---------------------------------------------
 

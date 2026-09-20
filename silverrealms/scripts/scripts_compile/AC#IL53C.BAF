@@ -1,0 +1,9 @@
+IF
+    NumberOfTimesTalkedTo(0)
+    See([PC])
+    Range([PC],15)
+THEN
+    RESPONSE #100
+        StartDialogueNoSet([PC])
+END
+

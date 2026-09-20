@@ -1,0 +1,8 @@
+IF
+    Entered([ANYONE])
+    Global("derrotrap","ACIL37",0)
+THEN
+    RESPONSE #50
+        SetGlobal("derrotrap","ACIL37",1)
+END
+

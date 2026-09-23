@@ -22,7 +22,7 @@ END
 	=
 	~Lebt wohl, <CHARNAME>, und passt gut auf Euch auf.~
 	IF ~~ THEN DO ~SetGlobal("AC#Goodbye_Iltkazar","GLOBAL",6)
-	AddJournalEntry(@64301,QUEST_DONE)~ EXIT
+	AddJournalEntry(@64301,QUEST)~ EXIT
 	END
 
 BEGIN ~AC#GROM9~

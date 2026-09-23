@@ -37,7 +37,7 @@ END
 			END
 			
 				IF ~~ THEN BEGIN sssleeper_hungry
-				SAY ~Dass wird er nicht tun! Wir sssehen ihn, doch können wir niccht mit ihm sssprechen...~
+				SAY ~Dass wird er nicht tun! Wir sssehen ihn, doch können wir nicht mit ihm sssprechen...~
 				++ ~Liegt Euer Gott zufällig in einer Art Drachentempel? Da müsste ich nämlich einmal kurz hinein.~ + dragontemple
 				++ ~Vielleicht sollte ich ihn zuerst finden und erschlagen. Rein vorsorglich.~ + dragontemple
 				END

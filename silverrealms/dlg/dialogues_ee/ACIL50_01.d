@@ -1038,7 +1038,7 @@ END
 			AddJournalEntry(@64300,QUEST)~ EXIT	
 			
 			CHAIN AC#BRES1 chain_reveal_dragoncem
-			~Elern, Ihr solltet <CHARNAME> nun sagen, wo er an der Oberfläche nach diesem Drachenfriedhof suchen soll. Er kann ja schließlich nicht im Dunkeln tappen.~
+			~Elern, Ihr solltet <CHARNAME> nun sagen, wo er an der Oberfläche nach diesem Drachenfriedhof suchen soll. Denn <PRO_HESHE> kann schließlich nicht jeden Stein an der Oberfläche umdrehen.~
 			== AC#ELER6 ~Aber natürlich, <CHARNAME>. Also hört gut zu.~
 			END
 			IF ~~ THEN EXTERN AC#ELER6 cloudpeaks_01

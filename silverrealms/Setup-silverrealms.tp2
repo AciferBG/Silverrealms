@@ -524,6 +524,41 @@ COPY ~silverrealms/bam/bam_desc_BG2EE/AC#ILASD.bam~ ~override~  //    astral shi
  LAF INSTALL_PVRZ INT_VAR original_base_index new_base_index STR_VAR source_file = ~silverrealms/bam/bam_desc_BG2EE/MOS1057.pvrz~
  END
  END
+ 
+ COPY ~silverrealms/bam/bam_desc_BG2EE/AC#ILRD8.bam~ ~override~  //    dragon ring desc
+ LPF UPDATE_PVRZ_INDICES RET original_base_index new_base_index END
+ ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN 
+ LAF INSTALL_PVRZ INT_VAR original_base_index new_base_index STR_VAR source_file = ~silverrealms/bam/bam_desc_BG2EE/MOS1058.pvrz~
+ END
+ END
+ 
+ COPY ~silverrealms/bam/bam_desc_BG2EE/AC#KY80D.bam~ ~override~  //    dragon claw single desc
+ LPF UPDATE_PVRZ_INDICES RET original_base_index new_base_index END
+ ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN 
+ LAF INSTALL_PVRZ INT_VAR original_base_index new_base_index STR_VAR source_file = ~silverrealms/bam/bam_desc_BG2EE/MOS1059.pvrz~
+ END
+ END
+ 
+ COPY ~silverrealms/bam/bam_desc_BG2EE/AC#KYDCD.bam~ ~override~  //    dragon claw tutti desc
+ LPF UPDATE_PVRZ_INDICES RET original_base_index new_base_index END
+ ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN 
+ LAF INSTALL_PVRZ INT_VAR original_base_index new_base_index STR_VAR source_file = ~silverrealms/bam/bam_desc_BG2EE/MOS1060.pvrz~
+ END
+ END
+ 
+ COPY ~silverrealms/bam/bam_desc_BG2EE/AC#ILAD8.bam~ ~override~  //    amulet heart of iltkazar desc
+ LPF UPDATE_PVRZ_INDICES RET original_base_index new_base_index END
+ ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN 
+ LAF INSTALL_PVRZ INT_VAR original_base_index new_base_index STR_VAR source_file = ~silverrealms/bam/bam_desc_BG2EE/MOS1061.pvrz~
+ END
+ END
+ 
+ COPY ~silverrealms/bam/bam_desc_BG2EE/AC#SKUTD.bam~ ~override~  //    maram skull desc
+ LPF UPDATE_PVRZ_INDICES RET original_base_index new_base_index END
+ ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN 
+ LAF INSTALL_PVRZ INT_VAR original_base_index new_base_index STR_VAR source_file = ~silverrealms/bam/bam_desc_BG2EE/MOS1062.pvrz~
+ END
+ END
 
 ///////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
@@ -633,7 +668,10 @@ ADD_JOURNAL
 //@20800  @20801  @20802  @20803
 @21002   @21021 @21022  @23000   @23001 @23002  @23003   @23004  @23010   @23011   @23012   @27000  @45000  
 @50020   @50021 @50022 
-@50600  @50601   @50602   @50603  @50604  @50607  @50608   @50609  @50610 @50611  @50612   @50700  @50701  @50702   @51000 @51001
+@50600  @50601   @50602   @50603  @50604  @50607  @50608   @50609  @50610 @50611  @50612   
+@50700  @50701  @50702 @50703  
+@50800 @50801
+@51000 @51001
 @51100 @51101 @51102
 @51200  @51201 
 @52100   @52101   @52110  
@@ -666,7 +704,7 @@ ADD_JOURNAL
 @80000  @80001
 @90010  @90011 @90012 @90013 @90014 @90015
 @90020  @90021  @99000
-@99500 @99501 @99502 @99503 @99504 @99505 @99506 @99507 @99508 @99509 @99510
+@99500 @99501 @99502 @99503 @99504 @99505 @99506 @99507 @99508 @99509 @99510 @99511 
 
 
 ///////////////////////////////////////////////////////////////////////

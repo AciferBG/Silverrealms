@@ -7,12 +7,14 @@ BEGIN AC#VRON5
 
 IF ~Global("AC#Gromi_Cernd","ACIL52",10)~ THEN BEGIN hello_ellhimar_gone
 SAY  ~So ist nun auch für mich hier alles getan. Ich wünsche Euch viel Erfolg, <CHARNAME>.~
-IF ~~ THEN DO ~EscapeArea()~  EXIT
+IF ~~ THEN DO ~AddJournalEntry(@99511,QUEST)
+EscapeArea()~  EXIT
 END
 
 IF ~Global("AC#Gromi_Cernd","ACIL52",4)~ THEN BEGIN hello_cernd_gone
 SAY  ~Was für eine schöne Wendung das Schicksal doch genommen hat! Nun ist auch für mich hier alles getan. Ich werde mich wieder um die Pflege meines kranken Mannes kümmern. Ich wünsche Euch viel Erfolg bei Eurer weiteren Suche und werde die Runen für Euer Schicksal gnädig stimmen.~
-IF ~~ THEN DO ~EscapeArea()~  EXIT
+IF ~~ THEN DO ~AddJournalEntry(@99511,QUEST)
+EscapeArea()~  EXIT
 END
 
 // in Area ACIL50
@@ -134,7 +136,7 @@ END
 											~Jedenfalls hat der Rat dann beschlossen, den armen Khaernd in der Halle der Runensteine, unserer großen Bibliothek, für den Rest seiner Tage in einen Käfig zu sperren. Dort sitzt er noch immer und wird bewacht.~
 											END
 											IF ~~ THEN REPLY ~Ihr wollt, dass ich ihn befreie?~ EXTERN AC#ELER7 free_cernd_01
-											IF ~~ THEN REPLY ~Immerhin hatte er vermutlich genug zu lesen.~ EXTERN AC#ELER7 free_cernd_01
+											IF ~~ THEN REPLY ~Immerhin hat er vermutlich genug zu lesen.~ EXTERN AC#ELER7 free_cernd_01
 											IF ~~ THEN REPLY ~Ihr glaubt doch nicht etwa, dass dieser Khaernd uns helfen kann?~ EXTERN AC#ELER7 free_cernd_01
 
 											
@@ -187,7 +189,7 @@ END
 																== AC#ELER7 ~Ich habe mit meiner Tante Isdlara gesprochen. Sie ist die Hohepriesterin Sharindlars, unserer Göttin des Lebens. In ihrem Tempel lässt sich die Einverleibung des Lappens sicher und diskret vollziehen.~
 																== AC#VRON5 ~Ich warte solange auf Euch im Gnädigen Hof, dem Tempel Sharindlars in Haelas Hallen. Trefft mich dort, um die Erinnerung des Lappens zu aktivieren.~															
 																END
-																IF ~~ THEN DO ~
+																IF ~~ THEN DO ~AddJournalEntry(@50800,QUEST)
 																SetGlobal("AC#IL_TasteLobeMyself","GLOBAL",1)
 																SetGlobal("AC#IL_NEW_Cernd","GLOBAL",3)
 																//AddJournalEntry(@,QUEST)																
@@ -298,10 +300,13 @@ IF ~GlobalGT("AC#IL_CerndTasteLobe","GLOBAL",1)~ THEN DO ~SetGlobal("AC#IL_Brain
 		IF ~~ THEN EXTERN AC#VRON5 use_book_for_worldmap
 				
 		CHAIN AC#VRON5 use_book_for_worldmap
-		~Ich bin mir sicher, dass Ihr in diesem Buch einen Anhalt finden werdet, wo sich dieser Ort, den Ihr in der Vision gesehen habt, befinden könnte. Nutzt das Wissen, um unserem König zu helfen. Unsere Aufgabe hier ist nun getan.~
+		~Ich bin mir sicher, dass Ihr in diesem Buch einen Anhalt finden werdet, wo sich dieser Ort, den Ihr in der Vision gesehen habt, befinden könnte. Nutzt das Wissen, um unserem König zu helfen. Unsere Aufgabe hier ist nun getan, auch für mich. Ich werde mich wieder um die Pflege meines kranken Mannes kümmern. Ich wünsche Euch viel Erfolg bei Eurer weiteren Suche und werde die Runen für Euer Schicksal gnädig stimmen.~
 		END
 		IF ~~ THEN DO ~SetGlobal("AC#IL_NEW_Borthun","GLOBAL",1)
-		SetGlobal("AC#IL_BrainVision","GLOBAL",10)~ EXIT
+		SetGlobal("AC#IL_BrainVision","GLOBAL",10)
+		AddJournalEntry(@50801,QUEST_DONE)
+		AddJournalEntry(@99511,QUEST)
+		EscapeArea()~ EXIT
 
 CHAIN IF ~Global("AC#IL_NEW_Cernd","GLOBAL",4)~ THEN AC#VRON5 hello_sharindlar
 ~Seid gegrüßt, <CHARNAME>. Schön, dass Ihr mich hier in Sharindlars Tempel aufsucht!~
@@ -438,6 +443,7 @@ IF ~~ THEN REPLY ~Das war Vronias Idee.~ EXTERN AC#VRON5 gromi_vronia_cernd_01
 	~Kommt mit, Khaernd, mein Sohn! Eure Mutter wird Augen machen. Lasst uns durch die Stadt gehen und jedem zeigen, dass Khaernd Arnschädel, Gromis Sohn, in die Zitadelle seines Clans zurückgekehrt ist!~
 	END
 	IF ~~ THEN DO ~SetGlobal("AC#Gromi_Cernd","ACIL52",3)
+	AddJournalEntry(@50703,QUEST_DONE)
 	ActionOverride("AC#CERN1",EscapeArea())
 	EscapeArea()~  EXIT
 						

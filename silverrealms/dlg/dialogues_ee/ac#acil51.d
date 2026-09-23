@@ -131,22 +131,44 @@ END
 			IF ~~ THEN BEGIN take_a_look_at_borthuns_book
 			SAY ~Was? Auf keinen Fall! Diese verfluchte Buch hat jedem, der es bisher gelesen hat, nichts als Pech und Verderben gebracht.~
 			IF ~~ THEN REPLY ~Was soll das bedeuten?~ GOTO book_nothing_but_bad_luck
+			IF ~~ THEN REPLY ~Wie kommt Ihr darauf?~ GOTO book_nothing_but_bad_luck
 			END
 			
 				IF ~~ THEN BEGIN book_nothing_but_bad_luck
 				SAY ~Mein Urahn Borthun ist nie ins Unterreich zurückgekehrt, nachdem er das Buch geschrieben hatte. König Mith Barak erwachte nicht mehr aus seinem Schlaf, als er einen Blick darauf warf. Und mein Sohn Beldas hat auf der Oberfläche einen garstigen Tod gefunden. Alles nur, nachdem sie in dieses verfluchte Buch geschaut haben! Dies ist ein Zeichen, dass wir Zwerge nichts mit der Oberfläche zu schaffen haben sollten. Unsere Götter schätzen es nicht, wenn wir unter der Sonne wandeln, anstelle unserer Aufgabe in den Tiefen der Berge nachzukommen. Borthuns, Beldas' und letztendlich Mith Baraks Schicksal ist eine Strafe für ihren *mulg*, zu meinen, wir hätten an der Oberfläche etwas zu schaffen.~
-				IF ~~ THEN REPLY ~Ich glaube nicht, dass das stimmt.~ GOTO show_me_the_book
+				IF ~~ THEN REPLY ~Ich glaube nicht, dass das stimmt.~ GOTO show_me_the_book_not_right
 				IF ~~ THEN REPLY ~Das mag stimmen, doch ich bin kein Zwerg des Unterreiches. Deshalb könntet Ihr mich ja gefahrlos einen Blick in das Buch werfen lassen.~ GOTO show_me_the_book
 				END	
 				
+					IF ~~ THEN BEGIN show_me_the_book_not_right
+					SAY ~Woher wollt Ihr das wissen?~
+					IF ~~ THEN REPLY ~Vielleicht wäre es eine Möglichkeit für Euch, dieses Buch loszuwerden - indem Ihr es mir geben würdet und ich es an die Oberfläche bringe.~ GOTO show_me_the_book_02
+					IF ~~ THEN REPLY ~Wenn dieses Buch wirklich so viel Unheil bringt, wie Ihr glaubt, dann sollte es erst recht nicht hier in Iltkazar bleiben.~ GOTO show_me_the_book_03
+					IF ~~ THEN REPLY ~Wenn Mith Barak selbst darin nach Antworten gesucht hat, dann kann ich seine Suche kaum fortsetzen, ohne zu wissen, was er gefunden hat.~ GOTO show_me_the_book_03
+					//IF ~~ THEN REPLY ~Ihr sagt, die Götter hätten sie bestraft. Vielleicht prüfen sie uns aber auch gerade, ob wir den Mut besitzen, es besser zu machen.~ GOTO show_me_the_book_03
+					IF ~~ THEN REPLY ~Euer Sohn ist tot, Mith Barak schläft, und Borthun kehrt nie zurück. Das Buch zu verstecken hat bisher keinen von ihnen gerettet.~ GOTO show_me_the_book_02
+					IF ~~ THEN REPLY ~Ihr könnt das Buch behalten. Oder Ihr gebt es jemandem, der bereit ist herauszufinden, warum so viele dafür einen so hohen Preis bezahlt haben.~ GOTO show_me_the_book_02
+					IF ~~ THEN REPLY ~Wenn das Buch mich ebenfalls umbringt, könnt Ihr Euch immerhin bestätigt fühlen.~ GOTO show_me_the_book_02
+					END
+				
 					IF ~~ THEN BEGIN show_me_the_book
 					SAY ~Nur, damit Ihr es allen herumerzählt? Nein, damit könntet Ihr die Stadt noch mehr ins Verderben stürzen.~
-					IF ~~ THEN REPLY ~Vielleicht wäre es aber auch eine Möglichkeit für Euch, dieses Buch loszuwerden  - indem Ihr es mir geben würdet und ich es an die Oberfläche bringe.~ GOTO show_me_the_book_02
+					IF ~~ THEN REPLY ~Vielleicht wäre es eine Möglichkeit für Euch, dieses Buch loszuwerden - indem Ihr es mir geben würdet und ich es an die Oberfläche bringe.~ GOTO show_me_the_book_02
+					IF ~~ THEN REPLY ~Wenn dieses Buch wirklich so viel Unheil bringt, wie Ihr glaubt, dann sollte es erst recht nicht hier in Iltkazar bleiben.~ GOTO show_me_the_book_03
+					IF ~~ THEN REPLY ~Wenn Mith Barak selbst darin nach Antworten gesucht hat, dann kann ich seine Suche kaum fortsetzen, ohne zu wissen, was er gefunden hat.~ GOTO show_me_the_book_03
+					//IF ~~ THEN REPLY ~Ihr sagt, die Götter hätten sie bestraft. Vielleicht prüfen sie uns aber auch gerade, ob wir den Mut besitzen, es besser zu machen.~ GOTO show_me_the_book_03
+					IF ~~ THEN REPLY ~Euer Sohn ist tot, Mith Barak schläft, und Borthun kehrt nie zurück. Das Buch zu verstecken hat bisher keinen von ihnen gerettet.~ GOTO show_me_the_book_02
+					IF ~~ THEN REPLY ~Ihr könnt das Buch behalten. Oder Ihr gebt es jemandem, der bereit ist herauszufinden, warum so viele dafür einen so hohen Preis bezahlt haben.~ GOTO show_me_the_book_02
+					IF ~~ THEN REPLY ~Wenn das Buch mich ebenfalls umbringt, könnt Ihr Euch immerhin bestätigt fühlen.~ GOTO show_me_the_book_02
 					END
 					
 						IF ~~ THEN BEGIN show_me_the_book_02
 						SAY ~Wozu? Hier in der Schmiede ist es doch mehr als sicher verwahrt.~
 						IF ~~ THEN REPLY ~Denkt Ihr nicht, dass es jetzt, da klar ist, dass auch Beldas darin gelesen hat, einen noch größeren Reiz auf weitere Zwerge ausüben könnte, darin zu lesen?~ GOTO show_me_the_book_03
+						IF ~~ THEN REPLY ~Sicher verwahrt vielleicht. Vergessen ist es deshalb noch lange nicht.~ GOTO show_me_the_book_03
+						IF ~~ THEN REPLY ~Wenn selbst Euer eigener Sohn Zugang dazu hatte, scheint mir die Verwahrung nicht ganz so sicher zu sein, wie Ihr glaubt.~ GOTO show_me_the_book_03
+						IF ~~ THEN REPLY ~Ihr könnt es bewachen, solange Ihr lebt. Und danach? Wollt Ihr diesen Fluch wirklich Euren Nachkommen hinterlassen?~ GOTO show_me_the_book_03
+						IF ~~ THEN REPLY ~Wenn Ihr unbedingt recht behalten wollt, lasst mich doch der Nächste sein, den das Buch ins Verderben stürzt.~ GOTO show_me_the_book_03
 						END
 						
 							IF ~~ THEN BEGIN show_me_the_book_03
@@ -156,17 +178,20 @@ END
 							END
 							
 								IF ~~ THEN BEGIN give_me_the_book_01
-								SAY ~Na schön. Macht damit, was Ihr wollt. Und wenn es Euch kein Glück bringt, behauptet nicht, ich hätte Euch nicht gewarnt!~
+								SAY ~Na schön. Hier, nehmt das verfluchte Ding und macht damit, was Ihr wollt. Und wenn es Euch kein Glück sondern nur Pech bringt, behauptet nicht, ich hätte Euch nicht gewarnt!~
 								IF ~~ THEN DO ~GiveItemCreate("AC#BOOKB",Player1,1,0,0)~ GOTO have_the_book_01
 								END
 							
 									IF ~~ THEN BEGIN have_the_book_01
-									SAY ~Eigentlich bin ich auch ganz froh, dass ich dieses Ding los bin.~
+									SAY ~Eigentlich bin ich auch ganz froh, dass ich es los bin. Seit Beldas' Tod habe ich das Buch keinen Augenblick mehr aus der Hand gegeben.~
 									IF ~~ THEN REPLY ~Ihr habt es die ganze Zeit bei Euch getragen?~ GOTO have_the_book_02
+									IF ~~ THEN REPLY ~Dann war es Euch offenbar lieber, selbst das Risiko zu tragen, als es jemand anderem zu überlassen.~ GOTO have_the_book_02
 									END
 									
 										IF ~~ THEN BEGIN have_the_book_02
-										SAY ~Natürlich. Nachdem mein eigener Sohn hinter meinem Rücken herumgeschnüffelt hatte, habe ich es lieber an mich genommen. Jetzt tragt Ihr die Verantwortung dafür, <PRO_RACE>! Geht mit dieser Verantwortung weise um.~
+										SAY ~Natürlich! Nachdem mein eigener Sohn hinter meinem Rücken herumgeschnüffelt hatte, habe ich es lieber an mich genommen.~ 
+										=
+										~Jetzt tragt Ihr die Verantwortung dafür, <PRO_RACE>! Geht mit dieser Verantwortung weise um.~
 										IF ~~ THEN DO ~
 										//AddJournalEntry(@64103,QUEST)
 										//SetGlobal("AC#Clans_Parting","GLOBAL",3)

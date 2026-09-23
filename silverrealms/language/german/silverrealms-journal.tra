@@ -223,13 +223,23 @@ Nach seinem Tod hat sich Ellhimars Leiche in einen Dunkelelfen verwandelt! Ich s
 Ich habe Vronia von meinem Kampf mit "Ellhimar", dem Drow erzählt. Sie war geschockt und ist umgehend zum Ratsgebäude aufgebrochen. Ich denke, ich habe nun etwas gut bei ihr.~
 @50700   = ~Verlorene Erinnerungen
 
-Vronia Eisenbieger hat mich wieder um Hilfe gebeten. Ich soll einen Zwerg namens Khaernd, der einst von den Gedankenschindern gequält wurde, um Hilfe bitten. Khaernd steht in der großen Bibliothek im Osten der Stadt unter Arrest. Wenn ich zuerst mit Bettargh Abgrundlied, dem Leiter der Bibliothek, rede, sollte Khaernd freigelassen werden, um den Hirnlappen des Ältestenhirnes zu konsumieren.~
+Vronia Eisenbieger hat mich wieder um Hilfe gebeten. Der Hirnlappen des Ältestenhirns könnte wertvolle Erinnerungen beinhalten, die uns in der Suche nach der Ursache des schlafenden Königs weiterbringen. Ich soll einen Zwerg namens Khaernd, der einst von den Gedankenschindern gequält wurde, um Hilfe bitten. Khaernd steht in der großen Bibliothek im Osten der Stadt unter Arrest. Wenn ich zuerst mit Bettargh Abgrundlied, dem Leiter der Bibliothek, rede, sollte Khaernd freigelassen werden, um den Hirnlappen des Ältestenhirnes zu konsumieren.~
 @50701   = ~Verlorene Erinnerungen
 
 Khaernd Schüttergeist, der Zwerg-Illithide, hat sich aus seinem Käfig einfach wegteleportiert. Wenn ich Glück habe, finde ich ihn bei Vronia im Tempel Sharindlars in Haelas Hallen. Wenn ich Pech habe - nein, darüber möchte ich lieber nicht nachdenken...~
 @50702   = ~Verlorene Erinnerungen
 
 Bettargh hat zugestimmt, mich zu Khaernd Schüttergeist vorzulassen. Ich finde ihn im Westen der Bibliothek, bei einer Tür, die von zwei Wachen bewacht wird.~
+@50703 = ~Verlorene Erinnerungen
+
+Khaernd Schüttergeist hat Erinnerungen des Ältestenhirnes mit mir geteilt. Zugleich scheint sein Handeln die Zweifel an ihm zerstreut zu haben: Er wurde wieder in die Zwergengemeinschaft Iltkazars aufgenommen.~
+
+@50800   = ~Verlorene Erinnerungen
+
+Vronia Eisenbieger hat mich wieder um Hilfe gebeten. Der Hirnlappen des Ältestenhirns könnte wertvolle Erinnerungen beinhalten, die uns in der Suche nach der Ursache des schlafenden Königs weiterbringen. Ich habe mich bereit erklärt, den Hirnlappen des Ältestenhirnes zu konsumieren und soll deshalb Vronia Eisenbieger in Sharindlars Tempel "Der gnädige Hof" in der Zitadelle "Haelas Hallen" aufsuchen.~
+@50801   = ~Verlorene Erinnerungen
+
+Ich habe die Erinnerungen aus dem Hirnlappen des Ältestenhirnes aktivieren können. Ob mir das gut bekommen ist, wird sich zeigen.~
 //___________________________Drachenangriff
 @51000   = ~Ein Drachenangriff?
 
@@ -610,22 +620,7 @@ Ellhimar ist von den Githyanki entführt worden! Nun kenne ich zumindest eine de
 @63001  = ~Zurück an die Oberfläche
 
 Um zurück an die Oberfläche zu gelangen, sollte ich Elern Abgrundlieds Mutter Dorna Abgrundlied im Tempel Dugmarens aufsuchen. Ich finde den Zugang zum Tempel in der Halle der Runensteine, an einer Tür unter den Werkstätten der Tiefengnome im Norden des Komplexes.~
-//___________________________Der Drachenfriedhof
-@64100  = ~Der Drachenfriedhof
 
-Ich soll Bettargh in der Abgrundliedhalle fragen, ob er einen Anhaltspunkt hat, wo der Ort an der Oberfläche, den Mith Barak in den Träumen besucht hat, liegen könnte.~
-@64101  = ~Der Drachenfriedhof
-
-Bettargh meinte, seine Tochter Elern könnte mir bei der Suche nach diesem seltsamen Ort weiterhelfen. Sie wartet in der Bibliothek an einem Zwergenstandbild im Osten auf mich.~
-@64102  = ~Der Drachenfriedhof
-
-Borthun Diamantklinge, ein großer zwergischer Entdecker, könnte etwas über diesen Drachenfriedhof niedergeschrieben haben. Seine Aufzeichnungen befinden sich im Besitz von Anthan Diamantklinge in der "Uralten Schmiede", dem Tempel Moradins, im Westen der Stadt.~
-@64103  = ~Der Drachenfriedhof
-
-Ich habe Borthuns Buch von Anthan Diamantklinge erhalten. Ich muss Elern von diesem Erfolg berichten, welche am Platz von Bhaerynden auf mich wartet. Sie wird mir sagen, wie es weitergehen soll.~
-@64104  = ~Der Drachenfriedhof
-
-Ich habe Borthuns Eintrag zu diesem mysteriösen Ort in seinem Buch gelesen. Es handelt sich um einen für Elfen heiligen Ort am Fuße der Wolkengipfel, an dem ein Elfenheld in grauer Vorzeit zwei Drachen erschlagen hatte. Mith Barak hat diesen Stein wohl deshalb aufgesucht, weil er sich in der Nähe zu einem Ort begab, den er den "Drachentempel" genannt hat. Ich vermute, dass dies der nächste Ort sein wird, den ich bei meiner Suche nach dem schlafenden König aufsuchen muss.~
 //___________________________Zurück an die Oberfläche
 @64200  = ~Der Levitationstrank
 
@@ -689,13 +684,6 @@ Um die Verzauberung der Drow-Schwebescheibe zu erneuern, muss ich die Scheibe mi
 
 Ich habe die Schwebescheibe hergestellt. Nun kann ich sie am Boden des Schachtes benutzen, den ich von der Oberfläche herabgeschwebt bin.~
 
-//___________________________Abschied aus Iltkazar
-@64300  = ~Abschied aus Iltkazar
-
-Ich sollte mich in Iltkazar für die Rückkehr an die Oberfläche rüsten. Wenn ich alles beisammen habe soll ich Bresk auf dem großen Platz im Zentrum Iltkazars über meinen Aufbruch informieren, damit ich einen würdigen Abschied bekomme. Was für ein Gegensatz zu dem frostigen Empfang, den man mir bei meiner Ankunft bereitet hat!~
-@64301  = ~Abschied aus Iltkazar
-
-Ich habe die Stadt verlassen. Die Tore sind verschlossen, und mein Weg wird mich nun zurück an die Oberfläche und zum Drachenfriedhof führen.~
 //___________________________Torglor, das Silberkönigreich
 @64900  = ~Torglor, das Silberkönigreich
 
@@ -844,5 +832,33 @@ Ich habe einen Teil des Hirngewebes des Ältestenhirns. Mit etwas Glück wissen 
 
 Der Regentschaftsrat Iltkazars hat sich aufgelöst, und die Tore zum Thronsaal wurden geöffnet. Ich kann dem König nun einen Besuch abstatten – auch wenn mich das bei der Suche nach der Ursache seines Schlafes wohl kaum weiterbringen wird.
 Vronia möchte mich außerdem vor dem Ratsgebäude sprechen. Sie scheint eine Idee zu haben, wie wir bei unserer Suche weiter vorgehen können.~
+@99511 = ~Der Schlafende König
+
+In den Erinnerungen, die Mith Barak mit dem Ältestenhirn geteilt hat, fand sich ein Hinweis auf einen Ort an der Oberfläche, an dem der Zwergenkönig einst versucht hat, seinen Fluch zu lösen. Offenbar ist dieser Ort in einem Buch verzeichnet, das sich nicht in Iltkazars großer Bibliothek befindet. Ich soll dennoch zunächst Bettargh Abgrundlied in der Halle der Runensteine aufsuchen. Vielleicht weiß er, um welches Werk es sich handelt – und wo es andernorts in Iltkazar verwahrt wird.~
+
+//__________________________alt:_Der Drachenfriedhof
+@64100  = ~Der Schlafende König
+
+Ich soll Bettargh in der Abgrundliedhalle fragen, ob er einen Anhaltspunkt hat, wo der Ort an der Oberfläche, den Mith Barak in den Träumen besucht hat, liegen könnte.~
+@64101  = ~Der Schlafende König
+
+Bettargh meinte, seine Tochter Elern könnte mir bei der Suche nach diesem seltsamen Ort weiterhelfen. Sie wartet in der Bibliothek an einem Zwergenstandbild im Osten auf mich.~
+@64102  = ~Der Schlafende König
+
+Borthun Diamantklinge, ein großer zwergischer Entdecker, könnte etwas über diesen Drachenfriedhof niedergeschrieben haben. Seine Aufzeichnungen befinden sich im Besitz von Anthan Diamantklinge in der "Uralten Schmiede", dem Tempel Moradins, im Westen der Stadt.~
+@64103  = ~Der Schlafende König
+
+Ich habe Borthuns Buch von Anthan Diamantklinge erhalten. Ich muss Elern von diesem Erfolg berichten, welche am Platz von Bhaerynden auf mich wartet. Sie wird mir sagen, wie es weitergehen soll.~
+@64104  = ~Der Schlafende König
+
+Ich habe Borthuns Eintrag zu diesem mysteriösen Ort in seinem Buch gelesen. Es handelt sich um einen für Elfen heiligen Ort am Fuße der Wolkengipfel, an dem ein Elfenheld in grauer Vorzeit zwei Drachen erschlagen hatte. Mith Barak hat diesen Stein wohl deshalb aufgesucht, weil er sich in der Nähe zu einem Ort begab, den er den "Drachentempel" genannt hat. Ich vermute, dass dies der nächste Ort sein wird, den ich bei meiner Suche nach dem schlafenden König aufsuchen muss.~
+
+//___________________________alt: Abschied aus Iltkazar
+@64300  = ~Der Schlafende König
+
+Ich sollte mich in Iltkazar für die Rückkehr an die Oberfläche rüsten. Wenn ich alles beisammen habe soll ich Bresk auf dem großen Platz im Zentrum Iltkazars über meinen Aufbruch informieren, damit ich einen würdigen Abschied bekomme. Was für ein Gegensatz zu dem frostigen Empfang, den man mir bei meiner Ankunft bereitet hat!~
+@64301  = ~Der Schlafende König
+
+Ich habe die Stadt verlassen. Die Tore sind verschlossen, und mein Weg wird mich nun zurück an die Oberfläche und zum Drachenfriedhof führen.~
 
 

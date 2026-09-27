@@ -12,7 +12,7 @@ IF ~NumTimesTalkedTo(0)~ THEN BEGIN 0
 END
 
 IF ~~ THEN BEGIN hostile
-  SAY ~Sein Zorn kriecht bereits durch euer Fleisch. Sterbt und nährt Ihn weiter!~
+  SAY ~Sein Tod kriecht bereits durch Euer Fleisch. Sterbt und nährt Ihn weiter!~
   IF ~~ THEN DO ~Enemy()~ EXIT
 END
 

@@ -716,10 +716,10 @@ Ich habe den neuen Bart abgeholt. Nun muss ich diesen zu seinem neuen Besitzer P
 
 Als Dank für die Ablieferung seines neuen Bartes hat mir Petben Riesenkrüppler ein Drow-Kettenhemd überlassen.~
 //___________________________Die zwölf Sockel
-@71000  = ~Die zwölf Sockel
+@71000  = ~Die Beschwörung eines alten Drachen
 
 Ich habe im Inneren des alten Drachentempels zwölf angebrannte Sockel entdeckt. Wenn ich etwas stark Brennbares darauflegen würde, könnte sich der Sockel wahrscheinlich entzünden. Es sieht so aus, als wäre dies in der Vergangenheit bereits mehrere Male getan worden, auch wenn sich mir der Zweck nicht ganz erschließt.~
-@71010  = ~Die zwölf Sockel
+@71010  = ~Die Beschwörung eines alten Drachen
 
 Ich habe mithilfe eines alten Rituals Kontakt zu einem Diener der Gottheit aufgenommen, die Mith Barak verflucht hatte. Sein Name war Maldraedior.~
 @71100  = ~Der Schlafende König
@@ -860,5 +860,7 @@ Ich sollte mich in Iltkazar für die Rückkehr an die Oberfläche rüsten. Wenn 
 @64301  = ~Der Schlafende König
 
 Ich habe die Stadt verlassen. Die Tore sind verschlossen, und mein Weg wird mich nun zurück an die Oberfläche und zum Drachenfriedhof führen.~
+@64302 = ~Der Schlafende König
 
+Ich bin am Drachenfriedhof angekommen. Irgendwo an diesem Ort soll sich ein uralter Tempel befinden, der einer vergessenen Drachengottheit namens Kalzareinad geweiht ist. Alles deutet darauf hin, dass Mith Barak genau diesen Tempel gesucht hat. Wenn ich herausfinden will, weshalb er hierherkam und was er über seinen Fluch wusste, muss ich den Tempel finden.~
 

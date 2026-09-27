@@ -198,5 +198,5 @@ THEN
 	RESPONSE #100
 		SetGlobal("AC#_Dragon_Warning","ACIL71",1)
 		Wait(3)
-                DisplayString(Player1,@121)
+        DisplayStringPoint([893.797],@121)
 END

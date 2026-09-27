@@ -19,13 +19,14 @@ END
 	END
 	
 		IF ~~ THEN BEGIN the_sssleeper
-		SAY ~Jaaa... der Ssschläfer. Unssser Gott!~
+		SAY ~Jaaa... der Ssschläfer. Kalzzzareinad. Unssser Gott!~
 		++ ~Hier ruht ein Gott?~ + the_sssleeper_02
+		++ ~Der Gott heißt Kalzareinad?~ + the_sssleeper_02
 		++ ~Aus Erfahrung kann ich Euch sagen, dass uralte Wesen nach dem Erwachen selten gute Laune haben.~ + the_sssleeper_bad_mood
 		END
 		
 			IF ~~ THEN BEGIN the_sssleeper_bad_mood
-			SAY ~Der Ssschläfer wartet auf unsss! Issst unssser Gott!~
+			SAY ~Der Ssschläfer Kalzzzareinad wartet auf unsss! Issst unssser Gott!~
 			++ ~Warum schläft er?~ + why_sssleeper
 			++ ~Dann hoffe ich für Euch, dass er nicht hungrig aufwacht.~ + sssleeper_hungry
 			END
@@ -49,12 +50,12 @@ END
 				END
 				
 				IF ~~ THEN BEGIN dragontemple
-				SAY ~Nein! Ihr dürft dorrrt nicccht hinein, niemand darrrf dort hinein - zzzu unssstet issst ssseine jetzzzige Form...~
+				SAY ~Nein! Ihr dürft dorrrt nicccht hinein, niemand darrrf dort hinein - zzzu unssstet issst Kalzzzareinadsss Form...~
 				++ ~Ich muss dort wirklich hinein.~ + need_to_go_there
 				END
 				
 					IF ~~ THEN BEGIN need_to_go_there
-					SAY ~Wir sssind die Wächter. Kehrt um, und Euch wird nichtsss geschehen. Tretet einen Sschritt näher, und Ihr werdet unssseren Zzzorn erwecken.~
+					SAY ~Wir sssind die Wächter. Kehrt um, und Euch wird nichtsss geschehen. Tretet einen Sschritt näher, und Ihr werdet unssseren Zzzorn erwecken. Niemand darf Kalzzzareinad ssstören!~
 					++ ~Ich muss dort hinein. Ob Euch das gefällt oder nicht.~ + skin
 					++ ~Ihr habt Eure Warnung ausgesprochen. Nun hört die meine: Geht mir aus dem Weg!~ + skin
 					++ ~Ich fürchte, das bringt nichts. Sagt, würde Eure Haut vielleicht als Tasche taugen?~ + skin
@@ -63,12 +64,13 @@ END
 				
 					IF ~~ THEN BEGIN i_am_gone
 					SAY ~Eine weissse Entssscheidung!~
-					IF ~~ THEN DO ~~  EXIT
+					IF ~~ THEN DO ~AddJournalEntry(@64302,QUEST)~  EXIT
 					END
 					
 					IF ~~ THEN BEGIN skin
 					SAY ~Ihr werdet ein würdigesss Opfer für unssseren Meissster sssein! Zzzu mir, meine Ssschergen, reisssen wir dem <RACE> ssseine zzzarte Haut vom Körper!~
 					IF ~~ THEN DO ~SetGlobal("Lizard_Attack","ACIL70",1)
+					AddJournalEntry(@64302,QUEST)
 					Enemy()~  EXIT
 					END	
 

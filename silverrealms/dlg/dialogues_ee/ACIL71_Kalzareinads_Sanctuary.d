@@ -156,7 +156,7 @@ END
 	END
 
 		IF ~~THEN BEGIN promise
-		SAY ~Bevor ich weiterspreche, muss ich Euch ein Versprechen abringen. Wir können einander helfen, <CHARNAME>. Ihr helft mir bei einer Angelegenheit, und ich werde Euch im Austausch alle Antworten geben, derer zu finden Ihr gekommen seid.~
+		SAY ~Bevor ich weiterspreche, möchte ich Euch einen Handel vorschlagen. Wir können einander helfen, <CHARNAME>. Ihr helft mir bei einer Angelegenheit, und ich werde Euch im Austausch alle Antworten geben, derer zu finden Ihr gekommen seid.~
 		++ ~Gut, ich werde Euch unterstützen.~ + 4
 		++ ~Ich kooperiere nicht mit bösen Wesen wie Euch!~ + dont_cooperate
 		++ ~Ihr seid nicht vertrauenserweckend.~ + dont_know_if_cooperate
@@ -183,7 +183,7 @@ END
 		END
 
 		IF ~~THEN BEGIN 6
-		SAY ~Kalzareinad ist der Drachengott der Magie. Einst war ich sein oberster Priester. Ich tat alles in meiner Macht stehende, um seine Gunst zu erlangen. Ich sammelte altes, verborgenes Wissen. Ich erschuf mächtige, dunkle Magie. Dies gefiel meinem Gott. Er belohnte mich mit Macht und Zaubern, um unsere Gegner zu vernichten.~
+		SAY ~Kalzareinad ist der uralte Drachengott der Magie. Ich war sein oberster Priester. Ich tat alles in meiner Macht stehende, um seine Gunst zu erlangen. Ich sammelte altes, verborgenes Wissen. Ich erschuf mächtige, dunkle Magie. Dies gefiel meinem Gott. Er belohnte mich mit Macht und Zaubern, um seine Gegner zu vernichten.~
 		IF ~~ THEN GOTO who_is_mithbarak
 		//IF ~~ THEN REPLY ~Ich wusste gar nicht, dass Drachen so viele eigene Götter haben.~ GOTO dragon_gods_question_01
 		END
@@ -204,7 +204,7 @@ END
 IF ~~THEN BEGIN 13
 SAY ~Zunächst solltet Ihr einmal wissen, wer Mith Barak in Wahrheit ist.~ 
 =
-~Mithbarakaz, wie sein voller Name eigentlich ist, ist ein ehrwürdiger alter Silberdrache.~
+~Mithbarakaz, wie sein voller Name eigentlich lautet, ist ein ehrwürdiger alter Silberdrache.~
 ++ ~Der Zwergenkönig ist in Wirklichkeit ein Drache?~ + 15
 ++ ~Ach!~ + 15
 ++ ~Das habe ich mir schon irgendwie gedacht.~ + 14
@@ -222,7 +222,7 @@ IF ~~ THEN GOTO 16
 END
 
 	IF ~~THEN BEGIN 16
-	SAY ~Aus für meinen Herrn triftigen Gründen wurde Mithbarakaz der Silberne von Kalzareinad mit einem Fluch belegt.~ 
+	SAY ~Aus für meinen Herrn triftigen Gründen wurde Mithbarakaz, der Silberne, von Kalzareinad mit einem Fluch belegt.~ 
 	=
 	~Kalzareinad hütete das Wissen um dunkle Drachenmagie und hatte eine Möglichkeit erforscht, das Leben von Drachen zu verlängern. Altersschwache, sterbende Drachen suchten in den letzten Stunden vor ihrem Tod diesen Ort auf in der Hoffnung, wieder zu alter Kraft zurückzufinden.~
 	IF ~~ THEN GOTO dracolich_failed
@@ -283,15 +283,17 @@ IF ~~ THEN GOTO 9
 END
 
 IF ~~THEN BEGIN 9
-SAY ~Ich bin der letzte treue Diener Kalzareinads. Zwei verfallene Tempel des einst mächtigen Hüters Dunkler Wunder sind geblieben, einer an der Schwertküste am Grabmal Tethirs, und der andere weit weg in Unther im Osten. Dort befindet Ihr Euch gerade dank des Portals, welches ich geöffnet habe.~
+SAY ~Ich bin der letzte treue Diener Kalzareinads. Zwei verfallene Tempel des einst mächtigen Hüters Dunkler Wunder sind geblieben, einer hier an der Schwertküste am Grabmal Tethirs, und der andere weit weg in Unther im Osten.~
 =
 ~Meine Pflicht ist es, diese beiden heiligen Stätten im Namen meines Gottes zu beschützen und an seiner statt zu führen.~
-++ ~Ihr sagtet, Euer Gott sei gestorben. Worum tut Ihr so, als würde ein Gott noch leben und beantwortet in seinem Namen die Fragen?~ + 10
+++ ~Ihr sagtet, Euer Gott sei gestorben. Warum tut Ihr so, als würde ein Gott noch leben und beantwortet in seinem Namen die Fragen?~ + 10
 ++ ~Ein sinnloses Unterfangen.~ + 10
 END
 
 IF ~~THEN BEGIN 10
-SAY ~Der Tod ist relativ. Wenn es möglich ist, eine der niederen Rassen von den Toten zurückzuholen, so könnte es auch möglich sein, eine verschwundene Gottheit aus ihrem ewigen Schlaf wiederzuerwecken. Meine Aufgabe ist, den Glauben an den Hüter dunkler Wunder aufrechtzuerhalten, damit er nicht in Vergessenheit gerät. Und Mithbarakaz war dabei mein Faustpfand. Er hatte ebensoviel Interesse daran, Kalzareinads Macht zurückzubringen wie ich!~
+SAY ~Der Tod ist relativ. Wenn es möglich ist, eine der niederen Rassen von den Toten zurückzuholen, so könnte es auch möglich sein, eine verschwundene Gottheit aus ihrem ewigen Schlaf wiederzuerwecken. Meine Aufgabe ist, den Glauben an den Hüter dunkler Wunder aufrechtzuerhalten, damit er nicht in Vergessenheit gerät.~
+=
+~Und Mithbarakaz war dabei mein Faustpfand. Er hatte ebensoviel Interesse daran, Kalzareinads Macht zurückzubringen wie ich!~
 =
 ~Wenn die Anbeter zu ihrem alten Glauben zurückfänden, würde der göttliche Lebensfunke meines Herrn aufs Neue zu leuchten beginnen. Man muss den Funken nur zum Glühen bringen, indem man ihm wieder etwas göttlichen Atem einhaucht.~
 =
@@ -333,7 +335,7 @@ END
 			END
 			
 				IF ~~THEN BEGIN travel_to_astralplane
-				SAY ~Genau dies hatte auch Mithbarakaz vor. Er wusste nur nicht, wo sich Kalzareinads Körper befindet. Dies kann ich Euch sagen. Es ist wahrscheinlich, dass sich Mithbarakaz vor seinem Verschwinden dort aufgehalten hat. Denn über eines haben wir noch nicht gesprochen - warum er nicht mehr wie sonst aus seinem Schlaf in Iltkazar wieder erwacht ist.~
+				SAY ~Genau dies hatte auch Mithbarakaz vor. Er wusste nur nicht, wo auf der Astralebene sich Kalzareinads Körper befindet. Dies kann ich Euch sagen. Es ist wahrscheinlich, dass sich Mithbarakaz vor seinem Verschwinden dort aufgehalten hat. Denn über eines haben wir noch nicht gesprochen - warum er nicht mehr wie sonst aus seinem Schlaf in Iltkazar wieder erwacht ist.~
 				IF ~~ THEN GOTO why_mith_didnot_came_back
 				END
 				
@@ -353,7 +355,8 @@ END
 						
 						IF ~~THEN BEGIN tiamat_02
 						SAY ~Wahrscheinlich seid Ihr schon einigen von Tiamats Schergen begegnet. Sie schickt gerne ihre Horden von Abishai aus den unteren Ebenen, wenn es eine ehrlose Schlacht zu schlagen gilt! Angeführt werden sie meist von einer Kreatur, deren Aussehen erbärmlicher nicht sein könnte: Malphas, das rabengesichtige Scheusal.~
-						IF ~~ THEN REPLY ~Malphas! Diesem Wesen bin ich schon einmal begegnet!~ + malphas_01
+						IF ~~ THEN REPLY ~Malphas? Vielleicht bin ich diesem Wesen schon einmal begegnet.~ + malphas_01
+						IF ~~ THEN REPLY ~Falls es mir schon einmal begegnet ist, dürfte es sich vermutlich ebenso gut an mich erinnern.~ + malphas_01
 						END
 									
 										IF ~~ THEN BEGIN malphas_01

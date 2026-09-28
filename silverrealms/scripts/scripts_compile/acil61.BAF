@@ -50,18 +50,18 @@ THEN
                 AmbientActivate("Waterspray_start",FALSE)
 END
 
-/*
+
 IF
 	Global("AC#SorniQuest","ACIL61",1)
 	Global("MapNotes","ACIL61",0)
 THEN
 	RESPONSE #100
 		SetGlobal("MapNotes","ACIL61",1)
-		AddMapNote([1300.449],999999)
-		AddMapNote([1624.681],999999)
-		AddMapNote([1922.927],999999)
+		AddMapNote([1300.449],@109)
+		AddMapNote([1624.681],@109)
+		AddMapNote([1922.927],@109)
 END
-*/
+
 IF
 	GlobalGT("AC#SorniQuest","ACIL61",19)		
 	Global("Hall_Explodes","ACIL61",0)

@@ -14,7 +14,7 @@ END
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN 1
 SAY  ~Los, schnell zum Aufzug! Die Halle beginnt einzustürzen, und wenn wir den Aufzug nicht erreichen, sind wir alle verloren! Ich hoffe, Bresk ist schon dort und wartet auf uns.~
    IF ~~ THEN DO ~SetGlobal("AC#SorniEscape","GLOBAL",1)
-   AddJournalEntry(@61014,QUEST)~  EXIT
+   AddJournalEntry(@61014,QUEST_DONE)~  EXIT
 END
 
 IF ~Global("AC#SorniEscape","GLOBAL",3)~ THEN BEGIN 4
@@ -37,7 +37,21 @@ END
 IF ~~THEN BEGIN 2
 SAY ~Verdammt! Er wollte sich doch hier mit uns treffen!~
 ++ ~Ich werde nach ihm suchen. Wartet hier.~ + 3
+++ ~Ich sehe nach, ob ich eine Spur von ihm finde.~ + 3
+++ ~Was kümmert uns Bresk? Wir sollten unsere eigene Haut retten.~ + no_bresk
 END
+
+	IF ~~ THEN BEGIN no_bresk
+	SAY ~Bei Moradins Hammer... ich will ihn nicht hier zurücklassen. Aber wenn wir bleiben, riskieren wir nur weitere Leben...~
+	++ ~Ich werde nach ihm suchen. Wartet hier.~ + 3
+	++ ~Ich sehe nach, ob ich eine Spur von ihm finde.~ + 3
+	++ ~Gehen wir nach oben, schnell! Wenn er es nicht selbst geschafft hat, können wir ihm auch nicht mehr helfen.~ + no_bresk_final
+	END
+	
+		IF ~~ THEN BEGIN no_bresk_final
+		SAY ~Verdammt... Ihr habt recht. Wenn die Halle weiter nachgibt, hilft es niemandem, wenn wir hier alle unter den Trümmern enden. Wir gehen nach oben – jetzt! Betretet den Aufzug, schnell!~
+		IF ~~ THEN DO ~SetGlobal("AC#SorniEscape","GLOBAL",3)~ EXIT
+		END
 
 IF ~~THEN BEGIN 3
 SAY ~Das ist sehr ehrenhaft von Euch. Aber wir haben nicht viel Zeit! Wenn die Azerkyn-Halle unter dem Druck des Wassers zusammenstürzt, wird auch in dieser Ebene alles in sich zusammenbrechen. Leider kann ich nicht sagen, wo er sich befinden könnte. Sucht bitte rasch nach ihm, ich werde hier warten und den Aufzug in Betrieb halten.~

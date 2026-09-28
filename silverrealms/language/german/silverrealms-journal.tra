@@ -482,7 +482,7 @@ Ich habe das Erz in der Azerkyn-Halle wieder geordnet. Vielleicht habe ich den E
 
 @61010  = ~Angriff auf Iltkazar
 
-Die Scheusale strömen aus einem Portal in die Azerkyn-Halle. Sorni möchte die gesamte Halle einstürzen lassen, um das Portal zu verschließen. Ich soll im ersten Schritt die drei Hochöfen mit Anthrazit befeuern.~
+Die Scheusale strömen aus einem Portal in die Azerkyn-Halle. Sorni möchte die gesamte Halle einstürzen lassen, um das Portal zu verschließen. Ich soll im ersten Schritt die drei nördlichen Hochöfen mit Anthrazit befeuern.~
 @61011  = ~Angriff auf Iltkazar
 
 Um die Explosion auszulösen, muss das Wasser auf die überhitzten Hochöfen treffen. Ich muss das Wassertor im Norden öffnen und sollte dann schleunigst die Beine in die Hand nehmen.~
@@ -724,7 +724,7 @@ Ich habe im Inneren des alten Drachentempels zwölf angebrannte Sockel entdeckt.
 Ich habe mithilfe eines alten Rituals Kontakt zu einem Diener der Gottheit aufgenommen, die Mith Barak verflucht hatte. Sein Name war Maldraedior.~
 @71100  = ~Der Schlafende König
 
-Ich fasse mich kurz: König Mith Barak ist in Wahrheit ein verfluchter Silberdrache. Der Gott Kalzareinad, der den Fluch ausgesprochen hat, treibt tot in der Astralebene. Dort scheint auch Mithbarakaz gefangen zu sein. Ich muss ein Portal in die Astralebene finden und dort Kalzareinads Körper aufsuchen, um herauszufinden, wo sich Mithbarakaz gerade aufhält. Ich bin gespannt, wie die Zwerge Iltkazars auf diesen Neuigkeiten reagieren werden.~
+Ich fasse mich kurz: König Mith Barak ist in Wahrheit ein verfluchter Silberdrache. Der Gott Kalzareinad, der den Fluch ausgesprochen hat, treibt tot in der Astralebene. Dort scheint auch Mithbarakaz gefangen zu sein. Ich muss ein Portal in die Astralebene finden und dort Kalzareinads Körper aufsuchen, um herauszufinden, wo sich Mithbarakaz gerade aufhält. Ich bin gespannt, wie die Zwerge Iltkazars auf diese Neuigkeiten reagieren werden.~
 
 //___________________________Kalzareinads Herz
 @79500  = ~Kalzareinads Herz
@@ -835,6 +835,10 @@ Vronia möchte mich außerdem vor dem Ratsgebäude sprechen. Sie scheint eine Id
 @99511 = ~Der Schlafende König
 
 In den Erinnerungen, die Mith Barak mit dem Ältestenhirn geteilt hat, fand sich ein Hinweis auf einen Ort an der Oberfläche, an dem der Zwergenkönig einst versucht hat, seinen Fluch zu lösen. Offenbar ist dieser Ort in einem Buch verzeichnet, das sich nicht in Iltkazars großer Bibliothek befindet. Ich soll dennoch zunächst Bettargh Abgrundlied in der Halle der Runensteine aufsuchen. Vielleicht weiß er, um welches Werk es sich handelt – und wo es andernorts in Iltkazar verwahrt wird.~
+
+@99520 = ~Der Schlafende König
+
+Der Angriff auf Iltkazar ist abgewehrt. Die Überlebenden haben sich im Thronsaal versammelt und warten darauf, dass ich ihnen berichte, was ich über Mith Barak und das Geheimnis seines Schlafes herausgefunden habe.~
 
 //__________________________alt:_Der Drachenfriedhof
 @64100  = ~Der Schlafende König

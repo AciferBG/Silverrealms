@@ -10,6 +10,9 @@ BEGIN ~AC#DUN03~
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN 1
 SAY  ~Bei den Göttern! Wir haben das Getöse im Ratssaal gehört und sind hierher geeilt. Was zum Teufel ist hier passiert? Seid Ihr wohlauf?~
 ++ ~Mir geht es gut. Wir haben das Portal verschlossen, indem wir die Halle zum Einsturz gebracht haben.~ + 2
+//++ ~Wir haben das Portal geschlossen, die Halle zerstört und vermutlich gleich mehrere Generationen zwergischer Baukunst begraben. Ein voller Erfolg.~ + 2
+++ ~Ein Teil der Stadt liegt in Trümmern, ich bin voller Staub, und das Portal ist zu. Ich würde sagen: Gut gemacht!~ + 2
+++ ~Sehe ich aus, als wäre alles gut gelaufen, nachdem mir die Schmiede um die Ohren geflogen ist? Aber das Portal ist verschwunden. Das zählt doch wohl.~ + 2
 END
 
 IF ~~ THEN BEGIN 2
@@ -31,10 +34,13 @@ END
 	IF ~~ THEN BEGIN 4
 	   SAY ~Aber- aber ich kann doch meinen geliebten Sohn nicht in diesem - diesem Grab wähnen und hier oben untätig herumstehen!~
 	IF ~~ THEN REPLY ~Ihr habt auch noch eine Verantwortung für die Bewohner dieser Stadt, Dunnabar. Sie brauchen noch Eure Hilfe.~ EXTERN ~AC#SORN3~ 5
+	IF ~~ THEN REPLY ~Wenn Ihr jetzt hinuntergeht, könnte Iltkazar am Ende zwei Steinschulter betrauern müssen.~ EXTERN ~AC#SORN3~ 5
+	IF ~~ THEN REPLY ~Bresk würde vermutlich selbst von Euch verlangen, hierzubleiben und Eure Pflicht zu tun.~ EXTERN ~AC#SORN3~ 5
+	IF ~~ THEN REPLY ~Euer Sohn ist vielleicht verloren. Die Stadt ist es noch nicht.~ EXTERN ~AC#SORN3~ 5
 	END
 
 	IF ~~ THEN BEGIN 5
-	   SAY ~Ihr habt vermutlich Recht. Meine Pflicht liegt hier oben in der Stadt.~
+	   SAY ~Bei Gorm... es zerreißt mich, ihn dort unten zurückzulassen! Aber meine Pflicht endet nicht bei meinem eigenen Blut. Iltkazar braucht mich. Meine Pflicht liegt hier oben in der Stadt.~
 	   IF ~~ GOTO 15
 	END
 
@@ -71,6 +77,7 @@ END
 IF ~~ THEN BEGIN 18
    SAY ~Lasst uns hier nicht zu lange verweilen. Kehren wir zum Thronsaal zurück. <CHARNAME>, stoßt im Thronsaal zu uns und berichtet uns alles, was sich in den Landen des Lichts zugetragen hat.~
    IF ~~ THEN DO ~SetGlobal("BreskPostMoves01","ACIL50",1)
+   AddJournalEntry(@99520,QUEST)
    ActionOverride("AC#SORN3",EscapeArea())
    ActionOverride("AC#ANT03",EscapeArea())
    EscapeAreaObject("TrACIL63")~ EXIT
@@ -109,7 +116,7 @@ IF ~~ THEN EXTERN ~AC#DUN03~ 4
 END
 
 IF ~~ THEN BEGIN 5
-SAY ~So schrecklich es auch klingen mag, <CHARNAME> hat Recht. Wir müssen hier nach dem Rechten sehen und die Überlebenden um uns scharen.?~
+SAY ~So schrecklich es auch klingen mag, <CHARNAME> hat Recht. Wir müssen hier nach dem Rechten sehen und die Überlebenden um uns scharen!~
 IF ~~ THEN EXTERN ~AC#DUN03~ 5
 END
 

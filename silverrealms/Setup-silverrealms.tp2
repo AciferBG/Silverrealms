@@ -559,7 +559,62 @@ COPY ~silverrealms/bam/bam_desc_BG2EE/AC#ILASD.bam~ ~override~  //    astral shi
  LAF INSTALL_PVRZ INT_VAR original_base_index new_base_index STR_VAR source_file = ~silverrealms/bam/bam_desc_BG2EE/MOS1062.pvrz~
  END
  END
+ 
+ COPY ~silverrealms/bam/bam_desc_BG2EE/AC#ILCD8.bam~ ~override~  //    malphas' cloak desc
+ LPF UPDATE_PVRZ_INDICES RET original_base_index new_base_index END
+ ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN 
+ LAF INSTALL_PVRZ INT_VAR original_base_index new_base_index STR_VAR source_file = ~silverrealms/bam/bam_desc_BG2EE/MOS1063.pvrz~
+ END
+ END
+ 
+ COPY ~silverrealms/bam/bam_desc_BG2EE/AC#BELD9.bam~ ~override~  //    girdle lions desc
+ LPF UPDATE_PVRZ_INDICES RET original_base_index new_base_index END
+ ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN 
+ LAF INSTALL_PVRZ INT_VAR original_base_index new_base_index STR_VAR source_file = ~silverrealms/bam/bam_desc_BG2EE/MOS1064.pvrz~
+ END
+ END
+ 
+ COPY ~silverrealms/bam/bam_desc_BG2EE/AC#S#BTD.bam~ ~override~  //    book tethir desc
+ LPF UPDATE_PVRZ_INDICES RET original_base_index new_base_index END
+ ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN 
+ LAF INSTALL_PVRZ INT_VAR original_base_index new_base_index STR_VAR source_file = ~silverrealms/bam/bam_desc_BG2EE/MOS1065.pvrz~
+ END
+ END
+ 
+ COPY ~silverrealms/bam/bam_desc_BG2EE/AC#IL52D.bam~ ~override~  //    haelas amulet desc
+ LPF UPDATE_PVRZ_INDICES RET original_base_index new_base_index END
+ ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN 
+ LAF INSTALL_PVRZ INT_VAR original_base_index new_base_index STR_VAR source_file = ~silverrealms/bam/bam_desc_BG2EE/MOS1066.pvrz~
+ END
+ END
+ 
+ COPY ~silverrealms/bam/bam_desc_BG2EE/AC#AXTUD.bam~ ~override~  //    Turbolds axe desc
+ LPF UPDATE_PVRZ_INDICES RET original_base_index new_base_index END
+ ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN 
+ LAF INSTALL_PVRZ INT_VAR original_base_index new_base_index STR_VAR source_file = ~silverrealms/bam/bam_desc_BG2EE/MOS1067.pvrz~
+ END
+ END
 
+ COPY ~silverrealms/bam/bam_desc_BG2EE/AC#IL95D.bam~ ~override~  //    wheel desc
+ LPF UPDATE_PVRZ_INDICES RET original_base_index new_base_index END
+ ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN 
+ LAF INSTALL_PVRZ INT_VAR original_base_index new_base_index STR_VAR source_file = ~silverrealms/bam/bam_desc_BG2EE/MOS1068.pvrz~
+ END
+ END
+ 
+ COPY ~silverrealms/bam/bam_desc_BG2EE/AC#ILAD2.bam~ ~override~  //    amulet of gem detection desc
+ LPF UPDATE_PVRZ_INDICES RET original_base_index new_base_index END
+ ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN 
+ LAF INSTALL_PVRZ INT_VAR original_base_index new_base_index STR_VAR source_file = ~silverrealms/bam/bam_desc_BG2EE/MOS1069.pvrz~
+ END
+ END
+ 
+ COPY ~silverrealms/bam/bam_desc_BG2EE/AC#DWF3D.bam~ ~override~  //    fever iron plate mail desc
+ LPF UPDATE_PVRZ_INDICES RET original_base_index new_base_index END
+ ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN 
+ LAF INSTALL_PVRZ INT_VAR original_base_index new_base_index STR_VAR source_file = ~silverrealms/bam/bam_desc_BG2EE/MOS1070.pvrz~
+ END
+ END
 ///////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
 // add Music files

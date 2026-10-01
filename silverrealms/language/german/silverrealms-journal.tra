@@ -684,11 +684,7 @@ Um die Verzauberung der Drow-Schwebescheibe zu erneuern, muss ich die Scheibe mi
 
 Ich habe die Schwebescheibe hergestellt. Nun kann ich sie am Boden des Schachtes benutzen, den ich von der Oberfläche herabgeschwebt bin.~
 
-//___________________________Torglor, das Silberkönigreich
-@64900  = ~Torglor, das Silberkönigreich
-
-So langsam erreicht die Suche nach Mith Barak ihren Höhepunkt. Ich werde mich in das alte Zwergenkönigreich Torglor nach Norden durchschlagen müssen. Mit etwas Glück finde ich dort ein Portal in die Astralebene, mit etwas Pech auch die Githyanki, die sich dort niedergelassen haben könnten.~
-//___________________________Torglor, das Silberkönigreich
+//___________________________Angriff auf Iltkazar
 @66000  = ~Angriff auf Iltkazar
 
 Iltkazar wird angegriffen. Hathar hält vor den Toren die Stellung und bat mich, in der Stadt die kämpfenden Zwerge zu unterstützen.~
@@ -867,4 +863,9 @@ Ich habe die Stadt verlassen. Die Tore sind verschlossen, und mein Weg wird mich
 @64302 = ~Der Schlafende König
 
 Ich bin am Drachenfriedhof angekommen. Irgendwo an diesem Ort soll sich ein uralter Tempel befinden, der einer vergessenen Drachengottheit namens Kalzareinad geweiht ist. Alles deutet darauf hin, dass Mith Barak genau diesen Tempel gesucht hat. Wenn ich herausfinden will, weshalb er hierherkam und was er über seinen Fluch wusste, muss ich den Tempel finden.~
+
+//___________________________alt: Torglor, das Silberkönigreich
+@64900  = ~Der Schlafende König
+
+So langsam erreicht die Suche nach Mith Barak ihren Höhepunkt. Ich werde mich in das alte Zwergenkönigreich Torglor nach Norden begeben müssen. Mit etwas Glück finde ich dort ein Portal in die Astralebene, mit etwas Pech auch die Githyanki, die sich dort niedergelassen haben könnten.~
 

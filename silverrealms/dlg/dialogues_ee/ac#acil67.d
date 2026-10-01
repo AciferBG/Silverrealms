@@ -19,13 +19,17 @@ END
 
 IF ~Global("AC#SorniEscape","GLOBAL",3)~ THEN BEGIN 4
 SAY  ~Habt Ihr Bresk schon gefunden?~
+   IF ~PartyHasItem("AC#67POT")~ THEN REPLY ~Ich habe hier diesen Schmelztiegel gefunden. Vielleicht kann ich damit Bresk zu uns herüberbringen.~ GOTO sorni_pot_01
    IF ~Global("AC#BreskEscape","GLOBAL",1)~ THEN REPLY ~Bresk sitzt in der zusammengestürzten Schmiedehalle fest. Wir müssen irgendwie versuchen, an ein Seil oder ähnliches zu gelangen, damit wir es ihm zuwerfen können.~ + 5
    IF ~~ THEN REPLY ~Ich konnte ihn noch nicht finden.~ + 6
+   IF ~~ THEN REPLY ~Uns bleibt keine Zeit mehr für die Suche. Lasst uns schleunigst diesen Ort verlassen!~ + no_bresk
 //   IF ~Global("AC#BreskEscape","GLOBAL",1)~ THEN REPLY ~Bresk ist tot. Wir sollten rasch an die Oberfläche gehen.~ + 5
 END
 
 IF ~~THEN BEGIN 5
-SAY ~Ein Seil? Wir haben Ketten in den Schmiederäumen, um die großen Hämmer zu justieren. Das wird aber kaum ausreichen. Ich muss mich hier um die anderen Fliehenden kümmern. Bitte, beeilt Euch!~
+SAY ~Ein Seil? Wir haben Ketten in den Schmiederäumen, um die großen Hämmer zu justieren. Das wird aber kaum ausreichen...~
+=
+~Vielleicht findet Ihr in einer der Schmiedekammern etwas Nützliches, mit welchem Ihr Bresk zu Euch herüberziehen könntet. Ich muss mich hier um die anderen Fliehenden kümmern. Bitte, beeilt Euch und sucht nach einer Lösung!~
    IF ~~ THEN EXIT
 END
 
@@ -34,11 +38,17 @@ SAY ~Dann sucht bitte weiter! Aber beeilt Euch - wir haben nicht mehr viel Zeit.
    IF ~~ THEN EXIT
 END
 
+IF ~~THEN BEGIN sorni_pot_01
+SAY ~Eine hervorragende Idee! Aber beeilt Euch - wir haben nicht mehr viel Zeit.~
+   IF ~~ THEN EXIT
+END
+
 IF ~~THEN BEGIN 2
 SAY ~Verdammt! Er wollte sich doch hier mit uns treffen!~
 ++ ~Ich werde nach ihm suchen. Wartet hier.~ + 3
 ++ ~Ich sehe nach, ob ich eine Spur von ihm finde.~ + 3
 ++ ~Was kümmert uns Bresk? Wir sollten unsere eigene Haut retten.~ + no_bresk
+++ ~Uns bleibt keine Zeit mehr für eine Suche. Lasst uns schleunigst diesen Ort verlassen!~ + no_bresk
 END
 
 	IF ~~ THEN BEGIN no_bresk
@@ -105,6 +115,9 @@ SAY  ~<CHARNAME>! Bringt Euch in Sicherheit! Die Zeit wird knapp, sonst seid Ihr
 IF ~~ THEN REPLY ~Bresk! Wir haben Euch überall gesucht. Könnt Ihr zu uns herüber kommen?~ + 2
 IF ~~ THEN REPLY ~Und was wird aus Euch?~ + what_about_you
 IF ~PartyHasItem("AC#67POT")~ THEN REPLY ~Ich habe hier einen Schmelztiegel gefunden. Meint Ihr, Ihr könntet an dessen Stange zu mir herüberklettern?~ GOTO potplot_01
+IF ~~ THEN REPLY ~Keine Sorge. Ich hatte ohnehin nicht vor, Euch hier herauszuholen.~ + bye
+IF ~~ THEN REPLY ~Wenn Ihr mich ganz lieb darum bittet, überlege ich mir vielleicht noch, Euch zu retten.~ + what_about_you
+IF ~~ THEN REPLY ~Ihr habt recht. Ich rette lieber meine eigene Haut. Viel Glück noch.~ + bye
 END
 
 IF ~~THEN BEGIN 2

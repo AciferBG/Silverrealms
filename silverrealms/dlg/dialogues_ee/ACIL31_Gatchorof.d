@@ -73,8 +73,7 @@ END
 IF ~~ THEN BEGIN 4
 SAY ~Es wird Zeit, Eure frechen Mäuler zu stopfen! Meine Hauptmänner werden Euch die Haut abziehen und mir daraus ein Paar Stiefel machen! Soldaten, zeigt diesem <RACE>, weshalb die Githyanki über die ganzen Ebenen hinweg so gefürchtet sind!~
 IF ~~ THEN DO
-   ~EraseJournalEntry(@64900)
-   ForceSpell(Myself,DRYAD_TELEPORT)
+   ~ForceSpell(Myself,DRYAD_TELEPORT)
 ~EXIT
 END
 

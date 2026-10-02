@@ -44,6 +44,18 @@ THEN
 END
 
 IF
+    InMyArea(Player1)
+    Global("MalphasCutsceneTiamat","ACIL63",0)
+    GlobalGT("Mith_Dragon","ACIL64",2)
+THEN
+    RESPONSE #100
+        FadeToColor([8.0],0)
+        SetGlobal("MalphasCutsceneTiamat","ACIL63",1)
+        StartCutSceneMode()
+        StartCutScene("AC#2TCT5")
+END
+
+IF
     Global("AC#Goapspawn","GLOBAL",1)
 THEN
     RESPONSE #100

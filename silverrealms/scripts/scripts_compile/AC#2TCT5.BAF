@@ -1,0 +1,19 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player1)
+        LeaveAreaLUAPanic("ACIL2T","",[6.948],S)
+        LeaveAreaLUA("ACIL2T","",[6.948],NW)
+        MultiPlayerSync()
+        MoveViewPoint([1539.1297],INSTANT)
+        CreateCreature("AC#5TTIA",[480.306],NW)  // Herrin
+        CreateCreature("AC#MAL5T",[847.761],NW)  // Malphas
+        ActionOverride("AC#MAL5T",MoveToPoint([600.499]))
+        MoveViewPoint([480.306],100)
+        SmallWait(5)
+        FadeFromColor([30.0],0)
+        Wait(4)
+        ActionOverride("AC#MAL5T",StartDialogueNoSet(Player1))
+END
+

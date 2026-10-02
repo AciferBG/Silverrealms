@@ -1,5 +1,5 @@
 /*******************************************************************************************************
-Dialogue in sewers
+Dialogue in Tiamats prison 1st time
 *******************************************************************************************************/
 
 // Tiamat
@@ -7,8 +7,6 @@ BEGIN ~AC#2TTIA~
 
 //Malphas
 BEGIN ~AC#MAL2T~
-
-
 
 
 CHAIN IF ~NumTimesTalkedTo(0)~ THEN AC#MAL2T hello
@@ -32,4 +30,34 @@ CHAIN IF ~NumTimesTalkedTo(0)~ THEN AC#MAL2T hello
 						StartCutScene("AC#2TCT2")~ EXIT
 						
 						
-//
+/*******************************************************************************************************
+Dialogue in Tiamats prison 2nd time
+*******************************************************************************************************/
+
+// Tiamat
+BEGIN ~AC#5TTIA~
+
+//Malphas
+BEGIN ~AC#MAL5T~
+						
+CHAIN IF ~NumTimesTalkedTo(0)~ THEN AC#MAL5T hello
+~Herrin... der Angriff auf Iltkazar ist gescheitert.~
+== AC#5TTIA ~Gescheitert?~
+== AC#MAL5T ~Die Zwerge haben sich erbitterter gewehrt, als wir erwartet hatten. Goap ist gefallen. Auch seine Diener wurden vernichtet.~
+== AC#5TTIA ~Ihr wollt mir sagen, dass mein General von einigen Zwergen bezwungen wurde?~
+== AC#MAL5T ~Nicht nur von den Zwergen, Herrin. <CHARNAME> war dort, <PRO_HESHE> hat ihnen geholfen.~
+== AC#5TTIA ~Natürlich. Immer wieder dieser Name.~
+== AC#MAL5T ~Die Zwerge haben schließlich die Schmiedehalle zum Einsturz gebracht. Der Zugang durch ihre Öfen ist verschüttet. Auf diesem Wege werden wir Iltkazar nicht erneut erreichen.~
+== AC#5TTIA ~Dann habt Ihr nicht nur meinen General verloren, sondern auch noch den einzigen Zugang, den Ihr in die Stadt geschaffen habt. Erbärmlich, Malphas.~
+== AC#MAL5T ~Verzeiht, Herrin. Aber noch ist nichts verloren. Das einzige Portal in erreichbarer Nähe, das <CHARNAME> näher an unseren Gefangenen bringen könnte, befindet sich in Torglor. Und Torglor wird von den Githyanki gehalten. Sie sind unsere Verbündeten.~
+== AC#5TTIA ~Ihr habt <CHARNAME> bereits unterschätzt. Tut es nicht noch einmal.~
+== AC#MAL5T ~Gewiss, Herrin.~
+== AC#5TTIA ~Das will ich hoffen. Oder habt Ihr vergessen, weshalb Ihr mir dient?~
+== AC#MAL5T ~Nein, Herrin.~
+== AC#5TTIA ~Seht an Euch herab, Malphas. Betrachtet, was aus Euch geworden ist. Euer Fluch wird erst enden, wenn meine Ketten gebrochen sind und ich wieder frei bin. Oder gefällt Euch diese erbärmliche Gestalt inzwischen so sehr, dass Ihr sie bis in alle Ewigkeit behalten wollt?~
+== AC#MAL5T ~Nein, Herrin. Ich werde Euch befreien.~
+== AC#5TTIA ~Dann sorgt dafür, dass der verfluchte Silberne die Astralebene nicht verlässt! Und dass <CHARNAME> ihn niemals erreicht!~
+== AC#MAL5T ~Jawohl, Herrin.~
+END
+IF ~~ THEN DO ~StartCutSceneMode()
+StartCutScene("AC#2TCT6")~ EXIT

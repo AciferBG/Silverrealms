@@ -35,9 +35,9 @@ BEGIN ~AC#STURV~
 
 	IF ~~ THEN BEGIN why_hostage
 	SAY ~Von wem wurde unser König eigentlich verflucht?~
-	IF ~~ THEN REPLY ~Mithbarakaz, wie Euer König eigentlich heißt, schien über mächtiges Wissen zu verfügen und deshalb auch von einem anderen Gott seiner Art, Kalzareinad, verflucht worden zu sein.~ EXTERN ~AC#VRONI~ kalazareinad_01
-	IF ~~ THEN REPLY ~Wenn Ihr einen Namen wollt: Kalzareinad. Wenn Ihr einen Grund wollt: Den weiß ich auch nicht. Aber Kalzareinads Fluch hatte Wirkung.~ EXTERN ~AC#VRONI~ kalazareinad_01
-	IF ~~ THEN REPLY ~Der Drachengott Kalzareinad hat ihn verflucht. Warum genau? Das müsstet ihr ihn schon selbst fragen.~ EXTERN ~AC#VRONI~ kalazareinad_01
+	IF ~~ THEN REPLY ~Von einem anderen Drachengott namens Kalzareinad.~ EXTERN ~AC#VRONI~ kalazareinad_01
+	IF ~~ THEN REPLY ~Wenn Ihr einen Namen wollt: Kalzareinad. Wenn Ihr einen Grund wollt: Den weiß ich auch nicht. Aber Kalzareinads Fluch zeigt Wirkung.~ EXTERN ~AC#VRONI~ kalazareinad_01
+	IF ~~ THEN REPLY ~Der Drachengott Kalzareinad hat ihn verflucht. Warum? Das müsstet ihr ihn schon selbst fragen.~ EXTERN ~AC#VRONI~ kalazareinad_01
 	END
 	
 BEGIN ~AC#FENYL~
@@ -56,7 +56,7 @@ BEGIN ~AC#TURBA~
 		END
 
 	IF ~~ THEN BEGIN stealthy_travel
-	SAY ~Es gibt Zauber, um die Astralebene zu bereisen, aber ich bezweifle, dass wir mit einer unserer Kompanien bei so einem Unterfangen Erfolg haben könnten.~
+	SAY ~Es gibt Zauber, um die Astralebene zu bereisen, aber ich bezweifle, dass wir mit so einem Unterfangen Erfolg hätten.~
 	IF ~~ THEN REPLY ~Wir können auch nicht durch einen Zauber, sondern nur durch ein Portal in diese Ebene reisen.~ EXTERN ~AC#BETTA~ chain_torglor_01
 	END
 	
@@ -64,19 +64,19 @@ BEGIN ~AC#VRONI~
 
 	IF ~~ THEN BEGIN mith_hostage
 	SAY ~Wenn ich mir die ganzen Verwüstungen in der Halle des Regentschaftsrates ansehe, vermute ich, dass es etwas mit dem fünfköpfigen Drachensymbol Tiamats zu tun hat, welches sich in unseren Runenboden gebrannt hat, um die Schutzzauber zu umgehen.~
-	IF ~~ THEN REPLY ~In der Tat ist Euer König wohl in die Fänge von Malphas, eines Dieners von Tiamat, der Herrin der bösen Drachen, geraten.~ EXTERN ~AC#ELERN~ dragon_attack_beldas
+	IF ~~ THEN REPLY ~In der Tat ist Euer König wohl in die Fänge von Malphas, einem Diener Tiamats, Herrin der bösen Drachen, geraten.~ EXTERN ~AC#ELERN~ dragon_attack_beldas
 	IF ~~ THEN REPLY ~Das Symbol gehört Tiamat. Und Malphas, einer ihrer Diener, scheint Mith Barak in seiner Gewalt zu haben.~ EXTERN ~AC#ELERN~ dragon_attack_beldas
-	IF ~~ THEN REPLY ~Offenbar wollte Tiamat sicherstellen, dass selbst der Letzte versteht, wer dahintersteckt und hat sich in Eurer Stadt mit ihrem Zeichen verewigt.~ EXTERN ~AC#ELERN~ dragon_attack_beldas
-	IF ~~ THEN REPLY ~Euer König hat sich ausgerechnet mit den Dienern Tiamats, Herrin der bösen Drachen, angelegt.~ EXTERN ~AC#ELERN~ dragon_attack_beldas
-	IF ~~ THEN REPLY ~Kurz gesagt: Mith Barak steckt in Schwierigkeiten, Malphas steckt dahinter, und Tiamat, die Drachengöttin, steht über ihm. Einfacher wird es leider nicht.~ EXTERN ~AC#ELERN~ dragon_attack_beldas
+	IF ~~ THEN REPLY ~Tiamat wollte sicherstellen, dass selbst der Letzte versteht, wer dahintersteckt und hat sich in Eurer Stadt mit ihrem Zeichen verewigt.~ EXTERN ~AC#ELERN~ dragon_attack_beldas
+	IF ~~ THEN REPLY ~Euer König hat sich anscheinend mit Dienern Tiamats, Herrin der bösen Drachen, angelegt.~ EXTERN ~AC#ELERN~ dragon_attack_beldas
+	//IF ~~ THEN REPLY ~Kurz gesagt: Mith Barak steckt in Schwierigkeiten, Malphas steckt dahinter, und Tiamat, die Drachengöttin, steht über ihm. Einfacher wird es leider nicht.~ EXTERN ~AC#ELERN~ dragon_attack_beldas
 	END
 	
 	IF ~~ THEN BEGIN kalazareinad_01
-	SAY ~Warum hat unser König... dieser Silberdrache denn nicht versucht, diesen Fluch, der auf ihm lastet, zu bannen?~
+	SAY ~Warum hat unser König, der Silberdrache, nicht versucht, diesen Fluch zu bannen?~
 	//IF ~~ THEN REPLY ~Weil der Drachengott, der ihm das angetan hat, leider gestorben ist, bevor er den Fluch aufheben konnte.~ EXTERN ~AC#BETTA~ kalzareinad_02
 	IF ~~ THEN REPLY ~Kalzareinad starb, bevor er den Fluch wieder lösen konnte.~ EXTERN ~AC#BETTA~ kalzareinad_02
-	IF ~~ THEN REPLY ~Mit Kalzareinads Tod verschwand offenbar auch die Möglichkeit, den Fluch aufzuheben.~ EXTERN ~AC#BETTA~ kalzareinad_02
-	IF ~~ THEN REPLY ~Er hat es versucht. Das Problem ist nur, dass Kalzareinad vorher starb.~ EXTERN ~AC#BETTA~ kalzareinad_02
+	//IF ~~ THEN REPLY ~Mit Kalzareinads Tod verschwand offenbar auch die Möglichkeit, den Fluch aufzuheben.~ EXTERN ~AC#BETTA~ kalzareinad_02
+	IF ~~ THEN REPLY ~Er hat es versucht. Das Problem ist nur, dass Kalzareinad vorher gestorben ist.~ EXTERN ~AC#BETTA~ kalzareinad_02
 	IF ~~ THEN REPLY ~Der Fluch überlebte seinen Schöpfer.~ EXTERN ~AC#BETTA~ kalzareinad_02
 	END
 	
@@ -86,8 +86,8 @@ BEGIN ~AC#BETTA~
 	SAY ~Bei Dugmaren... dann war Beldas' Tod also kein Zufall. Wenn Tiamats Schergen hinter Mith Barak her sind, hat der Angriff auf ihn dazu gedient, jede Spur zu beseitigen, die zu unserem König führte. Dann wurde Beldas nicht einfach Opfer eines Drachen: Er starb, weil er zu viel wusste! Wo könnte unser König gerade sein?~
 	IF ~~ THEN REPLY ~Die astrale Form Eures Königs hängt in der Astralebene fest und kann nicht zurück in seinen Körper.~ EXTERN ~AC#ANT64~ abishai_attack_iltkazar
 	IF ~~ THEN REPLY ~Mith Barak ist von seinem Körper getrennt. Solange er in der Astralebene festgehalten wird, kann er nicht erwachen.~ EXTERN ~AC#ANT64~ abishai_attack_iltkazar
-	IF ~~ THEN REPLY ~Sein Körper sitzt hier auf dem Thron. Mith Barak selbst aber ist in der Astralebene gefangen.~ EXTERN ~AC#ANT64~ abishai_attack_iltkazar
-	IF ~~ THEN REPLY ~Kurz gesagt: Der König sitzt vor uns, aber der Teil von ihm, der zum Aufwachen benötigt würde, steckt auf einer anderen Ebene fest.~ EXTERN ~AC#ANT64~ abishai_attack_iltkazar
+	//IF ~~ THEN REPLY ~Sein Körper sitzt hier auf dem Thron. Mith Barak selbst aber ist in der Astralebene gefangen.~ EXTERN ~AC#ANT64~ abishai_attack_iltkazar
+	IF ~~ THEN REPLY ~Der König sitzt vor uns, aber der Teil von ihm, der zum Aufwachen benötigt wird, steckt auf der Astralebene fest.~ EXTERN ~AC#ANT64~ abishai_attack_iltkazar
 	END
 	
 		IF ~~ THEN BEGIN kalzareinad_02
@@ -159,7 +159,9 @@ IF ~~ THEN  EXIT
 END
 
 IF ~~ THEN BEGIN goodbye_travel_to_astral
-	SAY ~Leider bleibt uns nicht viel Zeit für lange Abschiedszeremonien. Vertreter der Clans, geht Bitte zurück in Eure Zitadellen und steht den Bewohnern unserer Stadt nach dem großen Unheil bei. Ich wünsche Euch viel Glück bei Eurer Reise. Mögen die Morndinsamman über Euch wachen.~
+	SAY ~Leider bleibt uns nicht viel Zeit für lange Abschiedszeremonien. Vertreter der Clans, kehrt zurück in Eure Zitadellen und steht den Bewohnern unserer Stadt nach dem großen Unheil bei.~ 
+	=
+	~Euch, <CHARNAME>, wünsche ich viel Glück bei Eurer Reise. Mögen die Morndinsamman über Euch wachen!~
 	IF ~~ THEN DO ~SetGlobal("Mith_Dragon","ACIL64",3)
 	AddJournalEntry(@64900,QUEST)~ EXIT
 	END
@@ -177,8 +179,8 @@ IF ~Global("Mith_Dragon","ACIL64",2)~ THEN BEGIN announcement
 IF ~~ THEN REPLY ~Euer König ist ein Silberdrache, der in einer Zwergengestalt gefangen ist.~ EXTERN ~AC#ANT64~ chain_mith_dragon_01
 IF ~~ THEN REPLY ~Euer König trägt seit langer Zeit ein Geheimnis mit sich. Hinter seiner Gestalt verbirgt sich in Wirklichkeit ein Silberdrache!~ EXTERN ~AC#ANT64~ chain_mith_dragon_01
 IF ~~ THEN REPLY ~Ihr wollt die Wahrheit, hier ist sie: Seit all den Jahren sitzt kein Zwerg auf Eurem Thron, sondern ein Silberdrache.~ EXTERN ~AC#ANT64~ chain_mith_dragon_01
-IF ~~ THEN REPLY ~Überraschung! Mith Barak ist ein Drache. Silber, falls Euch die Farbe auch noch wichtig ist.~ EXTERN ~AC#ANT64~ chain_mith_dragon_01
-IF ~~ THEN REPLY ~Falls jemand gehofft hatte, die Wahrheit würde die Lage einfacher machen: Tut mir leid. Euer König ist ein Silberdrache, der in Zwergengestalt feststeckt.~ EXTERN ~AC#ANT64~ chain_mith_dragon_01
+//IF ~~ THEN REPLY ~Überraschung! Mith Barak ist ein Drache. Silber, falls Euch die Farbe auch noch wichtig ist.~ EXTERN ~AC#ANT64~ chain_mith_dragon_01
+//IF ~~ THEN REPLY ~Falls jemand gehofft hatte, die Wahrheit würde die Lage einfacher machen: Tut mir leid. Euer König ist ein Silberdrache, der in Zwergengestalt feststeckt.~ EXTERN ~AC#ANT64~ chain_mith_dragon_01
 END
 
 IF ~Global("AC#HatharQuest","GLOBAL",11)~ THEN BEGIN goodbye_dunnabar
@@ -364,9 +366,9 @@ CHAIN IF ~~ THEN AC#ANT64 chain_mith_dragon_01
 == AC#VRONI ~Warum haben unsere Runen eine solche Illusion nicht gebannt?~
 END
 ++ ~Es ist keine Illusion, sondern ein Fluch, der auf ihm lastet.~ EXTERN ~AC#ELERN~ mithbarak_curse_01
-++ ~Euer König ist ein verfluchter Drache in Zwergengestalt, kein Trugbild. Die Runen können schlecht etwas bannen, das gar nicht vorgespielt ist.~ EXTERN ~AC#ELERN~ mithbarak_curse_01
-++ ~Vielleicht, weil Eure Runen nicht damit rechnen, dass jemand so gründlich verflucht wurde.~ EXTERN ~AC#ELERN~ mithbarak_curse_01
-++ ~Eure Runen sind vielleicht mächtig, aber Mith Baraks Fluch ist mächtiger.~ EXTERN ~AC#ELERN~ mithbarak_curse_01
+//++ ~Euer König ist ein verfluchter Drache in Zwergengestalt, kein Trugbild. Die Runen können schlecht etwas bannen, das gar nicht vorgespielt ist.~ EXTERN ~AC#ELERN~ mithbarak_curse_01
+//++ ~Vielleicht, weil Eure Runen nicht damit rechnen, dass jemand so gründlich verflucht wurde.~ EXTERN ~AC#ELERN~ mithbarak_curse_01
+++ ~Eure Runen sind vielleicht mächtig, aber Mith Baraks Fluch scheint mächtiger.~ EXTERN ~AC#ELERN~ mithbarak_curse_01
 
 CHAIN IF ~~ THEN AC#BETTA chain_mith_astral_01
 ~Deshalb das Interesse an der Astralebene!~
@@ -379,9 +381,9 @@ END
 ++ ~Ja. Körper und Geist müssen dort nicht zwingend am selben Ort sein. Genau das scheint Mith Barak widerfahren zu sein.~ EXTERN ~AC#TURBA~ mith_astral_02
 
 CHAIN IF ~~ THEN AC#BETTA chain_torglor_01
-~...und hier kommt das Buch ins Spiel, welches Beldas für Mith Barak aus Kerzenburg besorgen wollte! Es beschreibt Portale, die in diese Ebene führen. Überraschenderweise gibt es davon auch viele im Unterreich.~
-= ~Ich habe zahlreiche Stunden damit verbracht, die alten Runentafeln Shanatars zu wälzen und denke, ich bin fündig geworden. Ich vermute, dass sich eines dieser Portale in Torglor befinden könnte.~
-== AC#TURBA ~In Torglor? Dem Silberkönigreich?~
+~...und hier kommt das Buch ins Spiel, welches Beldas für Mith Barak aus Kerzenburg besorgen wollte! Es beschreibt Portale, die in diese Ebene führen. Überraschenderweise gibt es davon auch einige im Unterreich.~
+= ~Je länger ich die alten Tafeln verglichen habe, desto häufiger tauchte derselbe Name auf: Torglor. Offenbar kannten die ehemaligen dortigen Zwergenclans Wege, die weit über gewöhnliche Tore und Tunnel hinausführten. Das könnte genau die Spur sein, die wir suchen.~
+== AC#TURBA ~In Torglor, dem Silberkönigreich könnte sich ein Portal in die Astralebene befinden?~
 == AC#BETTA ~Richtig. <CHARNAME>, dazu müsst Ihr wissen: Torglor war eines der alten Unterkönigreiche Shanatars, das sogenannte Silberkönigreich. *Tor* heißt in unserer Sprache Hügel. Und *glor* bedeutet See.~
 == AC#TORTH ~Und was soll das Königreich "Hügelsee" mit der Astralebene zu tun haben, Bettargh?~
 == AC#BETTA ~Es gibt im Zwergischen noch eine andere Bedeutung für *tor*, und die bedeutet Seele. Dann hätte dieser Zwergenclan sein Königreich nicht Hügelsee genannt, was auch irgendwie unsinnig erscheint, sondern Seelensee, in Anspielung auf die Astrale See, der Ebene des Geistes. Und der Begriff Silberkönigreich hätte damit auch eine völlig andere Bedeutung, da die Astralebene als ein Meer aus Silber beschrieben wird.~
@@ -400,7 +402,7 @@ END
 IF ~~ THEN GOTO chain_gith_in_torglor 
 
 CHAIN IF ~~ THEN AC#BETTA chain_gith_in_torglor
-~Die Githyanki, die immer wieder in Erscheinung getreten sind, könnten an diesem Ort ein Portal genutzt haben, um in das Unterreich zu gelangen.~
+~Die Githyanki, die immer wieder in Erscheinung getreten sind, könnten das Portal in Torglor genutzt haben, um aus der Astralebene in das Unterreich zu gelangen. Sie versuchten, vor Iltkazar ein weiteres zu errichten, sind aber gescheitert.~
 == AC#ELERN ~Ihr meint, dass die Githyanki mit dieser Drachengöttin unter einer Decke stecken?~
 END
 IF ~GlobalGT("AC#HatharQuest","GLOBAL",2)~ THEN REPLY ~Das stimmt. Dies erwähnte der Githyanki, der Hathar umgebracht hatte.~ EXTERN ~AC#GROM2~ chain_bettargh_whats_next
@@ -408,22 +410,27 @@ IF ~GlobalGT("AC#HatharQuest","GLOBAL",2)~ THEN REPLY ~Das stimmt. Dies erwähnt
 
 CHAIN IF ~~ THEN AC#GROM2 chain_bettargh_whats_next
 ~Was schlagt Ihr also vor, Bettargh?~
-== AC#BETTA ~Der einzige nächste sinnvolle Schritt besteht darin, nach Torglor zu reisen. Dort werden sich sehr wahrscheinlich die Githyanki aufhalten, die zumindest als Handlanger dieser Drachengöttin in Erscheinung getreten sind.~
-= ~Sicherlich existiert dort auch ein Portal in die Astralebene, welches man benutzen könnte, um Mith Barak - beziehungsweise Mithbarakaz - zu befreien.~
+== AC#BETTA ~Der einzige nächste sinnvolle Schritt besteht darin, nach Torglor zu reisen. Dort dürften sich die Githyanki aufhalten, die als Handlanger dieser Drachengöttin in Erscheinung getreten sind.~
+= ~Wenn Githyanki dort ihren Stützpunkt haben, existiert dort auch ein Portal in die Astralebene. Dieses könnten wir benutzen, um unseren gefangenen König zu befreien.~
 END
 IF ~~ THEN REPLY ~Ihr denkt, dass ich diese Reise unternehmen sollte, richtig?~ + chain_who_is_gonna_do_it
+IF ~~ THEN REPLY ~Es beruhigt mich, wie selbstverständlich Ihr alle davon ausgeht, dass ich das übernehmen sollte.~ + chain_who_is_gonna_do_it
+IF ~~ THEN REPLY ~Torglor, natürlich. Warum sollte die nächste Spur auch einmal an einem angenehmen Ort enden?~ + chain_who_is_gonna_do_it
+IF ~~ THEN REPLY ~Wenn dort wirklich der Schlüssel zur Astralebene liegt, werde ich nach Torglor gehen.~ + chain_who_is_gonna_do_it
 
 CHAIN IF ~~ THEN AC#GROM2 chain_who_is_gonna_do_it
 ~Ihr habt viel für unsere Stadt getan, <CHARNAME>. Ich kann mir gar nicht mehr vorstellen, dass ich Euch bei unserem ersten Zusammentreffen unter Arrest stellen ließ.~
 == AC#ELERN ~Das war auch wirklich eine Schande.~
 == AC#VRONI ~Bei dem derzeitigen Zustand unserer Stadt wüsste ich nicht, wer außer Euch, <CHARNAME>, dieses Abenteuer auf sich nehmen könnte.~
 END
-++ ~Dann ist dies also der nächste Schritt. Ich werde Euch sehr gerne helfen. Auf ins Silberkönigreich Torglor!~ EXTERN ~AC#TURBA~ chain_torglor_via_drakkalor
+++ ~Dann ist dies also der nächste Schritt. Auf ins Silberkönigreich Torglor!~ EXTERN ~AC#TURBA~ chain_torglor_via_drakkalor
+++ ~Dann bleibt mir wohl nichts anderes übrig. Ich werde nach Torglor reisen und sehen, wohin mich diese Spur führt.~ EXTERN ~AC#TURBA~ chain_torglor_via_drakkalor
+++ ~Na schön. Erst Barakuir, dann Drachen, jetzt Githyanki.~ EXTERN ~AC#TURBA~ chain_torglor_via_drakkalor
+
 
 CHAIN IF ~~ THEN AC#TURBA chain_torglor_via_drakkalor
 ~Torglor liegt im Norden. Wir müssen <CHARNAME> durch das Drakkalor-Tor gen Norden reisen lassen.~
-== AC#GROM2 ~Selbstverständlich steht Euch auch unsere Stadt immer offen, wenn Ihr Verpflegung für Eure Reise benötigt.~
-== AC#TURBA ~Ich werde die Wachen anweisen, das Drakkalor-Tor im Norden der Stadt zu öffnen.~
+== AC#GROM2 ~Wir werden die Wachen anweisen, das Drakkalor-Tor im Norden der Stadt zu öffnen.~
 END
 ++ ~Ich werde also durch das Drakkalor-Tor nach Norden aufbrechen, bis ich Torglor erreiche und dort ein Portal in die Astralebene finde.~ EXTERN ~AC#GROM2~ chain_good_plan
 

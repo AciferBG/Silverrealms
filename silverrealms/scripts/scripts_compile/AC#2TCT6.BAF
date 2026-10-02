@@ -1,0 +1,18 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player1)
+        FadeToColor([30.0],0)
+        ActionOverride("AC#5TTIA",DestroySelf())
+        ActionOverride("AC#MAL5T",EscapeAreaDestroy(0))
+        Wait(2)
+        LeaveAreaLUAPanic("ACIL63","",[2740.467],SW)
+        LeaveAreaLUA("ACIL63","",[2740.467],SW)
+        MultiPlayerSync()
+        MoveViewPoint([2740.467],INSTANT)
+        SmallWait(5)
+        FadeFromColor([30.0],0)
+        EndCutSceneMode()
+END
+

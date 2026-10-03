@@ -46,7 +46,7 @@ END
 IF
     InMyArea(Player1)
     Global("MalphasCutsceneTiamat","ACIL63",0)
-    GlobalGT("Mith_Dragon","ACIL64",2)
+    GlobalGT("AC#IL_Torglor_Quest","GLOBAL",0)
 THEN
     RESPONSE #100
         FadeToColor([8.0],0)

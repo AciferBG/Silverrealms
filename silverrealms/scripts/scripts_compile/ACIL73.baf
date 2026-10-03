@@ -1,4 +1,16 @@
 IF
+    InMyArea(Player1)
+    Global("MalphasCutsceneTiamat","ACIL73",0)
+    GlobalGT("AC#Talked_to_Maldraedior","GLOBAL",0)
+THEN
+    RESPONSE #100
+        FadeToColor([8.0],0)
+        SetGlobal("MalphasCutsceneTiamat","ACIL73",1)
+        StartCutSceneMode()
+        StartCutScene("AC#2TCT3")
+END
+
+IF
     Global("CircleOfMagic","ACIL73",4)
 THEN
     RESPONSE #100

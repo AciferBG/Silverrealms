@@ -236,7 +236,7 @@ END
 					IF ~~ THEN BEGIN rescue_questions
 					SAY ~Jedenfalls sind Euch der Dank Iltkazars und die Achtung des gesamten Zwergenvolkes gewiss – ebenso meine eigene und die aller guten Drachen. Ich weiß, dass Ihr viele Fragen habt, <CHARNAME>, und glaubt mir: Auch mein Volk verlangt nach Antworten. Doch dies ist weder die Zeit noch der Ort dafür. Lasst uns zunächst in den Thronsaal gehen und gemeinsam die Rettung Iltkazars feiern. Danach will ich Euch Rede und Antwort stehen, denn auch für mich hat die Heimkehr nach so langer Zeit vieles verändert.~
 					=
-					~Nun muss ich mich in den Thronsaal begeben. Zu lange war ich fort, und ein König hat Pflichten gegenüber seinem Volk. Kommt, Freunde! Lasst uns diesen Tag nicht mit Sorgen, sondern mit Freude beschließen. Heute feiern wir die Rettung Iltkazars. Und Ihr, <CHARNAME>, seid dort als Ehrengast willkommen. Wenn die Feierlichkeiten vorüber sind, werden wir Gelegenheit haben, über alles zu sprechen, was geschehen ist.~
+					~Ich werde mich in den Thronsaal begeben. Zu lange war ich fort, und ein König hat Pflichten gegenüber seinem Volk. Kommt, Freunde! Lasst uns diesen Tag nicht mit Sorgen, sondern mit Freude beschließen. Heute feiern wir die Rettung Iltkazars. Und Ihr, <CHARNAME>, seid dort als Ehrengast willkommen. Wenn die Feierlichkeiten vorüber sind, werden wir Gelegenheit haben, über alles zu sprechen, was geschehen ist.~
 					IF ~~ THEN DO ~SetGlobal("AC#Mithbarak_Rescued","GLOBAL",19)
 					AddJournalEntry(@99000,QUEST_DONE)								   
 					EscapeArea()~ EXIT
@@ -250,7 +250,7 @@ CHAIN IF ~~ THEN AC#MITH5 chain_mith_dragon_02
 == AC#GROM5 ~Ein Hoch auf die Rückkehr unseres Königs!~
 == AC#VRONI ~Seid gegrüßt, Mithbarakaz. Es ist schön, Euch in Eurer richtigen Gestalt kennenzulernen.~
 == AC#ANT64 ~Auch wenn Ihr mir als Zwerg besser gefallen habt, freue ich mich über Eure Rückkehr, König Mithralschild!~
-== AC#TURBA ~Ich wurdet vor Jahrhunderten, als Ihr unsere Stadt zum ersten Mal betreten habt, von Dumathoin persönlich gesegnet. Ob Zwerg oder nicht - Ihr seid der rechtmäßige Herrscher unserer Stadt!~
+== AC#TURBA ~Ihr wurdet vor Jahrhunderten, als Ihr unsere Stadt zum ersten Mal betreten habt, von Dumathoin persönlich gesegnet. Ob Zwerg oder nicht - Ihr seid der rechtmäßige Herrscher unserer Stadt!~
 == AC#SORNI ~Wir bräuchten aber ganz schön viel Adamantit, um Euch in dieser Form eine passende Rüstung zu schmieden!~
 == AC#BETTA ~Willkommen zurück, weiser Mithbarakaz!~
 == AC#FENYL ~Habt Ihr überhaupt Platz in unserem Thronsaal?~
@@ -289,8 +289,8 @@ IF ~~ THEN + dwarves_impressed
 
 CHAIN IF ~Global("AC#IltkazarCelebration","GLOBAL",2)~ THEN AC#MITH5 chain_mith_celebration_01
 ~Bürger von Iltkazar! Freunde! Kinder Shanatars!~
-= ~Zu lange lag ein Schatten über unserer Stadt. Zu lange hattet Ihr Sorge, dass Euer König niemals aus seinem Schlaf wieder erwachen würde.~
-= ~Doch heute stehen wir alle hier. Frei. Ungebrochen. Vereint.~
+= ~Lange lag ein Schatten über unserer Stadt. Lange hattet Ihr Sorge, dass Euer König niemals aus seinem Schlaf wieder erwachen würde.~
+= ~Doch heute stehen wir alle hier. Frei. Ungebrochen. Vereint!~
 = ~Diesen Tag verdanken wir einem Bewohner der Oberfläche, der unsere Not zu seiner eigenen machte. Der für uns kämpfte, als andere uns längst vergessen hatten. Der durch Flammen, Dunkelheit und Verrat ging und dennoch nicht von <PRO_HISHER>em Weg abwich.~
 = ~<CHARNAME>! Im Namen Iltkazars, im Namen des Zwergenvolkes und im Namen aller guten Drachen danke ich Euch.~
 = ~Mögen die Barden der Oberfläche Eure Taten besingen. Mögen die Schmiede des Unterreichs Euren Namen in Stahl schlagen. Mögen unsere Nachfahren sich an Euer Werk erinnern, wenn wir selbst längst zu Staub zerfallen sind.~
@@ -300,7 +300,12 @@ CHAIN IF ~Global("AC#IltkazarCelebration","GLOBAL",2)~ THEN AC#MITH5 chain_mith_
 == AC#BETTB ~Hoch!~
 == AC#ILFNB ~Hoch!~ [AC#ILFNB]
 == AC#MITH5~Ruhe, meine Freunde! Ruhe!~
-= ~Es erfreut mein Herz mehr, als Worte es ausdrücken können, Euch alle heute hier versammelt zu sehen. Lange habe ich von diesem Augenblick geträumt. Sehr lange. Doch Königreiche regieren sich nicht von selbst.~
+= ~<CHARNAME>, durch Euren Einsatz wurde ich aus den Fängen Tiamats befreit. Doch Eure Taten reichen weit über meine Rettung hinaus. Ihr habt auch den Plan der Drachenkönigin zu Fall gebracht, ihre Ketten zu sprengen. Tiamat bleibt in den Neun Höllen gefangen. Dafür ist Euch nicht allein Iltkazar, sondern ganz Faerûn zu Dank verpflichtet.~
+= ~Und auch Ihr, Zwerge Iltkazars, habt Euren Anteil daran, dass Tiamat weiterhin gefangen bleibt. Denn die Ketten, die sie in den Neun Höllen binden, wurden hier geschmiedet – in dieser Stadt! Nur in den Öfen des alten Shanatars konnte jenes Metall gehärtet werden, das selbst der Macht der Drachenkönigin widersteht.~
+== AC#SORNB ~Selbst eine Göttin vermag unsere Ketten nicht zu sprengen? Ha! Die alten Meister verstanden ihr Handwerk!~
+== AC#MITH5~Die Schmieden mögen nun in Trümmern liegen. Doch ihr Werk hält noch immer die Drachenkönigin gefangen! Dieselben Öfen, in denen Tiamats Ketten entstanden, hätten auch das Metall hervorbringen können, das sie bricht. Diese Gefahr liegt nun ebenfalls unter Trümmern begraben. Tiamats Diener werden einen anderen Weg finden müssen – und das verschafft uns Zeit.~
+== AC#TURBB ~Was Euch einst zu uns führte, war also eine gemeinsame Aufgabe unserer Götter und der Euren: Großes Unheil von Faerûn fernzuhalten. Und aus dem Clanlosen, der unser Metall suchte, wurde schließlich unser König.~
+== AC#MITH5 ~Und das bin ich wahrhaft: Euer König. Es erfreut mein Herz, Euch alle heute hier versammelt zu sehen. Lange habe ich von diesem Augenblick geträumt. Sehr lange. Doch Königreiche regieren sich nicht von selbst.~
 = ~Iltkazar muss wieder aufgebaut werden. Unsere Verluste müssen gezählt, unsere Bündnisse erneuert und unsere Wunden geheilt werden. Viel Arbeit liegt vor uns.~
 = ~Für heute jedoch sollen die Schmieden schweigen, die Gelehrten ihre Bücher schließen und die Krieger ihre Waffen niederlegen. Heute wird gefeiert!~
 == AC#ILFNB ~Hurra!~ [AC#ILFNB]

@@ -617,7 +617,21 @@ COPY ~silverrealms/cre/AC#MAL2T.cre~ ~override~ // Malphas: First Tiamat Cutscen
   SAY BATTLE_CRY1 @5146
   SAY BATTLE_CRY1 @5147
   SAY BATTLE_CRY1 @5148
-  
+
+COPY ~silverrealms/cre/AC#MAL4T.cre~ ~override~ // Malphas: Tiamat Cutscene after siege of Iltkazar is over
+  SAY NAME1 @62 SAY NAME2 @62
+  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~MALPHAS_ACIFER~))
+    SAY INITIAL_MEETING   @5142
+  SAY SELECT_COMMON1  @5141
+  SAY SELECT_COMMON2  @5143
+  SAY SELECT_COMMON3  @5144
+  SAY SELECT_COMMON4  @5145
+  SAY SELECT_COMMON5  @5142
+  SAY BATTLE_CRY1 @5140
+  SAY BATTLE_CRY1 @5146
+  SAY BATTLE_CRY1 @5147
+  SAY BATTLE_CRY1 @5148
+
 COPY ~silverrealms/cre/AC#MAL5T.cre~ ~override~ // Malphas: Tiamat Cutscene after siege of Iltkazar is over
   SAY NAME1 @62 SAY NAME2 @62
   WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~MALPHAS_ACIFER~))
@@ -683,6 +697,10 @@ COPY ~silverrealms/cre/AC#MITH2.cre~ ~override~
   
 COPY ~silverrealms/cre/AC#MITH5.cre~ ~override/AC#MITH5.cre~  // rescued Mith Barak: Dwarf
   SAY NAME1 @61 SAY NAME2 @61
+    SAY INITIAL_MEETING   @5400
+  SAY SELECT_COMMON1  @5401
+  SAY SELECT_COMMON2  @5402
+  SAY SELECT_COMMON2  @5403
   
 COPY ~silverrealms/cre/AC#MITHD.cre~ ~override/AC#MITHD.cre~ // rescued Mithbarakaz: Dragon
   SAY NAME1 @783 SAY NAME2 @783
@@ -3077,7 +3095,10 @@ COPY ~silverrealms/cre/AC#71CR6.cre~ ~override~ // dragon skeleton
   
 COPY ~silverrealms/cre/AC#2TTIA.cre~ ~override~ // malphas' lady (Tiamat)
   SAY NAME1 @1127 SAY NAME2 @1127
-  
+
+COPY ~silverrealms/cre/AC#4TTIA.cre~ ~override~ // Tiamat
+  SAY NAME1 @9075 SAY NAME2 @9075
+
 COPY ~silverrealms/cre/AC#5TTIA.cre~ ~override~ // Tiamat
   SAY NAME1 @9075 SAY NAME2 @9075
   

@@ -163,6 +163,7 @@ IF ~~ THEN BEGIN goodbye_travel_to_astral
 	=
 	~Euch, <CHARNAME>, wünsche ich viel Glück bei Eurer Reise. Mögen die Morndinsamman über Euch wachen!~
 	IF ~~ THEN DO ~SetGlobal("Mith_Dragon","ACIL64",3)
+	SetGlobal("AC#IL_Torglor_Quest","GLOBAL",1)
 	AddJournalEntry(@64900,QUEST)~ EXIT
 	END
 	

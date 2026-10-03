@@ -29,9 +29,39 @@ CHAIN IF ~NumTimesTalkedTo(0)~ THEN AC#MAL2T hello
 						IF ~~ THEN DO ~StartCutSceneMode()
 						StartCutScene("AC#2TCT2")~ EXIT
 						
-						
 /*******************************************************************************************************
 Dialogue in Tiamats prison 2nd time
+*******************************************************************************************************/
+
+// Tiamat
+BEGIN ~AC#4TTIA~
+
+//Malphas
+BEGIN ~AC#MAL4T~
+						
+CHAIN IF ~NumTimesTalkedTo(0)~ THEN AC#MAL4T hello
+~Herrin... <CHARNAME> war im Drachenfriedhof; <PRO_HESHE> hat den Tempel gefunden. Und <PRO_HESHE> hat mit Maldraedior gesprochen.~
+== AC#4TTIA ~Maldraedior...~
+== AC#MAL4T ~Dann war unsere Vermutung richtig. Kalzareinads Einfluss reicht noch immer bis an diesen Ort.~
+== AC#4TTIA ~Kalzareinad ist tot. Doch selbst im Tod hinterlässt mein alter Widersacher Spuren, über die Sterbliche stolpern können.~
+== AC#MAL4T ~Und Maldraedior sorgt dafür, dass sie ihnen folgen.~
+== AC#4TTIA ~Seit Äonen. Er war schon gerissen, als Kalzareinad noch glaubte, seine Pläne vor mir verbergen zu können. Und er ist gerissen genug, sich dort zu verkriechen, wo selbst meine Diener ihn nicht erreichen können.~
+== AC#MAL4T ~Wenn er <CHARNAME> erzählt hat, was er weiß, kennt <PRO_HESHE> nun möglicherweise die Wahrheit über Mithbarakaz.~
+== AC#4TTIA ~Möglicherweise. Maldraedior verschwendet keine Worte ohne Grund.~
+== AC#MAL4T ~Dann weiß <CHARNAME> nun, dass Mith Barak in Wahrheit ein Silberdrache ist. Und dass Kalzareinad ihn verflucht hat.~
+== AC#MAL4T ~Soll ich Maldraedior zum Schweigen bringen lassen?~
+== AC#4TTIA ~Wenn ich wüsste, wie, wäre er schon vor Jahrhunderten verstummt. Nein. Verschwendet keine Zeit mit ihm.~
+== AC#MAL4T ~Dann wird <CHARNAME> nach Iltkazar zurückkehren und den Zwergen alles berichten.~
+== AC#4TTIA ~Natürlich wird er das. Und Ihr sorgt gefälligst dafür, dass sein Weg dort endet!~
+== AC#MAL4T ~Wie Ihr befehlt, Herrin. Ich habe schon einen guten Plan...~
+== AC#4TTIA ~...der hoffentlich für Euch besser ausgeht als Euer Letzter!~
+== AC#MAL4T ~Mit Sicherheit, Herrin. Ich werde nicht scheitern!~
+END
+IF ~~ THEN DO ~StartCutSceneMode()
+StartCutScene("AC#2TCT4")~ EXIT
+						
+/*******************************************************************************************************
+Dialogue in Tiamats prison 3rd time
 *******************************************************************************************************/
 
 // Tiamat
@@ -48,14 +78,14 @@ CHAIN IF ~NumTimesTalkedTo(0)~ THEN AC#MAL5T hello
 == AC#MAL5T ~Nicht nur von den Zwergen, Herrin. <CHARNAME> war dort, <PRO_HESHE> hat ihnen geholfen.~
 == AC#5TTIA ~Natürlich. Immer wieder dieser Name.~
 == AC#MAL5T ~Die Zwerge haben schließlich die Schmiedehalle zum Einsturz gebracht. Der Zugang durch ihre Öfen ist verschüttet. Auf diesem Wege werden wir Iltkazar nicht erneut erreichen.~
-== AC#5TTIA ~Dann habt Ihr nicht nur meinen General verloren, sondern auch noch den einzigen Zugang, den Ihr in die Stadt geschaffen habt. Erbärmlich, Malphas.~
+== AC#5TTIA ~Dann habt Ihr nicht nur meinen General verloren, sondern auch noch den einzigen Zugang, den Ihr in die Stadt geschaffen habt! Und vielleicht die einzige Möglichkeit, Metall zu schmieden, das stark genug ist, meine Ketten zu sprengen. Erbärmlich, Malphas.~
 == AC#MAL5T ~Verzeiht, Herrin. Aber noch ist nichts verloren. Das einzige Portal in erreichbarer Nähe, das <CHARNAME> näher an unseren Gefangenen bringen könnte, befindet sich in Torglor. Und Torglor wird von den Githyanki gehalten. Sie sind unsere Verbündeten.~
 == AC#5TTIA ~Ihr habt <CHARNAME> bereits unterschätzt. Tut es nicht noch einmal.~
 == AC#MAL5T ~Gewiss, Herrin.~
 == AC#5TTIA ~Das will ich hoffen. Oder habt Ihr vergessen, weshalb Ihr mir dient?~
 == AC#MAL5T ~Nein, Herrin.~
-== AC#5TTIA ~Seht an Euch herab, Malphas. Betrachtet, was aus Euch geworden ist. Euer Fluch wird erst enden, wenn meine Ketten gebrochen sind und ich wieder frei bin. Oder gefällt Euch diese erbärmliche Gestalt inzwischen so sehr, dass Ihr sie bis in alle Ewigkeit behalten wollt?~
-== AC#MAL5T ~Nein, Herrin. Ich werde Euch befreien.~
+== AC#5TTIA ~Seht an Euch herab, Malphas. Betrachtet, was aus Euch geworden ist: Ein schäbiger Vogel! Mithbarakaz ist verdammt, als Zwerg sein Dasein zu fristen. Das hat mein alter Widersacher Kalzareinad gut gemacht. Doch *Euer* Fluch ist viel erniedrigender. Und er wird erst enden, wenn meine Ketten gebrochen sind und ich wieder frei bin. Oder gefällt Euch diese erbärmliche Gestalt inzwischen so sehr, dass Ihr sie bis in alle Ewigkeit behalten wollt?~
+== AC#MAL5T ~Nein, Herrin. Ich werde Euch befreien, um meine ursprüngliche Gestalt wiederzuerlangen.~
 == AC#5TTIA ~Dann sorgt dafür, dass der verfluchte Silberne die Astralebene nicht verlässt! Und dass <CHARNAME> ihn niemals erreicht!~
 == AC#MAL5T ~Jawohl, Herrin.~
 END

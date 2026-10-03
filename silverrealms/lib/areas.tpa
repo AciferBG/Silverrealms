@@ -134,7 +134,8 @@ COPY ~silverrealms/areas/ACIL3X.are~          ~override~
 
 COPY ~silverrealms/areas/ACIL44.are~          ~override~
  WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
- 
+ SAY 0x1738 @7018           // Info_giant
+
 COPY ~silverrealms/areas/ACIL45.are~          ~override~
  WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
  

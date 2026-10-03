@@ -56,7 +56,7 @@ BEGIN ~AC#TURBA~
 		END
 
 	IF ~~ THEN BEGIN stealthy_travel
-	SAY ~Es gibt Zauber, um die Astralebene zu bereisen, aber ich bezweifle, dass wir mit so einem Unterfangen Erfolg hätten.~
+	SAY ~Es gibt zwar Zauber, um die Astralebene zu bereisen, aber ich bezweifle, dass wir mit so einem Unterfangen Erfolg hätten.~
 	IF ~~ THEN REPLY ~Wir können auch nicht durch einen Zauber, sondern nur durch ein Portal in diese Ebene reisen.~ EXTERN ~AC#BETTA~ chain_torglor_01
 	END
 	
@@ -384,7 +384,7 @@ END
 CHAIN IF ~~ THEN AC#BETTA chain_torglor_01
 ~...und hier kommt das Buch ins Spiel, welches Beldas für Mith Barak aus Kerzenburg besorgen wollte! Es beschreibt Portale, die in diese Ebene führen. Überraschenderweise gibt es davon auch einige im Unterreich.~
 = ~Je länger ich die alten Tafeln verglichen habe, desto häufiger tauchte derselbe Name auf: Torglor. Offenbar kannten die ehemaligen dortigen Zwergenclans Wege, die weit über gewöhnliche Tore und Tunnel hinausführten. Das könnte genau die Spur sein, die wir suchen.~
-== AC#TURBA ~In Torglor, dem Silberkönigreich könnte sich ein Portal in die Astralebene befinden?~
+== AC#TURBA ~In Torglor, dem Silberkönigreich, könnte sich ein Portal in die Astralebene befinden?~
 == AC#BETTA ~Richtig. <CHARNAME>, dazu müsst Ihr wissen: Torglor war eines der alten Unterkönigreiche Shanatars, das sogenannte Silberkönigreich. *Tor* heißt in unserer Sprache Hügel. Und *glor* bedeutet See.~
 == AC#TORTH ~Und was soll das Königreich "Hügelsee" mit der Astralebene zu tun haben, Bettargh?~
 == AC#BETTA ~Es gibt im Zwergischen noch eine andere Bedeutung für *tor*, und die bedeutet Seele. Dann hätte dieser Zwergenclan sein Königreich nicht Hügelsee genannt, was auch irgendwie unsinnig erscheint, sondern Seelensee, in Anspielung auf die Astrale See, der Ebene des Geistes. Und der Begriff Silberkönigreich hätte damit auch eine völlig andere Bedeutung, da die Astralebene als ein Meer aus Silber beschrieben wird.~

@@ -30,7 +30,8 @@ AreaCheck("ACIL30")~ THEN BEGIN viconia_faerzress_comment
 	END
 	
 	IF ~~ THEN BEGIN not_know_faerzress
-	SAY ~Faerzress ist eine seltene magische Erscheinung, die im Unterreich zu finden ist - meistens in Verbindung mit mächtigen Erdknoten, die diese magische Energie anziehen. Leider macht die konzentrierte Ballung des Gewebes das Aussprechen von Zaubern und dergleichen zu einem riskanten Unterfangen, da an solchen Stellen Magie meist nicht so wirkt, wie man sich das wünschen würde. Ich würde mich nicht wundern, wenn wir hier auch allerlei mutierte Pflanzen finden würden, die diese wilde Form der Magie noch zusätzlich anheizen. Sussur-Bäume zum Beispiel. Sie überwuchern an solchen Orten meist alte Ruinen und treiben das magische Chaos auf die Spitze.~
+	SAY ~Faerzress. Eine Ballung wilder Magie, wie man sie an manchen Orten des Unterreichs findet. Wo sie stark ist, wird das Wirken von Zaubern unberechenbar.~
+	= ~Mich würde nicht wundern, wenn hier Sussur-Bäume wachsen. Sie gedeihen an solchen Orten prächtig und machen die Magie noch unzuverlässiger, als sie ohnehin schon ist. Wir sollten uns auf andere Kräfte als auf unsere Zauber an diesem Ort verlassen.~
 	IF ~~ THEN GOTO faerzress_exit
 	END
 	

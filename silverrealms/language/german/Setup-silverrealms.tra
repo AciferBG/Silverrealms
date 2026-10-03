@@ -233,7 +233,7 @@ In der Mitte der Münze ist das Symbol eines sich endlos drehenden Wirbels einge
 @194 = ~Ihr trinkt einen Schluck und fühlt Euch gesund und erfrischt.~
 @195 = ~Ihr müsst näher herantreten, wenn Ihr aus dem Becken trinken wollt.~
 @196 = ~Zwergenschlüssel~
-@197 = ~Dieser Schlüssel ist an seinem Griff mit zwei Ringen und einem kleinen Edelstein verziert.~
+@197 = ~Dieser Schlüssel wurde damals offensichtlich von den Zwergen des Reiches Torglor hergestellt.~
 @198 = ~Diese Tür ist mit zwei Äxten und zwei zunehmenden Monden verziert. Sie besteht aus einem Euch unbekannten Metall und hat keine sichtbaren Schlösser oder ähnliche Vorrichtungen, um sie zu bewegen. Es muss einen anderen Mechanismus geben, um sie öffnen zu können. Die in die Tür eingravierten Zwergenrunen bedeuten "Tretet ein im Namen der Schutzherren des zunehmenden Mondes."~
 @199 = ~Verwitterte Zwergenstatue~
 @200 = ~Mächtiger Federfalltrank~
@@ -1620,6 +1620,7 @@ Charvekannathors Hort~
 @7015 = ~Wenn Ihr Ärger sucht, geht woanders graben!~
 @7016 = ~Schankmaid! Noch ein Krug für den da – und diesmal nicht halb leer!~
 @7017 = ~Bei Moradins Bart, benehmt Euch oder ich werfe Euch eigenhändig hinaus!~
+@7018 = ~Dieser Riese sieht aus, als wäre er mit Gold oder einem anderen Edelmetall übergossen worden.~
 
 @7100 = ~^0xFFC8FFC8Die Reise dauerte 21 Stunden. ^-~
 @7101 = ~^0xFFC8FFC8Die Reise dauerte 20 Stunden. ^-~

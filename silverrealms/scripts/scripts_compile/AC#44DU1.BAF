@@ -1,0 +1,16 @@
+IF
+    Global("HealedMe","ACIL44",0)
+    See([PC])
+    OR(5)
+        SpellCastOnMe([ANYONE],CLERIC_HEAL)  // SPPR607.SPL (Heilung)
+        SpellCastOnMe([ANYONE],CLERIC_CURE_LIGHT_WOUNDS)  // SPPR103.SPL (Leichte Wunden heilen)
+        SpellCastOnMe([ANYONE],CLERIC_CURE_MEDIUM_WOUNDS)  // SPPR315.SPL (Mittelschwere Wunden heilen)
+        SpellCastOnMe([ANYONE],CLERIC_CURE_SERIOUS_WOUNDS)  // SPPR401.SPL (Schwere Wunden heilen)
+        SpellCastOnMe([ANYONE],INNATE_CURE_LIGHT_WOUNDS)  // SPIN101.SPL (Leichte Wunden heilen)
+THEN
+    RESPONSE #100
+        SetGlobal("HealedMe","ACIL44",1)
+        Wait(1)
+        ChangeAnimationNoEffect("AC#44DU2")  // Duergar
+END
+

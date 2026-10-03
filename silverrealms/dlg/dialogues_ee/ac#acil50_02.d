@@ -3,6 +3,18 @@ Dialogue after destruction
 ***************************************************/
 
 /*******************************************************************************************************
+Dwarven gatekeeper, in front of Drakkalor gate
+*******************************************************************************************************/
+
+BEGIN ~AC#50DW1~
+
+IF ~True()~ THEN BEGIN hello
+SAY ~Das Drakkalor-Tor steht Euch offen, <PRO_RACE>. Auf der anderen Seite liegen noch Leichen der Duergar, passt auf, wo Ihr hintretet.~
+IF ~~ THEN EXIT
+END
+
+
+/*******************************************************************************************************
 Dunnabar-Dialog
 *******************************************************************************************************/
 BEGIN ~AC#DUN03~
@@ -160,6 +172,8 @@ BEGIN ~AC#SORN5~
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN hello_before_torglor_sorni
 SAY ~<CHARNAME>, Ihr werdet bald nach Torglor aufbrechen. Ich wollte mich noch einmal für Eure Hilfe in der Arnschädelhalle bedanken.~
 IF ~~ THEN REPLY ~Das habe ich sehr gerne getan.~ + 1
+IF ~~ THEN REPLY ~Nicht nötig.~ + 1
+IF ~~ THEN REPLY ~Vergesst meine Hilfe niemals!~ + 1
 END
 
 	IF ~~ THEN BEGIN 1
@@ -175,20 +189,31 @@ END
 			IF ~~ THEN BEGIN 3
 			SAY ~Er ist aus einem besonderen Material geschmiedet, aus Adamant.~
 			IF ~~ THEN REPLY ~Ist das nicht auch das Metall, aus dem die Drow Ihre Rüstungen herstellen?~ + drow_armor
+			IF ~~ THEN REPLY ~Besonderes Metall, besondere Schmiedin. Das passt wohl.~ + armor_adamantine
+			IF ~~ THEN REPLY ~Hoffentlich ist das Ding bequemer, als es aussieht.~ + armor_adamantine
 			END
 			
 				IF ~~ THEN BEGIN drow_armor
-				SAY ~Nein, was Ihr meint ist Adamantit, eine Legierung aus Adamant und anderen Metallen. Dieser Panzer hier besteht aus reinem Adamant. Es lässt sich sehr schwer verarbeiten, weil es sehr spröde ist. Der Schutz, den diese Rüstung bietet, ist auch nicht gerade überragend, doch das Material hat einen Vorteil: Es ist sehr leicht und extrem hitzebeständig.~
-				IF ~~ THEN REPLY ~Ihr meint, es beschützt mich von Feuer?~ + prot_from_fire
+				SAY ~Nein, was Ihr meint ist Adamantit, die Legierung aus Adamant und anderen Metallen. Dieser Panzer hier besteht aus reinem Adamant.~ 
+				IF ~~ THEN + armor_adamantine
+				END
+				
+				IF ~~ THEN BEGIN armor_adamantine
+				SAY ~Adamant lässt sich schwer verarbeiten, weil es sehr spröde ist. Doch ich habe mein Bestes gegeben, eine vortreffliche Rüstung daraus zu fertigen. Der Schutz, den diese Rüstung bietet, ist zwar nicht überragend, doch das Material hat einen Vorteil: Es ist sehr leicht und extrem hitzebeständig.~
+				IF ~~ THEN REPLY ~Ihr meint, es beschützt mich vor Feuer?~ + prot_from_fire
 				END
 				
 					IF ~~ THEN BEGIN prot_from_fire
 					SAY ~Genau. Bei all den Gefahren, die auf Euch lauern, könnten feuerspeiende Wesen die weitaus Größte sein. Ich dachte mir, ich schmiede Euch eine Rüstung, die leicht zu tragen ist und Euch zuverlässig vor diesem Element beschützt.~
 					IF ~~ THEN REPLY ~Das ist sehr großzügig von Euch, Danke!~ + thanks
+					IF ~~ THEN REPLY ~Schwer, selten und kaum kaputtzukriegen. Ziemlich zwergisch.~ + thanks
+					IF ~~ THEN REPLY ~Ich werde ihn mit Stolz tragen.~ + thanks
+					IF ~~ THEN REPLY ~Ein Geschenk dieser Art verdient mehr als ein einfaches Danke. Ich werde es in Ehren tragen.~ + thanks
+					IF ~~ THEN REPLY ~Schaden kann es nicht, das Teil einmal mitzunehmen.~ + thanks
 					END
 					
 						IF ~~ THEN BEGIN thanks
-						SAY ~Ach, wisst Ihr, ich möchte einfach, dass Ihr wieder gut zurückkommt. Und jetzt gehe ich lieber wieder in meine Schmiede, bevor ich noch sentimental werde. Passt auf Euch, <CHARNAME>!~
+						SAY ~Ach, wisst Ihr, ich möchte einfach, dass Ihr wieder gut zurückkommt. Und jetzt gehe ich lieber wieder in meine Schmiede, bevor ich zu sentimental werde. Passt auf Euch, <CHARNAME>!~
 						IF ~~ THEN DO ~EscapeAreaObject("TrACIL51")~ EXIT
 						END
 

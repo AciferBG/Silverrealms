@@ -24,7 +24,7 @@ BEGIN ~AC#MITH5~
 
 IF ~Global("AC#IltkazarCelebration","GLOBAL",3)
 Global("AC#IL_GiveDragonRing","GLOBAL",0)~ THEN BEGIN hello_throne_final_0
-  SAY ~<CHARNAME>. Die Ansprache an mein Volk ist vorüber. Nun endlich haben wir Gelegenheit, in Ruhe miteinander zu sprechen. Ihr habt Iltkazar mehr gegeben, als ich jemals zurückzahlen könnte. Doch zunächst möchte ich Euch dies als Zeichen meiner Dankbarkeit geben: Ein Ring meiner Ahnen. Nehmt ihn. Ihr verdient ihn, fortan zu tragen.~
+  SAY ~<CHARNAME>. Die Ansprache an mein Volk ist vorüber. Nun endlich haben wir Gelegenheit, in Ruhe miteinander zu sprechen. Ihr habt Iltkazar mehr gegeben, als ich jemals zurückzahlen könnte. Ich möchte Euch dies als Zeichen meiner Dankbarkeit geben: Ein Ring meiner Ahnen. Ihr verdient, ihn fortan zu tragen.~
 	IF ~~ THEN DO ~GiveItemCreate("AC#ILRI8",Player1,1,1,1)
 	AddJournalEntry(@99001,QUEST_DONE)~ GOTO throne_final_questions_1
 END
@@ -38,7 +38,7 @@ END
 	  IF ~~ THEN REPLY ~Was wird nun aus Iltkazar werden?~ GOTO future
 	  IF ~~ THEN REPLY ~Was wird aus dem Regentschaftsrat?~ GOTO regency
 	  IF ~~ THEN REPLY ~Wusste irgendjemand, dass Ihr ein Drache seid?~ GOTO secret
-	  IF ~~ THEN REPLY ~Was bedeutet Iltkazar Euch persönlich?~ GOTO meaning
+	  IF ~~ THEN REPLY ~Wie habt Ihr Tiamat in den Neun Höllen eingekerkert?~ GOTO meaning
 	  IF ~~ THEN REPLY ~Ich denke, es ist Zeit für meinen Abschied.~ GOTO farewell
 	END
 
@@ -52,7 +52,7 @@ GlobalGT("AC#IL_GiveDragonRing","GLOBAL",0)~ THEN BEGIN hello_throne_final_01
   IF ~~ THEN REPLY ~Was wird nun aus Iltkazar werden?~ GOTO future
   IF ~~ THEN REPLY ~Was wird aus dem Regentschaftsrat?~ GOTO regency
   IF ~~ THEN REPLY ~Wusste irgendjemand, dass Ihr ein Drache seid?~ GOTO secret
-  IF ~~ THEN REPLY ~Was bedeutet Iltkazar Euch persönlich?~ GOTO meaning
+  IF ~~ THEN REPLY ~Wie habt Ihr Tiamat in den Neun Höllen eingekerkert?~ GOTO meaning
   IF ~~ THEN REPLY ~Ich denke, es ist Zeit für meinen Abschied.~ GOTO farewell
 END
 
@@ -65,59 +65,65 @@ END
 	  IF ~~ THEN REPLY ~Was wird nun aus Iltkazar werden?~ GOTO future
 	  IF ~~ THEN REPLY ~Was wird aus dem Regentschaftsrat?~ GOTO regency
 	  IF ~~ THEN REPLY ~Wusste irgendjemand, dass Ihr ein Drache seid?~ GOTO secret
-	  IF ~~ THEN REPLY ~Was bedeutet Iltkazar Euch persönlich?~ GOTO meaning
+	  IF ~~ THEN REPLY ~Wie habt Ihr Tiamat in den Neun Höllen eingekerkert?~ GOTO meaning
 	  IF ~~ THEN REPLY ~Ich denke, es ist Zeit für meinen Abschied.~ GOTO farewell
 	END
 
 IF ~~ THEN BEGIN who_are_you
-  SAY ~Ich wurde vor vielen Jahrhunderten geboren, lange bevor die meisten Reiche der Menschen überhaupt existierten. Wie viele Silberdrachen zog es mich einst hinaus in die Welt der Sterblichen. Während andere meinesgleichen ferne Gipfel oder einsame Täler bevorzugten, fand ich Gefallen an den Hallen der Zwerge. Ihre Beharrlichkeit, ihre Treue und ihre Kunstfertigkeit beeindruckten mich. Mit den Jahren wurde aus Bewunderung Zuneigung und schließlich Verantwortung.~
+  SAY ~Ich wurde vor vielen Jahrhunderten geboren, lange bevor die heutigen Reiche der Menschen existierten. Wie viele Silberdrachen zog es mich hinaus in die Welt, um Gutes zu tun. Ich fand Unterstützung im Glauben an Bahamut, den Platindrachen, Gott aller gut gesinnten DRachen. IN seinem Namen wirkte ich Gutes und stand gegen Böses ein. So zog ich mir den Unmut von Kalzareinad und Tiamat auf mich.~
   IF ~~ THEN GOTO throne_final_hub
 END
 
 IF ~~ THEN BEGIN king_of_iltkazar
-  SAY ~Ein König wird nicht allein durch Blut oder einen Thron zum Herrscher. Die Zwerge Iltkazars baten mich einst, über sie zu wachen. Zunächst als Freund, später als Berater und schließlich als König. Es war nie die Krone, die mir wichtig war. Es waren die Menschen – oder besser gesagt die Zwerge – die hinter ihr standen.~
+  SAY ~as ist eine lange und schwierige Geschichte. Nach dem Fluch Kalzareinads versuchte ich das Beste aus meiner Lage zu machen. Schließlich fand ich Gefallen daran, ein Zwerg zu sein. Nun, nicht so viel Gefallen wie ein Drache, aber dennoch. Zwege sind ein gutes, standhaftes Volk, und ich verstand mich gut mit ihnen.~
+  =
+  ~Irgendwann erhielt ich ein Zeichen. Ich nahm an, es sei von Bahamut. Erst viel später wurde mir klar, dass Dumathoin mich gerufen hatte. Und so stand ich dann vor den Toren Iltkazars und musste seine Bewohner davon überzeugen, dass Dumathoin mich als König auserkoren hatte. Kein sehr leichtes Unterfangen, weder für mich noch für sie.~
   IF ~~ THEN GOTO throne_final_hub
 END
 
 IF ~~ THEN BEGIN curse
-  SAY ~Länger, als manche Königreiche bestanden haben. Jahrhunderte vergingen, während ich in dieser Gestalt gefangen war. Anfangs zählte ich die Jahre. Später die Generationen. Schließlich hörte ich auf zu zählen.~
+  SAY ~Länger, als manche Königreiche bestanden haben. Anfangs zählte ich die Jahre. Später die Generationen. Schließlich hörte ich auf zu zählen.~
   IF ~~ THEN GOTO throne_final_hub
 END
 
 IF ~~ THEN BEGIN life_as_dwarf
   SAY ~Schlechter, als Ihr vielleicht denkt. Besser, als Ihr vielleicht erwartet. Anfangs empfand ich jede Einschränkung als Demütigung. Doch mit der Zeit lernte ich, die Welt durch die Augen jener zu sehen, die ich beschützen wollte. Vielleicht machte mich der Fluch zu einem besseren König, als ich es jemals als Drache gewesen wäre.~
+  =
+  ~Und ehrlich gesagt glaube ich mittlerweile, dass es das Schicksal geschickt eingefädelt hatte, mich in Zwergenform zu bringen. Denn so gelangte ich an den Ort mit den besten Schmieden und Metallwerkern, ohne deren Hilfe es den Anhängern Bahamuts nie gelungen wäre, Tiamat dauerhaft in den Neun Höllen einzusperren.~
   IF ~~ THEN GOTO throne_final_hub
 END
 
 IF ~~ THEN BEGIN future
-  SAY ~Der schwierigste Teil beginnt erst jetzt. Eine Stadt zu retten ist leichter, als sie wieder aufzubauen. Unsere Hallen müssen repariert, Handelswege gesichert und alte Bündnisse erneuert werden. Doch zum ersten Mal seit langer Zeit blicke ich mit Zuversicht in die Zukunft.~
+  SAY ~Eine Stadt zu retten ist leichter, als sie wieder aufzubauen. Unsere Hallen müssen repariert, Handelswege gesichert und alte Bündnisse erneuert werden. Doch zum ersten Mal seit langer Zeit blicke ich mit Zuversicht in die Zukunft.~
   IF ~~ THEN GOTO throne_final_hub
 END
 
 IF ~~ THEN BEGIN regency
-  SAY ~Der Regentschaftsrat hat Iltkazar durch schwere Zeiten geführt. Manche Entscheidungen hätte ich anders getroffen, andere nicht. Doch sie hielten die Stadt zusammen, als viele längst jede Hoffnung aufgegeben hatten. Dafür schulde ich ihnen Dank.~
+  SAY ~Der Regentschaftsrat hat Iltkazar durch schwere Zeiten geführt. Manche Entscheidungen hätte ich anders getroffen, andere sicher schlechter als sie. Doch sie hielten die Stadt zusammen, als viele längst jede Hoffnung aufgegeben hatten. Dafür schulde ich ihnen Dank.~
   IF ~~ THEN GOTO throne_final_hub
 END
 
 IF ~~ THEN BEGIN secret
-  SAY ~Einige ahnten es. Wenige wussten es mit Gewissheit. Die meisten hielten die Wahrheit für eine Legende. Das war mir stets recht. Ein König sollte nach seinen Taten beurteilt werden, nicht nach der Gestalt, die er annimmt.~
+  SAY ~Einige ahnten es vielleicht. Wenige wussten es mit Gewissheit. Die meisten hielten die Wahrheit für eine Legende. Das war mir stets recht. Ein König sollte nach seinen Taten beurteilt werden, nicht nach der Gestalt, die er annimmt.~
   IF ~~ THEN GOTO throne_final_hub
 END
 
 IF ~~ THEN BEGIN meaning
-  SAY ~Iltkazar ist mein Zuhause. Nicht meine Höhle. Nicht mein Hort. Mein Zuhause. Ich habe hier Freunde gefunden, Verbündete verloren, Siege gefeiert und Niederlagen ertragen. Die Stadt hat mich ebenso geprägt, wie ich sie geprägt habe.~
+  SAY ~Dieses Heldentat haben andere vollbracht. Meine Aufgabe war es lediglich, Ketten zu liefern, die stark genug sind, eine fünfköpfige Drachengottheit festzuhalten! Die Zwerge wussten nicht, was sie da schmiedeten, damals, als ich den Auftrag gab. Doch sie haben auch nie gefragt.~
+  =
+  ~Jedenfalls halten diese Ketten noch immer! Nicht auszudenken, wenn es Malphas und seinen Schergen gelungen wäre, sie zu sprengen. Tiamat ist eine eitle, rachsüchtige Gottheit. Nun sitzt sie weiterhin in den Neun Höllen fest, gehalten von Iltkazars Ketten.~
   IF ~~ THEN GOTO throne_final_hub
 END
 
 IF ~~ THEN BEGIN farewell
-  SAY ~Dann bleibt mir nur noch eines zu sagen. Ihr seid jederzeit in Iltkazar willkommen! Nicht nur als Gast. Auch nicht nur als Verbündeter. Sondern als Freund!~
+  SAY ~Dann bleibt mir nur noch eines zu sagen: Ihr seid jederzeit in Iltkazar willkommen! Nicht nur als Gast oder als Verbündeter. Sondern als Freund!~
   IF ~~ THEN REPLY ~Vielleicht sehen wir uns eines Tages wieder.~ GOTO bye
   IF ~~ THEN REPLY ~Passt gut auf Eure Stadt auf.~ GOTO bye
   IF ~~ THEN REPLY ~Lebt wohl, Mith Barak.~ GOTO bye
 END
 
 IF ~~ THEN BEGIN bye
-  SAY ~Lebt wohl, <CHARNAME>. Mögen Dumathoin und Bahamut über Euch wachen und Eure Wege stets sicher sein. Die Tore Iltkazars werden Euch immer offenstehen.~
+  SAY ~Lebt wohl, <CHARNAME>. Mögen Dumathoin und Bahamut über Euch wachen. Die Tore Iltkazars stehen Euch immer offen!~
   IF ~~ THEN EXIT
 END
 
@@ -338,7 +344,8 @@ CHAIN IF ~Global("AC#ILRegencyCouncilDone","GLOBAL",1)~ THEN AC#GROMB chain_rege
 == AC#VRONB ~Wir haben lange beraten, womit wir Euch für Eure Taten angemessen danken könnten.~
 == AC#GROMB ~Es gibt nur eine angemessene Antwort. Eines der größten Artefakte, das Iltkazar je besessen hat, soll fortan Euch gehören.~
 == AC#ANTAB ~Bei Euch ist es in guten Händen. Geht weise damit um.~
-== AC#ELERB ~Nehmt diesen Talisman. Möge er Euch stets an uns und unser Volk erinnern.~
+== AC#ELERB ~Dieser Talisman wurde aus den seltenen Omlar-Kristallen gefertigt, für die unsere Stadt so berühmt ist. Nehmt ihn.~
+== AC#GROMB ~Möge er Euch stets an uns und unser Volk erinnern.~
 END
 IF ~~ THEN DO ~GiveItemCreate("AC#ILAM8",Player1,1,1,1)~ EXTERN AC#GROMB chain_regency_council_thank_you_02 
 

@@ -1,0 +1,17 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player1)
+        FadeToColor([5.0],0)
+        LeaveAreaLUAPanic("ACIL2T","",[6.948],S)
+        LeaveAreaLUA("ACIL2T","",[6.948],NW)
+        MultiPlayerSync()
+        MoveViewPoint([480.306],INSTANT)
+        CreateCreature("AC#7TTIA",[480.306],NW)  // Tiamat
+        SmallWait(5)
+        FadeFromColor([15.0],0)
+        Wait(2)
+        ActionOverride("AC#7TTIA",StartDialogueNoSet(Player1))
+END
+

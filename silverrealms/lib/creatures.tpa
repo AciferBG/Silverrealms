@@ -3084,15 +3084,12 @@ ADD_MEMORIZED_SPELL ~SPWI623~ #5 ~wizard~ ( 1 ) // Carrion
   
 COPY ~silverrealms/cre/AC#IL04O.cre~ ~override~ // Onnor
   SAY NAME1 @1113 SAY NAME2 @1113
-  
+/*
 COPY ~silverrealms/cre/AC#71DRL.cre~ ~override~ // Dracolich (TSR#8101; Cult of the dragon; German version pp. 116 ff)
   SAY NAME1 @25 SAY NAME2 @25
-  
-  
-    
     COPY_EXISTING ~AC#71DRL.cre~ ~override~
     WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#DRACOLICH~))
-    
+*/    
   
 COPY ~silverrealms/cre/AC#71CR6.cre~ ~override~ // dragon skeleton
   SAY NAME1 @26 SAY NAME2 @26
@@ -3104,6 +3101,9 @@ COPY ~silverrealms/cre/AC#4TTIA.cre~ ~override~ // Tiamat
   SAY NAME1 @9075 SAY NAME2 @9075
 
 COPY ~silverrealms/cre/AC#5TTIA.cre~ ~override~ // Tiamat
+  SAY NAME1 @9075 SAY NAME2 @9075
+  
+COPY ~silverrealms/cre/AC#7TTIA.cre~ ~override~ // Tiamat
   SAY NAME1 @9075 SAY NAME2 @9075
   
 COPY ~silverrealms/cre/AC#50DWF.cre~ ~override~ // Domor the fisherman

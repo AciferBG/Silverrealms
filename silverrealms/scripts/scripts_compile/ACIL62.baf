@@ -138,6 +138,15 @@ THEN
 END
 
 IF
+    Global("EndScreen","ACIL62",1)
+THEN
+    RESPONSE #100
+        SetGlobal("EndScreen","ACIL62",2)
+        StartCutSceneMode()
+        StartCutScene("AC#2TCT7")
+END
+
+IF
     GlobalGT("AC#IltkazarCelebration","GLOBAL",2)
     Global("EndScreen","ACIL62",0)
 THEN

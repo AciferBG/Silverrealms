@@ -67,6 +67,7 @@ THEN
 	RESPONSE #100
 	         SetGlobal("Transit_to_ACIL50","ACIL88",1)
 	         SetGlobal("AC#Mithbarak_Rescued","GLOBAL",1)
+			 StartMovie("AC#IL64A")
 	         AmbientActivate("Portal",TRUE)
 	         SoundActivate("Ac#88_portal",TRUE)
                  TriggerActivation("TrACIL50",TRUE)

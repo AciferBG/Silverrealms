@@ -340,6 +340,11 @@ Ich habe mit dem Umhang aus Drider-Seide meine wohlverdiente Belohnung von dem B
 @54100 = ~Iltkazars Heldengeschichten
 
 Ich bin in der Bar "Zum blutigen Bollwerk" einer Gruppe Zwerge begegnet, die ihre Heldentaten zum Besten gegeben haben. Wenn auch nur die Hälfte von dem, womit sie geprahlt haben, der Wahrheit entspricht, müssen es alle große Kämpfer sein. Vielleicht kann ich sie auch einmal mit einer meiner Heldentaten unterhalten?~
+
+@54101 = ~Iltkazars Heldengeschichten
+
+Ich habe eine meiner Taten mit den prahlenden Zwergen in der Bar "Zum blutigen Bollwerk" geteilt und sie damit nachhaltig beeindruckt.~
+
 @54200 = ~Der Rothe-Bulle
 
 Ein Rothé-Züchter namens Snorri sorgt sich um seine Zucht, weil sein Zuchtbulle keinen Nachwuchs mehr zeugen will.~
@@ -794,11 +799,11 @@ Mith Baraks gefangener Astralkörper ist vernichtet. Sobald auch Malphas tot ist
 
 @98003 = ~Flucht aus der Astralebene
 
-Malphas und Mith Baraks Astralkörper sind vernichtet. Mith Barak sollte nun auf seinem Thron in Iltkazar erwacht sein und irgendwo auf dem Dach der Festung ein Portal geöffnet haben, das mich zurück in die Stadt bringt.~
+Malphas ist tot und Mith Baraks Astralkörper vernichtet. Mith Barak sollte nun auf seinem Thron in Iltkazar erwacht sein und irgendwo auf dem Dach der Festung ein Portal geöffnet haben, das mich zurück in die Stadt bringt.~
 //___________________________Schlafender König
 @99000  = ~Der Schlafende König
 
-Ich habe König Mith Barak befreit. Sowohl der König als auch die Zwerge waren mir äußerst dankbar. Ich soll mich in den Thronsaal begeben, um den Feierlichkeiten zu Mith Baraks Rückkehr beizuwohnen.~
+Ich habe König Mith Barak befreit. Sowohl der König als auch die Zwerge waren mir äußerst dankbar. Ich soll mich in den Thronsaal begeben, um den Feierlichkeiten beizuwohnen und danach einige persönliche Worte mit Mith Barak zu wechseln.~
 @99001 = ~Der Schlafende König
 
 Mith Barak hat seinen rechtmäßigen Platz auf Iltkazars Thron wieder eingenommen. Zugleich ist Tiamats Versuch gescheitert, ihre Ketten zu sprengen, die sie in den Neun Höllen gefangen halten. Nun, da die Feierlichkeiten vorüber sind, stehen mir die Tore Iltkazars jederzeit offen, und ich kann mich wieder anderen Aufgaben widmen.~

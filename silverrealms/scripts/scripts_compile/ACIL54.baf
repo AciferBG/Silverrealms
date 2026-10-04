@@ -36,7 +36,16 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("AC#Hero_Story","ACIL54",2)
-	        AddJournalEntry(@54100,QUEST)
+	    AddJournalEntry(@54100,QUEST)
+END
+
+IF
+	GlobalGT("AC#Battle_Tales","ACIL54",2)
+	Global("HeroStoryTold","ACIL54",0)
+THEN
+	RESPONSE #100
+		SetGlobal("HeroStoryTold","ACIL54",1)
+	    AddJournalEntry(@54101,QUEST_DONE)
 END
 
 IF

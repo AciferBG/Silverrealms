@@ -84,7 +84,7 @@ IF ~~ THEN EXTERN ~AC#BAR01~ mead_01
 END
 
 IF ~Global("AC#Battle_Tales","ACIL54",3)~ THEN BEGIN 0
-SAY ~Ein hoch auf <CHARNAME>, unseren Helden der Oberfläche!~ // ~Ein hoch auf <CHARNAME>, unseren Helden der Oberfläche!~
+SAY ~Ein Hoch auf <CHARNAME>, unseren Helden der Oberfläche!~ // ~Ein hoch auf <CHARNAME>, unseren Helden der Oberfläche!~
 IF ~~ THEN EXIT
 END
 
@@ -186,7 +186,7 @@ END
 
 BEGIN AC#BADW2  // Nalric Dunron
 IF ~Global("AC#Battle_Tales","ACIL54",3)~ THEN BEGIN 0
-SAY ~Ein hoch auf <CHARNAME>, unseren Helden der Oberfläche!~ // ~Ein hoch auf <CHARNAME>, unseren Helden der Oberfläche!~
+SAY ~Ein Hoch auf <CHARNAME>, unseren Helden der Oberfläche!~ // ~Ein hoch auf <CHARNAME>, unseren Helden der Oberfläche!~
 IF ~~ THEN EXIT
 END
 
@@ -263,7 +263,7 @@ END
 
 BEGIN AC#BADW3  // Otur Palaad
 IF ~Global("AC#Battle_Tales","ACIL54",3)~ THEN BEGIN 0
-SAY ~Ein hoch auf <CHARNAME>, unseren Helden der Oberfläche!~
+SAY ~Ein Hoch auf <CHARNAME>, unseren Helden der Oberfläche!~
 IF ~~ THEN EXIT
 END
 

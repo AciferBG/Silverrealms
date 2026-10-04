@@ -91,3 +91,20 @@ CHAIN IF ~NumTimesTalkedTo(0)~ THEN AC#MAL5T hello
 END
 IF ~~ THEN DO ~StartCutSceneMode()
 StartCutScene("AC#2TCT6")~ EXIT
+
+/*******************************************************************************************************
+Dialogue in Tiamats prison last time
+*******************************************************************************************************/
+// Tiamat
+BEGIN ~AC#7TTIA~
+
+CHAIN IF ~NumTimesTalkedTo(0)~ THEN AC#7TTIA hello
+~Malphas!~
+== AC#7TTIA ~MALPHAS!~
+== AC#7TTIA ~Verfluchter Vogel, wo steckt Ihr?~
+== AC#7TTIA ~MALPHAS!~
+== AC#7TTIA ~Argh... nach all der Zeit, noch immer diese Ketten!~
+== AC#7TTIA ~ICH WERDE NICHT EWIG HIER BLEIBEN!~
+END
+IF ~~ THEN DO ~StartCutSceneMode()
+StartCutScene("AC#2TCT8")~ EXIT

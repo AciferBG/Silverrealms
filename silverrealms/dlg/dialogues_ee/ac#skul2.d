@@ -8,8 +8,14 @@ BEGIN ~AC#Skul2~
 
 IF ~True()~ THEN BEGIN 1
 SAY ~Der Schädel pulsiert weiterhin mit ungeheurer Energie. Wenn Ihr möchtet, könnt Ihr allein mit Eurer Geisteskraft das Schiff manövrieren.~
+++ ~Bringt mich zurück zur materiellen Ebene.~ + bring_back_prime
 ++ ~Den Schädel loslassen.~ + 16
 IF ~Global("AC#RevealACIL80","GLOBAL",1)~ THEN REPLY ~Bringt mich zu Mith Baraks Gefängnis.~  + 3
+END
+
+IF ~~ THEN BEGIN bring_back_prime
+SAY ~Nichts geschieht. Es scheint, dass Ihr mit dem Schiff der Githyanki nicht mehr zurück in die materielle Ebene wechseln könnt.~
+++ ~Den Schädel loslassen.~ + 16
 END
 
 IF ~~ THEN BEGIN 3

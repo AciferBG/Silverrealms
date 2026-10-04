@@ -752,13 +752,6 @@ Ich habe den Fluch, der auf Mith Barak lastet, von ihm nehmen lassen. Für diese
 Mith Baraks Fluch wurde nicht gebrochen. Der Silberdrache wird also zeitlebens als Zwerg auf dieser Welt wandeln müssen.~
 
 
-//___________________________Mith Baraks Gefängnis
-@80000  = ~Befreie König Mith Barak
-
-Ich weiß jetzt, wo Mith Barak festgehalten wird: Bei einem anderen toten Gott in der Astralebene. Obwohl ich noch nie dort gewesen bin, weiß ich durch die Beschreibung des Gottes Kalzareinad, wie ich mit dem Astralschiff der Githyanki dorthin gelangen kann.~
-@80001  = ~Befreie König Mith Barak
-
-Ich bin an Mith Baraks Gefängnis angekommen. Ich muss mich zu ihm vorkämpfen und befreien, um wieder zurück in meine Heimat kehren zu können.~
 //___________________________Der Abstieg vom Turboldberg
 @90010  = ~Der Abstieg vom Turboldberg
 
@@ -785,10 +778,30 @@ Beldas erwähnte eine Leiter, die er im Inneren der Turboldfeste zurückgelassen
 @90021  = ~Der Abstieg vom Turboldberg
 
 Ich habe die Leiter gefunden. Wenn ich sie im Freien an dem Felsvorsprung festmache, werde ich den Turboldberg wieder verlassen können.~
-//___________________________Schlafender König
-@99000  = ~Befreie König Mith Barak
 
-Ich habe Mith Barak befreit und damit Iltkazar seinen rechtmäßigen König zurückgegeben und außerdem vor der Bedrohung Tiamats gerettet. Sowohl König Mith Barak als auch die Zwerge waren mir äußerst dankbar, und ich werde von nun in Iltkazar ein- und ausgehen können, wie es mir beliebt.~
+//___________________________Flucht aus der Astralebene
+@98000 = ~Flucht aus der Astralebene
+
+Um die Astralebene verlassen zu können, muss ich sowohl Malphas als auch Mith Baraks gefangenen Astralkörper vernichten. Erst wenn beide tot sind, kann Mith Barak auf seinem Thron in Iltkazar erwachen und ein Portal öffnen, das mich von diesem Ort fortbringt.~
+
+@98001 = ~Flucht aus der Astralebene
+
+Malphas ist tot. Nun muss ich noch Mith Baraks gefangenen Astralkörper vernichten. Danach sollte Mith Barak auf seinem Thron in Iltkazar erwachen und ein Portal öffnen können, das mich aus der Astralebene zurückbringt.~
+
+@98002 = ~Flucht aus der Astralebene
+
+Mith Baraks gefangener Astralkörper ist vernichtet. Sobald auch Malphas tot ist, sollte Mith Barak auf seinem Thron in Iltkazar erwachen und ein Portal öffnen können, das mich aus der Astralebene zurückbringt.~
+
+@98003 = ~Flucht aus der Astralebene
+
+Malphas und Mith Baraks Astralkörper sind vernichtet. Mith Barak sollte nun auf seinem Thron in Iltkazar erwacht sein und irgendwo auf dem Dach der Festung ein Portal geöffnet haben, das mich zurück in die Stadt bringt.~
+//___________________________Schlafender König
+@99000  = ~Der Schlafende König
+
+Ich habe König Mith Barak befreit. Sowohl der König als auch die Zwerge waren mir äußerst dankbar. Ich soll mich in den Thronsaal begeben, um den Feierlichkeiten zu Mith Baraks Rückkehr beizuwohnen.~
+@99001 = ~Der Schlafende König
+
+Mith Barak hat seinen rechtmäßigen Platz auf Iltkazars Thron wieder eingenommen. Zugleich ist Tiamats Versuch gescheitert, ihre Ketten zu sprengen, die sie in den Neun Höllen gefangen halten. Nun, da die Feierlichkeiten vorüber sind, stehen mir die Tore Iltkazars jederzeit offen, und ich kann mich wieder anderen Aufgaben widmen.~
 
 @20002   = ~Der Schlafende König
 
@@ -868,4 +881,12 @@ Ich bin am Drachenfriedhof angekommen. Irgendwo an diesem Ort soll sich ein ural
 @64900  = ~Der Schlafende König
 
 So langsam erreicht die Suche nach Mith Barak ihren Höhepunkt. Ich werde mich in das alte Zwergenkönigreich Torglor begeben müssen. Mit etwas Glück finde ich dort ein Portal in die Astralebene, das mich zu dem Körper des toten Gottes Kalzareinad bringt, mit etwas Pech auch die Githyanki, die sich dort niedergelassen haben. Ich muss Iltkazar über das nördliche Stadttor, das Drakkalor-Tor, verlassen, um meinen Weg nach Torglor anzutreten.~
+
+//___________________________alt: Befreie König Mith Barak
+@80000 = ~Der Schlafende König
+
+Ich weiß nun, wo Mith Barak in der Astralebene festgehalten wird. Kalzareinad hat den Ort beschrieben, an dem sich die Überreste eines anderen toten Gottes befinden. Mit diesem Wissen sollte ich das Astralschiff der Githyanki dorthin steuern können.~
+@80001  = ~Der Schlafende König
+
+Ich bin an Mith Baraks Gefängnis angekommen. Ich muss mich zu ihm vorkämpfen und befreien, um wieder zurück in meine Heimat kehren zu können.~
 

@@ -694,7 +694,11 @@ COPY ~silverrealms/cre/AC#DREA9.cre~ ~override/AC#DREA9.cre~ //Bleucorundum
 
 COPY ~silverrealms/cre/AC#MITH2.cre~ ~override~
   SAY NAME1 @61 SAY NAME2 @61
-  
+  SAY INITIAL_MEETING   @5400
+  SAY SELECT_COMMON1  @5401
+  SAY SELECT_COMMON2  @5402
+  SAY SELECT_COMMON2  @5403
+
 COPY ~silverrealms/cre/AC#MITH5.cre~ ~override/AC#MITH5.cre~  // rescued Mith Barak: Dwarf
   SAY NAME1 @61 SAY NAME2 @61
     SAY INITIAL_MEETING   @5400

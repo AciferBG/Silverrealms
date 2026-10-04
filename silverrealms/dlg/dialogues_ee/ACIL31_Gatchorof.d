@@ -23,12 +23,25 @@ END
 IF ~~ THEN BEGIN 3
    SAY ~Nichts geschieht. Ihr werdet Eure Gedanken genauer fokussieren müssen, um die Reise in Gang zu bringen.~
 ++ ~Den Schädel losslassen.~ + 16
-++ ~Ihr stellt Euch die tote Drachengottheit Kalzareinad vor, wie sie Euch der alte Drache Maldraedior beschrieben hat. Vor Eurem geistigen Auge formt sich ein Bild, das Bild eines riesigen Drachenkadavers, der in einem Meer aus Silber zu treiben scheint...~ + 4
+IF ~Global("NoBackWarning","ACIL31",1)~ THEN REPLY ~Ihr stellt Euch die tote Drachengottheit Kalzareinad vor: Das Bild eines riesigen Drachenkadavers, der in einem Meer aus Silber treibt...~ + 4
+IF ~Global("NoBackWarning","ACIL31",0)~ THEN REPLY ~Ihr stellt Euch die tote Drachengottheit Kalzareinad vor: Das Bild eines riesigen Drachenkadavers, der in einem Meer aus Silber treibt...~ DO ~SetGlobal("NoBackWarning","ACIL31",1)~ GOTO warning_no_way_back
+END
+
+IF ~~ THEN BEGIN warning_no_way_back
+SAY ~Ihr spürt, dass es von hier an kein einfaches Zurück mehr geben wird. Sobald Ihr in die Astralebene überwechselt, müsst Ihr Mith Barak finden und befreien, bevor Ihr auf die materielle Ebene zurückkehren könnt.~
+++ ~Den Schädel loslassen.~ + 16
+IF ~~ THEN REPLY ~Dann gibt es kein Zurück mehr. Los geht's!~ + 4
+IF ~~ THEN REPLY ~Ich brauche noch etwas Zeit.~ + 16
 END
 
 IF ~~THEN BEGIN 4
-SAY ~Die Wirklichkeit um Euch verschwimmt, und Ihr habt das gefühl, als würde Euer Geist den Körper verlassen. Ihr fühlt Euch leicht und frei, und die Höhle, in der Ihr Euch gerade noch befandet, verschwindet in einem Meer aus Licht...~
-   IF ~~ THEN DO ~SetGlobal("AC#Astraltravel","ACIL31",1)~  EXIT
+SAY ~Die Wirklichkeit um Euch verschwimmt, und Ihr habt das Gefühl, als würde Euer Geist den Körper verlassen. Ihr fühlt Euch leicht und frei, und die Höhle, in der Ihr Euch gerade noch befandet, verschwindet in einem Meer aus Licht...~
+   IF ~~ THEN DO ~SetGlobal("AC#Astraltravel","ACIL31",1)
+   		SetGlobal("GithShipleave","ACIL31",20)
+		ClearAllActions()
+		StartCutSceneMode()
+		Wait(2)
+		StartCutScene("ac#cut76")~  EXIT
 END
 
 IF ~~ THEN BEGIN 16

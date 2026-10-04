@@ -57,6 +57,7 @@ END
 					  SAY ~Der Silberne verweigerte mir Wissen, das mir zustand. Wissen, das kein Sterblicher vor einem Gott verbergen sollte! Für diese Anmaßung belegte ich ihn mit dem Fluch. Ich war Kalzareinad, Hüter dunklen Wissens. Flüche waren Teil meiner Domäne.~ 
 					  IF ~~ THEN REPLY ~Von welchem Wissen sprecht Ihr?~ GOTO 11
 					  IF ~~ THEN REPLY ~Welches Geheimnis war so wertvoll, dass Ihr einen Silberdrachen dafür verflucht habt?~ GOTO 11
+					  IF ~~ THEN REPLY ~Euer Zwist mit Mithbarakaz ist Vergangenheit. Ich muss wissen, wie ich ihn befreien kann.~ GOTO 15
 					END
 
 						IF ~~ THEN BEGIN 11 
@@ -88,7 +89,7 @@ END
 									END
 
 										IF ~~ THEN BEGIN 15 
-										  SAY ~Auch Mithbarakaz kämpfte gegen Tiamat. Doch seine Treue galt nicht mir, sondern Bahamut, dem Platinvater. Dem selbsternannten Beschützer der Schwachen. Dem Bruder Tiamats.~ 
+										  SAY ~Mithbarakaz kämpfte gegen Tiamat. Seine Treue galt Bahamut, dem Platinvater, dem selbsternannten Beschützer der Schwachen. Dem Bruder Tiamats!~ 
 										  IF ~~ THEN REPLY ~Mithbarakaz war ein Diener Bahamuts, der wiederum ein Bruder Tiamats ist?~  GOTO 16
 										  IF ~~ THEN REPLY ~Deshalb stellte er sich gegen Eure Pläne.~ GOTO 16
 										  IF ~~ THEN REPLY ~Oh. Das scheint ein ziemlich großer Konflikt zu sein, in den wir hier hineingeraten sind. Euch ist er jedenfalls nicht gut bekommen.~ GOTO 16

@@ -1,15 +1,20 @@
 IF
-	PartyHasItem("AC#SCABR")
-	CombatCounter(0)
-	InParty("Jaheira")
-	!Dead("Jaheira")
-	Global("AC#Bronzescales","GLOBAL",0)
+    Contains("AC#SCABR","Scales")  // Bronzene Drachenschuppen
+    Global("AC#KeepBronzescales","GLOBAL",0)
 THEN
-	RESPONSE #100
-	        ActionOverride("Jaheira",StartDialogueNoSet(Player1))
+    RESPONSE #100
+        SetGlobal("AC#KeepBronzescales","GLOBAL",10)
+        ActionOverride("Scales",DestroyItem("AC#SCABR"))  // Bronzene Drachenschuppen
 END
 
-
-
-
+IF
+    PartyHasItem("AC#SCABR")  // Bronzene Drachenschuppen
+    CombatCounter(0)
+    InParty("Jaheira")  // Jaheira
+    !Dead("Jaheira")  // Jaheira
+    Global("AC#Bronzescales","GLOBAL",0)
+THEN
+    RESPONSE #100
+        ActionOverride("Jaheira",StartDialogueNoSet(Player1))
+END
 

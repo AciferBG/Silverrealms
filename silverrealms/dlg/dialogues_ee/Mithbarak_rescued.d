@@ -25,7 +25,8 @@ BEGIN ~AC#MITH5~
 IF ~Global("AC#IltkazarCelebration","GLOBAL",3)
 Global("AC#IL_GiveDragonRing","GLOBAL",0)~ THEN BEGIN hello_throne_final_0
   SAY ~<CHARNAME>. Die Ansprache an mein Volk ist vorüber. Nun endlich haben wir Gelegenheit, in Ruhe miteinander zu sprechen. Ihr habt Iltkazar mehr gegeben, als ich jemals zurückzahlen könnte. Doch zunächst möchte ich Euch dies als Zeichen meiner Dankbarkeit geben: Ein Ring meiner Ahnen. Nehmt ihn. Ihr verdient ihn, fortan zu tragen.~
-	IF ~~ THEN DO ~GiveItemCreate("AC#ILRI8",Player1,1,1,1) ~ GOTO throne_final_questions_1
+	IF ~~ THEN DO ~GiveItemCreate("AC#ILRI8",Player1,1,1,1)
+	AddJournalEntry(@99001,QUEST_DONE)~ GOTO throne_final_questions_1
 END
 
 	IF ~~ THEN BEGIN throne_final_questions_1
@@ -236,9 +237,11 @@ END
 					IF ~~ THEN BEGIN rescue_questions
 					SAY ~Jedenfalls sind Euch der Dank Iltkazars und die Achtung des gesamten Zwergenvolkes gewiss – ebenso meine eigene und die aller guten Drachen. Ich weiß, dass Ihr viele Fragen habt, <CHARNAME>, und glaubt mir: Auch mein Volk verlangt nach Antworten. Doch dies ist weder die Zeit noch der Ort dafür. Lasst uns zunächst in den Thronsaal gehen und gemeinsam die Rettung Iltkazars feiern. Danach will ich Euch Rede und Antwort stehen, denn auch für mich hat die Heimkehr nach so langer Zeit vieles verändert.~
 					=
-					~Ich werde mich in den Thronsaal begeben. Zu lange war ich fort, und ein König hat Pflichten gegenüber seinem Volk. Kommt, Freunde! Lasst uns diesen Tag nicht mit Sorgen, sondern mit Freude beschließen. Heute feiern wir die Rettung Iltkazars. Und Ihr, <CHARNAME>, seid dort als Ehrengast willkommen. Wenn die Feierlichkeiten vorüber sind, werden wir Gelegenheit haben, über alles zu sprechen, was geschehen ist.~
+					~Ich werde mich in den Thronsaal begeben. Zu lange war ich fort, und ein König hat Pflichten gegenüber seinem Volk. Kommt, Freunde! Lasst uns diesen Tag nicht mit Sorgen, sondern mit Freude beschließen. Heute feiern wir die Rettung Iltkazars!~ 
+					=
+					~Und Ihr, <CHARNAME>, seid als Ehrengast zu den Feierlichkeiten geladen. Wenn alles vorüber ist, werden wir Gelegenheit haben, unter uns einige Worte zu wechseln.~
 					IF ~~ THEN DO ~SetGlobal("AC#Mithbarak_Rescued","GLOBAL",19)
-					AddJournalEntry(@99000,QUEST_DONE)								   
+					AddJournalEntry(@99000,QUEST)								   
 					EscapeArea()~ EXIT
 					END	
 

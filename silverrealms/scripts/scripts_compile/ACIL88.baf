@@ -31,6 +31,35 @@ THEN
 END
 
 IF
+       	 Global("JournalLeaveAstral","ACIL88",0)
+		 GlobalGT("AC#Mithbarak_Free","GLOBAL",0)
+THEN
+	RESPONSE #100
+	        SetGlobal("JournalLeaveAstral","ACIL88",1)
+			AddJournalEntry(@98000,QUEST)
+END
+
+IF
+         Dead("AC#MAL88")
+		 !Dead("AC#MITH2")
+       	 Global("JournalMalDeadMithNot","ACIL88",0)
+THEN
+	RESPONSE #100
+	        SetGlobal("JournalMalDeadMithNot","ACIL88",1)
+			AddJournalEntry(@98001,QUEST)
+END
+
+IF
+         !Dead("AC#MAL88")
+		 Dead("AC#MITH2")
+       	 Global("JournalMitDeadMalNot","ACIL88",0)
+THEN
+	RESPONSE #100
+	        SetGlobal("JournalMitDeadMalNot","ACIL88",1)
+			AddJournalEntry(@98002,QUEST)
+END
+
+IF
          Dead("AC#MITH2")
          Dead("AC#MAL88")
        	 Global("Transit_to_ACIL50","ACIL88",0)
@@ -41,6 +70,7 @@ THEN
 	         AmbientActivate("Portal",TRUE)
 	         SoundActivate("Ac#88_portal",TRUE)
                  TriggerActivation("TrACIL50",TRUE)
+				 AddJournalEntry(@98003,QUEST_DONE)
 END
 
 /*

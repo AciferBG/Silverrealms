@@ -1,16 +1,27 @@
-
 IF
-	Clicked([ANYONE])
-        Range(LastTrigger,12)
+    Clicked([ANYONE])
+    Range(LastTrigger,12)
+    Global("FireFlak","ACIL88",3)
 THEN
-	RESPONSE #100
-		ReallyForceSpellPoint([868.751],WIZARD_FIREBALL)
+    RESPONSE #100
+       DisplayString(Myself,@7801)
 END
 
 IF
-	Clicked([ANYONE])
-	!Range(LastTrigger,12)
+    Clicked([ANYONE])
+    Range(LastTrigger,12)
+    GlobalLT("FireFlak","ACIL88",3)
 THEN
-	RESPONSE #100
-		DisplayString(Myself,14702)  // Ihr seid zu weit entfernt, um das zu benutzen.
+    RESPONSE #100
+        ReallyForceSpellPoint([868.751],WIZARD_FIREBALL)  // SPWI304.SPL (Feuerball)
+        IncrementGlobal("FireFlak","ACIL88",1)
 END
+
+IF
+    Clicked([ANYONE])
+    !Range(LastTrigger,12)
+THEN
+    RESPONSE #100
+        DisplayString(Myself,14702)  // Ihr seid zu weit entfernt, um das zu benutzen.
+END
+

@@ -199,12 +199,12 @@ END
 				END
 				
 				IF ~~ THEN BEGIN armor_adamantine
-				SAY ~Adamant lässt sich schwer verarbeiten, weil es sehr spröde ist. Doch ich habe mein Bestes gegeben, eine vortreffliche Rüstung daraus zu fertigen. Der Schutz, den diese Rüstung bietet, ist zwar nicht überragend, doch das Material hat einen Vorteil: Es ist sehr leicht und extrem hitzebeständig.~
-				IF ~~ THEN REPLY ~Ihr meint, es beschützt mich vor Feuer?~ + prot_from_fire
+				SAY ~Adamant lässt sich schwer verarbeiten, weil es sehr spröde ist. Doch ich habe mein Bestes gegeben, eine vortreffliche Rüstung daraus zu fertigen.~
+				IF ~~ THEN GOTO prot_from_fire
 				END
 				
 					IF ~~ THEN BEGIN prot_from_fire
-					SAY ~Genau. Bei all den Gefahren, die auf Euch lauern, könnten feuerspeiende Wesen die weitaus Größte sein. Ich dachte mir, ich schmiede Euch eine Rüstung, die leicht zu tragen ist und Euch zuverlässig vor diesem Element beschützt.~
+					SAY ~Ich dachte mir, ich schmiede Euch eine Rüstung, die Euch zuverlässig bei Eurer Reise nach Torglor beschützt.~
 					IF ~~ THEN REPLY ~Das ist sehr großzügig von Euch, Danke!~ + thanks
 					IF ~~ THEN REPLY ~Schwer, selten und kaum kaputtzukriegen. Ziemlich zwergisch.~ + thanks
 					IF ~~ THEN REPLY ~Ich werde ihn mit Stolz tragen.~ + thanks

@@ -14,7 +14,7 @@ IF
 THEN
 	RESPONSE #100
 	        AddexperienceParty(9000)
-	        DisplayString(Myself,@315)
+	        DisplayStringPoint([1936.648],@315)
 		SetGlobal("EarthNodeActivation","ACIL31",7)
 END
 
@@ -29,6 +29,7 @@ THEN
 		SetGlobal("SkulldoorOpen","ACIL31",1)
 END
 
+/*
 IF
 	Global("AC#Astraltravel","ACIL31",1)
 THEN
@@ -49,6 +50,7 @@ THEN
 		Wait(2)
 		StartCutScene("ac#cut76")
 END
+*/
 
 
 

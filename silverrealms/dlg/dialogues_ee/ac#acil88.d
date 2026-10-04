@@ -52,6 +52,11 @@ IF ~~ THEN DO ~SetGlobal("AC#Mithbarak_Free","GLOBAL",1)~
    EXIT
 END
 
+IF ~GlobalGT("AC#Mithbarak_Free","GLOBAL",0)~THEN BEGIN hello_kill_me_02
+SAY ~Wir haben nicht viel Zeit! Ihr müsst mich so schnell wie möglich töten.~
+IF ~~ THEN EXIT
+END
+
 /*******************************************************************************************************
 Dialog AC#MAL88
 *******************************************************************************************************/

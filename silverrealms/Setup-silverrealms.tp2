@@ -615,6 +615,13 @@ COPY ~silverrealms/bam/bam_desc_BG2EE/AC#ILASD.bam~ ~override~  //    astral shi
  LAF INSTALL_PVRZ INT_VAR original_base_index new_base_index STR_VAR source_file = ~silverrealms/bam/bam_desc_BG2EE/MOS1070.pvrz~
  END
  END
+ 
+ COPY ~silverrealms/bam/bam_desc_BG2EE/AC#PLADD.bam~ ~override~  //    adamantium plate mail desc
+ LPF UPDATE_PVRZ_INDICES RET original_base_index new_base_index END
+ ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN 
+ LAF INSTALL_PVRZ INT_VAR original_base_index new_base_index STR_VAR source_file = ~silverrealms/bam/bam_desc_BG2EE/MOS1071.pvrz~
+ END
+ END
 ///////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
 // add Music files
@@ -760,9 +767,14 @@ ADD_JOURNAL
 @79690 @79700 @79701 
 @80000  @80001
 @90010  @90011 @90012 @90013 @90014 @90015
-@90020  @90021  @99000
+@90020  @90021  
+@99000  @99001
+
+@98000 @98001 @98002 @98003
+
 @99500 @99501 @99502 @99503 @99504 @99505 @99506 @99507 @99508 @99509 @99510 @99511 
 @99520
+
 
 
 ///////////////////////////////////////////////////////////////////////

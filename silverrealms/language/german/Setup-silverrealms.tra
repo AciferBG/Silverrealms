@@ -943,14 +943,22 @@ Waffenfertigkeit: Kriegshammer
 Waffentyp: Einhändig~
 @778 = ~Sterbender Duergar~
 @779 = ~Adamantrüstung~
-@780 = ~Diese Rüstung wurde für Euch von Sorni Arnschädel geschmiedet. Reines Adamant ist das am Schwersten zu bearbeitende Material in ganz Faerun. Rüstungen dieser Art bieten zwar wenig Schutz gegen Hiebe und Schläge, lassen sich aber gut verzaubern und bieten einen enormen Schutz vor jeglicher Art von Feuer. Adamant ist sehr spröde, und allein schon eine Rüstung herzustellen, die nicht bei dem ersten Hieb auseinanderfällt, ist eine große Kunst.
+@780 = ~Diese Rüstung wurde für Euch von Sorni Arnschädel geschmiedet. 
+Reines Adamant ist das am Schwersten zu bearbeitende Material in ganz Faerun, denn es ist sehr spröde. Eine Rüstung herzustellen, die nicht bei dem ersten Hieb auseinanderfällt, ist eine große Kunst. 
+Doch ist das Metall erst einmal gehärtet, bieten Rüstungen dieser Art hervorragenden Schutz, insbesondere vor kritischen Treffern. 
 
-SPEZIFISCHE EIGENSCHAFTEN:
+EIGENSCHAFTEN:
 
-Feuerresistenz: 80%
-Rüstungsklasse: 3
-Gewicht: 15
-Mindeststärke: 9~
+Schützt vor kritischen Treffern
+
+Rüstungsklasse: -1
+RK-Bonus:
+ -3 gg. Geschosswaffen
+ -3 gg. Stichwaffen
+ -4 gg. Klingenwaffen
+ Mindeststärke: 9
+ 
+Gewicht: 15~
 @781 = ~Diese elektrischen Blöcke scheinen dem Kraftfeld in der Mitte Energie zu verleihen. Ihr könnt sie deaktivieren, riskiert dabei jedoch, eine unbekannte an Elektrizität abzubekommen.~
 @782 = ~Ihr berührt das Kraftfeld und spürt, wie seine Energie Euren Körper durchdringt. Kurz darauf ist seine Aktivität erloschen.~
 @783 = ~Mithbarakaz~
@@ -1641,6 +1649,7 @@ Doch die Wege eines Abenteurers führen stets weiter.
 Wenn die Tore Iltkazars langsam hinter Euch verschwinden werden, wisst Ihr, dass Ihr hier im Unterreich mehr zurücklasst als eine gerettete Stadt: Ihr lasst Freunde zurück. Und ein Volk, das Euren Namen niemals vergessen wird.~ [AC#ILFIN]
 
 @7800 = ~Die fünf Fragmente verschmelzen zu einem vollständigen Schlüssel.~
+@7801 = ~Die Abschussvorrichtung hat keine Munition mehr.~
 
 
 

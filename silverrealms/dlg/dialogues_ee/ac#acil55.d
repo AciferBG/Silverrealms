@@ -225,5 +225,59 @@ SAY ~Gut. Und jetzt lasst mich schnell weiter mit meinem Tiegel arbeiten, bevor 
     IF ~~ THEN DO ~AddJournalEntry(@52101,QUEST)~ EXIT
 END
 
+// Schmiedearbeiter
+
+BEGIN ~AC#55DW1~
+
+IF ~RandomNum(10,1)~ THEN BEGIN 0
+  SAY ~Nicht so nah an die Hämmer! Die fragen nicht, ob da gerade ein Fuß im Weg steht.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(10,2)~ THEN BEGIN 1
+  SAY ~Noch zwei, drei Schläge, dann können wir das Stück wenden. Vorausgesetzt, die Maschine hält durch.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(10,3)~ THEN BEGIN 2
+  SAY ~Zu heiß, zu laut und der Staub sitzt überall. Genau so muss eine gute Schmiede sein!~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(10,4)~ THEN BEGIN 3
+  SAY ~Metall ist geduldig. Man muss nur lange genug darauf einschlagen.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(10,5)~ THEN BEGIN 4
+  SAY ~Wenn ihr etwas anfassen wollt, fragt vorher. Manche Stücke sehen kälter aus, als sie sind.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(10,6)~ THEN BEGIN 5
+  SAY ~Hört ihr das? Wenn der Klang stimmt, stimmt auch das Metall.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(10,7)~ THEN BEGIN 6
+  SAY ~Die alten Maschinen laufen noch immer. Man muss nur wissen, wo man treten und wo man besser nicht treten sollte.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(10,8)~ THEN BEGIN 7
+  SAY ~Ein sauberer Schlag zur richtigen Zeit spart zehn schlechte. Merkt Euch das.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(10,9)~ THEN BEGIN 8
+  SAY ~Wenn Moradin wollte, dass Metall weich bleibt, hätte er uns keine Hämmer gegeben.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(10,10)~ THEN BEGIN 9
+  SAY ~Spart Euch das Reden. Hier drin versteht Euch bei dem Lärm ohnehin keiner.~
+  IF ~~ THEN EXIT
+END
+
 
 

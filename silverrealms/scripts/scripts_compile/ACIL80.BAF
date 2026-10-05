@@ -84,6 +84,16 @@ THEN
 END
 
 IF
+    Global("AC#IL_TiamatKey","GLOBAL",1)
+    PartyHasItem("AC#KY801")
+    PartyHasItem("AC#KEY80")
+THEN
+    RESPONSE #100
+        TakePartyItem("AC#KY801")
+		SetGlobal("AC#IL_TiamatKey","GLOBAL",2)
+END
+
+IF
    Global("SpawnInfiltrators","ACIL80",0)
    Dead("AC#BERB1")
 THEN

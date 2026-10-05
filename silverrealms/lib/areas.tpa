@@ -339,6 +339,9 @@ COPY ~silverrealms/areas/ACIL5T.are~          ~override~
 COPY ~silverrealms/areas/ACIL5U.are~          ~override~
  WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
 
+COPY ~silverrealms/areas/ACIL5V.are~          ~override~
+ WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+
 COPY ~silverrealms/areas/ACIL5X.are~          ~override~
  WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
  

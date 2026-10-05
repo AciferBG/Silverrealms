@@ -25,7 +25,8 @@ BEGIN ~AC#MITH5~
 IF ~Global("AC#IltkazarCelebration","GLOBAL",3)
 Global("AC#IL_GiveDragonRing","GLOBAL",0)~ THEN BEGIN hello_throne_final_0
   SAY ~<CHARNAME>. Die Ansprache an mein Volk ist vorüber. Nun endlich haben wir Gelegenheit, in Ruhe miteinander zu sprechen. Ihr habt Iltkazar mehr gegeben, als ich jemals zurückzahlen könnte. Ich möchte Euch dies als Zeichen meiner Dankbarkeit geben: Ein Ring meiner Ahnen. Ihr verdient, ihn fortan zu tragen.~
-	IF ~~ THEN DO ~GiveItemCreate("AC#ILRI8",Player1,1,1,1)
+	IF ~~ THEN DO ~SetGlobal("AC#IL_GiveDragonRing","GLOBAL",10)
+	GiveItemCreate("AC#ILRI8",Player1,1,1,1)
 	AddJournalEntry(@99001,QUEST_DONE)~ GOTO throne_final_questions_1
 END
 
@@ -44,7 +45,7 @@ END
 
 IF ~Global("AC#IltkazarCelebration","GLOBAL",3)
 GlobalGT("AC#IL_GiveDragonRing","GLOBAL",0)~ THEN BEGIN hello_throne_final_01
-  SAY ~Nun endlich haben wir Gelegenheit, in Ruhe miteinander zu sprechen. Ihr habt Iltkazar mehr gegeben, als ich jemals zurückzahlen könnte. Wenn Ihr Fragen habt, werde ich sie beantworten, so gut ich kann.~
+  SAY ~Nun endlich haben wir Gelegenheit, in Ruhe miteinander zu sprechen. Wenn Ihr Fragen habt, werde ich sie beantworten, so gut ich kann.~
   IF ~~ THEN REPLY ~Erzählt mir von Euch. Wer ist Mithbarakaz wirklich?~ GOTO who_are_you
   IF ~~ THEN REPLY ~Wie seid Ihr überhaupt König von Iltkazar geworden?~ GOTO king_of_iltkazar
   IF ~~ THEN REPLY ~Wie lange lastete der Fluch bereits auf Euch?~ GOTO curse

@@ -37,13 +37,16 @@ END
 IF ~~ THEN REPLY ~Was genau macht Ihr hier?~ EXTERN AC#ILBDM what_do_you_do
 IF ~Global("AC#IL_Beardmaker","GLOBAL",0)~ THEN REPLY ~Bin schon wieder weg.~ EXTERN AC#ILBDM bye_first_02
 IF ~GlobalGT("AC#IL_Beardmaker","GLOBAL",0)~ THEN REPLY ~Bin schon wieder weg.~ EXTERN AC#ILBDM bye_01
-IF ~GlobalGT("AC#IL_Beardmaker","GLOBAL",0)~ THEN REPLY ~Wegen der Materialien für Bärte...~ EXTERN AC#ILBDM about_materials
+IF ~GlobalGT("AC#IL_Beardmaker","GLOBAL",0)
+GlobalLT("AC#IL_Beardmaker","GLOBAL",5)~ THEN REPLY ~Wegen der Materialien für Bärte...~ EXTERN AC#ILBDM about_materials
 IF ~Global("AC#IL_FalseBeard","GLOBAL",1)~ THEN REPLY ~Ich soll für Petben Riesenkrüppler einen neuen Bart abholen.~ EXTERN AC#ILBDM petben_beard
 
 		CHAIN AC#ILBDM petben_beard
 		~Traut er sich nicht selbst in mein Geschäft herein? Nun denn, mir ist es gleich. Bezahlt hatte er ihn ja bereits. Hier ist der Bart. Richtet ihm meine Grüße aus.~
 		END
-		IF ~~ THEN DO ~SetGlobal("AC#IL_Beardmaker","GLOBAL",2)
+		IF ~~ THEN DO ~
+		//SetGlobal("AC#IL_Beardmaker","GLOBAL",2)
+		SetGlobal("AC#IL_FalseBeard","GLOBAL",2)
 		AddJournalEntry(@66051,QUEST)
 		GiveItemCreate("AC#ILDWB",Player1,0,0,0) ~ EXIT
 
@@ -66,7 +69,7 @@ IF ~Global("AC#IL_FalseBeard","GLOBAL",1)~ THEN REPLY ~Ich soll für Petben Ries
 			CHAIN AC#ILBDM have_drider_silk_create_cloak
 			~War sicher nicht einfach, so etwas zu finden. Da Ihr mir von dem Zeug ausreichend viel mitgebracht habt, kann ich Euch daraus noch einen Mantel weben. Oder hättet Ihr lieber einen Bart?~
 			END
-			IF ~~ THEN REPLY ~Nein, ein Umhang würde und ganz und gar reichen.~ EXTERN AC#ILBDM create_cloak_bye
+			IF ~~ THEN REPLY ~Nein, ein Umhang würde ganz und gar reichen.~ EXTERN AC#ILBDM create_cloak_bye
 			
 			CHAIN AC#ILBDM create_cloak_bye
 			~Habe ich mir schon gedacht. Also gut, kommt morgen wieder vorbei, dann ist Euer Gewand fertig. Mache mich gleich an die Arbeit!~

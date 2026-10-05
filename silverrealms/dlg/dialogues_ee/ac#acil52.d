@@ -725,3 +725,115 @@ IF ~~ THEN BEGIN 9 // from: 8.0
   IF ~~ THEN REPLY ~Ich habe Fragen zu weiteren Exponaten.~GOTO 6
   IF ~~ THEN REPLY ~Mehr wollte ich gar nicht wissen. Lebt wohl.~ GOTO 5
 END
+
+// Dialog Glücksmaid 2-5
+
+BEGIN ~AC#52DW2~
+
+IF ~RandomNum(5,1)~ THEN BEGIN 0
+  SAY ~Haela liebt die Mutigen. Also enttäuscht sie besser nicht.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,2)~ THEN BEGIN 1
+  SAY ~Ein guter Kampf, ein scharfes Schwert und ein wenig Glück – mehr braucht es eigentlich nicht.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,3)~ THEN BEGIN 2
+  SAY ~Wenn ihr Ärger sucht, seid ihr hier nicht ganz falsch.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,4)~ THEN BEGIN 3
+  SAY ~Manche beten um Sicherheit. Ich bete lieber darum, dass der nächste Gegner etwas taugt.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,5)~ THEN BEGIN 4
+  SAY ~Das Glück hilft den Kühnen. Und wenn nicht, hilft immer noch eine gute Axt.~
+  IF ~~ THEN EXIT
+END
+
+
+
+BEGIN ~AC#52DW3~
+
+IF ~RandomNum(5,1)~ THEN BEGIN 0
+  SAY ~Haela liebt die Mutigen. Also enttäuscht sie besser nicht.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,2)~ THEN BEGIN 1
+  SAY ~Ein guter Kampf, ein scharfes Schwert und ein wenig Glück – mehr braucht es eigentlich nicht.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,3)~ THEN BEGIN 2
+  SAY ~Wenn ihr Ärger sucht, seid ihr hier nicht ganz falsch.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,4)~ THEN BEGIN 3
+  SAY ~Manche beten um Sicherheit. Ich bete lieber darum, dass der nächste Gegner etwas taugt.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,5)~ THEN BEGIN 4
+  SAY ~Das Glück hilft den Kühnen. Und wenn nicht, hilft immer noch eine gute Axt.~
+  IF ~~ THEN EXIT
+END
+
+BEGIN ~AC#52DW4~
+
+IF ~RandomNum(5,1)~ THEN BEGIN 0
+  SAY ~Haela liebt die Mutigen. Also enttäuscht sie besser nicht.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,2)~ THEN BEGIN 1
+  SAY ~Ein guter Kampf, ein scharfes Schwert und ein wenig Glück – mehr braucht es eigentlich nicht.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,3)~ THEN BEGIN 2
+  SAY ~Wenn ihr Ärger sucht, seid ihr hier nicht ganz falsch.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,4)~ THEN BEGIN 3
+  SAY ~Manche beten um Sicherheit. Ich bete lieber darum, dass der nächste Gegner etwas taugt.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,5)~ THEN BEGIN 4
+  SAY ~Das Glück hilft den Kühnen. Und wenn nicht, hilft immer noch ein guter Zweihänder.~
+  IF ~~ THEN EXIT
+END
+
+BEGIN ~AC#52DW5~
+
+IF ~RandomNum(5,1)~ THEN BEGIN 0
+  SAY ~Haela liebt die Mutigen. Also enttäuscht sie besser nicht.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,2)~ THEN BEGIN 1
+  SAY ~Ein guter Kampf, ein scharfes Schwert und ein wenig Glück – mehr braucht es eigentlich nicht.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,3)~ THEN BEGIN 2
+  SAY ~Wenn ihr Ärger sucht, seid ihr hier nicht ganz falsch.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,4)~ THEN BEGIN 3
+  SAY ~Manche beten um Sicherheit. Ich bete lieber darum, dass der nächste Gegner etwas taugt.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,5)~ THEN BEGIN 4
+  SAY ~Das Glück hilft den Kühnen. Und wenn nicht, hilft immer noch ein gutes Schwert.~
+  IF ~~ THEN EXIT
+END

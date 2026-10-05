@@ -61,70 +61,7 @@ IF ~~ THEN BEGIN gogondy_02
   IF ~~ THEN REPLY ~Es ist einen Versuch wert. Gebt mir den Wein.~ GOTO gogondy_yes
   IF ~~ THEN REPLY ~Nein. Den Stab nehme ich, aber auf den Wein verzichte ich.~ GOTO gogondy_no
 END
-
-/*
-	IF ~~ THEN BEGIN kuo_toa_problem_01
-	SAY ~Oh! Haben sie endlich beschlossen, sich dieser Sache anzunehmen? Das ist gut.~
-	IF ~~ THEN REPLY ~Sie vermuten, dass die Kuo-Toa irgendwo ein Schlupfloch haben, das sich auf normalem Wege nicht erreichen lässt und dort einen Gegenstand versteckt halten, der die Wasserelementare kontrollieren kann.~ GOTO kuo_toa_problem_02
-	END
-	
-		IF ~~ THEN BEGIN kuo_toa_problem_02
-		SAY ~Das könnte in der Tat so sein. Da die Kuo-Toa immer wieder auftauchen, scheinen sie sich in den überfluteten Gängen ungehindert fortbewegen können. Der Steinkreis, an dem die Elementarwesen erscheinen, ist sogar älter als diese Stadt hier. Wenn die Kuo-Toa einen Weg gefunden haben, diese Steinrunen zu kontrollieren, wird es schwierig, gegen sie anzukommen.~
-		IF ~~ THEN REPLY ~Und was könntet Ihr dagegen tun?~ GOTO kuo_toa_problem_03
-		END
-		
-			IF ~~ THEN BEGIN kuo_toa_problem_03
-			SAY ~Wir Svirfnebli? Gar nichts. Kuo-Toa sind für uns lästige Gegner. Normalerweise verlässt sich unsere Rasse auf Heimlichkeit und Tarnung, um unbemerkt zuschlagen zu können. All das hilft bei diesen Fischwesen nicht, da sie sich davon nicht täuschen lassen. Wenn sich einer von uns vor ihnen versteckt, bemerken sie das relativ schnell. Ich werde keinen meiner Krieger in solch einen aussichtslosen Kampf schicken.~
-			IF ~~ THEN GOTO rock_to_mud_01
-			END
-			
-				IF ~~ THEN BEGIN rock_to_mud_01
-				SAY ~Aber es gibt eine andere Möglichkeit, wie wir diesen Kreaturen Herr werden könnten. Tauchen können wir nicht, aber wir können den Fels passierbar machen und so vielleicht bis in ihren Unterschlupf vordringen.~
-				IF ~~ THEN REPLY ~Wie wollt Ihr das bewerkstelligen?~ GOTO rock_to_mud_02
-				END
-				
-					IF ~~ THEN BEGIN rock_to_mud_02
-					SAY ~Meine Rasse besitzt die Gabe, Fels zu verformen. Glücklicherweise besitze ich auch einen Stab, der diese Fähigkeit innehat. Wenn Ihr diesen in den Kuo-Toa-Tunneln an der richtigen Stelle einsetzt, könnte dies die dünne Felswand zum Schmelzen bringen und ihr Lager freilegen. Hier ist der Stab. Geht sorgsam mit ihm um.~
-					IF ~~ THEN REPLY ~Ihr wollt, dass ich mit Eurem Stab Fels zum Schmelzen bringe?~ DO ~GiveItemCreate("AC#WAND7",LastTalkedToBy(),1,0,0)~ GOTO rock_to_mud_03
-					IF ~~ THEN REPLY ~Klingt nach einem guten Plan.~ DO ~GiveItemCreate("AC#WAND7",LastTalkedToBy(),1,0,0)~ GOTO rock_to_mud_04
-					END
-					
-						IF ~~ THEN BEGIN rock_to_mud_03
-						SAY ~Genauer gesagt - zu Schlamm verwandelt! Das wird die Kreaturen mächtig verrückt machen. Um zu wissen, wo Ihr ihn einsetzen könnt, solltet Ihr dem strengen Geruch folgen, der häufig aus den Ritzen ihres Versteckes nach draußen dringt.~
-						IF ~~ THEN GOTO gogondy
-						END
-						
-						IF ~~ THEN BEGIN rock_to_mud_04
-						SAY ~Um zu wissen, wo Ihr ihn einsetzen könnt, solltet Ihr dem strengen Geruch folgen, der häufig aus den Ritzen ihres verrückten Versteckes nach draußen dringt.~
-						IF ~~ THEN GOTO gogondy
-						END
-						
-							IF ~~ THEN BEGIN gogondy
-							SAY ~Wartet - "verrückt" und "Geruch" sind gute Stichworte. Ich habe noch eine weitere Idee.~
-							IF ~~ THEN GOTO gogondy_02
-							END
-							
-								IF ~~ THEN BEGIN gogondy_02
-								SAY ~Aus unseren zahlreichen Kämpfen mit den Kuo-Toa wissen wir, dass ihr größter Schwachpunkt ihre geistige Gesundheit ist. Sie schrammen immer knapp am Rande des Wahnsinns entlang.~
-								IF ~~ THEN GOTO gogondy_03
-								END
-								
-									IF ~~ THEN BEGIN gogondy_03
-									SAY ~Halten sich so viele Kuo-toa an einem Ort auf, dann meistens deshalb, weil sie eine ihrer finsteren Gottheiten an dieser Stelle verehren. Ihr Gott gibt ihnen Zusammenhalt. Nimmt man ihnen die Zuversicht in ihren Glauben, fällt ihre ganze Disziplin in sich zusammen und sie zerfleischen sich meistens gegenseitig.~
-									IF ~~ THEN REPLY ~Soll ich mit dem Stab auch das Götzenbild zum Schmelzen bringen?~ GOTO gogondy_05
-									END
-										
-											IF ~~ THEN BEGIN gogondy_05
-											SAY ~Ha, das wäre auch ein guter Gedanke. Ich fürchte nur, dass dies zunächst ihren ganzen Zorn entfesseln könnte. Nein, mein Gedanke war, am Ort der Anbetung einen derart betörenden Duft freizusetzen, dass sie den Verstand verlieren.~
-											IF ~~ THEN REPLY ~Ich soll die Fischwesen mit Parfum einnebeln? Das könnt Ihr nicht ernst meinen.~ GOTO gogondy_06
-											END
 											
-												IF ~~ THEN BEGIN gogondy_06
-												SAY ~Der Gogondy, den ich im Sinne habe, ist kein Parfum, sondern ein Wein. Wir Svirfnebli stellen ihn her. Er besitzt berauschende Wirkung und kann uns einen Blick in die Zukunft schenken. Bei anderen Rassen führt dieses Getränk aber zu Halluzinationen. Dies könnten wir uns bei den Kuo-Toa zunutze machen, wenn Ihr nicht jeden Einzelnen von diesen Biestern niedermachen wollt.~
-												IF ~~ THEN REPLY ~Es wäre ein Versuch wert. Gebt mir den Wein.~ GOTO gogondy_yes
-												IF ~~ THEN REPLY ~Das ist mir zuviel Hokuspokus. Ich werde mit den Wesen auch ohne den Wein fertig!~ GOTO gogondy_no
-												END
-*/												
 												
 														IF ~~ THEN BEGIN gogondy_yes
 														SAY ~Hier ist eine Flasche. Ihr solltet schauen, dass Ihr den Wein möglichst nahe an ihrem Heiligtum zum Verdunsten bringt. Und trinkt ihn nicht vorher aus! Das würde Euch nicht gut bekommen.~
@@ -423,7 +360,7 @@ END
 	IF ~~ THEN REPLY ~Euren Bart?~ EXTERN AC#56DW7 chain_change_chainmail_beard_02
 	
 		CHAIN AC#56DW7 chain_change_chainmail_beard_02
-		~Mein Bart! Von Iltkazars Bartmacher.~
+		~Meinen Bart! Von Iltkazars Bartmacher.~
 		END
 		IF ~~ THEN REPLY ~Ihr tragt einen falschen Bart?~ EXTERN AC#56DW7 wrong_beard
 		IF ~~ THEN REPLY ~Wo finde ich den Bartmacher?~ EXTERN AC#56DW7 find_beardmaker
@@ -441,7 +378,7 @@ END
 		IF ~~ THEN REPLY ~Nein, das möchte ich nicht machen. Sucht jemand anderen, der Euch Euren Bart bringt.~ EXTERN AC#56DW7 bring_beard_no
 		
 		CHAIN AC#56DW7 bring_beard_no
-		~Wir Euch beliebt. Dann gibt's eben kein DRow-Kettenhemd.~
+		~Wir Euch beliebt. Dann gibt's eben kein Drow-Kettenhemd.~
 		EXIT
 		
 		CHAIN AC#56DW7 bring_beard_yes
@@ -454,7 +391,145 @@ END
 		~Denkt daran: Das Drow-Kettenhemd gibt es nur, wenn Ihr mir meinen Bart besorgt!~
 		EXIT
 		
-		
+// Faustkämpfer
+
+BEGIN ~AC#56DW1~
+
+IF ~RandomNum(5,1)~ THEN BEGIN 0
+  SAY ~Mit Waffen kann jeder kämpfen. Zeigt mir, was ihr mit bloßen Fäusten könnt!~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,2)~ THEN BEGIN 1
+  SAY ~Kinn runter, Deckung hoch. Sonst liegt Ihr schneller auf dem Boden, als Euch lieb ist.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,3)~ THEN BEGIN 2
+  SAY ~Ein sauberer Treffer zählt mehr als zehn wilde Schläge.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,4)~ THEN BEGIN 3
+  SAY ~Wenn Ihr zuschauen wollt, bleibt aus dem Ring. Wenn nicht, zieht die Handschuhe aus.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,5)~ THEN BEGIN 4
+  SAY ~Meine Nase war früher gerader. Ich vermisse sie nicht.~
+  IF ~~ THEN EXIT
+END
+
+
+BEGIN ~AC#56DW2~
+
+IF ~RandomNum(5,1)~ THEN BEGIN 0
+  SAY ~Ha! Endlich jemand, der nicht schon beim ersten Schlag jammert.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,2)~ THEN BEGIN 1
+  SAY ~Ich kämpfe nicht, um schön auszusehen. Das wäre ohnehin längst zu spät.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,3)~ THEN BEGIN 2
+  SAY ~Wer zuerst blinzelt, verliert. Wer zuerst umfällt, meistens auch.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,4)~ THEN BEGIN 3
+  SAY ~Ein Bier darauf, dass der Große dort drüben als Nächstes zu Boden geht.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,5)~ THEN BEGIN 4
+  SAY ~Haela liebt einen guten Kampf. Ich versuche, sie nicht zu enttäuschen.~
+  IF ~~ THEN EXIT
+END
+
+
+BEGIN ~AC#56DW4~
+
+IF ~RandomNum(5,1)~ THEN BEGIN 0
+  SAY ~Nicht auf die Nase! Die ist gerade erst wieder zusammengewachsen.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,2)~ THEN BEGIN 1
+  SAY ~Faustkampf ist ganz einfach: Schlagen, ausweichen und möglichst länger stehen bleiben als der andere.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,3)~ THEN BEGIN 2
+  SAY ~Der letzte Kerl behauptete, er hätte einen harten Schädel. Jetzt wissen wir es besser.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,4)~ THEN BEGIN 3
+  SAY ~Wenn ihr wetten wollt, setzt auf mich. Wenn ihr kämpfen wollt, besser nicht.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,5)~ THEN BEGIN 4
+  SAY ~Zähne sind überbewertet. Man kann Bier auch ohne trinken.~
+  IF ~~ THEN EXIT
+END
+
+
+BEGIN ~AC#56DW5~
+
+IF ~RandomNum(5,1)~ THEN BEGIN 0
+  SAY ~Ein Kampf ohne Stahl zeigt, wer wirklich etwas taugt.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,2)~ THEN BEGIN 1
+  SAY ~Keine Klingen, keine Magie, keine Ausreden. So gefällt mir das.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,3)~ THEN BEGIN 2
+  SAY ~Ihr seht kräftig aus. Das bedeutet leider noch lange nicht, dass ihr schlagen könnt.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,4)~ THEN BEGIN 3
+  SAY ~Man lernt mehr aus einem guten Treffer ins Gesicht als aus zehn Stunden Training.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,5)~ THEN BEGIN 4
+  SAY ~Haela schenkt uns Mut. Für die gebrochenen Rippen sind wir selbst verantwortlich.~
+  IF ~~ THEN EXIT
+END	
+
+BEGIN ~AC#56DW3~
+
+IF ~RandomNum(5,1)~ THEN BEGIN 0
+  SAY ~Kraft allein gewinnt keinen Kampf! Wer nicht auf seine Füße achtet, liegt schneller am Boden, als ihm lieb ist.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,2)~ THEN BEGIN 1
+  SAY ~Schlagt nicht härter. Schlagt im richtigen Augenblick. Das ist der Unterschied zwischen einem Raufbold und einem Kämpfer.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,3)~ THEN BEGIN 2
+  SAY ~Ich habe schon viele starke Zwerge gesehen. Die klugen waren mir immer lieber.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,4)~ THEN BEGIN 3
+  SAY ~Wer hier trainiert, lernt zuerst, Treffer einzustecken. Austeilen kommt danach.~
+  IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,5)~ THEN BEGIN 4
+  SAY ~Clangeddin verlangt Mut. Ich verlange außerdem Deckung, Haltung und ein wenig Verstand!~
+  IF ~~ THEN EXIT
+END				
 		
 		
 		

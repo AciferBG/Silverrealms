@@ -1,33 +1,37 @@
 
 /*******************************************************************************************************
-Dialogue Dracolich
+Dialog Maldraedior after Mith Barak free
 *******************************************************************************************************/
 
-/*
-BEGIN ~AC#71DRL~
+BEGIN ~AC#MALD2~
 
-IF ~NumTimesTalkedTo(0)~ THEN BEGIN 0
-SAY  ~Uuuuhh.... tausend Jahre tot... und jetzt wieder... Leben?~
-   IF ~~ THEN DO ~SetGlobal("AC#_DragonSummon","GLOBAL",14)
-   SetGlobal("AC#_TransformDracolich","GLOBAL",1)
-   Enemy()~  EXIT
+IF ~Global("AC#KalzareinadsFaith","GLOBAL",1)
+Global("AC#IL_Maldraed_Fight","GLOBAL",0)~ THEN BEGIN hello_kalza_alive
+SAY  ~Ihr kehrt zurück! Und Ihr habt getan, worum ich Euch bat. Mehr noch: Ihr habt meinem Gott Kalzareinad gegeben, was keine Unsterblichkeit ersetzen könnte: Die Gewissheit, dass sein Name nicht vergessen ist! Dies wiederum werde ich Euch nicht vergessen.~
+=
+~Ihr sollten nicht den Fehler machen, mich für sentimental zu halten. Aber Ihr habt einem alten Drachen etwas gegeben, das die Jahrhunderte ihm genommen hatten: Hoffnung.~
+=
+~Nehmt Euch als Belohnung einen Gegenstand vom Altar zu Füßen meines Gottes. Betrachtet ihn als meinen Dank – und als Zeichen, dass Maldraedior eine Schuld nicht vergisst.~
+=
+~Geht nun. Und vergesst nicht: Selbst ein Drache erinnert sich daran, wem er Dank schuldet.~
+	IF ~~ THEN DO ~SetGlobal("AC#IL_MaldraedHappy","GLOBAL",1)
+	AddexperienceParty(5000)
+	DestroySelf()~ EXIT
 END
-*/
 
-/*******************************************************************************************************
-Dialogue Dragonwraith
-*******************************************************************************************************/
-
-/*
-BEGIN ~AC#DRAGR~
-
-IF ~NumTimesTalkedTo(0)~ THEN BEGIN 0
-SAY  ~Wer wagt es, die alte Beschwörung Kalzareinads zu vollziehen? Ein <PRO_RACE>? Nur Drachen sind würdig, den Hüter alter Wunder anzurufen. Ich bin sein Wächter. Für diesen Frevel werde ich Euch vernichten!~
-   IF ~~ THEN DO ~SetGlobal("AC#_DragonSummon","GLOBAL",14)
-   SetGlobal("AC#_TransformDracolich","GLOBAL",1)
-   Enemy()~  EXIT
+IF ~Global("AC#KalzareinadDead","GLOBAL",1)
+Global("AC#IL_Maldraed_Fight","GLOBAL",0)~ THEN BEGIN hello_kalza_dead
+SAY  ~Ihr wagt es, erneut in Kalzareinads Heiligtum einzudringen, nachdem Ihr ihn getötet habt? Ich hatte Euch gewarnt, nicht meinen Zorn auf Euch zu ziehen! Nun lernt Maldraediors Rache kennen und verbrennt!~
+	IF ~~ THEN DO ~SetGlobal("AC#IL_Maldraed_Fight","GLOBAL",1)
+	DestroySelf()~ EXIT
 END
-*/
+
+IF ~Global("AC#KalzareinadsFaith","GLOBAL",0)
+Global("AC#IL_Maldraed_Fight","GLOBAL",0)~ THEN BEGIN hello_kalza_no_faith
+SAY  ~Ihr wagt es, erneut in Kalzareinads Heiligtum einzudringen, nachdem Ihr meinem Gott nichts von meinem Glauben mitgeteilt hattet? Ich hatte Euch gewarnt, nicht meinen Zorn auf Euch zu ziehen! Nun lernt Maldraediors Rache kennen und verbrennt!~
+	IF ~~ THEN DO ~SetGlobal("AC#IL_Maldraed_Fight","GLOBAL",1)
+	DestroySelf()~ EXIT
+END
 
 /*******************************************************************************************************
 Dialog Drachenstatue

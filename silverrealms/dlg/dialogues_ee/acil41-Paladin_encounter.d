@@ -34,7 +34,7 @@ END
 			IF ~~ THEN BEGIN of_course
 			SAY ~Das ist... das ist...~
 			=
-			~Das ist ja furchtbar! Dieser Drache war meine Queste zur Initiation in den heiligen Orden der Helden der Wachsamkeit in Velen! Was soll ich jetzt tun?~
+			~Das ist ja furchtbar! Dieser Drache war war der letzte Teil meiner Prüfung zur Aufnahme in den heiligen Orden der Helden der Wachsamkeit! Was soll ich jetzt tun?~
 			IF ~~ THEN REPLY ~Sieht so aus, als müsstet Ihr Euch einen anderen Drachen suchen.~ GOTO new_quest 
 			IF ~~ THEN REPLY ~Ihr könnt gerne jedem erzählen, dass Ihr es wart, der den Drachen erschlagen hat.~ GOTO tell_it_was_you 
 			END

@@ -405,7 +405,17 @@ END
 	IF ~~ THEN BEGIN wrong_book_finished
 	SAY ~Oh! Zeigt mal her.~
 	IF ~~ THEN DO ~TakePartyItem("AC#53BK2")
-	DestroyItem("AC#53BK2")~ + wrong_book_finished_02
+	DestroyItem("AC#53BK2")
+	TakePartyItem("AC#53PA1")
+	TakePartyItem("AC#53PA2")
+	TakePartyItem("AC#53PA3")
+	TakePartyItem("AC#53PA4")
+	TakePartyItem("AC#53PA5")
+	DestroyItem("AC#53PA1")
+	DestroyItem("AC#53PA2")
+	DestroyItem("AC#53PA3")
+	DestroyItem("AC#53PA4")
+	DestroyItem("AC#53PA5")~ + wrong_book_finished_02
 	END
 	
 		IF ~~ THEN BEGIN wrong_book_finished_02

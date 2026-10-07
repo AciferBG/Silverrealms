@@ -86,25 +86,6 @@ THEN
 		SetGlobal("AC#_DragonSummon","GLOBAL",13)
 END
 
-//OLD:
-/*
-IF
-    Global("AC#Maldraedior","ACIL71",1)
-THEN
-    RESPONSE #100
-        ClearAllActions()
-        StartCutSceneMode()
-        SetGlobal("AC#Maldraedior","ACIL71",2)
-        Wait(1)
-        CreateVisualEffect("SPDIMNDR",[835.378])
-        Wait(1)
-        CreateCreature("AC#MALD3",[835.378],NWW)  // Maldraedior
-        Wait(2)
-        EndCutSceneMode()
-END
-*/
-
-// NEW:
 IF
     Global("AC#Maldraedior","ACIL71",1)
 THEN
@@ -138,7 +119,95 @@ THEN
 		SetGlobal("AC#_DragonHeart","ACIL71",2)
 		Wait(4)
 		CreateCreatureImpassable("AC#MALD1",[491.286],13) // Drachenstatue
-               	EndCutSceneMode()
+        EndCutSceneMode()
+END
+
+IF
+    GlobalGT("AC#Mithbarak_Rescued","GLOBAL",0)
+    Global("KalzaAftermath","ACIL71",0)
+THEN
+    RESPONSE #100
+        SetGlobal("KalzaAftermath","ACIL71",1)	
+		AmbientActivate("Burning_heart",FALSE)	
+        CreateCreatureImpassable("AC#MALD2",[491.286],SEE)  // Drachenstatue
+END
+
+IF
+    GlobalGT("AC#IL_Maldraed_Fight","GLOBAL",0)
+    Global("KalzaKiller","ACIL71",0)
+THEN
+    RESPONSE #100
+        SetGlobal("KalzaKiller","ACIL71",1)
+		SetGlobalTimer("Inferno","ACIL71",3)
+		CloseDoor("Door14")
+		AmbientActivate("Cold_veil",TRUE)
+		SoundActivate("Coldveil_amb",TRUE)
+		TriggerActivation("Pillar02",TRUE)
+        TriggerActivation("Pillar03",TRUE)
+        TriggerActivation("Pillar04",TRUE)
+        TriggerActivation("Pillar05",TRUE)
+        TriggerActivation("Pillar06",TRUE)
+        TriggerActivation("Pillar07",TRUE)
+        TriggerActivation("Pillar08",TRUE)
+        TriggerActivation("Pillar09",TRUE)
+        TriggerActivation("Pillar10",TRUE)
+        TriggerActivation("Pillar11",TRUE)
+        TriggerActivation("Pillar12",TRUE)
+        TriggerActivation("Pillar13",TRUE)
+		SetGlobalTimer("InfernoStop","ACIL71",ONE_TURN)	
+END
+
+IF
+    GlobalTimerExpired("InfernoStop","ACIL71")
+    Global("KalzaKiller","ACIL71",1)
+THEN
+	RESPONSE #100
+		TriggerActivation("Pillar02",FALSE)
+        TriggerActivation("Pillar03",FALSE)
+        TriggerActivation("Pillar04",FALSE)
+        TriggerActivation("Pillar05",FALSE)
+        TriggerActivation("Pillar06",FALSE)
+        TriggerActivation("Pillar07",FALSE)
+        TriggerActivation("Pillar08",FALSE)
+        TriggerActivation("Pillar09",FALSE)
+        TriggerActivation("Pillar10",FALSE)
+        TriggerActivation("Pillar11",FALSE)
+        TriggerActivation("Pillar12",FALSE)
+        TriggerActivation("Pillar13",FALSE)
+		OpenDoor("Door14")
+		AmbientActivate("Cold_veil",FALSE)
+		SoundActivate("Coldveil_amb",FALSE)
+ 		SetGlobal("KalzaKiller","ACIL71",10)																								
+END
+
+IF
+    GlobalTimerExpired("Inferno","ACIL71")
+    Global("KalzaKiller","ACIL71",1)
+THEN
+    RESPONSE #100
+        ActionOverride("Pillar02",ReallyForceSpellPoint([737.448],WIZARD_FIREBALL))
+    RESPONSE #100
+        ActionOverride("Pillar03",ReallyForceSpellPoint([972.453],WIZARD_FIREBALL))
+    RESPONSE #100
+        ActionOverride("Pillar04",ReallyForceSpellPoint([1164.517],WIZARD_FIREBALL))
+    RESPONSE #100
+        ActionOverride("Pillar05",ReallyForceSpellPoint([1289.670],WIZARD_FIREBALL))
+    RESPONSE #100
+        ActionOverride("Pillar06",ReallyForceSpellPoint([1287.825],WIZARD_FIREBALL))
+    RESPONSE #100
+        ActionOverride("Pillar07",ReallyForceSpellPoint([1167.977],WIZARD_FIREBALL))
+    RESPONSE #100
+        ActionOverride("Pillar08",ReallyForceSpellPoint([984.1046],WIZARD_FIREBALL))
+    RESPONSE #100
+        ActionOverride("Pillar09",ReallyForceSpellPoint([753.1060],WIZARD_FIREBALL))
+    RESPONSE #100
+        ActionOverride("Pillar10",ReallyForceSpellPoint([555.982],WIZARD_FIREBALL))
+    RESPONSE #100
+        ActionOverride("Pillar11",ReallyForceSpellPoint([439.840],WIZARD_FIREBALL))
+    RESPONSE #100
+        ActionOverride("Pillar12",ReallyForceSpellPoint([441.670],WIZARD_FIREBALL))
+    RESPONSE #100
+        ActionOverride("Pillar13",ReallyForceSpellPoint([556.524],WIZARD_FIREBALL))
 END
 
 IF	

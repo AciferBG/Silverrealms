@@ -1,6 +1,15 @@
 IF
         Clicked([ANYONE])
         Range(LastTrigger,12)
+        Global("KalzaKiller","ACIL71",1)
+THEN
+    RESPONSE #100
+             DisplayString(Myself,@6701)
+END
+
+IF
+        Clicked([ANYONE])
+        Range(LastTrigger,12)
         Global("Acil71_Phosphor","ACIL71",0)
 THEN
     RESPONSE #100

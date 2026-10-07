@@ -358,7 +358,7 @@ IF ~~ THEN DO ~~ EXTERN ~AC#52DW1~ give_sword_back
 END
 
 IF ~~ THEN BEGIN give_sword_back_02
-SAY ~Gut. Hier habt Ihr ein Abzeichen der Glücksmaid, <CHARNAME>. Tragt es mit stolz.~
+SAY ~Gut. Hier habt Ihr ein Abzeichen der Glücksmaid, <CHARNAME>. Tragt es mit Stolz.~
 IF ~~ THEN DO ~GiveItemCreate("AC#IL52T",Player1,1,0,0)~ GOTO thanks_4_talisman
 END
 

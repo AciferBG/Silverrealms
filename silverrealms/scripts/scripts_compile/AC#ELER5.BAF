@@ -1,0 +1,8 @@
+IF
+    Global("AC#ElernBorthunBook","GLOBAL",1)
+    !Range("Sign_Borthun_02",15)
+THEN
+    RESPONSE #100
+        MoveToPointNoInterrupt([2755.920])
+END
+

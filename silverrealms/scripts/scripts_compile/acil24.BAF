@@ -1,5 +1,16 @@
 IF
 	Dead("AC#24DAE")
+	GlobalGT("AC#25_LolthPriestess","GLOBAL",0)
+	Global("AC#25PactLolthPriestess","GLOBAL",0)
+	Global("VhaeraunLolthJournal","ACIL24",0)
+THEN
+	RESPONSE #100
+		SetGlobal("VhaeraunLolthJournal","ACIL24",1)
+		AddJournalEntry(@62024,QUEST_DONE)	
+END
+
+IF
+	Dead("AC#24DAE")
 	GlobalLT("AC#25_LolthPriestess","GLOBAL",10)
 THEN
 	RESPONSE #100

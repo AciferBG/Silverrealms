@@ -406,7 +406,7 @@ END
 // dwarven patrol quest given
 IF ~Global("AC_Regency_Patrol","GLOBAL",1)~ THEN BEGIN patrol_dead_01
 SAY ~Ich nehme an, Ihr kehrt zurück, um den Rat über die Situation der vermissten Patrouille zu unterrichten?~
-  IF ~Global("Acil20_DeadDwarves","GLOBAL",1)~ THEN DO ~SetGlobal("AC_Regency_Patrol","GLOBAL",2)~ REPLY ~Die Zwergenpatrouille ist tot. Ich fand sie in einer Höhle in den südlichen Tunneln.~ EXTERN ~AC#CHEM1~ patrol_dead_02
+  IF ~Global("Acil20_DeadDwarves","GLOBAL",1)~ THEN REPLY ~Die Zwergenpatrouille ist tot. Ich fand sie in einer Höhle in den südlichen Tunneln.~ DO ~AddJournalEntry(@62012,QUEST_DONE) SetGlobal("AC_Regency_Patrol","GLOBAL",2)~ EXTERN ~AC#CHEM1~ patrol_dead_02
 IF ~Global("Acil20_DeadDwarves","GLOBAL",0)~ THEN REPLY ~Ich habe noch nichts gefunden, tut mir leid.~ GOTO patrol_keep_searching
 END
 

@@ -126,7 +126,7 @@ END
 				END
 				
 					IF ~~ THEN BEGIN stay_here
-					SAY ~Hier? In diesem Drecksloch? Nein, mein *abbil*. Uns zieht es an die Oberfläche. Es wird Zeit, dass die Drow erneut die oberen Lande beherrschen! Nun, da uns die Häuser Guallidurths nicht mehr verfolgen, können wir uns dort mit den anderen gleichen Glaubens, die schon oben sind, ein großes Reich erobern.~
+					SAY ~Hier? In diesem erbärmlichen Winkel? Nein, mein *abbil*. Uns zieht es an die Oberfläche. Es wird Zeit, dass die Drow erneut die oberen Lande beherrschen! Nun, da uns die Häuser Guallidurths nicht mehr verfolgen, können wir uns dort mit den anderen gleichen Glaubens, die schon oben sind, ein großes Reich erobern.~
 					=
 					~Abmarsch! Und lasst nichts als *araj* an diesem *yath* zurück!~
 					IF ~~ THEN DO ~
@@ -187,7 +187,7 @@ END
 		IF ~~ THEN BEGIN narbondel
 		SAY ~Ich sehe, Ihr seid nicht der hellste Kristall am Narbondel. Also gut, ich schlage Euch einen Tausch vor.~
 		IF ~~ THEN REPLY ~Lasst mich raten: Ich soll Euch etwas verraten, was Ihr begehrt, und Ihr verratet mir dafür eines Eurer Geheimnisse.~ + exchange_secrets
-		IF ~~ THEN REPLY ~Was für ein Tausch soll das sein?~ + exchange_secrets
+		IF ~~ THEN REPLY ~Was für ein Tausch soll das sein?~ + exchange_secrets_02
 		END
 
 			IF ~~ THEN BEGIN exchange_secrets

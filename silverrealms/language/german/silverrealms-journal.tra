@@ -517,7 +517,9 @@ Der Regentschaftsrat hat mich beauftragt, außerhalb von Iltkazar nach einer ver
 @62011  = ~Die vermisste Zwergenpatrouille
 
 Ich habe die Patrouille gefunden - zumindest das, was davon übrig ist. Es scheint ein harter Kampf stattgefunden zu haben. Keiner der Zwerge hat überlebt. Ich sollte dem Regentschaftsrat wieder Bericht erstatten.~
+@62012  = ~Die vermisste Zwergenpatrouille
 
+Ich habe dem Rat die Nachricht von dem Tod der Patrouille überbracht.~
 //___________________________Die Spinnenschächte
 
 @62020  = ~Die Spinnenschächte
@@ -534,6 +536,9 @@ Ich habe den Schlüsselstein für das Tor in die Spinnenschächte erhalten und s
 
 Ich habe die Spinnenschächte betreten. Irgendwo in diesen Minen muss sich auch Ellhimar aufgehalten haben, um etwas über den schlafenden König zu erfahren.~
 // Im Netz der Spinne
+@62024  = ~Im Netz der Spinne
+
+Ich habe alle Vhaeraun-Priester getötet. Damit ist mein Handel mit deren Anführer hinfällig geworden.~
 @62025  = ~Im Netz der Spinne
 
 Ich habe in den Spinnenschächten Daevion'lyr, einen Priester Vhaerauns getroffen, der von einer Priesterin Lolths gesucht wird. Ich soll der Priesterin die Leiche eines toten Drow geben und sie glauben lassen, ich hätte alle Dunkelelfen in diesem Gebiet getötet.~
@@ -552,6 +557,7 @@ Der Vhaeraun-Priester Daevion'lyr ist tot und ich habe sein heiliges Symbol an m
 @62030  = ~Im Netz der Spinne
 
 Ich habe der Lolth-Priesterin das heilige Symbol Vhaerauns übergeben.~
+
 //___________________________Barakuir
 @62031  = ~Barakuir
 

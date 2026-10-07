@@ -1600,6 +1600,8 @@ Charvekannathors Hort~
 // ACIL55 - Arnskullhall
 @6500 = ~Zur Azerkynhalle~
 
+@6701 = ~Es gibt keine Möglichkeit, die Säulen zu deaktivieren.~
+
 // ACIL58 - Dumathoins Crypts
 @6801 = ~Zentraler Schacht~
 @6802 = ~Lastenaufzug~

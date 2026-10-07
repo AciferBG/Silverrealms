@@ -293,8 +293,7 @@ IF ~~ THEN BEGIN okidok
 SAY ~Kommt, <CHARNAME>, folgt mir zu Borthuns Standbild im Osten der Bibliothek!~
 IF ~~ THEN DO ~SetGlobal("ElernSpawn","ACIL53",3)
 SetGlobal("AC#ElernBorthunBook","GLOBAL",1)
-AddJournalEntry(@64101,QUEST)
-MoveToPointNoInterrupt([2755.920])~ EXIT
+AddJournalEntry(@64101,QUEST)~ EXIT
 END
 
 IF ~Global("ElernSpawn","ACIL53",3)~ THEN BEGIN borthuns_monument

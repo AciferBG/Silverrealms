@@ -63,6 +63,15 @@ THEN
 		ActionOverride("AC#DUN03",Dialogue(Player1))
 END
 
+IF
+	GlobalGT("AC#AzerkynDestroyed","GLOBAL",0)
+	Global("AC#IL_61RescueDone","GLOBAL",0)
+	Global("EraseRescue61Journal","ACIL50",0)
+THEN
+	RESPONSE #100
+		SetGlobal("EraseRescue61Journal","ACIL50",1)	
+		EraseJournalEntry(@61020)
+	END
 /*
 Die PCs werden vor den Eingang des Ratsgeb�udes teleportiert
 */

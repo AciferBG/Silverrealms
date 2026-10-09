@@ -43,13 +43,13 @@ END
 		
 		IF ~~ THEN BEGIN have_levitation_potion_02
 		SAY ~Habt Ihr auch das Quecksilber?~
-		IF ~PartyHasItem("AC#MERC1")~ THEN REPLY ~Ja, hier ist es.~ GOTO have_all
+		IF ~PartyHasItem("AC#MERC1")~ THEN REPLY ~Ja, hier ist es.~ DO ~AddJournalEntry(@64227,QUEST_DONE)~ GOTO have_all
 		IF ~!PartyHasItem("AC#MERC1")~ THEN REPLY ~Nein, noch nicht.~ GOTO not_have_all_ingredients
 		END
 		
 	IF ~~ THEN BEGIN about_mercury
 	SAY ~Oh! Habt Ihr es schon gefunden?~
-	IF ~PartyHasItem("AC#MERC1")~ THEN REPLY ~Ja, hier ist es.~ GOTO have_mercury
+	IF ~PartyHasItem("AC#MERC1")~ THEN REPLY ~Ja, hier ist es.~ DO ~AddJournalEntry(@64227,QUEST_DONE)~ GOTO have_mercury
 	IF ~!PartyHasItem("AC#MERC1")~ THEN REPLY ~Nein. Ich muss mich wieder verabschieden.~ GOTO bye
 	//IF ~~ THEN REPLY ~Wo kann ich noch einmal das Quecksilber kaufen?~ GOTO buy_mercury_reprise
 	IF ~~ THEN REPLY ~Könnt Ihr mir noch einmal erklären, wie ich Quecksilber selbst herstellen kann?~ GOTO create_mercury_reprise

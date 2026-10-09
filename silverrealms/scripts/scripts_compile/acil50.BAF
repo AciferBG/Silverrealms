@@ -157,6 +157,29 @@ THEN
 END
 
 IF
+    Global("MoreGuardSpawn","ACIL50",0)
+THEN
+    RESPONSE #100
+        SetGlobal("MoreGuardSpawn","ACIL50",1)
+        CreateCreature("AC#50WT1",[893.2355],S)  // Wache
+        CreateCreature("AC#50WT1",[1001.2348],S)  // Wache
+        CreateCreature("AC#50WT2",[1114.1310],S)  // Wache
+        CreateCreature("AC#50WT2",[1285.768],W)  // Wache
+        CreateCreature("AC#50WT2",[1285.236],S)  // Wache
+        CreateCreature("AC#50WT2",[2359.441],S)  // Wache
+        CreateCreature("AC#50WT2",[2995.761],SW)  // Wache
+        CreateCreature("AC#50WT2",[3161.950],SW)  // Wache
+        CreateCreature("AC#50WT2",[3224.1140],SW)  // Wache
+        CreateCreature("AC#50WT2",[2620.2353],NW)  // Wache
+        CreateCreature("AC#50WT2",[1848.2100],SW)  // Wache
+        CreateCreature("AC#50WT2",[1347.1736],SW)  // Wache
+        CreateCreature("AC#50WT2",[1506.1830],S)  // Wache
+        CreateCreature("AC#50WT1",[737.2547],SE)  // Wache
+		CreateCreature("AC#50DW1",[1903.211],S)  // Torwächter
+        CreateCreature("AC#50DW1",[2094.236],S)  // Torwächter
+END
+
+IF
          Global("AC#Arrested","GLOBAL",1)
        	 Global("Transit_to_ACIL62","ACIL50",0)
 THEN
@@ -391,9 +414,7 @@ THEN
 		SetGlobal("AC#Torglor","GLOBAL",2)
 		Unlock("DOOR01")
 		OpenDoor("DOOR01")
-                CreateCreature("AC#SORN5",[2189.281],0)  // Sorni
-                CreateCreature("AC#50DW1",[1903.211],0)  // Gate guard
-                CreateCreature("AC#50DW1",[2094.236],0)  // Gate guard
+        CreateCreature("AC#SORN5",[2189.281],0)  // Sorni
 END
 
 IF

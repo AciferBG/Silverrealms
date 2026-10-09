@@ -8,8 +8,14 @@ Dwarven gatekeeper, in front of Drakkalor gate
 
 BEGIN ~AC#50DW1~
 
+IF ~Global("AC#Torglor","GLOBAL",0)~ THEN BEGIN hello_gate_closed
+SAY ~Das Drakkalor-Tor ist geschlossen! Geht weiter!~
+IF ~~ THEN EXIT
+END
+
+
 IF ~True()~ THEN BEGIN hello
-SAY ~Das Drakkalor-Tor steht Euch offen, <PRO_RACE>. Auf der anderen Seite liegen noch Leichen der Duergar, passt auf, wo Ihr hintretet.~
+SAY ~Das Drakkalor-Tor steht Euch offen, <PRO_RACE>. Auf der anderen Seite liegen vielleicht noch Leichen der Duergar; passt also auf, wohin Ihr tretet.~
 IF ~~ THEN EXIT
 END
 

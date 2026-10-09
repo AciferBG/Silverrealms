@@ -1,3 +1,57 @@
+// guards in the city
+BEGIN ~AC#50WT1~
+
+IF ~RandomNum(5,1)~ THEN BEGIN 0
+	SAY ~Rechne immer mit dem Schlimmsten. Dann sind selbst die schlechten Tage eine angenehme Überraschung.~
+	IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,2)~ THEN BEGIN 1
+	SAY ~Solange die Feuer brennen, ist Iltkazar noch nicht verloren.~
+	IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,3)~ THEN BEGIN 2
+	SAY ~Ich mag keine stillen Schichten. Da hört man jedes Geräusch.~
+	IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,4)~ THEN BEGIN 3
+	SAY ~Eine gute Wache braucht scharfe Augen, eine feste Axt und wenig Durst. In den ersten beiden bin ich schon recht gut.~
+	IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,5)~ THEN BEGIN 4
+	SAY ~Haltet die Wege frei! Wenn Alarm geschlagen wird, muss es schnell gehen.~
+	IF ~~ THEN EXIT
+END
+
+BEGIN ~AC#50WT2~
+
+IF ~RandomNum(5,1)~ THEN BEGIN 0
+	SAY ~Rechne immer mit dem Schlimmsten. Dann sind selbst die schlechten Tage eine angenehme Überraschung.~
+	IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,2)~ THEN BEGIN 1
+	SAY ~Solange die Feuer brennen, ist Iltkazar noch nicht verloren.~
+	IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,3)~ THEN BEGIN 2
+	SAY ~Ich mag keine stillen Schichten. Da hört man jedes Geräusch.~
+	IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,4)~ THEN BEGIN 3
+	SAY ~Eine gute Wache braucht scharfe Augen, eine feste Axt und wenig Durst. In den ersten beiden bin ich schon recht gut.~
+	IF ~~ THEN EXIT
+END
+
+IF ~RandomNum(5,5)~ THEN BEGIN 4
+	SAY ~Haltet die Wege frei! Wenn Alarm geschlagen wird, muss es schnell gehen.~
+	IF ~~ THEN EXIT
+END
 
 // RestInterrupt: Guard
 

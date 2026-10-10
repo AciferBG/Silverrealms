@@ -16,7 +16,8 @@ THEN
 		SpawnPtDeactivate("East_spawn_hard")
 		SpawnPtDeactivate("Mephits") 
 		SpawnPtDeactivate("Elementals")  
-		OpenDoor("DOOR05")
+        CloseDoor("DOOR05") // stone blocks to area ACIL27
+		//OpenDoor("DOOR05")
 		SetMusic(NIGHT,%AC#IL20%)
 		SetMusic(DAY,%AC#IL20%)	
 		SetGlobal("EnteredArea","ACIL20",1)
@@ -304,7 +305,7 @@ IF
 THEN
 	RESPONSE #100
         SetGlobal("LakeEntrySealed","ACIL20",1)
-		CloseDoor("DOOR05") // stone blocks to area ACIL27
+		//CloseDoor("DOOR05") // stone blocks to area ACIL27
 		SpawnPtDeactivate("Kuotoaspawn")  // deactivate Kuo Toa Spawnpoint before the party is heading to Barakuir
 		CreateCreature("AC#20DW8",[3700.2405],0)  // dwarven Warrior
 		CreateCreature("AC#20DW8",[3794.2445],5) // dwarven Warrior

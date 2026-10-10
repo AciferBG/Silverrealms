@@ -238,6 +238,20 @@ THEN
 END
 
 IF
+    GlobalGT("GithFight","ACIL28",0)
+    Global("SpawnMoreDuerghul","ACIL28",0)
+THEN
+    RESPONSE #100
+        SetGlobal("SpawnMoreDuerghul","ACIL28",1)
+        CreateCreature("AC#28LAC",[1104.551],SE)  // Duerghul
+        CreateCreature("AC#28LAC",[1071.616],SE)  // Duerghul
+        CreateCreature("AC#28LAC",[1013.642],SE)  // Duerghul
+        CreateCreature("AC#28LAC",[976.466],SE)  // Duerghul
+        CreateCreature("AC#28LAC",[917.491],SE)  // Duerghul
+        CreateCreature("AC#28DUG",[855.448],SE)  // Kordok der Ertrunkene
+END
+
+IF
 	Delay(3)
 	Global("Ambush01","ACIL28",1)
 	GlobalLT("Ambush01Stop","ACIL28",5)

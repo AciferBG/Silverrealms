@@ -2,6 +2,9 @@
 
 COPY ~silverrealms/cre/copy~         ~override~
 
+COPY ~silverrealms/cre/AC#28DUG.cre~ ~override~ // Kordok, Duerghul leader
+  SAY NAME1 @9077 SAY NAME2 @9077
+
 COPY ~%MOD_FOLDER%/cre/AC#ILDE1.cre~ ~override~ //Derro-Savant 01
   SAY NAME1 @9072 SAY NAME2 @9072
   SAY BATTLE_CRY1 @5905

@@ -1,3 +1,12 @@
+// ---------------------------------------------
+// Kordok
+// ---------------------------------------------
+BEGIN ~AC#28DUG~
+
+IF ~NumTimesTalkedTo(0)~ THEN BEGIN hello_wait_here
+  SAY ~Niemand verlässt Barakuir: Der See hat uns genommen. Nun nimmt er euch! Barakuir gibt seine Toten nicht mehr her...~
+  IF ~~ THEN EXIT
+END
 
 // ---------------------------------------------
 // Ruvan's Houseguard
@@ -5,7 +14,7 @@
 BEGIN ~AC#28DW3~
 
 IF ~NumTimesTalkedToGT(0)~ THEN BEGIN hello_wait_here
-  SAY ~Erwartet keine weitere Hilfe von uns. Unsere Aufgabe ist es, die Boote zu bewachen. Wir warten hier, bis Ihr Euren Auftrag erfüllt habt. ~
+  SAY ~Erwartet keine weitere Hilfe von uns. Unsere Aufgabe ist es, die Boote zu bewachen. Wir warten hier, bis Ihr Euren Auftrag erfüllt habt.~
   IF ~~ THEN EXIT
 END
 
@@ -26,7 +35,7 @@ END
 BEGIN ~AC#28DW4~
 
 IF ~True()~ THEN BEGIN hello_wait_here
-  SAY ~Erwartet keine weitere Hilfe von uns. Unsere Aufgabe ist es, die Boote zu bewachen. Wir warten hier, bis Ihr Euren Auftrag erfüllt habt. ~
+  SAY ~Erwartet keine weitere Hilfe von uns. Unsere Aufgabe ist es, die Boote zu bewachen. Wir warten hier, bis Ihr Euren Auftrag erfüllt habt.~
   IF ~~ THEN EXIT
 END
 
@@ -594,7 +603,7 @@ IF ~~ THEN REPLY ~Dann versucht, Euch diesen Gefallen etwas länger als unsere l
 	IF ~~ THEN REPLY ~Dann heraus damit, bevor er wieder verschwindet!~ EXTERN AC#IL28G idea_lobe_02
 	
 	CHAIN AC#IL28G idea_lobe_02
-	~Ich kann nicht mehr auf meine Erinnerungen zurückgreifen, Ihr aber vielleicht schon! Hier, nehmt diesen Teil meines Gehirn. Mit etwas Glück enthält dieser die Erinnerung, die Ihr sucht.~
+	~Ich kann nicht mehr auf meine Erinnerungen zurückgreifen, Ihr aber vielleicht schon! Hier, nehmt diesen Teil meines Gehirns. Mit etwas Glück enthält dieser die Erinnerung, die Ihr sucht.~
 	END
 	IF ~~ THEN REPLY ~Und wie soll ich darauf zurückgreifen?~ EXTERN AC#IL28G idea_lobe_03
 	IF ~~ THEN REPLY ~Was genau soll ich mit einem Stück Eures Gehirns anfangen?~ EXTERN AC#IL28G idea_lobe_03

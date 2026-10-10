@@ -3,6 +3,10 @@
 
 COPY ~silverrealms/itm/copy~         ~override~
 
+COPY ~silverrealms/itm/AC#ILBNS.itm~ ~override~ // veil of the banshee
+  SAY NAME2 @8172
+  SAY DESC @8173
+
 COPY ~silverrealms/itm/AC#ILRDS.itm~ ~override~ // juvenile red dragon scales
   SAY NAME2 @8170
   SAY DESC @8171

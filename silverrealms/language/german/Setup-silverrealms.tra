@@ -2369,7 +2369,9 @@ EIGENSCHAFTEN:
 
 Gewicht: 100~
 @8168 = ~Rote Drachenlederrüstung~
-@8169 = ~Die Rüstung besteht aus den geschickt miteinander verbundenen Schuppen junger roter Drachen. Die Rüstung ist sehr praktisch, aber auch gleichzeitig elegant. Durch die verwendeten Schuppen bietet sie dem Träger auch Schutz gegen Feuer.
+@8169 = ~Diese Rüstung wurde aus den Schuppen dreier junger roter Drachenweibchen gefertigt: Heltipyre, Scorlachash und Cragnortherma. Die drei Schwestern entstammten dem letzten Gelege der mächtigen Hulrundrar und stellten sich in den Dienste Tiamats. Als Verbündete der Githyanki bewachten sie deren wichtigste Stellungen, bis sie eine nach der anderen von <CHARNAME> erschlagen wurden.
+
+Die geschickt miteinander verbundenen Schuppen verleihen der Rüstung eine bemerkenswerte Widerstandsfähigkeit, ohne ihre Leichtigkeit und Beweglichkeit einzuschränken. Sie ist ebenso praktisch wie elegant und bietet ihrem Träger darüber hinaus Schutz vor Feuer.
 
 EIGENSCHAFTEN:
 
@@ -2391,6 +2393,16 @@ Wenn man genügend davon zusammenträgt, ließe sich daraus vielleicht eine ausg
 EIGENSCHAFTEN:
 
 Gewicht: 7~
+@8172 = ~Schleier der Todesfee~
+@8173 = ~Dieser Schleier gehörte einst einer Elfenprinzessin, deren Geist noch immer als Todesfee durch die Tiefen unter Iltkazar wandelte. Selbst nach ihrem Tod haftet dem feinen Gewebe etwas von ihrer unheimlichen Gegenwart an. Wer den Schleier trägt, scheint dem Griff des Todes ein Stück weit entrückt zu sein – und zugleich etwas von dem Hass auf die Zwerge zu teilen, die die Prinzessin einst einkerkerten.
+
+EIGENSCHAFTEN:
+
+- +2 Bonus auf Rettungswürfe und Rüstungsklasse gegen Zwerge
+- Der Träger ist immun gegen Stufenentzug.
+- kein Schutz vor kritischen Treffern
+
+Gewicht: 0~
 
  
 // creature strings

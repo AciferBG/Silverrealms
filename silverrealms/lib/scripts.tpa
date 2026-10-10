@@ -24,6 +24,8 @@ EXTEND_TOP ~ar1000.bcs~ ~silverrealms/scripts/_atkatla.baf~
 
 EXTEND_TOP ~BALDUR.bcs~ ~silverrealms/scripts/_baldur.baf~ // append baldur.bcs when party has drow letter identified
 
+EXTEND_TOP ~AR0334.bcs~ ~silverrealms/scripts/_AR0334.baf~ // Cromwell
+
 //Patching Jaheiras Lovetalks
 OUTER_SPRINT newline ~%WNL%%LNL%%MNL%%TAB% ~
 

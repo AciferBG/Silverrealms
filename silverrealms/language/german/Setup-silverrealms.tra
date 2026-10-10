@@ -2368,6 +2368,29 @@ Gewicht: 0~
 EIGENSCHAFTEN:
 
 Gewicht: 100~
+@8168 = ~Rote Drachenlederrüstung~
+@8169 = ~Die Rüstung besteht aus den geschickt miteinander verbundenen Schuppen junger roter Drachen. Die Rüstung ist sehr praktisch, aber auch gleichzeitig elegant. Durch die verwendeten Schuppen bietet sie dem Träger auch Schutz gegen Feuer.
+
+EIGENSCHAFTEN:
+
+Feuerwiderstand: +35 %
+
+Rüstungsklasse: 4
+RK-Bonus:
+ -1 gg. Geschosswaffen
+ -1 gg. Stichwaffen
+ -2 gg. Klingenwaffen
+Mindeststärke: 6
+
+Gewicht: 10~
+@8170 = ~Juvenile Drachenschuppe~
+@8171 = ~Dies ist eine Schuppe, die von einem jungen roten Drachen geborgen wurde. Im Gegensatz zu den Schuppen älterer Drachen ist sie noch weich und biegsam.
+
+Wenn man genügend davon zusammenträgt, ließe sich daraus vielleicht eine ausgezeichnete Lederrüstung fertigen – vorausgesetzt, man findet einen Handwerker, der sein Fach versteht.
+
+EIGENSCHAFTEN:
+
+Gewicht: 7~
 
  
 // creature strings

@@ -3,6 +3,14 @@
 
 COPY ~silverrealms/itm/copy~         ~override~
 
+COPY ~silverrealms/itm/AC#ILRDS.itm~ ~override~ // juvenile red dragon scales
+  SAY NAME2 @8170
+  SAY DESC @8171
+
+COPY ~silverrealms/itm/AC#ILRLA.itm~ ~override~ // red dragon armor
+  SAY NAME2 @8168
+  SAY DESC @8169
+
 COPY ~silverrealms/itm/AC#IL55C.itm~ ~override~ // chain piece
   SAY NAME2 @8166
   SAY DESC @8167

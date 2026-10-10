@@ -3,6 +3,10 @@
 
 COPY ~silverrealms/itm/copy~         ~override~
 
+COPY ~silverrealms/itm/AC#IL55C.itm~ ~override~ // chain piece
+  SAY NAME2 @8166
+  SAY DESC @8167
+
 COPY ~silverrealms/itm/AC#ILRSW.itm~ ~override~ // Spellweaver ring
   SAY NAME2 @8164
   SAY DESC @8165

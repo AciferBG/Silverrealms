@@ -346,38 +346,51 @@ END
 					IF ~~THEN BEGIN why_mith_didnot_came_back
 					SAY ~Andere Mächte zeigten ebenfalls Interesse an Mithbarakaz' Schicksal - oder an seinem Wissen über meinen Herrn Kalzareinad. Und sie sind mehr als bereit, es sich mit Gewalt zu nehmen.~
 					=
-					~Viele andere Götter meiner Art suchen nach Macht und Einfluss: Task, der Herr des Geizes, oder Null, der Gott der toten Drachen. Ein jeder von ihnen trachtet nach Wissen, das Mithbarakaz zu bewahren sucht. Doch es gibt eine Göttin, deren Sucht nach Größe unübertroffen ist und welcher sich Mithbarakaz ebenfalls in den Weg stellte: Tiamat, die dunkle Dame.~
+					~Viele Götter meiner Art suchten nach Macht und Einfluss: Task, der Herr des Geizes, oder Null, der Gott der toten Drachen. Ein jeder von ihnen trachtet nach verborgenem Wissen. Doch es gibt eine Göttin, deren Sucht nach Größe unübertroffen ist und welcher sich Mithbarakaz ebenfalls in den Weg stellte: Tiamat, die dunkle Dame.~
 					IF ~~ THEN GOTO tiamat_01
 					END
 				
 						IF ~~THEN BEGIN tiamat_01
 						SAY ~Ich bin mir sicher, dass Tiamat hinter Mith Baraks endlosem Schlaf steckt. Die selbst ernannte Königin der Drachen trachtete schon lange danach, die Herrschaft über alle Drachen für sich zu beanspruchen. Bisher ist es ihr nicht gelungen. Sie steckt vielmehr eingekerkert in den Neun Höllen fest. Ob hierbei auch Mithbarakaz seine Fänge im Spiel hatte? Ich weiß es nicht.~
 						=
-						~Jedenfalls sucht Tiamat nach einer Möglichkeit, sich aus ihrer Gefangenschaft zu befreien. Da kommt ihr ein alter Silberdrache wie gerufen. Ihre Anhänger müssen Mithbarakaz auf der Astralebene unter ihre Kontrolle gebracht haben, was seinen Körper zu einer Mithrilsäule erstarrt auf dem Throne der Zwergenstadt verharren lässt.~
+						~Jedenfalls sucht Tiamat nach einer Möglichkeit, sich aus ihrer Gefangenschaft zu befreien. Ihre Anhänger müssen Mithbarakaz auf der Astralebene unter ihre Kontrolle gebracht haben, was seinen Körper zu einer Mithrilsäule erstarrt auf dem Throne der Zwergenstadt verharren lässt.~
 						IF ~~ THEN GOTO tiamat_02
 						END
 						
 						IF ~~THEN BEGIN tiamat_02
 						SAY ~Wahrscheinlich seid Ihr schon einigen von Tiamats Schergen begegnet. Sie schickt gerne ihre Horden von Abishai aus den unteren Ebenen, wenn es eine ehrlose Schlacht zu schlagen gilt! Angeführt werden sie meist von einer Kreatur, deren Aussehen erbärmlicher nicht sein könnte: Malphas, das rabengesichtige Scheusal.~
 						IF ~~ THEN REPLY ~Malphas? Vielleicht bin ich diesem Wesen schon einmal begegnet.~ + malphas_01
-						IF ~~ THEN REPLY ~Falls es mir schon einmal begegnet ist, dürfte es sich vermutlich ebenso gut an mich erinnern.~ + malphas_01
+						IF ~~ THEN REPLY ~Falls mir dieses Scheusal schon einmal begegnet ist, dürfte es sich vermutlich ebenso gut an mich erinnern.~ + malphas_01
 						END
 									
 										IF ~~ THEN BEGIN malphas_01
 										SAY ~Dann solltet Ihr Euch also auf eine Begegnung mit diesem rabengesichtigen Scheusal gefasst machen. Das Schöne an diesen ganzen Teufeln ist, dass sie es einem immer leicht machen, sie zu erkennen. Sie zu besiegen ist aber eine ganz andere Sache. Denn die Anhänger Tiamats haben viele Verbündete.~
 										IF ~~ THEN GOTO githyanki_tiamat 
 										END
-									
-								IF ~~THEN BEGIN githyanki_tiamat
-								SAY ~Tiamat hat vor Jahrhunderten mit den Githyanki ein Abkommen getroffen. Sie bietet ihnen als Reittiere junge rote Drachen im Austausch für Dienste, die bisher unbekannt geblieben sind.~
-								=
-								~Und da die Githyanki ihre Heimat in der Astralebene haben, schließt sich hier der Kreis. Es könnte sein, dass Mithbarakaz von Githyanki in der Astralebene ergriffen wurde und dort nun von Tiamats Schergen gefangen gehalten wird.~
-								++ ~Wie geht es jetzt weiter?~ + no_time_to_talk
-								END
-								
-									
+																	
+										IF ~~ THEN BEGIN githyanki_tiamat
+										  SAY ~Tiamat hat vor Jahrhunderten mit den Githyanki ein Abkommen geschlossen. Sie stellt ihnen junge rote Drachen als Reittiere zur Verfügung. Im Gegenzug leisten die Githyanki ihr Dienste, deren genaue Natur bis heute unbekannt geblieben ist.~
+										  =
+										  ~Ihr solltet also damit rechnen,Githyanki gegenüberzutreten, als auch jungen Drachen. Meine Spitzel berichten, dass sich die Githyanki vor Kurzem die Unterstützung dreier roter junger Drachen gesichert haben. Es sind Schwestern aus demselben Gelege; ihre Namen lauten Heltipyre, Scorlachash und Cragnortherma.~
+										  IF ~~ THEN REPLY ~Ich hoffe, dass ich nicht alle drei gleichzeitig bekämpfen muss.~ + fight_3_dragons
+										  IF ~~ THEN REPLY ~Mit denen werde ich schon fertig.~ + githyanki_tiamat_02
+										  IF ~~ THEN REPLY ~Dann sollte ich wohl besser dafür sorgen, dass sie nicht mehr lange zu dritt sind.~ + githyanki_tiamat_02
+										END
+
+										IF ~~ THEN BEGIN fight_3_dragons
+										  SAY ~Das halte ich für unwahrscheinlich.~ 
+										IF ~~ THEN GOTO githyanki_tiamat_02 
+										END
+
+										IF ~~ THEN BEGIN githyanki_tiamat_02
+										  SAY ~Unterschätzt diese Kreaturen keinesfalls. Wo immer die Githyanki ihre wichtigsten Stellungen verteidigen, könnten auch diese Drachen auf Euch warten.~
+										  =
+										  ~Und da die Githyanki ihre Heimat in der Astralebene haben, schließt sich hier der Kreis. Es ist naheliegend, dass Mithbarakaz dort ergriffen wurde und nun von Tiamats Schergen gefangen gehalten wird.~
+										  ++ ~Wie geht es jetzt weiter?~ + no_time_to_talk
+										END
+																
 									IF ~~THEN BEGIN no_time_to_talk
-									SAY ~Wir haben das gleiche Ziel. Ihr müsst in die Astralebene zu Kalzareinads Körper reisen. Dort findet Ihr einen Anhaltspunkt, wo in der unendlichen Astralen See sich Mithbarakaz aufhält - beziehungsweise, wo er gefangengehalten wird. Mein Gott treibt in der Astralebene in einem Gebiet, welches "Silberwolke" genannt wird. Dort müsst hinreisen.~ 
+									SAY ~Wir haben das gleiche Ziel. Ihr müsst in die Astralebene zu Kalzareinads Körper reisen. Dort findet Ihr einen Anhaltspunkt, wo in der unendlichen Astralen See sich Mithbarakaz aufhält - beziehungsweise, wo er gefangengehalten wird. Dorthin führt Euer Weg.~ 
 									IF ~~ THEN GOTO your_part_of_deal_01
 									END
 									
@@ -387,7 +400,7 @@ END
 									END
 									
 									IF ~~THEN BEGIN your_part_of_deal_02
-									SAY ~Euer Teil der Abmachung ist, Kalzareinad neues Leben einzuhauchen und meinem Gott mitzuteilen, dass der Glaube an ihn noch nicht ganz erloschen ist und ich ihn immer noch verehre. Wenn Ihr besonders gutherzig sein wollt, könntet Ihr meinen Gott im Austausch für seine Wiederbelebung bitten, den Fluch, den er auf Mithbarakaz gelegt hat, von ihm zu nehmen. Dies bleibt aber Euch überlassen. Danach zieht Ihr jedenfalls weiter in der astralen See und rettet Mithbarakaz aus seinem elenden Gefängnis.~
+									SAY ~Euer Teil der Abmachung ist, Kalzareinad neues Leben einzuhauchen und meinem Gott mitzuteilen, dass der Glaube an ihn noch nicht ganz erloschen ist und ich ihn immer noch verehre. Wenn Ihr besonders gutherzig sein wollt, könntet Ihr meinen Gott im Austausch für seine Wiederbelebung bitten, den Fluch, den er auf Mithbarakaz gelegt hat, von ihm zu nehmen. Dies bleibt aber Euch überlassen. Danach zieht Ihr weiter und rettet Mithbarakaz aus seinem elenden Gefängnis.~
 									IF ~~ THEN DO ~AddJournalEntry(@79600,QUEST)~ GOTO do_we_have_a_deal
 									END
 									

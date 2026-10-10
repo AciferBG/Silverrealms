@@ -2362,6 +2362,12 @@ RK-Bonus: +1 (Malus)
 RW-Bonus: +1 (Malus)
 
 Gewicht: 0~
+@8166 = ~Kettenglied~
+@8167 = ~Dies ist ein einzelnes, extrem schweres Glied einer Kette. Es ist aus einer Euch unbekannten Legierung gefertigt, welche ein sehr hohes Gewicht hat. Warum jemand einen solch unpraktischen Gegenstand herstellt entzieht sich Eurer Kenntnis.
+
+EIGENSCHAFTEN:
+
+Gewicht: 100~
 
  
 // creature strings
@@ -2444,6 +2450,8 @@ Gewicht: 0~
 @9074 = ~Derro-Plünderer~
 
 @9075 = ~Tiamat~
+
+@9076 = ~Dorrim Glutbart~
 
 
 

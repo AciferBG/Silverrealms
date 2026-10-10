@@ -1,4 +1,57 @@
 /*******************************************************************************************************
+Dialog Dorrim Glutbart
+*******************************************************************************************************/
+BEGIN ~AC#55SM2~
+
+CHAIN IF ~GlobalGT("HelpWithChain","ACIL55",9)~ THEN AC#55SM2 hello_again
+~Ihr seid eine große Hilfe in der Stadt. Dank Euch kann ich mich jetzt wieder um die Schmiedearbeit kümmern!~
+END
+IF ~~ THEN EXIT
+
+CHAIN IF ~Global("HelpWithChain","ACIL55",2)~ THEN AC#55SM2 hello_thank_you
+~He, Danke! Das hätte ich nie geschafft. Ihr seid ganz schön stark! Das werde ich Bromdar erzählen, wenn ich ihn einmal wieder in der Krankenstation in Sharindlars Tempel besuchen gehe.~
+=
+~Ihr seid eine große Hilfe in der Stadt. Dank Euch kann ich mich jetzt wieder um die Schmiedearbeit kümmern!~
+END
+IF ~~ THEN DO ~SetGlobal("HelpWithChain","ACIL55",10)
+AddexperienceParty(300)~ EXIT
+
+CHAIN IF ~Global("HelpWithChain","ACIL55",1)~ THEN AC#55SM2 hello_help
+~Ich wäre Euch sehr verbunden, wenn Ihr mir alsbald das Kettenglied hier auf den Amboss legen würdet!~
+END
+IF ~~ THEN EXIT
+
+CHAIN IF ~NumTimesTalkedTo(0)~ THEN AC#55SM2 hello_0
+~He! Ihr da von der Oberfläche! Könntet Ihr mir einmal geschwind helfen?~
+END
+IF ~~ THEN REPLY ~Sicher. Worum geht es?~ EXTERN AC#55SM2 yes_help
+IF ~~ THEN REPLY ~Dafür habe ich keine Zeit.~ EXTERN AC#55SM2 no_help_bye
+
+	CHAIN AC#55SM2 yes_help
+	~Hier neben dem Amboss liegt ein kleines Teil der großen Kette, die Mith Barak in Auftrag gegeben hat. Dieses Kettenglied müsste jemand Starkes auf den Amboss dort hinten legen, damit ich es schmieden kann. Leider ist es für mich zu schwer, und mein Partner Bromdar trägt noch immer eine Schiene am Fuß, nachdem ihm das Kettenglied auf den Fuß gefallen ist. Aber Ihr seht aus, als könntet Ihr das Teil ohne Weiteres bewegen!~
+	END
+	IF ~~ THEN REPLY ~Gut das kann ich machen.~ EXTERN AC#55SM2 yes_help_02
+	IF ~~ THEN REPLY ~Was wollte Euer König Mith Barak mit so einer schweren Kette?~ EXTERN AC#55SM2 why_chain
+	IF ~~ THEN REPLY ~Dafür habe ich keine Zeit.~ EXTERN AC#55SM2 no_help_bye
+	
+		CHAIN AC#55SM2 why_chain
+		~Das kann ich Euch auch nicht sagen. Es ist auch nur die Ersatzkette für irgendein größeres Stück, das schon vor langer Zeit fertiggestellt wurde - keine Ahnung, wo sich die ursprüngliche Kette jetzt befindet! Aber wir haben den Auftrag, weitere Kettenglieder herzustellen, bis Mith Barak aus seinem Schlaf wieder erwacht ist. Helft Ihr mir jetzt oder nicht?~
+		END
+		IF ~~ THEN REPLY ~Ich werde Euch helfen.~ EXTERN AC#55SM2 yes_help_02
+		IF ~~ THEN REPLY ~Dafür habe ich keine Zeit.~ EXTERN AC#55SM2 no_help_bye
+		
+			CHAIN AC#55SM2 yes_help_02
+			~Wunderbar! Das Kettenglied liegt gleich hier drüben, neben dem kleinen Amboss. Dort ist es Bromdar auf den Fuß gefallen. Sein rechter Fuß hat jetzt die Größe eines Ogerfußes! Nehmt es und legt es auf den großen Amboss bei den Schmiedehämmern weiter hinten, dann kann ich es weiter verarbeiten. Ich warte auf Euch bei dem Amboss!~
+			END
+			IF ~~ THEN DO ~SetGlobal("HelpWithChain","ACIL55",1)~ EXIT
+
+	CHAIN AC#55SM2 no_help_bye
+	~War nur eine Frage. Nichts für ungut; dann werde ich anderswo nach Hilfe suchen müssen!~
+	END
+	IF ~~ THEN DO ~SetGlobal("ChainDelivered","ACIL55",20)
+	EscapeArea()~ EXIT
+
+/*******************************************************************************************************
 Thargrun, driftdisc-quest (creates mercury out of cinnabarit
 *******************************************************************************************************/
 BEGIN ~AC#55TDR~

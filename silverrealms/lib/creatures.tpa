@@ -2403,6 +2403,14 @@ COPY ~silverrealms/cre/AC#55SM1.cre~ ~override/AC#55SM1.cre~ // Whundaed Silberl
   SAY SELECT_COMMON3 @5038
   SAY SELECT_COMMON4 @5041
   
+COPY ~silverrealms/cre/AC#55SM2.cre~ ~override~ // Dorrim Glutbart
+  SAY NAME1 @9076 SAY NAME2 @9076
+  SAY INITIAL_MEETING @5037
+  SAY SELECT_COMMON1 @5035
+  SAY SELECT_COMMON2 @5036
+  SAY SELECT_COMMON3 @5038
+  SAY SELECT_COMMON4 @5041
+  
 COPY ~silverrealms/cre/ac#ilel1.cre~ ~override/ac#ilel1.cre~
   SAY NAME1 @648 SAY NAME2 @648
   WRITE_ASCII 0x250 ~AC#ILELF~ #8 // CLASS

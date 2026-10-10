@@ -1,20 +1,57 @@
 IF
-	Contains("AC#CINNA","Oven_mercury")  // Cinnabar
-	Global("MercuryCreation","ACIL55",0)
+    Global("EnteredArea","ACIL55",0)
 THEN
-	RESPONSE #100
-		SetGlobal("MercuryCreation","ACIL55",1)
-		ActionOverride("Oven_mercury",DestroyItem("AC#CINNA"))  // Cinnabar
-		//SmallWait(15)
-		CreateVisualEffect("AC#MAGIR",[787.450])
-		Wait(1)
-		ActionOverride("Oven_mercury",CreateItem("AC#MERC1",0,0,0))  // Mercury
+    RESPONSE #100
+        SetGlobal("EnteredArea","ACIL55",1)
+        AmbientActivate("Chain_piece_02",FALSE)
 END
 
 IF
-	PartyHasItem("AC#MERC1")  // Mercury
-	Global("MercuryCreation","ACIL55",1)
+    Contains("AC#IL55C","Con_chain")  // Kettenglied
+    Global("ChainDelivered","ACIL55",0)
 THEN
-	RESPONSE #100
-		SetGlobal("MercuryCreation","ACIL55",2)
+    RESPONSE #100
+        ActionOverride("Con_chain",DestroyItem("AC#IL55C"))  // Kettenglied
+        AmbientActivate("Chain_piece_02",TRUE)
+        ContainerEnable("Con_chain",FALSE)
+        SetGlobal("ChainDelivered","ACIL55",1)
 END
+
+IF
+    Global("ChainDelivered","ACIL55",20)
+THEN
+    RESPONSE #100
+        ContainerEnable("Con_chain",FALSE)
+        ActionOverride("Chainpiece_solo",DestroyItem("AC#IL55C"))  // Kettenglied
+        ContainerEnable("Chainpiece_solo",FALSE)
+END
+
+IF
+    Contains("AC#CINNA","Oven_mercury")  // Cinnabarit
+    Global("MercuryCreation","ACIL55",0)
+THEN
+    RESPONSE #100
+        SetGlobal("MercuryCreation","ACIL55",1)
+        ActionOverride("Oven_mercury",DestroyItem("AC#CINNA"))  // Cinnabarit
+        CreateVisualEffect("AC#MAGIR",[787.450])
+        Wait(1)
+        ActionOverride("Oven_mercury",CreateItem("AC#MERC1",0,0,0))  // Flüssiges Quecksilber
+END
+
+IF
+    PartyHasItem("AC#MERC1")  // Flüssiges Quecksilber
+    Global("MercuryCreation","ACIL55",1)
+THEN
+    RESPONSE #100
+        SetGlobal("MercuryCreation","ACIL55",2)
+END
+
+IF
+   Global("HelpWithChain","ACIL55",10)
+THEN
+    RESPONSE #100
+        SetGlobal("HelpWithChain","ACIL55",11)
+        IncrementGlobal("AC_Iltkazar_Reputation","GLOBAL",1)
+        DisplayString(Myself,@1021)  // ^0xFF22B4E6Euer Ansehen in Iltkazar ist gestiegen.^-
+END
+

@@ -1,0 +1,27 @@
+IF
+    NumberOfTimesTalkedTo(0)
+    See([PC])
+    Range([PC],15)
+THEN
+    RESPONSE #100
+        StartDialogueNoSet([PC])
+END
+
+IF
+    Global("HelpWithChain","ACIL55",1)
+    Global("MoveToAnvil","ACIL55",0)
+THEN
+    RESPONSE #100
+        MoveToPointNoInterrupt([2974.378])
+        SetGlobal("MoveToAnvil","ACIL55",1)
+END
+
+IF
+    Global("ChainDelivered","ACIL55",1)
+    Global("HelpWithChain","ACIL55",1)
+THEN
+    RESPONSE #100
+        SetGlobal("HelpWithChain","ACIL55",2)
+        StartDialogueNoSet([PC])
+END
+

@@ -524,3 +524,12 @@ THEN
 		AddMapNote([2214.1583],@221)
 END
 
+IF
+    Global("AddMoreMapnotes","ACIL50",0)
+THEN
+    RESPONSE #100
+        SetGlobal("AddMoreMapnotes","ACIL50",1)
+		AddMapNote([2376.1685],@6051) // Clangeddin's Shrine
+		AddMapNote([2546.1813],@6052) // tavern
+END
+

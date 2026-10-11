@@ -1,0 +1,22 @@
+IF
+    Entered([ANYONE])
+THEN
+    RESPONSE #100
+        CreateVisualEffect("AC#IL36A",[913.1060])
+        CreateCreature("AC#28LAC",[913.1060],NE)  // Duerghul
+        CreateVisualEffect("AC#IL36A",[938.1119])
+        CreateCreature("AC#28LAC",[938.1119],NE)  // Duerghul
+        CreateVisualEffect("AC#IL36A",[1010.715])
+        CreateCreature("AC#28LAC",[1010.715],SE)  // Duerghul
+        CreateVisualEffect("AC#IL36A",[985.703])
+        CreateCreature("AC#28LAC",[985.703],SE)  // Duerghul
+        CreateVisualEffect("AC#IL36A",[1315.896])
+        CreateCreature("AC#28LAC",[1315.896],NW)  // Duerghul
+        CreateVisualEffect("AC#IL36A",[1311.993])
+        CreateCreature("AC#28LAC",[1311.993],NW)  // Duerghul
+        CreateVisualEffect("AC#IL36A",[1275.734])
+        CreateCreature("AC#28LAC",[1275.734],SW)  // Duerghul
+        CreateVisualEffect("AC#IL36A",[1335.746])
+        CreateCreature("AC#28LAC",[1335.746],SW)  // Duerghul
+END
+

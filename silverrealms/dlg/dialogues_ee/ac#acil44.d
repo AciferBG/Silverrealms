@@ -10,6 +10,13 @@ SAY  ~Viel Glück da draußen, <CHARNAME>. Passt auf, denn es könnten sich imme
 IF ~~ THEN   EXIT
 END	
 
+BEGIN ~AC#44DW2~
+
+IF ~True()~ THEN BEGIN 1
+SAY  ~Viel Glück da draußen, <CHARNAME>. Passt auf, denn es könnten sich immer noch umherstreunende Trupps von Duergar in diesem Gebiet aufhalten.~
+IF ~~ THEN   EXIT
+END	
+
 /*******************************************************************************************************
 Dialogue Dying Duergar
 *******************************************************************************************************/

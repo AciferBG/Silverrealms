@@ -4,7 +4,7 @@
 BEGIN ~AC#28DUG~
 
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN hello_wait_here
-  SAY ~Niemand verlässt Barakuir: Der See hat uns genommen. Nun nimmt er euch! Barakuir gibt seine Toten nicht mehr her...~
+  SAY ~Niemand verlässt Barakuir: Der See hat uns alle verschlungen. Nun nimmt er auch euch! Barakuir gibt seine Toten nicht mehr her...~ [DROWN03]
   IF ~~ THEN EXIT
 END
 

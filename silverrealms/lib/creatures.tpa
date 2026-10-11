@@ -4,6 +4,7 @@ COPY ~silverrealms/cre/copy~         ~override~
 
 COPY ~silverrealms/cre/AC#28DUG.cre~ ~override~ // Kordok, Duerghul leader
   SAY NAME1 @9077 SAY NAME2 @9077
+  WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#DROWNED_DEAD_SMALL~))
 
 COPY ~%MOD_FOLDER%/cre/AC#ILDE1.cre~ ~override~ //Derro-Savant 01
   SAY NAME1 @9072 SAY NAME2 @9072
@@ -2718,6 +2719,14 @@ COPY ~silverrealms/cre/AC#44DW1.cre~ ~override~ // Gate guardian
   SAY SELECT_COMMON3 @5040
   SAY SELECT_COMMON4 @5041
   
+COPY ~silverrealms/cre/AC#44DW2.cre~ ~override~ // Gate guardian
+  SAY NAME1 @775 SAY NAME2 @775
+  SAY INITIAL_MEETING @5031
+  SAY SELECT_COMMON1 @5032
+  SAY SELECT_COMMON2 @5033
+  SAY SELECT_COMMON3 @5040
+  SAY SELECT_COMMON4 @5041
+  
 COPY ~silverrealms/cre/AC#44DU1.cre~ ~override~ // Dying Duergar
   SAY NAME1 @778 SAY NAME2 @778
   
@@ -3192,15 +3201,11 @@ COPY ~silverrealms/cre/AC#75REV.cre~ ~override~ // Reverend One (Elves of Everme
   
 COPY ~silverrealms/cre/AC#67GEL.cre~ ~override~ // Gelugon
   SAY NAME1 @9009 SAY NAME2 @9009
-    COPY_EXISTING ~AC#67GEL.cre~ ~override~
     WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#GELUGON~))
-    
 
 COPY ~silverrealms/cre/AC#FEYR1.cre~ ~override~ // greater feyr
   SAY NAME1 @9010 SAY NAME2 @9010
-    COPY_EXISTING ~AC#FEYR1.cre~ ~override~
     WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~FEYR_GREATER~))
-    
 
 COPY ~silverrealms/cre/AC#61DW1.cre~ ~override~ // worker in ACIL61 (Azerkyn-hall), to be rescued
   SAY NAME1 @933 SAY NAME2 @933
@@ -3219,15 +3224,11 @@ COPY ~silverrealms/cre/AC#53SVM.cre~ ~override~ // Krerthmull Staubmarker (deep 
 
 COPY ~silverrealms/cre/AC#28LAC.cre~ ~override~ // Duerghul (own creation :-))
   SAY NAME1 @9014 SAY NAME2 @9014
-      
-    COPY_EXISTING ~AC#28LAC.cre~ ~override~
     WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#DROWNED_DEAD_SMALL~))
     
 
 COPY ~silverrealms/cre/ac#28la2.cre~ ~override~ // Duerghul (own creation :-))
   SAY NAME1 @9014 SAY NAME2 @9014
-        
-    COPY_EXISTING ~AC#28la2.cre~ ~override~
     WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#DROWNED_DEAD_SMALL~))
     
   

@@ -16,10 +16,10 @@ ACIL04       W            AR1400       ExitSE       2            1            N 
 ACIL04       W            AR1404       ExitSE       2            1            N            N            N            N            N            0 
 ACIL04       W            AR1100       ExitNW       5            1            N            N            N            N            N            0 
 ACIL04       W            AR1200       ExitW        6            1            N            N            N            N            N            0 
-ACIL04       W            ACIL4M       Entrywm      0            1            N            N            N            N            N            0 
-ACIL04       S            ACIL4M       Entrywm      0            1            N            N            N            N            N            0
-ACIL04       S            ACIL06       Entrywm      0            1            N            N            N            N            N            0
-ACIL04       S            ACIL09       Entrywm      0            1            N            N            N            N            N            0 
+ACIL04       W            ACIL4M       Entrywm      1            1            N            N            N            N            N            0 
+ACIL04       S            ACIL4M       Entrywm      1            1            N            N            N            N            N            0
+ACIL04       S            ACIL06       Entrywm      1            1            N            N            N            N            N            0
+ACIL04       S            ACIL09       Entrywm      1            1            N            N            N            N            N            0 
 
 //Zweiwasser zerstört
 AR0020       E            ACIL07       EntryWM      4            1            N            N            N            N            N            0
@@ -38,21 +38,21 @@ ACIL07       W            AR1400       ExitSE       2            1            N 
 ACIL07       W            AR1404       ExitSE       2            1            N            N            N            N            N            0 
 ACIL07       W            AR1100       ExitNW       5            1            N            N            N            N            N            0 
 ACIL07       W            AR1200       ExitW        6            1            N            N            N            N            N            0
-ACIL07       W            ACIL4M       Entrywm      0            1            N            N            N            N            N            0 
-ACIL07       S            ACIL4M       Entrywm      0            1            N            N            N            N            N            0
-ACIL07       W            ACIL0A       Entrywm      0            1            N            N            N            N            N            0 
-ACIL07       S            ACIL0A       Entrywm      0            1            N            N            N            N            N            0
-ACIL07       S            ACIL09       Entrywm      0            1            N            N            N            N            N            0 
+ACIL07       W            ACIL4M       Entrywm      1            1            N            N            N            N            N            0 
+ACIL07       S            ACIL4M       Entrywm      1            1            N            N            N            N            N            0
+ACIL07       W            ACIL0A       Entrywm      8            1            N            N            N            N            N            0 
+ACIL07       S            ACIL0A       Entrywm      8            1            N            N            N            N            N            0
+ACIL07       S            ACIL09       Entrywm      1            1            N            N            N            N            N            0 
 ACIL07       S            ACIL01       EntryWM      3            1            N            N            N            N            N            0 
 ACIL07       W            ACIL01       EntryWM      3            1            N            N            N            N            N            0 
 
 //Axtbrücke
-ACIL04       S            ACIL06       EntryWM      0            1            N            N            N            N            N            0 
-ACIL06       S            ACIL04       ExitS        0            1            N            N            N            N            N            0 
+ACIL04       S            ACIL06       EntryWM      1            1            N            N            N            N            N            0 
+ACIL06       S            ACIL04       ExitS        1            1            N            N            N            N            N            0 
 
 //Axtbrücke zerstört
-ACIL07       S            ACIL09       EntryWM      0            1            N            N            N            N            N            0 
-ACIL09       S            ACIL07       Entrys       0            1            N            N            N            N            N            0 
+ACIL07       S            ACIL09       EntryWM      1            1            N            N            N            N            N            0 
+ACIL09       S            ACIL07       Entrys       1            1            N            N            N            N            N            0 
 
 //Turboldberg
 AR0020       E            ACIL0A       EntryWM      6            1            N            N            N            N            N            0
@@ -109,18 +109,18 @@ ACIL01       S            AC1900       ExitW        2            1            N 
 
 //Steinbruch
 AR0020       E            ACIL4M       EntryWM      4            1            N            N            N            N            N            0
-ACIL04       S            ACIL4M       EntryWM      0            1            N            N            N            N            N            0 
-ACIL06       S            ACIL4M       EntryWM      0            1            N            N            N            N            N            0 
+ACIL04       S            ACIL4M       EntryWM      1            1            N            N            N            N            N            0 
+ACIL06       S            ACIL4M       EntryWM      1            1            N            N            N            N            N            0 
  
 ACIL4M       W            AR0020       ExitNE       4            4            N            N            N            N            N            0
-ACIL4M       S            ACIL04       ExitS        0            1            N            N            N            N            N            0 
-ACIL4M       S            ACIL06       Entrys       0            1            N            N            N            N            N            0
-ACIL4M       W            ACIL09       Entryse      0            1            N            N            N            N            N            0 
-ACIL4M       W            ACIL07       Entrys       0            1            N            N            N            N            N            0
-ACIL4M       E            ACIL09       Entryse      0            1            N            N            N            N            N            0 
-ACIL4M       S            ACIL09       Entryse      0            1            N            N            N            N            N            0 
-ACIL4M       E            ACIL07       Entrys       0            1            N            N            N            N            N            0
-ACIL4M       S            ACIL07       Entrys       0            1            N            N            N            N            N            0
+ACIL4M       S            ACIL04       ExitS        1            1            N            N            N            N            N            0 
+ACIL4M       S            ACIL06       Entrys       1            1            N            N            N            N            N            0
+ACIL4M       W            ACIL09       Entryse      1            1            N            N            N            N            N            0 
+ACIL4M       W            ACIL07       Entrys       1            1            N            N            N            N            N            0
+ACIL4M       E            ACIL09       Entryse      1            1            N            N            N            N            N            0 
+ACIL4M       S            ACIL09       Entryse      1            1            N            N            N            N            N            0 
+ACIL4M       E            ACIL07       Entrys       1            1            N            N            N            N            N            0
+ACIL4M       S            ACIL07       Entrys       1            1            N            N            N            N            N            0
 
 
 //Drachenfriedhof

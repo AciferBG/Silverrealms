@@ -269,3 +269,12 @@ THEN
 		Wait(3)
         DisplayStringPoint([893.797],@121)
 END
+
+IF
+    Global("MalCreateReward","ACIL71",0)
+   GlobalGT("AC#IL_MaldraedHappy","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("MalCreateReward","ACIL71",1)
+        ActionOverride("AC#71X",CreateItem("AC#ILAMM",0,0,0))
+END

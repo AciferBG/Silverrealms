@@ -14,7 +14,7 @@ SAY  ~Ihr kehrt zurück! Und Ihr habt getan, worum ich Euch bat. Mehr noch: Ihr 
 ~Nehmt Euch als Belohnung einen Gegenstand vom Altar zu Füßen meines Gottes. Betrachtet ihn als meinen Dank – und als Zeichen, dass Maldraedior eine Schuld nicht vergisst.~
 =
 ~Geht nun. Und vergesst nicht: Selbst ein Drache erinnert sich daran, wem er Dank schuldet.~
-	IF ~~ THEN DO ~SetGlobal("AC#IL_MaldraedHappy","GLOBAL",1)
+	IF ~~ THEN DO ~SetGlobal("AC#IL_MaldraedHappy","GLOBAL",1)	
 	AddexperienceParty(5000)
 	DestroySelf()~ EXIT
 END

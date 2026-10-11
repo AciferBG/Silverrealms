@@ -2404,6 +2404,22 @@ EIGENSCHAFTEN:
 - kein Schutz vor kritischen Treffern
 
 Gewicht: 0~
+@8174 = ~Schleier~
+@8175 = ~Ein fein gearbeiteter Schleier, der sich sehr leicht anfühlt, aber etwas nach Tod und Verwesung riecht.
+
+Gewicht: 1~
+@8176 = ~Saphir des Sturmwächters~
+@8177 = ~In den Tagen der alten Gottkönige Unthers trugen die Wächter der Tempel Rammans, des Gottes des Donners und der Stürme, Amulette mit tiefblauen Saphiren. Man glaubte, dass diese Steine einen Teil der Macht ihres Gottes in sich bargen und ihre Träger selbst im heftigsten Gewitter vor Blitzschlägen bewahrten.
+
+Der Überlieferung nach wurden die Saphire während schwerer Unwetter auf den höchsten Zinnen der Tempel geweiht. Nur wenige dieser Amulette haben den Niedergang des alten untherischen Götterkultes überdauert.
+
+EIGENSCHAFTEN:
+
+Elektrizitätswiderstand: +40 %
+Rettungswurf gegen Odemwaffen: +2
+Immunität gegen Betäubung
+
+Gewicht: 1~
 
  
 // creature strings

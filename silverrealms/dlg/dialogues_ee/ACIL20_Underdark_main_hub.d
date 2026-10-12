@@ -492,7 +492,7 @@ CHAIN IF ~Global("AC#IL_ACIL20Portal","GLOBAL",8)~ THEN AC#TURBX hello_portal_af
 	== AC#VRONX ~Ich habe versucht, die merkwürdige Rune zu aktivieren, und <CHARNAME> hat hindurchgesehen. Irgendetwas auf der anderen Seite hat unseren Ausspähversuch bemerkt und <CHARNAME> einen geistigen Schlag verpasst.~
 	== AC#TURBX ~Was habt Ihr gesehen, <CHARNAME>?~
 	END
-	IF ~~ THEN REPLY ~Ich weiß nicht genau... irgendeine silbrige Ebene. Und das ist plötzlich so ein Rabengesicht aufgetaucht.~ EXTERN AC#TURBX raven_fiend 
+	IF ~~ THEN REPLY ~Ich weiß nicht genau... irgendeine silbrige Ebene. Und dann ist plötzlich so ein Rabengesicht aufgetaucht.~ EXTERN AC#TURBX raven_fiend 
 	
 		CHAIN AC#TURBX raven_fiend
 		~Ein Rabengesicht?~

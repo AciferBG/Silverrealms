@@ -11,7 +11,7 @@ END
 
 IF ~NumTimesTalkedToGT(0)~ THEN BEGIN Hello_again
 SAY  ~Wie sieht es aus? Konntet Ihr Durhgathu schon zur Rechenschaft ziehen?~
-IF ~Dead("AC#DURG1")~ THEN REPLY ~Ja, die Zwergin ist tot. Sie hatte einen Dämon beschworen!~ + durhgathu_is_dead
+IF ~Dead("AC#DURG1")~ THEN REPLY ~Ja, die Zwergin ist tot. Sie hatte ein Scheusal beschworen!~ + durhgathu_is_dead
 IF ~!Dead("AC#DURG1")~ THEN REPLY ~Nein, ich bin noch auf der Suche nach ihr.~ + keep_on_trying
 IF ~!Dead("AC#BANS1")
 Global("AC#MournInfo","ACIL57",1)~ THEN REPLY ~Was ist das für ein Wehklagen in der östlichen Kammer?~ + mourning
@@ -35,7 +35,7 @@ END
 		END
 		
 		IF ~~ THEN BEGIN has_hammer
-		SAY ~Ihr seid ein großartiger <PRO_RACE>! Wenn Ihr mich nach oben tragen könntet, kann ich Euch den Weg aus dieser Krypta weisen!~
+		SAY ~Ihr seid ein vortrefflicher <PRO_RACE>! Wenn Ihr mich nach oben tragen könntet, kann ich Euch den Weg aus dieser Krypta weisen!~
 		IF ~~ THEN DO ~GiveItemCreate("AC#57TUR",Player1,1,0,0)
 		AddJournalEntry(@58008,QUEST)
 		DestroySelf()~  EXIT
@@ -69,7 +69,7 @@ END
 			IF ~~ THEN BEGIN why_banshee_02
 			SAY ~Hört zu, <CHARNAME>, wir können nicht für alles, was unsere Ahnen getan haben, die Verantwortung übernehmen. Unsere einzige Möglichkeit ist, es besser zu machen. Helft mir also Bitte, die verrückte Zwergin zu stoppen!~
 			IF ~!Dead("AC#DURG1")~ THEN REPLY ~Ja, ich werde mich alsbald wieder darum kümmern.~ + keep_on_trying
-			IF ~Dead("AC#DURG1")~ THEN REPLY ~Ich habe die Zwergin bereits getötet. Sie hatte einen Dämon beschworen!~ + durhgathu_is_dead
+			IF ~Dead("AC#DURG1")~ THEN REPLY ~Ich habe die Zwergin bereits getötet. Sie hatte ein Scheusal beschworen!~ + durhgathu_is_dead
 			END
 	
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN 1

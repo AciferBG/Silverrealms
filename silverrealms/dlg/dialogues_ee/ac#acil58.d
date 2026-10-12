@@ -468,7 +468,7 @@ END
 			END
 			
 			IF ~~ THEN BEGIN honor_pc
-			SAY ~Euch, <CHARNAME>, wird die Ehre zuteil, Dumathoins Hammer  wieder an seinen angestammten Platz zu bringen. Platziert ihn bitte auf dem Sockel im Osten unseres Tempel. Ich bin mir sicher, dass der Schweigende gnädig auf Euch herablächeln wird!~
+			SAY ~Euch, <CHARNAME>, wird die Ehre zuteil, Dumathoins Hammer  wieder an seinen angestammten Platz zu bringen. Platziert ihn bitte auf dem Sockel im Osten unseres Tempels. Ich bin mir sicher, dass der Schweigende fortan gnädig auf Euch herablächeln wird!~
 			IF ~~ THEN DO ~SetGlobal("AC#TurbaernRescued","GLOBAL",10)
 				IncrementGlobal("AC_Iltkazar_Reputation","GLOBAL",3)
 				SetGlobalTimer("Turbaern_recovered","ACIL58",ONE_DAY)

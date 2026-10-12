@@ -472,7 +472,7 @@ END
 // ---------------------------------------
 CHAIN IF ~Global("VhaeraunKillDrow","ACIL24",2)~ THEN AC#24DR9 chain_killdrow
 ~Ihr habt nach mir gerufen, Vhaeraun-Priester?~
-== AC#24DAE ~Ja, Malagzmyr, Meistermagier aus Sshamath. Ich muss Euch eine Mitteilung machen. Caraf'nir, Euer Herr und Meister, den wir in die Zwergenstadt eingeschleust hatten, ist tot.~
+== AC#24DAE ~Ja, Malagzmyr, Magier aus Sshamath. Ich muss Euch eine Mitteilung machen. Caraf'nir, Euer Herr und Meister, den wir in die Zwergenstadt eingeschleust hatten, ist tot.~
 == AC#24DR9 ~Bei dem dunklen Gewebe!~
 == AC#24DAE ~Er wurde von diesem <PRO_RACE> hier, <CHARNAME>, umgebracht.~
 == AC#24DR9 ~Von einem *colnbluth*?~

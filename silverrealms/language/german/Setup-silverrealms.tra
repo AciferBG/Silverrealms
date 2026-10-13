@@ -529,7 +529,7 @@ Wird verschossen von: Bogen~
  
 Der Träger erhält einen Bonus von +30% auf Leise bewegen und kann einmal täglich den Zauber "katzenhafte Anmut" wirken, welcher ihm einen Geschicklichkeitsbonus spendet.
  
-Weiterhin ist ihm möglich, einmal täglich katzenartige Tiere wie Hauskatzen, Geparden, Panther, Leoparden, Pumas, Luchse, Tiger und Löwen zu bezaubern.
+Weiterhin ist es ihm möglich, einmal täglich katzenartige Tiere wie Hauskatzen, Geparden, Panther, Leoparden, Pumas, Luchse, Tiger und Löwen zu bezaubern.
 
 SPEZIFISCHE EIGENSCHAFTEN:
 
@@ -554,8 +554,10 @@ Gewicht: 3~
 @455 = ~Haelas Tempel~
 @456 = ~Phaeba Schwarzhorn~
 @457 = ~Illithidenrobe~
-@458 = ~Diese Robe wurde einst von einem Gedankenschinder angefertigt und getragen. Es ist wahrscheinlich, dass die positiven Eigenschaften, die diese Robe dem Träger verleiht, durch psionische Energie eingebracht wurde. Die unterschiedlichen Stoffe sind zu einem verwirrenden, schillernden bunten Mix aus verschiedenen Farben verwoben worden.
-Die Robe bietet dem Träger vor allen Dingen Widerstandskraft gegen Nahkampfangriffe, für die die weiche Haut eines Gedankenschinders besonders anfällig zu sein scheint.
+@458 = ~Diese Robe wurde von Gedankenschindern gefertigt und getragen. Es ist wahrscheinlich, dass die positiven Eigenschaften, die diese Robe dem Träger verleiht, durch psionische Energie eingebracht wurde. 
+Die unterschiedlichen Stoffe sind zu einem verwirrenden, schillernden bunten Mix aus verschiedenen Farben verwoben worden.
+
+Die Robe bietet dem Träger Widerstandskraft gegen Nahkampfangriffe, für die die weiche Haut eines Gedankenschinders besonders anfällig zu sein scheint.
 
 SPEZIFISCHE EIGENSCHAFTEN:
 
@@ -1697,7 +1699,9 @@ Gewicht: 12~
 @8006 = ~Kupferplatte~
 @8007 = ~Qualith-Runenplatte~
 @8008 = ~Diese Platte aus angelaufenem Kupfer zieren seltsame, horizontal verlaufende Linien.~
-@8009 = ~Diese Platte ist mit Qualith-Runen, der Schrift der Gedankenschinder, versehen. Auf ihr steht in den für die Schrift typischen Linien geschrieben:
+@8009 = ~Diese Platte ist mit Qualith-Runen, der Schrift der Gedankenschinder, versehen. 
+Auf ihr steht in den für die Schrift typischen Linien geschrieben:
+
 "Die Zwergenstadt ist überflutet, und viele unserer Rasse sind jämmerlich ertrunken. Der Tempel ist verloren. Wir sind von Wasser eingeschlossen und können nicht zurück. Hunger macht sich breit, und Einige haben schon aus Gier und Verzweiflung begonnen, die Hirne ihrer Kameraden zu verspeisen, jetzt, wo keine niederen Rassen mehr übrig sind, an denen wir uns laben können. Wir können das Ältestenhirn nicht mehr ernähren, und so bleibt uns nur die Wahl zwischen Tod oder Untod."~
 @8010 = ~Heiliger Hammer~
 @8011 = ~Dies ist der heilige Hammer Dumathoins aus dem Tempel Iltkazars. Man müsste die Waffe genauer untersuchen, um etwas über ihre Kräfte erfahren zu können.~
@@ -2071,7 +2075,7 @@ RW-Bonus: -1
 
 Gewicht: 1~
 @8100 = ~Helm des letzten Gedankens~
-@8101 = ~Dieser Helm gehörte einst dem Duergar-Krieger Talnukk. Als der Neothelid den Duergar verschlang, löste seine Verdauung Fleisch und Knochen des Zwerges vollständig auf. Lediglich einige Schädelreste mit Gehirnmasse und der Helm widerstanden – als hätte sich der letzte Gedanke des Duergars selbst verankert. Verdaut, aber nicht gebrochen.
+@8101 = ~Dieser Helm gehörte einst dem Duergar-Krieger Talnukk. Als der Neothelid den Duergar verschlang, löste seine Verdauung Fleisch und Knochen des Zwerges vollständig auf. Lediglich einige Schädelreste mit Gehirnmasse und der Helm selbst widerstanden – als hätte sich der letzte Gedanke des Duergars selbst verankert. Verdaut, aber nicht gebrochen.
 
 EIGENSCHAFTEN:
 

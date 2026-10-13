@@ -167,7 +167,8 @@ SAY ~Oh, seid gegrüßt, <CHARNAME>! Was kann ich für Euch tun?~
 ++ ~Derzeit nichts.~ + goodbye_02
 IF ~PartyHasItem("AC#SRBK1")~ THEN REPLY ~Ich habe hier ein Buch, welches Beldas bis zu seinem Tode bei sich trug. Ich soll es Euch geben.~ + beldas_book
 IF ~Global("AC#IL_NEW_Borthun","GLOBAL",1) Global("AC#IL_NEW_BettarghElern","GLOBAL",0)~ THEN REPLY ~Ich suche ein besonderes Buch.~ + borthun_book_start
-IF ~Global("AC#Ellhimar_Cernd","GLOBAL",3) Global("Prison_Cernd","ACIL53",0)~ THEN REPLY ~Es geht um Khaernd, den Sohn von Gromi, der von Illithiden verschleppt wurde.~ GOTO free_cernd_start	
+IF ~Global("AC#Ellhimar_Cernd","GLOBAL",3) Global("Prison_Cernd","ACIL53",0)
+GlobalLT("AC#IL_TasteLobeMyself","GLOBAL",2)~ THEN REPLY ~Es geht um Khaernd, den Sohn von Gromi, der von Illithiden verschleppt wurde.~ GOTO free_cernd_start	
 END
 
 IF ~Global("AC#TalkedToBettargh","ACIL53",1)~ THEN BEGIN 1

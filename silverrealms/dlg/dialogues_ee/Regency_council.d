@@ -143,9 +143,10 @@ END
 		
 		IF ~~ THEN BEGIN turbaern_open_throneroom
 		SAY ~Ein gewagtes Unterfangen. Warum sollte dies die Bürger unserer Stadt nicht noch niedergeschlagener machen?~
-		IF ~~ THEN REPLY ~Damit sie vielleicht endlich wieder sehen, dass sie noch einen König haben?~ + chain_open_throneroom
+		IF ~~ THEN REPLY ~Damit sie vielleicht endlich wieder sehen, dass sie einen König haben?~ + chain_open_throneroom
+		IF ~~ THEN REPLY ~Noch niedergeschlagener ist schwer möglich.~ + chain_open_throneroom
 		IF ~~ THEN REPLY ~Ein sichtbarer König stärkt den Mut, er schwächt ihn nicht.~ + chain_open_throneroom
-		IF ~~ THEN REPLY ~Weil die Stadt ohne sichtbares Oberhaupt bereits zerfällt?~ + chain_open_throneroom
+		IF ~~ THEN REPLY ~Weil die Stadt ohne sichtbares Oberhaupt bereits zerfällt.~ + chain_open_throneroom
 		//IF ~~ THEN REPLY ~Weil Feinde draußen stärker werden, während wir drinnen zaudern.~ + chain_open_throneroom
 		//IF ~~ THEN REPLY ~Verstecken ist Feigheit.~ + chain_open_throneroom
 		END

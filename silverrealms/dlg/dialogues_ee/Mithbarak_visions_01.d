@@ -19,7 +19,7 @@ BEGIN ~AC#DREA3~
 	== AC#DREA3 ~Dies ist aber die letzte Erinnerung, die ich mit Euch teilen werde! Dann werdet Ihr mir Antworten liefern müssen!~
 	== AC#ILD3E ~Ich gebe sie Euch schon vorher. Wenn Ihr wieder auf Eure... Reisen aufbrecht: Hütet Euch vor Malphas, dem Raben.~
 	== AC#DREA3 ~Malphas? Meine Gegner haben ausgerechnet dieses rabengesichtige Scheusal auf mich angesetzt? Warum?~
-	== AC#ILD3E ~Weil er genauso verflucht ist wie Ihr selbst. Und er hofft, durch Eure Beseitigung seiner Herrin zu gefallen.~
+	== AC#ILD3E ~Weil er genauso verflucht ist wie Ihr selbst. Und er hofft, durch Eure Beseitigung seinen Fluch loszuwerden.~
 	== AC#DREA3 ~Ich werde es beherzigen.~
 	END
 	IF ~~ THEN DO ~StartCutSceneMode()

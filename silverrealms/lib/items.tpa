@@ -3,6 +3,12 @@
 
 COPY ~silverrealms/itm/copy~         ~override~
 
+COPY ~silverrealms/itm/AC#ILLMP.itm~ ~override~ // lamp
+  SAY NAME2 @8178
+  SAY DESC @8179
+  SAY NAME1 @8180
+  SAY UNIDENTIFIED_DESC @8181
+
 COPY ~silverrealms/itm/AC#ILAMM.itm~ ~override~ // maldraedior's amulet
   SAY NAME2 @8176
   SAY DESC @8177

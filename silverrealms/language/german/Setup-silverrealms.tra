@@ -2426,6 +2426,20 @@ Rettungswurf gegen Odemwaffen: +2
 Immunität gegen Betäubung
 
 Gewicht: 1~
+@8178 = ~Laterne der verlorenen Stollen~
+@8179 = ~Die Kundschafter Shanatars führten Laternen wie diese mit sich, wenn sie vergessene Stollen und verlassene Wachposten erkundeten. Denn in der Tiefe bedeutet ein leerer Gang keineswegs einen sicheren Weg.
+
+Auf ein Befehlswort hin erwacht hinter dem rußgeschwärzten Glas eine blassgrüne Flamme, die weder die Umgebung erhellt noch Wärme spendet. Doch sie zeichnet die Umrisse jener Wesen nach, die sich vor gewöhnlichen Augen verbergen.
+
+EIGENSCHAFTEN:
+
+Unsichtbarkeit aufheben (1x täglich)
+ Bereich: 36,5 m Radius
+ Rettungswurf: Nein
+
+Gewicht: 3~
+@8180 = ~Lampe~
+@8181 = ~Eine alte Lampe, hinter deren rußgeschwärztem Glas eine blassgrüne Flamme fahl leuchtet.~
 
  
 // creature strings

@@ -129,22 +129,22 @@ END
 
 			
 			IF ~~ THEN BEGIN take_a_look_at_borthuns_book
-			SAY ~Was? Auf keinen Fall! Diese verfluchte Buch hat jedem, der es bisher gelesen hat, nichts als Pech und Verderben gebracht.~
+			SAY ~Was? Auf keinen Fall! Dieses verfluchte Buch hat jedem, der es bisher gelesen hat, nichts als Pech und Verderben gebracht.~
 			IF ~~ THEN REPLY ~Was soll das bedeuten?~ GOTO book_nothing_but_bad_luck
 			IF ~~ THEN REPLY ~Wie kommt Ihr darauf?~ GOTO book_nothing_but_bad_luck
 			END
 			
 				IF ~~ THEN BEGIN book_nothing_but_bad_luck
-				SAY ~Mein Urahn Borthun ist nie ins Unterreich zurückgekehrt, nachdem er das Buch geschrieben hatte. König Mith Barak erwachte nicht mehr aus seinem Schlaf, als er einen Blick darauf warf. Und mein Sohn Beldas hat auf der Oberfläche einen garstigen Tod gefunden. Alles nur, nachdem sie in dieses verfluchte Buch geschaut haben! Dies ist ein Zeichen, dass wir Zwerge nichts mit der Oberfläche zu schaffen haben sollten. Unsere Götter schätzen es nicht, wenn wir unter der Sonne wandeln, anstelle unserer Aufgabe in den Tiefen der Berge nachzukommen. Borthuns, Beldas' und letztendlich Mith Baraks Schicksal ist eine Strafe für ihren *mulg*, zu meinen, wir hätten an der Oberfläche etwas zu schaffen.~
+				SAY ~Mein Urahn Borthun ist nie ins Unterreich zurückgekehrt, nachdem er das Buch geschrieben hatte. König Mith Barak erwachte nicht mehr aus seinem Schlaf, als er einen Blick darauf warf. Und mein Sohn Beldas hat an der Oberfläche einen garstigen Tod gefunden. Alles nur, nachdem sie in dieses verfluchte Buch geschaut haben! Dies ist ein Zeichen, dass wir Zwerge nichts mit der Oberfläche zu schaffen haben sollten. Unsere Götter schätzen es nicht, wenn wir unter der Sonne wandeln, anstelle unserer Aufgabe in den Tiefen der Berge nachzukommen. Borthuns, Beldas' und letztendlich Mith Baraks Schicksal ist eine Strafe für ihren *mulg*, zu meinen, wir hätten an der Oberfläche etwas zu schaffen.~
 				IF ~~ THEN REPLY ~Ich glaube nicht, dass das stimmt.~ GOTO show_me_the_book_not_right
 				IF ~~ THEN REPLY ~Das mag stimmen, doch ich bin kein Zwerg des Unterreiches. Deshalb könntet Ihr mich ja gefahrlos einen Blick in das Buch werfen lassen.~ GOTO show_me_the_book
 				END	
 				
 					IF ~~ THEN BEGIN show_me_the_book_not_right
 					SAY ~Woher wollt Ihr das wissen?~
-					IF ~~ THEN REPLY ~Vielleicht wäre es eine Möglichkeit für Euch, dieses Buch loszuwerden - indem Ihr es mir geben würdet und ich es an die Oberfläche bringe.~ GOTO show_me_the_book_02
+					IF ~~ THEN REPLY ~Vielleicht wäre es eine Möglichkeit für Euch, dieses Buch loszuwerden - indem ich es an die Oberfläche bringe.~ GOTO show_me_the_book_02
 					IF ~~ THEN REPLY ~Wenn dieses Buch wirklich so viel Unheil bringt, wie Ihr glaubt, dann sollte es erst recht nicht hier in Iltkazar bleiben.~ GOTO show_me_the_book_03
-					IF ~~ THEN REPLY ~Wenn Mith Barak selbst darin nach Antworten gesucht hat, dann kann ich seine Suche kaum fortsetzen, ohne zu wissen, was er gefunden hat.~ GOTO show_me_the_book_03
+					//IF ~~ THEN REPLY ~Ich kann die Suche nach Mith Barak nicht fortsetzen, wenn ich nicht weiß, was er in dem Buch gefunden hat.~ GOTO show_me_the_book_03
 					//IF ~~ THEN REPLY ~Ihr sagt, die Götter hätten sie bestraft. Vielleicht prüfen sie uns aber auch gerade, ob wir den Mut besitzen, es besser zu machen.~ GOTO show_me_the_book_03
 					IF ~~ THEN REPLY ~Euer Sohn ist tot, Mith Barak schläft, und Borthun kehrt nie zurück. Das Buch zu verstecken hat bisher keinen von ihnen gerettet.~ GOTO show_me_the_book_02
 					IF ~~ THEN REPLY ~Ihr könnt das Buch behalten. Oder Ihr gebt es jemandem, der bereit ist herauszufinden, warum so viele dafür einen so hohen Preis bezahlt haben.~ GOTO show_me_the_book_02

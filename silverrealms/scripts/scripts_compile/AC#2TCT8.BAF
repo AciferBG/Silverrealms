@@ -1,3 +1,23 @@
+// NEW: To ACIL50
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player1)
+        FadeToColor([30.0],0)
+        ActionOverride("AC#7TTIA",DestroySelf())
+        Wait(2)
+        LeaveAreaLUAPanic("ACIL50","",[2972.337],SW)
+        LeaveAreaLUA("ACIL50","",[2972.337],SW)
+        MultiPlayerSync()
+        MoveViewPoint([2972.337],INSTANT)
+        SmallWait(5)
+        FadeFromColor([30.0],0)
+        EndCutSceneMode()
+END
+
+// OLD_ Teleport to ACIL62
+/*
 IF
     True()
 THEN
@@ -14,4 +34,5 @@ THEN
         FadeFromColor([30.0],0)
         EndCutSceneMode()
 END
+*/
 

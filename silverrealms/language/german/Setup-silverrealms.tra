@@ -2440,6 +2440,10 @@ Unsichtbarkeit aufheben (1x täglich)
 Gewicht: 3~
 @8180 = ~Lampe~
 @8181 = ~Eine alte Lampe, hinter deren rußgeschwärztem Glas eine blassgrüne Flamme fahl leuchtet.~
+@8182 = ~Schwebescheibe (repariert)~
+@8183 = ~Diese Drow-Schwebescheibe wurde von Euch im Tempel Dugmarens mit einer neuen Verzauberung versehen.
+
+Ihr könnt sie dazu verwenden, den Schacht zu Ravimors Höhle herauf- und herunterzuschweben, um in das Unterreich und wieder zurück an die Oberfläche zu gelangen.~
 
  
 // creature strings

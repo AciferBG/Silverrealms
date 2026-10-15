@@ -767,8 +767,8 @@ COPY ~silverrealms/itm/AC#DRFT1.itm~         ~override~   // Drow driftdisc: out
   SAY DESC @891
 
 COPY ~silverrealms/itm/AC#DRFT2.itm~         ~override~   // Drow driftdisc: Working
-  SAY NAME2 @890
-  SAY DESC @891
+  SAY NAME2 @8182
+  SAY DESC @8183
   
 COPY ~silverrealms/itm/AC#RCKEL.itm~         ~override~   // Stone of earth elemental summoning
   SAY NAME1 @894

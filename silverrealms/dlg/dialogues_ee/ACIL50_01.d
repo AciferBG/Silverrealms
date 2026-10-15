@@ -1051,17 +1051,17 @@ END
 			== AC#ELER6 ~Kennt Ihr vielleicht dieses Gebirge?~
 			END
 			IF ~~ THEN REPLY ~Die Wolkengipfel? Aber natürlich!~ EXTERN AC#ELER6 cloudpeaks_02
-			IF ~~ THEN REPLY ~Natürlich kenne ich sie. Man muss schon sein ganzes Leben unter einem Stein verbracht haben, um noch nie von ihnen gehört zu haben.~ EXTERN AC#ELER6 cloudpeaks_02
+			IF ~~ THEN REPLY ~Natürlich kenne ich sie. Man muss schon sein ganzes Leben im Unterreich verbracht haben, um noch nie von ihnen gehört zu haben.~ EXTERN AC#ELER6 cloudpeaks_02
 			IF ~~ THEN REPLY ~Wer kennt sie nicht? Sie sind an der Oberfläche kaum zu übersehen.~ EXTERN AC#ELER6 cloudpeaks_02
 			
 			CHAIN AC#ELER6 cloudpeaks_02
 			~Das ist ja fantastisch!~
 			=
-			~Bei den Wolkengipfeln gibt es im Osten einen Gebirgsausläufer, der nur als "der Grat" bezeichnet wird. Dieser Ort war früher den Elfen heilig, denn dort erschlug Tethir, der erste Drachentöter, vor vielen Jahrtausenden zwei Rote Drachen. Die zwei Skelette der ersten erschlagenen Drachen sollen sich noch immer an diesem Ort befinden.~
+			~Bei den Wolkengipfeln gibt es im Osten einen Gebirgsausläufer, der von Borthun als "Der Grat" bezeichnet wird. Dieser Ort war früher den Elfen heilig, denn dort erschlug Tethir, der erste Drachentöter, vor vielen Jahrtausenden zwei Rote Drachen. Die zwei Skelette der ersten erschlagenen Drachen sollen sich noch immer an diesem Ort befinden.~
 			=
 			~Dort soll jedoch auch ein alter Tempel eines alten Drachengottes gelegen sein. Borthun berichtet, dass sich früher Drachen zum Sterben an diesen Ort zurückgezogen haben. Warum, sagt er nicht.~
 			== AC#BRES1 ~Na, da bleibe ich doch lieber in meinem schönen, sicheren Unterreich.~
-			== AC#ELER6 ~Jedenfalls muss dies der Ort sein, den Ihr aufsuchen müsst. Mith Barak war überzeugt, dass dort die Ursache seines Schlafes beseitigt werden könne.~
+			== AC#ELER6 ~Jedenfalls muss dies der Ort sein, den Ihr aufsuchen müsst. Mith Barak war überzeugt, dass dort sein Fluch beseitigt werden könne.~
 			END
 			IF ~~ THEN DO ~RevealAreaOnMap("ACIL70")~ EXTERN AC#BRES1 ready_to_leave_03
 

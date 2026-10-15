@@ -64,6 +64,24 @@ THEN
 END
 
 IF
+    Global("EndScreen","ACIL50",1)
+THEN
+    RESPONSE #100
+        SetGlobal("EndScreen","ACIL50",2)
+        StartCutSceneMode()
+        StartCutScene("AC#2TCT7")
+END
+
+IF
+    GlobalGT("AC#IltkazarCelebration","GLOBAL",2)
+    Global("EndScreen","ACIL50",0)
+THEN
+    RESPONSE #100
+        SetGlobal("EndScreen","ACIL50",1)
+        TextScreen("AC#MOS89")
+END
+
+IF
 	GlobalGT("AC#AzerkynDestroyed","GLOBAL",0)
 	Global("AC#IL_61RescueDone","GLOBAL",0)
 	Global("EraseRescue61Journal","ACIL50",0)

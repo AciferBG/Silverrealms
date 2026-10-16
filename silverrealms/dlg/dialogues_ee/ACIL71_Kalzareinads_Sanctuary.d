@@ -40,7 +40,7 @@ Dialog Drachenstatue
 BEGIN ~AC#MALD1~
 
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN 0
-SAY  ~Ihr habt dem Hüter des verborgenen Wissens ein würdiges Opfer gebracht, Sterbliche... Die alten Regeln besagen, dass Ihr eine Frage stellen dürft. Wenn Sie Kalzareinad gefällt, antwortet er. Wenn er sie missbilligt, werdet Ihr vernichtet. Welche Frage hat Euch an diesen Ort gebracht?~
+SAY  ~Ihr habt dem Hüter des verborgenen Wissens ein würdiges Opfer gebracht, Sterbliche. Die alten Regeln besagen, dass Ihr eine Frage stellen dürft. Wenn Sie Kalzareinad gefällt, antwortet er. Wenn er sie missbilligt, werdet Ihr vernichtet. Welche Frage hat Euch an diesen Ort gebracht?~
 	IF ~~ THEN REPLY ~Ich suche einen Zwerg namens Mith Barak. Er muss Euch vor längerer Zeit aufgesucht haben.~ + seek_dwarf_long_time
 	IF ~~ THEN REPLY ~Ich komme aus Iltkazar und suche nach der Ursache für dessen schlafenden König.~ + seek_iltkazar_sleeping_king
 	IF ~!IsValidForPartyDialog("Minsc")~ THEN REPLY ~Was war zuerst da- der Drache oder das Ei?~ + egg
@@ -344,14 +344,14 @@ END
 				END
 				
 					IF ~~THEN BEGIN why_mith_didnot_came_back
-					SAY ~Andere Mächte zeigten ebenfalls Interesse an Mithbarakaz' Schicksal - oder an seinem Wissen über meinen Herrn Kalzareinad. Und sie sind mehr als bereit, es sich mit Gewalt zu nehmen.~
+					SAY ~Andere Mächte zeigten ebenfalls Interesse an Mithbarakaz und seinem Wissen. Und sie sind bereit, es sich mit Gewalt zu nehmen.~
 					=
-					~Viele Götter meiner Art suchten nach Macht und Einfluss: Task, der Herr des Geizes, oder Null, der Gott der toten Drachen. Ein jeder von ihnen trachtet nach verborgenem Wissen. Doch es gibt eine Göttin, deren Sucht nach Größe unübertroffen ist und welcher sich Mithbarakaz ebenfalls in den Weg stellte: Tiamat, die dunkle Dame.~
+					~Viele Götter meiner Art suchten nach Macht und Einfluss: Task, der Herr des Geizes, oder Null, der Gott der toten Drachen. Ein jeder von ihnen trachtet nach verborgenem Wissen. Doch es gibt eine Göttin, deren Sucht nach Größe unübertroffen ist und welcher sich Mithbarakaz ebenfalls in den Weg stellte: Tiamat, die selbsternannte Drachenkönigin.~
 					IF ~~ THEN GOTO tiamat_01
 					END
 				
 						IF ~~THEN BEGIN tiamat_01
-						SAY ~Ich bin mir sicher, dass Tiamat hinter Mith Baraks endlosem Schlaf steckt. Die selbst ernannte Königin der Drachen trachtete schon lange danach, die Herrschaft über alle Drachen für sich zu beanspruchen. Bisher ist es ihr nicht gelungen. Sie steckt vielmehr eingekerkert in den Neun Höllen fest. Ob hierbei auch Mithbarakaz seine Fänge im Spiel hatte? Ich weiß es nicht.~
+						SAY ~Ich bin mir sicher, dass Tiamat hinter Mith Baraks endlosem Schlaf steckt. Sie trachtete schon lange danach, die Herrschaft über alle Drachen für sich zu beanspruchen. Bisher ist es ihr nicht gelungen. Sie steckt vielmehr eingekerkert in den Neun Höllen fest. Ob hierbei auch Mithbarakaz seine Fänge im Spiel hatte? Ich weiß es nicht.~
 						=
 						~Jedenfalls sucht Tiamat nach einer Möglichkeit, sich aus ihrer Gefangenschaft zu befreien. Ihre Anhänger müssen Mithbarakaz auf der Astralebene unter ihre Kontrolle gebracht haben, was seinen Körper zu einer Mithrilsäule erstarrt auf dem Throne der Zwergenstadt verharren lässt.~
 						IF ~~ THEN GOTO tiamat_02

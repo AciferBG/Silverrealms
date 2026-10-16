@@ -901,7 +901,9 @@ Ernelis~
 @762 = ~AAAHH!~
 @763 = ~Sockel~
 @764 = ~Schlüssel zum Wassertor~
-@765 = ~Es ist bereits das zweite Mal in Eurem Leben, dass Ihr einen Schlüssel in der Hand haltet, mit dem Ihr eine unterirdische Zwergenanlage überfluten sollt. Dieser Schlüssel verschließt das Wassertor in der Azerkynhalle. Wenn Ihr es mit Hilfe des Schlüssels öffnet, wird das gesamte Gebiet durch die Fluten des Flusses Dhalnadar überflutet, was mit den überhitzten Hochöfen eine Kettenreaktion in Gang setzen und eine Dampfexplosion auslösen könnte.~
+@765 = ~Es ist bereits das zweite Mal in Eurem Leben, dass Ihr einen Schlüssel in der Hand haltet, mit dem Ihr eine unterirdische Zwergenanlage überfluten sollt. 
+
+Dieser Schlüssel verschließt das Wassertor in der Azerkynhalle. Wenn Ihr es mit Hilfe des Schlüssels öffnet, wird das gesamte Gebiet durch die Fluten des Flusses Dhalnadar überflutet, was mit den überhitzten Hochöfen eine Kettenreaktion in Gang setzen und eine Dampfexplosion auslösen könnte.~
 @766 = ~Ihr platziert den Edelstein in der Truhe, und Ihr spürt, wie der Raum von einer fremdartigen Macht erfüllt wird. In der Truhe erscheint plötzlich ein Gegenstand, der vorher noch nicht dort war.~
 @767 = ~Abbathors Dolch~
 @768 = ~Dolche dieser Art werden von den Anhängern Abbathors, des zwergischen Gottes des Geizes und der Habgier, verwendet. Bei jedem erfolgreichen Treffer erscheint in der Geldbörse des Trägers eine Goldmünze. Es ist offensichtlich, dass dieser Dolch sehr leicht dazu missbraucht werden kann, auf Kosten der Gesundheit anderer Lebewesen seinen eigenen Reichtum zu vermehren, und dies scheint ganz in der Intention des Fürsten der Gier zu sein. 
@@ -2529,6 +2531,8 @@ Ihr könnt sie dazu verwenden, den Schacht zu Ravimors Höhle herauf- und herunt
 
 @9076 = ~Dorrim Glutbart~
 @9077 = ~Kordok der Ertrunkene~
+
+@9078 = ~Mithrilgolem~
 
 
 

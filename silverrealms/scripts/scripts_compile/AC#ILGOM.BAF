@@ -1,0 +1,53 @@
+IF
+    Global("GolemActivate","ACIL23",1)
+    Allegiance(Myself,NEUTRAL)
+THEN
+    RESPONSE #100
+        Enemy()
+END
+
+IF
+    Global("Lightning","LOCALS",0)
+    See(NearestEnemyOf(Myself))
+THEN
+    RESPONSE #65
+        ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_CHAIN_LIGHTNING)  // SPWI615.SPL (Kettenblitz)
+        SetGlobal("Lightning","LOCALS",1)
+    RESPONSE #100
+        Continue()
+END
+
+IF
+    Delay(15)
+    See(NearestEnemyOf(Myself))
+    Global("Lightning","LOCALS",1)
+THEN
+    RESPONSE #80
+        ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_CHAIN_LIGHTNING)  // SPWI615.SPL (Kettenblitz)
+    RESPONSE #100
+        Continue()
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+THEN
+    RESPONSE #100
+        AttackReevaluate(NearestEnemyOf(Myself),5)
+END
+
+IF
+    Heard([ANYONE],112)
+THEN
+    RESPONSE #100
+        Enemy()
+END
+
+IF
+    AttackedBy([GOODCUTOFF],DEFAULT)
+    !Allegiance(Myself,ENEMY)
+THEN
+    RESPONSE #100
+        Shout(112)
+        Enemy()
+END
+

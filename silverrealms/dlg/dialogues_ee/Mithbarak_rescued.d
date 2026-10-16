@@ -27,8 +27,13 @@ Global("AC#IL_GiveDragonRing","GLOBAL",0)~ THEN BEGIN hello_throne_final_0
   SAY ~<CHARNAME>. Die Ansprache an mein Volk ist vorüber. Nun endlich haben wir Gelegenheit, in Ruhe miteinander zu sprechen. Ihr habt Iltkazar mehr gegeben, als ich jemals zurückzahlen könnte. Ich möchte Euch dies als Zeichen meiner Dankbarkeit geben: Ein Ring meiner Ahnen. Ihr verdient, ihn fortan zu tragen.~
 	IF ~~ THEN DO ~SetGlobal("AC#IL_GiveDragonRing","GLOBAL",10)
 	GiveItemCreate("AC#ILRI8",Player1,1,1,1)
-	AddJournalEntry(@99001,QUEST_DONE)~ GOTO throne_final_questions_1
+	AddJournalEntry(@99001,QUEST_DONE)~ GOTO take_ring_from_me
 END
+
+	IF ~~ THEN BEGIN take_ring_from_me
+	  SAY ~Möge er Euch gute Dienste erweisen und stets Zeichen der Verbundenheit zwischen uns Drachen und Euch, einem <PRO_RACE>, sein.~
+		IF ~~ THEN GOTO throne_final_questions_1
+	END
 
 	IF ~~ THEN BEGIN throne_final_questions_1
 	  SAY ~Wenn Ihr Fragen habt, werde ich sie beantworten, so gut ich kann.~
@@ -71,12 +76,12 @@ END
 	END
 
 IF ~~ THEN BEGIN who_are_you
-  SAY ~Ich wurde vor vielen Jahrhunderten geboren, lange bevor die heutigen Reiche der Menschen existierten. Wie viele Silberdrachen zog es mich hinaus in die Welt, um Gutes zu tun. Ich fand Unterstützung im Glauben an Bahamut, den Platindrachen, Gott aller gut gesinnten DRachen. IN seinem Namen wirkte ich Gutes und stand gegen Böses ein. So zog ich mir den Unmut von Kalzareinad und Tiamat auf mich.~
+  SAY ~Ich wurde vor vielen Jahrhunderten geboren, lange bevor die heutigen Reiche der Menschen existierten. Wie viele Silberdrachen zog es mich hinaus in die Welt, um Gutes zu tun. Ich fand Unterstützung im Glauben an Bahamut, den Platindrachen, Gott aller gut gesinnten Drachen. In seinem Namen wirkte ich Gutes und stand gegen Böses ein. So zog ich mir den Unmut von Kalzareinad und Tiamat auf mich.~
   IF ~~ THEN GOTO throne_final_hub
 END
 
 IF ~~ THEN BEGIN king_of_iltkazar
-  SAY ~as ist eine lange und schwierige Geschichte. Nach dem Fluch Kalzareinads versuchte ich das Beste aus meiner Lage zu machen. Schließlich fand ich Gefallen daran, ein Zwerg zu sein. Nun, nicht so viel Gefallen wie ein Drache, aber dennoch. Zwege sind ein gutes, standhaftes Volk, und ich verstand mich gut mit ihnen.~
+  SAY ~Das ist eine lange und schwierige Geschichte. Nach dem Fluch Kalzareinads versuchte ich das Beste aus meiner Lage zu machen. Schließlich fand ich Gefallen daran, ein Zwerg zu sein. Nun, nicht so viel Gefallen wie ein Drache, aber dennoch. Zwerge sind ein gutes, standhaftes Volk, und ich verstand mich gut mit ihnen.~
   =
   ~Irgendwann erhielt ich ein Zeichen. Ich nahm an, es sei von Bahamut. Erst viel später wurde mir klar, dass Dumathoin mich gerufen hatte. Und so stand ich dann vor den Toren Iltkazars und musste seine Bewohner davon überzeugen, dass Dumathoin mich als König auserkoren hatte. Kein sehr leichtes Unterfangen, weder für mich noch für sie.~
   IF ~~ THEN GOTO throne_final_hub
@@ -110,7 +115,7 @@ IF ~~ THEN BEGIN secret
 END
 
 IF ~~ THEN BEGIN meaning
-  SAY ~Dieses Heldentat haben andere vollbracht. Meine Aufgabe war es lediglich, Ketten zu liefern, die stark genug sind, eine fünfköpfige Drachengottheit festzuhalten! Die Zwerge wussten nicht, was sie da schmiedeten, damals, als ich den Auftrag gab. Doch sie haben auch nie gefragt.~
+  SAY ~Diese Heldentat haben andere vollbracht. Meine Aufgabe war es lediglich, Ketten zu liefern, die stark genug sind, eine fünfköpfige Drachengottheit festzuhalten! Die Zwerge wussten nicht, was sie da schmiedeten, damals, als ich den Auftrag gab. Doch sie haben auch nie gefragt.~
   =
   ~Jedenfalls halten diese Ketten noch immer! Nicht auszudenken, wenn es Malphas und seinen Schergen gelungen wäre, sie zu sprengen. Tiamat ist eine eitle, rachsüchtige Gottheit. Nun sitzt sie weiterhin in den Neun Höllen fest, gehalten von Iltkazars Ketten.~
   IF ~~ THEN GOTO throne_final_hub

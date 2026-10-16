@@ -2,6 +2,9 @@
 
 COPY ~silverrealms/cre/copy~         ~override~
 
+COPY ~silverrealms/cre/AC#ILGOM.cre~ ~override~ // Mithral golem
+  SAY NAME1 @9078 SAY NAME2 @9078
+
 COPY ~silverrealms/cre/AC#28DUG.cre~ ~override~ // Kordok, Duerghul leader
   SAY NAME1 @9077 SAY NAME2 @9077
   WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#DROWNED_DEAD_SMALL~))

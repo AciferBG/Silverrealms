@@ -1,0 +1,13 @@
+Silverrealms - Credits
+
+Acifer – Writer, artist, designer, programmer
+Weigo – Worldmap editing
+Roberciik – BP-BGT Worldmap functionality
+Taimon – Coding support, testing
+TheArtisan - Intellect Devourer animation
+Infinity Animations - multiple animations
+
+Textures:
+Iltkazar Floor texture in front of the Regency council: Abaroth
+This project uses textures created by David Gurrea and published at http://www.davegh.com
+

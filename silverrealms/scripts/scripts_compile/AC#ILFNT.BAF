@@ -1,0 +1,44 @@
+IF
+    See(NearestEnemyOf(Myself))
+    Global("FIREMEPHIT","LOCALS",0)
+    Range(NearestEnemyOf(Myself),8)
+THEN
+    RESPONSE #100
+        ForceSpell(NearestEnemyOf(Myself),MEPHIT_FLAME_FAN)  // SPIN938.SPL (Flammenfächer)
+        IncrementGlobal("FIREMEPHIT","LOCALS",1)
+        Wait(2)
+        ForceSpell(NearestEnemyOf(Myself),MEPHIT_FLAME_JET)  // SPIN939.SPL (Flammenstrahl)
+        AttackOneRound(NearestEnemyOf(Myself))
+END
+
+IF
+    Delay(8)
+    See(NearestEnemyOf(Myself))
+    GlobalLT("FIREMEPHIT","LOCALS",3)
+    Range(NearestEnemyOf(Myself),8)
+THEN
+    RESPONSE #100
+        ForceSpell(NearestEnemyOf(Myself),MEPHIT_FLAME_JET)  // SPIN939.SPL (Flammenstrahl)
+        IncrementGlobal("FIREMEPHIT","LOCALS",1)
+        AttackOneRound(NearestEnemyOf(Myself))
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    GlobalLT("FIREMEPHIT","LOCALS",3)
+    Range(NearestEnemyOf(Myself),8)
+THEN
+    RESPONSE #100
+        ForceSpell(NearestEnemyOf(Myself),MEPHIT_FLAME_FAN)  // SPIN938.SPL (Flammenfächer)
+        IncrementGlobal("FIREMEPHIT","LOCALS",1)
+        AttackOneRound(NearestEnemyOf(Myself))
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+THEN
+    RESPONSE #100
+        EquipMostDamagingMelee()
+        AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+

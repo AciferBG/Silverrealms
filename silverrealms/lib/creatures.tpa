@@ -2,6 +2,9 @@
 
 COPY ~silverrealms/cre/copy~         ~override~
 
+COPY ~silverrealms/cre/AC#ILLPE.cre~ ~override~ // lightning paraelemental
+  SAY NAME1 @9079 SAY NAME2 @9079
+
 COPY ~silverrealms/cre/AC#ILGOM.cre~ ~override~ // Mithral golem
   SAY NAME1 @9078 SAY NAME2 @9078
 

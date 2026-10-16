@@ -1,15 +1,41 @@
 IF
-	Die()
+    Die()
 THEN
-	RESPONSE #100
-		DestroySelf()
+    RESPONSE #100
+        DestroySelf()
 END
 
 IF
-	AreaCheck("ACIL27")
-	Global("MonolithsDeactivated","ACIL27",1)
+    AreaCheck("ACIL27")
+    Global("MonolithsDeactivated","ACIL27",1)
 THEN
-	RESPONSE #100
-		Kill(Myself)
+    RESPONSE #100
+        Kill(Myself)
+END
+
+IF
+    AttackedBy([GOODCUTOFF],DEFAULT)
+    Allegiance(Myself,NEUTRAL)
+THEN
+    RESPONSE #100
+        Enemy()
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+    Global("SwitchAttacks","LOCALS",0)
+THEN
+    RESPONSE #100
+        SetGlobal("SwitchAttacks","LOCALS",1)
+        AttackReevaluate(NearestEnemyOf(Myself),3)
+        EquipMostDamagingMelee()
+        AttackReevaluate(NearestEnemyOf(Myself),6)
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+THEN
+    RESPONSE #100
+        AttackReevaluate(NearestEnemyOf(Myself),6)
 END
 

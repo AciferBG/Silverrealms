@@ -1587,6 +1587,8 @@ Diirinka'~
 @6204 = ~Nach Rrinnoroth - 
 Charvekannathors Hort~
 
+@6229 = ~Man müsste wohl ein Betrachter sein, um dieses Portal nutzen zu können. Für Euch ist hier ein Durchgang nicht möglich.~
+
 // ACIL25 - Spiderstalkings #2 (other entries at @4 ff)
 @6251 = ~Dies ist das Symbol der ausgestoßenen Drow-Göttin Zinzerena, einer Feindin der Spinnenkönigin Lolth und ausgesprochenen Spinnenhasserin.~
 @6252 = ~Eine Statue der ausgestoßenen Drow-Gottheit Zinzerena, in ihrer typischen Darstellung mit Mantel und Dolch. Ihre rechte Hand ist ausgestreckt, als würde sie einen Zauber wirken, und ihre Augen betrachten konzentriert den Altar zu ihren Füßen. Eine feine Inschrift ziert ihr Gewand: "Die Beine einer Spinne sind dazu geschaffen, um zerbrochen zu werden."~
@@ -1648,10 +1650,9 @@ Charvekannathors Hort~
 @7112 = ~Nur <CHARNAME> scheint dieses Portal benutzen zu können.~
 
 //Epilog:
-@7200 = ~Ihr habt Iltkazar einen großen Dienst erwiesen.
+@7200 = ~Ihr habt Iltkazar einen großen Dienst erwiesen. Ihr habt Euch seinen Feinden entgegengestellt, seine Geheimnisse ergründet und seinen rechtmäßigen Herrscher befreit. Durch Eure Taten erhielt das alte Königreich eine neue Zukunft. König Mith Barak hat seinen Thron zurückerlangt. 
 
-Ihr habt Euch seinen Feinden entgegengestellt, seine Geheimnisse ergründet und seinen rechtmäßigen Herrscher befreit. Durch Eure Taten erhielt das alte Königreich eine neue Zukunft. 
-König Mith Barak hat seinen Thron zurückerlangt. Die Schmieden brennen wieder, die Händler kehren in die Straßen zurück, und in den Tavernen Iltkazars werden Geschichten über Eure Heldentaten erzählt. Dies alles erfüllt Euch mit einem tiefen Gefühl der Ruhe und Befriedigung.
+Daneben habt Ihr durch die Befreiung des Silberdrachen Tiamats Pläne vereitelt, ihre Ketten in den Neun Höllen Baators zu sprengen – eine Tat, deren Bedeutung weit über Iltkazar hinausreicht und ganz Faerûn vor großem Unheil bewahrt hat.
 
 Doch die Wege eines Abenteurers führen stets weiter.
 
@@ -2095,11 +2096,14 @@ Für einen Priester Vhaerauns ist dieses Symbol mehr als ein Zeichen des Glauben
 EIGENSCHAFTEN:
 
 Gewicht: 1~
-@8104 = ~Spinnenschleier~
-@8105 = ~Dieser Umhang wurde in den Tiefen des Unterreichs aus der Spinnenseide der Drider gewoben. Das Kleidungsstück trägt noch immer die Zauber der Spinnenwesen in sich.
+@8104 = ~Selvetarms Umarmung~
+@8105 = ~Dieser Umhang wurde aus der Seide heiliger Spinnen gefertigt und einst von den Klingenmeistern Selvetarms, des drowischen Gottes der Krieger, getragen.
+
+Das locker gewobene Gespinst lenkt Pfeile und Klingen ab, ohne die Bewegungsfreiheit seines Trägers einzuschränken. Doch die dunkle Macht, die in seinen Fäden ruht, fordert ihren Preis: Während sie den Waffenarm stärkt, macht sie den Geist anfälliger für feindliche Zauber.
 
 EIGENSCHAFTEN:
 
+ETW0 mit Nahkampfwaffen: +1 Bonus
 RK-Bonus: -4 gg. Geschoss- und Stichwaffen
 RW-Bonus: +1 Malus gg. Zauber
 Magiewiderstand: +7 %
@@ -2534,6 +2538,8 @@ Ihr könnt sie dazu verwenden, den Schacht zu Ravimors Höhle herauf- und herunt
 
 @9078 = ~Mithrilgolem~
 @9079 = ~Blitz-Paraelementar~
+
+@9080 = ~Tiefenrothé (versteinert)~
 
 
 

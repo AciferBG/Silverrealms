@@ -1,5 +1,8 @@
 // Silverrealms 2da files
 
+APPEND itemexcl.2da ~AC#CLCK1 1~
+BUT_ONLY
+
 APPEND itemexcl.2da ~AC#ILCK5 1~
 BUT_ONLY
 

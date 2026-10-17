@@ -85,6 +85,7 @@ COPY ~silverrealms/areas/ACIL28.are~          ~override~
   
 COPY ~silverrealms/areas/ACIL29.are~          ~override~
   WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type
+  SAY 0x1434 @6229           // Info portal not working
 
 COPY ~silverrealms/areas/ACIL2D.are~          ~override~
  WRITE_SHORT 0x48 (THIS | area_type_id_underdark)  // Set UNDERDARK area type

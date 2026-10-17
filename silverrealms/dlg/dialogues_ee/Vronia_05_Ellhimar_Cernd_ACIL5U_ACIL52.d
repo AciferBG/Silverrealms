@@ -12,7 +12,9 @@ EscapeArea()~  EXIT
 END
 
 IF ~Global("AC#Gromi_Cernd","ACIL52",4)~ THEN BEGIN hello_cernd_gone
-SAY  ~Was für eine schöne Wendung das Schicksal doch genommen hat! Nun ist auch für mich hier alles getan. Ich werde mich wieder um die Pflege meines kranken Mannes kümmern. Ich wünsche Euch viel Erfolg bei Eurer weiteren Suche und werde die Runen für Euer Schicksal gnädig stimmen.~
+SAY  ~Was für eine schöne Wendung das Schicksal doch genommen hat! Nun ist auch für mich hier alles getan.~ 
+=
+~Ich fürchte, von nun an kann ich Euch nur noch aus der Ferne beistehen. Ich werde mich wieder um meinen Mann kümmern und dafür sorgen, dass die Runen Euren weiteren Weg wohlwollend begleiten. Kommt mich gerne in meinem Haus besuchen, wenn Euch nach etwas Tee zumute ist. Bis dahin vertraue ich die Rettung unseres Königs Euren Händen an.~
 IF ~~ THEN DO ~AddJournalEntry(@99511,QUEST)
 EscapeArea()~  EXIT
 END
@@ -300,7 +302,9 @@ IF ~GlobalGT("AC#IL_CerndTasteLobe","GLOBAL",1)~ THEN DO ~SetGlobal("AC#IL_Brain
 		IF ~~ THEN EXTERN AC#VRON5 use_book_for_worldmap
 				
 		CHAIN AC#VRON5 use_book_for_worldmap
-		~Ich bin mir sicher, dass Ihr in diesem Buch einen Anhalt finden werdet, wo sich dieser Ort, den Ihr in der Vision gesehen habt, befinden könnte. Nutzt das Wissen, um unserem König zu helfen. Unsere Aufgabe hier ist nun getan, auch für mich. Ich werde mich wieder um die Pflege meines kranken Mannes kümmern. Ich wünsche Euch viel Erfolg bei Eurer weiteren Suche und werde die Runen für Euer Schicksal gnädig stimmen.~
+		~Ich bin mir sicher, dass Ihr in diesem Buch einen Anhalt finden werdet, wo sich dieser Ort, den Ihr in der Vision gesehen habt, befinden könnte. Nutzt das Wissen, um unserem König zu helfen. Unsere Aufgabe hier ist nun getan, auch für mich.~
+		=
+		~Ich fürchte, von nun an kann ich Euch nur noch aus der Ferne beistehen. Ich werde mich wieder um meinen Mann kümmern und dafür sorgen, dass die Runen Euren weiteren Weg wohlwollend begleiten. Kommt mich gerne in meinem Haus besuchen, wenn Euch nach etwas Tee zumute ist. Bis dahin vertraue ich die Rettung unseres Königs Euren Händen an.~
 		END
 		IF ~~ THEN DO ~SetGlobal("AC#IL_NEW_Borthun","GLOBAL",1)
 		SetGlobal("AC#IL_BrainVision","GLOBAL",10)

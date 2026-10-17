@@ -366,6 +366,10 @@ END
 	~ EXIT
 	END
 
+IF ~GlobalGT("AC#TurbaernRescued","GLOBAL",2)~ THEN BEGIN hello_again
+  SAY ~Für einen Oberflächenbewohner macht Ihr Euch wirklich nicht schlecht!~
+  IF ~~ THEN EXIT
+	END
 /*******************************************************************************************************
 Dialog Talhund 02
 *******************************************************************************************************/
@@ -378,9 +382,13 @@ END
 
 IF ~GlobalLT("AC#TurbaernRescued","GLOBAL",3)~ THEN BEGIN hello_again
   SAY ~Wir müssen einen Weg nach unten die Krypten finden, um unseren Brüdern dort unten zu helfen!~
-  IF ~~ THEN DO ~~ EXIT
+  IF ~~ THEN EXIT
 	END
-	
+
+IF ~GlobalGT("AC#TurbaernRescued","GLOBAL",2)~ THEN BEGIN hello_again
+  SAY ~Für einen Oberflächenbewohner macht Ihr Euch wirklich nicht schlecht!~
+  IF ~~ THEN EXIT
+	END	
 /*******************************************************************************************************
 Dialog Talhund 04
 *******************************************************************************************************/

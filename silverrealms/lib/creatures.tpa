@@ -1987,8 +1987,6 @@ COPY ~silverrealms/cre/AC#QUAG1.cre~ ~override/AC#QUAG1.cre~
   
 COPY ~silverrealms/cre/AC#QUAG2.cre~ ~override/AC#QUAG2.cre~
   SAY NAME1 @308 SAY NAME2 @308
-    
-    COPY_EXISTING ~AC#QUAG2.cre~ ~override~
     WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#THOKOLA_PST~))
     
 
@@ -2006,25 +2004,16 @@ COPY ~silverrealms/cre/AC#HAMA2.cre~ ~override~ //enemy Hamatula
   
 COPY ~silverrealms/cre/AC#ROTH1.cre~ ~override~ //Deep Rothé
   SAY NAME1 @394 SAY NAME2 @394
-    
-    
-    COPY_EXISTING ~AC#ROTH1.cre~ ~override~
     WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#ROTHE~))
     
 
 COPY ~silverrealms/cre/AC#ROTH2.cre~ ~override~ //Deep Rothé
-  SAY NAME1 @394 SAY NAME2 @394
-      
-    
-    COPY_EXISTING ~AC#ROTH2.cre~ ~override~
-    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#ROTHE~))
+  SAY NAME1 @9080 SAY NAME2 @9080
+    WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#ROTHE_GRAY~))
     
 
 COPY ~silverrealms/cre/AC#ROTHB.cre~ ~override~ //Deep Rothé Borug
   SAY NAME1 @394 SAY NAME2 @394
-       
-    
-    COPY_EXISTING ~AC#ROTHB.cre~ ~override~
     WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~AC#ROTHE~))
     
 

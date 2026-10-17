@@ -40,6 +40,8 @@ THEN
     RESPONSE #100
         ActionOverride("Gems01",DestroyItem("ac#ruby1"))
         ActionOverride("Gems02",DestroyItem("ac#ruby1"))
+        ActionOverride("Gems01",CreateItem("MISC20",0,0,0))
+        ActionOverride("Gems02",CreateItem("MISC20",0,0,0))
         SetGlobal("AC#IL25_RubiesGone","GLOBAL",1)
 END
 

@@ -3,6 +3,14 @@
 
 COPY ~silverrealms/itm/copy~         ~override~
 
+COPY ~silverrealms/itm/AC#ILBLN.itm~ ~override~ // flail
+  SAY NAME2 @8186
+  SAY DESC @8187
+
+COPY ~silverrealms/itm/AC#ILHLB.itm~ ~override~ // halberd
+  SAY NAME2 @8184
+  SAY DESC @8185
+
 COPY ~silverrealms/itm/AC#ILLMP.itm~ ~override~ // lamp
   SAY NAME2 @8178
   SAY DESC @8179

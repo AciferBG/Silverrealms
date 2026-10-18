@@ -2450,6 +2450,43 @@ Gewicht: 3~
 @8183 = ~Diese Drow-Schwebescheibe wurde von Euch im Tempel Dugmarens mit einer neuen Verzauberung versehen.
 
 Ihr könnt sie dazu verwenden, den Schacht zu Ravimors Höhle herauf- und herunterzuschweben, um in das Unterreich und wieder zurück an die Oberfläche zu gelangen.~
+@8184 = ~Kniefall +3~
+@8185 = ~Diese schwere Hellebarde wurde für eine Streiterin Haelas geschmiedet, die ihre geringe Körpergröße als besonderen Vorteil betrachtete: Mit der hakenförmigen Klinge brachte sie selbst hünenhafte Gegner zu Fall.
+Nach ihrem Tod gelangte die Hellebarde in die Obhut eines Tempels Haelas, wo sie auf jemanden wartet, der ihren eigenwilligen Kampfstil fortführt.
+
+EIGENSCHAFTEN:
+
+Bei einem kritischen Treffer wird das Ziel für eine Runde zu Boden geworfen (kein Rettungswurf).
+
+ETW0-Bonus: -3
+Schaden: 1W10 +3 (Stich)
+Initiativefaktor: 6
+Fertigkeit: Hellebarde
+Typ: 2-händig
+Mindeststärke: 13
+
+Gewicht: 11~
+@8186 = ~Das letzte Geleit +3~
+@8187 = ~Drei kleine bronzene Weihrauchgefäße hängen an den geschwärzten Ketten dieses ungewöhnlichen Flegels. Einst führte ein wandernder Zwergenpriester ihn mit sich, wenn er Leichenzüge über unsichere Wege des Unterreiches zu ihrer letzten Ruhestätte begleitete. Sein geweihter Weihrauch schützte die Trauernden vor den Toten, die noch keine Ruhe gefunden hatten.
+
+Noch immer glimmt hinter den durchbrochenen Bronzewänden eine Glut, die keiner Nahrung bedarf. Ihr Rauch umhüllt den Träger und verschleiert seine Konturen. Wer jedoch von den Gefäßen getroffen wird, spürt die sengende Hitze ihres Inhalts, wenngleich die weiche Bronze selbst nur wenig Schaden verursacht.
+
+EIGENSCHAFTEN:
+
+Ausrüstungsfähigkeiten:
+- +2 Bonus auf Rüstungsklasse und Rettungswürfe gegen Untote
+- +1 Bonus auf Rüstungsklasse gegen Geschosse
+Kampffähigkeiten:
+- Verursacht zusätzlich 1W3 Feuerschaden pro Treffer
+
+ETW0-Bonus: -3
+Schaden: 1W4 +3 (Wucht), 1W3 Feuerschaden
+Initiativefaktor: 4
+Fertigkeit: Flegel/Morgenstern
+Typ: 1-händig
+Mindeststärke: 13
+
+Gewicht: 11~
 
  
 // creature strings

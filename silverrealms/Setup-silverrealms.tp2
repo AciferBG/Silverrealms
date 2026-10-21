@@ -3,7 +3,7 @@
  *************************************************************************/
 BACKUP ~silverrealms/backup~
 AUTHOR "Acifer"
-VERSION ~Open Beta v0.907~
+VERSION ~Open Beta v0.908~
 
 AUTO_TRA ~silverrealms\language\%LANGUAGE%\%s~
 

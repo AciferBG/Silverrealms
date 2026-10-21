@@ -3,6 +3,26 @@
 
 COPY ~silverrealms/itm/copy~         ~override~
 
+COPY ~silverrealms/itm/AC#ILBTM.itm~ ~override~ // mindflayer bolt
+  SAY NAME2 @8196
+  SAY DESC @8197
+
+COPY ~silverrealms/itm/AC#ILBTB.itm~ ~override~ // beholder bolt
+  SAY NAME2 @8194
+  SAY DESC @8195
+
+COPY ~silverrealms/itm/AC#ILBG3.itm~ ~override~ // big 3 shortsword
+  SAY NAME2 @8192
+  SAY DESC @8193
+
+COPY ~silverrealms/itm/AC#ILBWB.itm~ ~override~ // web gloves
+  SAY NAME2 @8190
+  SAY DESC @8191
+
+COPY ~silverrealms/itm/AC#ILKEU.itm~ ~override~ // fimbrils mycel
+  SAY NAME2 @8188
+  SAY DESC @8189
+
 COPY ~silverrealms/itm/AC#ILBLN.itm~ ~override~ // flail
   SAY NAME2 @8186
   SAY DESC @8187

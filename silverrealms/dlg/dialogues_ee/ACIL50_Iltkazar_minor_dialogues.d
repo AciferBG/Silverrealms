@@ -275,22 +275,22 @@ IF ~~ THEN GOTO harpoon_01
 END
 
 	IF ~~ THEN BEGIN harpoon_01
-	SAY ~Ich habe diese alte Waffe unserer Clangründer wieder hervorgekramt. Meine Familie beschäftigt sich schon seit Jahrhunderten mit dem Fischen und der Jagd auf Wasserbewohner. Und sie hat mir einen alten Speer vermacht, der einst dafür geschaffen wurde, die großen Übel unter dem Wasser zu bekämpfen. Da die Stadt jetzt wieder sicherer geworden zu sein scheint, dachte ich, dass Ihr diese Art Harpune jetzt besser gebrauchen könntet als ich.~
-	IF ~~ THEN REPLY ~Das ist sehr freundlich von Euch, Danke!~ GOTO thanks_harpoon
-	IF ~~ THEN REPLY ~So etwas brauche ich nicht.~ GOTO dont_need_harpoon
+	SAY ~Ohne Euch hätte mich dieser Kuo-Toa wohl selbst an einen Angelhaken gehängt. Ich möchte Euch etwas zum Dank geben: Diese Handschuhe begleiten meine Familie schon seit Generationen beim Fischfang. In ihnen sind die Spinndrüsen einer Höhlenspinne verarbeitet. Auf ein Befehlswort schleudern sie ein klebriges Netz aus, dem selbst ein kräftiger Tiefenfisch kaum entkommt. Vielleicht könnt Ihr damit auch die eine oder andere Landratte einfangen!~
+	IF ~~ THEN REPLY ~Das ist sehr freundlich von Euch. Vielen Dank!~ GOTO thanks_harpoon
+	IF ~~ THEN REPLY ~Behaltet sie lieber. Ihr braucht sie vielleicht eher als ich.~ GOTO dont_need_harpoon
 	END
-	
+
 	IF ~~ THEN BEGIN dont_need_harpoon
-	SAY ~War nur ein Vorschlag. Nichts für Ungut, <RACE>!~
+	SAY ~Das ist anständig von Euch, <RACE>. Ich hätte Euch zwar gerne etwas gegeben, aber ich werde bei jedem guten Fang an Euch denken!~
 	IF ~~ THEN DO ~SetGlobal("FishermanQuest","ACIL50",20)
-	EscapeArea()~ EXIT 
+	EscapeArea()~ EXIT
 	END
-	
+
 	IF ~~ THEN BEGIN thanks_harpoon
-	SAY ~Gerne! Und wenn Ihr damit was fangt, was schmackhaft aussieht, lasst es Euch im "Blutigen Bollwerk" mit etwas Gewürzflechten verfeinern!~
-	IF ~~ THEN DO ~GiveItemCreate("AC#HAPO1",LastTalkedToBy,1,0,0)
+	SAY ~Gerne! Aber passt auf, wohin Ihr zielt. Ich habe mich einmal selbst an meinem Boot festgeklebt und musste warten, bis meine Frau mich gefunden hat. Sie erzählt die Geschichte heute noch bei jeder Gelegenheit.~
+	IF ~~ THEN DO ~GiveItemCreate("AC#ILBWB1",LastTalkedToBy,1,0,0)
 	SetGlobal("FishermanQuest","ACIL50",20)
-	EscapeArea()~ EXIT 
+	EscapeArea()~ EXIT
 	END
 
 IF ~Global("FishermanQuest","ACIL50",1)~ THEN BEGIN hello_kuota

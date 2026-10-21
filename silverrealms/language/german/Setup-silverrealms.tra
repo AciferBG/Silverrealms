@@ -1679,13 +1679,18 @@ Intelligenz: +2
 Besondere Eigenschaften: Schützt vor kritischen Treffern
 Gewicht: 2~
 @8002 = ~Frischer Fang~
-@8003 = ~Frischer Fang +2, +5 gegen Fischwesen
-Der Speer war eine der ersten Waffen, die von Menschenhand gefertigt wurde. Die ersten Speere waren nicht viel mehr als Holzstangen, die an einem Ende zugespitzt waren. Als die Menschheit lernte, mit Metall zu arbeiten, wurden die Speerspitzen aus Eisen oder Stahl gefertigt. Dann begannen die Waffenschmiede, mit verschiedenen Arten von Speerspitzen zu experimentieren. Aus den Experimenten heraus entstanden die verschiedenen Arten von Stangenwaffen. Weitere Experimente führten zur Herstellung magischer Speere. So wurden Speere beispielsweise vom Schamanen eines Stammes verzaubert, damit sie der Stammeskrieger rascher führen konnte und ein Treffer beim Feind mehr Schaden anrichtete.
+@8003 = ~Frischer Fang +2, +5 gegen Kuo-Toa 
+
+Der Fischer Dorrik führte diese Harpune jahrzehntelang auf den unterirdischen Seen des alten Shanatar. Ihre widerhakige Spitze durchbohrte selbst die dicken Schuppen der Tiefenfische, und Dorriks Fang war so begehrt, dass er sich eines Tages die Dienste eines Magiers leisten konnte. Fortan kehrte er mit noch größeren Fischen heim.
+
+Sein einträgliches Gewerbe fand ein jähes Ende, als Kuo-Toa sein Boot enterten und ihn vor ihren Hohepriester schleppten. Dieser verkündete, Dorrik werde für seine Frevel an den Bewohnern des Sees noch vor Tagesende geopfert. Der Fischer bat daraufhin um seine Harpune: Er wolle der Göttin einen letzten, besonders stattlichen Fang darbringen.
+
+Was anschließend im Tempel geschah, ist nicht überliefert. Dorrik kehrte jedoch mit seiner Harpune zurück und weigerte sich für den Rest seines Lebens, über den Inhalt seines Fangkorbes zu sprechen.
 
 SPEZIFISCHE EIGENSCHAFTEN:
 
 ETW0: -2
-Schaden: 1W6+2 (Stichwaffe), doppelter Schaden gegen fischartige Wesen wie Kuo-Toa 
+Schaden: 1W6+2 (Stichwaffe), doppelter Schaden gegen Kuo-Toa 
 Gewicht: 3
 Initiativefaktor: 4
 Waffenfertigkeit: Speer
@@ -2487,6 +2492,79 @@ Typ: 1-händig
 Mindeststärke: 13
 
 Gewicht: 11~
+@8188 = ~Fimbrils Mycel +3~
+@8189 = ~Der svirfneblische Pilzgärtner Fimbril züchtete dieses ungewöhnlich feste Pilzgeflecht ursprünglich als Ersatz für das im Unterreich seltene Holz. Als Grottenschrate seinen Garten heimsuchten, entdeckte er eine weitere Eigenschaft seiner Züchtung: Unter kräftigen Schlägen entließ sie Sporen, die selbst gestandene Krieger kurzzeitig orientierungslos umhertaumeln ließen. Fimbril vertrieb die Eindringlinge mit einem besonders handlichen Strunk, während diese untereinander darüber stritten, woher der Angriff kam.
+
+EIGENSCHAFTEN:
+
+Kampffähigkeiten:
+- Ein Treffer verwirrt zu 10% das Ziel für 1 Runde, sofern ihm kein Rettungswurf gegen Zauber gelingt.
+
+ETW0-Bonus: -3
+Schaden: 1W6 +3 (Wucht)
+Initiativefaktor: 1
+Fertigkeit: Keule
+Typ: 1-händig
+Mindeststärke: 5
+
+Gewicht: 1~
+@8190 = ~Handschuhe des Netzmeisters~
+@8191 = ~Diese Handschuhe gehörten einem Fischer, der an den unterirdischen Seen seinen Lebensunterhalt verdiente. In ihre Handflächen sind magisch bewahrte Spinndrüsen eingearbeitet, mit denen er ein klebriges Netz über das Wasser werfen konnte. Dass sich damit auch an Land Beute fangen lässt, dürfte abenteuerlustigen Trägern nicht entgehen.
+
+EIGENSCHAFTEN:
+
+Netz (1x täglich)
+Reichweite: 12 m
+Dauer: 1 Phase
+Zeitaufwand: 2
+Bereich: 4,5 m Radius
+Rettungswurf: Ja (gg. Zauber)
+
+Gewicht: 2~
+@8192 = ~Die Großen Drei +3~
+@8193 = ~Der Tiefengnom Belwarin kannte die Gefahren des Unterreichs besser, als ihm lieb war. Zweimal hatten Kuo-Toa ihn gefangen genommen, um ihn ihrer Göttin zu opfern, einmal hatten Gedankenschinder beinahe seinen Verstand verschlungen, und die Begegnung mit einem Betrachter hatte ihn seinen linken Fuß gekostet. Als er schließlich einen beträchtlichen Edelsteinfund machte, investierte er seinen Reichtum in die Verzauberung dieses Kurzschwerts.
+
+Fortan widmete Belwarin sich der Jagd auf jene Wesen, denen er seine leidvollen Erfahrungen verdankte. Er nannte die Waffe schlicht "die Großen Drei". Auf die Frage, weshalb er ausgerechnet diese Gegner jage, soll er geantwortet haben: "Mit den anderen habe ich noch keine Rechnung offen."
+
+EIGENSCHAFTEN:
+
+Ausgerüstete Fähigkeiten:
+– +2 Bonus auf die Rüstungsklasse gegen Kuo-Toa, Gedankenschinder und Betrachter
+– +2 Bonus auf Rettungswürfe gegen von diesen Wesen verursachte Effekte
+
+ETW0-Bonus: +3, insgesamt +5 gegen Kuo-Toa, Gedankenschinder und Betrachter
+Schaden: 1W6 +3 (Stich)
+Initiativefaktor: 0
+Fertigkeit: Kurzschwert
+Typ: Einhändig
+Mindeststärke: 5
+
+Gewicht: 2~
+@8194 = ~Betrachterbolzen~
+@8195 = ~Diese Bolzen wurden eigens für den Kampf gegen Betrachter gefertigt. Die stumpfe Glasspitze ist in der Form eines Betrachterauges gestaltet. Beim Aufprall zerbricht diese Spitze und setzt ein scharfes Pulver frei, das die Augen der Kreaturen reizt. Der Betrachter verliert dadurch vorübergehend die Sicht – und damit die Möglichkeit, seine gefürchteten Augenstrahlen gezielt einzusetzen.
+
+EIGENSCHAFTEN:
+
+Blendet getroffene Betrachter für 1 Runde.
+Kein Rettungswurf.
+
+Schaden: 1W3 (Geschoss)
+Schusswaffe: Armbrust
+
+Gewicht: 0~
+@8196 = ~Schinderbolzen~
+@8197 = ~Die Haut eines jeden Gedankenschinders ist von einer Schleimschicht überzogen, die ihnen ihre außergewöhnliche Magieresistenz verleiht. Die Spitzen dieser Bolzen enthalten eine alchemistische Substanz, die beim Aufprall freigesetzt wird und den schützenden Schleim auflöst. Bis sich die Schicht erneuert hat, ist der getroffene Gedankenschinder anfälliger für Zauber.
+
+EIGENSCHAFTEN:
+
+Senkt die Magieresistenz getroffener Gedankenschinder für 2 Runden um 20 Prozentpunkte.
+
+Schaden: 1W3 (Geschoss)
+Schusswaffe: Armbrust
+
+Gewicht: 0~
+
+
 
  
 // creature strings

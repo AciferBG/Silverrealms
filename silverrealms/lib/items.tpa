@@ -3,6 +3,12 @@
 
 COPY ~silverrealms/itm/copy~         ~override~
 
+COPY ~silverrealms/itm/AC#ILSHH.itm~ ~override~ // shaman headgear
+  SAY NAME2 @8198
+  SAY DESC @8199
+  SAY NAME1 @8200
+  SAY UNIDENTIFIED_DESC @8201
+
 COPY ~silverrealms/itm/AC#ILBTM.itm~ ~override~ // mindflayer bolt
   SAY NAME2 @8196
   SAY DESC @8197

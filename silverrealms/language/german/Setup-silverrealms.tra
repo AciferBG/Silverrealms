@@ -2314,6 +2314,12 @@ RW-Bonus: -1
 
 Der Träger kann sich auf Wunsch für 2 Phasen in einen Raben verwandeln.
 
+Rabengestalt:
+- Geschicklichkeit: 17
+- Magieresistenz: 50 %
+- Immunität gegen Bezauberung
+- Keine Zauber oder Waffenangriffe in Rabengestalt möglich
+
 Gewicht: 3~
 
 @8156 = ~Betrunkenes Zwinkern~
@@ -2563,6 +2569,18 @@ Schaden: 1W3 (Geschoss)
 Schusswaffe: Armbrust
 
 Gewicht: 0~
+@8198 = ~Bund der Ahnen~
+@8199 = ~Dieser Kopfschmuck ist mit Federn, Knochenperlen und kleinen geschnitzten Glücksbringern verziert. Jeder davon wurde einem Geist gewidmet, dessen Beistand sein früherer Besitzer einst erfahren hatte. Wer den Schmuck trägt, vernimmt bisweilen ein leises Flüstern und findet darin die Kraft, die Geister erneut anzurufen.
+
+EIGENSCHAFTEN:
+
+- Erlaubt dem Träger, täglich zwei zusätzliche Schamanenzauber des 1. Grades zu wirken.
+
+Gewicht: 1~
+@8200 = ~Kopfschmuck~
+@8201 = ~Dies ist ein Kopfschmuck, der mit Federn, Vogelknochen und anderen Gegenständen verziert ist.
+
+Gewicht: 1~
 
 
 

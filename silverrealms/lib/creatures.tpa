@@ -2102,7 +2102,13 @@ COPY ~silverrealms/cre/AC#ABGR2.cre~ ~override~ //Green Abishai
   
 COPY ~silverrealms/cre/AC#ABGR3.cre~ ~override~ //Green Abishai in area acil77
   SAY NAME1 @459 SAY NAME2 @459
-  
+
+COPY ~silverrealms/cre/AC#IL65A.cre~ ~override~ //Blue Abishai in area ACIL65
+  SAY NAME1 @462 SAY NAME2 @462
+
+COPY ~silverrealms/cre/AC#IL65B.cre~ ~override~ //Red Abishai in area ACIL65
+  SAY NAME1 @460 SAY NAME2 @460
+
 COPY ~silverrealms/cre/AC#ABRE1.cre~ ~override~ //Red Abishai
   SAY NAME1 @460 SAY NAME2 @460
   

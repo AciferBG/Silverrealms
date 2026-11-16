@@ -143,21 +143,21 @@ Ich habe die Tore von Iltkazar erreicht und mir wurde Einlass gewährt.~
 @23000   = ~Die Halle des Blutmondes
 
 Um den Zwergentempel, der "Halle des Blutmondes" genannt wird, im Norden der Spinnenschächte betreten zu können, brauche ich die Wörter der beiden ehemaligen Schutzgottheiten. Ich sollte der Statue, die den Eingang bewacht, die Namen "Clangeddin" und "Selune" nennen, um eingelassen zu werden.~
-//___________________________Die Halle des Blutmondes
 @23001   = ~Die Halle des Blutmondes
 
 Ich habe bei dem Drow, der Anführer der Vhaeraun-verehrenden Drow in den Spinnenschächten war, eine Notiz gefunden. Ich denke, diese Notiz könnte mir bei der Suche nach Ellhimar weiterhelfen. Da sie auf drowisch geschrieben ist, muss ich sie erst identifizieren, um ihren Inhalt lesen zu können.~
-//___________________________Die Halle des Blutmondes
 @23002   = ~Die Halle des Blutmondes
 
 Um den Zwergentempel, der "Halle des Blutmondes" genannt wird, im Norden der Spinnenschächte betreten zu können, brauche ich die Wörter der beiden ehemaligen Schutzgottheiten. Ich sollte der Statue, die den Eingang bewacht, die Namen "Clangeddin" und der menschlichen Mondgöttin nennen, um eingelassen zu werden.~
 @23003   = ~Die Halle des Blutmondes
 
 Ich habe in einer Nebenkammer der Halle des Blutmondes König Mith Baraks Notizen gefunden. Es scheint, dass er vor den Zwergen etwas verheimlicht hat und sich dort in der Abgeschiedenheit auf die Suche nach einem Portal in die Astralebene gemacht hat. Er wurde zwar in der Halle des Blutmondes nicht fündig, wollte seine Suche jedoch an einem Ort, den er Barakuir genannt hat, fortsetzen.~
-//___________________________Die Halle des Blutmondes
 @23004   = ~Die Halle des Blutmondes
 
 Ich habe den Drow-Anführer der Vhaeraun-Anhänger in dem alten Lolth-Tempel getötet. Da er zu wissen schien, wo ich als nächstes nach einer Ursache für den schlafenden König suchen sollte, sollte ich vielleicht bei seiner Leiche nach Hinweisen suchen.~
+@23005   = ~Die Halle des Blutmondes
+
+Ich habe eine kleine Nebenkammer in der Halle des Blutmondes betreten. Irgendwo hier sollte sich ein Hinweis auf König Mith Barak finden lassen.~
 @23010   = ~Ellhimars Tagebuch
 
 In der Halle des Blutmondes habe ich das Tagebuch des Magiers Ellhimar gefunden. Er hatte über Mith Barak einiges herausgefunden. Vielleicht sollte ich das Tagebuch einmal zu Vronia bringen, damit sie es sic ansehen kann.~
@@ -299,10 +299,16 @@ Schnaiklu Kobaltwächter benötigt zur Vollendung seines Golems zwei seltene Zut
 Ich habe Schnaiklu alle Zutaten gebracht, die er zum Betrieb des Metagolems benötigt.~
 @53220  = ~Die Essenz eines Elementarwesens
 
-Schnaiklu benötigt die Essenz eines Höheren Wasserelementares, um seinen Golem zu betreiben.~
+Schnaiklu benötigt die Essenz eines höheren Wasserelementares, um seinen Golem zu betreiben.~
+@53221  = ~Die Essenz eines Elementarwesens
+
+Ich habe Schnaiklu die Essenz eines höheren Wasserelementares übergeben.~
 @53230  = ~Hizagkuur
 
 Sorni Arnschädel kann mir bei der Beschaffung des Hizagkuur-Metalls weiterhelfen.~
+@53231  = ~Hizagkuur
+
+Ich habe Schnaiklu das Hizagkuur überbracht.~
 @53235  = ~Hizagkuur
 
 Ich habe in einem der Minenschächte eine seltsame Art von Metall gefunden. Vielleicht kann mir jemand, der sich mit Metallverarbeitung auskennt, mehr darüber sagen.~

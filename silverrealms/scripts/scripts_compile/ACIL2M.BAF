@@ -1,4 +1,12 @@
 IF
+    Global("EnteredArea","ACIL2M",0)
+THEN
+    RESPONSE #100
+        SetGlobal("EnteredArea","ACIL2M",1)
+        AddJournalEntry(@23005,QUEST_DONE)  
+END   
+
+IF
     PartyHasItem("AC#ILMBJ")  // Mith Baraks Notizen
     Global("AC#MithBarakJournal","GLOBAL",0)
 THEN

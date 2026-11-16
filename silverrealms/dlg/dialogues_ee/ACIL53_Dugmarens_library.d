@@ -711,7 +711,7 @@ END
 
 	IF ~~ THEN BEGIN final_hizagkuur
 	SAY ~Das ist genau das, was ich brauche!~
-	IF ~~ THEN DO ~TakePartyItem("AC#HIZA2")
+	IF ~~ THEN DO ~TakePartyItem("AC#HIZA2") AddJournalEntry(@53231,QUEST_DONE)
 	SetGlobal("AC#HizagkuurQuest","GLOBAL",4)~ + final_hizagkuur_02
 	END
 	
@@ -747,7 +747,7 @@ END
 		
 		IF ~~ THEN BEGIN have_water_essence
 		SAY ~Oh! Lasst es mich Euch gleich abnehmen - und vorsichtig damit, dass Ihr nichts verschüttet!~
-		IF ~~ THEN DO ~TakePartyItem("AC#ILWES")
+		IF ~~ THEN DO ~TakePartyItem("AC#ILWES") AddJournalEntry(@53221,QUEST_DONE)
 		SetGlobal("AC#WaterEleQuest","GLOBAL",2)~ + have_water_essence_02
 		END
 		
@@ -867,7 +867,7 @@ END
 								
 									IF ~~ THEN BEGIN already_have_water_essence
 									SAY ~Oh! Ja tatsächlich, das ist genau das, was ich brauche! Was für eine Überraschung. Lasst es mich Euch gleich abnehmen - und vorsichtig damit, dass Ihr nichts verschüttet!~
-									IF ~~ THEN DO ~TakePartyItem("AC#ILWES")
+									IF ~~ THEN DO ~TakePartyItem("AC#ILWES") AddJournalEntry(@53221,QUEST_DONE)
 									~ + have_water_essence_need_second_ingredient
 									END
 								

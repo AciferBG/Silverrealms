@@ -28,7 +28,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("Merch_Spawn","ACIL04",1)  // Zweiwasser
 		CreateCreature("AC#04MCL",[2495.1146],15)  // Händler
-		CreateCreature("AC#04GUA",[2627.1202],6)  // Leibwächter
+		CreateCreature("AC#04GUA",[2577.1206],6)  // Leibwächter
 		CreateCreature("AC#GOBDD",[2527.1184],1)  // Goblin
 END
 
